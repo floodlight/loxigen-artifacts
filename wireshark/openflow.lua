@@ -14,6 +14,14 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+-- Copy this file to your wireshark plugin directory:
+--   Linux / OS X: ~/.wireshark/plugins/
+--   Windows: C:\Documents and Settings\<username>\Application Data\Wireshark\plugins\
+-- You may need to create the directory.
+
+-- The latest version of this dissector is always available at:
+-- http://www.projectfloodlight.org/openflow.lua
+
 OFReader = {}
 OFReader.new = function(buf, offset)
     local self = {}
