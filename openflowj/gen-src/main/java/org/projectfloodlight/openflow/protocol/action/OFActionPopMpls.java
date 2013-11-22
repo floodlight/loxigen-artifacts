@@ -23,7 +23,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFActionPopMpls extends OFObject, OFAction {
     OFActionType getType();
-    int getEthertype();
+    EthType getEthertype();
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -32,8 +32,8 @@ public interface OFActionPopMpls extends OFObject, OFAction {
     public interface Builder extends OFAction.Builder {
         OFActionPopMpls build();
         OFActionType getType();
-        int getEthertype();
-        Builder setEthertype(int ethertype);
+        EthType getEthertype();
+        Builder setEthertype(EthType ethertype);
         OFVersion getVersion();
     }
 }

@@ -83,7 +83,7 @@ public class OFActionsVer11 implements OFActions {
     public OFActionSetNwDst.Builder buildSetNwDst() {
         return new OFActionSetNwDstVer11.Builder();
     }
-    public OFActionSetNwDst setNwDst(long nwAddr) {
+    public OFActionSetNwDst setNwDst(IPv4Address nwAddr) {
         return new OFActionSetNwDstVer11(
                 nwAddr
                     );
@@ -175,7 +175,7 @@ public class OFActionsVer11 implements OFActions {
     public OFActionPopMpls.Builder buildPopMpls() {
         return new OFActionPopMplsVer11.Builder();
     }
-    public OFActionPopMpls popMpls(int ethertype) {
+    public OFActionPopMpls popMpls(EthType ethertype) {
         return new OFActionPopMplsVer11(
                 ethertype
                     );

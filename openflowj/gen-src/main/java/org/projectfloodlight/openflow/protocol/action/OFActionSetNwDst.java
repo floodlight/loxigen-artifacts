@@ -24,7 +24,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFActionSetNwDst extends OFObject, OFAction {
     OFActionType getType();
-    long getNwAddr();
+    IPv4Address getNwAddr();
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -33,8 +33,8 @@ public interface OFActionSetNwDst extends OFObject, OFAction {
     public interface Builder extends OFAction.Builder {
         OFActionSetNwDst build();
         OFActionType getType();
-        long getNwAddr();
-        Builder setNwAddr(long nwAddr);
+        IPv4Address getNwAddr();
+        Builder setNwAddr(IPv4Address nwAddr);
         OFVersion getVersion();
     }
 }

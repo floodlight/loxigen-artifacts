@@ -37,7 +37,7 @@ public interface OFActions {
     OFActionSetDlSrc.Builder buildSetDlSrc() throws UnsupportedOperationException;
     OFActionSetDlSrc setDlSrc(MacAddress dlAddr);
     OFActionSetNwDst.Builder buildSetNwDst() throws UnsupportedOperationException;
-    OFActionSetNwDst setNwDst(long nwAddr);
+    OFActionSetNwDst setNwDst(IPv4Address nwAddr);
     OFActionSetNwSrc.Builder buildSetNwSrc() throws UnsupportedOperationException;
     OFActionSetNwSrc setNwSrc(IPv4Address nwAddr);
     OFActionSetNwTos.Builder buildSetNwTos() throws UnsupportedOperationException;
@@ -58,7 +58,7 @@ public interface OFActions {
     OFActionGroup.Builder buildGroup() throws UnsupportedOperationException;
     OFActionGroup group(OFGroup group);
     OFActionPopMpls.Builder buildPopMpls() throws UnsupportedOperationException;
-    OFActionPopMpls popMpls(int ethertype);
+    OFActionPopMpls popMpls(EthType ethertype);
     OFActionPopVlan popVlan();
     OFActionPushMpls.Builder buildPushMpls() throws UnsupportedOperationException;
     OFActionPushMpls pushMpls(EthType ethertype);

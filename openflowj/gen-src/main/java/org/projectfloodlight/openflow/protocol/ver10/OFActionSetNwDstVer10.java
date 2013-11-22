@@ -32,10 +32,10 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
     final static byte WIRE_VERSION = 1;
     final static int LENGTH = 8;
 
-        private final static long DEFAULT_NW_ADDR = 0x0L;
+        private final static IPv4Address DEFAULT_NW_ADDR = IPv4Address.NONE;
 
     // OF message fields
-    private final long nwAddr;
+    private final IPv4Address nwAddr;
 //
     // Immutable default instance
     final static OFActionSetNwDstVer10 DEFAULT = new OFActionSetNwDstVer10(
@@ -43,7 +43,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFActionSetNwDstVer10(long nwAddr) {
+    OFActionSetNwDstVer10(IPv4Address nwAddr) {
         this.nwAddr = nwAddr;
     }
 
@@ -54,7 +54,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
     }
 
     @Override
-    public long getNwAddr() {
+    public IPv4Address getNwAddr() {
         return nwAddr;
     }
 
@@ -74,7 +74,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
 
         // OF message fields
         private boolean nwAddrSet;
-        private long nwAddr;
+        private IPv4Address nwAddr;
 
         BuilderWithParent(OFActionSetNwDstVer10 parentMessage) {
             this.parentMessage = parentMessage;
@@ -86,12 +86,12 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
     }
 
     @Override
-    public long getNwAddr() {
+    public IPv4Address getNwAddr() {
         return nwAddr;
     }
 
     @Override
-    public OFActionSetNwDst.Builder setNwAddr(long nwAddr) {
+    public OFActionSetNwDst.Builder setNwAddr(IPv4Address nwAddr) {
         this.nwAddr = nwAddr;
         this.nwAddrSet = true;
         return this;
@@ -105,7 +105,9 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
 
         @Override
         public OFActionSetNwDst build() {
-                long nwAddr = this.nwAddrSet ? this.nwAddr : parentMessage.nwAddr;
+                IPv4Address nwAddr = this.nwAddrSet ? this.nwAddr : parentMessage.nwAddr;
+                if(nwAddr == null)
+                    throw new NullPointerException("Property nwAddr must not be null");
 
                 //
                 return new OFActionSetNwDstVer10(
@@ -118,7 +120,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
     static class Builder implements OFActionSetNwDst.Builder {
         // OF message fields
         private boolean nwAddrSet;
-        private long nwAddr;
+        private IPv4Address nwAddr;
 
     @Override
     public OFActionType getType() {
@@ -126,12 +128,12 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
     }
 
     @Override
-    public long getNwAddr() {
+    public IPv4Address getNwAddr() {
         return nwAddr;
     }
 
     @Override
-    public OFActionSetNwDst.Builder setNwAddr(long nwAddr) {
+    public OFActionSetNwDst.Builder setNwAddr(IPv4Address nwAddr) {
         this.nwAddr = nwAddr;
         this.nwAddrSet = true;
         return this;
@@ -144,7 +146,9 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
 //
         @Override
         public OFActionSetNwDst build() {
-            long nwAddr = this.nwAddrSet ? this.nwAddr : DEFAULT_NW_ADDR;
+            IPv4Address nwAddr = this.nwAddrSet ? this.nwAddr : DEFAULT_NW_ADDR;
+            if(nwAddr == null)
+                throw new NullPointerException("Property nwAddr must not be null");
 
 
             return new OFActionSetNwDstVer10(
@@ -174,7 +178,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            long nwAddr = U32.f(bb.readInt());
+            IPv4Address nwAddr = IPv4Address.read4Bytes(bb);
 
             OFActionSetNwDstVer10 actionSetNwDstVer10 = new OFActionSetNwDstVer10(
                     nwAddr
@@ -198,7 +202,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
             sink.putShort((short) 0x7);
             // fixed value property length = 8
             sink.putShort((short) 0x8);
-            sink.putLong(message.nwAddr);
+            message.nwAddr.putTo(sink);
         }
     }
 
@@ -215,7 +219,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
             bb.writeShort((short) 0x7);
             // fixed value property length = 8
             bb.writeShort((short) 0x8);
-            bb.writeInt(U32.t(message.nwAddr));
+            message.nwAddr.write4Bytes(bb);
 
 
         }
@@ -240,7 +244,10 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
             return false;
         OFActionSetNwDstVer10 other = (OFActionSetNwDstVer10) obj;
 
-        if( nwAddr != other.nwAddr)
+        if (nwAddr == null) {
+            if (other.nwAddr != null)
+                return false;
+        } else if (!nwAddr.equals(other.nwAddr))
             return false;
         return true;
     }
@@ -250,7 +257,7 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         final int prime = 31;
         int result = 1;
 
-        result = prime *  (int) (nwAddr ^ (nwAddr >>> 32));
+        result = prime * result + ((nwAddr == null) ? 0 : nwAddr.hashCode());
         return result;
     }
 

@@ -79,7 +79,7 @@ public class OFActionsVer12 implements OFActions {
     public OFActionSetNwDst.Builder buildSetNwDst() {
         throw new UnsupportedOperationException("OFActionSetNwDst not supported in version 1.2");
     }
-    public OFActionSetNwDst setNwDst(long nwAddr) {
+    public OFActionSetNwDst setNwDst(IPv4Address nwAddr) {
         throw new UnsupportedOperationException("OFActionSetNwDst not supported in version 1.2");
     }
 
@@ -157,7 +157,7 @@ public class OFActionsVer12 implements OFActions {
     public OFActionPopMpls.Builder buildPopMpls() {
         return new OFActionPopMplsVer12.Builder();
     }
-    public OFActionPopMpls popMpls(int ethertype) {
+    public OFActionPopMpls popMpls(EthType ethertype) {
         return new OFActionPopMplsVer12(
                 ethertype
                     );

@@ -86,7 +86,7 @@ public class OFActionsVer10 implements OFActions {
     public OFActionSetNwDst.Builder buildSetNwDst() {
         return new OFActionSetNwDstVer10.Builder();
     }
-    public OFActionSetNwDst setNwDst(long nwAddr) {
+    public OFActionSetNwDst setNwDst(IPv4Address nwAddr) {
         return new OFActionSetNwDstVer10(
                 nwAddr
                     );
@@ -176,7 +176,7 @@ public class OFActionsVer10 implements OFActions {
     public OFActionPopMpls.Builder buildPopMpls() {
         throw new UnsupportedOperationException("OFActionPopMpls not supported in version 1.0");
     }
-    public OFActionPopMpls popMpls(int ethertype) {
+    public OFActionPopMpls popMpls(EthType ethertype) {
         throw new UnsupportedOperationException("OFActionPopMpls not supported in version 1.0");
     }
 

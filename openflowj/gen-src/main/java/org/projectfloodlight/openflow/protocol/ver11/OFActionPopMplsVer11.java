@@ -32,10 +32,10 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
     final static byte WIRE_VERSION = 2;
     final static int LENGTH = 8;
 
-        private final static int DEFAULT_ETHERTYPE = 0x0;
+        private final static EthType DEFAULT_ETHERTYPE = EthType.NONE;
 
     // OF message fields
-    private final int ethertype;
+    private final EthType ethertype;
 //
     // Immutable default instance
     final static OFActionPopMplsVer11 DEFAULT = new OFActionPopMplsVer11(
@@ -43,7 +43,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFActionPopMplsVer11(int ethertype) {
+    OFActionPopMplsVer11(EthType ethertype) {
         this.ethertype = ethertype;
     }
 
@@ -54,7 +54,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
     }
 
     @Override
-    public int getEthertype() {
+    public EthType getEthertype() {
         return ethertype;
     }
 
@@ -74,7 +74,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
 
         // OF message fields
         private boolean ethertypeSet;
-        private int ethertype;
+        private EthType ethertype;
 
         BuilderWithParent(OFActionPopMplsVer11 parentMessage) {
             this.parentMessage = parentMessage;
@@ -86,12 +86,12 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
     }
 
     @Override
-    public int getEthertype() {
+    public EthType getEthertype() {
         return ethertype;
     }
 
     @Override
-    public OFActionPopMpls.Builder setEthertype(int ethertype) {
+    public OFActionPopMpls.Builder setEthertype(EthType ethertype) {
         this.ethertype = ethertype;
         this.ethertypeSet = true;
         return this;
@@ -105,7 +105,9 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
 
         @Override
         public OFActionPopMpls build() {
-                int ethertype = this.ethertypeSet ? this.ethertype : parentMessage.ethertype;
+                EthType ethertype = this.ethertypeSet ? this.ethertype : parentMessage.ethertype;
+                if(ethertype == null)
+                    throw new NullPointerException("Property ethertype must not be null");
 
                 //
                 return new OFActionPopMplsVer11(
@@ -118,7 +120,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
     static class Builder implements OFActionPopMpls.Builder {
         // OF message fields
         private boolean ethertypeSet;
-        private int ethertype;
+        private EthType ethertype;
 
     @Override
     public OFActionType getType() {
@@ -126,12 +128,12 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
     }
 
     @Override
-    public int getEthertype() {
+    public EthType getEthertype() {
         return ethertype;
     }
 
     @Override
-    public OFActionPopMpls.Builder setEthertype(int ethertype) {
+    public OFActionPopMpls.Builder setEthertype(EthType ethertype) {
         this.ethertype = ethertype;
         this.ethertypeSet = true;
         return this;
@@ -144,7 +146,9 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
 //
         @Override
         public OFActionPopMpls build() {
-            int ethertype = this.ethertypeSet ? this.ethertype : DEFAULT_ETHERTYPE;
+            EthType ethertype = this.ethertypeSet ? this.ethertype : DEFAULT_ETHERTYPE;
+            if(ethertype == null)
+                throw new NullPointerException("Property ethertype must not be null");
 
 
             return new OFActionPopMplsVer11(
@@ -174,7 +178,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            int ethertype = U16.f(bb.readShort());
+            EthType ethertype = EthType.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
 
@@ -200,7 +204,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
             sink.putShort((short) 0x14);
             // fixed value property length = 8
             sink.putShort((short) 0x8);
-            sink.putInt(message.ethertype);
+            message.ethertype.putTo(sink);
             // skip pad (2 bytes)
         }
     }
@@ -218,7 +222,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
             bb.writeShort((short) 0x14);
             // fixed value property length = 8
             bb.writeShort((short) 0x8);
-            bb.writeShort(U16.t(message.ethertype));
+            message.ethertype.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
 
@@ -245,7 +249,10 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
             return false;
         OFActionPopMplsVer11 other = (OFActionPopMplsVer11) obj;
 
-        if( ethertype != other.ethertype)
+        if (ethertype == null) {
+            if (other.ethertype != null)
+                return false;
+        } else if (!ethertype.equals(other.ethertype))
             return false;
         return true;
     }
@@ -255,7 +262,7 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + ethertype;
+        result = prime * result + ((ethertype == null) ? 0 : ethertype.hashCode());
         return result;
     }
 
