@@ -69,6 +69,10 @@ public class OFInstructionsVer12 implements OFInstructions {
                     );
     }
 
+    public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
+        throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.2");
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.2");
     }

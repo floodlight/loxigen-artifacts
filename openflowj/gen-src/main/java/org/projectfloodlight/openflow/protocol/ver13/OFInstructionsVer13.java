@@ -69,6 +69,10 @@ public class OFInstructionsVer13 implements OFInstructions {
                     );
     }
 
+    public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
+        return OFInstructionBsnDisableSrcMacCheckVer13.INSTANCE;
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         return new OFInstructionMeterVer13.Builder();
     }

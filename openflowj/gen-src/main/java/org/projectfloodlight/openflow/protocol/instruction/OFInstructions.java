@@ -33,6 +33,7 @@ public interface OFInstructions {
     OFInstructionWriteActions writeActions(List<OFAction> actions);
     OFInstructionWriteMetadata.Builder buildWriteMetadata() throws UnsupportedOperationException;
     OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask);
+    OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);
 

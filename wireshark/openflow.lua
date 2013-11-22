@@ -5743,12 +5743,20 @@ fields['of13.instruction.len'] = ProtoField.uint16("of13.instruction.len", "len"
 fields['of13.instruction_apply_actions.type'] = ProtoField.uint32("of13.instruction_apply_actions.type", "type", base.HEX, enum_v4_ofp_instruction_type)
 fields['of13.instruction_apply_actions.len'] = ProtoField.uint16("of13.instruction_apply_actions.len", "len", base.DEC, nil)
 fields['of13.instruction_apply_actions.actions'] = ProtoField.bytes("of13.instruction_apply_actions.actions", "actions")
-fields['of13.instruction_clear_actions.type'] = ProtoField.uint16("of13.instruction_clear_actions.type", "type", base.DEC, nil)
-fields['of13.instruction_clear_actions.len'] = ProtoField.uint16("of13.instruction_clear_actions.len", "len", base.DEC, nil)
 fields['of13.instruction_experimenter.type'] = ProtoField.uint16("of13.instruction_experimenter.type", "type", base.DEC, nil)
 fields['of13.instruction_experimenter.len'] = ProtoField.uint16("of13.instruction_experimenter.len", "len", base.DEC, nil)
 fields['of13.instruction_experimenter.experimenter'] = ProtoField.uint32("of13.instruction_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_experimenter.data'] = ProtoField.bytes("of13.instruction_experimenter.data", "data")
+fields['of13.instruction_bsn.type'] = ProtoField.uint16("of13.instruction_bsn.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn.len'] = ProtoField.uint16("of13.instruction_bsn.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn.experimenter'] = ProtoField.uint32("of13.instruction_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn.subtype'] = ProtoField.uint32("of13.instruction_bsn.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_disable_src_mac_check.type'] = ProtoField.uint16("of13.instruction_bsn_disable_src_mac_check.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_disable_src_mac_check.len'] = ProtoField.uint16("of13.instruction_bsn_disable_src_mac_check.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_disable_src_mac_check.experimenter'] = ProtoField.uint32("of13.instruction_bsn_disable_src_mac_check.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_disable_src_mac_check.subtype'] = ProtoField.uint32("of13.instruction_bsn_disable_src_mac_check.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_clear_actions.type'] = ProtoField.uint16("of13.instruction_clear_actions.type", "type", base.DEC, nil)
+fields['of13.instruction_clear_actions.len'] = ProtoField.uint16("of13.instruction_clear_actions.len", "len", base.DEC, nil)
 fields['of13.instruction_goto_table.type'] = ProtoField.uint16("of13.instruction_goto_table.type", "type", base.DEC, nil)
 fields['of13.instruction_goto_table.len'] = ProtoField.uint16("of13.instruction_goto_table.len", "len", base.DEC, nil)
 fields['of13.instruction_goto_table.table_id'] = ProtoField.uint8("of13.instruction_goto_table.table_id", "table_id", base.DEC, nil)
@@ -10164,12 +10172,20 @@ p_of.fields = {
     fields['of13.instruction_apply_actions.type'],
     fields['of13.instruction_apply_actions.len'],
     fields['of13.instruction_apply_actions.actions'],
-    fields['of13.instruction_clear_actions.type'],
-    fields['of13.instruction_clear_actions.len'],
     fields['of13.instruction_experimenter.type'],
     fields['of13.instruction_experimenter.len'],
     fields['of13.instruction_experimenter.experimenter'],
     fields['of13.instruction_experimenter.data'],
+    fields['of13.instruction_bsn.type'],
+    fields['of13.instruction_bsn.len'],
+    fields['of13.instruction_bsn.experimenter'],
+    fields['of13.instruction_bsn.subtype'],
+    fields['of13.instruction_bsn_disable_src_mac_check.type'],
+    fields['of13.instruction_bsn_disable_src_mac_check.len'],
+    fields['of13.instruction_bsn_disable_src_mac_check.experimenter'],
+    fields['of13.instruction_bsn_disable_src_mac_check.subtype'],
+    fields['of13.instruction_clear_actions.type'],
+    fields['of13.instruction_clear_actions.len'],
     fields['of13.instruction_goto_table.type'],
     fields['of13.instruction_goto_table.len'],
     fields['of13.instruction_goto_table.table_id'],
@@ -10878,6 +10894,7 @@ of_group_mod_v4_dissectors = {}
 of_hello_elem_v4_dissectors = {}
 of_instruction_v4_dissectors = {}
 of_instruction_experimenter_v4_dissectors = {}
+of_instruction_bsn_v4_dissectors = {}
 of_meter_band_v4_dissectors = {}
 of_nicira_header_v4_dissectors = {}
 of_queue_prop_v4_dissectors = {}
@@ -19233,16 +19250,6 @@ function dissect_of_instruction_apply_actions_v4(reader, subtree)
 end
 of_instruction_v4_dissectors[4] = dissect_of_instruction_apply_actions_v4
 
--- child class of_instruction_clear_actions
--- Child of of_instruction
-function dissect_of_instruction_clear_actions_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_clear_actions.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_clear_actions.len')
-    reader.skip(4)
-    return 'of_instruction_clear_actions'
-end
-of_instruction_v4_dissectors[5] = dissect_of_instruction_clear_actions_v4
-
 -- virtual child class of_instruction_experimenter
 -- Child of of_instruction
 -- Discriminator is experimenter
@@ -19254,6 +19261,41 @@ function dissect_of_instruction_experimenter_v4(reader, subtree)
     return 'of_instruction_experimenter'
 end
 of_instruction_v4_dissectors[65535] = dissect_of_instruction_experimenter_v4
+
+-- virtual child class of_instruction_bsn
+-- Child of of_instruction_experimenter
+-- Discriminator is subtype
+function dissect_of_instruction_bsn_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn'
+end
+of_instruction_experimenter_v4_dissectors[6035143] = dissect_of_instruction_bsn_v4
+
+-- child class of_instruction_bsn_disable_src_mac_check
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_src_mac_check_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_disable_src_mac_check.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_disable_src_mac_check.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_disable_src_mac_check.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_disable_src_mac_check.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_src_mac_check'
+end
+of_instruction_bsn_v4_dissectors[0] = dissect_of_instruction_bsn_disable_src_mac_check_v4
+
+-- child class of_instruction_clear_actions
+-- Child of of_instruction
+function dissect_of_instruction_clear_actions_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_clear_actions.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_clear_actions.len')
+    reader.skip(4)
+    return 'of_instruction_clear_actions'
+end
+of_instruction_v4_dissectors[5] = dissect_of_instruction_clear_actions_v4
 
 -- child class of_instruction_goto_table
 -- Child of of_instruction

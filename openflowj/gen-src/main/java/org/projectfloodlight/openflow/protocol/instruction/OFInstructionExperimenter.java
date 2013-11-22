@@ -24,7 +24,6 @@ import org.jboss.netty.buffer.ChannelBuffer;
 public interface OFInstructionExperimenter extends OFObject, OFInstruction {
     OFInstructionType getType();
     long getExperimenter();
-    byte[] getData();
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -34,8 +33,6 @@ public interface OFInstructionExperimenter extends OFObject, OFInstruction {
         OFInstructionExperimenter build();
         OFInstructionType getType();
         long getExperimenter();
-        byte[] getData();
-        Builder setData(byte[] data);
         OFVersion getVersion();
     }
 }
