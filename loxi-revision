@@ -1,1 +1,1 @@
-b8957d6b02d68b19fa531bdfe89783a13d2d4f7f Merge into master from pull request #139: add bsn_disable_src_mac_check instruction (https://github.com/floodlight/loxigen/pull/139)
+3c9090cc6bd07441513f4695d805f49b0c87ae9e Merge into master from pull request #140: OFPortBitMap: add functionality to iterate over the Ports (https://github.com/floodlight/loxigen/pull/140)
