@@ -1,1 +1,1 @@
-3c9090cc6bd07441513f4695d805f49b0c87ae9e Merge into master from pull request #140: OFPortBitMap: add functionality to iterate over the Ports (https://github.com/floodlight/loxigen/pull/140)
+711785b4bb7f1a6aaf39282c0c853558126c6e74 Merge into master from pull request #142: Use hamcrest-integration library to use additional matchers (https://github.com/floodlight/loxigen/pull/142)
