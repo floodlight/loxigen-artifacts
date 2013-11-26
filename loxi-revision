@@ -1,1 +1,1 @@
-711785b4bb7f1a6aaf39282c0c853558126c6e74 Merge into master from pull request #142: Use hamcrest-integration library to use additional matchers (https://github.com/floodlight/loxigen/pull/142)
+1870fb97d8b100cb9ccd6d58e55e670433142658 Merge into master from pull request #143: Make the of() function public/visible LOXI-54 (https://github.com/floodlight/loxigen/pull/143)
