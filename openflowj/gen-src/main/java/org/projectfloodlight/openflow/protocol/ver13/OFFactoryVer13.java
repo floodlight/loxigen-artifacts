@@ -734,6 +734,25 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() {
+        return new OFBsnGetSwitchPipelineReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGetSwitchPipelineReply bsnGetSwitchPipelineReply(String pipeline) {
+        return new OFBsnGetSwitchPipelineReplyVer13(
+                nextXid(),
+                      pipeline
+                    );
+    }
+
+    public OFBsnGetSwitchPipelineRequest.Builder buildBsnGetSwitchPipelineRequest() {
+        return new OFBsnGetSwitchPipelineRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGetSwitchPipelineRequest bsnGetSwitchPipelineRequest() {
+        return new OFBsnGetSwitchPipelineRequestVer13(
+                nextXid()
+                    );
+    }
+
     public OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() {
         return new OFBsnLacpConvergenceNotifVer13.Builder().setXid(nextXid());
     }
@@ -762,6 +781,49 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() {
         return new OFBsnSetLacpRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() {
+        return new OFBsnSetSwitchPipelineReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnSetSwitchPipelineReply bsnSetSwitchPipelineReply(long status) {
+        return new OFBsnSetSwitchPipelineReplyVer13(
+                nextXid(),
+                      status
+                    );
+    }
+
+    public OFBsnSetSwitchPipelineRequest.Builder buildBsnSetSwitchPipelineRequest() {
+        return new OFBsnSetSwitchPipelineRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnSetSwitchPipelineRequest bsnSetSwitchPipelineRequest(String pipeline) {
+        return new OFBsnSetSwitchPipelineRequestVer13(
+                nextXid(),
+                      pipeline
+                    );
+    }
+
+    public OFBsnSwitchPipelineStatsEntry.Builder buildBsnSwitchPipelineStatsEntry() {
+        return new OFBsnSwitchPipelineStatsEntryVer13.Builder();
+    }
+    public OFBsnSwitchPipelineStatsEntry bsnSwitchPipelineStatsEntry(String pipeline) {
+        return new OFBsnSwitchPipelineStatsEntryVer13(
+                pipeline
+                    );
+    }
+
+    public OFBsnSwitchPipelineStatsReply.Builder buildBsnSwitchPipelineStatsReply() {
+        return new OFBsnSwitchPipelineStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnSwitchPipelineStatsRequest.Builder buildBsnSwitchPipelineStatsRequest() {
+        return new OFBsnSwitchPipelineStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnSwitchPipelineStatsRequest bsnSwitchPipelineStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnSwitchPipelineStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnTimeReply.Builder buildBsnTimeReply() {

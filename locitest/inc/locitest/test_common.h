@@ -5001,6 +5001,24 @@ extern int of_bsn_get_mirroring_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_get_mirroring_request_OF_VERSION_1_3_check_scalars(
     of_bsn_get_mirroring_request_t *obj, int value);
 
+extern int of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_populate(
+    of_bsn_get_switch_pipeline_reply_t *obj, int value);
+extern int of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_check(
+    of_bsn_get_switch_pipeline_reply_t *obj, int value);
+extern int of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_get_switch_pipeline_reply_t *obj, int value);
+extern int of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_get_switch_pipeline_reply_t *obj, int value);
+
+extern int of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_populate(
+    of_bsn_get_switch_pipeline_request_t *obj, int value);
+extern int of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_check(
+    of_bsn_get_switch_pipeline_request_t *obj, int value);
+extern int of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_get_switch_pipeline_request_t *obj, int value);
+extern int of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_get_switch_pipeline_request_t *obj, int value);
+
 extern int of_bsn_header_OF_VERSION_1_3_populate(
     of_bsn_header_t *obj, int value);
 extern int of_bsn_header_OF_VERSION_1_3_check(
@@ -5127,6 +5145,24 @@ extern int of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_check_scalars(
     of_bsn_set_pktin_suppression_request_t *obj, int value);
 
+extern int of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_populate(
+    of_bsn_set_switch_pipeline_reply_t *obj, int value);
+extern int of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_check(
+    of_bsn_set_switch_pipeline_reply_t *obj, int value);
+extern int of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_set_switch_pipeline_reply_t *obj, int value);
+extern int of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_set_switch_pipeline_reply_t *obj, int value);
+
+extern int of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_populate(
+    of_bsn_set_switch_pipeline_request_t *obj, int value);
+extern int of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_check(
+    of_bsn_set_switch_pipeline_request_t *obj, int value);
+extern int of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_set_switch_pipeline_request_t *obj, int value);
+extern int of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_set_switch_pipeline_request_t *obj, int value);
+
 extern int of_bsn_stats_reply_OF_VERSION_1_3_populate(
     of_bsn_stats_reply_t *obj, int value);
 extern int of_bsn_stats_reply_OF_VERSION_1_3_check(
@@ -5144,6 +5180,24 @@ extern int of_bsn_stats_request_OF_VERSION_1_3_populate_scalars(
     of_bsn_stats_request_t *obj, int value);
 extern int of_bsn_stats_request_OF_VERSION_1_3_check_scalars(
     of_bsn_stats_request_t *obj, int value);
+
+extern int of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_switch_pipeline_stats_reply_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_switch_pipeline_stats_reply_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_switch_pipeline_stats_reply_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_switch_pipeline_stats_reply_t *obj, int value);
+
+extern int of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_switch_pipeline_stats_request_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_check(
+    of_bsn_switch_pipeline_stats_request_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_switch_pipeline_stats_request_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_switch_pipeline_stats_request_t *obj, int value);
 
 extern int of_bsn_time_reply_OF_VERSION_1_3_populate(
     of_bsn_time_reply_t *obj, int value);
@@ -6260,6 +6314,15 @@ extern int of_bsn_lacp_stats_entry_OF_VERSION_1_3_populate_scalars(
     of_bsn_lacp_stats_entry_t *obj, int value);
 extern int of_bsn_lacp_stats_entry_OF_VERSION_1_3_check_scalars(
     of_bsn_lacp_stats_entry_t *obj, int value);
+
+extern int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_switch_pipeline_stats_entry_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_switch_pipeline_stats_entry_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_switch_pipeline_stats_entry_t *obj, int value);
+extern int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_switch_pipeline_stats_entry_t *obj, int value);
 
 extern int of_bsn_vport_header_OF_VERSION_1_3_populate(
     of_bsn_vport_header_t *obj, int value);
@@ -7602,6 +7665,15 @@ extern int of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_populate_scalars(
 extern int of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_check_scalars(
     of_list_bsn_lacp_stats_entry_t *obj, int value);
 
+extern int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_switch_pipeline_stats_entry_t *obj, int value);
+extern int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_switch_pipeline_stats_entry_t *obj, int value);
+extern int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_switch_pipeline_stats_entry_t *obj, int value);
+extern int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_switch_pipeline_stats_entry_t *obj, int value);
+
 extern int of_list_bucket_OF_VERSION_1_3_populate(
     of_list_bucket_t *obj, int value);
 extern int of_list_bucket_OF_VERSION_1_3_check(
@@ -8088,6 +8160,13 @@ extern int
 extern int
     list_check_of_list_bsn_lacp_stats_entry_OF_VERSION_1_3(
     of_list_bsn_lacp_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_switch_pipeline_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_switch_pipeline_stats_entry_t *list, int value);
 
 extern int
     list_setup_of_list_bucket_OF_VERSION_1_3(

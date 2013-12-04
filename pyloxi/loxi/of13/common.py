@@ -279,6 +279,42 @@ class bsn_lacp_stats_entry(loxi.OFObject):
         q.text('}')
 
 
+class bsn_switch_pipeline_stats_entry(loxi.OFObject):
+
+    def __init__(self, pipeline=None):
+        if pipeline != None:
+            self.pipeline = pipeline
+        else:
+            self.pipeline = ""
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!256s", self.pipeline))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_switch_pipeline_stats_entry()
+        obj.pipeline = reader.read("!256s")[0].rstrip("\x00")
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.pipeline != other.pipeline: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_switch_pipeline_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("pipeline = ");
+                q.pp(self.pipeline)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_vport(loxi.OFObject):
     subtypes = {}
 

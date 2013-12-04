@@ -731,6 +731,20 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnFlowIdleEnableSetRequest not supported in version 1.0");
     }
 
+    public OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() {
+        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineReply not supported in version 1.0");
+    }
+    public OFBsnGetSwitchPipelineReply bsnGetSwitchPipelineReply(String pipeline) {
+        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineReply not supported in version 1.0");
+    }
+
+    public OFBsnGetSwitchPipelineRequest.Builder buildBsnGetSwitchPipelineRequest() {
+        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineRequest not supported in version 1.0");
+    }
+    public OFBsnGetSwitchPipelineRequest bsnGetSwitchPipelineRequest() {
+        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineRequest not supported in version 1.0");
+    }
+
     public OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() {
         throw new UnsupportedOperationException("OFBsnLacpConvergenceNotif not supported in version 1.0");
     }
@@ -756,6 +770,38 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() {
         throw new UnsupportedOperationException("OFBsnSetLacpRequest not supported in version 1.0");
+    }
+
+    public OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() {
+        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineReply not supported in version 1.0");
+    }
+    public OFBsnSetSwitchPipelineReply bsnSetSwitchPipelineReply(long status) {
+        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineReply not supported in version 1.0");
+    }
+
+    public OFBsnSetSwitchPipelineRequest.Builder buildBsnSetSwitchPipelineRequest() {
+        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineRequest not supported in version 1.0");
+    }
+    public OFBsnSetSwitchPipelineRequest bsnSetSwitchPipelineRequest(String pipeline) {
+        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineRequest not supported in version 1.0");
+    }
+
+    public OFBsnSwitchPipelineStatsEntry.Builder buildBsnSwitchPipelineStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsEntry not supported in version 1.0");
+    }
+    public OFBsnSwitchPipelineStatsEntry bsnSwitchPipelineStatsEntry(String pipeline) {
+        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsEntry not supported in version 1.0");
+    }
+
+    public OFBsnSwitchPipelineStatsReply.Builder buildBsnSwitchPipelineStatsReply() {
+        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsReply not supported in version 1.0");
+    }
+
+    public OFBsnSwitchPipelineStatsRequest.Builder buildBsnSwitchPipelineStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsRequest not supported in version 1.0");
+    }
+    public OFBsnSwitchPipelineStatsRequest bsnSwitchPipelineStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsRequest not supported in version 1.0");
     }
 
     public OFBsnTimeReply.Builder buildBsnTimeReply() {

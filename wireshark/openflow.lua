@@ -5170,6 +5170,19 @@ fields['of13.bsn_get_mirroring_request.xid'] = ProtoField.uint32("of13.bsn_get_m
 fields['of13.bsn_get_mirroring_request.experimenter'] = ProtoField.uint32("of13.bsn_get_mirroring_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_get_mirroring_request.subtype'] = ProtoField.uint32("of13.bsn_get_mirroring_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_get_mirroring_request.report_mirror_ports'] = ProtoField.uint8("of13.bsn_get_mirroring_request.report_mirror_ports", "report_mirror_ports", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.version'] = ProtoField.uint8("of13.bsn_get_switch_pipeline_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.type'] = ProtoField.uint8("of13.bsn_get_switch_pipeline_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.length'] = ProtoField.uint16("of13.bsn_get_switch_pipeline_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.xid'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.experimenter'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.subtype'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_reply.pipeline'] = ProtoField.stringz("of13.bsn_get_switch_pipeline_reply.pipeline", "pipeline")
+fields['of13.bsn_get_switch_pipeline_request.version'] = ProtoField.uint8("of13.bsn_get_switch_pipeline_request.version", "version", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_request.type'] = ProtoField.uint8("of13.bsn_get_switch_pipeline_request.type", "type", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_request.length'] = ProtoField.uint16("of13.bsn_get_switch_pipeline_request.length", "length", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_request.xid'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_request.experimenter'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_get_switch_pipeline_request.subtype'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_interface.hw_addr'] = ProtoField.ether("of13.bsn_interface.hw_addr", "hw_addr")
 fields['of13.bsn_interface.name'] = ProtoField.stringz("of13.bsn_interface.name", "name")
 fields['of13.bsn_interface.ipv4_addr'] = ProtoField.ipv4("of13.bsn_interface.ipv4_addr", "ipv4_addr")
@@ -5345,6 +5358,38 @@ fields['of13.bsn_set_pktin_suppression_request.idle_timeout'] = ProtoField.uint1
 fields['of13.bsn_set_pktin_suppression_request.hard_timeout'] = ProtoField.uint16("of13.bsn_set_pktin_suppression_request.hard_timeout", "hard_timeout", base.DEC, nil)
 fields['of13.bsn_set_pktin_suppression_request.priority'] = ProtoField.uint16("of13.bsn_set_pktin_suppression_request.priority", "priority", base.DEC, nil)
 fields['of13.bsn_set_pktin_suppression_request.cookie'] = ProtoField.uint64("of13.bsn_set_pktin_suppression_request.cookie", "cookie", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.version'] = ProtoField.uint8("of13.bsn_set_switch_pipeline_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.type'] = ProtoField.uint8("of13.bsn_set_switch_pipeline_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.length'] = ProtoField.uint16("of13.bsn_set_switch_pipeline_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.xid'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.experimenter'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.subtype'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_reply.status'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_reply.status", "status", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.version'] = ProtoField.uint8("of13.bsn_set_switch_pipeline_request.version", "version", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.type'] = ProtoField.uint8("of13.bsn_set_switch_pipeline_request.type", "type", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.length'] = ProtoField.uint16("of13.bsn_set_switch_pipeline_request.length", "length", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.xid'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.experimenter'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.subtype'] = ProtoField.uint32("of13.bsn_set_switch_pipeline_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_set_switch_pipeline_request.pipeline'] = ProtoField.stringz("of13.bsn_set_switch_pipeline_request.pipeline", "pipeline")
+fields['of13.bsn_switch_pipeline_stats_entry.pipeline'] = ProtoField.stringz("of13.bsn_switch_pipeline_stats_entry.pipeline", "pipeline")
+fields['of13.bsn_switch_pipeline_stats_reply.version'] = ProtoField.uint8("of13.bsn_switch_pipeline_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.type'] = ProtoField.uint8("of13.bsn_switch_pipeline_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.length'] = ProtoField.uint16("of13.bsn_switch_pipeline_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.xid'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_switch_pipeline_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.flags'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_switch_pipeline_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_reply.entries'] = ProtoField.bytes("of13.bsn_switch_pipeline_stats_reply.entries", "entries")
+fields['of13.bsn_switch_pipeline_stats_request.version'] = ProtoField.uint8("of13.bsn_switch_pipeline_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_request.type'] = ProtoField.uint8("of13.bsn_switch_pipeline_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_request.length'] = ProtoField.uint16("of13.bsn_switch_pipeline_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_request.xid'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_switch_pipeline_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_request.flags'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_switch_pipeline_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_switch_pipeline_stats_request.subtype'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_time_reply.version'] = ProtoField.uint8("of13.bsn_time_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_time_reply.type'] = ProtoField.uint8("of13.bsn_time_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_time_reply.length'] = ProtoField.uint16("of13.bsn_time_reply.length", "length", base.DEC, nil)
@@ -9599,6 +9644,19 @@ p_of.fields = {
     fields['of13.bsn_get_mirroring_request.experimenter'],
     fields['of13.bsn_get_mirroring_request.subtype'],
     fields['of13.bsn_get_mirroring_request.report_mirror_ports'],
+    fields['of13.bsn_get_switch_pipeline_reply.version'],
+    fields['of13.bsn_get_switch_pipeline_reply.type'],
+    fields['of13.bsn_get_switch_pipeline_reply.length'],
+    fields['of13.bsn_get_switch_pipeline_reply.xid'],
+    fields['of13.bsn_get_switch_pipeline_reply.experimenter'],
+    fields['of13.bsn_get_switch_pipeline_reply.subtype'],
+    fields['of13.bsn_get_switch_pipeline_reply.pipeline'],
+    fields['of13.bsn_get_switch_pipeline_request.version'],
+    fields['of13.bsn_get_switch_pipeline_request.type'],
+    fields['of13.bsn_get_switch_pipeline_request.length'],
+    fields['of13.bsn_get_switch_pipeline_request.xid'],
+    fields['of13.bsn_get_switch_pipeline_request.experimenter'],
+    fields['of13.bsn_get_switch_pipeline_request.subtype'],
     fields['of13.bsn_interface.hw_addr'],
     fields['of13.bsn_interface.name'],
     fields['of13.bsn_interface.ipv4_addr'],
@@ -9774,6 +9832,38 @@ p_of.fields = {
     fields['of13.bsn_set_pktin_suppression_request.hard_timeout'],
     fields['of13.bsn_set_pktin_suppression_request.priority'],
     fields['of13.bsn_set_pktin_suppression_request.cookie'],
+    fields['of13.bsn_set_switch_pipeline_reply.version'],
+    fields['of13.bsn_set_switch_pipeline_reply.type'],
+    fields['of13.bsn_set_switch_pipeline_reply.length'],
+    fields['of13.bsn_set_switch_pipeline_reply.xid'],
+    fields['of13.bsn_set_switch_pipeline_reply.experimenter'],
+    fields['of13.bsn_set_switch_pipeline_reply.subtype'],
+    fields['of13.bsn_set_switch_pipeline_reply.status'],
+    fields['of13.bsn_set_switch_pipeline_request.version'],
+    fields['of13.bsn_set_switch_pipeline_request.type'],
+    fields['of13.bsn_set_switch_pipeline_request.length'],
+    fields['of13.bsn_set_switch_pipeline_request.xid'],
+    fields['of13.bsn_set_switch_pipeline_request.experimenter'],
+    fields['of13.bsn_set_switch_pipeline_request.subtype'],
+    fields['of13.bsn_set_switch_pipeline_request.pipeline'],
+    fields['of13.bsn_switch_pipeline_stats_entry.pipeline'],
+    fields['of13.bsn_switch_pipeline_stats_reply.version'],
+    fields['of13.bsn_switch_pipeline_stats_reply.type'],
+    fields['of13.bsn_switch_pipeline_stats_reply.length'],
+    fields['of13.bsn_switch_pipeline_stats_reply.xid'],
+    fields['of13.bsn_switch_pipeline_stats_reply.stats_type'],
+    fields['of13.bsn_switch_pipeline_stats_reply.flags'],
+    fields['of13.bsn_switch_pipeline_stats_reply.experimenter'],
+    fields['of13.bsn_switch_pipeline_stats_reply.subtype'],
+    fields['of13.bsn_switch_pipeline_stats_reply.entries'],
+    fields['of13.bsn_switch_pipeline_stats_request.version'],
+    fields['of13.bsn_switch_pipeline_stats_request.type'],
+    fields['of13.bsn_switch_pipeline_stats_request.length'],
+    fields['of13.bsn_switch_pipeline_stats_request.xid'],
+    fields['of13.bsn_switch_pipeline_stats_request.stats_type'],
+    fields['of13.bsn_switch_pipeline_stats_request.flags'],
+    fields['of13.bsn_switch_pipeline_stats_request.experimenter'],
+    fields['of13.bsn_switch_pipeline_stats_request.subtype'],
     fields['of13.bsn_time_reply.version'],
     fields['of13.bsn_time_reply.type'],
     fields['of13.bsn_time_reply.length'],
@@ -18171,6 +18261,33 @@ function dissect_of_bsn_get_mirroring_request_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[4] = dissect_of_bsn_get_mirroring_request_v4
 
+-- child class of_bsn_get_switch_pipeline_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_get_switch_pipeline_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.subtype')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_reply.pipeline')
+    return 'of_bsn_get_switch_pipeline_reply'
+end
+of_bsn_header_v4_dissectors[52] = dissect_of_bsn_get_switch_pipeline_reply_v4
+
+-- child class of_bsn_get_switch_pipeline_request
+-- Child of of_bsn_header
+function dissect_of_bsn_get_switch_pipeline_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_request.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_get_switch_pipeline_request.subtype')
+    return 'of_bsn_get_switch_pipeline_request'
+end
+of_bsn_header_v4_dissectors[51] = dissect_of_bsn_get_switch_pipeline_request_v4
+
 -- top-level class of_bsn_interface
 function dissect_of_bsn_interface_v4(reader, subtree)
     read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_interface.hw_addr')
@@ -18491,6 +18608,72 @@ function dissect_of_bsn_set_pktin_suppression_request_v4(reader, subtree)
     return 'of_bsn_set_pktin_suppression_request'
 end
 of_bsn_header_v4_dissectors[11] = dissect_of_bsn_set_pktin_suppression_request_v4
+
+-- child class of_bsn_set_switch_pipeline_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_set_switch_pipeline_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_reply.status')
+    return 'of_bsn_set_switch_pipeline_reply'
+end
+of_bsn_header_v4_dissectors[54] = dissect_of_bsn_set_switch_pipeline_reply_v4
+
+-- child class of_bsn_set_switch_pipeline_request
+-- Child of of_bsn_header
+function dissect_of_bsn_set_switch_pipeline_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.subtype')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_set_switch_pipeline_request.pipeline')
+    return 'of_bsn_set_switch_pipeline_request'
+end
+of_bsn_header_v4_dissectors[53] = dissect_of_bsn_set_switch_pipeline_request_v4
+
+-- top-level class of_bsn_switch_pipeline_stats_entry
+function dissect_of_bsn_switch_pipeline_stats_entry_v4(reader, subtree)
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_entry.pipeline')
+    return 'of_bsn_switch_pipeline_stats_entry'
+end
+-- child class of_bsn_switch_pipeline_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_switch_pipeline_stats_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.subtype')
+    read_list_of_bsn_switch_pipeline_stats_entry_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.entries')
+    return 'of_bsn_switch_pipeline_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[6] = dissect_of_bsn_switch_pipeline_stats_reply_v4
+
+-- child class of_bsn_switch_pipeline_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_switch_pipeline_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_request.subtype')
+    return 'of_bsn_switch_pipeline_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[6] = dissect_of_bsn_switch_pipeline_stats_request_v4
 
 -- child class of_bsn_time_reply
 -- Child of of_bsn_header

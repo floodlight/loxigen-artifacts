@@ -19724,6 +19724,82 @@ test_of_bsn_get_mirroring_request_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3(void)
+{
+    of_bsn_get_switch_pipeline_reply_t *obj;
+    obj = of_bsn_get_switch_pipeline_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 272);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_get_switch_pipeline_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_get_switch_pipeline_request_OF_VERSION_1_3(void)
+{
+    of_bsn_get_switch_pipeline_request_t *obj;
+    obj = of_bsn_get_switch_pipeline_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_get_switch_pipeline_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_header_OF_VERSION_1_3(void)
 {
     of_bsn_header_t *obj;
@@ -20235,6 +20311,82 @@ test_of_bsn_set_pktin_suppression_request_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3(void)
+{
+    of_bsn_set_switch_pipeline_reply_t *obj;
+    obj = of_bsn_set_switch_pipeline_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_set_switch_pipeline_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_switch_pipeline_request_OF_VERSION_1_3(void)
+{
+    of_bsn_set_switch_pipeline_request_t *obj;
+    obj = of_bsn_set_switch_pipeline_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 272);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_set_switch_pipeline_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_stats_reply_OF_VERSION_1_3(void)
 {
     of_bsn_stats_reply_t *obj;
@@ -20263,6 +20415,82 @@ test_of_bsn_stats_request_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->object_id == OF_BSN_STATS_REQUEST);
 
     of_bsn_stats_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3(void)
+{
+    of_bsn_switch_pipeline_stats_reply_t *obj;
+    obj = of_bsn_switch_pipeline_stats_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_switch_pipeline_stats_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3(void)
+{
+    of_bsn_switch_pipeline_stats_request_t *obj;
+    obj = of_bsn_switch_pipeline_stats_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_switch_pipeline_stats_request_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -24702,6 +24930,44 @@ test_of_bsn_lacp_stats_entry_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_bsn_lacp_stats_entry_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(void)
+{
+    of_bsn_switch_pipeline_stats_entry_t *obj;
+    obj = of_bsn_switch_pipeline_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 256);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_ENTRY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 256);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_SWITCH_PIPELINE_STATS_ENTRY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_switch_pipeline_stats_entry_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -30139,6 +30405,44 @@ test_of_list_bsn_lacp_stats_entry_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(void)
+{
+    of_list_bsn_switch_pipeline_stats_entry_t *obj;
+    obj = of_list_bsn_switch_pipeline_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 0);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_LIST_BSN_SWITCH_PIPELINE_STATS_ENTRY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 0);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_LIST_BSN_SWITCH_PIPELINE_STATS_ENTRY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_list_bsn_switch_pipeline_stats_entry_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_list_bucket_OF_VERSION_1_3(void)
 {
     of_list_bucket_t *obj;
@@ -31487,6 +31791,8 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_get_interfaces_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_get_mirroring_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_get_mirroring_request_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_get_switch_pipeline_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_header_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lacp_convergence_notif_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lacp_stats_reply_OF_VERSION_1_3);
@@ -31501,8 +31807,12 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_set_mirroring_OF_VERSION_1_3);
     RUN_TEST(of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_set_pktin_suppression_request_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_set_switch_pipeline_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_stats_request_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_time_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_time_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_virtual_port_create_reply_OF_VERSION_1_3);
@@ -31627,6 +31937,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_action_set_queue_OF_VERSION_1_3);
     RUN_TEST(of_bsn_interface_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lacp_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_3);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_3);
     RUN_TEST(of_bucket_OF_VERSION_1_3);
@@ -31776,6 +32087,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_list_action_id_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_interface_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_lacp_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_bucket_OF_VERSION_1_3);
     RUN_TEST(of_list_bucket_counter_OF_VERSION_1_3);
     RUN_TEST(of_list_flow_stats_entry_OF_VERSION_1_3);

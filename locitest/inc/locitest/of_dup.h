@@ -134,6 +134,14 @@ extern of_bsn_get_mirroring_request_t *
     of_bsn_get_mirroring_request_dup(
         of_bsn_get_mirroring_request_t *src);
 
+extern of_bsn_get_switch_pipeline_reply_t *
+    of_bsn_get_switch_pipeline_reply_dup(
+        of_bsn_get_switch_pipeline_reply_t *src);
+
+extern of_bsn_get_switch_pipeline_request_t *
+    of_bsn_get_switch_pipeline_request_dup(
+        of_bsn_get_switch_pipeline_request_t *src);
+
 extern of_bsn_header_t *
     of_bsn_header_dup(
         of_bsn_header_t *src);
@@ -210,6 +218,14 @@ extern of_bsn_set_pktin_suppression_request_t *
     of_bsn_set_pktin_suppression_request_dup(
         of_bsn_set_pktin_suppression_request_t *src);
 
+extern of_bsn_set_switch_pipeline_reply_t *
+    of_bsn_set_switch_pipeline_reply_dup(
+        of_bsn_set_switch_pipeline_reply_t *src);
+
+extern of_bsn_set_switch_pipeline_request_t *
+    of_bsn_set_switch_pipeline_request_dup(
+        of_bsn_set_switch_pipeline_request_t *src);
+
 extern of_bsn_shell_command_t *
     of_bsn_shell_command_dup(
         of_bsn_shell_command_t *src);
@@ -229,6 +245,14 @@ extern of_bsn_stats_reply_t *
 extern of_bsn_stats_request_t *
     of_bsn_stats_request_dup(
         of_bsn_stats_request_t *src);
+
+extern of_bsn_switch_pipeline_stats_reply_t *
+    of_bsn_switch_pipeline_stats_reply_dup(
+        of_bsn_switch_pipeline_stats_reply_t *src);
+
+extern of_bsn_switch_pipeline_stats_request_t *
+    of_bsn_switch_pipeline_stats_request_dup(
+        of_bsn_switch_pipeline_stats_request_t *src);
 
 extern of_bsn_time_reply_t *
     of_bsn_time_reply_dup(
@@ -797,6 +821,10 @@ extern of_bsn_interface_t *
 extern of_bsn_lacp_stats_entry_t *
     of_bsn_lacp_stats_entry_dup(
         of_bsn_lacp_stats_entry_t *src);
+
+extern of_bsn_switch_pipeline_stats_entry_t *
+    of_bsn_switch_pipeline_stats_entry_dup(
+        of_bsn_switch_pipeline_stats_entry_t *src);
 
 extern of_bsn_vport_t *
     of_bsn_vport_dup(
@@ -1429,6 +1457,10 @@ extern of_list_bsn_interface_t *
 extern of_list_bsn_lacp_stats_entry_t *
     of_list_bsn_lacp_stats_entry_dup(
         of_list_bsn_lacp_stats_entry_t *src);
+
+extern of_list_bsn_switch_pipeline_stats_entry_t *
+    of_list_bsn_switch_pipeline_stats_entry_dup(
+        of_list_bsn_switch_pipeline_stats_entry_t *src);
 
 extern of_list_bucket_t *
     of_list_bucket_dup(
@@ -3754,6 +3786,14 @@ extern of_bsn_get_mirroring_request_t *
     of_bsn_get_mirroring_request_OF_VERSION_1_3_dup(
         of_bsn_get_mirroring_request_t *src);
 
+extern of_bsn_get_switch_pipeline_reply_t *
+    of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_dup(
+        of_bsn_get_switch_pipeline_reply_t *src);
+
+extern of_bsn_get_switch_pipeline_request_t *
+    of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_dup(
+        of_bsn_get_switch_pipeline_request_t *src);
+
 extern of_bsn_header_t *
     of_bsn_header_OF_VERSION_1_3_dup(
         of_bsn_header_t *src);
@@ -3810,6 +3850,14 @@ extern of_bsn_set_pktin_suppression_request_t *
     of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_dup(
         of_bsn_set_pktin_suppression_request_t *src);
 
+extern of_bsn_set_switch_pipeline_reply_t *
+    of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_dup(
+        of_bsn_set_switch_pipeline_reply_t *src);
+
+extern of_bsn_set_switch_pipeline_request_t *
+    of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_dup(
+        of_bsn_set_switch_pipeline_request_t *src);
+
 extern of_bsn_stats_reply_t *
     of_bsn_stats_reply_OF_VERSION_1_3_dup(
         of_bsn_stats_reply_t *src);
@@ -3817,6 +3865,14 @@ extern of_bsn_stats_reply_t *
 extern of_bsn_stats_request_t *
     of_bsn_stats_request_OF_VERSION_1_3_dup(
         of_bsn_stats_request_t *src);
+
+extern of_bsn_switch_pipeline_stats_reply_t *
+    of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_switch_pipeline_stats_reply_t *src);
+
+extern of_bsn_switch_pipeline_stats_request_t *
+    of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_switch_pipeline_stats_request_t *src);
 
 extern of_bsn_time_reply_t *
     of_bsn_time_reply_OF_VERSION_1_3_dup(
@@ -4321,6 +4377,10 @@ extern of_bsn_interface_t *
 extern of_bsn_lacp_stats_entry_t *
     of_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
         of_bsn_lacp_stats_entry_t *src);
+
+extern of_bsn_switch_pipeline_stats_entry_t *
+    of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_switch_pipeline_stats_entry_t *src);
 
 extern of_bsn_vport_t *
     of_bsn_vport_OF_VERSION_1_3_dup(
@@ -4945,6 +5005,10 @@ extern of_list_bsn_interface_t *
 extern of_list_bsn_lacp_stats_entry_t *
     of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
         of_list_bsn_lacp_stats_entry_t *src);
+
+extern of_list_bsn_switch_pipeline_stats_entry_t *
+    of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_switch_pipeline_stats_entry_t *src);
 
 extern of_list_bucket_t *
     of_list_bucket_OF_VERSION_1_3_dup(

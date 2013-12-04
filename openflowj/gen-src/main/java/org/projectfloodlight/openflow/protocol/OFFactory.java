@@ -188,6 +188,10 @@ public interface OFFactory extends XidGenerator {
     OFBsnFlowIdleEnableSetReply.Builder buildBsnFlowIdleEnableSetReply() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableSetRequest.Builder buildBsnFlowIdleEnableSetRequest() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableSetRequest bsnFlowIdleEnableSetRequest(long enable);
+    OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() throws UnsupportedOperationException;
+    OFBsnGetSwitchPipelineReply bsnGetSwitchPipelineReply(String pipeline);
+    OFBsnGetSwitchPipelineRequest.Builder buildBsnGetSwitchPipelineRequest() throws UnsupportedOperationException;
+    OFBsnGetSwitchPipelineRequest bsnGetSwitchPipelineRequest();
     OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() throws UnsupportedOperationException;
     OFBsnLacpStatsEntry.Builder buildBsnLacpStatsEntry() throws UnsupportedOperationException;
     OFBsnLacpStatsReply.Builder buildBsnLacpStatsReply() throws UnsupportedOperationException;
@@ -195,6 +199,15 @@ public interface OFFactory extends XidGenerator {
     OFBsnLacpStatsRequest bsnLacpStatsRequest(Set<OFStatsRequestFlags> flags);
     OFBsnSetLacpReply.Builder buildBsnSetLacpReply() throws UnsupportedOperationException;
     OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() throws UnsupportedOperationException;
+    OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() throws UnsupportedOperationException;
+    OFBsnSetSwitchPipelineReply bsnSetSwitchPipelineReply(long status);
+    OFBsnSetSwitchPipelineRequest.Builder buildBsnSetSwitchPipelineRequest() throws UnsupportedOperationException;
+    OFBsnSetSwitchPipelineRequest bsnSetSwitchPipelineRequest(String pipeline);
+    OFBsnSwitchPipelineStatsEntry.Builder buildBsnSwitchPipelineStatsEntry() throws UnsupportedOperationException;
+    OFBsnSwitchPipelineStatsEntry bsnSwitchPipelineStatsEntry(String pipeline);
+    OFBsnSwitchPipelineStatsReply.Builder buildBsnSwitchPipelineStatsReply() throws UnsupportedOperationException;
+    OFBsnSwitchPipelineStatsRequest.Builder buildBsnSwitchPipelineStatsRequest() throws UnsupportedOperationException;
+    OFBsnSwitchPipelineStatsRequest bsnSwitchPipelineStatsRequest(Set<OFStatsRequestFlags> flags);
     OFBsnTimeReply.Builder buildBsnTimeReply() throws UnsupportedOperationException;
     OFBsnTimeReply bsnTimeReply(U64 timeMs);
     OFBsnTimeRequest.Builder buildBsnTimeRequest() throws UnsupportedOperationException;
