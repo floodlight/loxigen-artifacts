@@ -197,6 +197,10 @@ public interface OFFactory extends XidGenerator {
     OFBsnLacpStatsReply.Builder buildBsnLacpStatsReply() throws UnsupportedOperationException;
     OFBsnLacpStatsRequest.Builder buildBsnLacpStatsRequest() throws UnsupportedOperationException;
     OFBsnLacpStatsRequest bsnLacpStatsRequest(Set<OFStatsRequestFlags> flags);
+    OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() throws UnsupportedOperationException;
+    OFBsnPortCounterStatsEntry bsnPortCounterStatsEntry(OFPort portNo, List<U64> values);
+    OFBsnPortCounterStatsReply.Builder buildBsnPortCounterStatsReply() throws UnsupportedOperationException;
+    OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() throws UnsupportedOperationException;
     OFBsnSetLacpReply.Builder buildBsnSetLacpReply() throws UnsupportedOperationException;
     OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() throws UnsupportedOperationException;
     OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() throws UnsupportedOperationException;
@@ -212,6 +216,10 @@ public interface OFFactory extends XidGenerator {
     OFBsnTimeReply bsnTimeReply(U64 timeMs);
     OFBsnTimeRequest.Builder buildBsnTimeRequest() throws UnsupportedOperationException;
     OFBsnTimeRequest bsnTimeRequest();
+    OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() throws UnsupportedOperationException;
+    OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values);
+    OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() throws UnsupportedOperationException;
+    OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() throws UnsupportedOperationException;
     OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() throws UnsupportedOperationException;
     OFHelloElemVersionbitmap helloElemVersionbitmap(List<U32> bitmaps);
     OFMeterBandStats.Builder buildMeterBandStats() throws UnsupportedOperationException;
@@ -264,6 +272,8 @@ public interface OFFactory extends XidGenerator {
     OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() throws UnsupportedOperationException;
     OFTableFeaturesStatsReply.Builder buildTableFeaturesStatsReply() throws UnsupportedOperationException;
     OFTableFeaturesStatsRequest.Builder buildTableFeaturesStatsRequest() throws UnsupportedOperationException;
+    OFUint64.Builder buildUint64() throws UnsupportedOperationException;
+    OFUint64 uint64(U64 value);
     Match.Builder buildMatch();
     Match matchWildcardAll();
 

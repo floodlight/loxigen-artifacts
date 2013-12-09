@@ -64,9 +64,15 @@ abstract class OFBsnStatsReplyVer13 {
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFBsnLacpStatsReplyVer13
                    return OFBsnLacpStatsReplyVer13.READER.readFrom(bb);
+               case 0x8:
+                   // discriminator value 0x8L=0x8L for class OFBsnPortCounterStatsReplyVer13
+                   return OFBsnPortCounterStatsReplyVer13.READER.readFrom(bb);
                case 0x6:
                    // discriminator value 0x6L=0x6L for class OFBsnSwitchPipelineStatsReplyVer13
                    return OFBsnSwitchPipelineStatsReplyVer13.READER.readFrom(bb);
+               case 0x9:
+                   // discriminator value 0x9L=0x9L for class OFBsnVlanCounterStatsReplyVer13
+                   return OFBsnVlanCounterStatsReplyVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnStatsReplyVer13: " + subtype);
             }

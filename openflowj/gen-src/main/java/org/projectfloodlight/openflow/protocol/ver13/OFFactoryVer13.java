@@ -775,6 +775,24 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
+        return new OFBsnPortCounterStatsEntryVer13.Builder();
+    }
+    public OFBsnPortCounterStatsEntry bsnPortCounterStatsEntry(OFPort portNo, List<U64> values) {
+        return new OFBsnPortCounterStatsEntryVer13(
+                portNo,
+                      values
+                    );
+    }
+
+    public OFBsnPortCounterStatsReply.Builder buildBsnPortCounterStatsReply() {
+        return new OFBsnPortCounterStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() {
+        return new OFBsnPortCounterStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {
         return new OFBsnSetLacpReplyVer13.Builder().setXid(nextXid());
     }
@@ -843,6 +861,24 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnTimeRequestVer13(
                 nextXid()
                     );
+    }
+
+    public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {
+        return new OFBsnVlanCounterStatsEntryVer13.Builder();
+    }
+    public OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values) {
+        return new OFBsnVlanCounterStatsEntryVer13(
+                vlanVid,
+                      values
+                    );
+    }
+
+    public OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() {
+        return new OFBsnVlanCounterStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() {
+        return new OFBsnVlanCounterStatsRequestVer13.Builder().setXid(nextXid());
     }
 
     public OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() {
@@ -1072,6 +1108,15 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFTableFeaturesStatsRequest.Builder buildTableFeaturesStatsRequest() {
         return new OFTableFeaturesStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFUint64.Builder buildUint64() {
+        return new OFUint64Ver13.Builder();
+    }
+    public OFUint64 uint64(U64 value) {
+        return new OFUint64Ver13(
+                value
+                    );
     }
 
     public OFMessageReader<OFMessage> getReader() {

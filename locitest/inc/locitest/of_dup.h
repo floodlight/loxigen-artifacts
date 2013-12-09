@@ -186,6 +186,14 @@ extern of_bsn_pdu_tx_request_t *
     of_bsn_pdu_tx_request_dup(
         of_bsn_pdu_tx_request_t *src);
 
+extern of_bsn_port_counter_stats_reply_t *
+    of_bsn_port_counter_stats_reply_dup(
+        of_bsn_port_counter_stats_reply_t *src);
+
+extern of_bsn_port_counter_stats_request_t *
+    of_bsn_port_counter_stats_request_dup(
+        of_bsn_port_counter_stats_request_t *src);
+
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_dup(
         of_bsn_set_ip_mask_t *src);
@@ -277,6 +285,14 @@ extern of_bsn_virtual_port_remove_reply_t *
 extern of_bsn_virtual_port_remove_request_t *
     of_bsn_virtual_port_remove_request_dup(
         of_bsn_virtual_port_remove_request_t *src);
+
+extern of_bsn_vlan_counter_stats_reply_t *
+    of_bsn_vlan_counter_stats_reply_dup(
+        of_bsn_vlan_counter_stats_reply_t *src);
+
+extern of_bsn_vlan_counter_stats_request_t *
+    of_bsn_vlan_counter_stats_request_dup(
+        of_bsn_vlan_counter_stats_request_t *src);
 
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_dup(
@@ -822,9 +838,17 @@ extern of_bsn_lacp_stats_entry_t *
     of_bsn_lacp_stats_entry_dup(
         of_bsn_lacp_stats_entry_t *src);
 
+extern of_bsn_port_counter_stats_entry_t *
+    of_bsn_port_counter_stats_entry_dup(
+        of_bsn_port_counter_stats_entry_t *src);
+
 extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_dup(
         of_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_bsn_vlan_counter_stats_entry_t *
+    of_bsn_vlan_counter_stats_entry_dup(
+        of_bsn_vlan_counter_stats_entry_t *src);
 
 extern of_bsn_vport_t *
     of_bsn_vport_dup(
@@ -1438,6 +1462,10 @@ extern of_uint32_t *
     of_uint32_dup(
         of_uint32_t *src);
 
+extern of_uint64_t *
+    of_uint64_dup(
+        of_uint64_t *src);
+
 extern of_uint8_t *
     of_uint8_dup(
         of_uint8_t *src);
@@ -1458,9 +1486,17 @@ extern of_list_bsn_lacp_stats_entry_t *
     of_list_bsn_lacp_stats_entry_dup(
         of_list_bsn_lacp_stats_entry_t *src);
 
+extern of_list_bsn_port_counter_stats_entry_t *
+    of_list_bsn_port_counter_stats_entry_dup(
+        of_list_bsn_port_counter_stats_entry_t *src);
+
 extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_dup(
         of_list_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_list_bsn_vlan_counter_stats_entry_t *
+    of_list_bsn_vlan_counter_stats_entry_dup(
+        of_list_bsn_vlan_counter_stats_entry_t *src);
 
 extern of_list_bucket_t *
     of_list_bucket_dup(
@@ -1541,6 +1577,10 @@ extern of_list_table_stats_entry_t *
 extern of_list_uint32_t *
     of_list_uint32_dup(
         of_list_uint32_t *src);
+
+extern of_list_uint64_t *
+    of_list_uint64_dup(
+        of_list_uint64_t *src);
 
 extern of_list_uint8_t *
     of_list_uint8_dup(
@@ -3830,6 +3870,14 @@ extern of_bsn_pdu_tx_request_t *
     of_bsn_pdu_tx_request_OF_VERSION_1_3_dup(
         of_bsn_pdu_tx_request_t *src);
 
+extern of_bsn_port_counter_stats_reply_t *
+    of_bsn_port_counter_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_port_counter_stats_reply_t *src);
+
+extern of_bsn_port_counter_stats_request_t *
+    of_bsn_port_counter_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_port_counter_stats_request_t *src);
+
 extern of_bsn_set_lacp_reply_t *
     of_bsn_set_lacp_reply_OF_VERSION_1_3_dup(
         of_bsn_set_lacp_reply_t *src);
@@ -3897,6 +3945,14 @@ extern of_bsn_virtual_port_remove_reply_t *
 extern of_bsn_virtual_port_remove_request_t *
     of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dup(
         of_bsn_virtual_port_remove_request_t *src);
+
+extern of_bsn_vlan_counter_stats_reply_t *
+    of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_vlan_counter_stats_reply_t *src);
+
+extern of_bsn_vlan_counter_stats_request_t *
+    of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_vlan_counter_stats_request_t *src);
 
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_OF_VERSION_1_3_dup(
@@ -4378,9 +4434,17 @@ extern of_bsn_lacp_stats_entry_t *
     of_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
         of_bsn_lacp_stats_entry_t *src);
 
+extern of_bsn_port_counter_stats_entry_t *
+    of_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_port_counter_stats_entry_t *src);
+
 extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
         of_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_bsn_vlan_counter_stats_entry_t *
+    of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_vlan_counter_stats_entry_t *src);
 
 extern of_bsn_vport_t *
     of_bsn_vport_OF_VERSION_1_3_dup(
@@ -4986,6 +5050,10 @@ extern of_uint32_t *
     of_uint32_OF_VERSION_1_3_dup(
         of_uint32_t *src);
 
+extern of_uint64_t *
+    of_uint64_OF_VERSION_1_3_dup(
+        of_uint64_t *src);
+
 extern of_uint8_t *
     of_uint8_OF_VERSION_1_3_dup(
         of_uint8_t *src);
@@ -5006,9 +5074,17 @@ extern of_list_bsn_lacp_stats_entry_t *
     of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
         of_list_bsn_lacp_stats_entry_t *src);
 
+extern of_list_bsn_port_counter_stats_entry_t *
+    of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_port_counter_stats_entry_t *src);
+
 extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
         of_list_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_list_bsn_vlan_counter_stats_entry_t *
+    of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_vlan_counter_stats_entry_t *src);
 
 extern of_list_bucket_t *
     of_list_bucket_OF_VERSION_1_3_dup(
@@ -5089,6 +5165,10 @@ extern of_list_table_stats_entry_t *
 extern of_list_uint32_t *
     of_list_uint32_OF_VERSION_1_3_dup(
         of_list_uint32_t *src);
+
+extern of_list_uint64_t *
+    of_list_uint64_OF_VERSION_1_3_dup(
+        of_list_uint64_t *src);
 
 extern of_list_uint8_t *
     of_list_uint8_OF_VERSION_1_3_dup(

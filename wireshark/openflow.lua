@@ -1417,22 +1417,10 @@ local enum_v3_ofp_port_features = {
 }
 
 
-local enum_v4_ofp_error_type = {
-    [0] = "OFPET_HELLO_FAILED",
-    [1] = "OFPET_BAD_REQUEST",
-    [2] = "OFPET_BAD_ACTION",
-    [3] = "OFPET_BAD_INSTRUCTION",
-    [4] = "OFPET_BAD_MATCH",
-    [5] = "OFPET_FLOW_MOD_FAILED",
-    [6] = "OFPET_GROUP_MOD_FAILED",
-    [7] = "OFPET_PORT_MOD_FAILED",
-    [8] = "OFPET_TABLE_MOD_FAILED",
-    [9] = "OFPET_QUEUE_OP_FAILED",
-    [10] = "OFPET_SWITCH_CONFIG_FAILED",
-    [11] = "OFPET_ROLE_REQUEST_FAILED",
-    [12] = "OFPET_METER_MOD_FAILED",
-    [13] = "OFPET_TABLE_FEATURES_FAILED",
-    [65535] = "OFPET_EXPERIMENTER",
+local enum_v4_ofp_group = {
+    [4294967040] = "OFPG_MAX",
+    [4294967292] = "OFPG_ALL",
+    [4294967295] = "OFPG_ANY",
 }
 
 local enum_v4_ofp_stats_type = {
@@ -1453,9 +1441,37 @@ local enum_v4_ofp_stats_type = {
     [65535] = "OFPST_EXPERIMENTER",
 }
 
-local enum_v4_ofp_hello_failed_code = {
-    [0] = "OFPHFC_INCOMPATIBLE",
-    [1] = "OFPHFC_EPERM",
+local enum_v4_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
+    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
 }
 
 local enum_v4_ofp_flow_mod_flags = {
@@ -1678,10 +1694,10 @@ local enum_v4_ofp_bsn_vport_status = {
     [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
-local enum_v4_ofp_group = {
-    [4294967040] = "OFPG_MAX",
-    [4294967292] = "OFPG_ALL",
-    [4294967295] = "OFPG_ANY",
+local enum_v4_of_bsn_lacp_convergence_status_t = {
+    [0] = "LACP_SUCCESS",
+    [1] = "LACP_TIMEDOUT",
+    [2] = "LACP_OUT_OF_SYNC",
 }
 
 local enum_v4_ofp_port_reason = {
@@ -1746,6 +1762,24 @@ local enum_v4_ofp_meter_band_type = {
     [1] = "OFPMBT_DROP",
     [2] = "OFPMBT_DSCP_REMARK",
     [65535] = "OFPMBT_EXPERIMENTER",
+}
+
+local enum_v4_ofp_error_type = {
+    [0] = "OFPET_HELLO_FAILED",
+    [1] = "OFPET_BAD_REQUEST",
+    [2] = "OFPET_BAD_ACTION",
+    [3] = "OFPET_BAD_INSTRUCTION",
+    [4] = "OFPET_BAD_MATCH",
+    [5] = "OFPET_FLOW_MOD_FAILED",
+    [6] = "OFPET_GROUP_MOD_FAILED",
+    [7] = "OFPET_PORT_MOD_FAILED",
+    [8] = "OFPET_TABLE_MOD_FAILED",
+    [9] = "OFPET_QUEUE_OP_FAILED",
+    [10] = "OFPET_SWITCH_CONFIG_FAILED",
+    [11] = "OFPET_ROLE_REQUEST_FAILED",
+    [12] = "OFPET_METER_MOD_FAILED",
+    [13] = "OFPET_TABLE_FEATURES_FAILED",
+    [65535] = "OFPET_EXPERIMENTER",
 }
 
 local enum_v4_ofp_group_mod_command = {
@@ -1817,6 +1851,11 @@ local enum_v4_macro_definitions = {
     [65535] = "OFPQ_MIN_RATE_UNCFG",
 }
 
+local enum_v4_ofp_hello_failed_code = {
+    [0] = "OFPHFC_INCOMPATIBLE",
+    [1] = "OFPHFC_EPERM",
+}
+
 local enum_v4_ofp_port = {
     [4294967040] = "OFPP_MAX",
     [4294967288] = "OFPP_IN_PORT",
@@ -1871,37 +1910,19 @@ local enum_v4_ofp_port_mod_failed_code = {
     [4] = "OFPPMFC_EPERM",
 }
 
-local enum_v4_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
-    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
+local enum_v4_ofp_bsn_port_counter = {
+    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
+    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
+    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
+    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
+    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
+    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
+    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
+    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
+    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
+    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
+    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
 }
 
 local enum_v4_ofp_packet_in_reason = {
@@ -1914,10 +1935,11 @@ local enum_v4_ofp_packet_in_reason = {
     [131] = "OFPR_BSN_DESTINATION_LOOKUP_FAILURE",
 }
 
-local enum_v4_of_bsn_lacp_convergence_status_t = {
-    [0] = "LACP_SUCCESS",
-    [1] = "LACP_TIMEDOUT",
-    [2] = "LACP_OUT_OF_SYNC",
+local enum_v4_of_bsn_vlan_counter_t = {
+    [0] = "OFP_BSN_VLAN_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_VLAN_COUNTER_RX_PACKETS",
+    [2] = "OFP_BSN_VLAN_COUNTER_TX_BYTES",
+    [3] = "OFP_BSN_VLAN_COUNTER_TX_PACKETS",
 }
 
 local enum_v4_ofp_bsn_vport_q_in_q_untagged = {
@@ -5312,6 +5334,27 @@ fields['of13.bsn_pdu_tx_request.tx_interval_ms'] = ProtoField.uint32("of13.bsn_p
 fields['of13.bsn_pdu_tx_request.port_no'] = ProtoField.uint32("of13.bsn_pdu_tx_request.port_no", "port_no", base.DEC, nil)
 fields['of13.bsn_pdu_tx_request.slot_num'] = ProtoField.uint8("of13.bsn_pdu_tx_request.slot_num", "slot_num", base.DEC, nil)
 fields['of13.bsn_pdu_tx_request.data'] = ProtoField.bytes("of13.bsn_pdu_tx_request.data", "data")
+fields['of13.bsn_port_counter_stats_entry.length'] = ProtoField.uint16("of13.bsn_port_counter_stats_entry.length", "length", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_entry.port_no'] = ProtoField.uint32("of13.bsn_port_counter_stats_entry.port_no", "port_no", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_entry.values'] = ProtoField.bytes("of13.bsn_port_counter_stats_entry.values", "values")
+fields['of13.bsn_port_counter_stats_reply.version'] = ProtoField.uint8("of13.bsn_port_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.type'] = ProtoField.uint8("of13.bsn_port_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.length'] = ProtoField.uint16("of13.bsn_port_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.xid'] = ProtoField.uint32("of13.bsn_port_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_port_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.flags'] = ProtoField.uint32("of13.bsn_port_counter_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_port_counter_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_port_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_port_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_reply.entries'] = ProtoField.bytes("of13.bsn_port_counter_stats_reply.entries", "entries")
+fields['of13.bsn_port_counter_stats_request.version'] = ProtoField.uint8("of13.bsn_port_counter_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.type'] = ProtoField.uint8("of13.bsn_port_counter_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.length'] = ProtoField.uint16("of13.bsn_port_counter_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.xid'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_port_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.flags'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_port_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_port_counter_stats_request.port_no'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.port_no", "port_no", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.version'] = ProtoField.uint8("of13.bsn_set_lacp_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.type'] = ProtoField.uint8("of13.bsn_set_lacp_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.length'] = ProtoField.uint16("of13.bsn_set_lacp_reply.length", "length", base.DEC, nil)
@@ -5442,6 +5485,27 @@ fields['of13.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of13.bsn
 fields['of13.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of13.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of13.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of13.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_entry.length'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_entry.length", "length", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_entry.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_entry.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_entry.values'] = ProtoField.bytes("of13.bsn_vlan_counter_stats_entry.values", "values")
+fields['of13.bsn_vlan_counter_stats_reply.version'] = ProtoField.uint8("of13.bsn_vlan_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.type'] = ProtoField.uint8("of13.bsn_vlan_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.length'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.xid'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.flags'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_vlan_counter_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_reply.entries'] = ProtoField.bytes("of13.bsn_vlan_counter_stats_reply.entries", "entries")
+fields['of13.bsn_vlan_counter_stats_request.version'] = ProtoField.uint8("of13.bsn_vlan_counter_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.type'] = ProtoField.uint8("of13.bsn_vlan_counter_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.length'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.xid'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.flags'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_vlan_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_vlan_counter_stats_request.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_request.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of13.bucket.len'] = ProtoField.uint16("of13.bucket.len", "len", base.DEC, nil)
 fields['of13.bucket.weight'] = ProtoField.uint16("of13.bucket.weight", "weight", base.DEC, nil)
 fields['of13.bucket.watch_port'] = ProtoField.uint32("of13.bucket.watch_port", "watch_port", base.DEC, nil)
@@ -6422,6 +6486,7 @@ fields['of13.table_stats_request.xid'] = ProtoField.uint32("of13.table_stats_req
 fields['of13.table_stats_request.stats_type'] = ProtoField.uint32("of13.table_stats_request.stats_type", "stats_type", base.DEC, enum_v4_ofp_stats_type)
 fields['of13.table_stats_request.flags'] = ProtoField.uint32("of13.table_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
 fields['of13.uint32.value'] = ProtoField.uint32("of13.uint32.value", "value", base.DEC, nil)
+fields['of13.uint64.value'] = ProtoField.uint64("of13.uint64.value", "value", base.DEC, nil)
 fields['of13.uint8.value'] = ProtoField.uint8("of13.uint8.value", "value", base.DEC, nil)
 
 p_of.fields = {
@@ -9786,6 +9851,27 @@ p_of.fields = {
     fields['of13.bsn_pdu_tx_request.port_no'],
     fields['of13.bsn_pdu_tx_request.slot_num'],
     fields['of13.bsn_pdu_tx_request.data'],
+    fields['of13.bsn_port_counter_stats_entry.length'],
+    fields['of13.bsn_port_counter_stats_entry.port_no'],
+    fields['of13.bsn_port_counter_stats_entry.values'],
+    fields['of13.bsn_port_counter_stats_reply.version'],
+    fields['of13.bsn_port_counter_stats_reply.type'],
+    fields['of13.bsn_port_counter_stats_reply.length'],
+    fields['of13.bsn_port_counter_stats_reply.xid'],
+    fields['of13.bsn_port_counter_stats_reply.stats_type'],
+    fields['of13.bsn_port_counter_stats_reply.flags'],
+    fields['of13.bsn_port_counter_stats_reply.experimenter'],
+    fields['of13.bsn_port_counter_stats_reply.subtype'],
+    fields['of13.bsn_port_counter_stats_reply.entries'],
+    fields['of13.bsn_port_counter_stats_request.version'],
+    fields['of13.bsn_port_counter_stats_request.type'],
+    fields['of13.bsn_port_counter_stats_request.length'],
+    fields['of13.bsn_port_counter_stats_request.xid'],
+    fields['of13.bsn_port_counter_stats_request.stats_type'],
+    fields['of13.bsn_port_counter_stats_request.flags'],
+    fields['of13.bsn_port_counter_stats_request.experimenter'],
+    fields['of13.bsn_port_counter_stats_request.subtype'],
+    fields['of13.bsn_port_counter_stats_request.port_no'],
     fields['of13.bsn_set_lacp_reply.version'],
     fields['of13.bsn_set_lacp_reply.type'],
     fields['of13.bsn_set_lacp_reply.length'],
@@ -9916,6 +10002,27 @@ p_of.fields = {
     fields['of13.bsn_virtual_port_remove_request.experimenter'],
     fields['of13.bsn_virtual_port_remove_request.subtype'],
     fields['of13.bsn_virtual_port_remove_request.vport_no'],
+    fields['of13.bsn_vlan_counter_stats_entry.length'],
+    fields['of13.bsn_vlan_counter_stats_entry.vlan_vid'],
+    fields['of13.bsn_vlan_counter_stats_entry.values'],
+    fields['of13.bsn_vlan_counter_stats_reply.version'],
+    fields['of13.bsn_vlan_counter_stats_reply.type'],
+    fields['of13.bsn_vlan_counter_stats_reply.length'],
+    fields['of13.bsn_vlan_counter_stats_reply.xid'],
+    fields['of13.bsn_vlan_counter_stats_reply.stats_type'],
+    fields['of13.bsn_vlan_counter_stats_reply.flags'],
+    fields['of13.bsn_vlan_counter_stats_reply.experimenter'],
+    fields['of13.bsn_vlan_counter_stats_reply.subtype'],
+    fields['of13.bsn_vlan_counter_stats_reply.entries'],
+    fields['of13.bsn_vlan_counter_stats_request.version'],
+    fields['of13.bsn_vlan_counter_stats_request.type'],
+    fields['of13.bsn_vlan_counter_stats_request.length'],
+    fields['of13.bsn_vlan_counter_stats_request.xid'],
+    fields['of13.bsn_vlan_counter_stats_request.stats_type'],
+    fields['of13.bsn_vlan_counter_stats_request.flags'],
+    fields['of13.bsn_vlan_counter_stats_request.experimenter'],
+    fields['of13.bsn_vlan_counter_stats_request.subtype'],
+    fields['of13.bsn_vlan_counter_stats_request.vlan_vid'],
     fields['of13.bucket.len'],
     fields['of13.bucket.weight'],
     fields['of13.bucket.watch_port'],
@@ -10896,6 +11003,7 @@ p_of.fields = {
     fields['of13.table_stats_request.stats_type'],
     fields['of13.table_stats_request.flags'],
     fields['of13.uint32.value'],
+    fields['of13.uint64.value'],
     fields['of13.uint8.value'],
 }
 
@@ -18525,6 +18633,48 @@ function dissect_of_bsn_pdu_tx_request_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[31] = dissect_of_bsn_pdu_tx_request_v4
 
+-- top-level class of_bsn_port_counter_stats_entry
+function dissect_of_bsn_port_counter_stats_entry_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_entry.length')
+    reader.skip(2)
+    read_of_port_no_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_entry.port_no')
+    read_list_of_uint64_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_entry.values')
+    return 'of_bsn_port_counter_stats_entry'
+end
+-- child class of_bsn_port_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_port_counter_stats_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.subtype')
+    read_list_of_bsn_port_counter_stats_entry_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.entries')
+    return 'of_bsn_port_counter_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[8] = dissect_of_bsn_port_counter_stats_reply_v4
+
+-- child class of_bsn_port_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_port_counter_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.subtype')
+    read_of_port_no_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_request.port_no')
+    return 'of_bsn_port_counter_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[8] = dissect_of_bsn_port_counter_stats_request_v4
+
 -- child class of_bsn_set_lacp_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_set_lacp_reply_v4(reader, subtree)
@@ -18780,6 +18930,48 @@ function dissect_of_bsn_virtual_port_remove_request_v4(reader, subtree)
     return 'of_bsn_virtual_port_remove_request'
 end
 of_bsn_header_v4_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v4
+
+-- top-level class of_bsn_vlan_counter_stats_entry
+function dissect_of_bsn_vlan_counter_stats_entry_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_entry.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_entry.vlan_vid')
+    reader.skip(4)
+    read_list_of_uint64_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_entry.values')
+    return 'of_bsn_vlan_counter_stats_entry'
+end
+-- child class of_bsn_vlan_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_vlan_counter_stats_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.subtype')
+    read_list_of_bsn_vlan_counter_stats_entry_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.entries')
+    return 'of_bsn_vlan_counter_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[9] = dissect_of_bsn_vlan_counter_stats_reply_v4
+
+-- child class of_bsn_vlan_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_vlan_counter_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_request.vlan_vid')
+    return 'of_bsn_vlan_counter_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[9] = dissect_of_bsn_vlan_counter_stats_request_v4
 
 -- top-level class of_bucket
 function dissect_of_bucket_v4(reader, subtree)
@@ -21236,6 +21428,11 @@ of_stats_request_v4_dissectors[3] = dissect_of_table_stats_request_v4
 function dissect_of_uint32_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.uint32.value')
     return 'of_uint32'
+end
+-- top-level class of_uint64
+function dissect_of_uint64_v4(reader, subtree)
+    read_uint64_t(reader, 4, subtree, 'of13.uint64.value')
+    return 'of_uint64'
 end
 -- top-level class of_uint8
 function dissect_of_uint8_v4(reader, subtree)

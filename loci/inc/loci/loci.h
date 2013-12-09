@@ -169,6 +169,8 @@ typedef of_object_t of_bsn_pdu_rx_request_t;
 typedef of_object_t of_bsn_pdu_rx_timeout_t;
 typedef of_object_t of_bsn_pdu_tx_reply_t;
 typedef of_object_t of_bsn_pdu_tx_request_t;
+typedef of_object_t of_bsn_port_counter_stats_reply_t;
+typedef of_object_t of_bsn_port_counter_stats_request_t;
 typedef of_object_t of_bsn_set_ip_mask_t;
 typedef of_object_t of_bsn_set_l2_table_reply_t;
 typedef of_object_t of_bsn_set_l2_table_request_t;
@@ -192,6 +194,8 @@ typedef of_object_t of_bsn_virtual_port_create_reply_t;
 typedef of_object_t of_bsn_virtual_port_create_request_t;
 typedef of_object_t of_bsn_virtual_port_remove_reply_t;
 typedef of_object_t of_bsn_virtual_port_remove_request_t;
+typedef of_object_t of_bsn_vlan_counter_stats_reply_t;
+typedef of_object_t of_bsn_vlan_counter_stats_request_t;
 typedef of_object_t of_desc_stats_reply_t;
 typedef of_object_t of_desc_stats_request_t;
 typedef of_object_t of_echo_reply_t;
@@ -326,7 +330,9 @@ typedef of_object_t of_action_set_vlan_vid_t;
 typedef of_object_t of_action_strip_vlan_t;
 typedef of_object_t of_bsn_interface_t;
 typedef of_object_t of_bsn_lacp_stats_entry_t;
+typedef of_object_t of_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
+typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_header_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
 typedef of_object_t of_bucket_t;
@@ -473,12 +479,15 @@ typedef of_object_t of_table_feature_prop_write_setfield_miss_t;
 typedef of_object_t of_table_features_t;
 typedef of_object_t of_table_stats_entry_t;
 typedef of_object_t of_uint32_t;
+typedef of_object_t of_uint64_t;
 typedef of_object_t of_uint8_t;
 typedef of_object_t of_list_action_t;
 typedef of_object_t of_list_action_id_t;
 typedef of_object_t of_list_bsn_interface_t;
 typedef of_object_t of_list_bsn_lacp_stats_entry_t;
+typedef of_object_t of_list_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_list_bsn_switch_pipeline_stats_entry_t;
+typedef of_object_t of_list_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_list_bucket_t;
 typedef of_object_t of_list_bucket_counter_t;
 typedef of_object_t of_list_flow_stats_entry_t;
@@ -499,6 +508,7 @@ typedef of_object_t of_list_table_feature_prop_t;
 typedef of_object_t of_list_table_features_t;
 typedef of_object_t of_list_table_stats_entry_t;
 typedef of_object_t of_list_uint32_t;
+typedef of_object_t of_list_uint64_t;
 typedef of_object_t of_list_uint8_t;
 
 /****************************************************************
@@ -1118,6 +1128,32 @@ extern of_bsn_pdu_tx_request_t *
     of_bsn_pdu_tx_request_new_from_message_tracking(msg, \
         __FILE__, __LINE__)
 
+extern of_bsn_port_counter_stats_reply_t *
+    of_bsn_port_counter_stats_reply_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_bsn_port_counter_stats_reply_new(version) \
+    of_bsn_port_counter_stats_reply_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_bsn_port_counter_stats_reply_t *
+    of_bsn_port_counter_stats_reply_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_bsn_port_counter_stats_reply_new_from_message(msg) \
+    of_bsn_port_counter_stats_reply_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
+extern of_bsn_port_counter_stats_request_t *
+    of_bsn_port_counter_stats_request_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_bsn_port_counter_stats_request_new(version) \
+    of_bsn_port_counter_stats_request_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_bsn_port_counter_stats_request_t *
+    of_bsn_port_counter_stats_request_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_bsn_port_counter_stats_request_new_from_message(msg) \
+    of_bsn_port_counter_stats_request_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_new_tracking(of_version_t version,
         const char *file, int line);
@@ -1415,6 +1451,32 @@ extern of_bsn_virtual_port_remove_request_t *
         const char *file, int line);
 #define of_bsn_virtual_port_remove_request_new_from_message(msg) \
     of_bsn_virtual_port_remove_request_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
+extern of_bsn_vlan_counter_stats_reply_t *
+    of_bsn_vlan_counter_stats_reply_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_bsn_vlan_counter_stats_reply_new(version) \
+    of_bsn_vlan_counter_stats_reply_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_bsn_vlan_counter_stats_reply_t *
+    of_bsn_vlan_counter_stats_reply_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_bsn_vlan_counter_stats_reply_new_from_message(msg) \
+    of_bsn_vlan_counter_stats_reply_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
+extern of_bsn_vlan_counter_stats_request_t *
+    of_bsn_vlan_counter_stats_request_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_bsn_vlan_counter_stats_request_new(version) \
+    of_bsn_vlan_counter_stats_request_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_bsn_vlan_counter_stats_request_t *
+    of_bsn_vlan_counter_stats_request_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_bsn_vlan_counter_stats_request_new_from_message(msg) \
+    of_bsn_vlan_counter_stats_request_new_from_message_tracking(msg, \
         __FILE__, __LINE__)
 
 extern of_desc_stats_reply_t *
@@ -2801,11 +2863,25 @@ extern of_bsn_lacp_stats_entry_t *
     of_bsn_lacp_stats_entry_new_tracking(version, \
         __FILE__, __LINE__)
 
+extern of_bsn_port_counter_stats_entry_t *
+    of_bsn_port_counter_stats_entry_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_bsn_port_counter_stats_entry_new(version) \
+    of_bsn_port_counter_stats_entry_new_tracking(version, \
+        __FILE__, __LINE__)
+
 extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_new_tracking(of_version_t version,
         const char *file, int line);
 #define of_bsn_switch_pipeline_stats_entry_new(version) \
     of_bsn_switch_pipeline_stats_entry_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_bsn_vlan_counter_stats_entry_t *
+    of_bsn_vlan_counter_stats_entry_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_bsn_vlan_counter_stats_entry_new(version) \
+    of_bsn_vlan_counter_stats_entry_new_tracking(version, \
         __FILE__, __LINE__)
 
 extern of_bsn_vport_t *
@@ -3879,6 +3955,13 @@ extern of_uint32_t *
     of_uint32_new_tracking(version, \
         __FILE__, __LINE__)
 
+extern of_uint64_t *
+    of_uint64_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_uint64_new(version) \
+    of_uint64_new_tracking(version, \
+        __FILE__, __LINE__)
+
 extern of_uint8_t *
     of_uint8_new_tracking(of_version_t version,
         const char *file, int line);
@@ -3914,11 +3997,25 @@ extern of_list_bsn_lacp_stats_entry_t *
     of_list_bsn_lacp_stats_entry_new_tracking(version, \
         __FILE__, __LINE__)
 
+extern of_list_bsn_port_counter_stats_entry_t *
+    of_list_bsn_port_counter_stats_entry_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_list_bsn_port_counter_stats_entry_new(version) \
+    of_list_bsn_port_counter_stats_entry_new_tracking(version, \
+        __FILE__, __LINE__)
+
 extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_new_tracking(of_version_t version,
         const char *file, int line);
 #define of_list_bsn_switch_pipeline_stats_entry_new(version) \
     of_list_bsn_switch_pipeline_stats_entry_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_list_bsn_vlan_counter_stats_entry_t *
+    of_list_bsn_vlan_counter_stats_entry_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_list_bsn_vlan_counter_stats_entry_new(version) \
+    of_list_bsn_vlan_counter_stats_entry_new_tracking(version, \
         __FILE__, __LINE__)
 
 extern of_list_bucket_t *
@@ -4059,6 +4156,13 @@ extern of_list_uint32_t *
         const char *file, int line);
 #define of_list_uint32_new(version) \
     of_list_uint32_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_list_uint64_t *
+    of_list_uint64_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_list_uint64_new(version) \
+    of_list_uint64_new_tracking(version, \
         __FILE__, __LINE__)
 
 extern of_list_uint8_t *
@@ -4285,6 +4389,16 @@ extern of_list_uint8_t *
 #define of_bsn_pdu_tx_request_new_from_message(msg) \
     of_bsn_pdu_tx_request_new_from_message_(msg)
 
+#define of_bsn_port_counter_stats_reply_new(version) \
+    of_bsn_port_counter_stats_reply_new_(version)
+#define of_bsn_port_counter_stats_reply_new_from_message(msg) \
+    of_bsn_port_counter_stats_reply_new_from_message_(msg)
+
+#define of_bsn_port_counter_stats_request_new(version) \
+    of_bsn_port_counter_stats_request_new_(version)
+#define of_bsn_port_counter_stats_request_new_from_message(msg) \
+    of_bsn_port_counter_stats_request_new_from_message_(msg)
+
 #define of_bsn_set_ip_mask_new(version) \
     of_bsn_set_ip_mask_new_(version)
 #define of_bsn_set_ip_mask_new_from_message(msg) \
@@ -4399,6 +4513,16 @@ extern of_list_uint8_t *
     of_bsn_virtual_port_remove_request_new_(version)
 #define of_bsn_virtual_port_remove_request_new_from_message(msg) \
     of_bsn_virtual_port_remove_request_new_from_message_(msg)
+
+#define of_bsn_vlan_counter_stats_reply_new(version) \
+    of_bsn_vlan_counter_stats_reply_new_(version)
+#define of_bsn_vlan_counter_stats_reply_new_from_message(msg) \
+    of_bsn_vlan_counter_stats_reply_new_from_message_(msg)
+
+#define of_bsn_vlan_counter_stats_request_new(version) \
+    of_bsn_vlan_counter_stats_request_new_(version)
+#define of_bsn_vlan_counter_stats_request_new_from_message(msg) \
+    of_bsn_vlan_counter_stats_request_new_from_message_(msg)
 
 #define of_desc_stats_reply_new(version) \
     of_desc_stats_reply_new_(version)
@@ -4952,8 +5076,14 @@ extern of_list_uint8_t *
 #define of_bsn_lacp_stats_entry_new(version) \
     of_bsn_lacp_stats_entry_new_(version)
 
+#define of_bsn_port_counter_stats_entry_new(version) \
+    of_bsn_port_counter_stats_entry_new_(version)
+
 #define of_bsn_switch_pipeline_stats_entry_new(version) \
     of_bsn_switch_pipeline_stats_entry_new_(version)
+
+#define of_bsn_vlan_counter_stats_entry_new(version) \
+    of_bsn_vlan_counter_stats_entry_new_(version)
 
 #define of_bsn_vport_new(version) \
     of_bsn_vport_new_(version)
@@ -5414,6 +5544,9 @@ extern of_list_uint8_t *
 #define of_uint32_new(version) \
     of_uint32_new_(version)
 
+#define of_uint64_new(version) \
+    of_uint64_new_(version)
+
 #define of_uint8_new(version) \
     of_uint8_new_(version)
 
@@ -5429,8 +5562,14 @@ extern of_list_uint8_t *
 #define of_list_bsn_lacp_stats_entry_new(version) \
     of_list_bsn_lacp_stats_entry_new_(version)
 
+#define of_list_bsn_port_counter_stats_entry_new(version) \
+    of_list_bsn_port_counter_stats_entry_new_(version)
+
 #define of_list_bsn_switch_pipeline_stats_entry_new(version) \
     of_list_bsn_switch_pipeline_stats_entry_new_(version)
+
+#define of_list_bsn_vlan_counter_stats_entry_new(version) \
+    of_list_bsn_vlan_counter_stats_entry_new_(version)
 
 #define of_list_bucket_new(version) \
     of_list_bucket_new_(version)
@@ -5491,6 +5630,9 @@ extern of_list_uint8_t *
 
 #define of_list_uint32_new(version) \
     of_list_uint32_new_(version)
+
+#define of_list_uint64_new(version) \
+    of_list_uint64_new_(version)
 
 #define of_list_uint8_new(version) \
     of_list_uint8_new_(version)
@@ -5798,6 +5940,20 @@ extern of_bsn_pdu_tx_request_t *
 extern void of_bsn_pdu_tx_request_init(
     of_bsn_pdu_tx_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_port_counter_stats_reply_t *
+    of_bsn_port_counter_stats_reply_new_(of_version_t version);
+extern of_bsn_port_counter_stats_reply_t *
+    of_bsn_port_counter_stats_reply_new_from_message_(of_message_t msg);
+extern void of_bsn_port_counter_stats_reply_init(
+    of_bsn_port_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_port_counter_stats_request_t *
+    of_bsn_port_counter_stats_request_new_(of_version_t version);
+extern of_bsn_port_counter_stats_request_t *
+    of_bsn_port_counter_stats_request_new_from_message_(of_message_t msg);
+extern void of_bsn_port_counter_stats_request_init(
+    of_bsn_port_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_new_(of_version_t version);
 extern of_bsn_set_ip_mask_t *
@@ -5958,6 +6114,20 @@ extern of_bsn_virtual_port_remove_request_t *
     of_bsn_virtual_port_remove_request_new_from_message_(of_message_t msg);
 extern void of_bsn_virtual_port_remove_request_init(
     of_bsn_virtual_port_remove_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vlan_counter_stats_reply_t *
+    of_bsn_vlan_counter_stats_reply_new_(of_version_t version);
+extern of_bsn_vlan_counter_stats_reply_t *
+    of_bsn_vlan_counter_stats_reply_new_from_message_(of_message_t msg);
+extern void of_bsn_vlan_counter_stats_reply_init(
+    of_bsn_vlan_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vlan_counter_stats_request_t *
+    of_bsn_vlan_counter_stats_request_new_(of_version_t version);
+extern of_bsn_vlan_counter_stats_request_t *
+    of_bsn_vlan_counter_stats_request_new_from_message_(of_message_t msg);
+extern void of_bsn_vlan_counter_stats_request_init(
+    of_bsn_vlan_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_new_(of_version_t version);
@@ -6783,10 +6953,20 @@ extern of_bsn_lacp_stats_entry_t *
 extern void of_bsn_lacp_stats_entry_init(
     of_bsn_lacp_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_port_counter_stats_entry_t *
+    of_bsn_port_counter_stats_entry_new_(of_version_t version);
+extern void of_bsn_port_counter_stats_entry_init(
+    of_bsn_port_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_new_(of_version_t version);
 extern void of_bsn_switch_pipeline_stats_entry_init(
     of_bsn_switch_pipeline_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vlan_counter_stats_entry_t *
+    of_bsn_vlan_counter_stats_entry_new_(of_version_t version);
+extern void of_bsn_vlan_counter_stats_entry_init(
+    of_bsn_vlan_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_vport_t *
     of_bsn_vport_new_(of_version_t version);
@@ -7553,6 +7733,11 @@ extern of_uint32_t *
 extern void of_uint32_init(
     of_uint32_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_uint64_t *
+    of_uint64_new_(of_version_t version);
+extern void of_uint64_init(
+    of_uint64_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_uint8_t *
     of_uint8_new_(of_version_t version);
 extern void of_uint8_init(
@@ -7578,10 +7763,20 @@ extern of_list_bsn_lacp_stats_entry_t *
 extern void of_list_bsn_lacp_stats_entry_init(
     of_list_bsn_lacp_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_list_bsn_port_counter_stats_entry_t *
+    of_list_bsn_port_counter_stats_entry_new_(of_version_t version);
+extern void of_list_bsn_port_counter_stats_entry_init(
+    of_list_bsn_port_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_new_(of_version_t version);
 extern void of_list_bsn_switch_pipeline_stats_entry_init(
     of_list_bsn_switch_pipeline_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_vlan_counter_stats_entry_t *
+    of_list_bsn_vlan_counter_stats_entry_new_(of_version_t version);
+extern void of_list_bsn_vlan_counter_stats_entry_init(
+    of_list_bsn_vlan_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_bucket_t *
     of_list_bucket_new_(of_version_t version);
@@ -7682,6 +7877,11 @@ extern of_list_uint32_t *
     of_list_uint32_new_(of_version_t version);
 extern void of_list_uint32_init(
     of_list_uint32_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_uint64_t *
+    of_list_uint64_new_(of_version_t version);
+extern void of_list_uint64_init(
+    of_list_uint64_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_uint8_t *
     of_list_uint8_new_(of_version_t version);
@@ -8169,6 +8369,28 @@ of_bsn_pdu_tx_request_delete(of_bsn_pdu_tx_request_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_port_counter_stats_reply_t
+ * @param obj An instance of type of_bsn_port_counter_stats_reply_t
+ *
+ * \ingroup of_bsn_port_counter_stats_reply
+ */
+static inline void
+of_bsn_port_counter_stats_reply_delete(of_bsn_port_counter_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_port_counter_stats_request_t
+ * @param obj An instance of type of_bsn_port_counter_stats_request_t
+ *
+ * \ingroup of_bsn_port_counter_stats_request
+ */
+static inline void
+of_bsn_port_counter_stats_request_delete(of_bsn_port_counter_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_set_ip_mask_t
  * @param obj An instance of type of_bsn_set_ip_mask_t
  *
@@ -8418,6 +8640,28 @@ of_bsn_virtual_port_remove_reply_delete(of_bsn_virtual_port_remove_reply_t *obj)
  */
 static inline void
 of_bsn_virtual_port_remove_request_delete(of_bsn_virtual_port_remove_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vlan_counter_stats_reply_t
+ * @param obj An instance of type of_bsn_vlan_counter_stats_reply_t
+ *
+ * \ingroup of_bsn_vlan_counter_stats_reply
+ */
+static inline void
+of_bsn_vlan_counter_stats_reply_delete(of_bsn_vlan_counter_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vlan_counter_stats_request_t
+ * @param obj An instance of type of_bsn_vlan_counter_stats_request_t
+ *
+ * \ingroup of_bsn_vlan_counter_stats_request
+ */
+static inline void
+of_bsn_vlan_counter_stats_request_delete(of_bsn_vlan_counter_stats_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -9918,6 +10162,17 @@ of_bsn_lacp_stats_entry_delete(of_bsn_lacp_stats_entry_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_port_counter_stats_entry_t
+ * @param obj An instance of type of_bsn_port_counter_stats_entry_t
+ *
+ * \ingroup of_bsn_port_counter_stats_entry
+ */
+static inline void
+of_bsn_port_counter_stats_entry_delete(of_bsn_port_counter_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_switch_pipeline_stats_entry_t
  * @param obj An instance of type of_bsn_switch_pipeline_stats_entry_t
  *
@@ -9925,6 +10180,17 @@ of_bsn_lacp_stats_entry_delete(of_bsn_lacp_stats_entry_t *obj) {
  */
 static inline void
 of_bsn_switch_pipeline_stats_entry_delete(of_bsn_switch_pipeline_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vlan_counter_stats_entry_t
+ * @param obj An instance of type of_bsn_vlan_counter_stats_entry_t
+ *
+ * \ingroup of_bsn_vlan_counter_stats_entry
+ */
+static inline void
+of_bsn_vlan_counter_stats_entry_delete(of_bsn_vlan_counter_stats_entry_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -11612,6 +11878,17 @@ of_uint32_delete(of_uint32_t *obj) {
 }
 
 /**
+ * Delete an object of type of_uint64_t
+ * @param obj An instance of type of_uint64_t
+ *
+ * \ingroup of_uint64
+ */
+static inline void
+of_uint64_delete(of_uint64_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_uint8_t
  * @param obj An instance of type of_uint8_t
  *
@@ -11667,6 +11944,17 @@ of_list_bsn_lacp_stats_entry_delete(of_list_bsn_lacp_stats_entry_t *obj) {
 }
 
 /**
+ * Delete an object of type of_list_bsn_port_counter_stats_entry_t
+ * @param obj An instance of type of_list_bsn_port_counter_stats_entry_t
+ *
+ * \ingroup of_list_bsn_port_counter_stats_entry
+ */
+static inline void
+of_list_bsn_port_counter_stats_entry_delete(of_list_bsn_port_counter_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_list_bsn_switch_pipeline_stats_entry_t
  * @param obj An instance of type of_list_bsn_switch_pipeline_stats_entry_t
  *
@@ -11674,6 +11962,17 @@ of_list_bsn_lacp_stats_entry_delete(of_list_bsn_lacp_stats_entry_t *obj) {
  */
 static inline void
 of_list_bsn_switch_pipeline_stats_entry_delete(of_list_bsn_switch_pipeline_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_vlan_counter_stats_entry_t
+ * @param obj An instance of type of_list_bsn_vlan_counter_stats_entry_t
+ *
+ * \ingroup of_list_bsn_vlan_counter_stats_entry
+ */
+static inline void
+of_list_bsn_vlan_counter_stats_entry_delete(of_list_bsn_vlan_counter_stats_entry_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -11894,6 +12193,17 @@ of_list_table_stats_entry_delete(of_list_table_stats_entry_t *obj) {
  */
 static inline void
 of_list_uint32_delete(of_list_uint32_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_uint64_t
+ * @param obj An instance of type of_list_uint64_t
+ *
+ * \ingroup of_list_uint64
+ */
+static inline void
+of_list_uint64_delete(of_list_uint64_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -13408,6 +13718,82 @@ extern void of_bsn_pdu_tx_request_data_get(
     of_bsn_pdu_tx_request_t *obj,
     of_octets_t *data);
 
+/* Unified accessor functions for of_bsn_port_counter_stats_reply */
+
+extern void of_bsn_port_counter_stats_reply_xid_set(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_port_counter_stats_reply_xid_get(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_port_counter_stats_reply_flags_set(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_port_counter_stats_reply_flags_get(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_port_counter_stats_reply_experimenter_set(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_port_counter_stats_reply_experimenter_get(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_port_counter_stats_reply_subtype_set(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_port_counter_stats_reply_subtype_get(
+    of_bsn_port_counter_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_port_counter_stats_reply_entries_set(
+    of_bsn_port_counter_stats_reply_t *obj,
+    of_list_bsn_port_counter_stats_entry_t *entries);
+extern void of_bsn_port_counter_stats_reply_entries_bind(
+    of_bsn_port_counter_stats_reply_t *obj,
+    of_list_bsn_port_counter_stats_entry_t *entries);
+extern of_list_bsn_port_counter_stats_entry_t *of_bsn_port_counter_stats_reply_entries_get(
+    of_bsn_port_counter_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_port_counter_stats_request */
+
+extern void of_bsn_port_counter_stats_request_xid_set(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_port_counter_stats_request_xid_get(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_port_counter_stats_request_flags_set(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_port_counter_stats_request_flags_get(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_port_counter_stats_request_experimenter_set(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_port_counter_stats_request_experimenter_get(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_port_counter_stats_request_subtype_set(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_port_counter_stats_request_subtype_get(
+    of_bsn_port_counter_stats_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_port_counter_stats_request_port_no_set(
+    of_bsn_port_counter_stats_request_t *obj,
+    of_port_no_t port_no);
+extern void of_bsn_port_counter_stats_request_port_no_get(
+    of_bsn_port_counter_stats_request_t *obj,
+    of_port_no_t *port_no);
+
 /* Unified accessor functions for of_bsn_set_ip_mask */
 
 extern void of_bsn_set_ip_mask_xid_set(
@@ -14220,6 +14606,82 @@ extern void of_bsn_virtual_port_remove_request_vport_no_set(
 extern void of_bsn_virtual_port_remove_request_vport_no_get(
     of_bsn_virtual_port_remove_request_t *obj,
     uint32_t *vport_no);
+
+/* Unified accessor functions for of_bsn_vlan_counter_stats_reply */
+
+extern void of_bsn_vlan_counter_stats_reply_xid_set(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_vlan_counter_stats_reply_xid_get(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_vlan_counter_stats_reply_flags_set(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_vlan_counter_stats_reply_flags_get(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_vlan_counter_stats_reply_experimenter_set(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_vlan_counter_stats_reply_experimenter_get(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_vlan_counter_stats_reply_subtype_set(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_vlan_counter_stats_reply_subtype_get(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_vlan_counter_stats_reply_entries_set(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    of_list_bsn_vlan_counter_stats_entry_t *entries);
+extern void of_bsn_vlan_counter_stats_reply_entries_bind(
+    of_bsn_vlan_counter_stats_reply_t *obj,
+    of_list_bsn_vlan_counter_stats_entry_t *entries);
+extern of_list_bsn_vlan_counter_stats_entry_t *of_bsn_vlan_counter_stats_reply_entries_get(
+    of_bsn_vlan_counter_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_vlan_counter_stats_request */
+
+extern void of_bsn_vlan_counter_stats_request_xid_set(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_vlan_counter_stats_request_xid_get(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_vlan_counter_stats_request_flags_set(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_vlan_counter_stats_request_flags_get(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_vlan_counter_stats_request_experimenter_set(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_vlan_counter_stats_request_experimenter_get(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_vlan_counter_stats_request_subtype_set(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_vlan_counter_stats_request_subtype_get(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_vlan_counter_stats_request_vlan_vid_set(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint16_t vlan_vid);
+extern void of_bsn_vlan_counter_stats_request_vlan_vid_get(
+    of_bsn_vlan_counter_stats_request_t *obj,
+    uint16_t *vlan_vid);
 
 /* Unified accessor functions for of_desc_stats_reply */
 
@@ -17246,6 +17708,24 @@ extern void of_bsn_lacp_stats_entry_partner_key_get(
     of_bsn_lacp_stats_entry_t *obj,
     uint16_t *partner_key);
 
+/* Unified accessor functions for of_bsn_port_counter_stats_entry */
+
+extern void of_bsn_port_counter_stats_entry_port_no_set(
+    of_bsn_port_counter_stats_entry_t *obj,
+    of_port_no_t port_no);
+extern void of_bsn_port_counter_stats_entry_port_no_get(
+    of_bsn_port_counter_stats_entry_t *obj,
+    of_port_no_t *port_no);
+
+extern int WARN_UNUSED_RESULT of_bsn_port_counter_stats_entry_values_set(
+    of_bsn_port_counter_stats_entry_t *obj,
+    of_list_uint64_t *values);
+extern void of_bsn_port_counter_stats_entry_values_bind(
+    of_bsn_port_counter_stats_entry_t *obj,
+    of_list_uint64_t *values);
+extern of_list_uint64_t *of_bsn_port_counter_stats_entry_values_get(
+    of_bsn_port_counter_stats_entry_t *obj);
+
 /* Unified accessor functions for of_bsn_switch_pipeline_stats_entry */
 
 extern void of_bsn_switch_pipeline_stats_entry_pipeline_set(
@@ -17254,6 +17734,24 @@ extern void of_bsn_switch_pipeline_stats_entry_pipeline_set(
 extern void of_bsn_switch_pipeline_stats_entry_pipeline_get(
     of_bsn_switch_pipeline_stats_entry_t *obj,
     of_desc_str_t *pipeline);
+
+/* Unified accessor functions for of_bsn_vlan_counter_stats_entry */
+
+extern void of_bsn_vlan_counter_stats_entry_vlan_vid_set(
+    of_bsn_vlan_counter_stats_entry_t *obj,
+    uint16_t vlan_vid);
+extern void of_bsn_vlan_counter_stats_entry_vlan_vid_get(
+    of_bsn_vlan_counter_stats_entry_t *obj,
+    uint16_t *vlan_vid);
+
+extern int WARN_UNUSED_RESULT of_bsn_vlan_counter_stats_entry_values_set(
+    of_bsn_vlan_counter_stats_entry_t *obj,
+    of_list_uint64_t *values);
+extern void of_bsn_vlan_counter_stats_entry_values_bind(
+    of_bsn_vlan_counter_stats_entry_t *obj,
+    of_list_uint64_t *values);
+extern of_list_uint64_t *of_bsn_vlan_counter_stats_entry_values_get(
+    of_bsn_vlan_counter_stats_entry_t *obj);
 
 /* Unified accessor functions for of_bsn_vport_header */
 
@@ -19848,6 +20346,15 @@ extern void of_uint32_value_get(
     of_uint32_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_uint64 */
+
+extern void of_uint64_value_set(
+    of_uint64_t *obj,
+    uint64_t value);
+extern void of_uint64_value_get(
+    of_uint64_t *obj,
+    uint64_t *value);
+
 /* Unified accessor functions for of_uint8 */
 
 extern void of_uint8_value_set(
@@ -19949,6 +20456,29 @@ extern int of_list_bsn_lacp_stats_entry_append(
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_lacp_stats_entry_next((list), (elt)))
 
+/* Unified accessor functions for of_list_bsn_port_counter_stats_entry */
+
+extern int of_list_bsn_port_counter_stats_entry_first(
+    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+extern int of_list_bsn_port_counter_stats_entry_next(
+    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+extern int of_list_bsn_port_counter_stats_entry_append_bind(
+    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+extern int of_list_bsn_port_counter_stats_entry_append(
+    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_port_counter_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_port_counter_stats_entry
+ * @param elt Pointer to an element of type of_bsn_port_counter_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_PORT_COUNTER_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_port_counter_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_port_counter_stats_entry_next((list), (elt)))
+
 /* Unified accessor functions for of_list_bsn_switch_pipeline_stats_entry */
 
 extern int of_list_bsn_switch_pipeline_stats_entry_first(
@@ -19971,6 +20501,29 @@ extern int of_list_bsn_switch_pipeline_stats_entry_append(
     for ((rv) = of_list_bsn_switch_pipeline_stats_entry_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_switch_pipeline_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_vlan_counter_stats_entry */
+
+extern int of_list_bsn_vlan_counter_stats_entry_first(
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+extern int of_list_bsn_vlan_counter_stats_entry_next(
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+extern int of_list_bsn_vlan_counter_stats_entry_append_bind(
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+extern int of_list_bsn_vlan_counter_stats_entry_append(
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_vlan_counter_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_vlan_counter_stats_entry
+ * @param elt Pointer to an element of type of_bsn_vlan_counter_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_VLAN_COUNTER_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_vlan_counter_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_vlan_counter_stats_entry_next((list), (elt)))
 
 /* Unified accessor functions for of_list_bucket */
 
@@ -20432,6 +20985,29 @@ extern int of_list_uint32_append(
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_uint32_next((list), (elt)))
 
+/* Unified accessor functions for of_list_uint64 */
+
+extern int of_list_uint64_first(
+    of_list_uint64_t *list, of_uint64_t *obj);
+extern int of_list_uint64_next(
+    of_list_uint64_t *list, of_uint64_t *obj);
+extern int of_list_uint64_append_bind(
+    of_list_uint64_t *list, of_uint64_t *obj);
+extern int of_list_uint64_append(
+    of_list_uint64_t *list, of_uint64_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_uint64
+ * @param list Pointer to the list being iterated over of
+ * type of_list_uint64
+ * @param elt Pointer to an element of type of_uint64
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_UINT64_ITER(list, elt, rv)  \
+    for ((rv) = of_list_uint64_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_uint64_next((list), (elt)))
+
 /* Unified accessor functions for of_list_uint8 */
 
 extern int of_list_uint8_first(
@@ -20625,6 +21201,8 @@ union of_generic_u {
     of_bsn_pdu_rx_timeout_t of_bsn_pdu_rx_timeout;
     of_bsn_pdu_tx_reply_t of_bsn_pdu_tx_reply;
     of_bsn_pdu_tx_request_t of_bsn_pdu_tx_request;
+    of_bsn_port_counter_stats_reply_t of_bsn_port_counter_stats_reply;
+    of_bsn_port_counter_stats_request_t of_bsn_port_counter_stats_request;
     of_bsn_set_ip_mask_t of_bsn_set_ip_mask;
     of_bsn_set_l2_table_reply_t of_bsn_set_l2_table_reply;
     of_bsn_set_l2_table_request_t of_bsn_set_l2_table_request;
@@ -20648,6 +21226,8 @@ union of_generic_u {
     of_bsn_virtual_port_create_request_t of_bsn_virtual_port_create_request;
     of_bsn_virtual_port_remove_reply_t of_bsn_virtual_port_remove_reply;
     of_bsn_virtual_port_remove_request_t of_bsn_virtual_port_remove_request;
+    of_bsn_vlan_counter_stats_reply_t of_bsn_vlan_counter_stats_reply;
+    of_bsn_vlan_counter_stats_request_t of_bsn_vlan_counter_stats_request;
     of_desc_stats_reply_t of_desc_stats_reply;
     of_desc_stats_request_t of_desc_stats_request;
     of_echo_reply_t of_echo_reply;
@@ -20784,7 +21364,9 @@ union of_generic_u {
     of_action_strip_vlan_t of_action_strip_vlan;
     of_bsn_interface_t of_bsn_interface;
     of_bsn_lacp_stats_entry_t of_bsn_lacp_stats_entry;
+    of_bsn_port_counter_stats_entry_t of_bsn_port_counter_stats_entry;
     of_bsn_switch_pipeline_stats_entry_t of_bsn_switch_pipeline_stats_entry;
+    of_bsn_vlan_counter_stats_entry_t of_bsn_vlan_counter_stats_entry;
     of_bsn_vport_header_t of_bsn_vport_header;
     of_bsn_vport_q_in_q_t of_bsn_vport_q_in_q;
     of_bucket_t of_bucket;
@@ -20931,6 +21513,7 @@ union of_generic_u {
     of_table_features_t of_table_features;
     of_table_stats_entry_t of_table_stats_entry;
     of_uint32_t of_uint32;
+    of_uint64_t of_uint64;
     of_uint8_t of_uint8;
 
     /* List objects */
@@ -20938,7 +21521,9 @@ union of_generic_u {
     of_list_action_id_t of_list_action_id;
     of_list_bsn_interface_t of_list_bsn_interface;
     of_list_bsn_lacp_stats_entry_t of_list_bsn_lacp_stats_entry;
+    of_list_bsn_port_counter_stats_entry_t of_list_bsn_port_counter_stats_entry;
     of_list_bsn_switch_pipeline_stats_entry_t of_list_bsn_switch_pipeline_stats_entry;
+    of_list_bsn_vlan_counter_stats_entry_t of_list_bsn_vlan_counter_stats_entry;
     of_list_bucket_t of_list_bucket;
     of_list_bucket_counter_t of_list_bucket_counter;
     of_list_flow_stats_entry_t of_list_flow_stats_entry;
@@ -20959,6 +21544,7 @@ union of_generic_u {
     of_list_table_features_t of_list_table_features;
     of_list_table_stats_entry_t of_list_table_stats_entry;
     of_list_uint32_t of_list_uint32;
+    of_list_uint64_t of_list_uint64;
     of_list_uint8_t of_list_uint8;
 };
 
@@ -22457,6 +23043,12 @@ of_object_to_stats_type(of_object_id_t id, of_version_t version)
     case OF_GROUP_STATS_REQUEST:
         if (version == OF_VERSION_1_0) break;
         return 6;
+    case OF_BSN_VLAN_COUNTER_STATS_REPLY:
+    case OF_BSN_VLAN_COUNTER_STATS_REQUEST:
+        if (version == OF_VERSION_1_0) break;
+        if (version == OF_VERSION_1_1) break;
+        if (version == OF_VERSION_1_2) break;
+        return 65535;
     case OF_TABLE_FEATURES_STATS_REPLY:
     case OF_TABLE_FEATURES_STATS_REQUEST:
         if (version == OF_VERSION_1_0) break;
@@ -22511,6 +23103,12 @@ of_object_to_stats_type(of_object_id_t id, of_version_t version)
         if (version == OF_VERSION_1_0) break;
         if (version == OF_VERSION_1_1) break;
         return 8;
+    case OF_BSN_PORT_COUNTER_STATS_REPLY:
+    case OF_BSN_PORT_COUNTER_STATS_REQUEST:
+        if (version == OF_VERSION_1_0) break;
+        if (version == OF_VERSION_1_1) break;
+        if (version == OF_VERSION_1_2) break;
+        return 65535;
     case OF_PORT_STATS_REPLY:
     case OF_PORT_STATS_REQUEST:
         return 4;
@@ -22748,6 +23346,16 @@ of_wire_message_object_id_set(of_wire_buffer_t *wbuf, of_object_id_t id)
             case OF_BSN_SWITCH_PIPELINE_STATS_REPLY:
                 of_message_stats_experimenter_id_set(msg, OF_EXPERIMENTER_ID_BSN);
                 of_message_stats_experimenter_subtype_set(msg, 6);
+                break;
+            case OF_BSN_PORT_COUNTER_STATS_REQUEST:
+            case OF_BSN_PORT_COUNTER_STATS_REPLY:
+                of_message_stats_experimenter_id_set(msg, OF_EXPERIMENTER_ID_BSN);
+                of_message_stats_experimenter_subtype_set(msg, 8);
+                break;
+            case OF_BSN_VLAN_COUNTER_STATS_REQUEST:
+            case OF_BSN_VLAN_COUNTER_STATS_REPLY:
+                of_message_stats_experimenter_id_set(msg, OF_EXPERIMENTER_ID_BSN);
+                of_message_stats_experimenter_subtype_set(msg, 9);
                 break;
             default:
                 break;

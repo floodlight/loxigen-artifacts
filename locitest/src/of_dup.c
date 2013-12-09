@@ -20543,6 +20543,93 @@ of_bsn_pdu_tx_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_port_counter_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_port_counter_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_port_counter_stats_reply_t *
+of_bsn_port_counter_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_port_counter_stats_reply_t *src)
+{
+    of_bsn_port_counter_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_port_counter_stats_entry_t src_list;
+    of_list_bsn_port_counter_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_port_counter_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_port_counter_stats_reply_xid_get(src, &val32);
+    of_bsn_port_counter_stats_reply_xid_set(dst, val32);
+
+    of_bsn_port_counter_stats_reply_flags_get(src, &val16);
+    of_bsn_port_counter_stats_reply_flags_set(dst, val16);
+
+    of_bsn_port_counter_stats_reply_experimenter_get(src, &val32);
+    of_bsn_port_counter_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_port_counter_stats_reply_subtype_get(src, &val32);
+    of_bsn_port_counter_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_port_counter_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_port_counter_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_port_counter_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_port_counter_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_port_counter_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_port_counter_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_port_counter_stats_request_t *
+of_bsn_port_counter_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_port_counter_stats_request_t *src)
+{
+    of_bsn_port_counter_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_port_no_t port_no;
+
+    if ((dst = of_bsn_port_counter_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_port_counter_stats_request_xid_get(src, &val32);
+    of_bsn_port_counter_stats_request_xid_set(dst, val32);
+
+    of_bsn_port_counter_stats_request_flags_get(src, &val16);
+    of_bsn_port_counter_stats_request_flags_set(dst, val16);
+
+    of_bsn_port_counter_stats_request_experimenter_get(src, &val32);
+    of_bsn_port_counter_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_port_counter_stats_request_subtype_get(src, &val32);
+    of_bsn_port_counter_stats_request_subtype_set(dst, val32);
+
+    of_bsn_port_counter_stats_request_port_no_get(src, &port_no);
+    of_bsn_port_counter_stats_request_port_no_set(dst, port_no);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_set_lacp_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -21187,6 +21274,92 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dup(
 
     of_bsn_virtual_port_remove_request_vport_no_get(src, &val32);
     of_bsn_virtual_port_remove_request_vport_no_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vlan_counter_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_counter_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_counter_stats_reply_t *
+of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_vlan_counter_stats_reply_t *src)
+{
+    of_bsn_vlan_counter_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_vlan_counter_stats_entry_t src_list;
+    of_list_bsn_vlan_counter_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_vlan_counter_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_counter_stats_reply_xid_get(src, &val32);
+    of_bsn_vlan_counter_stats_reply_xid_set(dst, val32);
+
+    of_bsn_vlan_counter_stats_reply_flags_get(src, &val16);
+    of_bsn_vlan_counter_stats_reply_flags_set(dst, val16);
+
+    of_bsn_vlan_counter_stats_reply_experimenter_get(src, &val32);
+    of_bsn_vlan_counter_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_vlan_counter_stats_reply_subtype_get(src, &val32);
+    of_bsn_vlan_counter_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_vlan_counter_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_vlan_counter_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_vlan_counter_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_vlan_counter_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vlan_counter_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_counter_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_counter_stats_request_t *
+of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_vlan_counter_stats_request_t *src)
+{
+    of_bsn_vlan_counter_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_vlan_counter_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_counter_stats_request_xid_get(src, &val32);
+    of_bsn_vlan_counter_stats_request_xid_set(dst, val32);
+
+    of_bsn_vlan_counter_stats_request_flags_get(src, &val16);
+    of_bsn_vlan_counter_stats_request_flags_set(dst, val16);
+
+    of_bsn_vlan_counter_stats_request_experimenter_get(src, &val32);
+    of_bsn_vlan_counter_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_vlan_counter_stats_request_subtype_get(src, &val32);
+    of_bsn_vlan_counter_stats_request_subtype_set(dst, val32);
+
+    of_bsn_vlan_counter_stats_request_vlan_vid_get(src, &val16);
+    of_bsn_vlan_counter_stats_request_vlan_vid_set(dst, val16);
 
     return dst;
 }
@@ -25434,6 +25607,44 @@ of_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_port_counter_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_port_counter_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_port_counter_stats_entry_t *
+of_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_port_counter_stats_entry_t *src)
+{
+    of_bsn_port_counter_stats_entry_t *dst;
+    of_port_no_t port_no;
+
+    of_list_uint64_t src_list;
+    of_list_uint64_t *dst_list;
+
+    if ((dst = of_bsn_port_counter_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_port_counter_stats_entry_port_no_get(src, &port_no);
+    of_bsn_port_counter_stats_entry_port_no_set(dst, port_no);
+
+    of_bsn_port_counter_stats_entry_values_bind(
+        src, &src_list);
+    dst_list = of_list_uint64_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_port_counter_stats_entry_delete(dst);
+        return NULL;
+    }
+    of_bsn_port_counter_stats_entry_values_set(dst, dst_list);
+    of_list_uint64_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_switch_pipeline_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -25454,6 +25665,44 @@ of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
 
     of_bsn_switch_pipeline_stats_entry_pipeline_get(src, &desc_str);
     of_bsn_switch_pipeline_stats_entry_pipeline_set(dst, desc_str);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vlan_counter_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_counter_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_counter_stats_entry_t *
+of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_vlan_counter_stats_entry_t *src)
+{
+    of_bsn_vlan_counter_stats_entry_t *dst;
+    uint16_t val16;
+
+    of_list_uint64_t src_list;
+    of_list_uint64_t *dst_list;
+
+    if ((dst = of_bsn_vlan_counter_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_counter_stats_entry_vlan_vid_get(src, &val16);
+    of_bsn_vlan_counter_stats_entry_vlan_vid_set(dst, val16);
+
+    of_bsn_vlan_counter_stats_entry_values_bind(
+        src, &src_list);
+    dst_list = of_list_uint64_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_vlan_counter_stats_entry_delete(dst);
+        return NULL;
+    }
+    of_bsn_vlan_counter_stats_entry_values_set(dst, dst_list);
+    of_list_uint64_delete(dst_list);
 
     return dst;
 }
@@ -30408,6 +30657,31 @@ of_uint32_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_uint64
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_uint64.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_uint64_t *
+of_uint64_OF_VERSION_1_3_dup(
+    of_uint64_t *src)
+{
+    of_uint64_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_uint64_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_uint64_value_get(src, &val64);
+    of_uint64_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_uint8
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30569,6 +30843,40 @@ of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_bsn_port_counter_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_port_counter_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_port_counter_stats_entry_t *
+of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_port_counter_stats_entry_t *src)
+{
+    of_bsn_port_counter_stats_entry_t src_elt;
+    of_bsn_port_counter_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_port_counter_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_port_counter_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_PORT_COUNTER_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_port_counter_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_bsn_switch_pipeline_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30595,6 +30903,40 @@ of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
             return NULL;
         }
         _TRY_FREE(of_list_bsn_switch_pipeline_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_vlan_counter_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_vlan_counter_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_vlan_counter_stats_entry_t *
+of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_vlan_counter_stats_entry_t *src)
+{
+    of_bsn_vlan_counter_stats_entry_t src_elt;
+    of_bsn_vlan_counter_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_vlan_counter_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_vlan_counter_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_VLAN_COUNTER_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_vlan_counter_stats_entry_append(dst, dst_elt),
             dst, NULL);
         of_object_delete((of_object_t *)dst_elt);
     }
@@ -31275,6 +31617,40 @@ of_list_uint32_OF_VERSION_1_3_dup(
             return NULL;
         }
         _TRY_FREE(of_list_uint32_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_uint64
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_uint64.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_uint64_t *
+of_list_uint64_OF_VERSION_1_3_dup(
+    of_list_uint64_t *src)
+{
+    of_uint64_t src_elt;
+    of_uint64_t *dst_elt;
+    int rv;
+    of_list_uint64_t *dst;
+
+    if ((dst = of_list_uint64_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_UINT64_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_uint64_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_uint64_append(dst, dst_elt),
             dst, NULL);
         of_object_delete((of_object_t *)dst_elt);
     }
@@ -32155,6 +32531,32 @@ of_bsn_pdu_tx_request_dup(
     return NULL;
 }
 
+of_bsn_port_counter_stats_reply_t *
+of_bsn_port_counter_stats_reply_dup(
+    of_bsn_port_counter_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_port_counter_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_port_counter_stats_request_t *
+of_bsn_port_counter_stats_request_dup(
+    of_bsn_port_counter_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_port_counter_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_set_ip_mask_t *
 of_bsn_set_ip_mask_dup(
     of_bsn_set_ip_mask_t *src)
@@ -32556,6 +32958,32 @@ of_bsn_virtual_port_remove_request_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_vlan_counter_stats_reply_t *
+of_bsn_vlan_counter_stats_reply_dup(
+    of_bsn_vlan_counter_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_vlan_counter_stats_request_t *
+of_bsn_vlan_counter_stats_request_dup(
+    of_bsn_vlan_counter_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -35190,6 +35618,19 @@ of_bsn_lacp_stats_entry_dup(
     return NULL;
 }
 
+of_bsn_port_counter_stats_entry_t *
+of_bsn_port_counter_stats_entry_dup(
+    of_bsn_port_counter_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_switch_pipeline_stats_entry_t *
 of_bsn_switch_pipeline_stats_entry_dup(
     of_bsn_switch_pipeline_stats_entry_t *src)
@@ -35197,6 +35638,19 @@ of_bsn_switch_pipeline_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_vlan_counter_stats_entry_t *
+of_bsn_vlan_counter_stats_entry_dup(
+    of_bsn_vlan_counter_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -37808,6 +38262,19 @@ of_uint32_dup(
     return NULL;
 }
 
+of_uint64_t *
+of_uint64_dup(
+    of_uint64_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_uint64_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_uint8_t *
 of_uint8_dup(
     of_uint8_t *src)
@@ -37897,6 +38364,19 @@ of_list_bsn_lacp_stats_entry_dup(
     return NULL;
 }
 
+of_list_bsn_port_counter_stats_entry_t *
+of_list_bsn_port_counter_stats_entry_dup(
+    of_list_bsn_port_counter_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_list_bsn_switch_pipeline_stats_entry_t *
 of_list_bsn_switch_pipeline_stats_entry_dup(
     of_list_bsn_switch_pipeline_stats_entry_t *src)
@@ -37904,6 +38384,19 @@ of_list_bsn_switch_pipeline_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_vlan_counter_stats_entry_t *
+of_list_bsn_vlan_counter_stats_entry_dup(
+    of_list_bsn_vlan_counter_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -38292,6 +38785,19 @@ of_list_uint32_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_list_uint32_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_uint64_t *
+of_list_uint64_dup(
+    of_list_uint64_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_uint64_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

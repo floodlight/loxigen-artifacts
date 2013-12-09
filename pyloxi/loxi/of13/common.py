@@ -279,6 +279,60 @@ class bsn_lacp_stats_entry(loxi.OFObject):
         q.text('}')
 
 
+class bsn_port_counter_stats_entry(loxi.OFObject):
+
+    def __init__(self, port_no=None, values=None):
+        if port_no != None:
+            self.port_no = port_no
+        else:
+            self.port_no = 0
+        if values != None:
+            self.values = values
+        else:
+            self.values = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append('\x00' * 2)
+        packed.append(util.pack_port_no(self.port_no))
+        packed.append(loxi.generic_util.pack_list(self.values))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_port_counter_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (0 + 2))
+        reader.skip(2)
+        obj.port_no = util.unpack_port_no(reader)
+        obj.values = loxi.generic_util.unpack_list(reader, common.uint64.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.port_no != other.port_no: return False
+        if self.values != other.values: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_port_counter_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("port_no = ");
+                q.text(util.pretty_port(self.port_no))
+                q.text(","); q.breakable()
+                q.text("values = ");
+                q.pp(self.values)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_switch_pipeline_stats_entry(loxi.OFObject):
 
     def __init__(self, pipeline=None):
@@ -424,6 +478,60 @@ class bsn_vport_q_in_q(bsn_vport):
         q.text('}')
 
 bsn_vport.subtypes[0] = bsn_vport_q_in_q
+
+class bsn_vlan_counter_stats_entry(loxi.OFObject):
+
+    def __init__(self, vlan_vid=None, values=None):
+        if vlan_vid != None:
+            self.vlan_vid = vlan_vid
+        else:
+            self.vlan_vid = 0
+        if values != None:
+            self.values = values
+        else:
+            self.values = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append(struct.pack("!H", self.vlan_vid))
+        packed.append('\x00' * 4)
+        packed.append(loxi.generic_util.pack_list(self.values))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vlan_counter_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (0 + 2))
+        obj.vlan_vid = reader.read("!H")[0]
+        reader.skip(4)
+        obj.values = loxi.generic_util.unpack_list(reader, common.uint64.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.vlan_vid != other.vlan_vid: return False
+        if self.values != other.values: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vlan_counter_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("vlan_vid = ");
+                q.text("%#x" % self.vlan_vid)
+                q.text(","); q.breakable()
+                q.text("values = ");
+                q.pp(self.values)
+            q.breakable()
+        q.text('}')
+
 
 class bucket(loxi.OFObject):
 
@@ -2826,6 +2934,42 @@ class uint32(loxi.OFObject):
 
     def pretty_print(self, q):
         q.text("uint32 {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+
+class uint64(loxi.OFObject):
+
+    def __init__(self, value=None):
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!Q", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = uint64()
+        obj.value = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("uint64 {")
         with q.group():
             with q.indent(2):
                 q.breakable()

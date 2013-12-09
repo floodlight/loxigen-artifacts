@@ -751,6 +751,21 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnLacpStatsRequest not supported in version 1.1");
     }
 
+    public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnPortCounterStatsEntry not supported in version 1.1");
+    }
+    public OFBsnPortCounterStatsEntry bsnPortCounterStatsEntry(OFPort portNo, List<U64> values) {
+        throw new UnsupportedOperationException("OFBsnPortCounterStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnPortCounterStatsReply.Builder buildBsnPortCounterStatsReply() {
+        throw new UnsupportedOperationException("OFBsnPortCounterStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnPortCounterStatsRequest not supported in version 1.1");
+    }
+
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {
         throw new UnsupportedOperationException("OFBsnSetLacpReply not supported in version 1.1");
     }
@@ -803,6 +818,21 @@ public class OFFactoryVer11 implements OFFactory {
     }
     public OFBsnTimeRequest bsnTimeRequest() {
         throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.1");
+    }
+
+    public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnVlanCounterStatsEntry not supported in version 1.1");
+    }
+    public OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values) {
+        throw new UnsupportedOperationException("OFBsnVlanCounterStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() {
+        throw new UnsupportedOperationException("OFBsnVlanCounterStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnVlanCounterStatsRequest not supported in version 1.1");
     }
 
     public OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() {
@@ -993,6 +1023,13 @@ public class OFFactoryVer11 implements OFFactory {
 
     public OFTableFeaturesStatsRequest.Builder buildTableFeaturesStatsRequest() {
         throw new UnsupportedOperationException("OFTableFeaturesStatsRequest not supported in version 1.1");
+    }
+
+    public OFUint64.Builder buildUint64() {
+        throw new UnsupportedOperationException("OFUint64 not supported in version 1.1");
+    }
+    public OFUint64 uint64(U64 value) {
+        throw new UnsupportedOperationException("OFUint64 not supported in version 1.1");
     }
 
     public OFMessageReader<OFMessage> getReader() {
