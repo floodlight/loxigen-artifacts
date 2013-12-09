@@ -242,10 +242,13 @@ static inline int of_hello_failed_error_msg_OF_VERSION_1_1_validate(uint8_t *buf
 static inline int of_hello_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_group_stats_request_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_group_stats_reply_OF_VERSION_1_1_validate(uint8_t *buf, int len);
+static inline int of_group_modify_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_group_mod_failed_error_msg_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_group_mod_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_request_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_reply_OF_VERSION_1_1_validate(uint8_t *buf, int len);
+static inline int of_group_delete_OF_VERSION_1_1_validate(uint8_t *buf, int len);
+static inline int of_group_add_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_get_config_request_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_get_config_reply_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_flow_stats_request_OF_VERSION_1_1_validate(uint8_t *buf, int len);
@@ -478,12 +481,15 @@ static inline int of_hello_failed_error_msg_OF_VERSION_1_2_validate(uint8_t *buf
 static inline int of_hello_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_stats_request_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_stats_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_group_modify_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_mod_failed_error_msg_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_mod_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_features_stats_request_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_features_stats_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_request_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_group_delete_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_group_add_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_get_config_request_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_get_config_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_flow_stats_request_OF_VERSION_1_2_validate(uint8_t *buf, int len);
@@ -807,12 +813,15 @@ static inline int of_hello_failed_error_msg_OF_VERSION_1_3_validate(uint8_t *buf
 static inline int of_hello_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_group_modify_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_mod_failed_error_msg_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_mod_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_features_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_features_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_group_delete_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_group_add_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_get_config_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_get_config_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_flow_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -4134,6 +4143,26 @@ of_group_stats_reply_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_group_modify_OF_VERSION_1_1_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_modify.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_1_validate(buf + 16, buckets_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
 of_group_mod_failed_error_msg_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -4188,6 +4217,46 @@ of_group_desc_stats_reply_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 
 
         if (of_list_group_desc_stats_entry_OF_VERSION_1_1_validate(buf + 16, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_group_delete_OF_VERSION_1_1_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_delete.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_1_validate(buf + 16, buckets_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_group_add_OF_VERSION_1_1_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_add.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_1_validate(buf + 16, buckets_len) < 0) {
             return -1;
         }
     }
@@ -4937,6 +5006,8 @@ of_validate_message_OF_VERSION_1_1(of_message_t msg, int len)
         return of_group_stats_request_OF_VERSION_1_1_validate(buf, len);
     case OF_GROUP_STATS_REPLY:
         return of_group_stats_reply_OF_VERSION_1_1_validate(buf, len);
+    case OF_GROUP_MODIFY:
+        return of_group_modify_OF_VERSION_1_1_validate(buf, len);
     case OF_GROUP_MOD_FAILED_ERROR_MSG:
         return of_group_mod_failed_error_msg_OF_VERSION_1_1_validate(buf, len);
     case OF_GROUP_MOD:
@@ -4945,6 +5016,10 @@ of_validate_message_OF_VERSION_1_1(of_message_t msg, int len)
         return of_group_desc_stats_request_OF_VERSION_1_1_validate(buf, len);
     case OF_GROUP_DESC_STATS_REPLY:
         return of_group_desc_stats_reply_OF_VERSION_1_1_validate(buf, len);
+    case OF_GROUP_DELETE:
+        return of_group_delete_OF_VERSION_1_1_validate(buf, len);
+    case OF_GROUP_ADD:
+        return of_group_add_OF_VERSION_1_1_validate(buf, len);
     case OF_GET_CONFIG_REQUEST:
         return of_get_config_request_OF_VERSION_1_1_validate(buf, len);
     case OF_GET_CONFIG_REPLY:
@@ -7298,6 +7373,26 @@ of_group_stats_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_group_modify_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_modify.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_2_validate(buf + 16, buckets_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
 of_group_mod_failed_error_msg_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -7374,6 +7469,46 @@ of_group_desc_stats_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 
 
         if (of_list_group_desc_stats_entry_OF_VERSION_1_2_validate(buf + 16, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_group_delete_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_delete.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_2_validate(buf + 16, buckets_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_group_add_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_add.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_2_validate(buf + 16, buckets_len) < 0) {
             return -1;
         }
     }
@@ -8158,6 +8293,8 @@ of_validate_message_OF_VERSION_1_2(of_message_t msg, int len)
         return of_group_stats_request_OF_VERSION_1_2_validate(buf, len);
     case OF_GROUP_STATS_REPLY:
         return of_group_stats_reply_OF_VERSION_1_2_validate(buf, len);
+    case OF_GROUP_MODIFY:
+        return of_group_modify_OF_VERSION_1_2_validate(buf, len);
     case OF_GROUP_MOD_FAILED_ERROR_MSG:
         return of_group_mod_failed_error_msg_OF_VERSION_1_2_validate(buf, len);
     case OF_GROUP_MOD:
@@ -8170,6 +8307,10 @@ of_validate_message_OF_VERSION_1_2(of_message_t msg, int len)
         return of_group_desc_stats_request_OF_VERSION_1_2_validate(buf, len);
     case OF_GROUP_DESC_STATS_REPLY:
         return of_group_desc_stats_reply_OF_VERSION_1_2_validate(buf, len);
+    case OF_GROUP_DELETE:
+        return of_group_delete_OF_VERSION_1_2_validate(buf, len);
+    case OF_GROUP_ADD:
+        return of_group_add_OF_VERSION_1_2_validate(buf, len);
     case OF_GET_CONFIG_REQUEST:
         return of_get_config_request_OF_VERSION_1_2_validate(buf, len);
     case OF_GET_CONFIG_REPLY:
@@ -12018,6 +12159,26 @@ of_group_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_group_modify_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_modify.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_3_validate(buf + 16, buckets_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
 of_group_mod_failed_error_msg_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -12094,6 +12255,46 @@ of_group_desc_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 
 
         if (of_list_group_desc_stats_entry_OF_VERSION_1_3_validate(buf + 16, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_group_delete_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_delete.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_3_validate(buf + 16, buckets_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_group_add_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_group_add.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int buckets_len = len - 16;
+
+
+        if (of_list_bucket_OF_VERSION_1_3_validate(buf + 16, buckets_len) < 0) {
             return -1;
         }
     }
@@ -13206,6 +13407,8 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_group_stats_request_OF_VERSION_1_3_validate(buf, len);
     case OF_GROUP_STATS_REPLY:
         return of_group_stats_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_GROUP_MODIFY:
+        return of_group_modify_OF_VERSION_1_3_validate(buf, len);
     case OF_GROUP_MOD_FAILED_ERROR_MSG:
         return of_group_mod_failed_error_msg_OF_VERSION_1_3_validate(buf, len);
     case OF_GROUP_MOD:
@@ -13218,6 +13421,10 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_group_desc_stats_request_OF_VERSION_1_3_validate(buf, len);
     case OF_GROUP_DESC_STATS_REPLY:
         return of_group_desc_stats_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_GROUP_DELETE:
+        return of_group_delete_OF_VERSION_1_3_validate(buf, len);
+    case OF_GROUP_ADD:
+        return of_group_add_OF_VERSION_1_3_validate(buf, len);
     case OF_GET_CONFIG_REQUEST:
         return of_get_config_request_OF_VERSION_1_3_validate(buf, len);
     case OF_GET_CONFIG_REPLY:

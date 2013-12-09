@@ -6522,6 +6522,82 @@ test_of_get_config_request_OF_VERSION_1_1(void)
 }
 
 static int
+test_of_group_add_OF_VERSION_1_1(void)
+{
+    of_group_add_t *obj;
+    obj = of_group_add_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_ADD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_1_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_1_check(
+        obj, 1) != 0);
+
+    of_group_add_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_OF_VERSION_1_1(void)
+{
+    of_group_delete_t *obj;
+    obj = of_group_delete_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_DELETE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_1_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_1_check(
+        obj, 1) != 0);
+
+    of_group_delete_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_OF_VERSION_1_1(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -6608,27 +6684,6 @@ test_of_group_mod_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-    if (obj->wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        obj->wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_GROUP_MOD);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_1_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_1_check(
-        obj, 1) != 0);
-
     of_group_mod_delete(obj);
 
     /* To do: Check memory */
@@ -6668,6 +6723,44 @@ test_of_group_mod_failed_error_msg_OF_VERSION_1_1(void)
         obj, 1) != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_OF_VERSION_1_1(void)
+{
+    of_group_modify_t *obj;
+    obj = of_group_modify_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_MODIFY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_1_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_1_check(
+        obj, 1) != 0);
+
+    of_group_modify_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -12034,6 +12127,82 @@ test_of_get_config_request_OF_VERSION_1_2(void)
 }
 
 static int
+test_of_group_add_OF_VERSION_1_2(void)
+{
+    of_group_add_t *obj;
+    obj = of_group_add_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_ADD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_2_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_2_check(
+        obj, 1) != 0);
+
+    of_group_add_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_OF_VERSION_1_2(void)
+{
+    of_group_delete_t *obj;
+    obj = of_group_delete_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_DELETE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_2_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_2_check(
+        obj, 1) != 0);
+
+    of_group_delete_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_OF_VERSION_1_2(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -12196,27 +12365,6 @@ test_of_group_mod_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-    if (obj->wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        obj->wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_GROUP_MOD);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_2_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_2_check(
-        obj, 1) != 0);
-
     of_group_mod_delete(obj);
 
     /* To do: Check memory */
@@ -12256,6 +12404,44 @@ test_of_group_mod_failed_error_msg_OF_VERSION_1_2(void)
         obj, 1) != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_OF_VERSION_1_2(void)
+{
+    of_group_modify_t *obj;
+    obj = of_group_modify_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_MODIFY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_2_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_2_check(
+        obj, 1) != 0);
+
+    of_group_modify_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -21667,6 +21853,82 @@ test_of_get_config_request_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_group_add_OF_VERSION_1_3(void)
+{
+    of_group_add_t *obj;
+    obj = of_group_add_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_ADD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_group_add_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_OF_VERSION_1_3(void)
+{
+    of_group_delete_t *obj;
+    obj = of_group_delete_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_DELETE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_group_delete_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_OF_VERSION_1_3(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -21829,27 +22091,6 @@ test_of_group_mod_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-    if (obj->wire_type_get != NULL) {
-        of_object_id_t obj_id;
-
-        obj->wire_type_get((of_object_t *)obj, &obj_id);
-        TEST_ASSERT(obj_id == OF_GROUP_MOD);
-    }
-
-    /* Set up incrementing values for members */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_3_populate(
-        obj, 1) != 0);
-
-    /* Check values just set */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_3_check(
-        obj, 1) != 0);
-
     of_group_mod_delete(obj);
 
     /* To do: Check memory */
@@ -21889,6 +22130,44 @@ test_of_group_mod_failed_error_msg_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_OF_VERSION_1_3(void)
+{
+    of_group_modify_t *obj;
+    obj = of_group_modify_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_GROUP_MODIFY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_group_modify_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -31807,10 +32086,13 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_1);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_1);
     RUN_TEST(of_get_config_request_OF_VERSION_1_1);
+    RUN_TEST(of_group_add_OF_VERSION_1_1);
+    RUN_TEST(of_group_delete_OF_VERSION_1_1);
     RUN_TEST(of_group_desc_stats_reply_OF_VERSION_1_1);
     RUN_TEST(of_group_desc_stats_request_OF_VERSION_1_1);
     RUN_TEST(of_group_mod_OF_VERSION_1_1);
     RUN_TEST(of_group_mod_failed_error_msg_OF_VERSION_1_1);
+    RUN_TEST(of_group_modify_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_1);
     RUN_TEST(of_hello_OF_VERSION_1_1);
@@ -31962,12 +32244,15 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_2);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_2);
     RUN_TEST(of_get_config_request_OF_VERSION_1_2);
+    RUN_TEST(of_group_add_OF_VERSION_1_2);
+    RUN_TEST(of_group_delete_OF_VERSION_1_2);
     RUN_TEST(of_group_desc_stats_reply_OF_VERSION_1_2);
     RUN_TEST(of_group_desc_stats_request_OF_VERSION_1_2);
     RUN_TEST(of_group_features_stats_reply_OF_VERSION_1_2);
     RUN_TEST(of_group_features_stats_request_OF_VERSION_1_2);
     RUN_TEST(of_group_mod_OF_VERSION_1_2);
     RUN_TEST(of_group_mod_failed_error_msg_OF_VERSION_1_2);
+    RUN_TEST(of_group_modify_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_2);
     RUN_TEST(of_hello_OF_VERSION_1_2);
@@ -32226,12 +32511,15 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_3);
     RUN_TEST(of_get_config_request_OF_VERSION_1_3);
+    RUN_TEST(of_group_add_OF_VERSION_1_3);
+    RUN_TEST(of_group_delete_OF_VERSION_1_3);
     RUN_TEST(of_group_desc_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_group_desc_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_group_features_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_group_features_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_group_mod_OF_VERSION_1_3);
     RUN_TEST(of_group_mod_failed_error_msg_OF_VERSION_1_3);
+    RUN_TEST(of_group_modify_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_hello_OF_VERSION_1_3);

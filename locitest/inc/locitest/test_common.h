@@ -1725,6 +1725,24 @@ extern int of_get_config_request_OF_VERSION_1_1_populate_scalars(
 extern int of_get_config_request_OF_VERSION_1_1_check_scalars(
     of_get_config_request_t *obj, int value);
 
+extern int of_group_add_OF_VERSION_1_1_populate(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_1_check(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_1_populate_scalars(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_1_check_scalars(
+    of_group_add_t *obj, int value);
+
+extern int of_group_delete_OF_VERSION_1_1_populate(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_1_check(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_1_populate_scalars(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_1_check_scalars(
+    of_group_delete_t *obj, int value);
+
 extern int of_group_desc_stats_reply_OF_VERSION_1_1_populate(
     of_group_desc_stats_reply_t *obj, int value);
 extern int of_group_desc_stats_reply_OF_VERSION_1_1_check(
@@ -1760,6 +1778,15 @@ extern int of_group_mod_failed_error_msg_OF_VERSION_1_1_populate_scalars(
     of_group_mod_failed_error_msg_t *obj, int value);
 extern int of_group_mod_failed_error_msg_OF_VERSION_1_1_check_scalars(
     of_group_mod_failed_error_msg_t *obj, int value);
+
+extern int of_group_modify_OF_VERSION_1_1_populate(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_1_check(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_1_populate_scalars(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_1_check_scalars(
+    of_group_modify_t *obj, int value);
 
 extern int of_group_stats_reply_OF_VERSION_1_1_populate(
     of_group_stats_reply_t *obj, int value);
@@ -3120,6 +3147,24 @@ extern int of_get_config_request_OF_VERSION_1_2_populate_scalars(
 extern int of_get_config_request_OF_VERSION_1_2_check_scalars(
     of_get_config_request_t *obj, int value);
 
+extern int of_group_add_OF_VERSION_1_2_populate(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_2_check(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_2_populate_scalars(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_2_check_scalars(
+    of_group_add_t *obj, int value);
+
+extern int of_group_delete_OF_VERSION_1_2_populate(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_2_check(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_2_populate_scalars(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_2_check_scalars(
+    of_group_delete_t *obj, int value);
+
 extern int of_group_desc_stats_reply_OF_VERSION_1_2_populate(
     of_group_desc_stats_reply_t *obj, int value);
 extern int of_group_desc_stats_reply_OF_VERSION_1_2_check(
@@ -3173,6 +3218,15 @@ extern int of_group_mod_failed_error_msg_OF_VERSION_1_2_populate_scalars(
     of_group_mod_failed_error_msg_t *obj, int value);
 extern int of_group_mod_failed_error_msg_OF_VERSION_1_2_check_scalars(
     of_group_mod_failed_error_msg_t *obj, int value);
+
+extern int of_group_modify_OF_VERSION_1_2_populate(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_2_check(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_2_populate_scalars(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_2_check_scalars(
+    of_group_modify_t *obj, int value);
 
 extern int of_group_stats_reply_OF_VERSION_1_2_populate(
     of_group_stats_reply_t *obj, int value);
@@ -5496,6 +5550,24 @@ extern int of_get_config_request_OF_VERSION_1_3_populate_scalars(
 extern int of_get_config_request_OF_VERSION_1_3_check_scalars(
     of_get_config_request_t *obj, int value);
 
+extern int of_group_add_OF_VERSION_1_3_populate(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_3_check(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_3_populate_scalars(
+    of_group_add_t *obj, int value);
+extern int of_group_add_OF_VERSION_1_3_check_scalars(
+    of_group_add_t *obj, int value);
+
+extern int of_group_delete_OF_VERSION_1_3_populate(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_3_check(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_3_populate_scalars(
+    of_group_delete_t *obj, int value);
+extern int of_group_delete_OF_VERSION_1_3_check_scalars(
+    of_group_delete_t *obj, int value);
+
 extern int of_group_desc_stats_reply_OF_VERSION_1_3_populate(
     of_group_desc_stats_reply_t *obj, int value);
 extern int of_group_desc_stats_reply_OF_VERSION_1_3_check(
@@ -5549,6 +5621,15 @@ extern int of_group_mod_failed_error_msg_OF_VERSION_1_3_populate_scalars(
     of_group_mod_failed_error_msg_t *obj, int value);
 extern int of_group_mod_failed_error_msg_OF_VERSION_1_3_check_scalars(
     of_group_mod_failed_error_msg_t *obj, int value);
+
+extern int of_group_modify_OF_VERSION_1_3_populate(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_3_check(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_3_populate_scalars(
+    of_group_modify_t *obj, int value);
+extern int of_group_modify_OF_VERSION_1_3_check_scalars(
+    of_group_modify_t *obj, int value);
 
 extern int of_group_stats_reply_OF_VERSION_1_3_populate(
     of_group_stats_reply_t *obj, int value);

@@ -5053,6 +5053,86 @@ test_of_get_config_request_create_OF_VERSION_1_1(void)
 }
 
 static int
+test_of_group_add_create_OF_VERSION_1_1(void)
+{
+    of_group_add_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_add_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_add_OF_VERSION_1_1_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_add_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_ADD);
+    obj = of_group_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_add_OF_VERSION_1_1_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_add_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_create_OF_VERSION_1_1(void)
+{
+    of_group_delete_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_delete_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_delete_OF_VERSION_1_1_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_delete_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DELETE);
+    obj = of_group_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_delete_OF_VERSION_1_1_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_delete_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_create_OF_VERSION_1_1(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -5133,46 +5213,6 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_1(void)
 }
 
 static int
-test_of_group_mod_create_OF_VERSION_1_1(void)
-{
-    of_group_mod_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_group_mod_new(OF_VERSION_1_1);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
-
-    /* Set up incrementing values for scalar members */
-    value = of_group_mod_OF_VERSION_1_1_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_group_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MOD);
-    obj = of_group_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_group_mod_OF_VERSION_1_1_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_group_mod_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
 test_of_group_mod_failed_error_msg_create_OF_VERSION_1_1(void)
 {
     of_group_mod_failed_error_msg_t *obj;
@@ -5208,6 +5248,46 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_create_OF_VERSION_1_1(void)
+{
+    of_group_modify_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_modify_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_modify_OF_VERSION_1_1_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_modify_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MODIFY);
+    obj = of_group_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_modify_OF_VERSION_1_1_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_modify_delete(obj);
 
     return TEST_PASS;
 }
@@ -8053,6 +8133,86 @@ test_of_get_config_request_create_OF_VERSION_1_2(void)
 }
 
 static int
+test_of_group_add_create_OF_VERSION_1_2(void)
+{
+    of_group_add_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_add_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_add_OF_VERSION_1_2_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_add_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_ADD);
+    obj = of_group_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_add_OF_VERSION_1_2_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_add_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_create_OF_VERSION_1_2(void)
+{
+    of_group_delete_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_delete_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_delete_OF_VERSION_1_2_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_delete_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DELETE);
+    obj = of_group_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_delete_OF_VERSION_1_2_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_delete_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_create_OF_VERSION_1_2(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -8213,46 +8373,6 @@ test_of_group_features_stats_request_create_OF_VERSION_1_2(void)
 }
 
 static int
-test_of_group_mod_create_OF_VERSION_1_2(void)
-{
-    of_group_mod_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_group_mod_new(OF_VERSION_1_2);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
-
-    /* Set up incrementing values for scalar members */
-    value = of_group_mod_OF_VERSION_1_2_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_group_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MOD);
-    obj = of_group_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_group_mod_OF_VERSION_1_2_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_group_mod_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
 test_of_group_mod_failed_error_msg_create_OF_VERSION_1_2(void)
 {
     of_group_mod_failed_error_msg_t *obj;
@@ -8288,6 +8408,46 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_create_OF_VERSION_1_2(void)
+{
+    of_group_modify_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_modify_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_modify_OF_VERSION_1_2_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_modify_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MODIFY);
+    obj = of_group_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_modify_OF_VERSION_1_2_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_modify_delete(obj);
 
     return TEST_PASS;
 }
@@ -12253,6 +12413,86 @@ test_of_get_config_request_create_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_group_add_create_OF_VERSION_1_3(void)
+{
+    of_group_add_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_add_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_add_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_add_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_ADD);
+    obj = of_group_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_add_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_add_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_create_OF_VERSION_1_3(void)
+{
+    of_group_delete_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_delete_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_delete_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_delete_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DELETE);
+    obj = of_group_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_delete_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_delete_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_create_OF_VERSION_1_3(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -12413,46 +12653,6 @@ test_of_group_features_stats_request_create_OF_VERSION_1_3(void)
 }
 
 static int
-test_of_group_mod_create_OF_VERSION_1_3(void)
-{
-    of_group_mod_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_group_mod_new(OF_VERSION_1_3);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
-
-    /* Set up incrementing values for scalar members */
-    value = of_group_mod_OF_VERSION_1_3_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_group_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MOD);
-    obj = of_group_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_group_mod_OF_VERSION_1_3_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_group_mod_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
 test_of_group_mod_failed_error_msg_create_OF_VERSION_1_3(void)
 {
     of_group_mod_failed_error_msg_t *obj;
@@ -12488,6 +12688,46 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_create_OF_VERSION_1_3(void)
+{
+    of_group_modify_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_group_modify_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_group_modify_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_group_modify_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MODIFY);
+    obj = of_group_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_group_modify_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_group_modify_delete(obj);
 
     return TEST_PASS;
 }
@@ -14141,10 +14381,12 @@ run_message_tests(void)
     RUN_TEST(of_flow_stats_request_create_OF_VERSION_1_1);
     RUN_TEST(of_get_config_reply_create_OF_VERSION_1_1);
     RUN_TEST(of_get_config_request_create_OF_VERSION_1_1);
+    RUN_TEST(of_group_add_create_OF_VERSION_1_1);
+    RUN_TEST(of_group_delete_create_OF_VERSION_1_1);
     RUN_TEST(of_group_desc_stats_reply_create_OF_VERSION_1_1);
     RUN_TEST(of_group_desc_stats_request_create_OF_VERSION_1_1);
-    RUN_TEST(of_group_mod_create_OF_VERSION_1_1);
     RUN_TEST(of_group_mod_failed_error_msg_create_OF_VERSION_1_1);
+    RUN_TEST(of_group_modify_create_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_reply_create_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_request_create_OF_VERSION_1_1);
     RUN_TEST(of_hello_create_OF_VERSION_1_1);
@@ -14216,12 +14458,14 @@ run_message_tests(void)
     RUN_TEST(of_flow_stats_request_create_OF_VERSION_1_2);
     RUN_TEST(of_get_config_reply_create_OF_VERSION_1_2);
     RUN_TEST(of_get_config_request_create_OF_VERSION_1_2);
+    RUN_TEST(of_group_add_create_OF_VERSION_1_2);
+    RUN_TEST(of_group_delete_create_OF_VERSION_1_2);
     RUN_TEST(of_group_desc_stats_reply_create_OF_VERSION_1_2);
     RUN_TEST(of_group_desc_stats_request_create_OF_VERSION_1_2);
     RUN_TEST(of_group_features_stats_reply_create_OF_VERSION_1_2);
     RUN_TEST(of_group_features_stats_request_create_OF_VERSION_1_2);
-    RUN_TEST(of_group_mod_create_OF_VERSION_1_2);
     RUN_TEST(of_group_mod_failed_error_msg_create_OF_VERSION_1_2);
+    RUN_TEST(of_group_modify_create_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_reply_create_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_request_create_OF_VERSION_1_2);
     RUN_TEST(of_hello_create_OF_VERSION_1_2);
@@ -14321,12 +14565,14 @@ run_message_tests(void)
     RUN_TEST(of_flow_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_get_config_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_get_config_request_create_OF_VERSION_1_3);
+    RUN_TEST(of_group_add_create_OF_VERSION_1_3);
+    RUN_TEST(of_group_delete_create_OF_VERSION_1_3);
     RUN_TEST(of_group_desc_stats_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_group_desc_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_group_features_stats_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_group_features_stats_request_create_OF_VERSION_1_3);
-    RUN_TEST(of_group_mod_create_OF_VERSION_1_3);
     RUN_TEST(of_group_mod_failed_error_msg_create_OF_VERSION_1_3);
+    RUN_TEST(of_group_modify_create_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_hello_create_OF_VERSION_1_3);

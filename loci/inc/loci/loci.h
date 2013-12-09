@@ -219,12 +219,15 @@ typedef of_object_t of_flow_stats_reply_t;
 typedef of_object_t of_flow_stats_request_t;
 typedef of_object_t of_get_config_reply_t;
 typedef of_object_t of_get_config_request_t;
+typedef of_object_t of_group_add_t;
+typedef of_object_t of_group_delete_t;
 typedef of_object_t of_group_desc_stats_reply_t;
 typedef of_object_t of_group_desc_stats_request_t;
 typedef of_object_t of_group_features_stats_reply_t;
 typedef of_object_t of_group_features_stats_request_t;
 typedef of_object_t of_group_mod_t;
 typedef of_object_t of_group_mod_failed_error_msg_t;
+typedef of_object_t of_group_modify_t;
 typedef of_object_t of_group_stats_reply_t;
 typedef of_object_t of_group_stats_request_t;
 typedef of_object_t of_hello_t;
@@ -1778,6 +1781,32 @@ extern of_get_config_request_t *
     of_get_config_request_new_from_message_tracking(msg, \
         __FILE__, __LINE__)
 
+extern of_group_add_t *
+    of_group_add_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_group_add_new(version) \
+    of_group_add_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_group_add_t *
+    of_group_add_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_group_add_new_from_message(msg) \
+    of_group_add_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
+extern of_group_delete_t *
+    of_group_delete_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_group_delete_new(version) \
+    of_group_delete_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_group_delete_t *
+    of_group_delete_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_group_delete_new_from_message(msg) \
+    of_group_delete_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_new_tracking(of_version_t version,
         const char *file, int line);
@@ -1854,6 +1883,19 @@ extern of_group_mod_failed_error_msg_t *
         const char *file, int line);
 #define of_group_mod_failed_error_msg_new_from_message(msg) \
     of_group_mod_failed_error_msg_new_from_message_tracking(msg, \
+        __FILE__, __LINE__)
+
+extern of_group_modify_t *
+    of_group_modify_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_group_modify_new(version) \
+    of_group_modify_new_tracking(version, \
+        __FILE__, __LINE__)
+extern of_group_modify_t *
+    of_group_modify_new_from_message_tracking(of_message_t msg,
+        const char *file, int line);
+#define of_group_modify_new_from_message(msg) \
+    of_group_modify_new_from_message_tracking(msg, \
         __FILE__, __LINE__)
 
 extern of_group_stats_reply_t *
@@ -4639,6 +4681,16 @@ extern of_list_uint8_t *
 #define of_get_config_request_new_from_message(msg) \
     of_get_config_request_new_from_message_(msg)
 
+#define of_group_add_new(version) \
+    of_group_add_new_(version)
+#define of_group_add_new_from_message(msg) \
+    of_group_add_new_from_message_(msg)
+
+#define of_group_delete_new(version) \
+    of_group_delete_new_(version)
+#define of_group_delete_new_from_message(msg) \
+    of_group_delete_new_from_message_(msg)
+
 #define of_group_desc_stats_reply_new(version) \
     of_group_desc_stats_reply_new_(version)
 #define of_group_desc_stats_reply_new_from_message(msg) \
@@ -4668,6 +4720,11 @@ extern of_list_uint8_t *
     of_group_mod_failed_error_msg_new_(version)
 #define of_group_mod_failed_error_msg_new_from_message(msg) \
     of_group_mod_failed_error_msg_new_from_message_(msg)
+
+#define of_group_modify_new(version) \
+    of_group_modify_new_(version)
+#define of_group_modify_new_from_message(msg) \
+    of_group_modify_new_from_message_(msg)
 
 #define of_group_stats_reply_new(version) \
     of_group_stats_reply_new_(version)
@@ -6290,6 +6347,20 @@ extern of_get_config_request_t *
 extern void of_get_config_request_init(
     of_get_config_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_group_add_t *
+    of_group_add_new_(of_version_t version);
+extern of_group_add_t *
+    of_group_add_new_from_message_(of_message_t msg);
+extern void of_group_add_init(
+    of_group_add_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_group_delete_t *
+    of_group_delete_new_(of_version_t version);
+extern of_group_delete_t *
+    of_group_delete_new_from_message_(of_message_t msg);
+extern void of_group_delete_init(
+    of_group_delete_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_new_(of_version_t version);
 extern of_group_desc_stats_reply_t *
@@ -6331,6 +6402,13 @@ extern of_group_mod_failed_error_msg_t *
     of_group_mod_failed_error_msg_new_from_message_(of_message_t msg);
 extern void of_group_mod_failed_error_msg_init(
     of_group_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_group_modify_t *
+    of_group_modify_new_(of_version_t version);
+extern of_group_modify_t *
+    of_group_modify_new_from_message_(of_message_t msg);
+extern void of_group_modify_init(
+    of_group_modify_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_stats_reply_t *
     of_group_stats_reply_new_(of_version_t version);
@@ -8919,6 +8997,28 @@ of_get_config_request_delete(of_get_config_request_t *obj) {
 }
 
 /**
+ * Delete an object of type of_group_add_t
+ * @param obj An instance of type of_group_add_t
+ *
+ * \ingroup of_group_add
+ */
+static inline void
+of_group_add_delete(of_group_add_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_group_delete_t
+ * @param obj An instance of type of_group_delete_t
+ *
+ * \ingroup of_group_delete
+ */
+static inline void
+of_group_delete_delete(of_group_delete_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_group_desc_stats_reply_t
  * @param obj An instance of type of_group_desc_stats_reply_t
  *
@@ -8981,6 +9081,17 @@ of_group_mod_delete(of_group_mod_t *obj) {
  */
 static inline void
 of_group_mod_failed_error_msg_delete(of_group_mod_failed_error_msg_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_group_modify_t
+ * @param obj An instance of type of_group_modify_t
+ *
+ * \ingroup of_group_modify
+ */
+static inline void
+of_group_modify_delete(of_group_modify_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -15849,6 +15960,70 @@ extern void of_get_config_request_xid_get(
     of_get_config_request_t *obj,
     uint32_t *xid);
 
+/* Unified accessor functions for of_group_add */
+
+extern void of_group_add_xid_set(
+    of_group_add_t *obj,
+    uint32_t xid);
+extern void of_group_add_xid_get(
+    of_group_add_t *obj,
+    uint32_t *xid);
+
+extern void of_group_add_group_type_set(
+    of_group_add_t *obj,
+    uint8_t group_type);
+extern void of_group_add_group_type_get(
+    of_group_add_t *obj,
+    uint8_t *group_type);
+
+extern void of_group_add_group_id_set(
+    of_group_add_t *obj,
+    uint32_t group_id);
+extern void of_group_add_group_id_get(
+    of_group_add_t *obj,
+    uint32_t *group_id);
+
+extern int WARN_UNUSED_RESULT of_group_add_buckets_set(
+    of_group_add_t *obj,
+    of_list_bucket_t *buckets);
+extern void of_group_add_buckets_bind(
+    of_group_add_t *obj,
+    of_list_bucket_t *buckets);
+extern of_list_bucket_t *of_group_add_buckets_get(
+    of_group_add_t *obj);
+
+/* Unified accessor functions for of_group_delete */
+
+extern void of_group_delete_xid_set(
+    of_group_delete_t *obj,
+    uint32_t xid);
+extern void of_group_delete_xid_get(
+    of_group_delete_t *obj,
+    uint32_t *xid);
+
+extern void of_group_delete_group_type_set(
+    of_group_delete_t *obj,
+    uint8_t group_type);
+extern void of_group_delete_group_type_get(
+    of_group_delete_t *obj,
+    uint8_t *group_type);
+
+extern void of_group_delete_group_id_set(
+    of_group_delete_t *obj,
+    uint32_t group_id);
+extern void of_group_delete_group_id_get(
+    of_group_delete_t *obj,
+    uint32_t *group_id);
+
+extern int WARN_UNUSED_RESULT of_group_delete_buckets_set(
+    of_group_delete_t *obj,
+    of_list_bucket_t *buckets);
+extern void of_group_delete_buckets_bind(
+    of_group_delete_t *obj,
+    of_list_bucket_t *buckets);
+extern of_list_bucket_t *of_group_delete_buckets_get(
+    of_group_delete_t *obj);
+
 /* Unified accessor functions for of_group_desc_stats_reply */
 
 extern void of_group_desc_stats_reply_xid_set(
@@ -16001,13 +16176,6 @@ extern void of_group_mod_xid_get(
     of_group_mod_t *obj,
     uint32_t *xid);
 
-extern void of_group_mod_command_set(
-    of_group_mod_t *obj,
-    uint16_t command);
-extern void of_group_mod_command_get(
-    of_group_mod_t *obj,
-    uint16_t *command);
-
 extern void of_group_mod_group_type_set(
     of_group_mod_t *obj,
     uint8_t group_type);
@@ -16053,6 +16221,38 @@ extern int WARN_UNUSED_RESULT of_group_mod_failed_error_msg_data_set(
 extern void of_group_mod_failed_error_msg_data_get(
     of_group_mod_failed_error_msg_t *obj,
     of_octets_t *data);
+
+/* Unified accessor functions for of_group_modify */
+
+extern void of_group_modify_xid_set(
+    of_group_modify_t *obj,
+    uint32_t xid);
+extern void of_group_modify_xid_get(
+    of_group_modify_t *obj,
+    uint32_t *xid);
+
+extern void of_group_modify_group_type_set(
+    of_group_modify_t *obj,
+    uint8_t group_type);
+extern void of_group_modify_group_type_get(
+    of_group_modify_t *obj,
+    uint8_t *group_type);
+
+extern void of_group_modify_group_id_set(
+    of_group_modify_t *obj,
+    uint32_t group_id);
+extern void of_group_modify_group_id_get(
+    of_group_modify_t *obj,
+    uint32_t *group_id);
+
+extern int WARN_UNUSED_RESULT of_group_modify_buckets_set(
+    of_group_modify_t *obj,
+    of_list_bucket_t *buckets);
+extern void of_group_modify_buckets_bind(
+    of_group_modify_t *obj,
+    of_list_bucket_t *buckets);
+extern of_list_bucket_t *of_group_modify_buckets_get(
+    of_group_modify_t *obj);
 
 /* Unified accessor functions for of_group_stats_reply */
 
@@ -16240,13 +16440,6 @@ extern void of_meter_mod_xid_set(
 extern void of_meter_mod_xid_get(
     of_meter_mod_t *obj,
     uint32_t *xid);
-
-extern void of_meter_mod_command_set(
-    of_meter_mod_t *obj,
-    uint16_t command);
-extern void of_meter_mod_command_get(
-    of_meter_mod_t *obj,
-    uint16_t *command);
 
 extern void of_meter_mod_flags_set(
     of_meter_mod_t *obj,
@@ -21251,12 +21444,15 @@ union of_generic_u {
     of_flow_stats_request_t of_flow_stats_request;
     of_get_config_reply_t of_get_config_reply;
     of_get_config_request_t of_get_config_request;
+    of_group_add_t of_group_add;
+    of_group_delete_t of_group_delete;
     of_group_desc_stats_reply_t of_group_desc_stats_reply;
     of_group_desc_stats_request_t of_group_desc_stats_request;
     of_group_features_stats_reply_t of_group_features_stats_reply;
     of_group_features_stats_request_t of_group_features_stats_request;
     of_group_mod_t of_group_mod;
     of_group_mod_failed_error_msg_t of_group_mod_failed_error_msg;
+    of_group_modify_t of_group_modify;
     of_group_stats_reply_t of_group_stats_reply;
     of_group_stats_request_t of_group_stats_request;
     of_hello_t of_hello;
@@ -22257,6 +22453,37 @@ of_flow_mod_to_object_id(int flow_mod, of_version_t version)
     return of_flow_mod_type_to_id[version][flow_mod];
 }
 
+/**
+ * group_mod wire type to object ID array.
+ * Treat as private; use function accessor below
+ */
+
+extern const of_object_id_t *const of_group_mod_type_to_id[OF_VERSION_ARRAY_MAX];
+
+#define OF_GROUP_MOD_ITEM_COUNT 3
+
+
+/**
+ * Map an group_mod wire value to an OF object
+ * @param group_mod The group_mod type wire value
+ * @param version The version associated with the check
+ * @return The group_mod OF object type
+ * @return OF_OBJECT_INVALID if type does not map to an object
+ *
+ */
+static inline of_object_id_t
+of_group_mod_to_object_id(int group_mod, of_version_t version)
+{
+    if (!OF_VERSION_OKAY(version)) {
+        return OF_OBJECT_INVALID;
+    }
+    if (group_mod < 0 || group_mod >= OF_GROUP_MOD_ITEM_COUNT) {
+        return OF_OBJECT_INVALID;
+    }
+
+    return of_group_mod_type_to_id[version][group_mod];
+}
+
 /* NOTE: We could optimize the OXM and only generate OF 1.2 versions. */
 
 /**
@@ -22858,6 +23085,7 @@ of_message_to_object_id(of_message_t msg, int length) {
     uint16_t err_type;
     uint8_t flow_mod_cmd;
     uint32_t experimenter, subtype;
+    uint16_t group_mod_cmd;
 
     if (length < OF_MESSAGE_MIN_LENGTH) {
         return OF_OBJECT_INVALID;
@@ -22922,6 +23150,14 @@ of_message_to_object_id(of_message_t msg, int length) {
         }
         err_type = of_message_error_type_get(msg);
         obj_id = of_error_msg_to_object_id(err_type, ver);
+    }
+
+    if (obj_id == OF_GROUP_MOD) {
+        if (length < OF_MESSAGE_MIN_GROUP_MOD_LENGTH) {
+            return OF_OBJECT_INVALID;
+        }
+        group_mod_cmd = of_message_group_mod_command_get(msg);
+        obj_id = of_group_mod_to_object_id(group_mod_cmd, ver);
     }
 
     return obj_id;
@@ -23241,6 +23477,43 @@ of_object_to_flow_mod_command(of_object_id_t id, of_version_t version)
     return -1; /* Not recognized as flow mod type object for this version */
 }
 
+
+/**
+ * Map an object ID to a group-mod command value
+ * @param id An object ID
+ * @return The wire value for the group-mod command
+ * @return -1 if not supported for this version
+ * @return -1 if id is not a specific stats type ID
+ *
+ * Note that the value is returned as a signed integer.  So -1 is
+ * an error code, while 0xffff is the usual "experimenter" code.
+ */
+
+static inline int
+of_object_to_group_mod_command(of_object_id_t id, of_version_t version)
+{
+    if (!OF_VERSION_OKAY(version)) {
+        return -1;
+    }
+    switch (id) {
+    case OF_GROUP_ADD:
+        if (OF_GROUP_MOD_COMMAND_ADD_SUPPORTED(version))
+            return OF_GROUP_MOD_COMMAND_ADD_BY_VERSION(version);
+        break;
+    case OF_GROUP_MODIFY:
+        if (OF_GROUP_MOD_COMMAND_MODIFY_SUPPORTED(version))
+            return OF_GROUP_MOD_COMMAND_MODIFY_BY_VERSION(version);
+        break;
+    case OF_GROUP_DELETE:
+        if (OF_GROUP_MOD_COMMAND_DELETE_SUPPORTED(version))
+            return OF_GROUP_MOD_COMMAND_DELETE_BY_VERSION(version);
+        break;
+    default:
+        break;
+    }
+    return -1; /* Not recognized as group mod type object for this version */
+}
+
 extern const int *const of_object_fixed_len[OF_VERSION_ARRAY_MAX];
 extern const int *const of_object_extra_len[OF_VERSION_ARRAY_MAX];
 
@@ -23369,6 +23642,10 @@ of_wire_message_object_id_set(of_wire_buffer_t *wbuf, of_object_id_t id)
     if ((type = of_object_to_flow_mod_command(id, ver)) >= 0) {
         /* It's a flow mod obj */
         of_message_flow_mod_command_set(msg, ver, type);
+    }
+    if ((type = of_object_to_group_mod_command(id, ver)) >= 0) {
+        /* It's a group mod obj */
+        of_message_group_mod_command_set(msg, type);
     }
     if (of_object_id_is_extension(id, ver)) {
         uint32_t val32;

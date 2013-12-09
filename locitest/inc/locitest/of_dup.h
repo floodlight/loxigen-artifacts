@@ -386,6 +386,14 @@ extern of_get_config_request_t *
     of_get_config_request_dup(
         of_get_config_request_t *src);
 
+extern of_group_add_t *
+    of_group_add_dup(
+        of_group_add_t *src);
+
+extern of_group_delete_t *
+    of_group_delete_dup(
+        of_group_delete_t *src);
+
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_dup(
         of_group_desc_stats_reply_t *src);
@@ -409,6 +417,10 @@ extern of_group_mod_t *
 extern of_group_mod_failed_error_msg_t *
     of_group_mod_failed_error_msg_dup(
         of_group_mod_failed_error_msg_t *src);
+
+extern of_group_modify_t *
+    of_group_modify_dup(
+        of_group_modify_t *src);
 
 extern of_group_stats_reply_t *
     of_group_stats_reply_dup(
@@ -2334,6 +2346,14 @@ extern of_get_config_request_t *
     of_get_config_request_OF_VERSION_1_1_dup(
         of_get_config_request_t *src);
 
+extern of_group_add_t *
+    of_group_add_OF_VERSION_1_1_dup(
+        of_group_add_t *src);
+
+extern of_group_delete_t *
+    of_group_delete_OF_VERSION_1_1_dup(
+        of_group_delete_t *src);
+
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_OF_VERSION_1_1_dup(
         of_group_desc_stats_reply_t *src);
@@ -2349,6 +2369,10 @@ extern of_group_mod_t *
 extern of_group_mod_failed_error_msg_t *
     of_group_mod_failed_error_msg_OF_VERSION_1_1_dup(
         of_group_mod_failed_error_msg_t *src);
+
+extern of_group_modify_t *
+    of_group_modify_OF_VERSION_1_1_dup(
+        of_group_modify_t *src);
 
 extern of_group_stats_reply_t *
     of_group_stats_reply_OF_VERSION_1_1_dup(
@@ -2970,6 +2994,14 @@ extern of_get_config_request_t *
     of_get_config_request_OF_VERSION_1_2_dup(
         of_get_config_request_t *src);
 
+extern of_group_add_t *
+    of_group_add_OF_VERSION_1_2_dup(
+        of_group_add_t *src);
+
+extern of_group_delete_t *
+    of_group_delete_OF_VERSION_1_2_dup(
+        of_group_delete_t *src);
+
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_OF_VERSION_1_2_dup(
         of_group_desc_stats_reply_t *src);
@@ -2993,6 +3025,10 @@ extern of_group_mod_t *
 extern of_group_mod_failed_error_msg_t *
     of_group_mod_failed_error_msg_OF_VERSION_1_2_dup(
         of_group_mod_failed_error_msg_t *src);
+
+extern of_group_modify_t *
+    of_group_modify_OF_VERSION_1_2_dup(
+        of_group_modify_t *src);
 
 extern of_group_stats_reply_t *
     of_group_stats_reply_OF_VERSION_1_2_dup(
@@ -4046,6 +4082,14 @@ extern of_get_config_request_t *
     of_get_config_request_OF_VERSION_1_3_dup(
         of_get_config_request_t *src);
 
+extern of_group_add_t *
+    of_group_add_OF_VERSION_1_3_dup(
+        of_group_add_t *src);
+
+extern of_group_delete_t *
+    of_group_delete_OF_VERSION_1_3_dup(
+        of_group_delete_t *src);
+
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_OF_VERSION_1_3_dup(
         of_group_desc_stats_reply_t *src);
@@ -4069,6 +4113,10 @@ extern of_group_mod_t *
 extern of_group_mod_failed_error_msg_t *
     of_group_mod_failed_error_msg_OF_VERSION_1_3_dup(
         of_group_mod_failed_error_msg_t *src);
+
+extern of_group_modify_t *
+    of_group_modify_OF_VERSION_1_3_dup(
+        of_group_modify_t *src);
 
 extern of_group_stats_reply_t *
     of_group_stats_reply_OF_VERSION_1_3_dup(

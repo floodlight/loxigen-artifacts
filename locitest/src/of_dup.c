@@ -7125,6 +7125,96 @@ of_get_config_request_OF_VERSION_1_1_dup(
 }
 
 /**
+ * Duplicate an object of type of_group_add
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_add.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_add_t *
+of_group_add_OF_VERSION_1_1_dup(
+    of_group_add_t *src)
+{
+    of_group_add_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_add_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_add_xid_get(src, &val32);
+    of_group_add_xid_set(dst, val32);
+
+    of_group_add_group_type_get(src, &val8);
+    of_group_add_group_type_set(dst, val8);
+
+    of_group_add_group_id_get(src, &val32);
+    of_group_add_group_id_set(dst, val32);
+
+    of_group_add_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_1_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_add_delete(dst);
+        return NULL;
+    }
+    of_group_add_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_group_delete
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_delete.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_delete_t *
+of_group_delete_OF_VERSION_1_1_dup(
+    of_group_delete_t *src)
+{
+    of_group_delete_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_delete_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_delete_xid_get(src, &val32);
+    of_group_delete_xid_set(dst, val32);
+
+    of_group_delete_group_type_get(src, &val8);
+    of_group_delete_group_type_set(dst, val8);
+
+    of_group_delete_group_id_get(src, &val32);
+    of_group_delete_group_id_set(dst, val32);
+
+    of_group_delete_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_1_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_delete_delete(dst);
+        return NULL;
+    }
+    of_group_delete_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_group_desc_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -7209,7 +7299,6 @@ of_group_mod_OF_VERSION_1_1_dup(
 {
     of_group_mod_t *dst;
     uint32_t val32;
-    uint16_t val16;
     uint8_t val8;
 
     of_list_bucket_t src_list;
@@ -7221,9 +7310,6 @@ of_group_mod_OF_VERSION_1_1_dup(
 
     of_group_mod_xid_get(src, &val32);
     of_group_mod_xid_set(dst, val32);
-
-    of_group_mod_command_get(src, &val16);
-    of_group_mod_command_set(dst, val16);
 
     of_group_mod_group_type_get(src, &val8);
     of_group_mod_group_type_set(dst, val8);
@@ -7273,6 +7359,51 @@ of_group_mod_failed_error_msg_OF_VERSION_1_1_dup(
 
     of_group_mod_failed_error_msg_data_get(src, &octets);
     of_group_mod_failed_error_msg_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_group_modify
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_modify.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_modify_t *
+of_group_modify_OF_VERSION_1_1_dup(
+    of_group_modify_t *src)
+{
+    of_group_modify_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_modify_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_modify_xid_get(src, &val32);
+    of_group_modify_xid_set(dst, val32);
+
+    of_group_modify_group_type_get(src, &val8);
+    of_group_modify_group_type_set(dst, val8);
+
+    of_group_modify_group_id_get(src, &val32);
+    of_group_modify_group_id_set(dst, val32);
+
+    of_group_modify_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_1_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_modify_delete(dst);
+        return NULL;
+    }
+    of_group_modify_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
 
     return dst;
 }
@@ -12954,6 +13085,96 @@ of_get_config_request_OF_VERSION_1_2_dup(
 }
 
 /**
+ * Duplicate an object of type of_group_add
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_add.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_add_t *
+of_group_add_OF_VERSION_1_2_dup(
+    of_group_add_t *src)
+{
+    of_group_add_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_add_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_add_xid_get(src, &val32);
+    of_group_add_xid_set(dst, val32);
+
+    of_group_add_group_type_get(src, &val8);
+    of_group_add_group_type_set(dst, val8);
+
+    of_group_add_group_id_get(src, &val32);
+    of_group_add_group_id_set(dst, val32);
+
+    of_group_add_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_2_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_add_delete(dst);
+        return NULL;
+    }
+    of_group_add_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_group_delete
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_delete.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_delete_t *
+of_group_delete_OF_VERSION_1_2_dup(
+    of_group_delete_t *src)
+{
+    of_group_delete_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_delete_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_delete_xid_get(src, &val32);
+    of_group_delete_xid_set(dst, val32);
+
+    of_group_delete_group_type_get(src, &val8);
+    of_group_delete_group_type_set(dst, val8);
+
+    of_group_delete_group_id_get(src, &val32);
+    of_group_delete_group_id_set(dst, val32);
+
+    of_group_delete_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_2_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_delete_delete(dst);
+        return NULL;
+    }
+    of_group_delete_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_group_desc_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -13126,7 +13347,6 @@ of_group_mod_OF_VERSION_1_2_dup(
 {
     of_group_mod_t *dst;
     uint32_t val32;
-    uint16_t val16;
     uint8_t val8;
 
     of_list_bucket_t src_list;
@@ -13138,9 +13358,6 @@ of_group_mod_OF_VERSION_1_2_dup(
 
     of_group_mod_xid_get(src, &val32);
     of_group_mod_xid_set(dst, val32);
-
-    of_group_mod_command_get(src, &val16);
-    of_group_mod_command_set(dst, val16);
 
     of_group_mod_group_type_get(src, &val8);
     of_group_mod_group_type_set(dst, val8);
@@ -13190,6 +13407,51 @@ of_group_mod_failed_error_msg_OF_VERSION_1_2_dup(
 
     of_group_mod_failed_error_msg_data_get(src, &octets);
     of_group_mod_failed_error_msg_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_group_modify
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_modify.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_modify_t *
+of_group_modify_OF_VERSION_1_2_dup(
+    of_group_modify_t *src)
+{
+    of_group_modify_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_modify_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_modify_xid_get(src, &val32);
+    of_group_modify_xid_set(dst, val32);
+
+    of_group_modify_group_type_get(src, &val8);
+    of_group_modify_group_type_set(dst, val8);
+
+    of_group_modify_group_id_get(src, &val32);
+    of_group_modify_group_id_set(dst, val32);
+
+    of_group_modify_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_2_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_modify_delete(dst);
+        return NULL;
+    }
+    of_group_modify_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
 
     return dst;
 }
@@ -22435,6 +22697,96 @@ of_get_config_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_group_add
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_add.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_add_t *
+of_group_add_OF_VERSION_1_3_dup(
+    of_group_add_t *src)
+{
+    of_group_add_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_add_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_add_xid_get(src, &val32);
+    of_group_add_xid_set(dst, val32);
+
+    of_group_add_group_type_get(src, &val8);
+    of_group_add_group_type_set(dst, val8);
+
+    of_group_add_group_id_get(src, &val32);
+    of_group_add_group_id_set(dst, val32);
+
+    of_group_add_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_add_delete(dst);
+        return NULL;
+    }
+    of_group_add_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_group_delete
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_delete.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_delete_t *
+of_group_delete_OF_VERSION_1_3_dup(
+    of_group_delete_t *src)
+{
+    of_group_delete_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_delete_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_delete_xid_get(src, &val32);
+    of_group_delete_xid_set(dst, val32);
+
+    of_group_delete_group_type_get(src, &val8);
+    of_group_delete_group_type_set(dst, val8);
+
+    of_group_delete_group_id_get(src, &val32);
+    of_group_delete_group_id_set(dst, val32);
+
+    of_group_delete_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_delete_delete(dst);
+        return NULL;
+    }
+    of_group_delete_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_group_desc_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -22607,7 +22959,6 @@ of_group_mod_OF_VERSION_1_3_dup(
 {
     of_group_mod_t *dst;
     uint32_t val32;
-    uint16_t val16;
     uint8_t val8;
 
     of_list_bucket_t src_list;
@@ -22619,9 +22970,6 @@ of_group_mod_OF_VERSION_1_3_dup(
 
     of_group_mod_xid_get(src, &val32);
     of_group_mod_xid_set(dst, val32);
-
-    of_group_mod_command_get(src, &val16);
-    of_group_mod_command_set(dst, val16);
 
     of_group_mod_group_type_get(src, &val8);
     of_group_mod_group_type_set(dst, val8);
@@ -22671,6 +23019,51 @@ of_group_mod_failed_error_msg_OF_VERSION_1_3_dup(
 
     of_group_mod_failed_error_msg_data_get(src, &octets);
     of_group_mod_failed_error_msg_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_group_modify
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_group_modify.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_group_modify_t *
+of_group_modify_OF_VERSION_1_3_dup(
+    of_group_modify_t *src)
+{
+    of_group_modify_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t src_list;
+    of_list_bucket_t *dst_list;
+
+    if ((dst = of_group_modify_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_group_modify_xid_get(src, &val32);
+    of_group_modify_xid_set(dst, val32);
+
+    of_group_modify_group_type_get(src, &val8);
+    of_group_modify_group_type_set(dst, val8);
+
+    of_group_modify_group_id_get(src, &val32);
+    of_group_modify_group_id_set(dst, val32);
+
+    of_group_modify_buckets_bind(
+        src, &src_list);
+    dst_list = of_list_bucket_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_group_modify_delete(dst);
+        return NULL;
+    }
+    of_group_modify_buckets_set(dst, dst_list);
+    of_list_bucket_delete(dst_list);
 
     return dst;
 }
@@ -22990,9 +23383,6 @@ of_meter_mod_OF_VERSION_1_3_dup(
 
     of_meter_mod_xid_get(src, &val32);
     of_meter_mod_xid_set(dst, val32);
-
-    of_meter_mod_command_get(src, &val16);
-    of_meter_mod_command_set(dst, val16);
 
     of_meter_mod_flags_get(src, &val16);
     of_meter_mod_flags_set(dst, val16);
@@ -33557,6 +33947,48 @@ of_get_config_request_dup(
     return NULL;
 }
 
+of_group_add_t *
+of_group_add_dup(
+    of_group_add_t *src)
+{
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_group_add_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_group_add_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_group_add_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_group_delete_t *
+of_group_delete_dup(
+    of_group_delete_t *src)
+{
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_group_delete_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_group_delete_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_group_delete_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_group_desc_stats_reply_t *
 of_group_desc_stats_reply_dup(
     of_group_desc_stats_reply_t *src)
@@ -33669,6 +34101,27 @@ of_group_mod_failed_error_msg_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_group_mod_failed_error_msg_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_group_modify_t *
+of_group_modify_dup(
+    of_group_modify_t *src)
+{
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_group_modify_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_group_modify_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_group_modify_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

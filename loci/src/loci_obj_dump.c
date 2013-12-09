@@ -6201,6 +6201,80 @@ of_get_config_request_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_group_add_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_add\n");
+
+    of_group_add_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_add_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_add_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_add_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
+of_group_delete_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_delete\n");
+
+    of_group_delete_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_delete_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_delete_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_delete_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
 of_group_desc_stats_reply_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
 {
     int out = 0;
@@ -6259,7 +6333,6 @@ of_group_mod_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_group_mo
 {
     int out = 0;
     uint32_t val32;
-    uint16_t val16;
     uint8_t val8;
 
     of_list_bucket_t list;
@@ -6271,11 +6344,6 @@ of_group_mod_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_group_mo
     of_group_mod_xid_get(obj, &val32);
     out += writer(cookie, "  xid (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_group_mod_command_get(obj, &val16);
-    out += writer(cookie, "  command (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     of_group_mod_group_type_get(obj, &val8);
@@ -6321,6 +6389,43 @@ of_group_mod_failed_error_msg_OF_VERSION_1_1_dump(loci_writer_f writer, void* co
     out += writer(cookie, "  data (of_octets_t):  ");
     out += LOCI_DUMP_octets(writer, cookie, octets);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_group_modify_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_modify\n");
+
+    of_group_modify_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_modify_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_modify_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_modify_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
 
     return out;
 }
@@ -10800,6 +10905,80 @@ of_get_config_request_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_group_add_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_add\n");
+
+    of_group_add_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_add_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_add_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_add_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
+of_group_delete_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_delete\n");
+
+    of_group_delete_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_delete_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_delete_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_delete_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
 of_group_desc_stats_reply_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
 {
     int out = 0;
@@ -10952,7 +11131,6 @@ of_group_mod_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_group_mo
 {
     int out = 0;
     uint32_t val32;
-    uint16_t val16;
     uint8_t val8;
 
     of_list_bucket_t list;
@@ -10964,11 +11142,6 @@ of_group_mod_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_group_mo
     of_group_mod_xid_get(obj, &val32);
     out += writer(cookie, "  xid (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_group_mod_command_get(obj, &val16);
-    out += writer(cookie, "  command (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     of_group_mod_group_type_get(obj, &val8);
@@ -11014,6 +11187,43 @@ of_group_mod_failed_error_msg_OF_VERSION_1_2_dump(loci_writer_f writer, void* co
     out += writer(cookie, "  data (of_octets_t):  ");
     out += LOCI_DUMP_octets(writer, cookie, octets);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_group_modify_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_modify\n");
+
+    of_group_modify_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_modify_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_modify_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_modify_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
 
     return out;
 }
@@ -17939,6 +18149,80 @@ of_get_config_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_group_add_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_add\n");
+
+    of_group_add_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_add_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_add_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_add_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
+of_group_delete_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_delete\n");
+
+    of_group_delete_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_delete_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_delete_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_delete_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
 of_group_desc_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
 {
     int out = 0;
@@ -18091,7 +18375,6 @@ of_group_mod_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_mo
 {
     int out = 0;
     uint32_t val32;
-    uint16_t val16;
     uint8_t val8;
 
     of_list_bucket_t list;
@@ -18103,11 +18386,6 @@ of_group_mod_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_mo
     of_group_mod_xid_get(obj, &val32);
     out += writer(cookie, "  xid (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_group_mod_command_get(obj, &val16);
-    out += writer(cookie, "  command (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     of_group_mod_group_type_get(obj, &val8);
@@ -18153,6 +18431,43 @@ of_group_mod_failed_error_msg_OF_VERSION_1_3_dump(loci_writer_f writer, void* co
     out += writer(cookie, "  data (of_octets_t):  ");
     out += LOCI_DUMP_octets(writer, cookie, octets);
     out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_group_modify_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+
+    of_list_bucket_t list;
+    of_bucket_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_group_modify\n");
+
+    of_group_modify_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_group_modify_group_type_get(obj, &val8);
+    out += writer(cookie, "  group_type (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_group_modify_group_id_get(obj, &val32);
+    out += writer(cookie, "  group_id (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bucket_t\n");
+    of_group_modify_buckets_bind(obj, &list);
+    OF_LIST_BUCKET_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
 
     return out;
 }
@@ -18394,11 +18709,6 @@ of_meter_mod_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_meter_mo
     of_meter_mod_xid_get(obj, &val32);
     out += writer(cookie, "  xid (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_meter_mod_command_get(obj, &val16);
-    out += writer(cookie, "  command (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
     of_meter_mod_flags_get(obj, &val16);
@@ -24068,6 +24378,9 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_hello_OF_VERSION_1_0_dump,
     of_hello_failed_error_msg_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -24458,12 +24771,15 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_flow_stats_request_OF_VERSION_1_1_dump,
     of_get_config_reply_OF_VERSION_1_1_dump,
     of_get_config_request_OF_VERSION_1_1_dump,
+    of_group_add_OF_VERSION_1_1_dump,
+    of_group_delete_OF_VERSION_1_1_dump,
     of_group_desc_stats_reply_OF_VERSION_1_1_dump,
     of_group_desc_stats_request_OF_VERSION_1_1_dump,
     unknown_dump,
     unknown_dump,
     of_group_mod_OF_VERSION_1_1_dump,
     of_group_mod_failed_error_msg_OF_VERSION_1_1_dump,
+    of_group_modify_OF_VERSION_1_1_dump,
     of_group_stats_reply_OF_VERSION_1_1_dump,
     of_group_stats_request_OF_VERSION_1_1_dump,
     of_hello_OF_VERSION_1_1_dump,
@@ -24856,12 +25172,15 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_flow_stats_request_OF_VERSION_1_2_dump,
     of_get_config_reply_OF_VERSION_1_2_dump,
     of_get_config_request_OF_VERSION_1_2_dump,
+    of_group_add_OF_VERSION_1_2_dump,
+    of_group_delete_OF_VERSION_1_2_dump,
     of_group_desc_stats_reply_OF_VERSION_1_2_dump,
     of_group_desc_stats_request_OF_VERSION_1_2_dump,
     of_group_features_stats_reply_OF_VERSION_1_2_dump,
     of_group_features_stats_request_OF_VERSION_1_2_dump,
     of_group_mod_OF_VERSION_1_2_dump,
     of_group_mod_failed_error_msg_OF_VERSION_1_2_dump,
+    of_group_modify_OF_VERSION_1_2_dump,
     of_group_stats_reply_OF_VERSION_1_2_dump,
     of_group_stats_request_OF_VERSION_1_2_dump,
     of_hello_OF_VERSION_1_2_dump,
@@ -25254,12 +25573,15 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_flow_stats_request_OF_VERSION_1_3_dump,
     of_get_config_reply_OF_VERSION_1_3_dump,
     of_get_config_request_OF_VERSION_1_3_dump,
+    of_group_add_OF_VERSION_1_3_dump,
+    of_group_delete_OF_VERSION_1_3_dump,
     of_group_desc_stats_reply_OF_VERSION_1_3_dump,
     of_group_desc_stats_request_OF_VERSION_1_3_dump,
     of_group_features_stats_reply_OF_VERSION_1_3_dump,
     of_group_features_stats_request_OF_VERSION_1_3_dump,
     of_group_mod_OF_VERSION_1_3_dump,
     of_group_mod_failed_error_msg_OF_VERSION_1_3_dump,
+    of_group_modify_OF_VERSION_1_3_dump,
     of_group_stats_reply_OF_VERSION_1_3_dump,
     of_group_stats_request_OF_VERSION_1_3_dump,
     of_hello_OF_VERSION_1_3_dump,

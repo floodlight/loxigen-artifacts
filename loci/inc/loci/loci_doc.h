@@ -2606,6 +2606,52 @@ typedef struct of_get_config_reply_s of_get_config_reply_t;
 typedef struct of_get_config_request_s of_get_config_request_t;
 
 /**
+ * Structure for of_group_add object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set 
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_group_add_uint32_get_f and _set_f.
+ *
+ * @param group_type_get/set 
+ *   Accessors for group_type, a variable of type uint8.  Functions
+ *   are of type of_group_add_uint8_get_f and _set_f.
+ *
+ * @param group_id_get/set 
+ *   Accessors for group_id, a variable of type uint32.  Functions
+ *   are of type of_group_add_uint32_get_f and _set_f.
+ *
+ * @param buckets_get/set 
+ *   Accessors for buckets, a variable of type of_list_bucket.  Functions
+ *   are of type of_group_add_of_list_bucket_get_f and _set_f.
+ *
+ */
+typedef struct of_group_add_s of_group_add_t;
+
+/**
+ * Structure for of_group_delete object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set 
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_group_delete_uint32_get_f and _set_f.
+ *
+ * @param group_type_get/set 
+ *   Accessors for group_type, a variable of type uint8.  Functions
+ *   are of type of_group_delete_uint8_get_f and _set_f.
+ *
+ * @param group_id_get/set 
+ *   Accessors for group_id, a variable of type uint32.  Functions
+ *   are of type of_group_delete_uint32_get_f and _set_f.
+ *
+ * @param buckets_get/set 
+ *   Accessors for buckets, a variable of type of_list_bucket.  Functions
+ *   are of type of_group_delete_of_list_bucket_get_f and _set_f.
+ *
+ */
+typedef struct of_group_delete_s of_group_delete_t;
+
+/**
  * Structure for of_group_desc_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -2717,10 +2763,6 @@ typedef struct of_group_features_stats_request_s of_group_features_stats_request
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_mod_uint32_get_f and _set_f.
  *
- * @param command_get/set 
- *   Accessors for command, a variable of type uint16.  Functions
- *   are of type of_group_mod_uint16_get_f and _set_f.
- *
  * @param group_type_get/set 
  *   Accessors for group_type, a variable of type uint8.  Functions
  *   are of type of_group_mod_uint8_get_f and _set_f.
@@ -2754,6 +2796,29 @@ typedef struct of_group_mod_s of_group_mod_t;
  *
  */
 typedef struct of_group_mod_failed_error_msg_s of_group_mod_failed_error_msg_t;
+
+/**
+ * Structure for of_group_modify object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set 
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_group_modify_uint32_get_f and _set_f.
+ *
+ * @param group_type_get/set 
+ *   Accessors for group_type, a variable of type uint8.  Functions
+ *   are of type of_group_modify_uint8_get_f and _set_f.
+ *
+ * @param group_id_get/set 
+ *   Accessors for group_id, a variable of type uint32.  Functions
+ *   are of type of_group_modify_uint32_get_f and _set_f.
+ *
+ * @param buckets_get/set 
+ *   Accessors for buckets, a variable of type of_list_bucket.  Functions
+ *   are of type of_group_modify_of_list_bucket_get_f and _set_f.
+ *
+ */
+typedef struct of_group_modify_s of_group_modify_t;
 
 /**
  * Structure for of_group_stats_reply object.  Get/set
@@ -2906,10 +2971,6 @@ typedef struct of_meter_features_stats_request_s of_meter_features_stats_request
  * @param xid_get/set ( OF_1_3).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_mod_uint32_get_f and _set_f.
- *
- * @param command_get/set ( OF_1_3).
- *   Accessors for command, a variable of type uint16.  Functions
- *   are of type of_meter_mod_uint16_get_f and _set_f.
  *
  * @param flags_get/set ( OF_1_3).
  *   Accessors for flags, a variable of type uint16.  Functions

@@ -5309,6 +5309,68 @@ test_of_get_config_request_OF_VERSION_1_1_scalar(void)
 }
 
 static int
+test_of_group_add_OF_VERSION_1_1_scalar(void)
+{
+    of_group_add_t *obj;
+
+    obj = of_group_add_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_add_OF_VERSION_1_1_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
+
+    of_group_add_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_OF_VERSION_1_1_scalar(void)
+{
+    of_group_delete_t *obj;
+
+    obj = of_group_delete_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_delete_OF_VERSION_1_1_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
+
+    of_group_delete_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_OF_VERSION_1_1_scalar(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -5382,19 +5444,6 @@ test_of_group_mod_OF_VERSION_1_1_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_group_mod_OF_VERSION_1_1_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
-
     of_group_mod_delete(obj);
 
     /* To do: Check memory */
@@ -5427,6 +5476,37 @@ test_of_group_mod_failed_error_msg_OF_VERSION_1_1_scalar(void)
     TEST_ASSERT(of_group_mod_failed_error_msg_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_OF_VERSION_1_1_scalar(void)
+{
+    of_group_modify_t *obj;
+
+    obj = of_group_modify_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_modify_OF_VERSION_1_1_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
+
+    of_group_modify_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -9702,6 +9782,68 @@ test_of_get_config_request_OF_VERSION_1_2_scalar(void)
 }
 
 static int
+test_of_group_add_OF_VERSION_1_2_scalar(void)
+{
+    of_group_add_t *obj;
+
+    obj = of_group_add_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_add_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_group_add_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_OF_VERSION_1_2_scalar(void)
+{
+    of_group_delete_t *obj;
+
+    obj = of_group_delete_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_delete_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_group_delete_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_OF_VERSION_1_2_scalar(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -9837,19 +9979,6 @@ test_of_group_mod_OF_VERSION_1_2_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_group_mod_OF_VERSION_1_2_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
-
     of_group_mod_delete(obj);
 
     /* To do: Check memory */
@@ -9882,6 +10011,37 @@ test_of_group_mod_failed_error_msg_OF_VERSION_1_2_scalar(void)
     TEST_ASSERT(of_group_mod_failed_error_msg_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_OF_VERSION_1_2_scalar(void)
+{
+    of_group_modify_t *obj;
+
+    obj = of_group_modify_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_modify_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_group_modify_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -17448,6 +17608,68 @@ test_of_get_config_request_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_group_add_OF_VERSION_1_3_scalar(void)
+{
+    of_group_add_t *obj;
+
+    obj = of_group_add_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_add_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_add_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_group_add_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_delete_OF_VERSION_1_3_scalar(void)
+{
+    of_group_delete_t *obj;
+
+    obj = of_group_delete_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_delete_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_delete_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_group_delete_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_group_desc_stats_reply_OF_VERSION_1_3_scalar(void)
 {
     of_group_desc_stats_reply_t *obj;
@@ -17583,19 +17805,6 @@ test_of_group_mod_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_group_mod_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_group_mod_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
-
     of_group_mod_delete(obj);
 
     /* To do: Check memory */
@@ -17628,6 +17837,37 @@ test_of_group_mod_failed_error_msg_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_group_mod_failed_error_msg_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_group_mod_failed_error_msg_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_group_modify_OF_VERSION_1_3_scalar(void)
+{
+    of_group_modify_t *obj;
+
+    obj = of_group_modify_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_group_modify_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_group_modify_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_group_modify_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -25460,10 +25700,13 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_1_scalar);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_1_scalar);
     RUN_TEST(of_get_config_request_OF_VERSION_1_1_scalar);
+    RUN_TEST(of_group_add_OF_VERSION_1_1_scalar);
+    RUN_TEST(of_group_delete_OF_VERSION_1_1_scalar);
     RUN_TEST(of_group_desc_stats_reply_OF_VERSION_1_1_scalar);
     RUN_TEST(of_group_desc_stats_request_OF_VERSION_1_1_scalar);
     RUN_TEST(of_group_mod_OF_VERSION_1_1_scalar);
     RUN_TEST(of_group_mod_failed_error_msg_OF_VERSION_1_1_scalar);
+    RUN_TEST(of_group_modify_OF_VERSION_1_1_scalar);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_1_scalar);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_1_scalar);
     RUN_TEST(of_hello_OF_VERSION_1_1_scalar);
@@ -25615,12 +25858,15 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_2_scalar);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_2_scalar);
     RUN_TEST(of_get_config_request_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_group_add_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_group_delete_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_desc_stats_reply_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_desc_stats_request_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_features_stats_reply_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_features_stats_request_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_mod_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_mod_failed_error_msg_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_group_modify_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_2_scalar);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_2_scalar);
     RUN_TEST(of_hello_OF_VERSION_1_2_scalar);
@@ -25879,12 +26125,15 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_get_config_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_group_add_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_group_delete_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_desc_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_desc_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_features_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_features_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_mod_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_mod_failed_error_msg_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_group_modify_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_hello_OF_VERSION_1_3_scalar);
