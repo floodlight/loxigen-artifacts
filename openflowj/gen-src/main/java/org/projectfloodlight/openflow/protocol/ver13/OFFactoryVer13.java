@@ -11,8 +11,10 @@ package org.projectfloodlight.openflow.protocol.ver13;
 
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
+import org.projectfloodlight.openflow.protocol.actionid.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
+import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
@@ -676,13 +678,80 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFRoleRequestFailedErrorMsgVer13.Builder().setXid(nextXid());
     }
 
-    public OFActionId.Builder buildActionId() {
-        return new OFActionIdVer13.Builder();
+    public OFActionIdBsnMirror actionIdBsnMirror() {
+        return OFActionIdBsnMirrorVer13.INSTANCE;
     }
-    public OFActionId actionId(OFActionType type) {
-        return new OFActionIdVer13(
-                type
-                    );
+
+    public OFActionIdBsnSetTunnelDst actionIdBsnSetTunnelDst() {
+        return OFActionIdBsnSetTunnelDstVer13.INSTANCE;
+    }
+
+    public OFActionIdCopyTtlIn actionIdCopyTtlIn() {
+        return OFActionIdCopyTtlInVer13.INSTANCE;
+    }
+
+    public OFActionIdCopyTtlOut actionIdCopyTtlOut() {
+        return OFActionIdCopyTtlOutVer13.INSTANCE;
+    }
+
+    public OFActionIdDecMplsTtl actionIdDecMplsTtl() {
+        return OFActionIdDecMplsTtlVer13.INSTANCE;
+    }
+
+    public OFActionIdDecNwTtl actionIdDecNwTtl() {
+        return OFActionIdDecNwTtlVer13.INSTANCE;
+    }
+
+    public OFActionIdGroup actionIdGroup() {
+        return OFActionIdGroupVer13.INSTANCE;
+    }
+
+    public OFActionIdNiciraDecTtl actionIdNiciraDecTtl() {
+        return OFActionIdNiciraDecTtlVer13.INSTANCE;
+    }
+
+    public OFActionIdOutput actionIdOutput() {
+        return OFActionIdOutputVer13.INSTANCE;
+    }
+
+    public OFActionIdPopMpls actionIdPopMpls() {
+        return OFActionIdPopMplsVer13.INSTANCE;
+    }
+
+    public OFActionIdPopPbb actionIdPopPbb() {
+        return OFActionIdPopPbbVer13.INSTANCE;
+    }
+
+    public OFActionIdPopVlan actionIdPopVlan() {
+        return OFActionIdPopVlanVer13.INSTANCE;
+    }
+
+    public OFActionIdPushMpls actionIdPushMpls() {
+        return OFActionIdPushMplsVer13.INSTANCE;
+    }
+
+    public OFActionIdPushPbb actionIdPushPbb() {
+        return OFActionIdPushPbbVer13.INSTANCE;
+    }
+
+    public OFActionIdPushVlan actionIdPushVlan() {
+        return OFActionIdPushVlanVer13.INSTANCE;
+    }
+
+    public OFActionIdSetField actionIdSetField() {
+        return OFActionIdSetFieldVer13.INSTANCE;
+    }
+
+    public OFActionIdSetMplsTtl actionIdSetMplsTtl() {
+        return OFActionIdSetMplsTtlVer13.INSTANCE;
+    }
+
+    public OFActionIdSetNwTtl actionIdSetNwTtl() {
+        return OFActionIdSetNwTtlVer13.INSTANCE;
+    }
+
+    public OFActionIdSetQueue actionIdSetQueue() {
+        return OFActionIdSetQueueVer13.INSTANCE;
     }
 
     public OFAsyncGetReply.Builder buildAsyncGetReply() {
@@ -888,6 +957,34 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFHelloElemVersionbitmapVer13(
                 bitmaps
                     );
+    }
+
+    public OFInstructionIdApplyActions instructionIdApplyActions() {
+        return OFInstructionIdApplyActionsVer13.INSTANCE;
+    }
+
+    public OFInstructionIdBsnDisableSrcMacCheck instructionIdBsnDisableSrcMacCheck() {
+        return OFInstructionIdBsnDisableSrcMacCheckVer13.INSTANCE;
+    }
+
+    public OFInstructionIdClearActions instructionIdClearActions() {
+        return OFInstructionIdClearActionsVer13.INSTANCE;
+    }
+
+    public OFInstructionIdGotoTable instructionIdGotoTable() {
+        return OFInstructionIdGotoTableVer13.INSTANCE;
+    }
+
+    public OFInstructionIdMeter instructionIdMeter() {
+        return OFInstructionIdMeterVer13.INSTANCE;
+    }
+
+    public OFInstructionIdWriteActions instructionIdWriteActions() {
+        return OFInstructionIdWriteActionsVer13.INSTANCE;
+    }
+
+    public OFInstructionIdWriteMetadata instructionIdWriteMetadata() {
+        return OFInstructionIdWriteMetadataVer13.INSTANCE;
     }
 
     public OFMeterBandStats.Builder buildMeterBandStats() {

@@ -24013,7 +24013,7 @@ test_of_action_id_bsn_OF_VERSION_1_3(void)
     obj = of_action_id_bsn_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_BSN);
 
@@ -24030,7 +24030,7 @@ test_of_action_id_bsn_mirror_OF_VERSION_1_3(void)
     obj = of_action_id_bsn_mirror_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->length == 15);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_BSN_MIRROR);
 
@@ -24038,7 +24038,7 @@ test_of_action_id_bsn_mirror_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 12);
+        TEST_ASSERT(length == 15);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24296,7 +24296,7 @@ test_of_action_id_group_OF_VERSION_1_3(void)
     obj = of_action_id_group_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_GROUP);
 
@@ -24304,7 +24304,7 @@ test_of_action_id_group_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24351,7 +24351,7 @@ test_of_action_id_nicira_OF_VERSION_1_3(void)
     obj = of_action_id_nicira_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA);
 
@@ -24368,7 +24368,7 @@ test_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_nicira_dec_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_DEC_TTL);
 
@@ -24376,7 +24376,7 @@ test_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 10);
+        TEST_ASSERT(length == 16);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24406,7 +24406,7 @@ test_of_action_id_output_OF_VERSION_1_3(void)
     obj = of_action_id_output_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 10);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_OUTPUT);
 
@@ -24414,7 +24414,7 @@ test_of_action_id_output_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 10);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24444,7 +24444,7 @@ test_of_action_id_pop_mpls_OF_VERSION_1_3(void)
     obj = of_action_id_pop_mpls_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 6);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_POP_MPLS);
 
@@ -24452,7 +24452,7 @@ test_of_action_id_pop_mpls_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 6);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24558,7 +24558,7 @@ test_of_action_id_push_mpls_OF_VERSION_1_3(void)
     obj = of_action_id_push_mpls_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 6);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_PUSH_MPLS);
 
@@ -24566,7 +24566,7 @@ test_of_action_id_push_mpls_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 6);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24596,7 +24596,7 @@ test_of_action_id_push_pbb_OF_VERSION_1_3(void)
     obj = of_action_id_push_pbb_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 6);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_PUSH_PBB);
 
@@ -24604,7 +24604,7 @@ test_of_action_id_push_pbb_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 6);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24634,7 +24634,7 @@ test_of_action_id_push_vlan_OF_VERSION_1_3(void)
     obj = of_action_id_push_vlan_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 6);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_PUSH_VLAN);
 
@@ -24642,7 +24642,7 @@ test_of_action_id_push_vlan_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 6);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24672,7 +24672,7 @@ test_of_action_id_set_field_OF_VERSION_1_3(void)
     obj = of_action_id_set_field_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_SET_FIELD);
 
@@ -24680,7 +24680,7 @@ test_of_action_id_set_field_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24710,7 +24710,7 @@ test_of_action_id_set_mpls_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_set_mpls_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 7);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_SET_MPLS_TTL);
 
@@ -24718,7 +24718,7 @@ test_of_action_id_set_mpls_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 7);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24748,7 +24748,7 @@ test_of_action_id_set_nw_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_set_nw_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 7);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_SET_NW_TTL);
 
@@ -24756,7 +24756,7 @@ test_of_action_id_set_nw_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 7);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24786,7 +24786,7 @@ test_of_action_id_set_queue_OF_VERSION_1_3(void)
     obj = of_action_id_set_queue_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_SET_QUEUE);
 
@@ -24794,7 +24794,7 @@ test_of_action_id_set_queue_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -26012,6 +26012,365 @@ test_of_instruction_header_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_HEADER);
 
     of_instruction_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_apply_actions_OF_VERSION_1_3(void)
+{
+    of_instruction_id_apply_actions_t *obj;
+    obj = of_instruction_id_apply_actions_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_APPLY_ACTIONS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_apply_actions_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_apply_actions_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_apply_actions_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_bsn_OF_VERSION_1_3(void)
+{
+    of_instruction_id_bsn_t *obj;
+    obj = of_instruction_id_bsn_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_BSN);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_bsn_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_bsn_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_bsn_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(void)
+{
+    of_instruction_id_bsn_disable_src_mac_check_t *obj;
+    obj = of_instruction_id_bsn_disable_src_mac_check_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_bsn_disable_src_mac_check_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_clear_actions_OF_VERSION_1_3(void)
+{
+    of_instruction_id_clear_actions_t *obj;
+    obj = of_instruction_id_clear_actions_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_clear_actions_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_clear_actions_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_clear_actions_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_experimenter_OF_VERSION_1_3(void)
+{
+    of_instruction_id_experimenter_t *obj;
+    obj = of_instruction_id_experimenter_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_EXPERIMENTER);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_EXPERIMENTER);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_experimenter_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_experimenter_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_experimenter_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_goto_table_OF_VERSION_1_3(void)
+{
+    of_instruction_id_goto_table_t *obj;
+    obj = of_instruction_id_goto_table_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 7);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_GOTO_TABLE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 7);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_GOTO_TABLE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_goto_table_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_goto_table_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_goto_table_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_header_OF_VERSION_1_3(void)
+{
+    of_instruction_id_header_t *obj;
+    obj = of_instruction_id_header_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_HEADER);
+
+    of_instruction_id_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_meter_OF_VERSION_1_3(void)
+{
+    of_instruction_id_meter_t *obj;
+    obj = of_instruction_id_meter_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_METER);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_METER);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_meter_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_meter_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_meter_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_write_actions_OF_VERSION_1_3(void)
+{
+    of_instruction_id_write_actions_t *obj;
+    obj = of_instruction_id_write_actions_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_WRITE_ACTIONS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_write_actions_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_write_actions_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_write_actions_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_write_metadata_OF_VERSION_1_3(void)
+{
+    of_instruction_id_write_metadata_t *obj;
+    obj = of_instruction_id_write_metadata_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_WRITE_METADATA);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_WRITE_METADATA);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_write_metadata_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_write_metadata_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_write_metadata_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -32630,6 +32989,16 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_instruction_experimenter_OF_VERSION_1_3);
     RUN_TEST(of_instruction_goto_table_OF_VERSION_1_3);
     RUN_TEST(of_instruction_header_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_apply_actions_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_bsn_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_clear_actions_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_experimenter_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_goto_table_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_header_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_meter_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_write_actions_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_write_metadata_OF_VERSION_1_3);
     RUN_TEST(of_instruction_meter_OF_VERSION_1_3);
     RUN_TEST(of_instruction_write_actions_OF_VERSION_1_3);
     RUN_TEST(of_instruction_write_metadata_OF_VERSION_1_3);

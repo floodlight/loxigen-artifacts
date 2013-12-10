@@ -3828,6 +3828,14 @@ typedef struct of_action_id_s of_action_id_t;
  * Structure for of_action_id_bsn object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_bsn_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_action_id_bsn_uint32_get_f and _set_f.
+ *
  */
 typedef struct of_action_id_bsn_s of_action_id_bsn_t;
 
@@ -3893,6 +3901,10 @@ typedef struct of_action_id_dec_nw_ttl_s of_action_id_dec_nw_ttl_t;
  * Structure for of_action_id_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_experimenter_uint32_get_f and _set_f.
+ *
  */
 typedef struct of_action_id_experimenter_s of_action_id_experimenter_t;
 
@@ -3913,6 +3925,14 @@ typedef struct of_action_id_header_s of_action_id_header_t;
 /**
  * Structure for of_action_id_nicira object.  Get/set
  * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_nicira_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint16.  Functions
+ *   are of type of_action_id_nicira_uint16_get_f and _set_f.
  *
  */
 typedef struct of_action_id_nicira_s of_action_id_nicira_t;
@@ -4748,6 +4768,103 @@ typedef struct of_instruction_goto_table_s of_instruction_goto_table_t;
  *
  */
 typedef struct of_instruction_header_s of_instruction_header_t;
+
+/**
+ * Structure for of_instruction_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_s of_instruction_id_t;
+
+/**
+ * Structure for of_instruction_id_apply_actions object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_apply_actions_s of_instruction_id_apply_actions_t;
+
+/**
+ * Structure for of_instruction_id_bsn object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_s of_instruction_id_bsn_t;
+
+/**
+ * Structure for of_instruction_id_bsn_disable_src_mac_check object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_disable_src_mac_check_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_disable_src_mac_check_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_disable_src_mac_check_s of_instruction_id_bsn_disable_src_mac_check_t;
+
+/**
+ * Structure for of_instruction_id_clear_actions object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_clear_actions_s of_instruction_id_clear_actions_t;
+
+/**
+ * Structure for of_instruction_id_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_experimenter_s of_instruction_id_experimenter_t;
+
+/**
+ * Structure for of_instruction_id_goto_table object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_goto_table_s of_instruction_id_goto_table_t;
+
+/**
+ * Structure for of_instruction_id_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_header_s of_instruction_id_header_t;
+
+/**
+ * Structure for of_instruction_id_meter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_meter_s of_instruction_id_meter_t;
+
+/**
+ * Structure for of_instruction_id_write_actions object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_write_actions_s of_instruction_id_write_actions_t;
+
+/**
+ * Structure for of_instruction_id_write_metadata object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_instruction_id_write_metadata_s of_instruction_id_write_metadata_t;
 
 /**
  * Structure for of_instruction_meter object.  Get/set

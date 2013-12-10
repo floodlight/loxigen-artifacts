@@ -12,6 +12,8 @@ import common
 import action
 import instruction
 import oxm
+import action_id
+import instruction_id
 import meter_band
 
 def pretty_mac(mac):

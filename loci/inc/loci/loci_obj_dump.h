@@ -770,6 +770,16 @@ int of_instruction_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void*
 int of_instruction_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj);
 int of_instruction_goto_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_goto_table_t *obj);
 int of_instruction_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_header_t *obj);
+int of_instruction_id_apply_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_apply_actions_t *obj);
+int of_instruction_id_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_t *obj);
+int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_src_mac_check_t *obj);
+int of_instruction_id_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_clear_actions_t *obj);
+int of_instruction_id_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_experimenter_t *obj);
+int of_instruction_id_goto_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_goto_table_t *obj);
+int of_instruction_id_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_header_t *obj);
+int of_instruction_id_meter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_meter_t *obj);
+int of_instruction_id_write_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_write_actions_t *obj);
+int of_instruction_id_write_metadata_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_write_metadata_t *obj);
 int of_instruction_meter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_meter_t *obj);
 int of_instruction_write_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_write_actions_t *obj);
 int of_instruction_write_metadata_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_write_metadata_t *obj);

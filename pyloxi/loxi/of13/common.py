@@ -13,53 +13,11 @@ import common
 import action
 import instruction
 import oxm
+import action_id
+import instruction_id
 import meter_band
 import util
 import loxi.generic_util
-
-class action_id(loxi.OFObject):
-
-    def __init__(self, type=None):
-        if type != None:
-            self.type = type
-        else:
-            self.type = 0
-        return
-
-    def pack(self):
-        packed = []
-        packed.append(struct.pack("!H", self.type))
-        packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append('\x00' * 4)
-        length = sum([len(x) for x in packed])
-        packed[1] = struct.pack("!H", length)
-        return ''.join(packed)
-
-    @staticmethod
-    def unpack(reader):
-        obj = action_id()
-        obj.type = reader.read("!H")[0]
-        _len = reader.read("!H")[0]
-        orig_reader = reader
-        reader = orig_reader.slice(_len - (2 + 2))
-        reader.skip(4)
-        return obj
-
-    def __eq__(self, other):
-        if type(self) != type(other): return False
-        if self.type != other.type: return False
-        return True
-
-    def pretty_print(self, q):
-        q.text("action_id {")
-        with q.group():
-            with q.indent(2):
-                q.breakable()
-                q.text("type = ");
-                q.text("%#x" % self.type)
-            q.breakable()
-        q.text('}')
-
 
 class bsn_interface(loxi.OFObject):
 
@@ -2037,7 +1995,7 @@ class table_feature_prop_apply_actions(table_feature_prop):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, common.action_id.unpack)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
         return obj
 
     def __eq__(self, other):
@@ -2084,7 +2042,7 @@ class table_feature_prop_apply_actions_miss(table_feature_prop):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, common.action_id.unpack)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
         return obj
 
     def __eq__(self, other):
@@ -2574,7 +2532,7 @@ class table_feature_prop_write_actions(table_feature_prop):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, common.action_id.unpack)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
         return obj
 
     def __eq__(self, other):
@@ -2621,7 +2579,7 @@ class table_feature_prop_write_actions_miss(table_feature_prop):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
-        obj.action_ids = loxi.generic_util.unpack_list(reader, common.action_id.unpack)
+        obj.action_ids = loxi.generic_util.unpack_list(reader, action_id.action_id.unpack)
         return obj
 
     def __eq__(self, other):

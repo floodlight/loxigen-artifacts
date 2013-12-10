@@ -25078,10 +25078,17 @@ of_action_id_bsn_OF_VERSION_1_3_dup(
     of_action_id_bsn_t *src)
 {
     of_action_id_bsn_t *dst;
+    uint32_t val32;
 
     if ((dst = of_action_id_bsn_new(src->version)) == NULL) {
         return NULL;
     }
+
+    of_action_id_bsn_experimenter_get(src, &val32);
+    of_action_id_bsn_experimenter_set(dst, val32);
+
+    of_action_id_bsn_subtype_get(src, &val32);
+    of_action_id_bsn_subtype_set(dst, val32);
 
     return dst;
 }
@@ -25239,10 +25246,14 @@ of_action_id_experimenter_OF_VERSION_1_3_dup(
     of_action_id_experimenter_t *src)
 {
     of_action_id_experimenter_t *dst;
+    uint32_t val32;
 
     if ((dst = of_action_id_experimenter_new(src->version)) == NULL) {
         return NULL;
     }
+
+    of_action_id_experimenter_experimenter_get(src, &val32);
+    of_action_id_experimenter_experimenter_set(dst, val32);
 
     return dst;
 }
@@ -25302,10 +25313,18 @@ of_action_id_nicira_OF_VERSION_1_3_dup(
     of_action_id_nicira_t *src)
 {
     of_action_id_nicira_t *dst;
+    uint32_t val32;
+    uint16_t val16;
 
     if ((dst = of_action_id_nicira_new(src->version)) == NULL) {
         return NULL;
     }
+
+    of_action_id_nicira_experimenter_get(src, &val32);
+    of_action_id_nicira_experimenter_set(dst, val32);
+
+    of_action_id_nicira_subtype_get(src, &val16);
+    of_action_id_nicira_subtype_set(dst, val16);
 
     return dst;
 }
@@ -26790,6 +26809,294 @@ of_instruction_header_OF_VERSION_1_3_dup(
     of_instruction_header_t *dst;
 
     if ((dst = of_instruction_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a super class object of type of_instruction_id
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_t *
+of_instruction_id_OF_VERSION_1_3_dup(
+    of_instruction_id_t *src)
+{
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return (of_instruction_id_t *)of_instruction_id_clear_actions_OF_VERSION_1_3_dup(
+            &src->clear_actions);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
+        return (of_instruction_id_t *)of_instruction_id_write_actions_OF_VERSION_1_3_dup(
+            &src->write_actions);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
+        return (of_instruction_id_t *)of_instruction_id_apply_actions_OF_VERSION_1_3_dup(
+            &src->apply_actions);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_METER) {
+        return (of_instruction_id_t *)of_instruction_id_meter_OF_VERSION_1_3_dup(
+            &src->meter);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_OF_VERSION_1_3_dup(
+            &src->bsn);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_EXPERIMENTER) {
+        return (of_instruction_id_t *)of_instruction_id_experimenter_OF_VERSION_1_3_dup(
+            &src->experimenter);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return (of_instruction_id_t *)of_instruction_id_write_metadata_OF_VERSION_1_3_dup(
+            &src->write_metadata);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
+        return (of_instruction_id_t *)of_instruction_id_goto_table_OF_VERSION_1_3_dup(
+            &src->goto_table);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
+            &src->bsn_disable_src_mac_check);
+    }
+
+    return NULL;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_apply_actions
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_apply_actions.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_apply_actions_t *
+of_instruction_id_apply_actions_OF_VERSION_1_3_dup(
+    of_instruction_id_apply_actions_t *src)
+{
+    of_instruction_id_apply_actions_t *dst;
+
+    if ((dst = of_instruction_id_apply_actions_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_t *
+of_instruction_id_bsn_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_t *src)
+{
+    of_instruction_id_bsn_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_experimenter_get(src, &val32);
+    of_instruction_id_bsn_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_subtype_get(src, &val32);
+    of_instruction_id_bsn_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_disable_src_mac_check
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_disable_src_mac_check.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_disable_src_mac_check_t *
+of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_disable_src_mac_check_t *src)
+{
+    of_instruction_id_bsn_disable_src_mac_check_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_disable_src_mac_check_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_disable_src_mac_check_experimenter_get(src, &val32);
+    of_instruction_id_bsn_disable_src_mac_check_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_disable_src_mac_check_subtype_get(src, &val32);
+    of_instruction_id_bsn_disable_src_mac_check_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_clear_actions
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_clear_actions.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_clear_actions_t *
+of_instruction_id_clear_actions_OF_VERSION_1_3_dup(
+    of_instruction_id_clear_actions_t *src)
+{
+    of_instruction_id_clear_actions_t *dst;
+
+    if ((dst = of_instruction_id_clear_actions_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_experimenter
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_experimenter.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_experimenter_t *
+of_instruction_id_experimenter_OF_VERSION_1_3_dup(
+    of_instruction_id_experimenter_t *src)
+{
+    of_instruction_id_experimenter_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_experimenter_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_experimenter_experimenter_get(src, &val32);
+    of_instruction_id_experimenter_experimenter_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_goto_table
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_goto_table.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_goto_table_t *
+of_instruction_id_goto_table_OF_VERSION_1_3_dup(
+    of_instruction_id_goto_table_t *src)
+{
+    of_instruction_id_goto_table_t *dst;
+
+    if ((dst = of_instruction_id_goto_table_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_header
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_header.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_header_t *
+of_instruction_id_header_OF_VERSION_1_3_dup(
+    of_instruction_id_header_t *src)
+{
+    of_instruction_id_header_t *dst;
+
+    if ((dst = of_instruction_id_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_meter
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_meter.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_meter_t *
+of_instruction_id_meter_OF_VERSION_1_3_dup(
+    of_instruction_id_meter_t *src)
+{
+    of_instruction_id_meter_t *dst;
+
+    if ((dst = of_instruction_id_meter_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_write_actions
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_write_actions.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_write_actions_t *
+of_instruction_id_write_actions_OF_VERSION_1_3_dup(
+    of_instruction_id_write_actions_t *src)
+{
+    of_instruction_id_write_actions_t *dst;
+
+    if ((dst = of_instruction_id_write_actions_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_write_metadata
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_write_metadata.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_write_metadata_t *
+of_instruction_id_write_metadata_OF_VERSION_1_3_dup(
+    of_instruction_id_write_metadata_t *src)
+{
+    of_instruction_id_write_metadata_t *dst;
+
+    if ((dst = of_instruction_id_write_metadata_new(src->version)) == NULL) {
         return NULL;
     }
 
@@ -36517,6 +36824,149 @@ of_instruction_header_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_instruction_header_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_t *
+of_instruction_id_dup(
+    of_instruction_id_t *src)
+{
+
+    if (src->header.version == OF_VERSION_1_3) {
+        return of_instruction_id_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_apply_actions_t *
+of_instruction_id_apply_actions_dup(
+    of_instruction_id_apply_actions_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_apply_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_t *
+of_instruction_id_bsn_dup(
+    of_instruction_id_bsn_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_disable_src_mac_check_t *
+of_instruction_id_bsn_disable_src_mac_check_dup(
+    of_instruction_id_bsn_disable_src_mac_check_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_clear_actions_t *
+of_instruction_id_clear_actions_dup(
+    of_instruction_id_clear_actions_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_experimenter_t *
+of_instruction_id_experimenter_dup(
+    of_instruction_id_experimenter_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_experimenter_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_goto_table_t *
+of_instruction_id_goto_table_dup(
+    of_instruction_id_goto_table_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_goto_table_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_header_t *
+of_instruction_id_header_dup(
+    of_instruction_id_header_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_header_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_meter_t *
+of_instruction_id_meter_dup(
+    of_instruction_id_meter_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_meter_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_write_actions_t *
+of_instruction_id_write_actions_dup(
+    of_instruction_id_write_actions_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_write_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_write_metadata_t *
+of_instruction_id_write_metadata_dup(
+    of_instruction_id_write_metadata_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

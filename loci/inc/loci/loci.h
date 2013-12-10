@@ -121,6 +121,7 @@ typedef union of_bsn_vport_u of_bsn_vport_t;
 typedef union of_table_feature_prop_u of_table_feature_prop_t;
 typedef union of_action_u of_action_t;
 typedef union of_instruction_u of_instruction_t;
+typedef union of_instruction_id_u of_instruction_id_t;
 typedef union of_meter_band_u of_meter_band_t;
 typedef union of_action_id_u of_action_id_t;
 typedef union of_oxm_u of_oxm_t;
@@ -354,6 +355,16 @@ typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
 typedef of_object_t of_instruction_goto_table_t;
 typedef of_object_t of_instruction_header_t;
+typedef of_object_t of_instruction_id_apply_actions_t;
+typedef of_object_t of_instruction_id_bsn_t;
+typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
+typedef of_object_t of_instruction_id_clear_actions_t;
+typedef of_object_t of_instruction_id_experimenter_t;
+typedef of_object_t of_instruction_id_goto_table_t;
+typedef of_object_t of_instruction_id_header_t;
+typedef of_object_t of_instruction_id_meter_t;
+typedef of_object_t of_instruction_id_write_actions_t;
+typedef of_object_t of_instruction_id_write_metadata_t;
 typedef of_object_t of_instruction_meter_t;
 typedef of_object_t of_instruction_write_actions_t;
 typedef of_object_t of_instruction_write_metadata_t;
@@ -3073,6 +3084,83 @@ extern of_instruction_header_t *
     of_instruction_header_new_tracking(version, \
         __FILE__, __LINE__)
 
+extern of_instruction_id_t *
+    of_instruction_id_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_new(version) \
+    of_instruction_id_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_apply_actions_t *
+    of_instruction_id_apply_actions_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_apply_actions_new(version) \
+    of_instruction_id_apply_actions_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_bsn_t *
+    of_instruction_id_bsn_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_bsn_new(version) \
+    of_instruction_id_bsn_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_bsn_disable_src_mac_check_t *
+    of_instruction_id_bsn_disable_src_mac_check_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_bsn_disable_src_mac_check_new(version) \
+    of_instruction_id_bsn_disable_src_mac_check_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_clear_actions_t *
+    of_instruction_id_clear_actions_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_clear_actions_new(version) \
+    of_instruction_id_clear_actions_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_experimenter_t *
+    of_instruction_id_experimenter_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_experimenter_new(version) \
+    of_instruction_id_experimenter_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_goto_table_t *
+    of_instruction_id_goto_table_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_goto_table_new(version) \
+    of_instruction_id_goto_table_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_header_t *
+    of_instruction_id_header_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_header_new(version) \
+    of_instruction_id_header_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_meter_t *
+    of_instruction_id_meter_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_meter_new(version) \
+    of_instruction_id_meter_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_write_actions_t *
+    of_instruction_id_write_actions_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_write_actions_new(version) \
+    of_instruction_id_write_actions_new_tracking(version, \
+        __FILE__, __LINE__)
+
+extern of_instruction_id_write_metadata_t *
+    of_instruction_id_write_metadata_new_tracking(of_version_t version,
+        const char *file, int line);
+#define of_instruction_id_write_metadata_new(version) \
+    of_instruction_id_write_metadata_new_tracking(version, \
+        __FILE__, __LINE__)
+
 extern of_instruction_meter_t *
     of_instruction_meter_new_tracking(of_version_t version,
         const char *file, int line);
@@ -5205,6 +5293,39 @@ extern of_list_uint8_t *
 #define of_instruction_header_new(version) \
     of_instruction_header_new_(version)
 
+#define of_instruction_id_new(version) \
+    of_instruction_id_new_(version)
+
+#define of_instruction_id_apply_actions_new(version) \
+    of_instruction_id_apply_actions_new_(version)
+
+#define of_instruction_id_bsn_new(version) \
+    of_instruction_id_bsn_new_(version)
+
+#define of_instruction_id_bsn_disable_src_mac_check_new(version) \
+    of_instruction_id_bsn_disable_src_mac_check_new_(version)
+
+#define of_instruction_id_clear_actions_new(version) \
+    of_instruction_id_clear_actions_new_(version)
+
+#define of_instruction_id_experimenter_new(version) \
+    of_instruction_id_experimenter_new_(version)
+
+#define of_instruction_id_goto_table_new(version) \
+    of_instruction_id_goto_table_new_(version)
+
+#define of_instruction_id_header_new(version) \
+    of_instruction_id_header_new_(version)
+
+#define of_instruction_id_meter_new(version) \
+    of_instruction_id_meter_new_(version)
+
+#define of_instruction_id_write_actions_new(version) \
+    of_instruction_id_write_actions_new_(version)
+
+#define of_instruction_id_write_metadata_new(version) \
+    of_instruction_id_write_metadata_new_(version)
+
 #define of_instruction_meter_new(version) \
     of_instruction_meter_new_(version)
 
@@ -7150,6 +7271,61 @@ extern of_instruction_header_t *
     of_instruction_header_new_(of_version_t version);
 extern void of_instruction_header_init(
     of_instruction_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_t *
+    of_instruction_id_new_(of_version_t version);
+extern void of_instruction_id_init(
+    of_instruction_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_apply_actions_t *
+    of_instruction_id_apply_actions_new_(of_version_t version);
+extern void of_instruction_id_apply_actions_init(
+    of_instruction_id_apply_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_t *
+    of_instruction_id_bsn_new_(of_version_t version);
+extern void of_instruction_id_bsn_init(
+    of_instruction_id_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_disable_src_mac_check_t *
+    of_instruction_id_bsn_disable_src_mac_check_new_(of_version_t version);
+extern void of_instruction_id_bsn_disable_src_mac_check_init(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_clear_actions_t *
+    of_instruction_id_clear_actions_new_(of_version_t version);
+extern void of_instruction_id_clear_actions_init(
+    of_instruction_id_clear_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_experimenter_t *
+    of_instruction_id_experimenter_new_(of_version_t version);
+extern void of_instruction_id_experimenter_init(
+    of_instruction_id_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_goto_table_t *
+    of_instruction_id_goto_table_new_(of_version_t version);
+extern void of_instruction_id_goto_table_init(
+    of_instruction_id_goto_table_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_header_t *
+    of_instruction_id_header_new_(of_version_t version);
+extern void of_instruction_id_header_init(
+    of_instruction_id_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_meter_t *
+    of_instruction_id_meter_new_(of_version_t version);
+extern void of_instruction_id_meter_init(
+    of_instruction_id_meter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_write_actions_t *
+    of_instruction_id_write_actions_new_(of_version_t version);
+extern void of_instruction_id_write_actions_init(
+    of_instruction_id_write_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_write_metadata_t *
+    of_instruction_id_write_metadata_new_(of_version_t version);
+extern void of_instruction_id_write_metadata_init(
+    of_instruction_id_write_metadata_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_meter_t *
     of_instruction_meter_new_(of_version_t version);
@@ -10533,6 +10709,127 @@ of_instruction_goto_table_delete(of_instruction_goto_table_t *obj) {
  */
 static inline void
 of_instruction_header_delete(of_instruction_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_t
+ * @param obj An instance of type of_instruction_id_t
+ *
+ * \ingroup of_instruction_id
+ */
+static inline void
+of_instruction_id_delete(of_instruction_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_apply_actions_t
+ * @param obj An instance of type of_instruction_id_apply_actions_t
+ *
+ * \ingroup of_instruction_id_apply_actions
+ */
+static inline void
+of_instruction_id_apply_actions_delete(of_instruction_id_apply_actions_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_t
+ * @param obj An instance of type of_instruction_id_bsn_t
+ *
+ * \ingroup of_instruction_id_bsn
+ */
+static inline void
+of_instruction_id_bsn_delete(of_instruction_id_bsn_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_disable_src_mac_check_t
+ * @param obj An instance of type of_instruction_id_bsn_disable_src_mac_check_t
+ *
+ * \ingroup of_instruction_id_bsn_disable_src_mac_check
+ */
+static inline void
+of_instruction_id_bsn_disable_src_mac_check_delete(of_instruction_id_bsn_disable_src_mac_check_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_clear_actions_t
+ * @param obj An instance of type of_instruction_id_clear_actions_t
+ *
+ * \ingroup of_instruction_id_clear_actions
+ */
+static inline void
+of_instruction_id_clear_actions_delete(of_instruction_id_clear_actions_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_experimenter_t
+ * @param obj An instance of type of_instruction_id_experimenter_t
+ *
+ * \ingroup of_instruction_id_experimenter
+ */
+static inline void
+of_instruction_id_experimenter_delete(of_instruction_id_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_goto_table_t
+ * @param obj An instance of type of_instruction_id_goto_table_t
+ *
+ * \ingroup of_instruction_id_goto_table
+ */
+static inline void
+of_instruction_id_goto_table_delete(of_instruction_id_goto_table_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_header_t
+ * @param obj An instance of type of_instruction_id_header_t
+ *
+ * \ingroup of_instruction_id_header
+ */
+static inline void
+of_instruction_id_header_delete(of_instruction_id_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_meter_t
+ * @param obj An instance of type of_instruction_id_meter_t
+ *
+ * \ingroup of_instruction_id_meter
+ */
+static inline void
+of_instruction_id_meter_delete(of_instruction_id_meter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_write_actions_t
+ * @param obj An instance of type of_instruction_id_write_actions_t
+ *
+ * \ingroup of_instruction_id_write_actions
+ */
+static inline void
+of_instruction_id_write_actions_delete(of_instruction_id_write_actions_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_write_metadata_t
+ * @param obj An instance of type of_instruction_id_write_metadata_t
+ *
+ * \ingroup of_instruction_id_write_metadata
+ */
+static inline void
+of_instruction_id_write_metadata_delete(of_instruction_id_write_metadata_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17465,6 +17762,20 @@ extern void of_action_group_group_id_get(
 
 /* Unified accessor functions for of_action_id_bsn */
 
+extern void of_action_id_bsn_experimenter_set(
+    of_action_id_bsn_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_bsn_experimenter_get(
+    of_action_id_bsn_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_bsn_subtype_set(
+    of_action_id_bsn_t *obj,
+    uint32_t subtype);
+extern void of_action_id_bsn_subtype_get(
+    of_action_id_bsn_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_action_id_bsn_mirror */
 
 extern void of_action_id_bsn_mirror_experimenter_set(
@@ -17507,11 +17818,32 @@ extern void of_action_id_bsn_set_tunnel_dst_subtype_get(
 
 /* Unified accessor functions for of_action_id_experimenter */
 
+extern void of_action_id_experimenter_experimenter_set(
+    of_action_id_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_experimenter_experimenter_get(
+    of_action_id_experimenter_t *obj,
+    uint32_t *experimenter);
+
 /* Unified accessor functions for of_action_id_group */
 
 /* Unified accessor functions for of_action_id_header */
 
 /* Unified accessor functions for of_action_id_nicira */
+
+extern void of_action_id_nicira_experimenter_set(
+    of_action_id_nicira_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_nicira_experimenter_get(
+    of_action_id_nicira_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_nicira_subtype_set(
+    of_action_id_nicira_t *obj,
+    uint16_t subtype);
+extern void of_action_id_nicira_subtype_get(
+    of_action_id_nicira_t *obj,
+    uint16_t *subtype);
 
 /* Unified accessor functions for of_action_id_nicira_dec_ttl */
 
@@ -18324,6 +18656,61 @@ extern void of_instruction_goto_table_table_id_get(
     uint8_t *table_id);
 
 /* Unified accessor functions for of_instruction_header */
+
+/* Unified accessor functions for of_instruction_id_apply_actions */
+
+/* Unified accessor functions for of_instruction_id_bsn */
+
+extern void of_instruction_id_bsn_experimenter_set(
+    of_instruction_id_bsn_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_experimenter_get(
+    of_instruction_id_bsn_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_subtype_set(
+    of_instruction_id_bsn_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_subtype_get(
+    of_instruction_id_bsn_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_disable_src_mac_check */
+
+extern void of_instruction_id_bsn_disable_src_mac_check_experimenter_set(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_disable_src_mac_check_experimenter_get(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_disable_src_mac_check_subtype_set(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_disable_src_mac_check_subtype_get(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_clear_actions */
+
+/* Unified accessor functions for of_instruction_id_experimenter */
+
+extern void of_instruction_id_experimenter_experimenter_set(
+    of_instruction_id_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_experimenter_experimenter_get(
+    of_instruction_id_experimenter_t *obj,
+    uint32_t *experimenter);
+
+/* Unified accessor functions for of_instruction_id_goto_table */
+
+/* Unified accessor functions for of_instruction_id_header */
+
+/* Unified accessor functions for of_instruction_id_meter */
+
+/* Unified accessor functions for of_instruction_id_write_actions */
+
+/* Unified accessor functions for of_instruction_id_write_metadata */
 
 /* Unified accessor functions for of_instruction_meter */
 
@@ -21581,6 +21968,16 @@ union of_generic_u {
     of_instruction_experimenter_t of_instruction_experimenter;
     of_instruction_goto_table_t of_instruction_goto_table;
     of_instruction_header_t of_instruction_header;
+    of_instruction_id_apply_actions_t of_instruction_id_apply_actions;
+    of_instruction_id_bsn_t of_instruction_id_bsn;
+    of_instruction_id_bsn_disable_src_mac_check_t of_instruction_id_bsn_disable_src_mac_check;
+    of_instruction_id_clear_actions_t of_instruction_id_clear_actions;
+    of_instruction_id_experimenter_t of_instruction_id_experimenter;
+    of_instruction_id_goto_table_t of_instruction_id_goto_table;
+    of_instruction_id_header_t of_instruction_id_header;
+    of_instruction_id_meter_t of_instruction_id_meter;
+    of_instruction_id_write_actions_t of_instruction_id_write_actions;
+    of_instruction_id_write_metadata_t of_instruction_id_write_metadata;
     of_instruction_meter_t of_instruction_meter;
     of_instruction_write_actions_t of_instruction_write_actions;
     of_instruction_write_metadata_t of_instruction_write_metadata;
@@ -21879,6 +22276,27 @@ union of_instruction_u {
     of_instruction_meter_t meter;
     of_instruction_write_actions_t write_actions;
     of_instruction_write_metadata_t write_metadata;
+};
+
+/**
+ * Inheritance super class for of_instruction_id
+ *
+ * This class is the union of of_instruction_id classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_instruction_id_u {
+    of_instruction_id_header_t header; /* Generic instance */
+    of_instruction_id_apply_actions_t apply_actions;
+    of_instruction_id_bsn_t bsn;
+    of_instruction_id_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
+    of_instruction_id_clear_actions_t clear_actions;
+    of_instruction_id_experimenter_t experimenter;
+    of_instruction_id_goto_table_t goto_table;
+    of_instruction_id_meter_t meter;
+    of_instruction_id_write_actions_t write_actions;
+    of_instruction_id_write_metadata_t write_metadata;
 };
 
 /**

@@ -19859,8 +19859,19 @@ int
 of_action_id_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_bsn_t *obj)
 {
     int out = 0;
+    uint32_t val32;
 
     out += writer(cookie, "Object of type of_action_id_bsn\n");
+
+    of_action_id_bsn_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_bsn_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -19951,8 +19962,14 @@ int
 of_action_id_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_experimenter_t *obj)
 {
     int out = 0;
+    uint32_t val32;
 
     out += writer(cookie, "Object of type of_action_id_experimenter\n");
+
+    of_action_id_experimenter_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -19981,8 +19998,20 @@ int
 of_action_id_nicira_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_nicira_t *obj)
 {
     int out = 0;
+    uint32_t val32;
+    uint16_t val16;
 
     out += writer(cookie, "Object of type of_action_id_nicira\n");
+
+    of_action_id_nicira_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_nicira_subtype_get(obj, &val16);
+    out += writer(cookie, "  subtype (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -20967,6 +20996,134 @@ of_instruction_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
     int out = 0;
 
     out += writer(cookie, "Object of type of_instruction_header\n");
+
+    return out;
+}
+
+int
+of_instruction_id_apply_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_apply_actions_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_apply_actions\n");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_id_bsn\n");
+
+    of_instruction_id_bsn_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_instruction_id_bsn_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_src_mac_check_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_id_bsn_disable_src_mac_check\n");
+
+    of_instruction_id_bsn_disable_src_mac_check_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_instruction_id_bsn_disable_src_mac_check_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_instruction_id_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_clear_actions_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_clear_actions\n");
+
+    return out;
+}
+
+int
+of_instruction_id_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_experimenter_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_id_experimenter\n");
+
+    of_instruction_id_experimenter_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_instruction_id_goto_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_goto_table_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_goto_table\n");
+
+    return out;
+}
+
+int
+of_instruction_id_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_header_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_header\n");
+
+    return out;
+}
+
+int
+of_instruction_id_meter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_meter_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_meter\n");
+
+    return out;
+}
+
+int
+of_instruction_id_write_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_write_actions_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_write_actions\n");
+
+    return out;
+}
+
+int
+of_instruction_id_write_metadata_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_write_metadata_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_instruction_id_write_metadata\n");
 
     return out;
 }
@@ -24513,6 +24670,17 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_match_v1_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -24911,6 +25079,17 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_instruction_experimenter_OF_VERSION_1_1_dump,
     of_instruction_goto_table_OF_VERSION_1_1_dump,
     of_instruction_header_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     of_instruction_write_actions_OF_VERSION_1_1_dump,
     of_instruction_write_metadata_OF_VERSION_1_1_dump,
@@ -25313,6 +25492,17 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_instruction_goto_table_OF_VERSION_1_2_dump,
     of_instruction_header_OF_VERSION_1_2_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_instruction_write_actions_OF_VERSION_1_2_dump,
     of_instruction_write_metadata_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -25713,6 +25903,17 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_experimenter_OF_VERSION_1_3_dump,
     of_instruction_goto_table_OF_VERSION_1_3_dump,
     of_instruction_header_OF_VERSION_1_3_dump,
+    unknown_dump,
+    of_instruction_id_apply_actions_OF_VERSION_1_3_dump,
+    of_instruction_id_bsn_OF_VERSION_1_3_dump,
+    of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dump,
+    of_instruction_id_clear_actions_OF_VERSION_1_3_dump,
+    of_instruction_id_experimenter_OF_VERSION_1_3_dump,
+    of_instruction_id_goto_table_OF_VERSION_1_3_dump,
+    of_instruction_id_header_OF_VERSION_1_3_dump,
+    of_instruction_id_meter_OF_VERSION_1_3_dump,
+    of_instruction_id_write_actions_OF_VERSION_1_3_dump,
+    of_instruction_id_write_metadata_OF_VERSION_1_3_dump,
     of_instruction_meter_OF_VERSION_1_3_dump,
     of_instruction_write_actions_OF_VERSION_1_3_dump,
     of_instruction_write_metadata_OF_VERSION_1_3_dump,

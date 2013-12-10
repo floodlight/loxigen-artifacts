@@ -703,6 +703,16 @@ static inline int of_match_v3_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_write_metadata_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_write_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_meter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_write_metadata_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_write_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_meter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_goto_table_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_clear_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_bsn_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_apply_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_goto_table_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -10754,6 +10764,116 @@ of_instruction_meter_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_instruction_id_write_metadata_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_instruction_id_write_metadata.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_write_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_instruction_id_write_actions.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_meter_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_instruction_id_meter.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_instruction_id_header.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_goto_table_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 7) {
+        VALIDATOR_LOG("Class of_instruction_id_goto_table.  Len %d too small, < %d", len, 7);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_instruction_id_experimenter.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_clear_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_instruction_id_clear_actions.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_instruction_id_bsn_disable_src_mac_check.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_bsn_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_instruction_id_bsn.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_id_apply_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_instruction_id_apply_actions.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_instruction_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
@@ -11224,8 +11344,8 @@ of_action_nicira_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_set_queue_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_set_queue.  Len %d too small, < %d", len, 8);
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_action_id_set_queue.  Len %d too small, < %d", len, 4);
         return -1;
     }
 
@@ -11235,8 +11355,8 @@ of_action_id_set_queue_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_set_nw_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_set_nw_ttl.  Len %d too small, < %d", len, 8);
+    if (len < 7) {
+        VALIDATOR_LOG("Class of_action_id_set_nw_ttl.  Len %d too small, < %d", len, 7);
         return -1;
     }
 
@@ -11246,8 +11366,8 @@ of_action_id_set_nw_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_set_mpls_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_set_mpls_ttl.  Len %d too small, < %d", len, 8);
+    if (len < 7) {
+        VALIDATOR_LOG("Class of_action_id_set_mpls_ttl.  Len %d too small, < %d", len, 7);
         return -1;
     }
 
@@ -11257,8 +11377,8 @@ of_action_id_set_mpls_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_set_field_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_set_field.  Len %d too small, < %d", len, 8);
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_action_id_set_field.  Len %d too small, < %d", len, 4);
         return -1;
     }
 
@@ -11268,8 +11388,8 @@ of_action_id_set_field_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_push_vlan_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_push_vlan.  Len %d too small, < %d", len, 8);
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_action_id_push_vlan.  Len %d too small, < %d", len, 6);
         return -1;
     }
 
@@ -11279,8 +11399,8 @@ of_action_id_push_vlan_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_push_pbb_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_push_pbb.  Len %d too small, < %d", len, 8);
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_action_id_push_pbb.  Len %d too small, < %d", len, 6);
         return -1;
     }
 
@@ -11290,8 +11410,8 @@ of_action_id_push_pbb_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_push_mpls_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_push_mpls.  Len %d too small, < %d", len, 8);
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_action_id_push_mpls.  Len %d too small, < %d", len, 6);
         return -1;
     }
 
@@ -11323,8 +11443,8 @@ of_action_id_pop_pbb_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_pop_mpls_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_pop_mpls.  Len %d too small, < %d", len, 8);
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_action_id_pop_mpls.  Len %d too small, < %d", len, 6);
         return -1;
     }
 
@@ -11334,8 +11454,8 @@ of_action_id_pop_mpls_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_output_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_output.  Len %d too small, < %d", len, 8);
+    if (len < 10) {
+        VALIDATOR_LOG("Class of_action_id_output.  Len %d too small, < %d", len, 10);
         return -1;
     }
 
@@ -11345,8 +11465,8 @@ of_action_id_output_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_nicira_dec_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 10) {
-        VALIDATOR_LOG("Class of_action_id_nicira_dec_ttl.  Len %d too small, < %d", len, 10);
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_action_id_nicira_dec_ttl.  Len %d too small, < %d", len, 16);
         return -1;
     }
 
@@ -11356,8 +11476,8 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_nicira_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_nicira.  Len %d too small, < %d", len, 8);
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_action_id_nicira.  Len %d too small, < %d", len, 16);
         return -1;
     }
 
@@ -11378,8 +11498,8 @@ of_action_id_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_group_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_group.  Len %d too small, < %d", len, 8);
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_action_id_group.  Len %d too small, < %d", len, 4);
         return -1;
     }
 
@@ -11455,8 +11575,8 @@ of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_bsn_mirror_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 12) {
-        VALIDATOR_LOG("Class of_action_id_bsn_mirror.  Len %d too small, < %d", len, 12);
+    if (len < 15) {
+        VALIDATOR_LOG("Class of_action_id_bsn_mirror.  Len %d too small, < %d", len, 15);
         return -1;
     }
 
@@ -11466,8 +11586,8 @@ of_action_id_bsn_mirror_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_id_bsn_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_action_id_bsn.  Len %d too small, < %d", len, 8);
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_action_id_bsn.  Len %d too small, < %d", len, 16);
         return -1;
     }
 

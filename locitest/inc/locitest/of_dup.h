@@ -946,6 +946,50 @@ extern of_instruction_header_t *
     of_instruction_header_dup(
         of_instruction_header_t *src);
 
+extern of_instruction_id_t *
+    of_instruction_id_dup(
+        of_instruction_id_t *src);
+
+extern of_instruction_id_apply_actions_t *
+    of_instruction_id_apply_actions_dup(
+        of_instruction_id_apply_actions_t *src);
+
+extern of_instruction_id_bsn_t *
+    of_instruction_id_bsn_dup(
+        of_instruction_id_bsn_t *src);
+
+extern of_instruction_id_bsn_disable_src_mac_check_t *
+    of_instruction_id_bsn_disable_src_mac_check_dup(
+        of_instruction_id_bsn_disable_src_mac_check_t *src);
+
+extern of_instruction_id_clear_actions_t *
+    of_instruction_id_clear_actions_dup(
+        of_instruction_id_clear_actions_t *src);
+
+extern of_instruction_id_experimenter_t *
+    of_instruction_id_experimenter_dup(
+        of_instruction_id_experimenter_t *src);
+
+extern of_instruction_id_goto_table_t *
+    of_instruction_id_goto_table_dup(
+        of_instruction_id_goto_table_t *src);
+
+extern of_instruction_id_header_t *
+    of_instruction_id_header_dup(
+        of_instruction_id_header_t *src);
+
+extern of_instruction_id_meter_t *
+    of_instruction_id_meter_dup(
+        of_instruction_id_meter_t *src);
+
+extern of_instruction_id_write_actions_t *
+    of_instruction_id_write_actions_dup(
+        of_instruction_id_write_actions_t *src);
+
+extern of_instruction_id_write_metadata_t *
+    of_instruction_id_write_metadata_dup(
+        of_instruction_id_write_metadata_t *src);
+
 extern of_instruction_meter_t *
     of_instruction_meter_dup(
         of_instruction_meter_t *src);
@@ -4577,6 +4621,50 @@ extern of_instruction_goto_table_t *
 extern of_instruction_header_t *
     of_instruction_header_OF_VERSION_1_3_dup(
         of_instruction_header_t *src);
+
+extern of_instruction_id_t *
+    of_instruction_id_OF_VERSION_1_3_dup(
+        of_instruction_id_t *src);
+
+extern of_instruction_id_apply_actions_t *
+    of_instruction_id_apply_actions_OF_VERSION_1_3_dup(
+        of_instruction_id_apply_actions_t *src);
+
+extern of_instruction_id_bsn_t *
+    of_instruction_id_bsn_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_t *src);
+
+extern of_instruction_id_bsn_disable_src_mac_check_t *
+    of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_disable_src_mac_check_t *src);
+
+extern of_instruction_id_clear_actions_t *
+    of_instruction_id_clear_actions_OF_VERSION_1_3_dup(
+        of_instruction_id_clear_actions_t *src);
+
+extern of_instruction_id_experimenter_t *
+    of_instruction_id_experimenter_OF_VERSION_1_3_dup(
+        of_instruction_id_experimenter_t *src);
+
+extern of_instruction_id_goto_table_t *
+    of_instruction_id_goto_table_OF_VERSION_1_3_dup(
+        of_instruction_id_goto_table_t *src);
+
+extern of_instruction_id_header_t *
+    of_instruction_id_header_OF_VERSION_1_3_dup(
+        of_instruction_id_header_t *src);
+
+extern of_instruction_id_meter_t *
+    of_instruction_id_meter_OF_VERSION_1_3_dup(
+        of_instruction_id_meter_t *src);
+
+extern of_instruction_id_write_actions_t *
+    of_instruction_id_write_actions_OF_VERSION_1_3_dup(
+        of_instruction_id_write_actions_t *src);
+
+extern of_instruction_id_write_metadata_t *
+    of_instruction_id_write_metadata_OF_VERSION_1_3_dup(
+        of_instruction_id_write_metadata_t *src);
 
 extern of_instruction_meter_t *
     of_instruction_meter_OF_VERSION_1_3_dup(

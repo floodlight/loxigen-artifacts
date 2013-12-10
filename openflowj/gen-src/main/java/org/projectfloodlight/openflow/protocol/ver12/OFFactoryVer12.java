@@ -11,8 +11,10 @@ package org.projectfloodlight.openflow.protocol.ver12;
 
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
+import org.projectfloodlight.openflow.protocol.actionid.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
+import org.projectfloodlight.openflow.protocol.instructionid.*;
 import org.projectfloodlight.openflow.protocol.match.*;
 import org.projectfloodlight.openflow.protocol.oxm.*;
 import org.projectfloodlight.openflow.protocol.queueprop.*;
@@ -675,11 +677,80 @@ public class OFFactoryVer12 implements OFFactory {
         return new OFRoleRequestFailedErrorMsgVer12.Builder().setXid(nextXid());
     }
 
-    public OFActionId.Builder buildActionId() {
-        throw new UnsupportedOperationException("OFActionId not supported in version 1.2");
+    public OFActionIdBsnMirror actionIdBsnMirror() {
+        throw new UnsupportedOperationException("OFActionIdBsnMirror not supported in version 1.2");
     }
-    public OFActionId actionId(OFActionType type) {
-        throw new UnsupportedOperationException("OFActionId not supported in version 1.2");
+
+    public OFActionIdBsnSetTunnelDst actionIdBsnSetTunnelDst() {
+        throw new UnsupportedOperationException("OFActionIdBsnSetTunnelDst not supported in version 1.2");
+    }
+
+    public OFActionIdCopyTtlIn actionIdCopyTtlIn() {
+        throw new UnsupportedOperationException("OFActionIdCopyTtlIn not supported in version 1.2");
+    }
+
+    public OFActionIdCopyTtlOut actionIdCopyTtlOut() {
+        throw new UnsupportedOperationException("OFActionIdCopyTtlOut not supported in version 1.2");
+    }
+
+    public OFActionIdDecMplsTtl actionIdDecMplsTtl() {
+        throw new UnsupportedOperationException("OFActionIdDecMplsTtl not supported in version 1.2");
+    }
+
+    public OFActionIdDecNwTtl actionIdDecNwTtl() {
+        throw new UnsupportedOperationException("OFActionIdDecNwTtl not supported in version 1.2");
+    }
+
+    public OFActionIdGroup actionIdGroup() {
+        throw new UnsupportedOperationException("OFActionIdGroup not supported in version 1.2");
+    }
+
+    public OFActionIdNiciraDecTtl actionIdNiciraDecTtl() {
+        throw new UnsupportedOperationException("OFActionIdNiciraDecTtl not supported in version 1.2");
+    }
+
+    public OFActionIdOutput actionIdOutput() {
+        throw new UnsupportedOperationException("OFActionIdOutput not supported in version 1.2");
+    }
+
+    public OFActionIdPopMpls actionIdPopMpls() {
+        throw new UnsupportedOperationException("OFActionIdPopMpls not supported in version 1.2");
+    }
+
+    public OFActionIdPopPbb actionIdPopPbb() {
+        throw new UnsupportedOperationException("OFActionIdPopPbb not supported in version 1.2");
+    }
+
+    public OFActionIdPopVlan actionIdPopVlan() {
+        throw new UnsupportedOperationException("OFActionIdPopVlan not supported in version 1.2");
+    }
+
+    public OFActionIdPushMpls actionIdPushMpls() {
+        throw new UnsupportedOperationException("OFActionIdPushMpls not supported in version 1.2");
+    }
+
+    public OFActionIdPushPbb actionIdPushPbb() {
+        throw new UnsupportedOperationException("OFActionIdPushPbb not supported in version 1.2");
+    }
+
+    public OFActionIdPushVlan actionIdPushVlan() {
+        throw new UnsupportedOperationException("OFActionIdPushVlan not supported in version 1.2");
+    }
+
+    public OFActionIdSetField actionIdSetField() {
+        throw new UnsupportedOperationException("OFActionIdSetField not supported in version 1.2");
+    }
+
+    public OFActionIdSetMplsTtl actionIdSetMplsTtl() {
+        throw new UnsupportedOperationException("OFActionIdSetMplsTtl not supported in version 1.2");
+    }
+
+    public OFActionIdSetNwTtl actionIdSetNwTtl() {
+        throw new UnsupportedOperationException("OFActionIdSetNwTtl not supported in version 1.2");
+    }
+
+    public OFActionIdSetQueue actionIdSetQueue() {
+        throw new UnsupportedOperationException("OFActionIdSetQueue not supported in version 1.2");
     }
 
     public OFAsyncGetReply.Builder buildAsyncGetReply() {
@@ -845,6 +916,34 @@ public class OFFactoryVer12 implements OFFactory {
     }
     public OFHelloElemVersionbitmap helloElemVersionbitmap(List<U32> bitmaps) {
         throw new UnsupportedOperationException("OFHelloElemVersionbitmap not supported in version 1.2");
+    }
+
+    public OFInstructionIdApplyActions instructionIdApplyActions() {
+        throw new UnsupportedOperationException("OFInstructionIdApplyActions not supported in version 1.2");
+    }
+
+    public OFInstructionIdBsnDisableSrcMacCheck instructionIdBsnDisableSrcMacCheck() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnDisableSrcMacCheck not supported in version 1.2");
+    }
+
+    public OFInstructionIdClearActions instructionIdClearActions() {
+        throw new UnsupportedOperationException("OFInstructionIdClearActions not supported in version 1.2");
+    }
+
+    public OFInstructionIdGotoTable instructionIdGotoTable() {
+        throw new UnsupportedOperationException("OFInstructionIdGotoTable not supported in version 1.2");
+    }
+
+    public OFInstructionIdMeter instructionIdMeter() {
+        throw new UnsupportedOperationException("OFInstructionIdMeter not supported in version 1.2");
+    }
+
+    public OFInstructionIdWriteActions instructionIdWriteActions() {
+        throw new UnsupportedOperationException("OFInstructionIdWriteActions not supported in version 1.2");
+    }
+
+    public OFInstructionIdWriteMetadata instructionIdWriteMetadata() {
+        throw new UnsupportedOperationException("OFInstructionIdWriteMetadata not supported in version 1.2");
     }
 
     public OFMeterBandStats.Builder buildMeterBandStats() {

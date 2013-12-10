@@ -6621,6 +6621,96 @@ extern int of_instruction_header_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_header_OF_VERSION_1_3_check_scalars(
     of_instruction_header_t *obj, int value);
 
+extern int of_instruction_id_apply_actions_OF_VERSION_1_3_populate(
+    of_instruction_id_apply_actions_t *obj, int value);
+extern int of_instruction_id_apply_actions_OF_VERSION_1_3_check(
+    of_instruction_id_apply_actions_t *obj, int value);
+extern int of_instruction_id_apply_actions_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_apply_actions_t *obj, int value);
+extern int of_instruction_id_apply_actions_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_apply_actions_t *obj, int value);
+
+extern int of_instruction_id_bsn_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_t *obj, int value);
+extern int of_instruction_id_bsn_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_t *obj, int value);
+extern int of_instruction_id_bsn_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_t *obj, int value);
+extern int of_instruction_id_bsn_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_t *obj, int value);
+
+extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
+extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
+extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
+extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
+
+extern int of_instruction_id_clear_actions_OF_VERSION_1_3_populate(
+    of_instruction_id_clear_actions_t *obj, int value);
+extern int of_instruction_id_clear_actions_OF_VERSION_1_3_check(
+    of_instruction_id_clear_actions_t *obj, int value);
+extern int of_instruction_id_clear_actions_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_clear_actions_t *obj, int value);
+extern int of_instruction_id_clear_actions_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_clear_actions_t *obj, int value);
+
+extern int of_instruction_id_experimenter_OF_VERSION_1_3_populate(
+    of_instruction_id_experimenter_t *obj, int value);
+extern int of_instruction_id_experimenter_OF_VERSION_1_3_check(
+    of_instruction_id_experimenter_t *obj, int value);
+extern int of_instruction_id_experimenter_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_experimenter_t *obj, int value);
+extern int of_instruction_id_experimenter_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_experimenter_t *obj, int value);
+
+extern int of_instruction_id_goto_table_OF_VERSION_1_3_populate(
+    of_instruction_id_goto_table_t *obj, int value);
+extern int of_instruction_id_goto_table_OF_VERSION_1_3_check(
+    of_instruction_id_goto_table_t *obj, int value);
+extern int of_instruction_id_goto_table_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_goto_table_t *obj, int value);
+extern int of_instruction_id_goto_table_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_goto_table_t *obj, int value);
+
+extern int of_instruction_id_header_OF_VERSION_1_3_populate(
+    of_instruction_id_header_t *obj, int value);
+extern int of_instruction_id_header_OF_VERSION_1_3_check(
+    of_instruction_id_header_t *obj, int value);
+extern int of_instruction_id_header_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_header_t *obj, int value);
+extern int of_instruction_id_header_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_header_t *obj, int value);
+
+extern int of_instruction_id_meter_OF_VERSION_1_3_populate(
+    of_instruction_id_meter_t *obj, int value);
+extern int of_instruction_id_meter_OF_VERSION_1_3_check(
+    of_instruction_id_meter_t *obj, int value);
+extern int of_instruction_id_meter_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_meter_t *obj, int value);
+extern int of_instruction_id_meter_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_meter_t *obj, int value);
+
+extern int of_instruction_id_write_actions_OF_VERSION_1_3_populate(
+    of_instruction_id_write_actions_t *obj, int value);
+extern int of_instruction_id_write_actions_OF_VERSION_1_3_check(
+    of_instruction_id_write_actions_t *obj, int value);
+extern int of_instruction_id_write_actions_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_write_actions_t *obj, int value);
+extern int of_instruction_id_write_actions_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_write_actions_t *obj, int value);
+
+extern int of_instruction_id_write_metadata_OF_VERSION_1_3_populate(
+    of_instruction_id_write_metadata_t *obj, int value);
+extern int of_instruction_id_write_metadata_OF_VERSION_1_3_check(
+    of_instruction_id_write_metadata_t *obj, int value);
+extern int of_instruction_id_write_metadata_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_write_metadata_t *obj, int value);
+extern int of_instruction_id_write_metadata_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_write_metadata_t *obj, int value);
+
 extern int of_instruction_meter_OF_VERSION_1_3_populate(
     of_instruction_meter_t *obj, int value);
 extern int of_instruction_meter_OF_VERSION_1_3_check(
