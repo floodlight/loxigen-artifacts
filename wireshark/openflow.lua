@@ -3788,7 +3788,7 @@ fields['of12.action_push_vlan.type'] = ProtoField.uint16("of12.action_push_vlan.
 fields['of12.action_push_vlan.len'] = ProtoField.uint16("of12.action_push_vlan.len", "len", base.DEC, nil)
 fields['of12.action_push_vlan.ethertype'] = ProtoField.uint16("of12.action_push_vlan.ethertype", "ethertype", base.DEC, nil)
 fields['of12.oxm.type_len'] = ProtoField.uint32("of12.oxm.type_len", "type_len", base.DEC, nil)
-fields['of12.action_set_field.type'] = ProtoField.uint16("of12.action_set_field.type", "type", base.DEC, nil)
+fields['of12.action_set_field.type'] = ProtoField.uint32("of12.action_set_field.type", "type", base.DEC, enum_v3_ofp_action_type)
 fields['of12.action_set_field.len'] = ProtoField.uint16("of12.action_set_field.len", "len", base.DEC, nil)
 fields['of12.action_set_field.field'] = ProtoField.bytes("of12.action_set_field.field", "field")
 fields['of12.action_set_mpls_ttl.type'] = ProtoField.uint16("of12.action_set_mpls_ttl.type", "type", base.DEC, nil)
@@ -5000,7 +5000,7 @@ fields['of13.action_push_vlan.ethertype'] = ProtoField.uint16("of13.action_push_
 fields['of13.action_id_push_vlan.type'] = ProtoField.uint16("of13.action_id_push_vlan.type", "type", base.DEC, nil)
 fields['of13.action_id_push_vlan.len'] = ProtoField.uint16("of13.action_id_push_vlan.len", "len", base.DEC, nil)
 fields['of13.oxm.type_len'] = ProtoField.uint32("of13.oxm.type_len", "type_len", base.DEC, nil)
-fields['of13.action_set_field.type'] = ProtoField.uint16("of13.action_set_field.type", "type", base.DEC, nil)
+fields['of13.action_set_field.type'] = ProtoField.uint32("of13.action_set_field.type", "type", base.DEC, enum_v4_ofp_action_type)
 fields['of13.action_set_field.len'] = ProtoField.uint16("of13.action_set_field.len", "len", base.DEC, nil)
 fields['of13.action_set_field.field'] = ProtoField.bytes("of13.action_set_field.field", "field")
 fields['of13.action_id_set_field.type'] = ProtoField.uint16("of13.action_id_set_field.type", "type", base.DEC, nil)
@@ -11267,24 +11267,16 @@ of_queue_prop_experimenter_v4_dissectors = {}
 of_table_feature_prop_v4_dissectors = {}
 
 --- Dissectors for each class
-
 -- virtual top-level class of_action
 -- Discriminator is type
 function dissect_of_action_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.action.type')
-    read_uint16_t(reader, 1, subtree, 'of10.action.len')
-    reader.skip(4)
-    return 'of_action'
+    return of_action_v1_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual child class of_action_experimenter
 -- Child of of_action
 -- Discriminator is experimenter
 function dissect_of_action_experimenter_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.action_experimenter.type')
-    read_uint16_t(reader, 1, subtree, 'of10.action_experimenter.len')
-    read_uint32_t(reader, 1, subtree, 'of10.action_experimenter.experimenter')
-    read_of_octets_t(reader, 1, subtree, 'of10.action_experimenter.data')
-    return 'of_action_experimenter'
+    return of_action_experimenter_v1_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_action_v1_dissectors[65535] = dissect_of_action_experimenter_v1
 
@@ -11292,12 +11284,7 @@ of_action_v1_dissectors[65535] = dissect_of_action_experimenter_v1
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_bsn_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.action_bsn.type')
-    read_uint16_t(reader, 1, subtree, 'of10.action_bsn.len')
-    read_uint32_t(reader, 1, subtree, 'of10.action_bsn.experimenter')
-    read_uint32_t(reader, 1, subtree, 'of10.action_bsn.subtype')
-    reader.skip(4)
-    return 'of_action_bsn'
+    return of_action_bsn_v1_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_experimenter_v1_dissectors[6035143] = dissect_of_action_bsn_v1
 
@@ -11344,13 +11331,7 @@ of_action_v1_dissectors[11] = dissect_of_action_enqueue_v1
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_nicira_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.action_nicira.type')
-    read_uint16_t(reader, 1, subtree, 'of10.action_nicira.len')
-    read_uint32_t(reader, 1, subtree, 'of10.action_nicira.experimenter')
-    read_uint16_t(reader, 1, subtree, 'of10.action_nicira.subtype')
-    reader.skip(2)
-    reader.skip(4)
-    return 'of_action_nicira'
+    return of_action_nicira_v1_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_action_experimenter_v1_dissectors[8992] = dissect_of_action_nicira_v1
 
@@ -11488,23 +11469,13 @@ of_action_v1_dissectors[3] = dissect_of_action_strip_vlan_v1
 -- virtual top-level class of_header
 -- Discriminator is type
 function dissect_of_header_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.header.version')
-    read_uint8_t(reader, 1, subtree, 'of10.header.type')
-    read_uint16_t(reader, 1, subtree, 'of10.header.length')
-    read_uint32_t(reader, 1, subtree, 'of10.header.xid')
-    return 'of_header'
+    return of_header_v1_dissectors[reader.peek(1,1):uint()](reader, subtree)
 end
 -- virtual child class of_stats_reply
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_reply_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.stats_reply.version')
-    read_uint8_t(reader, 1, subtree, 'of10.stats_reply.type')
-    read_uint16_t(reader, 1, subtree, 'of10.stats_reply.length')
-    read_uint32_t(reader, 1, subtree, 'of10.stats_reply.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.stats_reply.stats_type')
-    read_uint16_t(reader, 1, subtree, 'of10.stats_reply.flags')
-    return 'of_stats_reply'
+    return of_stats_reply_v1_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v1_dissectors[17] = dissect_of_stats_reply_v1
 
@@ -11529,13 +11500,7 @@ of_stats_reply_v1_dissectors[2] = dissect_of_aggregate_stats_reply_v1
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_request_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.stats_request.version')
-    read_uint8_t(reader, 1, subtree, 'of10.stats_request.type')
-    read_uint16_t(reader, 1, subtree, 'of10.stats_request.length')
-    read_uint32_t(reader, 1, subtree, 'of10.stats_request.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.stats_request.stats_type')
-    read_uint16_t(reader, 1, subtree, 'of10.stats_request.flags')
-    return 'of_stats_request'
+    return of_stats_request_v1_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v1_dissectors[16] = dissect_of_stats_request_v1
 
@@ -11560,12 +11525,7 @@ of_stats_request_v1_dissectors[2] = dissect_of_aggregate_stats_request_v1
 -- Child of of_header
 -- Discriminator is err_type
 function dissect_of_error_msg_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.error_msg.version')
-    read_uint8_t(reader, 1, subtree, 'of10.error_msg.type')
-    read_uint16_t(reader, 1, subtree, 'of10.error_msg.length')
-    read_uint32_t(reader, 1, subtree, 'of10.error_msg.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.error_msg.err_type')
-    return 'of_error_msg'
+    return of_error_msg_v1_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v1_dissectors[1] = dissect_of_error_msg_v1
 
@@ -11623,14 +11583,7 @@ of_header_v1_dissectors[18] = dissect_of_barrier_request_v1
 -- Child of of_header
 -- Discriminator is experimenter
 function dissect_of_experimenter_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.experimenter.version')
-    read_uint8_t(reader, 1, subtree, 'of10.experimenter.type')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter.length')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter.xid')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter.experimenter')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter.subtype')
-    read_of_octets_t(reader, 1, subtree, 'of10.experimenter.data')
-    return 'of_experimenter'
+    return of_experimenter_v1_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_header_v1_dissectors[4] = dissect_of_experimenter_v1
 
@@ -11638,13 +11591,7 @@ of_header_v1_dissectors[4] = dissect_of_experimenter_v1
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_bsn_header_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.bsn_header.version')
-    read_uint8_t(reader, 1, subtree, 'of10.bsn_header.type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_header.length')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_header.xid')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_header.experimenter')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_header.subtype')
-    return 'of_bsn_header'
+    return of_bsn_header_v1_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v1_dissectors[6035143] = dissect_of_bsn_header_v1
 
@@ -12116,15 +12063,7 @@ of_bsn_header_v1_dissectors[8] = dissect_of_bsn_shell_status_v1
 -- Child of of_stats_reply
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_reply_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.experimenter_stats_reply.version')
-    read_uint8_t(reader, 1, subtree, 'of10.experimenter_stats_reply.type')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter_stats_reply.length')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter_stats_reply.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter_stats_reply.stats_type')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter_stats_reply.flags')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter_stats_reply.experimenter')
-    read_of_octets_t(reader, 1, subtree, 'of10.experimenter_stats_reply.data')
-    return 'of_experimenter_stats_reply'
+    return of_experimenter_stats_reply_v1_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_stats_reply_v1_dissectors[65535] = dissect_of_experimenter_stats_reply_v1
 
@@ -12132,16 +12071,7 @@ of_stats_reply_v1_dissectors[65535] = dissect_of_experimenter_stats_reply_v1
 -- Child of of_experimenter_stats_reply
 -- Discriminator is subtype
 function dissect_of_bsn_stats_reply_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.bsn_stats_reply.version')
-    read_uint8_t(reader, 1, subtree, 'of10.bsn_stats_reply.type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_stats_reply.length')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_stats_reply.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_stats_reply.stats_type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_stats_reply.experimenter')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_stats_reply.subtype')
-    return 'of_bsn_stats_reply'
+    return of_bsn_stats_reply_v1_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_reply_v1_dissectors[6035143] = dissect_of_bsn_stats_reply_v1
 
@@ -12149,15 +12079,7 @@ of_experimenter_stats_reply_v1_dissectors[6035143] = dissect_of_bsn_stats_reply_
 -- Child of of_stats_request
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_request_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.experimenter_stats_request.version')
-    read_uint8_t(reader, 1, subtree, 'of10.experimenter_stats_request.type')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter_stats_request.length')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter_stats_request.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter_stats_request.stats_type')
-    read_uint16_t(reader, 1, subtree, 'of10.experimenter_stats_request.flags')
-    read_uint32_t(reader, 1, subtree, 'of10.experimenter_stats_request.experimenter')
-    read_of_octets_t(reader, 1, subtree, 'of10.experimenter_stats_request.data')
-    return 'of_experimenter_stats_request'
+    return of_experimenter_stats_request_v1_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_stats_request_v1_dissectors[65535] = dissect_of_experimenter_stats_request_v1
 
@@ -12165,16 +12087,7 @@ of_stats_request_v1_dissectors[65535] = dissect_of_experimenter_stats_request_v1
 -- Child of of_experimenter_stats_request
 -- Discriminator is subtype
 function dissect_of_bsn_stats_request_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.bsn_stats_request.version')
-    read_uint8_t(reader, 1, subtree, 'of10.bsn_stats_request.type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_stats_request.length')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_stats_request.xid')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_stats_request.stats_type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_stats_request.experimenter')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_stats_request.subtype')
-    return 'of_bsn_stats_request'
+    return of_bsn_stats_request_v1_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_request_v1_dissectors[6035143] = dissect_of_bsn_stats_request_v1
 
@@ -12196,9 +12109,7 @@ of_bsn_header_v1_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v1
 -- virtual top-level class of_bsn_vport
 -- Discriminator is type
 function dissect_of_bsn_vport_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport.type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport.length')
-    return 'of_bsn_vport'
+    return of_bsn_vport_v1_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_bsn_vport_q_in_q
 -- Child of of_bsn_vport
@@ -12345,21 +12256,7 @@ of_header_v1_dissectors[5] = dissect_of_features_request_v1
 -- Child of of_header
 -- Discriminator is _command
 function dissect_of_flow_mod_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.flow_mod.version')
-    read_uint8_t(reader, 1, subtree, 'of10.flow_mod.type')
-    read_uint16_t(reader, 1, subtree, 'of10.flow_mod.length')
-    read_uint32_t(reader, 1, subtree, 'of10.flow_mod.xid')
-    read_of_match_t(reader, 1, subtree, 'of10.flow_mod.match')
-    read_uint64_t(reader, 1, subtree, 'of10.flow_mod.cookie')
-    read_of_fm_cmd_t(reader, 1, subtree, 'of10.flow_mod._command')
-    read_uint16_t(reader, 1, subtree, 'of10.flow_mod.idle_timeout')
-    read_uint16_t(reader, 1, subtree, 'of10.flow_mod.hard_timeout')
-    read_uint16_t(reader, 1, subtree, 'of10.flow_mod.priority')
-    read_uint32_t(reader, 1, subtree, 'of10.flow_mod.buffer_id')
-    read_of_port_no_t(reader, 1, subtree, 'of10.flow_mod.out_port')
-    read_uint16_t(reader, 1, subtree, 'of10.flow_mod.flags')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_mod.actions')
-    return 'of_flow_mod'
+    return of_flow_mod_v1_dissectors[reader.peek(56,2):uint()](reader, subtree)
 end
 of_header_v1_dissectors[14] = dissect_of_flow_mod_v1
 
@@ -12625,13 +12522,7 @@ end
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_nicira_header_v1(reader, subtree)
-    read_uint8_t(reader, 1, subtree, 'of10.nicira_header.version')
-    read_uint8_t(reader, 1, subtree, 'of10.nicira_header.type')
-    read_uint16_t(reader, 1, subtree, 'of10.nicira_header.length')
-    read_uint32_t(reader, 1, subtree, 'of10.nicira_header.xid')
-    read_uint32_t(reader, 1, subtree, 'of10.nicira_header.experimenter')
-    read_uint32_t(reader, 1, subtree, 'of10.nicira_header.subtype')
-    return 'of_nicira_header'
+    return of_nicira_header_v1_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v1_dissectors[8992] = dissect_of_nicira_header_v1
 
@@ -12853,10 +12744,7 @@ of_error_msg_v1_dissectors[5] = dissect_of_queue_op_failed_error_msg_v1
 -- virtual top-level class of_queue_prop
 -- Discriminator is type
 function dissect_of_queue_prop_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.queue_prop.type')
-    read_uint16_t(reader, 1, subtree, 'of10.queue_prop.len')
-    reader.skip(4)
-    return 'of_queue_prop'
+    return of_queue_prop_v1_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_queue_prop_min_rate
 -- Child of of_queue_prop
@@ -12979,20 +12867,13 @@ of_stats_request_v1_dissectors[3] = dissect_of_table_stats_request_v1
 -- virtual top-level class of_action
 -- Discriminator is type
 function dissect_of_action_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.action.type')
-    read_uint16_t(reader, 2, subtree, 'of11.action.len')
-    reader.skip(4)
-    return 'of_action'
+    return of_action_v2_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual child class of_action_experimenter
 -- Child of of_action
 -- Discriminator is experimenter
 function dissect_of_action_experimenter_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.action_experimenter.type')
-    read_uint16_t(reader, 2, subtree, 'of11.action_experimenter.len')
-    read_uint32_t(reader, 2, subtree, 'of11.action_experimenter.experimenter')
-    read_of_octets_t(reader, 2, subtree, 'of11.action_experimenter.data')
-    return 'of_action_experimenter'
+    return of_action_experimenter_v2_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_action_v2_dissectors[65535] = dissect_of_action_experimenter_v2
 
@@ -13000,12 +12881,7 @@ of_action_v2_dissectors[65535] = dissect_of_action_experimenter_v2
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_bsn_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.action_bsn.type')
-    read_uint16_t(reader, 2, subtree, 'of11.action_bsn.len')
-    read_uint32_t(reader, 2, subtree, 'of11.action_bsn.experimenter')
-    read_uint32_t(reader, 2, subtree, 'of11.action_bsn.subtype')
-    reader.skip(4)
-    return 'of_action_bsn'
+    return of_action_bsn_v2_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_experimenter_v2_dissectors[6035143] = dissect_of_action_bsn_v2
 
@@ -13090,13 +12966,7 @@ of_action_v2_dissectors[22] = dissect_of_action_group_v2
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_nicira_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.action_nicira.type')
-    read_uint16_t(reader, 2, subtree, 'of11.action_nicira.len')
-    read_uint32_t(reader, 2, subtree, 'of11.action_nicira.experimenter')
-    read_uint16_t(reader, 2, subtree, 'of11.action_nicira.subtype')
-    reader.skip(2)
-    reader.skip(4)
-    return 'of_action_nicira'
+    return of_action_nicira_v2_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_action_experimenter_v2_dissectors[8992] = dissect_of_action_nicira_v2
 
@@ -13332,24 +13202,13 @@ of_action_v2_dissectors[1] = dissect_of_action_set_vlan_vid_v2
 -- virtual top-level class of_header
 -- Discriminator is type
 function dissect_of_header_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.header.version')
-    read_uint8_t(reader, 2, subtree, 'of11.header.type')
-    read_uint16_t(reader, 2, subtree, 'of11.header.length')
-    read_uint32_t(reader, 2, subtree, 'of11.header.xid')
-    return 'of_header'
+    return of_header_v2_dissectors[reader.peek(1,1):uint()](reader, subtree)
 end
 -- virtual child class of_stats_reply
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_reply_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.stats_reply.version')
-    read_uint8_t(reader, 2, subtree, 'of11.stats_reply.type')
-    read_uint16_t(reader, 2, subtree, 'of11.stats_reply.length')
-    read_uint32_t(reader, 2, subtree, 'of11.stats_reply.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.stats_reply.stats_type')
-    read_uint16_t(reader, 2, subtree, 'of11.stats_reply.flags')
-    reader.skip(4)
-    return 'of_stats_reply'
+    return of_stats_reply_v2_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v2_dissectors[19] = dissect_of_stats_reply_v2
 
@@ -13375,14 +13234,7 @@ of_stats_reply_v2_dissectors[2] = dissect_of_aggregate_stats_reply_v2
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_request_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.stats_request.version')
-    read_uint8_t(reader, 2, subtree, 'of11.stats_request.type')
-    read_uint16_t(reader, 2, subtree, 'of11.stats_request.length')
-    read_uint32_t(reader, 2, subtree, 'of11.stats_request.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.stats_request.stats_type')
-    read_uint16_t(reader, 2, subtree, 'of11.stats_request.flags')
-    reader.skip(4)
-    return 'of_stats_request'
+    return of_stats_request_v2_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v2_dissectors[18] = dissect_of_stats_request_v2
 
@@ -13412,12 +13264,7 @@ of_stats_request_v2_dissectors[2] = dissect_of_aggregate_stats_request_v2
 -- Child of of_header
 -- Discriminator is err_type
 function dissect_of_error_msg_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.error_msg.version')
-    read_uint8_t(reader, 2, subtree, 'of11.error_msg.type')
-    read_uint16_t(reader, 2, subtree, 'of11.error_msg.length')
-    read_uint32_t(reader, 2, subtree, 'of11.error_msg.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.error_msg.err_type')
-    return 'of_error_msg'
+    return of_error_msg_v2_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v2_dissectors[1] = dissect_of_error_msg_v2
 
@@ -13503,14 +13350,7 @@ of_header_v2_dissectors[20] = dissect_of_barrier_request_v2
 -- Child of of_header
 -- Discriminator is experimenter
 function dissect_of_experimenter_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.experimenter.version')
-    read_uint8_t(reader, 2, subtree, 'of11.experimenter.type')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter.length')
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter.xid')
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter.experimenter')
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter.subtype')
-    read_of_octets_t(reader, 2, subtree, 'of11.experimenter.data')
-    return 'of_experimenter'
+    return of_experimenter_v2_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_header_v2_dissectors[4] = dissect_of_experimenter_v2
 
@@ -13518,13 +13358,7 @@ of_header_v2_dissectors[4] = dissect_of_experimenter_v2
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_bsn_header_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.bsn_header.version')
-    read_uint8_t(reader, 2, subtree, 'of11.bsn_header.type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_header.length')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_header.xid')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_header.experimenter')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_header.subtype')
-    return 'of_bsn_header'
+    return of_bsn_header_v2_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v2_dissectors[6035143] = dissect_of_bsn_header_v2
 
@@ -13812,17 +13646,7 @@ of_bsn_header_v2_dissectors[11] = dissect_of_bsn_set_pktin_suppression_request_v
 -- Child of of_stats_reply
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_reply_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.experimenter_stats_reply.version')
-    read_uint8_t(reader, 2, subtree, 'of11.experimenter_stats_reply.type')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter_stats_reply.length')
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter_stats_reply.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter_stats_reply.stats_type')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter_stats_reply.experimenter')
-    reader.skip(4)
-    read_of_octets_t(reader, 2, subtree, 'of11.experimenter_stats_reply.data')
-    return 'of_experimenter_stats_reply'
+    return of_experimenter_stats_reply_v2_dissectors[reader.peek(16,4):uint()](reader, subtree)
 end
 of_stats_reply_v2_dissectors[65535] = dissect_of_experimenter_stats_reply_v2
 
@@ -13830,16 +13654,7 @@ of_stats_reply_v2_dissectors[65535] = dissect_of_experimenter_stats_reply_v2
 -- Child of of_experimenter_stats_reply
 -- Discriminator is subtype
 function dissect_of_bsn_stats_reply_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.bsn_stats_reply.version')
-    read_uint8_t(reader, 2, subtree, 'of11.bsn_stats_reply.type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_stats_reply.length')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_stats_reply.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_stats_reply.stats_type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_stats_reply.experimenter')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_stats_reply.subtype')
-    return 'of_bsn_stats_reply'
+    return of_bsn_stats_reply_v2_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_reply_v2_dissectors[6035143] = dissect_of_bsn_stats_reply_v2
 
@@ -13847,17 +13662,7 @@ of_experimenter_stats_reply_v2_dissectors[6035143] = dissect_of_bsn_stats_reply_
 -- Child of of_stats_request
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_request_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.experimenter_stats_request.version')
-    read_uint8_t(reader, 2, subtree, 'of11.experimenter_stats_request.type')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter_stats_request.length')
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter_stats_request.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter_stats_request.stats_type')
-    read_uint16_t(reader, 2, subtree, 'of11.experimenter_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 2, subtree, 'of11.experimenter_stats_request.experimenter')
-    reader.skip(4)
-    read_of_octets_t(reader, 2, subtree, 'of11.experimenter_stats_request.data')
-    return 'of_experimenter_stats_request'
+    return of_experimenter_stats_request_v2_dissectors[reader.peek(16,4):uint()](reader, subtree)
 end
 of_stats_request_v2_dissectors[65535] = dissect_of_experimenter_stats_request_v2
 
@@ -13865,16 +13670,7 @@ of_stats_request_v2_dissectors[65535] = dissect_of_experimenter_stats_request_v2
 -- Child of of_experimenter_stats_request
 -- Discriminator is subtype
 function dissect_of_bsn_stats_request_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.bsn_stats_request.version')
-    read_uint8_t(reader, 2, subtree, 'of11.bsn_stats_request.type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_stats_request.length')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_stats_request.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_stats_request.stats_type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_stats_request.experimenter')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_stats_request.subtype')
-    return 'of_bsn_stats_request'
+    return of_bsn_stats_request_v2_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_request_v2_dissectors[6035143] = dissect_of_bsn_stats_request_v2
 
@@ -13896,9 +13692,7 @@ of_bsn_header_v2_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v2
 -- virtual top-level class of_bsn_vport
 -- Discriminator is type
 function dissect_of_bsn_vport_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport.type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport.length')
-    return 'of_bsn_vport'
+    return of_bsn_vport_v2_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_bsn_vport_q_in_q
 -- Child of of_bsn_vport
@@ -14063,25 +13857,7 @@ of_header_v2_dissectors[5] = dissect_of_features_request_v2
 -- Child of of_header
 -- Discriminator is _command
 function dissect_of_flow_mod_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.flow_mod.version')
-    read_uint8_t(reader, 2, subtree, 'of11.flow_mod.type')
-    read_uint16_t(reader, 2, subtree, 'of11.flow_mod.length')
-    read_uint32_t(reader, 2, subtree, 'of11.flow_mod.xid')
-    read_uint64_t(reader, 2, subtree, 'of11.flow_mod.cookie')
-    read_uint64_t(reader, 2, subtree, 'of11.flow_mod.cookie_mask')
-    read_uint8_t(reader, 2, subtree, 'of11.flow_mod.table_id')
-    read_of_fm_cmd_t(reader, 2, subtree, 'of11.flow_mod._command')
-    read_uint16_t(reader, 2, subtree, 'of11.flow_mod.idle_timeout')
-    read_uint16_t(reader, 2, subtree, 'of11.flow_mod.hard_timeout')
-    read_uint16_t(reader, 2, subtree, 'of11.flow_mod.priority')
-    read_uint32_t(reader, 2, subtree, 'of11.flow_mod.buffer_id')
-    read_of_port_no_t(reader, 2, subtree, 'of11.flow_mod.out_port')
-    read_uint32_t(reader, 2, subtree, 'of11.flow_mod.out_group')
-    read_uint16_t(reader, 2, subtree, 'of11.flow_mod.flags')
-    reader.skip(2)
-    read_of_match_t(reader, 2, subtree, 'of11.flow_mod.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_mod.instructions')
-    return 'of_flow_mod'
+    return of_flow_mod_v2_dissectors[reader.peek(25,1):uint()](reader, subtree)
 end
 of_header_v2_dissectors[14] = dissect_of_flow_mod_v2
 
@@ -14329,16 +14105,7 @@ of_header_v2_dissectors[7] = dissect_of_get_config_request_v2
 -- Child of of_header
 -- Discriminator is command
 function dissect_of_group_mod_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.group_mod.version')
-    read_uint8_t(reader, 2, subtree, 'of11.group_mod.type')
-    read_uint16_t(reader, 2, subtree, 'of11.group_mod.length')
-    read_uint32_t(reader, 2, subtree, 'of11.group_mod.xid')
-    read_uint16_t(reader, 2, subtree, 'of11.group_mod.command')
-    read_uint8_t(reader, 2, subtree, 'of11.group_mod.group_type')
-    reader.skip(1)
-    read_uint32_t(reader, 2, subtree, 'of11.group_mod.group_id')
-    read_list_of_bucket_t(reader, 2, subtree, 'of11.group_mod.buckets')
-    return 'of_group_mod'
+    return of_group_mod_v2_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v2_dissectors[15] = dissect_of_group_mod_v2
 
@@ -14513,10 +14280,7 @@ of_error_msg_v2_dissectors[0] = dissect_of_hello_failed_error_msg_v2
 -- virtual top-level class of_instruction
 -- Discriminator is type
 function dissect_of_instruction_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.instruction.type')
-    read_uint16_t(reader, 2, subtree, 'of11.instruction.len')
-    reader.skip(4)
-    return 'of_instruction'
+    return of_instruction_v2_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_instruction_apply_actions
 -- Child of of_instruction
@@ -14543,11 +14307,7 @@ of_instruction_v2_dissectors[5] = dissect_of_instruction_clear_actions_v2
 -- Child of of_instruction
 -- Discriminator is experimenter
 function dissect_of_instruction_experimenter_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.instruction_experimenter.type')
-    read_uint16_t(reader, 2, subtree, 'of11.instruction_experimenter.len')
-    read_uint32_t(reader, 2, subtree, 'of11.instruction_experimenter.experimenter')
-    read_of_octets_t(reader, 2, subtree, 'of11.instruction_experimenter.data')
-    return 'of_instruction_experimenter'
+    return of_instruction_experimenter_v2_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_instruction_v2_dissectors[65535] = dissect_of_instruction_experimenter_v2
 
@@ -14618,13 +14378,7 @@ end
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_nicira_header_v2(reader, subtree)
-    read_uint8_t(reader, 2, subtree, 'of11.nicira_header.version')
-    read_uint8_t(reader, 2, subtree, 'of11.nicira_header.type')
-    read_uint16_t(reader, 2, subtree, 'of11.nicira_header.length')
-    read_uint32_t(reader, 2, subtree, 'of11.nicira_header.xid')
-    read_uint32_t(reader, 2, subtree, 'of11.nicira_header.experimenter')
-    read_uint32_t(reader, 2, subtree, 'of11.nicira_header.subtype')
-    return 'of_nicira_header'
+    return of_nicira_header_v2_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v2_dissectors[8992] = dissect_of_nicira_header_v2
 
@@ -14828,10 +14582,7 @@ of_error_msg_v2_dissectors[9] = dissect_of_queue_op_failed_error_msg_v2
 -- virtual top-level class of_queue_prop
 -- Discriminator is type
 function dissect_of_queue_prop_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.queue_prop.type')
-    read_uint16_t(reader, 2, subtree, 'of11.queue_prop.len')
-    reader.skip(4)
-    return 'of_queue_prop'
+    return of_queue_prop_v2_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_queue_prop_min_rate
 -- Child of of_queue_prop
@@ -14989,20 +14740,13 @@ of_stats_request_v2_dissectors[3] = dissect_of_table_stats_request_v2
 -- virtual top-level class of_action
 -- Discriminator is type
 function dissect_of_action_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.action.type')
-    read_uint16_t(reader, 3, subtree, 'of12.action.len')
-    reader.skip(4)
-    return 'of_action'
+    return of_action_v3_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual child class of_action_experimenter
 -- Child of of_action
 -- Discriminator is experimenter
 function dissect_of_action_experimenter_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.action_experimenter.type')
-    read_uint16_t(reader, 3, subtree, 'of12.action_experimenter.len')
-    read_uint32_t(reader, 3, subtree, 'of12.action_experimenter.experimenter')
-    read_of_octets_t(reader, 3, subtree, 'of12.action_experimenter.data')
-    return 'of_action_experimenter'
+    return of_action_experimenter_v3_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_action_v3_dissectors[65535] = dissect_of_action_experimenter_v3
 
@@ -15010,12 +14754,7 @@ of_action_v3_dissectors[65535] = dissect_of_action_experimenter_v3
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_bsn_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.action_bsn.type')
-    read_uint16_t(reader, 3, subtree, 'of12.action_bsn.len')
-    read_uint32_t(reader, 3, subtree, 'of12.action_bsn.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.action_bsn.subtype')
-    reader.skip(4)
-    return 'of_action_bsn'
+    return of_action_bsn_v3_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_experimenter_v3_dissectors[6035143] = dissect_of_action_bsn_v3
 
@@ -15100,13 +14839,7 @@ of_action_v3_dissectors[22] = dissect_of_action_group_v3
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_nicira_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.action_nicira.type')
-    read_uint16_t(reader, 3, subtree, 'of12.action_nicira.len')
-    read_uint32_t(reader, 3, subtree, 'of12.action_nicira.experimenter')
-    read_uint16_t(reader, 3, subtree, 'of12.action_nicira.subtype')
-    reader.skip(2)
-    reader.skip(4)
-    return 'of_action_nicira'
+    return of_action_nicira_v3_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_action_experimenter_v3_dissectors[8992] = dissect_of_action_nicira_v3
 
@@ -15181,8 +14914,7 @@ of_action_v3_dissectors[17] = dissect_of_action_push_vlan_v3
 -- virtual top-level class of_oxm
 -- Discriminator is type_len
 function dissect_of_oxm_v3(reader, subtree)
-    read_uint32_t(reader, 3, subtree, 'of12.oxm.type_len')
-    return 'of_oxm'
+    return of_oxm_v3_dissectors[reader.peek(0,4):uint()](reader, subtree)
 end
 -- child class of_action_set_field
 -- Child of of_action
@@ -15229,24 +14961,13 @@ of_action_v3_dissectors[21] = dissect_of_action_set_queue_v3
 -- virtual top-level class of_header
 -- Discriminator is type
 function dissect_of_header_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.header.version')
-    read_uint8_t(reader, 3, subtree, 'of12.header.type')
-    read_uint16_t(reader, 3, subtree, 'of12.header.length')
-    read_uint32_t(reader, 3, subtree, 'of12.header.xid')
-    return 'of_header'
+    return of_header_v3_dissectors[reader.peek(1,1):uint()](reader, subtree)
 end
 -- virtual child class of_stats_reply
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_reply_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.stats_reply.version')
-    read_uint8_t(reader, 3, subtree, 'of12.stats_reply.type')
-    read_uint16_t(reader, 3, subtree, 'of12.stats_reply.length')
-    read_uint32_t(reader, 3, subtree, 'of12.stats_reply.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.stats_reply.stats_type')
-    read_uint16_t(reader, 3, subtree, 'of12.stats_reply.flags')
-    reader.skip(4)
-    return 'of_stats_reply'
+    return of_stats_reply_v3_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v3_dissectors[19] = dissect_of_stats_reply_v3
 
@@ -15272,14 +14993,7 @@ of_stats_reply_v3_dissectors[2] = dissect_of_aggregate_stats_reply_v3
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_request_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.stats_request.version')
-    read_uint8_t(reader, 3, subtree, 'of12.stats_request.type')
-    read_uint16_t(reader, 3, subtree, 'of12.stats_request.length')
-    read_uint32_t(reader, 3, subtree, 'of12.stats_request.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.stats_request.stats_type')
-    read_uint16_t(reader, 3, subtree, 'of12.stats_request.flags')
-    reader.skip(4)
-    return 'of_stats_request'
+    return of_stats_request_v3_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v3_dissectors[18] = dissect_of_stats_request_v3
 
@@ -15309,12 +15023,7 @@ of_stats_request_v3_dissectors[2] = dissect_of_aggregate_stats_request_v3
 -- Child of of_header
 -- Discriminator is err_type
 function dissect_of_error_msg_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.error_msg.version')
-    read_uint8_t(reader, 3, subtree, 'of12.error_msg.type')
-    read_uint16_t(reader, 3, subtree, 'of12.error_msg.length')
-    read_uint32_t(reader, 3, subtree, 'of12.error_msg.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.error_msg.err_type')
-    return 'of_error_msg'
+    return of_error_msg_v3_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v3_dissectors[1] = dissect_of_error_msg_v3
 
@@ -15400,14 +15109,7 @@ of_header_v3_dissectors[20] = dissect_of_barrier_request_v3
 -- Child of of_header
 -- Discriminator is experimenter
 function dissect_of_experimenter_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter.version')
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter.type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter.length')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter.xid')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter.subtype')
-    read_of_octets_t(reader, 3, subtree, 'of12.experimenter.data')
-    return 'of_experimenter'
+    return of_experimenter_v3_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_header_v3_dissectors[4] = dissect_of_experimenter_v3
 
@@ -15415,13 +15117,7 @@ of_header_v3_dissectors[4] = dissect_of_experimenter_v3
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_bsn_header_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.bsn_header.version')
-    read_uint8_t(reader, 3, subtree, 'of12.bsn_header.type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_header.length')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_header.xid')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_header.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_header.subtype')
-    return 'of_bsn_header'
+    return of_bsn_header_v3_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v3_dissectors[6035143] = dissect_of_bsn_header_v3
 
@@ -15709,17 +15405,7 @@ of_bsn_header_v3_dissectors[11] = dissect_of_bsn_set_pktin_suppression_request_v
 -- Child of of_stats_reply
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_reply_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter_stats_reply.version')
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter_stats_reply.type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_stats_reply.length')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_stats_reply.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_stats_reply.stats_type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_stats_reply.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_stats_reply.subtype')
-    read_of_octets_t(reader, 3, subtree, 'of12.experimenter_stats_reply.data')
-    return 'of_experimenter_stats_reply'
+    return of_experimenter_stats_reply_v3_dissectors[reader.peek(16,4):uint()](reader, subtree)
 end
 of_stats_reply_v3_dissectors[65535] = dissect_of_experimenter_stats_reply_v3
 
@@ -15727,16 +15413,7 @@ of_stats_reply_v3_dissectors[65535] = dissect_of_experimenter_stats_reply_v3
 -- Child of of_experimenter_stats_reply
 -- Discriminator is subtype
 function dissect_of_bsn_stats_reply_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.bsn_stats_reply.version')
-    read_uint8_t(reader, 3, subtree, 'of12.bsn_stats_reply.type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_stats_reply.length')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_stats_reply.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_stats_reply.stats_type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_stats_reply.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_stats_reply.subtype')
-    return 'of_bsn_stats_reply'
+    return of_bsn_stats_reply_v3_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_reply_v3_dissectors[6035143] = dissect_of_bsn_stats_reply_v3
 
@@ -15744,17 +15421,7 @@ of_experimenter_stats_reply_v3_dissectors[6035143] = dissect_of_bsn_stats_reply_
 -- Child of of_stats_request
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_request_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter_stats_request.version')
-    read_uint8_t(reader, 3, subtree, 'of12.experimenter_stats_request.type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_stats_request.length')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_stats_request.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_stats_request.stats_type')
-    read_uint16_t(reader, 3, subtree, 'of12.experimenter_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_stats_request.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.experimenter_stats_request.subtype')
-    read_of_octets_t(reader, 3, subtree, 'of12.experimenter_stats_request.data')
-    return 'of_experimenter_stats_request'
+    return of_experimenter_stats_request_v3_dissectors[reader.peek(16,4):uint()](reader, subtree)
 end
 of_stats_request_v3_dissectors[65535] = dissect_of_experimenter_stats_request_v3
 
@@ -15762,16 +15429,7 @@ of_stats_request_v3_dissectors[65535] = dissect_of_experimenter_stats_request_v3
 -- Child of of_experimenter_stats_request
 -- Discriminator is subtype
 function dissect_of_bsn_stats_request_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.bsn_stats_request.version')
-    read_uint8_t(reader, 3, subtree, 'of12.bsn_stats_request.type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_stats_request.length')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_stats_request.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_stats_request.stats_type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_stats_request.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_stats_request.subtype')
-    return 'of_bsn_stats_request'
+    return of_bsn_stats_request_v3_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_request_v3_dissectors[6035143] = dissect_of_bsn_stats_request_v3
 
@@ -15793,9 +15451,7 @@ of_bsn_header_v3_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v3
 -- virtual top-level class of_bsn_vport
 -- Discriminator is type
 function dissect_of_bsn_vport_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport.type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport.length')
-    return 'of_bsn_vport'
+    return of_bsn_vport_v3_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_bsn_vport_q_in_q
 -- Child of of_bsn_vport
@@ -15975,25 +15631,7 @@ of_header_v3_dissectors[5] = dissect_of_features_request_v3
 -- Child of of_header
 -- Discriminator is _command
 function dissect_of_flow_mod_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.flow_mod.version')
-    read_uint8_t(reader, 3, subtree, 'of12.flow_mod.type')
-    read_uint16_t(reader, 3, subtree, 'of12.flow_mod.length')
-    read_uint32_t(reader, 3, subtree, 'of12.flow_mod.xid')
-    read_uint64_t(reader, 3, subtree, 'of12.flow_mod.cookie')
-    read_uint64_t(reader, 3, subtree, 'of12.flow_mod.cookie_mask')
-    read_uint8_t(reader, 3, subtree, 'of12.flow_mod.table_id')
-    read_of_fm_cmd_t(reader, 3, subtree, 'of12.flow_mod._command')
-    read_uint16_t(reader, 3, subtree, 'of12.flow_mod.idle_timeout')
-    read_uint16_t(reader, 3, subtree, 'of12.flow_mod.hard_timeout')
-    read_uint16_t(reader, 3, subtree, 'of12.flow_mod.priority')
-    read_uint32_t(reader, 3, subtree, 'of12.flow_mod.buffer_id')
-    read_of_port_no_t(reader, 3, subtree, 'of12.flow_mod.out_port')
-    read_uint32_t(reader, 3, subtree, 'of12.flow_mod.out_group')
-    read_uint16_t(reader, 3, subtree, 'of12.flow_mod.flags')
-    reader.skip(2)
-    read_of_match_t(reader, 3, subtree, 'of12.flow_mod.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_mod.instructions')
-    return 'of_flow_mod'
+    return of_flow_mod_v3_dissectors[reader.peek(25,1):uint()](reader, subtree)
 end
 of_header_v3_dissectors[14] = dissect_of_flow_mod_v3
 
@@ -16241,16 +15879,7 @@ of_header_v3_dissectors[7] = dissect_of_get_config_request_v3
 -- Child of of_header
 -- Discriminator is command
 function dissect_of_group_mod_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.group_mod.version')
-    read_uint8_t(reader, 3, subtree, 'of12.group_mod.type')
-    read_uint16_t(reader, 3, subtree, 'of12.group_mod.length')
-    read_uint32_t(reader, 3, subtree, 'of12.group_mod.xid')
-    read_uint16_t(reader, 3, subtree, 'of12.group_mod.command')
-    read_uint8_t(reader, 3, subtree, 'of12.group_mod.group_type')
-    reader.skip(1)
-    read_uint32_t(reader, 3, subtree, 'of12.group_mod.group_id')
-    read_list_of_bucket_t(reader, 3, subtree, 'of12.group_mod.buckets')
-    return 'of_group_mod'
+    return of_group_mod_v3_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v3_dissectors[15] = dissect_of_group_mod_v3
 
@@ -16463,10 +16092,7 @@ of_error_msg_v3_dissectors[0] = dissect_of_hello_failed_error_msg_v3
 -- virtual top-level class of_instruction
 -- Discriminator is type
 function dissect_of_instruction_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.instruction.type')
-    read_uint16_t(reader, 3, subtree, 'of12.instruction.len')
-    reader.skip(4)
-    return 'of_instruction'
+    return of_instruction_v3_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_instruction_apply_actions
 -- Child of of_instruction
@@ -16493,11 +16119,7 @@ of_instruction_v3_dissectors[5] = dissect_of_instruction_clear_actions_v3
 -- Child of of_instruction
 -- Discriminator is experimenter
 function dissect_of_instruction_experimenter_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.instruction_experimenter.type')
-    read_uint16_t(reader, 3, subtree, 'of12.instruction_experimenter.len')
-    read_uint32_t(reader, 3, subtree, 'of12.instruction_experimenter.experimenter')
-    read_of_octets_t(reader, 3, subtree, 'of12.instruction_experimenter.data')
-    return 'of_instruction_experimenter'
+    return of_instruction_experimenter_v3_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_instruction_v3_dissectors[65535] = dissect_of_instruction_experimenter_v3
 
@@ -16546,13 +16168,7 @@ end
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_nicira_header_v3(reader, subtree)
-    read_uint8_t(reader, 3, subtree, 'of12.nicira_header.version')
-    read_uint8_t(reader, 3, subtree, 'of12.nicira_header.type')
-    read_uint16_t(reader, 3, subtree, 'of12.nicira_header.length')
-    read_uint32_t(reader, 3, subtree, 'of12.nicira_header.xid')
-    read_uint32_t(reader, 3, subtree, 'of12.nicira_header.experimenter')
-    read_uint32_t(reader, 3, subtree, 'of12.nicira_header.subtype')
-    return 'of_nicira_header'
+    return of_nicira_header_v3_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v3_dissectors[8992] = dissect_of_nicira_header_v3
 
@@ -17574,22 +17190,13 @@ of_error_msg_v3_dissectors[9] = dissect_of_queue_op_failed_error_msg_v3
 -- virtual top-level class of_queue_prop
 -- Discriminator is type
 function dissect_of_queue_prop_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.queue_prop.type')
-    read_uint16_t(reader, 3, subtree, 'of12.queue_prop.len')
-    reader.skip(4)
-    return 'of_queue_prop'
+    return of_queue_prop_v3_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual child class of_queue_prop_experimenter
 -- Child of of_queue_prop
 -- Discriminator is experimenter
 function dissect_of_queue_prop_experimenter_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.queue_prop_experimenter.type')
-    read_uint16_t(reader, 3, subtree, 'of12.queue_prop_experimenter.len')
-    reader.skip(4)
-    read_uint32_t(reader, 3, subtree, 'of12.queue_prop_experimenter.experimenter')
-    reader.skip(4)
-    read_of_octets_t(reader, 3, subtree, 'of12.queue_prop_experimenter.data')
-    return 'of_queue_prop_experimenter'
+    return of_queue_prop_experimenter_v3_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_queue_prop_v3_dissectors[65535] = dissect_of_queue_prop_experimenter_v3
 
@@ -17807,28 +17414,18 @@ of_stats_request_v3_dissectors[3] = dissect_of_table_stats_request_v3
 -- virtual top-level class of_action
 -- Discriminator is type
 function dissect_of_action_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action.len')
-    reader.skip(4)
-    return 'of_action'
+    return of_action_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual top-level class of_action_id
 -- Discriminator is type
 function dissect_of_action_id_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_id.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_id.len')
-    reader.skip(4)
-    return 'of_action_id'
+    return of_action_id_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual child class of_action_experimenter
 -- Child of of_action
 -- Discriminator is experimenter
 function dissect_of_action_experimenter_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_experimenter.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_experimenter.len')
-    read_uint32_t(reader, 4, subtree, 'of13.action_experimenter.experimenter')
-    read_of_octets_t(reader, 4, subtree, 'of13.action_experimenter.data')
-    return 'of_action_experimenter'
+    return of_action_experimenter_v4_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_action_v4_dissectors[65535] = dissect_of_action_experimenter_v4
 
@@ -17836,12 +17433,7 @@ of_action_v4_dissectors[65535] = dissect_of_action_experimenter_v4
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_bsn_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_bsn.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_bsn.len')
-    read_uint32_t(reader, 4, subtree, 'of13.action_bsn.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.action_bsn.subtype')
-    reader.skip(4)
-    return 'of_action_bsn'
+    return of_action_bsn_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_experimenter_v4_dissectors[6035143] = dissect_of_action_bsn_v4
 
@@ -17849,10 +17441,7 @@ of_action_experimenter_v4_dissectors[6035143] = dissect_of_action_bsn_v4
 -- Child of of_action_id
 -- Discriminator is experimenter
 function dissect_of_action_id_experimenter_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_experimenter.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_experimenter.len')
-    read_uint32_t(reader, 4, subtree, 'of13.action_id_experimenter.experimenter')
-    return 'of_action_id_experimenter'
+    return of_action_id_experimenter_v4_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_action_id_v4_dissectors[65535] = dissect_of_action_id_experimenter_v4
 
@@ -17860,12 +17449,7 @@ of_action_id_v4_dissectors[65535] = dissect_of_action_id_experimenter_v4
 -- Child of of_action_id_experimenter
 -- Discriminator is subtype
 function dissect_of_action_id_bsn_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn.len')
-    read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn.subtype')
-    reader.skip(4)
-    return 'of_action_id_bsn'
+    return of_action_id_bsn_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_id_experimenter_v4_dissectors[6035143] = dissect_of_action_id_bsn_v4
 
@@ -18022,13 +17606,7 @@ of_action_id_v4_dissectors[22] = dissect_of_action_id_group_v4
 -- Child of of_action_experimenter
 -- Discriminator is subtype
 function dissect_of_action_nicira_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_nicira.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_nicira.len')
-    read_uint32_t(reader, 4, subtree, 'of13.action_nicira.experimenter')
-    read_uint16_t(reader, 4, subtree, 'of13.action_nicira.subtype')
-    reader.skip(2)
-    reader.skip(4)
-    return 'of_action_nicira'
+    return of_action_nicira_v4_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_action_experimenter_v4_dissectors[8992] = dissect_of_action_nicira_v4
 
@@ -18036,13 +17614,7 @@ of_action_experimenter_v4_dissectors[8992] = dissect_of_action_nicira_v4
 -- Child of of_action_id_experimenter
 -- Discriminator is subtype
 function dissect_of_action_id_nicira_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira.type')
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira.len')
-    read_uint32_t(reader, 4, subtree, 'of13.action_id_nicira.experimenter')
-    read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira.subtype')
-    reader.skip(2)
-    reader.skip(4)
-    return 'of_action_id_nicira'
+    return of_action_id_nicira_v4_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_action_id_experimenter_v4_dissectors[8992] = dissect_of_action_id_nicira_v4
 
@@ -18221,8 +17793,7 @@ of_action_id_v4_dissectors[17] = dissect_of_action_id_push_vlan_v4
 -- virtual top-level class of_oxm
 -- Discriminator is type_len
 function dissect_of_oxm_v4(reader, subtree)
-    read_uint32_t(reader, 4, subtree, 'of13.oxm.type_len')
-    return 'of_oxm'
+    return of_oxm_v4_dissectors[reader.peek(0,4):uint()](reader, subtree)
 end
 -- child class of_action_set_field
 -- Child of of_action
@@ -18307,24 +17878,13 @@ of_action_id_v4_dissectors[21] = dissect_of_action_id_set_queue_v4
 -- virtual top-level class of_header
 -- Discriminator is type
 function dissect_of_header_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.header.version')
-    read_uint8_t(reader, 4, subtree, 'of13.header.type')
-    read_uint16_t(reader, 4, subtree, 'of13.header.length')
-    read_uint32_t(reader, 4, subtree, 'of13.header.xid')
-    return 'of_header'
+    return of_header_v4_dissectors[reader.peek(1,1):uint()](reader, subtree)
 end
 -- virtual child class of_stats_reply
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_reply_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.stats_reply.version')
-    read_uint8_t(reader, 4, subtree, 'of13.stats_reply.type')
-    read_uint16_t(reader, 4, subtree, 'of13.stats_reply.length')
-    read_uint32_t(reader, 4, subtree, 'of13.stats_reply.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.stats_reply.stats_type')
-    read_uint16_t(reader, 4, subtree, 'of13.stats_reply.flags')
-    reader.skip(4)
-    return 'of_stats_reply'
+    return of_stats_reply_v4_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v4_dissectors[19] = dissect_of_stats_reply_v4
 
@@ -18350,14 +17910,7 @@ of_stats_reply_v4_dissectors[2] = dissect_of_aggregate_stats_reply_v4
 -- Child of of_header
 -- Discriminator is stats_type
 function dissect_of_stats_request_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.stats_request.version')
-    read_uint8_t(reader, 4, subtree, 'of13.stats_request.type')
-    read_uint16_t(reader, 4, subtree, 'of13.stats_request.length')
-    read_uint32_t(reader, 4, subtree, 'of13.stats_request.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.stats_request.stats_type')
-    read_uint16_t(reader, 4, subtree, 'of13.stats_request.flags')
-    reader.skip(4)
-    return 'of_stats_request'
+    return of_stats_request_v4_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v4_dissectors[18] = dissect_of_stats_request_v4
 
@@ -18438,12 +17991,7 @@ of_header_v4_dissectors[28] = dissect_of_async_set_v4
 -- Child of of_header
 -- Discriminator is err_type
 function dissect_of_error_msg_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.error_msg.version')
-    read_uint8_t(reader, 4, subtree, 'of13.error_msg.type')
-    read_uint16_t(reader, 4, subtree, 'of13.error_msg.length')
-    read_uint32_t(reader, 4, subtree, 'of13.error_msg.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.error_msg.err_type')
-    return 'of_error_msg'
+    return of_error_msg_v4_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v4_dissectors[1] = dissect_of_error_msg_v4
 
@@ -18529,14 +18077,7 @@ of_header_v4_dissectors[20] = dissect_of_barrier_request_v4
 -- Child of of_header
 -- Discriminator is experimenter
 function dissect_of_experimenter_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter.version')
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter.type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter.length')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter.xid')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter.subtype')
-    read_of_octets_t(reader, 4, subtree, 'of13.experimenter.data')
-    return 'of_experimenter'
+    return of_experimenter_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_header_v4_dissectors[4] = dissect_of_experimenter_v4
 
@@ -18544,13 +18085,7 @@ of_header_v4_dissectors[4] = dissect_of_experimenter_v4
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_bsn_header_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.bsn_header.version')
-    read_uint8_t(reader, 4, subtree, 'of13.bsn_header.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_header.length')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_header.xid')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_header.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_header.subtype')
-    return 'of_bsn_header'
+    return of_bsn_header_v4_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v4_dissectors[6035143] = dissect_of_bsn_header_v4
 
@@ -18852,16 +18387,7 @@ end
 -- Child of of_stats_reply
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_reply_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter_stats_reply.version')
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter_stats_reply.type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_stats_reply.length')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_reply.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_stats_reply.stats_type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_reply.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_reply.subtype')
-    return 'of_experimenter_stats_reply'
+    return of_experimenter_stats_reply_v4_dissectors[reader.peek(16,4):uint()](reader, subtree)
 end
 of_stats_reply_v4_dissectors[65535] = dissect_of_experimenter_stats_reply_v4
 
@@ -18869,16 +18395,7 @@ of_stats_reply_v4_dissectors[65535] = dissect_of_experimenter_stats_reply_v4
 -- Child of of_experimenter_stats_reply
 -- Discriminator is subtype
 function dissect_of_bsn_stats_reply_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.bsn_stats_reply.version')
-    read_uint8_t(reader, 4, subtree, 'of13.bsn_stats_reply.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_stats_reply.length')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_stats_reply.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_stats_reply.stats_type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_stats_reply.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_stats_reply.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_stats_reply.subtype')
-    return 'of_bsn_stats_reply'
+    return of_bsn_stats_reply_v4_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_reply_v4_dissectors[6035143] = dissect_of_bsn_stats_reply_v4
 
@@ -18903,16 +18420,7 @@ of_bsn_stats_reply_v4_dissectors[1] = dissect_of_bsn_lacp_stats_reply_v4
 -- Child of of_stats_request
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_request_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter_stats_request.version')
-    read_uint8_t(reader, 4, subtree, 'of13.experimenter_stats_request.type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_stats_request.length')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_request.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_stats_request.stats_type')
-    read_uint16_t(reader, 4, subtree, 'of13.experimenter_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_request.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_request.subtype')
-    return 'of_experimenter_stats_request'
+    return of_experimenter_stats_request_v4_dissectors[reader.peek(16,4):uint()](reader, subtree)
 end
 of_stats_request_v4_dissectors[65535] = dissect_of_experimenter_stats_request_v4
 
@@ -18920,16 +18428,7 @@ of_stats_request_v4_dissectors[65535] = dissect_of_experimenter_stats_request_v4
 -- Child of of_experimenter_stats_request
 -- Discriminator is subtype
 function dissect_of_bsn_stats_request_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.bsn_stats_request.version')
-    read_uint8_t(reader, 4, subtree, 'of13.bsn_stats_request.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_stats_request.length')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_stats_request.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_stats_request.stats_type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_stats_request.flags')
-    reader.skip(4)
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_stats_request.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_stats_request.subtype')
-    return 'of_bsn_stats_request'
+    return of_bsn_stats_request_v4_dissectors[reader.peek(20,4):uint()](reader, subtree)
 end
 of_experimenter_stats_request_v4_dissectors[6035143] = dissect_of_bsn_stats_request_v4
 
@@ -19269,9 +18768,7 @@ of_bsn_header_v4_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v4
 -- virtual top-level class of_bsn_vport
 -- Discriminator is type
 function dissect_of_bsn_vport_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport.length')
-    return 'of_bsn_vport'
+    return of_bsn_vport_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_bsn_vport_q_in_q
 -- Child of of_bsn_vport
@@ -19463,9 +18960,7 @@ of_error_msg_v4_dissectors[65535] = dissect_of_experimenter_error_msg_v4
 -- virtual top-level class of_experimenter_stats_header
 -- Discriminator is experimenter
 function dissect_of_experimenter_stats_header_v4(reader, subtree)
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_header.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.experimenter_stats_header.subtype')
-    return 'of_experimenter_stats_header'
+    return of_experimenter_stats_header_v4_dissectors[reader.peek(0,4):uint()](reader, subtree)
 end
 -- child class of_features_reply
 -- Child of of_header
@@ -19500,25 +18995,7 @@ of_header_v4_dissectors[5] = dissect_of_features_request_v4
 -- Child of of_header
 -- Discriminator is _command
 function dissect_of_flow_mod_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.flow_mod.version')
-    read_uint8_t(reader, 4, subtree, 'of13.flow_mod.type')
-    read_uint16_t(reader, 4, subtree, 'of13.flow_mod.length')
-    read_uint32_t(reader, 4, subtree, 'of13.flow_mod.xid')
-    read_uint64_t(reader, 4, subtree, 'of13.flow_mod.cookie')
-    read_uint64_t(reader, 4, subtree, 'of13.flow_mod.cookie_mask')
-    read_uint8_t(reader, 4, subtree, 'of13.flow_mod.table_id')
-    read_of_fm_cmd_t(reader, 4, subtree, 'of13.flow_mod._command')
-    read_uint16_t(reader, 4, subtree, 'of13.flow_mod.idle_timeout')
-    read_uint16_t(reader, 4, subtree, 'of13.flow_mod.hard_timeout')
-    read_uint16_t(reader, 4, subtree, 'of13.flow_mod.priority')
-    read_uint32_t(reader, 4, subtree, 'of13.flow_mod.buffer_id')
-    read_of_port_no_t(reader, 4, subtree, 'of13.flow_mod.out_port')
-    read_uint32_t(reader, 4, subtree, 'of13.flow_mod.out_group')
-    read_uint16_t(reader, 4, subtree, 'of13.flow_mod.flags')
-    reader.skip(2)
-    read_of_match_t(reader, 4, subtree, 'of13.flow_mod.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_mod.instructions')
-    return 'of_flow_mod'
+    return of_flow_mod_v4_dissectors[reader.peek(25,1):uint()](reader, subtree)
 end
 of_header_v4_dissectors[14] = dissect_of_flow_mod_v4
 
@@ -19767,16 +19244,7 @@ of_header_v4_dissectors[7] = dissect_of_get_config_request_v4
 -- Child of of_header
 -- Discriminator is command
 function dissect_of_group_mod_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.group_mod.version')
-    read_uint8_t(reader, 4, subtree, 'of13.group_mod.type')
-    read_uint16_t(reader, 4, subtree, 'of13.group_mod.length')
-    read_uint32_t(reader, 4, subtree, 'of13.group_mod.xid')
-    read_uint16_t(reader, 4, subtree, 'of13.group_mod.command')
-    read_uint8_t(reader, 4, subtree, 'of13.group_mod.group_type')
-    reader.skip(1)
-    read_uint32_t(reader, 4, subtree, 'of13.group_mod.group_id')
-    read_list_of_bucket_t(reader, 4, subtree, 'of13.group_mod.buckets')
-    return 'of_group_mod'
+    return of_group_mod_v4_dissectors[reader.peek(8,2):uint()](reader, subtree)
 end
 of_header_v4_dissectors[15] = dissect_of_group_mod_v4
 
@@ -19978,9 +19446,7 @@ of_header_v4_dissectors[0] = dissect_of_hello_v4
 -- virtual top-level class of_hello_elem
 -- Discriminator is type
 function dissect_of_hello_elem_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.hello_elem.type')
-    read_uint16_t(reader, 4, subtree, 'of13.hello_elem.length')
-    return 'of_hello_elem'
+    return of_hello_elem_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_hello_elem_versionbitmap
 -- Child of of_hello_elem
@@ -20009,16 +19475,12 @@ of_error_msg_v4_dissectors[0] = dissect_of_hello_failed_error_msg_v4
 -- virtual top-level class of_instruction
 -- Discriminator is type
 function dissect_of_instruction_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction.len')
-    return 'of_instruction'
+    return of_instruction_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual top-level class of_instruction_id
 -- Discriminator is type
 function dissect_of_instruction_id_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_id.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_id.len')
-    return 'of_instruction_id'
+    return of_instruction_id_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_instruction_apply_actions
 -- Child of of_instruction
@@ -20045,11 +19507,7 @@ of_instruction_id_v4_dissectors[4] = dissect_of_instruction_id_apply_actions_v4
 -- Child of of_instruction
 -- Discriminator is experimenter
 function dissect_of_instruction_experimenter_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_experimenter.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_experimenter.len')
-    read_uint32_t(reader, 4, subtree, 'of13.instruction_experimenter.experimenter')
-    read_of_octets_t(reader, 4, subtree, 'of13.instruction_experimenter.data')
-    return 'of_instruction_experimenter'
+    return of_instruction_experimenter_v4_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_instruction_v4_dissectors[65535] = dissect_of_instruction_experimenter_v4
 
@@ -20057,12 +19515,7 @@ of_instruction_v4_dissectors[65535] = dissect_of_instruction_experimenter_v4
 -- Child of of_instruction_experimenter
 -- Discriminator is subtype
 function dissect_of_instruction_bsn_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn.len')
-    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn.subtype')
-    reader.skip(4)
-    return 'of_instruction_bsn'
+    return of_instruction_bsn_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_instruction_experimenter_v4_dissectors[6035143] = dissect_of_instruction_bsn_v4
 
@@ -20070,10 +19523,7 @@ of_instruction_experimenter_v4_dissectors[6035143] = dissect_of_instruction_bsn_
 -- Child of of_instruction_id
 -- Discriminator is experimenter
 function dissect_of_instruction_id_experimenter_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_experimenter.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_experimenter.len')
-    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_experimenter.experimenter')
-    return 'of_instruction_id_experimenter'
+    return of_instruction_id_experimenter_v4_dissectors[reader.peek(4,4):uint()](reader, subtree)
 end
 of_instruction_id_v4_dissectors[65535] = dissect_of_instruction_id_experimenter_v4
 
@@ -20081,12 +19531,7 @@ of_instruction_id_v4_dissectors[65535] = dissect_of_instruction_id_experimenter_
 -- Child of of_instruction_id_experimenter
 -- Discriminator is subtype
 function dissect_of_instruction_id_bsn_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn.type')
-    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn.len')
-    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn.subtype')
-    reader.skip(4)
-    return 'of_instruction_id_bsn'
+    return of_instruction_id_bsn_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_instruction_id_experimenter_v4_dissectors[6035143] = dissect_of_instruction_id_bsn_v4
 
@@ -20227,9 +19672,7 @@ end
 -- virtual top-level class of_meter_band
 -- Discriminator is type
 function dissect_of_meter_band_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.meter_band.type')
-    read_uint16_t(reader, 4, subtree, 'of13.meter_band.len')
-    return 'of_meter_band'
+    return of_meter_band_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_meter_band_drop
 -- Child of of_meter_band
@@ -20429,13 +19872,7 @@ of_stats_request_v4_dissectors[9] = dissect_of_meter_stats_request_v4
 -- Child of of_experimenter
 -- Discriminator is subtype
 function dissect_of_nicira_header_v4(reader, subtree)
-    read_uint8_t(reader, 4, subtree, 'of13.nicira_header.version')
-    read_uint8_t(reader, 4, subtree, 'of13.nicira_header.type')
-    read_uint16_t(reader, 4, subtree, 'of13.nicira_header.length')
-    read_uint32_t(reader, 4, subtree, 'of13.nicira_header.xid')
-    read_uint32_t(reader, 4, subtree, 'of13.nicira_header.experimenter')
-    read_uint32_t(reader, 4, subtree, 'of13.nicira_header.subtype')
-    return 'of_nicira_header'
+    return of_nicira_header_v4_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v4_dissectors[8992] = dissect_of_nicira_header_v4
 
@@ -21489,22 +20926,13 @@ of_error_msg_v4_dissectors[9] = dissect_of_queue_op_failed_error_msg_v4
 -- virtual top-level class of_queue_prop
 -- Discriminator is type
 function dissect_of_queue_prop_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.queue_prop.type')
-    read_uint16_t(reader, 4, subtree, 'of13.queue_prop.len')
-    reader.skip(4)
-    return 'of_queue_prop'
+    return of_queue_prop_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- virtual child class of_queue_prop_experimenter
 -- Child of of_queue_prop
 -- Discriminator is experimenter
 function dissect_of_queue_prop_experimenter_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.queue_prop_experimenter.type')
-    read_uint16_t(reader, 4, subtree, 'of13.queue_prop_experimenter.len')
-    reader.skip(4)
-    read_uint32_t(reader, 4, subtree, 'of13.queue_prop_experimenter.experimenter')
-    reader.skip(4)
-    read_of_octets_t(reader, 4, subtree, 'of13.queue_prop_experimenter.data')
-    return 'of_queue_prop_experimenter'
+    return of_queue_prop_experimenter_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_queue_prop_v4_dissectors[65535] = dissect_of_queue_prop_experimenter_v4
 
@@ -21646,9 +21074,7 @@ of_error_msg_v4_dissectors[10] = dissect_of_switch_config_failed_error_msg_v4
 -- virtual top-level class of_table_feature_prop
 -- Discriminator is type
 function dissect_of_table_feature_prop_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop.type')
-    read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop.length')
-    return 'of_table_feature_prop'
+    return of_table_feature_prop_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
 -- child class of_table_feature_prop_apply_actions
 -- Child of of_table_feature_prop
@@ -22037,15 +21463,7 @@ function dissect_of_message(buf, root)
     end
 
     local info = "unknown"
-    if type_val == 19 then
-        local stats_type = buf(8,2):uint()
-        info = of_stats_reply_dissectors[version_val][stats_type](reader,subtree)
-    elseif type_val == 18 then
-        local stats_type = buf(8,2):uint()
-        info = of_stats_request_dissectors[version_val][stats_type](reader,subtree)
-    elseif of_message_dissectors[version_val] and of_message_dissectors[version_val][type_val] then
-        info = of_message_dissectors[version_val][type_val](reader, subtree)
-    end
+    info = of_message_dissectors[version_val][type_val](reader, subtree)
 
     return protocol, info
 end

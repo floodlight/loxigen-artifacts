@@ -1,1 +1,1 @@
-71b185f680bd6988e74b8ee74875b4928c02eb53 Merge into master from pull request #151: automatically generate action/instruction ID classes (https://github.com/floodlight/loxigen/pull/151)
+c7a12461c8c26d69aa585cb92a94cf80a70f2244 Merge into master from pull request #152: Handling virtual classes in wireshark_gen (https://github.com/floodlight/loxigen/pull/152)
