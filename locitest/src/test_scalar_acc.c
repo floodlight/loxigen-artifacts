@@ -1464,19 +1464,6 @@ test_of_experimenter_OF_VERSION_1_0_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_OF_VERSION_1_0_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_OF_VERSION_1_0_check_scalars(obj, 1) != 0);
-
     of_experimenter_delete(obj);
 
     /* To do: Check memory */
@@ -2736,19 +2723,6 @@ test_of_action_experimenter_OF_VERSION_1_0_scalar(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_EXPERIMENTER);
-
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_action_experimenter_OF_VERSION_1_0_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_action_experimenter_OF_VERSION_1_0_check_scalars(obj, 1) != 0);
 
     of_action_experimenter_delete(obj);
 
@@ -4832,19 +4806,6 @@ test_of_experimenter_OF_VERSION_1_1_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_OF_VERSION_1_1_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
-
     of_experimenter_delete(obj);
 
     /* To do: Check memory */
@@ -6463,19 +6424,6 @@ test_of_action_experimenter_OF_VERSION_1_1_scalar(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_EXPERIMENTER);
-
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_action_experimenter_OF_VERSION_1_1_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_action_experimenter_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
 
     of_action_experimenter_delete(obj);
 
@@ -9274,19 +9222,6 @@ test_of_experimenter_OF_VERSION_1_2_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_OF_VERSION_1_2_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
-
     of_experimenter_delete(obj);
 
     /* To do: Check memory */
@@ -11091,19 +11026,6 @@ test_of_action_experimenter_OF_VERSION_1_2_scalar(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_EXPERIMENTER);
-
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_action_experimenter_OF_VERSION_1_2_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_action_experimenter_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
 
     of_action_experimenter_delete(obj);
 
@@ -14752,19 +14674,6 @@ test_of_queue_prop_experimenter_OF_VERSION_1_2_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_PROP_EXPERIMENTER);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_queue_prop_experimenter_OF_VERSION_1_2_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_queue_prop_experimenter_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
-
     of_queue_prop_experimenter_delete(obj);
 
     /* To do: Check memory */
@@ -17100,19 +17009,6 @@ test_of_experimenter_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_experimenter_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_experimenter_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
-
     of_experimenter_delete(obj);
 
     /* To do: Check memory */
@@ -19321,19 +19217,6 @@ test_of_action_experimenter_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_EXPERIMENTER);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_action_experimenter_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_action_experimenter_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
-
     of_action_experimenter_delete(obj);
 
     /* To do: Check memory */
@@ -19604,19 +19487,6 @@ test_of_action_id_experimenter_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_EXPERIMENTER);
-
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_action_id_experimenter_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_action_id_experimenter_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_action_id_experimenter_delete(obj);
 
@@ -21118,19 +20988,6 @@ test_of_instruction_id_bsn_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN);
 
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_instruction_id_bsn_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_instruction_id_bsn_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
-
     of_instruction_id_bsn_delete(obj);
 
     /* To do: Check memory */
@@ -21210,19 +21067,6 @@ test_of_instruction_id_experimenter_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_EXPERIMENTER);
-
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_instruction_id_experimenter_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_instruction_id_experimenter_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_instruction_id_experimenter_delete(obj);
 
@@ -24519,19 +24363,6 @@ test_of_queue_prop_experimenter_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_PROP_EXPERIMENTER);
-
-    if (obj->wire_length_get != NULL) {
-        int length;
-
-        obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
-    }
-
-    /* Set up incrementing values for scalar members */
-    of_queue_prop_experimenter_OF_VERSION_1_3_populate_scalars(obj, 1);
-
-    /* Check values just set */
-    TEST_ASSERT(of_queue_prop_experimenter_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_queue_prop_experimenter_delete(obj);
 

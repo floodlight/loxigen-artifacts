@@ -55,7 +55,7 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
     // Accessors for OF message fields
     @Override
     public long getTypeLen() {
-        return 0x30701L;
+        return 0x30702L;
     }
 
     @Override
@@ -114,7 +114,7 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
 
     @Override
     public long getTypeLen() {
-        return 0x30701L;
+        return 0x30702L;
     }
 
     @Override
@@ -188,7 +188,7 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
 
     @Override
     public long getTypeLen() {
-        return 0x30701L;
+        return 0x30702L;
     }
 
     @Override
@@ -257,10 +257,10 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
     static class Reader implements OFMessageReader<OFOxmBsnGlobalVrfAllowedMasked> {
         @Override
         public OFOxmBsnGlobalVrfAllowedMasked readFrom(ChannelBuffer bb) throws OFParseError {
-            // fixed value property typeLen == 0x30701L
+            // fixed value property typeLen == 0x30702L
             int typeLen = bb.readInt();
-            if(typeLen != 0x30701)
-                throw new OFParseError("Wrong typeLen: Expected=0x30701L(0x30701L), got="+typeLen);
+            if(typeLen != 0x30702)
+                throw new OFParseError("Wrong typeLen: Expected=0x30702L(0x30702L), got="+typeLen);
             OFBooleanValue value = OFBooleanValue.of(bb.readByte() != 0);
             OFBooleanValue mask = OFBooleanValue.of(bb.readByte() != 0);
 
@@ -283,8 +283,8 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFOxmBsnGlobalVrfAllowedMaskedVer13 message, PrimitiveSink sink) {
-            // fixed value property typeLen = 0x30701L
-            sink.putInt(0x30701);
+            // fixed value property typeLen = 0x30702L
+            sink.putInt(0x30702);
             message.value.putTo(sink);
             message.mask.putTo(sink);
         }
@@ -299,8 +299,8 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer13 implements OFOxmBsnGlobalVrfAllowedMas
     static class Writer implements OFMessageWriter<OFOxmBsnGlobalVrfAllowedMaskedVer13> {
         @Override
         public void write(ChannelBuffer bb, OFOxmBsnGlobalVrfAllowedMaskedVer13 message) {
-            // fixed value property typeLen = 0x30701L
-            bb.writeInt(0x30701);
+            // fixed value property typeLen = 0x30702L
+            bb.writeInt(0x30702);
             bb.writeByte(message.value.getInt());
             bb.writeByte(message.mask.getInt());
 

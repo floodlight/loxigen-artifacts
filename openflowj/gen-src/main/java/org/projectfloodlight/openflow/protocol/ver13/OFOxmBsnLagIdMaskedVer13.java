@@ -55,7 +55,7 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
     // Accessors for OF message fields
     @Override
     public long getTypeLen() {
-        return 0x30304L;
+        return 0x30308L;
     }
 
     @Override
@@ -114,7 +114,7 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
 
     @Override
     public long getTypeLen() {
-        return 0x30304L;
+        return 0x30308L;
     }
 
     @Override
@@ -188,7 +188,7 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
 
     @Override
     public long getTypeLen() {
-        return 0x30304L;
+        return 0x30308L;
     }
 
     @Override
@@ -257,10 +257,10 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
     static class Reader implements OFMessageReader<OFOxmBsnLagIdMasked> {
         @Override
         public OFOxmBsnLagIdMasked readFrom(ChannelBuffer bb) throws OFParseError {
-            // fixed value property typeLen == 0x30304L
+            // fixed value property typeLen == 0x30308L
             int typeLen = bb.readInt();
-            if(typeLen != 0x30304)
-                throw new OFParseError("Wrong typeLen: Expected=0x30304L(0x30304L), got="+typeLen);
+            if(typeLen != 0x30308)
+                throw new OFParseError("Wrong typeLen: Expected=0x30308L(0x30308L), got="+typeLen);
             LagId value = LagId.read4Bytes(bb);
             LagId mask = LagId.read4Bytes(bb);
 
@@ -283,8 +283,8 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFOxmBsnLagIdMaskedVer13 message, PrimitiveSink sink) {
-            // fixed value property typeLen = 0x30304L
-            sink.putInt(0x30304);
+            // fixed value property typeLen = 0x30308L
+            sink.putInt(0x30308);
             message.value.putTo(sink);
             message.mask.putTo(sink);
         }
@@ -299,8 +299,8 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
     static class Writer implements OFMessageWriter<OFOxmBsnLagIdMaskedVer13> {
         @Override
         public void write(ChannelBuffer bb, OFOxmBsnLagIdMaskedVer13 message) {
-            // fixed value property typeLen = 0x30304L
-            bb.writeInt(0x30304);
+            // fixed value property typeLen = 0x30308L
+            bb.writeInt(0x30308);
             message.value.write4Bytes(bb);
             message.mask.write4Bytes(bb);
 

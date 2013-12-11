@@ -16024,7 +16024,7 @@ function dissect_of_oxm_bsn_global_vrf_allowed_masked_v3(reader, subtree)
     read_uint8_t(reader, 3, subtree, 'of12.oxm_bsn_global_vrf_allowed_masked.value_mask')
     return 'of_oxm_bsn_global_vrf_allowed_masked'
 end
-of_oxm_v3_dissectors[198401] = dissect_of_oxm_bsn_global_vrf_allowed_masked_v3
+of_oxm_v3_dissectors[198402] = dissect_of_oxm_bsn_global_vrf_allowed_masked_v3
 
 -- child class of_oxm_bsn_in_ports_128
 -- Child of of_oxm
@@ -16033,7 +16033,7 @@ function dissect_of_oxm_bsn_in_ports_128_v3(reader, subtree)
     read_of_bitmap_128_t(reader, 3, subtree, 'of12.oxm_bsn_in_ports_128.value')
     return 'of_oxm_bsn_in_ports_128'
 end
-of_oxm_v3_dissectors[196640] = dissect_of_oxm_bsn_in_ports_128_v3
+of_oxm_v3_dissectors[196624] = dissect_of_oxm_bsn_in_ports_128_v3
 
 -- child class of_oxm_bsn_in_ports_128_masked
 -- Child of of_oxm
@@ -16062,7 +16062,7 @@ function dissect_of_oxm_bsn_l3_dst_class_id_masked_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_l3_dst_class_id_masked.value_mask')
     return 'of_oxm_bsn_l3_dst_class_id_masked'
 end
-of_oxm_v3_dissectors[199940] = dissect_of_oxm_bsn_l3_dst_class_id_masked_v3
+of_oxm_v3_dissectors[199944] = dissect_of_oxm_bsn_l3_dst_class_id_masked_v3
 
 -- child class of_oxm_bsn_l3_interface_class_id
 -- Child of of_oxm
@@ -16081,7 +16081,7 @@ function dissect_of_oxm_bsn_l3_interface_class_id_masked_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_l3_interface_class_id_masked.value_mask')
     return 'of_oxm_bsn_l3_interface_class_id_masked'
 end
-of_oxm_v3_dissectors[198916] = dissect_of_oxm_bsn_l3_interface_class_id_masked_v3
+of_oxm_v3_dissectors[198920] = dissect_of_oxm_bsn_l3_interface_class_id_masked_v3
 
 -- child class of_oxm_bsn_l3_src_class_id
 -- Child of of_oxm
@@ -16100,7 +16100,7 @@ function dissect_of_oxm_bsn_l3_src_class_id_masked_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_l3_src_class_id_masked.value_mask')
     return 'of_oxm_bsn_l3_src_class_id_masked'
 end
-of_oxm_v3_dissectors[199428] = dissect_of_oxm_bsn_l3_src_class_id_masked_v3
+of_oxm_v3_dissectors[199432] = dissect_of_oxm_bsn_l3_src_class_id_masked_v3
 
 -- child class of_oxm_bsn_lag_id
 -- Child of of_oxm
@@ -16119,7 +16119,7 @@ function dissect_of_oxm_bsn_lag_id_masked_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_lag_id_masked.value_mask')
     return 'of_oxm_bsn_lag_id_masked'
 end
-of_oxm_v3_dissectors[197380] = dissect_of_oxm_bsn_lag_id_masked_v3
+of_oxm_v3_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v3
 
 -- child class of_oxm_bsn_vrf
 -- Child of of_oxm
@@ -16138,7 +16138,7 @@ function dissect_of_oxm_bsn_vrf_masked_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_vrf_masked.value_mask')
     return 'of_oxm_bsn_vrf_masked'
 end
-of_oxm_v3_dissectors[197892] = dissect_of_oxm_bsn_vrf_masked_v3
+of_oxm_v3_dissectors[197896] = dissect_of_oxm_bsn_vrf_masked_v3
 
 -- child class of_oxm_eth_dst
 -- Child of of_oxm
@@ -19728,7 +19728,7 @@ function dissect_of_oxm_bsn_global_vrf_allowed_masked_v4(reader, subtree)
     read_uint8_t(reader, 4, subtree, 'of13.oxm_bsn_global_vrf_allowed_masked.value_mask')
     return 'of_oxm_bsn_global_vrf_allowed_masked'
 end
-of_oxm_v4_dissectors[198401] = dissect_of_oxm_bsn_global_vrf_allowed_masked_v4
+of_oxm_v4_dissectors[198402] = dissect_of_oxm_bsn_global_vrf_allowed_masked_v4
 
 -- child class of_oxm_bsn_in_ports_128
 -- Child of of_oxm
@@ -19737,7 +19737,7 @@ function dissect_of_oxm_bsn_in_ports_128_v4(reader, subtree)
     read_of_bitmap_128_t(reader, 4, subtree, 'of13.oxm_bsn_in_ports_128.value')
     return 'of_oxm_bsn_in_ports_128'
 end
-of_oxm_v4_dissectors[196640] = dissect_of_oxm_bsn_in_ports_128_v4
+of_oxm_v4_dissectors[196624] = dissect_of_oxm_bsn_in_ports_128_v4
 
 -- child class of_oxm_bsn_in_ports_128_masked
 -- Child of of_oxm
@@ -19766,7 +19766,7 @@ function dissect_of_oxm_bsn_l3_dst_class_id_masked_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_l3_dst_class_id_masked.value_mask')
     return 'of_oxm_bsn_l3_dst_class_id_masked'
 end
-of_oxm_v4_dissectors[199940] = dissect_of_oxm_bsn_l3_dst_class_id_masked_v4
+of_oxm_v4_dissectors[199944] = dissect_of_oxm_bsn_l3_dst_class_id_masked_v4
 
 -- child class of_oxm_bsn_l3_interface_class_id
 -- Child of of_oxm
@@ -19785,7 +19785,7 @@ function dissect_of_oxm_bsn_l3_interface_class_id_masked_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_l3_interface_class_id_masked.value_mask')
     return 'of_oxm_bsn_l3_interface_class_id_masked'
 end
-of_oxm_v4_dissectors[198916] = dissect_of_oxm_bsn_l3_interface_class_id_masked_v4
+of_oxm_v4_dissectors[198920] = dissect_of_oxm_bsn_l3_interface_class_id_masked_v4
 
 -- child class of_oxm_bsn_l3_src_class_id
 -- Child of of_oxm
@@ -19804,7 +19804,7 @@ function dissect_of_oxm_bsn_l3_src_class_id_masked_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_l3_src_class_id_masked.value_mask')
     return 'of_oxm_bsn_l3_src_class_id_masked'
 end
-of_oxm_v4_dissectors[199428] = dissect_of_oxm_bsn_l3_src_class_id_masked_v4
+of_oxm_v4_dissectors[199432] = dissect_of_oxm_bsn_l3_src_class_id_masked_v4
 
 -- child class of_oxm_bsn_lag_id
 -- Child of of_oxm
@@ -19823,7 +19823,7 @@ function dissect_of_oxm_bsn_lag_id_masked_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_lag_id_masked.value_mask')
     return 'of_oxm_bsn_lag_id_masked'
 end
-of_oxm_v4_dissectors[197380] = dissect_of_oxm_bsn_lag_id_masked_v4
+of_oxm_v4_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v4
 
 -- child class of_oxm_bsn_vrf
 -- Child of of_oxm
@@ -19842,7 +19842,7 @@ function dissect_of_oxm_bsn_vrf_masked_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vrf_masked.value_mask')
     return 'of_oxm_bsn_vrf_masked'
 end
-of_oxm_v4_dissectors[197892] = dissect_of_oxm_bsn_vrf_masked_v4
+of_oxm_v4_dissectors[197896] = dissect_of_oxm_bsn_vrf_masked_v4
 
 -- child class of_oxm_eth_dst
 -- Child of of_oxm

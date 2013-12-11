@@ -382,15 +382,6 @@ test_validate_all(void)
     }
 
     {
-        of_experimenter_t *obj = of_experimenter_new(OF_VERSION_1_0);
-        of_message_t msg;
-        of_experimenter_OF_VERSION_1_0_populate(obj, 1);
-        msg = OF_OBJECT_TO_MESSAGE(obj);
-        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
-        of_experimenter_delete(obj);
-    }
-
-    {
         of_echo_request_t *obj = of_echo_request_new(OF_VERSION_1_0);
         of_message_t msg;
         of_echo_request_OF_VERSION_1_0_populate(obj, 1);
@@ -1156,15 +1147,6 @@ test_validate_all(void)
     }
 
     {
-        of_experimenter_t *obj = of_experimenter_new(OF_VERSION_1_1);
-        of_message_t msg;
-        of_experimenter_OF_VERSION_1_1_populate(obj, 1);
-        msg = OF_OBJECT_TO_MESSAGE(obj);
-        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
-        of_experimenter_delete(obj);
-    }
-
-    {
         of_echo_request_t *obj = of_echo_request_new(OF_VERSION_1_1);
         of_message_t msg;
         of_echo_request_OF_VERSION_1_1_populate(obj, 1);
@@ -1891,15 +1873,6 @@ test_validate_all(void)
         msg = OF_OBJECT_TO_MESSAGE(obj);
         TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
         of_experimenter_error_msg_delete(obj);
-    }
-
-    {
-        of_experimenter_t *obj = of_experimenter_new(OF_VERSION_1_2);
-        of_message_t msg;
-        of_experimenter_OF_VERSION_1_2_populate(obj, 1);
-        msg = OF_OBJECT_TO_MESSAGE(obj);
-        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
-        of_experimenter_delete(obj);
     }
 
     {
@@ -2746,15 +2719,6 @@ test_validate_all(void)
         msg = OF_OBJECT_TO_MESSAGE(obj);
         TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
         of_experimenter_error_msg_delete(obj);
-    }
-
-    {
-        of_experimenter_t *obj = of_experimenter_new(OF_VERSION_1_3);
-        of_message_t msg;
-        of_experimenter_OF_VERSION_1_3_populate(obj, 1);
-        msg = OF_OBJECT_TO_MESSAGE(obj);
-        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
-        of_experimenter_delete(obj);
     }
 
     {

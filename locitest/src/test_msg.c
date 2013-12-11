@@ -1773,46 +1773,6 @@ test_of_echo_request_create_OF_VERSION_1_0(void)
 }
 
 static int
-test_of_experimenter_create_OF_VERSION_1_0(void)
-{
-    of_experimenter_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_experimenter_new(OF_VERSION_1_0);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_0);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
-
-    /* Set up incrementing values for scalar members */
-    value = of_experimenter_OF_VERSION_1_0_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_experimenter_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_EXPERIMENTER);
-    obj = of_experimenter_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_experimenter_OF_VERSION_1_0_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_experimenter_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
 test_of_features_reply_create_OF_VERSION_1_0(void)
 {
     of_features_reply_t *obj;
@@ -4488,46 +4448,6 @@ test_of_echo_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     of_echo_request_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
-test_of_experimenter_create_OF_VERSION_1_1(void)
-{
-    of_experimenter_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_experimenter_new(OF_VERSION_1_1);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
-
-    /* Set up incrementing values for scalar members */
-    value = of_experimenter_OF_VERSION_1_1_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_experimenter_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_EXPERIMENTER);
-    obj = of_experimenter_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_experimenter_OF_VERSION_1_1_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_experimenter_delete(obj);
 
     return TEST_PASS;
 }
@@ -7528,46 +7448,6 @@ test_of_echo_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     of_echo_request_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
-test_of_experimenter_create_OF_VERSION_1_2(void)
-{
-    of_experimenter_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_experimenter_new(OF_VERSION_1_2);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
-
-    /* Set up incrementing values for scalar members */
-    value = of_experimenter_OF_VERSION_1_2_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_experimenter_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_EXPERIMENTER);
-    obj = of_experimenter_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_experimenter_OF_VERSION_1_2_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_experimenter_delete(obj);
 
     return TEST_PASS;
 }
@@ -11813,46 +11693,6 @@ test_of_echo_request_create_OF_VERSION_1_3(void)
 }
 
 static int
-test_of_experimenter_create_OF_VERSION_1_3(void)
-{
-    of_experimenter_t *obj;
-    uint8_t *msg_buf;
-    int value;
-    int len;
-
-    obj = of_experimenter_new(OF_VERSION_1_3);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
-
-    /* Set up incrementing values for scalar members */
-    value = of_experimenter_OF_VERSION_1_3_populate_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    /* Grab the underlying buffer from the message */
-    len = obj->length;
-    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
-    TEST_ASSERT(msg_buf != NULL);
-    of_experimenter_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_EXPERIMENTER);
-    obj = of_experimenter_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
-
-    TEST_ASSERT(obj != NULL);
-
-    /* @fixme Set up all message objects (recursively?) */
-
-    value = of_experimenter_OF_VERSION_1_3_check_scalars(obj, 1);
-    TEST_ASSERT(value != 0);
-
-    of_experimenter_delete(obj);
-
-    return TEST_PASS;
-}
-
-static int
 test_of_experimenter_error_msg_create_OF_VERSION_1_3(void)
 {
     of_experimenter_error_msg_t *obj;
@@ -14299,7 +14139,6 @@ run_message_tests(void)
     RUN_TEST(of_desc_stats_request_create_OF_VERSION_1_0);
     RUN_TEST(of_echo_reply_create_OF_VERSION_1_0);
     RUN_TEST(of_echo_request_create_OF_VERSION_1_0);
-    RUN_TEST(of_experimenter_create_OF_VERSION_1_0);
     RUN_TEST(of_features_reply_create_OF_VERSION_1_0);
     RUN_TEST(of_features_request_create_OF_VERSION_1_0);
     RUN_TEST(of_flow_add_create_OF_VERSION_1_0);
@@ -14367,7 +14206,6 @@ run_message_tests(void)
     RUN_TEST(of_desc_stats_request_create_OF_VERSION_1_1);
     RUN_TEST(of_echo_reply_create_OF_VERSION_1_1);
     RUN_TEST(of_echo_request_create_OF_VERSION_1_1);
-    RUN_TEST(of_experimenter_create_OF_VERSION_1_1);
     RUN_TEST(of_features_reply_create_OF_VERSION_1_1);
     RUN_TEST(of_features_request_create_OF_VERSION_1_1);
     RUN_TEST(of_flow_add_create_OF_VERSION_1_1);
@@ -14443,7 +14281,6 @@ run_message_tests(void)
     RUN_TEST(of_desc_stats_request_create_OF_VERSION_1_2);
     RUN_TEST(of_echo_reply_create_OF_VERSION_1_2);
     RUN_TEST(of_echo_request_create_OF_VERSION_1_2);
-    RUN_TEST(of_experimenter_create_OF_VERSION_1_2);
     RUN_TEST(of_experimenter_error_msg_create_OF_VERSION_1_2);
     RUN_TEST(of_features_reply_create_OF_VERSION_1_2);
     RUN_TEST(of_features_request_create_OF_VERSION_1_2);
@@ -14550,7 +14387,6 @@ run_message_tests(void)
     RUN_TEST(of_desc_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_echo_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_echo_request_create_OF_VERSION_1_3);
-    RUN_TEST(of_experimenter_create_OF_VERSION_1_3);
     RUN_TEST(of_experimenter_error_msg_create_OF_VERSION_1_3);
     RUN_TEST(of_features_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_features_request_create_OF_VERSION_1_3);

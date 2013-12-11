@@ -531,7 +531,7 @@ class bsn_global_vrf_allowed(oxm):
 oxm.subtypes[198145] = bsn_global_vrf_allowed
 
 class bsn_global_vrf_allowed_masked(oxm):
-    type_len = 198401
+    type_len = 198402
 
     def __init__(self, value=None, value_mask=None):
         if value != None:
@@ -555,7 +555,7 @@ class bsn_global_vrf_allowed_masked(oxm):
     def unpack(reader):
         obj = bsn_global_vrf_allowed_masked()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 198401)
+        assert(_type_len == 198402)
         obj.value = reader.read("!B")[0]
         obj.value_mask = reader.read("!B")[0]
         return obj
@@ -579,10 +579,10 @@ class bsn_global_vrf_allowed_masked(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[198401] = bsn_global_vrf_allowed_masked
+oxm.subtypes[198402] = bsn_global_vrf_allowed_masked
 
 class bsn_in_ports_128(oxm):
-    type_len = 196640
+    type_len = 196624
 
     def __init__(self, value=None):
         if value != None:
@@ -601,7 +601,7 @@ class bsn_in_ports_128(oxm):
     def unpack(reader):
         obj = bsn_in_ports_128()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 196640)
+        assert(_type_len == 196624)
         obj.value = util.unpack_bitmap_128(reader)
         return obj
 
@@ -620,7 +620,7 @@ class bsn_in_ports_128(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[196640] = bsn_in_ports_128
+oxm.subtypes[196624] = bsn_in_ports_128
 
 class bsn_in_ports_128_masked(oxm):
     type_len = 196896
@@ -715,7 +715,7 @@ class bsn_l3_dst_class_id(oxm):
 oxm.subtypes[199684] = bsn_l3_dst_class_id
 
 class bsn_l3_dst_class_id_masked(oxm):
-    type_len = 199940
+    type_len = 199944
 
     def __init__(self, value=None, value_mask=None):
         if value != None:
@@ -739,7 +739,7 @@ class bsn_l3_dst_class_id_masked(oxm):
     def unpack(reader):
         obj = bsn_l3_dst_class_id_masked()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 199940)
+        assert(_type_len == 199944)
         obj.value = reader.read("!L")[0]
         obj.value_mask = reader.read("!L")[0]
         return obj
@@ -763,7 +763,7 @@ class bsn_l3_dst_class_id_masked(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[199940] = bsn_l3_dst_class_id_masked
+oxm.subtypes[199944] = bsn_l3_dst_class_id_masked
 
 class bsn_l3_interface_class_id(oxm):
     type_len = 198660
@@ -807,7 +807,7 @@ class bsn_l3_interface_class_id(oxm):
 oxm.subtypes[198660] = bsn_l3_interface_class_id
 
 class bsn_l3_interface_class_id_masked(oxm):
-    type_len = 198916
+    type_len = 198920
 
     def __init__(self, value=None, value_mask=None):
         if value != None:
@@ -831,7 +831,7 @@ class bsn_l3_interface_class_id_masked(oxm):
     def unpack(reader):
         obj = bsn_l3_interface_class_id_masked()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 198916)
+        assert(_type_len == 198920)
         obj.value = reader.read("!L")[0]
         obj.value_mask = reader.read("!L")[0]
         return obj
@@ -855,7 +855,7 @@ class bsn_l3_interface_class_id_masked(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[198916] = bsn_l3_interface_class_id_masked
+oxm.subtypes[198920] = bsn_l3_interface_class_id_masked
 
 class bsn_l3_src_class_id(oxm):
     type_len = 199172
@@ -899,7 +899,7 @@ class bsn_l3_src_class_id(oxm):
 oxm.subtypes[199172] = bsn_l3_src_class_id
 
 class bsn_l3_src_class_id_masked(oxm):
-    type_len = 199428
+    type_len = 199432
 
     def __init__(self, value=None, value_mask=None):
         if value != None:
@@ -923,7 +923,7 @@ class bsn_l3_src_class_id_masked(oxm):
     def unpack(reader):
         obj = bsn_l3_src_class_id_masked()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 199428)
+        assert(_type_len == 199432)
         obj.value = reader.read("!L")[0]
         obj.value_mask = reader.read("!L")[0]
         return obj
@@ -947,7 +947,7 @@ class bsn_l3_src_class_id_masked(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[199428] = bsn_l3_src_class_id_masked
+oxm.subtypes[199432] = bsn_l3_src_class_id_masked
 
 class bsn_lag_id(oxm):
     type_len = 197124
@@ -991,7 +991,7 @@ class bsn_lag_id(oxm):
 oxm.subtypes[197124] = bsn_lag_id
 
 class bsn_lag_id_masked(oxm):
-    type_len = 197380
+    type_len = 197384
 
     def __init__(self, value=None, value_mask=None):
         if value != None:
@@ -1015,7 +1015,7 @@ class bsn_lag_id_masked(oxm):
     def unpack(reader):
         obj = bsn_lag_id_masked()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 197380)
+        assert(_type_len == 197384)
         obj.value = reader.read("!L")[0]
         obj.value_mask = reader.read("!L")[0]
         return obj
@@ -1039,7 +1039,7 @@ class bsn_lag_id_masked(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[197380] = bsn_lag_id_masked
+oxm.subtypes[197384] = bsn_lag_id_masked
 
 class bsn_vrf(oxm):
     type_len = 197636
@@ -1083,7 +1083,7 @@ class bsn_vrf(oxm):
 oxm.subtypes[197636] = bsn_vrf
 
 class bsn_vrf_masked(oxm):
-    type_len = 197892
+    type_len = 197896
 
     def __init__(self, value=None, value_mask=None):
         if value != None:
@@ -1107,7 +1107,7 @@ class bsn_vrf_masked(oxm):
     def unpack(reader):
         obj = bsn_vrf_masked()
         _type_len = reader.read("!L")[0]
-        assert(_type_len == 197892)
+        assert(_type_len == 197896)
         obj.value = reader.read("!L")[0]
         obj.value_mask = reader.read("!L")[0]
         return obj
@@ -1131,7 +1131,7 @@ class bsn_vrf_masked(oxm):
             q.breakable()
         q.text('}')
 
-oxm.subtypes[197892] = bsn_vrf_masked
+oxm.subtypes[197896] = bsn_vrf_masked
 
 class eth_dst(oxm):
     type_len = 2147485190

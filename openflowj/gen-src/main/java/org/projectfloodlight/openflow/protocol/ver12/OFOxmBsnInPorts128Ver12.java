@@ -52,7 +52,7 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
     // Accessors for OF message fields
     @Override
     public long getTypeLen() {
-        return 0x30020L;
+        return 0x30010L;
     }
 
     @Override
@@ -104,7 +104,7 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
 
     @Override
     public long getTypeLen() {
-        return 0x30020L;
+        return 0x30010L;
     }
 
     @Override
@@ -166,7 +166,7 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
 
     @Override
     public long getTypeLen() {
-        return 0x30020L;
+        return 0x30010L;
     }
 
     @Override
@@ -225,10 +225,10 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
     static class Reader implements OFMessageReader<OFOxmBsnInPorts128> {
         @Override
         public OFOxmBsnInPorts128 readFrom(ChannelBuffer bb) throws OFParseError {
-            // fixed value property typeLen == 0x30020L
+            // fixed value property typeLen == 0x30010L
             int typeLen = bb.readInt();
-            if(typeLen != 0x30020)
-                throw new OFParseError("Wrong typeLen: Expected=0x30020L(0x30020L), got="+typeLen);
+            if(typeLen != 0x30010)
+                throw new OFParseError("Wrong typeLen: Expected=0x30010L(0x30010L), got="+typeLen);
             OFBitMask128 value = OFBitMask128.read16Bytes(bb);
 
             OFOxmBsnInPorts128Ver12 oxmBsnInPorts128Ver12 = new OFOxmBsnInPorts128Ver12(
@@ -249,8 +249,8 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFOxmBsnInPorts128Ver12 message, PrimitiveSink sink) {
-            // fixed value property typeLen = 0x30020L
-            sink.putInt(0x30020);
+            // fixed value property typeLen = 0x30010L
+            sink.putInt(0x30010);
             message.value.putTo(sink);
         }
     }
@@ -264,8 +264,8 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
     static class Writer implements OFMessageWriter<OFOxmBsnInPorts128Ver12> {
         @Override
         public void write(ChannelBuffer bb, OFOxmBsnInPorts128Ver12 message) {
-            // fixed value property typeLen = 0x30020L
-            bb.writeInt(0x30020);
+            // fixed value property typeLen = 0x30010L
+            bb.writeInt(0x30010);
             message.value.write16Bytes(bb);
 
 

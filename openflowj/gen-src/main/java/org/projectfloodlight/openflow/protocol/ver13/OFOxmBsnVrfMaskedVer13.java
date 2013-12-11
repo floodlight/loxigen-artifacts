@@ -55,7 +55,7 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
     // Accessors for OF message fields
     @Override
     public long getTypeLen() {
-        return 0x30504L;
+        return 0x30508L;
     }
 
     @Override
@@ -114,7 +114,7 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
 
     @Override
     public long getTypeLen() {
-        return 0x30504L;
+        return 0x30508L;
     }
 
     @Override
@@ -188,7 +188,7 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
 
     @Override
     public long getTypeLen() {
-        return 0x30504L;
+        return 0x30508L;
     }
 
     @Override
@@ -257,10 +257,10 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
     static class Reader implements OFMessageReader<OFOxmBsnVrfMasked> {
         @Override
         public OFOxmBsnVrfMasked readFrom(ChannelBuffer bb) throws OFParseError {
-            // fixed value property typeLen == 0x30504L
+            // fixed value property typeLen == 0x30508L
             int typeLen = bb.readInt();
-            if(typeLen != 0x30504)
-                throw new OFParseError("Wrong typeLen: Expected=0x30504L(0x30504L), got="+typeLen);
+            if(typeLen != 0x30508)
+                throw new OFParseError("Wrong typeLen: Expected=0x30508L(0x30508L), got="+typeLen);
             VRF value = VRF.read4Bytes(bb);
             VRF mask = VRF.read4Bytes(bb);
 
@@ -283,8 +283,8 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFOxmBsnVrfMaskedVer13 message, PrimitiveSink sink) {
-            // fixed value property typeLen = 0x30504L
-            sink.putInt(0x30504);
+            // fixed value property typeLen = 0x30508L
+            sink.putInt(0x30508);
             message.value.putTo(sink);
             message.mask.putTo(sink);
         }
@@ -299,8 +299,8 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
     static class Writer implements OFMessageWriter<OFOxmBsnVrfMaskedVer13> {
         @Override
         public void write(ChannelBuffer bb, OFOxmBsnVrfMaskedVer13 message) {
-            // fixed value property typeLen = 0x30504L
-            bb.writeInt(0x30504);
+            // fixed value property typeLen = 0x30508L
+            bb.writeInt(0x30508);
             message.value.write4Bytes(bb);
             message.mask.write4Bytes(bb);
 
