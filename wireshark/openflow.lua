@@ -68,266 +68,6 @@ OFReader.new = function(buf, offset)
     return self
 end
 
-
-function read_scalar(reader, subtree, field_name, length)
-    subtree:add(fields[field_name], reader.read(length))
-end
-
-function read_uint8_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 1)
-end
-
-function read_uint16_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 2)
-end
-
-function read_uint32_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 4)
-end
-
-function read_uint64_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 8)
-end
-
-function read_of_octets_t(reader, version, subtree, field_name)
-    if not reader.is_empty() then
-        subtree:add(fields[field_name], reader.read_all())
-    end
-end
-
-function read_list_of_hello_elem_t(reader, version, subtree, field_name)
-    -- TODO
-end
-
-function read_of_match_t(reader, version, subtree, field_name)
-    if version == 1 then
-        dissect_of_match_v1_v1(reader, subtree:add(fields[field_name]))
-    elseif version == 2 then
-        dissect_of_match_v2_v2(reader, subtree:add(fields[field_name]))
-    elseif version >= 3 then
-        dissect_of_match_v3_v3(reader, subtree:add(fields[field_name]))
-    end
-end
-
-function read_of_wc_bmap_t(reader, version, subtree, field_name)
-    if version <= 2 then
-        read_scalar(reader, subtree, field_name, 4)
-    else
-        read_scalar(reader, subtree, field_name, 8)
-    end
-end
-
-function read_of_port_no_t(reader, version, subtree, field_name)
-    if version == 1 then
-        read_scalar(reader, subtree, field_name, 2)
-    else
-        read_scalar(reader, subtree, field_name, 4)
-    end
-end
-
-function read_of_port_name_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 16)
-end
-
-function read_of_mac_addr_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 6)
-end
-
-function read_of_ipv4_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 4)
-end
-
-function read_of_ipv6_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 16)
-end
-
-function read_of_fm_cmd_t(reader, version, subtree, field_name)
-    if version == 1 then
-        read_scalar(reader, subtree, field_name, 2)
-    else
-        read_scalar(reader, subtree, field_name, 1)
-    end
-end
-
-function read_list_of_action_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-
-    local list_len = 0
-
-    if string.find(field_name,'packet_out') then
-        if version == 1 then
-            list_len = reader.peek(-2,2):uint()
-        else
-            list_len = reader.peek(-8,2):uint()
-        end
-    end
-
-    local list = nil
-    local reader2 = nil
-
-    if list_len == 0 then
-        list = subtree:add(fields[field_name], reader.peek_all(0))
-        reader2 = reader
-    else
-        list = subtree:add(fields[field_name], reader.peek(0, list_len))
-        reader2 = reader.slice(list_len)
-    end
-
-    while not reader2.is_empty() do
-        local action_len = reader2.peek(2, 2):uint()
-        local child_reader = reader2.slice(action_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_action(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-    list:set_text("List of actions")
-end
-
-function read_list_of_port_desc_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of port descriptions")
-    while not reader.is_empty() do
-        local port_desc_len = 64
-        local child_reader = reader.slice(port_desc_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_port_desc(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_flow_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of flow stats entries")
-    while not reader.is_empty() do
-        local stats_len = reader.peek(0,2):uint()
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_flow_stats_entry(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_port_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of port stats entries")
-    while not reader.is_empty() do
-        local stats_len = 112
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_port_stats_entry(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_table_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of table stats entries")
-    while not reader.is_empty() do
-        local stats_len = 24
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_table_stats_entry(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_queue_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of flow stats entries")
-    while not reader.is_empty() do
-        local stats_len = 40
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_queue_stats_entry(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_packet_queue_t(reader, version, subtree, field_name)
-    -- TODO
-    read_of_octets_t()
-end
-
-function read_of_desc_str_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 256)
-end
-
-function read_of_serial_num_t(reader, version, subtree, field_name)
-    read_scalar(reader, subtree, field_name, 32)
-end
-
-function read_list_of_oxm_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list_len = reader.peek(-2,2):uint()
-    local reader2 = reader.slice(list_len - 4)
-    local list = nil
-    if not reader2.is_empty() then
-        list = subtree:add(fields[field_name], reader2.peek_all(0))
-        list:set_text("List of matches")
-    end
-    while not reader2.is_empty() do
-        local match_len = 4 + reader2.peek(3,1):uint()
-        local child_reader = reader2.slice(match_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_oxm(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-    subtree:set_text("OXM")
-    reader.skip_align()
-end
-
-function read_list_of_instruction_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
-    local info = dissect_of_instruction(reader, child_subtree, version)
-    child_subtree:set_text("Instructions")
-end
-
-function read_list_of_bucket_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local bucket_list_subtree = subtree:add(fields[field_name], reader.peek_all(0))
-    bucket_list_subtree:set_text("List of buckets")
-    while not reader.is_empty() do
-        local bucket_len = reader.peek(0,2):uint()
-        local child_reader = reader.slice(bucket_len)
-        local child_subtree = bucket_list_subtree:add(fields[field_name], child_reader.peek_all(0))
-        local info = dissect_of_bucket(child_reader, child_subtree, version)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_of_oxm_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
-    local info = dissect_of_oxm(reader, child_subtree, version)
-    child_subtree:set_text(info)
-end
-
 p_of = Proto ("of", "OpenFlow")
 
 local openflow_versions = {
@@ -21368,31 +21108,31 @@ function dissect_of_uint8_v4(reader, subtree)
 end
 
 local of_message_dissectors = {
-    [1] = of_header_v1_dissectors,
-    [2] = of_header_v2_dissectors,
-    [3] = of_header_v3_dissectors,
-    [4] = of_header_v4_dissectors,
+    [1] = dissect_of_header_v1,
+    [2] = dissect_of_header_v2,
+    [3] = dissect_of_header_v3,
+    [4] = dissect_of_header_v4,
 }
 
 local of_oxm_dissectors = {
-    [1] = of_oxm_v1_dissectors,
-    [2] = of_oxm_v2_dissectors,
-    [3] = of_oxm_v3_dissectors,
-    [4] = of_oxm_v4_dissectors,
+    [1] = dissect_of_oxm_v1,
+    [2] = dissect_of_oxm_v2,
+    [3] = dissect_of_oxm_v3,
+    [4] = dissect_of_oxm_v4,
 }
 
 local of_action_dissectors = {
-    [1] = of_action_v1_dissectors,
-    [2] = of_action_v2_dissectors,
-    [3] = of_action_v3_dissectors,
-    [4] = of_action_v4_dissectors,
+    [1] = dissect_of_action_v1,
+    [2] = dissect_of_action_v2,
+    [3] = dissect_of_action_v3,
+    [4] = dissect_of_action_v4,
 }
 
 local of_instruction_dissectors = {
-    [1] = of_instruction_v1_dissectors,
-    [2] = of_instruction_v2_dissectors,
-    [3] = of_instruction_v3_dissectors,
-    [4] = of_instruction_v4_dissectors,
+    [1] = dissect_of_instruction_v1,
+    [2] = dissect_of_instruction_v2,
+    [3] = dissect_of_instruction_v3,
+    [4] = dissect_of_instruction_v4,
 }
 
 local of_bucket_dissectors = {
@@ -21410,17 +21150,17 @@ local of_port_desc_dissectors = {
 }
 
 local of_stats_reply_dissectors = {
-    [1] = of_stats_reply_v1_dissectors,
-    [2] = of_stats_reply_v2_dissectors,
-    [3] = of_stats_reply_v3_dissectors,
-    [4] = of_stats_reply_v4_dissectors,
+    [1] = dissect_of_stats_reply_v1,
+    [2] = dissect_of_stats_reply_v2,
+    [3] = dissect_of_stats_reply_v3,
+    [4] = dissect_of_stats_reply_v4,
 }
 
 local of_stats_request_dissectors = {
-    [1] = of_stats_request_v1_dissectors,
-    [2] = of_stats_request_v2_dissectors,
-    [3] = of_stats_request_v3_dissectors,
-    [4] = of_stats_request_v4_dissectors,
+    [1] = dissect_of_stats_request_v1,
+    [2] = dissect_of_stats_request_v2,
+    [3] = dissect_of_stats_request_v3,
+    [4] = dissect_of_stats_request_v4,
 }
 
 local of_flow_stats_entry_dissectors = {
@@ -21451,6 +21191,266 @@ local of_queue_stats_entry_dissectors = {
     [4] = dissect_of_queue_stats_entry_v4,
 }
 
+
+function read_scalar(reader, subtree, field_name, length)
+    subtree:add(fields[field_name], reader.read(length))
+end
+
+function read_uint8_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 1)
+end
+
+function read_uint16_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 2)
+end
+
+function read_uint32_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 4)
+end
+
+function read_uint64_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 8)
+end
+
+function read_of_octets_t(reader, version, subtree, field_name)
+    if not reader.is_empty() then
+        subtree:add(fields[field_name], reader.read_all())
+    end
+end
+
+function read_list_of_hello_elem_t(reader, version, subtree, field_name)
+    -- TODO
+end
+
+function read_of_match_t(reader, version, subtree, field_name)
+    if version == 1 then
+        dissect_of_match_v1_v1(reader, subtree:add(fields[field_name]))
+    elseif version == 2 then
+        dissect_of_match_v2_v2(reader, subtree:add(fields[field_name]))
+    elseif version >= 3 then
+        dissect_of_match_v3_v3(reader, subtree:add(fields[field_name]))
+    end
+end
+
+function read_of_wc_bmap_t(reader, version, subtree, field_name)
+    if version <= 2 then
+        read_scalar(reader, subtree, field_name, 4)
+    else
+        read_scalar(reader, subtree, field_name, 8)
+    end
+end
+
+function read_of_port_no_t(reader, version, subtree, field_name)
+    if version == 1 then
+        read_scalar(reader, subtree, field_name, 2)
+    else
+        read_scalar(reader, subtree, field_name, 4)
+    end
+end
+
+function read_of_port_name_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 16)
+end
+
+function read_of_mac_addr_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 6)
+end
+
+function read_of_ipv4_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 4)
+end
+
+function read_of_ipv6_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 16)
+end
+
+function read_of_fm_cmd_t(reader, version, subtree, field_name)
+    if version == 1 then
+        read_scalar(reader, subtree, field_name, 2)
+    else
+        read_scalar(reader, subtree, field_name, 1)
+    end
+end
+
+function read_list_of_action_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+
+    local list_len = 0
+
+    if string.find(field_name,'packet_out') then
+        if version == 1 then
+            list_len = reader.peek(-2,2):uint()
+        else
+            list_len = reader.peek(-8,2):uint()
+        end
+    end
+
+    local list = nil
+    local reader2 = nil
+
+    if list_len == 0 then
+        list = subtree:add(fields[field_name], reader.peek_all(0))
+        reader2 = reader
+    else
+        list = subtree:add(fields[field_name], reader.peek(0, list_len))
+        reader2 = reader.slice(list_len)
+    end
+
+    while not reader2.is_empty() do
+        local action_len = reader2.peek(2, 2):uint()
+        local child_reader = reader2.slice(action_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_action_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+    list:set_text("List of actions")
+end
+
+function read_list_of_port_desc_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local list = subtree:add(fields[field_name], reader.peek_all(0))
+    list:set_text("List of port descriptions")
+    while not reader.is_empty() do
+        local port_desc_len = 64
+        local child_reader = reader.slice(port_desc_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_port_desc_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+end
+
+function read_list_of_flow_stats_entry_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local list = subtree:add(fields[field_name], reader.peek_all(0))
+    list:set_text("List of flow stats entries")
+    while not reader.is_empty() do
+        local stats_len = reader.peek(0,2):uint()
+        local child_reader = reader.slice(stats_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_flow_stats_entry_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+end
+
+function read_list_of_port_stats_entry_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local list = subtree:add(fields[field_name], reader.peek_all(0))
+    list:set_text("List of port stats entries")
+    while not reader.is_empty() do
+        local stats_len = 112
+        local child_reader = reader.slice(stats_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_port_stats_entry_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+end
+
+function read_list_of_table_stats_entry_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local list = subtree:add(fields[field_name], reader.peek_all(0))
+    list:set_text("List of table stats entries")
+    while not reader.is_empty() do
+        local stats_len = 24
+        local child_reader = reader.slice(stats_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_table_stats_entry_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+end
+
+function read_list_of_queue_stats_entry_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local list = subtree:add(fields[field_name], reader.peek_all(0))
+    list:set_text("List of flow stats entries")
+    while not reader.is_empty() do
+        local stats_len = 40
+        local child_reader = reader.slice(stats_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_queue_stats_entry_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+end
+
+function read_list_of_packet_queue_t(reader, version, subtree, field_name)
+    -- TODO
+    read_of_octets_t()
+end
+
+function read_of_desc_str_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 256)
+end
+
+function read_of_serial_num_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 32)
+end
+
+function read_list_of_oxm_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local list_len = reader.peek(-2,2):uint()
+    local reader2 = reader.slice(list_len - 4)
+    local list = nil
+    if not reader2.is_empty() then
+        list = subtree:add(fields[field_name], reader2.peek_all(0))
+        list:set_text("List of matches")
+    end
+    while not reader2.is_empty() do
+        local match_len = 4 + reader2.peek(3,1):uint()
+        local child_reader = reader2.slice(match_len)
+        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_oxm_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+    subtree:set_text("OXM")
+    reader.skip_align()
+end
+
+function read_list_of_instruction_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    local info = of_instruction_dissectors[version](reader, child_subtree)
+    child_subtree:set_text("Instructions")
+end
+
+function read_list_of_bucket_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local bucket_list_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    bucket_list_subtree:set_text("List of buckets")
+    while not reader.is_empty() do
+        local bucket_len = reader.peek(0,2):uint()
+        local child_reader = reader.slice(bucket_len)
+        local child_subtree = bucket_list_subtree:add(fields[field_name], child_reader.peek_all(0))
+        local info = of_bucket_dissectors[version](child_reader, child_subtree)
+        child_subtree:set_text(info)
+    end
+end
+
+function read_of_oxm_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    local info = of_oxm_dissectors[version](reader, child_subtree)
+    child_subtree:set_text(info)
+end
+
 function dissect_of_message(buf, root)
     local reader = OFReader.new(buf)
     local subtree = root:add(p_of, buf(0))
@@ -21463,93 +21463,9 @@ function dissect_of_message(buf, root)
     end
 
     local info = "unknown"
-    info = of_message_dissectors[version_val][type_val](reader, subtree)
+    info = of_message_dissectors[version_val](reader, subtree)
 
     return protocol, info
-end
-
-function dissect_of_oxm(reader, subtree, version_val)
-    local type_val = reader.peek(0,4):uint()
-    local info = "unknown"
-    if of_oxm_dissectors[version_val] and of_oxm_dissectors[version_val][type_val] then
-        info = of_oxm_dissectors[version_val][type_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_action(reader, subtree, version_val)
-    local type_val = reader.peek(0,2):uint()
-    local info = "unknown"
-    if of_action_dissectors[version_val] and of_action_dissectors[version_val][type_val] then
-        info = of_action_dissectors[version_val][type_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_instruction(reader, subtree, version_val)
-    local type_val = reader.peek(0,2):uint()
-    local info = "unknown"
-    if of_instruction_dissectors[version_val] and of_instruction_dissectors[version_val][type_val] then
-        info = of_instruction_dissectors[version_val][type_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_bucket(reader, subtree, version_val)
-    local info = "unknown"
-    if of_bucket_dissectors[version_val] then
-        info = of_bucket_dissectors[version_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_port_desc(reader, subtree, version_val)
-    local info = "unknown"
-    if of_port_desc_dissectors[version_val] then
-        info = of_port_desc_dissectors[version_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_flow_stats_entry(reader, subtree, version_val)
-    local info = "unknown"
-    if of_flow_stats_entry_dissectors[version_val] then
-        info = of_flow_stats_entry_dissectors[version_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_port_stats_entry(reader, subtree, version_val)
-    local info = "unknown"
-    if of_port_stats_entry_dissectors[version_val] then
-        info = of_port_stats_entry_dissectors[version_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_table_stats_entry(reader, subtree, version_val)
-    local info = "unknown"
-    if of_table_stats_entry_dissectors[version_val] then
-        info = of_table_stats_entry_dissectors[version_val](reader, subtree)
-    end
-
-    return info
-end
-
-function dissect_of_queue_stats_entry(reader, subtree, version_val)
-    local info = "unknown"
-    if of_queue_stats_entry_dissectors[version_val] then
-        info = of_queue_stats_entry_dissectors[version_val](reader, subtree)
-    end
-
-    return info
 end
 
 -- of dissector function
