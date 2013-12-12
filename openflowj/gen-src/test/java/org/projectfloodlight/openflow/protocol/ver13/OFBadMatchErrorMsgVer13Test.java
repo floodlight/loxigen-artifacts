@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
@@ -31,14 +32,14 @@ import org.hamcrest.CoreMatchers;
 
 
 public class OFBadMatchErrorMsgVer13Test {
-    OFFactory factory;
+    OFErrorMsgs factory;
 
     final static byte[] BAD_MATCH_ERROR_MSG_SERIALIZED =
         new byte[] { 0x4, 0x1, 0x0, 0xf, 0x12, 0x34, 0x56, 0x78, 0x0, 0x4, 0x0, 0x8, 0x61, 0x62, 0x63 };
 
     @Before
     public void setup() {
-        factory = OFFactoryVer13.INSTANCE;
+        factory = OFErrorMsgsVer13.INSTANCE;
     }
 
     @Test

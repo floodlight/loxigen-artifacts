@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver10;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;

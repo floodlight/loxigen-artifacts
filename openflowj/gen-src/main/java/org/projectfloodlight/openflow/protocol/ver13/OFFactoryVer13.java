@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
@@ -46,6 +47,15 @@ public class OFFactoryVer13 implements OFFactory {
     public OFQueueProps queueProps() {
         return OFQueuePropsVer13.INSTANCE;
     }
+    public OFErrorMsgs errorMsgs() {
+        return OFErrorMsgsVer13.INSTANCE;
+    }
+    public OFActionIds actionIds() {
+        return OFActionIdsVer13.INSTANCE;
+    }
+    public OFInstructionIds instructionIds() {
+        return OFInstructionIdsVer13.INSTANCE;
+    }
 
 
     public OFAggregateStatsReply.Builder buildAggregateStatsReply() {
@@ -54,14 +64,6 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFAggregateStatsRequest.Builder buildAggregateStatsRequest() {
         return new OFAggregateStatsRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBadActionErrorMsg.Builder buildBadActionErrorMsg() {
-        return new OFBadActionErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg() {
-        return new OFBadRequestErrorMsgVer13.Builder().setXid(nextXid());
     }
 
     public OFBarrierReply.Builder buildBarrierReply() {
@@ -381,10 +383,6 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFFlowDeleteStrictVer13.Builder().setXid(nextXid());
     }
 
-    public OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg() {
-        return new OFFlowModFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
     public OFFlowModify.Builder buildFlowModify() {
         return new OFFlowModifyVer13.Builder().setXid(nextXid());
     }
@@ -432,10 +430,6 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
-    public OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg() {
-        return new OFHelloFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
     public OFMatchV1.Builder buildMatchV1() {
         throw new UnsupportedOperationException("OFMatchV1 not supported in version 1.3");
     }
@@ -474,10 +468,6 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFPortModVer13.Builder().setXid(nextXid());
     }
 
-    public OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg() {
-        return new OFPortModFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
     public OFPortStatsEntry.Builder buildPortStatsEntry() {
         return new OFPortStatsEntryVer13.Builder();
     }
@@ -506,10 +496,6 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       port
                     );
-    }
-
-    public OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg() {
-        return new OFQueueOpFailedErrorMsgVer13.Builder().setXid(nextXid());
     }
 
     public OFQueueStatsEntry.Builder buildQueueStatsEntry() {
@@ -548,14 +534,6 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       flags
                     );
-    }
-
-    public OFBadInstructionErrorMsg.Builder buildBadInstructionErrorMsg() {
-        return new OFBadInstructionErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
-    public OFBadMatchErrorMsg.Builder buildBadMatchErrorMsg() {
-        return new OFBadMatchErrorMsgVer13.Builder().setXid(nextXid());
     }
 
     public OFBucket.Builder buildBucket() {
@@ -598,10 +576,6 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
-    public OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() {
-        return new OFGroupModFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
     public OFGroupModify.Builder buildGroupModify() {
         return new OFGroupModifyVer13.Builder().setXid(nextXid());
     }
@@ -620,18 +594,6 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFMatchV2.Builder buildMatchV2() {
         throw new UnsupportedOperationException("OFMatchV2 not supported in version 1.3");
-    }
-
-    public OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() {
-        return new OFSwitchConfigFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
-    public OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() {
-        return new OFTableModFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
-    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
-        return new OFExperimenterErrorMsgVer13.Builder().setXid(nextXid());
     }
 
     public OFGroupFeaturesStatsReply.Builder buildGroupFeaturesStatsReply() {
@@ -672,86 +634,6 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFRoleRequest.Builder buildRoleRequest() {
         return new OFRoleRequestVer13.Builder().setXid(nextXid());
-    }
-
-    public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
-        return new OFRoleRequestFailedErrorMsgVer13.Builder().setXid(nextXid());
-    }
-
-    public OFActionIdBsnMirror actionIdBsnMirror() {
-        return OFActionIdBsnMirrorVer13.INSTANCE;
-    }
-
-    public OFActionIdBsnSetTunnelDst actionIdBsnSetTunnelDst() {
-        return OFActionIdBsnSetTunnelDstVer13.INSTANCE;
-    }
-
-    public OFActionIdCopyTtlIn actionIdCopyTtlIn() {
-        return OFActionIdCopyTtlInVer13.INSTANCE;
-    }
-
-    public OFActionIdCopyTtlOut actionIdCopyTtlOut() {
-        return OFActionIdCopyTtlOutVer13.INSTANCE;
-    }
-
-    public OFActionIdDecMplsTtl actionIdDecMplsTtl() {
-        return OFActionIdDecMplsTtlVer13.INSTANCE;
-    }
-
-    public OFActionIdDecNwTtl actionIdDecNwTtl() {
-        return OFActionIdDecNwTtlVer13.INSTANCE;
-    }
-
-    public OFActionIdGroup actionIdGroup() {
-        return OFActionIdGroupVer13.INSTANCE;
-    }
-
-    public OFActionIdNiciraDecTtl actionIdNiciraDecTtl() {
-        return OFActionIdNiciraDecTtlVer13.INSTANCE;
-    }
-
-    public OFActionIdOutput actionIdOutput() {
-        return OFActionIdOutputVer13.INSTANCE;
-    }
-
-    public OFActionIdPopMpls actionIdPopMpls() {
-        return OFActionIdPopMplsVer13.INSTANCE;
-    }
-
-    public OFActionIdPopPbb actionIdPopPbb() {
-        return OFActionIdPopPbbVer13.INSTANCE;
-    }
-
-    public OFActionIdPopVlan actionIdPopVlan() {
-        return OFActionIdPopVlanVer13.INSTANCE;
-    }
-
-    public OFActionIdPushMpls actionIdPushMpls() {
-        return OFActionIdPushMplsVer13.INSTANCE;
-    }
-
-    public OFActionIdPushPbb actionIdPushPbb() {
-        return OFActionIdPushPbbVer13.INSTANCE;
-    }
-
-    public OFActionIdPushVlan actionIdPushVlan() {
-        return OFActionIdPushVlanVer13.INSTANCE;
-    }
-
-    public OFActionIdSetField actionIdSetField() {
-        return OFActionIdSetFieldVer13.INSTANCE;
-    }
-
-    public OFActionIdSetMplsTtl actionIdSetMplsTtl() {
-        return OFActionIdSetMplsTtlVer13.INSTANCE;
-    }
-
-    public OFActionIdSetNwTtl actionIdSetNwTtl() {
-        return OFActionIdSetNwTtlVer13.INSTANCE;
-    }
-
-    public OFActionIdSetQueue actionIdSetQueue() {
-        return OFActionIdSetQueueVer13.INSTANCE;
     }
 
     public OFAsyncGetReply.Builder buildAsyncGetReply() {
@@ -959,34 +841,6 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
-    public OFInstructionIdApplyActions instructionIdApplyActions() {
-        return OFInstructionIdApplyActionsVer13.INSTANCE;
-    }
-
-    public OFInstructionIdBsnDisableSrcMacCheck instructionIdBsnDisableSrcMacCheck() {
-        return OFInstructionIdBsnDisableSrcMacCheckVer13.INSTANCE;
-    }
-
-    public OFInstructionIdClearActions instructionIdClearActions() {
-        return OFInstructionIdClearActionsVer13.INSTANCE;
-    }
-
-    public OFInstructionIdGotoTable instructionIdGotoTable() {
-        return OFInstructionIdGotoTableVer13.INSTANCE;
-    }
-
-    public OFInstructionIdMeter instructionIdMeter() {
-        return OFInstructionIdMeterVer13.INSTANCE;
-    }
-
-    public OFInstructionIdWriteActions instructionIdWriteActions() {
-        return OFInstructionIdWriteActionsVer13.INSTANCE;
-    }
-
-    public OFInstructionIdWriteMetadata instructionIdWriteMetadata() {
-        return OFInstructionIdWriteMetadataVer13.INSTANCE;
-    }
-
     public OFMeterBandStats.Builder buildMeterBandStats() {
         return new OFMeterBandStatsVer13.Builder();
     }
@@ -1029,10 +883,6 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFMeterMod.Builder buildMeterMod() {
         return new OFMeterModVer13.Builder().setXid(nextXid());
-    }
-
-    public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
-        return new OFMeterModFailedErrorMsgVer13.Builder().setXid(nextXid());
     }
 
     public OFMeterStats.Builder buildMeterStats() {
@@ -1193,10 +1043,6 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFTableFeatures.Builder buildTableFeatures() {
         return new OFTableFeaturesVer13.Builder();
-    }
-
-    public OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() {
-        return new OFTableFeaturesFailedErrorMsgVer13.Builder().setXid(nextXid());
     }
 
     public OFTableFeaturesStatsReply.Builder buildTableFeaturesStatsReply() {

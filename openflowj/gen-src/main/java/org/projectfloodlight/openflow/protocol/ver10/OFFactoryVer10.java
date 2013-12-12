@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver10;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
 import org.projectfloodlight.openflow.protocol.instructionid.*;
@@ -46,6 +47,15 @@ public class OFFactoryVer10 implements OFFactory {
     public OFQueueProps queueProps() {
         return OFQueuePropsVer10.INSTANCE;
     }
+    public OFErrorMsgs errorMsgs() {
+        return OFErrorMsgsVer10.INSTANCE;
+    }
+    public OFActionIds actionIds() {
+        return OFActionIdsVer10.INSTANCE;
+    }
+    public OFInstructionIds instructionIds() {
+        return OFInstructionIdsVer10.INSTANCE;
+    }
 
 
     public OFAggregateStatsReply.Builder buildAggregateStatsReply() {
@@ -54,14 +64,6 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFAggregateStatsRequest.Builder buildAggregateStatsRequest() {
         return new OFAggregateStatsRequestVer10.Builder().setXid(nextXid());
-    }
-
-    public OFBadActionErrorMsg.Builder buildBadActionErrorMsg() {
-        return new OFBadActionErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
-    public OFBadRequestErrorMsg.Builder buildBadRequestErrorMsg() {
-        return new OFBadRequestErrorMsgVer10.Builder().setXid(nextXid());
     }
 
     public OFBarrierReply.Builder buildBarrierReply() {
@@ -394,10 +396,6 @@ public class OFFactoryVer10 implements OFFactory {
         return new OFFlowDeleteStrictVer10.Builder().setXid(nextXid());
     }
 
-    public OFFlowModFailedErrorMsg.Builder buildFlowModFailedErrorMsg() {
-        return new OFFlowModFailedErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
     public OFFlowModify.Builder buildFlowModify() {
         return new OFFlowModifyVer10.Builder().setXid(nextXid());
     }
@@ -442,10 +440,6 @@ public class OFFactoryVer10 implements OFFactory {
         return new OFHelloVer10(
                 nextXid()
                     );
-    }
-
-    public OFHelloFailedErrorMsg.Builder buildHelloFailedErrorMsg() {
-        return new OFHelloFailedErrorMsgVer10.Builder().setXid(nextXid());
     }
 
     public OFMatchV1.Builder buildMatchV1() {
@@ -501,10 +495,6 @@ public class OFFactoryVer10 implements OFFactory {
         return new OFPortModVer10.Builder().setXid(nextXid());
     }
 
-    public OFPortModFailedErrorMsg.Builder buildPortModFailedErrorMsg() {
-        return new OFPortModFailedErrorMsgVer10.Builder().setXid(nextXid());
-    }
-
     public OFPortStatsEntry.Builder buildPortStatsEntry() {
         return new OFPortStatsEntryVer10.Builder();
     }
@@ -533,10 +523,6 @@ public class OFFactoryVer10 implements OFFactory {
                 nextXid(),
                       port
                     );
-    }
-
-    public OFQueueOpFailedErrorMsg.Builder buildQueueOpFailedErrorMsg() {
-        return new OFQueueOpFailedErrorMsgVer10.Builder().setXid(nextXid());
     }
 
     public OFQueueStatsEntry.Builder buildQueueStatsEntry() {
@@ -577,14 +563,6 @@ public class OFFactoryVer10 implements OFFactory {
                     );
     }
 
-    public OFBadInstructionErrorMsg.Builder buildBadInstructionErrorMsg() {
-        throw new UnsupportedOperationException("OFBadInstructionErrorMsg not supported in version 1.0");
-    }
-
-    public OFBadMatchErrorMsg.Builder buildBadMatchErrorMsg() {
-        throw new UnsupportedOperationException("OFBadMatchErrorMsg not supported in version 1.0");
-    }
-
     public OFBucket.Builder buildBucket() {
         throw new UnsupportedOperationException("OFBucket not supported in version 1.0");
     }
@@ -619,10 +597,6 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFGroupDescStatsRequest not supported in version 1.0");
     }
 
-    public OFGroupModFailedErrorMsg.Builder buildGroupModFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFGroupModFailedErrorMsg not supported in version 1.0");
-    }
-
     public OFGroupModify.Builder buildGroupModify() {
         throw new UnsupportedOperationException("OFGroupModify not supported in version 1.0");
     }
@@ -641,18 +615,6 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFMatchV2.Builder buildMatchV2() {
         throw new UnsupportedOperationException("OFMatchV2 not supported in version 1.0");
-    }
-
-    public OFSwitchConfigFailedErrorMsg.Builder buildSwitchConfigFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFSwitchConfigFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFTableModFailedErrorMsg.Builder buildTableModFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFTableModFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFExperimenterErrorMsg.Builder buildExperimenterErrorMsg() {
-        throw new UnsupportedOperationException("OFExperimenterErrorMsg not supported in version 1.0");
     }
 
     public OFGroupFeaturesStatsReply.Builder buildGroupFeaturesStatsReply() {
@@ -679,86 +641,6 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFRoleRequest.Builder buildRoleRequest() {
         throw new UnsupportedOperationException("OFRoleRequest not supported in version 1.0");
-    }
-
-    public OFRoleRequestFailedErrorMsg.Builder buildRoleRequestFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFRoleRequestFailedErrorMsg not supported in version 1.0");
-    }
-
-    public OFActionIdBsnMirror actionIdBsnMirror() {
-        throw new UnsupportedOperationException("OFActionIdBsnMirror not supported in version 1.0");
-    }
-
-    public OFActionIdBsnSetTunnelDst actionIdBsnSetTunnelDst() {
-        throw new UnsupportedOperationException("OFActionIdBsnSetTunnelDst not supported in version 1.0");
-    }
-
-    public OFActionIdCopyTtlIn actionIdCopyTtlIn() {
-        throw new UnsupportedOperationException("OFActionIdCopyTtlIn not supported in version 1.0");
-    }
-
-    public OFActionIdCopyTtlOut actionIdCopyTtlOut() {
-        throw new UnsupportedOperationException("OFActionIdCopyTtlOut not supported in version 1.0");
-    }
-
-    public OFActionIdDecMplsTtl actionIdDecMplsTtl() {
-        throw new UnsupportedOperationException("OFActionIdDecMplsTtl not supported in version 1.0");
-    }
-
-    public OFActionIdDecNwTtl actionIdDecNwTtl() {
-        throw new UnsupportedOperationException("OFActionIdDecNwTtl not supported in version 1.0");
-    }
-
-    public OFActionIdGroup actionIdGroup() {
-        throw new UnsupportedOperationException("OFActionIdGroup not supported in version 1.0");
-    }
-
-    public OFActionIdNiciraDecTtl actionIdNiciraDecTtl() {
-        throw new UnsupportedOperationException("OFActionIdNiciraDecTtl not supported in version 1.0");
-    }
-
-    public OFActionIdOutput actionIdOutput() {
-        throw new UnsupportedOperationException("OFActionIdOutput not supported in version 1.0");
-    }
-
-    public OFActionIdPopMpls actionIdPopMpls() {
-        throw new UnsupportedOperationException("OFActionIdPopMpls not supported in version 1.0");
-    }
-
-    public OFActionIdPopPbb actionIdPopPbb() {
-        throw new UnsupportedOperationException("OFActionIdPopPbb not supported in version 1.0");
-    }
-
-    public OFActionIdPopVlan actionIdPopVlan() {
-        throw new UnsupportedOperationException("OFActionIdPopVlan not supported in version 1.0");
-    }
-
-    public OFActionIdPushMpls actionIdPushMpls() {
-        throw new UnsupportedOperationException("OFActionIdPushMpls not supported in version 1.0");
-    }
-
-    public OFActionIdPushPbb actionIdPushPbb() {
-        throw new UnsupportedOperationException("OFActionIdPushPbb not supported in version 1.0");
-    }
-
-    public OFActionIdPushVlan actionIdPushVlan() {
-        throw new UnsupportedOperationException("OFActionIdPushVlan not supported in version 1.0");
-    }
-
-    public OFActionIdSetField actionIdSetField() {
-        throw new UnsupportedOperationException("OFActionIdSetField not supported in version 1.0");
-    }
-
-    public OFActionIdSetMplsTtl actionIdSetMplsTtl() {
-        throw new UnsupportedOperationException("OFActionIdSetMplsTtl not supported in version 1.0");
-    }
-
-    public OFActionIdSetNwTtl actionIdSetNwTtl() {
-        throw new UnsupportedOperationException("OFActionIdSetNwTtl not supported in version 1.0");
-    }
-
-    public OFActionIdSetQueue actionIdSetQueue() {
-        throw new UnsupportedOperationException("OFActionIdSetQueue not supported in version 1.0");
     }
 
     public OFAsyncGetReply.Builder buildAsyncGetReply() {
@@ -926,34 +808,6 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFHelloElemVersionbitmap not supported in version 1.0");
     }
 
-    public OFInstructionIdApplyActions instructionIdApplyActions() {
-        throw new UnsupportedOperationException("OFInstructionIdApplyActions not supported in version 1.0");
-    }
-
-    public OFInstructionIdBsnDisableSrcMacCheck instructionIdBsnDisableSrcMacCheck() {
-        throw new UnsupportedOperationException("OFInstructionIdBsnDisableSrcMacCheck not supported in version 1.0");
-    }
-
-    public OFInstructionIdClearActions instructionIdClearActions() {
-        throw new UnsupportedOperationException("OFInstructionIdClearActions not supported in version 1.0");
-    }
-
-    public OFInstructionIdGotoTable instructionIdGotoTable() {
-        throw new UnsupportedOperationException("OFInstructionIdGotoTable not supported in version 1.0");
-    }
-
-    public OFInstructionIdMeter instructionIdMeter() {
-        throw new UnsupportedOperationException("OFInstructionIdMeter not supported in version 1.0");
-    }
-
-    public OFInstructionIdWriteActions instructionIdWriteActions() {
-        throw new UnsupportedOperationException("OFInstructionIdWriteActions not supported in version 1.0");
-    }
-
-    public OFInstructionIdWriteMetadata instructionIdWriteMetadata() {
-        throw new UnsupportedOperationException("OFInstructionIdWriteMetadata not supported in version 1.0");
-    }
-
     public OFMeterBandStats.Builder buildMeterBandStats() {
         throw new UnsupportedOperationException("OFMeterBandStats not supported in version 1.0");
     }
@@ -990,10 +844,6 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFMeterMod.Builder buildMeterMod() {
         throw new UnsupportedOperationException("OFMeterMod not supported in version 1.0");
-    }
-
-    public OFMeterModFailedErrorMsg.Builder buildMeterModFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFMeterModFailedErrorMsg not supported in version 1.0");
     }
 
     public OFMeterStats.Builder buildMeterStats() {
@@ -1123,10 +973,6 @@ public class OFFactoryVer10 implements OFFactory {
 
     public OFTableFeatures.Builder buildTableFeatures() {
         throw new UnsupportedOperationException("OFTableFeatures not supported in version 1.0");
-    }
-
-    public OFTableFeaturesFailedErrorMsg.Builder buildTableFeaturesFailedErrorMsg() {
-        throw new UnsupportedOperationException("OFTableFeaturesFailedErrorMsg not supported in version 1.0");
     }
 
     public OFTableFeaturesStatsReply.Builder buildTableFeaturesStatsReply() {

@@ -1,1 +1,1 @@
-026ff024585f1588a7f11fa4c1a9a48d44dc098d Merge into master from pull request #153: Rewrite LOCI wire type pushing (https://github.com/floodlight/loxigen/pull/153)
+a2f9d95f4dca2a6e8f581cae42077ef8a6337536 Merge into master from pull request #154: java_gen: dedicated factories for (action|instruction)_id, erromsg (https://github.com/floodlight/loxigen/pull/154)
