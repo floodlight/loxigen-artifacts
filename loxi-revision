@@ -1,1 +1,1 @@
-a2f9d95f4dca2a6e8f581cae42077ef8a6337536 Merge into master from pull request #154: java_gen: dedicated factories for (action|instruction)_id, erromsg (https://github.com/floodlight/loxigen/pull/154)
+dea7bf2192788677f4d753fabcf5cc35ef81d2a4 Merge into master from pull request #155: IPAddress and IPAddressWithMask updates and fixes (https://github.com/floodlight/loxigen/pull/155)
