@@ -620,7 +620,7 @@ test_of10_packet_in(void) {
     of_object_t *obj;
 
     obj = of_packet_in_new(OF_VERSION_1_0);
-    of_packet_in_buffer_id_set(obj, 2882400001);
+    of_packet_in_buffer_id_set(obj, 0xabcdef01);
     {
         of_octets_t data = { .bytes=3, .data=(uint8_t *)"\x61\x62\x63" };
         of_packet_in_data_set(obj, &data);
@@ -657,7 +657,7 @@ test_of10_packet_out(void) {
     of_object_t *obj;
 
     obj = of_packet_out_new(OF_VERSION_1_0);
-    of_packet_out_buffer_id_set(obj, 2882400001);
+    of_packet_out_buffer_id_set(obj, 0xabcdef01);
     of_packet_out_in_port_set(obj, 65534);
     of_packet_out_xid_set(obj, 305419896);
     {
@@ -756,13 +756,13 @@ test_of10_port_mod(void) {
     of_object_t *obj;
 
     obj = of_port_mod_new(OF_VERSION_1_0);
-    of_port_mod_advertise_set(obj, 3405670281);
-    of_port_mod_config_set(obj, 2427178479);
+    of_port_mod_advertise_set(obj, 0xCAFE6789);
+    of_port_mod_config_set(obj, 0x90ABCDEF);
     {
         of_mac_addr_t hw_addr = { { 1, 2, 3, 4, 5, 6 } };
         of_port_mod_hw_addr_set(obj, hw_addr);
     }
-    of_port_mod_mask_set(obj, 4279369489);
+    of_port_mod_mask_set(obj, 0xFF11FF11);
     of_port_mod_port_no_set(obj, 65533);
     of_port_mod_xid_set(obj, 2);
 

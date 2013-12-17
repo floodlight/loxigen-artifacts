@@ -1,1 +1,1 @@
-9b15f2daec15bd773b037e10ba921f75426e1a2c Merge into master from pull request #157: Types: added 'matches' method to Masked<T> (https://github.com/floodlight/loxigen/pull/157)
+5c11767e98f26594669ab9f821e40ab57fa8b8df Merge into master from pull request #160: loci: fix 32-bit build (https://github.com/floodlight/loxigen/pull/160)
