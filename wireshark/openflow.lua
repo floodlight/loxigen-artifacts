@@ -2214,7 +2214,7 @@ fields['of10.flow_mod.out_port'] = ProtoField.uint32("of10.flow_mod.out_port", "
 fields['of10.flow_mod.flags'] = ProtoField.uint32("of10.flow_mod.flags", "flags", base.HEX, enum_v1_ofp_flow_mod_flags)
 fields['of10.flow_mod.actions'] = ProtoField.bytes("of10.flow_mod.actions", "actions")
 fields['of10.flow_add.version'] = ProtoField.uint8("of10.flow_add.version", "version", base.DEC, nil)
-fields['of10.flow_add.type'] = ProtoField.uint8("of10.flow_add.type", "type", base.DEC, nil)
+fields['of10.flow_add.type'] = ProtoField.uint32("of10.flow_add.type", "type", base.DEC, enum_v1_ofp_type)
 fields['of10.flow_add.length'] = ProtoField.uint16("of10.flow_add.length", "length", base.DEC, nil)
 fields['of10.flow_add.xid'] = ProtoField.uint32("of10.flow_add.xid", "xid", base.DEC, nil)
 fields['of10.flow_add.match'] = ProtoField.bytes("of10.flow_add.match", "match")
@@ -2228,7 +2228,7 @@ fields['of10.flow_add.out_port'] = ProtoField.uint32("of10.flow_add.out_port", "
 fields['of10.flow_add.flags'] = ProtoField.uint32("of10.flow_add.flags", "flags", base.HEX, enum_v1_ofp_flow_mod_flags)
 fields['of10.flow_add.actions'] = ProtoField.bytes("of10.flow_add.actions", "actions")
 fields['of10.flow_delete.version'] = ProtoField.uint8("of10.flow_delete.version", "version", base.DEC, nil)
-fields['of10.flow_delete.type'] = ProtoField.uint8("of10.flow_delete.type", "type", base.DEC, nil)
+fields['of10.flow_delete.type'] = ProtoField.uint32("of10.flow_delete.type", "type", base.DEC, enum_v1_ofp_type)
 fields['of10.flow_delete.length'] = ProtoField.uint16("of10.flow_delete.length", "length", base.DEC, nil)
 fields['of10.flow_delete.xid'] = ProtoField.uint32("of10.flow_delete.xid", "xid", base.DEC, nil)
 fields['of10.flow_delete.match'] = ProtoField.bytes("of10.flow_delete.match", "match")
@@ -3011,7 +3011,7 @@ fields['of11.flow_mod.flags'] = ProtoField.uint32("of11.flow_mod.flags", "flags"
 fields['of11.flow_mod.match'] = ProtoField.bytes("of11.flow_mod.match", "match")
 fields['of11.flow_mod.instructions'] = ProtoField.bytes("of11.flow_mod.instructions", "instructions")
 fields['of11.flow_add.version'] = ProtoField.uint8("of11.flow_add.version", "version", base.DEC, nil)
-fields['of11.flow_add.type'] = ProtoField.uint8("of11.flow_add.type", "type", base.DEC, nil)
+fields['of11.flow_add.type'] = ProtoField.uint32("of11.flow_add.type", "type", base.DEC, enum_v2_ofp_type)
 fields['of11.flow_add.length'] = ProtoField.uint16("of11.flow_add.length", "length", base.DEC, nil)
 fields['of11.flow_add.xid'] = ProtoField.uint32("of11.flow_add.xid", "xid", base.DEC, nil)
 fields['of11.flow_add.cookie'] = ProtoField.uint64("of11.flow_add.cookie", "cookie", base.DEC, nil)
@@ -3028,7 +3028,7 @@ fields['of11.flow_add.flags'] = ProtoField.uint32("of11.flow_add.flags", "flags"
 fields['of11.flow_add.match'] = ProtoField.bytes("of11.flow_add.match", "match")
 fields['of11.flow_add.instructions'] = ProtoField.bytes("of11.flow_add.instructions", "instructions")
 fields['of11.flow_delete.version'] = ProtoField.uint8("of11.flow_delete.version", "version", base.DEC, nil)
-fields['of11.flow_delete.type'] = ProtoField.uint8("of11.flow_delete.type", "type", base.DEC, nil)
+fields['of11.flow_delete.type'] = ProtoField.uint32("of11.flow_delete.type", "type", base.DEC, enum_v2_ofp_type)
 fields['of11.flow_delete.length'] = ProtoField.uint16("of11.flow_delete.length", "length", base.DEC, nil)
 fields['of11.flow_delete.xid'] = ProtoField.uint32("of11.flow_delete.xid", "xid", base.DEC, nil)
 fields['of11.flow_delete.cookie'] = ProtoField.uint64("of11.flow_delete.cookie", "cookie", base.DEC, nil)
@@ -3921,7 +3921,7 @@ fields['of12.flow_mod.flags'] = ProtoField.uint32("of12.flow_mod.flags", "flags"
 fields['of12.flow_mod.match'] = ProtoField.bytes("of12.flow_mod.match", "match")
 fields['of12.flow_mod.instructions'] = ProtoField.bytes("of12.flow_mod.instructions", "instructions")
 fields['of12.flow_add.version'] = ProtoField.uint8("of12.flow_add.version", "version", base.DEC, nil)
-fields['of12.flow_add.type'] = ProtoField.uint8("of12.flow_add.type", "type", base.DEC, nil)
+fields['of12.flow_add.type'] = ProtoField.uint32("of12.flow_add.type", "type", base.DEC, enum_v3_ofp_type)
 fields['of12.flow_add.length'] = ProtoField.uint16("of12.flow_add.length", "length", base.DEC, nil)
 fields['of12.flow_add.xid'] = ProtoField.uint32("of12.flow_add.xid", "xid", base.DEC, nil)
 fields['of12.flow_add.cookie'] = ProtoField.uint64("of12.flow_add.cookie", "cookie", base.DEC, nil)
@@ -3938,7 +3938,7 @@ fields['of12.flow_add.flags'] = ProtoField.uint32("of12.flow_add.flags", "flags"
 fields['of12.flow_add.match'] = ProtoField.bytes("of12.flow_add.match", "match")
 fields['of12.flow_add.instructions'] = ProtoField.bytes("of12.flow_add.instructions", "instructions")
 fields['of12.flow_delete.version'] = ProtoField.uint8("of12.flow_delete.version", "version", base.DEC, nil)
-fields['of12.flow_delete.type'] = ProtoField.uint8("of12.flow_delete.type", "type", base.DEC, nil)
+fields['of12.flow_delete.type'] = ProtoField.uint32("of12.flow_delete.type", "type", base.DEC, enum_v3_ofp_type)
 fields['of12.flow_delete.length'] = ProtoField.uint16("of12.flow_delete.length", "length", base.DEC, nil)
 fields['of12.flow_delete.xid'] = ProtoField.uint32("of12.flow_delete.xid", "xid", base.DEC, nil)
 fields['of12.flow_delete.cookie'] = ProtoField.uint64("of12.flow_delete.cookie", "cookie", base.DEC, nil)
@@ -5377,7 +5377,7 @@ fields['of13.flow_mod.flags'] = ProtoField.uint32("of13.flow_mod.flags", "flags"
 fields['of13.flow_mod.match'] = ProtoField.bytes("of13.flow_mod.match", "match")
 fields['of13.flow_mod.instructions'] = ProtoField.bytes("of13.flow_mod.instructions", "instructions")
 fields['of13.flow_add.version'] = ProtoField.uint8("of13.flow_add.version", "version", base.DEC, nil)
-fields['of13.flow_add.type'] = ProtoField.uint8("of13.flow_add.type", "type", base.DEC, nil)
+fields['of13.flow_add.type'] = ProtoField.uint32("of13.flow_add.type", "type", base.DEC, enum_v4_ofp_type)
 fields['of13.flow_add.length'] = ProtoField.uint16("of13.flow_add.length", "length", base.DEC, nil)
 fields['of13.flow_add.xid'] = ProtoField.uint32("of13.flow_add.xid", "xid", base.DEC, nil)
 fields['of13.flow_add.cookie'] = ProtoField.uint64("of13.flow_add.cookie", "cookie", base.DEC, nil)
@@ -5394,7 +5394,7 @@ fields['of13.flow_add.flags'] = ProtoField.uint32("of13.flow_add.flags", "flags"
 fields['of13.flow_add.match'] = ProtoField.bytes("of13.flow_add.match", "match")
 fields['of13.flow_add.instructions'] = ProtoField.bytes("of13.flow_add.instructions", "instructions")
 fields['of13.flow_delete.version'] = ProtoField.uint8("of13.flow_delete.version", "version", base.DEC, nil)
-fields['of13.flow_delete.type'] = ProtoField.uint8("of13.flow_delete.type", "type", base.DEC, nil)
+fields['of13.flow_delete.type'] = ProtoField.uint32("of13.flow_delete.type", "type", base.DEC, enum_v4_ofp_type)
 fields['of13.flow_delete.length'] = ProtoField.uint16("of13.flow_delete.length", "length", base.DEC, nil)
 fields['of13.flow_delete.xid'] = ProtoField.uint32("of13.flow_delete.xid", "xid", base.DEC, nil)
 fields['of13.flow_delete.cookie'] = ProtoField.uint64("of13.flow_delete.cookie", "cookie", base.DEC, nil)
@@ -11272,6 +11272,9 @@ of_header_v1_dissectors[1] = dissect_of_error_msg_v1
 -- child class of_bad_action_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_action_error_msg_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bad_action_error_msg.version')
     read_uint8_t(reader, 1, subtree, 'of10.bad_action_error_msg.type')
     read_uint16_t(reader, 1, subtree, 'of10.bad_action_error_msg.length')
@@ -11286,6 +11289,9 @@ of_error_msg_v1_dissectors[2] = dissect_of_bad_action_error_msg_v1
 -- child class of_bad_request_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_request_error_msg_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bad_request_error_msg.version')
     read_uint8_t(reader, 1, subtree, 'of10.bad_request_error_msg.type')
     read_uint16_t(reader, 1, subtree, 'of10.bad_request_error_msg.length')
@@ -11421,13 +11427,16 @@ of_bsn_header_v1_dissectors[18] = dissect_of_bsn_bw_enable_set_request_v1
 -- child class of_bsn_get_interfaces_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_get_interfaces_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.length')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.xid')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.experimenter')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.subtype')
-    read_list_of_bsn_interface_t(reader, 1, subtree, 'of10.bsn_get_interfaces_reply.interfaces')
+    read_list(reader, dissect_of_bsn_interface_v1, subtree, 'of_bsn_interface')
     return 'of_bsn_get_interfaces_reply'
 end
 of_bsn_header_v1_dissectors[10] = dissect_of_bsn_get_interfaces_reply_v1
@@ -11594,6 +11603,9 @@ of_bsn_header_v1_dissectors[34] = dissect_of_bsn_pdu_rx_reply_v1
 -- child class of_bsn_pdu_rx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_rx_request_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_pdu_rx_request.version')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_pdu_rx_request.type')
     read_uint16_t(reader, 1, subtree, 'of10.bsn_pdu_rx_request.length')
@@ -11643,6 +11655,9 @@ of_bsn_header_v1_dissectors[32] = dissect_of_bsn_pdu_tx_reply_v1
 -- child class of_bsn_pdu_tx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_tx_request_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_pdu_tx_request.version')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_pdu_tx_request.type')
     read_uint16_t(reader, 1, subtree, 'of10.bsn_pdu_tx_request.length')
@@ -11759,6 +11774,9 @@ of_bsn_header_v1_dissectors[11] = dissect_of_bsn_set_pktin_suppression_request_v
 -- child class of_bsn_shell_command
 -- Child of of_bsn_header
 function dissect_of_bsn_shell_command_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_shell_command.version')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_shell_command.type')
     read_uint16_t(reader, 1, subtree, 'of10.bsn_shell_command.length')
@@ -11774,6 +11792,9 @@ of_bsn_header_v1_dissectors[6] = dissect_of_bsn_shell_command_v1
 -- child class of_bsn_shell_output
 -- Child of of_bsn_header
 function dissect_of_bsn_shell_output_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_shell_output.version')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_shell_output.type')
     read_uint16_t(reader, 1, subtree, 'of10.bsn_shell_output.length')
@@ -11942,6 +11963,9 @@ of_stats_request_v1_dissectors[0] = dissect_of_desc_stats_request_v1
 -- child class of_echo_reply
 -- Child of of_header
 function dissect_of_echo_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.echo_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.echo_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.echo_reply.length')
@@ -11954,6 +11978,9 @@ of_header_v1_dissectors[3] = dissect_of_echo_reply_v1
 -- child class of_echo_request
 -- Child of of_header
 function dissect_of_echo_request_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.echo_request.version')
     read_uint8_t(reader, 1, subtree, 'of10.echo_request.type')
     read_uint16_t(reader, 1, subtree, 'of10.echo_request.length')
@@ -11966,6 +11993,9 @@ of_header_v1_dissectors[2] = dissect_of_echo_request_v1
 -- child class of_features_reply
 -- Child of of_header
 function dissect_of_features_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.features_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.features_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.features_reply.length')
@@ -11976,7 +12006,7 @@ function dissect_of_features_reply_v1(reader, subtree)
     reader.skip(3)
     read_uint32_t(reader, 1, subtree, 'of10.features_reply.capabilities')
     read_uint32_t(reader, 1, subtree, 'of10.features_reply.actions')
-    read_list_of_port_desc_t(reader, 1, subtree, 'of10.features_reply.ports')
+    read_list(reader, dissect_of_port_desc_v1, subtree, 'of_port_desc')
     return 'of_features_reply'
 end
 of_header_v1_dissectors[6] = dissect_of_features_reply_v1
@@ -12003,6 +12033,9 @@ of_header_v1_dissectors[14] = dissect_of_flow_mod_v1
 -- child class of_flow_add
 -- Child of of_flow_mod
 function dissect_of_flow_add_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_add.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_add.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_add.length')
@@ -12016,7 +12049,7 @@ function dissect_of_flow_add_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.flow_add.buffer_id')
     read_of_port_no_t(reader, 1, subtree, 'of10.flow_add.out_port')
     read_uint16_t(reader, 1, subtree, 'of10.flow_add.flags')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_add.actions')
+    read_list(reader, dissect_of_action_v1, subtree, 'of_action')
     return 'of_flow_add'
 end
 of_flow_mod_v1_dissectors[0] = dissect_of_flow_add_v1
@@ -12024,6 +12057,9 @@ of_flow_mod_v1_dissectors[0] = dissect_of_flow_add_v1
 -- child class of_flow_delete
 -- Child of of_flow_mod
 function dissect_of_flow_delete_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_delete.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_delete.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_delete.length')
@@ -12037,7 +12073,7 @@ function dissect_of_flow_delete_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.flow_delete.buffer_id')
     read_of_port_no_t(reader, 1, subtree, 'of10.flow_delete.out_port')
     read_uint16_t(reader, 1, subtree, 'of10.flow_delete.flags')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_delete.actions')
+    read_list(reader, dissect_of_action_v1, subtree, 'of_action')
     return 'of_flow_delete'
 end
 of_flow_mod_v1_dissectors[3] = dissect_of_flow_delete_v1
@@ -12045,6 +12081,9 @@ of_flow_mod_v1_dissectors[3] = dissect_of_flow_delete_v1
 -- child class of_flow_delete_strict
 -- Child of of_flow_mod
 function dissect_of_flow_delete_strict_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_delete_strict.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_delete_strict.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_delete_strict.length')
@@ -12058,7 +12097,7 @@ function dissect_of_flow_delete_strict_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.flow_delete_strict.buffer_id')
     read_of_port_no_t(reader, 1, subtree, 'of10.flow_delete_strict.out_port')
     read_uint16_t(reader, 1, subtree, 'of10.flow_delete_strict.flags')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_delete_strict.actions')
+    read_list(reader, dissect_of_action_v1, subtree, 'of_action')
     return 'of_flow_delete_strict'
 end
 of_flow_mod_v1_dissectors[4] = dissect_of_flow_delete_strict_v1
@@ -12066,6 +12105,9 @@ of_flow_mod_v1_dissectors[4] = dissect_of_flow_delete_strict_v1
 -- child class of_flow_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_flow_mod_failed_error_msg_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.length')
@@ -12080,6 +12122,9 @@ of_error_msg_v1_dissectors[3] = dissect_of_flow_mod_failed_error_msg_v1
 -- child class of_flow_modify
 -- Child of of_flow_mod
 function dissect_of_flow_modify_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_modify.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_modify.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_modify.length')
@@ -12093,7 +12138,7 @@ function dissect_of_flow_modify_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.flow_modify.buffer_id')
     read_of_port_no_t(reader, 1, subtree, 'of10.flow_modify.out_port')
     read_uint16_t(reader, 1, subtree, 'of10.flow_modify.flags')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_modify.actions')
+    read_list(reader, dissect_of_action_v1, subtree, 'of_action')
     return 'of_flow_modify'
 end
 of_flow_mod_v1_dissectors[1] = dissect_of_flow_modify_v1
@@ -12101,6 +12146,9 @@ of_flow_mod_v1_dissectors[1] = dissect_of_flow_modify_v1
 -- child class of_flow_modify_strict
 -- Child of of_flow_mod
 function dissect_of_flow_modify_strict_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_modify_strict.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_modify_strict.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_modify_strict.length')
@@ -12114,7 +12162,7 @@ function dissect_of_flow_modify_strict_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.flow_modify_strict.buffer_id')
     read_of_port_no_t(reader, 1, subtree, 'of10.flow_modify_strict.out_port')
     read_uint16_t(reader, 1, subtree, 'of10.flow_modify_strict.flags')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_modify_strict.actions')
+    read_list(reader, dissect_of_action_v1, subtree, 'of_action')
     return 'of_flow_modify_strict'
 end
 of_flow_mod_v1_dissectors[2] = dissect_of_flow_modify_strict_v1
@@ -12143,6 +12191,9 @@ of_header_v1_dissectors[11] = dissect_of_flow_removed_v1
 
 -- top-level class of_flow_stats_entry
 function dissect_of_flow_stats_entry_v1(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 1, subtree, 'of10.flow_stats_entry.length')
     read_uint8_t(reader, 1, subtree, 'of10.flow_stats_entry.table_id')
     reader.skip(1)
@@ -12156,19 +12207,22 @@ function dissect_of_flow_stats_entry_v1(reader, subtree)
     read_uint64_t(reader, 1, subtree, 'of10.flow_stats_entry.cookie')
     read_uint64_t(reader, 1, subtree, 'of10.flow_stats_entry.packet_count')
     read_uint64_t(reader, 1, subtree, 'of10.flow_stats_entry.byte_count')
-    read_list_of_action_t(reader, 1, subtree, 'of10.flow_stats_entry.actions')
+    read_list(reader, dissect_of_action_v1, subtree, 'of_action')
     return 'of_flow_stats_entry'
 end
 -- child class of_flow_stats_reply
 -- Child of of_stats_reply
 function dissect_of_flow_stats_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.flow_stats_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.flow_stats_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_stats_reply.length')
     read_uint32_t(reader, 1, subtree, 'of10.flow_stats_reply.xid')
     read_uint16_t(reader, 1, subtree, 'of10.flow_stats_reply.stats_type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_stats_reply.flags')
-    read_list_of_flow_stats_entry_t(reader, 1, subtree, 'of10.flow_stats_reply.entries')
+    read_list(reader, dissect_of_flow_stats_entry_v1, subtree, 'of_flow_stats_entry')
     return 'of_flow_stats_reply'
 end
 of_stats_reply_v1_dissectors[1] = dissect_of_flow_stats_reply_v1
@@ -12228,6 +12282,9 @@ of_header_v1_dissectors[0] = dissect_of_hello_v1
 -- child class of_hello_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_hello_failed_error_msg_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.hello_failed_error_msg.version')
     read_uint8_t(reader, 1, subtree, 'of10.hello_failed_error_msg.type')
     read_uint16_t(reader, 1, subtree, 'of10.hello_failed_error_msg.length')
@@ -12297,6 +12354,9 @@ of_nicira_header_v1_dissectors[10] = dissect_of_nicira_controller_role_request_v
 -- child class of_packet_in
 -- Child of of_header
 function dissect_of_packet_in_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.packet_in.version')
     read_uint8_t(reader, 1, subtree, 'of10.packet_in.type')
     read_uint16_t(reader, 1, subtree, 'of10.packet_in.length')
@@ -12314,14 +12374,18 @@ of_header_v1_dissectors[10] = dissect_of_packet_in_v1
 -- child class of_packet_out
 -- Child of of_header
 function dissect_of_packet_out_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.packet_out.version')
     read_uint8_t(reader, 1, subtree, 'of10.packet_out.type')
     read_uint16_t(reader, 1, subtree, 'of10.packet_out.length')
     read_uint32_t(reader, 1, subtree, 'of10.packet_out.xid')
     read_uint32_t(reader, 1, subtree, 'of10.packet_out.buffer_id')
     read_of_port_no_t(reader, 1, subtree, 'of10.packet_out.in_port')
+    local _actions_length = reader.peek(0, 2):uint()
     read_uint16_t(reader, 1, subtree, 'of10.packet_out.actions_len')
-    read_list_of_action_t(reader, 1, subtree, 'of10.packet_out.actions')
+    read_list(reader.slice(_actions_length), dissect_of_action_v1, subtree, 'of_action')
     read_of_octets_t(reader, 1, subtree, 'of10.packet_out.data')
     return 'of_packet_out'
 end
@@ -12329,10 +12393,13 @@ of_header_v1_dissectors[13] = dissect_of_packet_out_v1
 
 -- top-level class of_packet_queue
 function dissect_of_packet_queue_v1(reader, subtree)
+    local _length = reader.peek(4, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint32_t(reader, 1, subtree, 'of10.packet_queue.queue_id')
     read_uint16_t(reader, 1, subtree, 'of10.packet_queue.len')
     reader.skip(2)
-    read_list_of_queue_prop_t(reader, 1, subtree, 'of10.packet_queue.properties')
+    read_list(reader, dissect_of_queue_prop_v1, subtree, 'of_queue_prop')
     return 'of_packet_queue'
 end
 -- top-level class of_port_desc
@@ -12368,6 +12435,9 @@ of_header_v1_dissectors[15] = dissect_of_port_mod_v1
 -- child class of_port_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_port_mod_failed_error_msg_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.version')
     read_uint8_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.type')
     read_uint16_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.length')
@@ -12400,13 +12470,16 @@ end
 -- child class of_port_stats_reply
 -- Child of of_stats_reply
 function dissect_of_port_stats_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.port_stats_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.port_stats_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.port_stats_reply.length')
     read_uint32_t(reader, 1, subtree, 'of10.port_stats_reply.xid')
     read_uint16_t(reader, 1, subtree, 'of10.port_stats_reply.stats_type')
     read_uint16_t(reader, 1, subtree, 'of10.port_stats_reply.flags')
-    read_list_of_port_stats_entry_t(reader, 1, subtree, 'of10.port_stats_reply.entries')
+    read_list(reader, dissect_of_port_stats_entry_v1, subtree, 'of_port_stats_entry')
     return 'of_port_stats_reply'
 end
 of_stats_reply_v1_dissectors[4] = dissect_of_port_stats_reply_v1
@@ -12443,13 +12516,16 @@ of_header_v1_dissectors[12] = dissect_of_port_status_v1
 -- child class of_queue_get_config_reply
 -- Child of of_header
 function dissect_of_queue_get_config_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.queue_get_config_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.queue_get_config_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.queue_get_config_reply.length')
     read_uint32_t(reader, 1, subtree, 'of10.queue_get_config_reply.xid')
     read_of_port_no_t(reader, 1, subtree, 'of10.queue_get_config_reply.port')
     reader.skip(6)
-    read_list_of_packet_queue_t(reader, 1, subtree, 'of10.queue_get_config_reply.queues')
+    read_list(reader, dissect_of_packet_queue_v1, subtree, 'of_packet_queue')
     return 'of_queue_get_config_reply'
 end
 of_header_v1_dissectors[21] = dissect_of_queue_get_config_reply_v1
@@ -12470,6 +12546,9 @@ of_header_v1_dissectors[20] = dissect_of_queue_get_config_request_v1
 -- child class of_queue_op_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_queue_op_failed_error_msg_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.version')
     read_uint8_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.type')
     read_uint16_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.length')
@@ -12511,13 +12590,16 @@ end
 -- child class of_queue_stats_reply
 -- Child of of_stats_reply
 function dissect_of_queue_stats_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.queue_stats_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.queue_stats_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.queue_stats_reply.length')
     read_uint32_t(reader, 1, subtree, 'of10.queue_stats_reply.xid')
     read_uint16_t(reader, 1, subtree, 'of10.queue_stats_reply.stats_type')
     read_uint16_t(reader, 1, subtree, 'of10.queue_stats_reply.flags')
-    read_list_of_queue_stats_entry_t(reader, 1, subtree, 'of10.queue_stats_reply.entries')
+    read_list(reader, dissect_of_queue_stats_entry_v1, subtree, 'of_queue_stats_entry')
     return 'of_queue_stats_reply'
 end
 of_stats_reply_v1_dissectors[5] = dissect_of_queue_stats_reply_v1
@@ -12580,13 +12662,16 @@ end
 -- child class of_table_stats_reply
 -- Child of of_stats_reply
 function dissect_of_table_stats_reply_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.table_stats_reply.version')
     read_uint8_t(reader, 1, subtree, 'of10.table_stats_reply.type')
     read_uint16_t(reader, 1, subtree, 'of10.table_stats_reply.length')
     read_uint32_t(reader, 1, subtree, 'of10.table_stats_reply.xid')
     read_uint16_t(reader, 1, subtree, 'of10.table_stats_reply.stats_type')
     read_uint16_t(reader, 1, subtree, 'of10.table_stats_reply.flags')
-    read_list_of_table_stats_entry_t(reader, 1, subtree, 'of10.table_stats_reply.entries')
+    read_list(reader, dissect_of_table_stats_entry_v1, subtree, 'of_table_stats_entry')
     return 'of_table_stats_reply'
 end
 of_stats_reply_v1_dissectors[3] = dissect_of_table_stats_reply_v1
@@ -13011,6 +13096,9 @@ of_header_v2_dissectors[1] = dissect_of_error_msg_v2
 -- child class of_bad_action_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_action_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bad_action_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.bad_action_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_action_error_msg.length')
@@ -13025,6 +13113,9 @@ of_error_msg_v2_dissectors[2] = dissect_of_bad_action_error_msg_v2
 -- child class of_bad_instruction_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_instruction_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.length')
@@ -13039,6 +13130,9 @@ of_error_msg_v2_dissectors[3] = dissect_of_bad_instruction_error_msg_v2
 -- child class of_bad_match_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_match_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bad_match_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.bad_match_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_match_error_msg.length')
@@ -13053,6 +13147,9 @@ of_error_msg_v2_dissectors[4] = dissect_of_bad_match_error_msg_v2
 -- child class of_bad_request_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_request_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bad_request_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.bad_request_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_request_error_msg.length')
@@ -13188,13 +13285,16 @@ of_bsn_header_v2_dissectors[18] = dissect_of_bsn_bw_enable_set_request_v2
 -- child class of_bsn_get_interfaces_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_get_interfaces_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.length')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.xid')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.experimenter')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.subtype')
-    read_list_of_bsn_interface_t(reader, 2, subtree, 'of11.bsn_get_interfaces_reply.interfaces')
+    read_list(reader, dissect_of_bsn_interface_v2, subtree, 'of_bsn_interface')
     return 'of_bsn_get_interfaces_reply'
 end
 of_bsn_header_v2_dissectors[10] = dissect_of_bsn_get_interfaces_reply_v2
@@ -13270,6 +13370,9 @@ of_bsn_header_v2_dissectors[34] = dissect_of_bsn_pdu_rx_reply_v2
 -- child class of_bsn_pdu_rx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_rx_request_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bsn_pdu_rx_request.version')
     read_uint8_t(reader, 2, subtree, 'of11.bsn_pdu_rx_request.type')
     read_uint16_t(reader, 2, subtree, 'of11.bsn_pdu_rx_request.length')
@@ -13319,6 +13422,9 @@ of_bsn_header_v2_dissectors[32] = dissect_of_bsn_pdu_tx_reply_v2
 -- child class of_bsn_pdu_tx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_tx_request_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bsn_pdu_tx_request.version')
     read_uint8_t(reader, 2, subtree, 'of11.bsn_pdu_tx_request.type')
     read_uint16_t(reader, 2, subtree, 'of11.bsn_pdu_tx_request.length')
@@ -13493,12 +13599,15 @@ of_bsn_header_v2_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v2
 
 -- top-level class of_bucket
 function dissect_of_bucket_v2(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 2, subtree, 'of11.bucket.len')
     read_uint16_t(reader, 2, subtree, 'of11.bucket.weight')
     read_of_port_no_t(reader, 2, subtree, 'of11.bucket.watch_port')
     read_uint32_t(reader, 2, subtree, 'of11.bucket.watch_group')
     reader.skip(4)
-    read_list_of_action_t(reader, 2, subtree, 'of11.bucket.actions')
+    read_list(reader, dissect_of_action_v2, subtree, 'of_action')
     return 'of_bucket'
 end
 -- top-level class of_bucket_counter
@@ -13543,6 +13652,9 @@ of_stats_request_v2_dissectors[0] = dissect_of_desc_stats_request_v2
 -- child class of_echo_reply
 -- Child of of_header
 function dissect_of_echo_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.echo_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.echo_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.echo_reply.length')
@@ -13555,6 +13667,9 @@ of_header_v2_dissectors[3] = dissect_of_echo_reply_v2
 -- child class of_echo_request
 -- Child of of_header
 function dissect_of_echo_request_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.echo_request.version')
     read_uint8_t(reader, 2, subtree, 'of11.echo_request.type')
     read_uint16_t(reader, 2, subtree, 'of11.echo_request.length')
@@ -13567,6 +13682,9 @@ of_header_v2_dissectors[2] = dissect_of_echo_request_v2
 -- child class of_features_reply
 -- Child of of_header
 function dissect_of_features_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.features_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.features_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.features_reply.length')
@@ -13577,7 +13695,7 @@ function dissect_of_features_reply_v2(reader, subtree)
     reader.skip(3)
     read_uint32_t(reader, 2, subtree, 'of11.features_reply.capabilities')
     read_uint32_t(reader, 2, subtree, 'of11.features_reply.reserved')
-    read_list_of_port_desc_t(reader, 2, subtree, 'of11.features_reply.ports')
+    read_list(reader, dissect_of_port_desc_v2, subtree, 'of_port_desc')
     return 'of_features_reply'
 end
 of_header_v2_dissectors[6] = dissect_of_features_reply_v2
@@ -13604,6 +13722,9 @@ of_header_v2_dissectors[14] = dissect_of_flow_mod_v2
 -- child class of_flow_add
 -- Child of of_flow_mod
 function dissect_of_flow_add_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_add.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_add.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_add.length')
@@ -13621,7 +13742,7 @@ function dissect_of_flow_add_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.flow_add.flags')
     reader.skip(2)
     read_of_match_t(reader, 2, subtree, 'of11.flow_add.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_add.instructions')
+    read_list(reader, dissect_of_instruction_v2, subtree, 'of_instruction')
     return 'of_flow_add'
 end
 of_flow_mod_v2_dissectors[0] = dissect_of_flow_add_v2
@@ -13629,6 +13750,9 @@ of_flow_mod_v2_dissectors[0] = dissect_of_flow_add_v2
 -- child class of_flow_delete
 -- Child of of_flow_mod
 function dissect_of_flow_delete_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_delete.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_delete.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_delete.length')
@@ -13646,7 +13770,7 @@ function dissect_of_flow_delete_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.flow_delete.flags')
     reader.skip(2)
     read_of_match_t(reader, 2, subtree, 'of11.flow_delete.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_delete.instructions')
+    read_list(reader, dissect_of_instruction_v2, subtree, 'of_instruction')
     return 'of_flow_delete'
 end
 of_flow_mod_v2_dissectors[3] = dissect_of_flow_delete_v2
@@ -13654,6 +13778,9 @@ of_flow_mod_v2_dissectors[3] = dissect_of_flow_delete_v2
 -- child class of_flow_delete_strict
 -- Child of of_flow_mod
 function dissect_of_flow_delete_strict_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_delete_strict.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_delete_strict.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_delete_strict.length')
@@ -13671,7 +13798,7 @@ function dissect_of_flow_delete_strict_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.flow_delete_strict.flags')
     reader.skip(2)
     read_of_match_t(reader, 2, subtree, 'of11.flow_delete_strict.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_delete_strict.instructions')
+    read_list(reader, dissect_of_instruction_v2, subtree, 'of_instruction')
     return 'of_flow_delete_strict'
 end
 of_flow_mod_v2_dissectors[4] = dissect_of_flow_delete_strict_v2
@@ -13679,6 +13806,9 @@ of_flow_mod_v2_dissectors[4] = dissect_of_flow_delete_strict_v2
 -- child class of_flow_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_flow_mod_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.length')
@@ -13693,6 +13823,9 @@ of_error_msg_v2_dissectors[5] = dissect_of_flow_mod_failed_error_msg_v2
 -- child class of_flow_modify
 -- Child of of_flow_mod
 function dissect_of_flow_modify_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_modify.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_modify.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_modify.length')
@@ -13710,7 +13843,7 @@ function dissect_of_flow_modify_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.flow_modify.flags')
     reader.skip(2)
     read_of_match_t(reader, 2, subtree, 'of11.flow_modify.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_modify.instructions')
+    read_list(reader, dissect_of_instruction_v2, subtree, 'of_instruction')
     return 'of_flow_modify'
 end
 of_flow_mod_v2_dissectors[1] = dissect_of_flow_modify_v2
@@ -13718,6 +13851,9 @@ of_flow_mod_v2_dissectors[1] = dissect_of_flow_modify_v2
 -- child class of_flow_modify_strict
 -- Child of of_flow_mod
 function dissect_of_flow_modify_strict_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_modify_strict.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_modify_strict.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_modify_strict.length')
@@ -13735,7 +13871,7 @@ function dissect_of_flow_modify_strict_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.flow_modify_strict.flags')
     reader.skip(2)
     read_of_match_t(reader, 2, subtree, 'of11.flow_modify_strict.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_modify_strict.instructions')
+    read_list(reader, dissect_of_instruction_v2, subtree, 'of_instruction')
     return 'of_flow_modify_strict'
 end
 of_flow_mod_v2_dissectors[2] = dissect_of_flow_modify_strict_v2
@@ -13764,6 +13900,9 @@ of_header_v2_dissectors[11] = dissect_of_flow_removed_v2
 
 -- top-level class of_flow_stats_entry
 function dissect_of_flow_stats_entry_v2(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 2, subtree, 'of11.flow_stats_entry.length')
     read_uint8_t(reader, 2, subtree, 'of11.flow_stats_entry.table_id')
     reader.skip(1)
@@ -13777,12 +13916,15 @@ function dissect_of_flow_stats_entry_v2(reader, subtree)
     read_uint64_t(reader, 2, subtree, 'of11.flow_stats_entry.packet_count')
     read_uint64_t(reader, 2, subtree, 'of11.flow_stats_entry.byte_count')
     read_of_match_t(reader, 2, subtree, 'of11.flow_stats_entry.match')
-    read_list_of_instruction_t(reader, 2, subtree, 'of11.flow_stats_entry.instructions')
+    read_list(reader, dissect_of_instruction_v2, subtree, 'of_instruction')
     return 'of_flow_stats_entry'
 end
 -- child class of_flow_stats_reply
 -- Child of of_stats_reply
 function dissect_of_flow_stats_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.flow_stats_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.flow_stats_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_stats_reply.length')
@@ -13790,7 +13932,7 @@ function dissect_of_flow_stats_reply_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.flow_stats_reply.stats_type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_stats_reply.flags')
     reader.skip(4)
-    read_list_of_flow_stats_entry_t(reader, 2, subtree, 'of11.flow_stats_reply.entries')
+    read_list(reader, dissect_of_flow_stats_entry_v2, subtree, 'of_flow_stats_entry')
     return 'of_flow_stats_reply'
 end
 of_stats_reply_v2_dissectors[1] = dissect_of_flow_stats_reply_v2
@@ -13852,6 +13994,9 @@ of_header_v2_dissectors[15] = dissect_of_group_mod_v2
 -- child class of_group_add
 -- Child of of_group_mod
 function dissect_of_group_add_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.group_add.version')
     read_uint8_t(reader, 2, subtree, 'of11.group_add.type')
     read_uint16_t(reader, 2, subtree, 'of11.group_add.length')
@@ -13860,7 +14005,7 @@ function dissect_of_group_add_v2(reader, subtree)
     read_uint8_t(reader, 2, subtree, 'of11.group_add.group_type')
     reader.skip(1)
     read_uint32_t(reader, 2, subtree, 'of11.group_add.group_id')
-    read_list_of_bucket_t(reader, 2, subtree, 'of11.group_add.buckets')
+    read_list(reader, dissect_of_bucket_v2, subtree, 'of_bucket')
     return 'of_group_add'
 end
 of_group_mod_v2_dissectors[0] = dissect_of_group_add_v2
@@ -13868,6 +14013,9 @@ of_group_mod_v2_dissectors[0] = dissect_of_group_add_v2
 -- child class of_group_delete
 -- Child of of_group_mod
 function dissect_of_group_delete_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.group_delete.version')
     read_uint8_t(reader, 2, subtree, 'of11.group_delete.type')
     read_uint16_t(reader, 2, subtree, 'of11.group_delete.length')
@@ -13876,23 +14024,29 @@ function dissect_of_group_delete_v2(reader, subtree)
     read_uint8_t(reader, 2, subtree, 'of11.group_delete.group_type')
     reader.skip(1)
     read_uint32_t(reader, 2, subtree, 'of11.group_delete.group_id')
-    read_list_of_bucket_t(reader, 2, subtree, 'of11.group_delete.buckets')
+    read_list(reader, dissect_of_bucket_v2, subtree, 'of_bucket')
     return 'of_group_delete'
 end
 of_group_mod_v2_dissectors[2] = dissect_of_group_delete_v2
 
 -- top-level class of_group_desc_stats_entry
 function dissect_of_group_desc_stats_entry_v2(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 2, subtree, 'of11.group_desc_stats_entry.length')
     read_uint8_t(reader, 2, subtree, 'of11.group_desc_stats_entry.group_type')
     reader.skip(1)
     read_uint32_t(reader, 2, subtree, 'of11.group_desc_stats_entry.group_id')
-    read_list_of_bucket_t(reader, 2, subtree, 'of11.group_desc_stats_entry.buckets')
+    read_list(reader, dissect_of_bucket_v2, subtree, 'of_bucket')
     return 'of_group_desc_stats_entry'
 end
 -- child class of_group_desc_stats_reply
 -- Child of of_stats_reply
 function dissect_of_group_desc_stats_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.group_desc_stats_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.group_desc_stats_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.group_desc_stats_reply.length')
@@ -13900,7 +14054,7 @@ function dissect_of_group_desc_stats_reply_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.group_desc_stats_reply.stats_type')
     read_uint16_t(reader, 2, subtree, 'of11.group_desc_stats_reply.flags')
     reader.skip(4)
-    read_list_of_group_desc_stats_entry_t(reader, 2, subtree, 'of11.group_desc_stats_reply.entries')
+    read_list(reader, dissect_of_group_desc_stats_entry_v2, subtree, 'of_group_desc_stats_entry')
     return 'of_group_desc_stats_reply'
 end
 of_stats_reply_v2_dissectors[7] = dissect_of_group_desc_stats_reply_v2
@@ -13922,6 +14076,9 @@ of_stats_request_v2_dissectors[7] = dissect_of_group_desc_stats_request_v2
 -- child class of_group_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_group_mod_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.length')
@@ -13936,6 +14093,9 @@ of_error_msg_v2_dissectors[6] = dissect_of_group_mod_failed_error_msg_v2
 -- child class of_group_modify
 -- Child of of_group_mod
 function dissect_of_group_modify_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.group_modify.version')
     read_uint8_t(reader, 2, subtree, 'of11.group_modify.type')
     read_uint16_t(reader, 2, subtree, 'of11.group_modify.length')
@@ -13944,13 +14104,16 @@ function dissect_of_group_modify_v2(reader, subtree)
     read_uint8_t(reader, 2, subtree, 'of11.group_modify.group_type')
     reader.skip(1)
     read_uint32_t(reader, 2, subtree, 'of11.group_modify.group_id')
-    read_list_of_bucket_t(reader, 2, subtree, 'of11.group_modify.buckets')
+    read_list(reader, dissect_of_bucket_v2, subtree, 'of_bucket')
     return 'of_group_modify'
 end
 of_group_mod_v2_dissectors[1] = dissect_of_group_modify_v2
 
 -- top-level class of_group_stats_entry
 function dissect_of_group_stats_entry_v2(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 2, subtree, 'of11.group_stats_entry.length')
     reader.skip(2)
     read_uint32_t(reader, 2, subtree, 'of11.group_stats_entry.group_id')
@@ -13958,12 +14121,15 @@ function dissect_of_group_stats_entry_v2(reader, subtree)
     reader.skip(4)
     read_uint64_t(reader, 2, subtree, 'of11.group_stats_entry.packet_count')
     read_uint64_t(reader, 2, subtree, 'of11.group_stats_entry.byte_count')
-    read_list_of_bucket_counter_t(reader, 2, subtree, 'of11.group_stats_entry.bucket_stats')
+    read_list(reader, dissect_of_bucket_counter_v2, subtree, 'of_bucket_counter')
     return 'of_group_stats_entry'
 end
 -- child class of_group_stats_reply
 -- Child of of_stats_reply
 function dissect_of_group_stats_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.group_stats_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.group_stats_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.group_stats_reply.length')
@@ -13971,7 +14137,7 @@ function dissect_of_group_stats_reply_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.group_stats_reply.stats_type')
     read_uint16_t(reader, 2, subtree, 'of11.group_stats_reply.flags')
     reader.skip(4)
-    read_list_of_group_stats_entry_t(reader, 2, subtree, 'of11.group_stats_reply.entries')
+    read_list(reader, dissect_of_group_stats_entry_v2, subtree, 'of_group_stats_entry')
     return 'of_group_stats_reply'
 end
 of_stats_reply_v2_dissectors[6] = dissect_of_group_stats_reply_v2
@@ -14006,6 +14172,9 @@ of_header_v2_dissectors[0] = dissect_of_hello_v2
 -- child class of_hello_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_hello_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.hello_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.hello_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.hello_failed_error_msg.length')
@@ -14025,10 +14194,13 @@ end
 -- child class of_instruction_apply_actions
 -- Child of of_instruction
 function dissect_of_instruction_apply_actions_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 2, subtree, 'of11.instruction_apply_actions.type')
     read_uint16_t(reader, 2, subtree, 'of11.instruction_apply_actions.len')
     reader.skip(4)
-    read_list_of_action_t(reader, 2, subtree, 'of11.instruction_apply_actions.actions')
+    read_list(reader, dissect_of_action_v2, subtree, 'of_action')
     return 'of_instruction_apply_actions'
 end
 of_instruction_v2_dissectors[4] = dissect_of_instruction_apply_actions_v2
@@ -14065,10 +14237,13 @@ of_instruction_v2_dissectors[1] = dissect_of_instruction_goto_table_v2
 -- child class of_instruction_write_actions
 -- Child of of_instruction
 function dissect_of_instruction_write_actions_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 2, subtree, 'of11.instruction_write_actions.type')
     read_uint16_t(reader, 2, subtree, 'of11.instruction_write_actions.len')
     reader.skip(4)
-    read_list_of_action_t(reader, 2, subtree, 'of11.instruction_write_actions.actions')
+    read_list(reader, dissect_of_action_v2, subtree, 'of_action')
     return 'of_instruction_write_actions'
 end
 of_instruction_v2_dissectors[3] = dissect_of_instruction_write_actions_v2
@@ -14125,6 +14300,9 @@ of_experimenter_v2_dissectors[8992] = dissect_of_nicira_header_v2
 -- child class of_packet_in
 -- Child of of_header
 function dissect_of_packet_in_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.packet_in.version')
     read_uint8_t(reader, 2, subtree, 'of11.packet_in.type')
     read_uint16_t(reader, 2, subtree, 'of11.packet_in.length')
@@ -14143,15 +14321,19 @@ of_header_v2_dissectors[10] = dissect_of_packet_in_v2
 -- child class of_packet_out
 -- Child of of_header
 function dissect_of_packet_out_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.packet_out.version')
     read_uint8_t(reader, 2, subtree, 'of11.packet_out.type')
     read_uint16_t(reader, 2, subtree, 'of11.packet_out.length')
     read_uint32_t(reader, 2, subtree, 'of11.packet_out.xid')
     read_uint32_t(reader, 2, subtree, 'of11.packet_out.buffer_id')
     read_of_port_no_t(reader, 2, subtree, 'of11.packet_out.in_port')
+    local _actions_length = reader.peek(0, 2):uint()
     read_uint16_t(reader, 2, subtree, 'of11.packet_out.actions_len')
     reader.skip(6)
-    read_list_of_action_t(reader, 2, subtree, 'of11.packet_out.actions')
+    read_list(reader.slice(_actions_length), dissect_of_action_v2, subtree, 'of_action')
     read_of_octets_t(reader, 2, subtree, 'of11.packet_out.data')
     return 'of_packet_out'
 end
@@ -14159,10 +14341,13 @@ of_header_v2_dissectors[13] = dissect_of_packet_out_v2
 
 -- top-level class of_packet_queue
 function dissect_of_packet_queue_v2(reader, subtree)
+    local _length = reader.peek(4, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint32_t(reader, 2, subtree, 'of11.packet_queue.queue_id')
     read_uint16_t(reader, 2, subtree, 'of11.packet_queue.len')
     reader.skip(2)
-    read_list_of_queue_prop_t(reader, 2, subtree, 'of11.packet_queue.properties')
+    read_list(reader, dissect_of_queue_prop_v2, subtree, 'of_queue_prop')
     return 'of_packet_queue'
 end
 -- top-level class of_port_desc
@@ -14204,6 +14389,9 @@ of_header_v2_dissectors[16] = dissect_of_port_mod_v2
 -- child class of_port_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_port_mod_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.length')
@@ -14236,6 +14424,9 @@ end
 -- child class of_port_stats_reply
 -- Child of of_stats_reply
 function dissect_of_port_stats_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.port_stats_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.port_stats_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.port_stats_reply.length')
@@ -14243,7 +14434,7 @@ function dissect_of_port_stats_reply_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.port_stats_reply.stats_type')
     read_uint16_t(reader, 2, subtree, 'of11.port_stats_reply.flags')
     reader.skip(4)
-    read_list_of_port_stats_entry_t(reader, 2, subtree, 'of11.port_stats_reply.entries')
+    read_list(reader, dissect_of_port_stats_entry_v2, subtree, 'of_port_stats_entry')
     return 'of_port_stats_reply'
 end
 of_stats_reply_v2_dissectors[4] = dissect_of_port_stats_reply_v2
@@ -14281,13 +14472,16 @@ of_header_v2_dissectors[12] = dissect_of_port_status_v2
 -- child class of_queue_get_config_reply
 -- Child of of_header
 function dissect_of_queue_get_config_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.queue_get_config_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.queue_get_config_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.queue_get_config_reply.length')
     read_uint32_t(reader, 2, subtree, 'of11.queue_get_config_reply.xid')
     read_of_port_no_t(reader, 2, subtree, 'of11.queue_get_config_reply.port')
     reader.skip(4)
-    read_list_of_packet_queue_t(reader, 2, subtree, 'of11.queue_get_config_reply.queues')
+    read_list(reader, dissect_of_packet_queue_v2, subtree, 'of_packet_queue')
     return 'of_queue_get_config_reply'
 end
 of_header_v2_dissectors[23] = dissect_of_queue_get_config_reply_v2
@@ -14308,6 +14502,9 @@ of_header_v2_dissectors[22] = dissect_of_queue_get_config_request_v2
 -- child class of_queue_op_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_queue_op_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.length')
@@ -14348,6 +14545,9 @@ end
 -- child class of_queue_stats_reply
 -- Child of of_stats_reply
 function dissect_of_queue_stats_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.queue_stats_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.queue_stats_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.queue_stats_reply.length')
@@ -14355,7 +14555,7 @@ function dissect_of_queue_stats_reply_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.queue_stats_reply.stats_type')
     read_uint16_t(reader, 2, subtree, 'of11.queue_stats_reply.flags')
     reader.skip(4)
-    read_list_of_queue_stats_entry_t(reader, 2, subtree, 'of11.queue_stats_reply.entries')
+    read_list(reader, dissect_of_queue_stats_entry_v2, subtree, 'of_queue_stats_entry')
     return 'of_queue_stats_reply'
 end
 of_stats_reply_v2_dissectors[5] = dissect_of_queue_stats_reply_v2
@@ -14392,6 +14592,9 @@ of_header_v2_dissectors[9] = dissect_of_set_config_v2
 -- child class of_switch_config_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_switch_config_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.length')
@@ -14420,6 +14623,9 @@ of_header_v2_dissectors[17] = dissect_of_table_mod_v2
 -- child class of_table_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_table_mod_failed_error_msg_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.version')
     read_uint8_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.type')
     read_uint16_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.length')
@@ -14451,6 +14657,9 @@ end
 -- child class of_table_stats_reply
 -- Child of of_stats_reply
 function dissect_of_table_stats_reply_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.table_stats_reply.version')
     read_uint8_t(reader, 2, subtree, 'of11.table_stats_reply.type')
     read_uint16_t(reader, 2, subtree, 'of11.table_stats_reply.length')
@@ -14458,7 +14667,7 @@ function dissect_of_table_stats_reply_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.table_stats_reply.stats_type')
     read_uint16_t(reader, 2, subtree, 'of11.table_stats_reply.flags')
     reader.skip(4)
-    read_list_of_table_stats_entry_t(reader, 2, subtree, 'of11.table_stats_reply.entries')
+    read_list(reader, dissect_of_table_stats_entry_v2, subtree, 'of_table_stats_entry')
     return 'of_table_stats_reply'
 end
 of_stats_reply_v2_dissectors[3] = dissect_of_table_stats_reply_v2
@@ -14659,6 +14868,9 @@ end
 -- child class of_action_set_field
 -- Child of of_action
 function dissect_of_action_set_field_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.action_set_field.type')
     read_uint16_t(reader, 3, subtree, 'of12.action_set_field.len')
     read_of_oxm_t(reader, 3, subtree, 'of12.action_set_field.field')
@@ -14740,6 +14952,9 @@ of_header_v3_dissectors[18] = dissect_of_stats_request_v3
 -- child class of_aggregate_stats_request
 -- Child of of_stats_request
 function dissect_of_aggregate_stats_request_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.aggregate_stats_request.version')
     read_uint8_t(reader, 3, subtree, 'of12.aggregate_stats_request.type')
     read_uint16_t(reader, 3, subtree, 'of12.aggregate_stats_request.length')
@@ -14770,6 +14985,9 @@ of_header_v3_dissectors[1] = dissect_of_error_msg_v3
 -- child class of_bad_action_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_action_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bad_action_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.bad_action_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_action_error_msg.length')
@@ -14784,6 +15002,9 @@ of_error_msg_v3_dissectors[2] = dissect_of_bad_action_error_msg_v3
 -- child class of_bad_instruction_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_instruction_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.length')
@@ -14798,6 +15019,9 @@ of_error_msg_v3_dissectors[3] = dissect_of_bad_instruction_error_msg_v3
 -- child class of_bad_match_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_match_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bad_match_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.bad_match_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_match_error_msg.length')
@@ -14812,6 +15036,9 @@ of_error_msg_v3_dissectors[4] = dissect_of_bad_match_error_msg_v3
 -- child class of_bad_request_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_request_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bad_request_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.bad_request_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_request_error_msg.length')
@@ -14947,13 +15174,16 @@ of_bsn_header_v3_dissectors[18] = dissect_of_bsn_bw_enable_set_request_v3
 -- child class of_bsn_get_interfaces_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_get_interfaces_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.length')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.xid')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.experimenter')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.subtype')
-    read_list_of_bsn_interface_t(reader, 3, subtree, 'of12.bsn_get_interfaces_reply.interfaces')
+    read_list(reader, dissect_of_bsn_interface_v3, subtree, 'of_bsn_interface')
     return 'of_bsn_get_interfaces_reply'
 end
 of_bsn_header_v3_dissectors[10] = dissect_of_bsn_get_interfaces_reply_v3
@@ -15029,6 +15259,9 @@ of_bsn_header_v3_dissectors[34] = dissect_of_bsn_pdu_rx_reply_v3
 -- child class of_bsn_pdu_rx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_rx_request_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bsn_pdu_rx_request.version')
     read_uint8_t(reader, 3, subtree, 'of12.bsn_pdu_rx_request.type')
     read_uint16_t(reader, 3, subtree, 'of12.bsn_pdu_rx_request.length')
@@ -15078,6 +15311,9 @@ of_bsn_header_v3_dissectors[32] = dissect_of_bsn_pdu_tx_reply_v3
 -- child class of_bsn_pdu_tx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_tx_request_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bsn_pdu_tx_request.version')
     read_uint8_t(reader, 3, subtree, 'of12.bsn_pdu_tx_request.type')
     read_uint16_t(reader, 3, subtree, 'of12.bsn_pdu_tx_request.length')
@@ -15252,12 +15488,15 @@ of_bsn_header_v3_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v3
 
 -- top-level class of_bucket
 function dissect_of_bucket_v3(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.bucket.len')
     read_uint16_t(reader, 3, subtree, 'of12.bucket.weight')
     read_of_port_no_t(reader, 3, subtree, 'of12.bucket.watch_port')
     read_uint32_t(reader, 3, subtree, 'of12.bucket.watch_group')
     reader.skip(4)
-    read_list_of_action_t(reader, 3, subtree, 'of12.bucket.actions')
+    read_list(reader, dissect_of_action_v3, subtree, 'of_action')
     return 'of_bucket'
 end
 -- top-level class of_bucket_counter
@@ -15302,6 +15541,9 @@ of_stats_request_v3_dissectors[0] = dissect_of_desc_stats_request_v3
 -- child class of_echo_reply
 -- Child of of_header
 function dissect_of_echo_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.echo_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.echo_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.echo_reply.length')
@@ -15314,6 +15556,9 @@ of_header_v3_dissectors[3] = dissect_of_echo_reply_v3
 -- child class of_echo_request
 -- Child of of_header
 function dissect_of_echo_request_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.echo_request.version')
     read_uint8_t(reader, 3, subtree, 'of12.echo_request.type')
     read_uint16_t(reader, 3, subtree, 'of12.echo_request.length')
@@ -15326,6 +15571,9 @@ of_header_v3_dissectors[2] = dissect_of_echo_request_v3
 -- child class of_experimenter_error_msg
 -- Child of of_error_msg
 function dissect_of_experimenter_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.experimenter_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.experimenter_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.experimenter_error_msg.length')
@@ -15341,6 +15589,9 @@ of_error_msg_v3_dissectors[65535] = dissect_of_experimenter_error_msg_v3
 -- child class of_features_reply
 -- Child of of_header
 function dissect_of_features_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.features_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.features_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.features_reply.length')
@@ -15351,7 +15602,7 @@ function dissect_of_features_reply_v3(reader, subtree)
     reader.skip(3)
     read_uint32_t(reader, 3, subtree, 'of12.features_reply.capabilities')
     read_uint32_t(reader, 3, subtree, 'of12.features_reply.reserved')
-    read_list_of_port_desc_t(reader, 3, subtree, 'of12.features_reply.ports')
+    read_list(reader, dissect_of_port_desc_v3, subtree, 'of_port_desc')
     return 'of_features_reply'
 end
 of_header_v3_dissectors[6] = dissect_of_features_reply_v3
@@ -15378,6 +15629,9 @@ of_header_v3_dissectors[14] = dissect_of_flow_mod_v3
 -- child class of_flow_add
 -- Child of of_flow_mod
 function dissect_of_flow_add_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_add.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_add.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_add.length')
@@ -15395,7 +15649,7 @@ function dissect_of_flow_add_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.flow_add.flags')
     reader.skip(2)
     read_of_match_t(reader, 3, subtree, 'of12.flow_add.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_add.instructions')
+    read_list(reader, dissect_of_instruction_v3, subtree, 'of_instruction')
     return 'of_flow_add'
 end
 of_flow_mod_v3_dissectors[0] = dissect_of_flow_add_v3
@@ -15403,6 +15657,9 @@ of_flow_mod_v3_dissectors[0] = dissect_of_flow_add_v3
 -- child class of_flow_delete
 -- Child of of_flow_mod
 function dissect_of_flow_delete_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_delete.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_delete.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_delete.length')
@@ -15420,7 +15677,7 @@ function dissect_of_flow_delete_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.flow_delete.flags')
     reader.skip(2)
     read_of_match_t(reader, 3, subtree, 'of12.flow_delete.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_delete.instructions')
+    read_list(reader, dissect_of_instruction_v3, subtree, 'of_instruction')
     return 'of_flow_delete'
 end
 of_flow_mod_v3_dissectors[3] = dissect_of_flow_delete_v3
@@ -15428,6 +15685,9 @@ of_flow_mod_v3_dissectors[3] = dissect_of_flow_delete_v3
 -- child class of_flow_delete_strict
 -- Child of of_flow_mod
 function dissect_of_flow_delete_strict_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_delete_strict.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_delete_strict.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_delete_strict.length')
@@ -15445,7 +15705,7 @@ function dissect_of_flow_delete_strict_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.flow_delete_strict.flags')
     reader.skip(2)
     read_of_match_t(reader, 3, subtree, 'of12.flow_delete_strict.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_delete_strict.instructions')
+    read_list(reader, dissect_of_instruction_v3, subtree, 'of_instruction')
     return 'of_flow_delete_strict'
 end
 of_flow_mod_v3_dissectors[4] = dissect_of_flow_delete_strict_v3
@@ -15453,6 +15713,9 @@ of_flow_mod_v3_dissectors[4] = dissect_of_flow_delete_strict_v3
 -- child class of_flow_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_flow_mod_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.length')
@@ -15467,6 +15730,9 @@ of_error_msg_v3_dissectors[5] = dissect_of_flow_mod_failed_error_msg_v3
 -- child class of_flow_modify
 -- Child of of_flow_mod
 function dissect_of_flow_modify_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_modify.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_modify.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_modify.length')
@@ -15484,7 +15750,7 @@ function dissect_of_flow_modify_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.flow_modify.flags')
     reader.skip(2)
     read_of_match_t(reader, 3, subtree, 'of12.flow_modify.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_modify.instructions')
+    read_list(reader, dissect_of_instruction_v3, subtree, 'of_instruction')
     return 'of_flow_modify'
 end
 of_flow_mod_v3_dissectors[1] = dissect_of_flow_modify_v3
@@ -15492,6 +15758,9 @@ of_flow_mod_v3_dissectors[1] = dissect_of_flow_modify_v3
 -- child class of_flow_modify_strict
 -- Child of of_flow_mod
 function dissect_of_flow_modify_strict_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_modify_strict.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_modify_strict.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_modify_strict.length')
@@ -15509,7 +15778,7 @@ function dissect_of_flow_modify_strict_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.flow_modify_strict.flags')
     reader.skip(2)
     read_of_match_t(reader, 3, subtree, 'of12.flow_modify_strict.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_modify_strict.instructions')
+    read_list(reader, dissect_of_instruction_v3, subtree, 'of_instruction')
     return 'of_flow_modify_strict'
 end
 of_flow_mod_v3_dissectors[2] = dissect_of_flow_modify_strict_v3
@@ -15517,6 +15786,9 @@ of_flow_mod_v3_dissectors[2] = dissect_of_flow_modify_strict_v3
 -- child class of_flow_removed
 -- Child of of_header
 function dissect_of_flow_removed_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_removed.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_removed.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_removed.length')
@@ -15538,6 +15810,9 @@ of_header_v3_dissectors[11] = dissect_of_flow_removed_v3
 
 -- top-level class of_flow_stats_entry
 function dissect_of_flow_stats_entry_v3(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.flow_stats_entry.length')
     read_uint8_t(reader, 3, subtree, 'of12.flow_stats_entry.table_id')
     reader.skip(1)
@@ -15551,12 +15826,15 @@ function dissect_of_flow_stats_entry_v3(reader, subtree)
     read_uint64_t(reader, 3, subtree, 'of12.flow_stats_entry.packet_count')
     read_uint64_t(reader, 3, subtree, 'of12.flow_stats_entry.byte_count')
     read_of_match_t(reader, 3, subtree, 'of12.flow_stats_entry.match')
-    read_list_of_instruction_t(reader, 3, subtree, 'of12.flow_stats_entry.instructions')
+    read_list(reader, dissect_of_instruction_v3, subtree, 'of_instruction')
     return 'of_flow_stats_entry'
 end
 -- child class of_flow_stats_reply
 -- Child of of_stats_reply
 function dissect_of_flow_stats_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_stats_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_stats_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_stats_reply.length')
@@ -15564,7 +15842,7 @@ function dissect_of_flow_stats_reply_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.flow_stats_reply.stats_type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_stats_reply.flags')
     reader.skip(4)
-    read_list_of_flow_stats_entry_t(reader, 3, subtree, 'of12.flow_stats_reply.entries')
+    read_list(reader, dissect_of_flow_stats_entry_v3, subtree, 'of_flow_stats_entry')
     return 'of_flow_stats_reply'
 end
 of_stats_reply_v3_dissectors[1] = dissect_of_flow_stats_reply_v3
@@ -15572,6 +15850,9 @@ of_stats_reply_v3_dissectors[1] = dissect_of_flow_stats_reply_v3
 -- child class of_flow_stats_request
 -- Child of of_stats_request
 function dissect_of_flow_stats_request_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.flow_stats_request.version')
     read_uint8_t(reader, 3, subtree, 'of12.flow_stats_request.type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_stats_request.length')
@@ -15626,6 +15907,9 @@ of_header_v3_dissectors[15] = dissect_of_group_mod_v3
 -- child class of_group_add
 -- Child of of_group_mod
 function dissect_of_group_add_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.group_add.version')
     read_uint8_t(reader, 3, subtree, 'of12.group_add.type')
     read_uint16_t(reader, 3, subtree, 'of12.group_add.length')
@@ -15634,7 +15918,7 @@ function dissect_of_group_add_v3(reader, subtree)
     read_uint8_t(reader, 3, subtree, 'of12.group_add.group_type')
     reader.skip(1)
     read_uint32_t(reader, 3, subtree, 'of12.group_add.group_id')
-    read_list_of_bucket_t(reader, 3, subtree, 'of12.group_add.buckets')
+    read_list(reader, dissect_of_bucket_v3, subtree, 'of_bucket')
     return 'of_group_add'
 end
 of_group_mod_v3_dissectors[0] = dissect_of_group_add_v3
@@ -15642,6 +15926,9 @@ of_group_mod_v3_dissectors[0] = dissect_of_group_add_v3
 -- child class of_group_delete
 -- Child of of_group_mod
 function dissect_of_group_delete_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.group_delete.version')
     read_uint8_t(reader, 3, subtree, 'of12.group_delete.type')
     read_uint16_t(reader, 3, subtree, 'of12.group_delete.length')
@@ -15650,23 +15937,29 @@ function dissect_of_group_delete_v3(reader, subtree)
     read_uint8_t(reader, 3, subtree, 'of12.group_delete.group_type')
     reader.skip(1)
     read_uint32_t(reader, 3, subtree, 'of12.group_delete.group_id')
-    read_list_of_bucket_t(reader, 3, subtree, 'of12.group_delete.buckets')
+    read_list(reader, dissect_of_bucket_v3, subtree, 'of_bucket')
     return 'of_group_delete'
 end
 of_group_mod_v3_dissectors[2] = dissect_of_group_delete_v3
 
 -- top-level class of_group_desc_stats_entry
 function dissect_of_group_desc_stats_entry_v3(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.group_desc_stats_entry.length')
     read_uint8_t(reader, 3, subtree, 'of12.group_desc_stats_entry.group_type')
     reader.skip(1)
     read_uint32_t(reader, 3, subtree, 'of12.group_desc_stats_entry.group_id')
-    read_list_of_bucket_t(reader, 3, subtree, 'of12.group_desc_stats_entry.buckets')
+    read_list(reader, dissect_of_bucket_v3, subtree, 'of_bucket')
     return 'of_group_desc_stats_entry'
 end
 -- child class of_group_desc_stats_reply
 -- Child of of_stats_reply
 function dissect_of_group_desc_stats_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.group_desc_stats_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.group_desc_stats_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.group_desc_stats_reply.length')
@@ -15674,7 +15967,7 @@ function dissect_of_group_desc_stats_reply_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.group_desc_stats_reply.stats_type')
     read_uint16_t(reader, 3, subtree, 'of12.group_desc_stats_reply.flags')
     reader.skip(4)
-    read_list_of_group_desc_stats_entry_t(reader, 3, subtree, 'of12.group_desc_stats_reply.entries')
+    read_list(reader, dissect_of_group_desc_stats_entry_v3, subtree, 'of_group_desc_stats_entry')
     return 'of_group_desc_stats_reply'
 end
 of_stats_reply_v3_dissectors[7] = dissect_of_group_desc_stats_reply_v3
@@ -15734,6 +16027,9 @@ of_stats_request_v3_dissectors[8] = dissect_of_group_features_stats_request_v3
 -- child class of_group_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_group_mod_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.length')
@@ -15748,6 +16044,9 @@ of_error_msg_v3_dissectors[6] = dissect_of_group_mod_failed_error_msg_v3
 -- child class of_group_modify
 -- Child of of_group_mod
 function dissect_of_group_modify_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.group_modify.version')
     read_uint8_t(reader, 3, subtree, 'of12.group_modify.type')
     read_uint16_t(reader, 3, subtree, 'of12.group_modify.length')
@@ -15756,13 +16055,16 @@ function dissect_of_group_modify_v3(reader, subtree)
     read_uint8_t(reader, 3, subtree, 'of12.group_modify.group_type')
     reader.skip(1)
     read_uint32_t(reader, 3, subtree, 'of12.group_modify.group_id')
-    read_list_of_bucket_t(reader, 3, subtree, 'of12.group_modify.buckets')
+    read_list(reader, dissect_of_bucket_v3, subtree, 'of_bucket')
     return 'of_group_modify'
 end
 of_group_mod_v3_dissectors[1] = dissect_of_group_modify_v3
 
 -- top-level class of_group_stats_entry
 function dissect_of_group_stats_entry_v3(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.group_stats_entry.length')
     reader.skip(2)
     read_uint32_t(reader, 3, subtree, 'of12.group_stats_entry.group_id')
@@ -15770,12 +16072,15 @@ function dissect_of_group_stats_entry_v3(reader, subtree)
     reader.skip(4)
     read_uint64_t(reader, 3, subtree, 'of12.group_stats_entry.packet_count')
     read_uint64_t(reader, 3, subtree, 'of12.group_stats_entry.byte_count')
-    read_list_of_bucket_counter_t(reader, 3, subtree, 'of12.group_stats_entry.bucket_stats')
+    read_list(reader, dissect_of_bucket_counter_v3, subtree, 'of_bucket_counter')
     return 'of_group_stats_entry'
 end
 -- child class of_group_stats_reply
 -- Child of of_stats_reply
 function dissect_of_group_stats_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.group_stats_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.group_stats_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.group_stats_reply.length')
@@ -15783,7 +16088,7 @@ function dissect_of_group_stats_reply_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.group_stats_reply.stats_type')
     read_uint16_t(reader, 3, subtree, 'of12.group_stats_reply.flags')
     reader.skip(4)
-    read_list_of_group_stats_entry_t(reader, 3, subtree, 'of12.group_stats_reply.entries')
+    read_list(reader, dissect_of_group_stats_entry_v3, subtree, 'of_group_stats_entry')
     return 'of_group_stats_reply'
 end
 of_stats_reply_v3_dissectors[6] = dissect_of_group_stats_reply_v3
@@ -15818,6 +16123,9 @@ of_header_v3_dissectors[0] = dissect_of_hello_v3
 -- child class of_hello_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_hello_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.hello_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.hello_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.hello_failed_error_msg.length')
@@ -15837,10 +16145,13 @@ end
 -- child class of_instruction_apply_actions
 -- Child of of_instruction
 function dissect_of_instruction_apply_actions_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.instruction_apply_actions.type')
     read_uint16_t(reader, 3, subtree, 'of12.instruction_apply_actions.len')
     reader.skip(4)
-    read_list_of_action_t(reader, 3, subtree, 'of12.instruction_apply_actions.actions')
+    read_list(reader, dissect_of_action_v3, subtree, 'of_action')
     return 'of_instruction_apply_actions'
 end
 of_instruction_v3_dissectors[4] = dissect_of_instruction_apply_actions_v3
@@ -15877,10 +16188,13 @@ of_instruction_v3_dissectors[1] = dissect_of_instruction_goto_table_v3
 -- child class of_instruction_write_actions
 -- Child of of_instruction
 function dissect_of_instruction_write_actions_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.instruction_write_actions.type')
     read_uint16_t(reader, 3, subtree, 'of12.instruction_write_actions.len')
     reader.skip(4)
-    read_list_of_action_t(reader, 3, subtree, 'of12.instruction_write_actions.actions')
+    read_list(reader, dissect_of_action_v3, subtree, 'of_action')
     return 'of_instruction_write_actions'
 end
 of_instruction_v3_dissectors[3] = dissect_of_instruction_write_actions_v3
@@ -15899,9 +16213,13 @@ of_instruction_v3_dissectors[2] = dissect_of_instruction_write_metadata_v3
 
 -- top-level class of_match_v3
 function dissect_of_match_v3_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 3, subtree, 'of12.match_v3.type')
     read_uint16_t(reader, 3, subtree, 'of12.match_v3.length')
-    read_list_of_oxm_t(reader, 3, subtree, 'of12.match_v3.oxm_list')
+    read_list(reader, dissect_of_oxm_v3, subtree, 'of_oxm')
+    orig_reader.skip_align()
     return 'of_match_v3'
 end
 -- virtual child class of_nicira_header
@@ -16732,6 +17050,9 @@ of_oxm_v3_dissectors[2147486980] = dissect_of_oxm_vlan_vid_masked_v3
 -- child class of_packet_in
 -- Child of of_header
 function dissect_of_packet_in_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.packet_in.version')
     read_uint8_t(reader, 3, subtree, 'of12.packet_in.type')
     read_uint16_t(reader, 3, subtree, 'of12.packet_in.length')
@@ -16750,15 +17071,19 @@ of_header_v3_dissectors[10] = dissect_of_packet_in_v3
 -- child class of_packet_out
 -- Child of of_header
 function dissect_of_packet_out_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.packet_out.version')
     read_uint8_t(reader, 3, subtree, 'of12.packet_out.type')
     read_uint16_t(reader, 3, subtree, 'of12.packet_out.length')
     read_uint32_t(reader, 3, subtree, 'of12.packet_out.xid')
     read_uint32_t(reader, 3, subtree, 'of12.packet_out.buffer_id')
     read_of_port_no_t(reader, 3, subtree, 'of12.packet_out.in_port')
+    local _actions_length = reader.peek(0, 2):uint()
     read_uint16_t(reader, 3, subtree, 'of12.packet_out.actions_len')
     reader.skip(6)
-    read_list_of_action_t(reader, 3, subtree, 'of12.packet_out.actions')
+    read_list(reader.slice(_actions_length), dissect_of_action_v3, subtree, 'of_action')
     read_of_octets_t(reader, 3, subtree, 'of12.packet_out.data')
     return 'of_packet_out'
 end
@@ -16766,11 +17091,14 @@ of_header_v3_dissectors[13] = dissect_of_packet_out_v3
 
 -- top-level class of_packet_queue
 function dissect_of_packet_queue_v3(reader, subtree)
+    local _length = reader.peek(8, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint32_t(reader, 3, subtree, 'of12.packet_queue.queue_id')
     read_of_port_no_t(reader, 3, subtree, 'of12.packet_queue.port')
     read_uint16_t(reader, 3, subtree, 'of12.packet_queue.len')
     reader.skip(6)
-    read_list_of_queue_prop_t(reader, 3, subtree, 'of12.packet_queue.properties')
+    read_list(reader, dissect_of_queue_prop_v3, subtree, 'of_queue_prop')
     return 'of_packet_queue'
 end
 -- top-level class of_port_desc
@@ -16812,6 +17140,9 @@ of_header_v3_dissectors[16] = dissect_of_port_mod_v3
 -- child class of_port_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_port_mod_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.length')
@@ -16844,6 +17175,9 @@ end
 -- child class of_port_stats_reply
 -- Child of of_stats_reply
 function dissect_of_port_stats_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.port_stats_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.port_stats_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.port_stats_reply.length')
@@ -16851,7 +17185,7 @@ function dissect_of_port_stats_reply_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.port_stats_reply.stats_type')
     read_uint16_t(reader, 3, subtree, 'of12.port_stats_reply.flags')
     reader.skip(4)
-    read_list_of_port_stats_entry_t(reader, 3, subtree, 'of12.port_stats_reply.entries')
+    read_list(reader, dissect_of_port_stats_entry_v3, subtree, 'of_port_stats_entry')
     return 'of_port_stats_reply'
 end
 of_stats_reply_v3_dissectors[4] = dissect_of_port_stats_reply_v3
@@ -16889,13 +17223,16 @@ of_header_v3_dissectors[12] = dissect_of_port_status_v3
 -- child class of_queue_get_config_reply
 -- Child of of_header
 function dissect_of_queue_get_config_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.queue_get_config_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.queue_get_config_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.queue_get_config_reply.length')
     read_uint32_t(reader, 3, subtree, 'of12.queue_get_config_reply.xid')
     read_of_port_no_t(reader, 3, subtree, 'of12.queue_get_config_reply.port')
     reader.skip(4)
-    read_list_of_packet_queue_t(reader, 3, subtree, 'of12.queue_get_config_reply.queues')
+    read_list(reader, dissect_of_packet_queue_v3, subtree, 'of_packet_queue')
     return 'of_queue_get_config_reply'
 end
 of_header_v3_dissectors[23] = dissect_of_queue_get_config_reply_v3
@@ -16916,6 +17253,9 @@ of_header_v3_dissectors[22] = dissect_of_queue_get_config_request_v3
 -- child class of_queue_op_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_queue_op_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.length')
@@ -16976,6 +17316,9 @@ end
 -- child class of_queue_stats_reply
 -- Child of of_stats_reply
 function dissect_of_queue_stats_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.queue_stats_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.queue_stats_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.queue_stats_reply.length')
@@ -16983,7 +17326,7 @@ function dissect_of_queue_stats_reply_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.queue_stats_reply.stats_type')
     read_uint16_t(reader, 3, subtree, 'of12.queue_stats_reply.flags')
     reader.skip(4)
-    read_list_of_queue_stats_entry_t(reader, 3, subtree, 'of12.queue_stats_reply.entries')
+    read_list(reader, dissect_of_queue_stats_entry_v3, subtree, 'of_queue_stats_entry')
     return 'of_queue_stats_reply'
 end
 of_stats_reply_v3_dissectors[5] = dissect_of_queue_stats_reply_v3
@@ -17035,6 +17378,9 @@ of_header_v3_dissectors[24] = dissect_of_role_request_v3
 -- child class of_role_request_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_role_request_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.length')
@@ -17062,6 +17408,9 @@ of_header_v3_dissectors[9] = dissect_of_set_config_v3
 -- child class of_switch_config_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_switch_config_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.length')
@@ -17090,6 +17439,9 @@ of_header_v3_dissectors[17] = dissect_of_table_mod_v3
 -- child class of_table_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_table_mod_failed_error_msg_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.version')
     read_uint8_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.type')
     read_uint16_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.length')
@@ -17125,6 +17477,9 @@ end
 -- child class of_table_stats_reply
 -- Child of of_stats_reply
 function dissect_of_table_stats_reply_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.table_stats_reply.version')
     read_uint8_t(reader, 3, subtree, 'of12.table_stats_reply.type')
     read_uint16_t(reader, 3, subtree, 'of12.table_stats_reply.length')
@@ -17132,7 +17487,7 @@ function dissect_of_table_stats_reply_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.table_stats_reply.stats_type')
     read_uint16_t(reader, 3, subtree, 'of12.table_stats_reply.flags')
     reader.skip(4)
-    read_list_of_table_stats_entry_t(reader, 3, subtree, 'of12.table_stats_reply.entries')
+    read_list(reader, dissect_of_table_stats_entry_v3, subtree, 'of_table_stats_entry')
     return 'of_table_stats_reply'
 end
 of_stats_reply_v3_dissectors[3] = dissect_of_table_stats_reply_v3
@@ -17538,6 +17893,9 @@ end
 -- child class of_action_set_field
 -- Child of of_action
 function dissect_of_action_set_field_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.action_set_field.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_set_field.len')
     read_of_oxm_t(reader, 4, subtree, 'of13.action_set_field.field')
@@ -17657,6 +18015,9 @@ of_header_v4_dissectors[18] = dissect_of_stats_request_v4
 -- child class of_aggregate_stats_request
 -- Child of of_stats_request
 function dissect_of_aggregate_stats_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.aggregate_stats_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.aggregate_stats_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.aggregate_stats_request.length')
@@ -17738,6 +18099,9 @@ of_header_v4_dissectors[1] = dissect_of_error_msg_v4
 -- child class of_bad_action_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_action_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bad_action_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.bad_action_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_action_error_msg.length')
@@ -17752,6 +18116,9 @@ of_error_msg_v4_dissectors[2] = dissect_of_bad_action_error_msg_v4
 -- child class of_bad_instruction_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_instruction_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.length')
@@ -17766,6 +18133,9 @@ of_error_msg_v4_dissectors[3] = dissect_of_bad_instruction_error_msg_v4
 -- child class of_bad_match_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_match_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bad_match_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.bad_match_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_match_error_msg.length')
@@ -17780,6 +18150,9 @@ of_error_msg_v4_dissectors[4] = dissect_of_bad_match_error_msg_v4
 -- child class of_bad_request_error_msg
 -- Child of of_error_msg
 function dissect_of_bad_request_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bad_request_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.bad_request_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_request_error_msg.length')
@@ -17915,6 +18288,9 @@ of_bsn_header_v4_dissectors[18] = dissect_of_bsn_bw_enable_set_request_v4
 -- child class of_bsn_flow_idle
 -- Child of of_bsn_header
 function dissect_of_bsn_flow_idle_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_idle.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_idle.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_idle.length')
@@ -17989,13 +18365,16 @@ of_bsn_header_v4_dissectors[36] = dissect_of_bsn_flow_idle_enable_set_request_v4
 -- child class of_bsn_get_interfaces_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_get_interfaces_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.length')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.xid')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.subtype')
-    read_list_of_bsn_interface_t(reader, 4, subtree, 'of13.bsn_get_interfaces_reply.interfaces')
+    read_list(reader, dissect_of_bsn_interface_v4, subtree, 'of_bsn_interface')
     return 'of_bsn_get_interfaces_reply'
 end
 of_bsn_header_v4_dissectors[10] = dissect_of_bsn_get_interfaces_reply_v4
@@ -18142,6 +18521,9 @@ of_experimenter_stats_reply_v4_dissectors[6035143] = dissect_of_bsn_stats_reply_
 -- child class of_bsn_lacp_stats_reply
 -- Child of of_bsn_stats_reply
 function dissect_of_bsn_lacp_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_lacp_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_lacp_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_lacp_stats_reply.length')
@@ -18151,7 +18533,7 @@ function dissect_of_bsn_lacp_stats_reply_v4(reader, subtree)
     reader.skip(4)
     read_uint32_t(reader, 4, subtree, 'of13.bsn_lacp_stats_reply.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_lacp_stats_reply.subtype')
-    read_list_of_bsn_lacp_stats_entry_t(reader, 4, subtree, 'of13.bsn_lacp_stats_reply.entries')
+    read_list(reader, dissect_of_bsn_lacp_stats_entry_v4, subtree, 'of_bsn_lacp_stats_entry')
     return 'of_bsn_lacp_stats_reply'
 end
 of_bsn_stats_reply_v4_dissectors[1] = dissect_of_bsn_lacp_stats_reply_v4
@@ -18207,6 +18589,9 @@ of_bsn_header_v4_dissectors[34] = dissect_of_bsn_pdu_rx_reply_v4
 -- child class of_bsn_pdu_rx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_rx_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_pdu_rx_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_pdu_rx_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_pdu_rx_request.length')
@@ -18256,6 +18641,9 @@ of_bsn_header_v4_dissectors[32] = dissect_of_bsn_pdu_tx_reply_v4
 -- child class of_bsn_pdu_tx_request
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_tx_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_pdu_tx_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_pdu_tx_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_pdu_tx_request.length')
@@ -18273,15 +18661,21 @@ of_bsn_header_v4_dissectors[31] = dissect_of_bsn_pdu_tx_request_v4
 
 -- top-level class of_bsn_port_counter_stats_entry
 function dissect_of_bsn_port_counter_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_entry.length')
     reader.skip(2)
     read_of_port_no_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_entry.port_no')
-    read_list_of_uint64_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_entry.values')
+    read_list(reader, dissect_of_uint64_v4, subtree, 'of_uint64')
     return 'of_bsn_port_counter_stats_entry'
 end
 -- child class of_bsn_port_counter_stats_reply
 -- Child of of_bsn_stats_reply
 function dissect_of_bsn_port_counter_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.length')
@@ -18291,7 +18685,7 @@ function dissect_of_bsn_port_counter_stats_reply_v4(reader, subtree)
     reader.skip(4)
     read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.subtype')
-    read_list_of_bsn_port_counter_stats_entry_t(reader, 4, subtree, 'of13.bsn_port_counter_stats_reply.entries')
+    read_list(reader, dissect_of_bsn_port_counter_stats_entry_v4, subtree, 'of_bsn_port_counter_stats_entry')
     return 'of_bsn_port_counter_stats_reply'
 end
 of_bsn_stats_reply_v4_dissectors[8] = dissect_of_bsn_port_counter_stats_reply_v4
@@ -18433,6 +18827,9 @@ end
 -- child class of_bsn_switch_pipeline_stats_reply
 -- Child of of_bsn_stats_reply
 function dissect_of_bsn_switch_pipeline_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.length')
@@ -18442,7 +18839,7 @@ function dissect_of_bsn_switch_pipeline_stats_reply_v4(reader, subtree)
     reader.skip(4)
     read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.subtype')
-    read_list_of_bsn_switch_pipeline_stats_entry_t(reader, 4, subtree, 'of13.bsn_switch_pipeline_stats_reply.entries')
+    read_list(reader, dissect_of_bsn_switch_pipeline_stats_entry_v4, subtree, 'of_bsn_switch_pipeline_stats_entry')
     return 'of_bsn_switch_pipeline_stats_reply'
 end
 of_bsn_stats_reply_v4_dissectors[6] = dissect_of_bsn_switch_pipeline_stats_reply_v4
@@ -18569,15 +18966,21 @@ of_bsn_header_v4_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v4
 
 -- top-level class of_bsn_vlan_counter_stats_entry
 function dissect_of_bsn_vlan_counter_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_entry.length')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_entry.vlan_vid')
     reader.skip(4)
-    read_list_of_uint64_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_entry.values')
+    read_list(reader, dissect_of_uint64_v4, subtree, 'of_uint64')
     return 'of_bsn_vlan_counter_stats_entry'
 end
 -- child class of_bsn_vlan_counter_stats_reply
 -- Child of of_bsn_stats_reply
 function dissect_of_bsn_vlan_counter_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.length')
@@ -18587,7 +18990,7 @@ function dissect_of_bsn_vlan_counter_stats_reply_v4(reader, subtree)
     reader.skip(4)
     read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.subtype')
-    read_list_of_bsn_vlan_counter_stats_entry_t(reader, 4, subtree, 'of13.bsn_vlan_counter_stats_reply.entries')
+    read_list(reader, dissect_of_bsn_vlan_counter_stats_entry_v4, subtree, 'of_bsn_vlan_counter_stats_entry')
     return 'of_bsn_vlan_counter_stats_reply'
 end
 of_bsn_stats_reply_v4_dissectors[9] = dissect_of_bsn_vlan_counter_stats_reply_v4
@@ -18611,12 +19014,15 @@ of_bsn_stats_request_v4_dissectors[9] = dissect_of_bsn_vlan_counter_stats_reques
 
 -- top-level class of_bucket
 function dissect_of_bucket_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.bucket.len')
     read_uint16_t(reader, 4, subtree, 'of13.bucket.weight')
     read_of_port_no_t(reader, 4, subtree, 'of13.bucket.watch_port')
     read_uint32_t(reader, 4, subtree, 'of13.bucket.watch_group')
     reader.skip(4)
-    read_list_of_action_t(reader, 4, subtree, 'of13.bucket.actions')
+    read_list(reader, dissect_of_action_v4, subtree, 'of_action')
     return 'of_bucket'
 end
 -- top-level class of_bucket_counter
@@ -18661,6 +19067,9 @@ of_stats_request_v4_dissectors[0] = dissect_of_desc_stats_request_v4
 -- child class of_echo_reply
 -- Child of of_header
 function dissect_of_echo_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.echo_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.echo_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.echo_reply.length')
@@ -18673,6 +19082,9 @@ of_header_v4_dissectors[3] = dissect_of_echo_reply_v4
 -- child class of_echo_request
 -- Child of of_header
 function dissect_of_echo_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.echo_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.echo_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.echo_request.length')
@@ -18685,6 +19097,9 @@ of_header_v4_dissectors[2] = dissect_of_echo_request_v4
 -- child class of_experimenter_error_msg
 -- Child of of_error_msg
 function dissect_of_experimenter_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.experimenter_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.experimenter_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.experimenter_error_msg.length')
@@ -18742,6 +19157,9 @@ of_header_v4_dissectors[14] = dissect_of_flow_mod_v4
 -- child class of_flow_add
 -- Child of of_flow_mod
 function dissect_of_flow_add_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_add.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_add.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_add.length')
@@ -18759,7 +19177,7 @@ function dissect_of_flow_add_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.flow_add.flags')
     reader.skip(2)
     read_of_match_t(reader, 4, subtree, 'of13.flow_add.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_add.instructions')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_flow_add'
 end
 of_flow_mod_v4_dissectors[0] = dissect_of_flow_add_v4
@@ -18767,6 +19185,9 @@ of_flow_mod_v4_dissectors[0] = dissect_of_flow_add_v4
 -- child class of_flow_delete
 -- Child of of_flow_mod
 function dissect_of_flow_delete_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_delete.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_delete.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_delete.length')
@@ -18784,7 +19205,7 @@ function dissect_of_flow_delete_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.flow_delete.flags')
     reader.skip(2)
     read_of_match_t(reader, 4, subtree, 'of13.flow_delete.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_delete.instructions')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_flow_delete'
 end
 of_flow_mod_v4_dissectors[3] = dissect_of_flow_delete_v4
@@ -18792,6 +19213,9 @@ of_flow_mod_v4_dissectors[3] = dissect_of_flow_delete_v4
 -- child class of_flow_delete_strict
 -- Child of of_flow_mod
 function dissect_of_flow_delete_strict_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_delete_strict.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_delete_strict.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_delete_strict.length')
@@ -18809,7 +19233,7 @@ function dissect_of_flow_delete_strict_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.flow_delete_strict.flags')
     reader.skip(2)
     read_of_match_t(reader, 4, subtree, 'of13.flow_delete_strict.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_delete_strict.instructions')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_flow_delete_strict'
 end
 of_flow_mod_v4_dissectors[4] = dissect_of_flow_delete_strict_v4
@@ -18817,6 +19241,9 @@ of_flow_mod_v4_dissectors[4] = dissect_of_flow_delete_strict_v4
 -- child class of_flow_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_flow_mod_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.length')
@@ -18831,6 +19258,9 @@ of_error_msg_v4_dissectors[5] = dissect_of_flow_mod_failed_error_msg_v4
 -- child class of_flow_modify
 -- Child of of_flow_mod
 function dissect_of_flow_modify_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_modify.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_modify.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_modify.length')
@@ -18848,7 +19278,7 @@ function dissect_of_flow_modify_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.flow_modify.flags')
     reader.skip(2)
     read_of_match_t(reader, 4, subtree, 'of13.flow_modify.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_modify.instructions')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_flow_modify'
 end
 of_flow_mod_v4_dissectors[1] = dissect_of_flow_modify_v4
@@ -18856,6 +19286,9 @@ of_flow_mod_v4_dissectors[1] = dissect_of_flow_modify_v4
 -- child class of_flow_modify_strict
 -- Child of of_flow_mod
 function dissect_of_flow_modify_strict_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_modify_strict.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_modify_strict.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_modify_strict.length')
@@ -18873,7 +19306,7 @@ function dissect_of_flow_modify_strict_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.flow_modify_strict.flags')
     reader.skip(2)
     read_of_match_t(reader, 4, subtree, 'of13.flow_modify_strict.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_modify_strict.instructions')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_flow_modify_strict'
 end
 of_flow_mod_v4_dissectors[2] = dissect_of_flow_modify_strict_v4
@@ -18881,6 +19314,9 @@ of_flow_mod_v4_dissectors[2] = dissect_of_flow_modify_strict_v4
 -- child class of_flow_removed
 -- Child of of_header
 function dissect_of_flow_removed_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_removed.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_removed.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_removed.length')
@@ -18902,6 +19338,9 @@ of_header_v4_dissectors[11] = dissect_of_flow_removed_v4
 
 -- top-level class of_flow_stats_entry
 function dissect_of_flow_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.flow_stats_entry.length')
     read_uint8_t(reader, 4, subtree, 'of13.flow_stats_entry.table_id')
     reader.skip(1)
@@ -18916,12 +19355,15 @@ function dissect_of_flow_stats_entry_v4(reader, subtree)
     read_uint64_t(reader, 4, subtree, 'of13.flow_stats_entry.packet_count')
     read_uint64_t(reader, 4, subtree, 'of13.flow_stats_entry.byte_count')
     read_of_match_t(reader, 4, subtree, 'of13.flow_stats_entry.match')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.flow_stats_entry.instructions')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_flow_stats_entry'
 end
 -- child class of_flow_stats_reply
 -- Child of of_stats_reply
 function dissect_of_flow_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_stats_reply.length')
@@ -18929,7 +19371,7 @@ function dissect_of_flow_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.flow_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_stats_reply.flags')
     reader.skip(4)
-    read_list_of_flow_stats_entry_t(reader, 4, subtree, 'of13.flow_stats_reply.entries')
+    read_list(reader, dissect_of_flow_stats_entry_v4, subtree, 'of_flow_stats_entry')
     return 'of_flow_stats_reply'
 end
 of_stats_reply_v4_dissectors[1] = dissect_of_flow_stats_reply_v4
@@ -18937,6 +19379,9 @@ of_stats_reply_v4_dissectors[1] = dissect_of_flow_stats_reply_v4
 -- child class of_flow_stats_request
 -- Child of of_stats_request
 function dissect_of_flow_stats_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.flow_stats_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.flow_stats_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_stats_request.length')
@@ -18991,6 +19436,9 @@ of_header_v4_dissectors[15] = dissect_of_group_mod_v4
 -- child class of_group_add
 -- Child of of_group_mod
 function dissect_of_group_add_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.group_add.version')
     read_uint8_t(reader, 4, subtree, 'of13.group_add.type')
     read_uint16_t(reader, 4, subtree, 'of13.group_add.length')
@@ -18999,7 +19447,7 @@ function dissect_of_group_add_v4(reader, subtree)
     read_uint8_t(reader, 4, subtree, 'of13.group_add.group_type')
     reader.skip(1)
     read_uint32_t(reader, 4, subtree, 'of13.group_add.group_id')
-    read_list_of_bucket_t(reader, 4, subtree, 'of13.group_add.buckets')
+    read_list(reader, dissect_of_bucket_v4, subtree, 'of_bucket')
     return 'of_group_add'
 end
 of_group_mod_v4_dissectors[0] = dissect_of_group_add_v4
@@ -19007,6 +19455,9 @@ of_group_mod_v4_dissectors[0] = dissect_of_group_add_v4
 -- child class of_group_delete
 -- Child of of_group_mod
 function dissect_of_group_delete_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.group_delete.version')
     read_uint8_t(reader, 4, subtree, 'of13.group_delete.type')
     read_uint16_t(reader, 4, subtree, 'of13.group_delete.length')
@@ -19015,23 +19466,29 @@ function dissect_of_group_delete_v4(reader, subtree)
     read_uint8_t(reader, 4, subtree, 'of13.group_delete.group_type')
     reader.skip(1)
     read_uint32_t(reader, 4, subtree, 'of13.group_delete.group_id')
-    read_list_of_bucket_t(reader, 4, subtree, 'of13.group_delete.buckets')
+    read_list(reader, dissect_of_bucket_v4, subtree, 'of_bucket')
     return 'of_group_delete'
 end
 of_group_mod_v4_dissectors[2] = dissect_of_group_delete_v4
 
 -- top-level class of_group_desc_stats_entry
 function dissect_of_group_desc_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.group_desc_stats_entry.length')
     read_uint8_t(reader, 4, subtree, 'of13.group_desc_stats_entry.group_type')
     reader.skip(1)
     read_uint32_t(reader, 4, subtree, 'of13.group_desc_stats_entry.group_id')
-    read_list_of_bucket_t(reader, 4, subtree, 'of13.group_desc_stats_entry.buckets')
+    read_list(reader, dissect_of_bucket_v4, subtree, 'of_bucket')
     return 'of_group_desc_stats_entry'
 end
 -- child class of_group_desc_stats_reply
 -- Child of of_stats_reply
 function dissect_of_group_desc_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.group_desc_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.group_desc_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.group_desc_stats_reply.length')
@@ -19039,7 +19496,7 @@ function dissect_of_group_desc_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.group_desc_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.group_desc_stats_reply.flags')
     reader.skip(4)
-    read_list_of_group_desc_stats_entry_t(reader, 4, subtree, 'of13.group_desc_stats_reply.entries')
+    read_list(reader, dissect_of_group_desc_stats_entry_v4, subtree, 'of_group_desc_stats_entry')
     return 'of_group_desc_stats_reply'
 end
 of_stats_reply_v4_dissectors[7] = dissect_of_group_desc_stats_reply_v4
@@ -19099,6 +19556,9 @@ of_stats_request_v4_dissectors[8] = dissect_of_group_features_stats_request_v4
 -- child class of_group_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_group_mod_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.length')
@@ -19113,6 +19573,9 @@ of_error_msg_v4_dissectors[6] = dissect_of_group_mod_failed_error_msg_v4
 -- child class of_group_modify
 -- Child of of_group_mod
 function dissect_of_group_modify_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.group_modify.version')
     read_uint8_t(reader, 4, subtree, 'of13.group_modify.type')
     read_uint16_t(reader, 4, subtree, 'of13.group_modify.length')
@@ -19121,13 +19584,16 @@ function dissect_of_group_modify_v4(reader, subtree)
     read_uint8_t(reader, 4, subtree, 'of13.group_modify.group_type')
     reader.skip(1)
     read_uint32_t(reader, 4, subtree, 'of13.group_modify.group_id')
-    read_list_of_bucket_t(reader, 4, subtree, 'of13.group_modify.buckets')
+    read_list(reader, dissect_of_bucket_v4, subtree, 'of_bucket')
     return 'of_group_modify'
 end
 of_group_mod_v4_dissectors[1] = dissect_of_group_modify_v4
 
 -- top-level class of_group_stats_entry
 function dissect_of_group_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.group_stats_entry.length')
     reader.skip(2)
     read_uint32_t(reader, 4, subtree, 'of13.group_stats_entry.group_id')
@@ -19137,12 +19603,15 @@ function dissect_of_group_stats_entry_v4(reader, subtree)
     read_uint64_t(reader, 4, subtree, 'of13.group_stats_entry.byte_count')
     read_uint32_t(reader, 4, subtree, 'of13.group_stats_entry.duration_sec')
     read_uint32_t(reader, 4, subtree, 'of13.group_stats_entry.duration_nsec')
-    read_list_of_bucket_counter_t(reader, 4, subtree, 'of13.group_stats_entry.bucket_stats')
+    read_list(reader, dissect_of_bucket_counter_v4, subtree, 'of_bucket_counter')
     return 'of_group_stats_entry'
 end
 -- child class of_group_stats_reply
 -- Child of of_stats_reply
 function dissect_of_group_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.group_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.group_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.group_stats_reply.length')
@@ -19150,7 +19619,7 @@ function dissect_of_group_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.group_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.group_stats_reply.flags')
     reader.skip(4)
-    read_list_of_group_stats_entry_t(reader, 4, subtree, 'of13.group_stats_reply.entries')
+    read_list(reader, dissect_of_group_stats_entry_v4, subtree, 'of_group_stats_entry')
     return 'of_group_stats_reply'
 end
 of_stats_reply_v4_dissectors[6] = dissect_of_group_stats_reply_v4
@@ -19174,11 +19643,14 @@ of_stats_request_v4_dissectors[6] = dissect_of_group_stats_request_v4
 -- child class of_hello
 -- Child of of_header
 function dissect_of_hello_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.hello.version')
     read_uint8_t(reader, 4, subtree, 'of13.hello.type')
     read_uint16_t(reader, 4, subtree, 'of13.hello.length')
     read_uint32_t(reader, 4, subtree, 'of13.hello.xid')
-    read_list_of_hello_elem_t(reader, 4, subtree, 'of13.hello.elements')
+    read_list(reader, dissect_of_hello_elem_v4, subtree, 'of_hello_elem')
     return 'of_hello'
 end
 of_header_v4_dissectors[0] = dissect_of_hello_v4
@@ -19191,9 +19663,12 @@ end
 -- child class of_hello_elem_versionbitmap
 -- Child of of_hello_elem
 function dissect_of_hello_elem_versionbitmap_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.hello_elem_versionbitmap.type')
     read_uint16_t(reader, 4, subtree, 'of13.hello_elem_versionbitmap.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.hello_elem_versionbitmap.bitmaps')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_hello_elem_versionbitmap'
 end
 of_hello_elem_v4_dissectors[1] = dissect_of_hello_elem_versionbitmap_v4
@@ -19201,6 +19676,9 @@ of_hello_elem_v4_dissectors[1] = dissect_of_hello_elem_versionbitmap_v4
 -- child class of_hello_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_hello_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.hello_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.hello_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.hello_failed_error_msg.length')
@@ -19225,10 +19703,13 @@ end
 -- child class of_instruction_apply_actions
 -- Child of of_instruction
 function dissect_of_instruction_apply_actions_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_apply_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_apply_actions.len')
     reader.skip(4)
-    read_list_of_action_t(reader, 4, subtree, 'of13.instruction_apply_actions.actions')
+    read_list(reader, dissect_of_action_v4, subtree, 'of_action')
     return 'of_instruction_apply_actions'
 end
 of_instruction_v4_dissectors[4] = dissect_of_instruction_apply_actions_v4
@@ -19362,10 +19843,13 @@ of_instruction_id_v4_dissectors[6] = dissect_of_instruction_id_meter_v4
 -- child class of_instruction_write_actions
 -- Child of of_instruction
 function dissect_of_instruction_write_actions_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_write_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_write_actions.len')
     reader.skip(4)
-    read_list_of_action_t(reader, 4, subtree, 'of13.instruction_write_actions.actions')
+    read_list(reader, dissect_of_action_v4, subtree, 'of_action')
     return 'of_instruction_write_actions'
 end
 of_instruction_v4_dissectors[3] = dissect_of_instruction_write_actions_v4
@@ -19404,9 +19888,13 @@ of_instruction_id_v4_dissectors[2] = dissect_of_instruction_id_write_metadata_v4
 
 -- top-level class of_match_v3
 function dissect_of_match_v3_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.match_v3.type')
     read_uint16_t(reader, 4, subtree, 'of13.match_v3.length')
-    read_list_of_oxm_t(reader, 4, subtree, 'of13.match_v3.oxm_list')
+    read_list(reader, dissect_of_oxm_v4, subtree, 'of_oxm')
+    orig_reader.skip_align()
     return 'of_match_v3'
 end
 -- virtual top-level class of_meter_band
@@ -19459,15 +19947,21 @@ function dissect_of_meter_band_stats_v4(reader, subtree)
 end
 -- top-level class of_meter_config
 function dissect_of_meter_config_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.meter_config.length')
     read_uint16_t(reader, 4, subtree, 'of13.meter_config.flags')
     read_uint32_t(reader, 4, subtree, 'of13.meter_config.meter_id')
-    read_list_of_meter_band_t(reader, 4, subtree, 'of13.meter_config.entries')
+    read_list(reader, dissect_of_meter_band_v4, subtree, 'of_meter_band')
     return 'of_meter_config'
 end
 -- child class of_meter_config_stats_reply
 -- Child of of_stats_reply
 function dissect_of_meter_config_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.meter_config_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.meter_config_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_config_stats_reply.length')
@@ -19475,7 +19969,7 @@ function dissect_of_meter_config_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.meter_config_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_config_stats_reply.flags')
     reader.skip(4)
-    read_list_of_meter_band_t(reader, 4, subtree, 'of13.meter_config_stats_reply.entries')
+    read_list(reader, dissect_of_meter_band_v4, subtree, 'of_meter_band')
     return 'of_meter_config_stats_reply'
 end
 of_stats_reply_v4_dissectors[10] = dissect_of_meter_config_stats_reply_v4
@@ -19538,6 +20032,9 @@ of_stats_request_v4_dissectors[11] = dissect_of_meter_features_stats_request_v4
 -- child class of_meter_mod
 -- Child of of_header
 function dissect_of_meter_mod_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.meter_mod.version')
     read_uint8_t(reader, 4, subtree, 'of13.meter_mod.type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_mod.length')
@@ -19545,7 +20042,7 @@ function dissect_of_meter_mod_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.meter_mod.command')
     read_uint16_t(reader, 4, subtree, 'of13.meter_mod.flags')
     read_uint32_t(reader, 4, subtree, 'of13.meter_mod.meter_id')
-    read_list_of_meter_band_t(reader, 4, subtree, 'of13.meter_mod.meters')
+    read_list(reader, dissect_of_meter_band_v4, subtree, 'of_meter_band')
     return 'of_meter_mod'
 end
 of_header_v4_dissectors[29] = dissect_of_meter_mod_v4
@@ -19553,6 +20050,9 @@ of_header_v4_dissectors[29] = dissect_of_meter_mod_v4
 -- child class of_meter_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_meter_mod_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.length')
@@ -19566,6 +20066,9 @@ of_error_msg_v4_dissectors[12] = dissect_of_meter_mod_failed_error_msg_v4
 
 -- top-level class of_meter_stats
 function dissect_of_meter_stats_v4(reader, subtree)
+    local _length = reader.peek(4, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint32_t(reader, 4, subtree, 'of13.meter_stats.meter_id')
     read_uint16_t(reader, 4, subtree, 'of13.meter_stats.len')
     reader.skip(6)
@@ -19574,12 +20077,15 @@ function dissect_of_meter_stats_v4(reader, subtree)
     read_uint64_t(reader, 4, subtree, 'of13.meter_stats.byte_in_count')
     read_uint32_t(reader, 4, subtree, 'of13.meter_stats.duration_sec')
     read_uint32_t(reader, 4, subtree, 'of13.meter_stats.duration_nsec')
-    read_list_of_meter_band_stats_t(reader, 4, subtree, 'of13.meter_stats.band_stats')
+    read_list(reader, dissect_of_meter_band_stats_v4, subtree, 'of_meter_band_stats')
     return 'of_meter_stats'
 end
 -- child class of_meter_stats_reply
 -- Child of of_stats_reply
 function dissect_of_meter_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.meter_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.meter_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_stats_reply.length')
@@ -19587,7 +20093,7 @@ function dissect_of_meter_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.meter_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_stats_reply.flags')
     reader.skip(4)
-    read_list_of_meter_stats_t(reader, 4, subtree, 'of13.meter_stats_reply.entries')
+    read_list(reader, dissect_of_meter_stats_v4, subtree, 'of_meter_stats')
     return 'of_meter_stats_reply'
 end
 of_stats_reply_v4_dissectors[9] = dissect_of_meter_stats_reply_v4
@@ -20436,6 +20942,9 @@ of_oxm_v4_dissectors[2147486980] = dissect_of_oxm_vlan_vid_masked_v4
 -- child class of_packet_in
 -- Child of of_header
 function dissect_of_packet_in_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.packet_in.version')
     read_uint8_t(reader, 4, subtree, 'of13.packet_in.type')
     read_uint16_t(reader, 4, subtree, 'of13.packet_in.length')
@@ -20455,15 +20964,19 @@ of_header_v4_dissectors[10] = dissect_of_packet_in_v4
 -- child class of_packet_out
 -- Child of of_header
 function dissect_of_packet_out_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.packet_out.version')
     read_uint8_t(reader, 4, subtree, 'of13.packet_out.type')
     read_uint16_t(reader, 4, subtree, 'of13.packet_out.length')
     read_uint32_t(reader, 4, subtree, 'of13.packet_out.xid')
     read_uint32_t(reader, 4, subtree, 'of13.packet_out.buffer_id')
     read_of_port_no_t(reader, 4, subtree, 'of13.packet_out.in_port')
+    local _actions_length = reader.peek(0, 2):uint()
     read_uint16_t(reader, 4, subtree, 'of13.packet_out.actions_len')
     reader.skip(6)
-    read_list_of_action_t(reader, 4, subtree, 'of13.packet_out.actions')
+    read_list(reader.slice(_actions_length), dissect_of_action_v4, subtree, 'of_action')
     read_of_octets_t(reader, 4, subtree, 'of13.packet_out.data')
     return 'of_packet_out'
 end
@@ -20471,11 +20984,14 @@ of_header_v4_dissectors[13] = dissect_of_packet_out_v4
 
 -- top-level class of_packet_queue
 function dissect_of_packet_queue_v4(reader, subtree)
+    local _length = reader.peek(8, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint32_t(reader, 4, subtree, 'of13.packet_queue.queue_id')
     read_of_port_no_t(reader, 4, subtree, 'of13.packet_queue.port')
     read_uint16_t(reader, 4, subtree, 'of13.packet_queue.len')
     reader.skip(6)
-    read_list_of_queue_prop_t(reader, 4, subtree, 'of13.packet_queue.properties')
+    read_list(reader, dissect_of_queue_prop_v4, subtree, 'of_queue_prop')
     return 'of_packet_queue'
 end
 -- top-level class of_port_desc
@@ -20498,6 +21014,9 @@ end
 -- child class of_port_desc_stats_reply
 -- Child of of_stats_reply
 function dissect_of_port_desc_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.port_desc_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.port_desc_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.port_desc_stats_reply.length')
@@ -20505,7 +21024,7 @@ function dissect_of_port_desc_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.port_desc_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.port_desc_stats_reply.flags')
     reader.skip(4)
-    read_list_of_port_desc_t(reader, 4, subtree, 'of13.port_desc_stats_reply.entries')
+    read_list(reader, dissect_of_port_desc_v4, subtree, 'of_port_desc')
     return 'of_port_desc_stats_reply'
 end
 of_stats_reply_v4_dissectors[13] = dissect_of_port_desc_stats_reply_v4
@@ -20546,6 +21065,9 @@ of_header_v4_dissectors[16] = dissect_of_port_mod_v4
 -- child class of_port_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_port_mod_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.length')
@@ -20580,6 +21102,9 @@ end
 -- child class of_port_stats_reply
 -- Child of of_stats_reply
 function dissect_of_port_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.port_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.port_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.port_stats_reply.length')
@@ -20587,7 +21112,7 @@ function dissect_of_port_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.port_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.port_stats_reply.flags')
     reader.skip(4)
-    read_list_of_port_stats_entry_t(reader, 4, subtree, 'of13.port_stats_reply.entries')
+    read_list(reader, dissect_of_port_stats_entry_v4, subtree, 'of_port_stats_entry')
     return 'of_port_stats_reply'
 end
 of_stats_reply_v4_dissectors[4] = dissect_of_port_stats_reply_v4
@@ -20625,13 +21150,16 @@ of_header_v4_dissectors[12] = dissect_of_port_status_v4
 -- child class of_queue_get_config_reply
 -- Child of of_header
 function dissect_of_queue_get_config_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.queue_get_config_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.queue_get_config_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.queue_get_config_reply.length')
     read_uint32_t(reader, 4, subtree, 'of13.queue_get_config_reply.xid')
     read_of_port_no_t(reader, 4, subtree, 'of13.queue_get_config_reply.port')
     reader.skip(4)
-    read_list_of_packet_queue_t(reader, 4, subtree, 'of13.queue_get_config_reply.queues')
+    read_list(reader, dissect_of_packet_queue_v4, subtree, 'of_packet_queue')
     return 'of_queue_get_config_reply'
 end
 of_header_v4_dissectors[23] = dissect_of_queue_get_config_reply_v4
@@ -20652,6 +21180,9 @@ of_header_v4_dissectors[22] = dissect_of_queue_get_config_request_v4
 -- child class of_queue_op_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_queue_op_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.length')
@@ -20714,6 +21245,9 @@ end
 -- child class of_queue_stats_reply
 -- Child of of_stats_reply
 function dissect_of_queue_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.queue_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.queue_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.queue_stats_reply.length')
@@ -20721,7 +21255,7 @@ function dissect_of_queue_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.queue_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.queue_stats_reply.flags')
     reader.skip(4)
-    read_list_of_queue_stats_entry_t(reader, 4, subtree, 'of13.queue_stats_reply.entries')
+    read_list(reader, dissect_of_queue_stats_entry_v4, subtree, 'of_queue_stats_entry')
     return 'of_queue_stats_reply'
 end
 of_stats_reply_v4_dissectors[5] = dissect_of_queue_stats_reply_v4
@@ -20773,6 +21307,9 @@ of_header_v4_dissectors[24] = dissect_of_role_request_v4
 -- child class of_role_request_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_role_request_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.length')
@@ -20800,6 +21337,9 @@ of_header_v4_dissectors[9] = dissect_of_set_config_v4
 -- child class of_switch_config_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_switch_config_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.length')
@@ -20819,9 +21359,12 @@ end
 -- child class of_table_feature_prop_apply_actions
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_apply_actions_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions.length')
-    read_list_of_action_id_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions.action_ids')
+    read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
     return 'of_table_feature_prop_apply_actions'
 end
 of_table_feature_prop_v4_dissectors[6] = dissect_of_table_feature_prop_apply_actions_v4
@@ -20829,9 +21372,12 @@ of_table_feature_prop_v4_dissectors[6] = dissect_of_table_feature_prop_apply_act
 -- child class of_table_feature_prop_apply_actions_miss
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_apply_actions_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions_miss.length')
-    read_list_of_action_id_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions_miss.action_ids')
+    read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
     return 'of_table_feature_prop_apply_actions_miss'
 end
 of_table_feature_prop_v4_dissectors[7] = dissect_of_table_feature_prop_apply_actions_miss_v4
@@ -20839,9 +21385,12 @@ of_table_feature_prop_v4_dissectors[7] = dissect_of_table_feature_prop_apply_act
 -- child class of_table_feature_prop_apply_setfield
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_apply_setfield_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield.oxm_ids')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_table_feature_prop_apply_setfield'
 end
 of_table_feature_prop_v4_dissectors[14] = dissect_of_table_feature_prop_apply_setfield_v4
@@ -20849,9 +21398,12 @@ of_table_feature_prop_v4_dissectors[14] = dissect_of_table_feature_prop_apply_se
 -- child class of_table_feature_prop_apply_setfield_miss
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_apply_setfield_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield_miss.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield_miss.oxm_ids')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_table_feature_prop_apply_setfield_miss'
 end
 of_table_feature_prop_v4_dissectors[15] = dissect_of_table_feature_prop_apply_setfield_miss_v4
@@ -20859,6 +21411,9 @@ of_table_feature_prop_v4_dissectors[15] = dissect_of_table_feature_prop_apply_se
 -- child class of_table_feature_prop_experimenter
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_experimenter_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter.length')
     read_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter.experimenter')
@@ -20871,9 +21426,12 @@ of_table_feature_prop_v4_dissectors[65535] = dissect_of_table_feature_prop_exper
 -- child class of_table_feature_prop_instructions
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_instructions_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.length')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.instruction_ids')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_table_feature_prop_instructions'
 end
 of_table_feature_prop_v4_dissectors[0] = dissect_of_table_feature_prop_instructions_v4
@@ -20881,9 +21439,12 @@ of_table_feature_prop_v4_dissectors[0] = dissect_of_table_feature_prop_instructi
 -- child class of_table_feature_prop_instructions_miss
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_instructions_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.length')
-    read_list_of_instruction_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.instruction_ids')
+    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
     return 'of_table_feature_prop_instructions_miss'
 end
 of_table_feature_prop_v4_dissectors[1] = dissect_of_table_feature_prop_instructions_miss_v4
@@ -20891,9 +21452,12 @@ of_table_feature_prop_v4_dissectors[1] = dissect_of_table_feature_prop_instructi
 -- child class of_table_feature_prop_match
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_match_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_match.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_match.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_match.oxm_ids')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_table_feature_prop_match'
 end
 of_table_feature_prop_v4_dissectors[8] = dissect_of_table_feature_prop_match_v4
@@ -20901,9 +21465,12 @@ of_table_feature_prop_v4_dissectors[8] = dissect_of_table_feature_prop_match_v4
 -- child class of_table_feature_prop_next_tables
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_next_tables_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables.length')
-    read_list_of_uint8_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables.next_table_ids')
+    read_list(reader, dissect_of_uint8_v4, subtree, 'of_uint8')
     return 'of_table_feature_prop_next_tables'
 end
 of_table_feature_prop_v4_dissectors[2] = dissect_of_table_feature_prop_next_tables_v4
@@ -20911,9 +21478,12 @@ of_table_feature_prop_v4_dissectors[2] = dissect_of_table_feature_prop_next_tabl
 -- child class of_table_feature_prop_next_tables_miss
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_next_tables_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables_miss.length')
-    read_list_of_uint8_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables_miss.next_table_ids')
+    read_list(reader, dissect_of_uint8_v4, subtree, 'of_uint8')
     return 'of_table_feature_prop_next_tables_miss'
 end
 of_table_feature_prop_v4_dissectors[3] = dissect_of_table_feature_prop_next_tables_miss_v4
@@ -20921,9 +21491,12 @@ of_table_feature_prop_v4_dissectors[3] = dissect_of_table_feature_prop_next_tabl
 -- child class of_table_feature_prop_wildcards
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_wildcards_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_wildcards.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_wildcards.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_wildcards.oxm_ids')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_table_feature_prop_wildcards'
 end
 of_table_feature_prop_v4_dissectors[10] = dissect_of_table_feature_prop_wildcards_v4
@@ -20931,9 +21504,12 @@ of_table_feature_prop_v4_dissectors[10] = dissect_of_table_feature_prop_wildcard
 -- child class of_table_feature_prop_write_actions
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_write_actions_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions.length')
-    read_list_of_action_id_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions.action_ids')
+    read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
     return 'of_table_feature_prop_write_actions'
 end
 of_table_feature_prop_v4_dissectors[4] = dissect_of_table_feature_prop_write_actions_v4
@@ -20941,9 +21517,12 @@ of_table_feature_prop_v4_dissectors[4] = dissect_of_table_feature_prop_write_act
 -- child class of_table_feature_prop_write_actions_miss
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_write_actions_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions_miss.length')
-    read_list_of_action_id_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions_miss.action_ids')
+    read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
     return 'of_table_feature_prop_write_actions_miss'
 end
 of_table_feature_prop_v4_dissectors[5] = dissect_of_table_feature_prop_write_actions_miss_v4
@@ -20951,9 +21530,12 @@ of_table_feature_prop_v4_dissectors[5] = dissect_of_table_feature_prop_write_act
 -- child class of_table_feature_prop_write_setfield
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_write_setfield_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield.oxm_ids')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_table_feature_prop_write_setfield'
 end
 of_table_feature_prop_v4_dissectors[12] = dissect_of_table_feature_prop_write_setfield_v4
@@ -20961,15 +21543,21 @@ of_table_feature_prop_v4_dissectors[12] = dissect_of_table_feature_prop_write_se
 -- child class of_table_feature_prop_write_setfield_miss
 -- Child of of_table_feature_prop
 function dissect_of_table_feature_prop_write_setfield_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield_miss.length')
-    read_list_of_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield_miss.oxm_ids')
+    read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
     return 'of_table_feature_prop_write_setfield_miss'
 end
 of_table_feature_prop_v4_dissectors[13] = dissect_of_table_feature_prop_write_setfield_miss_v4
 
 -- top-level class of_table_features
 function dissect_of_table_features_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_features.length')
     read_uint8_t(reader, 4, subtree, 'of13.table_features.table_id')
     reader.skip(5)
@@ -20978,12 +21566,15 @@ function dissect_of_table_features_v4(reader, subtree)
     read_uint64_t(reader, 4, subtree, 'of13.table_features.metadata_write')
     read_uint32_t(reader, 4, subtree, 'of13.table_features.config')
     read_uint32_t(reader, 4, subtree, 'of13.table_features.max_entries')
-    read_list_of_table_feature_prop_t(reader, 4, subtree, 'of13.table_features.properties')
+    read_list(reader, dissect_of_table_feature_prop_v4, subtree, 'of_table_feature_prop')
     return 'of_table_features'
 end
 -- child class of_table_features_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_table_features_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.length')
@@ -20998,6 +21589,9 @@ of_error_msg_v4_dissectors[13] = dissect_of_table_features_failed_error_msg_v4
 -- child class of_table_features_stats_reply
 -- Child of of_stats_reply
 function dissect_of_table_features_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.table_features_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.table_features_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_stats_reply.length')
@@ -21005,7 +21599,7 @@ function dissect_of_table_features_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_features_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_stats_reply.flags')
     reader.skip(4)
-    read_list_of_table_features_t(reader, 4, subtree, 'of13.table_features_stats_reply.entries')
+    read_list(reader, dissect_of_table_features_v4, subtree, 'of_table_features')
     return 'of_table_features_stats_reply'
 end
 of_stats_reply_v4_dissectors[12] = dissect_of_table_features_stats_reply_v4
@@ -21013,6 +21607,9 @@ of_stats_reply_v4_dissectors[12] = dissect_of_table_features_stats_reply_v4
 -- child class of_table_features_stats_request
 -- Child of of_stats_request
 function dissect_of_table_features_stats_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.table_features_stats_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.table_features_stats_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_stats_request.length')
@@ -21020,7 +21617,7 @@ function dissect_of_table_features_stats_request_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_features_stats_request.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_stats_request.flags')
     reader.skip(4)
-    read_list_of_table_features_t(reader, 4, subtree, 'of13.table_features_stats_request.entries')
+    read_list(reader, dissect_of_table_features_v4, subtree, 'of_table_features')
     return 'of_table_features_stats_request'
 end
 of_stats_request_v4_dissectors[12] = dissect_of_table_features_stats_request_v4
@@ -21042,6 +21639,9 @@ of_header_v4_dissectors[17] = dissect_of_table_mod_v4
 -- child class of_table_mod_failed_error_msg
 -- Child of of_error_msg
 function dissect_of_table_mod_failed_error_msg_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.version')
     read_uint8_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.length')
@@ -21065,6 +21665,9 @@ end
 -- child class of_table_stats_reply
 -- Child of of_stats_reply
 function dissect_of_table_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.table_stats_reply.version')
     read_uint8_t(reader, 4, subtree, 'of13.table_stats_reply.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_stats_reply.length')
@@ -21072,7 +21675,7 @@ function dissect_of_table_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.table_stats_reply.flags')
     reader.skip(4)
-    read_list_of_table_stats_entry_t(reader, 4, subtree, 'of13.table_stats_reply.entries')
+    read_list(reader, dissect_of_table_stats_entry_v4, subtree, 'of_table_stats_entry')
     return 'of_table_stats_reply'
 end
 of_stats_reply_v4_dissectors[3] = dissect_of_table_stats_reply_v4
@@ -21121,76 +21724,6 @@ local of_oxm_dissectors = {
     [4] = dissect_of_oxm_v4,
 }
 
-local of_action_dissectors = {
-    [1] = dissect_of_action_v1,
-    [2] = dissect_of_action_v2,
-    [3] = dissect_of_action_v3,
-    [4] = dissect_of_action_v4,
-}
-
-local of_instruction_dissectors = {
-    [1] = dissect_of_instruction_v1,
-    [2] = dissect_of_instruction_v2,
-    [3] = dissect_of_instruction_v3,
-    [4] = dissect_of_instruction_v4,
-}
-
-local of_bucket_dissectors = {
-    [1] = dissect_of_bucket_v1,
-    [2] = dissect_of_bucket_v2,
-    [3] = dissect_of_bucket_v3,
-    [4] = dissect_of_bucket_v4,
-}
-
-local of_port_desc_dissectors = {
-    [1] = dissect_of_port_desc_v1,
-    [2] = dissect_of_port_desc_v2,
-    [3] = dissect_of_port_desc_v3,
-    [4] = dissect_of_port_desc_v4,
-}
-
-local of_stats_reply_dissectors = {
-    [1] = dissect_of_stats_reply_v1,
-    [2] = dissect_of_stats_reply_v2,
-    [3] = dissect_of_stats_reply_v3,
-    [4] = dissect_of_stats_reply_v4,
-}
-
-local of_stats_request_dissectors = {
-    [1] = dissect_of_stats_request_v1,
-    [2] = dissect_of_stats_request_v2,
-    [3] = dissect_of_stats_request_v3,
-    [4] = dissect_of_stats_request_v4,
-}
-
-local of_flow_stats_entry_dissectors = {
-    [1] = dissect_of_flow_stats_entry_v1,
-    [2] = dissect_of_flow_stats_entry_v2,
-    [3] = dissect_of_flow_stats_entry_v3,
-    [4] = dissect_of_flow_stats_entry_v4,
-}
-
-local of_port_stats_entry_dissectors = {
-    [1] = dissect_of_port_stats_entry_v1,
-    [2] = dissect_of_port_stats_entry_v2,
-    [3] = dissect_of_port_stats_entry_v3,
-    [4] = dissect_of_port_stats_entry_v4,
-}
-
-local of_table_stats_entry_dissectors = {
-    [1] = dissect_of_table_stats_entry_v1,
-    [2] = dissect_of_table_stats_entry_v2,
-    [3] = dissect_of_table_stats_entry_v3,
-    [4] = dissect_of_table_stats_entry_v4,
-}
-
-local of_queue_stats_entry_dissectors = {
-    [1] = dissect_of_queue_stats_entry_v1,
-    [2] = dissect_of_queue_stats_entry_v2,
-    [3] = dissect_of_queue_stats_entry_v3,
-    [4] = dissect_of_queue_stats_entry_v4,
-}
-
 
 function read_scalar(reader, subtree, field_name, length)
     subtree:add(fields[field_name], reader.read(length))
@@ -21224,11 +21757,11 @@ end
 
 function read_of_match_t(reader, version, subtree, field_name)
     if version == 1 then
-        dissect_of_match_v1_v1(reader, subtree:add(fields[field_name]))
+        dissect_of_match_v1_v1(reader, subtree:add("of_match"))
     elseif version == 2 then
-        dissect_of_match_v2_v2(reader, subtree:add(fields[field_name]))
+        dissect_of_match_v2_v2(reader, subtree:add("of_match"))
     elseif version >= 3 then
-        dissect_of_match_v3_v3(reader, subtree:add(fields[field_name]))
+        dissect_of_match_v3_v3(reader, subtree:add("of_match"))
     end
 end
 
@@ -21272,174 +21805,12 @@ function read_of_fm_cmd_t(reader, version, subtree, field_name)
     end
 end
 
-function read_list_of_action_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-
-    local list_len = 0
-
-    if string.find(field_name,'packet_out') then
-        if version == 1 then
-            list_len = reader.peek(-2,2):uint()
-        else
-            list_len = reader.peek(-8,2):uint()
-        end
-    end
-
-    local list = nil
-    local reader2 = nil
-
-    if list_len == 0 then
-        list = subtree:add(fields[field_name], reader.peek_all(0))
-        reader2 = reader
-    else
-        list = subtree:add(fields[field_name], reader.peek(0, list_len))
-        reader2 = reader.slice(list_len)
-    end
-
-    while not reader2.is_empty() do
-        local action_len = reader2.peek(2, 2):uint()
-        local child_reader = reader2.slice(action_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_action_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-    list:set_text("List of actions")
-end
-
-function read_list_of_port_desc_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of port descriptions")
-    while not reader.is_empty() do
-        local port_desc_len = 64
-        local child_reader = reader.slice(port_desc_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_port_desc_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_flow_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of flow stats entries")
-    while not reader.is_empty() do
-        local stats_len = reader.peek(0,2):uint()
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_flow_stats_entry_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_port_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of port stats entries")
-    while not reader.is_empty() do
-        local stats_len = 112
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_port_stats_entry_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_table_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of table stats entries")
-    while not reader.is_empty() do
-        local stats_len = 24
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_table_stats_entry_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_queue_stats_entry_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list = subtree:add(fields[field_name], reader.peek_all(0))
-    list:set_text("List of flow stats entries")
-    while not reader.is_empty() do
-        local stats_len = 40
-        local child_reader = reader.slice(stats_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_queue_stats_entry_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-end
-
-function read_list_of_packet_queue_t(reader, version, subtree, field_name)
-    -- TODO
-    read_of_octets_t()
-end
-
 function read_of_desc_str_t(reader, version, subtree, field_name)
     read_scalar(reader, subtree, field_name, 256)
 end
 
 function read_of_serial_num_t(reader, version, subtree, field_name)
     read_scalar(reader, subtree, field_name, 32)
-end
-
-function read_list_of_oxm_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local list_len = reader.peek(-2,2):uint()
-    local reader2 = reader.slice(list_len - 4)
-    local list = nil
-    if not reader2.is_empty() then
-        list = subtree:add(fields[field_name], reader2.peek_all(0))
-        list:set_text("List of matches")
-    end
-    while not reader2.is_empty() do
-        local match_len = 4 + reader2.peek(3,1):uint()
-        local child_reader = reader2.slice(match_len)
-        local child_subtree = list:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_oxm_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
-    subtree:set_text("OXM")
-    reader.skip_align()
-end
-
-function read_list_of_instruction_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
-    local info = of_instruction_dissectors[version](reader, child_subtree)
-    child_subtree:set_text("Instructions")
-end
-
-function read_list_of_bucket_t(reader, version, subtree, field_name)
-    if reader.is_empty() then
-        return
-    end
-    local bucket_list_subtree = subtree:add(fields[field_name], reader.peek_all(0))
-    bucket_list_subtree:set_text("List of buckets")
-    while not reader.is_empty() do
-        local bucket_len = reader.peek(0,2):uint()
-        local child_reader = reader.slice(bucket_len)
-        local child_subtree = bucket_list_subtree:add(fields[field_name], child_reader.peek_all(0))
-        local info = of_bucket_dissectors[version](child_reader, child_subtree)
-        child_subtree:set_text(info)
-    end
 end
 
 function read_of_oxm_t(reader, version, subtree, field_name)
@@ -21449,6 +21820,19 @@ function read_of_oxm_t(reader, version, subtree, field_name)
     local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
     local info = of_oxm_dissectors[version](reader, child_subtree)
     child_subtree:set_text(info)
+end
+
+function read_list(reader, dissector, subtree, field_name)
+    if not reader.is_empty() then
+        local list_subtree = subtree:add(field_name .. " list", reader.peek_all(0))
+        while not reader.is_empty() do
+            local atom_subtree = list_subtree:add(field_name, reader.peek_all(0))
+            local info = dissector(reader, atom_subtree)
+            atom_subtree:set_text(info)
+        end
+    else
+        return
+    end
 end
 
 function dissect_of_message(buf, root)
