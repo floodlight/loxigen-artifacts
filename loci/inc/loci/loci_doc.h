@@ -422,6 +422,48 @@ typedef struct of_bsn_bw_enable_set_reply_s of_bsn_bw_enable_set_reply_t;
 typedef struct of_bsn_bw_enable_set_request_s of_bsn_bw_enable_set_request_t;
 
 /**
+ * Structure for of_bsn_controller_connections_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connections_reply_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connections_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connections_reply_uint32_get_f and _set_f.
+ *
+ * @param connections_get/set ( OF_1_3).
+ *   Accessors for connections, a variable of type of_list_bsn_controller_connection.  Functions
+ *   are of type of_bsn_controller_connections_reply_of_list_bsn_controller_connection_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_controller_connections_reply_s of_bsn_controller_connections_reply_t;
+
+/**
+ * Structure for of_bsn_controller_connections_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connections_request_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connections_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connections_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_controller_connections_request_s of_bsn_controller_connections_request_t;
+
+/**
  * Structure for of_bsn_flow_idle object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -1168,6 +1210,37 @@ typedef struct of_bsn_port_counter_stats_reply_s of_bsn_port_counter_stats_reply
  *
  */
 typedef struct of_bsn_port_counter_stats_request_s of_bsn_port_counter_stats_request_t;
+
+/**
+ * Structure for of_bsn_role_status object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_role_status_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_role_status_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_role_status_uint32_get_f and _set_f.
+ *
+ * @param role_get/set ( OF_1_3).
+ *   Accessors for role, a variable of type uint32.  Functions
+ *   are of type of_bsn_role_status_uint32_get_f and _set_f.
+ *
+ * @param reason_get/set ( OF_1_3).
+ *   Accessors for reason, a variable of type uint8.  Functions
+ *   are of type of_bsn_role_status_uint8_get_f and _set_f.
+ *
+ * @param generation_id_get/set ( OF_1_3).
+ *   Accessors for generation_id, a variable of type uint64.  Functions
+ *   are of type of_bsn_role_status_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_role_status_s of_bsn_role_status_t;
 
 /**
  * Structure for of_bsn_set_ip_mask object.  Get/set
@@ -4316,6 +4389,29 @@ typedef struct of_action_set_vlan_vid_s of_action_set_vlan_vid_t;
 typedef struct of_action_strip_vlan_s of_action_strip_vlan_t;
 
 /**
+ * Structure for of_bsn_controller_connection object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param state_get/set ( OF_1_3).
+ *   Accessors for state, a variable of type uint8.  Functions
+ *   are of type of_bsn_controller_connection_uint8_get_f and _set_f.
+ *
+ * @param auxiliary_id_get/set ( OF_1_3).
+ *   Accessors for auxiliary_id, a variable of type uint8.  Functions
+ *   are of type of_bsn_controller_connection_uint8_get_f and _set_f.
+ *
+ * @param role_get/set ( OF_1_3).
+ *   Accessors for role, a variable of type uint32.  Functions
+ *   are of type of_bsn_controller_connection_uint32_get_f and _set_f.
+ *
+ * @param uri_get/set ( OF_1_3).
+ *   Accessors for uri, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_controller_connection_of_desc_str_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_controller_connection_s of_bsn_controller_connection_t;
+
+/**
  * Structure for of_bsn_interface object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6937,6 +7033,21 @@ typedef struct of_list_action_s of_list_action_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_action_id_s of_list_action_id_t;
+
+/**
+ * Structure for of_list_bsn_controller_connection object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_controller_connection_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_controller_connection_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_controller_connection_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_controller_connection_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_controller_connection_s of_list_bsn_controller_connection_t;
 
 /**
  * Structure for of_list_bsn_interface object.  Get/set

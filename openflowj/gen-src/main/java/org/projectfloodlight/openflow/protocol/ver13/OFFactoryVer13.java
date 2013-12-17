@@ -648,6 +648,29 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFAsyncSetVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnControllerConnection.Builder buildBsnControllerConnection() {
+        return new OFBsnControllerConnectionVer13.Builder();
+    }
+
+    public OFBsnControllerConnectionsReply.Builder buildBsnControllerConnectionsReply() {
+        return new OFBsnControllerConnectionsReplyVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnControllerConnectionsReply bsnControllerConnectionsReply(List<OFBsnControllerConnection> connections) {
+        return new OFBsnControllerConnectionsReplyVer13(
+                nextXid(),
+                      connections
+                    );
+    }
+
+    public OFBsnControllerConnectionsRequest.Builder buildBsnControllerConnectionsRequest() {
+        return new OFBsnControllerConnectionsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnControllerConnectionsRequest bsnControllerConnectionsRequest() {
+        return new OFBsnControllerConnectionsRequestVer13(
+                nextXid()
+                    );
+    }
+
     public OFBsnFlowIdle.Builder buildBsnFlowIdle() {
         return new OFBsnFlowIdleVer13.Builder().setXid(nextXid());
     }
@@ -742,6 +765,10 @@ public class OFFactoryVer13 implements OFFactory {
 
     public OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() {
         return new OFBsnPortCounterStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnRoleStatus.Builder buildBsnRoleStatus() {
+        return new OFBsnRoleStatusVer13.Builder().setXid(nextXid());
     }
 
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {

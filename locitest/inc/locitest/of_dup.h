@@ -82,6 +82,14 @@ extern of_bsn_bw_enable_set_request_t *
     of_bsn_bw_enable_set_request_dup(
         of_bsn_bw_enable_set_request_t *src);
 
+extern of_bsn_controller_connections_reply_t *
+    of_bsn_controller_connections_reply_dup(
+        of_bsn_controller_connections_reply_t *src);
+
+extern of_bsn_controller_connections_request_t *
+    of_bsn_controller_connections_request_dup(
+        of_bsn_controller_connections_request_t *src);
+
 extern of_bsn_flow_idle_t *
     of_bsn_flow_idle_dup(
         of_bsn_flow_idle_t *src);
@@ -193,6 +201,10 @@ extern of_bsn_port_counter_stats_reply_t *
 extern of_bsn_port_counter_stats_request_t *
     of_bsn_port_counter_stats_request_dup(
         of_bsn_port_counter_stats_request_t *src);
+
+extern of_bsn_role_status_t *
+    of_bsn_role_status_dup(
+        of_bsn_role_status_t *src);
 
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_dup(
@@ -841,6 +853,10 @@ extern of_action_set_vlan_vid_t *
 extern of_action_strip_vlan_t *
     of_action_strip_vlan_dup(
         of_action_strip_vlan_t *src);
+
+extern of_bsn_controller_connection_t *
+    of_bsn_controller_connection_dup(
+        of_bsn_controller_connection_t *src);
 
 extern of_bsn_interface_t *
     of_bsn_interface_dup(
@@ -1533,6 +1549,10 @@ extern of_list_action_t *
 extern of_list_action_id_t *
     of_list_action_id_dup(
         of_list_action_id_t *src);
+
+extern of_list_bsn_controller_connection_t *
+    of_list_bsn_controller_connection_dup(
+        of_list_bsn_controller_connection_t *src);
 
 extern of_list_bsn_interface_t *
     of_list_bsn_interface_dup(
@@ -3870,6 +3890,14 @@ extern of_bsn_bw_enable_set_request_t *
     of_bsn_bw_enable_set_request_OF_VERSION_1_3_dup(
         of_bsn_bw_enable_set_request_t *src);
 
+extern of_bsn_controller_connections_reply_t *
+    of_bsn_controller_connections_reply_OF_VERSION_1_3_dup(
+        of_bsn_controller_connections_reply_t *src);
+
+extern of_bsn_controller_connections_request_t *
+    of_bsn_controller_connections_request_OF_VERSION_1_3_dup(
+        of_bsn_controller_connections_request_t *src);
+
 extern of_bsn_flow_idle_t *
     of_bsn_flow_idle_OF_VERSION_1_3_dup(
         of_bsn_flow_idle_t *src);
@@ -3957,6 +3985,10 @@ extern of_bsn_port_counter_stats_reply_t *
 extern of_bsn_port_counter_stats_request_t *
     of_bsn_port_counter_stats_request_OF_VERSION_1_3_dup(
         of_bsn_port_counter_stats_request_t *src);
+
+extern of_bsn_role_status_t *
+    of_bsn_role_status_OF_VERSION_1_3_dup(
+        of_bsn_role_status_t *src);
 
 extern of_bsn_set_lacp_reply_t *
     of_bsn_set_lacp_reply_OF_VERSION_1_3_dup(
@@ -4517,6 +4549,10 @@ extern of_action_set_nw_ttl_t *
 extern of_action_set_queue_t *
     of_action_set_queue_OF_VERSION_1_3_dup(
         of_action_set_queue_t *src);
+
+extern of_bsn_controller_connection_t *
+    of_bsn_controller_connection_OF_VERSION_1_3_dup(
+        of_bsn_controller_connection_t *src);
 
 extern of_bsn_interface_t *
     of_bsn_interface_OF_VERSION_1_3_dup(
@@ -5201,6 +5237,10 @@ extern of_list_action_t *
 extern of_list_action_id_t *
     of_list_action_id_OF_VERSION_1_3_dup(
         of_list_action_id_t *src);
+
+extern of_list_bsn_controller_connection_t *
+    of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
+        of_list_bsn_controller_connection_t *src);
 
 extern of_list_bsn_interface_t *
     of_list_bsn_interface_OF_VERSION_1_3_dup(

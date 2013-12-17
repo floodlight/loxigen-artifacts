@@ -1069,6 +1069,32 @@ test_of_list_action_id_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_list_bsn_controller_connection_OF_VERSION_1_3(void)
+{
+    of_list_bsn_controller_connection_t *list;
+    int value = 1;
+
+    list = of_list_bsn_controller_connection_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_CONTROLLER_CONNECTION);
+
+    value = list_setup_of_list_bsn_controller_connection_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_controller_connection_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_controller_connection_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_list_bsn_interface_OF_VERSION_1_3(void)
 {
     of_list_bsn_interface_t *list;
@@ -1813,6 +1839,7 @@ run_list_tests(void)
     RUN_TEST(of_list_table_stats_entry_OF_VERSION_1_2);
     RUN_TEST(of_list_action_OF_VERSION_1_3);
     RUN_TEST(of_list_action_id_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_controller_connection_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_interface_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_lacp_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3);

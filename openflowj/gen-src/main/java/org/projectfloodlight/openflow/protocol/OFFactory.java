@@ -171,6 +171,11 @@ public interface OFFactory extends XidGenerator {
     OFAsyncGetReply.Builder buildAsyncGetReply() throws UnsupportedOperationException;
     OFAsyncGetRequest.Builder buildAsyncGetRequest() throws UnsupportedOperationException;
     OFAsyncSet.Builder buildAsyncSet() throws UnsupportedOperationException;
+    OFBsnControllerConnection.Builder buildBsnControllerConnection() throws UnsupportedOperationException;
+    OFBsnControllerConnectionsReply.Builder buildBsnControllerConnectionsReply() throws UnsupportedOperationException;
+    OFBsnControllerConnectionsReply bsnControllerConnectionsReply(List<OFBsnControllerConnection> connections);
+    OFBsnControllerConnectionsRequest.Builder buildBsnControllerConnectionsRequest() throws UnsupportedOperationException;
+    OFBsnControllerConnectionsRequest bsnControllerConnectionsRequest();
     OFBsnFlowIdle.Builder buildBsnFlowIdle() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableGetReply.Builder buildBsnFlowIdleEnableGetReply() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableGetReply bsnFlowIdleEnableGetReply(long enabled);
@@ -192,6 +197,7 @@ public interface OFFactory extends XidGenerator {
     OFBsnPortCounterStatsEntry bsnPortCounterStatsEntry(OFPort portNo, List<U64> values);
     OFBsnPortCounterStatsReply.Builder buildBsnPortCounterStatsReply() throws UnsupportedOperationException;
     OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() throws UnsupportedOperationException;
+    OFBsnRoleStatus.Builder buildBsnRoleStatus() throws UnsupportedOperationException;
     OFBsnSetLacpReply.Builder buildBsnSetLacpReply() throws UnsupportedOperationException;
     OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() throws UnsupportedOperationException;
     OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() throws UnsupportedOperationException;

@@ -1522,6 +1522,140 @@ class bsn_bw_enable_set_request(bsn_header):
 
 bsn_header.subtypes[18] = bsn_bw_enable_set_request
 
+class bsn_controller_connections_reply(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 57
+
+    def __init__(self, xid=None, connections=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if connections != None:
+            self.connections = connections
+        else:
+            self.connections = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(loxi.generic_util.pack_list(self.connections))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_controller_connections_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 57)
+        obj.connections = loxi.generic_util.unpack_list(reader, common.bsn_controller_connection.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.connections != other.connections: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_controller_connections_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("connections = ");
+                q.pp(self.connections)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[57] = bsn_controller_connections_reply
+
+class bsn_controller_connections_request(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 56
+
+    def __init__(self, xid=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_controller_connections_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 56)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_controller_connections_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[56] = bsn_controller_connections_request
+
 class bsn_flow_idle(bsn_header):
     version = 4
     type = 4
@@ -3385,6 +3519,100 @@ class bsn_port_counter_stats_request(bsn_stats_request):
         q.text('}')
 
 bsn_stats_request.subtypes[8] = bsn_port_counter_stats_request
+
+class bsn_role_status(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 55
+
+    def __init__(self, xid=None, role=None, reason=None, generation_id=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if role != None:
+            self.role = role
+        else:
+            self.role = 0
+        if reason != None:
+            self.reason = reason
+        else:
+            self.reason = 0
+        if generation_id != None:
+            self.generation_id = generation_id
+        else:
+            self.generation_id = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!L", self.role))
+        packed.append(struct.pack("!B", self.reason))
+        packed.append('\x00' * 3)
+        packed.append(struct.pack("!Q", self.generation_id))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_role_status()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 55)
+        obj.role = reader.read("!L")[0]
+        obj.reason = reader.read("!B")[0]
+        reader.skip(3)
+        obj.generation_id = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.role != other.role: return False
+        if self.reason != other.reason: return False
+        if self.generation_id != other.generation_id: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_role_status {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("role = ");
+                q.text("%#x" % self.role)
+                q.text(","); q.breakable()
+                q.text("reason = ");
+                q.text("%#x" % self.reason)
+                q.text(","); q.breakable()
+                q.text("generation_id = ");
+                q.text("%#x" % self.generation_id)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[55] = bsn_role_status
 
 class bsn_set_lacp_reply(bsn_header):
     version = 4

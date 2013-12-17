@@ -19,6 +19,74 @@ import meter_band
 import util
 import loxi.generic_util
 
+class bsn_controller_connection(loxi.OFObject):
+
+    def __init__(self, state=None, auxiliary_id=None, role=None, uri=None):
+        if state != None:
+            self.state = state
+        else:
+            self.state = 0
+        if auxiliary_id != None:
+            self.auxiliary_id = auxiliary_id
+        else:
+            self.auxiliary_id = 0
+        if role != None:
+            self.role = role
+        else:
+            self.role = 0
+        if uri != None:
+            self.uri = uri
+        else:
+            self.uri = ""
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.state))
+        packed.append(struct.pack("!B", self.auxiliary_id))
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!L", self.role))
+        packed.append(struct.pack("!256s", self.uri))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_controller_connection()
+        obj.state = reader.read("!B")[0]
+        obj.auxiliary_id = reader.read("!B")[0]
+        reader.skip(2)
+        obj.role = reader.read("!L")[0]
+        obj.uri = reader.read("!256s")[0].rstrip("\x00")
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.state != other.state: return False
+        if self.auxiliary_id != other.auxiliary_id: return False
+        if self.role != other.role: return False
+        if self.uri != other.uri: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_controller_connection {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("state = ");
+                q.text("%#x" % self.state)
+                q.text(","); q.breakable()
+                q.text("auxiliary_id = ");
+                q.text("%#x" % self.auxiliary_id)
+                q.text(","); q.breakable()
+                q.text("role = ");
+                q.text("%#x" % self.role)
+                q.text(","); q.breakable()
+                q.text("uri = ");
+                q.pp(self.uri)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_interface(loxi.OFObject):
 
     def __init__(self, hw_addr=None, name=None, ipv4_addr=None, ipv4_netmask=None):

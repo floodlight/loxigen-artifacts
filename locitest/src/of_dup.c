@@ -20011,6 +20011,81 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_controller_connections_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_controller_connections_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_controller_connections_reply_t *
+of_bsn_controller_connections_reply_OF_VERSION_1_3_dup(
+    of_bsn_controller_connections_reply_t *src)
+{
+    of_bsn_controller_connections_reply_t *dst;
+    uint32_t val32;
+
+    of_list_bsn_controller_connection_t src_list;
+    of_list_bsn_controller_connection_t *dst_list;
+
+    if ((dst = of_bsn_controller_connections_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_controller_connections_reply_xid_get(src, &val32);
+    of_bsn_controller_connections_reply_xid_set(dst, val32);
+
+    of_bsn_controller_connections_reply_experimenter_get(src, &val32);
+    of_bsn_controller_connections_reply_experimenter_set(dst, val32);
+
+    of_bsn_controller_connections_reply_subtype_get(src, &val32);
+    of_bsn_controller_connections_reply_subtype_set(dst, val32);
+
+    of_bsn_controller_connections_reply_connections_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_controller_connection_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_controller_connections_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_controller_connections_reply_connections_set(dst, dst_list);
+    of_list_bsn_controller_connection_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_controller_connections_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_controller_connections_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_controller_connections_request_t *
+of_bsn_controller_connections_request_OF_VERSION_1_3_dup(
+    of_bsn_controller_connections_request_t *src)
+{
+    of_bsn_controller_connections_request_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_controller_connections_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_controller_connections_request_xid_get(src, &val32);
+    of_bsn_controller_connections_request_xid_set(dst, val32);
+
+    of_bsn_controller_connections_request_experimenter_get(src, &val32);
+    of_bsn_controller_connections_request_experimenter_set(dst, val32);
+
+    of_bsn_controller_connections_request_subtype_get(src, &val32);
+    of_bsn_controller_connections_request_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_flow_idle
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -20887,6 +20962,48 @@ of_bsn_port_counter_stats_request_OF_VERSION_1_3_dup(
 
     of_bsn_port_counter_stats_request_port_no_get(src, &port_no);
     of_bsn_port_counter_stats_request_port_no_set(dst, port_no);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_role_status
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_role_status.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_role_status_t *
+of_bsn_role_status_OF_VERSION_1_3_dup(
+    of_bsn_role_status_t *src)
+{
+    of_bsn_role_status_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+    uint64_t val64;
+
+    if ((dst = of_bsn_role_status_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_role_status_xid_get(src, &val32);
+    of_bsn_role_status_xid_set(dst, val32);
+
+    of_bsn_role_status_experimenter_get(src, &val32);
+    of_bsn_role_status_experimenter_set(dst, val32);
+
+    of_bsn_role_status_subtype_get(src, &val32);
+    of_bsn_role_status_subtype_set(dst, val32);
+
+    of_bsn_role_status_role_get(src, &val32);
+    of_bsn_role_status_role_set(dst, val32);
+
+    of_bsn_role_status_reason_get(src, &val8);
+    of_bsn_role_status_reason_set(dst, val8);
+
+    of_bsn_role_status_generation_id_get(src, &val64);
+    of_bsn_role_status_generation_id_set(dst, val64);
 
     return dst;
 }
@@ -25914,6 +26031,42 @@ of_action_set_queue_OF_VERSION_1_3_dup(
 
     of_action_set_queue_queue_id_get(src, &val32);
     of_action_set_queue_queue_id_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_controller_connection
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_controller_connection.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_controller_connection_t *
+of_bsn_controller_connection_OF_VERSION_1_3_dup(
+    of_bsn_controller_connection_t *src)
+{
+    of_bsn_controller_connection_t *dst;
+    uint8_t val8;
+    uint32_t val32;
+    of_desc_str_t desc_str;
+
+    if ((dst = of_bsn_controller_connection_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_controller_connection_state_get(src, &val8);
+    of_bsn_controller_connection_state_set(dst, val8);
+
+    of_bsn_controller_connection_auxiliary_id_get(src, &val8);
+    of_bsn_controller_connection_auxiliary_id_set(dst, val8);
+
+    of_bsn_controller_connection_role_get(src, &val32);
+    of_bsn_controller_connection_role_set(dst, val32);
+
+    of_bsn_controller_connection_uri_get(src, &desc_str);
+    of_bsn_controller_connection_uri_set(dst, desc_str);
 
     return dst;
 }
@@ -31472,6 +31625,40 @@ of_list_action_id_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_bsn_controller_connection
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_controller_connection.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_controller_connection_t *
+of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
+    of_list_bsn_controller_connection_t *src)
+{
+    of_bsn_controller_connection_t src_elt;
+    of_bsn_controller_connection_t *dst_elt;
+    int rv;
+    of_list_bsn_controller_connection_t *dst;
+
+    if ((dst = of_list_bsn_controller_connection_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_CONTROLLER_CONNECTION_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_controller_connection_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_controller_connection_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_bsn_interface
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -32770,6 +32957,32 @@ of_bsn_bw_enable_set_request_dup(
     return NULL;
 }
 
+of_bsn_controller_connections_reply_t *
+of_bsn_controller_connections_reply_dup(
+    of_bsn_controller_connections_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_controller_connections_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_controller_connections_request_t *
+of_bsn_controller_connections_request_dup(
+    of_bsn_controller_connections_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_controller_connections_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_flow_idle_t *
 of_bsn_flow_idle_dup(
     of_bsn_flow_idle_t *src)
@@ -33248,6 +33461,19 @@ of_bsn_port_counter_stats_request_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_port_counter_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_role_status_t *
+of_bsn_role_status_dup(
+    of_bsn_role_status_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_role_status_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -36340,6 +36566,19 @@ of_action_strip_vlan_dup(
     return NULL;
 }
 
+of_bsn_controller_connection_t *
+of_bsn_controller_connection_dup(
+    of_bsn_controller_connection_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_controller_connection_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_interface_t *
 of_bsn_interface_dup(
     of_bsn_interface_t *src)
@@ -39223,6 +39462,19 @@ of_list_action_id_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_list_action_id_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_controller_connection_t *
+of_list_bsn_controller_connection_dup(
+    of_list_bsn_controller_connection_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_controller_connection_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

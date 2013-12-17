@@ -642,6 +642,24 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFAsyncSet not supported in version 1.1");
     }
 
+    public OFBsnControllerConnection.Builder buildBsnControllerConnection() {
+        throw new UnsupportedOperationException("OFBsnControllerConnection not supported in version 1.1");
+    }
+
+    public OFBsnControllerConnectionsReply.Builder buildBsnControllerConnectionsReply() {
+        throw new UnsupportedOperationException("OFBsnControllerConnectionsReply not supported in version 1.1");
+    }
+    public OFBsnControllerConnectionsReply bsnControllerConnectionsReply(List<OFBsnControllerConnection> connections) {
+        throw new UnsupportedOperationException("OFBsnControllerConnectionsReply not supported in version 1.1");
+    }
+
+    public OFBsnControllerConnectionsRequest.Builder buildBsnControllerConnectionsRequest() {
+        throw new UnsupportedOperationException("OFBsnControllerConnectionsRequest not supported in version 1.1");
+    }
+    public OFBsnControllerConnectionsRequest bsnControllerConnectionsRequest() {
+        throw new UnsupportedOperationException("OFBsnControllerConnectionsRequest not supported in version 1.1");
+    }
+
     public OFBsnFlowIdle.Builder buildBsnFlowIdle() {
         throw new UnsupportedOperationException("OFBsnFlowIdle not supported in version 1.1");
     }
@@ -717,6 +735,10 @@ public class OFFactoryVer11 implements OFFactory {
 
     public OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() {
         throw new UnsupportedOperationException("OFBsnPortCounterStatsRequest not supported in version 1.1");
+    }
+
+    public OFBsnRoleStatus.Builder buildBsnRoleStatus() {
+        throw new UnsupportedOperationException("OFBsnRoleStatus not supported in version 1.1");
     }
 
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {

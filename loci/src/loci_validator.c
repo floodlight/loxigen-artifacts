@@ -573,6 +573,7 @@ static inline int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validat
 static inline int of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_action_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_action_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_uint8_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -736,6 +737,7 @@ static inline int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uin
 static inline int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_queue_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_nw_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_mpls_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -874,6 +876,7 @@ static inline int of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3_validate(uin
 static inline int of_bsn_set_mirroring_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_set_lacp_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_set_lacp_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_role_status_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_pdu_tx_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -896,6 +899,8 @@ static inline int of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_validate(uint
 static inline int of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_controller_connections_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_controller_connections_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_bw_enable_set_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_bw_enable_set_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_bw_enable_get_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8910,6 +8915,16 @@ of_list_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_list_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if ((len / 264) * 264 != len) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_list_action_id_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     while (len >= 8) {
@@ -11199,6 +11214,17 @@ of_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 264) {
+        VALIDATOR_LOG("Class of_bsn_controller_connection.  Len %d too small, < %d", len, 264);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_action_set_queue_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 8) {
@@ -12984,6 +13010,17 @@ of_bsn_set_lacp_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_role_status_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 32) {
+        VALIDATOR_LOG("Class of_bsn_role_status.  Len %d too small, < %d", len, 32);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_port_counter_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 28) {
@@ -13247,6 +13284,37 @@ of_bsn_flow_idle_OF_VERSION_1_3_validate(uint8_t *buf, int len)
     if (len < 40) {
         VALIDATOR_LOG("Class of_bsn_flow_idle.  Len %d too small, < %d", len, 40);
         return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_controller_connections_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_bsn_controller_connections_request.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_controller_connections_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_bsn_controller_connections_reply.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+
+    {    int connections_len = len - 16;
+
+
+        if (of_list_bsn_controller_connection_OF_VERSION_1_3_validate(buf + 16, connections_len) < 0) {
+            return -1;
+        }
     }
 
     return 0;
@@ -13629,6 +13697,8 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_set_lacp_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_SET_LACP_REPLY:
         return of_bsn_set_lacp_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_ROLE_STATUS:
+        return of_bsn_role_status_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_PORT_COUNTER_STATS_REQUEST:
         return of_bsn_port_counter_stats_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_PORT_COUNTER_STATS_REPLY:
@@ -13673,6 +13743,10 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_FLOW_IDLE:
         return of_bsn_flow_idle_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_CONTROLLER_CONNECTIONS_REQUEST:
+        return of_bsn_controller_connections_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_CONTROLLER_CONNECTIONS_REPLY:
+        return of_bsn_controller_connections_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_BW_ENABLE_SET_REQUEST:
         return of_bsn_bw_enable_set_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_BW_ENABLE_SET_REPLY:

@@ -1181,37 +1181,19 @@ local enum_v4_ofp_stats_type = {
     [65535] = "OFPST_EXPERIMENTER",
 }
 
-local enum_v4_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
-    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
+local enum_v4_ofp_bsn_port_counter = {
+    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
+    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
+    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
+    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
+    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
+    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
+    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
+    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
+    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
+    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
+    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
 }
 
 local enum_v4_ofp_flow_mod_flags = {
@@ -1434,6 +1416,11 @@ local enum_v4_ofp_bsn_vport_status = {
     [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
+local enum_v4_ofp_bsn_controller_connection_state = {
+    [0] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED",
+    [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
+}
+
 local enum_v4_of_bsn_lacp_convergence_status_t = {
     [0] = "LACP_SUCCESS",
     [1] = "LACP_TIMEDOUT",
@@ -1546,13 +1533,10 @@ local enum_v4_ofp_hello_elem_type = {
     [1] = "OFPHET_VERSIONBITMAP",
 }
 
-local enum_v4_ofp_table_features_failed_code = {
-    [0] = "OFPTFFC_BAD_TABLE",
-    [1] = "OFPTFFC_BAD_METADATA",
-    [2] = "OFPTFFC_BAD_TYPE",
-    [3] = "OFPTFFC_BAD_LEN",
-    [4] = "OFPTFFC_BAD_ARGUMENT",
-    [5] = "OFPTFFC_EPERM",
+local enum_v4_ofp_bsn_controller_role_reason = {
+    [0] = "OFP_BSN_CONTROLLER_ROLE_REASON_MASTER_REQUEST",
+    [1] = "OFP_BSN_CONTROLLER_ROLE_REASON_CONFIG",
+    [2] = "OFP_BSN_CONTROLLER_ROLE_REASON_EXPERIMENTER",
 }
 
 local enum_v4_ofp_group_mod_failed_code = {
@@ -1650,19 +1634,37 @@ local enum_v4_ofp_port_mod_failed_code = {
     [4] = "OFPPMFC_EPERM",
 }
 
-local enum_v4_ofp_bsn_port_counter = {
-    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
-    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
-    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
-    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
-    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
-    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
-    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
-    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
-    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
-    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
-    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
-    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
+local enum_v4_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
+    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
 }
 
 local enum_v4_ofp_packet_in_reason = {
@@ -1688,6 +1690,15 @@ local enum_v4_ofp_bsn_vport_q_in_q_untagged = {
 
 local enum_v4_of_bsn_pdu_slot_num_t = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
+}
+
+local enum_v4_ofp_table_features_failed_code = {
+    [0] = "OFPTFFC_BAD_TABLE",
+    [1] = "OFPTFFC_BAD_METADATA",
+    [2] = "OFPTFFC_BAD_TYPE",
+    [3] = "OFPTFFC_BAD_LEN",
+    [4] = "OFPTFFC_BAD_ARGUMENT",
+    [5] = "OFPTFFC_EPERM",
 }
 
 local enum_v4_ofp_port_features = {
@@ -4922,6 +4933,23 @@ fields['of13.bsn_bw_enable_set_request.xid'] = ProtoField.uint32("of13.bsn_bw_en
 fields['of13.bsn_bw_enable_set_request.experimenter'] = ProtoField.uint32("of13.bsn_bw_enable_set_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_bw_enable_set_request.subtype'] = ProtoField.uint32("of13.bsn_bw_enable_set_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_bw_enable_set_request.enable'] = ProtoField.uint32("of13.bsn_bw_enable_set_request.enable", "enable", base.DEC, nil)
+fields['of13.bsn_controller_connection.state'] = ProtoField.uint32("of13.bsn_controller_connection.state", "state", base.DEC, enum_v4_ofp_bsn_controller_connection_state)
+fields['of13.bsn_controller_connection.auxiliary_id'] = ProtoField.uint8("of13.bsn_controller_connection.auxiliary_id", "auxiliary_id", base.DEC, nil)
+fields['of13.bsn_controller_connection.role'] = ProtoField.uint32("of13.bsn_controller_connection.role", "role", base.DEC, enum_v4_ofp_controller_role)
+fields['of13.bsn_controller_connection.uri'] = ProtoField.stringz("of13.bsn_controller_connection.uri", "uri")
+fields['of13.bsn_controller_connections_reply.version'] = ProtoField.uint8("of13.bsn_controller_connections_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_controller_connections_reply.type'] = ProtoField.uint8("of13.bsn_controller_connections_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_controller_connections_reply.length'] = ProtoField.uint16("of13.bsn_controller_connections_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_controller_connections_reply.xid'] = ProtoField.uint32("of13.bsn_controller_connections_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_controller_connections_reply.experimenter'] = ProtoField.uint32("of13.bsn_controller_connections_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_controller_connections_reply.subtype'] = ProtoField.uint32("of13.bsn_controller_connections_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_controller_connections_reply.connections'] = ProtoField.bytes("of13.bsn_controller_connections_reply.connections", "connections")
+fields['of13.bsn_controller_connections_request.version'] = ProtoField.uint8("of13.bsn_controller_connections_request.version", "version", base.DEC, nil)
+fields['of13.bsn_controller_connections_request.type'] = ProtoField.uint8("of13.bsn_controller_connections_request.type", "type", base.DEC, nil)
+fields['of13.bsn_controller_connections_request.length'] = ProtoField.uint16("of13.bsn_controller_connections_request.length", "length", base.DEC, nil)
+fields['of13.bsn_controller_connections_request.xid'] = ProtoField.uint32("of13.bsn_controller_connections_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_controller_connections_request.experimenter'] = ProtoField.uint32("of13.bsn_controller_connections_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_controller_connections_request.subtype'] = ProtoField.uint32("of13.bsn_controller_connections_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_flow_idle.version'] = ProtoField.uint8("of13.bsn_flow_idle.version", "version", base.DEC, nil)
 fields['of13.bsn_flow_idle.type'] = ProtoField.uint8("of13.bsn_flow_idle.type", "type", base.DEC, nil)
 fields['of13.bsn_flow_idle.length'] = ProtoField.uint16("of13.bsn_flow_idle.length", "length", base.DEC, nil)
@@ -5150,6 +5178,15 @@ fields['of13.bsn_port_counter_stats_request.flags'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_port_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_port_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_port_counter_stats_request.port_no'] = ProtoField.uint32("of13.bsn_port_counter_stats_request.port_no", "port_no", base.DEC, nil)
+fields['of13.bsn_role_status.version'] = ProtoField.uint8("of13.bsn_role_status.version", "version", base.DEC, nil)
+fields['of13.bsn_role_status.type'] = ProtoField.uint8("of13.bsn_role_status.type", "type", base.DEC, nil)
+fields['of13.bsn_role_status.length'] = ProtoField.uint16("of13.bsn_role_status.length", "length", base.DEC, nil)
+fields['of13.bsn_role_status.xid'] = ProtoField.uint32("of13.bsn_role_status.xid", "xid", base.DEC, nil)
+fields['of13.bsn_role_status.experimenter'] = ProtoField.uint32("of13.bsn_role_status.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_role_status.subtype'] = ProtoField.uint32("of13.bsn_role_status.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_role_status.role'] = ProtoField.uint32("of13.bsn_role_status.role", "role", base.DEC, enum_v4_ofp_controller_role)
+fields['of13.bsn_role_status.reason'] = ProtoField.uint32("of13.bsn_role_status.reason", "reason", base.DEC, enum_v4_ofp_bsn_controller_role_reason)
+fields['of13.bsn_role_status.generation_id'] = ProtoField.uint64("of13.bsn_role_status.generation_id", "generation_id", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.version'] = ProtoField.uint8("of13.bsn_set_lacp_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.type'] = ProtoField.uint8("of13.bsn_set_lacp_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.length'] = ProtoField.uint16("of13.bsn_set_lacp_reply.length", "length", base.DEC, nil)
@@ -9519,6 +9556,23 @@ p_of.fields = {
     fields['of13.bsn_bw_enable_set_request.experimenter'],
     fields['of13.bsn_bw_enable_set_request.subtype'],
     fields['of13.bsn_bw_enable_set_request.enable'],
+    fields['of13.bsn_controller_connection.state'],
+    fields['of13.bsn_controller_connection.auxiliary_id'],
+    fields['of13.bsn_controller_connection.role'],
+    fields['of13.bsn_controller_connection.uri'],
+    fields['of13.bsn_controller_connections_reply.version'],
+    fields['of13.bsn_controller_connections_reply.type'],
+    fields['of13.bsn_controller_connections_reply.length'],
+    fields['of13.bsn_controller_connections_reply.xid'],
+    fields['of13.bsn_controller_connections_reply.experimenter'],
+    fields['of13.bsn_controller_connections_reply.subtype'],
+    fields['of13.bsn_controller_connections_reply.connections'],
+    fields['of13.bsn_controller_connections_request.version'],
+    fields['of13.bsn_controller_connections_request.type'],
+    fields['of13.bsn_controller_connections_request.length'],
+    fields['of13.bsn_controller_connections_request.xid'],
+    fields['of13.bsn_controller_connections_request.experimenter'],
+    fields['of13.bsn_controller_connections_request.subtype'],
     fields['of13.bsn_flow_idle.version'],
     fields['of13.bsn_flow_idle.type'],
     fields['of13.bsn_flow_idle.length'],
@@ -9747,6 +9801,15 @@ p_of.fields = {
     fields['of13.bsn_port_counter_stats_request.experimenter'],
     fields['of13.bsn_port_counter_stats_request.subtype'],
     fields['of13.bsn_port_counter_stats_request.port_no'],
+    fields['of13.bsn_role_status.version'],
+    fields['of13.bsn_role_status.type'],
+    fields['of13.bsn_role_status.length'],
+    fields['of13.bsn_role_status.xid'],
+    fields['of13.bsn_role_status.experimenter'],
+    fields['of13.bsn_role_status.subtype'],
+    fields['of13.bsn_role_status.role'],
+    fields['of13.bsn_role_status.reason'],
+    fields['of13.bsn_role_status.generation_id'],
     fields['of13.bsn_set_lacp_reply.version'],
     fields['of13.bsn_set_lacp_reply.type'],
     fields['of13.bsn_set_lacp_reply.length'],
@@ -18285,6 +18348,45 @@ function dissect_of_bsn_bw_enable_set_request_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[18] = dissect_of_bsn_bw_enable_set_request_v4
 
+-- top-level class of_bsn_controller_connection
+function dissect_of_bsn_controller_connection_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_controller_connection.state')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_controller_connection.auxiliary_id')
+    reader.skip(2)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connection.role')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_controller_connection.uri')
+    return 'of_bsn_controller_connection'
+end
+-- child class of_bsn_controller_connections_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_controller_connections_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_controller_connections_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_controller_connections_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_controller_connections_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connections_reply.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connections_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connections_reply.subtype')
+    read_list(reader, dissect_of_bsn_controller_connection_v4, subtree, 'of_bsn_controller_connection')
+    return 'of_bsn_controller_connections_reply'
+end
+of_bsn_header_v4_dissectors[57] = dissect_of_bsn_controller_connections_reply_v4
+
+-- child class of_bsn_controller_connections_request
+-- Child of of_bsn_header
+function dissect_of_bsn_controller_connections_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_controller_connections_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_controller_connections_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_controller_connections_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connections_request.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connections_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_controller_connections_request.subtype')
+    return 'of_bsn_controller_connections_request'
+end
+of_bsn_header_v4_dissectors[56] = dissect_of_bsn_controller_connections_request_v4
+
 -- child class of_bsn_flow_idle
 -- Child of of_bsn_header
 function dissect_of_bsn_flow_idle_v4(reader, subtree)
@@ -18706,6 +18808,23 @@ function dissect_of_bsn_port_counter_stats_request_v4(reader, subtree)
     return 'of_bsn_port_counter_stats_request'
 end
 of_bsn_stats_request_v4_dissectors[8] = dissect_of_bsn_port_counter_stats_request_v4
+
+-- child class of_bsn_role_status
+-- Child of of_bsn_header
+function dissect_of_bsn_role_status_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_role_status.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_role_status.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_role_status.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_role_status.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_role_status.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_role_status.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_role_status.role')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_role_status.reason')
+    reader.skip(3)
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_role_status.generation_id')
+    return 'of_bsn_role_status'
+end
+of_bsn_header_v4_dissectors[55] = dissect_of_bsn_role_status_v4
 
 -- child class of_bsn_set_lacp_reply
 -- Child of of_bsn_header

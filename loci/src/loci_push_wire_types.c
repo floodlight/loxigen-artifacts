@@ -3926,6 +3926,38 @@ of_async_set_push_wire_types(of_object_t *obj)
 }
 
 void
+of_bsn_controller_connections_reply_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = loci_object_to_buffer(obj);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint8_t *)(buf + 0) = obj->version; /* version */
+        *(uint8_t *)(buf + 1) = 0x4; /* type */
+        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = htobe32(0x39); /* subtype */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+void
+of_bsn_controller_connections_request_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = loci_object_to_buffer(obj);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint8_t *)(buf + 0) = obj->version; /* version */
+        *(uint8_t *)(buf + 1) = 0x4; /* type */
+        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = htobe32(0x38); /* subtype */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+void
 of_bsn_flow_idle_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = loci_object_to_buffer(obj);
@@ -4115,6 +4147,22 @@ of_bsn_port_counter_stats_request_push_wire_types(of_object_t *obj)
         *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
         *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 20) = htobe32(0x8); /* subtype */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+void
+of_bsn_role_status_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = loci_object_to_buffer(obj);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint8_t *)(buf + 0) = obj->version; /* version */
+        *(uint8_t *)(buf + 1) = 0x4; /* type */
+        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = htobe32(0x37); /* subtype */
         break;
     default:
         UNREACHABLE();

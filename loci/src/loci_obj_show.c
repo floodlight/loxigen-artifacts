@@ -14520,6 +14520,65 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
+of_bsn_controller_connections_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connections_reply_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_list_bsn_controller_connection_t list;
+    of_bsn_controller_connection_t elt;
+    int rv;
+
+    of_bsn_controller_connections_reply_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connections_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connections_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_controller_connection_t={ ");
+    of_bsn_controller_connections_reply_connections_bind(obj, &list);
+    OF_LIST_BSN_CONTROLLER_CONNECTION_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_controller_connections_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connections_request_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_bsn_controller_connections_request_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connections_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connections_request_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_flow_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_t *obj)
 {
     int out = 0;
@@ -15323,6 +15382,47 @@ of_bsn_port_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void
     of_bsn_port_counter_stats_request_port_no_get(obj, &port_no);
     out += writer(cookie, "port_no=");
     out += LOCI_SHOW_port_no_port_no(writer, cookie, port_no);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_role_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_role_status_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+    uint64_t val64;
+
+    of_bsn_role_status_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_role_status_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_role_status_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_role_status_role_get(obj, &val32);
+    out += writer(cookie, "role=");
+    out += LOCI_SHOW_u32_role(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_role_status_reason_get(obj, &val8);
+    out += writer(cookie, "reason=");
+    out += LOCI_SHOW_u8_reason(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_role_status_generation_id_get(obj, &val64);
+    out += writer(cookie, "generation_id=");
+    out += LOCI_SHOW_u64_generation_id(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -19054,6 +19154,37 @@ of_action_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
+of_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connection_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+    uint32_t val32;
+    of_desc_str_t desc_str;
+
+    of_bsn_controller_connection_state_get(obj, &val8);
+    out += writer(cookie, "state=");
+    out += LOCI_SHOW_u8_state(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connection_auxiliary_id_get(obj, &val8);
+    out += writer(cookie, "auxiliary_id=");
+    out += LOCI_SHOW_u8_auxiliary_id(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connection_role_get(obj, &val32);
+    out += writer(cookie, "role=");
+    out += LOCI_SHOW_u32_role(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_controller_connection_uri_get(obj, &desc_str);
+    out += writer(cookie, "uri=");
+    out += LOCI_SHOW_desc_str_uri(writer, cookie, desc_str);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj)
 {
     int out = 0;
@@ -22199,6 +22330,14 @@ of_list_action_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
+of_list_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_controller_connection_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_list_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_interface_t *obj)
 {
     int out = 0;
@@ -22793,6 +22932,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_0_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_0_show,
     of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show,
@@ -22814,6 +22955,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_bsn_pdu_rx_timeout_OF_VERSION_1_0_show,
     of_bsn_pdu_tx_reply_OF_VERSION_1_0_show,
     of_bsn_pdu_tx_request_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     of_bsn_set_ip_mask_OF_VERSION_1_0_show,
@@ -22978,6 +23120,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_action_set_vlan_pcp_OF_VERSION_1_0_show,
     of_action_set_vlan_vid_OF_VERSION_1_0_show,
     of_action_strip_vlan_OF_VERSION_1_0_show,
+    unknown_show,
     of_bsn_interface_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -23151,6 +23294,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     of_list_action_OF_VERSION_1_0_show,
     unknown_show,
+    unknown_show,
     of_list_bsn_interface_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -23205,6 +23349,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_1_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_1_show,
     unknown_show,
@@ -23226,6 +23372,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_pdu_rx_timeout_OF_VERSION_1_1_show,
     of_bsn_pdu_tx_reply_OF_VERSION_1_1_show,
     of_bsn_pdu_tx_request_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -23389,6 +23536,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_action_set_tp_src_OF_VERSION_1_1_show,
     of_action_set_vlan_pcp_OF_VERSION_1_1_show,
     of_action_set_vlan_vid_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
     unknown_show,
@@ -23563,6 +23711,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_list_action_OF_VERSION_1_1_show,
     unknown_show,
+    unknown_show,
     of_list_bsn_interface_OF_VERSION_1_1_show,
     unknown_show,
     unknown_show,
@@ -23617,6 +23766,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_2_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_2_show,
     unknown_show,
@@ -23638,6 +23789,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_bsn_pdu_rx_timeout_OF_VERSION_1_2_show,
     of_bsn_pdu_tx_reply_OF_VERSION_1_2_show,
     of_bsn_pdu_tx_request_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -23797,6 +23949,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_set_nw_ttl_OF_VERSION_1_2_show,
     of_action_set_queue_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -23975,6 +24128,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     of_list_action_OF_VERSION_1_2_show,
     unknown_show,
+    unknown_show,
     of_list_bsn_interface_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -24024,6 +24178,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_3_show,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_3_show,
     of_bsn_bw_enable_set_request_OF_VERSION_1_3_show,
+    of_bsn_controller_connections_reply_OF_VERSION_1_3_show,
+    of_bsn_controller_connections_request_OF_VERSION_1_3_show,
     of_bsn_flow_idle_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show,
@@ -24052,6 +24208,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_pdu_tx_request_OF_VERSION_1_3_show,
     of_bsn_port_counter_stats_reply_OF_VERSION_1_3_show,
     of_bsn_port_counter_stats_request_OF_VERSION_1_3_show,
+    of_bsn_role_status_OF_VERSION_1_3_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -24214,6 +24371,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    of_bsn_controller_connection_OF_VERSION_1_3_show,
     of_bsn_interface_OF_VERSION_1_3_show,
     of_bsn_lacp_stats_entry_OF_VERSION_1_3_show,
     of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show,
@@ -24387,6 +24545,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_uint8_OF_VERSION_1_3_show,
     of_list_action_OF_VERSION_1_3_show,
     of_list_action_id_OF_VERSION_1_3_show,
+    of_list_bsn_controller_connection_OF_VERSION_1_3_show,
     of_list_bsn_interface_OF_VERSION_1_3_show,
     of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_show,

@@ -124,6 +124,12 @@ abstract class OFBsnHeaderVer13 {
                case 0x11:
                    // discriminator value 0x11L=0x11L for class OFBsnVirtualPortRemoveRequestVer13
                    return OFBsnVirtualPortRemoveRequestVer13.READER.readFrom(bb);
+               case 0x39:
+                   // discriminator value 0x39L=0x39L for class OFBsnControllerConnectionsReplyVer13
+                   return OFBsnControllerConnectionsReplyVer13.READER.readFrom(bb);
+               case 0x38:
+                   // discriminator value 0x38L=0x38L for class OFBsnControllerConnectionsRequestVer13
+                   return OFBsnControllerConnectionsRequestVer13.READER.readFrom(bb);
                case 0x28:
                    // discriminator value 0x28L=0x28L for class OFBsnFlowIdleVer13
                    return OFBsnFlowIdleVer13.READER.readFrom(bb);
@@ -148,6 +154,9 @@ abstract class OFBsnHeaderVer13 {
                case 0x2b:
                    // discriminator value 0x2bL=0x2bL for class OFBsnLacpConvergenceNotifVer13
                    return OFBsnLacpConvergenceNotifVer13.READER.readFrom(bb);
+               case 0x37:
+                   // discriminator value 0x37L=0x37L for class OFBsnRoleStatusVer13
+                   return OFBsnRoleStatusVer13.READER.readFrom(bb);
                case 0x2a:
                    // discriminator value 0x2aL=0x2aL for class OFBsnSetLacpReplyVer13
                    return OFBsnSetLacpReplyVer13.READER.readFrom(bb);

@@ -15624,6 +15624,68 @@ test_of_bsn_bw_enable_set_request_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_controller_connections_reply_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_controller_connections_reply_t *obj;
+
+    obj = of_bsn_controller_connections_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTIONS_REPLY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_controller_connections_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_controller_connections_reply_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_controller_connections_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_controller_connections_request_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_controller_connections_request_t *obj;
+
+    obj = of_bsn_controller_connections_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTIONS_REQUEST);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_controller_connections_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_controller_connections_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_controller_connections_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_flow_idle_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_flow_idle_t *obj;
@@ -16287,6 +16349,37 @@ test_of_bsn_port_counter_stats_request_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_port_counter_stats_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_port_counter_stats_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_role_status_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_role_status_t *obj;
+
+    obj = of_bsn_role_status_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 32);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ROLE_STATUS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 32);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_role_status_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_role_status_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_role_status_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -20318,6 +20411,37 @@ test_of_action_set_queue_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_action_set_queue_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_action_set_queue_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_controller_connection_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_controller_connection_t *obj;
+
+    obj = of_bsn_controller_connection_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 264);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 264);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_controller_connection_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_controller_connection_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_controller_connection_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -25156,6 +25280,24 @@ test_of_list_action_id_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_list_bsn_controller_connection_OF_VERSION_1_3_scalar(void)
+{
+    of_list_bsn_controller_connection_t *obj;
+
+    obj = of_list_bsn_controller_connection_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 0);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_LIST_BSN_CONTROLLER_CONNECTION);
+
+    of_list_bsn_controller_connection_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_list_bsn_interface_OF_VERSION_1_3_scalar(void)
 {
     of_list_bsn_interface_t *obj;
@@ -26189,6 +26331,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_bw_enable_get_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_bw_enable_set_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_bw_enable_set_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_controller_connections_reply_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_controller_connections_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_idle_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_scalar);
@@ -26211,6 +26355,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_pdu_tx_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_port_counter_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_port_counter_stats_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_role_status_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_set_lacp_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_set_lacp_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_set_mirroring_OF_VERSION_1_3_scalar);
@@ -26349,6 +26494,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_action_set_mpls_ttl_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_set_nw_ttl_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_set_queue_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_controller_connection_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_interface_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_lacp_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_port_counter_stats_entry_OF_VERSION_1_3_scalar);
@@ -26512,6 +26658,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_uint8_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_action_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_action_id_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_list_bsn_controller_connection_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bsn_interface_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_scalar);
