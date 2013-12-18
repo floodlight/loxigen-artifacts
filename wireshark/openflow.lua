@@ -2470,7 +2470,7 @@ fields['of10.port_stats_request.stats_type'] = ProtoField.uint32("of10.port_stat
 fields['of10.port_stats_request.flags'] = ProtoField.uint32("of10.port_stats_request.flags", "flags", base.HEX, enum_v1_ofp_stats_request_flags)
 fields['of10.port_stats_request.port_no'] = ProtoField.uint32("of10.port_stats_request.port_no", "port_no", base.DEC, nil)
 fields['of10.port_status.version'] = ProtoField.uint8("of10.port_status.version", "version", base.DEC, nil)
-fields['of10.port_status.type'] = ProtoField.uint8("of10.port_status.type", "type", base.DEC, nil)
+fields['of10.port_status.type'] = ProtoField.uint32("of10.port_status.type", "type", base.DEC, enum_v1_ofp_type)
 fields['of10.port_status.length'] = ProtoField.uint16("of10.port_status.length", "length", base.DEC, nil)
 fields['of10.port_status.xid'] = ProtoField.uint32("of10.port_status.xid", "xid", base.DEC, nil)
 fields['of10.port_status.reason'] = ProtoField.uint32("of10.port_status.reason", "reason", base.DEC, enum_v1_ofp_port_reason)
@@ -3383,7 +3383,7 @@ fields['of11.port_stats_request.stats_type'] = ProtoField.uint32("of11.port_stat
 fields['of11.port_stats_request.flags'] = ProtoField.uint32("of11.port_stats_request.flags", "flags", base.HEX, enum_v2_ofp_stats_request_flags)
 fields['of11.port_stats_request.port_no'] = ProtoField.uint32("of11.port_stats_request.port_no", "port_no", base.DEC, nil)
 fields['of11.port_status.version'] = ProtoField.uint8("of11.port_status.version", "version", base.DEC, nil)
-fields['of11.port_status.type'] = ProtoField.uint8("of11.port_status.type", "type", base.DEC, nil)
+fields['of11.port_status.type'] = ProtoField.uint32("of11.port_status.type", "type", base.DEC, enum_v2_ofp_type)
 fields['of11.port_status.length'] = ProtoField.uint16("of11.port_status.length", "length", base.DEC, nil)
 fields['of11.port_status.xid'] = ProtoField.uint32("of11.port_status.xid", "xid", base.DEC, nil)
 fields['of11.port_status.reason'] = ProtoField.uint32("of11.port_status.reason", "reason", base.DEC, enum_v2_ofp_port_reason)
@@ -4511,7 +4511,7 @@ fields['of12.port_stats_request.stats_type'] = ProtoField.uint32("of12.port_stat
 fields['of12.port_stats_request.flags'] = ProtoField.uint32("of12.port_stats_request.flags", "flags", base.HEX, enum_v3_ofp_stats_request_flags)
 fields['of12.port_stats_request.port_no'] = ProtoField.uint32("of12.port_stats_request.port_no", "port_no", base.DEC, nil)
 fields['of12.port_status.version'] = ProtoField.uint8("of12.port_status.version", "version", base.DEC, nil)
-fields['of12.port_status.type'] = ProtoField.uint8("of12.port_status.type", "type", base.DEC, nil)
+fields['of12.port_status.type'] = ProtoField.uint32("of12.port_status.type", "type", base.DEC, enum_v3_ofp_type)
 fields['of12.port_status.length'] = ProtoField.uint16("of12.port_status.length", "length", base.DEC, nil)
 fields['of12.port_status.xid'] = ProtoField.uint32("of12.port_status.xid", "xid", base.DEC, nil)
 fields['of12.port_status.reason'] = ProtoField.uint32("of12.port_status.reason", "reason", base.DEC, enum_v3_ofp_port_reason)
@@ -6145,7 +6145,7 @@ fields['of13.port_stats_request.stats_type'] = ProtoField.uint32("of13.port_stat
 fields['of13.port_stats_request.flags'] = ProtoField.uint32("of13.port_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
 fields['of13.port_stats_request.port_no'] = ProtoField.uint32("of13.port_stats_request.port_no", "port_no", base.DEC, nil)
 fields['of13.port_status.version'] = ProtoField.uint8("of13.port_status.version", "version", base.DEC, nil)
-fields['of13.port_status.type'] = ProtoField.uint8("of13.port_status.type", "type", base.DEC, nil)
+fields['of13.port_status.type'] = ProtoField.uint32("of13.port_status.type", "type", base.DEC, enum_v4_ofp_type)
 fields['of13.port_status.length'] = ProtoField.uint16("of13.port_status.length", "length", base.DEC, nil)
 fields['of13.port_status.xid'] = ProtoField.uint32("of13.port_status.xid", "xid", base.DEC, nil)
 fields['of13.port_status.reason'] = ProtoField.uint32("of13.port_status.reason", "reason", base.DEC, enum_v4_ofp_port_reason)
@@ -21836,6 +21836,13 @@ local of_message_dissectors = {
     [4] = dissect_of_header_v4,
 }
 
+local of_port_desc_dissectors = {
+    [1] = dissect_of_port_desc_v1,
+    [2] = dissect_of_port_desc_v2,
+    [3] = dissect_of_port_desc_v3,
+    [4] = dissect_of_port_desc_v4,
+}
+
 local of_oxm_dissectors = {
     [1] = dissect_of_oxm_v1,
     [2] = dissect_of_oxm_v2,
@@ -21930,6 +21937,15 @@ end
 
 function read_of_serial_num_t(reader, version, subtree, field_name)
     read_scalar(reader, subtree, field_name, 32)
+end
+
+function read_of_port_desc_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    local info = of_port_desc_dissectors[version](reader, child_subtree)
+    child_subtree:set_text(info)
 end
 
 function read_of_oxm_t(reader, version, subtree, field_name)
