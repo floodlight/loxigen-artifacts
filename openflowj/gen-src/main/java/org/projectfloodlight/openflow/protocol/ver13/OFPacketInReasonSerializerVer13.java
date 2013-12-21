@@ -35,6 +35,7 @@ public class OFPacketInReasonSerializerVer13 {
     public final static byte BSN_STATION_MOVE_VAL = (byte) 0x81;
     public final static byte BSN_BAD_VLAN_VAL = (byte) 0x82;
     public final static byte BSN_DESTINATION_LOOKUP_FAILURE_VAL = (byte) 0x83;
+    public final static byte BSN_NO_ROUTE_VAL = (byte) 0x84;
 
     public static OFPacketInReason readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -68,6 +69,8 @@ public class OFPacketInReasonSerializerVer13 {
                 return OFPacketInReason.BSN_BAD_VLAN;
             case BSN_DESTINATION_LOOKUP_FAILURE_VAL:
                 return OFPacketInReason.BSN_DESTINATION_LOOKUP_FAILURE;
+            case BSN_NO_ROUTE_VAL:
+                return OFPacketInReason.BSN_NO_ROUTE;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFPacketInReason in version 1.3: " + val);
         }
@@ -90,6 +93,8 @@ public class OFPacketInReasonSerializerVer13 {
                 return BSN_BAD_VLAN_VAL;
             case BSN_DESTINATION_LOOKUP_FAILURE:
                 return BSN_DESTINATION_LOOKUP_FAILURE_VAL;
+            case BSN_NO_ROUTE:
+                return BSN_NO_ROUTE_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFPacketInReason in version 1.3: " + e);
         }

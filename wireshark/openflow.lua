@@ -1675,6 +1675,7 @@ local enum_v4_ofp_packet_in_reason = {
     [129] = "OFPR_BSN_STATION_MOVE",
     [130] = "OFPR_BSN_BAD_VLAN",
     [131] = "OFPR_BSN_DESTINATION_LOOKUP_FAILURE",
+    [132] = "OFPR_BSN_NO_ROUTE",
 }
 
 local enum_v4_of_bsn_vlan_counter_t = {

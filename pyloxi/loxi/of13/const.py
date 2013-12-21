@@ -685,6 +685,7 @@ OFPR_BSN_NEW_HOST = 128
 OFPR_BSN_STATION_MOVE = 129
 OFPR_BSN_BAD_VLAN = 130
 OFPR_BSN_DESTINATION_LOOKUP_FAILURE = 131
+OFPR_BSN_NO_ROUTE = 132
 
 ofp_packet_in_reason_map = {
     0: 'OFPR_NO_MATCH',
@@ -694,6 +695,7 @@ ofp_packet_in_reason_map = {
     129: 'OFPR_BSN_STATION_MOVE',
     130: 'OFPR_BSN_BAD_VLAN',
     131: 'OFPR_BSN_DESTINATION_LOOKUP_FAILURE',
+    132: 'OFPR_BSN_NO_ROUTE',
 }
 
 # Identifiers from group ofp_port
