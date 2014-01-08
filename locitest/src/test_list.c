@@ -1095,6 +1095,136 @@ test_of_list_bsn_controller_connection_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(void)
+{
+    of_list_bsn_gentable_bucket_stats_entry_t *list;
+    int value = 1;
+
+    list = of_list_bsn_gentable_bucket_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_GENTABLE_BUCKET_STATS_ENTRY);
+
+    value = list_setup_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_gentable_bucket_stats_entry_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(void)
+{
+    of_list_bsn_gentable_desc_stats_entry_t *list;
+    int value = 1;
+
+    list = of_list_bsn_gentable_desc_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_GENTABLE_DESC_STATS_ENTRY);
+
+    value = list_setup_of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_gentable_desc_stats_entry_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3(void)
+{
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list;
+    int value = 1;
+
+    list = of_list_bsn_gentable_entry_desc_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY);
+
+    value = list_setup_of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_gentable_entry_desc_stats_entry_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3(void)
+{
+    of_list_bsn_gentable_entry_stats_entry_t *list;
+    int value = 1;
+
+    list = of_list_bsn_gentable_entry_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_GENTABLE_ENTRY_STATS_ENTRY);
+
+    value = list_setup_of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_gentable_entry_stats_entry_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_list_bsn_gentable_stats_entry_OF_VERSION_1_3(void)
+{
+    of_list_bsn_gentable_stats_entry_t *list;
+    int value = 1;
+
+    list = of_list_bsn_gentable_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_GENTABLE_STATS_ENTRY);
+
+    value = list_setup_of_list_bsn_gentable_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_gentable_stats_entry_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_gentable_stats_entry_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_list_bsn_interface_OF_VERSION_1_3(void)
 {
     of_list_bsn_interface_t *list;
@@ -1194,6 +1324,32 @@ test_of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     of_list_bsn_switch_pipeline_stats_entry_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_list_bsn_tlv_OF_VERSION_1_3(void)
+{
+    of_list_bsn_tlv_t *list;
+    int value = 1;
+
+    list = of_list_bsn_tlv_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_BSN_TLV);
+
+    value = list_setup_of_list_bsn_tlv_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_bsn_tlv_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_bsn_tlv_delete(list);
 
     return TEST_PASS;
 }
@@ -1840,10 +1996,16 @@ run_list_tests(void)
     RUN_TEST(of_list_action_OF_VERSION_1_3);
     RUN_TEST(of_list_action_id_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_controller_connection_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_gentable_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_interface_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_lacp_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_list_bsn_tlv_OF_VERSION_1_3);
     RUN_TEST(of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_bucket_OF_VERSION_1_3);
     RUN_TEST(of_list_bucket_counter_OF_VERSION_1_3);

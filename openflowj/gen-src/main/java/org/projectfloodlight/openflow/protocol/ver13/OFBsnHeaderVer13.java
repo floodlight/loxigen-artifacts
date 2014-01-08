@@ -145,6 +145,21 @@ abstract class OFBsnHeaderVer13 {
                case 0x24:
                    // discriminator value 0x24L=0x24L for class OFBsnFlowIdleEnableSetRequestVer13
                    return OFBsnFlowIdleEnableSetRequestVer13.READER.readFrom(bb);
+               case 0x31:
+                   // discriminator value 0x31L=0x31L for class OFBsnGentableClearReplyVer13
+                   return OFBsnGentableClearReplyVer13.READER.readFrom(bb);
+               case 0x30:
+                   // discriminator value 0x30L=0x30L for class OFBsnGentableClearRequestVer13
+                   return OFBsnGentableClearRequestVer13.READER.readFrom(bb);
+               case 0x2e:
+                   // discriminator value 0x2eL=0x2eL for class OFBsnGentableEntryAddVer13
+                   return OFBsnGentableEntryAddVer13.READER.readFrom(bb);
+               case 0x2f:
+                   // discriminator value 0x2fL=0x2fL for class OFBsnGentableEntryDeleteVer13
+                   return OFBsnGentableEntryDeleteVer13.READER.readFrom(bb);
+               case 0x32:
+                   // discriminator value 0x32L=0x32L for class OFBsnGentableSetBucketsSizeVer13
+                   return OFBsnGentableSetBucketsSizeVer13.READER.readFrom(bb);
                case 0x34:
                    // discriminator value 0x34L=0x34L for class OFBsnGetSwitchPipelineReplyVer13
                    return OFBsnGetSwitchPipelineReplyVer13.READER.readFrom(bb);

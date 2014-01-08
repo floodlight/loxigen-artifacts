@@ -708,6 +708,109 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
+        return new OFBsnGentableBucketStatsEntryVer13.Builder();
+    }
+    public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(OFChecksum128 checksum) {
+        return new OFBsnGentableBucketStatsEntryVer13(
+                checksum
+                    );
+    }
+
+    public OFBsnGentableBucketStatsReply.Builder buildBsnGentableBucketStatsReply() {
+        return new OFBsnGentableBucketStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableBucketStatsRequest.Builder buildBsnGentableBucketStatsRequest() {
+        return new OFBsnGentableBucketStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableClearReply.Builder buildBsnGentableClearReply() {
+        return new OFBsnGentableClearReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableClearRequest.Builder buildBsnGentableClearRequest() {
+        return new OFBsnGentableClearRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableDescStatsEntry.Builder buildBsnGentableDescStatsEntry() {
+        return new OFBsnGentableDescStatsEntryVer13.Builder();
+    }
+
+    public OFBsnGentableDescStatsReply.Builder buildBsnGentableDescStatsReply() {
+        return new OFBsnGentableDescStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableDescStatsRequest.Builder buildBsnGentableDescStatsRequest() {
+        return new OFBsnGentableDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGentableDescStatsRequest bsnGentableDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnGentableDescStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
+    public OFBsnGentableEntryAdd.Builder buildBsnGentableEntryAdd() {
+        return new OFBsnGentableEntryAddVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableEntryDelete.Builder buildBsnGentableEntryDelete() {
+        return new OFBsnGentableEntryDeleteVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableEntryDescStatsEntry.Builder buildBsnGentableEntryDescStatsEntry() {
+        return new OFBsnGentableEntryDescStatsEntryVer13.Builder();
+    }
+
+    public OFBsnGentableEntryDescStatsReply.Builder buildBsnGentableEntryDescStatsReply() {
+        return new OFBsnGentableEntryDescStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableEntryDescStatsRequest.Builder buildBsnGentableEntryDescStatsRequest() {
+        return new OFBsnGentableEntryDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableEntryStatsEntry.Builder buildBsnGentableEntryStatsEntry() {
+        return new OFBsnGentableEntryStatsEntryVer13.Builder();
+    }
+    public OFBsnGentableEntryStatsEntry bsnGentableEntryStatsEntry(List<OFBsnTlv> key, List<OFBsnTlv> stats) {
+        return new OFBsnGentableEntryStatsEntryVer13(
+                key,
+                      stats
+                    );
+    }
+
+    public OFBsnGentableEntryStatsReply.Builder buildBsnGentableEntryStatsReply() {
+        return new OFBsnGentableEntryStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableEntryStatsRequest.Builder buildBsnGentableEntryStatsRequest() {
+        return new OFBsnGentableEntryStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableSetBucketsSize.Builder buildBsnGentableSetBucketsSize() {
+        return new OFBsnGentableSetBucketsSizeVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableStatsEntry.Builder buildBsnGentableStatsEntry() {
+        return new OFBsnGentableStatsEntryVer13.Builder();
+    }
+
+    public OFBsnGentableStatsReply.Builder buildBsnGentableStatsReply() {
+        return new OFBsnGentableStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGentableStatsRequest.Builder buildBsnGentableStatsRequest() {
+        return new OFBsnGentableStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnGentableStatsRequest bsnGentableStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnGentableStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
     public OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() {
         return new OFBsnGetSwitchPipelineReplyVer13.Builder().setXid(nextXid());
     }
@@ -838,6 +941,73 @@ public class OFFactoryVer13 implements OFFactory {
     public OFBsnTimeRequest bsnTimeRequest() {
         return new OFBsnTimeRequestVer13(
                 nextXid()
+                    );
+    }
+
+    public OFBsnTlvIdleNotification bsnTlvIdleNotification() {
+        return OFBsnTlvIdleNotificationVer13.INSTANCE;
+    }
+
+    public OFBsnTlvIdleTime.Builder buildBsnTlvIdleTime() {
+        return new OFBsnTlvIdleTimeVer13.Builder();
+    }
+    public OFBsnTlvIdleTime bsnTlvIdleTime(U64 value) {
+        return new OFBsnTlvIdleTimeVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIpv4.Builder buildBsnTlvIpv4() {
+        return new OFBsnTlvIpv4Ver13.Builder();
+    }
+    public OFBsnTlvIpv4 bsnTlvIpv4(IPv4Address value) {
+        return new OFBsnTlvIpv4Ver13(
+                value
+                    );
+    }
+
+    public OFBsnTlvMac.Builder buildBsnTlvMac() {
+        return new OFBsnTlvMacVer13.Builder();
+    }
+    public OFBsnTlvMac bsnTlvMac(MacAddress value) {
+        return new OFBsnTlvMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPort.Builder buildBsnTlvPort() {
+        return new OFBsnTlvPortVer13.Builder();
+    }
+    public OFBsnTlvPort bsnTlvPort(OFPort value) {
+        return new OFBsnTlvPortVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvRxPackets.Builder buildBsnTlvRxPackets() {
+        return new OFBsnTlvRxPacketsVer13.Builder();
+    }
+    public OFBsnTlvRxPackets bsnTlvRxPackets(U64 value) {
+        return new OFBsnTlvRxPacketsVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvTxPackets.Builder buildBsnTlvTxPackets() {
+        return new OFBsnTlvTxPacketsVer13.Builder();
+    }
+    public OFBsnTlvTxPackets bsnTlvTxPackets(U64 value) {
+        return new OFBsnTlvTxPacketsVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvVlanVid.Builder buildBsnTlvVlanVid() {
+        return new OFBsnTlvVlanVidVer13.Builder();
+    }
+    public OFBsnTlvVlanVid bsnTlvVlanVid(int value) {
+        return new OFBsnTlvVlanVidVer13(
+                value
                     );
     }
 

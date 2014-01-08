@@ -13,6 +13,7 @@ typedef union of_bsn_vport_u of_bsn_vport_t;
 typedef union of_table_feature_prop_u of_table_feature_prop_t;
 typedef union of_action_u of_action_t;
 typedef union of_instruction_u of_instruction_t;
+typedef union of_bsn_tlv_u of_bsn_tlv_t;
 typedef union of_instruction_id_u of_instruction_id_t;
 typedef union of_meter_band_u of_meter_band_t;
 typedef union of_action_id_u of_action_id_t;
@@ -43,6 +44,21 @@ typedef of_object_t of_bsn_flow_idle_enable_get_reply_t;
 typedef of_object_t of_bsn_flow_idle_enable_get_request_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_reply_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_request_t;
+typedef of_object_t of_bsn_gentable_bucket_stats_reply_t;
+typedef of_object_t of_bsn_gentable_bucket_stats_request_t;
+typedef of_object_t of_bsn_gentable_clear_reply_t;
+typedef of_object_t of_bsn_gentable_clear_request_t;
+typedef of_object_t of_bsn_gentable_desc_stats_reply_t;
+typedef of_object_t of_bsn_gentable_desc_stats_request_t;
+typedef of_object_t of_bsn_gentable_entry_add_t;
+typedef of_object_t of_bsn_gentable_entry_delete_t;
+typedef of_object_t of_bsn_gentable_entry_desc_stats_reply_t;
+typedef of_object_t of_bsn_gentable_entry_desc_stats_request_t;
+typedef of_object_t of_bsn_gentable_entry_stats_reply_t;
+typedef of_object_t of_bsn_gentable_entry_stats_request_t;
+typedef of_object_t of_bsn_gentable_set_buckets_size_t;
+typedef of_object_t of_bsn_gentable_stats_reply_t;
+typedef of_object_t of_bsn_gentable_stats_request_t;
 typedef of_object_t of_bsn_get_interfaces_reply_t;
 typedef of_object_t of_bsn_get_interfaces_request_t;
 typedef of_object_t of_bsn_get_ip_mask_reply_t;
@@ -228,10 +244,24 @@ typedef of_object_t of_action_set_vlan_pcp_t;
 typedef of_object_t of_action_set_vlan_vid_t;
 typedef of_object_t of_action_strip_vlan_t;
 typedef of_object_t of_bsn_controller_connection_t;
+typedef of_object_t of_bsn_gentable_bucket_stats_entry_t;
+typedef of_object_t of_bsn_gentable_desc_stats_entry_t;
+typedef of_object_t of_bsn_gentable_entry_desc_stats_entry_t;
+typedef of_object_t of_bsn_gentable_entry_stats_entry_t;
+typedef of_object_t of_bsn_gentable_stats_entry_t;
 typedef of_object_t of_bsn_interface_t;
 typedef of_object_t of_bsn_lacp_stats_entry_t;
 typedef of_object_t of_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
+typedef of_object_t of_bsn_tlv_header_t;
+typedef of_object_t of_bsn_tlv_idle_notification_t;
+typedef of_object_t of_bsn_tlv_idle_time_t;
+typedef of_object_t of_bsn_tlv_ipv4_t;
+typedef of_object_t of_bsn_tlv_mac_t;
+typedef of_object_t of_bsn_tlv_port_t;
+typedef of_object_t of_bsn_tlv_rx_packets_t;
+typedef of_object_t of_bsn_tlv_tx_packets_t;
+typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_header_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
@@ -394,10 +424,16 @@ typedef of_object_t of_uint8_t;
 typedef of_object_t of_list_action_t;
 typedef of_object_t of_list_action_id_t;
 typedef of_object_t of_list_bsn_controller_connection_t;
+typedef of_object_t of_list_bsn_gentable_bucket_stats_entry_t;
+typedef of_object_t of_list_bsn_gentable_desc_stats_entry_t;
+typedef of_object_t of_list_bsn_gentable_entry_desc_stats_entry_t;
+typedef of_object_t of_list_bsn_gentable_entry_stats_entry_t;
+typedef of_object_t of_list_bsn_gentable_stats_entry_t;
 typedef of_object_t of_list_bsn_interface_t;
 typedef of_object_t of_list_bsn_lacp_stats_entry_t;
 typedef of_object_t of_list_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_list_bsn_switch_pipeline_stats_entry_t;
+typedef of_object_t of_list_bsn_tlv_t;
 typedef of_object_t of_list_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_list_bucket_t;
 typedef of_object_t of_list_bucket_counter_t;
@@ -615,6 +651,111 @@ extern of_bsn_flow_idle_enable_set_request_t *
     of_bsn_flow_idle_enable_set_request_new_from_message(of_message_t msg);
 extern void of_bsn_flow_idle_enable_set_request_init(
     of_bsn_flow_idle_enable_set_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_bucket_stats_reply_t *
+    of_bsn_gentable_bucket_stats_reply_new(of_version_t version);
+extern of_bsn_gentable_bucket_stats_reply_t *
+    of_bsn_gentable_bucket_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_bucket_stats_reply_init(
+    of_bsn_gentable_bucket_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_bucket_stats_request_t *
+    of_bsn_gentable_bucket_stats_request_new(of_version_t version);
+extern of_bsn_gentable_bucket_stats_request_t *
+    of_bsn_gentable_bucket_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_bucket_stats_request_init(
+    of_bsn_gentable_bucket_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_clear_reply_t *
+    of_bsn_gentable_clear_reply_new(of_version_t version);
+extern of_bsn_gentable_clear_reply_t *
+    of_bsn_gentable_clear_reply_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_clear_reply_init(
+    of_bsn_gentable_clear_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_clear_request_t *
+    of_bsn_gentable_clear_request_new(of_version_t version);
+extern of_bsn_gentable_clear_request_t *
+    of_bsn_gentable_clear_request_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_clear_request_init(
+    of_bsn_gentable_clear_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_desc_stats_reply_t *
+    of_bsn_gentable_desc_stats_reply_new(of_version_t version);
+extern of_bsn_gentable_desc_stats_reply_t *
+    of_bsn_gentable_desc_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_desc_stats_reply_init(
+    of_bsn_gentable_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_desc_stats_request_t *
+    of_bsn_gentable_desc_stats_request_new(of_version_t version);
+extern of_bsn_gentable_desc_stats_request_t *
+    of_bsn_gentable_desc_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_desc_stats_request_init(
+    of_bsn_gentable_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_add_t *
+    of_bsn_gentable_entry_add_new(of_version_t version);
+extern of_bsn_gentable_entry_add_t *
+    of_bsn_gentable_entry_add_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_entry_add_init(
+    of_bsn_gentable_entry_add_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_delete_t *
+    of_bsn_gentable_entry_delete_new(of_version_t version);
+extern of_bsn_gentable_entry_delete_t *
+    of_bsn_gentable_entry_delete_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_entry_delete_init(
+    of_bsn_gentable_entry_delete_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_desc_stats_reply_t *
+    of_bsn_gentable_entry_desc_stats_reply_new(of_version_t version);
+extern of_bsn_gentable_entry_desc_stats_reply_t *
+    of_bsn_gentable_entry_desc_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_entry_desc_stats_reply_init(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_desc_stats_request_t *
+    of_bsn_gentable_entry_desc_stats_request_new(of_version_t version);
+extern of_bsn_gentable_entry_desc_stats_request_t *
+    of_bsn_gentable_entry_desc_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_entry_desc_stats_request_init(
+    of_bsn_gentable_entry_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_stats_reply_t *
+    of_bsn_gentable_entry_stats_reply_new(of_version_t version);
+extern of_bsn_gentable_entry_stats_reply_t *
+    of_bsn_gentable_entry_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_entry_stats_reply_init(
+    of_bsn_gentable_entry_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_stats_request_t *
+    of_bsn_gentable_entry_stats_request_new(of_version_t version);
+extern of_bsn_gentable_entry_stats_request_t *
+    of_bsn_gentable_entry_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_entry_stats_request_init(
+    of_bsn_gentable_entry_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_set_buckets_size_t *
+    of_bsn_gentable_set_buckets_size_new(of_version_t version);
+extern of_bsn_gentable_set_buckets_size_t *
+    of_bsn_gentable_set_buckets_size_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_set_buckets_size_init(
+    of_bsn_gentable_set_buckets_size_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_stats_reply_t *
+    of_bsn_gentable_stats_reply_new(of_version_t version);
+extern of_bsn_gentable_stats_reply_t *
+    of_bsn_gentable_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_stats_reply_init(
+    of_bsn_gentable_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_stats_request_t *
+    of_bsn_gentable_stats_request_new(of_version_t version);
+extern of_bsn_gentable_stats_request_t *
+    of_bsn_gentable_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_gentable_stats_request_init(
+    of_bsn_gentable_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_interfaces_reply_t *
     of_bsn_get_interfaces_reply_new(of_version_t version);
@@ -1799,6 +1940,31 @@ extern of_bsn_controller_connection_t *
 extern void of_bsn_controller_connection_init(
     of_bsn_controller_connection_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_gentable_bucket_stats_entry_t *
+    of_bsn_gentable_bucket_stats_entry_new(of_version_t version);
+extern void of_bsn_gentable_bucket_stats_entry_init(
+    of_bsn_gentable_bucket_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_desc_stats_entry_t *
+    of_bsn_gentable_desc_stats_entry_new(of_version_t version);
+extern void of_bsn_gentable_desc_stats_entry_init(
+    of_bsn_gentable_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_desc_stats_entry_t *
+    of_bsn_gentable_entry_desc_stats_entry_new(of_version_t version);
+extern void of_bsn_gentable_entry_desc_stats_entry_init(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_entry_stats_entry_t *
+    of_bsn_gentable_entry_stats_entry_new(of_version_t version);
+extern void of_bsn_gentable_entry_stats_entry_init(
+    of_bsn_gentable_entry_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_gentable_stats_entry_t *
+    of_bsn_gentable_stats_entry_new(of_version_t version);
+extern void of_bsn_gentable_stats_entry_init(
+    of_bsn_gentable_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_interface_t *
     of_bsn_interface_new(of_version_t version);
 extern void of_bsn_interface_init(
@@ -1818,6 +1984,56 @@ extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_new(of_version_t version);
 extern void of_bsn_switch_pipeline_stats_entry_init(
     of_bsn_switch_pipeline_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_t *
+    of_bsn_tlv_new(of_version_t version);
+extern void of_bsn_tlv_init(
+    of_bsn_tlv_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_header_t *
+    of_bsn_tlv_header_new(of_version_t version);
+extern void of_bsn_tlv_header_init(
+    of_bsn_tlv_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_idle_notification_t *
+    of_bsn_tlv_idle_notification_new(of_version_t version);
+extern void of_bsn_tlv_idle_notification_init(
+    of_bsn_tlv_idle_notification_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_idle_time_t *
+    of_bsn_tlv_idle_time_new(of_version_t version);
+extern void of_bsn_tlv_idle_time_init(
+    of_bsn_tlv_idle_time_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_ipv4_t *
+    of_bsn_tlv_ipv4_new(of_version_t version);
+extern void of_bsn_tlv_ipv4_init(
+    of_bsn_tlv_ipv4_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_mac_t *
+    of_bsn_tlv_mac_new(of_version_t version);
+extern void of_bsn_tlv_mac_init(
+    of_bsn_tlv_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_port_t *
+    of_bsn_tlv_port_new(of_version_t version);
+extern void of_bsn_tlv_port_init(
+    of_bsn_tlv_port_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_rx_packets_t *
+    of_bsn_tlv_rx_packets_new(of_version_t version);
+extern void of_bsn_tlv_rx_packets_init(
+    of_bsn_tlv_rx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_tx_packets_t *
+    of_bsn_tlv_tx_packets_new(of_version_t version);
+extern void of_bsn_tlv_tx_packets_init(
+    of_bsn_tlv_tx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_vlan_vid_t *
+    of_bsn_tlv_vlan_vid_new(of_version_t version);
+extern void of_bsn_tlv_vlan_vid_init(
+    of_bsn_tlv_vlan_vid_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_vlan_counter_stats_entry_t *
     of_bsn_vlan_counter_stats_entry_new(of_version_t version);
@@ -2669,6 +2885,31 @@ extern of_list_bsn_controller_connection_t *
 extern void of_list_bsn_controller_connection_init(
     of_list_bsn_controller_connection_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_list_bsn_gentable_bucket_stats_entry_t *
+    of_list_bsn_gentable_bucket_stats_entry_new(of_version_t version);
+extern void of_list_bsn_gentable_bucket_stats_entry_init(
+    of_list_bsn_gentable_bucket_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_gentable_desc_stats_entry_t *
+    of_list_bsn_gentable_desc_stats_entry_new(of_version_t version);
+extern void of_list_bsn_gentable_desc_stats_entry_init(
+    of_list_bsn_gentable_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_gentable_entry_desc_stats_entry_t *
+    of_list_bsn_gentable_entry_desc_stats_entry_new(of_version_t version);
+extern void of_list_bsn_gentable_entry_desc_stats_entry_init(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_gentable_entry_stats_entry_t *
+    of_list_bsn_gentable_entry_stats_entry_new(of_version_t version);
+extern void of_list_bsn_gentable_entry_stats_entry_init(
+    of_list_bsn_gentable_entry_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_gentable_stats_entry_t *
+    of_list_bsn_gentable_stats_entry_new(of_version_t version);
+extern void of_list_bsn_gentable_stats_entry_init(
+    of_list_bsn_gentable_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_list_bsn_interface_t *
     of_list_bsn_interface_new(of_version_t version);
 extern void of_list_bsn_interface_init(
@@ -2688,6 +2929,11 @@ extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_new(of_version_t version);
 extern void of_list_bsn_switch_pipeline_stats_entry_init(
     of_list_bsn_switch_pipeline_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_tlv_t *
+    of_list_bsn_tlv_new(of_version_t version);
+extern void of_list_bsn_tlv_init(
+    of_list_bsn_tlv_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_bsn_vlan_counter_stats_entry_t *
     of_list_bsn_vlan_counter_stats_entry_new(of_version_t version);
@@ -3072,6 +3318,171 @@ of_bsn_flow_idle_enable_set_reply_delete(of_bsn_flow_idle_enable_set_reply_t *ob
  */
 static inline void
 of_bsn_flow_idle_enable_set_request_delete(of_bsn_flow_idle_enable_set_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_bucket_stats_reply_t
+ * @param obj An instance of type of_bsn_gentable_bucket_stats_reply_t
+ *
+ * \ingroup of_bsn_gentable_bucket_stats_reply
+ */
+static inline void
+of_bsn_gentable_bucket_stats_reply_delete(of_bsn_gentable_bucket_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_bucket_stats_request_t
+ * @param obj An instance of type of_bsn_gentable_bucket_stats_request_t
+ *
+ * \ingroup of_bsn_gentable_bucket_stats_request
+ */
+static inline void
+of_bsn_gentable_bucket_stats_request_delete(of_bsn_gentable_bucket_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_clear_reply_t
+ * @param obj An instance of type of_bsn_gentable_clear_reply_t
+ *
+ * \ingroup of_bsn_gentable_clear_reply
+ */
+static inline void
+of_bsn_gentable_clear_reply_delete(of_bsn_gentable_clear_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_clear_request_t
+ * @param obj An instance of type of_bsn_gentable_clear_request_t
+ *
+ * \ingroup of_bsn_gentable_clear_request
+ */
+static inline void
+of_bsn_gentable_clear_request_delete(of_bsn_gentable_clear_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_desc_stats_reply_t
+ * @param obj An instance of type of_bsn_gentable_desc_stats_reply_t
+ *
+ * \ingroup of_bsn_gentable_desc_stats_reply
+ */
+static inline void
+of_bsn_gentable_desc_stats_reply_delete(of_bsn_gentable_desc_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_desc_stats_request_t
+ * @param obj An instance of type of_bsn_gentable_desc_stats_request_t
+ *
+ * \ingroup of_bsn_gentable_desc_stats_request
+ */
+static inline void
+of_bsn_gentable_desc_stats_request_delete(of_bsn_gentable_desc_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_add_t
+ * @param obj An instance of type of_bsn_gentable_entry_add_t
+ *
+ * \ingroup of_bsn_gentable_entry_add
+ */
+static inline void
+of_bsn_gentable_entry_add_delete(of_bsn_gentable_entry_add_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_delete_t
+ * @param obj An instance of type of_bsn_gentable_entry_delete_t
+ *
+ * \ingroup of_bsn_gentable_entry_delete
+ */
+static inline void
+of_bsn_gentable_entry_delete_delete(of_bsn_gentable_entry_delete_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_desc_stats_reply_t
+ * @param obj An instance of type of_bsn_gentable_entry_desc_stats_reply_t
+ *
+ * \ingroup of_bsn_gentable_entry_desc_stats_reply
+ */
+static inline void
+of_bsn_gentable_entry_desc_stats_reply_delete(of_bsn_gentable_entry_desc_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_desc_stats_request_t
+ * @param obj An instance of type of_bsn_gentable_entry_desc_stats_request_t
+ *
+ * \ingroup of_bsn_gentable_entry_desc_stats_request
+ */
+static inline void
+of_bsn_gentable_entry_desc_stats_request_delete(of_bsn_gentable_entry_desc_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_stats_reply_t
+ * @param obj An instance of type of_bsn_gentable_entry_stats_reply_t
+ *
+ * \ingroup of_bsn_gentable_entry_stats_reply
+ */
+static inline void
+of_bsn_gentable_entry_stats_reply_delete(of_bsn_gentable_entry_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_stats_request_t
+ * @param obj An instance of type of_bsn_gentable_entry_stats_request_t
+ *
+ * \ingroup of_bsn_gentable_entry_stats_request
+ */
+static inline void
+of_bsn_gentable_entry_stats_request_delete(of_bsn_gentable_entry_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_set_buckets_size_t
+ * @param obj An instance of type of_bsn_gentable_set_buckets_size_t
+ *
+ * \ingroup of_bsn_gentable_set_buckets_size
+ */
+static inline void
+of_bsn_gentable_set_buckets_size_delete(of_bsn_gentable_set_buckets_size_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_stats_reply_t
+ * @param obj An instance of type of_bsn_gentable_stats_reply_t
+ *
+ * \ingroup of_bsn_gentable_stats_reply
+ */
+static inline void
+of_bsn_gentable_stats_reply_delete(of_bsn_gentable_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_stats_request_t
+ * @param obj An instance of type of_bsn_gentable_stats_request_t
+ *
+ * \ingroup of_bsn_gentable_stats_request
+ */
+static inline void
+of_bsn_gentable_stats_request_delete(of_bsn_gentable_stats_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -5133,6 +5544,61 @@ of_bsn_controller_connection_delete(of_bsn_controller_connection_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_gentable_bucket_stats_entry_t
+ * @param obj An instance of type of_bsn_gentable_bucket_stats_entry_t
+ *
+ * \ingroup of_bsn_gentable_bucket_stats_entry
+ */
+static inline void
+of_bsn_gentable_bucket_stats_entry_delete(of_bsn_gentable_bucket_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_desc_stats_entry_t
+ * @param obj An instance of type of_bsn_gentable_desc_stats_entry_t
+ *
+ * \ingroup of_bsn_gentable_desc_stats_entry
+ */
+static inline void
+of_bsn_gentable_desc_stats_entry_delete(of_bsn_gentable_desc_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_desc_stats_entry_t
+ * @param obj An instance of type of_bsn_gentable_entry_desc_stats_entry_t
+ *
+ * \ingroup of_bsn_gentable_entry_desc_stats_entry
+ */
+static inline void
+of_bsn_gentable_entry_desc_stats_entry_delete(of_bsn_gentable_entry_desc_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_entry_stats_entry_t
+ * @param obj An instance of type of_bsn_gentable_entry_stats_entry_t
+ *
+ * \ingroup of_bsn_gentable_entry_stats_entry
+ */
+static inline void
+of_bsn_gentable_entry_stats_entry_delete(of_bsn_gentable_entry_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_gentable_stats_entry_t
+ * @param obj An instance of type of_bsn_gentable_stats_entry_t
+ *
+ * \ingroup of_bsn_gentable_stats_entry
+ */
+static inline void
+of_bsn_gentable_stats_entry_delete(of_bsn_gentable_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_interface_t
  * @param obj An instance of type of_bsn_interface_t
  *
@@ -5173,6 +5639,116 @@ of_bsn_port_counter_stats_entry_delete(of_bsn_port_counter_stats_entry_t *obj) {
  */
 static inline void
 of_bsn_switch_pipeline_stats_entry_delete(of_bsn_switch_pipeline_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_t
+ * @param obj An instance of type of_bsn_tlv_t
+ *
+ * \ingroup of_bsn_tlv
+ */
+static inline void
+of_bsn_tlv_delete(of_bsn_tlv_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_header_t
+ * @param obj An instance of type of_bsn_tlv_header_t
+ *
+ * \ingroup of_bsn_tlv_header
+ */
+static inline void
+of_bsn_tlv_header_delete(of_bsn_tlv_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_idle_notification_t
+ * @param obj An instance of type of_bsn_tlv_idle_notification_t
+ *
+ * \ingroup of_bsn_tlv_idle_notification
+ */
+static inline void
+of_bsn_tlv_idle_notification_delete(of_bsn_tlv_idle_notification_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_idle_time_t
+ * @param obj An instance of type of_bsn_tlv_idle_time_t
+ *
+ * \ingroup of_bsn_tlv_idle_time
+ */
+static inline void
+of_bsn_tlv_idle_time_delete(of_bsn_tlv_idle_time_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ipv4_t
+ * @param obj An instance of type of_bsn_tlv_ipv4_t
+ *
+ * \ingroup of_bsn_tlv_ipv4
+ */
+static inline void
+of_bsn_tlv_ipv4_delete(of_bsn_tlv_ipv4_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_mac_t
+ * @param obj An instance of type of_bsn_tlv_mac_t
+ *
+ * \ingroup of_bsn_tlv_mac
+ */
+static inline void
+of_bsn_tlv_mac_delete(of_bsn_tlv_mac_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_port_t
+ * @param obj An instance of type of_bsn_tlv_port_t
+ *
+ * \ingroup of_bsn_tlv_port
+ */
+static inline void
+of_bsn_tlv_port_delete(of_bsn_tlv_port_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_rx_packets_t
+ * @param obj An instance of type of_bsn_tlv_rx_packets_t
+ *
+ * \ingroup of_bsn_tlv_rx_packets
+ */
+static inline void
+of_bsn_tlv_rx_packets_delete(of_bsn_tlv_rx_packets_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_tx_packets_t
+ * @param obj An instance of type of_bsn_tlv_tx_packets_t
+ *
+ * \ingroup of_bsn_tlv_tx_packets
+ */
+static inline void
+of_bsn_tlv_tx_packets_delete(of_bsn_tlv_tx_packets_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_vlan_vid_t
+ * @param obj An instance of type of_bsn_tlv_vlan_vid_t
+ *
+ * \ingroup of_bsn_tlv_vlan_vid
+ */
+static inline void
+of_bsn_tlv_vlan_vid_delete(of_bsn_tlv_vlan_vid_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -7047,6 +7623,61 @@ of_list_bsn_controller_connection_delete(of_list_bsn_controller_connection_t *ob
 }
 
 /**
+ * Delete an object of type of_list_bsn_gentable_bucket_stats_entry_t
+ * @param obj An instance of type of_list_bsn_gentable_bucket_stats_entry_t
+ *
+ * \ingroup of_list_bsn_gentable_bucket_stats_entry
+ */
+static inline void
+of_list_bsn_gentable_bucket_stats_entry_delete(of_list_bsn_gentable_bucket_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_gentable_desc_stats_entry_t
+ * @param obj An instance of type of_list_bsn_gentable_desc_stats_entry_t
+ *
+ * \ingroup of_list_bsn_gentable_desc_stats_entry
+ */
+static inline void
+of_list_bsn_gentable_desc_stats_entry_delete(of_list_bsn_gentable_desc_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_gentable_entry_desc_stats_entry_t
+ * @param obj An instance of type of_list_bsn_gentable_entry_desc_stats_entry_t
+ *
+ * \ingroup of_list_bsn_gentable_entry_desc_stats_entry
+ */
+static inline void
+of_list_bsn_gentable_entry_desc_stats_entry_delete(of_list_bsn_gentable_entry_desc_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_gentable_entry_stats_entry_t
+ * @param obj An instance of type of_list_bsn_gentable_entry_stats_entry_t
+ *
+ * \ingroup of_list_bsn_gentable_entry_stats_entry
+ */
+static inline void
+of_list_bsn_gentable_entry_stats_entry_delete(of_list_bsn_gentable_entry_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_gentable_stats_entry_t
+ * @param obj An instance of type of_list_bsn_gentable_stats_entry_t
+ *
+ * \ingroup of_list_bsn_gentable_stats_entry
+ */
+static inline void
+of_list_bsn_gentable_stats_entry_delete(of_list_bsn_gentable_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_list_bsn_interface_t
  * @param obj An instance of type of_list_bsn_interface_t
  *
@@ -7087,6 +7718,17 @@ of_list_bsn_port_counter_stats_entry_delete(of_list_bsn_port_counter_stats_entry
  */
 static inline void
 of_list_bsn_switch_pipeline_stats_entry_delete(of_list_bsn_switch_pipeline_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_tlv_t
+ * @param obj An instance of type of_list_bsn_tlv_t
+ *
+ * \ingroup of_list_bsn_tlv
+ */
+static inline void
+of_list_bsn_tlv_delete(of_list_bsn_tlv_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -8116,6 +8758,619 @@ extern void of_bsn_flow_idle_enable_set_request_enable_set(
 extern void of_bsn_flow_idle_enable_set_request_enable_get(
     of_bsn_flow_idle_enable_set_request_t *obj,
     uint32_t *enable);
+
+/* Unified accessor functions for of_bsn_gentable_bucket_stats_reply */
+
+extern void of_bsn_gentable_bucket_stats_reply_xid_set(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_bucket_stats_reply_xid_get(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_bucket_stats_reply_flags_set(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_bucket_stats_reply_flags_get(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_bucket_stats_reply_experimenter_set(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_bucket_stats_reply_experimenter_get(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_bucket_stats_reply_subtype_set(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_bucket_stats_reply_subtype_get(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_bucket_stats_reply_entries_set(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    of_list_bsn_gentable_bucket_stats_entry_t *entries);
+extern void of_bsn_gentable_bucket_stats_reply_entries_bind(
+    of_bsn_gentable_bucket_stats_reply_t *obj,
+    of_list_bsn_gentable_bucket_stats_entry_t *entries);
+extern of_list_bsn_gentable_bucket_stats_entry_t *of_bsn_gentable_bucket_stats_reply_entries_get(
+    of_bsn_gentable_bucket_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_bucket_stats_request */
+
+extern void of_bsn_gentable_bucket_stats_request_xid_set(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_bucket_stats_request_xid_get(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_bucket_stats_request_flags_set(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_bucket_stats_request_flags_get(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_bucket_stats_request_experimenter_set(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_bucket_stats_request_experimenter_get(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_bucket_stats_request_subtype_set(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_bucket_stats_request_subtype_get(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_bucket_stats_request_table_id_set(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_bucket_stats_request_table_id_get(
+    of_bsn_gentable_bucket_stats_request_t *obj,
+    uint16_t *table_id);
+
+/* Unified accessor functions for of_bsn_gentable_clear_reply */
+
+extern void of_bsn_gentable_clear_reply_xid_set(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_clear_reply_xid_get(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_clear_reply_experimenter_set(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_clear_reply_experimenter_get(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_clear_reply_subtype_set(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_clear_reply_subtype_get(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_clear_reply_table_id_set(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_clear_reply_table_id_get(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_clear_reply_deleted_count_set(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t deleted_count);
+extern void of_bsn_gentable_clear_reply_deleted_count_get(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t *deleted_count);
+
+extern void of_bsn_gentable_clear_reply_error_count_set(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t error_count);
+extern void of_bsn_gentable_clear_reply_error_count_get(
+    of_bsn_gentable_clear_reply_t *obj,
+    uint32_t *error_count);
+
+/* Unified accessor functions for of_bsn_gentable_clear_request */
+
+extern void of_bsn_gentable_clear_request_xid_set(
+    of_bsn_gentable_clear_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_clear_request_xid_get(
+    of_bsn_gentable_clear_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_clear_request_experimenter_set(
+    of_bsn_gentable_clear_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_clear_request_experimenter_get(
+    of_bsn_gentable_clear_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_clear_request_subtype_set(
+    of_bsn_gentable_clear_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_clear_request_subtype_get(
+    of_bsn_gentable_clear_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_clear_request_table_id_set(
+    of_bsn_gentable_clear_request_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_clear_request_table_id_get(
+    of_bsn_gentable_clear_request_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_clear_request_checksum_set(
+    of_bsn_gentable_clear_request_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_clear_request_checksum_get(
+    of_bsn_gentable_clear_request_t *obj,
+    of_checksum_128_t *checksum);
+
+extern void of_bsn_gentable_clear_request_checksum_mask_set(
+    of_bsn_gentable_clear_request_t *obj,
+    of_checksum_128_t checksum_mask);
+extern void of_bsn_gentable_clear_request_checksum_mask_get(
+    of_bsn_gentable_clear_request_t *obj,
+    of_checksum_128_t *checksum_mask);
+
+/* Unified accessor functions for of_bsn_gentable_desc_stats_reply */
+
+extern void of_bsn_gentable_desc_stats_reply_xid_set(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_desc_stats_reply_xid_get(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_desc_stats_reply_flags_set(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_desc_stats_reply_flags_get(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_desc_stats_reply_experimenter_set(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_desc_stats_reply_experimenter_get(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_desc_stats_reply_subtype_set(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_desc_stats_reply_subtype_get(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_desc_stats_reply_entries_set(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    of_list_bsn_gentable_desc_stats_entry_t *entries);
+extern void of_bsn_gentable_desc_stats_reply_entries_bind(
+    of_bsn_gentable_desc_stats_reply_t *obj,
+    of_list_bsn_gentable_desc_stats_entry_t *entries);
+extern of_list_bsn_gentable_desc_stats_entry_t *of_bsn_gentable_desc_stats_reply_entries_get(
+    of_bsn_gentable_desc_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_desc_stats_request */
+
+extern void of_bsn_gentable_desc_stats_request_xid_set(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_desc_stats_request_xid_get(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_desc_stats_request_flags_set(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_desc_stats_request_flags_get(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_desc_stats_request_experimenter_set(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_desc_stats_request_experimenter_get(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_desc_stats_request_subtype_set(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_desc_stats_request_subtype_get(
+    of_bsn_gentable_desc_stats_request_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_bsn_gentable_entry_add */
+
+extern void of_bsn_gentable_entry_add_xid_set(
+    of_bsn_gentable_entry_add_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_entry_add_xid_get(
+    of_bsn_gentable_entry_add_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_entry_add_experimenter_set(
+    of_bsn_gentable_entry_add_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_entry_add_experimenter_get(
+    of_bsn_gentable_entry_add_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_entry_add_subtype_set(
+    of_bsn_gentable_entry_add_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_entry_add_subtype_get(
+    of_bsn_gentable_entry_add_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_entry_add_table_id_set(
+    of_bsn_gentable_entry_add_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_entry_add_table_id_get(
+    of_bsn_gentable_entry_add_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_entry_add_checksum_set(
+    of_bsn_gentable_entry_add_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_entry_add_checksum_get(
+    of_bsn_gentable_entry_add_t *obj,
+    of_checksum_128_t *checksum);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_add_key_set(
+    of_bsn_gentable_entry_add_t *obj,
+    of_list_bsn_tlv_t *key);
+extern void of_bsn_gentable_entry_add_key_bind(
+    of_bsn_gentable_entry_add_t *obj,
+    of_list_bsn_tlv_t *key);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_add_key_get(
+    of_bsn_gentable_entry_add_t *obj);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_add_value_set(
+    of_bsn_gentable_entry_add_t *obj,
+    of_list_bsn_tlv_t *value);
+extern void of_bsn_gentable_entry_add_value_bind(
+    of_bsn_gentable_entry_add_t *obj,
+    of_list_bsn_tlv_t *value);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_add_value_get(
+    of_bsn_gentable_entry_add_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_entry_delete */
+
+extern void of_bsn_gentable_entry_delete_xid_set(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_entry_delete_xid_get(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_entry_delete_experimenter_set(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_entry_delete_experimenter_get(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_entry_delete_subtype_set(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_entry_delete_subtype_get(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_entry_delete_table_id_set(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_entry_delete_table_id_get(
+    of_bsn_gentable_entry_delete_t *obj,
+    uint16_t *table_id);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_delete_key_set(
+    of_bsn_gentable_entry_delete_t *obj,
+    of_list_bsn_tlv_t *key);
+extern void of_bsn_gentable_entry_delete_key_bind(
+    of_bsn_gentable_entry_delete_t *obj,
+    of_list_bsn_tlv_t *key);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_delete_key_get(
+    of_bsn_gentable_entry_delete_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_entry_desc_stats_reply */
+
+extern void of_bsn_gentable_entry_desc_stats_reply_xid_set(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_entry_desc_stats_reply_xid_get(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_entry_desc_stats_reply_flags_set(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_entry_desc_stats_reply_flags_get(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_entry_desc_stats_reply_experimenter_set(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_entry_desc_stats_reply_experimenter_get(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_entry_desc_stats_reply_subtype_set(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_entry_desc_stats_reply_subtype_get(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_desc_stats_reply_entries_set(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    of_list_bsn_gentable_entry_desc_stats_entry_t *entries);
+extern void of_bsn_gentable_entry_desc_stats_reply_entries_bind(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj,
+    of_list_bsn_gentable_entry_desc_stats_entry_t *entries);
+extern of_list_bsn_gentable_entry_desc_stats_entry_t *of_bsn_gentable_entry_desc_stats_reply_entries_get(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_entry_desc_stats_request */
+
+extern void of_bsn_gentable_entry_desc_stats_request_xid_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_entry_desc_stats_request_xid_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_entry_desc_stats_request_flags_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_entry_desc_stats_request_flags_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_entry_desc_stats_request_experimenter_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_entry_desc_stats_request_experimenter_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_entry_desc_stats_request_subtype_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_entry_desc_stats_request_subtype_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_entry_desc_stats_request_table_id_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_entry_desc_stats_request_table_id_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_entry_desc_stats_request_checksum_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_entry_desc_stats_request_checksum_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    of_checksum_128_t *checksum);
+
+extern void of_bsn_gentable_entry_desc_stats_request_checksum_mask_set(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    of_checksum_128_t checksum_mask);
+extern void of_bsn_gentable_entry_desc_stats_request_checksum_mask_get(
+    of_bsn_gentable_entry_desc_stats_request_t *obj,
+    of_checksum_128_t *checksum_mask);
+
+/* Unified accessor functions for of_bsn_gentable_entry_stats_reply */
+
+extern void of_bsn_gentable_entry_stats_reply_xid_set(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_entry_stats_reply_xid_get(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_entry_stats_reply_flags_set(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_entry_stats_reply_flags_get(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_entry_stats_reply_experimenter_set(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_entry_stats_reply_experimenter_get(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_entry_stats_reply_subtype_set(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_entry_stats_reply_subtype_get(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_stats_reply_entries_set(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    of_list_bsn_gentable_entry_stats_entry_t *entries);
+extern void of_bsn_gentable_entry_stats_reply_entries_bind(
+    of_bsn_gentable_entry_stats_reply_t *obj,
+    of_list_bsn_gentable_entry_stats_entry_t *entries);
+extern of_list_bsn_gentable_entry_stats_entry_t *of_bsn_gentable_entry_stats_reply_entries_get(
+    of_bsn_gentable_entry_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_entry_stats_request */
+
+extern void of_bsn_gentable_entry_stats_request_xid_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_entry_stats_request_xid_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_entry_stats_request_flags_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_entry_stats_request_flags_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_entry_stats_request_experimenter_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_entry_stats_request_experimenter_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_entry_stats_request_subtype_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_entry_stats_request_subtype_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_entry_stats_request_table_id_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_entry_stats_request_table_id_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_entry_stats_request_checksum_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_entry_stats_request_checksum_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    of_checksum_128_t *checksum);
+
+extern void of_bsn_gentable_entry_stats_request_checksum_mask_set(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    of_checksum_128_t checksum_mask);
+extern void of_bsn_gentable_entry_stats_request_checksum_mask_get(
+    of_bsn_gentable_entry_stats_request_t *obj,
+    of_checksum_128_t *checksum_mask);
+
+/* Unified accessor functions for of_bsn_gentable_set_buckets_size */
+
+extern void of_bsn_gentable_set_buckets_size_xid_set(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_set_buckets_size_xid_get(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_set_buckets_size_experimenter_set(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_set_buckets_size_experimenter_get(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_set_buckets_size_subtype_set(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_set_buckets_size_subtype_get(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_gentable_set_buckets_size_table_id_set(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_set_buckets_size_table_id_get(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_set_buckets_size_buckets_size_set(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t buckets_size);
+extern void of_bsn_gentable_set_buckets_size_buckets_size_get(
+    of_bsn_gentable_set_buckets_size_t *obj,
+    uint32_t *buckets_size);
+
+/* Unified accessor functions for of_bsn_gentable_stats_reply */
+
+extern void of_bsn_gentable_stats_reply_xid_set(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_stats_reply_xid_get(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_stats_reply_flags_set(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_stats_reply_flags_get(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_stats_reply_experimenter_set(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_stats_reply_experimenter_get(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_stats_reply_subtype_set(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_stats_reply_subtype_get(
+    of_bsn_gentable_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_stats_reply_entries_set(
+    of_bsn_gentable_stats_reply_t *obj,
+    of_list_bsn_gentable_stats_entry_t *entries);
+extern void of_bsn_gentable_stats_reply_entries_bind(
+    of_bsn_gentable_stats_reply_t *obj,
+    of_list_bsn_gentable_stats_entry_t *entries);
+extern of_list_bsn_gentable_stats_entry_t *of_bsn_gentable_stats_reply_entries_get(
+    of_bsn_gentable_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_stats_request */
+
+extern void of_bsn_gentable_stats_request_xid_set(
+    of_bsn_gentable_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_gentable_stats_request_xid_get(
+    of_bsn_gentable_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_gentable_stats_request_flags_set(
+    of_bsn_gentable_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_gentable_stats_request_flags_get(
+    of_bsn_gentable_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_gentable_stats_request_experimenter_set(
+    of_bsn_gentable_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_gentable_stats_request_experimenter_get(
+    of_bsn_gentable_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_gentable_stats_request_subtype_set(
+    of_bsn_gentable_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_gentable_stats_request_subtype_get(
+    of_bsn_gentable_stats_request_t *obj,
+    uint32_t *subtype);
 
 /* Unified accessor functions for of_bsn_get_interfaces_reply */
 
@@ -12963,6 +14218,115 @@ extern void of_bsn_controller_connection_uri_get(
     of_bsn_controller_connection_t *obj,
     of_desc_str_t *uri);
 
+/* Unified accessor functions for of_bsn_gentable_bucket_stats_entry */
+
+extern void of_bsn_gentable_bucket_stats_entry_checksum_set(
+    of_bsn_gentable_bucket_stats_entry_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_bucket_stats_entry_checksum_get(
+    of_bsn_gentable_bucket_stats_entry_t *obj,
+    of_checksum_128_t *checksum);
+
+/* Unified accessor functions for of_bsn_gentable_desc_stats_entry */
+
+extern void of_bsn_gentable_desc_stats_entry_table_id_set(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_desc_stats_entry_table_id_get(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_desc_stats_entry_name_set(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    of_table_name_t name);
+extern void of_bsn_gentable_desc_stats_entry_name_get(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    of_table_name_t *name);
+
+extern void of_bsn_gentable_desc_stats_entry_buckets_size_set(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    uint32_t buckets_size);
+extern void of_bsn_gentable_desc_stats_entry_buckets_size_get(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    uint32_t *buckets_size);
+
+extern void of_bsn_gentable_desc_stats_entry_max_entries_set(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    uint32_t max_entries);
+extern void of_bsn_gentable_desc_stats_entry_max_entries_get(
+    of_bsn_gentable_desc_stats_entry_t *obj,
+    uint32_t *max_entries);
+
+/* Unified accessor functions for of_bsn_gentable_entry_desc_stats_entry */
+
+extern void of_bsn_gentable_entry_desc_stats_entry_checksum_set(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_entry_desc_stats_entry_checksum_get(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj,
+    of_checksum_128_t *checksum);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_desc_stats_entry_key_set(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj,
+    of_list_bsn_tlv_t *key);
+extern void of_bsn_gentable_entry_desc_stats_entry_key_bind(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj,
+    of_list_bsn_tlv_t *key);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_desc_stats_entry_key_get(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_desc_stats_entry_value_set(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj,
+    of_list_bsn_tlv_t *value);
+extern void of_bsn_gentable_entry_desc_stats_entry_value_bind(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj,
+    of_list_bsn_tlv_t *value);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_desc_stats_entry_value_get(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_entry_stats_entry */
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_stats_entry_key_set(
+    of_bsn_gentable_entry_stats_entry_t *obj,
+    of_list_bsn_tlv_t *key);
+extern void of_bsn_gentable_entry_stats_entry_key_bind(
+    of_bsn_gentable_entry_stats_entry_t *obj,
+    of_list_bsn_tlv_t *key);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_stats_entry_key_get(
+    of_bsn_gentable_entry_stats_entry_t *obj);
+
+extern int WARN_UNUSED_RESULT of_bsn_gentable_entry_stats_entry_stats_set(
+    of_bsn_gentable_entry_stats_entry_t *obj,
+    of_list_bsn_tlv_t *stats);
+extern void of_bsn_gentable_entry_stats_entry_stats_bind(
+    of_bsn_gentable_entry_stats_entry_t *obj,
+    of_list_bsn_tlv_t *stats);
+extern of_list_bsn_tlv_t *of_bsn_gentable_entry_stats_entry_stats_get(
+    of_bsn_gentable_entry_stats_entry_t *obj);
+
+/* Unified accessor functions for of_bsn_gentable_stats_entry */
+
+extern void of_bsn_gentable_stats_entry_table_id_set(
+    of_bsn_gentable_stats_entry_t *obj,
+    uint16_t table_id);
+extern void of_bsn_gentable_stats_entry_table_id_get(
+    of_bsn_gentable_stats_entry_t *obj,
+    uint16_t *table_id);
+
+extern void of_bsn_gentable_stats_entry_entry_count_set(
+    of_bsn_gentable_stats_entry_t *obj,
+    uint32_t entry_count);
+extern void of_bsn_gentable_stats_entry_entry_count_get(
+    of_bsn_gentable_stats_entry_t *obj,
+    uint32_t *entry_count);
+
+extern void of_bsn_gentable_stats_entry_checksum_set(
+    of_bsn_gentable_stats_entry_t *obj,
+    of_checksum_128_t checksum);
+extern void of_bsn_gentable_stats_entry_checksum_get(
+    of_bsn_gentable_stats_entry_t *obj,
+    of_checksum_128_t *checksum);
+
 /* Unified accessor functions for of_bsn_interface */
 
 extern void of_bsn_interface_hw_addr_set(
@@ -13105,6 +14469,73 @@ extern void of_bsn_switch_pipeline_stats_entry_pipeline_set(
 extern void of_bsn_switch_pipeline_stats_entry_pipeline_get(
     of_bsn_switch_pipeline_stats_entry_t *obj,
     of_desc_str_t *pipeline);
+
+/* Unified accessor functions for of_bsn_tlv_header */
+
+/* Unified accessor functions for of_bsn_tlv_idle_notification */
+
+/* Unified accessor functions for of_bsn_tlv_idle_time */
+
+extern void of_bsn_tlv_idle_time_value_set(
+    of_bsn_tlv_idle_time_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_idle_time_value_get(
+    of_bsn_tlv_idle_time_t *obj,
+    uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ipv4 */
+
+extern void of_bsn_tlv_ipv4_value_set(
+    of_bsn_tlv_ipv4_t *obj,
+    of_ipv4_t value);
+extern void of_bsn_tlv_ipv4_value_get(
+    of_bsn_tlv_ipv4_t *obj,
+    of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_mac */
+
+extern void of_bsn_tlv_mac_value_set(
+    of_bsn_tlv_mac_t *obj,
+    of_mac_addr_t value);
+extern void of_bsn_tlv_mac_value_get(
+    of_bsn_tlv_mac_t *obj,
+    of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_port */
+
+extern void of_bsn_tlv_port_value_set(
+    of_bsn_tlv_port_t *obj,
+    of_port_no_t value);
+extern void of_bsn_tlv_port_value_get(
+    of_bsn_tlv_port_t *obj,
+    of_port_no_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_rx_packets */
+
+extern void of_bsn_tlv_rx_packets_value_set(
+    of_bsn_tlv_rx_packets_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_rx_packets_value_get(
+    of_bsn_tlv_rx_packets_t *obj,
+    uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_tx_packets */
+
+extern void of_bsn_tlv_tx_packets_value_set(
+    of_bsn_tlv_tx_packets_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_tx_packets_value_get(
+    of_bsn_tlv_tx_packets_t *obj,
+    uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_vlan_vid */
+
+extern void of_bsn_tlv_vlan_vid_value_set(
+    of_bsn_tlv_vlan_vid_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_vlan_vid_value_get(
+    of_bsn_tlv_vlan_vid_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_vlan_counter_stats_entry */
 
@@ -15859,6 +17290,121 @@ extern int of_list_bsn_controller_connection_append(
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_controller_connection_next((list), (elt)))
 
+/* Unified accessor functions for of_list_bsn_gentable_bucket_stats_entry */
+
+extern int of_list_bsn_gentable_bucket_stats_entry_first(
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+extern int of_list_bsn_gentable_bucket_stats_entry_next(
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+extern int of_list_bsn_gentable_bucket_stats_entry_append_bind(
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+extern int of_list_bsn_gentable_bucket_stats_entry_append(
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_gentable_bucket_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_gentable_bucket_stats_entry
+ * @param elt Pointer to an element of type of_bsn_gentable_bucket_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_GENTABLE_BUCKET_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_gentable_bucket_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_gentable_bucket_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_gentable_desc_stats_entry */
+
+extern int of_list_bsn_gentable_desc_stats_entry_first(
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+extern int of_list_bsn_gentable_desc_stats_entry_next(
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+extern int of_list_bsn_gentable_desc_stats_entry_append_bind(
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+extern int of_list_bsn_gentable_desc_stats_entry_append(
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_gentable_desc_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_gentable_desc_stats_entry
+ * @param elt Pointer to an element of type of_bsn_gentable_desc_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_GENTABLE_DESC_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_gentable_desc_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_gentable_desc_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_gentable_entry_desc_stats_entry */
+
+extern int of_list_bsn_gentable_entry_desc_stats_entry_first(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+extern int of_list_bsn_gentable_entry_desc_stats_entry_next(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+extern int of_list_bsn_gentable_entry_desc_stats_entry_append_bind(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+extern int of_list_bsn_gentable_entry_desc_stats_entry_append(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_gentable_entry_desc_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_gentable_entry_desc_stats_entry
+ * @param elt Pointer to an element of type of_bsn_gentable_entry_desc_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_gentable_entry_desc_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_gentable_entry_desc_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_gentable_entry_stats_entry */
+
+extern int of_list_bsn_gentable_entry_stats_entry_first(
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+extern int of_list_bsn_gentable_entry_stats_entry_next(
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+extern int of_list_bsn_gentable_entry_stats_entry_append_bind(
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+extern int of_list_bsn_gentable_entry_stats_entry_append(
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_gentable_entry_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_gentable_entry_stats_entry
+ * @param elt Pointer to an element of type of_bsn_gentable_entry_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_GENTABLE_ENTRY_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_gentable_entry_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_gentable_entry_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_gentable_stats_entry */
+
+extern int of_list_bsn_gentable_stats_entry_first(
+    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+extern int of_list_bsn_gentable_stats_entry_next(
+    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+extern int of_list_bsn_gentable_stats_entry_append_bind(
+    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+extern int of_list_bsn_gentable_stats_entry_append(
+    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_gentable_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_gentable_stats_entry
+ * @param elt Pointer to an element of type of_bsn_gentable_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_GENTABLE_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_gentable_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_gentable_stats_entry_next((list), (elt)))
+
 /* Unified accessor functions for of_list_bsn_interface */
 
 extern int of_list_bsn_interface_first(
@@ -15950,6 +17496,29 @@ extern int of_list_bsn_switch_pipeline_stats_entry_append(
     for ((rv) = of_list_bsn_switch_pipeline_stats_entry_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_switch_pipeline_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_tlv */
+
+extern int of_list_bsn_tlv_first(
+    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+extern int of_list_bsn_tlv_next(
+    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+extern int of_list_bsn_tlv_append_bind(
+    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+extern int of_list_bsn_tlv_append(
+    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_tlv
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_tlv
+ * @param elt Pointer to an element of type of_bsn_tlv
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_TLV_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_tlv_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_tlv_next((list), (elt)))
 
 /* Unified accessor functions for of_list_bsn_vlan_counter_stats_entry */
 
@@ -16615,6 +18184,26 @@ union of_instruction_u {
     of_instruction_meter_t meter;
     of_instruction_write_actions_t write_actions;
     of_instruction_write_metadata_t write_metadata;
+};
+
+/**
+ * Inheritance super class for of_bsn_tlv
+ *
+ * This class is the union of of_bsn_tlv classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_bsn_tlv_u {
+    of_bsn_tlv_header_t header; /* Generic instance */
+    of_bsn_tlv_idle_notification_t idle_notification;
+    of_bsn_tlv_idle_time_t idle_time;
+    of_bsn_tlv_ipv4_t ipv4;
+    of_bsn_tlv_mac_t mac;
+    of_bsn_tlv_port_t port;
+    of_bsn_tlv_rx_packets_t rx_packets;
+    of_bsn_tlv_tx_packets_t tx_packets;
+    of_bsn_tlv_vlan_vid_t vlan_vid;
 };
 
 /**

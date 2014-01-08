@@ -110,6 +110,66 @@ extern of_bsn_flow_idle_enable_set_request_t *
     of_bsn_flow_idle_enable_set_request_dup(
         of_bsn_flow_idle_enable_set_request_t *src);
 
+extern of_bsn_gentable_bucket_stats_reply_t *
+    of_bsn_gentable_bucket_stats_reply_dup(
+        of_bsn_gentable_bucket_stats_reply_t *src);
+
+extern of_bsn_gentable_bucket_stats_request_t *
+    of_bsn_gentable_bucket_stats_request_dup(
+        of_bsn_gentable_bucket_stats_request_t *src);
+
+extern of_bsn_gentable_clear_reply_t *
+    of_bsn_gentable_clear_reply_dup(
+        of_bsn_gentable_clear_reply_t *src);
+
+extern of_bsn_gentable_clear_request_t *
+    of_bsn_gentable_clear_request_dup(
+        of_bsn_gentable_clear_request_t *src);
+
+extern of_bsn_gentable_desc_stats_reply_t *
+    of_bsn_gentable_desc_stats_reply_dup(
+        of_bsn_gentable_desc_stats_reply_t *src);
+
+extern of_bsn_gentable_desc_stats_request_t *
+    of_bsn_gentable_desc_stats_request_dup(
+        of_bsn_gentable_desc_stats_request_t *src);
+
+extern of_bsn_gentable_entry_add_t *
+    of_bsn_gentable_entry_add_dup(
+        of_bsn_gentable_entry_add_t *src);
+
+extern of_bsn_gentable_entry_delete_t *
+    of_bsn_gentable_entry_delete_dup(
+        of_bsn_gentable_entry_delete_t *src);
+
+extern of_bsn_gentable_entry_desc_stats_reply_t *
+    of_bsn_gentable_entry_desc_stats_reply_dup(
+        of_bsn_gentable_entry_desc_stats_reply_t *src);
+
+extern of_bsn_gentable_entry_desc_stats_request_t *
+    of_bsn_gentable_entry_desc_stats_request_dup(
+        of_bsn_gentable_entry_desc_stats_request_t *src);
+
+extern of_bsn_gentable_entry_stats_reply_t *
+    of_bsn_gentable_entry_stats_reply_dup(
+        of_bsn_gentable_entry_stats_reply_t *src);
+
+extern of_bsn_gentable_entry_stats_request_t *
+    of_bsn_gentable_entry_stats_request_dup(
+        of_bsn_gentable_entry_stats_request_t *src);
+
+extern of_bsn_gentable_set_buckets_size_t *
+    of_bsn_gentable_set_buckets_size_dup(
+        of_bsn_gentable_set_buckets_size_t *src);
+
+extern of_bsn_gentable_stats_reply_t *
+    of_bsn_gentable_stats_reply_dup(
+        of_bsn_gentable_stats_reply_t *src);
+
+extern of_bsn_gentable_stats_request_t *
+    of_bsn_gentable_stats_request_dup(
+        of_bsn_gentable_stats_request_t *src);
+
 extern of_bsn_get_interfaces_reply_t *
     of_bsn_get_interfaces_reply_dup(
         of_bsn_get_interfaces_reply_t *src);
@@ -858,6 +918,26 @@ extern of_bsn_controller_connection_t *
     of_bsn_controller_connection_dup(
         of_bsn_controller_connection_t *src);
 
+extern of_bsn_gentable_bucket_stats_entry_t *
+    of_bsn_gentable_bucket_stats_entry_dup(
+        of_bsn_gentable_bucket_stats_entry_t *src);
+
+extern of_bsn_gentable_desc_stats_entry_t *
+    of_bsn_gentable_desc_stats_entry_dup(
+        of_bsn_gentable_desc_stats_entry_t *src);
+
+extern of_bsn_gentable_entry_desc_stats_entry_t *
+    of_bsn_gentable_entry_desc_stats_entry_dup(
+        of_bsn_gentable_entry_desc_stats_entry_t *src);
+
+extern of_bsn_gentable_entry_stats_entry_t *
+    of_bsn_gentable_entry_stats_entry_dup(
+        of_bsn_gentable_entry_stats_entry_t *src);
+
+extern of_bsn_gentable_stats_entry_t *
+    of_bsn_gentable_stats_entry_dup(
+        of_bsn_gentable_stats_entry_t *src);
+
 extern of_bsn_interface_t *
     of_bsn_interface_dup(
         of_bsn_interface_t *src);
@@ -873,6 +953,46 @@ extern of_bsn_port_counter_stats_entry_t *
 extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_dup(
         of_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_bsn_tlv_t *
+    of_bsn_tlv_dup(
+        of_bsn_tlv_t *src);
+
+extern of_bsn_tlv_header_t *
+    of_bsn_tlv_header_dup(
+        of_bsn_tlv_header_t *src);
+
+extern of_bsn_tlv_idle_notification_t *
+    of_bsn_tlv_idle_notification_dup(
+        of_bsn_tlv_idle_notification_t *src);
+
+extern of_bsn_tlv_idle_time_t *
+    of_bsn_tlv_idle_time_dup(
+        of_bsn_tlv_idle_time_t *src);
+
+extern of_bsn_tlv_ipv4_t *
+    of_bsn_tlv_ipv4_dup(
+        of_bsn_tlv_ipv4_t *src);
+
+extern of_bsn_tlv_mac_t *
+    of_bsn_tlv_mac_dup(
+        of_bsn_tlv_mac_t *src);
+
+extern of_bsn_tlv_port_t *
+    of_bsn_tlv_port_dup(
+        of_bsn_tlv_port_t *src);
+
+extern of_bsn_tlv_rx_packets_t *
+    of_bsn_tlv_rx_packets_dup(
+        of_bsn_tlv_rx_packets_t *src);
+
+extern of_bsn_tlv_tx_packets_t *
+    of_bsn_tlv_tx_packets_dup(
+        of_bsn_tlv_tx_packets_t *src);
+
+extern of_bsn_tlv_vlan_vid_t *
+    of_bsn_tlv_vlan_vid_dup(
+        of_bsn_tlv_vlan_vid_t *src);
 
 extern of_bsn_vlan_counter_stats_entry_t *
     of_bsn_vlan_counter_stats_entry_dup(
@@ -1554,6 +1674,26 @@ extern of_list_bsn_controller_connection_t *
     of_list_bsn_controller_connection_dup(
         of_list_bsn_controller_connection_t *src);
 
+extern of_list_bsn_gentable_bucket_stats_entry_t *
+    of_list_bsn_gentable_bucket_stats_entry_dup(
+        of_list_bsn_gentable_bucket_stats_entry_t *src);
+
+extern of_list_bsn_gentable_desc_stats_entry_t *
+    of_list_bsn_gentable_desc_stats_entry_dup(
+        of_list_bsn_gentable_desc_stats_entry_t *src);
+
+extern of_list_bsn_gentable_entry_desc_stats_entry_t *
+    of_list_bsn_gentable_entry_desc_stats_entry_dup(
+        of_list_bsn_gentable_entry_desc_stats_entry_t *src);
+
+extern of_list_bsn_gentable_entry_stats_entry_t *
+    of_list_bsn_gentable_entry_stats_entry_dup(
+        of_list_bsn_gentable_entry_stats_entry_t *src);
+
+extern of_list_bsn_gentable_stats_entry_t *
+    of_list_bsn_gentable_stats_entry_dup(
+        of_list_bsn_gentable_stats_entry_t *src);
+
 extern of_list_bsn_interface_t *
     of_list_bsn_interface_dup(
         of_list_bsn_interface_t *src);
@@ -1569,6 +1709,10 @@ extern of_list_bsn_port_counter_stats_entry_t *
 extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_dup(
         of_list_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_list_bsn_tlv_t *
+    of_list_bsn_tlv_dup(
+        of_list_bsn_tlv_t *src);
 
 extern of_list_bsn_vlan_counter_stats_entry_t *
     of_list_bsn_vlan_counter_stats_entry_dup(
@@ -3918,6 +4062,66 @@ extern of_bsn_flow_idle_enable_set_request_t *
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_dup(
         of_bsn_flow_idle_enable_set_request_t *src);
 
+extern of_bsn_gentable_bucket_stats_reply_t *
+    of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_gentable_bucket_stats_reply_t *src);
+
+extern of_bsn_gentable_bucket_stats_request_t *
+    of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_gentable_bucket_stats_request_t *src);
+
+extern of_bsn_gentable_clear_reply_t *
+    of_bsn_gentable_clear_reply_OF_VERSION_1_3_dup(
+        of_bsn_gentable_clear_reply_t *src);
+
+extern of_bsn_gentable_clear_request_t *
+    of_bsn_gentable_clear_request_OF_VERSION_1_3_dup(
+        of_bsn_gentable_clear_request_t *src);
+
+extern of_bsn_gentable_desc_stats_reply_t *
+    of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_gentable_desc_stats_reply_t *src);
+
+extern of_bsn_gentable_desc_stats_request_t *
+    of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_gentable_desc_stats_request_t *src);
+
+extern of_bsn_gentable_entry_add_t *
+    of_bsn_gentable_entry_add_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_add_t *src);
+
+extern of_bsn_gentable_entry_delete_t *
+    of_bsn_gentable_entry_delete_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_delete_t *src);
+
+extern of_bsn_gentable_entry_desc_stats_reply_t *
+    of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_desc_stats_reply_t *src);
+
+extern of_bsn_gentable_entry_desc_stats_request_t *
+    of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_desc_stats_request_t *src);
+
+extern of_bsn_gentable_entry_stats_reply_t *
+    of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_stats_reply_t *src);
+
+extern of_bsn_gentable_entry_stats_request_t *
+    of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_stats_request_t *src);
+
+extern of_bsn_gentable_set_buckets_size_t *
+    of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_dup(
+        of_bsn_gentable_set_buckets_size_t *src);
+
+extern of_bsn_gentable_stats_reply_t *
+    of_bsn_gentable_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_gentable_stats_reply_t *src);
+
+extern of_bsn_gentable_stats_request_t *
+    of_bsn_gentable_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_gentable_stats_request_t *src);
+
 extern of_bsn_get_interfaces_reply_t *
     of_bsn_get_interfaces_reply_OF_VERSION_1_3_dup(
         of_bsn_get_interfaces_reply_t *src);
@@ -4554,6 +4758,26 @@ extern of_bsn_controller_connection_t *
     of_bsn_controller_connection_OF_VERSION_1_3_dup(
         of_bsn_controller_connection_t *src);
 
+extern of_bsn_gentable_bucket_stats_entry_t *
+    of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_gentable_bucket_stats_entry_t *src);
+
+extern of_bsn_gentable_desc_stats_entry_t *
+    of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_gentable_desc_stats_entry_t *src);
+
+extern of_bsn_gentable_entry_desc_stats_entry_t *
+    of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_desc_stats_entry_t *src);
+
+extern of_bsn_gentable_entry_stats_entry_t *
+    of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_gentable_entry_stats_entry_t *src);
+
+extern of_bsn_gentable_stats_entry_t *
+    of_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_gentable_stats_entry_t *src);
+
 extern of_bsn_interface_t *
     of_bsn_interface_OF_VERSION_1_3_dup(
         of_bsn_interface_t *src);
@@ -4569,6 +4793,46 @@ extern of_bsn_port_counter_stats_entry_t *
 extern of_bsn_switch_pipeline_stats_entry_t *
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
         of_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_bsn_tlv_t *
+    of_bsn_tlv_OF_VERSION_1_3_dup(
+        of_bsn_tlv_t *src);
+
+extern of_bsn_tlv_header_t *
+    of_bsn_tlv_header_OF_VERSION_1_3_dup(
+        of_bsn_tlv_header_t *src);
+
+extern of_bsn_tlv_idle_notification_t *
+    of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
+        of_bsn_tlv_idle_notification_t *src);
+
+extern of_bsn_tlv_idle_time_t *
+    of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
+        of_bsn_tlv_idle_time_t *src);
+
+extern of_bsn_tlv_ipv4_t *
+    of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
+        of_bsn_tlv_ipv4_t *src);
+
+extern of_bsn_tlv_mac_t *
+    of_bsn_tlv_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_mac_t *src);
+
+extern of_bsn_tlv_port_t *
+    of_bsn_tlv_port_OF_VERSION_1_3_dup(
+        of_bsn_tlv_port_t *src);
+
+extern of_bsn_tlv_rx_packets_t *
+    of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
+        of_bsn_tlv_rx_packets_t *src);
+
+extern of_bsn_tlv_tx_packets_t *
+    of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
+        of_bsn_tlv_tx_packets_t *src);
+
+extern of_bsn_tlv_vlan_vid_t *
+    of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
+        of_bsn_tlv_vlan_vid_t *src);
 
 extern of_bsn_vlan_counter_stats_entry_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
@@ -5242,6 +5506,26 @@ extern of_list_bsn_controller_connection_t *
     of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
         of_list_bsn_controller_connection_t *src);
 
+extern of_list_bsn_gentable_bucket_stats_entry_t *
+    of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_gentable_bucket_stats_entry_t *src);
+
+extern of_list_bsn_gentable_desc_stats_entry_t *
+    of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_gentable_desc_stats_entry_t *src);
+
+extern of_list_bsn_gentable_entry_desc_stats_entry_t *
+    of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_gentable_entry_desc_stats_entry_t *src);
+
+extern of_list_bsn_gentable_entry_stats_entry_t *
+    of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_gentable_entry_stats_entry_t *src);
+
+extern of_list_bsn_gentable_stats_entry_t *
+    of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_gentable_stats_entry_t *src);
+
 extern of_list_bsn_interface_t *
     of_list_bsn_interface_OF_VERSION_1_3_dup(
         of_list_bsn_interface_t *src);
@@ -5257,6 +5541,10 @@ extern of_list_bsn_port_counter_stats_entry_t *
 extern of_list_bsn_switch_pipeline_stats_entry_t *
     of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
         of_list_bsn_switch_pipeline_stats_entry_t *src);
+
+extern of_list_bsn_tlv_t *
+    of_list_bsn_tlv_OF_VERSION_1_3_dup(
+        of_list_bsn_tlv_t *src);
 
 extern of_list_bsn_vlan_counter_stats_entry_t *
     of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(

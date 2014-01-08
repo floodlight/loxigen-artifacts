@@ -3064,6 +3064,141 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_gentable_stats_request_t *obj = of_bsn_gentable_stats_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_stats_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_stats_request_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_stats_reply_t *obj = of_bsn_gentable_stats_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_stats_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_stats_reply_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_set_buckets_size_t *obj = of_bsn_gentable_set_buckets_size_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_set_buckets_size_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_entry_stats_request_t *obj = of_bsn_gentable_entry_stats_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_entry_stats_request_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_entry_stats_reply_t *obj = of_bsn_gentable_entry_stats_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_entry_stats_reply_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_entry_desc_stats_request_t *obj = of_bsn_gentable_entry_desc_stats_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_entry_desc_stats_request_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_entry_desc_stats_reply_t *obj = of_bsn_gentable_entry_desc_stats_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_entry_desc_stats_reply_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_entry_delete_t *obj = of_bsn_gentable_entry_delete_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_entry_delete_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_entry_delete_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_entry_add_t *obj = of_bsn_gentable_entry_add_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_entry_add_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_entry_add_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_desc_stats_request_t *obj = of_bsn_gentable_desc_stats_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_desc_stats_request_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_desc_stats_reply_t *obj = of_bsn_gentable_desc_stats_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_desc_stats_reply_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_clear_request_t *obj = of_bsn_gentable_clear_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_clear_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_clear_request_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_clear_reply_t *obj = of_bsn_gentable_clear_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_clear_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_clear_reply_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_bucket_stats_request_t *obj = of_bsn_gentable_bucket_stats_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_bucket_stats_request_delete(obj);
+    }
+
+    {
+        of_bsn_gentable_bucket_stats_reply_t *obj = of_bsn_gentable_bucket_stats_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_gentable_bucket_stats_reply_delete(obj);
+    }
+
+    {
         of_bsn_flow_idle_enable_set_request_t *obj = of_bsn_flow_idle_enable_set_request_new(OF_VERSION_1_3);
         of_message_t msg;
         of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_populate(obj, 1);

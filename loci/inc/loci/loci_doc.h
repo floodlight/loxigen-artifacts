@@ -591,6 +591,435 @@ typedef struct of_bsn_flow_idle_enable_set_reply_s of_bsn_flow_idle_enable_set_r
 typedef struct of_bsn_flow_idle_enable_set_request_s of_bsn_flow_idle_enable_set_request_t;
 
 /**
+ * Structure for of_bsn_gentable_bucket_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_gentable_bucket_stats_entry.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_reply_of_list_bsn_gentable_bucket_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_bucket_stats_reply_s of_bsn_gentable_bucket_stats_reply_t;
+
+/**
+ * Structure for of_bsn_gentable_bucket_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_request_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_request_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_bucket_stats_request_s of_bsn_gentable_bucket_stats_request_t;
+
+/**
+ * Structure for of_bsn_gentable_clear_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_reply_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_reply_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_clear_reply_uint16_get_f and _set_f.
+ *
+ * @param deleted_count_get/set ( OF_1_3).
+ *   Accessors for deleted_count, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_reply_uint32_get_f and _set_f.
+ *
+ * @param error_count_get/set ( OF_1_3).
+ *   Accessors for error_count, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_reply_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_clear_reply_s of_bsn_gentable_clear_reply_t;
+
+/**
+ * Structure for of_bsn_gentable_clear_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_request_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_clear_request_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_clear_request_uint16_get_f and _set_f.
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_clear_request_of_checksum_128_get_f and _set_f.
+ *
+ * @param checksum_mask_get/set ( OF_1_3).
+ *   Accessors for checksum_mask, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_clear_request_of_checksum_128_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_clear_request_s of_bsn_gentable_clear_request_t;
+
+/**
+ * Structure for of_bsn_gentable_desc_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_desc_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_gentable_desc_stats_entry.  Functions
+ *   are of type of_bsn_gentable_desc_stats_reply_of_list_bsn_gentable_desc_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_desc_stats_reply_s of_bsn_gentable_desc_stats_reply_t;
+
+/**
+ * Structure for of_bsn_gentable_desc_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_desc_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_desc_stats_request_s of_bsn_gentable_desc_stats_request_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_add object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_add_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_add_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_add_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_add_uint16_get_f and _set_f.
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_entry_add_of_checksum_128_get_f and _set_f.
+ *
+ * @param key_get/set ( OF_1_3).
+ *   Accessors for key, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_add_of_list_bsn_tlv_get_f and _set_f.
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_add_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_add_s of_bsn_gentable_entry_add_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_delete object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_delete_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_delete_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_delete_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_delete_uint16_get_f and _set_f.
+ *
+ * @param key_get/set ( OF_1_3).
+ *   Accessors for key, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_delete_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_delete_s of_bsn_gentable_entry_delete_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_desc_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_gentable_entry_desc_stats_entry.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_reply_of_list_bsn_gentable_entry_desc_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_desc_stats_reply_s of_bsn_gentable_entry_desc_stats_reply_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_desc_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_uint16_get_f and _set_f.
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_of_checksum_128_get_f and _set_f.
+ *
+ * @param checksum_mask_get/set ( OF_1_3).
+ *   Accessors for checksum_mask, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_request_of_checksum_128_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_desc_stats_request_s of_bsn_gentable_entry_desc_stats_request_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_gentable_entry_stats_entry.  Functions
+ *   are of type of_bsn_gentable_entry_stats_reply_of_list_bsn_gentable_entry_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_stats_reply_s of_bsn_gentable_entry_stats_reply_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_uint16_get_f and _set_f.
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_of_checksum_128_get_f and _set_f.
+ *
+ * @param checksum_mask_get/set ( OF_1_3).
+ *   Accessors for checksum_mask, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_entry_stats_request_of_checksum_128_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_stats_request_s of_bsn_gentable_entry_stats_request_t;
+
+/**
+ * Structure for of_bsn_gentable_set_buckets_size object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_set_buckets_size_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_set_buckets_size_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_set_buckets_size_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_set_buckets_size_uint16_get_f and _set_f.
+ *
+ * @param buckets_size_get/set ( OF_1_3).
+ *   Accessors for buckets_size, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_set_buckets_size_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_set_buckets_size_s of_bsn_gentable_set_buckets_size_t;
+
+/**
+ * Structure for of_bsn_gentable_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_gentable_stats_entry.  Functions
+ *   are of type of_bsn_gentable_stats_reply_of_list_bsn_gentable_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_stats_reply_s of_bsn_gentable_stats_reply_t;
+
+/**
+ * Structure for of_bsn_gentable_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_stats_request_s of_bsn_gentable_stats_request_t;
+
+/**
  * Structure for of_bsn_get_interfaces_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -4412,6 +4841,93 @@ typedef struct of_action_strip_vlan_s of_action_strip_vlan_t;
 typedef struct of_bsn_controller_connection_s of_bsn_controller_connection_t;
 
 /**
+ * Structure for of_bsn_gentable_bucket_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_bucket_stats_entry_of_checksum_128_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_bucket_stats_entry_s of_bsn_gentable_bucket_stats_entry_t;
+
+/**
+ * Structure for of_bsn_gentable_desc_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_desc_stats_entry_uint16_get_f and _set_f.
+ *
+ * @param name_get/set ( OF_1_3).
+ *   Accessors for name, a variable of type of_table_name.  Functions
+ *   are of type of_bsn_gentable_desc_stats_entry_of_table_name_get_f and _set_f.
+ *
+ * @param buckets_size_get/set ( OF_1_3).
+ *   Accessors for buckets_size, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_entry_uint32_get_f and _set_f.
+ *
+ * @param max_entries_get/set ( OF_1_3).
+ *   Accessors for max_entries, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_desc_stats_entry_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_desc_stats_entry_s of_bsn_gentable_desc_stats_entry_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_desc_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_entry_of_checksum_128_get_f and _set_f.
+ *
+ * @param key_get/set ( OF_1_3).
+ *   Accessors for key, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_entry_of_list_bsn_tlv_get_f and _set_f.
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_desc_stats_entry_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_desc_stats_entry_s of_bsn_gentable_entry_desc_stats_entry_t;
+
+/**
+ * Structure for of_bsn_gentable_entry_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param key_get/set ( OF_1_3).
+ *   Accessors for key, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_stats_entry_of_list_bsn_tlv_get_f and _set_f.
+ *
+ * @param stats_get/set ( OF_1_3).
+ *   Accessors for stats, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_gentable_entry_stats_entry_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_entry_stats_entry_s of_bsn_gentable_entry_stats_entry_t;
+
+/**
+ * Structure for of_bsn_gentable_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_gentable_stats_entry_uint16_get_f and _set_f.
+ *
+ * @param entry_count_get/set ( OF_1_3).
+ *   Accessors for entry_count, a variable of type uint32.  Functions
+ *   are of type of_bsn_gentable_stats_entry_uint32_get_f and _set_f.
+ *
+ * @param checksum_get/set ( OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_bsn_gentable_stats_entry_of_checksum_128_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_gentable_stats_entry_s of_bsn_gentable_stats_entry_t;
+
+/**
  * Structure for of_bsn_interface object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -4514,6 +5030,104 @@ typedef struct of_bsn_port_counter_stats_entry_s of_bsn_port_counter_stats_entry
  *
  */
 typedef struct of_bsn_switch_pipeline_stats_entry_s of_bsn_switch_pipeline_stats_entry_t;
+
+/**
+ * Structure for of_bsn_tlv object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_s of_bsn_tlv_t;
+
+/**
+ * Structure for of_bsn_tlv_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_header_s of_bsn_tlv_header_t;
+
+/**
+ * Structure for of_bsn_tlv_idle_notification object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_idle_notification_s of_bsn_tlv_idle_notification_t;
+
+/**
+ * Structure for of_bsn_tlv_idle_time object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_idle_time_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_idle_time_s of_bsn_tlv_idle_time_t;
+
+/**
+ * Structure for of_bsn_tlv_ipv4 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_tlv_ipv4_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ipv4_s of_bsn_tlv_ipv4_t;
+
+/**
+ * Structure for of_bsn_tlv_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
+
+/**
+ * Structure for of_bsn_tlv_port object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_port_no.  Functions
+ *   are of type of_bsn_tlv_port_of_port_no_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
+
+/**
+ * Structure for of_bsn_tlv_rx_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_rx_packets_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_rx_packets_s of_bsn_tlv_rx_packets_t;
+
+/**
+ * Structure for of_bsn_tlv_tx_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_tx_packets_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_tx_packets_s of_bsn_tlv_tx_packets_t;
+
+/**
+ * Structure for of_bsn_tlv_vlan_vid object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_vlan_vid_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_vlan_vid_s of_bsn_tlv_vlan_vid_t;
 
 /**
  * Structure for of_bsn_vlan_counter_stats_entry object.  Get/set
@@ -7050,6 +7664,81 @@ typedef struct of_list_action_id_s of_list_action_id_t;
 typedef struct of_list_bsn_controller_connection_s of_list_bsn_controller_connection_t;
 
 /**
+ * Structure for of_list_bsn_gentable_bucket_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_gentable_bucket_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_gentable_bucket_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_gentable_bucket_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_gentable_bucket_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_gentable_bucket_stats_entry_s of_list_bsn_gentable_bucket_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_gentable_desc_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_gentable_desc_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_gentable_desc_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_gentable_desc_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_gentable_desc_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_gentable_desc_stats_entry_s of_list_bsn_gentable_desc_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_gentable_entry_desc_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_gentable_entry_desc_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_gentable_entry_desc_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_gentable_entry_desc_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_gentable_entry_desc_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_gentable_entry_desc_stats_entry_s of_list_bsn_gentable_entry_desc_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_gentable_entry_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_gentable_entry_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_gentable_entry_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_gentable_entry_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_gentable_entry_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_gentable_entry_stats_entry_s of_list_bsn_gentable_entry_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_gentable_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_gentable_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_gentable_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_gentable_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_gentable_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_gentable_stats_entry_s of_list_bsn_gentable_stats_entry_t;
+
+/**
  * Structure for of_list_bsn_interface object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7108,6 +7797,21 @@ typedef struct of_list_bsn_port_counter_stats_entry_s of_list_bsn_port_counter_s
  * Copy an item to the end of a list
  */
 typedef struct of_list_bsn_switch_pipeline_stats_entry_s of_list_bsn_switch_pipeline_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_tlv object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_tlv_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_tlv_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_tlv_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_tlv_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_tlv_s of_list_bsn_tlv_t;
 
 /**
  * Structure for of_list_bsn_vlan_counter_stats_entry object.  Get/set

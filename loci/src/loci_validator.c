@@ -569,10 +569,16 @@ static inline int of_list_flow_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf,
 static inline int of_list_bucket_counter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bucket_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_action_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_action_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -733,10 +739,24 @@ static inline int of_bucket_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_rx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_port_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_mac_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_ipv4_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_idle_time_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_idle_notification_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_queue_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_nw_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -894,6 +914,21 @@ static inline int of_bsn_get_mirroring_request_OF_VERSION_1_3_validate(uint8_t *
 static inline int of_bsn_get_mirroring_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_get_interfaces_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_get_interfaces_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_delete_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_entry_add_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_clear_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_clear_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8877,6 +8912,69 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int l
 }
 
 static inline int
+of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    while (len >= 4) {
+        of_object_id_t e_id;
+        uint16_t e_type, e_len;
+        buf_u16_get(buf, &e_type);
+        buf_u16_get(buf+2, &e_len);
+        e_id = of_bsn_tlv_to_object_id(e_type, OF_VERSION_1_3);
+        switch (e_id) {
+        case OF_BSN_TLV_RX_PACKETS:
+            if (of_bsn_tlv_rx_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_IDLE_TIME:
+            if (of_bsn_tlv_idle_time_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_MAC:
+            if (of_bsn_tlv_mac_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_IPV4:
+            if (of_bsn_tlv_ipv4_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_VLAN_VID:
+            if (of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_IDLE_NOTIFICATION:
+            if (of_bsn_tlv_idle_notification_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_TX_PACKETS:
+            if (of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_PORT:
+            if (of_bsn_tlv_port_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        default:
+            return -1;
+        }
+        buf += e_len;
+        len -= e_len;
+    }
+    if (len != 0) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if ((len / 256) * 256 != len) {
@@ -8908,6 +9006,50 @@ static inline int
 of_list_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if ((len / 32) * 32 != len) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if ((len / 24) * 24 != len) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    /* TODO verify U16 len elements */
+
+    return 0;
+}
+
+static inline int
+of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    /* TODO verify U16 len elements */
+
+    return 0;
+}
+
+static inline int
+of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    /* TODO verify U16 len elements */
+
+    return 0;
+}
+
+static inline int
+of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if ((len / 16) * 16 != len) {
         return -1;
     }
 
@@ -11161,6 +11303,105 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_bsn_tlv_vlan_vid.  Len %d too small, < %d", len, 6);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_bsn_tlv_tx_packets.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_rx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_bsn_tlv_rx_packets.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_port_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_tlv_port.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_mac_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 10) {
+        VALIDATOR_LOG("Class of_bsn_tlv_mac.  Len %d too small, < %d", len, 10);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_ipv4_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_tlv_ipv4.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_idle_time_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_bsn_tlv_idle_time.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_idle_notification_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_bsn_tlv_idle_notification.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_bsn_tlv_header.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 256) {
@@ -11207,6 +11448,79 @@ of_bsn_interface_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 32) {
         VALIDATOR_LOG("Class of_bsn_interface.  Len %d too small, < %d", len, 32);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_stats_entry.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_stats_entry.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+
+    {    int key_len = len - 4;
+
+
+        if (of_list_bsn_tlv_OF_VERSION_1_3_validate(buf + 4, key_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 20) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_desc_stats_entry.  Len %d too small, < %d", len, 20);
+        return -1;
+    }
+
+
+    {    int key_len = len - 20;
+
+
+        if (of_list_bsn_tlv_OF_VERSION_1_3_validate(buf + 20, key_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 48) {
+        VALIDATOR_LOG("Class of_bsn_gentable_desc_stats_entry.  Len %d too small, < %d", len, 48);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_bsn_gentable_bucket_stats_entry.  Len %d too small, < %d", len, 16);
         return -1;
     }
 
@@ -13235,6 +13549,234 @@ of_bsn_get_interfaces_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_gentable_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_stats_request.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_set_buckets_size.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 60) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_stats_request.  Len %d too small, < %d", len, 60);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 60) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_desc_stats_request.  Len %d too small, < %d", len, 60);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_desc_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_delete_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 18) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_delete.  Len %d too small, < %d", len, 18);
+        return -1;
+    }
+
+
+    {    int key_len = len - 18;
+
+
+        if (of_list_bsn_tlv_OF_VERSION_1_3_validate(buf + 18, key_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_entry_add_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 36) {
+        VALIDATOR_LOG("Class of_bsn_gentable_entry_add.  Len %d too small, < %d", len, 36);
+        return -1;
+    }
+
+
+    {    int key_len = len - 36;
+
+
+        if (of_list_bsn_tlv_OF_VERSION_1_3_validate(buf + 36, key_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_desc_stats_request.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_desc_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_clear_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 52) {
+        VALIDATOR_LOG("Class of_bsn_gentable_clear_request.  Len %d too small, < %d", len, 52);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_clear_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 28) {
+        VALIDATOR_LOG("Class of_bsn_gentable_clear_reply.  Len %d too small, < %d", len, 28);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 26) {
+        VALIDATOR_LOG("Class of_bsn_gentable_bucket_stats_request.  Len %d too small, < %d", len, 26);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_gentable_bucket_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 20) {
@@ -13733,6 +14275,36 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_get_interfaces_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_GET_INTERFACES_REPLY:
         return of_bsn_get_interfaces_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_STATS_REQUEST:
+        return of_bsn_gentable_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_STATS_REPLY:
+        return of_bsn_gentable_stats_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_SET_BUCKETS_SIZE:
+        return of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_ENTRY_STATS_REQUEST:
+        return of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_ENTRY_STATS_REPLY:
+        return of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST:
+        return of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY:
+        return of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_ENTRY_DELETE:
+        return of_bsn_gentable_entry_delete_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_ENTRY_ADD:
+        return of_bsn_gentable_entry_add_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_DESC_STATS_REQUEST:
+        return of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_DESC_STATS_REPLY:
+        return of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_CLEAR_REQUEST:
+        return of_bsn_gentable_clear_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_CLEAR_REPLY:
+        return of_bsn_gentable_clear_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_BUCKET_STATS_REQUEST:
+        return of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_GENTABLE_BUCKET_STATS_REPLY:
+        return of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST:
         return of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY:

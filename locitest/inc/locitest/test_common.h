@@ -5037,6 +5037,141 @@ extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_check_scalars(
     of_bsn_flow_idle_enable_set_request_t *obj, int value);
 
+extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_gentable_bucket_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_gentable_bucket_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_bucket_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_bucket_stats_reply_t *obj, int value);
+
+extern int of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_gentable_bucket_stats_request_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_check(
+    of_bsn_gentable_bucket_stats_request_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_bucket_stats_request_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_bucket_stats_request_t *obj, int value);
+
+extern int of_bsn_gentable_clear_reply_OF_VERSION_1_3_populate(
+    of_bsn_gentable_clear_reply_t *obj, int value);
+extern int of_bsn_gentable_clear_reply_OF_VERSION_1_3_check(
+    of_bsn_gentable_clear_reply_t *obj, int value);
+extern int of_bsn_gentable_clear_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_clear_reply_t *obj, int value);
+extern int of_bsn_gentable_clear_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_clear_reply_t *obj, int value);
+
+extern int of_bsn_gentable_clear_request_OF_VERSION_1_3_populate(
+    of_bsn_gentable_clear_request_t *obj, int value);
+extern int of_bsn_gentable_clear_request_OF_VERSION_1_3_check(
+    of_bsn_gentable_clear_request_t *obj, int value);
+extern int of_bsn_gentable_clear_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_clear_request_t *obj, int value);
+extern int of_bsn_gentable_clear_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_clear_request_t *obj, int value);
+
+extern int of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_gentable_desc_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_gentable_desc_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_desc_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_desc_stats_reply_t *obj, int value);
+
+extern int of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_gentable_desc_stats_request_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_check(
+    of_bsn_gentable_desc_stats_request_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_desc_stats_request_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_desc_stats_request_t *obj, int value);
+
+extern int of_bsn_gentable_entry_add_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_add_t *obj, int value);
+extern int of_bsn_gentable_entry_add_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_add_t *obj, int value);
+extern int of_bsn_gentable_entry_add_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_add_t *obj, int value);
+extern int of_bsn_gentable_entry_add_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_add_t *obj, int value);
+
+extern int of_bsn_gentable_entry_delete_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_delete_t *obj, int value);
+extern int of_bsn_gentable_entry_delete_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_delete_t *obj, int value);
+extern int of_bsn_gentable_entry_delete_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_delete_t *obj, int value);
+extern int of_bsn_gentable_entry_delete_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_delete_t *obj, int value);
+
+extern int of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_desc_stats_reply_t *obj, int value);
+
+extern int of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_desc_stats_request_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_desc_stats_request_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_desc_stats_request_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_desc_stats_request_t *obj, int value);
+
+extern int of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_stats_reply_t *obj, int value);
+
+extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_stats_request_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_stats_request_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_stats_request_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_stats_request_t *obj, int value);
+
+extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_populate(
+    of_bsn_gentable_set_buckets_size_t *obj, int value);
+extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_check(
+    of_bsn_gentable_set_buckets_size_t *obj, int value);
+extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_set_buckets_size_t *obj, int value);
+extern int of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_set_buckets_size_t *obj, int value);
+
+extern int of_bsn_gentable_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_gentable_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_gentable_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_stats_reply_t *obj, int value);
+extern int of_bsn_gentable_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_stats_reply_t *obj, int value);
+
+extern int of_bsn_gentable_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_gentable_stats_request_t *obj, int value);
+extern int of_bsn_gentable_stats_request_OF_VERSION_1_3_check(
+    of_bsn_gentable_stats_request_t *obj, int value);
+extern int of_bsn_gentable_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_stats_request_t *obj, int value);
+extern int of_bsn_gentable_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_stats_request_t *obj, int value);
+
 extern int of_bsn_get_interfaces_reply_OF_VERSION_1_3_populate(
     of_bsn_get_interfaces_reply_t *obj, int value);
 extern int of_bsn_get_interfaces_reply_OF_VERSION_1_3_check(
@@ -6450,6 +6585,51 @@ extern int of_bsn_controller_connection_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_controller_connection_OF_VERSION_1_3_check_scalars(
     of_bsn_controller_connection_t *obj, int value);
 
+extern int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_gentable_bucket_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_gentable_bucket_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_bucket_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_bucket_stats_entry_t *obj, int value);
+
+extern int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_gentable_desc_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_gentable_desc_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_desc_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_desc_stats_entry_t *obj, int value);
+
+extern int of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+
+extern int of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_gentable_entry_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_gentable_entry_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_entry_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_entry_stats_entry_t *obj, int value);
+
+extern int of_bsn_gentable_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_gentable_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_gentable_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_gentable_stats_entry_t *obj, int value);
+extern int of_bsn_gentable_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_gentable_stats_entry_t *obj, int value);
+
 extern int of_bsn_interface_OF_VERSION_1_3_populate(
     of_bsn_interface_t *obj, int value);
 extern int of_bsn_interface_OF_VERSION_1_3_check(
@@ -6485,6 +6665,87 @@ extern int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate_scalars(
     of_bsn_switch_pipeline_stats_entry_t *obj, int value);
 extern int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check_scalars(
     of_bsn_switch_pipeline_stats_entry_t *obj, int value);
+
+extern int of_bsn_tlv_header_OF_VERSION_1_3_populate(
+    of_bsn_tlv_header_t *obj, int value);
+extern int of_bsn_tlv_header_OF_VERSION_1_3_check(
+    of_bsn_tlv_header_t *obj, int value);
+extern int of_bsn_tlv_header_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_header_t *obj, int value);
+extern int of_bsn_tlv_header_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_header_t *obj, int value);
+
+extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_populate(
+    of_bsn_tlv_idle_notification_t *obj, int value);
+extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_check(
+    of_bsn_tlv_idle_notification_t *obj, int value);
+extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_idle_notification_t *obj, int value);
+extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_idle_notification_t *obj, int value);
+
+extern int of_bsn_tlv_idle_time_OF_VERSION_1_3_populate(
+    of_bsn_tlv_idle_time_t *obj, int value);
+extern int of_bsn_tlv_idle_time_OF_VERSION_1_3_check(
+    of_bsn_tlv_idle_time_t *obj, int value);
+extern int of_bsn_tlv_idle_time_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_idle_time_t *obj, int value);
+extern int of_bsn_tlv_idle_time_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_idle_time_t *obj, int value);
+
+extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_populate(
+    of_bsn_tlv_ipv4_t *obj, int value);
+extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_check(
+    of_bsn_tlv_ipv4_t *obj, int value);
+extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_ipv4_t *obj, int value);
+extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_ipv4_t *obj, int value);
+
+extern int of_bsn_tlv_mac_OF_VERSION_1_3_populate(
+    of_bsn_tlv_mac_t *obj, int value);
+extern int of_bsn_tlv_mac_OF_VERSION_1_3_check(
+    of_bsn_tlv_mac_t *obj, int value);
+extern int of_bsn_tlv_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_mac_t *obj, int value);
+extern int of_bsn_tlv_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_mac_t *obj, int value);
+
+extern int of_bsn_tlv_port_OF_VERSION_1_3_populate(
+    of_bsn_tlv_port_t *obj, int value);
+extern int of_bsn_tlv_port_OF_VERSION_1_3_check(
+    of_bsn_tlv_port_t *obj, int value);
+extern int of_bsn_tlv_port_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_port_t *obj, int value);
+extern int of_bsn_tlv_port_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_port_t *obj, int value);
+
+extern int of_bsn_tlv_rx_packets_OF_VERSION_1_3_populate(
+    of_bsn_tlv_rx_packets_t *obj, int value);
+extern int of_bsn_tlv_rx_packets_OF_VERSION_1_3_check(
+    of_bsn_tlv_rx_packets_t *obj, int value);
+extern int of_bsn_tlv_rx_packets_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_rx_packets_t *obj, int value);
+extern int of_bsn_tlv_rx_packets_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_rx_packets_t *obj, int value);
+
+extern int of_bsn_tlv_tx_packets_OF_VERSION_1_3_populate(
+    of_bsn_tlv_tx_packets_t *obj, int value);
+extern int of_bsn_tlv_tx_packets_OF_VERSION_1_3_check(
+    of_bsn_tlv_tx_packets_t *obj, int value);
+extern int of_bsn_tlv_tx_packets_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_tx_packets_t *obj, int value);
+extern int of_bsn_tlv_tx_packets_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_tx_packets_t *obj, int value);
+
+extern int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_populate(
+    of_bsn_tlv_vlan_vid_t *obj, int value);
+extern int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_check(
+    of_bsn_tlv_vlan_vid_t *obj, int value);
+extern int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_vlan_vid_t *obj, int value);
+extern int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_vlan_vid_t *obj, int value);
 
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_populate(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
@@ -7926,6 +8187,51 @@ extern int of_list_bsn_controller_connection_OF_VERSION_1_3_populate_scalars(
 extern int of_list_bsn_controller_connection_OF_VERSION_1_3_check_scalars(
     of_list_bsn_controller_connection_t *obj, int value);
 
+extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_gentable_bucket_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_gentable_bucket_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_gentable_bucket_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_gentable_bucket_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_gentable_desc_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_gentable_desc_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_gentable_desc_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_gentable_desc_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_gentable_entry_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_gentable_entry_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_gentable_entry_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_gentable_entry_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_gentable_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_gentable_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_gentable_stats_entry_t *obj, int value);
+extern int of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_gentable_stats_entry_t *obj, int value);
+
 extern int of_list_bsn_interface_OF_VERSION_1_3_populate(
     of_list_bsn_interface_t *obj, int value);
 extern int of_list_bsn_interface_OF_VERSION_1_3_check(
@@ -7961,6 +8267,15 @@ extern int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_populate_scala
     of_list_bsn_switch_pipeline_stats_entry_t *obj, int value);
 extern int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_check_scalars(
     of_list_bsn_switch_pipeline_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_tlv_OF_VERSION_1_3_populate(
+    of_list_bsn_tlv_t *obj, int value);
+extern int of_list_bsn_tlv_OF_VERSION_1_3_check(
+    of_list_bsn_tlv_t *obj, int value);
+extern int of_list_bsn_tlv_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_tlv_t *obj, int value);
+extern int of_list_bsn_tlv_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_tlv_t *obj, int value);
 
 extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_populate(
     of_list_bsn_vlan_counter_stats_entry_t *obj, int value);
@@ -8461,6 +8776,41 @@ extern int
     of_list_bsn_controller_connection_t *list, int value);
 
 extern int
+    list_setup_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_bucket_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_bucket_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_desc_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_desc_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_entry_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_entry_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_gentable_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_gentable_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_gentable_stats_entry_t *list, int value);
+
+extern int
     list_setup_of_list_bsn_interface_OF_VERSION_1_3(
     of_list_bsn_interface_t *list, int value);
 extern int
@@ -8487,6 +8837,13 @@ extern int
 extern int
     list_check_of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(
     of_list_bsn_switch_pipeline_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_tlv_OF_VERSION_1_3(
+    of_list_bsn_tlv_t *list, int value);
+extern int
+    list_check_of_list_bsn_tlv_OF_VERSION_1_3(
+    of_list_bsn_tlv_t *list, int value);
 
 extern int
     list_setup_of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3(

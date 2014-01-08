@@ -20269,6 +20269,675 @@ of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_gentable_bucket_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_bucket_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_bucket_stats_reply_t *
+of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_gentable_bucket_stats_reply_t *src)
+{
+    of_bsn_gentable_bucket_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_gentable_bucket_stats_entry_t src_list;
+    of_list_bsn_gentable_bucket_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_gentable_bucket_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_bucket_stats_reply_xid_get(src, &val32);
+    of_bsn_gentable_bucket_stats_reply_xid_set(dst, val32);
+
+    of_bsn_gentable_bucket_stats_reply_flags_get(src, &val16);
+    of_bsn_gentable_bucket_stats_reply_flags_set(dst, val16);
+
+    of_bsn_gentable_bucket_stats_reply_experimenter_get(src, &val32);
+    of_bsn_gentable_bucket_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_gentable_bucket_stats_reply_subtype_get(src, &val32);
+    of_bsn_gentable_bucket_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_gentable_bucket_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_bucket_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_bucket_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_gentable_bucket_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_bucket_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_bucket_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_bucket_stats_request_t *
+of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_gentable_bucket_stats_request_t *src)
+{
+    of_bsn_gentable_bucket_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_gentable_bucket_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_bucket_stats_request_xid_get(src, &val32);
+    of_bsn_gentable_bucket_stats_request_xid_set(dst, val32);
+
+    of_bsn_gentable_bucket_stats_request_flags_get(src, &val16);
+    of_bsn_gentable_bucket_stats_request_flags_set(dst, val16);
+
+    of_bsn_gentable_bucket_stats_request_experimenter_get(src, &val32);
+    of_bsn_gentable_bucket_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_gentable_bucket_stats_request_subtype_get(src, &val32);
+    of_bsn_gentable_bucket_stats_request_subtype_set(dst, val32);
+
+    of_bsn_gentable_bucket_stats_request_table_id_get(src, &val16);
+    of_bsn_gentable_bucket_stats_request_table_id_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_clear_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_clear_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_clear_reply_t *
+of_bsn_gentable_clear_reply_OF_VERSION_1_3_dup(
+    of_bsn_gentable_clear_reply_t *src)
+{
+    of_bsn_gentable_clear_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_gentable_clear_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_clear_reply_xid_get(src, &val32);
+    of_bsn_gentable_clear_reply_xid_set(dst, val32);
+
+    of_bsn_gentable_clear_reply_experimenter_get(src, &val32);
+    of_bsn_gentable_clear_reply_experimenter_set(dst, val32);
+
+    of_bsn_gentable_clear_reply_subtype_get(src, &val32);
+    of_bsn_gentable_clear_reply_subtype_set(dst, val32);
+
+    of_bsn_gentable_clear_reply_table_id_get(src, &val16);
+    of_bsn_gentable_clear_reply_table_id_set(dst, val16);
+
+    of_bsn_gentable_clear_reply_deleted_count_get(src, &val32);
+    of_bsn_gentable_clear_reply_deleted_count_set(dst, val32);
+
+    of_bsn_gentable_clear_reply_error_count_get(src, &val32);
+    of_bsn_gentable_clear_reply_error_count_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_clear_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_clear_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_clear_request_t *
+of_bsn_gentable_clear_request_OF_VERSION_1_3_dup(
+    of_bsn_gentable_clear_request_t *src)
+{
+    of_bsn_gentable_clear_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_checksum_128_t checksum_128;
+
+    if ((dst = of_bsn_gentable_clear_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_clear_request_xid_get(src, &val32);
+    of_bsn_gentable_clear_request_xid_set(dst, val32);
+
+    of_bsn_gentable_clear_request_experimenter_get(src, &val32);
+    of_bsn_gentable_clear_request_experimenter_set(dst, val32);
+
+    of_bsn_gentable_clear_request_subtype_get(src, &val32);
+    of_bsn_gentable_clear_request_subtype_set(dst, val32);
+
+    of_bsn_gentable_clear_request_table_id_get(src, &val16);
+    of_bsn_gentable_clear_request_table_id_set(dst, val16);
+
+    of_bsn_gentable_clear_request_checksum_get(src, &checksum_128);
+    of_bsn_gentable_clear_request_checksum_set(dst, checksum_128);
+
+    of_bsn_gentable_clear_request_checksum_mask_get(src, &checksum_128);
+    of_bsn_gentable_clear_request_checksum_mask_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_desc_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_desc_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_desc_stats_reply_t *
+of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_gentable_desc_stats_reply_t *src)
+{
+    of_bsn_gentable_desc_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_gentable_desc_stats_entry_t src_list;
+    of_list_bsn_gentable_desc_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_gentable_desc_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_desc_stats_reply_xid_get(src, &val32);
+    of_bsn_gentable_desc_stats_reply_xid_set(dst, val32);
+
+    of_bsn_gentable_desc_stats_reply_flags_get(src, &val16);
+    of_bsn_gentable_desc_stats_reply_flags_set(dst, val16);
+
+    of_bsn_gentable_desc_stats_reply_experimenter_get(src, &val32);
+    of_bsn_gentable_desc_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_gentable_desc_stats_reply_subtype_get(src, &val32);
+    of_bsn_gentable_desc_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_gentable_desc_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_desc_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_desc_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_gentable_desc_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_desc_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_desc_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_desc_stats_request_t *
+of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_gentable_desc_stats_request_t *src)
+{
+    of_bsn_gentable_desc_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_gentable_desc_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_desc_stats_request_xid_get(src, &val32);
+    of_bsn_gentable_desc_stats_request_xid_set(dst, val32);
+
+    of_bsn_gentable_desc_stats_request_flags_get(src, &val16);
+    of_bsn_gentable_desc_stats_request_flags_set(dst, val16);
+
+    of_bsn_gentable_desc_stats_request_experimenter_get(src, &val32);
+    of_bsn_gentable_desc_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_gentable_desc_stats_request_subtype_get(src, &val32);
+    of_bsn_gentable_desc_stats_request_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_add
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_add.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_add_t *
+of_bsn_gentable_entry_add_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_add_t *src)
+{
+    of_bsn_gentable_entry_add_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_checksum_128_t checksum_128;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_gentable_entry_add_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_add_xid_get(src, &val32);
+    of_bsn_gentable_entry_add_xid_set(dst, val32);
+
+    of_bsn_gentable_entry_add_experimenter_get(src, &val32);
+    of_bsn_gentable_entry_add_experimenter_set(dst, val32);
+
+    of_bsn_gentable_entry_add_subtype_get(src, &val32);
+    of_bsn_gentable_entry_add_subtype_set(dst, val32);
+
+    of_bsn_gentable_entry_add_table_id_get(src, &val16);
+    of_bsn_gentable_entry_add_table_id_set(dst, val16);
+
+    of_bsn_gentable_entry_add_checksum_get(src, &checksum_128);
+    of_bsn_gentable_entry_add_checksum_set(dst, checksum_128);
+
+    of_bsn_gentable_entry_add_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_add_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_add_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    of_bsn_gentable_entry_add_value_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_add_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_add_value_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_delete
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_delete.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_delete_t *
+of_bsn_gentable_entry_delete_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_delete_t *src)
+{
+    of_bsn_gentable_entry_delete_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_gentable_entry_delete_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_delete_xid_get(src, &val32);
+    of_bsn_gentable_entry_delete_xid_set(dst, val32);
+
+    of_bsn_gentable_entry_delete_experimenter_get(src, &val32);
+    of_bsn_gentable_entry_delete_experimenter_set(dst, val32);
+
+    of_bsn_gentable_entry_delete_subtype_get(src, &val32);
+    of_bsn_gentable_entry_delete_subtype_set(dst, val32);
+
+    of_bsn_gentable_entry_delete_table_id_get(src, &val16);
+    of_bsn_gentable_entry_delete_table_id_set(dst, val16);
+
+    of_bsn_gentable_entry_delete_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_delete_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_delete_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_desc_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_desc_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_desc_stats_reply_t *
+of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_desc_stats_reply_t *src)
+{
+    of_bsn_gentable_entry_desc_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_gentable_entry_desc_stats_entry_t src_list;
+    of_list_bsn_gentable_entry_desc_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_gentable_entry_desc_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_desc_stats_reply_xid_get(src, &val32);
+    of_bsn_gentable_entry_desc_stats_reply_xid_set(dst, val32);
+
+    of_bsn_gentable_entry_desc_stats_reply_flags_get(src, &val16);
+    of_bsn_gentable_entry_desc_stats_reply_flags_set(dst, val16);
+
+    of_bsn_gentable_entry_desc_stats_reply_experimenter_get(src, &val32);
+    of_bsn_gentable_entry_desc_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_gentable_entry_desc_stats_reply_subtype_get(src, &val32);
+    of_bsn_gentable_entry_desc_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_gentable_entry_desc_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_desc_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_desc_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_gentable_entry_desc_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_desc_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_desc_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_desc_stats_request_t *
+of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_desc_stats_request_t *src)
+{
+    of_bsn_gentable_entry_desc_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_checksum_128_t checksum_128;
+
+    if ((dst = of_bsn_gentable_entry_desc_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_desc_stats_request_xid_get(src, &val32);
+    of_bsn_gentable_entry_desc_stats_request_xid_set(dst, val32);
+
+    of_bsn_gentable_entry_desc_stats_request_flags_get(src, &val16);
+    of_bsn_gentable_entry_desc_stats_request_flags_set(dst, val16);
+
+    of_bsn_gentable_entry_desc_stats_request_experimenter_get(src, &val32);
+    of_bsn_gentable_entry_desc_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_gentable_entry_desc_stats_request_subtype_get(src, &val32);
+    of_bsn_gentable_entry_desc_stats_request_subtype_set(dst, val32);
+
+    of_bsn_gentable_entry_desc_stats_request_table_id_get(src, &val16);
+    of_bsn_gentable_entry_desc_stats_request_table_id_set(dst, val16);
+
+    of_bsn_gentable_entry_desc_stats_request_checksum_get(src, &checksum_128);
+    of_bsn_gentable_entry_desc_stats_request_checksum_set(dst, checksum_128);
+
+    of_bsn_gentable_entry_desc_stats_request_checksum_mask_get(src, &checksum_128);
+    of_bsn_gentable_entry_desc_stats_request_checksum_mask_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_stats_reply_t *
+of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_stats_reply_t *src)
+{
+    of_bsn_gentable_entry_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_gentable_entry_stats_entry_t src_list;
+    of_list_bsn_gentable_entry_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_gentable_entry_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_stats_reply_xid_get(src, &val32);
+    of_bsn_gentable_entry_stats_reply_xid_set(dst, val32);
+
+    of_bsn_gentable_entry_stats_reply_flags_get(src, &val16);
+    of_bsn_gentable_entry_stats_reply_flags_set(dst, val16);
+
+    of_bsn_gentable_entry_stats_reply_experimenter_get(src, &val32);
+    of_bsn_gentable_entry_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_gentable_entry_stats_reply_subtype_get(src, &val32);
+    of_bsn_gentable_entry_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_gentable_entry_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_gentable_entry_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_stats_request_t *
+of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_stats_request_t *src)
+{
+    of_bsn_gentable_entry_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_checksum_128_t checksum_128;
+
+    if ((dst = of_bsn_gentable_entry_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_stats_request_xid_get(src, &val32);
+    of_bsn_gentable_entry_stats_request_xid_set(dst, val32);
+
+    of_bsn_gentable_entry_stats_request_flags_get(src, &val16);
+    of_bsn_gentable_entry_stats_request_flags_set(dst, val16);
+
+    of_bsn_gentable_entry_stats_request_experimenter_get(src, &val32);
+    of_bsn_gentable_entry_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_gentable_entry_stats_request_subtype_get(src, &val32);
+    of_bsn_gentable_entry_stats_request_subtype_set(dst, val32);
+
+    of_bsn_gentable_entry_stats_request_table_id_get(src, &val16);
+    of_bsn_gentable_entry_stats_request_table_id_set(dst, val16);
+
+    of_bsn_gentable_entry_stats_request_checksum_get(src, &checksum_128);
+    of_bsn_gentable_entry_stats_request_checksum_set(dst, checksum_128);
+
+    of_bsn_gentable_entry_stats_request_checksum_mask_get(src, &checksum_128);
+    of_bsn_gentable_entry_stats_request_checksum_mask_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_set_buckets_size
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_set_buckets_size.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_set_buckets_size_t *
+of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_dup(
+    of_bsn_gentable_set_buckets_size_t *src)
+{
+    of_bsn_gentable_set_buckets_size_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_gentable_set_buckets_size_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_set_buckets_size_xid_get(src, &val32);
+    of_bsn_gentable_set_buckets_size_xid_set(dst, val32);
+
+    of_bsn_gentable_set_buckets_size_experimenter_get(src, &val32);
+    of_bsn_gentable_set_buckets_size_experimenter_set(dst, val32);
+
+    of_bsn_gentable_set_buckets_size_subtype_get(src, &val32);
+    of_bsn_gentable_set_buckets_size_subtype_set(dst, val32);
+
+    of_bsn_gentable_set_buckets_size_table_id_get(src, &val16);
+    of_bsn_gentable_set_buckets_size_table_id_set(dst, val16);
+
+    of_bsn_gentable_set_buckets_size_buckets_size_get(src, &val32);
+    of_bsn_gentable_set_buckets_size_buckets_size_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_stats_reply_t *
+of_bsn_gentable_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_gentable_stats_reply_t *src)
+{
+    of_bsn_gentable_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_gentable_stats_entry_t src_list;
+    of_list_bsn_gentable_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_gentable_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_stats_reply_xid_get(src, &val32);
+    of_bsn_gentable_stats_reply_xid_set(dst, val32);
+
+    of_bsn_gentable_stats_reply_flags_get(src, &val16);
+    of_bsn_gentable_stats_reply_flags_set(dst, val16);
+
+    of_bsn_gentable_stats_reply_experimenter_get(src, &val32);
+    of_bsn_gentable_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_gentable_stats_reply_subtype_get(src, &val32);
+    of_bsn_gentable_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_gentable_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_gentable_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_stats_request_t *
+of_bsn_gentable_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_gentable_stats_request_t *src)
+{
+    of_bsn_gentable_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_gentable_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_stats_request_xid_get(src, &val32);
+    of_bsn_gentable_stats_request_xid_set(dst, val32);
+
+    of_bsn_gentable_stats_request_flags_get(src, &val16);
+    of_bsn_gentable_stats_request_flags_set(dst, val16);
+
+    of_bsn_gentable_stats_request_experimenter_get(src, &val32);
+    of_bsn_gentable_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_gentable_stats_request_subtype_get(src, &val32);
+    of_bsn_gentable_stats_request_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_get_interfaces_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -26072,6 +26741,192 @@ of_bsn_controller_connection_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_gentable_bucket_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_bucket_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_bucket_stats_entry_t *
+of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_gentable_bucket_stats_entry_t *src)
+{
+    of_bsn_gentable_bucket_stats_entry_t *dst;
+    of_checksum_128_t checksum_128;
+
+    if ((dst = of_bsn_gentable_bucket_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_bucket_stats_entry_checksum_get(src, &checksum_128);
+    of_bsn_gentable_bucket_stats_entry_checksum_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_desc_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_desc_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_desc_stats_entry_t *
+of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_gentable_desc_stats_entry_t *src)
+{
+    of_bsn_gentable_desc_stats_entry_t *dst;
+    uint16_t val16;
+    of_table_name_t table_name;
+    uint32_t val32;
+
+    if ((dst = of_bsn_gentable_desc_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_desc_stats_entry_table_id_get(src, &val16);
+    of_bsn_gentable_desc_stats_entry_table_id_set(dst, val16);
+
+    of_bsn_gentable_desc_stats_entry_name_get(src, &table_name);
+    of_bsn_gentable_desc_stats_entry_name_set(dst, table_name);
+
+    of_bsn_gentable_desc_stats_entry_buckets_size_get(src, &val32);
+    of_bsn_gentable_desc_stats_entry_buckets_size_set(dst, val32);
+
+    of_bsn_gentable_desc_stats_entry_max_entries_get(src, &val32);
+    of_bsn_gentable_desc_stats_entry_max_entries_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_desc_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_desc_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_desc_stats_entry_t *
+of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_desc_stats_entry_t *src)
+{
+    of_bsn_gentable_entry_desc_stats_entry_t *dst;
+    of_checksum_128_t checksum_128;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_gentable_entry_desc_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_desc_stats_entry_checksum_get(src, &checksum_128);
+    of_bsn_gentable_entry_desc_stats_entry_checksum_set(dst, checksum_128);
+
+    of_bsn_gentable_entry_desc_stats_entry_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_desc_stats_entry_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_desc_stats_entry_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    of_bsn_gentable_entry_desc_stats_entry_value_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_desc_stats_entry_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_desc_stats_entry_value_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_entry_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_entry_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_entry_stats_entry_t *
+of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_gentable_entry_stats_entry_t *src)
+{
+    of_bsn_gentable_entry_stats_entry_t *dst;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_gentable_entry_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_entry_stats_entry_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_stats_entry_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_stats_entry_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    of_bsn_gentable_entry_stats_entry_stats_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_gentable_entry_stats_entry_delete(dst);
+        return NULL;
+    }
+    of_bsn_gentable_entry_stats_entry_stats_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_gentable_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_gentable_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_gentable_stats_entry_t *
+of_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_gentable_stats_entry_t *src)
+{
+    of_bsn_gentable_stats_entry_t *dst;
+    uint16_t val16;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    if ((dst = of_bsn_gentable_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_gentable_stats_entry_table_id_get(src, &val16);
+    of_bsn_gentable_stats_entry_table_id_set(dst, val16);
+
+    of_bsn_gentable_stats_entry_entry_count_get(src, &val32);
+    of_bsn_gentable_stats_entry_entry_count_set(dst, val32);
+
+    of_bsn_gentable_stats_entry_checksum_get(src, &checksum_128);
+    of_bsn_gentable_stats_entry_checksum_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_interface
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -26227,6 +27082,278 @@ of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
 
     of_bsn_switch_pipeline_stats_entry_pipeline_get(src, &desc_str);
     of_bsn_switch_pipeline_stats_entry_pipeline_set(dst, desc_str);
+
+    return dst;
+}
+
+/**
+ * Duplicate a super class object of type of_bsn_tlv
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_t *
+of_bsn_tlv_OF_VERSION_1_3_dup(
+    of_bsn_tlv_t *src)
+{
+
+    if (src->header.object_id == OF_BSN_TLV_RX_PACKETS) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
+            &src->rx_packets);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_IDLE_TIME) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
+            &src->idle_time);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_MAC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_mac_OF_VERSION_1_3_dup(
+            &src->mac);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_IPV4) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
+            &src->ipv4);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_VLAN_VID) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
+            &src->vlan_vid);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
+            &src->idle_notification);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_TX_PACKETS) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
+            &src->tx_packets);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_PORT) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_port_OF_VERSION_1_3_dup(
+            &src->port);
+    }
+
+    return NULL;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_header
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_header.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_header_t *
+of_bsn_tlv_header_OF_VERSION_1_3_dup(
+    of_bsn_tlv_header_t *src)
+{
+    of_bsn_tlv_header_t *dst;
+
+    if ((dst = of_bsn_tlv_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_idle_notification
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_idle_notification.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_idle_notification_t *
+of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
+    of_bsn_tlv_idle_notification_t *src)
+{
+    of_bsn_tlv_idle_notification_t *dst;
+
+    if ((dst = of_bsn_tlv_idle_notification_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_idle_time
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_idle_time.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_idle_time_t *
+of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
+    of_bsn_tlv_idle_time_t *src)
+{
+    of_bsn_tlv_idle_time_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_idle_time_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_idle_time_value_get(src, &val64);
+    of_bsn_tlv_idle_time_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ipv4
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ipv4.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ipv4_t *
+of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
+    of_bsn_tlv_ipv4_t *src)
+{
+    of_bsn_tlv_ipv4_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_ipv4_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ipv4_value_get(src, &ipv4);
+    of_bsn_tlv_ipv4_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mac_t *
+of_bsn_tlv_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_mac_t *src)
+{
+    of_bsn_tlv_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_port
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_port.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_port_t *
+of_bsn_tlv_port_OF_VERSION_1_3_dup(
+    of_bsn_tlv_port_t *src)
+{
+    of_bsn_tlv_port_t *dst;
+    of_port_no_t port_no;
+
+    if ((dst = of_bsn_tlv_port_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_port_value_get(src, &port_no);
+    of_bsn_tlv_port_value_set(dst, port_no);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rx_packets
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rx_packets.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rx_packets_t *
+of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
+    of_bsn_tlv_rx_packets_t *src)
+{
+    of_bsn_tlv_rx_packets_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_rx_packets_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rx_packets_value_get(src, &val64);
+    of_bsn_tlv_rx_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_tx_packets
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_tx_packets.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_tx_packets_t *
+of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
+    of_bsn_tlv_tx_packets_t *src)
+{
+    of_bsn_tlv_tx_packets_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_tx_packets_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_tx_packets_value_get(src, &val64);
+    of_bsn_tlv_tx_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vlan_vid
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vlan_vid.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vlan_vid_t *
+of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
+    of_bsn_tlv_vlan_vid_t *src)
+{
+    of_bsn_tlv_vlan_vid_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_vlan_vid_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vlan_vid_value_get(src, &val16);
+    of_bsn_tlv_vlan_vid_value_set(dst, val16);
 
     return dst;
 }
@@ -31659,6 +32786,176 @@ of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_bsn_gentable_bucket_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_gentable_bucket_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_gentable_bucket_stats_entry_t *
+of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_gentable_bucket_stats_entry_t *src)
+{
+    of_bsn_gentable_bucket_stats_entry_t src_elt;
+    of_bsn_gentable_bucket_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_gentable_bucket_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_gentable_bucket_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_GENTABLE_BUCKET_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_gentable_bucket_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_gentable_desc_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_gentable_desc_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_gentable_desc_stats_entry_t *
+of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_gentable_desc_stats_entry_t *src)
+{
+    of_bsn_gentable_desc_stats_entry_t src_elt;
+    of_bsn_gentable_desc_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_gentable_desc_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_gentable_desc_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_GENTABLE_DESC_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_gentable_desc_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_gentable_entry_desc_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_gentable_entry_desc_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_gentable_entry_desc_stats_entry_t *
+of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *src)
+{
+    of_bsn_gentable_entry_desc_stats_entry_t src_elt;
+    of_bsn_gentable_entry_desc_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_gentable_entry_desc_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_gentable_entry_desc_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_gentable_entry_desc_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_gentable_entry_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_gentable_entry_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_gentable_entry_stats_entry_t *
+of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_gentable_entry_stats_entry_t *src)
+{
+    of_bsn_gentable_entry_stats_entry_t src_elt;
+    of_bsn_gentable_entry_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_gentable_entry_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_gentable_entry_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_GENTABLE_ENTRY_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_gentable_entry_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_gentable_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_gentable_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_gentable_stats_entry_t *
+of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_gentable_stats_entry_t *src)
+{
+    of_bsn_gentable_stats_entry_t src_elt;
+    of_bsn_gentable_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_gentable_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_gentable_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_GENTABLE_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_gentable_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_bsn_interface
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -31787,6 +33084,40 @@ of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
             return NULL;
         }
         _TRY_FREE(of_list_bsn_switch_pipeline_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_tlv
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_tlv.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_tlv_t *
+of_list_bsn_tlv_OF_VERSION_1_3_dup(
+    of_list_bsn_tlv_t *src)
+{
+    of_bsn_tlv_t src_elt;
+    of_bsn_tlv_t *dst_elt;
+    int rv;
+    of_list_bsn_tlv_t *dst;
+
+    if ((dst = of_list_bsn_tlv_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_TLV_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_tlv_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_tlv_append(dst, dst_elt),
             dst, NULL);
         of_object_delete((of_object_t *)dst_elt);
     }
@@ -33042,6 +34373,201 @@ of_bsn_flow_idle_enable_set_request_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_bucket_stats_reply_t *
+of_bsn_gentable_bucket_stats_reply_dup(
+    of_bsn_gentable_bucket_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_bucket_stats_request_t *
+of_bsn_gentable_bucket_stats_request_dup(
+    of_bsn_gentable_bucket_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_clear_reply_t *
+of_bsn_gentable_clear_reply_dup(
+    of_bsn_gentable_clear_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_clear_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_clear_request_t *
+of_bsn_gentable_clear_request_dup(
+    of_bsn_gentable_clear_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_clear_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_desc_stats_reply_t *
+of_bsn_gentable_desc_stats_reply_dup(
+    of_bsn_gentable_desc_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_desc_stats_request_t *
+of_bsn_gentable_desc_stats_request_dup(
+    of_bsn_gentable_desc_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_add_t *
+of_bsn_gentable_entry_add_dup(
+    of_bsn_gentable_entry_add_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_add_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_delete_t *
+of_bsn_gentable_entry_delete_dup(
+    of_bsn_gentable_entry_delete_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_delete_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_desc_stats_reply_t *
+of_bsn_gentable_entry_desc_stats_reply_dup(
+    of_bsn_gentable_entry_desc_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_desc_stats_request_t *
+of_bsn_gentable_entry_desc_stats_request_dup(
+    of_bsn_gentable_entry_desc_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_stats_reply_t *
+of_bsn_gentable_entry_stats_reply_dup(
+    of_bsn_gentable_entry_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_stats_request_t *
+of_bsn_gentable_entry_stats_request_dup(
+    of_bsn_gentable_entry_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_set_buckets_size_t *
+of_bsn_gentable_set_buckets_size_dup(
+    of_bsn_gentable_set_buckets_size_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_stats_reply_t *
+of_bsn_gentable_stats_reply_dup(
+    of_bsn_gentable_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_stats_request_t *
+of_bsn_gentable_stats_request_dup(
+    of_bsn_gentable_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_stats_request_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -36579,6 +38105,71 @@ of_bsn_controller_connection_dup(
     return NULL;
 }
 
+of_bsn_gentable_bucket_stats_entry_t *
+of_bsn_gentable_bucket_stats_entry_dup(
+    of_bsn_gentable_bucket_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_desc_stats_entry_t *
+of_bsn_gentable_desc_stats_entry_dup(
+    of_bsn_gentable_desc_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_desc_stats_entry_t *
+of_bsn_gentable_entry_desc_stats_entry_dup(
+    of_bsn_gentable_entry_desc_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_entry_stats_entry_t *
+of_bsn_gentable_entry_stats_entry_dup(
+    of_bsn_gentable_entry_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_gentable_stats_entry_t *
+of_bsn_gentable_stats_entry_dup(
+    of_bsn_gentable_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_interface_t *
 of_bsn_interface_dup(
     of_bsn_interface_t *src)
@@ -36637,6 +38228,136 @@ of_bsn_switch_pipeline_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_t *
+of_bsn_tlv_dup(
+    of_bsn_tlv_t *src)
+{
+
+    if (src->header.version == OF_VERSION_1_3) {
+        return of_bsn_tlv_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_header_t *
+of_bsn_tlv_header_dup(
+    of_bsn_tlv_header_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_header_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_idle_notification_t *
+of_bsn_tlv_idle_notification_dup(
+    of_bsn_tlv_idle_notification_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_idle_time_t *
+of_bsn_tlv_idle_time_dup(
+    of_bsn_tlv_idle_time_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_ipv4_t *
+of_bsn_tlv_ipv4_dup(
+    of_bsn_tlv_ipv4_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_mac_t *
+of_bsn_tlv_mac_dup(
+    of_bsn_tlv_mac_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_port_t *
+of_bsn_tlv_port_dup(
+    of_bsn_tlv_port_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_rx_packets_t *
+of_bsn_tlv_rx_packets_dup(
+    of_bsn_tlv_rx_packets_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_tx_packets_t *
+of_bsn_tlv_tx_packets_dup(
+    of_bsn_tlv_tx_packets_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_vlan_vid_t *
+of_bsn_tlv_vlan_vid_dup(
+    of_bsn_tlv_vlan_vid_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -39481,6 +41202,71 @@ of_list_bsn_controller_connection_dup(
     return NULL;
 }
 
+of_list_bsn_gentable_bucket_stats_entry_t *
+of_list_bsn_gentable_bucket_stats_entry_dup(
+    of_list_bsn_gentable_bucket_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_gentable_desc_stats_entry_t *
+of_list_bsn_gentable_desc_stats_entry_dup(
+    of_list_bsn_gentable_desc_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_gentable_entry_desc_stats_entry_t *
+of_list_bsn_gentable_entry_desc_stats_entry_dup(
+    of_list_bsn_gentable_entry_desc_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_gentable_entry_stats_entry_t *
+of_list_bsn_gentable_entry_stats_entry_dup(
+    of_list_bsn_gentable_entry_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_gentable_stats_entry_t *
+of_list_bsn_gentable_stats_entry_dup(
+    of_list_bsn_gentable_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_list_bsn_interface_t *
 of_list_bsn_interface_dup(
     of_list_bsn_interface_t *src)
@@ -39539,6 +41325,19 @@ of_list_bsn_switch_pipeline_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_tlv_t *
+of_list_bsn_tlv_dup(
+    of_list_bsn_tlv_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_tlv_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

@@ -689,6 +689,98 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnFlowIdleEnableSetRequest not supported in version 1.1");
     }
 
+    public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.1");
+    }
+    public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(OFChecksum128 checksum) {
+        throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnGentableBucketStatsReply.Builder buildBsnGentableBucketStatsReply() {
+        throw new UnsupportedOperationException("OFBsnGentableBucketStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnGentableBucketStatsRequest.Builder buildBsnGentableBucketStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnGentableBucketStatsRequest not supported in version 1.1");
+    }
+
+    public OFBsnGentableClearReply.Builder buildBsnGentableClearReply() {
+        throw new UnsupportedOperationException("OFBsnGentableClearReply not supported in version 1.1");
+    }
+
+    public OFBsnGentableClearRequest.Builder buildBsnGentableClearRequest() {
+        throw new UnsupportedOperationException("OFBsnGentableClearRequest not supported in version 1.1");
+    }
+
+    public OFBsnGentableDescStatsEntry.Builder buildBsnGentableDescStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnGentableDescStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnGentableDescStatsReply.Builder buildBsnGentableDescStatsReply() {
+        throw new UnsupportedOperationException("OFBsnGentableDescStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnGentableDescStatsRequest.Builder buildBsnGentableDescStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnGentableDescStatsRequest not supported in version 1.1");
+    }
+    public OFBsnGentableDescStatsRequest bsnGentableDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnGentableDescStatsRequest not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryAdd.Builder buildBsnGentableEntryAdd() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryAdd not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryDelete.Builder buildBsnGentableEntryDelete() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryDelete not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryDescStatsEntry.Builder buildBsnGentableEntryDescStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryDescStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryDescStatsReply.Builder buildBsnGentableEntryDescStatsReply() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryDescStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryDescStatsRequest.Builder buildBsnGentableEntryDescStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryDescStatsRequest not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryStatsEntry.Builder buildBsnGentableEntryStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryStatsEntry not supported in version 1.1");
+    }
+    public OFBsnGentableEntryStatsEntry bsnGentableEntryStatsEntry(List<OFBsnTlv> key, List<OFBsnTlv> stats) {
+        throw new UnsupportedOperationException("OFBsnGentableEntryStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryStatsReply.Builder buildBsnGentableEntryStatsReply() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnGentableEntryStatsRequest.Builder buildBsnGentableEntryStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnGentableEntryStatsRequest not supported in version 1.1");
+    }
+
+    public OFBsnGentableSetBucketsSize.Builder buildBsnGentableSetBucketsSize() {
+        throw new UnsupportedOperationException("OFBsnGentableSetBucketsSize not supported in version 1.1");
+    }
+
+    public OFBsnGentableStatsEntry.Builder buildBsnGentableStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnGentableStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnGentableStatsReply.Builder buildBsnGentableStatsReply() {
+        throw new UnsupportedOperationException("OFBsnGentableStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnGentableStatsRequest.Builder buildBsnGentableStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnGentableStatsRequest not supported in version 1.1");
+    }
+    public OFBsnGentableStatsRequest bsnGentableStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnGentableStatsRequest not supported in version 1.1");
+    }
+
     public OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() {
         throw new UnsupportedOperationException("OFBsnGetSwitchPipelineReply not supported in version 1.1");
     }
@@ -793,6 +885,59 @@ public class OFFactoryVer11 implements OFFactory {
     }
     public OFBsnTimeRequest bsnTimeRequest() {
         throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.1");
+    }
+
+    public OFBsnTlvIdleNotification bsnTlvIdleNotification() {
+        throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.1");
+    }
+
+    public OFBsnTlvIdleTime.Builder buildBsnTlvIdleTime() {
+        throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.1");
+    }
+    public OFBsnTlvIdleTime bsnTlvIdleTime(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.1");
+    }
+
+    public OFBsnTlvIpv4.Builder buildBsnTlvIpv4() {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.1");
+    }
+    public OFBsnTlvIpv4 bsnTlvIpv4(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.1");
+    }
+
+    public OFBsnTlvMac.Builder buildBsnTlvMac() {
+        throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.1");
+    }
+    public OFBsnTlvMac bsnTlvMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.1");
+    }
+
+    public OFBsnTlvPort.Builder buildBsnTlvPort() {
+        throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
+    }
+    public OFBsnTlvPort bsnTlvPort(OFPort value) {
+        throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
+    }
+
+    public OFBsnTlvRxPackets.Builder buildBsnTlvRxPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.1");
+    }
+    public OFBsnTlvRxPackets bsnTlvRxPackets(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.1");
+    }
+
+    public OFBsnTlvTxPackets.Builder buildBsnTlvTxPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.1");
+    }
+    public OFBsnTlvTxPackets bsnTlvTxPackets(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.1");
+    }
+
+    public OFBsnTlvVlanVid.Builder buildBsnTlvVlanVid() {
+        throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.1");
+    }
+    public OFBsnTlvVlanVid bsnTlvVlanVid(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.1");
     }
 
     public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {

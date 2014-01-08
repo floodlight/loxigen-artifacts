@@ -215,6 +215,7 @@ of_object_id_t of_group_mod_to_object_id(int group_mod, of_version_t version);
 of_object_id_t of_oxm_to_object_id(uint32_t type_len, of_version_t version);
 of_object_id_t of_message_experimenter_to_object_id(of_message_t msg, of_version_t version);
 of_object_id_t of_message_to_object_id(of_message_t msg, int length);
+of_object_id_t of_bsn_tlv_to_object_id(int tlv_type, of_version_t version);
 
 int of_object_wire_init(of_object_t *obj, of_object_id_t base_object_id, int max_len);
 
@@ -364,6 +365,50 @@ extern int of_offset_flow_modify_instructions_get(
     of_flow_modify_t *obj, int *offset);
 
 /**
+ * Special length calculation for of_bsn_gentable_entry_add->value.
+ * @param obj An object of type of_bsn_gentable_entry_add to check for
+ * length of value
+ * @param bytes[out] Where to store the calculated length
+ *
+ * Preceding data member is key.
+ */
+extern int of_length_bsn_gentable_entry_add_value_get(
+    of_bsn_gentable_entry_add_t *obj, int *bytes);
+
+/**
+ * Special offset calculation for of_bsn_gentable_entry_add->value.
+ * @param obj An object of type of_bsn_gentable_entry_add to check for
+ * length of value
+ * @param offset[out] Where to store the calculated length
+ *
+ * Preceding data member is key.
+ */
+extern int of_offset_bsn_gentable_entry_add_value_get(
+    of_bsn_gentable_entry_add_t *obj, int *offset);
+
+/**
+ * Special length calculation for of_bsn_gentable_entry_stats_entry->stats.
+ * @param obj An object of type of_bsn_gentable_entry_stats_entry to check for
+ * length of stats
+ * @param bytes[out] Where to store the calculated length
+ *
+ * Preceding data member is key.
+ */
+extern int of_length_bsn_gentable_entry_stats_entry_stats_get(
+    of_bsn_gentable_entry_stats_entry_t *obj, int *bytes);
+
+/**
+ * Special offset calculation for of_bsn_gentable_entry_stats_entry->stats.
+ * @param obj An object of type of_bsn_gentable_entry_stats_entry to check for
+ * length of stats
+ * @param offset[out] Where to store the calculated length
+ *
+ * Preceding data member is key.
+ */
+extern int of_offset_bsn_gentable_entry_stats_entry_stats_get(
+    of_bsn_gentable_entry_stats_entry_t *obj, int *offset);
+
+/**
  * Special length calculation for of_flow_delete->instructions.
  * @param obj An object of type of_flow_delete to check for
  * length of instructions
@@ -384,6 +429,28 @@ extern int of_length_flow_delete_instructions_get(
  */
 extern int of_offset_flow_delete_instructions_get(
     of_flow_delete_t *obj, int *offset);
+
+/**
+ * Special length calculation for of_bsn_gentable_entry_desc_stats_entry->value.
+ * @param obj An object of type of_bsn_gentable_entry_desc_stats_entry to check for
+ * length of value
+ * @param bytes[out] Where to store the calculated length
+ *
+ * Preceding data member is key.
+ */
+extern int of_length_bsn_gentable_entry_desc_stats_entry_value_get(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, int *bytes);
+
+/**
+ * Special offset calculation for of_bsn_gentable_entry_desc_stats_entry->value.
+ * @param obj An object of type of_bsn_gentable_entry_desc_stats_entry to check for
+ * length of value
+ * @param offset[out] Where to store the calculated length
+ *
+ * Preceding data member is key.
+ */
+extern int of_offset_bsn_gentable_entry_desc_stats_entry_value_get(
+    of_bsn_gentable_entry_desc_stats_entry_t *obj, int *offset);
 
 /**
  * Special length calculation for of_flow_mod->instructions.
@@ -457,6 +524,8 @@ extern void of_table_feature_prop_wire_object_id_get(of_object_t *obj,
 extern void of_meter_band_wire_object_id_get(of_object_t *obj,
     of_object_id_t *id);
 extern void of_hello_elem_wire_object_id_get(of_object_t *obj,
+    of_object_id_t *id);
+extern void of_bsn_tlv_wire_object_id_get(of_object_t *obj,
     of_object_id_t *id);
 
 #define OF_OXM_LENGTH_GET(hdr) (((hdr) & 0xff) + 4)

@@ -16,6 +16,7 @@ import oxm
 import action_id
 import instruction_id
 import meter_band
+import bsn_tlv
 import util
 import loxi.generic_util
 
@@ -2048,6 +2049,1425 @@ class bsn_flow_idle_enable_set_request(bsn_header):
 
 bsn_header.subtypes[36] = bsn_flow_idle_enable_set_request
 
+class experimenter_stats_reply(stats_reply):
+    subtypes = {}
+
+    @staticmethod
+    def unpack(reader):
+        subtype, = reader.peek('!L', 16)
+        try:
+            subclass = experimenter_stats_reply.subtypes[subtype]
+        except KeyError:
+            raise loxi.ProtocolError("unknown experimenter_stats_reply stats_reply message subtype %#x" % subtype)
+        return subclass.unpack(reader)
+
+stats_reply.subtypes[65535] = experimenter_stats_reply
+
+class bsn_stats_reply(experimenter_stats_reply):
+    subtypes = {}
+
+    @staticmethod
+    def unpack(reader):
+        subtype, = reader.peek('!L', 20)
+        try:
+            subclass = bsn_stats_reply.subtypes[subtype]
+        except KeyError:
+            raise loxi.ProtocolError("unknown bsn_stats_reply experimenter_stats_reply stats_reply message subtype %#x" % subtype)
+        return subclass.unpack(reader)
+
+experimenter_stats_reply.subtypes[6035143] = bsn_stats_reply
+
+class bsn_gentable_bucket_stats_reply(bsn_stats_reply):
+    version = 4
+    type = 19
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 5
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_bucket_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 5)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.bsn_gentable_bucket_stats_entry.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_bucket_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_reply.subtypes[5] = bsn_gentable_bucket_stats_reply
+
+class experimenter_stats_request(stats_request):
+    subtypes = {}
+
+    @staticmethod
+    def unpack(reader):
+        subtype, = reader.peek('!L', 16)
+        try:
+            subclass = experimenter_stats_request.subtypes[subtype]
+        except KeyError:
+            raise loxi.ProtocolError("unknown experimenter_stats_request stats_request message subtype %#x" % subtype)
+        return subclass.unpack(reader)
+
+stats_request.subtypes[65535] = experimenter_stats_request
+
+class bsn_stats_request(experimenter_stats_request):
+    subtypes = {}
+
+    @staticmethod
+    def unpack(reader):
+        subtype, = reader.peek('!L', 20)
+        try:
+            subclass = bsn_stats_request.subtypes[subtype]
+        except KeyError:
+            raise loxi.ProtocolError("unknown bsn_stats_request experimenter_stats_request stats_request message subtype %#x" % subtype)
+        return subclass.unpack(reader)
+
+experimenter_stats_request.subtypes[6035143] = bsn_stats_request
+
+class bsn_gentable_bucket_stats_request(bsn_stats_request):
+    version = 4
+    type = 18
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 5
+
+    def __init__(self, xid=None, flags=None, table_id=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_bucket_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 5)
+        obj.table_id = reader.read("!H")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.table_id != other.table_id: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_bucket_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_request.subtypes[5] = bsn_gentable_bucket_stats_request
+
+class bsn_gentable_clear_reply(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 49
+
+    def __init__(self, xid=None, table_id=None, deleted_count=None, error_count=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if deleted_count != None:
+            self.deleted_count = deleted_count
+        else:
+            self.deleted_count = 0
+        if error_count != None:
+            self.error_count = error_count
+        else:
+            self.error_count = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!L", self.deleted_count))
+        packed.append(struct.pack("!L", self.error_count))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_clear_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 49)
+        obj.table_id = reader.read("!H")[0]
+        reader.skip(2)
+        obj.deleted_count = reader.read("!L")[0]
+        obj.error_count = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.table_id != other.table_id: return False
+        if self.deleted_count != other.deleted_count: return False
+        if self.error_count != other.error_count: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_clear_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("deleted_count = ");
+                q.text("%#x" % self.deleted_count)
+                q.text(","); q.breakable()
+                q.text("error_count = ");
+                q.text("%#x" % self.error_count)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[49] = bsn_gentable_clear_reply
+
+class bsn_gentable_clear_request(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 48
+
+    def __init__(self, xid=None, table_id=None, checksum=None, checksum_mask=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if checksum != None:
+            self.checksum = checksum
+        else:
+            self.checksum = 0
+        if checksum_mask != None:
+            self.checksum_mask = checksum_mask
+        else:
+            self.checksum_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append('\x00' * 2)
+        packed.append(util.pack_checksum_128(self.checksum))
+        packed.append(util.pack_checksum_128(self.checksum_mask))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_clear_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 48)
+        obj.table_id = reader.read("!H")[0]
+        reader.skip(2)
+        obj.checksum = util.unpack_checksum_128(reader)
+        obj.checksum_mask = util.unpack_checksum_128(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.table_id != other.table_id: return False
+        if self.checksum != other.checksum: return False
+        if self.checksum_mask != other.checksum_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_clear_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("checksum = ");
+                q.pp(self.checksum)
+                q.text(","); q.breakable()
+                q.text("checksum_mask = ");
+                q.pp(self.checksum_mask)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[48] = bsn_gentable_clear_request
+
+class bsn_gentable_desc_stats_reply(bsn_stats_reply):
+    version = 4
+    type = 19
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 4
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_desc_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 4)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.bsn_gentable_desc_stats_entry.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_desc_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_reply.subtypes[4] = bsn_gentable_desc_stats_reply
+
+class bsn_gentable_desc_stats_request(bsn_stats_request):
+    version = 4
+    type = 18
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 4
+
+    def __init__(self, xid=None, flags=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_desc_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_desc_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_request.subtypes[4] = bsn_gentable_desc_stats_request
+
+class bsn_gentable_entry_add(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 46
+
+    def __init__(self, xid=None, table_id=None, checksum=None, key=None, value=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if checksum != None:
+            self.checksum = checksum
+        else:
+            self.checksum = 0
+        if key != None:
+            self.key = key
+        else:
+            self.key = []
+        if value != None:
+            self.value = value
+        else:
+            self.value = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append(struct.pack("!H", 0)) # placeholder for key_length at index 7
+        packed.append(util.pack_checksum_128(self.checksum))
+        packed.append(loxi.generic_util.pack_list(self.key))
+        packed[7] = struct.pack("!H", len(packed[-1]))
+        packed.append(loxi.generic_util.pack_list(self.value))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_entry_add()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 46)
+        obj.table_id = reader.read("!H")[0]
+        _key_length = reader.read("!H")[0]
+        obj.checksum = util.unpack_checksum_128(reader)
+        obj.key = loxi.generic_util.unpack_list(reader.slice(_key_length), bsn_tlv.bsn_tlv.unpack)
+        obj.value = loxi.generic_util.unpack_list(reader, bsn_tlv.bsn_tlv.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.table_id != other.table_id: return False
+        if self.checksum != other.checksum: return False
+        if self.key != other.key: return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_entry_add {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("checksum = ");
+                q.pp(self.checksum)
+                q.text(","); q.breakable()
+                q.text("key = ");
+                q.pp(self.key)
+                q.text(","); q.breakable()
+                q.text("value = ");
+                q.pp(self.value)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[46] = bsn_gentable_entry_add
+
+class bsn_gentable_entry_delete(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 47
+
+    def __init__(self, xid=None, table_id=None, key=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if key != None:
+            self.key = key
+        else:
+            self.key = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append(loxi.generic_util.pack_list(self.key))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_entry_delete()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 47)
+        obj.table_id = reader.read("!H")[0]
+        obj.key = loxi.generic_util.unpack_list(reader, bsn_tlv.bsn_tlv.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.table_id != other.table_id: return False
+        if self.key != other.key: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_entry_delete {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("key = ");
+                q.pp(self.key)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[47] = bsn_gentable_entry_delete
+
+class bsn_gentable_entry_desc_stats_reply(bsn_stats_reply):
+    version = 4
+    type = 19
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 2
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_entry_desc_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 2)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.bsn_gentable_entry_desc_stats_entry.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_entry_desc_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_reply.subtypes[2] = bsn_gentable_entry_desc_stats_reply
+
+class bsn_gentable_entry_desc_stats_request(bsn_stats_request):
+    version = 4
+    type = 18
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 2
+
+    def __init__(self, xid=None, flags=None, table_id=None, checksum=None, checksum_mask=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if checksum != None:
+            self.checksum = checksum
+        else:
+            self.checksum = 0
+        if checksum_mask != None:
+            self.checksum_mask = checksum_mask
+        else:
+            self.checksum_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append('\x00' * 2)
+        packed.append(util.pack_checksum_128(self.checksum))
+        packed.append(util.pack_checksum_128(self.checksum_mask))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_entry_desc_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 2)
+        obj.table_id = reader.read("!H")[0]
+        reader.skip(2)
+        obj.checksum = util.unpack_checksum_128(reader)
+        obj.checksum_mask = util.unpack_checksum_128(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.table_id != other.table_id: return False
+        if self.checksum != other.checksum: return False
+        if self.checksum_mask != other.checksum_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_entry_desc_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("checksum = ");
+                q.pp(self.checksum)
+                q.text(","); q.breakable()
+                q.text("checksum_mask = ");
+                q.pp(self.checksum_mask)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_request.subtypes[2] = bsn_gentable_entry_desc_stats_request
+
+class bsn_gentable_entry_stats_reply(bsn_stats_reply):
+    version = 4
+    type = 19
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 3
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_entry_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 3)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.bsn_gentable_entry_stats_entry.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_entry_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_reply.subtypes[3] = bsn_gentable_entry_stats_reply
+
+class bsn_gentable_entry_stats_request(bsn_stats_request):
+    version = 4
+    type = 18
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 3
+
+    def __init__(self, xid=None, flags=None, table_id=None, checksum=None, checksum_mask=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if checksum != None:
+            self.checksum = checksum
+        else:
+            self.checksum = 0
+        if checksum_mask != None:
+            self.checksum_mask = checksum_mask
+        else:
+            self.checksum_mask = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append('\x00' * 2)
+        packed.append(util.pack_checksum_128(self.checksum))
+        packed.append(util.pack_checksum_128(self.checksum_mask))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_entry_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 3)
+        obj.table_id = reader.read("!H")[0]
+        reader.skip(2)
+        obj.checksum = util.unpack_checksum_128(reader)
+        obj.checksum_mask = util.unpack_checksum_128(reader)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.table_id != other.table_id: return False
+        if self.checksum != other.checksum: return False
+        if self.checksum_mask != other.checksum_mask: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_entry_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("checksum = ");
+                q.pp(self.checksum)
+                q.text(","); q.breakable()
+                q.text("checksum_mask = ");
+                q.pp(self.checksum_mask)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_request.subtypes[3] = bsn_gentable_entry_stats_request
+
+class bsn_gentable_set_buckets_size(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 50
+
+    def __init__(self, xid=None, table_id=None, buckets_size=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if buckets_size != None:
+            self.buckets_size = buckets_size
+        else:
+            self.buckets_size = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!H", self.table_id))
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!L", self.buckets_size))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_set_buckets_size()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 50)
+        obj.table_id = reader.read("!H")[0]
+        reader.skip(2)
+        obj.buckets_size = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.table_id != other.table_id: return False
+        if self.buckets_size != other.buckets_size: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_set_buckets_size {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("buckets_size = ");
+                q.text("%#x" % self.buckets_size)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[50] = bsn_gentable_set_buckets_size
+
+class bsn_gentable_stats_reply(bsn_stats_reply):
+    version = 4
+    type = 19
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 7
+
+    def __init__(self, xid=None, flags=None, entries=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        if entries != None:
+            self.entries = entries
+        else:
+            self.entries = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(loxi.generic_util.pack_list(self.entries))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_stats_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 19)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 7)
+        obj.entries = loxi.generic_util.unpack_list(reader, common.bsn_gentable_stats_entry.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        if self.entries != other.entries: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_stats_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+                q.text(","); q.breakable()
+                q.text("entries = ");
+                q.pp(self.entries)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_reply.subtypes[7] = bsn_gentable_stats_reply
+
+class bsn_gentable_stats_request(bsn_stats_request):
+    version = 4
+    type = 18
+    stats_type = 65535
+    experimenter = 6035143
+    subtype = 7
+
+    def __init__(self, xid=None, flags=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if flags != None:
+            self.flags = flags
+        else:
+            self.flags = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!H", self.stats_type))
+        packed.append(struct.pack("!H", self.flags))
+        packed.append('\x00' * 4)
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_gentable_stats_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 18)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _stats_type = reader.read("!H")[0]
+        assert(_stats_type == 65535)
+        obj.flags = reader.read("!H")[0]
+        reader.skip(4)
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 7)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.flags != other.flags: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_gentable_stats_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("flags = ");
+                q.text("%#x" % self.flags)
+            q.breakable()
+        q.text('}')
+
+bsn_stats_request.subtypes[7] = bsn_gentable_stats_request
+
 class bsn_get_interfaces_reply(bsn_header):
     version = 4
     type = 4
@@ -2648,34 +4068,6 @@ class bsn_lacp_convergence_notif(bsn_header):
 
 bsn_header.subtypes[43] = bsn_lacp_convergence_notif
 
-class experimenter_stats_reply(stats_reply):
-    subtypes = {}
-
-    @staticmethod
-    def unpack(reader):
-        subtype, = reader.peek('!L', 16)
-        try:
-            subclass = experimenter_stats_reply.subtypes[subtype]
-        except KeyError:
-            raise loxi.ProtocolError("unknown experimenter_stats_reply stats_reply message subtype %#x" % subtype)
-        return subclass.unpack(reader)
-
-stats_reply.subtypes[65535] = experimenter_stats_reply
-
-class bsn_stats_reply(experimenter_stats_reply):
-    subtypes = {}
-
-    @staticmethod
-    def unpack(reader):
-        subtype, = reader.peek('!L', 20)
-        try:
-            subclass = bsn_stats_reply.subtypes[subtype]
-        except KeyError:
-            raise loxi.ProtocolError("unknown bsn_stats_reply experimenter_stats_reply stats_reply message subtype %#x" % subtype)
-        return subclass.unpack(reader)
-
-experimenter_stats_reply.subtypes[6035143] = bsn_stats_reply
-
 class bsn_lacp_stats_reply(bsn_stats_reply):
     version = 4
     type = 19
@@ -2763,34 +4155,6 @@ class bsn_lacp_stats_reply(bsn_stats_reply):
         q.text('}')
 
 bsn_stats_reply.subtypes[1] = bsn_lacp_stats_reply
-
-class experimenter_stats_request(stats_request):
-    subtypes = {}
-
-    @staticmethod
-    def unpack(reader):
-        subtype, = reader.peek('!L', 16)
-        try:
-            subclass = experimenter_stats_request.subtypes[subtype]
-        except KeyError:
-            raise loxi.ProtocolError("unknown experimenter_stats_request stats_request message subtype %#x" % subtype)
-        return subclass.unpack(reader)
-
-stats_request.subtypes[65535] = experimenter_stats_request
-
-class bsn_stats_request(experimenter_stats_request):
-    subtypes = {}
-
-    @staticmethod
-    def unpack(reader):
-        subtype, = reader.peek('!L', 20)
-        try:
-            subclass = bsn_stats_request.subtypes[subtype]
-        except KeyError:
-            raise loxi.ProtocolError("unknown bsn_stats_request experimenter_stats_request stats_request message subtype %#x" % subtype)
-        return subclass.unpack(reader)
-
-experimenter_stats_request.subtypes[6035143] = bsn_stats_request
 
 class bsn_lacp_stats_request(bsn_stats_request):
     version = 4

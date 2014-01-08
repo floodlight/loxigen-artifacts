@@ -1147,6 +1147,503 @@ test_of13_bsn_flow_idle(void) {
     return TEST_PASS;
 }
 
+/* Generated from of13/bsn_gentable_bucket_stats_reply.data */
+static int
+test_of13_bsn_gentable_bucket_stats_reply(void) {
+    uint8_t binary[] = {
+        0x04, 0x13, 0x00, 0x38, 0x12, 0x34, 0x56, 0x78, 
+        0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x05, 
+        0x88, 0x77, 0x66, 0x55, 0x44, 0x33, 0x22, 0x11, 
+        0xff, 0xee, 0xdd, 0xcc, 0xbb, 0xaa, 0x99, 0x88, 
+        0x12, 0x34, 0x23, 0x45, 0x34, 0x56, 0x45, 0x67, 
+        0x56, 0x78, 0x67, 0x89, 0x78, 0x9a, 0x89, 0xab, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_bucket_stats_reply_new(OF_VERSION_1_3);
+    of_bsn_gentable_bucket_stats_reply_xid_set(obj, 0x12345678);
+    {
+        of_object_t *list = of_list_bsn_gentable_bucket_stats_entry_new(OF_VERSION_1_3);
+        {
+            of_object_t *entry = of_bsn_gentable_bucket_stats_entry_new(OF_VERSION_1_3);
+            {
+                of_checksum_128_t checksum = { 0x8877665544332211L, 0xFFEEDDCCBBAA9988L };
+                of_bsn_gentable_bucket_stats_entry_checksum_set(entry, checksum);
+            }
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        {
+            of_object_t *entry = of_bsn_gentable_bucket_stats_entry_new(OF_VERSION_1_3);
+            {
+                of_checksum_128_t checksum = { 0x1234234534564567L, 0x56786789789A89ABL };
+                of_bsn_gentable_bucket_stats_entry_checksum_set(entry, checksum);
+            }
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        of_bsn_gentable_bucket_stats_reply_entries_set(obj, list);
+        of_object_delete(list);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_gentable_clear_request.data */
+static int
+test_of13_bsn_gentable_clear_request(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x34, 0x12, 0x34, 0x56, 0x78, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x30, 
+        0x00, 0x14, 0x00, 0x00, 0xfe, 0xdc, 0xba, 0x98, 
+        0x76, 0x54, 0x32, 0x10, 0xff, 0xee, 0xcc, 0xbb, 
+        0xaa, 0x99, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff, 
+        0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 
+        0xff, 0xff, 0x00, 0x00, 
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_clear_request_new(OF_VERSION_1_3);
+    of_bsn_gentable_clear_request_xid_set(obj, 0x12345678);
+    of_bsn_gentable_clear_request_table_id_set(obj, 20);
+    {
+        of_checksum_128_t checksum = { 0xFEDCBA9876543210L, 0xFFEECCBBAA990000L };
+        of_bsn_gentable_clear_request_checksum_set(obj, checksum);
+    }
+    {
+        of_checksum_128_t checksum_mask = { 0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L };
+        of_bsn_gentable_clear_request_checksum_mask_set(obj, checksum_mask);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_gentable_desc_stats_reply.data */
+static int
+test_of13_bsn_gentable_desc_stats_reply(void) {
+    uint8_t binary[] = {
+        0x04, 0x13, 0x00, 0x78, 0x12, 0x34, 0x56, 0x78, 
+        0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x04, 
+        0x00, 0x30, 0x00, 0x00, 0x74, 0x61, 0x62, 0x6c, 
+        0x65, 0x20, 0x30, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 
+        0x00, 0x00, 0x00, 0x40, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x30, 0x00, 0x01, 0x74, 0x61, 0x62, 0x6c, 
+        0x65, 0x20, 0x31, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 
+        0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 
+        0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 0x2e, 
+        0x2e, 0x2e, 0x2e, 0x2e, 0x00, 0x00, 0x00, 0x40, 
+        0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_desc_stats_reply_new(OF_VERSION_1_3);
+    of_bsn_gentable_desc_stats_reply_xid_set(obj, 0x12345678);
+    {
+        of_object_t *list = of_list_bsn_gentable_desc_stats_entry_new(OF_VERSION_1_3);
+        {
+            of_table_name_t name = "table 0";
+            of_object_t *entry = of_bsn_gentable_desc_stats_entry_new(OF_VERSION_1_3);
+            of_bsn_gentable_desc_stats_entry_table_id_set(entry, 0);
+            of_bsn_gentable_desc_stats_entry_name_set(entry, name);
+            of_bsn_gentable_desc_stats_entry_buckets_size_set(entry, 32);
+            of_bsn_gentable_desc_stats_entry_max_entries_set(entry, 64);
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        {
+            of_table_name_t name = "table 1.........................";
+            of_object_t *entry = of_bsn_gentable_desc_stats_entry_new(OF_VERSION_1_3);
+            of_bsn_gentable_desc_stats_entry_table_id_set(entry, 1);
+            of_bsn_gentable_desc_stats_entry_name_set(entry, name);
+            of_bsn_gentable_desc_stats_entry_buckets_size_set(entry, 64);
+            of_bsn_gentable_desc_stats_entry_max_entries_set(entry, 128);
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        of_bsn_gentable_desc_stats_reply_entries_set(obj, list);
+        of_object_delete(list);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_gentable_entry_add.data */
+static int
+test_of13_bsn_gentable_entry_add(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x48, 0x12, 0x34, 0x56, 0x78, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x2e, 
+        0x00, 0x14, 0x00, 0x12, 0xfe, 0xdc, 0xba, 0x98, 
+        0x76, 0x54, 0x32, 0x10, 0xff, 0xee, 0xcc, 0xbb, 
+        0xaa, 0x99, 0x88, 0x77, 0x00, 0x00, 0x00, 0x08, 
+        0x00, 0x00, 0x00, 0x05, 0x00, 0x01, 0x00, 0x0a, 
+        0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0x00, 0x00, 
+        0x00, 0x08, 0x00, 0x00, 0x00, 0x06, 0x00, 0x01, 
+        0x00, 0x0a, 0xff, 0xee, 0xdd, 0xcc, 0xbb, 0xaa, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_entry_add_new(OF_VERSION_1_3);
+    of_bsn_gentable_entry_add_xid_set(obj, 0x12345678);
+    of_bsn_gentable_entry_add_table_id_set(obj, 20);
+    {
+        of_checksum_128_t checksum = { 0xFEDCBA9876543210L, 0xFFEECCBBAA998877L };
+        of_bsn_gentable_entry_add_checksum_set(obj, checksum);
+    }
+    {
+        of_object_t *list = of_list_bsn_tlv_new(OF_VERSION_1_3);
+        {
+            of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+            of_bsn_tlv_port_value_set(tlv, 5);
+            of_list_append(list, tlv);
+            of_object_delete(tlv);
+        }
+        {
+            of_mac_addr_t mac = { { 0x01, 0x23, 0x45, 0x67, 0x89, 0xab } };
+            of_object_t *tlv = of_bsn_tlv_mac_new(OF_VERSION_1_3);
+            of_bsn_tlv_mac_value_set(tlv, mac);
+            of_list_append(list, tlv);
+            of_object_delete(tlv);
+        }
+        of_bsn_gentable_entry_add_key_set(obj, list);
+        of_object_delete(list);
+    }
+    {
+        of_object_t *list = of_list_bsn_tlv_new(OF_VERSION_1_3);
+        {
+            of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+            of_bsn_tlv_port_value_set(tlv, 6);
+            of_list_append(list, tlv);
+            of_object_delete(tlv);
+        }
+        {
+            of_mac_addr_t mac = { { 0xff, 0xee, 0xdd, 0xcc, 0xbb, 0xaa } };
+            of_object_t *tlv = of_bsn_tlv_mac_new(OF_VERSION_1_3);
+            of_bsn_tlv_mac_value_set(tlv, mac);
+            of_list_append(list, tlv);
+            of_object_delete(tlv);
+        }
+        of_bsn_gentable_entry_add_value_set(obj, list);
+        of_object_delete(list);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_gentable_entry_delete.data */
+static int
+test_of13_bsn_gentable_entry_delete(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x24, 0x12, 0x34, 0x56, 0x78, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x2f, 
+        0x00, 0x14, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 
+        0x00, 0x05, 0x00, 0x01, 0x00, 0x0a, 0x01, 0x23, 
+        0x45, 0x67, 0x89, 0xab, 
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_entry_delete_new(OF_VERSION_1_3);
+    of_bsn_gentable_entry_delete_xid_set(obj, 0x12345678);
+    of_bsn_gentable_entry_delete_table_id_set(obj, 20);
+    {
+        of_object_t *list = of_list_bsn_tlv_new(OF_VERSION_1_3);
+        {
+            of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+            of_bsn_tlv_port_value_set(tlv, 5);
+            of_list_append(list, tlv);
+            of_object_delete(tlv);
+        }
+        {
+            of_mac_addr_t mac = { { 0x01, 0x23, 0x45, 0x67, 0x89, 0xab } };
+            of_object_t *tlv = of_bsn_tlv_mac_new(OF_VERSION_1_3);
+            of_bsn_tlv_mac_value_set(tlv, mac);
+            of_list_append(list, tlv);
+            of_object_delete(tlv);
+        }
+        of_bsn_gentable_entry_delete_key_set(obj, list);
+        of_object_delete(list);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_gentable_entry_desc_stats_reply.data */
+static int
+test_of13_bsn_gentable_entry_desc_stats_reply(void) {
+    uint8_t binary[] = {
+        0x04, 0x13, 0x00, 0x64, 0x12, 0x34, 0x56, 0x78, 
+        0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x02, 
+        0x00, 0x26, 0x00, 0x08, 0xfe, 0xdc, 0xba, 0x98, 
+        0x76, 0x54, 0x32, 0x10, 0xff, 0xee, 0xcc, 0xbb, 
+        0xaa, 0x99, 0x88, 0x00, 0x00, 0x00, 0x00, 0x08, 
+        0x00, 0x00, 0x00, 0x05, 0x00, 0x01, 0x00, 0x0a, 
+        0xff, 0xee, 0xdd, 0xcc, 0xbb, 0x00, 0x00, 0x26, 
+        0x00, 0x08, 0xfe, 0xdc, 0xba, 0x98, 0x76, 0x54, 
+        0x32, 0x10, 0xff, 0xee, 0xcc, 0xbb, 0xaa, 0x99, 
+        0x88, 0x01, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 
+        0x00, 0x06, 0x00, 0x01, 0x00, 0x0a, 0xff, 0xee, 
+        0xdd, 0xcc, 0xbb, 0x01, 
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_entry_desc_stats_reply_new(OF_VERSION_1_3);
+    of_bsn_gentable_entry_desc_stats_reply_xid_set(obj, 0x12345678);
+    {
+        of_object_t *list = of_list_bsn_gentable_entry_desc_stats_entry_new(OF_VERSION_1_3);
+        {
+            of_object_t *entry = of_bsn_gentable_entry_desc_stats_entry_new(OF_VERSION_1_3);
+            {
+                of_checksum_128_t checksum = { 0xFEDCBA9876543210L, 0xFFEECCBBAA998800L };
+                of_bsn_gentable_entry_desc_stats_entry_checksum_set(entry, checksum);
+            }
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+                    of_bsn_tlv_port_value_set(tlv, 5);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_desc_stats_entry_key_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_mac_new(OF_VERSION_1_3);
+                    of_mac_addr_t mac = { { 0xff, 0xee, 0xdd, 0xcc, 0xbb, 0x00 } };
+                    of_bsn_tlv_mac_value_set(tlv, mac);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_desc_stats_entry_value_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        {
+            of_object_t *entry = of_bsn_gentable_entry_desc_stats_entry_new(OF_VERSION_1_3);
+            {
+                of_checksum_128_t checksum = { 0xFEDCBA9876543210L, 0xFFEECCBBAA998801L };
+                of_bsn_gentable_entry_desc_stats_entry_checksum_set(entry, checksum);
+            }
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+                    of_bsn_tlv_port_value_set(tlv, 6);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_desc_stats_entry_key_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_mac_new(OF_VERSION_1_3);
+                    of_mac_addr_t mac = { { 0xff, 0xee, 0xdd, 0xcc, 0xbb, 0x01 } };
+                    of_bsn_tlv_mac_value_set(tlv, mac);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_desc_stats_entry_value_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        of_bsn_gentable_entry_desc_stats_reply_entries_set(obj, list);
+        of_object_delete(list);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_gentable_entry_stats_reply.data */
+static int
+test_of13_bsn_gentable_entry_stats_reply(void) {
+    uint8_t binary[] = {
+        0x04, 0x13, 0x00, 0x60, 0x12, 0x34, 0x56, 0x78, 
+        0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x03, 
+        0x00, 0x24, 0x00, 0x08, 0x00, 0x00, 0x00, 0x08, 
+        0x00, 0x00, 0x00, 0x05, 0x00, 0x02, 0x00, 0x0c, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x64, 
+        0x00, 0x03, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x65, 0x00, 0x24, 0x00, 0x08, 
+        0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x06, 
+        0x00, 0x02, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x64, 0x00, 0x03, 0x00, 0x0c, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x65, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_gentable_entry_stats_reply_new(OF_VERSION_1_3);
+    of_bsn_gentable_entry_stats_reply_xid_set(obj, 0x12345678);
+    {
+        of_object_t *list = of_list_bsn_gentable_entry_stats_entry_new(OF_VERSION_1_3);
+        {
+            of_object_t *entry = of_bsn_gentable_entry_stats_entry_new(OF_VERSION_1_3);
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+                    of_bsn_tlv_port_value_set(tlv, 5);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_stats_entry_key_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_rx_packets_new(OF_VERSION_1_3);
+                    of_bsn_tlv_rx_packets_value_set(tlv, 100);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                {
+                    of_object_t *tlv = of_bsn_tlv_tx_packets_new(OF_VERSION_1_3);
+                    of_bsn_tlv_tx_packets_value_set(tlv, 101);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_stats_entry_stats_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        {
+            of_object_t *entry = of_bsn_gentable_entry_stats_entry_new(OF_VERSION_1_3);
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_port_new(OF_VERSION_1_3);
+                    of_bsn_tlv_port_value_set(tlv, 6);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_stats_entry_key_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            {
+                of_object_t *tlvs = of_list_bsn_tlv_new(OF_VERSION_1_3);
+                {
+                    of_object_t *tlv = of_bsn_tlv_rx_packets_new(OF_VERSION_1_3);
+                    of_bsn_tlv_rx_packets_value_set(tlv, 100);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                {
+                    of_object_t *tlv = of_bsn_tlv_tx_packets_new(OF_VERSION_1_3);
+                    of_bsn_tlv_tx_packets_value_set(tlv, 101);
+                    of_list_append(tlvs, tlv);
+                    of_object_delete(tlv);
+                }
+                of_bsn_gentable_entry_stats_entry_stats_set(entry, tlvs);
+                of_object_delete(tlvs);
+            }
+            of_list_append(list, entry);
+            of_object_delete(entry);
+        }
+        of_bsn_gentable_entry_stats_reply_entries_set(obj, list);
+        of_object_delete(list);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
 /* Generated from of13/bsn_lacp_stats_reply.data */
 static int
 test_of13_bsn_lacp_stats_reply(void) {
@@ -1396,6 +1893,13 @@ test_datafiles(void)
     RUN_TEST(of13_bad_match_error_msg);
     RUN_TEST(of13_bad_request_error_msg);
     RUN_TEST(of13_bsn_flow_idle);
+    RUN_TEST(of13_bsn_gentable_bucket_stats_reply);
+    RUN_TEST(of13_bsn_gentable_clear_request);
+    RUN_TEST(of13_bsn_gentable_desc_stats_reply);
+    RUN_TEST(of13_bsn_gentable_entry_add);
+    RUN_TEST(of13_bsn_gentable_entry_delete);
+    RUN_TEST(of13_bsn_gentable_entry_desc_stats_reply);
+    RUN_TEST(of13_bsn_gentable_entry_stats_reply);
     RUN_TEST(of13_bsn_lacp_stats_reply);
     RUN_TEST(of13_bsn_lacp_stats_request);
     RUN_TEST(of13_instruction_bsn_disable_src_mac_check);

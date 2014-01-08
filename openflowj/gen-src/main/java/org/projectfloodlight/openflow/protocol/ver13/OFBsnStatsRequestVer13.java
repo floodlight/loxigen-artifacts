@@ -64,6 +64,21 @@ abstract class OFBsnStatsRequestVer13 {
             int subtype = bb.readInt();
             bb.readerIndex(start);
             switch(subtype) {
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFBsnGentableBucketStatsRequestVer13
+                   return OFBsnGentableBucketStatsRequestVer13.READER.readFrom(bb);
+               case 0x4:
+                   // discriminator value 0x4L=0x4L for class OFBsnGentableDescStatsRequestVer13
+                   return OFBsnGentableDescStatsRequestVer13.READER.readFrom(bb);
+               case 0x2:
+                   // discriminator value 0x2L=0x2L for class OFBsnGentableEntryDescStatsRequestVer13
+                   return OFBsnGentableEntryDescStatsRequestVer13.READER.readFrom(bb);
+               case 0x3:
+                   // discriminator value 0x3L=0x3L for class OFBsnGentableEntryStatsRequestVer13
+                   return OFBsnGentableEntryStatsRequestVer13.READER.readFrom(bb);
+               case 0x7:
+                   // discriminator value 0x7L=0x7L for class OFBsnGentableStatsRequestVer13
+                   return OFBsnGentableStatsRequestVer13.READER.readFrom(bb);
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFBsnLacpStatsRequestVer13
                    return OFBsnLacpStatsRequestVer13.READER.readFrom(bb);
