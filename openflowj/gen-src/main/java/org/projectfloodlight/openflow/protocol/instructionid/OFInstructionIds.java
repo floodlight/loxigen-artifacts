@@ -27,6 +27,7 @@ public interface OFInstructionIds {
     // Subfactories
 
     OFInstructionIdApplyActions applyActions();
+    OFInstructionIdBsnArpOffload bsnArpOffload();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();

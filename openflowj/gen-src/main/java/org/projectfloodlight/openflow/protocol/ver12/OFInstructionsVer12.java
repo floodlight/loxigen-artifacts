@@ -72,6 +72,10 @@ public class OFInstructionsVer12 implements OFInstructions {
                     );
     }
 
+    public OFInstructionBsnArpOffload bsnArpOffload() {
+        throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.2");
+    }
+
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.2");
     }

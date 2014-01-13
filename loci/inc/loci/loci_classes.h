@@ -276,6 +276,7 @@ typedef of_object_t of_hello_elem_header_t;
 typedef of_object_t of_hello_elem_versionbitmap_t;
 typedef of_object_t of_instruction_apply_actions_t;
 typedef of_object_t of_instruction_bsn_t;
+typedef of_object_t of_instruction_bsn_arp_offload_t;
 typedef of_object_t of_instruction_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
@@ -283,6 +284,7 @@ typedef of_object_t of_instruction_goto_table_t;
 typedef of_object_t of_instruction_header_t;
 typedef of_object_t of_instruction_id_apply_actions_t;
 typedef of_object_t of_instruction_id_bsn_t;
+typedef of_object_t of_instruction_id_bsn_arp_offload_t;
 typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_id_clear_actions_t;
 typedef of_object_t of_instruction_id_experimenter_t;
@@ -2120,6 +2122,11 @@ extern of_instruction_bsn_t *
 extern void of_instruction_bsn_init(
     of_instruction_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_bsn_arp_offload_t *
+    of_instruction_bsn_arp_offload_new(of_version_t version);
+extern void of_instruction_bsn_arp_offload_init(
+    of_instruction_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_new(of_version_t version);
 extern void of_instruction_bsn_disable_src_mac_check_init(
@@ -2159,6 +2166,11 @@ extern of_instruction_id_bsn_t *
     of_instruction_id_bsn_new(of_version_t version);
 extern void of_instruction_id_bsn_init(
     of_instruction_id_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_arp_offload_t *
+    of_instruction_id_bsn_arp_offload_new(of_version_t version);
+extern void of_instruction_id_bsn_arp_offload_init(
+    of_instruction_id_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_new(of_version_t version);
@@ -5940,6 +5952,17 @@ of_instruction_bsn_delete(of_instruction_bsn_t *obj) {
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_arp_offload_t
+ * @param obj An instance of type of_instruction_bsn_arp_offload_t
+ *
+ * \ingroup of_instruction_bsn_arp_offload
+ */
+static inline void
+of_instruction_bsn_arp_offload_delete(of_instruction_bsn_arp_offload_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_bsn_disable_src_mac_check_t
  * @param obj An instance of type of_instruction_bsn_disable_src_mac_check_t
  *
@@ -6024,6 +6047,17 @@ of_instruction_id_apply_actions_delete(of_instruction_id_apply_actions_t *obj) {
  */
 static inline void
 of_instruction_id_bsn_delete(of_instruction_id_bsn_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_arp_offload_t
+ * @param obj An instance of type of_instruction_id_bsn_arp_offload_t
+ *
+ * \ingroup of_instruction_id_bsn_arp_offload
+ */
+static inline void
+of_instruction_id_bsn_arp_offload_delete(of_instruction_id_bsn_arp_offload_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -14889,6 +14923,22 @@ extern void of_instruction_bsn_subtype_get(
     of_instruction_bsn_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_bsn_arp_offload */
+
+extern void of_instruction_bsn_arp_offload_experimenter_set(
+    of_instruction_bsn_arp_offload_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_arp_offload_experimenter_get(
+    of_instruction_bsn_arp_offload_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_arp_offload_subtype_set(
+    of_instruction_bsn_arp_offload_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_arp_offload_subtype_get(
+    of_instruction_bsn_arp_offload_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_bsn_disable_src_mac_check */
 
 extern void of_instruction_bsn_disable_src_mac_check_experimenter_set(
@@ -14950,6 +15000,22 @@ extern void of_instruction_id_bsn_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_subtype_get(
     of_instruction_id_bsn_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_arp_offload */
+
+extern void of_instruction_id_bsn_arp_offload_experimenter_set(
+    of_instruction_id_bsn_arp_offload_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_arp_offload_experimenter_get(
+    of_instruction_id_bsn_arp_offload_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_arp_offload_subtype_set(
+    of_instruction_id_bsn_arp_offload_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_arp_offload_subtype_get(
+    of_instruction_id_bsn_arp_offload_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_bsn_disable_src_mac_check */
@@ -18177,6 +18243,7 @@ union of_instruction_u {
     of_instruction_header_t header; /* Generic instance */
     of_instruction_apply_actions_t apply_actions;
     of_instruction_bsn_t bsn;
+    of_instruction_bsn_arp_offload_t bsn_arp_offload;
     of_instruction_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
     of_instruction_clear_actions_t clear_actions;
     of_instruction_experimenter_t experimenter;
@@ -18218,6 +18285,7 @@ union of_instruction_id_u {
     of_instruction_id_header_t header; /* Generic instance */
     of_instruction_id_apply_actions_t apply_actions;
     of_instruction_id_bsn_t bsn;
+    of_instruction_id_bsn_arp_offload_t bsn_arp_offload;
     of_instruction_id_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
     of_instruction_id_clear_actions_t clear_actions;
     of_instruction_id_experimenter_t experimenter;

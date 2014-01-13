@@ -5425,6 +5425,21 @@ typedef struct of_instruction_apply_actions_s of_instruction_apply_actions_t;
 typedef struct of_instruction_bsn_s of_instruction_bsn_t;
 
 /**
+ * Structure for of_instruction_bsn_arp_offload object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_arp_offload_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_arp_offload_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_arp_offload_s of_instruction_bsn_arp_offload_t;
+
+/**
  * Structure for of_instruction_bsn_disable_src_mac_check object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5507,6 +5522,21 @@ typedef struct of_instruction_id_apply_actions_s of_instruction_id_apply_actions
  *
  */
 typedef struct of_instruction_id_bsn_s of_instruction_id_bsn_t;
+
+/**
+ * Structure for of_instruction_id_bsn_arp_offload object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_arp_offload_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_arp_offload_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_arp_offload_s of_instruction_id_bsn_arp_offload_t;
 
 /**
  * Structure for of_instruction_id_bsn_disable_src_mac_check object.  Get/set

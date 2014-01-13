@@ -34,6 +34,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdApplyActionsVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnArpOffload bsnArpOffload() {
+        return OFInstructionIdBsnArpOffloadVer13.INSTANCE;
+    }
+
     public OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         return OFInstructionIdBsnDisableSrcMacCheckVer13.INSTANCE;
     }

@@ -72,6 +72,10 @@ public class OFInstructionsVer13 implements OFInstructions {
                     );
     }
 
+    public OFInstructionBsnArpOffload bsnArpOffload() {
+        return OFInstructionBsnArpOffloadVer13.INSTANCE;
+    }
+
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         return OFInstructionBsnDisableSrcMacCheckVer13.INSTANCE;
     }

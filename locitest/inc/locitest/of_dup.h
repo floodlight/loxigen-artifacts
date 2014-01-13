@@ -1062,6 +1062,10 @@ extern of_instruction_bsn_t *
     of_instruction_bsn_dup(
         of_instruction_bsn_t *src);
 
+extern of_instruction_bsn_arp_offload_t *
+    of_instruction_bsn_arp_offload_dup(
+        of_instruction_bsn_arp_offload_t *src);
+
 extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_dup(
         of_instruction_bsn_disable_src_mac_check_t *src);
@@ -1093,6 +1097,10 @@ extern of_instruction_id_apply_actions_t *
 extern of_instruction_id_bsn_t *
     of_instruction_id_bsn_dup(
         of_instruction_id_bsn_t *src);
+
+extern of_instruction_id_bsn_arp_offload_t *
+    of_instruction_id_bsn_arp_offload_dup(
+        of_instruction_id_bsn_arp_offload_t *src);
 
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_dup(
@@ -4902,6 +4910,10 @@ extern of_instruction_bsn_t *
     of_instruction_bsn_OF_VERSION_1_3_dup(
         of_instruction_bsn_t *src);
 
+extern of_instruction_bsn_arp_offload_t *
+    of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(
+        of_instruction_bsn_arp_offload_t *src);
+
 extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
         of_instruction_bsn_disable_src_mac_check_t *src);
@@ -4933,6 +4945,10 @@ extern of_instruction_id_apply_actions_t *
 extern of_instruction_id_bsn_t *
     of_instruction_id_bsn_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_t *src);
+
+extern of_instruction_id_bsn_arp_offload_t *
+    of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_arp_offload_t *src);
 
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
