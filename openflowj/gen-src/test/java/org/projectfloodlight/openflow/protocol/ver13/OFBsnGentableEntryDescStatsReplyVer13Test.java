@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -53,19 +54,19 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
             factory.buildBsnGentableEntryDescStatsEntry()
                 .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998800L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(5))
+                    factory.bsnTlvs().port(OFPort.of(5))
                 ))
                 .setValue(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvMac(MacAddress.of("ff:ee:dd:cc:bb:00"))
+                    factory.bsnTlvs().mac(MacAddress.of("ff:ee:dd:cc:bb:00"))
                 ))
                 .build(),
             factory.buildBsnGentableEntryDescStatsEntry()
                 .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998801L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(6))
+                    factory.bsnTlvs().port(OFPort.of(6))
                 ))
                 .setValue(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvMac(MacAddress.of("ff:ee:dd:cc:bb:01"))
+                    factory.bsnTlvs().mac(MacAddress.of("ff:ee:dd:cc:bb:01"))
                 ))
                 .build()
         )
@@ -88,19 +89,19 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
             factory.buildBsnGentableEntryDescStatsEntry()
                 .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998800L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(5))
+                    factory.bsnTlvs().port(OFPort.of(5))
                 ))
                 .setValue(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvMac(MacAddress.of("ff:ee:dd:cc:bb:00"))
+                    factory.bsnTlvs().mac(MacAddress.of("ff:ee:dd:cc:bb:00"))
                 ))
                 .build(),
             factory.buildBsnGentableEntryDescStatsEntry()
                 .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998801L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(6))
+                    factory.bsnTlvs().port(OFPort.of(6))
                 ))
                 .setValue(ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvMac(MacAddress.of("ff:ee:dd:cc:bb:01"))
+                    factory.bsnTlvs().mac(MacAddress.of("ff:ee:dd:cc:bb:01"))
                 ))
                 .build()
         )

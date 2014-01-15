@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -51,13 +52,13 @@ public class OFBsnGentableDescStatsReplyVer13Test {
     .setEntries(
         ImmutableList.<OFBsnGentableDescStatsEntry>of(
             factory.buildBsnGentableDescStatsEntry()
-                .setTableId(0)
+                .setTableId(GenTableId.of(0))
                 .setName("table 0")
                 .setBucketsSize(32)
                 .setMaxEntries(64)
                 .build(),
             factory.buildBsnGentableDescStatsEntry()
-                .setTableId(1)
+                .setTableId(GenTableId.of(1))
                 .setName("table 1.........................")
                 .setBucketsSize(64)
                 .setMaxEntries(128)
@@ -80,13 +81,13 @@ public class OFBsnGentableDescStatsReplyVer13Test {
     .setEntries(
         ImmutableList.<OFBsnGentableDescStatsEntry>of(
             factory.buildBsnGentableDescStatsEntry()
-                .setTableId(0)
+                .setTableId(GenTableId.of(0))
                 .setName("table 0")
                 .setBucketsSize(32)
                 .setMaxEntries(64)
                 .build(),
             factory.buildBsnGentableDescStatsEntry()
-                .setTableId(1)
+                .setTableId(GenTableId.of(1))
                 .setName("table 1.........................")
                 .setBucketsSize(64)
                 .setMaxEntries(128)

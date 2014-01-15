@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -35,6 +36,7 @@ public interface OFFactory extends XidGenerator {
     OFErrorMsgs errorMsgs();
     OFActionIds actionIds();
     OFInstructionIds instructionIds();
+    OFBsnTlvs bsnTlvs();
 
     OFAggregateStatsReply.Builder buildAggregateStatsReply();
     OFAggregateStatsRequest.Builder buildAggregateStatsRequest();
@@ -237,21 +239,6 @@ public interface OFFactory extends XidGenerator {
     OFBsnTimeReply bsnTimeReply(U64 timeMs);
     OFBsnTimeRequest.Builder buildBsnTimeRequest() throws UnsupportedOperationException;
     OFBsnTimeRequest bsnTimeRequest();
-    OFBsnTlvIdleNotification bsnTlvIdleNotification();
-    OFBsnTlvIdleTime.Builder buildBsnTlvIdleTime() throws UnsupportedOperationException;
-    OFBsnTlvIdleTime bsnTlvIdleTime(U64 value);
-    OFBsnTlvIpv4.Builder buildBsnTlvIpv4() throws UnsupportedOperationException;
-    OFBsnTlvIpv4 bsnTlvIpv4(IPv4Address value);
-    OFBsnTlvMac.Builder buildBsnTlvMac() throws UnsupportedOperationException;
-    OFBsnTlvMac bsnTlvMac(MacAddress value);
-    OFBsnTlvPort.Builder buildBsnTlvPort() throws UnsupportedOperationException;
-    OFBsnTlvPort bsnTlvPort(OFPort value);
-    OFBsnTlvRxPackets.Builder buildBsnTlvRxPackets() throws UnsupportedOperationException;
-    OFBsnTlvRxPackets bsnTlvRxPackets(U64 value);
-    OFBsnTlvTxPackets.Builder buildBsnTlvTxPackets() throws UnsupportedOperationException;
-    OFBsnTlvTxPackets bsnTlvTxPackets(U64 value);
-    OFBsnTlvVlanVid.Builder buildBsnTlvVlanVid() throws UnsupportedOperationException;
-    OFBsnTlvVlanVid bsnTlvVlanVid(int value);
     OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() throws UnsupportedOperationException;
     OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values);
     OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() throws UnsupportedOperationException;

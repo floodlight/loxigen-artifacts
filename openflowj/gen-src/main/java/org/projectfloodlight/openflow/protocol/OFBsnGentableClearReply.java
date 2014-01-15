@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -30,7 +31,7 @@ public interface OFBsnGentableClearReply extends OFObject, OFBsnHeader {
     long getXid();
     long getExperimenter();
     long getSubtype();
-    int getTableId();
+    GenTableId getTableId();
     long getDeletedCount();
     long getErrorCount();
 
@@ -45,8 +46,8 @@ public interface OFBsnGentableClearReply extends OFObject, OFBsnHeader {
         Builder setXid(long xid);
         long getExperimenter();
         long getSubtype();
-        int getTableId();
-        Builder setTableId(int tableId);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
         long getDeletedCount();
         Builder setDeletedCount(long deletedCount);
         long getErrorCount();

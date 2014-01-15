@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -25,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnGentableStatsEntry extends OFObject {
-    int getTableId();
+    GenTableId getTableId();
     long getEntryCount();
     OFChecksum128 getChecksum();
     OFVersion getVersion();
@@ -35,8 +36,8 @@ public interface OFBsnGentableStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnGentableStatsEntry build();
-        int getTableId();
-        Builder setTableId(int tableId);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
         long getEntryCount();
         Builder setEntryCount(long entryCount);
         OFChecksum128 getChecksum();

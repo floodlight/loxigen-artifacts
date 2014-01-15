@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -25,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnGentableDescStatsEntry extends OFObject {
-    int getTableId();
+    GenTableId getTableId();
     String getName();
     long getBucketsSize();
     long getMaxEntries();
@@ -36,8 +37,8 @@ public interface OFBsnGentableDescStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnGentableDescStatsEntry build();
-        int getTableId();
-        Builder setTableId(int tableId);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
         String getName();
         Builder setName(String name);
         long getBucketsSize();

@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -48,11 +49,11 @@ public class OFBsnGentableEntryDeleteVer13Test {
     public void testWrite() {
         OFBsnGentableEntryDelete.Builder builder = factory.buildBsnGentableEntryDelete();
         builder.setXid(0x12345678)
-    .setTableId(20)
+    .setTableId(GenTableId.of(20))
     .setKey(
         ImmutableList.<OFBsnTlv>of(
-            factory.bsnTlvPort(OFPort.of(5)),
-            factory.bsnTlvMac(MacAddress.of("01:23:45:67:89:ab"))
+            factory.bsnTlvs().port(OFPort.of(5)),
+            factory.bsnTlvs().mac(MacAddress.of("01:23:45:67:89:ab"))
         )
     );
         OFBsnGentableEntryDelete bsnGentableEntryDelete = builder.build();
@@ -68,11 +69,11 @@ public class OFBsnGentableEntryDeleteVer13Test {
     public void testRead() throws Exception {
         OFBsnGentableEntryDelete.Builder builder = factory.buildBsnGentableEntryDelete();
         builder.setXid(0x12345678)
-    .setTableId(20)
+    .setTableId(GenTableId.of(20))
     .setKey(
         ImmutableList.<OFBsnTlv>of(
-            factory.bsnTlvPort(OFPort.of(5)),
-            factory.bsnTlvMac(MacAddress.of("01:23:45:67:89:ab"))
+            factory.bsnTlvs().port(OFPort.of(5)),
+            factory.bsnTlvs().mac(MacAddress.of("01:23:45:67:89:ab"))
         )
     );
         OFBsnGentableEntryDelete bsnGentableEntryDeleteBuilt = builder.build();

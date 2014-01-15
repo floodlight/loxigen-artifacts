@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -38,24 +39,19 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
         private final static OFChecksum128 DEFAULT_CHECKSUM_MASK = OFChecksum128.ZERO;
 
     // OF message fields
     private final long xid;
     private final Set<OFStatsRequestFlags> flags;
-    private final int tableId;
+    private final GenTableId tableId;
     private final OFChecksum128 checksum;
     private final OFChecksum128 checksumMask;
 //
-    // Immutable default instance
-    final static OFBsnGentableEntryStatsRequestVer13 DEFAULT = new OFBsnGentableEntryStatsRequestVer13(
-        DEFAULT_XID, DEFAULT_FLAGS, DEFAULT_TABLE_ID, DEFAULT_CHECKSUM, DEFAULT_CHECKSUM_MASK
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableEntryStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, int tableId, OFChecksum128 checksum, OFChecksum128 checksumMask) {
+    OFBsnGentableEntryStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, GenTableId tableId, OFChecksum128 checksum, OFChecksum128 checksumMask) {
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;
@@ -100,7 +96,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -129,7 +125,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         private boolean flagsSet;
         private Set<OFStatsRequestFlags> flags;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean checksumSet;
         private OFChecksum128 checksum;
         private boolean checksumMaskSet;
@@ -187,12 +183,12 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableEntryStatsRequest.Builder setTableId(int tableId) {
+    public OFBsnGentableEntryStatsRequest.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -227,7 +223,9 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
                 Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
@@ -254,7 +252,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         private boolean flagsSet;
         private Set<OFStatsRequestFlags> flags;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean checksumSet;
         private OFChecksum128 checksum;
         private boolean checksumMaskSet;
@@ -308,12 +306,12 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableEntryStatsRequest.Builder setTableId(int tableId) {
+    public OFBsnGentableEntryStatsRequest.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -347,7 +345,10 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
             Set<OFStatsRequestFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
@@ -407,7 +408,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
             int subtype = bb.readInt();
             if(subtype != 0x3)
                 throw new OFParseError("Wrong subtype: Expected=0x3L(0x3L), got="+subtype);
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
@@ -450,7 +451,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x3L
             sink.putInt(0x3);
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             // skip pad (2 bytes)
             message.checksum.putTo(sink);
             message.checksumMask.putTo(sink);
@@ -482,7 +483,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x3L
             bb.writeInt(0x3);
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             message.checksum.write16Bytes(bb);
@@ -526,7 +527,10 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
                 return false;
         } else if (!flags.equals(other.flags))
             return false;
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if (checksum == null) {
             if (other.checksum != null)
@@ -548,7 +552,7 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((checksumMask == null) ? 0 : checksumMask.hashCode());
         return result;

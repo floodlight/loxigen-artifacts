@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -32,14 +33,14 @@ import org.hamcrest.CoreMatchers;
 
 
 public class OFBsnTlvPortVer13Test {
-    OFFactory factory;
+    OFBsnTlvs factory;
 
     final static byte[] BSN_TLV_PORT_SERIALIZED =
         new byte[] { 0x0, 0x0, 0x0, 0x8, 0x0, 0x0, 0x0, 0x5 };
 
     @Before
     public void setup() {
-        factory = OFFactoryVer13.INSTANCE;
+        factory = OFBsnTlvsVer13.INSTANCE;
     }
 
    // FIXME: No java stanza in test_data for this class. Add for more comprehensive unit testing

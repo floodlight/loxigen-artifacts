@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -30,7 +31,7 @@ public interface OFBsnGentableClearRequest extends OFObject, OFBsnHeader, OFRequ
     long getXid();
     long getExperimenter();
     long getSubtype();
-    int getTableId();
+    GenTableId getTableId();
     OFChecksum128 getChecksum();
     OFChecksum128 getChecksumMask();
 
@@ -45,8 +46,8 @@ public interface OFBsnGentableClearRequest extends OFObject, OFBsnHeader, OFRequ
         Builder setXid(long xid);
         long getExperimenter();
         long getSubtype();
-        int getTableId();
-        Builder setTableId(int tableId);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
         OFChecksum128 getChecksum();
         Builder setChecksum(OFChecksum128 checksum);
         OFChecksum128 getChecksumMask();

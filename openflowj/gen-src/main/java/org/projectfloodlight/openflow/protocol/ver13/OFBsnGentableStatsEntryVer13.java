@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -35,22 +36,17 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 24;
 
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static long DEFAULT_ENTRY_COUNT = 0x0L;
         private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
 
     // OF message fields
-    private final int tableId;
+    private final GenTableId tableId;
     private final long entryCount;
     private final OFChecksum128 checksum;
 //
-    // Immutable default instance
-    final static OFBsnGentableStatsEntryVer13 DEFAULT = new OFBsnGentableStatsEntryVer13(
-        DEFAULT_TABLE_ID, DEFAULT_ENTRY_COUNT, DEFAULT_CHECKSUM
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableStatsEntryVer13(int tableId, long entryCount, OFChecksum128 checksum) {
+    OFBsnGentableStatsEntryVer13(GenTableId tableId, long entryCount, OFChecksum128 checksum) {
         this.tableId = tableId;
         this.entryCount = entryCount;
         this.checksum = checksum;
@@ -58,7 +54,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -88,7 +84,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
 
         // OF message fields
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean entryCountSet;
         private long entryCount;
         private boolean checksumSet;
@@ -99,12 +95,12 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setTableId(int tableId) {
+    public OFBsnGentableStatsEntry.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -140,7 +136,9 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
 
         @Override
         public OFBsnGentableStatsEntry build() {
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 long entryCount = this.entryCountSet ? this.entryCount : parentMessage.entryCount;
                 OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
@@ -159,19 +157,19 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     static class Builder implements OFBsnGentableStatsEntry.Builder {
         // OF message fields
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean entryCountSet;
         private long entryCount;
         private boolean checksumSet;
         private OFChecksum128 checksum;
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setTableId(int tableId) {
+    public OFBsnGentableStatsEntry.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -206,7 +204,10 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
 //
         @Override
         public OFBsnGentableStatsEntry build() {
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             long entryCount = this.entryCountSet ? this.entryCount : DEFAULT_ENTRY_COUNT;
             OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
@@ -227,7 +228,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     static class Reader implements OFMessageReader<OFBsnGentableStatsEntry> {
         @Override
         public OFBsnGentableStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             long entryCount = U32.f(bb.readInt());
@@ -253,7 +254,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFBsnGentableStatsEntryVer13 message, PrimitiveSink sink) {
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             // skip pad (2 bytes)
             sink.putLong(message.entryCount);
             message.checksum.putTo(sink);
@@ -269,7 +270,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     static class Writer implements OFMessageWriter<OFBsnGentableStatsEntryVer13> {
         @Override
         public void write(ChannelBuffer bb, OFBsnGentableStatsEntryVer13 message) {
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             bb.writeInt(U32.t(message.entryCount));
@@ -302,7 +303,10 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
             return false;
         OFBsnGentableStatsEntryVer13 other = (OFBsnGentableStatsEntryVer13) obj;
 
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if( entryCount != other.entryCount)
             return false;
@@ -319,7 +323,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (entryCount ^ (entryCount >>> 32));
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         return result;

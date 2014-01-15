@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -38,25 +39,20 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     final static int MINIMUM_LENGTH = 36;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
         private final static List<OFBsnTlv> DEFAULT_KEY = ImmutableList.<OFBsnTlv>of();
         private final static List<OFBsnTlv> DEFAULT_VALUE = ImmutableList.<OFBsnTlv>of();
 
     // OF message fields
     private final long xid;
-    private final int tableId;
+    private final GenTableId tableId;
     private final OFChecksum128 checksum;
     private final List<OFBsnTlv> key;
     private final List<OFBsnTlv> value;
 //
-    // Immutable default instance
-    final static OFBsnGentableEntryAddVer13 DEFAULT = new OFBsnGentableEntryAddVer13(
-        DEFAULT_XID, DEFAULT_TABLE_ID, DEFAULT_CHECKSUM, DEFAULT_KEY, DEFAULT_VALUE
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableEntryAddVer13(long xid, int tableId, OFChecksum128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
+    OFBsnGentableEntryAddVer13(long xid, GenTableId tableId, OFChecksum128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
         this.xid = xid;
         this.tableId = tableId;
         this.checksum = checksum;
@@ -91,7 +87,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -123,7 +119,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean checksumSet;
         private OFChecksum128 checksum;
         private boolean keySet;
@@ -167,12 +163,12 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableEntryAdd.Builder setTableId(int tableId) {
+    public OFBsnGentableEntryAdd.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -215,7 +211,9 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         @Override
         public OFBsnGentableEntryAdd build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
@@ -243,7 +241,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean checksumSet;
         private OFChecksum128 checksum;
         private boolean keySet;
@@ -283,12 +281,12 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableEntryAdd.Builder setTableId(int tableId) {
+    public OFBsnGentableEntryAdd.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -330,7 +328,10 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         @Override
         public OFBsnGentableEntryAdd build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
@@ -386,7 +387,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
             int subtype = bb.readInt();
             if(subtype != 0x2e)
                 throw new OFParseError("Wrong subtype: Expected=0x2eL(0x2eL), got="+subtype);
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             int keyLength = U16.f(bb.readShort());
             OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
             List<OFBsnTlv> key = ChannelUtils.readList(bb, keyLength, OFBsnTlvVer13.READER);
@@ -424,7 +425,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x2eL
             sink.putInt(0x2e);
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             // FIXME: skip funnel of keyLength
             message.checksum.putTo(sink);
             FunnelUtils.putList(message.key, sink);
@@ -455,7 +456,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x2eL
             bb.writeInt(0x2e);
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             // keyLength is length indicator for key, will be
             // udpated when key has been written
             int keyLengthIndex = bb.writerIndex();
@@ -504,7 +505,10 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
 
         if( xid != other.xid)
             return false;
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if (checksum == null) {
             if (other.checksum != null)
@@ -530,7 +534,7 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());
         result = prime * result + ((value == null) ? 0 : value.hashCode());

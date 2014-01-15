@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -35,10 +36,10 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 6;
 
-        private final static int DEFAULT_VALUE = 0x0;
+        private final static VlanVid DEFAULT_VALUE = VlanVid.ZERO;
 
     // OF message fields
-    private final int value;
+    private final VlanVid value;
 //
     // Immutable default instance
     final static OFBsnTlvVlanVidVer13 DEFAULT = new OFBsnTlvVlanVidVer13(
@@ -46,7 +47,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnTlvVlanVidVer13(int value) {
+    OFBsnTlvVlanVidVer13(VlanVid value) {
         this.value = value;
     }
 
@@ -57,7 +58,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
     }
 
     @Override
-    public int getValue() {
+    public VlanVid getValue() {
         return value;
     }
 
@@ -77,7 +78,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
 
         // OF message fields
         private boolean valueSet;
-        private int value;
+        private VlanVid value;
 
         BuilderWithParent(OFBsnTlvVlanVidVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -89,12 +90,12 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
     }
 
     @Override
-    public int getValue() {
+    public VlanVid getValue() {
         return value;
     }
 
     @Override
-    public OFBsnTlvVlanVid.Builder setValue(int value) {
+    public OFBsnTlvVlanVid.Builder setValue(VlanVid value) {
         this.value = value;
         this.valueSet = true;
         return this;
@@ -108,7 +109,9 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
 
         @Override
         public OFBsnTlvVlanVid build() {
-                int value = this.valueSet ? this.value : parentMessage.value;
+                VlanVid value = this.valueSet ? this.value : parentMessage.value;
+                if(value == null)
+                    throw new NullPointerException("Property value must not be null");
 
                 //
                 return new OFBsnTlvVlanVidVer13(
@@ -121,7 +124,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
     static class Builder implements OFBsnTlvVlanVid.Builder {
         // OF message fields
         private boolean valueSet;
-        private int value;
+        private VlanVid value;
 
     @Override
     public int getType() {
@@ -129,12 +132,12 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
     }
 
     @Override
-    public int getValue() {
+    public VlanVid getValue() {
         return value;
     }
 
     @Override
-    public OFBsnTlvVlanVid.Builder setValue(int value) {
+    public OFBsnTlvVlanVid.Builder setValue(VlanVid value) {
         this.value = value;
         this.valueSet = true;
         return this;
@@ -147,7 +150,9 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
 //
         @Override
         public OFBsnTlvVlanVid build() {
-            int value = this.valueSet ? this.value : DEFAULT_VALUE;
+            VlanVid value = this.valueSet ? this.value : DEFAULT_VALUE;
+            if(value == null)
+                throw new NullPointerException("Property value must not be null");
 
 
             return new OFBsnTlvVlanVidVer13(
@@ -177,7 +182,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            int value = U16.f(bb.readShort());
+            VlanVid value = VlanVid.read2Bytes(bb);
 
             OFBsnTlvVlanVidVer13 bsnTlvVlanVidVer13 = new OFBsnTlvVlanVidVer13(
                     value
@@ -201,7 +206,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
             sink.putShort((short) 0x6);
             // fixed value property length = 6
             sink.putShort((short) 0x6);
-            sink.putInt(message.value);
+            message.value.putTo(sink);
         }
     }
 
@@ -218,7 +223,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
             bb.writeShort((short) 0x6);
             // fixed value property length = 6
             bb.writeShort((short) 0x6);
-            bb.writeShort(U16.t(message.value));
+            message.value.write2Bytes(bb);
 
 
         }
@@ -243,7 +248,10 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
             return false;
         OFBsnTlvVlanVidVer13 other = (OFBsnTlvVlanVidVer13) obj;
 
-        if( value != other.value)
+        if (value == null) {
+            if (other.value != null)
+                return false;
+        } else if (!value.equals(other.value))
             return false;
         return true;
     }
@@ -253,7 +261,7 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + value;
+        result = prime * result + ((value == null) ? 0 : value.hashCode());
         return result;
     }
 

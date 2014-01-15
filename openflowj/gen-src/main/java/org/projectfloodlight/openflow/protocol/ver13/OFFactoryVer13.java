@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -55,6 +56,9 @@ public class OFFactoryVer13 implements OFFactory {
     }
     public OFInstructionIds instructionIds() {
         return OFInstructionIdsVer13.INSTANCE;
+    }
+    public OFBsnTlvs bsnTlvs() {
+        return OFBsnTlvsVer13.INSTANCE;
     }
 
 
@@ -941,73 +945,6 @@ public class OFFactoryVer13 implements OFFactory {
     public OFBsnTimeRequest bsnTimeRequest() {
         return new OFBsnTimeRequestVer13(
                 nextXid()
-                    );
-    }
-
-    public OFBsnTlvIdleNotification bsnTlvIdleNotification() {
-        return OFBsnTlvIdleNotificationVer13.INSTANCE;
-    }
-
-    public OFBsnTlvIdleTime.Builder buildBsnTlvIdleTime() {
-        return new OFBsnTlvIdleTimeVer13.Builder();
-    }
-    public OFBsnTlvIdleTime bsnTlvIdleTime(U64 value) {
-        return new OFBsnTlvIdleTimeVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvIpv4.Builder buildBsnTlvIpv4() {
-        return new OFBsnTlvIpv4Ver13.Builder();
-    }
-    public OFBsnTlvIpv4 bsnTlvIpv4(IPv4Address value) {
-        return new OFBsnTlvIpv4Ver13(
-                value
-                    );
-    }
-
-    public OFBsnTlvMac.Builder buildBsnTlvMac() {
-        return new OFBsnTlvMacVer13.Builder();
-    }
-    public OFBsnTlvMac bsnTlvMac(MacAddress value) {
-        return new OFBsnTlvMacVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPort.Builder buildBsnTlvPort() {
-        return new OFBsnTlvPortVer13.Builder();
-    }
-    public OFBsnTlvPort bsnTlvPort(OFPort value) {
-        return new OFBsnTlvPortVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvRxPackets.Builder buildBsnTlvRxPackets() {
-        return new OFBsnTlvRxPacketsVer13.Builder();
-    }
-    public OFBsnTlvRxPackets bsnTlvRxPackets(U64 value) {
-        return new OFBsnTlvRxPacketsVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvTxPackets.Builder buildBsnTlvTxPackets() {
-        return new OFBsnTlvTxPacketsVer13.Builder();
-    }
-    public OFBsnTlvTxPackets bsnTlvTxPackets(U64 value) {
-        return new OFBsnTlvTxPacketsVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvVlanVid.Builder buildBsnTlvVlanVid() {
-        return new OFBsnTlvVlanVidVer13.Builder();
-    }
-    public OFBsnTlvVlanVid bsnTlvVlanVid(int value) {
-        return new OFBsnTlvVlanVidVer13(
-                value
                     );
     }
 

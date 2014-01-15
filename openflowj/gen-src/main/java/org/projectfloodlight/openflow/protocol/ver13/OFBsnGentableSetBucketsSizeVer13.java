@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -36,21 +37,16 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
     final static int LENGTH = 24;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static long DEFAULT_BUCKETS_SIZE = 0x0L;
 
     // OF message fields
     private final long xid;
-    private final int tableId;
+    private final GenTableId tableId;
     private final long bucketsSize;
 //
-    // Immutable default instance
-    final static OFBsnGentableSetBucketsSizeVer13 DEFAULT = new OFBsnGentableSetBucketsSizeVer13(
-        DEFAULT_XID, DEFAULT_TABLE_ID, DEFAULT_BUCKETS_SIZE
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableSetBucketsSizeVer13(long xid, int tableId, long bucketsSize) {
+    OFBsnGentableSetBucketsSizeVer13(long xid, GenTableId tableId, long bucketsSize) {
         this.xid = xid;
         this.tableId = tableId;
         this.bucketsSize = bucketsSize;
@@ -83,7 +79,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -105,7 +101,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean bucketsSizeSet;
         private long bucketsSize;
 
@@ -145,12 +141,12 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableSetBucketsSize.Builder setTableId(int tableId) {
+    public OFBsnGentableSetBucketsSize.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -171,7 +167,9 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
         @Override
         public OFBsnGentableSetBucketsSize build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 long bucketsSize = this.bucketsSizeSet ? this.bucketsSize : parentMessage.bucketsSize;
 
                 //
@@ -189,7 +187,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean bucketsSizeSet;
         private long bucketsSize;
 
@@ -225,12 +223,12 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableSetBucketsSize.Builder setTableId(int tableId) {
+    public OFBsnGentableSetBucketsSize.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -250,7 +248,10 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
         @Override
         public OFBsnGentableSetBucketsSize build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             long bucketsSize = this.bucketsSizeSet ? this.bucketsSize : DEFAULT_BUCKETS_SIZE;
 
 
@@ -296,7 +297,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
             int subtype = bb.readInt();
             if(subtype != 0x32)
                 throw new OFParseError("Wrong subtype: Expected=0x32L(0x32L), got="+subtype);
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             long bucketsSize = U32.f(bb.readInt());
@@ -332,7 +333,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x32L
             sink.putInt(0x32);
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             // skip pad (2 bytes)
             sink.putLong(message.bucketsSize);
         }
@@ -358,7 +359,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x32L
             bb.writeInt(0x32);
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             bb.writeInt(U32.t(message.bucketsSize));
@@ -392,7 +393,10 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
 
         if( xid != other.xid)
             return false;
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if( bucketsSize != other.bucketsSize)
             return false;
@@ -405,7 +409,7 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (bucketsSize ^ (bucketsSize >>> 32));
         return result;
     }

@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -33,7 +34,7 @@ public interface OFBsnGentableBucketStatsRequest extends OFObject, OFBsnStatsReq
     Set<OFStatsRequestFlags> getFlags();
     long getExperimenter();
     long getSubtype();
-    int getTableId();
+    GenTableId getTableId();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -49,7 +50,7 @@ public interface OFBsnGentableBucketStatsRequest extends OFObject, OFBsnStatsReq
         Builder setFlags(Set<OFStatsRequestFlags> flags);
         long getExperimenter();
         long getSubtype();
-        int getTableId();
-        Builder setTableId(int tableId);
+        GenTableId getTableId();
+        Builder setTableId(GenTableId tableId);
     }
 }

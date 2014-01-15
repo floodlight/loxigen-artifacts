@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver11;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -55,6 +56,9 @@ public class OFFactoryVer11 implements OFFactory {
     }
     public OFInstructionIds instructionIds() {
         return OFInstructionIdsVer11.INSTANCE;
+    }
+    public OFBsnTlvs bsnTlvs() {
+        return OFBsnTlvsVer11.INSTANCE;
     }
 
 
@@ -885,59 +889,6 @@ public class OFFactoryVer11 implements OFFactory {
     }
     public OFBsnTimeRequest bsnTimeRequest() {
         throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.1");
-    }
-
-    public OFBsnTlvIdleNotification bsnTlvIdleNotification() {
-        throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.1");
-    }
-
-    public OFBsnTlvIdleTime.Builder buildBsnTlvIdleTime() {
-        throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.1");
-    }
-    public OFBsnTlvIdleTime bsnTlvIdleTime(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.1");
-    }
-
-    public OFBsnTlvIpv4.Builder buildBsnTlvIpv4() {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.1");
-    }
-    public OFBsnTlvIpv4 bsnTlvIpv4(IPv4Address value) {
-        throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.1");
-    }
-
-    public OFBsnTlvMac.Builder buildBsnTlvMac() {
-        throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.1");
-    }
-    public OFBsnTlvMac bsnTlvMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.1");
-    }
-
-    public OFBsnTlvPort.Builder buildBsnTlvPort() {
-        throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
-    }
-    public OFBsnTlvPort bsnTlvPort(OFPort value) {
-        throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.1");
-    }
-
-    public OFBsnTlvRxPackets.Builder buildBsnTlvRxPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.1");
-    }
-    public OFBsnTlvRxPackets bsnTlvRxPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.1");
-    }
-
-    public OFBsnTlvTxPackets.Builder buildBsnTlvTxPackets() {
-        throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.1");
-    }
-    public OFBsnTlvTxPackets bsnTlvTxPackets(U64 value) {
-        throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.1");
-    }
-
-    public OFBsnTlvVlanVid.Builder buildBsnTlvVlanVid() {
-        throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.1");
-    }
-    public OFBsnTlvVlanVid bsnTlvVlanVid(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.1");
     }
 
     public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {

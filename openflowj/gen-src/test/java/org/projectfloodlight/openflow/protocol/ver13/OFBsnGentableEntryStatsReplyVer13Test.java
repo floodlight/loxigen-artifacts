@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -52,20 +53,20 @@ public class OFBsnGentableEntryStatsReplyVer13Test {
         ImmutableList.<OFBsnGentableEntryStatsEntry>of(
             factory.bsnGentableEntryStatsEntry(
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(5))
+                    factory.bsnTlvs().port(OFPort.of(5))
                 ),
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvRxPackets(U64.of(100)),
-                    factory.bsnTlvTxPackets(U64.of(101))
+                    factory.bsnTlvs().rxPackets(U64.of(100)),
+                    factory.bsnTlvs().txPackets(U64.of(101))
                 )
             ),
             factory.bsnGentableEntryStatsEntry(
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(6))
+                    factory.bsnTlvs().port(OFPort.of(6))
                 ),
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvRxPackets(U64.of(100)),
-                    factory.bsnTlvTxPackets(U64.of(101))
+                    factory.bsnTlvs().rxPackets(U64.of(100)),
+                    factory.bsnTlvs().txPackets(U64.of(101))
                 )
             )
         )
@@ -87,20 +88,20 @@ public class OFBsnGentableEntryStatsReplyVer13Test {
         ImmutableList.<OFBsnGentableEntryStatsEntry>of(
             factory.bsnGentableEntryStatsEntry(
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(5))
+                    factory.bsnTlvs().port(OFPort.of(5))
                 ),
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvRxPackets(U64.of(100)),
-                    factory.bsnTlvTxPackets(U64.of(101))
+                    factory.bsnTlvs().rxPackets(U64.of(100)),
+                    factory.bsnTlvs().txPackets(U64.of(101))
                 )
             ),
             factory.bsnGentableEntryStatsEntry(
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvPort(OFPort.of(6))
+                    factory.bsnTlvs().port(OFPort.of(6))
                 ),
                 ImmutableList.<OFBsnTlv>of(
-                    factory.bsnTlvRxPackets(U64.of(100)),
-                    factory.bsnTlvTxPackets(U64.of(101))
+                    factory.bsnTlvs().rxPackets(U64.of(100)),
+                    factory.bsnTlvs().txPackets(U64.of(101))
                 )
             )
         )

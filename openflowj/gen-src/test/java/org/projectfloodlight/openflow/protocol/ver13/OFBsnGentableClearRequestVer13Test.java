@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -48,7 +49,7 @@ public class OFBsnGentableClearRequestVer13Test {
         builder.setXid(0x12345678)
     .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
     .setChecksumMask(OFChecksum128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
-    .setTableId(20);
+    .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequest = builder.build();
         ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
         bsnGentableClearRequest.writeTo(bb);
@@ -64,7 +65,7 @@ public class OFBsnGentableClearRequestVer13Test {
         builder.setXid(0x12345678)
     .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
     .setChecksumMask(OFChecksum128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
-    .setTableId(20);
+    .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequestBuilt = builder.build();
 
         ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_CLEAR_REQUEST_SERIALIZED);

@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -35,24 +36,19 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 48;
 
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static String DEFAULT_NAME = "";
         private final static long DEFAULT_BUCKETS_SIZE = 0x0L;
         private final static long DEFAULT_MAX_ENTRIES = 0x0L;
 
     // OF message fields
-    private final int tableId;
+    private final GenTableId tableId;
     private final String name;
     private final long bucketsSize;
     private final long maxEntries;
 //
-    // Immutable default instance
-    final static OFBsnGentableDescStatsEntryVer13 DEFAULT = new OFBsnGentableDescStatsEntryVer13(
-        DEFAULT_TABLE_ID, DEFAULT_NAME, DEFAULT_BUCKETS_SIZE, DEFAULT_MAX_ENTRIES
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableDescStatsEntryVer13(int tableId, String name, long bucketsSize, long maxEntries) {
+    OFBsnGentableDescStatsEntryVer13(GenTableId tableId, String name, long bucketsSize, long maxEntries) {
         this.tableId = tableId;
         this.name = name;
         this.bucketsSize = bucketsSize;
@@ -61,7 +57,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
 
     // Accessors for OF message fields
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -96,7 +92,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
 
         // OF message fields
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean nameSet;
         private String name;
         private boolean bucketsSizeSet;
@@ -109,12 +105,12 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableDescStatsEntry.Builder setTableId(int tableId) {
+    public OFBsnGentableDescStatsEntry.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -161,7 +157,9 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
 
         @Override
         public OFBsnGentableDescStatsEntry build() {
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 String name = this.nameSet ? this.name : parentMessage.name;
                 if(name == null)
                     throw new NullPointerException("Property name must not be null");
@@ -182,7 +180,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
     static class Builder implements OFBsnGentableDescStatsEntry.Builder {
         // OF message fields
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean nameSet;
         private String name;
         private boolean bucketsSizeSet;
@@ -191,12 +189,12 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         private long maxEntries;
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableDescStatsEntry.Builder setTableId(int tableId) {
+    public OFBsnGentableDescStatsEntry.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -242,7 +240,10 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
 //
         @Override
         public OFBsnGentableDescStatsEntry build() {
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             String name = this.nameSet ? this.name : DEFAULT_NAME;
             if(name == null)
                 throw new NullPointerException("Property name must not be null");
@@ -276,7 +277,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             String name = ChannelUtils.readFixedLengthString(bb, 32);
             long bucketsSize = U32.f(bb.readInt());
             long maxEntries = U32.f(bb.readInt());
@@ -306,7 +307,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         public void funnel(OFBsnGentableDescStatsEntryVer13 message, PrimitiveSink sink) {
             // fixed value property length = 48
             sink.putShort((short) 0x30);
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             sink.putUnencodedChars(message.name);
             sink.putLong(message.bucketsSize);
             sink.putLong(message.maxEntries);
@@ -325,7 +326,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         public void write(ChannelBuffer bb, OFBsnGentableDescStatsEntryVer13 message) {
             // fixed value property length = 48
             bb.writeShort((short) 0x30);
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             ChannelUtils.writeFixedLengthString(bb, message.name, 32);
             bb.writeInt(U32.t(message.bucketsSize));
             bb.writeInt(U32.t(message.maxEntries));
@@ -361,7 +362,10 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
             return false;
         OFBsnGentableDescStatsEntryVer13 other = (OFBsnGentableDescStatsEntryVer13) obj;
 
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if (name == null) {
             if (other.name != null)
@@ -380,7 +384,7 @@ class OFBsnGentableDescStatsEntryVer13 implements OFBsnGentableDescStatsEntry {
         final int prime = 31;
         int result = 1;
 
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime *  (int) (bucketsSize ^ (bucketsSize >>> 32));
         result = prime *  (int) (maxEntries ^ (maxEntries >>> 32));

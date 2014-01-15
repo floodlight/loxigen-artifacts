@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -38,21 +39,16 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
     final static int MINIMUM_LENGTH = 18;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static List<OFBsnTlv> DEFAULT_KEY = ImmutableList.<OFBsnTlv>of();
 
     // OF message fields
     private final long xid;
-    private final int tableId;
+    private final GenTableId tableId;
     private final List<OFBsnTlv> key;
 //
-    // Immutable default instance
-    final static OFBsnGentableEntryDeleteVer13 DEFAULT = new OFBsnGentableEntryDeleteVer13(
-        DEFAULT_XID, DEFAULT_TABLE_ID, DEFAULT_KEY
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableEntryDeleteVer13(long xid, int tableId, List<OFBsnTlv> key) {
+    OFBsnGentableEntryDeleteVer13(long xid, GenTableId tableId, List<OFBsnTlv> key) {
         this.xid = xid;
         this.tableId = tableId;
         this.key = key;
@@ -85,7 +81,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -107,7 +103,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean keySet;
         private List<OFBsnTlv> key;
 
@@ -147,12 +143,12 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableEntryDelete.Builder setTableId(int tableId) {
+    public OFBsnGentableEntryDelete.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -173,7 +169,9 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         @Override
         public OFBsnGentableEntryDelete build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 List<OFBsnTlv> key = this.keySet ? this.key : parentMessage.key;
                 if(key == null)
                     throw new NullPointerException("Property key must not be null");
@@ -193,7 +191,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean keySet;
         private List<OFBsnTlv> key;
 
@@ -229,12 +227,12 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableEntryDelete.Builder setTableId(int tableId) {
+    public OFBsnGentableEntryDelete.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -254,7 +252,10 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         @Override
         public OFBsnGentableEntryDelete build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             List<OFBsnTlv> key = this.keySet ? this.key : DEFAULT_KEY;
             if(key == null)
                 throw new NullPointerException("Property key must not be null");
@@ -302,7 +303,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
             int subtype = bb.readInt();
             if(subtype != 0x2f)
                 throw new OFParseError("Wrong subtype: Expected=0x2fL(0x2fL), got="+subtype);
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             List<OFBsnTlv> key = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBsnTlvVer13.READER);
 
             OFBsnGentableEntryDeleteVer13 bsnGentableEntryDeleteVer13 = new OFBsnGentableEntryDeleteVer13(
@@ -335,7 +336,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x2fL
             sink.putInt(0x2f);
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             FunnelUtils.putList(message.key, sink);
         }
     }
@@ -363,7 +364,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x2fL
             bb.writeInt(0x2f);
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             ChannelUtils.writeList(bb, message.key);
 
             // update length field
@@ -398,7 +399,10 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
 
         if( xid != other.xid)
             return false;
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if (key == null) {
             if (other.key != null)
@@ -414,7 +418,7 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((key == null) ? 0 : key.hashCode());
         return result;
     }

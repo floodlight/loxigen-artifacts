@@ -12,6 +12,7 @@ package org.projectfloodlight.openflow.protocol.ver13;
 import org.projectfloodlight.openflow.protocol.*;
 import org.projectfloodlight.openflow.protocol.action.*;
 import org.projectfloodlight.openflow.protocol.actionid.*;
+import org.projectfloodlight.openflow.protocol.bsntlv.*;
 import org.projectfloodlight.openflow.protocol.errormsg.*;
 import org.projectfloodlight.openflow.protocol.meterband.*;
 import org.projectfloodlight.openflow.protocol.instruction.*;
@@ -36,23 +37,18 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     final static int LENGTH = 52;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static int DEFAULT_TABLE_ID = 0x0;
         private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
         private final static OFChecksum128 DEFAULT_CHECKSUM_MASK = OFChecksum128.ZERO;
 
     // OF message fields
     private final long xid;
-    private final int tableId;
+    private final GenTableId tableId;
     private final OFChecksum128 checksum;
     private final OFChecksum128 checksumMask;
 //
-    // Immutable default instance
-    final static OFBsnGentableClearRequestVer13 DEFAULT = new OFBsnGentableClearRequestVer13(
-        DEFAULT_XID, DEFAULT_TABLE_ID, DEFAULT_CHECKSUM, DEFAULT_CHECKSUM_MASK
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableClearRequestVer13(long xid, int tableId, OFChecksum128 checksum, OFChecksum128 checksumMask) {
+    OFBsnGentableClearRequestVer13(long xid, GenTableId tableId, OFChecksum128 checksum, OFChecksum128 checksumMask) {
         this.xid = xid;
         this.tableId = tableId;
         this.checksum = checksum;
@@ -86,7 +82,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
@@ -113,7 +109,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean checksumSet;
         private OFChecksum128 checksum;
         private boolean checksumMaskSet;
@@ -155,12 +151,12 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setTableId(int tableId) {
+    public OFBsnGentableClearRequest.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -192,7 +188,9 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         @Override
         public OFBsnGentableClearRequest build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
@@ -216,7 +214,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private GenTableId tableId;
         private boolean checksumSet;
         private OFChecksum128 checksum;
         private boolean checksumMaskSet;
@@ -254,12 +252,12 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
     }
 
     @Override
-    public int getTableId() {
+    public GenTableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnGentableClearRequest.Builder setTableId(int tableId) {
+    public OFBsnGentableClearRequest.Builder setTableId(GenTableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -290,7 +288,10 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         @Override
         public OFBsnGentableClearRequest build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(!this.tableIdSet)
+                throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
@@ -342,7 +343,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
             int subtype = bb.readInt();
             if(subtype != 0x30)
                 throw new OFParseError("Wrong subtype: Expected=0x30L(0x30L), got="+subtype);
-            int tableId = U16.f(bb.readShort());
+            GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
@@ -380,7 +381,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x30L
             sink.putInt(0x30);
-            sink.putInt(message.tableId);
+            message.tableId.putTo(sink);
             // skip pad (2 bytes)
             message.checksum.putTo(sink);
             message.checksumMask.putTo(sink);
@@ -407,7 +408,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x30L
             bb.writeInt(0x30);
-            bb.writeShort(U16.t(message.tableId));
+            message.tableId.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             message.checksum.write16Bytes(bb);
@@ -444,7 +445,10 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
 
         if( xid != other.xid)
             return false;
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if (checksum == null) {
             if (other.checksum != null)
@@ -465,7 +469,7 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((checksum == null) ? 0 : checksum.hashCode());
         result = prime * result + ((checksumMask == null) ? 0 : checksumMask.hashCode());
         return result;
