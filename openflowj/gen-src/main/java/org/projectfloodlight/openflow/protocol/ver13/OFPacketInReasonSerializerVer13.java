@@ -37,6 +37,11 @@ public class OFPacketInReasonSerializerVer13 {
     public final static byte BSN_BAD_VLAN_VAL = (byte) 0x82;
     public final static byte BSN_DESTINATION_LOOKUP_FAILURE_VAL = (byte) 0x83;
     public final static byte BSN_NO_ROUTE_VAL = (byte) 0x84;
+    public final static byte BSN_ICMP_ECHO_REQUEST_VAL = (byte) 0x85;
+    public final static byte BSN_DEST_NETWORK_UNREACHABLE_VAL = (byte) 0x86;
+    public final static byte BSN_DEST_HOST_UNREACHABLE_VAL = (byte) 0x87;
+    public final static byte BSN_DEST_PORT_UNREACHABLE_VAL = (byte) 0x88;
+    public final static byte BSN_FRAGMENTATION_REQUIRED_VAL = (byte) 0x89;
 
     public static OFPacketInReason readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -72,6 +77,16 @@ public class OFPacketInReasonSerializerVer13 {
                 return OFPacketInReason.BSN_DESTINATION_LOOKUP_FAILURE;
             case BSN_NO_ROUTE_VAL:
                 return OFPacketInReason.BSN_NO_ROUTE;
+            case BSN_ICMP_ECHO_REQUEST_VAL:
+                return OFPacketInReason.BSN_ICMP_ECHO_REQUEST;
+            case BSN_DEST_NETWORK_UNREACHABLE_VAL:
+                return OFPacketInReason.BSN_DEST_NETWORK_UNREACHABLE;
+            case BSN_DEST_HOST_UNREACHABLE_VAL:
+                return OFPacketInReason.BSN_DEST_HOST_UNREACHABLE;
+            case BSN_DEST_PORT_UNREACHABLE_VAL:
+                return OFPacketInReason.BSN_DEST_PORT_UNREACHABLE;
+            case BSN_FRAGMENTATION_REQUIRED_VAL:
+                return OFPacketInReason.BSN_FRAGMENTATION_REQUIRED;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFPacketInReason in version 1.3: " + val);
         }
@@ -96,6 +111,16 @@ public class OFPacketInReasonSerializerVer13 {
                 return BSN_DESTINATION_LOOKUP_FAILURE_VAL;
             case BSN_NO_ROUTE:
                 return BSN_NO_ROUTE_VAL;
+            case BSN_ICMP_ECHO_REQUEST:
+                return BSN_ICMP_ECHO_REQUEST_VAL;
+            case BSN_DEST_NETWORK_UNREACHABLE:
+                return BSN_DEST_NETWORK_UNREACHABLE_VAL;
+            case BSN_DEST_HOST_UNREACHABLE:
+                return BSN_DEST_HOST_UNREACHABLE_VAL;
+            case BSN_DEST_PORT_UNREACHABLE:
+                return BSN_DEST_PORT_UNREACHABLE_VAL;
+            case BSN_FRAGMENTATION_REQUIRED:
+                return BSN_FRAGMENTATION_REQUIRED_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFPacketInReason in version 1.3: " + e);
         }
