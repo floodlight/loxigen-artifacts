@@ -33,9 +33,9 @@ abstract class OFBsnStatsRequestVer11 {
 
     public final static OFBsnStatsRequestVer11.Reader READER = new Reader();
 
-    static class Reader implements OFMessageReader<OFBsnStatsRequest> {
+    static class Reader implements OFMessageReader<OFBsnStatsRequest<?>> {
         @Override
-        public OFBsnStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnStatsRequest<?> readFrom(ChannelBuffer bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();

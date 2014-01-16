@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 
-public interface OFBsnGentableBucketStatsRequest extends OFObject, OFBsnStatsRequest, OFRequest<OFBsnGentableBucketStatsReply> {
+public interface OFBsnGentableBucketStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnGentableBucketStatsReply>, OFRequest<OFBsnGentableBucketStatsReply> {
     OFVersion getVersion();
     OFType getType();
     long getXid();
@@ -39,7 +39,7 @@ public interface OFBsnGentableBucketStatsRequest extends OFObject, OFBsnStatsReq
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFBsnStatsRequest.Builder {
+    public interface Builder extends OFBsnStatsRequest.Builder<OFBsnGentableBucketStatsReply> {
         OFBsnGentableBucketStatsRequest build();
         OFVersion getVersion();
         OFType getType();
