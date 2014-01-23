@@ -259,7 +259,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
             int subtype = bb.readInt();
             if(subtype != 0xf)
                 throw new OFParseError("Wrong subtype: Expected=0xfL(0xfL), got="+subtype);
-            OFBsnVportQInQ vport = ChannelUtilsVer10.readOFBsnVportQInQ(bb);
+            OFBsnVportQInQ vport = OFBsnVportQInQVer10.READER.readFrom(bb);
 
             OFBsnVirtualPortCreateRequestVer10 bsnVirtualPortCreateRequestVer10 = new OFBsnVirtualPortCreateRequestVer10(
                     xid,
@@ -315,7 +315,7 @@ class OFBsnVirtualPortCreateRequestVer10 implements OFBsnVirtualPortCreateReques
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0xfL
             bb.writeInt(0xf);
-            ChannelUtilsVer10.writeOFBsnVportQInQ(bb, message.vport);
+            message.vport.writeTo(bb);
 
 
         }

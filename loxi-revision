@@ -1,1 +1,1 @@
-527015eae8a000d79d6369fbe56c0fab59bdf0fa Merge into master from pull request #176: java_gen: bump version to 0.3.4 (https://github.com/floodlight/loxigen/pull/176)
+1223812e8de24c740b5b7dba139a8c9e818e38c7 Merge into master from pull request #179: java_gen: use auto-generated reader/writer code for OFBsnVportQInQ (https://github.com/floodlight/loxigen/pull/179)
