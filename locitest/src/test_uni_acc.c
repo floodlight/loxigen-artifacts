@@ -26145,6 +26145,44 @@ test_of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_broadcast_query_timeout_t *obj;
+    obj = of_bsn_tlv_broadcast_query_timeout_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_broadcast_query_timeout_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_header_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_header_t *obj;
@@ -26238,6 +26276,44 @@ test_of_bsn_tlv_idle_time_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_idle_timeout_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_idle_timeout_t *obj;
+    obj = of_bsn_tlv_idle_timeout_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_IDLE_TIMEOUT);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_IDLE_TIMEOUT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_idle_timeout_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_idle_timeout_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_idle_timeout_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_ipv4_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_ipv4_t *obj;
@@ -26314,6 +26390,44 @@ test_of_bsn_tlv_mac_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_miss_packets_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_miss_packets_t *obj;
+    obj = of_bsn_tlv_miss_packets_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_MISS_PACKETS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_MISS_PACKETS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_miss_packets_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_miss_packets_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_miss_packets_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_port_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_port_t *obj;
@@ -26346,6 +26460,82 @@ test_of_bsn_tlv_port_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_bsn_tlv_port_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_reply_packets_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_reply_packets_t *obj;
+    obj = of_bsn_tlv_reply_packets_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_REPLY_PACKETS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_REPLY_PACKETS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_reply_packets_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_reply_packets_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_reply_packets_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_request_packets_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_request_packets_t *obj;
+    obj = of_bsn_tlv_request_packets_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_REQUEST_PACKETS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_REQUEST_PACKETS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_request_packets_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_request_packets_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_request_packets_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -26422,6 +26612,44 @@ test_of_bsn_tlv_tx_packets_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_bsn_tlv_tx_packets_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_unicast_query_timeout_t *obj;
+    obj = of_bsn_tlv_unicast_query_timeout_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_unicast_query_timeout_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -34296,14 +34524,20 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_lacp_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_bsn_port_counter_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_header_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_idle_notification_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_idle_time_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_idle_timeout_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_ipv4_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_mac_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_miss_packets_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_port_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_reply_packets_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_request_packets_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_rx_packets_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_tx_packets_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_vlan_vid_OF_VERSION_1_3);
     RUN_TEST(of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_3);

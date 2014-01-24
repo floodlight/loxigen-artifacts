@@ -958,6 +958,10 @@ extern of_bsn_tlv_t *
     of_bsn_tlv_dup(
         of_bsn_tlv_t *src);
 
+extern of_bsn_tlv_broadcast_query_timeout_t *
+    of_bsn_tlv_broadcast_query_timeout_dup(
+        of_bsn_tlv_broadcast_query_timeout_t *src);
+
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_dup(
         of_bsn_tlv_header_t *src);
@@ -970,6 +974,10 @@ extern of_bsn_tlv_idle_time_t *
     of_bsn_tlv_idle_time_dup(
         of_bsn_tlv_idle_time_t *src);
 
+extern of_bsn_tlv_idle_timeout_t *
+    of_bsn_tlv_idle_timeout_dup(
+        of_bsn_tlv_idle_timeout_t *src);
+
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_dup(
         of_bsn_tlv_ipv4_t *src);
@@ -978,9 +986,21 @@ extern of_bsn_tlv_mac_t *
     of_bsn_tlv_mac_dup(
         of_bsn_tlv_mac_t *src);
 
+extern of_bsn_tlv_miss_packets_t *
+    of_bsn_tlv_miss_packets_dup(
+        of_bsn_tlv_miss_packets_t *src);
+
 extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_dup(
         of_bsn_tlv_port_t *src);
+
+extern of_bsn_tlv_reply_packets_t *
+    of_bsn_tlv_reply_packets_dup(
+        of_bsn_tlv_reply_packets_t *src);
+
+extern of_bsn_tlv_request_packets_t *
+    of_bsn_tlv_request_packets_dup(
+        of_bsn_tlv_request_packets_t *src);
 
 extern of_bsn_tlv_rx_packets_t *
     of_bsn_tlv_rx_packets_dup(
@@ -989,6 +1009,10 @@ extern of_bsn_tlv_rx_packets_t *
 extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_dup(
         of_bsn_tlv_tx_packets_t *src);
+
+extern of_bsn_tlv_unicast_query_timeout_t *
+    of_bsn_tlv_unicast_query_timeout_dup(
+        of_bsn_tlv_unicast_query_timeout_t *src);
 
 extern of_bsn_tlv_vlan_vid_t *
     of_bsn_tlv_vlan_vid_dup(
@@ -4806,6 +4830,10 @@ extern of_bsn_tlv_t *
     of_bsn_tlv_OF_VERSION_1_3_dup(
         of_bsn_tlv_t *src);
 
+extern of_bsn_tlv_broadcast_query_timeout_t *
+    of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
+        of_bsn_tlv_broadcast_query_timeout_t *src);
+
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_OF_VERSION_1_3_dup(
         of_bsn_tlv_header_t *src);
@@ -4818,6 +4846,10 @@ extern of_bsn_tlv_idle_time_t *
     of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
         of_bsn_tlv_idle_time_t *src);
 
+extern of_bsn_tlv_idle_timeout_t *
+    of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(
+        of_bsn_tlv_idle_timeout_t *src);
+
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
         of_bsn_tlv_ipv4_t *src);
@@ -4826,9 +4858,21 @@ extern of_bsn_tlv_mac_t *
     of_bsn_tlv_mac_OF_VERSION_1_3_dup(
         of_bsn_tlv_mac_t *src);
 
+extern of_bsn_tlv_miss_packets_t *
+    of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
+        of_bsn_tlv_miss_packets_t *src);
+
 extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
         of_bsn_tlv_port_t *src);
+
+extern of_bsn_tlv_reply_packets_t *
+    of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(
+        of_bsn_tlv_reply_packets_t *src);
+
+extern of_bsn_tlv_request_packets_t *
+    of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(
+        of_bsn_tlv_request_packets_t *src);
 
 extern of_bsn_tlv_rx_packets_t *
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
@@ -4837,6 +4881,10 @@ extern of_bsn_tlv_rx_packets_t *
 extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
         of_bsn_tlv_tx_packets_t *src);
+
+extern of_bsn_tlv_unicast_query_timeout_t *
+    of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
+        of_bsn_tlv_unicast_query_timeout_t *src);
 
 extern of_bsn_tlv_vlan_vid_t *
     of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(

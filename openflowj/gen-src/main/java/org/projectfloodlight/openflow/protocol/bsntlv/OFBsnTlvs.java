@@ -27,19 +27,31 @@ import org.projectfloodlight.openflow.exceptions.*;
 public interface OFBsnTlvs {
     // Subfactories
 
+    OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
+    OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvIdleNotification idleNotification();
     OFBsnTlvIdleTime.Builder buildIdleTime() throws UnsupportedOperationException;
     OFBsnTlvIdleTime idleTime(U64 value);
+    OFBsnTlvIdleTimeout.Builder buildIdleTimeout() throws UnsupportedOperationException;
+    OFBsnTlvIdleTimeout idleTimeout(long value);
     OFBsnTlvIpv4.Builder buildIpv4() throws UnsupportedOperationException;
     OFBsnTlvIpv4 ipv4(IPv4Address value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
+    OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
+    OFBsnTlvMissPackets missPackets(U64 value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
+    OFBsnTlvReplyPackets replyPackets(U64 value);
+    OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;
+    OFBsnTlvRequestPackets requestPackets(U64 value);
     OFBsnTlvRxPackets.Builder buildRxPackets() throws UnsupportedOperationException;
     OFBsnTlvRxPackets rxPackets(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;
     OFBsnTlvTxPackets txPackets(U64 value);
+    OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;
+    OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;
     OFBsnTlvVlanVid vlanVid(VlanVid value);
 

@@ -253,14 +253,20 @@ typedef of_object_t of_bsn_interface_t;
 typedef of_object_t of_bsn_lacp_stats_entry_t;
 typedef of_object_t of_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
+typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_header_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
+typedef of_object_t of_bsn_tlv_idle_timeout_t;
 typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_mac_t;
+typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_port_t;
+typedef of_object_t of_bsn_tlv_reply_packets_t;
+typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
+typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_header_t;
@@ -1992,6 +1998,11 @@ extern of_bsn_tlv_t *
 extern void of_bsn_tlv_init(
     of_bsn_tlv_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_broadcast_query_timeout_t *
+    of_bsn_tlv_broadcast_query_timeout_new(of_version_t version);
+extern void of_bsn_tlv_broadcast_query_timeout_init(
+    of_bsn_tlv_broadcast_query_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_new(of_version_t version);
 extern void of_bsn_tlv_header_init(
@@ -2007,6 +2018,11 @@ extern of_bsn_tlv_idle_time_t *
 extern void of_bsn_tlv_idle_time_init(
     of_bsn_tlv_idle_time_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_idle_timeout_t *
+    of_bsn_tlv_idle_timeout_new(of_version_t version);
+extern void of_bsn_tlv_idle_timeout_init(
+    of_bsn_tlv_idle_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_init(
@@ -2017,10 +2033,25 @@ extern of_bsn_tlv_mac_t *
 extern void of_bsn_tlv_mac_init(
     of_bsn_tlv_mac_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_miss_packets_t *
+    of_bsn_tlv_miss_packets_new(of_version_t version);
+extern void of_bsn_tlv_miss_packets_init(
+    of_bsn_tlv_miss_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_new(of_version_t version);
 extern void of_bsn_tlv_port_init(
     of_bsn_tlv_port_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_reply_packets_t *
+    of_bsn_tlv_reply_packets_new(of_version_t version);
+extern void of_bsn_tlv_reply_packets_init(
+    of_bsn_tlv_reply_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_request_packets_t *
+    of_bsn_tlv_request_packets_new(of_version_t version);
+extern void of_bsn_tlv_request_packets_init(
+    of_bsn_tlv_request_packets_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_rx_packets_t *
     of_bsn_tlv_rx_packets_new(of_version_t version);
@@ -2031,6 +2062,11 @@ extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_new(of_version_t version);
 extern void of_bsn_tlv_tx_packets_init(
     of_bsn_tlv_tx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_unicast_query_timeout_t *
+    of_bsn_tlv_unicast_query_timeout_new(of_version_t version);
+extern void of_bsn_tlv_unicast_query_timeout_init(
+    of_bsn_tlv_unicast_query_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_vlan_vid_t *
     of_bsn_tlv_vlan_vid_new(of_version_t version);
@@ -5666,6 +5702,17 @@ of_bsn_tlv_delete(of_bsn_tlv_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_broadcast_query_timeout_t
+ * @param obj An instance of type of_bsn_tlv_broadcast_query_timeout_t
+ *
+ * \ingroup of_bsn_tlv_broadcast_query_timeout
+ */
+static inline void
+of_bsn_tlv_broadcast_query_timeout_delete(of_bsn_tlv_broadcast_query_timeout_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_header_t
  * @param obj An instance of type of_bsn_tlv_header_t
  *
@@ -5699,6 +5746,17 @@ of_bsn_tlv_idle_time_delete(of_bsn_tlv_idle_time_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_idle_timeout_t
+ * @param obj An instance of type of_bsn_tlv_idle_timeout_t
+ *
+ * \ingroup of_bsn_tlv_idle_timeout
+ */
+static inline void
+of_bsn_tlv_idle_timeout_delete(of_bsn_tlv_idle_timeout_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_ipv4_t
  * @param obj An instance of type of_bsn_tlv_ipv4_t
  *
@@ -5721,6 +5779,17 @@ of_bsn_tlv_mac_delete(of_bsn_tlv_mac_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_miss_packets_t
+ * @param obj An instance of type of_bsn_tlv_miss_packets_t
+ *
+ * \ingroup of_bsn_tlv_miss_packets
+ */
+static inline void
+of_bsn_tlv_miss_packets_delete(of_bsn_tlv_miss_packets_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_port_t
  * @param obj An instance of type of_bsn_tlv_port_t
  *
@@ -5728,6 +5797,28 @@ of_bsn_tlv_mac_delete(of_bsn_tlv_mac_t *obj) {
  */
 static inline void
 of_bsn_tlv_port_delete(of_bsn_tlv_port_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_reply_packets_t
+ * @param obj An instance of type of_bsn_tlv_reply_packets_t
+ *
+ * \ingroup of_bsn_tlv_reply_packets
+ */
+static inline void
+of_bsn_tlv_reply_packets_delete(of_bsn_tlv_reply_packets_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_request_packets_t
+ * @param obj An instance of type of_bsn_tlv_request_packets_t
+ *
+ * \ingroup of_bsn_tlv_request_packets
+ */
+static inline void
+of_bsn_tlv_request_packets_delete(of_bsn_tlv_request_packets_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -5750,6 +5841,17 @@ of_bsn_tlv_rx_packets_delete(of_bsn_tlv_rx_packets_t *obj) {
  */
 static inline void
 of_bsn_tlv_tx_packets_delete(of_bsn_tlv_tx_packets_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_unicast_query_timeout_t
+ * @param obj An instance of type of_bsn_tlv_unicast_query_timeout_t
+ *
+ * \ingroup of_bsn_tlv_unicast_query_timeout
+ */
+static inline void
+of_bsn_tlv_unicast_query_timeout_delete(of_bsn_tlv_unicast_query_timeout_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -14504,6 +14606,15 @@ extern void of_bsn_switch_pipeline_stats_entry_pipeline_get(
     of_bsn_switch_pipeline_stats_entry_t *obj,
     of_desc_str_t *pipeline);
 
+/* Unified accessor functions for of_bsn_tlv_broadcast_query_timeout */
+
+extern void of_bsn_tlv_broadcast_query_timeout_value_set(
+    of_bsn_tlv_broadcast_query_timeout_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_broadcast_query_timeout_value_get(
+    of_bsn_tlv_broadcast_query_timeout_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_header */
 
 /* Unified accessor functions for of_bsn_tlv_idle_notification */
@@ -14516,6 +14627,15 @@ extern void of_bsn_tlv_idle_time_value_set(
 extern void of_bsn_tlv_idle_time_value_get(
     of_bsn_tlv_idle_time_t *obj,
     uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_idle_timeout */
+
+extern void of_bsn_tlv_idle_timeout_value_set(
+    of_bsn_tlv_idle_timeout_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_idle_timeout_value_get(
+    of_bsn_tlv_idle_timeout_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_ipv4 */
 
@@ -14535,6 +14655,15 @@ extern void of_bsn_tlv_mac_value_get(
     of_bsn_tlv_mac_t *obj,
     of_mac_addr_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_miss_packets */
+
+extern void of_bsn_tlv_miss_packets_value_set(
+    of_bsn_tlv_miss_packets_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_miss_packets_value_get(
+    of_bsn_tlv_miss_packets_t *obj,
+    uint64_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_port */
 
 extern void of_bsn_tlv_port_value_set(
@@ -14543,6 +14672,24 @@ extern void of_bsn_tlv_port_value_set(
 extern void of_bsn_tlv_port_value_get(
     of_bsn_tlv_port_t *obj,
     of_port_no_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_reply_packets */
+
+extern void of_bsn_tlv_reply_packets_value_set(
+    of_bsn_tlv_reply_packets_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_reply_packets_value_get(
+    of_bsn_tlv_reply_packets_t *obj,
+    uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_request_packets */
+
+extern void of_bsn_tlv_request_packets_value_set(
+    of_bsn_tlv_request_packets_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_request_packets_value_get(
+    of_bsn_tlv_request_packets_t *obj,
+    uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_rx_packets */
 
@@ -14561,6 +14708,15 @@ extern void of_bsn_tlv_tx_packets_value_set(
 extern void of_bsn_tlv_tx_packets_value_get(
     of_bsn_tlv_tx_packets_t *obj,
     uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_unicast_query_timeout */
+
+extern void of_bsn_tlv_unicast_query_timeout_value_set(
+    of_bsn_tlv_unicast_query_timeout_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_unicast_query_timeout_value_get(
+    of_bsn_tlv_unicast_query_timeout_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_vlan_vid */
 
@@ -18263,13 +18419,19 @@ union of_instruction_u {
 
 union of_bsn_tlv_u {
     of_bsn_tlv_header_t header; /* Generic instance */
+    of_bsn_tlv_broadcast_query_timeout_t broadcast_query_timeout;
     of_bsn_tlv_idle_notification_t idle_notification;
     of_bsn_tlv_idle_time_t idle_time;
+    of_bsn_tlv_idle_timeout_t idle_timeout;
     of_bsn_tlv_ipv4_t ipv4;
     of_bsn_tlv_mac_t mac;
+    of_bsn_tlv_miss_packets_t miss_packets;
     of_bsn_tlv_port_t port;
+    of_bsn_tlv_reply_packets_t reply_packets;
+    of_bsn_tlv_request_packets_t request_packets;
     of_bsn_tlv_rx_packets_t rx_packets;
     of_bsn_tlv_tx_packets_t tx_packets;
+    of_bsn_tlv_unicast_query_timeout_t unicast_query_timeout;
     of_bsn_tlv_vlan_vid_t vlan_vid;
 };
 

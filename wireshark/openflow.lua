@@ -5441,26 +5441,44 @@ fields['of13.bsn_time_request.experimenter'] = ProtoField.uint32("of13.bsn_time_
 fields['of13.bsn_time_request.subtype'] = ProtoField.uint32("of13.bsn_time_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_tlv.type'] = ProtoField.uint16("of13.bsn_tlv.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv.length'] = ProtoField.uint16("of13.bsn_tlv.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.type'] = ProtoField.uint16("of13.bsn_tlv_idle_time.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.length'] = ProtoField.uint16("of13.bsn_tlv_idle_time.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.value'] = ProtoField.uint64("of13.bsn_tlv_idle_time.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_idle_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_idle_timeout.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_idle_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_idle_timeout.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_idle_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_idle_timeout.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4.value", "value")
 fields['of13.bsn_tlv_mac.type'] = ProtoField.uint16("of13.bsn_tlv_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mac.length'] = ProtoField.uint16("of13.bsn_tlv_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "value")
+fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_reply_packets.type'] = ProtoField.uint16("of13.bsn_tlv_reply_packets.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_reply_packets.length'] = ProtoField.uint16("of13.bsn_tlv_reply_packets.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_reply_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_request_packets.type'] = ProtoField.uint16("of13.bsn_tlv_request_packets.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_request_packets.length'] = ProtoField.uint16("of13.bsn_tlv_request_packets.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_request_packets.value'] = ProtoField.uint64("of13.bsn_tlv_request_packets.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_rx_packets.type'] = ProtoField.uint16("of13.bsn_tlv_rx_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_rx_packets.length'] = ProtoField.uint16("of13.bsn_tlv_rx_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_rx_packets.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_tx_packets.type'] = ProtoField.uint16("of13.bsn_tlv_tx_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tx_packets.length'] = ProtoField.uint16("of13.bsn_tlv_tx_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_tx_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
@@ -10252,26 +10270,44 @@ p_of.fields = {
     fields['of13.bsn_time_request.subtype'],
     fields['of13.bsn_tlv.type'],
     fields['of13.bsn_tlv.length'],
+    fields['of13.bsn_tlv_broadcast_query_timeout.type'],
+    fields['of13.bsn_tlv_broadcast_query_timeout.length'],
+    fields['of13.bsn_tlv_broadcast_query_timeout.value'],
     fields['of13.bsn_tlv_idle_notification.type'],
     fields['of13.bsn_tlv_idle_notification.length'],
     fields['of13.bsn_tlv_idle_time.type'],
     fields['of13.bsn_tlv_idle_time.length'],
     fields['of13.bsn_tlv_idle_time.value'],
+    fields['of13.bsn_tlv_idle_timeout.type'],
+    fields['of13.bsn_tlv_idle_timeout.length'],
+    fields['of13.bsn_tlv_idle_timeout.value'],
     fields['of13.bsn_tlv_ipv4.type'],
     fields['of13.bsn_tlv_ipv4.length'],
     fields['of13.bsn_tlv_ipv4.value'],
     fields['of13.bsn_tlv_mac.type'],
     fields['of13.bsn_tlv_mac.length'],
     fields['of13.bsn_tlv_mac.value'],
+    fields['of13.bsn_tlv_miss_packets.type'],
+    fields['of13.bsn_tlv_miss_packets.length'],
+    fields['of13.bsn_tlv_miss_packets.value'],
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_reply_packets.type'],
+    fields['of13.bsn_tlv_reply_packets.length'],
+    fields['of13.bsn_tlv_reply_packets.value'],
+    fields['of13.bsn_tlv_request_packets.type'],
+    fields['of13.bsn_tlv_request_packets.length'],
+    fields['of13.bsn_tlv_request_packets.value'],
     fields['of13.bsn_tlv_rx_packets.type'],
     fields['of13.bsn_tlv_rx_packets.length'],
     fields['of13.bsn_tlv_rx_packets.value'],
     fields['of13.bsn_tlv_tx_packets.type'],
     fields['of13.bsn_tlv_tx_packets.length'],
     fields['of13.bsn_tlv_tx_packets.value'],
+    fields['of13.bsn_tlv_unicast_query_timeout.type'],
+    fields['of13.bsn_tlv_unicast_query_timeout.length'],
+    fields['of13.bsn_tlv_unicast_query_timeout.value'],
     fields['of13.bsn_tlv_vlan_vid.type'],
     fields['of13.bsn_tlv_vlan_vid.length'],
     fields['of13.bsn_tlv_vlan_vid.value'],
@@ -19721,6 +19757,16 @@ of_bsn_header_v4_dissectors[44] = dissect_of_bsn_time_request_v4
 function dissect_of_bsn_tlv_v4(reader, subtree)
     return of_bsn_tlv_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
+-- child class of_bsn_tlv_broadcast_query_timeout
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_broadcast_query_timeout.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_broadcast_query_timeout.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_broadcast_query_timeout.value')
+    return 'of_bsn_tlv_broadcast_query_timeout'
+end
+of_bsn_tlv_v4_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v4
+
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_idle_notification_v4(reader, subtree)
@@ -19739,6 +19785,16 @@ function dissect_of_bsn_tlv_idle_time_v4(reader, subtree)
     return 'of_bsn_tlv_idle_time'
 end
 of_bsn_tlv_v4_dissectors[5] = dissect_of_bsn_tlv_idle_time_v4
+
+-- child class of_bsn_tlv_idle_timeout
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_idle_timeout_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_idle_timeout.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_idle_timeout.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_idle_timeout.value')
+    return 'of_bsn_tlv_idle_timeout'
+end
+of_bsn_tlv_v4_dissectors[8] = dissect_of_bsn_tlv_idle_timeout_v4
 
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv
@@ -19760,6 +19816,16 @@ function dissect_of_bsn_tlv_mac_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[1] = dissect_of_bsn_tlv_mac_v4
 
+-- child class of_bsn_tlv_miss_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_miss_packets_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_miss_packets.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_miss_packets.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_miss_packets.value')
+    return 'of_bsn_tlv_miss_packets'
+end
+of_bsn_tlv_v4_dissectors[13] = dissect_of_bsn_tlv_miss_packets_v4
+
 -- child class of_bsn_tlv_port
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_port_v4(reader, subtree)
@@ -19769,6 +19835,26 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
+
+-- child class of_bsn_tlv_reply_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_reply_packets_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_reply_packets.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_reply_packets.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_reply_packets.value')
+    return 'of_bsn_tlv_reply_packets'
+end
+of_bsn_tlv_v4_dissectors[12] = dissect_of_bsn_tlv_reply_packets_v4
+
+-- child class of_bsn_tlv_request_packets
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_request_packets_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_request_packets.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_request_packets.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_request_packets.value')
+    return 'of_bsn_tlv_request_packets'
+end
+of_bsn_tlv_v4_dissectors[11] = dissect_of_bsn_tlv_request_packets_v4
 
 -- child class of_bsn_tlv_rx_packets
 -- Child of of_bsn_tlv
@@ -19789,6 +19875,16 @@ function dissect_of_bsn_tlv_tx_packets_v4(reader, subtree)
     return 'of_bsn_tlv_tx_packets'
 end
 of_bsn_tlv_v4_dissectors[3] = dissect_of_bsn_tlv_tx_packets_v4
+
+-- child class of_bsn_tlv_unicast_query_timeout
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_unicast_query_timeout_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_unicast_query_timeout.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_unicast_query_timeout.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_unicast_query_timeout.value')
+    return 'of_bsn_tlv_unicast_query_timeout'
+end
+of_bsn_tlv_v4_dissectors[9] = dissect_of_bsn_tlv_unicast_query_timeout_v4
 
 -- child class of_bsn_tlv_vlan_vid
 -- Child of of_bsn_tlv

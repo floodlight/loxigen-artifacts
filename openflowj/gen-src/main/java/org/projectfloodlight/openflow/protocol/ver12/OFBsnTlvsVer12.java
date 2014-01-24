@@ -31,6 +31,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
+        throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.2");
+    }
+    public OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.2");
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.2");
     }
@@ -40,6 +47,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvIdleTime idleTime(U64 value) {
         throw new UnsupportedOperationException("OFBsnTlvIdleTime not supported in version 1.2");
+    }
+
+    public OFBsnTlvIdleTimeout.Builder buildIdleTimeout() {
+        throw new UnsupportedOperationException("OFBsnTlvIdleTimeout not supported in version 1.2");
+    }
+    public OFBsnTlvIdleTimeout idleTimeout(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvIdleTimeout not supported in version 1.2");
     }
 
     public OFBsnTlvIpv4.Builder buildIpv4() {
@@ -56,11 +70,32 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.2");
     }
 
+    public OFBsnTlvMissPackets.Builder buildMissPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.2");
+    }
+    public OFBsnTlvMissPackets missPackets(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.2");
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
     }
     public OFBsnTlvPort port(OFPort value) {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
+    }
+
+    public OFBsnTlvReplyPackets.Builder buildReplyPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvReplyPackets not supported in version 1.2");
+    }
+    public OFBsnTlvReplyPackets replyPackets(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvReplyPackets not supported in version 1.2");
+    }
+
+    public OFBsnTlvRequestPackets.Builder buildRequestPackets() {
+        throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.2");
+    }
+    public OFBsnTlvRequestPackets requestPackets(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.2");
     }
 
     public OFBsnTlvRxPackets.Builder buildRxPackets() {
@@ -75,6 +110,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvTxPackets txPackets(U64 value) {
         throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.2");
+    }
+
+    public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
+        throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.2");
+    }
+    public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.2");
     }
 
     public OFBsnTlvVlanVid.Builder buildVlanVid() {

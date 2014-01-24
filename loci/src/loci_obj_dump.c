@@ -21410,6 +21410,22 @@ of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 }
 
 int
+of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_broadcast_query_timeout_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_broadcast_query_timeout\n");
+
+    of_bsn_tlv_broadcast_query_timeout_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_header_t *obj)
 {
     int out = 0;
@@ -21440,6 +21456,22 @@ of_bsn_tlv_idle_time_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_
     of_bsn_tlv_idle_time_value_get(obj, &val64);
     out += writer(cookie, "  value (uint64_t):  ");
     out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_idle_timeout_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_idle_timeout\n");
+
+    of_bsn_tlv_idle_timeout_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -21478,6 +21510,22 @@ of_bsn_tlv_mac_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tl
 }
 
 int
+of_bsn_tlv_miss_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_miss_packets_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_miss_packets\n");
+
+    of_bsn_tlv_miss_packets_value_get(obj, &val64);
+    out += writer(cookie, "  value (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_port_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_port_t *obj)
 {
     int out = 0;
@@ -21488,6 +21536,38 @@ of_bsn_tlv_port_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_t
     of_bsn_tlv_port_value_get(obj, &port_no);
     out += writer(cookie, "  value (of_port_no_t):  ");
     out += LOCI_DUMP_port_no(writer, cookie, port_no);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_reply_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_reply_packets_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_reply_packets\n");
+
+    of_bsn_tlv_reply_packets_value_get(obj, &val64);
+    out += writer(cookie, "  value (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_request_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_request_packets_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_request_packets\n");
+
+    of_bsn_tlv_request_packets_value_get(obj, &val64);
+    out += writer(cookie, "  value (uint64_t):  ");
+    out += LOCI_DUMP_u64(writer, cookie, val64);
     out += writer(cookie, "\n");
 
     return out;
@@ -21520,6 +21600,22 @@ of_bsn_tlv_tx_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
     of_bsn_tlv_tx_packets_value_get(obj, &val64);
     out += writer(cookie, "  value (uint64_t):  ");
     out += LOCI_DUMP_u64(writer, cookie, val64);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_unicast_query_timeout_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_unicast_query_timeout\n");
+
+    of_bsn_tlv_unicast_query_timeout_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -25823,6 +25919,12 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -26263,6 +26365,12 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -26733,6 +26841,12 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     of_bucket_OF_VERSION_1_2_dump,
@@ -27177,14 +27291,20 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_port_counter_stats_entry_OF_VERSION_1_3_dump,
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dump,
     unknown_dump,
+    of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump,
     of_bsn_tlv_header_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_notification_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_time_OF_VERSION_1_3_dump,
+    of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dump,
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dump,
     of_bsn_tlv_mac_OF_VERSION_1_3_dump,
+    of_bsn_tlv_miss_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_OF_VERSION_1_3_dump,
+    of_bsn_tlv_reply_packets_OF_VERSION_1_3_dump,
+    of_bsn_tlv_request_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_tx_packets_OF_VERSION_1_3_dump,
+    of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dump,
     of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dump,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump,
     unknown_dump,

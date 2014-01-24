@@ -742,14 +742,20 @@ static inline int of_bsn_vport_q_in_q_OF_VERSION_1_3_validate(uint8_t *buf, int 
 static inline int of_bsn_vport_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_rx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_request_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_reply_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_port_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_miss_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_mac_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_ipv4_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_idle_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_idle_time_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_idle_notification_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8933,6 +8939,16 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_BSN_TLV_REPLY_PACKETS:
+            if (of_bsn_tlv_reply_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_UNICAST_QUERY_TIMEOUT:
+            if (of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_BSN_TLV_IDLE_TIME:
             if (of_bsn_tlv_idle_time_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -8940,6 +8956,16 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
             break;
         case OF_BSN_TLV_MAC:
             if (of_bsn_tlv_mac_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_MISS_PACKETS:
+            if (of_bsn_tlv_miss_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_IDLE_TIMEOUT:
+            if (of_bsn_tlv_idle_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -8965,6 +8991,16 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
             break;
         case OF_BSN_TLV_PORT:
             if (of_bsn_tlv_port_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_REQUEST_PACKETS:
+            if (of_bsn_tlv_request_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT:
+            if (of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -11343,6 +11379,17 @@ of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_tlv_unicast_query_timeout.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -11365,10 +11412,43 @@ of_bsn_tlv_rx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_tlv_request_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_bsn_tlv_request_packets.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_reply_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_bsn_tlv_reply_packets.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_tlv_port_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 8) {
         VALIDATOR_LOG("Class of_bsn_tlv_port.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_miss_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_bsn_tlv_miss_packets.  Len %d too small, < %d", len, 12);
         return -1;
     }
 
@@ -11391,6 +11471,17 @@ of_bsn_tlv_ipv4_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 8) {
         VALIDATOR_LOG("Class of_bsn_tlv_ipv4.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_idle_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_tlv_idle_timeout.  Len %d too small, < %d", len, 8);
         return -1;
     }
 
@@ -11424,6 +11515,17 @@ of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
         VALIDATOR_LOG("Class of_bsn_tlv_header.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_tlv_broadcast_query_timeout.  Len %d too small, < %d", len, 8);
         return -1;
     }
 

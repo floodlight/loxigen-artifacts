@@ -5039,6 +5039,17 @@ typedef struct of_bsn_switch_pipeline_stats_entry_s of_bsn_switch_pipeline_stats
 typedef struct of_bsn_tlv_s of_bsn_tlv_t;
 
 /**
+ * Structure for of_bsn_tlv_broadcast_query_timeout object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_broadcast_query_timeout_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_broadcast_query_timeout_s of_bsn_tlv_broadcast_query_timeout_t;
+
+/**
  * Structure for of_bsn_tlv_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5064,6 +5075,17 @@ typedef struct of_bsn_tlv_idle_notification_s of_bsn_tlv_idle_notification_t;
 typedef struct of_bsn_tlv_idle_time_s of_bsn_tlv_idle_time_t;
 
 /**
+ * Structure for of_bsn_tlv_idle_timeout object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_idle_timeout_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_idle_timeout_s of_bsn_tlv_idle_timeout_t;
+
+/**
  * Structure for of_bsn_tlv_ipv4 object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5086,6 +5108,17 @@ typedef struct of_bsn_tlv_ipv4_s of_bsn_tlv_ipv4_t;
 typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
 
 /**
+ * Structure for of_bsn_tlv_miss_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_miss_packets_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_miss_packets_s of_bsn_tlv_miss_packets_t;
+
+/**
  * Structure for of_bsn_tlv_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5095,6 +5128,28 @@ typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
  *
  */
 typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
+
+/**
+ * Structure for of_bsn_tlv_reply_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_reply_packets_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_reply_packets_s of_bsn_tlv_reply_packets_t;
+
+/**
+ * Structure for of_bsn_tlv_request_packets object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_request_packets_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_request_packets_s of_bsn_tlv_request_packets_t;
 
 /**
  * Structure for of_bsn_tlv_rx_packets object.  Get/set
@@ -5117,6 +5172,17 @@ typedef struct of_bsn_tlv_rx_packets_s of_bsn_tlv_rx_packets_t;
  *
  */
 typedef struct of_bsn_tlv_tx_packets_s of_bsn_tlv_tx_packets_t;
+
+/**
+ * Structure for of_bsn_tlv_unicast_query_timeout object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_unicast_query_timeout_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_unicast_query_timeout_s of_bsn_tlv_unicast_query_timeout_t;
 
 /**
  * Structure for of_bsn_tlv_vlan_vid object.  Get/set

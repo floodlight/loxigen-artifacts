@@ -31,6 +31,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
+        return new OFBsnTlvBroadcastQueryTimeoutVer13.Builder();
+    }
+    public OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value) {
+        return new OFBsnTlvBroadcastQueryTimeoutVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }
@@ -40,6 +49,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvIdleTime idleTime(U64 value) {
         return new OFBsnTlvIdleTimeVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIdleTimeout.Builder buildIdleTimeout() {
+        return new OFBsnTlvIdleTimeoutVer13.Builder();
+    }
+    public OFBsnTlvIdleTimeout idleTimeout(long value) {
+        return new OFBsnTlvIdleTimeoutVer13(
                 value
                     );
     }
@@ -62,11 +80,38 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvMissPackets.Builder buildMissPackets() {
+        return new OFBsnTlvMissPacketsVer13.Builder();
+    }
+    public OFBsnTlvMissPackets missPackets(U64 value) {
+        return new OFBsnTlvMissPacketsVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         return new OFBsnTlvPortVer13.Builder();
     }
     public OFBsnTlvPort port(OFPort value) {
         return new OFBsnTlvPortVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvReplyPackets.Builder buildReplyPackets() {
+        return new OFBsnTlvReplyPacketsVer13.Builder();
+    }
+    public OFBsnTlvReplyPackets replyPackets(U64 value) {
+        return new OFBsnTlvReplyPacketsVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvRequestPackets.Builder buildRequestPackets() {
+        return new OFBsnTlvRequestPacketsVer13.Builder();
+    }
+    public OFBsnTlvRequestPackets requestPackets(U64 value) {
+        return new OFBsnTlvRequestPacketsVer13(
                 value
                     );
     }
@@ -85,6 +130,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvTxPackets txPackets(U64 value) {
         return new OFBsnTlvTxPacketsVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
+        return new OFBsnTlvUnicastQueryTimeoutVer13.Builder();
+    }
+    public OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value) {
+        return new OFBsnTlvUnicastQueryTimeoutVer13(
                 value
                     );
     }
