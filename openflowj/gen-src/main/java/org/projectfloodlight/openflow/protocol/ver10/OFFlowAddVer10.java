@@ -143,7 +143,7 @@ class OFFlowAddVer10 implements OFFlowAdd {
     }
 
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
@@ -313,12 +313,12 @@ class OFFlowAddVer10 implements OFFlowAdd {
         return this;
     }
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFFlowAdd.Builder setOutGroup(long outGroup) throws UnsupportedOperationException {
+    public OFFlowAdd.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
@@ -541,12 +541,12 @@ class OFFlowAddVer10 implements OFFlowAdd {
         return this;
     }
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFFlowAdd.Builder setOutGroup(long outGroup) throws UnsupportedOperationException {
+    public OFFlowAdd.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override

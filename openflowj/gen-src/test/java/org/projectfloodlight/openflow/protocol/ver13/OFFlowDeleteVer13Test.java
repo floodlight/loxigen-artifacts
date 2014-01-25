@@ -59,7 +59,7 @@ public class OFFlowDeleteVer13Test {
     .setPriority(6000)
     .setBufferId(OFBufferId.of(50))
     .setOutPort(OFPort.of(6))
-    .setOutGroup(8)
+    .setOutGroup(OFGroup.of(8))
     .setFlags(ImmutableSet.<OFFlowModFlags>of())
     .setMatch(
         factory.buildMatch()
@@ -98,7 +98,7 @@ public class OFFlowDeleteVer13Test {
     .setPriority(6000)
     .setBufferId(OFBufferId.of(50))
     .setOutPort(OFPort.of(6))
-    .setOutGroup(8)
+    .setOutGroup(OFGroup.of(8))
     .setFlags(ImmutableSet.<OFFlowModFlags>of())
     .setMatch(
         factory.buildMatch()

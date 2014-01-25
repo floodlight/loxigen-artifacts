@@ -42,13 +42,13 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         private final static long DEFAULT_XID = 0x0L;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_COOKIE_MASK = U64.ZERO;
-        private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
+        private final static TableId DEFAULT_TABLE_ID = TableId.ZERO;
         private final static int DEFAULT_IDLE_TIMEOUT = 0x0;
         private final static int DEFAULT_HARD_TIMEOUT = 0x0;
         private final static int DEFAULT_PRIORITY = 0x0;
         private final static OFBufferId DEFAULT_BUFFER_ID = OFBufferId.NO_BUFFER;
         private final static OFPort DEFAULT_OUT_PORT = OFPort.ANY;
-        private final static long DEFAULT_OUT_GROUP = 0x0L;
+        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ANY;
         private final static Set<OFFlowModFlags> DEFAULT_FLAGS = ImmutableSet.<OFFlowModFlags>of();
         private final static Match DEFAULT_MATCH = OFFactoryVer12.MATCH_WILDCARD_ALL;
         private final static List<OFInstruction> DEFAULT_INSTRUCTIONS = ImmutableList.<OFInstruction>of();
@@ -63,7 +63,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
     private final int priority;
     private final OFBufferId bufferId;
     private final OFPort outPort;
-    private final long outGroup;
+    private final OFGroup outGroup;
     private final Set<OFFlowModFlags> flags;
     private final Match match;
     private final List<OFInstruction> instructions;
@@ -74,7 +74,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFFlowDeleteVer12(long xid, U64 cookie, U64 cookieMask, TableId tableId, int idleTimeout, int hardTimeout, int priority, OFBufferId bufferId, OFPort outPort, long outGroup, Set<OFFlowModFlags> flags, Match match, List<OFInstruction> instructions) {
+    OFFlowDeleteVer12(long xid, U64 cookie, U64 cookieMask, TableId tableId, int idleTimeout, int hardTimeout, int priority, OFBufferId bufferId, OFPort outPort, OFGroup outGroup, Set<OFFlowModFlags> flags, Match match, List<OFInstruction> instructions) {
         this.xid = xid;
         this.cookie = cookie;
         this.cookieMask = cookieMask;
@@ -152,7 +152,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
     }
 
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
@@ -205,7 +205,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         private boolean outPortSet;
         private OFPort outPort;
         private boolean outGroupSet;
-        private long outGroup;
+        private OFGroup outGroup;
         private boolean flagsSet;
         private Set<OFFlowModFlags> flags;
         private boolean matchSet;
@@ -332,12 +332,12 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
     @Override
-    public OFFlowDelete.Builder setOutGroup(long outGroup) {
+    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) {
         this.outGroup = outGroup;
         this.outGroupSet = true;
         return this;
@@ -407,7 +407,9 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
                 OFPort outPort = this.outPortSet ? this.outPort : parentMessage.outPort;
                 if(outPort == null)
                     throw new NullPointerException("Property outPort must not be null");
-                long outGroup = this.outGroupSet ? this.outGroup : parentMessage.outGroup;
+                OFGroup outGroup = this.outGroupSet ? this.outGroup : parentMessage.outGroup;
+                if(outGroup == null)
+                    throw new NullPointerException("Property outGroup must not be null");
                 Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
@@ -459,7 +461,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         private boolean outPortSet;
         private OFPort outPort;
         private boolean outGroupSet;
-        private long outGroup;
+        private OFGroup outGroup;
         private boolean flagsSet;
         private Set<OFFlowModFlags> flags;
         private boolean matchSet;
@@ -582,12 +584,12 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         return this;
     }
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
     @Override
-    public OFFlowDelete.Builder setOutGroup(long outGroup) {
+    public OFFlowDelete.Builder setOutGroup(OFGroup outGroup) {
         this.outGroup = outGroup;
         this.outGroupSet = true;
         return this;
@@ -656,7 +658,9 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
             OFPort outPort = this.outPortSet ? this.outPort : DEFAULT_OUT_PORT;
             if(outPort == null)
                 throw new NullPointerException("Property outPort must not be null");
-            long outGroup = this.outGroupSet ? this.outGroup : DEFAULT_OUT_GROUP;
+            OFGroup outGroup = this.outGroupSet ? this.outGroup : DEFAULT_OUT_GROUP;
+            if(outGroup == null)
+                throw new NullPointerException("Property outGroup must not be null");
             Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
@@ -724,7 +728,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
             int priority = U16.f(bb.readShort());
             OFBufferId bufferId = OFBufferId.of(bb.readInt());
             OFPort outPort = OFPort.read4Bytes(bb);
-            long outGroup = U32.f(bb.readInt());
+            OFGroup outGroup = OFGroup.read4Bytes(bb);
             Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer12.readFrom(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
@@ -777,7 +781,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
             sink.putInt(message.priority);
             message.bufferId.putTo(sink);
             message.outPort.putTo(sink);
-            sink.putLong(message.outGroup);
+            message.outGroup.putTo(sink);
             OFFlowModFlagsSerializerVer12.putTo(message.flags, sink);
             // skip pad (2 bytes)
             message.match.putTo(sink);
@@ -814,7 +818,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
             bb.writeShort(U16.t(message.priority));
             bb.writeInt(message.bufferId.getInt());
             message.outPort.write4Bytes(bb);
-            bb.writeInt(U32.t(message.outGroup));
+            message.outGroup.write4Bytes(bb);
             OFFlowModFlagsSerializerVer12.writeTo(bb, message.flags);
             // pad: 2 bytes
             bb.writeZero(2);
@@ -904,7 +908,10 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
                 return false;
         } else if (!outPort.equals(other.outPort))
             return false;
-        if( outGroup != other.outGroup)
+        if (outGroup == null) {
+            if (other.outGroup != null)
+                return false;
+        } else if (!outGroup.equals(other.outGroup))
             return false;
         if (flags == null) {
             if (other.flags != null)
@@ -938,7 +945,7 @@ class OFFlowDeleteVer12 implements OFFlowDelete {
         result = prime * result + priority;
         result = prime * result + ((bufferId == null) ? 0 : bufferId.hashCode());
         result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime *  (int) (outGroup ^ (outGroup >>> 32));
+        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((match == null) ? 0 : match.hashCode());
         result = prime * result + ((instructions == null) ? 0 : instructions.hashCode());

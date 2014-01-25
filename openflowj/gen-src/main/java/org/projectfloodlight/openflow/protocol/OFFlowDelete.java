@@ -40,7 +40,7 @@ public interface OFFlowDelete extends OFObject, OFFlowMod {
     int getPriority();
     OFBufferId getBufferId();
     OFPort getOutPort();
-    long getOutGroup() throws UnsupportedOperationException;
+    OFGroup getOutGroup() throws UnsupportedOperationException;
     Set<OFFlowModFlags> getFlags();
     Match getMatch();
     List<OFInstruction> getInstructions() throws UnsupportedOperationException;
@@ -72,8 +72,8 @@ public interface OFFlowDelete extends OFObject, OFFlowMod {
         Builder setBufferId(OFBufferId bufferId);
         OFPort getOutPort();
         Builder setOutPort(OFPort outPort);
-        long getOutGroup() throws UnsupportedOperationException;
-        Builder setOutGroup(long outGroup) throws UnsupportedOperationException;
+        OFGroup getOutGroup() throws UnsupportedOperationException;
+        Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException;
         Set<OFFlowModFlags> getFlags();
         Builder setFlags(Set<OFFlowModFlags> flags);
         Match getMatch();

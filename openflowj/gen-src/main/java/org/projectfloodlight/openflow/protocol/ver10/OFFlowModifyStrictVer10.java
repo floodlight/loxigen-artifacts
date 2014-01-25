@@ -143,7 +143,7 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
     }
 
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
@@ -313,12 +313,12 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setOutGroup(long outGroup) throws UnsupportedOperationException {
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
@@ -541,12 +541,12 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return this;
     }
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFFlowModifyStrict.Builder setOutGroup(long outGroup) throws UnsupportedOperationException {
+    public OFFlowModifyStrict.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
