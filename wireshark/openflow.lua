@@ -1681,6 +1681,7 @@ local enum_v4_ofp_packet_in_reason = {
     [135] = "OFPR_BSN_DEST_HOST_UNREACHABLE",
     [136] = "OFPR_BSN_DEST_PORT_UNREACHABLE",
     [137] = "OFPR_BSN_FRAGMENTATION_REQUIRED",
+    [139] = "OFPR_BSN_ARP",
 }
 
 local enum_v4_of_bsn_vlan_counter_t = {
