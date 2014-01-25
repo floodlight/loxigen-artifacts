@@ -375,7 +375,6 @@ class OFBsnFlowIdleEnableSetReplyVer13 implements OFBsnFlowIdleEnableSetReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

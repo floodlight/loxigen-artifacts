@@ -320,7 +320,6 @@ class OFOxmArpThaMaskedVer13 implements OFOxmArpThaMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

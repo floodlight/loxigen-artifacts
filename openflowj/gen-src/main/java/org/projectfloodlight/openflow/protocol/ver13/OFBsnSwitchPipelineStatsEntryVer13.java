@@ -199,7 +199,6 @@ class OFBsnSwitchPipelineStatsEntryVer13 implements OFBsnSwitchPipelineStatsEntr
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

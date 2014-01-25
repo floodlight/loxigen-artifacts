@@ -282,7 +282,6 @@ class OFOxmIpProtoVer12 implements OFOxmIpProto {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

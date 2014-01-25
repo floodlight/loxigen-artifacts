@@ -366,7 +366,6 @@ class OFBucketVer11 implements OFBucket {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

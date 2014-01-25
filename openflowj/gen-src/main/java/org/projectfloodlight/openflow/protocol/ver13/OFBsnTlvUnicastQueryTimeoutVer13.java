@@ -233,7 +233,6 @@ class OFBsnTlvUnicastQueryTimeoutVer13 implements OFBsnTlvUnicastQueryTimeout {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

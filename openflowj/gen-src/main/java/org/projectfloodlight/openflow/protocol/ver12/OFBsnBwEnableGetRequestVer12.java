@@ -287,7 +287,6 @@ class OFBsnBwEnableGetRequestVer12 implements OFBsnBwEnableGetRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

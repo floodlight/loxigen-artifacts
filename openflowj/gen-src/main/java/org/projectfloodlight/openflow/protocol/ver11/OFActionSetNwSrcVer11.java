@@ -237,7 +237,6 @@ class OFActionSetNwSrcVer11 implements OFActionSetNwSrc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

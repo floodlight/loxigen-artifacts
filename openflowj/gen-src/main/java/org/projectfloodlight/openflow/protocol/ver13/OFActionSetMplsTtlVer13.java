@@ -238,7 +238,6 @@ class OFActionSetMplsTtlVer13 implements OFActionSetMplsTtl {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

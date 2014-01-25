@@ -331,7 +331,6 @@ class OFBsnBwEnableGetReplyVer13 implements OFBsnBwEnableGetReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -362,7 +362,6 @@ class OFHelloFailedErrorMsgVer11 implements OFHelloFailedErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

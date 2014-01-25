@@ -380,7 +380,6 @@ class OFBsnGentableSetBucketsSizeVer13 implements OFBsnGentableSetBucketsSize {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

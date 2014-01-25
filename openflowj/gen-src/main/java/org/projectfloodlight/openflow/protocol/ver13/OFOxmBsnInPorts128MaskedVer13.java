@@ -320,7 +320,6 @@ class OFOxmBsnInPorts128MaskedVer13 implements OFOxmBsnInPorts128Masked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

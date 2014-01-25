@@ -379,7 +379,6 @@ class OFBsnPduRxTimeoutVer10 implements OFBsnPduRxTimeout {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

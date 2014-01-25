@@ -457,7 +457,6 @@ class OFBsnVportQInQVer11 implements OFBsnVportQInQ {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

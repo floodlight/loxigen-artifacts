@@ -282,7 +282,6 @@ class OFOxmMplsLabelVer12 implements OFOxmMplsLabel {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

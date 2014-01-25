@@ -242,7 +242,6 @@ class OFActionSetDlSrcVer11 implements OFActionSetDlSrc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

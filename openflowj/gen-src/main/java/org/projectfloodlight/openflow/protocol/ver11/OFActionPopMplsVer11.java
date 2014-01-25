@@ -242,7 +242,6 @@ class OFActionPopMplsVer11 implements OFActionPopMpls {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

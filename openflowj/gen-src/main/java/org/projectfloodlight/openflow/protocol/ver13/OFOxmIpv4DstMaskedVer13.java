@@ -320,7 +320,6 @@ class OFOxmIpv4DstMaskedVer13 implements OFOxmIpv4DstMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

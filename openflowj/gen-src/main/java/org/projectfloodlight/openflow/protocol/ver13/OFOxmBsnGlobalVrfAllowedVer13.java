@@ -282,7 +282,6 @@ class OFOxmBsnGlobalVrfAllowedVer13 implements OFOxmBsnGlobalVrfAllowed {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -380,7 +380,6 @@ class OFBsnGetIpMaskReplyVer10 implements OFBsnGetIpMaskReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

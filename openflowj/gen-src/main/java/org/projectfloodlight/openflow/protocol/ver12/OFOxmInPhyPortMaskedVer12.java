@@ -320,7 +320,6 @@ class OFOxmInPhyPortMaskedVer12 implements OFOxmInPhyPortMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

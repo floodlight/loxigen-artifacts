@@ -241,7 +241,6 @@ class OFBarrierRequestVer13 implements OFBarrierRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -338,7 +338,6 @@ class OFRoleReplyVer12 implements OFRoleReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

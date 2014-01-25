@@ -244,7 +244,6 @@ class OFTableFeaturePropMatchVer13 implements OFTableFeaturePropMatch {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

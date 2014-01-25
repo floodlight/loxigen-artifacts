@@ -368,7 +368,6 @@ class OFTableStatsReplyVer10 implements OFTableStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

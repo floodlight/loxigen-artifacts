@@ -295,7 +295,6 @@ class OFEchoReplyVer12 implements OFEchoReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -334,7 +334,6 @@ class OFSetConfigVer13 implements OFSetConfig {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

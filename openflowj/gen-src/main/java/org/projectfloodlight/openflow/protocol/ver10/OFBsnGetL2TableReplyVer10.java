@@ -385,7 +385,6 @@ class OFBsnGetL2TableReplyVer10 implements OFBsnGetL2TableReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

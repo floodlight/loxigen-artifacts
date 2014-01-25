@@ -233,7 +233,6 @@ class OFBsnTlvBroadcastQueryTimeoutVer13 implements OFBsnTlvBroadcastQueryTimeou
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

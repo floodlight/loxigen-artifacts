@@ -282,7 +282,6 @@ class OFOxmMetadataVer12 implements OFOxmMetadata {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

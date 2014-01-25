@@ -553,7 +553,6 @@ class OFDescStatsReplyVer10 implements OFDescStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

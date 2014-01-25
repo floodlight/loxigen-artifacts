@@ -376,7 +376,6 @@ class OFActionBsnMirrorVer13 implements OFActionBsnMirror {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

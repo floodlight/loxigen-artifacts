@@ -341,7 +341,6 @@ class OFBsnShellOutputVer10 implements OFBsnShellOutput {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

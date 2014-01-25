@@ -134,7 +134,6 @@ class OFInstructionIdMeterVer13 implements OFInstructionIdMeter {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

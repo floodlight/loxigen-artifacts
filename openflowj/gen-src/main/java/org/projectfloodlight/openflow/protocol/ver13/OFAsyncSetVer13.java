@@ -505,7 +505,6 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

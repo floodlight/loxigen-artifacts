@@ -362,7 +362,6 @@ class OFFlowModFailedErrorMsgVer11 implements OFFlowModFailedErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

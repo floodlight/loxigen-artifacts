@@ -282,7 +282,6 @@ class OFOxmTcpDstVer13 implements OFOxmTcpDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

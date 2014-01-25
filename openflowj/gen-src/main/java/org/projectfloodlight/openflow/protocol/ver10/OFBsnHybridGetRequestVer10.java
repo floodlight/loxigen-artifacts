@@ -287,7 +287,6 @@ class OFBsnHybridGetRequestVer10 implements OFBsnHybridGetRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -320,7 +320,6 @@ class OFOxmIpEcnMaskedVer13 implements OFOxmIpEcnMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

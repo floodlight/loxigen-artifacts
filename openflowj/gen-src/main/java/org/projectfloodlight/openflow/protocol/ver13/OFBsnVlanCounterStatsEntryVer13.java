@@ -270,7 +270,6 @@ class OFBsnVlanCounterStatsEntryVer13 implements OFBsnVlanCounterStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

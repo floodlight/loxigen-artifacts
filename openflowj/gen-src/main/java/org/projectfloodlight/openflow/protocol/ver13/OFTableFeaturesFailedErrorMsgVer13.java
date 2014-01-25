@@ -362,7 +362,6 @@ class OFTableFeaturesFailedErrorMsgVer13 implements OFTableFeaturesFailedErrorMs
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

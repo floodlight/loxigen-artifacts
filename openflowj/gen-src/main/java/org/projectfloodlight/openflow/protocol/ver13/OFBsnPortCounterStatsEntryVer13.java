@@ -274,7 +274,6 @@ class OFBsnPortCounterStatsEntryVer13 implements OFBsnPortCounterStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

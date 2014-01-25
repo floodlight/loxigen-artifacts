@@ -438,7 +438,6 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

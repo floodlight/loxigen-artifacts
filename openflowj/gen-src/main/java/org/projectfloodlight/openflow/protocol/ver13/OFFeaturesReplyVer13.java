@@ -566,7 +566,6 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

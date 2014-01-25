@@ -237,7 +237,6 @@ class OFBsnTlvIpv4Ver13 implements OFBsnTlvIpv4 {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

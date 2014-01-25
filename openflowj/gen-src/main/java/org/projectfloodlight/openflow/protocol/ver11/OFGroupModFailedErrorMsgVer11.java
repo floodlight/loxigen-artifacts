@@ -362,7 +362,6 @@ class OFGroupModFailedErrorMsgVer11 implements OFGroupModFailedErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -247,7 +247,6 @@ class OFBucketCounterVer11 implements OFBucketCounter {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

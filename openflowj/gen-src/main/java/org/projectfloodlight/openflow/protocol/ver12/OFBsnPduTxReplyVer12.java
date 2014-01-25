@@ -423,7 +423,6 @@ class OFBsnPduTxReplyVer12 implements OFBsnPduTxReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

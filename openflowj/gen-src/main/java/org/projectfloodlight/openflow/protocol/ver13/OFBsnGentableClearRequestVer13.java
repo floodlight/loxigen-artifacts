@@ -432,7 +432,6 @@ class OFBsnGentableClearRequestVer13 implements OFBsnGentableClearRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

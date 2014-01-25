@@ -282,7 +282,6 @@ class OFOxmIcmpv6TypeVer12 implements OFOxmIcmpv6Type {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

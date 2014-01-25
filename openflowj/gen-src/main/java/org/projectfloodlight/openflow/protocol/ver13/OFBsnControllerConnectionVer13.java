@@ -340,7 +340,6 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

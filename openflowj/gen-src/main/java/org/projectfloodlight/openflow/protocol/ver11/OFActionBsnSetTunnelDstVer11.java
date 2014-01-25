@@ -279,7 +279,6 @@ class OFActionBsnSetTunnelDstVer11 implements OFActionBsnSetTunnelDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

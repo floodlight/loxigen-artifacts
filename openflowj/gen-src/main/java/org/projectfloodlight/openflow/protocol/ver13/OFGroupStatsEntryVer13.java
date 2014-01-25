@@ -507,7 +507,6 @@ class OFGroupStatsEntryVer13 implements OFGroupStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

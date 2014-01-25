@@ -385,7 +385,6 @@ class OFBsnHybridGetReplyVer10 implements OFBsnHybridGetReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

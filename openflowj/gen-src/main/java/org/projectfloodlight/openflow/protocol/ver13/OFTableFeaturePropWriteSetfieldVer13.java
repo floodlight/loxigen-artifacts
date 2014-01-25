@@ -244,7 +244,6 @@ class OFTableFeaturePropWriteSetfieldVer13 implements OFTableFeaturePropWriteSet
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

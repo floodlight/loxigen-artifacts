@@ -282,7 +282,6 @@ class OFOxmSctpDstVer13 implements OFOxmSctpDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -368,7 +368,6 @@ class OFQueueStatsReplyVer10 implements OFQueueStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

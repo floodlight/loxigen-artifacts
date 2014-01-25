@@ -139,7 +139,6 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

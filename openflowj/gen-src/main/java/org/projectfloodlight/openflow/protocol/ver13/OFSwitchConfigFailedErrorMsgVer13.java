@@ -362,7 +362,6 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

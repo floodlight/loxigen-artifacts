@@ -165,7 +165,6 @@ class OFInstructionBsnArpOffloadVer13 implements OFInstructionBsnArpOffload {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

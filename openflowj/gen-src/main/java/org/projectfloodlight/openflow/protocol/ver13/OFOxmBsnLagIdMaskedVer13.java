@@ -320,7 +320,6 @@ class OFOxmBsnLagIdMaskedVer13 implements OFOxmBsnLagIdMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

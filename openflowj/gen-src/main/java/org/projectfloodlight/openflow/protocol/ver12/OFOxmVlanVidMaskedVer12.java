@@ -320,7 +320,6 @@ class OFOxmVlanVidMaskedVer12 implements OFOxmVlanVidMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

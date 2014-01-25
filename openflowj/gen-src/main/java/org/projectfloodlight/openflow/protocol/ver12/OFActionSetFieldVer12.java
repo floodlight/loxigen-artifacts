@@ -243,7 +243,6 @@ class OFActionSetFieldVer12 implements OFActionSetField {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

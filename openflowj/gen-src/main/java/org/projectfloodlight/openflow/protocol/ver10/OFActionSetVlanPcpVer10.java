@@ -242,7 +242,6 @@ class OFActionSetVlanPcpVer10 implements OFActionSetVlanPcp {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

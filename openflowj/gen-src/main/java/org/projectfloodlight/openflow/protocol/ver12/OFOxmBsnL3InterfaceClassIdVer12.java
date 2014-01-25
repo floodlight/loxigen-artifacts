@@ -282,7 +282,6 @@ class OFOxmBsnL3InterfaceClassIdVer12 implements OFOxmBsnL3InterfaceClassId {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

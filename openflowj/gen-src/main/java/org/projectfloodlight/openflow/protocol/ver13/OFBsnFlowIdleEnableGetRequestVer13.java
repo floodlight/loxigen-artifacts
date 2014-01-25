@@ -287,7 +287,6 @@ class OFBsnFlowIdleEnableGetRequestVer13 implements OFBsnFlowIdleEnableGetReques
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

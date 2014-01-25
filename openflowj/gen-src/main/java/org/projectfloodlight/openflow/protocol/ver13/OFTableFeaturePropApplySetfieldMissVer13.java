@@ -244,7 +244,6 @@ class OFTableFeaturePropApplySetfieldMissVer13 implements OFTableFeaturePropAppl
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

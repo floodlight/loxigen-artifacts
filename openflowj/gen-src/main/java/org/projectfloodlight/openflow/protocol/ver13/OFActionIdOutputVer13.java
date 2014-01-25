@@ -139,7 +139,6 @@ class OFActionIdOutputVer13 implements OFActionIdOutput {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

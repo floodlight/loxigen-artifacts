@@ -139,7 +139,6 @@ class OFActionIdPopVlanVer13 implements OFActionIdPopVlan {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

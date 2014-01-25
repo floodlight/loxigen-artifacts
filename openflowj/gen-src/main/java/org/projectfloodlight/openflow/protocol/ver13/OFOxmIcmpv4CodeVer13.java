@@ -282,7 +282,6 @@ class OFOxmIcmpv4CodeVer13 implements OFOxmIcmpv4Code {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

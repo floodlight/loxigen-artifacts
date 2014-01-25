@@ -309,7 +309,6 @@ class OFMeterConfigVer13 implements OFMeterConfig {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

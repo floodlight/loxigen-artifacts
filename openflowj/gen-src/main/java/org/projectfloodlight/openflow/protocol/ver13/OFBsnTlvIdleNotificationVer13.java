@@ -134,7 +134,6 @@ class OFBsnTlvIdleNotificationVer13 implements OFBsnTlvIdleNotification {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

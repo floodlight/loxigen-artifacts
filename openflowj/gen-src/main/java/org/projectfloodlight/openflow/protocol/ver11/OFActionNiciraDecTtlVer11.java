@@ -170,7 +170,6 @@ class OFActionNiciraDecTtlVer11 implements OFActionNiciraDecTtl {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -792,7 +792,6 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

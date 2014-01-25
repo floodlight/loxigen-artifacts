@@ -334,7 +334,6 @@ class OFGetConfigReplyVer12 implements OFGetConfigReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

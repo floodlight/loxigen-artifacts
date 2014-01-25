@@ -492,7 +492,6 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -287,7 +287,6 @@ class OFBsnGetL2TableRequestVer10 implements OFBsnGetL2TableRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

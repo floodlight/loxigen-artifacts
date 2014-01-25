@@ -386,7 +386,6 @@ class OFBsnGentableEntryDeleteVer13 implements OFBsnGentableEntryDelete {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

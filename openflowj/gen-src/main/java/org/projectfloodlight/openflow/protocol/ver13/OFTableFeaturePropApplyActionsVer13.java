@@ -244,7 +244,6 @@ class OFTableFeaturePropApplyActionsVer13 implements OFTableFeaturePropApplyActi
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

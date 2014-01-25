@@ -320,7 +320,6 @@ class OFOxmIcmpv4TypeMaskedVer13 implements OFOxmIcmpv4TypeMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

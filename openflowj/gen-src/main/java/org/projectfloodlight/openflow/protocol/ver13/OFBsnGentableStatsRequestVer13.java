@@ -364,7 +364,6 @@ class OFBsnGentableStatsRequestVer13 implements OFBsnGentableStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

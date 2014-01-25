@@ -242,7 +242,6 @@ class OFActionSetDlDstVer11 implements OFActionSetDlDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

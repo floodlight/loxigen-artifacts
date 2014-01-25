@@ -293,7 +293,6 @@ class OFPacketQueueVer10 implements OFPacketQueue {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

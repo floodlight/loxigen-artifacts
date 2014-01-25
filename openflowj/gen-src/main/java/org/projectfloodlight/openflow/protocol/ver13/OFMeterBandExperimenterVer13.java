@@ -321,7 +321,6 @@ class OFMeterBandExperimenterVer13 implements OFMeterBandExperimenter {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

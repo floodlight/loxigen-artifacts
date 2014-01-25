@@ -282,7 +282,6 @@ class OFOxmArpShaVer12 implements OFOxmArpSha {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

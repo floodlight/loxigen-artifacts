@@ -320,7 +320,6 @@ class OFOxmBsnL3DstClassIdMaskedVer13 implements OFOxmBsnL3DstClassIdMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

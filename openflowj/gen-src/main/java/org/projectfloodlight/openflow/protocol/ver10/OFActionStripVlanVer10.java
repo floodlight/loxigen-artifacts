@@ -139,7 +139,6 @@ class OFActionStripVlanVer10 implements OFActionStripVlan {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -336,7 +336,6 @@ class OFBsnGetMirroringReplyVer13 implements OFBsnGetMirroringReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

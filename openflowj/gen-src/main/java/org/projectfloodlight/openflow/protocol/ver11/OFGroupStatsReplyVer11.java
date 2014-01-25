@@ -373,7 +373,6 @@ class OFGroupStatsReplyVer11 implements OFGroupStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

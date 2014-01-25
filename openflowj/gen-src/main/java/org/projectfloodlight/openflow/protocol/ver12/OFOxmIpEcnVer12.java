@@ -282,7 +282,6 @@ class OFOxmIpEcnVer12 implements OFOxmIpEcn {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

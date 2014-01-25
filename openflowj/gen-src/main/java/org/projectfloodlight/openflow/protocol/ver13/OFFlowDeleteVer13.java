@@ -897,7 +897,6 @@ class OFFlowDeleteVer13 implements OFFlowDelete {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

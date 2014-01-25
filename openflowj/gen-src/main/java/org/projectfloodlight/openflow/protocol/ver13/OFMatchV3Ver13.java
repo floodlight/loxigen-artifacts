@@ -601,11 +601,21 @@ class OFMatchV3Ver13 implements OFMatchV3 {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFMatchV3Ver13(");
-        b.append("oxmList=").append(oxmList);
+        boolean first = true;
+        for(MatchField<?> field : getMatchFields()) {
+            if(first)
+                first = false;
+            else
+                b.append(", ");
+            String name = field.getName();
+            b.append(name).append('=').append(this.get(field));
+            if(isPartiallyMasked(field)) {
+                b.append('/').append(this.getMasked(field).getMask());
+            }
+        }
         b.append(")");
         return b.toString();
     }
-
 
     @Override
     public boolean equals(Object obj) {

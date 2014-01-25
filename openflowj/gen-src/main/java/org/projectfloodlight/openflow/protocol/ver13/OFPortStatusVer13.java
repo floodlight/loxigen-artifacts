@@ -338,7 +338,6 @@ class OFPortStatusVer13 implements OFPortStatus {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

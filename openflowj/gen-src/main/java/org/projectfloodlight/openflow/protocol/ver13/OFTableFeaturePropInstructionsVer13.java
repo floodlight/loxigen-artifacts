@@ -244,7 +244,6 @@ class OFTableFeaturePropInstructionsVer13 implements OFTableFeaturePropInstructi
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

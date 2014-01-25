@@ -241,7 +241,6 @@ class OFBarrierReplyVer11 implements OFBarrierReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

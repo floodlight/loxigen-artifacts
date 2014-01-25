@@ -237,7 +237,6 @@ class OFBsnTlvVlanVidVer13 implements OFBsnTlvVlanVid {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

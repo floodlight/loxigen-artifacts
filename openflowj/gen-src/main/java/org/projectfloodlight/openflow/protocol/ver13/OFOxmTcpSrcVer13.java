@@ -282,7 +282,6 @@ class OFOxmTcpSrcVer13 implements OFOxmTcpSrc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

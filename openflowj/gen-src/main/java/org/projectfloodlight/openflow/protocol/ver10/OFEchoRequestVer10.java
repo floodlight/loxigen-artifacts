@@ -295,7 +295,6 @@ class OFEchoRequestVer10 implements OFEchoRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

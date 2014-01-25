@@ -379,7 +379,6 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

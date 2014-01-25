@@ -282,7 +282,6 @@ class OFOxmIcmpv4TypeVer13 implements OFOxmIcmpv4Type {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

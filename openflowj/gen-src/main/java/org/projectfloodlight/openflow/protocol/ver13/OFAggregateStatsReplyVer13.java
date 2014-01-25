@@ -463,7 +463,6 @@ class OFAggregateStatsReplyVer13 implements OFAggregateStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

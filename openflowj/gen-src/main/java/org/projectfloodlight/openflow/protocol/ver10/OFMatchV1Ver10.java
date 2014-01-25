@@ -494,7 +494,7 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                 int dstCidrLen = getIpv4DstCidrMaskLen();
                 return dstCidrLen > 0 && dstCidrLen < 32;
             default:
-                throw new UnsupportedOperationException("OFMatch does not support masked matching on field " + field.getName());
+                return false;
         }
     }
 
@@ -2319,35 +2319,21 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     @Override
     public String toString() {
         StringBuilder b = new StringBuilder("OFMatchV1Ver10(");
-        b.append("wildcards=").append(wildcards);
-        b.append(", ");
-        b.append("inPort=").append(inPort);
-        b.append(", ");
-        b.append("ethSrc=").append(ethSrc);
-        b.append(", ");
-        b.append("ethDst=").append(ethDst);
-        b.append(", ");
-        b.append("vlanVid=").append(vlanVid);
-        b.append(", ");
-        b.append("vlanPcp=").append(vlanPcp);
-        b.append(", ");
-        b.append("ethType=").append(ethType);
-        b.append(", ");
-        b.append("ipDscp=").append(ipDscp);
-        b.append(", ");
-        b.append("ipProto=").append(ipProto);
-        b.append(", ");
-        b.append("ipv4Src=").append(ipv4Src);
-        b.append(", ");
-        b.append("ipv4Dst=").append(ipv4Dst);
-        b.append(", ");
-        b.append("tcpSrc=").append(tcpSrc);
-        b.append(", ");
-        b.append("tcpDst=").append(tcpDst);
+        boolean first = true;
+        for(MatchField<?> field : getMatchFields()) {
+            if(first)
+                first = false;
+            else
+                b.append(", ");
+            String name = field.getName();
+            b.append(name).append('=').append(this.get(field));
+            if(isPartiallyMasked(field)) {
+                b.append('/').append(this.getMasked(field).getMask());
+            }
+        }
         b.append(")");
         return b.toString();
     }
-
 
     @Override
     public boolean equals(Object obj) {

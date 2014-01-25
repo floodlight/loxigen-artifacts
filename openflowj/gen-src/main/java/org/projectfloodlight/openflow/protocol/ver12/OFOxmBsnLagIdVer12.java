@@ -282,7 +282,6 @@ class OFOxmBsnLagIdVer12 implements OFOxmBsnLagId {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

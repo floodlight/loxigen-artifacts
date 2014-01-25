@@ -336,7 +336,6 @@ class OFBsnGetMirroringRequestVer13 implements OFBsnGetMirroringRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

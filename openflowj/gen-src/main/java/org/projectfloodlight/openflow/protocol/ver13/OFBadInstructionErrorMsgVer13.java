@@ -362,7 +362,6 @@ class OFBadInstructionErrorMsgVer13 implements OFBadInstructionErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -287,7 +287,6 @@ class OFBsnTimeRequestVer13 implements OFBsnTimeRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -140,7 +140,6 @@ class OFActionIdSetNwTtlVer13 implements OFActionIdSetNwTtl {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

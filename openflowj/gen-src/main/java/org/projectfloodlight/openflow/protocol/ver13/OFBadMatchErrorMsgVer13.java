@@ -362,7 +362,6 @@ class OFBadMatchErrorMsgVer13 implements OFBadMatchErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

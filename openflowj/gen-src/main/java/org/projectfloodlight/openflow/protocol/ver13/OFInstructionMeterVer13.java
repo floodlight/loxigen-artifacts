@@ -233,7 +233,6 @@ class OFInstructionMeterVer13 implements OFInstructionMeter {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -244,7 +244,6 @@ class OFTableFeaturePropWildcardsVer13 implements OFTableFeaturePropWildcards {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

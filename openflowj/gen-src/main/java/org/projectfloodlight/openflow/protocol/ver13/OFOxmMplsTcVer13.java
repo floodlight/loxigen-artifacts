@@ -282,7 +282,6 @@ class OFOxmMplsTcVer13 implements OFOxmMplsTc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

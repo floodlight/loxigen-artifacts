@@ -313,7 +313,6 @@ class OFDescStatsRequestVer10 implements OFDescStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

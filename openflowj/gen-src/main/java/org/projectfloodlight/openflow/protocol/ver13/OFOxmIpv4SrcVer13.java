@@ -282,7 +282,6 @@ class OFOxmIpv4SrcVer13 implements OFOxmIpv4Src {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -242,7 +242,6 @@ class OFActionPushMplsVer13 implements OFActionPushMpls {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

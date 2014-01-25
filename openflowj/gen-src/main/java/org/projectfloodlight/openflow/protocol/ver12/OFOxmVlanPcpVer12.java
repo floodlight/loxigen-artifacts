@@ -282,7 +282,6 @@ class OFOxmVlanPcpVer12 implements OFOxmVlanPcp {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

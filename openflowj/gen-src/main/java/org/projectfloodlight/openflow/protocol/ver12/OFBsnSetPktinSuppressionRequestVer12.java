@@ -516,7 +516,6 @@ class OFBsnSetPktinSuppressionRequestVer12 implements OFBsnSetPktinSuppressionRe
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

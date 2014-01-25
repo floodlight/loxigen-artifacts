@@ -758,7 +758,6 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

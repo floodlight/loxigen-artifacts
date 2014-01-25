@@ -282,7 +282,6 @@ class OFOxmIpv6DstVer13 implements OFOxmIpv6Dst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

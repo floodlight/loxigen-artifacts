@@ -237,7 +237,6 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

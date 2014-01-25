@@ -139,7 +139,6 @@ class OFInstructionIdWriteMetadataVer13 implements OFInstructionIdWriteMetadata 
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

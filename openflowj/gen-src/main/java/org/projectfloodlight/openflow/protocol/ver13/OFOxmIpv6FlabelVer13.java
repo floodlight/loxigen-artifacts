@@ -282,7 +282,6 @@ class OFOxmIpv6FlabelVer13 implements OFOxmIpv6Flabel {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

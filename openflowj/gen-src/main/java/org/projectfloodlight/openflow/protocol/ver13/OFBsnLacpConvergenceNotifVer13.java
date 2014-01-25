@@ -832,7 +832,6 @@ class OFBsnLacpConvergenceNotifVer13 implements OFBsnLacpConvergenceNotif {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

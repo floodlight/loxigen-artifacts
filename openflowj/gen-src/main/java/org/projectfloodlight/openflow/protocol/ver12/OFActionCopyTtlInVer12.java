@@ -139,7 +139,6 @@ class OFActionCopyTtlInVer12 implements OFActionCopyTtlIn {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

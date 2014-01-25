@@ -241,7 +241,6 @@ class OFGetConfigRequestVer11 implements OFGetConfigRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

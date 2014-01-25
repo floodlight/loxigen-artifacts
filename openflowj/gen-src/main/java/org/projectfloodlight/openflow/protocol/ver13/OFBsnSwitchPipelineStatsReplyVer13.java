@@ -419,7 +419,6 @@ class OFBsnSwitchPipelineStatsReplyVer13 implements OFBsnSwitchPipelineStatsRepl
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

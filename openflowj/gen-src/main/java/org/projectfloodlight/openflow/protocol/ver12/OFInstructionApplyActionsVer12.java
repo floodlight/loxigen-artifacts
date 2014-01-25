@@ -249,7 +249,6 @@ class OFInstructionApplyActionsVer12 implements OFInstructionApplyActions {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

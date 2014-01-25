@@ -482,7 +482,6 @@ class OFBsnPduTxRequestVer12 implements OFBsnPduTxRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

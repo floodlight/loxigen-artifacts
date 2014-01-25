@@ -320,7 +320,6 @@ class OFOxmEthTypeMaskedVer12 implements OFOxmEthTypeMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

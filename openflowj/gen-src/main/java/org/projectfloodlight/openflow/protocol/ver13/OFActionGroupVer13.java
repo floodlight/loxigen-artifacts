@@ -237,7 +237,6 @@ class OFActionGroupVer13 implements OFActionGroup {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

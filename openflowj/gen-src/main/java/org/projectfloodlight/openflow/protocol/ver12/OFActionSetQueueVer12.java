@@ -233,7 +233,6 @@ class OFActionSetQueueVer12 implements OFActionSetQueue {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

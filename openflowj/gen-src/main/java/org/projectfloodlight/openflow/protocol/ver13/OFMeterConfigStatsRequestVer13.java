@@ -367,7 +367,6 @@ class OFMeterConfigStatsRequestVer13 implements OFMeterConfigStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

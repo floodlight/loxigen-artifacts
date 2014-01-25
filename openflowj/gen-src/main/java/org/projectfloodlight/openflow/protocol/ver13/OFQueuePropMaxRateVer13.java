@@ -243,7 +243,6 @@ class OFQueuePropMaxRateVer13 implements OFQueuePropMaxRate {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

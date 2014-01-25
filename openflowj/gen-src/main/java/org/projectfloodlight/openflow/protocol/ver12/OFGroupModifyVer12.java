@@ -416,7 +416,6 @@ class OFGroupModifyVer12 implements OFGroupModify {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

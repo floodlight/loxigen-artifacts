@@ -282,7 +282,6 @@ class OFOxmIcmpv6CodeVer12 implements OFOxmIcmpv6Code {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

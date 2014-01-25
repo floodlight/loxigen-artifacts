@@ -320,7 +320,6 @@ class OFOxmBsnGlobalVrfAllowedMaskedVer12 implements OFOxmBsnGlobalVrfAllowedMas
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

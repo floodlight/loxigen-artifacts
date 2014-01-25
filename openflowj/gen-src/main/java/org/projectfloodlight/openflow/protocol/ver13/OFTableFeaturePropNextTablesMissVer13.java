@@ -244,7 +244,6 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

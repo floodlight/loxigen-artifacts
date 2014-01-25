@@ -139,7 +139,6 @@ class OFActionIdPushPbbVer13 implements OFActionIdPushPbb {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

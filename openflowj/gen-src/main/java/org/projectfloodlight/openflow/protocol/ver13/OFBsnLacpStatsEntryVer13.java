@@ -701,7 +701,6 @@ class OFBsnLacpStatsEntryVer13 implements OFBsnLacpStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

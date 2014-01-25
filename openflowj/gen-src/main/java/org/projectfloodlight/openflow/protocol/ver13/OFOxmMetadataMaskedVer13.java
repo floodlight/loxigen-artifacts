@@ -320,7 +320,6 @@ class OFOxmMetadataMaskedVer13 implements OFOxmMetadataMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

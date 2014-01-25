@@ -290,7 +290,6 @@ class OFInstructionWriteMetadataVer12 implements OFInstructionWriteMetadata {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

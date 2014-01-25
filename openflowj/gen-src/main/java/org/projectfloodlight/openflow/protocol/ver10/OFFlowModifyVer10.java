@@ -784,7 +784,6 @@ class OFFlowModifyVer10 implements OFFlowModify {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

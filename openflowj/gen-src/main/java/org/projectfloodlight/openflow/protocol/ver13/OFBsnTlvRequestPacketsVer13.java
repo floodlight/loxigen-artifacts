@@ -237,7 +237,6 @@ class OFBsnTlvRequestPacketsVer13 implements OFBsnTlvRequestPackets {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

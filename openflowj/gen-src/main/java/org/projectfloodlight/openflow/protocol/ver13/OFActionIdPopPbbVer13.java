@@ -139,7 +139,6 @@ class OFActionIdPopPbbVer13 implements OFActionIdPopPbb {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

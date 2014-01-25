@@ -630,7 +630,6 @@ class OFPortDescVer10 implements OFPortDesc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

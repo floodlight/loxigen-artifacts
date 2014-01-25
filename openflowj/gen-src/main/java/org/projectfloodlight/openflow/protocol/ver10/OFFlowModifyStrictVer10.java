@@ -784,7 +784,6 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

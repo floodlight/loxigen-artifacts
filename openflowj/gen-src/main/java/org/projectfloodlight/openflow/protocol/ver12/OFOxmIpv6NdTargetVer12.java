@@ -282,7 +282,6 @@ class OFOxmIpv6NdTargetVer12 implements OFOxmIpv6NdTarget {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

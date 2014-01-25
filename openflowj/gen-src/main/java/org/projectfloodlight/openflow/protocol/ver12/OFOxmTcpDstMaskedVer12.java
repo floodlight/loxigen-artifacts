@@ -320,7 +320,6 @@ class OFOxmTcpDstMaskedVer12 implements OFOxmTcpDstMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -331,7 +331,6 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

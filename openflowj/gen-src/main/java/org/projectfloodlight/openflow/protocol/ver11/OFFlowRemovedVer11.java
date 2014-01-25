@@ -729,7 +729,6 @@ class OFFlowRemovedVer11 implements OFFlowRemoved {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

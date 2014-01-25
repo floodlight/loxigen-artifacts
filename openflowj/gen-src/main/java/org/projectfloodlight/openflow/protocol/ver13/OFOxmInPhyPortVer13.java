@@ -282,7 +282,6 @@ class OFOxmInPhyPortVer13 implements OFOxmInPhyPort {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

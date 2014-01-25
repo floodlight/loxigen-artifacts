@@ -336,7 +336,6 @@ class OFBsnSetMirroringVer11 implements OFBsnSetMirroring {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -376,7 +376,6 @@ class OFMeterFeaturesVer13 implements OFMeterFeatures {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

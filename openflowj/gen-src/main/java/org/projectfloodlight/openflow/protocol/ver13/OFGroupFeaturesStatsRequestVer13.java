@@ -318,7 +318,6 @@ class OFGroupFeaturesStatsRequestVer13 implements OFGroupFeaturesStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

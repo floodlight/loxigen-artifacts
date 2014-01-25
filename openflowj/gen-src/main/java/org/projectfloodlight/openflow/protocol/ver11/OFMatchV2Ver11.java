@@ -1358,7 +1358,6 @@ class OFMatchV2Ver11 implements OFMatchV2 {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

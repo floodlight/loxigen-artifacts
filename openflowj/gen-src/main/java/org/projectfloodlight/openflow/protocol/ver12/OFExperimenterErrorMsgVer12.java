@@ -406,7 +406,6 @@ class OFExperimenterErrorMsgVer12 implements OFExperimenterErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

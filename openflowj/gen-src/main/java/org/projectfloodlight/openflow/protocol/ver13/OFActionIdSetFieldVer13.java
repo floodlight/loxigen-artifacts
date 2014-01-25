@@ -135,7 +135,6 @@ class OFActionIdSetFieldVer13 implements OFActionIdSetField {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

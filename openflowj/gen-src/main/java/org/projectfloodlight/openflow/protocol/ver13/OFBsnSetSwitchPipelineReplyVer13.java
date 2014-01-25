@@ -331,7 +331,6 @@ class OFBsnSetSwitchPipelineReplyVer13 implements OFBsnSetSwitchPipelineReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

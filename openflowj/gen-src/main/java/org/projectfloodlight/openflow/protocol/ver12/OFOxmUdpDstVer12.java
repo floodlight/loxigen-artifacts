@@ -282,7 +282,6 @@ class OFOxmUdpDstVer12 implements OFOxmUdpDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

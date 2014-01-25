@@ -336,7 +336,6 @@ class OFBsnGetIpMaskRequestVer10 implements OFBsnGetIpMaskRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -498,7 +498,6 @@ class OFMeterStatsVer13 implements OFMeterStats {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

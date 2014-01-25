@@ -244,7 +244,6 @@ class OFTableFeaturePropWriteSetfieldMissVer13 implements OFTableFeaturePropWrit
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

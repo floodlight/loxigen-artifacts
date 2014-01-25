@@ -362,7 +362,6 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

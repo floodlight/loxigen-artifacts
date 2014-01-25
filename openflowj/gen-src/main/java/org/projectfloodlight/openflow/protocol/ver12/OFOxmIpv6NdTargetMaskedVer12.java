@@ -320,7 +320,6 @@ class OFOxmIpv6NdTargetMaskedVer12 implements OFOxmIpv6NdTargetMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -371,7 +371,6 @@ class OFGroupStatsRequestVer12 implements OFGroupStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

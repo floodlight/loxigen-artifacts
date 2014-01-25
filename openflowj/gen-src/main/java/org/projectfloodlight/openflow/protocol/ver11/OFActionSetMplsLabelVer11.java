@@ -233,7 +233,6 @@ class OFActionSetMplsLabelVer11 implements OFActionSetMplsLabel {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

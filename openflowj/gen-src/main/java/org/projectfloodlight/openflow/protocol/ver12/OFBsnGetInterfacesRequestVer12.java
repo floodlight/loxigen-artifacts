@@ -287,7 +287,6 @@ class OFBsnGetInterfacesRequestVer12 implements OFBsnGetInterfacesRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

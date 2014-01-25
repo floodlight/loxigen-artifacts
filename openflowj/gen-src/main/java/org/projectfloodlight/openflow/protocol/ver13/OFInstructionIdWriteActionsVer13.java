@@ -139,7 +139,6 @@ class OFInstructionIdWriteActionsVer13 implements OFInstructionIdWriteActions {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

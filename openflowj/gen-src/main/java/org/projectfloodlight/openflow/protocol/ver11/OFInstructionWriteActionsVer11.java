@@ -249,7 +249,6 @@ class OFInstructionWriteActionsVer11 implements OFInstructionWriteActions {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

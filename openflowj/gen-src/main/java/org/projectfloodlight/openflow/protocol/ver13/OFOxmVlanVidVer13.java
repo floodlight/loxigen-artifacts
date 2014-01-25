@@ -282,7 +282,6 @@ class OFOxmVlanVidVer13 implements OFOxmVlanVid {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

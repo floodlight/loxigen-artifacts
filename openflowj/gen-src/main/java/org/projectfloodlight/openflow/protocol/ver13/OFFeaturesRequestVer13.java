@@ -241,7 +241,6 @@ class OFFeaturesRequestVer13 implements OFFeaturesRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

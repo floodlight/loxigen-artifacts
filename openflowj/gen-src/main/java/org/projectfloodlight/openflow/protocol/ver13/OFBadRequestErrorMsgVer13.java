@@ -362,7 +362,6 @@ class OFBadRequestErrorMsgVer13 implements OFBadRequestErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

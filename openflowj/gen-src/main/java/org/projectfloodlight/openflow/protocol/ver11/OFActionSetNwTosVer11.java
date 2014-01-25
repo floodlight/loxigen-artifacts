@@ -238,7 +238,6 @@ class OFActionSetNwTosVer11 implements OFActionSetNwTos {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -161,7 +161,6 @@ class OFActionIdBsnSetTunnelDstVer13 implements OFActionIdBsnSetTunnelDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

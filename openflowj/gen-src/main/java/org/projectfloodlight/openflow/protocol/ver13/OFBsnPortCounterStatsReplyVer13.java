@@ -419,7 +419,6 @@ class OFBsnPortCounterStatsReplyVer13 implements OFBsnPortCounterStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

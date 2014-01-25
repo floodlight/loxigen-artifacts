@@ -320,7 +320,6 @@ class OFOxmIpv4SrcMaskedVer13 implements OFOxmIpv4SrcMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

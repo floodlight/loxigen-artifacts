@@ -199,7 +199,6 @@ class OFUint64Ver13 implements OFUint64 {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

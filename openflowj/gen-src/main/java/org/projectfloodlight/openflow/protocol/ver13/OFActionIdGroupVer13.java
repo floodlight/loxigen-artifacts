@@ -134,7 +134,6 @@ class OFActionIdGroupVer13 implements OFActionIdGroup {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

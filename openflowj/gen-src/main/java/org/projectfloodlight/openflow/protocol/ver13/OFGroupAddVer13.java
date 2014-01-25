@@ -416,7 +416,6 @@ class OFGroupAddVer13 implements OFGroupAdd {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

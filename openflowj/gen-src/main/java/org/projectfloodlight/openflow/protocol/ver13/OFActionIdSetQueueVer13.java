@@ -135,7 +135,6 @@ class OFActionIdSetQueueVer13 implements OFActionIdSetQueue {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

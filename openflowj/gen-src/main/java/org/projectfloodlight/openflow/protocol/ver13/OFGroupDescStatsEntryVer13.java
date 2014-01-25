@@ -318,7 +318,6 @@ class OFGroupDescStatsEntryVer13 implements OFGroupDescStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

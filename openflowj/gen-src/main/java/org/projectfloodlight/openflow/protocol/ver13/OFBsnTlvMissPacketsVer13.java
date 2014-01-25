@@ -237,7 +237,6 @@ class OFBsnTlvMissPacketsVer13 implements OFBsnTlvMissPackets {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -282,7 +282,6 @@ class OFOxmInPortVer12 implements OFOxmInPort {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -373,7 +373,6 @@ class OFTableFeaturesStatsReplyVer13 implements OFTableFeaturesStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

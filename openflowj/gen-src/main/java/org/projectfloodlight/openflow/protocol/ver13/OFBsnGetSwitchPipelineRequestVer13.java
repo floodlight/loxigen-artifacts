@@ -287,7 +287,6 @@ class OFBsnGetSwitchPipelineRequestVer13 implements OFBsnGetSwitchPipelineReques
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

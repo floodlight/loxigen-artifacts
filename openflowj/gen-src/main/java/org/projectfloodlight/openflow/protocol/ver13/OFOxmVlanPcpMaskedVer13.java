@@ -320,7 +320,6 @@ class OFOxmVlanPcpMaskedVer13 implements OFOxmVlanPcpMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

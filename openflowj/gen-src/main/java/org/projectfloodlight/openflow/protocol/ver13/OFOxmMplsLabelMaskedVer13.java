@@ -320,7 +320,6 @@ class OFOxmMplsLabelMaskedVer13 implements OFOxmMplsLabelMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

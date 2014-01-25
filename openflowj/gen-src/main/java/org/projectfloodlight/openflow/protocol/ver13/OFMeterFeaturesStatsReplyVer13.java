@@ -362,7 +362,6 @@ class OFMeterFeaturesStatsReplyVer13 implements OFMeterFeaturesStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

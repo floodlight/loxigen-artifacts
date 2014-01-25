@@ -368,7 +368,6 @@ class OFPortStatsReplyVer10 implements OFPortStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

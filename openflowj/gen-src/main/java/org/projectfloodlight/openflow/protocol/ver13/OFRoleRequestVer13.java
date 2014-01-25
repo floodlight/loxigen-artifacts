@@ -338,7 +338,6 @@ class OFRoleRequestVer13 implements OFRoleRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

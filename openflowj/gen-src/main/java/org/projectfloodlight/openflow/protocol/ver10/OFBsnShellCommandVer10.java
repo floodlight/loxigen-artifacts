@@ -385,7 +385,6 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

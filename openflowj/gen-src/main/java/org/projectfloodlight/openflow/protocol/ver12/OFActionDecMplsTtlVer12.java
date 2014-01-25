@@ -139,7 +139,6 @@ class OFActionDecMplsTtlVer12 implements OFActionDecMplsTtl {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -237,7 +237,6 @@ class OFBsnTlvMacVer13 implements OFBsnTlvMac {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

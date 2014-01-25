@@ -331,7 +331,6 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

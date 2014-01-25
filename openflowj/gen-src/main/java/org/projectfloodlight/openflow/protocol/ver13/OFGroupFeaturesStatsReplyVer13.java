@@ -758,7 +758,6 @@ class OFGroupFeaturesStatsReplyVer13 implements OFGroupFeaturesStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

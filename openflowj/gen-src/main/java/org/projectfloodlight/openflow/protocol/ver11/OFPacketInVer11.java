@@ -621,7 +621,6 @@ class OFPacketInVer11 implements OFPacketIn {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -320,7 +320,6 @@ class OFOxmBsnVrfMaskedVer13 implements OFOxmBsnVrfMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

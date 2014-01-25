@@ -331,7 +331,6 @@ class OFBsnBwEnableSetRequestVer10 implements OFBsnBwEnableSetRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -320,7 +320,6 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

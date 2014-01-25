@@ -282,7 +282,6 @@ class OFOxmEthDstVer12 implements OFOxmEthDst {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

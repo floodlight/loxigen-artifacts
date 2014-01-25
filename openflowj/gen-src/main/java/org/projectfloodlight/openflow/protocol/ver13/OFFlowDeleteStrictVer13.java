@@ -897,7 +897,6 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

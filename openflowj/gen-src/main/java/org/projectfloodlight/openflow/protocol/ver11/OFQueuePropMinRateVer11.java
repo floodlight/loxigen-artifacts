@@ -243,7 +243,6 @@ class OFQueuePropMinRateVer11 implements OFQueuePropMinRate {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

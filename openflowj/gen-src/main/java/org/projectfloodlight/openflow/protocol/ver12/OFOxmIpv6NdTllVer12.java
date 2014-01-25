@@ -282,7 +282,6 @@ class OFOxmIpv6NdTllVer12 implements OFOxmIpv6NdTll {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

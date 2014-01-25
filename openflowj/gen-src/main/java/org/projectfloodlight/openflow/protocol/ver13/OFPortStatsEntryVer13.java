@@ -868,7 +868,6 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

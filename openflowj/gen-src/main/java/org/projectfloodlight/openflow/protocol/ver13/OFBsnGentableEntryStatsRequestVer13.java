@@ -509,7 +509,6 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

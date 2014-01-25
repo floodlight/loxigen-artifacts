@@ -282,7 +282,6 @@ class OFOxmEthTypeVer13 implements OFOxmEthType {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

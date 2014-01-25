@@ -238,7 +238,6 @@ class OFActionSetMplsTcVer11 implements OFActionSetMplsTc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

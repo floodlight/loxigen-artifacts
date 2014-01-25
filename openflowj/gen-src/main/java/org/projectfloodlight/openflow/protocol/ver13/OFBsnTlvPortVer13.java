@@ -237,7 +237,6 @@ class OFBsnTlvPortVer13 implements OFBsnTlvPort {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -362,7 +362,6 @@ class OFQueueOpFailedErrorMsgVer11 implements OFQueueOpFailedErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

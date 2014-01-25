@@ -318,7 +318,6 @@ class OFTableStatsRequestVer11 implements OFTableStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

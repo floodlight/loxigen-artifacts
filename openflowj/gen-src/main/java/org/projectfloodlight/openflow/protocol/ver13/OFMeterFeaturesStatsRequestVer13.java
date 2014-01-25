@@ -318,7 +318,6 @@ class OFMeterFeaturesStatsRequestVer13 implements OFMeterFeaturesStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

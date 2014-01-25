@@ -282,7 +282,6 @@ class OFOxmUdpSrcVer13 implements OFOxmUdpSrc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

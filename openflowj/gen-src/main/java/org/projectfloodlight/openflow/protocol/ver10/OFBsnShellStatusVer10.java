@@ -331,7 +331,6 @@ class OFBsnShellStatusVer10 implements OFBsnShellStatus {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

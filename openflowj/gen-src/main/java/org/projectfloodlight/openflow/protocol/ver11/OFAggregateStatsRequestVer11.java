@@ -612,7 +612,6 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -456,7 +456,6 @@ class OFPacketOutVer12 implements OFPacketOut {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

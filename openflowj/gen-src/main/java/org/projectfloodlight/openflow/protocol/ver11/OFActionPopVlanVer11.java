@@ -139,7 +139,6 @@ class OFActionPopVlanVer11 implements OFActionPopVlan {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

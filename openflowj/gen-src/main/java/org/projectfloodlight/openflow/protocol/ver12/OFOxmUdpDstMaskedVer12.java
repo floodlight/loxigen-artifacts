@@ -320,7 +320,6 @@ class OFOxmUdpDstMaskedVer12 implements OFOxmUdpDstMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

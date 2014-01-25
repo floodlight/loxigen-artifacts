@@ -410,7 +410,6 @@ class OFQueueStatsRequestVer10 implements OFQueueStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

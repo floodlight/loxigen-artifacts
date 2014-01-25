@@ -233,7 +233,6 @@ class OFBsnTlvIdleTimeoutVer13 implements OFBsnTlvIdleTimeout {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -140,7 +140,6 @@ class OFActionIdSetMplsTtlVer13 implements OFActionIdSetMplsTtl {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

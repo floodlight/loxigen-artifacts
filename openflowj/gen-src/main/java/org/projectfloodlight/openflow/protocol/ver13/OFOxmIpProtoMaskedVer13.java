@@ -320,7 +320,6 @@ class OFOxmIpProtoMaskedVer13 implements OFOxmIpProtoMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

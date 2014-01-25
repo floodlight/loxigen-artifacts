@@ -373,7 +373,6 @@ class OFMeterConfigStatsReplyVer13 implements OFMeterConfigStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

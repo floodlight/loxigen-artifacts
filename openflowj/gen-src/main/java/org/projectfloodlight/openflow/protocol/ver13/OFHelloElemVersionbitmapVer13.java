@@ -244,7 +244,6 @@ class OFHelloElemVersionbitmapVer13 implements OFHelloElemVersionbitmap {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

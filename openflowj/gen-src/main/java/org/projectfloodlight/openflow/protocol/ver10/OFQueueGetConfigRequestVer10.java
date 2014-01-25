@@ -294,7 +294,6 @@ class OFQueueGetConfigRequestVer10 implements OFQueueGetConfigRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

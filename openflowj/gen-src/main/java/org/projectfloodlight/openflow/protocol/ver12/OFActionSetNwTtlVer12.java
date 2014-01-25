@@ -238,7 +238,6 @@ class OFActionSetNwTtlVer12 implements OFActionSetNwTtl {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

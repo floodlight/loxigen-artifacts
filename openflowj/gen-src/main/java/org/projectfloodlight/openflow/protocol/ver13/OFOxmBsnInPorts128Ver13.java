@@ -282,7 +282,6 @@ class OFOxmBsnInPorts128Ver13 implements OFOxmBsnInPorts128 {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

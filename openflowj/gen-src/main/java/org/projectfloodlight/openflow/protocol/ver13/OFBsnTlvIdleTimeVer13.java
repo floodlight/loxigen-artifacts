@@ -237,7 +237,6 @@ class OFBsnTlvIdleTimeVer13 implements OFBsnTlvIdleTime {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

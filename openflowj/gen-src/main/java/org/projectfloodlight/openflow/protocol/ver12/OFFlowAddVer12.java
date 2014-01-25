@@ -864,7 +864,6 @@ class OFFlowAddVer12 implements OFFlowAdd {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

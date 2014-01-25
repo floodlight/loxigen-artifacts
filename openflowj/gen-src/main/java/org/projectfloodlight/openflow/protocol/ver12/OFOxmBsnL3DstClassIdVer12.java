@@ -282,7 +282,6 @@ class OFOxmBsnL3DstClassIdVer12 implements OFOxmBsnL3DstClassId {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

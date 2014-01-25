@@ -419,7 +419,6 @@ class OFBsnLacpStatsReplyVer13 implements OFBsnLacpStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

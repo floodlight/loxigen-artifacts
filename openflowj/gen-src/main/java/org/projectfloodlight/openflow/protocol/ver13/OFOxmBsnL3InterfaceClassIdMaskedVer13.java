@@ -320,7 +320,6 @@ class OFOxmBsnL3InterfaceClassIdMaskedVer13 implements OFOxmBsnL3InterfaceClassI
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

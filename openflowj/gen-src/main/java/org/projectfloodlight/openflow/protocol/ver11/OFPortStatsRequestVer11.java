@@ -371,7 +371,6 @@ class OFPortStatsRequestVer11 implements OFPortStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

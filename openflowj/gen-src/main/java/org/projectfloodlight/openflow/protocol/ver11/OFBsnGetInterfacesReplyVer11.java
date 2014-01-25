@@ -342,7 +342,6 @@ class OFBsnGetInterfacesReplyVer11 implements OFBsnGetInterfacesReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

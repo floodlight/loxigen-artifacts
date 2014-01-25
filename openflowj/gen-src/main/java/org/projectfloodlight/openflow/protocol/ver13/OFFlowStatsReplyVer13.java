@@ -373,7 +373,6 @@ class OFFlowStatsReplyVer13 implements OFFlowStatsReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

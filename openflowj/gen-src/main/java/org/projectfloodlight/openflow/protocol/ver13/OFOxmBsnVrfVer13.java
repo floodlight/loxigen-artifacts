@@ -282,7 +282,6 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

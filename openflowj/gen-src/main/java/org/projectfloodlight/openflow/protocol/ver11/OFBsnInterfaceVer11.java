@@ -348,7 +348,6 @@ class OFBsnInterfaceVer11 implements OFBsnInterface {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

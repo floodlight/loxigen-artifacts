@@ -408,7 +408,6 @@ class OFBsnGentableBucketStatsRequestVer13 implements OFBsnGentableBucketStatsRe
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

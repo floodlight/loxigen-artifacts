@@ -282,7 +282,6 @@ class OFMeterBandDropVer13 implements OFMeterBandDrop {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -242,7 +242,6 @@ class OFActionSetTpSrcVer11 implements OFActionSetTpSrc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

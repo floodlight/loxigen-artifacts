@@ -331,7 +331,6 @@ class OFBsnBwClearDataReplyVer12 implements OFBsnBwClearDataReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

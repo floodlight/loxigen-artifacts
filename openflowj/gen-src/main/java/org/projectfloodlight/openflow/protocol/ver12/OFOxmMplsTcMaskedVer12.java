@@ -320,7 +320,6 @@ class OFOxmMplsTcMaskedVer12 implements OFOxmMplsTcMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

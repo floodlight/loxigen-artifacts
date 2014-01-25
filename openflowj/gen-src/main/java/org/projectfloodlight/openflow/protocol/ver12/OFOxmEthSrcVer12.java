@@ -282,7 +282,6 @@ class OFOxmEthSrcVer12 implements OFOxmEthSrc {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

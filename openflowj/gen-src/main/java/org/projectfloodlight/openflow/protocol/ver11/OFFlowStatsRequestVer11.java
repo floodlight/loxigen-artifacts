@@ -616,7 +616,6 @@ class OFFlowStatsRequestVer11 implements OFFlowStatsRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -287,7 +287,6 @@ class OFBsnBwClearDataRequestVer10 implements OFBsnBwClearDataRequest {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

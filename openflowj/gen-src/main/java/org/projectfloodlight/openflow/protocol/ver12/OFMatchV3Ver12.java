@@ -566,7 +566,6 @@ class OFMatchV3Ver12 implements OFMatchV3 {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

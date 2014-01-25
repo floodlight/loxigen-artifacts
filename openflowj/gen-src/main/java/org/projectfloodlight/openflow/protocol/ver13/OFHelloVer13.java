@@ -296,7 +296,6 @@ class OFHelloVer13 implements OFHello {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

@@ -335,7 +335,6 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

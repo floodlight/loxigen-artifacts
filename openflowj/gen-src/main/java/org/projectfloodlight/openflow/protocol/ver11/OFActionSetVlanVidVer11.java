@@ -242,7 +242,6 @@ class OFActionSetVlanVidVer11 implements OFActionSetVlanVid {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

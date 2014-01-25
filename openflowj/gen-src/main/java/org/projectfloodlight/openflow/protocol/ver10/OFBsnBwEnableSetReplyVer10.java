@@ -375,7 +375,6 @@ class OFBsnBwEnableSetReplyVer10 implements OFBsnBwEnableSetReply {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

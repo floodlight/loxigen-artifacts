@@ -320,7 +320,6 @@ class OFOxmEthSrcMaskedVer13 implements OFOxmEthSrcMasked {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

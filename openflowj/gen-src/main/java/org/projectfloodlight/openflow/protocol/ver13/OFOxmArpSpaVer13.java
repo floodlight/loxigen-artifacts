@@ -282,7 +282,6 @@ class OFOxmArpSpaVer13 implements OFOxmArpSpa {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

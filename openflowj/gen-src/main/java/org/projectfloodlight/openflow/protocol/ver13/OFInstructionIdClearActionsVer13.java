@@ -139,7 +139,6 @@ class OFInstructionIdClearActionsVer13 implements OFInstructionIdClearActions {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

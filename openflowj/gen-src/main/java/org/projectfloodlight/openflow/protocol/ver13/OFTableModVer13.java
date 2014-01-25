@@ -338,7 +338,6 @@ class OFTableModVer13 implements OFTableMod {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

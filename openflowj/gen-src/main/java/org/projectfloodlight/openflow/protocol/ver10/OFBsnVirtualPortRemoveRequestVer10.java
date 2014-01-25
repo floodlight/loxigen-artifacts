@@ -331,7 +331,6 @@ class OFBsnVirtualPortRemoveRequestVer10 implements OFBsnVirtualPortRemoveReques
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

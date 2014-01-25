@@ -165,7 +165,6 @@ class OFInstructionIdBsnDisableSrcMacCheckVer13 implements OFInstructionIdBsnDis
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

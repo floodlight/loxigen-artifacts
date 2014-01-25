@@ -362,7 +362,6 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
         return b.toString();
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
