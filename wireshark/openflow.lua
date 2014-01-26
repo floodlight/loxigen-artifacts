@@ -69,6 +69,9 @@ OFReader.new = function(buf, offset)
 end
 
 p_of = Proto ("of", "OpenFlow")
+ethernet_dissector = Dissector.get("eth")
+
+current_pkt = nil
 
 local openflow_versions = {
     [1] = "1.0",
@@ -12849,7 +12852,7 @@ function dissect_of_packet_in_v1(reader, subtree)
     read_of_port_no_t(reader, 1, subtree, 'of10.packet_in.in_port')
     read_uint8_t(reader, 1, subtree, 'of10.packet_in.reason')
     reader.skip(1)
-    read_of_octets_t(reader, 1, subtree, 'of10.packet_in.data')
+    read_ethernet(reader, 1, subtree, 'of10.packet_in.data')
     return 'of_packet_in'
 end
 of_header_v1_dissectors[10] = dissect_of_packet_in_v1
@@ -14796,7 +14799,7 @@ function dissect_of_packet_in_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.packet_in.total_len')
     read_uint8_t(reader, 2, subtree, 'of11.packet_in.reason')
     read_uint8_t(reader, 2, subtree, 'of11.packet_in.table_id')
-    read_of_octets_t(reader, 2, subtree, 'of11.packet_in.data')
+    read_ethernet(reader, 2, subtree, 'of11.packet_in.data')
     return 'of_packet_in'
 end
 of_header_v2_dissectors[10] = dissect_of_packet_in_v2
@@ -17546,7 +17549,7 @@ function dissect_of_packet_in_v3(reader, subtree)
     read_uint8_t(reader, 3, subtree, 'of12.packet_in.table_id')
     read_of_match_t(reader, 3, subtree, 'of12.packet_in.match')
     reader.skip(2)
-    read_of_octets_t(reader, 3, subtree, 'of12.packet_in.data')
+    read_ethernet(reader, 3, subtree, 'of12.packet_in.data')
     return 'of_packet_in'
 end
 of_header_v3_dissectors[10] = dissect_of_packet_in_v3
@@ -21990,7 +21993,7 @@ function dissect_of_packet_in_v4(reader, subtree)
     read_uint64_t(reader, 4, subtree, 'of13.packet_in.cookie')
     read_of_match_t(reader, 4, subtree, 'of13.packet_in.match')
     reader.skip(2)
-    read_of_octets_t(reader, 4, subtree, 'of13.packet_in.data')
+    read_ethernet(reader, 4, subtree, 'of13.packet_in.data')
     return 'of_packet_in'
 end
 of_header_v4_dissectors[10] = dissect_of_packet_in_v4
@@ -22765,6 +22768,13 @@ local of_oxm_dissectors = {
     [4] = dissect_of_oxm_v4,
 }
 
+local of_bsn_vport_q_in_q_dissectors = {
+    [1] = dissect_of_bsn_vport_q_in_q_v1,
+    [2] = dissect_of_bsn_vport_q_in_q_v2,
+    [3] = dissect_of_bsn_vport_q_in_q_v3,
+    [4] = dissect_of_bsn_vport_q_in_q_v4,
+}
+
 
 function read_scalar(reader, subtree, field_name, length)
     subtree:add(fields[field_name], reader.read(length))
@@ -22893,6 +22903,24 @@ function read_list(reader, dissector, subtree, field_name)
     end
 end
 
+function read_ethernet(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    child_subtree:set_text("Ethernet packet")
+    ethernet_dissector:call(reader.read_all():tvb(), current_pkt, child_subtree)
+end
+
+function read_of_bsn_vport_q_in_q_t(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    local info = of_bsn_vport_q_in_q_dissectors[version](reader, child_subtree)
+    child_subtree:set_text(info)
+end
+
 function dissect_of_message(buf, root)
     local reader = OFReader.new(buf)
     local subtree = root:add(p_of, buf(0))
@@ -22913,6 +22941,7 @@ end
 -- of dissector function
 function p_of.dissector (buf, pkt, root)
     local offset = 0
+    current_pkt = pkt
     repeat
         if buf:len() - offset >= 4 then
             msg_len = buf(offset+2,2):uint()
