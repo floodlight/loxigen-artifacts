@@ -878,6 +878,20 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnRoleStatusVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnSetAuxCxnsReply.Builder buildBsnSetAuxCxnsReply() {
+        return new OFBsnSetAuxCxnsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnSetAuxCxnsRequest.Builder buildBsnSetAuxCxnsRequest() {
+        return new OFBsnSetAuxCxnsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnSetAuxCxnsRequest bsnSetAuxCxnsRequest(long numAux) {
+        return new OFBsnSetAuxCxnsRequestVer13(
+                nextXid(),
+                      numAux
+                    );
+    }
+
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {
         return new OFBsnSetLacpReplyVer13.Builder().setXid(nextXid());
     }

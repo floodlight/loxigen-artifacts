@@ -21678,6 +21678,77 @@ of_bsn_role_status_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_set_aux_cxns_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_set_aux_cxns_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_set_aux_cxns_reply_t *
+of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_dup(
+    of_bsn_set_aux_cxns_reply_t *src)
+{
+    of_bsn_set_aux_cxns_reply_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_set_aux_cxns_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_set_aux_cxns_reply_xid_get(src, &val32);
+    of_bsn_set_aux_cxns_reply_xid_set(dst, val32);
+
+    of_bsn_set_aux_cxns_reply_experimenter_get(src, &val32);
+    of_bsn_set_aux_cxns_reply_experimenter_set(dst, val32);
+
+    of_bsn_set_aux_cxns_reply_subtype_get(src, &val32);
+    of_bsn_set_aux_cxns_reply_subtype_set(dst, val32);
+
+    of_bsn_set_aux_cxns_reply_num_aux_get(src, &val32);
+    of_bsn_set_aux_cxns_reply_num_aux_set(dst, val32);
+
+    of_bsn_set_aux_cxns_reply_status_get(src, &val32);
+    of_bsn_set_aux_cxns_reply_status_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_set_aux_cxns_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_set_aux_cxns_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_set_aux_cxns_request_t *
+of_bsn_set_aux_cxns_request_OF_VERSION_1_3_dup(
+    of_bsn_set_aux_cxns_request_t *src)
+{
+    of_bsn_set_aux_cxns_request_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_set_aux_cxns_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_set_aux_cxns_request_xid_get(src, &val32);
+    of_bsn_set_aux_cxns_request_xid_set(dst, val32);
+
+    of_bsn_set_aux_cxns_request_experimenter_get(src, &val32);
+    of_bsn_set_aux_cxns_request_experimenter_set(dst, val32);
+
+    of_bsn_set_aux_cxns_request_subtype_get(src, &val32);
+    of_bsn_set_aux_cxns_request_subtype_set(dst, val32);
+
+    of_bsn_set_aux_cxns_request_num_aux_get(src, &val32);
+    of_bsn_set_aux_cxns_request_num_aux_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_set_lacp_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -35246,6 +35317,32 @@ of_bsn_role_status_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_role_status_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_set_aux_cxns_reply_t *
+of_bsn_set_aux_cxns_reply_dup(
+    of_bsn_set_aux_cxns_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_set_aux_cxns_request_t *
+of_bsn_set_aux_cxns_request_dup(
+    of_bsn_set_aux_cxns_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_set_aux_cxns_request_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

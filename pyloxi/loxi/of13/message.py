@@ -4978,6 +4978,160 @@ class bsn_role_status(bsn_header):
 
 bsn_header.subtypes[55] = bsn_role_status
 
+class bsn_set_aux_cxns_reply(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 59
+
+    def __init__(self, xid=None, num_aux=None, status=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if num_aux != None:
+            self.num_aux = num_aux
+        else:
+            self.num_aux = 0
+        if status != None:
+            self.status = status
+        else:
+            self.status = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!L", self.num_aux))
+        packed.append(struct.pack("!L", self.status))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_set_aux_cxns_reply()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 59)
+        obj.num_aux = reader.read("!L")[0]
+        obj.status = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.num_aux != other.num_aux: return False
+        if self.status != other.status: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_set_aux_cxns_reply {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("num_aux = ");
+                q.text("%#x" % self.num_aux)
+                q.text(","); q.breakable()
+                q.text("status = ");
+                q.text("%#x" % self.status)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[59] = bsn_set_aux_cxns_reply
+
+class bsn_set_aux_cxns_request(bsn_header):
+    version = 4
+    type = 4
+    experimenter = 6035143
+    subtype = 58
+
+    def __init__(self, xid=None, num_aux=None):
+        if xid != None:
+            self.xid = xid
+        else:
+            self.xid = None
+        if num_aux != None:
+            self.num_aux = num_aux
+        else:
+            self.num_aux = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.version))
+        packed.append(struct.pack("!B", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 2
+        packed.append(struct.pack("!L", self.xid))
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(struct.pack("!L", self.num_aux))
+        length = sum([len(x) for x in packed])
+        packed[2] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_set_aux_cxns_request()
+        _version = reader.read("!B")[0]
+        assert(_version == 4)
+        _type = reader.read("!B")[0]
+        assert(_type == 4)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.xid = reader.read("!L")[0]
+        _experimenter = reader.read("!L")[0]
+        assert(_experimenter == 6035143)
+        _subtype = reader.read("!L")[0]
+        assert(_subtype == 58)
+        obj.num_aux = reader.read("!L")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.xid != other.xid: return False
+        if self.num_aux != other.num_aux: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_set_aux_cxns_request {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("xid = ");
+                if self.xid != None:
+                    q.text("%#x" % self.xid)
+                else:
+                    q.text('None')
+                q.text(","); q.breakable()
+                q.text("num_aux = ");
+                q.text("%#x" % self.num_aux)
+            q.breakable()
+        q.text('}')
+
+bsn_header.subtypes[58] = bsn_set_aux_cxns_request
+
 class bsn_set_lacp_reply(bsn_header):
     version = 4
     type = 4

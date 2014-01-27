@@ -83,6 +83,8 @@ typedef of_object_t of_bsn_pdu_tx_request_t;
 typedef of_object_t of_bsn_port_counter_stats_reply_t;
 typedef of_object_t of_bsn_port_counter_stats_request_t;
 typedef of_object_t of_bsn_role_status_t;
+typedef of_object_t of_bsn_set_aux_cxns_reply_t;
+typedef of_object_t of_bsn_set_aux_cxns_request_t;
 typedef of_object_t of_bsn_set_ip_mask_t;
 typedef of_object_t of_bsn_set_l2_table_reply_t;
 typedef of_object_t of_bsn_set_l2_table_request_t;
@@ -932,6 +934,20 @@ extern of_bsn_role_status_t *
     of_bsn_role_status_new_from_message(of_message_t msg);
 extern void of_bsn_role_status_init(
     of_bsn_role_status_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_set_aux_cxns_reply_t *
+    of_bsn_set_aux_cxns_reply_new(of_version_t version);
+extern of_bsn_set_aux_cxns_reply_t *
+    of_bsn_set_aux_cxns_reply_new_from_message(of_message_t msg);
+extern void of_bsn_set_aux_cxns_reply_init(
+    of_bsn_set_aux_cxns_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_set_aux_cxns_request_t *
+    of_bsn_set_aux_cxns_request_new(of_version_t version);
+extern of_bsn_set_aux_cxns_request_t *
+    of_bsn_set_aux_cxns_request_new_from_message(of_message_t msg);
+extern void of_bsn_set_aux_cxns_request_init(
+    of_bsn_set_aux_cxns_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_new(of_version_t version);
@@ -3795,6 +3811,28 @@ of_bsn_port_counter_stats_request_delete(of_bsn_port_counter_stats_request_t *ob
  */
 static inline void
 of_bsn_role_status_delete(of_bsn_role_status_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_set_aux_cxns_reply_t
+ * @param obj An instance of type of_bsn_set_aux_cxns_reply_t
+ *
+ * \ingroup of_bsn_set_aux_cxns_reply
+ */
+static inline void
+of_bsn_set_aux_cxns_reply_delete(of_bsn_set_aux_cxns_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_set_aux_cxns_request_t
+ * @param obj An instance of type of_bsn_set_aux_cxns_request_t
+ *
+ * \ingroup of_bsn_set_aux_cxns_request
+ */
+static inline void
+of_bsn_set_aux_cxns_request_delete(of_bsn_set_aux_cxns_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10408,6 +10446,73 @@ extern void of_bsn_role_status_generation_id_set(
 extern void of_bsn_role_status_generation_id_get(
     of_bsn_role_status_t *obj,
     uint64_t *generation_id);
+
+/* Unified accessor functions for of_bsn_set_aux_cxns_reply */
+
+extern void of_bsn_set_aux_cxns_reply_xid_set(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_set_aux_cxns_reply_xid_get(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_set_aux_cxns_reply_experimenter_set(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_set_aux_cxns_reply_experimenter_get(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_set_aux_cxns_reply_subtype_set(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_set_aux_cxns_reply_subtype_get(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_set_aux_cxns_reply_num_aux_set(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t num_aux);
+extern void of_bsn_set_aux_cxns_reply_num_aux_get(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t *num_aux);
+
+extern void of_bsn_set_aux_cxns_reply_status_set(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t status);
+extern void of_bsn_set_aux_cxns_reply_status_get(
+    of_bsn_set_aux_cxns_reply_t *obj,
+    uint32_t *status);
+
+/* Unified accessor functions for of_bsn_set_aux_cxns_request */
+
+extern void of_bsn_set_aux_cxns_request_xid_set(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_set_aux_cxns_request_xid_get(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_set_aux_cxns_request_experimenter_set(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_set_aux_cxns_request_experimenter_get(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_set_aux_cxns_request_subtype_set(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_set_aux_cxns_request_subtype_get(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_set_aux_cxns_request_num_aux_set(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t num_aux);
+extern void of_bsn_set_aux_cxns_request_num_aux_get(
+    of_bsn_set_aux_cxns_request_t *obj,
+    uint32_t *num_aux);
 
 /* Unified accessor functions for of_bsn_set_ip_mask */
 

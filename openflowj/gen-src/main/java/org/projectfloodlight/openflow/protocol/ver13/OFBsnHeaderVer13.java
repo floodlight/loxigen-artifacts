@@ -173,6 +173,12 @@ abstract class OFBsnHeaderVer13 {
                case 0x37:
                    // discriminator value 0x37L=0x37L for class OFBsnRoleStatusVer13
                    return OFBsnRoleStatusVer13.READER.readFrom(bb);
+               case 0x3b:
+                   // discriminator value 0x3bL=0x3bL for class OFBsnSetAuxCxnsReplyVer13
+                   return OFBsnSetAuxCxnsReplyVer13.READER.readFrom(bb);
+               case 0x3a:
+                   // discriminator value 0x3aL=0x3aL for class OFBsnSetAuxCxnsRequestVer13
+                   return OFBsnSetAuxCxnsRequestVer13.READER.readFrom(bb);
                case 0x2a:
                    // discriminator value 0x2aL=0x2aL for class OFBsnSetLacpReplyVer13
                    return OFBsnSetLacpReplyVer13.READER.readFrom(bb);

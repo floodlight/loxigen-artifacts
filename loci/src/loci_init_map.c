@@ -75,6 +75,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_port_counter_stats_reply_init,
     (of_object_init_f)of_bsn_port_counter_stats_request_init,
     (of_object_init_f)of_bsn_role_status_init,
+    (of_object_init_f)of_bsn_set_aux_cxns_reply_init,
+    (of_object_init_f)of_bsn_set_aux_cxns_request_init,
     (of_object_init_f)of_bsn_set_ip_mask_init,
     (of_object_init_f)of_bsn_set_l2_table_reply_init,
     (of_object_init_f)of_bsn_set_l2_table_request_init,

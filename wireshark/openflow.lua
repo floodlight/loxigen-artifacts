@@ -5352,6 +5352,21 @@ fields['of13.bsn_role_status.subtype'] = ProtoField.uint32("of13.bsn_role_status
 fields['of13.bsn_role_status.role'] = ProtoField.uint32("of13.bsn_role_status.role", "role", base.DEC, enum_v4_ofp_controller_role)
 fields['of13.bsn_role_status.reason'] = ProtoField.uint32("of13.bsn_role_status.reason", "reason", base.DEC, enum_v4_ofp_bsn_controller_role_reason)
 fields['of13.bsn_role_status.generation_id'] = ProtoField.uint64("of13.bsn_role_status.generation_id", "generation_id", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.version'] = ProtoField.uint8("of13.bsn_set_aux_cxns_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.type'] = ProtoField.uint8("of13.bsn_set_aux_cxns_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.length'] = ProtoField.uint16("of13.bsn_set_aux_cxns_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.xid'] = ProtoField.uint32("of13.bsn_set_aux_cxns_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.experimenter'] = ProtoField.uint32("of13.bsn_set_aux_cxns_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.subtype'] = ProtoField.uint32("of13.bsn_set_aux_cxns_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.num_aux'] = ProtoField.uint32("of13.bsn_set_aux_cxns_reply.num_aux", "num_aux", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_reply.status'] = ProtoField.uint32("of13.bsn_set_aux_cxns_reply.status", "status", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.version'] = ProtoField.uint8("of13.bsn_set_aux_cxns_request.version", "version", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.type'] = ProtoField.uint8("of13.bsn_set_aux_cxns_request.type", "type", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.length'] = ProtoField.uint16("of13.bsn_set_aux_cxns_request.length", "length", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.xid'] = ProtoField.uint32("of13.bsn_set_aux_cxns_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.experimenter'] = ProtoField.uint32("of13.bsn_set_aux_cxns_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.subtype'] = ProtoField.uint32("of13.bsn_set_aux_cxns_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_set_aux_cxns_request.num_aux'] = ProtoField.uint32("of13.bsn_set_aux_cxns_request.num_aux", "num_aux", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.version'] = ProtoField.uint8("of13.bsn_set_lacp_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.type'] = ProtoField.uint8("of13.bsn_set_lacp_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_set_lacp_reply.length'] = ProtoField.uint16("of13.bsn_set_lacp_reply.length", "length", base.DEC, nil)
@@ -10181,6 +10196,21 @@ p_of.fields = {
     fields['of13.bsn_role_status.role'],
     fields['of13.bsn_role_status.reason'],
     fields['of13.bsn_role_status.generation_id'],
+    fields['of13.bsn_set_aux_cxns_reply.version'],
+    fields['of13.bsn_set_aux_cxns_reply.type'],
+    fields['of13.bsn_set_aux_cxns_reply.length'],
+    fields['of13.bsn_set_aux_cxns_reply.xid'],
+    fields['of13.bsn_set_aux_cxns_reply.experimenter'],
+    fields['of13.bsn_set_aux_cxns_reply.subtype'],
+    fields['of13.bsn_set_aux_cxns_reply.num_aux'],
+    fields['of13.bsn_set_aux_cxns_reply.status'],
+    fields['of13.bsn_set_aux_cxns_request.version'],
+    fields['of13.bsn_set_aux_cxns_request.type'],
+    fields['of13.bsn_set_aux_cxns_request.length'],
+    fields['of13.bsn_set_aux_cxns_request.xid'],
+    fields['of13.bsn_set_aux_cxns_request.experimenter'],
+    fields['of13.bsn_set_aux_cxns_request.subtype'],
+    fields['of13.bsn_set_aux_cxns_request.num_aux'],
     fields['of13.bsn_set_lacp_reply.version'],
     fields['of13.bsn_set_lacp_reply.type'],
     fields['of13.bsn_set_lacp_reply.length'],
@@ -19575,6 +19605,35 @@ function dissect_of_bsn_role_status_v4(reader, subtree)
     return 'of_bsn_role_status'
 end
 of_bsn_header_v4_dissectors[55] = dissect_of_bsn_role_status_v4
+
+-- child class of_bsn_set_aux_cxns_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_set_aux_cxns_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.num_aux')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_reply.status')
+    return 'of_bsn_set_aux_cxns_reply'
+end
+of_bsn_header_v4_dissectors[59] = dissect_of_bsn_set_aux_cxns_reply_v4
+
+-- child class of_bsn_set_aux_cxns_request
+-- Child of of_bsn_header
+function dissect_of_bsn_set_aux_cxns_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_set_aux_cxns_request.num_aux')
+    return 'of_bsn_set_aux_cxns_request'
+end
+of_bsn_header_v4_dissectors[58] = dissect_of_bsn_set_aux_cxns_request_v4
 
 -- child class of_bsn_set_lacp_reply
 -- Child of of_bsn_header

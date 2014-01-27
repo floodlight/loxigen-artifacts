@@ -266,6 +266,14 @@ extern of_bsn_role_status_t *
     of_bsn_role_status_dup(
         of_bsn_role_status_t *src);
 
+extern of_bsn_set_aux_cxns_reply_t *
+    of_bsn_set_aux_cxns_reply_dup(
+        of_bsn_set_aux_cxns_reply_t *src);
+
+extern of_bsn_set_aux_cxns_request_t *
+    of_bsn_set_aux_cxns_request_dup(
+        of_bsn_set_aux_cxns_request_t *src);
+
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_dup(
         of_bsn_set_ip_mask_t *src);
@@ -4225,6 +4233,14 @@ extern of_bsn_port_counter_stats_request_t *
 extern of_bsn_role_status_t *
     of_bsn_role_status_OF_VERSION_1_3_dup(
         of_bsn_role_status_t *src);
+
+extern of_bsn_set_aux_cxns_reply_t *
+    of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_dup(
+        of_bsn_set_aux_cxns_reply_t *src);
+
+extern of_bsn_set_aux_cxns_request_t *
+    of_bsn_set_aux_cxns_request_OF_VERSION_1_3_dup(
+        of_bsn_set_aux_cxns_request_t *src);
 
 extern of_bsn_set_lacp_reply_t *
     of_bsn_set_lacp_reply_OF_VERSION_1_3_dup(

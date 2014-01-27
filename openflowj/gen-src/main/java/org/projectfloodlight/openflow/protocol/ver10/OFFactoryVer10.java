@@ -850,6 +850,17 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnRoleStatus not supported in version 1.0");
     }
 
+    public OFBsnSetAuxCxnsReply.Builder buildBsnSetAuxCxnsReply() {
+        throw new UnsupportedOperationException("OFBsnSetAuxCxnsReply not supported in version 1.0");
+    }
+
+    public OFBsnSetAuxCxnsRequest.Builder buildBsnSetAuxCxnsRequest() {
+        throw new UnsupportedOperationException("OFBsnSetAuxCxnsRequest not supported in version 1.0");
+    }
+    public OFBsnSetAuxCxnsRequest bsnSetAuxCxnsRequest(long numAux) {
+        throw new UnsupportedOperationException("OFBsnSetAuxCxnsRequest not supported in version 1.0");
+    }
+
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {
         throw new UnsupportedOperationException("OFBsnSetLacpReply not supported in version 1.0");
     }

@@ -72,6 +72,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_port_counter_stats_reply",
     "of_bsn_port_counter_stats_request",
     "of_bsn_role_status",
+    "of_bsn_set_aux_cxns_reply",
+    "of_bsn_set_aux_cxns_request",
     "of_bsn_set_ip_mask",
     "of_bsn_set_l2_table_reply",
     "of_bsn_set_l2_table_request",

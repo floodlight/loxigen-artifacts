@@ -16851,6 +16851,68 @@ test_of_bsn_role_status_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_set_aux_cxns_reply_t *obj;
+
+    obj = of_bsn_set_aux_cxns_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_AUX_CXNS_REPLY);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_set_aux_cxns_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_aux_cxns_request_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_set_aux_cxns_request_t *obj;
+
+    obj = of_bsn_set_aux_cxns_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_AUX_CXNS_REQUEST);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 20);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_set_aux_cxns_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_set_aux_cxns_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_set_aux_cxns_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_set_lacp_reply_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_set_lacp_reply_t *obj;
@@ -27613,6 +27675,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_port_counter_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_port_counter_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_role_status_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_set_aux_cxns_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_set_lacp_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_set_lacp_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_set_mirroring_OF_VERSION_1_3_scalar);

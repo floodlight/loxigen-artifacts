@@ -1732,6 +1732,64 @@ test_of13_bsn_lacp_stats_request(void) {
     return TEST_PASS;
 }
 
+/* Generated from of13/bsn_set_aux_cxns_reply.data */
+static int
+test_of13_bsn_set_aux_cxns_reply(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x18, 0x12, 0x34, 0x56, 0x78, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x3b, 
+        0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_set_aux_cxns_reply_new(OF_VERSION_1_3);
+    of_bsn_set_aux_cxns_reply_xid_set(obj, 0x12345678);
+    of_bsn_set_aux_cxns_reply_num_aux_set(obj, 1);
+    of_bsn_set_aux_cxns_reply_status_set(obj, 0);
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_set_aux_cxns_request.data */
+static int
+test_of13_bsn_set_aux_cxns_request(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x14, 0x12, 0x34, 0x56, 0x78, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x3a, 
+        0x00, 0x00, 0x00, 0x01, 
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_set_aux_cxns_request_new(OF_VERSION_1_3);
+    of_bsn_set_aux_cxns_request_xid_set(obj, 0x12345678);
+    of_bsn_set_aux_cxns_request_num_aux_set(obj, 1);
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
 /* Generated from of13/instruction_bsn_disable_src_mac_check.data */
 static int
 test_of13_instruction_bsn_disable_src_mac_check(void) {
@@ -1902,6 +1960,8 @@ test_datafiles(void)
     RUN_TEST(of13_bsn_gentable_entry_stats_reply);
     RUN_TEST(of13_bsn_lacp_stats_reply);
     RUN_TEST(of13_bsn_lacp_stats_request);
+    RUN_TEST(of13_bsn_set_aux_cxns_reply);
+    RUN_TEST(of13_bsn_set_aux_cxns_request);
     RUN_TEST(of13_instruction_bsn_disable_src_mac_check);
     RUN_TEST(of13_oxm_bsn_global_vrf_allowed);
     RUN_TEST(of13_oxm_bsn_in_ports_masked_128);

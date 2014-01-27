@@ -1672,6 +1672,56 @@ typedef struct of_bsn_port_counter_stats_request_s of_bsn_port_counter_stats_req
 typedef struct of_bsn_role_status_s of_bsn_role_status_t;
 
 /**
+ * Structure for of_bsn_set_aux_cxns_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_reply_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_reply_uint32_get_f and _set_f.
+ *
+ * @param num_aux_get/set ( OF_1_3).
+ *   Accessors for num_aux, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_reply_uint32_get_f and _set_f.
+ *
+ * @param status_get/set ( OF_1_3).
+ *   Accessors for status, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_reply_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_set_aux_cxns_reply_s of_bsn_set_aux_cxns_reply_t;
+
+/**
+ * Structure for of_bsn_set_aux_cxns_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_request_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_request_uint32_get_f and _set_f.
+ *
+ * @param num_aux_get/set ( OF_1_3).
+ *   Accessors for num_aux, a variable of type uint32.  Functions
+ *   are of type of_bsn_set_aux_cxns_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_set_aux_cxns_request_s of_bsn_set_aux_cxns_request_t;
+
+/**
  * Structure for of_bsn_set_ip_mask object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

@@ -904,6 +904,8 @@ static inline int of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3_validate(uin
 static inline int of_bsn_set_mirroring_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_set_lacp_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_set_lacp_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_set_aux_cxns_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_role_status_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -13455,6 +13457,28 @@ of_bsn_set_lacp_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_set_aux_cxns_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 20) {
+        VALIDATOR_LOG("Class of_bsn_set_aux_cxns_request.  Len %d too small, < %d", len, 20);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_set_aux_cxns_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_role_status_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 32) {
@@ -14370,6 +14394,10 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_set_lacp_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_SET_LACP_REPLY:
         return of_bsn_set_lacp_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_SET_AUX_CXNS_REQUEST:
+        return of_bsn_set_aux_cxns_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_SET_AUX_CXNS_REPLY:
+        return of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_ROLE_STATUS:
         return of_bsn_role_status_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_PORT_COUNTER_STATS_REQUEST:

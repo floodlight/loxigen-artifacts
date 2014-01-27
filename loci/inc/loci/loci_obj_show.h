@@ -627,6 +627,8 @@ int of_bsn_pdu_tx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 int of_bsn_port_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_reply_t *obj);
 int of_bsn_port_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_request_t *obj);
 int of_bsn_role_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_role_status_t *obj);
+int of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_aux_cxns_reply_t *obj);
+int of_bsn_set_aux_cxns_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_aux_cxns_request_t *obj);
 int of_bsn_set_lacp_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_lacp_reply_t *obj);
 int of_bsn_set_lacp_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_lacp_request_t *obj);
 int of_bsn_set_mirroring_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_mirroring_t *obj);
