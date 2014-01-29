@@ -42,7 +42,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         private final static DatapathId DEFAULT_DATAPATH_ID = DatapathId.NONE;
         private final static long DEFAULT_N_BUFFERS = 0x0L;
         private final static short DEFAULT_N_TABLES = (short) 0x0;
-        private final static short DEFAULT_AUXILIARY_ID = (short) 0x0;
+        private final static OFAuxId DEFAULT_AUXILIARY_ID = OFAuxId.MAIN;
         private final static Set<OFCapabilities> DEFAULT_CAPABILITIES = ImmutableSet.<OFCapabilities>of();
         private final static long DEFAULT_RESERVED = 0x0L;
 
@@ -51,7 +51,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
     private final DatapathId datapathId;
     private final long nBuffers;
     private final short nTables;
-    private final short auxiliaryId;
+    private final OFAuxId auxiliaryId;
     private final Set<OFCapabilities> capabilities;
     private final long reserved;
 //
@@ -61,7 +61,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFFeaturesReplyVer13(long xid, DatapathId datapathId, long nBuffers, short nTables, short auxiliaryId, Set<OFCapabilities> capabilities, long reserved) {
+    OFFeaturesReplyVer13(long xid, DatapathId datapathId, long nBuffers, short nTables, OFAuxId auxiliaryId, Set<OFCapabilities> capabilities, long reserved) {
         this.xid = xid;
         this.datapathId = datapathId;
         this.nBuffers = nBuffers;
@@ -123,7 +123,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
     }
 
     @Override
-    public short getAuxiliaryId() {
+    public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
 
@@ -146,7 +146,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         private boolean nTablesSet;
         private short nTables;
         private boolean auxiliaryIdSet;
-        private short auxiliaryId;
+        private OFAuxId auxiliaryId;
         private boolean capabilitiesSet;
         private Set<OFCapabilities> capabilities;
         private boolean reservedSet;
@@ -251,12 +251,12 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public short getAuxiliaryId() {
+    public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(short auxiliaryId) {
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
         this.auxiliaryId = auxiliaryId;
         this.auxiliaryIdSet = true;
         return this;
@@ -271,7 +271,9 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
                     throw new NullPointerException("Property datapathId must not be null");
                 long nBuffers = this.nBuffersSet ? this.nBuffers : parentMessage.nBuffers;
                 short nTables = this.nTablesSet ? this.nTables : parentMessage.nTables;
-                short auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : parentMessage.auxiliaryId;
+                OFAuxId auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : parentMessage.auxiliaryId;
+                if(auxiliaryId == null)
+                    throw new NullPointerException("Property auxiliaryId must not be null");
                 Set<OFCapabilities> capabilities = this.capabilitiesSet ? this.capabilities : parentMessage.capabilities;
                 if(capabilities == null)
                     throw new NullPointerException("Property capabilities must not be null");
@@ -302,7 +304,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         private boolean nTablesSet;
         private short nTables;
         private boolean auxiliaryIdSet;
-        private short auxiliaryId;
+        private OFAuxId auxiliaryId;
         private boolean capabilitiesSet;
         private Set<OFCapabilities> capabilities;
         private boolean reservedSet;
@@ -403,12 +405,12 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public short getAuxiliaryId() {
+    public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(short auxiliaryId) {
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
         this.auxiliaryId = auxiliaryId;
         this.auxiliaryIdSet = true;
         return this;
@@ -422,7 +424,9 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
                 throw new NullPointerException("Property datapathId must not be null");
             long nBuffers = this.nBuffersSet ? this.nBuffers : DEFAULT_N_BUFFERS;
             short nTables = this.nTablesSet ? this.nTables : DEFAULT_N_TABLES;
-            short auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : DEFAULT_AUXILIARY_ID;
+            OFAuxId auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : DEFAULT_AUXILIARY_ID;
+            if(auxiliaryId == null)
+                throw new NullPointerException("Property auxiliaryId must not be null");
             Set<OFCapabilities> capabilities = this.capabilitiesSet ? this.capabilities : DEFAULT_CAPABILITIES;
             if(capabilities == null)
                 throw new NullPointerException("Property capabilities must not be null");
@@ -470,7 +474,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             DatapathId datapathId = DatapathId.of(bb.readLong());
             long nBuffers = U32.f(bb.readInt());
             short nTables = U8.f(bb.readByte());
-            short auxiliaryId = U8.f(bb.readByte());
+            OFAuxId auxiliaryId = OFAuxId.readByte(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             Set<OFCapabilities> capabilities = OFCapabilitiesSerializerVer13.readFrom(bb);
@@ -510,7 +514,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             message.datapathId.putTo(sink);
             sink.putLong(message.nBuffers);
             sink.putShort(message.nTables);
-            sink.putShort(message.auxiliaryId);
+            message.auxiliaryId.putTo(sink);
             // skip pad (2 bytes)
             OFCapabilitiesSerializerVer13.putTo(message.capabilities, sink);
             sink.putLong(message.reserved);
@@ -536,7 +540,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             bb.writeLong(message.datapathId.getLong());
             bb.writeInt(U32.t(message.nBuffers));
             bb.writeByte(U8.t(message.nTables));
-            bb.writeByte(U8.t(message.auxiliaryId));
+            message.auxiliaryId.writeByte(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             OFCapabilitiesSerializerVer13.writeTo(bb, message.capabilities);
@@ -587,7 +591,10 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
             return false;
         if( nTables != other.nTables)
             return false;
-        if( auxiliaryId != other.auxiliaryId)
+        if (auxiliaryId == null) {
+            if (other.auxiliaryId != null)
+                return false;
+        } else if (!auxiliaryId.equals(other.auxiliaryId))
             return false;
         if (capabilities == null) {
             if (other.capabilities != null)
@@ -608,7 +615,7 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
         result = prime * result + ((datapathId == null) ? 0 : datapathId.hashCode());
         result = prime *  (int) (nBuffers ^ (nBuffers >>> 32));
         result = prime * result + nTables;
-        result = prime * result + auxiliaryId;
+        result = prime * result + ((auxiliaryId == null) ? 0 : auxiliaryId.hashCode());
         result = prime * result + ((capabilities == null) ? 0 : capabilities.hashCode());
         result = prime *  (int) (reserved ^ (reserved >>> 32));
         return result;

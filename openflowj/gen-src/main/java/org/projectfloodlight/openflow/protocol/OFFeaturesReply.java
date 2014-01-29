@@ -38,7 +38,7 @@ public interface OFFeaturesReply extends OFObject, OFMessage {
     long getReserved() throws UnsupportedOperationException;
     List<OFPortDesc> getPorts() throws UnsupportedOperationException;
     Set<OFActionType> getActions() throws UnsupportedOperationException;
-    short getAuxiliaryId() throws UnsupportedOperationException;
+    OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -63,7 +63,7 @@ public interface OFFeaturesReply extends OFObject, OFMessage {
         Builder setPorts(List<OFPortDesc> ports) throws UnsupportedOperationException;
         Set<OFActionType> getActions() throws UnsupportedOperationException;
         Builder setActions(Set<OFActionType> actions) throws UnsupportedOperationException;
-        short getAuxiliaryId() throws UnsupportedOperationException;
-        Builder setAuxiliaryId(short auxiliaryId) throws UnsupportedOperationException;
+        OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
+        Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException;
     }
 }

@@ -124,7 +124,7 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
     }
 
     @Override
-    public short getAuxiliaryId()throws UnsupportedOperationException {
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
@@ -254,12 +254,12 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public short getAuxiliaryId()throws UnsupportedOperationException {
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(short auxiliaryId) throws UnsupportedOperationException {
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
@@ -410,12 +410,12 @@ class OFFeaturesReplyVer10 implements OFFeaturesReply {
         return this;
     }
     @Override
-    public short getAuxiliaryId()throws UnsupportedOperationException {
+    public OFAuxId getAuxiliaryId()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 
     @Override
-    public OFFeaturesReply.Builder setAuxiliaryId(short auxiliaryId) throws UnsupportedOperationException {
+    public OFFeaturesReply.Builder setAuxiliaryId(OFAuxId auxiliaryId) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property auxiliaryId not supported in version 1.0");
     }
 //
