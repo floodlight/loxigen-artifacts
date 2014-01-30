@@ -12132,7 +12132,7 @@ function dissect_of_bsn_pdu_rx_request_v1(reader, subtree)
     read_of_port_no_t(reader, 1, subtree, 'of10.bsn_pdu_rx_request.port_no')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_pdu_rx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 1, subtree, 'of10.bsn_pdu_rx_request.data')
+    read_ethernet(reader, 1, subtree, 'of10.bsn_pdu_rx_request.data')
     return 'of_bsn_pdu_rx_request'
 end
 of_bsn_header_v1_dissectors[33] = dissect_of_bsn_pdu_rx_request_v1
@@ -12184,7 +12184,7 @@ function dissect_of_bsn_pdu_tx_request_v1(reader, subtree)
     read_of_port_no_t(reader, 1, subtree, 'of10.bsn_pdu_tx_request.port_no')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_pdu_tx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 1, subtree, 'of10.bsn_pdu_tx_request.data')
+    read_ethernet(reader, 1, subtree, 'of10.bsn_pdu_tx_request.data')
     return 'of_bsn_pdu_tx_request'
 end
 of_bsn_header_v1_dissectors[31] = dissect_of_bsn_pdu_tx_request_v1
@@ -12902,7 +12902,7 @@ function dissect_of_packet_out_v1(reader, subtree)
     local _actions_length = reader.peek(0, 2):uint()
     read_uint16_t(reader, 1, subtree, 'of10.packet_out.actions_len')
     read_list(reader.slice(_actions_length), dissect_of_action_v1, subtree, 'of_action')
-    read_of_octets_t(reader, 1, subtree, 'of10.packet_out.data')
+    read_ethernet(reader, 1, subtree, 'of10.packet_out.data')
     return 'of_packet_out'
 end
 of_header_v1_dissectors[13] = dissect_of_packet_out_v1
@@ -13899,7 +13899,7 @@ function dissect_of_bsn_pdu_rx_request_v2(reader, subtree)
     read_of_port_no_t(reader, 2, subtree, 'of11.bsn_pdu_rx_request.port_no')
     read_uint8_t(reader, 2, subtree, 'of11.bsn_pdu_rx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 2, subtree, 'of11.bsn_pdu_rx_request.data')
+    read_ethernet(reader, 2, subtree, 'of11.bsn_pdu_rx_request.data')
     return 'of_bsn_pdu_rx_request'
 end
 of_bsn_header_v2_dissectors[33] = dissect_of_bsn_pdu_rx_request_v2
@@ -13951,7 +13951,7 @@ function dissect_of_bsn_pdu_tx_request_v2(reader, subtree)
     read_of_port_no_t(reader, 2, subtree, 'of11.bsn_pdu_tx_request.port_no')
     read_uint8_t(reader, 2, subtree, 'of11.bsn_pdu_tx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 2, subtree, 'of11.bsn_pdu_tx_request.data')
+    read_ethernet(reader, 2, subtree, 'of11.bsn_pdu_tx_request.data')
     return 'of_bsn_pdu_tx_request'
 end
 of_bsn_header_v2_dissectors[31] = dissect_of_bsn_pdu_tx_request_v2
@@ -14850,7 +14850,7 @@ function dissect_of_packet_out_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.packet_out.actions_len')
     reader.skip(6)
     read_list(reader.slice(_actions_length), dissect_of_action_v2, subtree, 'of_action')
-    read_of_octets_t(reader, 2, subtree, 'of11.packet_out.data')
+    read_ethernet(reader, 2, subtree, 'of11.packet_out.data')
     return 'of_packet_out'
 end
 of_header_v2_dissectors[13] = dissect_of_packet_out_v2
@@ -15788,7 +15788,7 @@ function dissect_of_bsn_pdu_rx_request_v3(reader, subtree)
     read_of_port_no_t(reader, 3, subtree, 'of12.bsn_pdu_rx_request.port_no')
     read_uint8_t(reader, 3, subtree, 'of12.bsn_pdu_rx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 3, subtree, 'of12.bsn_pdu_rx_request.data')
+    read_ethernet(reader, 3, subtree, 'of12.bsn_pdu_rx_request.data')
     return 'of_bsn_pdu_rx_request'
 end
 of_bsn_header_v3_dissectors[33] = dissect_of_bsn_pdu_rx_request_v3
@@ -15840,7 +15840,7 @@ function dissect_of_bsn_pdu_tx_request_v3(reader, subtree)
     read_of_port_no_t(reader, 3, subtree, 'of12.bsn_pdu_tx_request.port_no')
     read_uint8_t(reader, 3, subtree, 'of12.bsn_pdu_tx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 3, subtree, 'of12.bsn_pdu_tx_request.data')
+    read_ethernet(reader, 3, subtree, 'of12.bsn_pdu_tx_request.data')
     return 'of_bsn_pdu_tx_request'
 end
 of_bsn_header_v3_dissectors[31] = dissect_of_bsn_pdu_tx_request_v3
@@ -17600,7 +17600,7 @@ function dissect_of_packet_out_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.packet_out.actions_len')
     reader.skip(6)
     read_list(reader.slice(_actions_length), dissect_of_action_v3, subtree, 'of_action')
-    read_of_octets_t(reader, 3, subtree, 'of12.packet_out.data')
+    read_ethernet(reader, 3, subtree, 'of12.packet_out.data')
     return 'of_packet_out'
 end
 of_header_v3_dissectors[13] = dissect_of_packet_out_v3
@@ -19484,7 +19484,7 @@ function dissect_of_bsn_pdu_rx_request_v4(reader, subtree)
     read_of_port_no_t(reader, 4, subtree, 'of13.bsn_pdu_rx_request.port_no')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_pdu_rx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 4, subtree, 'of13.bsn_pdu_rx_request.data')
+    read_ethernet(reader, 4, subtree, 'of13.bsn_pdu_rx_request.data')
     return 'of_bsn_pdu_rx_request'
 end
 of_bsn_header_v4_dissectors[33] = dissect_of_bsn_pdu_rx_request_v4
@@ -19536,7 +19536,7 @@ function dissect_of_bsn_pdu_tx_request_v4(reader, subtree)
     read_of_port_no_t(reader, 4, subtree, 'of13.bsn_pdu_tx_request.port_no')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_pdu_tx_request.slot_num')
     reader.skip(3)
-    read_of_octets_t(reader, 4, subtree, 'of13.bsn_pdu_tx_request.data')
+    read_ethernet(reader, 4, subtree, 'of13.bsn_pdu_tx_request.data')
     return 'of_bsn_pdu_tx_request'
 end
 of_bsn_header_v4_dissectors[31] = dissect_of_bsn_pdu_tx_request_v4
@@ -22073,7 +22073,7 @@ function dissect_of_packet_out_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.packet_out.actions_len')
     reader.skip(6)
     read_list(reader.slice(_actions_length), dissect_of_action_v4, subtree, 'of_action')
-    read_of_octets_t(reader, 4, subtree, 'of13.packet_out.data')
+    read_ethernet(reader, 4, subtree, 'of13.packet_out.data')
     return 'of_packet_out'
 end
 of_header_v4_dissectors[13] = dissect_of_packet_out_v4
@@ -22993,6 +22993,8 @@ function dissect_of_message(buf, root)
     local protocol = "OF ?"
     if openflow_versions[version_val] then
         protocol = "OF " .. openflow_versions[version_val]
+    else
+        return "Unknown protocol", "Dissection error"
     end
 
     local info = "unknown"
@@ -23007,7 +23009,12 @@ function p_of.dissector (buf, pkt, root)
     current_pkt = pkt
     repeat
         if buf:len() - offset >= 4 then
-            msg_len = buf(offset+2,2):uint()
+            local msg_len = buf(offset+2,2):uint()
+
+            if msg_len < 8 then
+                break
+            end
+
             if offset + msg_len > buf:len() then
                 -- we don't have all the data we need yet
                 pkt.desegment_len = offset + msg_len - buf:len()
