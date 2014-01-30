@@ -125,6 +125,9 @@ abstract class OFBsnHeaderVer13 {
                case 0x11:
                    // discriminator value 0x11L=0x11L for class OFBsnVirtualPortRemoveRequestVer13
                    return OFBsnVirtualPortRemoveRequestVer13.READER.readFrom(bb);
+               case 0x3c:
+                   // discriminator value 0x3cL=0x3cL for class OFBsnArpIdleVer13
+                   return OFBsnArpIdleVer13.READER.readFrom(bb);
                case 0x39:
                    // discriminator value 0x39L=0x39L for class OFBsnControllerConnectionsReplyVer13
                    return OFBsnControllerConnectionsReplyVer13.READER.readFrom(bb);

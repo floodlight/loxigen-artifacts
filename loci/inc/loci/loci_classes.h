@@ -31,6 +31,7 @@ typedef of_object_t of_bad_match_error_msg_t;
 typedef of_object_t of_bad_request_error_msg_t;
 typedef of_object_t of_barrier_reply_t;
 typedef of_object_t of_barrier_request_t;
+typedef of_object_t of_bsn_arp_idle_t;
 typedef of_object_t of_bsn_bw_clear_data_reply_t;
 typedef of_object_t of_bsn_bw_clear_data_request_t;
 typedef of_object_t of_bsn_bw_enable_get_reply_t;
@@ -570,6 +571,13 @@ extern of_barrier_request_t *
     of_barrier_request_new_from_message(of_message_t msg);
 extern void of_barrier_request_init(
     of_barrier_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_arp_idle_t *
+    of_bsn_arp_idle_new(of_version_t version);
+extern of_bsn_arp_idle_t *
+    of_bsn_arp_idle_new_from_message(of_message_t msg);
+extern void of_bsn_arp_idle_init(
+    of_bsn_arp_idle_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_clear_data_reply_t *
     of_bsn_bw_clear_data_reply_new(of_version_t version);
@@ -3239,6 +3247,17 @@ of_barrier_reply_delete(of_barrier_reply_t *obj) {
  */
 static inline void
 of_barrier_request_delete(of_barrier_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_arp_idle_t
+ * @param obj An instance of type of_bsn_arp_idle_t
+ *
+ * \ingroup of_bsn_arp_idle
+ */
+static inline void
+of_bsn_arp_idle_delete(of_bsn_arp_idle_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -8533,6 +8552,43 @@ extern void of_barrier_request_xid_set(
 extern void of_barrier_request_xid_get(
     of_barrier_request_t *obj,
     uint32_t *xid);
+
+/* Unified accessor functions for of_bsn_arp_idle */
+
+extern void of_bsn_arp_idle_xid_set(
+    of_bsn_arp_idle_t *obj,
+    uint32_t xid);
+extern void of_bsn_arp_idle_xid_get(
+    of_bsn_arp_idle_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_arp_idle_experimenter_set(
+    of_bsn_arp_idle_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_arp_idle_experimenter_get(
+    of_bsn_arp_idle_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_arp_idle_subtype_set(
+    of_bsn_arp_idle_t *obj,
+    uint32_t subtype);
+extern void of_bsn_arp_idle_subtype_get(
+    of_bsn_arp_idle_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_arp_idle_vlan_vid_set(
+    of_bsn_arp_idle_t *obj,
+    uint16_t vlan_vid);
+extern void of_bsn_arp_idle_vlan_vid_get(
+    of_bsn_arp_idle_t *obj,
+    uint16_t *vlan_vid);
+
+extern void of_bsn_arp_idle_ipv4_addr_set(
+    of_bsn_arp_idle_t *obj,
+    of_ipv4_t ipv4_addr);
+extern void of_bsn_arp_idle_ipv4_addr_get(
+    of_bsn_arp_idle_t *obj,
+    of_ipv4_t *ipv4_addr);
 
 /* Unified accessor functions for of_bsn_bw_clear_data_reply */
 

@@ -652,6 +652,10 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFAsyncSetVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnArpIdle.Builder buildBsnArpIdle() {
+        return new OFBsnArpIdleVer13.Builder().setXid(nextXid());
+    }
+
     public OFBsnControllerConnection.Builder buildBsnControllerConnection() {
         return new OFBsnControllerConnectionVer13.Builder();
     }

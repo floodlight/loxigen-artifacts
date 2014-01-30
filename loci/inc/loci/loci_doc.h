@@ -288,6 +288,33 @@ typedef struct of_barrier_reply_s of_barrier_reply_t;
 typedef struct of_barrier_request_s of_barrier_request_t;
 
 /**
+ * Structure for of_bsn_arp_idle object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_arp_idle_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_arp_idle_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_arp_idle_uint32_get_f and _set_f.
+ *
+ * @param vlan_vid_get/set ( OF_1_3).
+ *   Accessors for vlan_vid, a variable of type uint16.  Functions
+ *   are of type of_bsn_arp_idle_uint16_get_f and _set_f.
+ *
+ * @param ipv4_addr_get/set ( OF_1_3).
+ *   Accessors for ipv4_addr, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_arp_idle_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_arp_idle_s of_bsn_arp_idle_t;
+
+/**
  * Structure for of_bsn_bw_clear_data_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

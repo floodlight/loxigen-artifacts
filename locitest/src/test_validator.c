@@ -3334,6 +3334,15 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_arp_idle_t *obj = of_bsn_arp_idle_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_arp_idle_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_arp_idle_delete(obj);
+    }
+
+    {
         of_barrier_request_t *obj = of_barrier_request_new(OF_VERSION_1_3);
         of_message_t msg;
         of_barrier_request_OF_VERSION_1_3_populate(obj, 1);

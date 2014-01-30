@@ -1,1 +1,1 @@
-6e92d6892ca13a65a31711f9aacd8da9e7d82ce5 Merge into master from pull request #188: Error-proofing dissector and packet_out recursive (https://github.com/floodlight/loxigen/pull/188)
+ee486e9db76d2bfc56808fe53be5a6db943b90cc Merge into master from pull request #189: openflow_input: add bsn_arp_idle extension (https://github.com/floodlight/loxigen/pull/189)

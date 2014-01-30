@@ -20,6 +20,7 @@ const char *const of_object_id_str[] = {
     "of_bad_request_error_msg",
     "of_barrier_reply",
     "of_barrier_request",
+    "of_bsn_arp_idle",
     "of_bsn_bw_clear_data_reply",
     "of_bsn_bw_clear_data_request",
     "of_bsn_bw_enable_get_reply",

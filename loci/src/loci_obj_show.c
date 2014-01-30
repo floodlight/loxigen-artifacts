@@ -14351,6 +14351,42 @@ of_barrier_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ba
 }
 
 int
+of_bsn_arp_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_arp_idle_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_ipv4_t ipv4;
+
+    of_bsn_arp_idle_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_arp_idle_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_arp_idle_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_arp_idle_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "vlan_vid=");
+    out += LOCI_SHOW_u16_vlan_vid(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_arp_idle_ipv4_addr_get(obj, &ipv4);
+    out += writer(cookie, "ipv4_addr=");
+    out += LOCI_SHOW_ipv4_ipv4_addr(writer, cookie, ipv4);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_bw_clear_data_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj)
 {
     int out = 0;
@@ -24000,6 +24036,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_bad_request_error_msg_OF_VERSION_1_0_show,
     of_barrier_reply_OF_VERSION_1_0_show,
     of_barrier_request_OF_VERSION_1_0_show,
+    unknown_show,
     of_bsn_bw_clear_data_reply_OF_VERSION_1_0_show,
     of_bsn_bw_clear_data_request_OF_VERSION_1_0_show,
     of_bsn_bw_enable_get_reply_OF_VERSION_1_0_show,
@@ -24463,6 +24500,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bad_request_error_msg_OF_VERSION_1_1_show,
     of_barrier_reply_OF_VERSION_1_1_show,
     of_barrier_request_OF_VERSION_1_1_show,
+    unknown_show,
     of_bsn_bw_clear_data_reply_OF_VERSION_1_1_show,
     of_bsn_bw_clear_data_request_OF_VERSION_1_1_show,
     of_bsn_bw_enable_get_reply_OF_VERSION_1_1_show,
@@ -24926,6 +24964,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_bad_request_error_msg_OF_VERSION_1_2_show,
     of_barrier_reply_OF_VERSION_1_2_show,
     of_barrier_request_OF_VERSION_1_2_show,
+    unknown_show,
     of_bsn_bw_clear_data_reply_OF_VERSION_1_2_show,
     of_bsn_bw_clear_data_request_OF_VERSION_1_2_show,
     of_bsn_bw_enable_get_reply_OF_VERSION_1_2_show,
@@ -25389,6 +25428,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bad_request_error_msg_OF_VERSION_1_3_show,
     of_barrier_reply_OF_VERSION_1_3_show,
     of_barrier_request_OF_VERSION_1_3_show,
+    of_bsn_arp_idle_OF_VERSION_1_3_show,
     of_bsn_bw_clear_data_reply_OF_VERSION_1_3_show,
     of_bsn_bw_clear_data_request_OF_VERSION_1_3_show,
     of_bsn_bw_enable_get_reply_OF_VERSION_1_3_show,

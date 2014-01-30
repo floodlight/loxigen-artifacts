@@ -15438,6 +15438,37 @@ test_of_barrier_request_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_arp_idle_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_arp_idle_t *obj;
+
+    obj = of_bsn_arp_idle_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ARP_IDLE);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_arp_idle_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_arp_idle_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_arp_idle_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_bw_clear_data_reply_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_bw_clear_data_reply_t *obj;
@@ -27629,6 +27660,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bad_request_error_msg_OF_VERSION_1_3_scalar);
     RUN_TEST(of_barrier_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_barrier_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_arp_idle_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_bw_clear_data_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_bw_clear_data_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_bw_enable_get_reply_OF_VERSION_1_3_scalar);

@@ -952,6 +952,7 @@ static inline int of_bsn_bw_enable_get_request_OF_VERSION_1_3_validate(uint8_t *
 static inline int of_bsn_bw_enable_get_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_bw_clear_data_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_bw_clear_data_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_arp_idle_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_barrier_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_barrier_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bad_request_error_msg_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -14084,6 +14085,17 @@ of_bsn_bw_clear_data_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_arp_idle_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_arp_idle.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_barrier_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 8) {
@@ -14490,6 +14502,8 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_bw_clear_data_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_BW_CLEAR_DATA_REPLY:
         return of_bsn_bw_clear_data_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_ARP_IDLE:
+        return of_bsn_arp_idle_OF_VERSION_1_3_validate(buf, len);
     case OF_BARRIER_REQUEST:
         return of_barrier_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BARRIER_REPLY:

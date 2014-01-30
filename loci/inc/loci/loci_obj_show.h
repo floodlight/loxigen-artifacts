@@ -581,6 +581,7 @@ int of_bad_match_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 int of_bad_request_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bad_request_error_msg_t *obj);
 int of_barrier_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_barrier_reply_t *obj);
 int of_barrier_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_barrier_request_t *obj);
+int of_bsn_arp_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_arp_idle_t *obj);
 int of_bsn_bw_clear_data_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj);
 int of_bsn_bw_clear_data_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_request_t *obj);
 int of_bsn_bw_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_reply_t *obj);

@@ -23,6 +23,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bad_request_error_msg_init,
     (of_object_init_f)of_barrier_reply_init,
     (of_object_init_f)of_barrier_request_init,
+    (of_object_init_f)of_bsn_arp_idle_init,
     (of_object_init_f)of_bsn_bw_clear_data_reply_init,
     (of_object_init_f)of_bsn_bw_clear_data_request_init,
     (of_object_init_f)of_bsn_bw_enable_get_reply_init,

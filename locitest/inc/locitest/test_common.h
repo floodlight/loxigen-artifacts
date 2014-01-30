@@ -4920,6 +4920,15 @@ extern int of_barrier_request_OF_VERSION_1_3_populate_scalars(
 extern int of_barrier_request_OF_VERSION_1_3_check_scalars(
     of_barrier_request_t *obj, int value);
 
+extern int of_bsn_arp_idle_OF_VERSION_1_3_populate(
+    of_bsn_arp_idle_t *obj, int value);
+extern int of_bsn_arp_idle_OF_VERSION_1_3_check(
+    of_bsn_arp_idle_t *obj, int value);
+extern int of_bsn_arp_idle_OF_VERSION_1_3_populate_scalars(
+    of_bsn_arp_idle_t *obj, int value);
+extern int of_bsn_arp_idle_OF_VERSION_1_3_check_scalars(
+    of_bsn_arp_idle_t *obj, int value);
+
 extern int of_bsn_bw_clear_data_reply_OF_VERSION_1_3_populate(
     of_bsn_bw_clear_data_reply_t *obj, int value);
 extern int of_bsn_bw_clear_data_reply_OF_VERSION_1_3_check(

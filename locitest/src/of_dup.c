@@ -19810,6 +19810,45 @@ of_barrier_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_arp_idle
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_arp_idle.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_arp_idle_t *
+of_bsn_arp_idle_OF_VERSION_1_3_dup(
+    of_bsn_arp_idle_t *src)
+{
+    of_bsn_arp_idle_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_arp_idle_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_arp_idle_xid_get(src, &val32);
+    of_bsn_arp_idle_xid_set(dst, val32);
+
+    of_bsn_arp_idle_experimenter_get(src, &val32);
+    of_bsn_arp_idle_experimenter_set(dst, val32);
+
+    of_bsn_arp_idle_subtype_get(src, &val32);
+    of_bsn_arp_idle_subtype_set(dst, val32);
+
+    of_bsn_arp_idle_vlan_vid_get(src, &val16);
+    of_bsn_arp_idle_vlan_vid_set(dst, val16);
+
+    of_bsn_arp_idle_ipv4_addr_get(src, &ipv4);
+    of_bsn_arp_idle_ipv4_addr_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_bw_clear_data_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -34449,6 +34488,19 @@ of_barrier_request_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_barrier_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_arp_idle_t *
+of_bsn_arp_idle_dup(
+    of_bsn_arp_idle_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_arp_idle_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

@@ -651,6 +651,10 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFAsyncSet not supported in version 1.2");
     }
 
+    public OFBsnArpIdle.Builder buildBsnArpIdle() {
+        throw new UnsupportedOperationException("OFBsnArpIdle not supported in version 1.2");
+    }
+
     public OFBsnControllerConnection.Builder buildBsnControllerConnection() {
         throw new UnsupportedOperationException("OFBsnControllerConnection not supported in version 1.2");
     }

@@ -4902,6 +4902,14 @@ fields['of13.bsn_header.length'] = ProtoField.uint16("of13.bsn_header.length", "
 fields['of13.bsn_header.xid'] = ProtoField.uint32("of13.bsn_header.xid", "xid", base.DEC, nil)
 fields['of13.bsn_header.experimenter'] = ProtoField.uint32("of13.bsn_header.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_header.subtype'] = ProtoField.uint32("of13.bsn_header.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_arp_idle.version'] = ProtoField.uint8("of13.bsn_arp_idle.version", "version", base.DEC, nil)
+fields['of13.bsn_arp_idle.type'] = ProtoField.uint8("of13.bsn_arp_idle.type", "type", base.DEC, nil)
+fields['of13.bsn_arp_idle.length'] = ProtoField.uint16("of13.bsn_arp_idle.length", "length", base.DEC, nil)
+fields['of13.bsn_arp_idle.xid'] = ProtoField.uint32("of13.bsn_arp_idle.xid", "xid", base.DEC, nil)
+fields['of13.bsn_arp_idle.experimenter'] = ProtoField.uint32("of13.bsn_arp_idle.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_arp_idle.subtype'] = ProtoField.uint32("of13.bsn_arp_idle.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_arp_idle.vlan_vid'] = ProtoField.uint16("of13.bsn_arp_idle.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of13.bsn_arp_idle.ipv4_addr'] = ProtoField.ipv4("of13.bsn_arp_idle.ipv4_addr", "ipv4_addr")
 fields['of13.bsn_bw_clear_data_reply.version'] = ProtoField.uint8("of13.bsn_bw_clear_data_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_bw_clear_data_reply.type'] = ProtoField.uint8("of13.bsn_bw_clear_data_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_bw_clear_data_reply.length'] = ProtoField.uint16("of13.bsn_bw_clear_data_reply.length", "length", base.DEC, nil)
@@ -9746,6 +9754,14 @@ p_of.fields = {
     fields['of13.bsn_header.xid'],
     fields['of13.bsn_header.experimenter'],
     fields['of13.bsn_header.subtype'],
+    fields['of13.bsn_arp_idle.version'],
+    fields['of13.bsn_arp_idle.type'],
+    fields['of13.bsn_arp_idle.length'],
+    fields['of13.bsn_arp_idle.xid'],
+    fields['of13.bsn_arp_idle.experimenter'],
+    fields['of13.bsn_arp_idle.subtype'],
+    fields['of13.bsn_arp_idle.vlan_vid'],
+    fields['of13.bsn_arp_idle.ipv4_addr'],
     fields['of13.bsn_bw_clear_data_reply.version'],
     fields['of13.bsn_bw_clear_data_reply.type'],
     fields['of13.bsn_bw_clear_data_reply.length'],
@@ -18717,6 +18733,22 @@ function dissect_of_bsn_header_v4(reader, subtree)
     return of_bsn_header_v4_dissectors[reader.peek(12,4):uint()](reader, subtree)
 end
 of_experimenter_v4_dissectors[6035143] = dissect_of_bsn_header_v4
+
+-- child class of_bsn_arp_idle
+-- Child of of_bsn_header
+function dissect_of_bsn_arp_idle_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_arp_idle.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_arp_idle.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_arp_idle.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_arp_idle.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_arp_idle.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_arp_idle.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_arp_idle.vlan_vid')
+    reader.skip(2)
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_arp_idle.ipv4_addr')
+    return 'of_bsn_arp_idle'
+end
+of_bsn_header_v4_dissectors[60] = dissect_of_bsn_arp_idle_v4
 
 -- child class of_bsn_bw_clear_data_reply
 -- Child of of_bsn_header

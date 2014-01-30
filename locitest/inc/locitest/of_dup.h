@@ -58,6 +58,10 @@ extern of_barrier_request_t *
     of_barrier_request_dup(
         of_barrier_request_t *src);
 
+extern of_bsn_arp_idle_t *
+    of_bsn_arp_idle_dup(
+        of_bsn_arp_idle_t *src);
+
 extern of_bsn_bw_clear_data_reply_t *
     of_bsn_bw_clear_data_reply_dup(
         of_bsn_bw_clear_data_reply_t *src);
@@ -4049,6 +4053,10 @@ extern of_barrier_reply_t *
 extern of_barrier_request_t *
     of_barrier_request_OF_VERSION_1_3_dup(
         of_barrier_request_t *src);
+
+extern of_bsn_arp_idle_t *
+    of_bsn_arp_idle_OF_VERSION_1_3_dup(
+        of_bsn_arp_idle_t *src);
 
 extern of_bsn_bw_clear_data_reply_t *
     of_bsn_bw_clear_data_reply_OF_VERSION_1_3_dup(
