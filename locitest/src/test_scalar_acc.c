@@ -21316,6 +21316,37 @@ test_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_circuit_id_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_circuit_id_t *obj;
+
+    obj = of_bsn_tlv_circuit_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_CIRCUIT_ID);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_circuit_id_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_circuit_id_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_circuit_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_header_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_header_t *obj;
@@ -27858,6 +27889,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_port_counter_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_circuit_id_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_header_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_idle_notification_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_idle_time_OF_VERSION_1_3_scalar);

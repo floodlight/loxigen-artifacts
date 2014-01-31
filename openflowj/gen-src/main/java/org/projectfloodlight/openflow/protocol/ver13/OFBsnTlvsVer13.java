@@ -40,6 +40,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvCircuitId.Builder buildCircuitId() {
+        return new OFBsnTlvCircuitIdVer13.Builder();
+    }
+    public OFBsnTlvCircuitId circuitId(byte[] value) {
+        return new OFBsnTlvCircuitIdVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }

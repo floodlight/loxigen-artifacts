@@ -38,5 +38,6 @@ public enum OFPacketInReason {
      BSN_DEST_HOST_UNREACHABLE,
      BSN_DEST_PORT_UNREACHABLE,
      BSN_FRAGMENTATION_REQUIRED,
-     BSN_ARP;
+     BSN_ARP,
+     BSN_DHCP;
 }

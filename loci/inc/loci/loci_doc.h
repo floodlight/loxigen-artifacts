@@ -5127,6 +5127,17 @@ typedef struct of_bsn_tlv_s of_bsn_tlv_t;
 typedef struct of_bsn_tlv_broadcast_query_timeout_s of_bsn_tlv_broadcast_query_timeout_t;
 
 /**
+ * Structure for of_bsn_tlv_circuit_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_circuit_id_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_circuit_id_s of_bsn_tlv_circuit_id_t;
+
+/**
  * Structure for of_bsn_tlv_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

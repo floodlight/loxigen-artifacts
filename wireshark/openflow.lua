@@ -1685,6 +1685,7 @@ local enum_v4_ofp_packet_in_reason = {
     [136] = "OFPR_BSN_DEST_PORT_UNREACHABLE",
     [137] = "OFPR_BSN_FRAGMENTATION_REQUIRED",
     [139] = "OFPR_BSN_ARP",
+    [140] = "OFPR_BSN_DHCP",
 }
 
 local enum_v4_of_bsn_vlan_counter_t = {
@@ -5471,6 +5472,9 @@ fields['of13.bsn_tlv.length'] = ProtoField.uint16("of13.bsn_tlv.length", "length
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit_id.value", "value")
 fields['of13.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.type'] = ProtoField.uint16("of13.bsn_tlv_idle_time.type", "type", base.DEC, nil)
@@ -10323,6 +10327,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
+    fields['of13.bsn_tlv_circuit_id.type'],
+    fields['of13.bsn_tlv_circuit_id.length'],
+    fields['of13.bsn_tlv_circuit_id.value'],
     fields['of13.bsn_tlv_idle_notification.type'],
     fields['of13.bsn_tlv_idle_notification.length'],
     fields['of13.bsn_tlv_idle_time.type'],
@@ -19861,6 +19868,19 @@ function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
     return 'of_bsn_tlv_broadcast_query_timeout'
 end
 of_bsn_tlv_v4_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v4
+
+-- child class of_bsn_tlv_circuit_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_circuit_id_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_circuit_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_circuit_id.length')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_tlv_circuit_id.value')
+    return 'of_bsn_tlv_circuit_id'
+end
+of_bsn_tlv_v4_dissectors[14] = dissect_of_bsn_tlv_circuit_id_v4
 
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv

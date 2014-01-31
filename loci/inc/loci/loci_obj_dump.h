@@ -779,6 +779,7 @@ int of_bsn_lacp_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
 int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_entry_t *obj);
 int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_switch_pipeline_stats_entry_t *obj);
 int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_broadcast_query_timeout_t *obj);
+int of_bsn_tlv_circuit_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_circuit_id_t *obj);
 int of_bsn_tlv_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_header_t *obj);
 int of_bsn_tlv_idle_notification_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_idle_notification_t *obj);
 int of_bsn_tlv_idle_time_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_idle_time_t *obj);

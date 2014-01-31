@@ -21531,6 +21531,22 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 }
 
 int
+of_bsn_tlv_circuit_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_circuit_id_t *obj)
+{
+    int out = 0;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_circuit_id\n");
+
+    of_bsn_tlv_circuit_id_value_get(obj, &octets);
+    out += writer(cookie, "  value (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_header_t *obj)
 {
     int out = 0;
@@ -26033,6 +26049,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -26476,6 +26493,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -26961,6 +26979,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     of_bucket_OF_VERSION_1_2_dump,
@@ -27409,6 +27428,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dump,
     unknown_dump,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump,
+    of_bsn_tlv_circuit_id_OF_VERSION_1_3_dump,
     of_bsn_tlv_header_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_notification_OF_VERSION_1_3_dump,
     of_bsn_tlv_idle_time_OF_VERSION_1_3_dump,

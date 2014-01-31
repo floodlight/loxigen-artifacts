@@ -43,6 +43,7 @@ public class OFPacketInReasonSerializerVer13 {
     public final static byte BSN_DEST_PORT_UNREACHABLE_VAL = (byte) 0x88;
     public final static byte BSN_FRAGMENTATION_REQUIRED_VAL = (byte) 0x89;
     public final static byte BSN_ARP_VAL = (byte) 0x8b;
+    public final static byte BSN_DHCP_VAL = (byte) 0x8c;
 
     public static OFPacketInReason readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -90,6 +91,8 @@ public class OFPacketInReasonSerializerVer13 {
                 return OFPacketInReason.BSN_FRAGMENTATION_REQUIRED;
             case BSN_ARP_VAL:
                 return OFPacketInReason.BSN_ARP;
+            case BSN_DHCP_VAL:
+                return OFPacketInReason.BSN_DHCP;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFPacketInReason in version 1.3: " + val);
         }
@@ -126,6 +129,8 @@ public class OFPacketInReasonSerializerVer13 {
                 return BSN_FRAGMENTATION_REQUIRED_VAL;
             case BSN_ARP:
                 return BSN_ARP_VAL;
+            case BSN_DHCP:
+                return BSN_DHCP_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFPacketInReason in version 1.3: " + e);
         }

@@ -252,6 +252,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_switch_pipeline_stats_entry_init,
     (of_object_init_f)of_bsn_tlv_init,
     (of_object_init_f)of_bsn_tlv_broadcast_query_timeout_init,
+    (of_object_init_f)of_bsn_tlv_circuit_id_init,
     (of_object_init_f)of_bsn_tlv_header_init,
     (of_object_init_f)of_bsn_tlv_idle_notification_init,
     (of_object_init_f)of_bsn_tlv_idle_time_init,

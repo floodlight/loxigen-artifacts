@@ -38,6 +38,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.2");
     }
 
+    public OFBsnTlvCircuitId.Builder buildCircuitId() {
+        throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.2");
+    }
+    public OFBsnTlvCircuitId circuitId(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.2");
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.2");
     }

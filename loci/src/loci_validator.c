@@ -755,6 +755,7 @@ static inline int of_bsn_tlv_idle_timeout_OF_VERSION_1_3_validate(uint8_t *buf, 
 static inline int of_bsn_tlv_idle_time_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_idle_notification_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_circuit_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8947,6 +8948,11 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_BSN_TLV_CIRCUIT_ID:
+            if (of_bsn_tlv_circuit_id_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_BSN_TLV_UNICAST_QUERY_TIMEOUT:
             if (of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -8957,8 +8963,8 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
-        case OF_BSN_TLV_MAC:
-            if (of_bsn_tlv_mac_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+        case OF_BSN_TLV_IDLE_TIMEOUT:
+            if (of_bsn_tlv_idle_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -8967,8 +8973,8 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
-        case OF_BSN_TLV_IDLE_TIMEOUT:
-            if (of_bsn_tlv_idle_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+        case OF_BSN_TLV_MAC:
+            if (of_bsn_tlv_mac_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -11518,6 +11524,17 @@ of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
         VALIDATOR_LOG("Class of_bsn_tlv_header.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_circuit_id_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 4) {
+        VALIDATOR_LOG("Class of_bsn_tlv_circuit_id.  Len %d too small, < %d", len, 4);
         return -1;
     }
 

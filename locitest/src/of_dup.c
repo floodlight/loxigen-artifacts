@@ -27223,14 +27223,19 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->unicast_query_timeout);
     }
 
+    if (src->header.object_id == OF_BSN_TLV_CIRCUIT_ID) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
+            &src->circuit_id);
+    }
+
     if (src->header.object_id == OF_BSN_TLV_IDLE_TIME) {
         return (of_bsn_tlv_t *)of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
             &src->idle_time);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(
-            &src->idle_timeout);
+    if (src->header.object_id == OF_BSN_TLV_MAC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_mac_OF_VERSION_1_3_dup(
+            &src->mac);
     }
 
     if (src->header.object_id == OF_BSN_TLV_MISS_PACKETS) {
@@ -27238,9 +27243,9 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->miss_packets);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_mac_OF_VERSION_1_3_dup(
-            &src->mac);
+    if (src->header.object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(
+            &src->idle_timeout);
     }
 
     if (src->header.object_id == OF_BSN_TLV_IPV4) {
@@ -27302,6 +27307,31 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_circuit_id
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_circuit_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_circuit_id_t *
+of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
+    of_bsn_tlv_circuit_id_t *src)
+{
+    of_bsn_tlv_circuit_id_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_circuit_id_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_circuit_id_value_get(src, &octets);
+    of_bsn_tlv_circuit_id_value_set(dst, &octets);
 
     return dst;
 }
@@ -38649,6 +38679,19 @@ of_bsn_tlv_broadcast_query_timeout_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_circuit_id_t *
+of_bsn_tlv_circuit_id_dup(
+    of_bsn_tlv_circuit_id_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
