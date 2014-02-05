@@ -68,6 +68,10 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.0");
     }
 
+    public OFInstructionBsnDhcpOffload bsnDhcpOffload() {
+        throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.0");
+    }
+
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.0");
     }

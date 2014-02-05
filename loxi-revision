@@ -1,1 +1,1 @@
-30da69de767f2a2bd5ff10a8114d876d92cd19b6 Merge into master from pull request #191: Add DHCP pkt in reason and circuit id TLV (https://github.com/floodlight/loxigen/pull/191)
+51cdfba106a98177ff7e816fe9ecd335a3c68121 Merge into master from pull request #192: openflow_input: add bsn_dhcp_offload (https://github.com/floodlight/loxigen/pull/192)

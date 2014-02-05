@@ -29,6 +29,7 @@ public interface OFInstructionIds {
 
     OFInstructionIdApplyActions applyActions();
     OFInstructionIdBsnArpOffload bsnArpOffload();
+    OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();

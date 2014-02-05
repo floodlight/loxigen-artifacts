@@ -27311,6 +27311,44 @@ test_of_instruction_bsn_arp_offload_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_instruction_bsn_dhcp_offload_OF_VERSION_1_3(void)
+{
+    of_instruction_bsn_dhcp_offload_t *obj;
+    obj = of_instruction_bsn_dhcp_offload_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_bsn_dhcp_offload_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3(void)
 {
     of_instruction_bsn_disable_src_mac_check_t *obj;
@@ -27546,6 +27584,44 @@ test_of_instruction_id_bsn_arp_offload_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_instruction_id_bsn_arp_offload_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3(void)
+{
+    of_instruction_id_bsn_dhcp_offload_t *obj;
+    obj = of_instruction_id_bsn_dhcp_offload_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_instruction_id_bsn_dhcp_offload_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -34710,6 +34786,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_instruction_apply_actions_OF_VERSION_1_3);
     RUN_TEST(of_instruction_bsn_OF_VERSION_1_3);
     RUN_TEST(of_instruction_bsn_arp_offload_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_bsn_dhcp_offload_OF_VERSION_1_3);
     RUN_TEST(of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3);
     RUN_TEST(of_instruction_clear_actions_OF_VERSION_1_3);
     RUN_TEST(of_instruction_experimenter_OF_VERSION_1_3);
@@ -34718,6 +34795,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_instruction_id_apply_actions_OF_VERSION_1_3);
     RUN_TEST(of_instruction_id_bsn_OF_VERSION_1_3);
     RUN_TEST(of_instruction_id_bsn_arp_offload_OF_VERSION_1_3);
+    RUN_TEST(of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3);
     RUN_TEST(of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3);
     RUN_TEST(of_instruction_id_clear_actions_OF_VERSION_1_3);
     RUN_TEST(of_instruction_id_experimenter_OF_VERSION_1_3);

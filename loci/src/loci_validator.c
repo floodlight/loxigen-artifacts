@@ -718,6 +718,7 @@ static inline int of_instruction_id_goto_table_OF_VERSION_1_3_validate(uint8_t *
 static inline int of_instruction_id_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_clear_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_apply_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -726,6 +727,7 @@ static inline int of_instruction_goto_table_OF_VERSION_1_3_validate(uint8_t *buf
 static inline int of_instruction_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_clear_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_arp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_apply_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8827,6 +8829,11 @@ of_list_instruction_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_INSTRUCTION_BSN_DHCP_OFFLOAD:
+            if (of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_INSTRUCTION_WRITE_METADATA:
             if (of_instruction_write_metadata_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -11061,6 +11068,17 @@ of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf
 }
 
 static inline int
+of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_instruction_id_bsn_dhcp_offload.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 16) {
@@ -11142,6 +11160,17 @@ of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, i
 {
     if (len < 16) {
         VALIDATOR_LOG("Class of_instruction_bsn_disable_src_mac_check.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_instruction_bsn_dhcp_offload.  Len %d too small, < %d", len, 16);
         return -1;
     }
 

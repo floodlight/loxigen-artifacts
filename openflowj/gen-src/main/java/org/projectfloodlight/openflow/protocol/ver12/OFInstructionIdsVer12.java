@@ -39,6 +39,10 @@ public class OFInstructionIdsVer12 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnArpOffload not supported in version 1.2");
     }
 
+    public OFInstructionIdBsnDhcpOffload bsnDhcpOffload() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnDhcpOffload not supported in version 1.2");
+    }
+
     public OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         throw new UnsupportedOperationException("OFInstructionIdBsnDisableSrcMacCheck not supported in version 1.2");
     }
