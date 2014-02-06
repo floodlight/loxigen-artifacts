@@ -1,1 +1,1 @@
-165e6de3454070fdb52461f6ee78faf5e357855e Merge into master from pull request #193: bsn_flow_checksum extension (https://github.com/floodlight/loxigen/pull/193)
+9fe5aaf05554ae83f5ce3b00a1b10cacbb04d7d2 Merge into master from pull request #194: java_gen: fix bug in IPv4Address.equals / hashCode (https://github.com/floodlight/loxigen/pull/194)
