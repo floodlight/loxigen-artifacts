@@ -679,6 +679,23 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() {
+        return new OFBsnFlowChecksumBucketStatsEntryVer13.Builder();
+    }
+    public OFBsnFlowChecksumBucketStatsEntry bsnFlowChecksumBucketStatsEntry(U64 checksum) {
+        return new OFBsnFlowChecksumBucketStatsEntryVer13(
+                checksum
+                    );
+    }
+
+    public OFBsnFlowChecksumBucketStatsReply.Builder buildBsnFlowChecksumBucketStatsReply() {
+        return new OFBsnFlowChecksumBucketStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnFlowChecksumBucketStatsRequest.Builder buildBsnFlowChecksumBucketStatsRequest() {
+        return new OFBsnFlowChecksumBucketStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
     public OFBsnFlowIdle.Builder buildBsnFlowIdle() {
         return new OFBsnFlowIdleVer13.Builder().setXid(nextXid());
     }
@@ -945,6 +962,34 @@ public class OFFactoryVer13 implements OFFactory {
                 nextXid(),
                       flags
                     );
+    }
+
+    public OFBsnTableChecksumStatsEntry.Builder buildBsnTableChecksumStatsEntry() {
+        return new OFBsnTableChecksumStatsEntryVer13.Builder();
+    }
+    public OFBsnTableChecksumStatsEntry bsnTableChecksumStatsEntry(TableId tableId, U64 checksum) {
+        return new OFBsnTableChecksumStatsEntryVer13(
+                tableId,
+                      checksum
+                    );
+    }
+
+    public OFBsnTableChecksumStatsReply.Builder buildBsnTableChecksumStatsReply() {
+        return new OFBsnTableChecksumStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnTableChecksumStatsRequest.Builder buildBsnTableChecksumStatsRequest() {
+        return new OFBsnTableChecksumStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnTableChecksumStatsRequest bsnTableChecksumStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnTableChecksumStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
+    public OFBsnTableSetBucketsSize.Builder buildBsnTableSetBucketsSize() {
+        return new OFBsnTableSetBucketsSizeVer13.Builder().setXid(nextXid());
     }
 
     public OFBsnTimeReply.Builder buildBsnTimeReply() {

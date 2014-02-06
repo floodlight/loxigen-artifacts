@@ -14615,6 +14615,83 @@ of_bsn_controller_connections_request_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
+of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_reply_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_flow_checksum_bucket_stats_entry_t list;
+    of_bsn_flow_checksum_bucket_stats_entry_t elt;
+    int rv;
+
+    of_bsn_flow_checksum_bucket_stats_reply_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_reply_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u16_flags(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_flow_checksum_bucket_stats_entry_t={ ");
+    of_bsn_flow_checksum_bucket_stats_reply_entries_bind(obj, &list);
+    OF_LIST_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_request_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    uint8_t val8;
+
+    of_bsn_flow_checksum_bucket_stats_request_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_request_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u16_flags(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_request_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_flow_checksum_bucket_stats_request_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8_table_id(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_flow_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_t *obj)
 {
     int out = 0;
@@ -16524,6 +16601,112 @@ of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, v
     of_bsn_switch_pipeline_stats_request_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_reply_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_table_checksum_stats_entry_t list;
+    of_bsn_table_checksum_stats_entry_t elt;
+    int rv;
+
+    of_bsn_table_checksum_stats_reply_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_reply_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u16_flags(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_table_checksum_stats_entry_t={ ");
+    of_bsn_table_checksum_stats_reply_entries_bind(obj, &list);
+    OF_LIST_BSN_TABLE_CHECKSUM_STATS_ENTRY_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_request_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_bsn_table_checksum_stats_request_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_request_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u16_flags(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_request_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_set_buckets_size_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_bsn_table_set_buckets_size_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_set_buckets_size_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_set_buckets_size_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_table_set_buckets_size_table_id_get(obj, &val16);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u16_table_id(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_table_set_buckets_size_buckets_size_get(obj, &val32);
+    out += writer(cookie, "buckets_size=");
+    out += LOCI_SHOW_u32_buckets_size(writer, cookie, val32);
     out += writer(cookie, " ");
 
     return out;
@@ -19887,6 +20070,20 @@ of_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
+of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_entry_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_flow_checksum_bucket_stats_entry_checksum_get(obj, &val64);
+    out += writer(cookie, "checksum=");
+    out += LOCI_SHOW_u64_checksum(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_bucket_stats_entry_t *obj)
 {
     int out = 0;
@@ -20152,6 +20349,26 @@ of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, voi
     of_bsn_switch_pipeline_stats_entry_pipeline_get(obj, &desc_str);
     out += writer(cookie, "pipeline=");
     out += LOCI_SHOW_desc_str_pipeline(writer, cookie, desc_str);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_entry_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+    uint64_t val64;
+
+    of_bsn_table_checksum_stats_entry_table_id_get(obj, &val8);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u8_table_id(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_table_checksum_stats_entry_checksum_get(obj, &val64);
+    out += writer(cookie, "checksum=");
+    out += LOCI_SHOW_u64_checksum(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -23457,6 +23674,14 @@ of_list_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
+of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_flow_checksum_bucket_stats_entry_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_bucket_stats_entry_t *obj)
 {
     int out = 0;
@@ -23522,6 +23747,14 @@ of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, v
 
 int
 of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_switch_pipeline_stats_entry_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_table_checksum_stats_entry_t *obj)
 {
     int out = 0;
 
@@ -24117,6 +24350,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_0_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_0_show,
     of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show,
@@ -24158,6 +24393,9 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_bsn_shell_status_OF_VERSION_1_0_show,
     of_bsn_stats_reply_OF_VERSION_1_0_show,
     of_bsn_stats_request_OF_VERSION_1_0_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -24311,7 +24549,9 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_interface_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -24511,7 +24751,9 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_list_bsn_interface_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -24584,6 +24826,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_1_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_1_show,
     unknown_show,
@@ -24625,6 +24869,9 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_bsn_stats_reply_OF_VERSION_1_1_show,
     of_bsn_stats_request_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -24778,7 +25025,9 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -24978,7 +25227,9 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_list_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -25051,6 +25302,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_2_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_2_show,
     unknown_show,
@@ -25092,6 +25345,9 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     of_bsn_stats_reply_OF_VERSION_1_2_show,
     of_bsn_stats_request_OF_VERSION_1_2_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -25245,7 +25501,9 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_interface_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -25445,7 +25703,9 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_list_bsn_interface_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -25498,6 +25758,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_set_request_OF_VERSION_1_3_show,
     of_bsn_controller_connections_reply_OF_VERSION_1_3_show,
     of_bsn_controller_connections_request_OF_VERSION_1_3_show,
+    of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_show,
+    of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_show,
     of_bsn_flow_idle_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show,
@@ -25561,6 +25823,9 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_stats_request_OF_VERSION_1_3_show,
     of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_show,
     of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_show,
+    of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_show,
+    of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show,
+    of_bsn_table_set_buckets_size_OF_VERSION_1_3_show,
     of_bsn_time_reply_OF_VERSION_1_3_show,
     of_bsn_time_request_OF_VERSION_1_3_show,
     of_bsn_virtual_port_create_reply_OF_VERSION_1_3_show,
@@ -25707,6 +25972,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_controller_connection_OF_VERSION_1_3_show,
+    of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show,
     of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show,
     of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show,
     of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show,
@@ -25716,6 +25982,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_lacp_stats_entry_OF_VERSION_1_3_show,
     of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show,
     of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show,
+    of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show,
     unknown_show,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show,
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_show,
@@ -25907,6 +26174,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_list_action_OF_VERSION_1_3_show,
     of_list_action_id_OF_VERSION_1_3_show,
     of_list_bsn_controller_connection_OF_VERSION_1_3_show,
+    of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show,
@@ -25916,6 +26184,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show,
+    of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_tlv_OF_VERSION_1_3_show,
     of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show,
     of_list_bucket_OF_VERSION_1_3_show,

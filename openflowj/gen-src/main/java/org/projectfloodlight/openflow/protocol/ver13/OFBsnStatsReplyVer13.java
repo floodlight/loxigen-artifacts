@@ -65,6 +65,9 @@ abstract class OFBsnStatsReplyVer13 {
             int subtype = bb.readInt();
             bb.readerIndex(start);
             switch(subtype) {
+               case 0xa:
+                   // discriminator value 0xaL=0xaL for class OFBsnFlowChecksumBucketStatsReplyVer13
+                   return OFBsnFlowChecksumBucketStatsReplyVer13.READER.readFrom(bb);
                case 0x5:
                    // discriminator value 0x5L=0x5L for class OFBsnGentableBucketStatsReplyVer13
                    return OFBsnGentableBucketStatsReplyVer13.READER.readFrom(bb);
@@ -89,6 +92,9 @@ abstract class OFBsnStatsReplyVer13 {
                case 0x6:
                    // discriminator value 0x6L=0x6L for class OFBsnSwitchPipelineStatsReplyVer13
                    return OFBsnSwitchPipelineStatsReplyVer13.READER.readFrom(bb);
+               case 0xb:
+                   // discriminator value 0xbL=0xbL for class OFBsnTableChecksumStatsReplyVer13
+                   return OFBsnTableChecksumStatsReplyVer13.READER.readFrom(bb);
                case 0x9:
                    // discriminator value 0x9L=0x9L for class OFBsnVlanCounterStatsReplyVer13
                    return OFBsnVlanCounterStatsReplyVer13.READER.readFrom(bb);

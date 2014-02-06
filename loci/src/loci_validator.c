@@ -570,6 +570,7 @@ static inline int of_list_bucket_counter_OF_VERSION_1_3_validate(uint8_t *buf, i
 static inline int of_list_bucket_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -579,6 +580,7 @@ static inline int of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate
 static inline int of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_action_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_action_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -759,6 +761,7 @@ static inline int of_bsn_tlv_idle_notification_OF_VERSION_1_3_validate(uint8_t *
 static inline int of_bsn_tlv_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_circuit_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_lacp_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -768,6 +771,7 @@ static inline int of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_validate(uint
 static inline int of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_controller_connection_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_queue_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_action_set_nw_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -896,6 +900,9 @@ static inline int of_bsn_virtual_port_create_request_OF_VERSION_1_3_validate(uin
 static inline int of_bsn_virtual_port_create_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_time_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_time_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_table_set_buckets_size_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_table_checksum_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -947,6 +954,8 @@ static inline int of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_validate(uint
 static inline int of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_flow_idle_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_controller_connections_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_controller_connections_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_bw_enable_set_request_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -9034,6 +9043,16 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if ((len / 9) * 9 != len) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if ((len / 256) * 256 != len) {
@@ -9109,6 +9128,16 @@ static inline int
 of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if ((len / 16) * 16 != len) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if ((len / 8) * 8 != len) {
         return -1;
     }
 
@@ -11582,6 +11611,17 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len
 }
 
 static inline int
+of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 9) {
+        VALIDATOR_LOG("Class of_bsn_table_checksum_stats_entry.  Len %d too small, < %d", len, 9);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 256) {
@@ -11701,6 +11741,17 @@ of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len
 {
     if (len < 16) {
         VALIDATOR_LOG("Class of_bsn_gentable_bucket_stats_entry.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_flow_checksum_bucket_stats_entry.  Len %d too small, < %d", len, 8);
         return -1;
     }
 
@@ -13374,6 +13425,48 @@ of_bsn_time_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_table_set_buckets_size_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_table_set_buckets_size.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_table_checksum_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_table_checksum_stats_request.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_table_checksum_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 24) {
@@ -14034,6 +14127,37 @@ of_bsn_flow_idle_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 25) {
+        VALIDATOR_LOG("Class of_bsn_flow_checksum_bucket_stats_request.  Len %d too small, < %d", len, 25);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 24) {
+        VALIDATOR_LOG("Class of_bsn_flow_checksum_bucket_stats_reply.  Len %d too small, < %d", len, 24);
+        return -1;
+    }
+
+
+    {    int entries_len = len - 24;
+
+
+        if (of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_validate(buf + 24, entries_len) < 0) {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_controller_connections_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 16) {
@@ -14430,6 +14554,12 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_time_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_TIME_REPLY:
         return of_bsn_time_reply_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_TABLE_SET_BUCKETS_SIZE:
+        return of_bsn_table_set_buckets_size_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_TABLE_CHECKSUM_STATS_REQUEST:
+        return of_bsn_table_checksum_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_TABLE_CHECKSUM_STATS_REPLY:
+        return of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_SWITCH_PIPELINE_STATS_REQUEST:
         return of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_SWITCH_PIPELINE_STATS_REPLY:
@@ -14532,6 +14662,10 @@ of_validate_message_OF_VERSION_1_3(of_message_t msg, int len)
         return of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_FLOW_IDLE:
         return of_bsn_flow_idle_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST:
+        return of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_validate(buf, len);
+    case OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY:
+        return of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_CONTROLLER_CONNECTIONS_REQUEST:
         return of_bsn_controller_connections_request_OF_VERSION_1_3_validate(buf, len);
     case OF_BSN_CONTROLLER_CONNECTIONS_REPLY:

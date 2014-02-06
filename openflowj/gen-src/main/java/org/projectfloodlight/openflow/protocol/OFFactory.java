@@ -179,6 +179,10 @@ public interface OFFactory extends XidGenerator {
     OFBsnControllerConnectionsReply bsnControllerConnectionsReply(List<OFBsnControllerConnection> connections);
     OFBsnControllerConnectionsRequest.Builder buildBsnControllerConnectionsRequest() throws UnsupportedOperationException;
     OFBsnControllerConnectionsRequest bsnControllerConnectionsRequest();
+    OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() throws UnsupportedOperationException;
+    OFBsnFlowChecksumBucketStatsEntry bsnFlowChecksumBucketStatsEntry(U64 checksum);
+    OFBsnFlowChecksumBucketStatsReply.Builder buildBsnFlowChecksumBucketStatsReply() throws UnsupportedOperationException;
+    OFBsnFlowChecksumBucketStatsRequest.Builder buildBsnFlowChecksumBucketStatsRequest() throws UnsupportedOperationException;
     OFBsnFlowIdle.Builder buildBsnFlowIdle() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableGetReply.Builder buildBsnFlowIdleEnableGetReply() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableGetReply bsnFlowIdleEnableGetReply(long enabled);
@@ -239,6 +243,12 @@ public interface OFFactory extends XidGenerator {
     OFBsnSwitchPipelineStatsReply.Builder buildBsnSwitchPipelineStatsReply() throws UnsupportedOperationException;
     OFBsnSwitchPipelineStatsRequest.Builder buildBsnSwitchPipelineStatsRequest() throws UnsupportedOperationException;
     OFBsnSwitchPipelineStatsRequest bsnSwitchPipelineStatsRequest(Set<OFStatsRequestFlags> flags);
+    OFBsnTableChecksumStatsEntry.Builder buildBsnTableChecksumStatsEntry() throws UnsupportedOperationException;
+    OFBsnTableChecksumStatsEntry bsnTableChecksumStatsEntry(TableId tableId, U64 checksum);
+    OFBsnTableChecksumStatsReply.Builder buildBsnTableChecksumStatsReply() throws UnsupportedOperationException;
+    OFBsnTableChecksumStatsRequest.Builder buildBsnTableChecksumStatsRequest() throws UnsupportedOperationException;
+    OFBsnTableChecksumStatsRequest bsnTableChecksumStatsRequest(Set<OFStatsRequestFlags> flags);
+    OFBsnTableSetBucketsSize.Builder buildBsnTableSetBucketsSize() throws UnsupportedOperationException;
     OFBsnTimeReply.Builder buildBsnTimeReply() throws UnsupportedOperationException;
     OFBsnTimeReply bsnTimeReply(U64 timeMs);
     OFBsnTimeRequest.Builder buildBsnTimeRequest() throws UnsupportedOperationException;

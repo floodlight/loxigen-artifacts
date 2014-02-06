@@ -10133,6 +10133,86 @@ test_of_bsn_controller_connections_request_create_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_3(void)
+{
+    of_bsn_flow_checksum_bucket_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_bsn_flow_checksum_bucket_stats_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_checksum_bucket_stats_reply_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
+    obj = of_bsn_flow_checksum_bucket_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_checksum_bucket_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_3(void)
+{
+    of_bsn_flow_checksum_bucket_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_bsn_flow_checksum_bucket_stats_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 25);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_checksum_bucket_stats_request_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
+    obj = of_bsn_flow_checksum_bucket_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_checksum_bucket_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_flow_idle_create_OF_VERSION_1_3(void)
 {
     of_bsn_flow_idle_t *obj;
@@ -12048,6 +12128,126 @@ test_of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     of_bsn_switch_pipeline_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_3(void)
+{
+    of_bsn_table_checksum_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_bsn_table_checksum_stats_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_table_checksum_stats_reply_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
+    obj = of_bsn_table_checksum_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_table_checksum_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_table_checksum_stats_request_create_OF_VERSION_1_3(void)
+{
+    of_bsn_table_checksum_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_bsn_table_checksum_stats_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_table_checksum_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_table_checksum_stats_request_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
+    obj = of_bsn_table_checksum_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_table_checksum_stats_request_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_table_checksum_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_3(void)
+{
+    of_bsn_table_set_buckets_size_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    int len;
+
+    obj = of_bsn_table_set_buckets_size_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TABLE_SET_BUCKETS_SIZE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_table_set_buckets_size_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    /* Grab the underlying buffer from the message */
+    len = obj->length;
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_table_set_buckets_size_delete(obj);
+    /* TODO:  */
+    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TABLE_SET_BUCKETS_SIZE);
+    obj = of_bsn_table_set_buckets_size_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_table_set_buckets_size_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_table_set_buckets_size_delete(obj);
 
     return TEST_PASS;
 }
@@ -15188,6 +15388,8 @@ run_message_tests(void)
     RUN_TEST(of_bsn_bw_enable_set_request_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_controller_connections_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_controller_connections_request_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_flow_idle_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_3);
@@ -15236,6 +15438,9 @@ run_message_tests(void)
     RUN_TEST(of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_table_checksum_stats_request_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_table_set_buckets_size_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_time_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_time_request_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_virtual_port_create_reply_create_OF_VERSION_1_3);

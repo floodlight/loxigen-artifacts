@@ -4969,6 +4969,57 @@ fields['of13.bsn_controller_connections_request.length'] = ProtoField.uint16("of
 fields['of13.bsn_controller_connections_request.xid'] = ProtoField.uint32("of13.bsn_controller_connections_request.xid", "xid", base.DEC, nil)
 fields['of13.bsn_controller_connections_request.experimenter'] = ProtoField.uint32("of13.bsn_controller_connections_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_controller_connections_request.subtype'] = ProtoField.uint32("of13.bsn_controller_connections_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_entry.checksum'] = ProtoField.uint64("of13.bsn_flow_checksum_bucket_stats_entry.checksum", "checksum", base.DEC, nil)
+fields['of13.experimenter_stats_reply.version'] = ProtoField.uint8("of13.experimenter_stats_reply.version", "version", base.DEC, nil)
+fields['of13.experimenter_stats_reply.type'] = ProtoField.uint8("of13.experimenter_stats_reply.type", "type", base.DEC, nil)
+fields['of13.experimenter_stats_reply.length'] = ProtoField.uint16("of13.experimenter_stats_reply.length", "length", base.DEC, nil)
+fields['of13.experimenter_stats_reply.xid'] = ProtoField.uint32("of13.experimenter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.experimenter_stats_reply.stats_type'] = ProtoField.uint16("of13.experimenter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.experimenter_stats_reply.flags'] = ProtoField.uint32("of13.experimenter_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.experimenter_stats_reply.experimenter'] = ProtoField.uint32("of13.experimenter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.experimenter_stats_reply.subtype'] = ProtoField.uint32("of13.experimenter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_stats_reply.version'] = ProtoField.uint8("of13.bsn_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_stats_reply.type'] = ProtoField.uint8("of13.bsn_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_stats_reply.length'] = ProtoField.uint16("of13.bsn_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_stats_reply.xid'] = ProtoField.uint32("of13.bsn_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_stats_reply.flags'] = ProtoField.uint32("of13.bsn_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.version'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.type'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.length'] = ProtoField.uint16("of13.bsn_flow_checksum_bucket_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.xid'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_flow_checksum_bucket_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.flags'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_reply.entries'] = ProtoField.bytes("of13.bsn_flow_checksum_bucket_stats_reply.entries", "entries")
+fields['of13.experimenter_stats_request.version'] = ProtoField.uint8("of13.experimenter_stats_request.version", "version", base.DEC, nil)
+fields['of13.experimenter_stats_request.type'] = ProtoField.uint8("of13.experimenter_stats_request.type", "type", base.DEC, nil)
+fields['of13.experimenter_stats_request.length'] = ProtoField.uint16("of13.experimenter_stats_request.length", "length", base.DEC, nil)
+fields['of13.experimenter_stats_request.xid'] = ProtoField.uint32("of13.experimenter_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.experimenter_stats_request.stats_type'] = ProtoField.uint16("of13.experimenter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.experimenter_stats_request.flags'] = ProtoField.uint32("of13.experimenter_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.experimenter_stats_request.experimenter'] = ProtoField.uint32("of13.experimenter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.experimenter_stats_request.subtype'] = ProtoField.uint32("of13.experimenter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_stats_request.version'] = ProtoField.uint8("of13.bsn_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_stats_request.type'] = ProtoField.uint8("of13.bsn_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_stats_request.length'] = ProtoField.uint16("of13.bsn_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_stats_request.xid'] = ProtoField.uint32("of13.bsn_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_stats_request.flags'] = ProtoField.uint32("of13.bsn_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_stats_request.subtype'] = ProtoField.uint32("of13.bsn_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.version'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.type'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.length'] = ProtoField.uint16("of13.bsn_flow_checksum_bucket_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.xid'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_flow_checksum_bucket_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.flags'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_flow_checksum_bucket_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.subtype'] = ProtoField.uint32("of13.bsn_flow_checksum_bucket_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_flow_checksum_bucket_stats_request.table_id'] = ProtoField.uint8("of13.bsn_flow_checksum_bucket_stats_request.table_id", "table_id", base.DEC, nil)
 fields['of13.bsn_flow_idle.version'] = ProtoField.uint8("of13.bsn_flow_idle.version", "version", base.DEC, nil)
 fields['of13.bsn_flow_idle.type'] = ProtoField.uint8("of13.bsn_flow_idle.type", "type", base.DEC, nil)
 fields['of13.bsn_flow_idle.length'] = ProtoField.uint16("of13.bsn_flow_idle.length", "length", base.DEC, nil)
@@ -5008,22 +5059,6 @@ fields['of13.bsn_flow_idle_enable_set_request.experimenter'] = ProtoField.uint32
 fields['of13.bsn_flow_idle_enable_set_request.subtype'] = ProtoField.uint32("of13.bsn_flow_idle_enable_set_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_flow_idle_enable_set_request.enable'] = ProtoField.uint32("of13.bsn_flow_idle_enable_set_request.enable", "enable", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_entry.checksum'] = ProtoField.bytes("of13.bsn_gentable_bucket_stats_entry.checksum", "checksum")
-fields['of13.experimenter_stats_reply.version'] = ProtoField.uint8("of13.experimenter_stats_reply.version", "version", base.DEC, nil)
-fields['of13.experimenter_stats_reply.type'] = ProtoField.uint8("of13.experimenter_stats_reply.type", "type", base.DEC, nil)
-fields['of13.experimenter_stats_reply.length'] = ProtoField.uint16("of13.experimenter_stats_reply.length", "length", base.DEC, nil)
-fields['of13.experimenter_stats_reply.xid'] = ProtoField.uint32("of13.experimenter_stats_reply.xid", "xid", base.DEC, nil)
-fields['of13.experimenter_stats_reply.stats_type'] = ProtoField.uint16("of13.experimenter_stats_reply.stats_type", "stats_type", base.DEC, nil)
-fields['of13.experimenter_stats_reply.flags'] = ProtoField.uint32("of13.experimenter_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
-fields['of13.experimenter_stats_reply.experimenter'] = ProtoField.uint32("of13.experimenter_stats_reply.experimenter", "experimenter", base.DEC, nil)
-fields['of13.experimenter_stats_reply.subtype'] = ProtoField.uint32("of13.experimenter_stats_reply.subtype", "subtype", base.DEC, nil)
-fields['of13.bsn_stats_reply.version'] = ProtoField.uint8("of13.bsn_stats_reply.version", "version", base.DEC, nil)
-fields['of13.bsn_stats_reply.type'] = ProtoField.uint8("of13.bsn_stats_reply.type", "type", base.DEC, nil)
-fields['of13.bsn_stats_reply.length'] = ProtoField.uint16("of13.bsn_stats_reply.length", "length", base.DEC, nil)
-fields['of13.bsn_stats_reply.xid'] = ProtoField.uint32("of13.bsn_stats_reply.xid", "xid", base.DEC, nil)
-fields['of13.bsn_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_stats_reply.stats_type", "stats_type", base.DEC, nil)
-fields['of13.bsn_stats_reply.flags'] = ProtoField.uint32("of13.bsn_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
-fields['of13.bsn_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_stats_reply.experimenter", "experimenter", base.DEC, nil)
-fields['of13.bsn_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_stats_reply.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_reply.version'] = ProtoField.uint8("of13.bsn_gentable_bucket_stats_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_reply.type'] = ProtoField.uint8("of13.bsn_gentable_bucket_stats_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_reply.length'] = ProtoField.uint16("of13.bsn_gentable_bucket_stats_reply.length", "length", base.DEC, nil)
@@ -5033,22 +5068,6 @@ fields['of13.bsn_gentable_bucket_stats_reply.flags'] = ProtoField.uint32("of13.b
 fields['of13.bsn_gentable_bucket_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_gentable_bucket_stats_reply.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_gentable_bucket_stats_reply.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_reply.entries'] = ProtoField.bytes("of13.bsn_gentable_bucket_stats_reply.entries", "entries")
-fields['of13.experimenter_stats_request.version'] = ProtoField.uint8("of13.experimenter_stats_request.version", "version", base.DEC, nil)
-fields['of13.experimenter_stats_request.type'] = ProtoField.uint8("of13.experimenter_stats_request.type", "type", base.DEC, nil)
-fields['of13.experimenter_stats_request.length'] = ProtoField.uint16("of13.experimenter_stats_request.length", "length", base.DEC, nil)
-fields['of13.experimenter_stats_request.xid'] = ProtoField.uint32("of13.experimenter_stats_request.xid", "xid", base.DEC, nil)
-fields['of13.experimenter_stats_request.stats_type'] = ProtoField.uint16("of13.experimenter_stats_request.stats_type", "stats_type", base.DEC, nil)
-fields['of13.experimenter_stats_request.flags'] = ProtoField.uint32("of13.experimenter_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
-fields['of13.experimenter_stats_request.experimenter'] = ProtoField.uint32("of13.experimenter_stats_request.experimenter", "experimenter", base.DEC, nil)
-fields['of13.experimenter_stats_request.subtype'] = ProtoField.uint32("of13.experimenter_stats_request.subtype", "subtype", base.DEC, nil)
-fields['of13.bsn_stats_request.version'] = ProtoField.uint8("of13.bsn_stats_request.version", "version", base.DEC, nil)
-fields['of13.bsn_stats_request.type'] = ProtoField.uint8("of13.bsn_stats_request.type", "type", base.DEC, nil)
-fields['of13.bsn_stats_request.length'] = ProtoField.uint16("of13.bsn_stats_request.length", "length", base.DEC, nil)
-fields['of13.bsn_stats_request.xid'] = ProtoField.uint32("of13.bsn_stats_request.xid", "xid", base.DEC, nil)
-fields['of13.bsn_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_stats_request.stats_type", "stats_type", base.DEC, nil)
-fields['of13.bsn_stats_request.flags'] = ProtoField.uint32("of13.bsn_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
-fields['of13.bsn_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_stats_request.experimenter", "experimenter", base.DEC, nil)
-fields['of13.bsn_stats_request.subtype'] = ProtoField.uint32("of13.bsn_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_request.version'] = ProtoField.uint8("of13.bsn_gentable_bucket_stats_request.version", "version", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_request.type'] = ProtoField.uint8("of13.bsn_gentable_bucket_stats_request.type", "type", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_request.length'] = ProtoField.uint16("of13.bsn_gentable_bucket_stats_request.length", "length", base.DEC, nil)
@@ -5454,6 +5473,33 @@ fields['of13.bsn_switch_pipeline_stats_request.stats_type'] = ProtoField.uint16(
 fields['of13.bsn_switch_pipeline_stats_request.flags'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
 fields['of13.bsn_switch_pipeline_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_switch_pipeline_stats_request.subtype'] = ProtoField.uint32("of13.bsn_switch_pipeline_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_entry.table_id'] = ProtoField.uint8("of13.bsn_table_checksum_stats_entry.table_id", "table_id", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_entry.checksum'] = ProtoField.uint64("of13.bsn_table_checksum_stats_entry.checksum", "checksum", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.version'] = ProtoField.uint8("of13.bsn_table_checksum_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.type'] = ProtoField.uint8("of13.bsn_table_checksum_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.length'] = ProtoField.uint16("of13.bsn_table_checksum_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.xid'] = ProtoField.uint32("of13.bsn_table_checksum_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_table_checksum_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.flags'] = ProtoField.uint32("of13.bsn_table_checksum_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_table_checksum_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_table_checksum_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_table_checksum_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_reply.entries'] = ProtoField.bytes("of13.bsn_table_checksum_stats_reply.entries", "entries")
+fields['of13.bsn_table_checksum_stats_request.version'] = ProtoField.uint8("of13.bsn_table_checksum_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_request.type'] = ProtoField.uint8("of13.bsn_table_checksum_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_request.length'] = ProtoField.uint16("of13.bsn_table_checksum_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_request.xid'] = ProtoField.uint32("of13.bsn_table_checksum_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_table_checksum_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_request.flags'] = ProtoField.uint32("of13.bsn_table_checksum_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_table_checksum_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_table_checksum_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_table_checksum_stats_request.subtype'] = ProtoField.uint32("of13.bsn_table_checksum_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.version'] = ProtoField.uint8("of13.bsn_table_set_buckets_size.version", "version", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.type'] = ProtoField.uint8("of13.bsn_table_set_buckets_size.type", "type", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.length'] = ProtoField.uint16("of13.bsn_table_set_buckets_size.length", "length", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.xid'] = ProtoField.uint32("of13.bsn_table_set_buckets_size.xid", "xid", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.experimenter'] = ProtoField.uint32("of13.bsn_table_set_buckets_size.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.subtype'] = ProtoField.uint32("of13.bsn_table_set_buckets_size.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.table_id'] = ProtoField.uint16("of13.bsn_table_set_buckets_size.table_id", "table_id", base.DEC, nil)
+fields['of13.bsn_table_set_buckets_size.buckets_size'] = ProtoField.uint32("of13.bsn_table_set_buckets_size.buckets_size", "buckets_size", base.DEC, nil)
 fields['of13.bsn_time_reply.version'] = ProtoField.uint8("of13.bsn_time_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_time_reply.type'] = ProtoField.uint8("of13.bsn_time_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_time_reply.length'] = ProtoField.uint16("of13.bsn_time_reply.length", "length", base.DEC, nil)
@@ -9832,6 +9878,57 @@ p_of.fields = {
     fields['of13.bsn_controller_connections_request.xid'],
     fields['of13.bsn_controller_connections_request.experimenter'],
     fields['of13.bsn_controller_connections_request.subtype'],
+    fields['of13.bsn_flow_checksum_bucket_stats_entry.checksum'],
+    fields['of13.experimenter_stats_reply.version'],
+    fields['of13.experimenter_stats_reply.type'],
+    fields['of13.experimenter_stats_reply.length'],
+    fields['of13.experimenter_stats_reply.xid'],
+    fields['of13.experimenter_stats_reply.stats_type'],
+    fields['of13.experimenter_stats_reply.flags'],
+    fields['of13.experimenter_stats_reply.experimenter'],
+    fields['of13.experimenter_stats_reply.subtype'],
+    fields['of13.bsn_stats_reply.version'],
+    fields['of13.bsn_stats_reply.type'],
+    fields['of13.bsn_stats_reply.length'],
+    fields['of13.bsn_stats_reply.xid'],
+    fields['of13.bsn_stats_reply.stats_type'],
+    fields['of13.bsn_stats_reply.flags'],
+    fields['of13.bsn_stats_reply.experimenter'],
+    fields['of13.bsn_stats_reply.subtype'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.version'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.type'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.length'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.xid'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.stats_type'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.flags'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.experimenter'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.subtype'],
+    fields['of13.bsn_flow_checksum_bucket_stats_reply.entries'],
+    fields['of13.experimenter_stats_request.version'],
+    fields['of13.experimenter_stats_request.type'],
+    fields['of13.experimenter_stats_request.length'],
+    fields['of13.experimenter_stats_request.xid'],
+    fields['of13.experimenter_stats_request.stats_type'],
+    fields['of13.experimenter_stats_request.flags'],
+    fields['of13.experimenter_stats_request.experimenter'],
+    fields['of13.experimenter_stats_request.subtype'],
+    fields['of13.bsn_stats_request.version'],
+    fields['of13.bsn_stats_request.type'],
+    fields['of13.bsn_stats_request.length'],
+    fields['of13.bsn_stats_request.xid'],
+    fields['of13.bsn_stats_request.stats_type'],
+    fields['of13.bsn_stats_request.flags'],
+    fields['of13.bsn_stats_request.experimenter'],
+    fields['of13.bsn_stats_request.subtype'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.version'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.type'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.length'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.xid'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.stats_type'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.flags'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.experimenter'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.subtype'],
+    fields['of13.bsn_flow_checksum_bucket_stats_request.table_id'],
     fields['of13.bsn_flow_idle.version'],
     fields['of13.bsn_flow_idle.type'],
     fields['of13.bsn_flow_idle.length'],
@@ -9871,22 +9968,6 @@ p_of.fields = {
     fields['of13.bsn_flow_idle_enable_set_request.subtype'],
     fields['of13.bsn_flow_idle_enable_set_request.enable'],
     fields['of13.bsn_gentable_bucket_stats_entry.checksum'],
-    fields['of13.experimenter_stats_reply.version'],
-    fields['of13.experimenter_stats_reply.type'],
-    fields['of13.experimenter_stats_reply.length'],
-    fields['of13.experimenter_stats_reply.xid'],
-    fields['of13.experimenter_stats_reply.stats_type'],
-    fields['of13.experimenter_stats_reply.flags'],
-    fields['of13.experimenter_stats_reply.experimenter'],
-    fields['of13.experimenter_stats_reply.subtype'],
-    fields['of13.bsn_stats_reply.version'],
-    fields['of13.bsn_stats_reply.type'],
-    fields['of13.bsn_stats_reply.length'],
-    fields['of13.bsn_stats_reply.xid'],
-    fields['of13.bsn_stats_reply.stats_type'],
-    fields['of13.bsn_stats_reply.flags'],
-    fields['of13.bsn_stats_reply.experimenter'],
-    fields['of13.bsn_stats_reply.subtype'],
     fields['of13.bsn_gentable_bucket_stats_reply.version'],
     fields['of13.bsn_gentable_bucket_stats_reply.type'],
     fields['of13.bsn_gentable_bucket_stats_reply.length'],
@@ -9896,22 +9977,6 @@ p_of.fields = {
     fields['of13.bsn_gentable_bucket_stats_reply.experimenter'],
     fields['of13.bsn_gentable_bucket_stats_reply.subtype'],
     fields['of13.bsn_gentable_bucket_stats_reply.entries'],
-    fields['of13.experimenter_stats_request.version'],
-    fields['of13.experimenter_stats_request.type'],
-    fields['of13.experimenter_stats_request.length'],
-    fields['of13.experimenter_stats_request.xid'],
-    fields['of13.experimenter_stats_request.stats_type'],
-    fields['of13.experimenter_stats_request.flags'],
-    fields['of13.experimenter_stats_request.experimenter'],
-    fields['of13.experimenter_stats_request.subtype'],
-    fields['of13.bsn_stats_request.version'],
-    fields['of13.bsn_stats_request.type'],
-    fields['of13.bsn_stats_request.length'],
-    fields['of13.bsn_stats_request.xid'],
-    fields['of13.bsn_stats_request.stats_type'],
-    fields['of13.bsn_stats_request.flags'],
-    fields['of13.bsn_stats_request.experimenter'],
-    fields['of13.bsn_stats_request.subtype'],
     fields['of13.bsn_gentable_bucket_stats_request.version'],
     fields['of13.bsn_gentable_bucket_stats_request.type'],
     fields['of13.bsn_gentable_bucket_stats_request.length'],
@@ -10317,6 +10382,33 @@ p_of.fields = {
     fields['of13.bsn_switch_pipeline_stats_request.flags'],
     fields['of13.bsn_switch_pipeline_stats_request.experimenter'],
     fields['of13.bsn_switch_pipeline_stats_request.subtype'],
+    fields['of13.bsn_table_checksum_stats_entry.table_id'],
+    fields['of13.bsn_table_checksum_stats_entry.checksum'],
+    fields['of13.bsn_table_checksum_stats_reply.version'],
+    fields['of13.bsn_table_checksum_stats_reply.type'],
+    fields['of13.bsn_table_checksum_stats_reply.length'],
+    fields['of13.bsn_table_checksum_stats_reply.xid'],
+    fields['of13.bsn_table_checksum_stats_reply.stats_type'],
+    fields['of13.bsn_table_checksum_stats_reply.flags'],
+    fields['of13.bsn_table_checksum_stats_reply.experimenter'],
+    fields['of13.bsn_table_checksum_stats_reply.subtype'],
+    fields['of13.bsn_table_checksum_stats_reply.entries'],
+    fields['of13.bsn_table_checksum_stats_request.version'],
+    fields['of13.bsn_table_checksum_stats_request.type'],
+    fields['of13.bsn_table_checksum_stats_request.length'],
+    fields['of13.bsn_table_checksum_stats_request.xid'],
+    fields['of13.bsn_table_checksum_stats_request.stats_type'],
+    fields['of13.bsn_table_checksum_stats_request.flags'],
+    fields['of13.bsn_table_checksum_stats_request.experimenter'],
+    fields['of13.bsn_table_checksum_stats_request.subtype'],
+    fields['of13.bsn_table_set_buckets_size.version'],
+    fields['of13.bsn_table_set_buckets_size.type'],
+    fields['of13.bsn_table_set_buckets_size.length'],
+    fields['of13.bsn_table_set_buckets_size.xid'],
+    fields['of13.bsn_table_set_buckets_size.experimenter'],
+    fields['of13.bsn_table_set_buckets_size.subtype'],
+    fields['of13.bsn_table_set_buckets_size.table_id'],
+    fields['of13.bsn_table_set_buckets_size.buckets_size'],
     fields['of13.bsn_time_reply.version'],
     fields['of13.bsn_time_reply.type'],
     fields['of13.bsn_time_reply.length'],
@@ -18895,6 +18987,80 @@ function dissect_of_bsn_controller_connections_request_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[56] = dissect_of_bsn_controller_connections_request_v4
 
+-- top-level class of_bsn_flow_checksum_bucket_stats_entry
+function dissect_of_bsn_flow_checksum_bucket_stats_entry_v4(reader, subtree)
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_entry.checksum')
+    return 'of_bsn_flow_checksum_bucket_stats_entry'
+end
+-- virtual child class of_experimenter_stats_reply
+-- Child of of_stats_reply
+-- Discriminator is experimenter
+function dissect_of_experimenter_stats_reply_v4(reader, subtree)
+    return of_experimenter_stats_reply_v4_dissectors[reader.peek(16,4):uint()](reader, subtree)
+end
+of_stats_reply_v4_dissectors[65535] = dissect_of_experimenter_stats_reply_v4
+
+-- virtual child class of_bsn_stats_reply
+-- Child of of_experimenter_stats_reply
+-- Discriminator is subtype
+function dissect_of_bsn_stats_reply_v4(reader, subtree)
+    return of_bsn_stats_reply_v4_dissectors[reader.peek(20,4):uint()](reader, subtree)
+end
+of_experimenter_stats_reply_v4_dissectors[6035143] = dissect_of_bsn_stats_reply_v4
+
+-- child class of_bsn_flow_checksum_bucket_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_flow_checksum_bucket_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_flow_checksum_bucket_stats_entry_v4, subtree, 'of_bsn_flow_checksum_bucket_stats_entry')
+    return 'of_bsn_flow_checksum_bucket_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[10] = dissect_of_bsn_flow_checksum_bucket_stats_reply_v4
+
+-- virtual child class of_experimenter_stats_request
+-- Child of of_stats_request
+-- Discriminator is experimenter
+function dissect_of_experimenter_stats_request_v4(reader, subtree)
+    return of_experimenter_stats_request_v4_dissectors[reader.peek(16,4):uint()](reader, subtree)
+end
+of_stats_request_v4_dissectors[65535] = dissect_of_experimenter_stats_request_v4
+
+-- virtual child class of_bsn_stats_request
+-- Child of of_experimenter_stats_request
+-- Discriminator is subtype
+function dissect_of_bsn_stats_request_v4(reader, subtree)
+    return of_bsn_stats_request_v4_dissectors[reader.peek(20,4):uint()](reader, subtree)
+end
+of_experimenter_stats_request_v4_dissectors[6035143] = dissect_of_bsn_stats_request_v4
+
+-- child class of_bsn_flow_checksum_bucket_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_flow_checksum_bucket_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.subtype')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_flow_checksum_bucket_stats_request.table_id')
+    return 'of_bsn_flow_checksum_bucket_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[10] = dissect_of_bsn_flow_checksum_bucket_stats_request_v4
+
 -- child class of_bsn_flow_idle
 -- Child of of_bsn_header
 function dissect_of_bsn_flow_idle_v4(reader, subtree)
@@ -18977,22 +19143,6 @@ function dissect_of_bsn_gentable_bucket_stats_entry_v4(reader, subtree)
     read_of_checksum_128_t(reader, 4, subtree, 'of13.bsn_gentable_bucket_stats_entry.checksum')
     return 'of_bsn_gentable_bucket_stats_entry'
 end
--- virtual child class of_experimenter_stats_reply
--- Child of of_stats_reply
--- Discriminator is experimenter
-function dissect_of_experimenter_stats_reply_v4(reader, subtree)
-    return of_experimenter_stats_reply_v4_dissectors[reader.peek(16,4):uint()](reader, subtree)
-end
-of_stats_reply_v4_dissectors[65535] = dissect_of_experimenter_stats_reply_v4
-
--- virtual child class of_bsn_stats_reply
--- Child of of_experimenter_stats_reply
--- Discriminator is subtype
-function dissect_of_bsn_stats_reply_v4(reader, subtree)
-    return of_bsn_stats_reply_v4_dissectors[reader.peek(20,4):uint()](reader, subtree)
-end
-of_experimenter_stats_reply_v4_dissectors[6035143] = dissect_of_bsn_stats_reply_v4
-
 -- child class of_bsn_gentable_bucket_stats_reply
 -- Child of of_bsn_stats_reply
 function dissect_of_bsn_gentable_bucket_stats_reply_v4(reader, subtree)
@@ -19012,22 +19162,6 @@ function dissect_of_bsn_gentable_bucket_stats_reply_v4(reader, subtree)
     return 'of_bsn_gentable_bucket_stats_reply'
 end
 of_bsn_stats_reply_v4_dissectors[5] = dissect_of_bsn_gentable_bucket_stats_reply_v4
-
--- virtual child class of_experimenter_stats_request
--- Child of of_stats_request
--- Discriminator is experimenter
-function dissect_of_experimenter_stats_request_v4(reader, subtree)
-    return of_experimenter_stats_request_v4_dissectors[reader.peek(16,4):uint()](reader, subtree)
-end
-of_stats_request_v4_dissectors[65535] = dissect_of_experimenter_stats_request_v4
-
--- virtual child class of_bsn_stats_request
--- Child of of_experimenter_stats_request
--- Discriminator is subtype
-function dissect_of_bsn_stats_request_v4(reader, subtree)
-    return of_bsn_stats_request_v4_dissectors[reader.peek(20,4):uint()](reader, subtree)
-end
-of_experimenter_stats_request_v4_dissectors[6035143] = dissect_of_bsn_stats_request_v4
 
 -- child class of_bsn_gentable_bucket_stats_request
 -- Child of of_bsn_stats_request
@@ -19842,6 +19976,64 @@ function dissect_of_bsn_switch_pipeline_stats_request_v4(reader, subtree)
     return 'of_bsn_switch_pipeline_stats_request'
 end
 of_bsn_stats_request_v4_dissectors[6] = dissect_of_bsn_switch_pipeline_stats_request_v4
+
+-- top-level class of_bsn_table_checksum_stats_entry
+function dissect_of_bsn_table_checksum_stats_entry_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_entry.table_id')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_entry.checksum')
+    return 'of_bsn_table_checksum_stats_entry'
+end
+-- child class of_bsn_table_checksum_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_table_checksum_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_table_checksum_stats_entry_v4, subtree, 'of_bsn_table_checksum_stats_entry')
+    return 'of_bsn_table_checksum_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[11] = dissect_of_bsn_table_checksum_stats_reply_v4
+
+-- child class of_bsn_table_checksum_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_table_checksum_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_checksum_stats_request.subtype')
+    return 'of_bsn_table_checksum_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[11] = dissect_of_bsn_table_checksum_stats_request_v4
+
+-- child class of_bsn_table_set_buckets_size
+-- Child of of_bsn_header
+function dissect_of_bsn_table_set_buckets_size_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.table_id')
+    reader.skip(2)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_table_set_buckets_size.buckets_size')
+    return 'of_bsn_table_set_buckets_size'
+end
+of_bsn_header_v4_dissectors[61] = dissect_of_bsn_table_set_buckets_size_v4
 
 -- child class of_bsn_time_reply
 -- Child of of_bsn_header

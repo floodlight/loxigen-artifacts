@@ -88,6 +88,42 @@ class bsn_controller_connection(loxi.OFObject):
         q.text('}')
 
 
+class bsn_flow_checksum_bucket_stats_entry(loxi.OFObject):
+
+    def __init__(self, checksum=None):
+        if checksum != None:
+            self.checksum = checksum
+        else:
+            self.checksum = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!Q", self.checksum))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_flow_checksum_bucket_stats_entry()
+        obj.checksum = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.checksum != other.checksum: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_flow_checksum_bucket_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("checksum = ");
+                q.text("%#x" % self.checksum)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_gentable_bucket_stats_entry(loxi.OFObject):
 
     def __init__(self, checksum=None):
@@ -680,6 +716,52 @@ class bsn_switch_pipeline_stats_entry(loxi.OFObject):
                 q.breakable()
                 q.text("pipeline = ");
                 q.pp(self.pipeline)
+            q.breakable()
+        q.text('}')
+
+
+class bsn_table_checksum_stats_entry(loxi.OFObject):
+
+    def __init__(self, table_id=None, checksum=None):
+        if table_id != None:
+            self.table_id = table_id
+        else:
+            self.table_id = 0
+        if checksum != None:
+            self.checksum = checksum
+        else:
+            self.checksum = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!B", self.table_id))
+        packed.append(struct.pack("!Q", self.checksum))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_table_checksum_stats_entry()
+        obj.table_id = reader.read("!B")[0]
+        obj.checksum = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.table_id != other.table_id: return False
+        if self.checksum != other.checksum: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_table_checksum_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("table_id = ");
+                q.text("%#x" % self.table_id)
+                q.text(","); q.breakable()
+                q.text("checksum = ");
+                q.text("%#x" % self.checksum)
             q.breakable()
         q.text('}')
 

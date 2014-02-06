@@ -681,6 +681,21 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnControllerConnectionsRequest not supported in version 1.0");
     }
 
+    public OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsEntry not supported in version 1.0");
+    }
+    public OFBsnFlowChecksumBucketStatsEntry bsnFlowChecksumBucketStatsEntry(U64 checksum) {
+        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsEntry not supported in version 1.0");
+    }
+
+    public OFBsnFlowChecksumBucketStatsReply.Builder buildBsnFlowChecksumBucketStatsReply() {
+        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsReply not supported in version 1.0");
+    }
+
+    public OFBsnFlowChecksumBucketStatsRequest.Builder buildBsnFlowChecksumBucketStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsRequest not supported in version 1.0");
+    }
+
     public OFBsnFlowIdle.Builder buildBsnFlowIdle() {
         throw new UnsupportedOperationException("OFBsnFlowIdle not supported in version 1.0");
     }
@@ -903,6 +918,28 @@ public class OFFactoryVer10 implements OFFactory {
     }
     public OFBsnSwitchPipelineStatsRequest bsnSwitchPipelineStatsRequest(Set<OFStatsRequestFlags> flags) {
         throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsRequest not supported in version 1.0");
+    }
+
+    public OFBsnTableChecksumStatsEntry.Builder buildBsnTableChecksumStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnTableChecksumStatsEntry not supported in version 1.0");
+    }
+    public OFBsnTableChecksumStatsEntry bsnTableChecksumStatsEntry(TableId tableId, U64 checksum) {
+        throw new UnsupportedOperationException("OFBsnTableChecksumStatsEntry not supported in version 1.0");
+    }
+
+    public OFBsnTableChecksumStatsReply.Builder buildBsnTableChecksumStatsReply() {
+        throw new UnsupportedOperationException("OFBsnTableChecksumStatsReply not supported in version 1.0");
+    }
+
+    public OFBsnTableChecksumStatsRequest.Builder buildBsnTableChecksumStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnTableChecksumStatsRequest not supported in version 1.0");
+    }
+    public OFBsnTableChecksumStatsRequest bsnTableChecksumStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnTableChecksumStatsRequest not supported in version 1.0");
+    }
+
+    public OFBsnTableSetBucketsSize.Builder buildBsnTableSetBucketsSize() {
+        throw new UnsupportedOperationException("OFBsnTableSetBucketsSize not supported in version 1.0");
     }
 
     public OFBsnTimeReply.Builder buildBsnTimeReply() {

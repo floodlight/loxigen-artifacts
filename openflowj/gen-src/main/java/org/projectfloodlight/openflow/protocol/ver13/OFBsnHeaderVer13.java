@@ -194,6 +194,9 @@ abstract class OFBsnHeaderVer13 {
                case 0x35:
                    // discriminator value 0x35L=0x35L for class OFBsnSetSwitchPipelineRequestVer13
                    return OFBsnSetSwitchPipelineRequestVer13.READER.readFrom(bb);
+               case 0x3d:
+                   // discriminator value 0x3dL=0x3dL for class OFBsnTableSetBucketsSizeVer13
+                   return OFBsnTableSetBucketsSizeVer13.READER.readFrom(bb);
                case 0x2d:
                    // discriminator value 0x2dL=0x2dL for class OFBsnTimeReplyVer13
                    return OFBsnTimeReplyVer13.READER.readFrom(bb);
