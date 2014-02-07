@@ -1,1 +1,1 @@
-9fe5aaf05554ae83f5ce3b00a1b10cacbb04d7d2 Merge into master from pull request #194: java_gen: fix bug in IPv4Address.equals / hashCode (https://github.com/floodlight/loxigen/pull/194)
+9d8a944e411129d7a37ad1650ea8211bd4db2a84 Merge into master from pull request #195: openflowj: upgrade netty to 3.9.0 (https://github.com/floodlight/loxigen/pull/195)
