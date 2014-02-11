@@ -1,1 +1,1 @@
-9d8a944e411129d7a37ad1650ea8211bd4db2a84 Merge into master from pull request #195: openflowj: upgrade netty to 3.9.0 (https://github.com/floodlight/loxigen/pull/195)
+feaa994e30319af672b9becbebb788e83c359526 Merge into master from pull request #196: Add MacAddress.isLinkLocal() (https://github.com/floodlight/loxigen/pull/196)
