@@ -1138,6 +1138,10 @@ extern of_instruction_bsn_dhcp_offload_t *
     of_instruction_bsn_dhcp_offload_dup(
         of_instruction_bsn_dhcp_offload_t *src);
 
+extern of_instruction_bsn_disable_split_horizon_check_t *
+    of_instruction_bsn_disable_split_horizon_check_dup(
+        of_instruction_bsn_disable_split_horizon_check_t *src);
+
 extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_dup(
         of_instruction_bsn_disable_src_mac_check_t *src);
@@ -1177,6 +1181,10 @@ extern of_instruction_id_bsn_arp_offload_t *
 extern of_instruction_id_bsn_dhcp_offload_t *
     of_instruction_id_bsn_dhcp_offload_dup(
         of_instruction_id_bsn_dhcp_offload_t *src);
+
+extern of_instruction_id_bsn_disable_split_horizon_check_t *
+    of_instruction_id_bsn_disable_split_horizon_check_dup(
+        of_instruction_id_bsn_disable_split_horizon_check_t *src);
 
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_dup(
@@ -5070,6 +5078,10 @@ extern of_instruction_bsn_dhcp_offload_t *
     of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(
         of_instruction_bsn_dhcp_offload_t *src);
 
+extern of_instruction_bsn_disable_split_horizon_check_t *
+    of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
+        of_instruction_bsn_disable_split_horizon_check_t *src);
+
 extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
         of_instruction_bsn_disable_src_mac_check_t *src);
@@ -5109,6 +5121,10 @@ extern of_instruction_id_bsn_arp_offload_t *
 extern of_instruction_id_bsn_dhcp_offload_t *
     of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_dhcp_offload_t *src);
+
+extern of_instruction_id_bsn_disable_split_horizon_check_t *
+    of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_disable_split_horizon_check_t *src);
 
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(

@@ -817,6 +817,7 @@ int of_instruction_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void*
 int of_instruction_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_t *obj);
 int of_instruction_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_arp_offload_t *obj);
 int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_dhcp_offload_t *obj);
+int of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_disable_split_horizon_check_t *obj);
 int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_disable_src_mac_check_t *obj);
 int of_instruction_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj);
 int of_instruction_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj);
@@ -826,6 +827,7 @@ int of_instruction_id_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, vo
 int of_instruction_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_t *obj);
 int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_arp_offload_t *obj);
 int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_dhcp_offload_t *obj);
+int of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_split_horizon_check_t *obj);
 int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_src_mac_check_t *obj);
 int of_instruction_id_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_clear_actions_t *obj);
 int of_instruction_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_experimenter_t *obj);

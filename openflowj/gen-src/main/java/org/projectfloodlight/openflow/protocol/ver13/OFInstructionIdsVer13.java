@@ -43,6 +43,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnDhcpOffloadVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
+        return OFInstructionIdBsnDisableSplitHorizonCheckVer13.INSTANCE;
+    }
+
     public OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         return OFInstructionIdBsnDisableSrcMacCheckVer13.INSTANCE;
     }

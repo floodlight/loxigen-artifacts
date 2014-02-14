@@ -81,6 +81,10 @@ public class OFInstructionsVer12 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.2");
     }
 
+    public OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
+        throw new UnsupportedOperationException("OFInstructionBsnDisableSplitHorizonCheck not supported in version 1.2");
+    }
+
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.2");
     }

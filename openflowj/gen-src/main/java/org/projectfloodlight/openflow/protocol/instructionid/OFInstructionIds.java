@@ -30,6 +30,7 @@ public interface OFInstructionIds {
     OFInstructionIdApplyActions applyActions();
     OFInstructionIdBsnArpOffload bsnArpOffload();
     OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
+    OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();

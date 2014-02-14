@@ -39,6 +39,7 @@ public interface OFInstructions {
     OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask);
     OFInstructionBsnArpOffload bsnArpOffload();
     OFInstructionBsnDhcpOffload bsnDhcpOffload();
+    OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);

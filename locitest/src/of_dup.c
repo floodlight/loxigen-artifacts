@@ -28463,6 +28463,11 @@ of_instruction_OF_VERSION_1_3_dup(
             &src->bsn_arp_offload);
     }
 
+    if (src->header.object_id == OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
+        return (of_instruction_t *)of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
+            &src->bsn_disable_split_horizon_check);
+    }
+
     if (src->header.object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
         return (of_instruction_t *)of_instruction_apply_actions_OF_VERSION_1_3_dup(
             &src->apply_actions);
@@ -28615,6 +28620,34 @@ of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_disable_split_horizon_check
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_disable_split_horizon_check.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_disable_split_horizon_check_t *
+of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
+    of_instruction_bsn_disable_split_horizon_check_t *src)
+{
+    of_instruction_bsn_disable_split_horizon_check_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_disable_split_horizon_check_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_disable_split_horizon_check_experimenter_get(src, &val32);
+    of_instruction_bsn_disable_split_horizon_check_experimenter_set(dst, val32);
+
+    of_instruction_bsn_disable_split_horizon_check_subtype_get(src, &val32);
+    of_instruction_bsn_disable_split_horizon_check_subtype_set(dst, val32);
 
     return dst;
 }
@@ -28775,6 +28808,11 @@ of_instruction_id_OF_VERSION_1_3_dup(
             &src->bsn_arp_offload);
     }
 
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
+            &src->bsn_disable_split_horizon_check);
+    }
+
     if (src->header.object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
         return (of_instruction_id_t *)of_instruction_id_apply_actions_OF_VERSION_1_3_dup(
             &src->apply_actions);
@@ -28914,6 +28952,34 @@ of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_disable_split_horizon_check
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_disable_split_horizon_check.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_disable_split_horizon_check_t *
+of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_disable_split_horizon_check_t *src)
+{
+    of_instruction_id_bsn_disable_split_horizon_check_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_disable_split_horizon_check_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_disable_split_horizon_check_experimenter_get(src, &val32);
+    of_instruction_id_bsn_disable_split_horizon_check_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_disable_split_horizon_check_subtype_get(src, &val32);
+    of_instruction_id_bsn_disable_split_horizon_check_subtype_set(dst, val32);
 
     return dst;
 }
@@ -39722,6 +39788,19 @@ of_instruction_bsn_dhcp_offload_dup(
     return NULL;
 }
 
+of_instruction_bsn_disable_split_horizon_check_t *
+of_instruction_bsn_disable_split_horizon_check_dup(
+    of_instruction_bsn_disable_split_horizon_check_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_instruction_bsn_disable_src_mac_check_t *
 of_instruction_bsn_disable_src_mac_check_dup(
     of_instruction_bsn_disable_src_mac_check_t *src)
@@ -39878,6 +39957,19 @@ of_instruction_id_bsn_dhcp_offload_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_disable_split_horizon_check_t *
+of_instruction_id_bsn_disable_split_horizon_check_dup(
+    of_instruction_id_bsn_disable_split_horizon_check_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
