@@ -6558,6 +6558,11 @@ fields['of13.table_feature_prop_experimenter.length'] = ProtoField.uint16("of13.
 fields['of13.table_feature_prop_experimenter.experimenter'] = ProtoField.uint32("of13.table_feature_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
 fields['of13.table_feature_prop_experimenter.subtype'] = ProtoField.uint32("of13.table_feature_prop_experimenter.subtype", "subtype", base.DEC, nil)
 fields['of13.table_feature_prop_experimenter.experimenter_data'] = ProtoField.bytes("of13.table_feature_prop_experimenter.experimenter_data", "experimenter_data")
+fields['of13.table_feature_prop_experimenter_miss.type'] = ProtoField.uint16("of13.table_feature_prop_experimenter_miss.type", "type", base.DEC, nil)
+fields['of13.table_feature_prop_experimenter_miss.length'] = ProtoField.uint16("of13.table_feature_prop_experimenter_miss.length", "length", base.DEC, nil)
+fields['of13.table_feature_prop_experimenter_miss.experimenter'] = ProtoField.uint32("of13.table_feature_prop_experimenter_miss.experimenter", "experimenter", base.DEC, nil)
+fields['of13.table_feature_prop_experimenter_miss.subtype'] = ProtoField.uint32("of13.table_feature_prop_experimenter_miss.subtype", "subtype", base.DEC, nil)
+fields['of13.table_feature_prop_experimenter_miss.experimenter_data'] = ProtoField.bytes("of13.table_feature_prop_experimenter_miss.experimenter_data", "experimenter_data")
 fields['of13.table_feature_prop_instructions.type'] = ProtoField.uint16("of13.table_feature_prop_instructions.type", "type", base.DEC, nil)
 fields['of13.table_feature_prop_instructions.length'] = ProtoField.uint16("of13.table_feature_prop_instructions.length", "length", base.DEC, nil)
 fields['of13.table_feature_prop_instructions.instruction_ids'] = ProtoField.bytes("of13.table_feature_prop_instructions.instruction_ids", "instruction_ids")
@@ -11475,6 +11480,11 @@ p_of.fields = {
     fields['of13.table_feature_prop_experimenter.experimenter'],
     fields['of13.table_feature_prop_experimenter.subtype'],
     fields['of13.table_feature_prop_experimenter.experimenter_data'],
+    fields['of13.table_feature_prop_experimenter_miss.type'],
+    fields['of13.table_feature_prop_experimenter_miss.length'],
+    fields['of13.table_feature_prop_experimenter_miss.experimenter'],
+    fields['of13.table_feature_prop_experimenter_miss.subtype'],
+    fields['of13.table_feature_prop_experimenter_miss.experimenter_data'],
     fields['of13.table_feature_prop_instructions.type'],
     fields['of13.table_feature_prop_instructions.length'],
     fields['of13.table_feature_prop_instructions.instruction_ids'],
@@ -22841,7 +22851,22 @@ function dissect_of_table_feature_prop_experimenter_v4(reader, subtree)
     read_of_octets_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter.experimenter_data')
     return 'of_table_feature_prop_experimenter'
 end
-of_table_feature_prop_v4_dissectors[65535] = dissect_of_table_feature_prop_experimenter_v4
+of_table_feature_prop_v4_dissectors[65534] = dissect_of_table_feature_prop_experimenter_v4
+
+-- child class of_table_feature_prop_experimenter_miss
+-- Child of of_table_feature_prop
+function dissect_of_table_feature_prop_experimenter_miss_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter_miss.type')
+    read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter_miss.length')
+    read_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter_miss.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter_miss.subtype')
+    read_of_octets_t(reader, 4, subtree, 'of13.table_feature_prop_experimenter_miss.experimenter_data')
+    return 'of_table_feature_prop_experimenter_miss'
+end
+of_table_feature_prop_v4_dissectors[65535] = dissect_of_table_feature_prop_experimenter_miss_v4
 
 -- child class of_table_feature_prop_instructions
 -- Child of of_table_feature_prop

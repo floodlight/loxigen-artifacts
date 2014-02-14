@@ -25043,6 +25043,33 @@ of_table_feature_prop_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 }
 
 int
+of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_miss_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_table_feature_prop_experimenter_miss\n");
+
+    of_table_feature_prop_experimenter_miss_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_table_feature_prop_experimenter_miss_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_table_feature_prop_experimenter_miss_experimenter_data_get(obj, &octets);
+    out += writer(cookie, "  experimenter_data (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_table_feature_prop_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_table_feature_prop_header_t *obj)
 {
     int out = 0;
@@ -26557,6 +26584,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_table_stats_entry_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -27017,6 +27045,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     of_queue_prop_min_rate_OF_VERSION_1_1_dump,
     of_queue_stats_entry_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -27513,6 +27542,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_table_stats_entry_OF_VERSION_1_2_dump,
     unknown_dump,
     unknown_dump,
@@ -27979,6 +28009,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_table_feature_prop_apply_setfield_OF_VERSION_1_3_dump,
     of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_dump,
     of_table_feature_prop_experimenter_OF_VERSION_1_3_dump,
+    of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dump,
     of_table_feature_prop_header_OF_VERSION_1_3_dump,
     of_table_feature_prop_instructions_OF_VERSION_1_3_dump,
     of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dump,

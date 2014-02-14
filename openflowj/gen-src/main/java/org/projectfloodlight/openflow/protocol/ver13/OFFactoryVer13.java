@@ -1148,6 +1148,10 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFTableFeaturePropExperimenterVer13.Builder();
     }
 
+    public OFTableFeaturePropExperimenterMiss.Builder buildTableFeaturePropExperimenterMiss() {
+        return new OFTableFeaturePropExperimenterMissVer13.Builder();
+    }
+
     public OFTableFeaturePropInstructions.Builder buildTableFeaturePropInstructions() {
         return new OFTableFeaturePropInstructionsVer13.Builder();
     }

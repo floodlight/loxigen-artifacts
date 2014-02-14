@@ -55,9 +55,12 @@ abstract class OFTableFeaturePropVer13 {
                case (short) 0xf:
                    // discriminator value 0xf=0xf for class OFTableFeaturePropApplySetfieldMissVer13
                    return OFTableFeaturePropApplySetfieldMissVer13.READER.readFrom(bb);
-               case (short) 0xffff:
-                   // discriminator value 0xffff=0xffff for class OFTableFeaturePropExperimenterVer13
+               case (short) 0xfffe:
+                   // discriminator value 0xfffe=0xfffe for class OFTableFeaturePropExperimenterVer13
                    return OFTableFeaturePropExperimenterVer13.READER.readFrom(bb);
+               case (short) 0xffff:
+                   // discriminator value 0xffff=0xffff for class OFTableFeaturePropExperimenterMissVer13
+                   return OFTableFeaturePropExperimenterMissVer13.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFTableFeaturePropInstructionsVer13
                    return OFTableFeaturePropInstructionsVer13.READER.readFrom(bb);

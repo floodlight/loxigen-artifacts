@@ -61,7 +61,7 @@ class OFTableFeaturePropExperimenterVer13 implements OFTableFeaturePropExperimen
     // Accessors for OF message fields
     @Override
     public int getType() {
-        return 0xffff;
+        return 0xfffe;
     }
 
     @Override
@@ -107,7 +107,7 @@ class OFTableFeaturePropExperimenterVer13 implements OFTableFeaturePropExperimen
 
     @Override
     public int getType() {
-        return 0xffff;
+        return 0xfffe;
     }
 
     @Override
@@ -179,7 +179,7 @@ class OFTableFeaturePropExperimenterVer13 implements OFTableFeaturePropExperimen
 
     @Override
     public int getType() {
-        return 0xffff;
+        return 0xfffe;
     }
 
     @Override
@@ -245,10 +245,10 @@ class OFTableFeaturePropExperimenterVer13 implements OFTableFeaturePropExperimen
         @Override
         public OFTableFeaturePropExperimenter readFrom(ChannelBuffer bb) throws OFParseError {
             int start = bb.readerIndex();
-            // fixed value property type == 0xffff
+            // fixed value property type == 0xfffe
             short type = bb.readShort();
-            if(type != (short) 0xffff)
-                throw new OFParseError("Wrong type: Expected=0xffff(0xffff), got="+type);
+            if(type != (short) 0xfffe)
+                throw new OFParseError("Wrong type: Expected=0xfffe(0xfffe), got="+type);
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
                 throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
@@ -283,8 +283,8 @@ class OFTableFeaturePropExperimenterVer13 implements OFTableFeaturePropExperimen
         private static final long serialVersionUID = 1L;
         @Override
         public void funnel(OFTableFeaturePropExperimenterVer13 message, PrimitiveSink sink) {
-            // fixed value property type = 0xffff
-            sink.putShort((short) 0xffff);
+            // fixed value property type = 0xfffe
+            sink.putShort((short) 0xfffe);
             // FIXME: skip funnel of length
             sink.putLong(message.experimenter);
             sink.putLong(message.subtype);
@@ -302,8 +302,8 @@ class OFTableFeaturePropExperimenterVer13 implements OFTableFeaturePropExperimen
         @Override
         public void write(ChannelBuffer bb, OFTableFeaturePropExperimenterVer13 message) {
             int startIndex = bb.writerIndex();
-            // fixed value property type = 0xffff
-            bb.writeShort((short) 0xffff);
+            // fixed value property type = 0xfffe
+            bb.writeShort((short) 0xfffe);
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();
             bb.writeShort(U16.t(0));

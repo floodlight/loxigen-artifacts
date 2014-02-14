@@ -428,6 +428,7 @@ const char *const of_object_id_str[] = {
     "of_table_feature_prop_apply_setfield",
     "of_table_feature_prop_apply_setfield_miss",
     "of_table_feature_prop_experimenter",
+    "of_table_feature_prop_experimenter_miss",
     "of_table_feature_prop_header",
     "of_table_feature_prop_instructions",
     "of_table_feature_prop_instructions_miss",

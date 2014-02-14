@@ -7764,6 +7764,25 @@ typedef struct of_table_feature_prop_apply_setfield_miss_s of_table_feature_prop
 typedef struct of_table_feature_prop_experimenter_s of_table_feature_prop_experimenter_t;
 
 /**
+ * Structure for of_table_feature_prop_experimenter_miss object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_table_feature_prop_experimenter_miss_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_table_feature_prop_experimenter_miss_uint32_get_f and _set_f.
+ *
+ * @param experimenter_data_get/set ( OF_1_3).
+ *   Accessors for experimenter_data, a variable of type of_octets.  Functions
+ *   are of type of_table_feature_prop_experimenter_miss_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_table_feature_prop_experimenter_miss_s of_table_feature_prop_experimenter_miss_t;
+
+/**
  * Structure for of_table_feature_prop_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

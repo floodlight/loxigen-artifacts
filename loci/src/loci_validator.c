@@ -600,6 +600,7 @@ static inline int of_table_feature_prop_match_OF_VERSION_1_3_validate(uint8_t *b
 static inline int of_table_feature_prop_instructions_miss_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_table_feature_prop_instructions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_table_feature_prop_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_table_feature_prop_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_table_feature_prop_apply_setfield_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8572,6 +8573,11 @@ of_list_table_feature_prop_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS:
+            if (of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_TABLE_FEATURE_PROP_WRITE_ACTIONS:
             if (of_table_feature_prop_write_actions_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -9696,6 +9702,17 @@ of_table_feature_prop_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
         VALIDATOR_LOG("Class of_table_feature_prop_header.  Len %d too small, < %d", len, 4);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_table_feature_prop_experimenter_miss.  Len %d too small, < %d", len, 12);
         return -1;
     }
 

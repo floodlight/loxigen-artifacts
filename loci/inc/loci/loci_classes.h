@@ -428,6 +428,7 @@ typedef of_object_t of_table_feature_prop_apply_actions_miss_t;
 typedef of_object_t of_table_feature_prop_apply_setfield_t;
 typedef of_object_t of_table_feature_prop_apply_setfield_miss_t;
 typedef of_object_t of_table_feature_prop_experimenter_t;
+typedef of_object_t of_table_feature_prop_experimenter_miss_t;
 typedef of_object_t of_table_feature_prop_header_t;
 typedef of_object_t of_table_feature_prop_instructions_t;
 typedef of_object_t of_table_feature_prop_instructions_miss_t;
@@ -2945,6 +2946,11 @@ extern of_table_feature_prop_experimenter_t *
     of_table_feature_prop_experimenter_new(of_version_t version);
 extern void of_table_feature_prop_experimenter_init(
     of_table_feature_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_feature_prop_experimenter_miss_t *
+    of_table_feature_prop_experimenter_miss_new(of_version_t version);
+extern void of_table_feature_prop_experimenter_miss_init(
+    of_table_feature_prop_experimenter_miss_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_feature_prop_header_t *
     of_table_feature_prop_header_new(of_version_t version);
@@ -7829,6 +7835,17 @@ of_table_feature_prop_apply_setfield_miss_delete(of_table_feature_prop_apply_set
  */
 static inline void
 of_table_feature_prop_experimenter_delete(of_table_feature_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_feature_prop_experimenter_miss_t
+ * @param obj An instance of type of_table_feature_prop_experimenter_miss_t
+ *
+ * \ingroup of_table_feature_prop_experimenter_miss
+ */
+static inline void
+of_table_feature_prop_experimenter_miss_delete(of_table_feature_prop_experimenter_miss_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17826,6 +17843,29 @@ extern void of_table_feature_prop_experimenter_experimenter_data_get(
     of_table_feature_prop_experimenter_t *obj,
     of_octets_t *experimenter_data);
 
+/* Unified accessor functions for of_table_feature_prop_experimenter_miss */
+
+extern void of_table_feature_prop_experimenter_miss_experimenter_set(
+    of_table_feature_prop_experimenter_miss_t *obj,
+    uint32_t experimenter);
+extern void of_table_feature_prop_experimenter_miss_experimenter_get(
+    of_table_feature_prop_experimenter_miss_t *obj,
+    uint32_t *experimenter);
+
+extern void of_table_feature_prop_experimenter_miss_subtype_set(
+    of_table_feature_prop_experimenter_miss_t *obj,
+    uint32_t subtype);
+extern void of_table_feature_prop_experimenter_miss_subtype_get(
+    of_table_feature_prop_experimenter_miss_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_table_feature_prop_experimenter_miss_experimenter_data_set(
+    of_table_feature_prop_experimenter_miss_t *obj,
+    of_octets_t *experimenter_data);
+extern void of_table_feature_prop_experimenter_miss_experimenter_data_get(
+    of_table_feature_prop_experimenter_miss_t *obj,
+    of_octets_t *experimenter_data);
+
 /* Unified accessor functions for of_table_feature_prop_header */
 
 /* Unified accessor functions for of_table_feature_prop_instructions */
@@ -19062,6 +19102,7 @@ union of_table_feature_prop_u {
     of_table_feature_prop_apply_setfield_t apply_setfield;
     of_table_feature_prop_apply_setfield_miss_t apply_setfield_miss;
     of_table_feature_prop_experimenter_t experimenter;
+    of_table_feature_prop_experimenter_miss_t experimenter_miss;
     of_table_feature_prop_instructions_t instructions;
     of_table_feature_prop_instructions_miss_t instructions_miss;
     of_table_feature_prop_match_t match;

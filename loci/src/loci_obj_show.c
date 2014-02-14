@@ -23364,6 +23364,31 @@ of_table_feature_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
+of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_miss_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_octets_t octets;
+
+    of_table_feature_prop_experimenter_miss_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_table_feature_prop_experimenter_miss_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_table_feature_prop_experimenter_miss_experimenter_data_get(obj, &octets);
+    out += writer(cookie, "experimenter_data=");
+    out += LOCI_SHOW_octets_experimenter_data(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_table_feature_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_header_t *obj)
 {
     int out = 0;
@@ -24779,6 +24804,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_table_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -25239,6 +25265,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_queue_prop_min_rate_OF_VERSION_1_1_show,
     of_queue_stats_entry_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -25735,6 +25762,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_table_stats_entry_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -26201,6 +26229,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_table_feature_prop_apply_setfield_OF_VERSION_1_3_show,
     of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_show,
     of_table_feature_prop_experimenter_OF_VERSION_1_3_show,
+    of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_show,
     of_table_feature_prop_header_OF_VERSION_1_3_show,
     of_table_feature_prop_instructions_OF_VERSION_1_3_show,
     of_table_feature_prop_instructions_miss_OF_VERSION_1_3_show,

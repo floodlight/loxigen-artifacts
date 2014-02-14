@@ -35,7 +35,7 @@ of_table_feature_prop_experimenter_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0xffff); /* type */
+        *(uint16_t *)(buf + 0) = htobe16(0xfffe); /* type */
         break;
     default:
         UNREACHABLE();

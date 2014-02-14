@@ -32404,6 +32404,44 @@ test_of_table_feature_prop_experimenter_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_table_feature_prop_experimenter_miss_OF_VERSION_1_3(void)
+{
+    of_table_feature_prop_experimenter_miss_t *obj;
+    obj = of_table_feature_prop_experimenter_miss_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_table_feature_prop_experimenter_miss_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_table_feature_prop_header_OF_VERSION_1_3(void)
 {
     of_table_feature_prop_header_t *obj;
@@ -35343,6 +35381,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_table_feature_prop_apply_setfield_OF_VERSION_1_3);
     RUN_TEST(of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3);
     RUN_TEST(of_table_feature_prop_experimenter_OF_VERSION_1_3);
+    RUN_TEST(of_table_feature_prop_experimenter_miss_OF_VERSION_1_3);
     RUN_TEST(of_table_feature_prop_header_OF_VERSION_1_3);
     RUN_TEST(of_table_feature_prop_instructions_OF_VERSION_1_3);
     RUN_TEST(of_table_feature_prop_instructions_miss_OF_VERSION_1_3);

@@ -948,6 +948,7 @@ int of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3_show(loci_writer_f w
 int of_table_feature_prop_apply_setfield_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_setfield_t *obj);
 int of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_setfield_miss_t *obj);
 int of_table_feature_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_t *obj);
+int of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_miss_t *obj);
 int of_table_feature_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_header_t *obj);
 int of_table_feature_prop_instructions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_instructions_t *obj);
 int of_table_feature_prop_instructions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_instructions_miss_t *obj);

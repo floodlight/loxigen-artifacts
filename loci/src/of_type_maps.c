@@ -177,8 +177,11 @@ of_table_feature_prop_to_object_id(int table_feature_prop, of_version_t version)
     if (!OF_VERSION_OKAY(version)) {
         return OF_OBJECT_INVALID;
     }
-    if (table_feature_prop == OF_EXPERIMENTER_TYPE) {
+    if (table_feature_prop == 0xfffe) {
         return OF_TABLE_FEATURE_PROP_EXPERIMENTER;
+    }
+    if (table_feature_prop == 0xffff) {
+        return OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS;
     }
     if (table_feature_prop < 0 || table_feature_prop >= OF_TABLE_FEATURE_PROP_ITEM_COUNT) {
         return OF_OBJECT_INVALID;
@@ -3037,60 +3040,61 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 417: of_table_feature_prop_apply_setfield */
     -1,   /* 418: of_table_feature_prop_apply_setfield_miss */
     -1,   /* 419: of_table_feature_prop_experimenter */
-    -1,   /* 420: of_table_feature_prop_header */
-    -1,   /* 421: of_table_feature_prop_instructions */
-    -1,   /* 422: of_table_feature_prop_instructions_miss */
-    -1,   /* 423: of_table_feature_prop_match */
-    -1,   /* 424: of_table_feature_prop_next_tables */
-    -1,   /* 425: of_table_feature_prop_next_tables_miss */
-    -1,   /* 426: of_table_feature_prop_wildcards */
-    -1,   /* 427: of_table_feature_prop_write_actions */
-    -1,   /* 428: of_table_feature_prop_write_actions_miss */
-    -1,   /* 429: of_table_feature_prop_write_setfield */
-    -1,   /* 430: of_table_feature_prop_write_setfield_miss */
-    -1,   /* 431: of_table_features */
-    64,   /* 432: of_table_stats_entry */
-    -1,   /* 433: of_uint32 */
-    -1,   /* 434: of_uint64 */
-    -1,   /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    -1,   /* 437: of_list_action_id */
-    -1,   /* 438: of_list_bsn_controller_connection */
-    -1,   /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    -1,   /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    -1,   /* 441: of_list_bsn_gentable_desc_stats_entry */
-    -1,   /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    -1,   /* 443: of_list_bsn_gentable_entry_stats_entry */
-    -1,   /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    -1,   /* 446: of_list_bsn_lacp_stats_entry */
-    -1,   /* 447: of_list_bsn_port_counter_stats_entry */
-    -1,   /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    -1,   /* 449: of_list_bsn_table_checksum_stats_entry */
-    -1,   /* 450: of_list_bsn_tlv */
-    -1,   /* 451: of_list_bsn_vlan_counter_stats_entry */
-    -1,   /* 452: of_list_bucket */
-    -1,   /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    -1,   /* 455: of_list_group_desc_stats_entry */
-    -1,   /* 456: of_list_group_stats_entry */
-    -1,   /* 457: of_list_hello_elem */
-    -1,   /* 458: of_list_instruction */
-    -1,   /* 459: of_list_meter_band */
-    -1,   /* 460: of_list_meter_band_stats */
-    -1,   /* 461: of_list_meter_stats */
-    -1,   /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    -1,   /* 468: of_list_table_feature_prop */
-    -1,   /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    -1,   /* 471: of_list_uint32 */
-    -1,   /* 472: of_list_uint64 */
-    -1    /* 473: of_list_uint8 */
+    -1,   /* 420: of_table_feature_prop_experimenter_miss */
+    -1,   /* 421: of_table_feature_prop_header */
+    -1,   /* 422: of_table_feature_prop_instructions */
+    -1,   /* 423: of_table_feature_prop_instructions_miss */
+    -1,   /* 424: of_table_feature_prop_match */
+    -1,   /* 425: of_table_feature_prop_next_tables */
+    -1,   /* 426: of_table_feature_prop_next_tables_miss */
+    -1,   /* 427: of_table_feature_prop_wildcards */
+    -1,   /* 428: of_table_feature_prop_write_actions */
+    -1,   /* 429: of_table_feature_prop_write_actions_miss */
+    -1,   /* 430: of_table_feature_prop_write_setfield */
+    -1,   /* 431: of_table_feature_prop_write_setfield_miss */
+    -1,   /* 432: of_table_features */
+    64,   /* 433: of_table_stats_entry */
+    -1,   /* 434: of_uint32 */
+    -1,   /* 435: of_uint64 */
+    -1,   /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    -1,   /* 438: of_list_action_id */
+    -1,   /* 439: of_list_bsn_controller_connection */
+    -1,   /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    -1,   /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    -1,   /* 442: of_list_bsn_gentable_desc_stats_entry */
+    -1,   /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    -1,   /* 444: of_list_bsn_gentable_entry_stats_entry */
+    -1,   /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    -1,   /* 447: of_list_bsn_lacp_stats_entry */
+    -1,   /* 448: of_list_bsn_port_counter_stats_entry */
+    -1,   /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    -1,   /* 450: of_list_bsn_table_checksum_stats_entry */
+    -1,   /* 451: of_list_bsn_tlv */
+    -1,   /* 452: of_list_bsn_vlan_counter_stats_entry */
+    -1,   /* 453: of_list_bucket */
+    -1,   /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    -1,   /* 456: of_list_group_desc_stats_entry */
+    -1,   /* 457: of_list_group_stats_entry */
+    -1,   /* 458: of_list_hello_elem */
+    -1,   /* 459: of_list_instruction */
+    -1,   /* 460: of_list_meter_band */
+    -1,   /* 461: of_list_meter_band_stats */
+    -1,   /* 462: of_list_meter_stats */
+    -1,   /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    -1,   /* 469: of_list_table_feature_prop */
+    -1,   /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    -1,   /* 472: of_list_uint32 */
+    -1,   /* 473: of_list_uint64 */
+    -1    /* 474: of_list_uint8 */
 };
 
 static const int
@@ -3515,60 +3519,61 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     -1,   /* 417: of_table_feature_prop_apply_setfield */
     -1,   /* 418: of_table_feature_prop_apply_setfield_miss */
     -1,   /* 419: of_table_feature_prop_experimenter */
-    -1,   /* 420: of_table_feature_prop_header */
-    -1,   /* 421: of_table_feature_prop_instructions */
-    -1,   /* 422: of_table_feature_prop_instructions_miss */
-    -1,   /* 423: of_table_feature_prop_match */
-    -1,   /* 424: of_table_feature_prop_next_tables */
-    -1,   /* 425: of_table_feature_prop_next_tables_miss */
-    -1,   /* 426: of_table_feature_prop_wildcards */
-    -1,   /* 427: of_table_feature_prop_write_actions */
-    -1,   /* 428: of_table_feature_prop_write_actions_miss */
-    -1,   /* 429: of_table_feature_prop_write_setfield */
-    -1,   /* 430: of_table_feature_prop_write_setfield_miss */
-    -1,   /* 431: of_table_features */
-    88,   /* 432: of_table_stats_entry */
-    -1,   /* 433: of_uint32 */
-    -1,   /* 434: of_uint64 */
-    -1,   /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    -1,   /* 437: of_list_action_id */
-    -1,   /* 438: of_list_bsn_controller_connection */
-    -1,   /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    -1,   /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    -1,   /* 441: of_list_bsn_gentable_desc_stats_entry */
-    -1,   /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    -1,   /* 443: of_list_bsn_gentable_entry_stats_entry */
-    -1,   /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    -1,   /* 446: of_list_bsn_lacp_stats_entry */
-    -1,   /* 447: of_list_bsn_port_counter_stats_entry */
-    -1,   /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    -1,   /* 449: of_list_bsn_table_checksum_stats_entry */
-    -1,   /* 450: of_list_bsn_tlv */
-    -1,   /* 451: of_list_bsn_vlan_counter_stats_entry */
-    0,    /* 452: of_list_bucket */
-    0,    /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    0,    /* 455: of_list_group_desc_stats_entry */
-    0,    /* 456: of_list_group_stats_entry */
-    -1,   /* 457: of_list_hello_elem */
-    0,    /* 458: of_list_instruction */
-    -1,   /* 459: of_list_meter_band */
-    -1,   /* 460: of_list_meter_band_stats */
-    -1,   /* 461: of_list_meter_stats */
-    -1,   /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    -1,   /* 468: of_list_table_feature_prop */
-    -1,   /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    -1,   /* 471: of_list_uint32 */
-    -1,   /* 472: of_list_uint64 */
-    -1    /* 473: of_list_uint8 */
+    -1,   /* 420: of_table_feature_prop_experimenter_miss */
+    -1,   /* 421: of_table_feature_prop_header */
+    -1,   /* 422: of_table_feature_prop_instructions */
+    -1,   /* 423: of_table_feature_prop_instructions_miss */
+    -1,   /* 424: of_table_feature_prop_match */
+    -1,   /* 425: of_table_feature_prop_next_tables */
+    -1,   /* 426: of_table_feature_prop_next_tables_miss */
+    -1,   /* 427: of_table_feature_prop_wildcards */
+    -1,   /* 428: of_table_feature_prop_write_actions */
+    -1,   /* 429: of_table_feature_prop_write_actions_miss */
+    -1,   /* 430: of_table_feature_prop_write_setfield */
+    -1,   /* 431: of_table_feature_prop_write_setfield_miss */
+    -1,   /* 432: of_table_features */
+    88,   /* 433: of_table_stats_entry */
+    -1,   /* 434: of_uint32 */
+    -1,   /* 435: of_uint64 */
+    -1,   /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    -1,   /* 438: of_list_action_id */
+    -1,   /* 439: of_list_bsn_controller_connection */
+    -1,   /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    -1,   /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    -1,   /* 442: of_list_bsn_gentable_desc_stats_entry */
+    -1,   /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    -1,   /* 444: of_list_bsn_gentable_entry_stats_entry */
+    -1,   /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    -1,   /* 447: of_list_bsn_lacp_stats_entry */
+    -1,   /* 448: of_list_bsn_port_counter_stats_entry */
+    -1,   /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    -1,   /* 450: of_list_bsn_table_checksum_stats_entry */
+    -1,   /* 451: of_list_bsn_tlv */
+    -1,   /* 452: of_list_bsn_vlan_counter_stats_entry */
+    0,    /* 453: of_list_bucket */
+    0,    /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    0,    /* 456: of_list_group_desc_stats_entry */
+    0,    /* 457: of_list_group_stats_entry */
+    -1,   /* 458: of_list_hello_elem */
+    0,    /* 459: of_list_instruction */
+    -1,   /* 460: of_list_meter_band */
+    -1,   /* 461: of_list_meter_band_stats */
+    -1,   /* 462: of_list_meter_stats */
+    -1,   /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    -1,   /* 469: of_list_table_feature_prop */
+    -1,   /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    -1,   /* 472: of_list_uint32 */
+    -1,   /* 473: of_list_uint64 */
+    -1    /* 474: of_list_uint8 */
 };
 
 static const int
@@ -3993,60 +3998,61 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     -1,   /* 417: of_table_feature_prop_apply_setfield */
     -1,   /* 418: of_table_feature_prop_apply_setfield_miss */
     -1,   /* 419: of_table_feature_prop_experimenter */
-    -1,   /* 420: of_table_feature_prop_header */
-    -1,   /* 421: of_table_feature_prop_instructions */
-    -1,   /* 422: of_table_feature_prop_instructions_miss */
-    -1,   /* 423: of_table_feature_prop_match */
-    -1,   /* 424: of_table_feature_prop_next_tables */
-    -1,   /* 425: of_table_feature_prop_next_tables_miss */
-    -1,   /* 426: of_table_feature_prop_wildcards */
-    -1,   /* 427: of_table_feature_prop_write_actions */
-    -1,   /* 428: of_table_feature_prop_write_actions_miss */
-    -1,   /* 429: of_table_feature_prop_write_setfield */
-    -1,   /* 430: of_table_feature_prop_write_setfield_miss */
-    -1,   /* 431: of_table_features */
-    128,  /* 432: of_table_stats_entry */
-    -1,   /* 433: of_uint32 */
-    -1,   /* 434: of_uint64 */
-    -1,   /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    -1,   /* 437: of_list_action_id */
-    -1,   /* 438: of_list_bsn_controller_connection */
-    -1,   /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    -1,   /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    -1,   /* 441: of_list_bsn_gentable_desc_stats_entry */
-    -1,   /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    -1,   /* 443: of_list_bsn_gentable_entry_stats_entry */
-    -1,   /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    -1,   /* 446: of_list_bsn_lacp_stats_entry */
-    -1,   /* 447: of_list_bsn_port_counter_stats_entry */
-    -1,   /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    -1,   /* 449: of_list_bsn_table_checksum_stats_entry */
-    -1,   /* 450: of_list_bsn_tlv */
-    -1,   /* 451: of_list_bsn_vlan_counter_stats_entry */
-    0,    /* 452: of_list_bucket */
-    0,    /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    0,    /* 455: of_list_group_desc_stats_entry */
-    0,    /* 456: of_list_group_stats_entry */
-    -1,   /* 457: of_list_hello_elem */
-    0,    /* 458: of_list_instruction */
-    -1,   /* 459: of_list_meter_band */
-    -1,   /* 460: of_list_meter_band_stats */
-    -1,   /* 461: of_list_meter_stats */
-    0,    /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    -1,   /* 468: of_list_table_feature_prop */
-    -1,   /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    -1,   /* 471: of_list_uint32 */
-    -1,   /* 472: of_list_uint64 */
-    -1    /* 473: of_list_uint8 */
+    -1,   /* 420: of_table_feature_prop_experimenter_miss */
+    -1,   /* 421: of_table_feature_prop_header */
+    -1,   /* 422: of_table_feature_prop_instructions */
+    -1,   /* 423: of_table_feature_prop_instructions_miss */
+    -1,   /* 424: of_table_feature_prop_match */
+    -1,   /* 425: of_table_feature_prop_next_tables */
+    -1,   /* 426: of_table_feature_prop_next_tables_miss */
+    -1,   /* 427: of_table_feature_prop_wildcards */
+    -1,   /* 428: of_table_feature_prop_write_actions */
+    -1,   /* 429: of_table_feature_prop_write_actions_miss */
+    -1,   /* 430: of_table_feature_prop_write_setfield */
+    -1,   /* 431: of_table_feature_prop_write_setfield_miss */
+    -1,   /* 432: of_table_features */
+    128,  /* 433: of_table_stats_entry */
+    -1,   /* 434: of_uint32 */
+    -1,   /* 435: of_uint64 */
+    -1,   /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    -1,   /* 438: of_list_action_id */
+    -1,   /* 439: of_list_bsn_controller_connection */
+    -1,   /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    -1,   /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    -1,   /* 442: of_list_bsn_gentable_desc_stats_entry */
+    -1,   /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    -1,   /* 444: of_list_bsn_gentable_entry_stats_entry */
+    -1,   /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    -1,   /* 447: of_list_bsn_lacp_stats_entry */
+    -1,   /* 448: of_list_bsn_port_counter_stats_entry */
+    -1,   /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    -1,   /* 450: of_list_bsn_table_checksum_stats_entry */
+    -1,   /* 451: of_list_bsn_tlv */
+    -1,   /* 452: of_list_bsn_vlan_counter_stats_entry */
+    0,    /* 453: of_list_bucket */
+    0,    /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    0,    /* 456: of_list_group_desc_stats_entry */
+    0,    /* 457: of_list_group_stats_entry */
+    -1,   /* 458: of_list_hello_elem */
+    0,    /* 459: of_list_instruction */
+    -1,   /* 460: of_list_meter_band */
+    -1,   /* 461: of_list_meter_band_stats */
+    -1,   /* 462: of_list_meter_stats */
+    0,    /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    -1,   /* 469: of_list_table_feature_prop */
+    -1,   /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    -1,   /* 472: of_list_uint32 */
+    -1,   /* 473: of_list_uint64 */
+    -1    /* 474: of_list_uint8 */
 };
 
 static const int
@@ -4471,60 +4477,61 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     4,    /* 417: of_table_feature_prop_apply_setfield */
     4,    /* 418: of_table_feature_prop_apply_setfield_miss */
     12,   /* 419: of_table_feature_prop_experimenter */
-    4,    /* 420: of_table_feature_prop_header */
-    4,    /* 421: of_table_feature_prop_instructions */
-    4,    /* 422: of_table_feature_prop_instructions_miss */
-    4,    /* 423: of_table_feature_prop_match */
-    4,    /* 424: of_table_feature_prop_next_tables */
-    4,    /* 425: of_table_feature_prop_next_tables_miss */
-    4,    /* 426: of_table_feature_prop_wildcards */
-    4,    /* 427: of_table_feature_prop_write_actions */
-    4,    /* 428: of_table_feature_prop_write_actions_miss */
-    4,    /* 429: of_table_feature_prop_write_setfield */
-    4,    /* 430: of_table_feature_prop_write_setfield_miss */
-    64,   /* 431: of_table_features */
-    24,   /* 432: of_table_stats_entry */
-    4,    /* 433: of_uint32 */
-    8,    /* 434: of_uint64 */
-    1,    /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    0,    /* 437: of_list_action_id */
-    0,    /* 438: of_list_bsn_controller_connection */
-    0,    /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    0,    /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    0,    /* 441: of_list_bsn_gentable_desc_stats_entry */
-    0,    /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    0,    /* 443: of_list_bsn_gentable_entry_stats_entry */
-    0,    /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    0,    /* 446: of_list_bsn_lacp_stats_entry */
-    0,    /* 447: of_list_bsn_port_counter_stats_entry */
-    0,    /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    0,    /* 449: of_list_bsn_table_checksum_stats_entry */
-    0,    /* 450: of_list_bsn_tlv */
-    0,    /* 451: of_list_bsn_vlan_counter_stats_entry */
-    0,    /* 452: of_list_bucket */
-    0,    /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    0,    /* 455: of_list_group_desc_stats_entry */
-    0,    /* 456: of_list_group_stats_entry */
-    0,    /* 457: of_list_hello_elem */
-    0,    /* 458: of_list_instruction */
-    0,    /* 459: of_list_meter_band */
-    0,    /* 460: of_list_meter_band_stats */
-    0,    /* 461: of_list_meter_stats */
-    0,    /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    0,    /* 468: of_list_table_feature_prop */
-    0,    /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    0,    /* 471: of_list_uint32 */
-    0,    /* 472: of_list_uint64 */
-    0     /* 473: of_list_uint8 */
+    12,   /* 420: of_table_feature_prop_experimenter_miss */
+    4,    /* 421: of_table_feature_prop_header */
+    4,    /* 422: of_table_feature_prop_instructions */
+    4,    /* 423: of_table_feature_prop_instructions_miss */
+    4,    /* 424: of_table_feature_prop_match */
+    4,    /* 425: of_table_feature_prop_next_tables */
+    4,    /* 426: of_table_feature_prop_next_tables_miss */
+    4,    /* 427: of_table_feature_prop_wildcards */
+    4,    /* 428: of_table_feature_prop_write_actions */
+    4,    /* 429: of_table_feature_prop_write_actions_miss */
+    4,    /* 430: of_table_feature_prop_write_setfield */
+    4,    /* 431: of_table_feature_prop_write_setfield_miss */
+    64,   /* 432: of_table_features */
+    24,   /* 433: of_table_stats_entry */
+    4,    /* 434: of_uint32 */
+    8,    /* 435: of_uint64 */
+    1,    /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    0,    /* 438: of_list_action_id */
+    0,    /* 439: of_list_bsn_controller_connection */
+    0,    /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    0,    /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    0,    /* 442: of_list_bsn_gentable_desc_stats_entry */
+    0,    /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    0,    /* 444: of_list_bsn_gentable_entry_stats_entry */
+    0,    /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    0,    /* 447: of_list_bsn_lacp_stats_entry */
+    0,    /* 448: of_list_bsn_port_counter_stats_entry */
+    0,    /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    0,    /* 450: of_list_bsn_table_checksum_stats_entry */
+    0,    /* 451: of_list_bsn_tlv */
+    0,    /* 452: of_list_bsn_vlan_counter_stats_entry */
+    0,    /* 453: of_list_bucket */
+    0,    /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    0,    /* 456: of_list_group_desc_stats_entry */
+    0,    /* 457: of_list_group_stats_entry */
+    0,    /* 458: of_list_hello_elem */
+    0,    /* 459: of_list_instruction */
+    0,    /* 460: of_list_meter_band */
+    0,    /* 461: of_list_meter_band_stats */
+    0,    /* 462: of_list_meter_stats */
+    0,    /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    0,    /* 469: of_list_table_feature_prop */
+    0,    /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    0,    /* 472: of_list_uint32 */
+    0,    /* 473: of_list_uint64 */
+    0     /* 474: of_list_uint8 */
 };
 
 /**
@@ -4966,60 +4973,61 @@ of_object_extra_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 417: of_table_feature_prop_apply_setfield */
     -1,   /* 418: of_table_feature_prop_apply_setfield_miss */
     -1,   /* 419: of_table_feature_prop_experimenter */
-    -1,   /* 420: of_table_feature_prop_header */
-    -1,   /* 421: of_table_feature_prop_instructions */
-    -1,   /* 422: of_table_feature_prop_instructions_miss */
-    -1,   /* 423: of_table_feature_prop_match */
-    -1,   /* 424: of_table_feature_prop_next_tables */
-    -1,   /* 425: of_table_feature_prop_next_tables_miss */
-    -1,   /* 426: of_table_feature_prop_wildcards */
-    -1,   /* 427: of_table_feature_prop_write_actions */
-    -1,   /* 428: of_table_feature_prop_write_actions_miss */
-    -1,   /* 429: of_table_feature_prop_write_setfield */
-    -1,   /* 430: of_table_feature_prop_write_setfield_miss */
-    -1,   /* 431: of_table_features */
-    0,    /* 432: of_table_stats_entry */
-    -1,   /* 433: of_uint32 */
-    -1,   /* 434: of_uint64 */
-    -1,   /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    -1,   /* 437: of_list_action_id */
-    -1,   /* 438: of_list_bsn_controller_connection */
-    -1,   /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    -1,   /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    -1,   /* 441: of_list_bsn_gentable_desc_stats_entry */
-    -1,   /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    -1,   /* 443: of_list_bsn_gentable_entry_stats_entry */
-    -1,   /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    -1,   /* 446: of_list_bsn_lacp_stats_entry */
-    -1,   /* 447: of_list_bsn_port_counter_stats_entry */
-    -1,   /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    -1,   /* 449: of_list_bsn_table_checksum_stats_entry */
-    -1,   /* 450: of_list_bsn_tlv */
-    -1,   /* 451: of_list_bsn_vlan_counter_stats_entry */
-    -1,   /* 452: of_list_bucket */
-    -1,   /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    -1,   /* 455: of_list_group_desc_stats_entry */
-    -1,   /* 456: of_list_group_stats_entry */
-    -1,   /* 457: of_list_hello_elem */
-    -1,   /* 458: of_list_instruction */
-    -1,   /* 459: of_list_meter_band */
-    -1,   /* 460: of_list_meter_band_stats */
-    -1,   /* 461: of_list_meter_stats */
-    -1,   /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    -1,   /* 468: of_list_table_feature_prop */
-    -1,   /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    -1,   /* 471: of_list_uint32 */
-    -1,   /* 472: of_list_uint64 */
-    -1    /* 473: of_list_uint8 */
+    -1,   /* 420: of_table_feature_prop_experimenter_miss */
+    -1,   /* 421: of_table_feature_prop_header */
+    -1,   /* 422: of_table_feature_prop_instructions */
+    -1,   /* 423: of_table_feature_prop_instructions_miss */
+    -1,   /* 424: of_table_feature_prop_match */
+    -1,   /* 425: of_table_feature_prop_next_tables */
+    -1,   /* 426: of_table_feature_prop_next_tables_miss */
+    -1,   /* 427: of_table_feature_prop_wildcards */
+    -1,   /* 428: of_table_feature_prop_write_actions */
+    -1,   /* 429: of_table_feature_prop_write_actions_miss */
+    -1,   /* 430: of_table_feature_prop_write_setfield */
+    -1,   /* 431: of_table_feature_prop_write_setfield_miss */
+    -1,   /* 432: of_table_features */
+    0,    /* 433: of_table_stats_entry */
+    -1,   /* 434: of_uint32 */
+    -1,   /* 435: of_uint64 */
+    -1,   /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    -1,   /* 438: of_list_action_id */
+    -1,   /* 439: of_list_bsn_controller_connection */
+    -1,   /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    -1,   /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    -1,   /* 442: of_list_bsn_gentable_desc_stats_entry */
+    -1,   /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    -1,   /* 444: of_list_bsn_gentable_entry_stats_entry */
+    -1,   /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    -1,   /* 447: of_list_bsn_lacp_stats_entry */
+    -1,   /* 448: of_list_bsn_port_counter_stats_entry */
+    -1,   /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    -1,   /* 450: of_list_bsn_table_checksum_stats_entry */
+    -1,   /* 451: of_list_bsn_tlv */
+    -1,   /* 452: of_list_bsn_vlan_counter_stats_entry */
+    -1,   /* 453: of_list_bucket */
+    -1,   /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    -1,   /* 456: of_list_group_desc_stats_entry */
+    -1,   /* 457: of_list_group_stats_entry */
+    -1,   /* 458: of_list_hello_elem */
+    -1,   /* 459: of_list_instruction */
+    -1,   /* 460: of_list_meter_band */
+    -1,   /* 461: of_list_meter_band_stats */
+    -1,   /* 462: of_list_meter_stats */
+    -1,   /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    -1,   /* 469: of_list_table_feature_prop */
+    -1,   /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    -1,   /* 472: of_list_uint32 */
+    -1,   /* 473: of_list_uint64 */
+    -1    /* 474: of_list_uint8 */
 };
 
 static const int
@@ -5444,60 +5452,61 @@ of_object_extra_len_v2[OF_OBJECT_COUNT] = {
     -1,   /* 417: of_table_feature_prop_apply_setfield */
     -1,   /* 418: of_table_feature_prop_apply_setfield_miss */
     -1,   /* 419: of_table_feature_prop_experimenter */
-    -1,   /* 420: of_table_feature_prop_header */
-    -1,   /* 421: of_table_feature_prop_instructions */
-    -1,   /* 422: of_table_feature_prop_instructions_miss */
-    -1,   /* 423: of_table_feature_prop_match */
-    -1,   /* 424: of_table_feature_prop_next_tables */
-    -1,   /* 425: of_table_feature_prop_next_tables_miss */
-    -1,   /* 426: of_table_feature_prop_wildcards */
-    -1,   /* 427: of_table_feature_prop_write_actions */
-    -1,   /* 428: of_table_feature_prop_write_actions_miss */
-    -1,   /* 429: of_table_feature_prop_write_setfield */
-    -1,   /* 430: of_table_feature_prop_write_setfield_miss */
-    -1,   /* 431: of_table_features */
-    0,    /* 432: of_table_stats_entry */
-    -1,   /* 433: of_uint32 */
-    -1,   /* 434: of_uint64 */
-    -1,   /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    -1,   /* 437: of_list_action_id */
-    -1,   /* 438: of_list_bsn_controller_connection */
-    -1,   /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    -1,   /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    -1,   /* 441: of_list_bsn_gentable_desc_stats_entry */
-    -1,   /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    -1,   /* 443: of_list_bsn_gentable_entry_stats_entry */
-    -1,   /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    -1,   /* 446: of_list_bsn_lacp_stats_entry */
-    -1,   /* 447: of_list_bsn_port_counter_stats_entry */
-    -1,   /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    -1,   /* 449: of_list_bsn_table_checksum_stats_entry */
-    -1,   /* 450: of_list_bsn_tlv */
-    -1,   /* 451: of_list_bsn_vlan_counter_stats_entry */
-    0,    /* 452: of_list_bucket */
-    0,    /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    0,    /* 455: of_list_group_desc_stats_entry */
-    0,    /* 456: of_list_group_stats_entry */
-    -1,   /* 457: of_list_hello_elem */
-    0,    /* 458: of_list_instruction */
-    -1,   /* 459: of_list_meter_band */
-    -1,   /* 460: of_list_meter_band_stats */
-    -1,   /* 461: of_list_meter_stats */
-    -1,   /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    -1,   /* 468: of_list_table_feature_prop */
-    -1,   /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    -1,   /* 471: of_list_uint32 */
-    -1,   /* 472: of_list_uint64 */
-    -1    /* 473: of_list_uint8 */
+    -1,   /* 420: of_table_feature_prop_experimenter_miss */
+    -1,   /* 421: of_table_feature_prop_header */
+    -1,   /* 422: of_table_feature_prop_instructions */
+    -1,   /* 423: of_table_feature_prop_instructions_miss */
+    -1,   /* 424: of_table_feature_prop_match */
+    -1,   /* 425: of_table_feature_prop_next_tables */
+    -1,   /* 426: of_table_feature_prop_next_tables_miss */
+    -1,   /* 427: of_table_feature_prop_wildcards */
+    -1,   /* 428: of_table_feature_prop_write_actions */
+    -1,   /* 429: of_table_feature_prop_write_actions_miss */
+    -1,   /* 430: of_table_feature_prop_write_setfield */
+    -1,   /* 431: of_table_feature_prop_write_setfield_miss */
+    -1,   /* 432: of_table_features */
+    0,    /* 433: of_table_stats_entry */
+    -1,   /* 434: of_uint32 */
+    -1,   /* 435: of_uint64 */
+    -1,   /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    -1,   /* 438: of_list_action_id */
+    -1,   /* 439: of_list_bsn_controller_connection */
+    -1,   /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    -1,   /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    -1,   /* 442: of_list_bsn_gentable_desc_stats_entry */
+    -1,   /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    -1,   /* 444: of_list_bsn_gentable_entry_stats_entry */
+    -1,   /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    -1,   /* 447: of_list_bsn_lacp_stats_entry */
+    -1,   /* 448: of_list_bsn_port_counter_stats_entry */
+    -1,   /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    -1,   /* 450: of_list_bsn_table_checksum_stats_entry */
+    -1,   /* 451: of_list_bsn_tlv */
+    -1,   /* 452: of_list_bsn_vlan_counter_stats_entry */
+    0,    /* 453: of_list_bucket */
+    0,    /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    0,    /* 456: of_list_group_desc_stats_entry */
+    0,    /* 457: of_list_group_stats_entry */
+    -1,   /* 458: of_list_hello_elem */
+    0,    /* 459: of_list_instruction */
+    -1,   /* 460: of_list_meter_band */
+    -1,   /* 461: of_list_meter_band_stats */
+    -1,   /* 462: of_list_meter_stats */
+    -1,   /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    -1,   /* 469: of_list_table_feature_prop */
+    -1,   /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    -1,   /* 472: of_list_uint32 */
+    -1,   /* 473: of_list_uint64 */
+    -1    /* 474: of_list_uint8 */
 };
 
 static const int
@@ -5922,60 +5931,61 @@ of_object_extra_len_v3[OF_OBJECT_COUNT] = {
     -1,   /* 417: of_table_feature_prop_apply_setfield */
     -1,   /* 418: of_table_feature_prop_apply_setfield_miss */
     -1,   /* 419: of_table_feature_prop_experimenter */
-    -1,   /* 420: of_table_feature_prop_header */
-    -1,   /* 421: of_table_feature_prop_instructions */
-    -1,   /* 422: of_table_feature_prop_instructions_miss */
-    -1,   /* 423: of_table_feature_prop_match */
-    -1,   /* 424: of_table_feature_prop_next_tables */
-    -1,   /* 425: of_table_feature_prop_next_tables_miss */
-    -1,   /* 426: of_table_feature_prop_wildcards */
-    -1,   /* 427: of_table_feature_prop_write_actions */
-    -1,   /* 428: of_table_feature_prop_write_actions_miss */
-    -1,   /* 429: of_table_feature_prop_write_setfield */
-    -1,   /* 430: of_table_feature_prop_write_setfield_miss */
-    -1,   /* 431: of_table_features */
-    0,    /* 432: of_table_stats_entry */
-    -1,   /* 433: of_uint32 */
-    -1,   /* 434: of_uint64 */
-    -1,   /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    -1,   /* 437: of_list_action_id */
-    -1,   /* 438: of_list_bsn_controller_connection */
-    -1,   /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    -1,   /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    -1,   /* 441: of_list_bsn_gentable_desc_stats_entry */
-    -1,   /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    -1,   /* 443: of_list_bsn_gentable_entry_stats_entry */
-    -1,   /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    -1,   /* 446: of_list_bsn_lacp_stats_entry */
-    -1,   /* 447: of_list_bsn_port_counter_stats_entry */
-    -1,   /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    -1,   /* 449: of_list_bsn_table_checksum_stats_entry */
-    -1,   /* 450: of_list_bsn_tlv */
-    -1,   /* 451: of_list_bsn_vlan_counter_stats_entry */
-    0,    /* 452: of_list_bucket */
-    0,    /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    0,    /* 455: of_list_group_desc_stats_entry */
-    0,    /* 456: of_list_group_stats_entry */
-    -1,   /* 457: of_list_hello_elem */
-    0,    /* 458: of_list_instruction */
-    -1,   /* 459: of_list_meter_band */
-    -1,   /* 460: of_list_meter_band_stats */
-    -1,   /* 461: of_list_meter_stats */
-    0,    /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    -1,   /* 468: of_list_table_feature_prop */
-    -1,   /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    -1,   /* 471: of_list_uint32 */
-    -1,   /* 472: of_list_uint64 */
-    -1    /* 473: of_list_uint8 */
+    -1,   /* 420: of_table_feature_prop_experimenter_miss */
+    -1,   /* 421: of_table_feature_prop_header */
+    -1,   /* 422: of_table_feature_prop_instructions */
+    -1,   /* 423: of_table_feature_prop_instructions_miss */
+    -1,   /* 424: of_table_feature_prop_match */
+    -1,   /* 425: of_table_feature_prop_next_tables */
+    -1,   /* 426: of_table_feature_prop_next_tables_miss */
+    -1,   /* 427: of_table_feature_prop_wildcards */
+    -1,   /* 428: of_table_feature_prop_write_actions */
+    -1,   /* 429: of_table_feature_prop_write_actions_miss */
+    -1,   /* 430: of_table_feature_prop_write_setfield */
+    -1,   /* 431: of_table_feature_prop_write_setfield_miss */
+    -1,   /* 432: of_table_features */
+    0,    /* 433: of_table_stats_entry */
+    -1,   /* 434: of_uint32 */
+    -1,   /* 435: of_uint64 */
+    -1,   /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    -1,   /* 438: of_list_action_id */
+    -1,   /* 439: of_list_bsn_controller_connection */
+    -1,   /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    -1,   /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    -1,   /* 442: of_list_bsn_gentable_desc_stats_entry */
+    -1,   /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    -1,   /* 444: of_list_bsn_gentable_entry_stats_entry */
+    -1,   /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    -1,   /* 447: of_list_bsn_lacp_stats_entry */
+    -1,   /* 448: of_list_bsn_port_counter_stats_entry */
+    -1,   /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    -1,   /* 450: of_list_bsn_table_checksum_stats_entry */
+    -1,   /* 451: of_list_bsn_tlv */
+    -1,   /* 452: of_list_bsn_vlan_counter_stats_entry */
+    0,    /* 453: of_list_bucket */
+    0,    /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    0,    /* 456: of_list_group_desc_stats_entry */
+    0,    /* 457: of_list_group_stats_entry */
+    -1,   /* 458: of_list_hello_elem */
+    0,    /* 459: of_list_instruction */
+    -1,   /* 460: of_list_meter_band */
+    -1,   /* 461: of_list_meter_band_stats */
+    -1,   /* 462: of_list_meter_stats */
+    0,    /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    -1,   /* 469: of_list_table_feature_prop */
+    -1,   /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    -1,   /* 472: of_list_uint32 */
+    -1,   /* 473: of_list_uint64 */
+    -1    /* 474: of_list_uint8 */
 };
 
 static const int
@@ -6400,60 +6410,61 @@ of_object_extra_len_v4[OF_OBJECT_COUNT] = {
     0,    /* 417: of_table_feature_prop_apply_setfield */
     0,    /* 418: of_table_feature_prop_apply_setfield_miss */
     0,    /* 419: of_table_feature_prop_experimenter */
-    0,    /* 420: of_table_feature_prop_header */
-    0,    /* 421: of_table_feature_prop_instructions */
-    0,    /* 422: of_table_feature_prop_instructions_miss */
-    0,    /* 423: of_table_feature_prop_match */
-    0,    /* 424: of_table_feature_prop_next_tables */
-    0,    /* 425: of_table_feature_prop_next_tables_miss */
-    0,    /* 426: of_table_feature_prop_wildcards */
-    0,    /* 427: of_table_feature_prop_write_actions */
-    0,    /* 428: of_table_feature_prop_write_actions_miss */
-    0,    /* 429: of_table_feature_prop_write_setfield */
-    0,    /* 430: of_table_feature_prop_write_setfield_miss */
-    0,    /* 431: of_table_features */
-    0,    /* 432: of_table_stats_entry */
-    0,    /* 433: of_uint32 */
-    0,    /* 434: of_uint64 */
-    0,    /* 435: of_uint8 */
-    0,    /* 436: of_list_action */
-    0,    /* 437: of_list_action_id */
-    0,    /* 438: of_list_bsn_controller_connection */
-    0,    /* 439: of_list_bsn_flow_checksum_bucket_stats_entry */
-    0,    /* 440: of_list_bsn_gentable_bucket_stats_entry */
-    0,    /* 441: of_list_bsn_gentable_desc_stats_entry */
-    0,    /* 442: of_list_bsn_gentable_entry_desc_stats_entry */
-    0,    /* 443: of_list_bsn_gentable_entry_stats_entry */
-    0,    /* 444: of_list_bsn_gentable_stats_entry */
-    0,    /* 445: of_list_bsn_interface */
-    0,    /* 446: of_list_bsn_lacp_stats_entry */
-    0,    /* 447: of_list_bsn_port_counter_stats_entry */
-    0,    /* 448: of_list_bsn_switch_pipeline_stats_entry */
-    0,    /* 449: of_list_bsn_table_checksum_stats_entry */
-    0,    /* 450: of_list_bsn_tlv */
-    0,    /* 451: of_list_bsn_vlan_counter_stats_entry */
-    0,    /* 452: of_list_bucket */
-    0,    /* 453: of_list_bucket_counter */
-    0,    /* 454: of_list_flow_stats_entry */
-    0,    /* 455: of_list_group_desc_stats_entry */
-    0,    /* 456: of_list_group_stats_entry */
-    0,    /* 457: of_list_hello_elem */
-    0,    /* 458: of_list_instruction */
-    0,    /* 459: of_list_meter_band */
-    0,    /* 460: of_list_meter_band_stats */
-    0,    /* 461: of_list_meter_stats */
-    0,    /* 462: of_list_oxm */
-    0,    /* 463: of_list_packet_queue */
-    0,    /* 464: of_list_port_desc */
-    0,    /* 465: of_list_port_stats_entry */
-    0,    /* 466: of_list_queue_prop */
-    0,    /* 467: of_list_queue_stats_entry */
-    0,    /* 468: of_list_table_feature_prop */
-    0,    /* 469: of_list_table_features */
-    0,    /* 470: of_list_table_stats_entry */
-    0,    /* 471: of_list_uint32 */
-    0,    /* 472: of_list_uint64 */
-    0     /* 473: of_list_uint8 */
+    0,    /* 420: of_table_feature_prop_experimenter_miss */
+    0,    /* 421: of_table_feature_prop_header */
+    0,    /* 422: of_table_feature_prop_instructions */
+    0,    /* 423: of_table_feature_prop_instructions_miss */
+    0,    /* 424: of_table_feature_prop_match */
+    0,    /* 425: of_table_feature_prop_next_tables */
+    0,    /* 426: of_table_feature_prop_next_tables_miss */
+    0,    /* 427: of_table_feature_prop_wildcards */
+    0,    /* 428: of_table_feature_prop_write_actions */
+    0,    /* 429: of_table_feature_prop_write_actions_miss */
+    0,    /* 430: of_table_feature_prop_write_setfield */
+    0,    /* 431: of_table_feature_prop_write_setfield_miss */
+    0,    /* 432: of_table_features */
+    0,    /* 433: of_table_stats_entry */
+    0,    /* 434: of_uint32 */
+    0,    /* 435: of_uint64 */
+    0,    /* 436: of_uint8 */
+    0,    /* 437: of_list_action */
+    0,    /* 438: of_list_action_id */
+    0,    /* 439: of_list_bsn_controller_connection */
+    0,    /* 440: of_list_bsn_flow_checksum_bucket_stats_entry */
+    0,    /* 441: of_list_bsn_gentable_bucket_stats_entry */
+    0,    /* 442: of_list_bsn_gentable_desc_stats_entry */
+    0,    /* 443: of_list_bsn_gentable_entry_desc_stats_entry */
+    0,    /* 444: of_list_bsn_gentable_entry_stats_entry */
+    0,    /* 445: of_list_bsn_gentable_stats_entry */
+    0,    /* 446: of_list_bsn_interface */
+    0,    /* 447: of_list_bsn_lacp_stats_entry */
+    0,    /* 448: of_list_bsn_port_counter_stats_entry */
+    0,    /* 449: of_list_bsn_switch_pipeline_stats_entry */
+    0,    /* 450: of_list_bsn_table_checksum_stats_entry */
+    0,    /* 451: of_list_bsn_tlv */
+    0,    /* 452: of_list_bsn_vlan_counter_stats_entry */
+    0,    /* 453: of_list_bucket */
+    0,    /* 454: of_list_bucket_counter */
+    0,    /* 455: of_list_flow_stats_entry */
+    0,    /* 456: of_list_group_desc_stats_entry */
+    0,    /* 457: of_list_group_stats_entry */
+    0,    /* 458: of_list_hello_elem */
+    0,    /* 459: of_list_instruction */
+    0,    /* 460: of_list_meter_band */
+    0,    /* 461: of_list_meter_band_stats */
+    0,    /* 462: of_list_meter_stats */
+    0,    /* 463: of_list_oxm */
+    0,    /* 464: of_list_packet_queue */
+    0,    /* 465: of_list_port_desc */
+    0,    /* 466: of_list_port_stats_entry */
+    0,    /* 467: of_list_queue_prop */
+    0,    /* 468: of_list_queue_stats_entry */
+    0,    /* 469: of_list_table_feature_prop */
+    0,    /* 470: of_list_table_features */
+    0,    /* 471: of_list_table_stats_entry */
+    0,    /* 472: of_list_uint32 */
+    0,    /* 473: of_list_uint64 */
+    0     /* 474: of_list_uint8 */
 };
 
 /**
@@ -6800,19 +6811,6 @@ of_queue_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 
 
 /**
- * @fixme to do when we have table_feature_prop extensions
- * See extension_action above
- */
-
-static void
-extension_table_feature_prop_object_id_get(of_object_t *obj, of_object_id_t *id)
-{
-    (void)obj;
-
-    *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER;
-}
-
-/**
  * Table feature property object ID determination
  *
  * @param obj The object being referenced
@@ -6825,15 +6823,7 @@ of_table_feature_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     int wire_type;
 
     of_tlv16_wire_type_get(obj, &wire_type);
-    if (wire_type == OF_EXPERIMENTER_TYPE) {
-        extension_table_feature_prop_object_id_get(obj, id);
-        return;
-    }
-
-    ASSERT(wire_type >= 0 && wire_type < OF_TABLE_FEATURE_PROP_ITEM_COUNT);
-
-    *id = of_table_feature_prop_type_to_id[obj->version][wire_type];
-    ASSERT(*id != OF_OBJECT_INVALID);
+    *id = of_table_feature_prop_to_object_id(wire_type, obj->version);
 }
 
 /**

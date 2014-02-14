@@ -1063,6 +1063,10 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFTableFeaturePropExperimenter not supported in version 1.2");
     }
 
+    public OFTableFeaturePropExperimenterMiss.Builder buildTableFeaturePropExperimenterMiss() {
+        throw new UnsupportedOperationException("OFTableFeaturePropExperimenterMiss not supported in version 1.2");
+    }
+
     public OFTableFeaturePropInstructions.Builder buildTableFeaturePropInstructions() {
         throw new UnsupportedOperationException("OFTableFeaturePropInstructions not supported in version 1.2");
     }

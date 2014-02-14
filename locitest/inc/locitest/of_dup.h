@@ -1690,6 +1690,10 @@ extern of_table_feature_prop_experimenter_t *
     of_table_feature_prop_experimenter_dup(
         of_table_feature_prop_experimenter_t *src);
 
+extern of_table_feature_prop_experimenter_miss_t *
+    of_table_feature_prop_experimenter_miss_dup(
+        of_table_feature_prop_experimenter_miss_t *src);
+
 extern of_table_feature_prop_header_t *
     of_table_feature_prop_header_dup(
         of_table_feature_prop_header_t *src);
@@ -5621,6 +5625,10 @@ extern of_table_feature_prop_apply_setfield_miss_t *
 extern of_table_feature_prop_experimenter_t *
     of_table_feature_prop_experimenter_OF_VERSION_1_3_dup(
         of_table_feature_prop_experimenter_t *src);
+
+extern of_table_feature_prop_experimenter_miss_t *
+    of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(
+        of_table_feature_prop_experimenter_miss_t *src);
 
 extern of_table_feature_prop_header_t *
     of_table_feature_prop_header_OF_VERSION_1_3_dup(

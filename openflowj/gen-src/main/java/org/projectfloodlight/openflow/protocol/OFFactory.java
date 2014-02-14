@@ -284,6 +284,7 @@ public interface OFFactory extends XidGenerator {
     OFTableFeaturePropApplySetfieldMiss.Builder buildTableFeaturePropApplySetfieldMiss() throws UnsupportedOperationException;
     OFTableFeaturePropApplySetfieldMiss tableFeaturePropApplySetfieldMiss(List<U32> oxmIds);
     OFTableFeaturePropExperimenter.Builder buildTableFeaturePropExperimenter() throws UnsupportedOperationException;
+    OFTableFeaturePropExperimenterMiss.Builder buildTableFeaturePropExperimenterMiss() throws UnsupportedOperationException;
     OFTableFeaturePropInstructions.Builder buildTableFeaturePropInstructions() throws UnsupportedOperationException;
     OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstruction> instructionIds);
     OFTableFeaturePropInstructionsMiss.Builder buildTableFeaturePropInstructionsMiss() throws UnsupportedOperationException;

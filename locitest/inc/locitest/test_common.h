@@ -8223,6 +8223,15 @@ extern int of_table_feature_prop_experimenter_OF_VERSION_1_3_populate_scalars(
 extern int of_table_feature_prop_experimenter_OF_VERSION_1_3_check_scalars(
     of_table_feature_prop_experimenter_t *obj, int value);
 
+extern int of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_populate(
+    of_table_feature_prop_experimenter_miss_t *obj, int value);
+extern int of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_check(
+    of_table_feature_prop_experimenter_miss_t *obj, int value);
+extern int of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_populate_scalars(
+    of_table_feature_prop_experimenter_miss_t *obj, int value);
+extern int of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_check_scalars(
+    of_table_feature_prop_experimenter_miss_t *obj, int value);
+
 extern int of_table_feature_prop_header_OF_VERSION_1_3_populate(
     of_table_feature_prop_header_t *obj, int value);
 extern int of_table_feature_prop_header_OF_VERSION_1_3_check(

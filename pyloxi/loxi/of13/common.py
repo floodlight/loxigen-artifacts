@@ -2822,7 +2822,7 @@ class table_feature_prop_apply_setfield_miss(table_feature_prop):
 table_feature_prop.subtypes[15] = table_feature_prop_apply_setfield_miss
 
 class table_feature_prop_experimenter(table_feature_prop):
-    type = 65535
+    type = 65534
 
     def __init__(self, experimenter=None, subtype=None, experimenter_data=None):
         if experimenter != None:
@@ -2854,7 +2854,7 @@ class table_feature_prop_experimenter(table_feature_prop):
     def unpack(reader):
         obj = table_feature_prop_experimenter()
         _type = reader.read("!H")[0]
-        assert(_type == 65535)
+        assert(_type == 65534)
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
@@ -2886,7 +2886,74 @@ class table_feature_prop_experimenter(table_feature_prop):
             q.breakable()
         q.text('}')
 
-table_feature_prop.subtypes[65535] = table_feature_prop_experimenter
+table_feature_prop.subtypes[65534] = table_feature_prop_experimenter
+
+class table_feature_prop_experimenter_miss(table_feature_prop):
+    type = 65535
+
+    def __init__(self, experimenter=None, subtype=None, experimenter_data=None):
+        if experimenter != None:
+            self.experimenter = experimenter
+        else:
+            self.experimenter = 0
+        if subtype != None:
+            self.subtype = subtype
+        else:
+            self.subtype = 0
+        if experimenter_data != None:
+            self.experimenter_data = experimenter_data
+        else:
+            self.experimenter_data = ''
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        packed.append(struct.pack("!L", self.experimenter))
+        packed.append(struct.pack("!L", self.subtype))
+        packed.append(self.experimenter_data)
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = table_feature_prop_experimenter_miss()
+        _type = reader.read("!H")[0]
+        assert(_type == 65535)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (2 + 2))
+        obj.experimenter = reader.read("!L")[0]
+        obj.subtype = reader.read("!L")[0]
+        obj.experimenter_data = str(reader.read_all())
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.experimenter != other.experimenter: return False
+        if self.subtype != other.subtype: return False
+        if self.experimenter_data != other.experimenter_data: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("table_feature_prop_experimenter_miss {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("experimenter = ");
+                q.text("%#x" % self.experimenter)
+                q.text(","); q.breakable()
+                q.text("subtype = ");
+                q.text("%#x" % self.subtype)
+                q.text(","); q.breakable()
+                q.text("experimenter_data = ");
+                q.pp(self.experimenter_data)
+            q.breakable()
+        q.text('}')
+
+table_feature_prop.subtypes[65535] = table_feature_prop_experimenter_miss
 
 class table_feature_prop_instructions(table_feature_prop):
     type = 0

@@ -32699,6 +32699,11 @@ of_table_feature_prop_OF_VERSION_1_3_dup(
             &src->wildcards);
     }
 
+    if (src->header.object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS) {
+        return (of_table_feature_prop_t *)of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(
+            &src->experimenter_miss);
+    }
+
     if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
         return (of_table_feature_prop_t *)of_table_feature_prop_write_actions_OF_VERSION_1_3_dup(
             &src->write_actions);
@@ -32931,6 +32936,38 @@ of_table_feature_prop_experimenter_OF_VERSION_1_3_dup(
 
     of_table_feature_prop_experimenter_experimenter_data_get(src, &octets);
     of_table_feature_prop_experimenter_experimenter_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_table_feature_prop_experimenter_miss
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_table_feature_prop_experimenter_miss.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_table_feature_prop_experimenter_miss_t *
+of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(
+    of_table_feature_prop_experimenter_miss_t *src)
+{
+    of_table_feature_prop_experimenter_miss_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_table_feature_prop_experimenter_miss_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_table_feature_prop_experimenter_miss_experimenter_get(src, &val32);
+    of_table_feature_prop_experimenter_miss_experimenter_set(dst, val32);
+
+    of_table_feature_prop_experimenter_miss_subtype_get(src, &val32);
+    of_table_feature_prop_experimenter_miss_subtype_set(dst, val32);
+
+    of_table_feature_prop_experimenter_miss_experimenter_data_get(src, &octets);
+    of_table_feature_prop_experimenter_miss_experimenter_data_set(dst, &octets);
 
     return dst;
 }
@@ -42072,6 +42109,19 @@ of_table_feature_prop_experimenter_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_table_feature_prop_experimenter_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_table_feature_prop_experimenter_miss_t *
+of_table_feature_prop_experimenter_miss_dup(
+    of_table_feature_prop_experimenter_miss_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

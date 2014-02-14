@@ -431,6 +431,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_table_feature_prop_apply_setfield_init,
     (of_object_init_f)of_table_feature_prop_apply_setfield_miss_init,
     (of_object_init_f)of_table_feature_prop_experimenter_init,
+    (of_object_init_f)of_table_feature_prop_experimenter_miss_init,
     (of_object_init_f)of_table_feature_prop_header_init,
     (of_object_init_f)of_table_feature_prop_instructions_init,
     (of_object_init_f)of_table_feature_prop_instructions_miss_init,
