@@ -89,7 +89,7 @@ of_nicira_header_init(of_nicira_header_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_NICIRA_HEADER] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_NICIRA_HEADER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -172,10 +172,10 @@ of_nicira_header_xid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_NICIRA_HEADER);
+    LOCI_ASSERT(obj->object_id == OF_NICIRA_HEADER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -186,11 +186,11 @@ of_nicira_header_xid_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -213,10 +213,10 @@ of_nicira_header_xid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_NICIRA_HEADER);
+    LOCI_ASSERT(obj->object_id == OF_NICIRA_HEADER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -227,11 +227,11 @@ of_nicira_header_xid_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -256,10 +256,10 @@ of_nicira_header_experimenter_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_NICIRA_HEADER);
+    LOCI_ASSERT(obj->object_id == OF_NICIRA_HEADER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -270,11 +270,11 @@ of_nicira_header_experimenter_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -297,10 +297,10 @@ of_nicira_header_experimenter_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_NICIRA_HEADER);
+    LOCI_ASSERT(obj->object_id == OF_NICIRA_HEADER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -311,11 +311,11 @@ of_nicira_header_experimenter_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -340,10 +340,10 @@ of_nicira_header_subtype_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_NICIRA_HEADER);
+    LOCI_ASSERT(obj->object_id == OF_NICIRA_HEADER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -354,11 +354,11 @@ of_nicira_header_subtype_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -381,10 +381,10 @@ of_nicira_header_subtype_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_NICIRA_HEADER);
+    LOCI_ASSERT(obj->object_id == OF_NICIRA_HEADER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -395,11 +395,11 @@ of_nicira_header_subtype_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
 
     OF_LENGTH_CHECK_ASSERT(obj);

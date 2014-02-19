@@ -104,7 +104,7 @@ of_uint8_init(of_uint8_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_UINT8] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_UINT8] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -144,10 +144,10 @@ of_uint8_value_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_UINT8);
+    LOCI_ASSERT(obj->object_id == OF_UINT8);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -155,11 +155,11 @@ of_uint8_value_get(
         offset = 0;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -182,10 +182,10 @@ of_uint8_value_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_UINT8);
+    LOCI_ASSERT(obj->object_id == OF_UINT8);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -193,11 +193,11 @@ of_uint8_value_set(
         offset = 0;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);

@@ -127,7 +127,7 @@ of_meter_mod_init(of_meter_mod_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_METER_MOD] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_METER_MOD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -212,10 +212,10 @@ of_meter_mod_xid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -223,11 +223,11 @@ of_meter_mod_xid_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -250,10 +250,10 @@ of_meter_mod_xid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -261,11 +261,11 @@ of_meter_mod_xid_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -290,10 +290,10 @@ of_meter_mod_flags_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -301,11 +301,11 @@ of_meter_mod_flags_get(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, flags);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -328,10 +328,10 @@ of_meter_mod_flags_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -339,11 +339,11 @@ of_meter_mod_flags_set(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, flags);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -368,10 +368,10 @@ of_meter_mod_meter_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -379,11 +379,11 @@ of_meter_mod_meter_id_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, meter_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -406,10 +406,10 @@ of_meter_mod_meter_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -417,11 +417,11 @@ of_meter_mod_meter_id_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, meter_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -452,10 +452,10 @@ of_meter_mod_meters_bind(
     of_version_t ver;
     int cur_len = 0; /* Current length of object data */
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -464,12 +464,12 @@ of_meter_mod_meters_bind(
         cur_len = _END_LEN(obj, offset);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
-    ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
     of_list_meter_band_init(meters, obj->version, 0, 1);
@@ -526,10 +526,10 @@ of_meter_mod_meters_set(
     int cur_len = 0; /* Current length of object data */
     int new_len, delta; /* For set, need new length and delta */
 
-    ASSERT(obj->object_id == OF_METER_MOD);
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -538,12 +538,12 @@ of_meter_mod_meters_set(
         cur_len = _END_LEN(obj, offset);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
-    ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* LOCI object type */
     new_len = meters->length;
@@ -551,8 +551,8 @@ of_meter_mod_meters_set(
     if (obj->wire_object.wbuf == meters->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
-        ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(meters, 0));
-        /* ASSERT(new_len == cur_len); */ /* fixme: may fail for OXM lists */
+        LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(meters, 0));
+        /* LOCI_ASSERT(new_len == cur_len); */ /* fixme: may fail for OXM lists */
         return OF_ERROR_NONE;
     }
 

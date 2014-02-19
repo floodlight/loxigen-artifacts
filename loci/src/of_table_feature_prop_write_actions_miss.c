@@ -122,7 +122,7 @@ of_table_feature_prop_write_actions_miss_init(of_table_feature_prop_write_action
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -176,10 +176,10 @@ of_table_feature_prop_write_actions_miss_action_ids_bind(
     of_version_t ver;
     int cur_len = 0; /* Current length of object data */
 
-    ASSERT(obj->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -188,12 +188,12 @@ of_table_feature_prop_write_actions_miss_action_ids_bind(
         cur_len = _END_LEN(obj, offset);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
-    ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
     of_list_action_id_init(action_ids, obj->version, 0, 1);
@@ -250,10 +250,10 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
     int cur_len = 0; /* Current length of object data */
     int new_len, delta; /* For set, need new length and delta */
 
-    ASSERT(obj->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -262,12 +262,12 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
         cur_len = _END_LEN(obj, offset);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
-    ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* LOCI object type */
     new_len = action_ids->length;
@@ -275,8 +275,8 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
     if (obj->wire_object.wbuf == action_ids->wire_object.wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
-        ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(action_ids, 0));
-        /* ASSERT(new_len == cur_len); */ /* fixme: may fail for OXM lists */
+        LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(action_ids, 0));
+        /* LOCI_ASSERT(new_len == cur_len); */ /* fixme: may fail for OXM lists */
         return OF_ERROR_NONE;
     }
 

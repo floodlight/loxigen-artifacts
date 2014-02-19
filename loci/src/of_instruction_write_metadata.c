@@ -124,7 +124,7 @@ of_instruction_write_metadata_init(of_instruction_write_metadata_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_WRITE_METADATA] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -172,10 +172,10 @@ of_instruction_write_metadata_metadata_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -185,11 +185,11 @@ of_instruction_write_metadata_metadata_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, metadata);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -212,10 +212,10 @@ of_instruction_write_metadata_metadata_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -225,11 +225,11 @@ of_instruction_write_metadata_metadata_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, metadata);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -254,10 +254,10 @@ of_instruction_write_metadata_metadata_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -267,11 +267,11 @@ of_instruction_write_metadata_metadata_mask_get(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, metadata_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -294,10 +294,10 @@ of_instruction_write_metadata_metadata_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_WRITE_METADATA);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -307,11 +307,11 @@ of_instruction_write_metadata_metadata_mask_set(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, metadata_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);

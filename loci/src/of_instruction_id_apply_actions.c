@@ -122,7 +122,7 @@ of_instruction_id_apply_actions_init(of_instruction_id_apply_actions_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_APPLY_ACTIONS] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_APPLY_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

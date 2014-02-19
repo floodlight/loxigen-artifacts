@@ -92,7 +92,7 @@ of_queue_prop_init(of_queue_prop_t *obj_p,
 
     obj = &obj_p->header;  /* Need instantiable subclass */
 
-    ASSERT(of_object_fixed_len[version][OF_QUEUE_PROP] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_QUEUE_PROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

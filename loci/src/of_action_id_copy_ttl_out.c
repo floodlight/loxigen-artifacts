@@ -122,7 +122,7 @@ of_action_id_copy_ttl_out_init(of_action_id_copy_ttl_out_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_ACTION_ID_COPY_TTL_OUT] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_ID_COPY_TTL_OUT] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

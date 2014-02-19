@@ -119,7 +119,7 @@ of_match_v2_init(of_match_v2_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_MATCH_V2] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_MATCH_V2] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -161,10 +161,10 @@ of_match_v2_in_port_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -172,11 +172,11 @@ of_match_v2_in_port_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_no_get(ver, wbuf, abs_offset, in_port);
     OF_PORT_NO_VALUE_CHECK(*in_port, ver);
 
@@ -200,10 +200,10 @@ of_match_v2_in_port_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -211,11 +211,11 @@ of_match_v2_in_port_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_no_set(ver, wbuf, abs_offset, in_port);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -240,10 +240,10 @@ of_match_v2_wildcards_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -251,11 +251,11 @@ of_match_v2_wildcards_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_wc_bmap_get(ver, wbuf, abs_offset, wildcards);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -278,10 +278,10 @@ of_match_v2_wildcards_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -289,11 +289,11 @@ of_match_v2_wildcards_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_wc_bmap_set(ver, wbuf, abs_offset, wildcards);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -318,10 +318,10 @@ of_match_v2_eth_src_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -329,11 +329,11 @@ of_match_v2_eth_src_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_get(wbuf, abs_offset, eth_src);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -356,10 +356,10 @@ of_match_v2_eth_src_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -367,11 +367,11 @@ of_match_v2_eth_src_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_set(wbuf, abs_offset, eth_src);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -396,10 +396,10 @@ of_match_v2_eth_src_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -407,11 +407,11 @@ of_match_v2_eth_src_mask_get(
         offset = 18;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_get(wbuf, abs_offset, eth_src_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -434,10 +434,10 @@ of_match_v2_eth_src_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -445,11 +445,11 @@ of_match_v2_eth_src_mask_set(
         offset = 18;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_set(wbuf, abs_offset, eth_src_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -474,10 +474,10 @@ of_match_v2_eth_dst_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -485,11 +485,11 @@ of_match_v2_eth_dst_get(
         offset = 24;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_get(wbuf, abs_offset, eth_dst);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -512,10 +512,10 @@ of_match_v2_eth_dst_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -523,11 +523,11 @@ of_match_v2_eth_dst_set(
         offset = 24;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_set(wbuf, abs_offset, eth_dst);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -552,10 +552,10 @@ of_match_v2_eth_dst_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -563,11 +563,11 @@ of_match_v2_eth_dst_mask_get(
         offset = 30;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_get(wbuf, abs_offset, eth_dst_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -590,10 +590,10 @@ of_match_v2_eth_dst_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -601,11 +601,11 @@ of_match_v2_eth_dst_mask_set(
         offset = 30;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_set(wbuf, abs_offset, eth_dst_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -630,10 +630,10 @@ of_match_v2_vlan_vid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -641,11 +641,11 @@ of_match_v2_vlan_vid_get(
         offset = 36;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, vlan_vid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -668,10 +668,10 @@ of_match_v2_vlan_vid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -679,11 +679,11 @@ of_match_v2_vlan_vid_set(
         offset = 36;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, vlan_vid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -708,10 +708,10 @@ of_match_v2_vlan_pcp_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -719,11 +719,11 @@ of_match_v2_vlan_pcp_get(
         offset = 38;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, vlan_pcp);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -746,10 +746,10 @@ of_match_v2_vlan_pcp_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -757,11 +757,11 @@ of_match_v2_vlan_pcp_set(
         offset = 38;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, vlan_pcp);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -786,10 +786,10 @@ of_match_v2_eth_type_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -797,11 +797,11 @@ of_match_v2_eth_type_get(
         offset = 40;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, eth_type);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -824,10 +824,10 @@ of_match_v2_eth_type_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -835,11 +835,11 @@ of_match_v2_eth_type_set(
         offset = 40;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, eth_type);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -864,10 +864,10 @@ of_match_v2_ip_dscp_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -875,11 +875,11 @@ of_match_v2_ip_dscp_get(
         offset = 42;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, ip_dscp);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -902,10 +902,10 @@ of_match_v2_ip_dscp_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -913,11 +913,11 @@ of_match_v2_ip_dscp_set(
         offset = 42;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, ip_dscp);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -942,10 +942,10 @@ of_match_v2_ip_proto_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -953,11 +953,11 @@ of_match_v2_ip_proto_get(
         offset = 43;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, ip_proto);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -980,10 +980,10 @@ of_match_v2_ip_proto_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -991,11 +991,11 @@ of_match_v2_ip_proto_set(
         offset = 43;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, ip_proto);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1020,10 +1020,10 @@ of_match_v2_ipv4_src_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1031,11 +1031,11 @@ of_match_v2_ipv4_src_get(
         offset = 44;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_get(wbuf, abs_offset, ipv4_src);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1058,10 +1058,10 @@ of_match_v2_ipv4_src_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1069,11 +1069,11 @@ of_match_v2_ipv4_src_set(
         offset = 44;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_set(wbuf, abs_offset, ipv4_src);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1098,10 +1098,10 @@ of_match_v2_ipv4_src_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1109,11 +1109,11 @@ of_match_v2_ipv4_src_mask_get(
         offset = 48;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_get(wbuf, abs_offset, ipv4_src_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1136,10 +1136,10 @@ of_match_v2_ipv4_src_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1147,11 +1147,11 @@ of_match_v2_ipv4_src_mask_set(
         offset = 48;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_set(wbuf, abs_offset, ipv4_src_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1176,10 +1176,10 @@ of_match_v2_ipv4_dst_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1187,11 +1187,11 @@ of_match_v2_ipv4_dst_get(
         offset = 52;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_get(wbuf, abs_offset, ipv4_dst);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1214,10 +1214,10 @@ of_match_v2_ipv4_dst_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1225,11 +1225,11 @@ of_match_v2_ipv4_dst_set(
         offset = 52;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_set(wbuf, abs_offset, ipv4_dst);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1254,10 +1254,10 @@ of_match_v2_ipv4_dst_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1265,11 +1265,11 @@ of_match_v2_ipv4_dst_mask_get(
         offset = 56;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_get(wbuf, abs_offset, ipv4_dst_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1292,10 +1292,10 @@ of_match_v2_ipv4_dst_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1303,11 +1303,11 @@ of_match_v2_ipv4_dst_mask_set(
         offset = 56;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_ipv4_set(wbuf, abs_offset, ipv4_dst_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1332,10 +1332,10 @@ of_match_v2_tcp_src_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1343,11 +1343,11 @@ of_match_v2_tcp_src_get(
         offset = 60;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, tcp_src);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1370,10 +1370,10 @@ of_match_v2_tcp_src_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1381,11 +1381,11 @@ of_match_v2_tcp_src_set(
         offset = 60;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, tcp_src);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1410,10 +1410,10 @@ of_match_v2_tcp_dst_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1421,11 +1421,11 @@ of_match_v2_tcp_dst_get(
         offset = 62;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, tcp_dst);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1448,10 +1448,10 @@ of_match_v2_tcp_dst_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1459,11 +1459,11 @@ of_match_v2_tcp_dst_set(
         offset = 62;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, tcp_dst);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1488,10 +1488,10 @@ of_match_v2_mpls_label_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1499,11 +1499,11 @@ of_match_v2_mpls_label_get(
         offset = 64;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, mpls_label);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1526,10 +1526,10 @@ of_match_v2_mpls_label_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1537,11 +1537,11 @@ of_match_v2_mpls_label_set(
         offset = 64;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, mpls_label);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1566,10 +1566,10 @@ of_match_v2_mpls_tc_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1577,11 +1577,11 @@ of_match_v2_mpls_tc_get(
         offset = 68;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, mpls_tc);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1604,10 +1604,10 @@ of_match_v2_mpls_tc_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1615,11 +1615,11 @@ of_match_v2_mpls_tc_set(
         offset = 68;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, mpls_tc);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1644,10 +1644,10 @@ of_match_v2_metadata_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1655,11 +1655,11 @@ of_match_v2_metadata_get(
         offset = 72;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, metadata);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1682,10 +1682,10 @@ of_match_v2_metadata_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1693,11 +1693,11 @@ of_match_v2_metadata_set(
         offset = 72;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, metadata);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1722,10 +1722,10 @@ of_match_v2_metadata_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1733,11 +1733,11 @@ of_match_v2_metadata_mask_get(
         offset = 80;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, metadata_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1760,10 +1760,10 @@ of_match_v2_metadata_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_MATCH_V2);
+    LOCI_ASSERT(obj->object_id == OF_MATCH_V2);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1771,11 +1771,11 @@ of_match_v2_metadata_mask_set(
         offset = 80;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, metadata_mask);
 
     OF_LENGTH_CHECK_ASSERT(obj);

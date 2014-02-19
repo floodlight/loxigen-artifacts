@@ -89,7 +89,7 @@ of_bsn_tlv_header_init(of_bsn_tlv_header_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_BSN_TLV_HEADER] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_HEADER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

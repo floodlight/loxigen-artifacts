@@ -131,7 +131,7 @@ of_bad_request_error_msg_init(of_bad_request_error_msg_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_BAD_REQUEST_ERROR_MSG] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BAD_REQUEST_ERROR_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -216,10 +216,10 @@ of_bad_request_error_msg_xid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+    LOCI_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -230,11 +230,11 @@ of_bad_request_error_msg_xid_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -257,10 +257,10 @@ of_bad_request_error_msg_xid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+    LOCI_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -271,11 +271,11 @@ of_bad_request_error_msg_xid_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -300,10 +300,10 @@ of_bad_request_error_msg_code_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+    LOCI_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -314,11 +314,11 @@ of_bad_request_error_msg_code_get(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, code);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -341,10 +341,10 @@ of_bad_request_error_msg_code_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+    LOCI_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -355,11 +355,11 @@ of_bad_request_error_msg_code_set(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, code);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -385,10 +385,10 @@ of_bad_request_error_msg_data_get(
     of_version_t ver;
     int cur_len = 0; /* Current length of object data */
 
-    ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+    LOCI_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -400,13 +400,13 @@ of_bad_request_error_msg_data_get(
         cur_len = _END_LEN(obj, offset);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
-    ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
-    ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
     data->bytes = cur_len;
     data->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
 
@@ -432,10 +432,10 @@ of_bad_request_error_msg_data_set(
     int cur_len = 0; /* Current length of object data */
     int new_len, delta; /* For set, need new length and delta */
 
-    ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+    LOCI_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -447,12 +447,12 @@ of_bad_request_error_msg_data_set(
         cur_len = _END_LEN(obj, offset);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
-    ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
     new_len = data->bytes;
     of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
     of_wire_buffer_octets_data_set(wbuf, abs_offset, data, cur_len);

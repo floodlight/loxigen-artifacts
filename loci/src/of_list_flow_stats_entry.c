@@ -89,7 +89,7 @@ of_list_flow_stats_entry_init(of_list_flow_stats_entry_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_LIST_FLOW_STATS_ENTRY] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_LIST_FLOW_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

@@ -1,1 +1,1 @@
-152a6c61b932a552b482873ae7df194fdf8bd0d1 Merge into master from pull request #204: java_gen: Return copies of byte arrays in getBytes LOXI-58 (https://github.com/floodlight/loxigen/pull/204)
+d10a4a80fab5991cbe8df622b136e8e6ea30235d Merge into master from pull request #205: loci: rework assertions for better static analysis (https://github.com/floodlight/loxigen/pull/205)

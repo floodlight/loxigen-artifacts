@@ -122,7 +122,7 @@ of_bsn_vport_q_in_q_init(of_bsn_vport_q_in_q_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_BSN_VPORT_Q_IN_Q] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_VPORT_Q_IN_Q] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -164,10 +164,10 @@ of_bsn_vport_q_in_q_port_no_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -178,11 +178,11 @@ of_bsn_vport_q_in_q_port_no_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, port_no);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -205,10 +205,10 @@ of_bsn_vport_q_in_q_port_no_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -219,11 +219,11 @@ of_bsn_vport_q_in_q_port_no_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, port_no);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -248,10 +248,10 @@ of_bsn_vport_q_in_q_ingress_tpid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -262,11 +262,11 @@ of_bsn_vport_q_in_q_ingress_tpid_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, ingress_tpid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -289,10 +289,10 @@ of_bsn_vport_q_in_q_ingress_tpid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -303,11 +303,11 @@ of_bsn_vport_q_in_q_ingress_tpid_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, ingress_tpid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -332,10 +332,10 @@ of_bsn_vport_q_in_q_ingress_vlan_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -346,11 +346,11 @@ of_bsn_vport_q_in_q_ingress_vlan_id_get(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, ingress_vlan_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -373,10 +373,10 @@ of_bsn_vport_q_in_q_ingress_vlan_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -387,11 +387,11 @@ of_bsn_vport_q_in_q_ingress_vlan_id_set(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, ingress_vlan_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -416,10 +416,10 @@ of_bsn_vport_q_in_q_egress_tpid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -430,11 +430,11 @@ of_bsn_vport_q_in_q_egress_tpid_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, egress_tpid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -457,10 +457,10 @@ of_bsn_vport_q_in_q_egress_tpid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -471,11 +471,11 @@ of_bsn_vport_q_in_q_egress_tpid_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, egress_tpid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -500,10 +500,10 @@ of_bsn_vport_q_in_q_egress_vlan_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -514,11 +514,11 @@ of_bsn_vport_q_in_q_egress_vlan_id_get(
         offset = 14;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, egress_vlan_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -541,10 +541,10 @@ of_bsn_vport_q_in_q_egress_vlan_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -555,11 +555,11 @@ of_bsn_vport_q_in_q_egress_vlan_id_set(
         offset = 14;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, egress_vlan_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -584,10 +584,10 @@ of_bsn_vport_q_in_q_if_name_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -598,11 +598,11 @@ of_bsn_vport_q_in_q_if_name_get(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_name_get(wbuf, abs_offset, if_name);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -625,10 +625,10 @@ of_bsn_vport_q_in_q_if_name_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_Q_IN_Q);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -639,11 +639,11 @@ of_bsn_vport_q_in_q_if_name_set(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_name_set(wbuf, abs_offset, if_name);
 
     OF_LENGTH_CHECK_ASSERT(obj);

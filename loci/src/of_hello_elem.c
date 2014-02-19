@@ -92,7 +92,7 @@ of_hello_elem_init(of_hello_elem_t *obj_p,
 
     obj = &obj_p->header;  /* Need instantiable subclass */
 
-    ASSERT(of_object_fixed_len[version][OF_HELLO_ELEM] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_HELLO_ELEM] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

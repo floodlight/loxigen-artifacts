@@ -92,7 +92,7 @@ of_bsn_tlv_init(of_bsn_tlv_t *obj_p,
 
     obj = &obj_p->header;  /* Need instantiable subclass */
 
-    ASSERT(of_object_fixed_len[version][OF_BSN_TLV] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

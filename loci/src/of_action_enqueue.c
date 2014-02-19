@@ -122,7 +122,7 @@ of_action_enqueue_init(of_action_enqueue_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_ACTION_ENQUEUE] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_ENQUEUE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -170,10 +170,10 @@ of_action_enqueue_port_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -181,11 +181,11 @@ of_action_enqueue_port_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_no_get(ver, wbuf, abs_offset, port);
     OF_PORT_NO_VALUE_CHECK(*port, ver);
 
@@ -209,10 +209,10 @@ of_action_enqueue_port_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -220,11 +220,11 @@ of_action_enqueue_port_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_no_set(ver, wbuf, abs_offset, port);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -249,10 +249,10 @@ of_action_enqueue_queue_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -260,11 +260,11 @@ of_action_enqueue_queue_id_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, queue_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -287,10 +287,10 @@ of_action_enqueue_queue_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_ENQUEUE);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -298,11 +298,11 @@ of_action_enqueue_queue_id_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, queue_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);

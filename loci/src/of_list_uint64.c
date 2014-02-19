@@ -89,7 +89,7 @@ of_list_uint64_init(of_list_uint64_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_LIST_UINT64] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_LIST_UINT64] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

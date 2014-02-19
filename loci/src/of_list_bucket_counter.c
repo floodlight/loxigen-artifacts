@@ -89,7 +89,7 @@ of_list_bucket_counter_init(of_list_bucket_counter_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_LIST_BUCKET_COUNTER] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_LIST_BUCKET_COUNTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

@@ -122,7 +122,7 @@ of_instruction_meter_init(of_instruction_meter_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_METER] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_METER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -170,10 +170,10 @@ of_instruction_meter_meter_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_INSTRUCTION_METER);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_METER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -181,11 +181,11 @@ of_instruction_meter_meter_id_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, meter_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -208,10 +208,10 @@ of_instruction_meter_meter_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_INSTRUCTION_METER);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_METER);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -219,11 +219,11 @@ of_instruction_meter_meter_id_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, meter_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);

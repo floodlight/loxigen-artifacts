@@ -104,7 +104,7 @@ of_bsn_controller_connection_init(of_bsn_controller_connection_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_BSN_CONTROLLER_CONNECTION] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_CONTROLLER_CONNECTION] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -144,10 +144,10 @@ of_bsn_controller_connection_state_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -155,11 +155,11 @@ of_bsn_controller_connection_state_get(
         offset = 0;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, state);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -182,10 +182,10 @@ of_bsn_controller_connection_state_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -193,11 +193,11 @@ of_bsn_controller_connection_state_set(
         offset = 0;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, state);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -222,10 +222,10 @@ of_bsn_controller_connection_auxiliary_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -233,11 +233,11 @@ of_bsn_controller_connection_auxiliary_id_get(
         offset = 1;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, auxiliary_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -260,10 +260,10 @@ of_bsn_controller_connection_auxiliary_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -271,11 +271,11 @@ of_bsn_controller_connection_auxiliary_id_set(
         offset = 1;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, auxiliary_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -300,10 +300,10 @@ of_bsn_controller_connection_role_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -311,11 +311,11 @@ of_bsn_controller_connection_role_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, role);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -338,10 +338,10 @@ of_bsn_controller_connection_role_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -349,11 +349,11 @@ of_bsn_controller_connection_role_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, role);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -378,10 +378,10 @@ of_bsn_controller_connection_uri_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -389,11 +389,11 @@ of_bsn_controller_connection_uri_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_desc_str_get(wbuf, abs_offset, uri);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -416,10 +416,10 @@ of_bsn_controller_connection_uri_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
+    LOCI_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -427,11 +427,11 @@ of_bsn_controller_connection_uri_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_desc_str_set(wbuf, abs_offset, uri);
 
     OF_LENGTH_CHECK_ASSERT(obj);

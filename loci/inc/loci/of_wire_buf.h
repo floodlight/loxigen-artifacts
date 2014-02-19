@@ -64,7 +64,7 @@ typedef struct of_wire_object_s {
  * @param offset The extent of the buffer required
  */
 #define OF_WIRE_BUFFER_ACCESS_CHECK(wbuf, offset)                      \
-    ASSERT(((wbuf) != NULL) && (WBUF_BUF(wbuf) != NULL) &&             \
+    LOCI_ASSERT(((wbuf) != NULL) && (WBUF_BUF(wbuf) != NULL) &&             \
            (offset > 0) && (WBUF_CURRENT_BYTES(wbuf) >= offset))
 
 /*
@@ -218,8 +218,8 @@ of_wire_buffer_steal(of_wire_buffer_t *wbuf, uint8_t **buffer)
 static inline void
 of_wire_buffer_grow(of_wire_buffer_t *wbuf, int bytes)
 {
-    ASSERT(wbuf != NULL);
-    ASSERT(wbuf->alloc_bytes >= bytes);
+    LOCI_ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf->alloc_bytes >= bytes);
     if (bytes > wbuf->current_bytes) {
         wbuf->current_bytes = bytes;
     }
@@ -402,7 +402,7 @@ static inline void
 of_wire_buffer_match_get(int version, of_wire_buffer_t *wbuf, int offset,
                       of_match_t *value)
 {
-    ASSERT(0);
+    LOCI_ASSERT(0);
 }
 
 /**
@@ -419,7 +419,7 @@ static inline void
 of_wire_buffer_match_set(int version, of_wire_buffer_t *wbuf, int offset,
                       of_match_t *value)
 {
-    ASSERT(0);
+    LOCI_ASSERT(0);
 }
 
 /**
@@ -437,7 +437,7 @@ static inline void
 of_wire_buffer_of_port_desc_get(int version, of_wire_buffer_t *wbuf, int offset,
                              void *value)
 {
-    ASSERT(0);
+    LOCI_ASSERT(0);
 }
 
 /**
@@ -455,7 +455,7 @@ static inline void
 of_wire_buffer_of_port_desc_set(int version, of_wire_buffer_t *wbuf, int offset,
                              void *value)
 {
-    ASSERT(0);
+    LOCI_ASSERT(0);
 }
 
 /**
@@ -486,7 +486,7 @@ of_wire_buffer_port_no_get(int version, of_wire_buffer_t *wbuf, int offset,
         *value = v32;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 }
 
@@ -514,7 +514,7 @@ of_wire_buffer_port_no_set(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u32_set(wbuf, offset, (uint32_t)value);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 }
 
@@ -544,7 +544,7 @@ of_wire_buffer_fm_cmd_get(int version, of_wire_buffer_t *wbuf, int offset,
         *value = v8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 }
 
@@ -569,7 +569,7 @@ of_wire_buffer_fm_cmd_set(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u8_set(wbuf, offset, (uint8_t)value);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 }
 
@@ -599,7 +599,7 @@ of_wire_buffer_wc_bmap_get(int version, of_wire_buffer_t *wbuf, int offset,
         *value = v64;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 }
 
@@ -624,7 +624,7 @@ of_wire_buffer_wc_bmap_set(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u64_set(wbuf, offset, (uint64_t)value);
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 }
 
@@ -678,7 +678,7 @@ of_wire_buffer_octets_data_set(of_wire_buffer_t *wbuf, int offset,
                                of_octets_t *value, int cur_len)
 {
     // FIXME need to adjust length of octets member in buffer
-    ASSERT(cur_len == 0 || cur_len == value->bytes);
+    LOCI_ASSERT(cur_len == 0 || cur_len == value->bytes);
 
     OF_WIRE_BUFFER_ACCESS_CHECK(wbuf, offset + OF_OCTETS_BYTES_GET(value));
     buf_octets_set(OF_WIRE_BUFFER_INDEX(wbuf, offset),

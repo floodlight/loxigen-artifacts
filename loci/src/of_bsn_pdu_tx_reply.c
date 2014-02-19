@@ -132,7 +132,7 @@ of_bsn_pdu_tx_reply_init(of_bsn_pdu_tx_reply_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_BSN_PDU_TX_REPLY] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_PDU_TX_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -217,10 +217,10 @@ of_bsn_pdu_tx_reply_xid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -231,11 +231,11 @@ of_bsn_pdu_tx_reply_xid_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -258,10 +258,10 @@ of_bsn_pdu_tx_reply_xid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -272,11 +272,11 @@ of_bsn_pdu_tx_reply_xid_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -301,10 +301,10 @@ of_bsn_pdu_tx_reply_experimenter_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -315,11 +315,11 @@ of_bsn_pdu_tx_reply_experimenter_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -342,10 +342,10 @@ of_bsn_pdu_tx_reply_experimenter_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -356,11 +356,11 @@ of_bsn_pdu_tx_reply_experimenter_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -385,10 +385,10 @@ of_bsn_pdu_tx_reply_subtype_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -399,11 +399,11 @@ of_bsn_pdu_tx_reply_subtype_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -426,10 +426,10 @@ of_bsn_pdu_tx_reply_subtype_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -440,11 +440,11 @@ of_bsn_pdu_tx_reply_subtype_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -469,10 +469,10 @@ of_bsn_pdu_tx_reply_status_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -483,11 +483,11 @@ of_bsn_pdu_tx_reply_status_get(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, status);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -510,10 +510,10 @@ of_bsn_pdu_tx_reply_status_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -524,11 +524,11 @@ of_bsn_pdu_tx_reply_status_set(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, status);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -553,10 +553,10 @@ of_bsn_pdu_tx_reply_port_no_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -569,11 +569,11 @@ of_bsn_pdu_tx_reply_port_no_get(
         offset = 20;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_no_get(ver, wbuf, abs_offset, port_no);
     OF_PORT_NO_VALUE_CHECK(*port_no, ver);
 
@@ -597,10 +597,10 @@ of_bsn_pdu_tx_reply_port_no_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -613,11 +613,11 @@ of_bsn_pdu_tx_reply_port_no_set(
         offset = 20;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_port_no_set(ver, wbuf, abs_offset, port_no);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -642,10 +642,10 @@ of_bsn_pdu_tx_reply_slot_num_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -658,11 +658,11 @@ of_bsn_pdu_tx_reply_slot_num_get(
         offset = 24;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, slot_num);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -685,10 +685,10 @@ of_bsn_pdu_tx_reply_slot_num_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -701,11 +701,11 @@ of_bsn_pdu_tx_reply_slot_num_set(
         offset = 24;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, slot_num);
 
     OF_LENGTH_CHECK_ASSERT(obj);

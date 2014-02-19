@@ -127,7 +127,7 @@ of_action_bsn_mirror_init(of_action_bsn_mirror_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_ACTION_BSN_MIRROR] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_BSN_MIRROR] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -175,10 +175,10 @@ of_action_bsn_mirror_experimenter_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -189,11 +189,11 @@ of_action_bsn_mirror_experimenter_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -216,10 +216,10 @@ of_action_bsn_mirror_experimenter_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -230,11 +230,11 @@ of_action_bsn_mirror_experimenter_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -259,10 +259,10 @@ of_action_bsn_mirror_subtype_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -273,11 +273,11 @@ of_action_bsn_mirror_subtype_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -300,10 +300,10 @@ of_action_bsn_mirror_subtype_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -314,11 +314,11 @@ of_action_bsn_mirror_subtype_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -343,10 +343,10 @@ of_action_bsn_mirror_dest_port_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -357,11 +357,11 @@ of_action_bsn_mirror_dest_port_get(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, dest_port);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -384,10 +384,10 @@ of_action_bsn_mirror_dest_port_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -398,11 +398,11 @@ of_action_bsn_mirror_dest_port_set(
         offset = 12;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, dest_port);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -427,10 +427,10 @@ of_action_bsn_mirror_vlan_tag_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -441,11 +441,11 @@ of_action_bsn_mirror_vlan_tag_get(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, vlan_tag);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -468,10 +468,10 @@ of_action_bsn_mirror_vlan_tag_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -482,11 +482,11 @@ of_action_bsn_mirror_vlan_tag_set(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, vlan_tag);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -511,10 +511,10 @@ of_action_bsn_mirror_copy_stage_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -525,11 +525,11 @@ of_action_bsn_mirror_copy_stage_get(
         offset = 20;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, copy_stage);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -552,10 +552,10 @@ of_action_bsn_mirror_copy_stage_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
+    LOCI_ASSERT(obj->object_id == OF_ACTION_BSN_MIRROR);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -566,11 +566,11 @@ of_action_bsn_mirror_copy_stage_set(
         offset = 20;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, copy_stage);
 
     OF_LENGTH_CHECK_ASSERT(obj);

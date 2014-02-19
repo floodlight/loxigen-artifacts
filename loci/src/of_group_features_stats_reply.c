@@ -129,7 +129,7 @@ of_group_features_stats_reply_init(of_group_features_stats_reply_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_GROUP_FEATURES_STATS_REPLY] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_GROUP_FEATURES_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -214,10 +214,10 @@ of_group_features_stats_reply_xid_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -226,11 +226,11 @@ of_group_features_stats_reply_xid_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -253,10 +253,10 @@ of_group_features_stats_reply_xid_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -265,11 +265,11 @@ of_group_features_stats_reply_xid_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, xid);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -294,10 +294,10 @@ of_group_features_stats_reply_flags_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -306,11 +306,11 @@ of_group_features_stats_reply_flags_get(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_get(wbuf, abs_offset, flags);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -333,10 +333,10 @@ of_group_features_stats_reply_flags_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -345,11 +345,11 @@ of_group_features_stats_reply_flags_set(
         offset = 10;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u16_set(wbuf, abs_offset, flags);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -374,10 +374,10 @@ of_group_features_stats_reply_types_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -386,11 +386,11 @@ of_group_features_stats_reply_types_get(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, types);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -413,10 +413,10 @@ of_group_features_stats_reply_types_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -425,11 +425,11 @@ of_group_features_stats_reply_types_set(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, types);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -454,10 +454,10 @@ of_group_features_stats_reply_capabilities_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -466,11 +466,11 @@ of_group_features_stats_reply_capabilities_get(
         offset = 20;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, capabilities);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -493,10 +493,10 @@ of_group_features_stats_reply_capabilities_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -505,11 +505,11 @@ of_group_features_stats_reply_capabilities_set(
         offset = 20;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, capabilities);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -534,10 +534,10 @@ of_group_features_stats_reply_max_groups_all_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -546,11 +546,11 @@ of_group_features_stats_reply_max_groups_all_get(
         offset = 24;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, max_groups_all);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -573,10 +573,10 @@ of_group_features_stats_reply_max_groups_all_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -585,11 +585,11 @@ of_group_features_stats_reply_max_groups_all_set(
         offset = 24;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, max_groups_all);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -614,10 +614,10 @@ of_group_features_stats_reply_max_groups_select_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -626,11 +626,11 @@ of_group_features_stats_reply_max_groups_select_get(
         offset = 28;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, max_groups_select);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -653,10 +653,10 @@ of_group_features_stats_reply_max_groups_select_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -665,11 +665,11 @@ of_group_features_stats_reply_max_groups_select_set(
         offset = 28;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, max_groups_select);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -694,10 +694,10 @@ of_group_features_stats_reply_max_groups_indirect_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -706,11 +706,11 @@ of_group_features_stats_reply_max_groups_indirect_get(
         offset = 32;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, max_groups_indirect);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -733,10 +733,10 @@ of_group_features_stats_reply_max_groups_indirect_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -745,11 +745,11 @@ of_group_features_stats_reply_max_groups_indirect_set(
         offset = 32;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, max_groups_indirect);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -774,10 +774,10 @@ of_group_features_stats_reply_max_groups_ff_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -786,11 +786,11 @@ of_group_features_stats_reply_max_groups_ff_get(
         offset = 36;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, max_groups_ff);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -813,10 +813,10 @@ of_group_features_stats_reply_max_groups_ff_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -825,11 +825,11 @@ of_group_features_stats_reply_max_groups_ff_set(
         offset = 36;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, max_groups_ff);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -854,10 +854,10 @@ of_group_features_stats_reply_actions_all_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -866,11 +866,11 @@ of_group_features_stats_reply_actions_all_get(
         offset = 40;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, actions_all);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -893,10 +893,10 @@ of_group_features_stats_reply_actions_all_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -905,11 +905,11 @@ of_group_features_stats_reply_actions_all_set(
         offset = 40;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, actions_all);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -934,10 +934,10 @@ of_group_features_stats_reply_actions_select_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -946,11 +946,11 @@ of_group_features_stats_reply_actions_select_get(
         offset = 44;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, actions_select);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -973,10 +973,10 @@ of_group_features_stats_reply_actions_select_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -985,11 +985,11 @@ of_group_features_stats_reply_actions_select_set(
         offset = 44;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, actions_select);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1014,10 +1014,10 @@ of_group_features_stats_reply_actions_indirect_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1026,11 +1026,11 @@ of_group_features_stats_reply_actions_indirect_get(
         offset = 48;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, actions_indirect);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1053,10 +1053,10 @@ of_group_features_stats_reply_actions_indirect_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1065,11 +1065,11 @@ of_group_features_stats_reply_actions_indirect_set(
         offset = 48;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, actions_indirect);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1094,10 +1094,10 @@ of_group_features_stats_reply_actions_ff_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1106,11 +1106,11 @@ of_group_features_stats_reply_actions_ff_get(
         offset = 52;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, actions_ff);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1133,10 +1133,10 @@ of_group_features_stats_reply_actions_ff_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+    LOCI_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1145,11 +1145,11 @@ of_group_features_stats_reply_actions_ff_set(
         offset = 52;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, actions_ff);
 
     OF_LENGTH_CHECK_ASSERT(obj);

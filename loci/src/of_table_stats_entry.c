@@ -104,7 +104,7 @@ of_table_stats_entry_init(of_table_stats_entry_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_TABLE_STATS_ENTRY] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
@@ -144,10 +144,10 @@ of_table_stats_entry_table_id_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -158,11 +158,11 @@ of_table_stats_entry_table_id_get(
         offset = 0;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_get(wbuf, abs_offset, table_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -185,10 +185,10 @@ of_table_stats_entry_table_id_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -199,11 +199,11 @@ of_table_stats_entry_table_id_set(
         offset = 0;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u8_set(wbuf, abs_offset, table_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -228,10 +228,10 @@ of_table_stats_entry_active_count_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -248,11 +248,11 @@ of_table_stats_entry_active_count_get(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, active_count);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -275,10 +275,10 @@ of_table_stats_entry_active_count_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -295,11 +295,11 @@ of_table_stats_entry_active_count_set(
         offset = 4;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, active_count);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -324,10 +324,10 @@ of_table_stats_entry_lookup_count_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -344,11 +344,11 @@ of_table_stats_entry_lookup_count_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, lookup_count);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -371,10 +371,10 @@ of_table_stats_entry_lookup_count_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -391,11 +391,11 @@ of_table_stats_entry_lookup_count_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, lookup_count);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -420,10 +420,10 @@ of_table_stats_entry_matched_count_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -440,11 +440,11 @@ of_table_stats_entry_matched_count_get(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, matched_count);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -467,10 +467,10 @@ of_table_stats_entry_matched_count_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -487,11 +487,11 @@ of_table_stats_entry_matched_count_set(
         offset = 16;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, matched_count);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -516,10 +516,10 @@ of_table_stats_entry_name_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -531,11 +531,11 @@ of_table_stats_entry_name_get(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_tab_name_get(wbuf, abs_offset, name);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -558,10 +558,10 @@ of_table_stats_entry_name_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -573,11 +573,11 @@ of_table_stats_entry_name_set(
         offset = 8;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_tab_name_set(wbuf, abs_offset, name);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -602,10 +602,10 @@ of_table_stats_entry_match_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -616,11 +616,11 @@ of_table_stats_entry_match_get(
         offset = 40;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_match_bmap_get(ver, wbuf, abs_offset, match);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -643,10 +643,10 @@ of_table_stats_entry_match_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -657,11 +657,11 @@ of_table_stats_entry_match_set(
         offset = 40;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_match_bmap_set(ver, wbuf, abs_offset, match);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -686,10 +686,10 @@ of_table_stats_entry_wildcards_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -703,11 +703,11 @@ of_table_stats_entry_wildcards_get(
         offset = 48;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_wc_bmap_get(ver, wbuf, abs_offset, wildcards);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -730,10 +730,10 @@ of_table_stats_entry_wildcards_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -747,11 +747,11 @@ of_table_stats_entry_wildcards_set(
         offset = 48;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_wc_bmap_set(ver, wbuf, abs_offset, wildcards);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -776,10 +776,10 @@ of_table_stats_entry_write_actions_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -790,11 +790,11 @@ of_table_stats_entry_write_actions_get(
         offset = 56;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, write_actions);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -817,10 +817,10 @@ of_table_stats_entry_write_actions_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -831,11 +831,11 @@ of_table_stats_entry_write_actions_set(
         offset = 56;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, write_actions);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -860,10 +860,10 @@ of_table_stats_entry_apply_actions_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -874,11 +874,11 @@ of_table_stats_entry_apply_actions_get(
         offset = 60;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, apply_actions);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -901,10 +901,10 @@ of_table_stats_entry_apply_actions_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -915,11 +915,11 @@ of_table_stats_entry_apply_actions_set(
         offset = 60;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, apply_actions);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -944,10 +944,10 @@ of_table_stats_entry_write_setfields_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -955,11 +955,11 @@ of_table_stats_entry_write_setfields_get(
         offset = 64;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, write_setfields);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -982,10 +982,10 @@ of_table_stats_entry_write_setfields_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -993,11 +993,11 @@ of_table_stats_entry_write_setfields_set(
         offset = 64;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, write_setfields);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1022,10 +1022,10 @@ of_table_stats_entry_apply_setfields_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1033,11 +1033,11 @@ of_table_stats_entry_apply_setfields_get(
         offset = 72;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, apply_setfields);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1060,10 +1060,10 @@ of_table_stats_entry_apply_setfields_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1071,11 +1071,11 @@ of_table_stats_entry_apply_setfields_set(
         offset = 72;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, apply_setfields);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1100,10 +1100,10 @@ of_table_stats_entry_metadata_match_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1111,11 +1111,11 @@ of_table_stats_entry_metadata_match_get(
         offset = 80;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, metadata_match);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1138,10 +1138,10 @@ of_table_stats_entry_metadata_match_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1149,11 +1149,11 @@ of_table_stats_entry_metadata_match_set(
         offset = 80;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, metadata_match);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1178,10 +1178,10 @@ of_table_stats_entry_metadata_write_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1189,11 +1189,11 @@ of_table_stats_entry_metadata_write_get(
         offset = 88;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_get(wbuf, abs_offset, metadata_write);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1216,10 +1216,10 @@ of_table_stats_entry_metadata_write_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1227,11 +1227,11 @@ of_table_stats_entry_metadata_write_set(
         offset = 88;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u64_set(wbuf, abs_offset, metadata_write);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1256,10 +1256,10 @@ of_table_stats_entry_instructions_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1270,11 +1270,11 @@ of_table_stats_entry_instructions_get(
         offset = 96;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, instructions);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1297,10 +1297,10 @@ of_table_stats_entry_instructions_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1311,11 +1311,11 @@ of_table_stats_entry_instructions_set(
         offset = 96;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, instructions);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1340,10 +1340,10 @@ of_table_stats_entry_config_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1354,11 +1354,11 @@ of_table_stats_entry_config_get(
         offset = 100;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, config);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1381,10 +1381,10 @@ of_table_stats_entry_config_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1395,11 +1395,11 @@ of_table_stats_entry_config_set(
         offset = 100;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, config);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1424,10 +1424,10 @@ of_table_stats_entry_max_entries_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1441,11 +1441,11 @@ of_table_stats_entry_max_entries_get(
         offset = 104;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_get(wbuf, abs_offset, max_entries);
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1468,10 +1468,10 @@ of_table_stats_entry_max_entries_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
+    LOCI_ASSERT(obj->object_id == OF_TABLE_STATS_ENTRY);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
-    ASSERT(wbuf != NULL);
+    LOCI_ASSERT(wbuf != NULL);
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
@@ -1485,11 +1485,11 @@ of_table_stats_entry_max_entries_set(
         offset = 104;
         break;
     default:
-        ASSERT(0);
+        LOCI_ASSERT(0);
     }
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_u32_set(wbuf, abs_offset, max_entries);
 
     OF_LENGTH_CHECK_ASSERT(obj);

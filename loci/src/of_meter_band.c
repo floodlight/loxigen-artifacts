@@ -92,7 +92,7 @@ of_meter_band_init(of_meter_band_t *obj_p,
 
     obj = &obj_p->header;  /* Need instantiable subclass */
 
-    ASSERT(of_object_fixed_len[version][OF_METER_BAND] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_METER_BAND] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }

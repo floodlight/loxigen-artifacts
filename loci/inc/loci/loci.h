@@ -564,7 +564,7 @@ extern int of_match_to_wire_match_v3(of_match_t *src, of_match_v3_t *dst);
  * underlying wire buffer's current bytes.
  */
 #define OF_LENGTH_CHECK_ASSERT(obj) \
-    ASSERT(((obj)->parent != NULL) || \
+    LOCI_ASSERT(((obj)->parent != NULL) || \
      ((obj)->wire_object.wbuf == NULL) || \
      (WBUF_CURRENT_BYTES((obj)->wire_object.wbuf) == (obj)->length))
 

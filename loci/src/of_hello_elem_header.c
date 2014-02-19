@@ -89,7 +89,7 @@ of_hello_elem_header_init(of_hello_elem_header_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    ASSERT(of_object_fixed_len[version][OF_HELLO_ELEM_HEADER] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_HELLO_ELEM_HEADER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
