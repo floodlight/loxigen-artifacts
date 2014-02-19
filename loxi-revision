@@ -1,1 +1,1 @@
-19060b9bba8897eb7dc876d22129cbb81d999905 Merge into master from pull request #201: of_table_feature_prop_experimenter_miss type value fix (https://github.com/floodlight/loxigen/pull/201)
+152a6c61b932a552b482873ae7df194fdf8bd0d1 Merge into master from pull request #204: java_gen: Return copies of byte arrays in getBytes LOXI-58 (https://github.com/floodlight/loxigen/pull/204)
