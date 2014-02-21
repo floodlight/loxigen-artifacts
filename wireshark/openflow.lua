@@ -1686,6 +1686,7 @@ local enum_v4_ofp_packet_in_reason = {
     [137] = "OFPR_BSN_FRAGMENTATION_REQUIRED",
     [139] = "OFPR_BSN_ARP",
     [140] = "OFPR_BSN_DHCP",
+    [141] = "OFPR_BSN_DEBUG",
 }
 
 local enum_v4_of_bsn_vlan_counter_t = {
