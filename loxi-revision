@@ -1,1 +1,1 @@
-0a48e0952154c621e00ca742049a85be1e455aaa Merge into master from pull request #208: add debug as pktin reason (https://github.com/floodlight/loxigen/pull/208)
+fd9430c67ababd7db8ce36df7cf5a97d7616f51a Merge into master from pull request #209: loci: add a function to parse messages without allocating memory (https://github.com/floodlight/loxigen/pull/209)
