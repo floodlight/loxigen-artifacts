@@ -1,1 +1,1 @@
-fd9430c67ababd7db8ce36df7cf5a97d7616f51a Merge into master from pull request #209: loci: add a function to parse messages without allocating memory (https://github.com/floodlight/loxigen/pull/209)
+2fbe90a66c6df64e2b4eaad9552d68866702f791 Merge into master from pull request #211: Remove padding from action_ids. (https://github.com/floodlight/loxigen/pull/211)

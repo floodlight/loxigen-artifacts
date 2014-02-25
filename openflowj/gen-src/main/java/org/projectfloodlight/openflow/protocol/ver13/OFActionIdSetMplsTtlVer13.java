@@ -34,7 +34,7 @@ class OFActionIdSetMplsTtlVer13 implements OFActionIdSetMplsTtl {
     private static final Logger logger = LoggerFactory.getLogger(OFActionIdSetMplsTtlVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 7;
+    final static int LENGTH = 4;
 
 
     // OF message fields
@@ -78,8 +78,8 @@ class OFActionIdSetMplsTtlVer13 implements OFActionIdSetMplsTtl {
             if(type != (short) 0xf)
                 throw new OFParseError("Wrong type: Expected=OFActionType.SET_MPLS_TTL(15), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 7)
-                throw new OFParseError("Wrong length: Expected=7(7), got="+length);
+            if(length != 4)
+                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -87,8 +87,6 @@ class OFActionIdSetMplsTtlVer13 implements OFActionIdSetMplsTtl {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            // pad: 3 bytes
-            bb.skipBytes(3);
 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - returning shared instance={}", INSTANCE);
@@ -107,9 +105,8 @@ class OFActionIdSetMplsTtlVer13 implements OFActionIdSetMplsTtl {
         public void funnel(OFActionIdSetMplsTtlVer13 message, PrimitiveSink sink) {
             // fixed value property type = 15
             sink.putShort((short) 0xf);
-            // fixed value property length = 7
-            sink.putShort((short) 0x7);
-            // skip pad (3 bytes)
+            // fixed value property length = 4
+            sink.putShort((short) 0x4);
         }
     }
 
@@ -124,10 +121,8 @@ class OFActionIdSetMplsTtlVer13 implements OFActionIdSetMplsTtl {
         public void write(ChannelBuffer bb, OFActionIdSetMplsTtlVer13 message) {
             // fixed value property type = 15
             bb.writeShort((short) 0xf);
-            // fixed value property length = 7
-            bb.writeShort((short) 0x7);
-            // pad: 3 bytes
-            bb.writeZero(3);
+            // fixed value property length = 4
+            bb.writeShort((short) 0x4);
 
 
         }

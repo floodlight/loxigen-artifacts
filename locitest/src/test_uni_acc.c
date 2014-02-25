@@ -24812,7 +24812,7 @@ test_of_action_id_bsn_OF_VERSION_1_3(void)
     obj = of_action_id_bsn_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_BSN);
 
@@ -24829,7 +24829,7 @@ test_of_action_id_bsn_mirror_OF_VERSION_1_3(void)
     obj = of_action_id_bsn_mirror_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 15);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_BSN_MIRROR);
 
@@ -24837,7 +24837,7 @@ test_of_action_id_bsn_mirror_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 15);
+        TEST_ASSERT(length == 12);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24905,7 +24905,7 @@ test_of_action_id_copy_ttl_in_OF_VERSION_1_3(void)
     obj = of_action_id_copy_ttl_in_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_COPY_TTL_IN);
 
@@ -24913,7 +24913,7 @@ test_of_action_id_copy_ttl_in_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24943,7 +24943,7 @@ test_of_action_id_copy_ttl_out_OF_VERSION_1_3(void)
     obj = of_action_id_copy_ttl_out_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_COPY_TTL_OUT);
 
@@ -24951,7 +24951,7 @@ test_of_action_id_copy_ttl_out_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -24981,7 +24981,7 @@ test_of_action_id_dec_mpls_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_dec_mpls_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_DEC_MPLS_TTL);
 
@@ -24989,7 +24989,7 @@ test_of_action_id_dec_mpls_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25019,7 +25019,7 @@ test_of_action_id_dec_nw_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_dec_nw_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_DEC_NW_TTL);
 
@@ -25027,7 +25027,7 @@ test_of_action_id_dec_nw_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25112,7 +25112,7 @@ test_of_action_id_header_OF_VERSION_1_3(void)
     obj = of_action_id_header_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_HEADER);
 
@@ -25129,7 +25129,7 @@ test_of_action_id_nicira_OF_VERSION_1_3(void)
     obj = of_action_id_nicira_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 10);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA);
 
@@ -25146,7 +25146,7 @@ test_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_nicira_dec_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 10);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_NICIRA_DEC_TTL);
 
@@ -25154,7 +25154,7 @@ test_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
+        TEST_ASSERT(length == 10);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25184,7 +25184,7 @@ test_of_action_id_output_OF_VERSION_1_3(void)
     obj = of_action_id_output_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_OUTPUT);
 
@@ -25192,7 +25192,7 @@ test_of_action_id_output_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 10);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25222,7 +25222,7 @@ test_of_action_id_pop_mpls_OF_VERSION_1_3(void)
     obj = of_action_id_pop_mpls_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_POP_MPLS);
 
@@ -25230,7 +25230,7 @@ test_of_action_id_pop_mpls_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 6);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25260,7 +25260,7 @@ test_of_action_id_pop_pbb_OF_VERSION_1_3(void)
     obj = of_action_id_pop_pbb_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_POP_PBB);
 
@@ -25268,7 +25268,7 @@ test_of_action_id_pop_pbb_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25298,7 +25298,7 @@ test_of_action_id_pop_vlan_OF_VERSION_1_3(void)
     obj = of_action_id_pop_vlan_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_POP_VLAN);
 
@@ -25306,7 +25306,7 @@ test_of_action_id_pop_vlan_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25336,7 +25336,7 @@ test_of_action_id_push_mpls_OF_VERSION_1_3(void)
     obj = of_action_id_push_mpls_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_PUSH_MPLS);
 
@@ -25344,7 +25344,7 @@ test_of_action_id_push_mpls_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 6);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25374,7 +25374,7 @@ test_of_action_id_push_pbb_OF_VERSION_1_3(void)
     obj = of_action_id_push_pbb_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_PUSH_PBB);
 
@@ -25382,7 +25382,7 @@ test_of_action_id_push_pbb_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 6);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25412,7 +25412,7 @@ test_of_action_id_push_vlan_OF_VERSION_1_3(void)
     obj = of_action_id_push_vlan_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 6);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_PUSH_VLAN);
 
@@ -25420,7 +25420,7 @@ test_of_action_id_push_vlan_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 6);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25488,7 +25488,7 @@ test_of_action_id_set_mpls_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_set_mpls_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 7);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_SET_MPLS_TTL);
 
@@ -25496,7 +25496,7 @@ test_of_action_id_set_mpls_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 7);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -25526,7 +25526,7 @@ test_of_action_id_set_nw_ttl_OF_VERSION_1_3(void)
     obj = of_action_id_set_nw_ttl_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 7);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ACTION_ID_SET_NW_TTL);
 
@@ -25534,7 +25534,7 @@ test_of_action_id_set_nw_ttl_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 7);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -27807,7 +27807,7 @@ test_of_instruction_id_apply_actions_OF_VERSION_1_3(void)
     obj = of_instruction_id_apply_actions_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS);
 
@@ -27815,7 +27815,7 @@ test_of_instruction_id_apply_actions_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -27845,7 +27845,7 @@ test_of_instruction_id_bsn_OF_VERSION_1_3(void)
     obj = of_instruction_id_bsn_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN);
 
@@ -27862,7 +27862,7 @@ test_of_instruction_id_bsn_arp_offload_OF_VERSION_1_3(void)
     obj = of_instruction_id_bsn_arp_offload_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD);
 
@@ -27870,7 +27870,7 @@ test_of_instruction_id_bsn_arp_offload_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
+        TEST_ASSERT(length == 12);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -27900,7 +27900,7 @@ test_of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3(void)
     obj = of_instruction_id_bsn_dhcp_offload_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD);
 
@@ -27908,7 +27908,7 @@ test_of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
+        TEST_ASSERT(length == 12);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -27938,7 +27938,7 @@ test_of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3(void)
     obj = of_instruction_id_bsn_disable_split_horizon_check_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK);
 
@@ -27946,7 +27946,7 @@ test_of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
+        TEST_ASSERT(length == 12);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -27976,7 +27976,7 @@ test_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(void)
     obj = of_instruction_id_bsn_disable_src_mac_check_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK);
 
@@ -27984,7 +27984,7 @@ test_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 16);
+        TEST_ASSERT(length == 12);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -28014,7 +28014,7 @@ test_of_instruction_id_clear_actions_OF_VERSION_1_3(void)
     obj = of_instruction_id_clear_actions_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS);
 
@@ -28022,7 +28022,7 @@ test_of_instruction_id_clear_actions_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -28069,7 +28069,7 @@ test_of_instruction_id_goto_table_OF_VERSION_1_3(void)
     obj = of_instruction_id_goto_table_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 7);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_GOTO_TABLE);
 
@@ -28077,7 +28077,7 @@ test_of_instruction_id_goto_table_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 7);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -28162,7 +28162,7 @@ test_of_instruction_id_write_actions_OF_VERSION_1_3(void)
     obj = of_instruction_id_write_actions_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS);
 
@@ -28170,7 +28170,7 @@ test_of_instruction_id_write_actions_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -28200,7 +28200,7 @@ test_of_instruction_id_write_metadata_OF_VERSION_1_3(void)
     obj = of_instruction_id_write_metadata_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->length == 4);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_WRITE_METADATA);
 
@@ -28208,7 +28208,7 @@ test_of_instruction_id_write_metadata_OF_VERSION_1_3(void)
         int length;
 
         obj->wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 8);
+        TEST_ASSERT(length == 4);
     }
     if (obj->wire_type_get != NULL) {
         of_object_id_t obj_id;

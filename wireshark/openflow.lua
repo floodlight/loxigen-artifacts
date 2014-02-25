@@ -18244,7 +18244,6 @@ function dissect_of_action_id_bsn_mirror_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn_mirror.len')
     read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn_mirror.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn_mirror.subtype')
-    reader.skip(3)
     return 'of_action_id_bsn_mirror'
 end
 of_action_id_bsn_v4_dissectors[1] = dissect_of_action_id_bsn_mirror_v4
@@ -18287,7 +18286,6 @@ of_action_v4_dissectors[12] = dissect_of_action_copy_ttl_in_v4
 function dissect_of_action_id_copy_ttl_in_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_copy_ttl_in.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_copy_ttl_in.len')
-    reader.skip(4)
     return 'of_action_id_copy_ttl_in'
 end
 of_action_id_v4_dissectors[12] = dissect_of_action_id_copy_ttl_in_v4
@@ -18307,7 +18305,6 @@ of_action_v4_dissectors[11] = dissect_of_action_copy_ttl_out_v4
 function dissect_of_action_id_copy_ttl_out_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_copy_ttl_out.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_copy_ttl_out.len')
-    reader.skip(4)
     return 'of_action_id_copy_ttl_out'
 end
 of_action_id_v4_dissectors[11] = dissect_of_action_id_copy_ttl_out_v4
@@ -18327,7 +18324,6 @@ of_action_v4_dissectors[16] = dissect_of_action_dec_mpls_ttl_v4
 function dissect_of_action_id_dec_mpls_ttl_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_dec_mpls_ttl.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_dec_mpls_ttl.len')
-    reader.skip(4)
     return 'of_action_id_dec_mpls_ttl'
 end
 of_action_id_v4_dissectors[16] = dissect_of_action_id_dec_mpls_ttl_v4
@@ -18347,7 +18343,6 @@ of_action_v4_dissectors[24] = dissect_of_action_dec_nw_ttl_v4
 function dissect_of_action_id_dec_nw_ttl_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_dec_nw_ttl.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_dec_nw_ttl.len')
-    reader.skip(4)
     return 'of_action_id_dec_nw_ttl'
 end
 of_action_id_v4_dissectors[24] = dissect_of_action_id_dec_nw_ttl_v4
@@ -18407,8 +18402,6 @@ function dissect_of_action_id_nicira_dec_ttl_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_dec_ttl.len')
     read_uint32_t(reader, 4, subtree, 'of13.action_id_nicira_dec_ttl.experimenter')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_nicira_dec_ttl.subtype')
-    reader.skip(2)
-    reader.skip(4)
     return 'of_action_id_nicira_dec_ttl'
 end
 of_action_id_nicira_v4_dissectors[18] = dissect_of_action_id_nicira_dec_ttl_v4
@@ -18430,7 +18423,6 @@ of_action_v4_dissectors[0] = dissect_of_action_output_v4
 function dissect_of_action_id_output_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_output.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_output.len')
-    reader.skip(6)
     return 'of_action_id_output'
 end
 of_action_id_v4_dissectors[0] = dissect_of_action_id_output_v4
@@ -18451,7 +18443,6 @@ of_action_v4_dissectors[20] = dissect_of_action_pop_mpls_v4
 function dissect_of_action_id_pop_mpls_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_pop_mpls.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_pop_mpls.len')
-    reader.skip(2)
     return 'of_action_id_pop_mpls'
 end
 of_action_id_v4_dissectors[20] = dissect_of_action_id_pop_mpls_v4
@@ -18471,7 +18462,6 @@ of_action_v4_dissectors[27] = dissect_of_action_pop_pbb_v4
 function dissect_of_action_id_pop_pbb_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_pop_pbb.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_pop_pbb.len')
-    reader.skip(4)
     return 'of_action_id_pop_pbb'
 end
 of_action_id_v4_dissectors[27] = dissect_of_action_id_pop_pbb_v4
@@ -18491,7 +18481,6 @@ of_action_v4_dissectors[18] = dissect_of_action_pop_vlan_v4
 function dissect_of_action_id_pop_vlan_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_pop_vlan.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_pop_vlan.len')
-    reader.skip(4)
     return 'of_action_id_pop_vlan'
 end
 of_action_id_v4_dissectors[18] = dissect_of_action_id_pop_vlan_v4
@@ -18512,7 +18501,6 @@ of_action_v4_dissectors[19] = dissect_of_action_push_mpls_v4
 function dissect_of_action_id_push_mpls_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_push_mpls.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_push_mpls.len')
-    reader.skip(2)
     return 'of_action_id_push_mpls'
 end
 of_action_id_v4_dissectors[19] = dissect_of_action_id_push_mpls_v4
@@ -18533,7 +18521,6 @@ of_action_v4_dissectors[26] = dissect_of_action_push_pbb_v4
 function dissect_of_action_id_push_pbb_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_push_pbb.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_push_pbb.len')
-    reader.skip(2)
     return 'of_action_id_push_pbb'
 end
 of_action_id_v4_dissectors[26] = dissect_of_action_id_push_pbb_v4
@@ -18554,7 +18541,6 @@ of_action_v4_dissectors[17] = dissect_of_action_push_vlan_v4
 function dissect_of_action_id_push_vlan_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_push_vlan.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_push_vlan.len')
-    reader.skip(2)
     return 'of_action_id_push_vlan'
 end
 of_action_id_v4_dissectors[17] = dissect_of_action_id_push_vlan_v4
@@ -18602,7 +18588,6 @@ of_action_v4_dissectors[15] = dissect_of_action_set_mpls_ttl_v4
 function dissect_of_action_id_set_mpls_ttl_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_set_mpls_ttl.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_set_mpls_ttl.len')
-    reader.skip(3)
     return 'of_action_id_set_mpls_ttl'
 end
 of_action_id_v4_dissectors[15] = dissect_of_action_id_set_mpls_ttl_v4
@@ -18623,7 +18608,6 @@ of_action_v4_dissectors[23] = dissect_of_action_set_nw_ttl_v4
 function dissect_of_action_id_set_nw_ttl_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.action_id_set_nw_ttl.type')
     read_uint16_t(reader, 4, subtree, 'of13.action_id_set_nw_ttl.len')
-    reader.skip(3)
     return 'of_action_id_set_nw_ttl'
 end
 of_action_id_v4_dissectors[23] = dissect_of_action_id_set_nw_ttl_v4
@@ -21078,7 +21062,6 @@ of_instruction_v4_dissectors[4] = dissect_of_instruction_apply_actions_v4
 function dissect_of_instruction_id_apply_actions_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_apply_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_apply_actions.len')
-    reader.skip(4)
     return 'of_instruction_id_apply_actions'
 end
 of_instruction_id_v4_dissectors[4] = dissect_of_instruction_id_apply_actions_v4
@@ -21134,7 +21117,6 @@ function dissect_of_instruction_id_bsn_arp_offload_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_arp_offload.len')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_arp_offload.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_arp_offload.subtype')
-    reader.skip(4)
     return 'of_instruction_id_bsn_arp_offload'
 end
 of_instruction_id_bsn_v4_dissectors[1] = dissect_of_instruction_id_bsn_arp_offload_v4
@@ -21158,7 +21140,6 @@ function dissect_of_instruction_id_bsn_dhcp_offload_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_dhcp_offload.len')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_dhcp_offload.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_dhcp_offload.subtype')
-    reader.skip(4)
     return 'of_instruction_id_bsn_dhcp_offload'
 end
 of_instruction_id_bsn_v4_dissectors[2] = dissect_of_instruction_id_bsn_dhcp_offload_v4
@@ -21182,7 +21163,6 @@ function dissect_of_instruction_id_bsn_disable_split_horizon_check_v4(reader, su
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_split_horizon_check.len')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_split_horizon_check.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_split_horizon_check.subtype')
-    reader.skip(4)
     return 'of_instruction_id_bsn_disable_split_horizon_check'
 end
 of_instruction_id_bsn_v4_dissectors[3] = dissect_of_instruction_id_bsn_disable_split_horizon_check_v4
@@ -21206,7 +21186,6 @@ function dissect_of_instruction_id_bsn_disable_src_mac_check_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_src_mac_check.len')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_src_mac_check.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_src_mac_check.subtype')
-    reader.skip(4)
     return 'of_instruction_id_bsn_disable_src_mac_check'
 end
 of_instruction_id_bsn_v4_dissectors[0] = dissect_of_instruction_id_bsn_disable_src_mac_check_v4
@@ -21226,7 +21205,6 @@ of_instruction_v4_dissectors[5] = dissect_of_instruction_clear_actions_v4
 function dissect_of_instruction_id_clear_actions_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_clear_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_clear_actions.len')
-    reader.skip(4)
     return 'of_instruction_id_clear_actions'
 end
 of_instruction_id_v4_dissectors[5] = dissect_of_instruction_id_clear_actions_v4
@@ -21247,7 +21225,6 @@ of_instruction_v4_dissectors[1] = dissect_of_instruction_goto_table_v4
 function dissect_of_instruction_id_goto_table_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_goto_table.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_goto_table.len')
-    reader.skip(3)
     return 'of_instruction_id_goto_table'
 end
 of_instruction_id_v4_dissectors[1] = dissect_of_instruction_id_goto_table_v4
@@ -21290,7 +21267,6 @@ of_instruction_v4_dissectors[3] = dissect_of_instruction_write_actions_v4
 function dissect_of_instruction_id_write_actions_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_write_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_write_actions.len')
-    reader.skip(4)
     return 'of_instruction_id_write_actions'
 end
 of_instruction_id_v4_dissectors[3] = dissect_of_instruction_id_write_actions_v4
@@ -21312,7 +21288,6 @@ of_instruction_v4_dissectors[2] = dissect_of_instruction_write_metadata_v4
 function dissect_of_instruction_id_write_metadata_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_write_metadata.type')
     read_uint16_t(reader, 4, subtree, 'of13.instruction_id_write_metadata.len')
-    reader.skip(4)
     return 'of_instruction_id_write_metadata'
 end
 of_instruction_id_v4_dissectors[2] = dissect_of_instruction_id_write_metadata_v4

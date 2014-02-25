@@ -29,7 +29,7 @@ import java.util.Set;
 abstract class OFActionIdVer13 {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int MINIMUM_LENGTH = 8;
+    final static int MINIMUM_LENGTH = 4;
 
 
     public final static OFActionIdVer13.Reader READER = new Reader();

@@ -33,7 +33,7 @@ class OFActionIdNiciraDecTtlVer13 implements OFActionIdNiciraDecTtl {
     private static final Logger logger = LoggerFactory.getLogger(OFActionIdNiciraDecTtlVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 16;
+    final static int LENGTH = 10;
 
 
     // OF message fields
@@ -87,8 +87,8 @@ class OFActionIdNiciraDecTtlVer13 implements OFActionIdNiciraDecTtl {
             if(type != (short) 0xffff)
                 throw new OFParseError("Wrong type: Expected=OFActionType.EXPERIMENTER(65535), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 16)
-                throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            if(length != 10)
+                throw new OFParseError("Wrong length: Expected=10(10), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -104,10 +104,6 @@ class OFActionIdNiciraDecTtlVer13 implements OFActionIdNiciraDecTtl {
             short subtype = bb.readShort();
             if(subtype != (short) 0x12)
                 throw new OFParseError("Wrong subtype: Expected=0x12(0x12), got="+subtype);
-            // pad: 2 bytes
-            bb.skipBytes(2);
-            // pad: 4 bytes
-            bb.skipBytes(4);
 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - returning shared instance={}", INSTANCE);
@@ -126,14 +122,12 @@ class OFActionIdNiciraDecTtlVer13 implements OFActionIdNiciraDecTtl {
         public void funnel(OFActionIdNiciraDecTtlVer13 message, PrimitiveSink sink) {
             // fixed value property type = 65535
             sink.putShort((short) 0xffff);
-            // fixed value property length = 16
-            sink.putShort((short) 0x10);
+            // fixed value property length = 10
+            sink.putShort((short) 0xa);
             // fixed value property experimenter = 0x2320L
             sink.putInt(0x2320);
             // fixed value property subtype = 0x12
             sink.putShort((short) 0x12);
-            // skip pad (2 bytes)
-            // skip pad (4 bytes)
         }
     }
 
@@ -148,16 +142,12 @@ class OFActionIdNiciraDecTtlVer13 implements OFActionIdNiciraDecTtl {
         public void write(ChannelBuffer bb, OFActionIdNiciraDecTtlVer13 message) {
             // fixed value property type = 65535
             bb.writeShort((short) 0xffff);
-            // fixed value property length = 16
-            bb.writeShort((short) 0x10);
+            // fixed value property length = 10
+            bb.writeShort((short) 0xa);
             // fixed value property experimenter = 0x2320L
             bb.writeInt(0x2320);
             // fixed value property subtype = 0x12
             bb.writeShort((short) 0x12);
-            // pad: 2 bytes
-            bb.writeZero(2);
-            // pad: 4 bytes
-            bb.writeZero(4);
 
 
         }

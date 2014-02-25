@@ -33,7 +33,7 @@ class OFInstructionIdWriteActionsVer13 implements OFInstructionIdWriteActions {
     private static final Logger logger = LoggerFactory.getLogger(OFInstructionIdWriteActionsVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 8;
+    final static int LENGTH = 4;
 
 
     // OF message fields
@@ -77,8 +77,8 @@ class OFInstructionIdWriteActionsVer13 implements OFInstructionIdWriteActions {
             if(type != (short) 0x3)
                 throw new OFParseError("Wrong type: Expected=OFInstructionType.WRITE_ACTIONS(3), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 8)
-                throw new OFParseError("Wrong length: Expected=8(8), got="+length);
+            if(length != 4)
+                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -86,8 +86,6 @@ class OFInstructionIdWriteActionsVer13 implements OFInstructionIdWriteActions {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            // pad: 4 bytes
-            bb.skipBytes(4);
 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - returning shared instance={}", INSTANCE);
@@ -106,9 +104,8 @@ class OFInstructionIdWriteActionsVer13 implements OFInstructionIdWriteActions {
         public void funnel(OFInstructionIdWriteActionsVer13 message, PrimitiveSink sink) {
             // fixed value property type = 3
             sink.putShort((short) 0x3);
-            // fixed value property length = 8
-            sink.putShort((short) 0x8);
-            // skip pad (4 bytes)
+            // fixed value property length = 4
+            sink.putShort((short) 0x4);
         }
     }
 
@@ -123,10 +120,8 @@ class OFInstructionIdWriteActionsVer13 implements OFInstructionIdWriteActions {
         public void write(ChannelBuffer bb, OFInstructionIdWriteActionsVer13 message) {
             // fixed value property type = 3
             bb.writeShort((short) 0x3);
-            // fixed value property length = 8
-            bb.writeShort((short) 0x8);
-            // pad: 4 bytes
-            bb.writeZero(4);
+            // fixed value property length = 4
+            bb.writeShort((short) 0x4);
 
 
         }

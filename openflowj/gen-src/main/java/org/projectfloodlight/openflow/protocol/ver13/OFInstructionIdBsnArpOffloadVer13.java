@@ -33,7 +33,7 @@ class OFInstructionIdBsnArpOffloadVer13 implements OFInstructionIdBsnArpOffload 
     private static final Logger logger = LoggerFactory.getLogger(OFInstructionIdBsnArpOffloadVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 16;
+    final static int LENGTH = 12;
 
 
     // OF message fields
@@ -87,8 +87,8 @@ class OFInstructionIdBsnArpOffloadVer13 implements OFInstructionIdBsnArpOffload 
             if(type != (short) 0xffff)
                 throw new OFParseError("Wrong type: Expected=OFInstructionType.EXPERIMENTER(65535), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 16)
-                throw new OFParseError("Wrong length: Expected=16(16), got="+length);
+            if(length != 12)
+                throw new OFParseError("Wrong length: Expected=12(12), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -104,8 +104,6 @@ class OFInstructionIdBsnArpOffloadVer13 implements OFInstructionIdBsnArpOffload 
             int subtype = bb.readInt();
             if(subtype != 0x1)
                 throw new OFParseError("Wrong subtype: Expected=0x1L(0x1L), got="+subtype);
-            // pad: 4 bytes
-            bb.skipBytes(4);
 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - returning shared instance={}", INSTANCE);
@@ -124,13 +122,12 @@ class OFInstructionIdBsnArpOffloadVer13 implements OFInstructionIdBsnArpOffload 
         public void funnel(OFInstructionIdBsnArpOffloadVer13 message, PrimitiveSink sink) {
             // fixed value property type = 65535
             sink.putShort((short) 0xffff);
-            // fixed value property length = 16
-            sink.putShort((short) 0x10);
+            // fixed value property length = 12
+            sink.putShort((short) 0xc);
             // fixed value property experimenter = 0x5c16c7L
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x1L
             sink.putInt(0x1);
-            // skip pad (4 bytes)
         }
     }
 
@@ -145,14 +142,12 @@ class OFInstructionIdBsnArpOffloadVer13 implements OFInstructionIdBsnArpOffload 
         public void write(ChannelBuffer bb, OFInstructionIdBsnArpOffloadVer13 message) {
             // fixed value property type = 65535
             bb.writeShort((short) 0xffff);
-            // fixed value property length = 16
-            bb.writeShort((short) 0x10);
+            // fixed value property length = 12
+            bb.writeShort((short) 0xc);
             // fixed value property experimenter = 0x5c16c7L
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x1L
             bb.writeInt(0x1);
-            // pad: 4 bytes
-            bb.writeZero(4);
 
 
         }

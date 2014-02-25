@@ -33,7 +33,7 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
     private static final Logger logger = LoggerFactory.getLogger(OFInstructionIdGotoTableVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 7;
+    final static int LENGTH = 4;
 
 
     // OF message fields
@@ -77,8 +77,8 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
             if(type != (short) 0x1)
                 throw new OFParseError("Wrong type: Expected=OFInstructionType.GOTO_TABLE(1), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 7)
-                throw new OFParseError("Wrong length: Expected=7(7), got="+length);
+            if(length != 4)
+                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -86,8 +86,6 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            // pad: 3 bytes
-            bb.skipBytes(3);
 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - returning shared instance={}", INSTANCE);
@@ -106,9 +104,8 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
         public void funnel(OFInstructionIdGotoTableVer13 message, PrimitiveSink sink) {
             // fixed value property type = 1
             sink.putShort((short) 0x1);
-            // fixed value property length = 7
-            sink.putShort((short) 0x7);
-            // skip pad (3 bytes)
+            // fixed value property length = 4
+            sink.putShort((short) 0x4);
         }
     }
 
@@ -123,10 +120,8 @@ class OFInstructionIdGotoTableVer13 implements OFInstructionIdGotoTable {
         public void write(ChannelBuffer bb, OFInstructionIdGotoTableVer13 message) {
             // fixed value property type = 1
             bb.writeShort((short) 0x1);
-            // fixed value property length = 7
-            bb.writeShort((short) 0x7);
-            // pad: 3 bytes
-            bb.writeZero(3);
+            // fixed value property length = 4
+            bb.writeShort((short) 0x4);
 
 
         }

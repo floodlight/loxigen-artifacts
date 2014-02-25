@@ -1046,6 +1046,30 @@ test_of10_table_stats_entry(void) {
     return TEST_PASS;
 }
 
+/* Generated from of13/action_id_output.data */
+static int
+test_of13_action_id_output(void) {
+    uint8_t binary[] = {
+        0x00, 0x00, 0x00, 0x04, 
+    };
+
+    of_object_t *obj;
+
+    obj = of_action_id_output_new(OF_VERSION_1_3);
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
 /* Generated from of13/bad_match_error_msg.data */
 static int
 test_of13_bad_match_error_msg(void) {
@@ -1948,6 +1972,7 @@ test_datafiles(void)
     RUN_TEST(of10_port_status);
     RUN_TEST(of10_queue_get_config_reply);
     RUN_TEST(of10_table_stats_entry);
+    RUN_TEST(of13_action_id_output);
     RUN_TEST(of13_bad_match_error_msg);
     RUN_TEST(of13_bad_request_error_msg);
     RUN_TEST(of13_bsn_flow_idle);

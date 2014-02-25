@@ -33,7 +33,7 @@ class OFActionIdPopMplsVer13 implements OFActionIdPopMpls {
     private static final Logger logger = LoggerFactory.getLogger(OFActionIdPopMplsVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 6;
+    final static int LENGTH = 4;
 
 
     // OF message fields
@@ -77,8 +77,8 @@ class OFActionIdPopMplsVer13 implements OFActionIdPopMpls {
             if(type != (short) 0x14)
                 throw new OFParseError("Wrong type: Expected=OFActionType.POP_MPLS(20), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 6)
-                throw new OFParseError("Wrong length: Expected=6(6), got="+length);
+            if(length != 4)
+                throw new OFParseError("Wrong length: Expected=4(4), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -86,8 +86,6 @@ class OFActionIdPopMplsVer13 implements OFActionIdPopMpls {
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            // pad: 2 bytes
-            bb.skipBytes(2);
 
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - returning shared instance={}", INSTANCE);
@@ -106,9 +104,8 @@ class OFActionIdPopMplsVer13 implements OFActionIdPopMpls {
         public void funnel(OFActionIdPopMplsVer13 message, PrimitiveSink sink) {
             // fixed value property type = 20
             sink.putShort((short) 0x14);
-            // fixed value property length = 6
-            sink.putShort((short) 0x6);
-            // skip pad (2 bytes)
+            // fixed value property length = 4
+            sink.putShort((short) 0x4);
         }
     }
 
@@ -123,10 +120,8 @@ class OFActionIdPopMplsVer13 implements OFActionIdPopMpls {
         public void write(ChannelBuffer bb, OFActionIdPopMplsVer13 message) {
             // fixed value property type = 20
             bb.writeShort((short) 0x14);
-            // fixed value property length = 6
-            bb.writeShort((short) 0x6);
-            // pad: 2 bytes
-            bb.writeZero(2);
+            // fixed value property length = 4
+            bb.writeShort((short) 0x4);
 
 
         }

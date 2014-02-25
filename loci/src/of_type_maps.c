@@ -4241,29 +4241,29 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     8,    /* 181: of_action_experimenter */
     8,    /* 182: of_action_group */
     8,    /* 183: of_action_header */
-    8,    /* 184: of_action_id */
-    16,   /* 185: of_action_id_bsn */
-    15,   /* 186: of_action_id_bsn_mirror */
+    4,    /* 184: of_action_id */
+    12,   /* 185: of_action_id_bsn */
+    12,   /* 186: of_action_id_bsn_mirror */
     12,   /* 187: of_action_id_bsn_set_tunnel_dst */
-    8,    /* 188: of_action_id_copy_ttl_in */
-    8,    /* 189: of_action_id_copy_ttl_out */
-    8,    /* 190: of_action_id_dec_mpls_ttl */
-    8,    /* 191: of_action_id_dec_nw_ttl */
+    4,    /* 188: of_action_id_copy_ttl_in */
+    4,    /* 189: of_action_id_copy_ttl_out */
+    4,    /* 190: of_action_id_dec_mpls_ttl */
+    4,    /* 191: of_action_id_dec_nw_ttl */
     8,    /* 192: of_action_id_experimenter */
     4,    /* 193: of_action_id_group */
-    8,    /* 194: of_action_id_header */
-    16,   /* 195: of_action_id_nicira */
-    16,   /* 196: of_action_id_nicira_dec_ttl */
-    10,   /* 197: of_action_id_output */
-    6,    /* 198: of_action_id_pop_mpls */
-    8,    /* 199: of_action_id_pop_pbb */
-    8,    /* 200: of_action_id_pop_vlan */
-    6,    /* 201: of_action_id_push_mpls */
-    6,    /* 202: of_action_id_push_pbb */
-    6,    /* 203: of_action_id_push_vlan */
+    4,    /* 194: of_action_id_header */
+    10,   /* 195: of_action_id_nicira */
+    10,   /* 196: of_action_id_nicira_dec_ttl */
+    4,    /* 197: of_action_id_output */
+    4,    /* 198: of_action_id_pop_mpls */
+    4,    /* 199: of_action_id_pop_pbb */
+    4,    /* 200: of_action_id_pop_vlan */
+    4,    /* 201: of_action_id_push_mpls */
+    4,    /* 202: of_action_id_push_pbb */
+    4,    /* 203: of_action_id_push_vlan */
     4,    /* 204: of_action_id_set_field */
-    7,    /* 205: of_action_id_set_mpls_ttl */
-    7,    /* 206: of_action_id_set_nw_ttl */
+    4,    /* 205: of_action_id_set_mpls_ttl */
+    4,    /* 206: of_action_id_set_nw_ttl */
     4,    /* 207: of_action_id_set_queue */
     16,   /* 208: of_action_nicira */
     16,   /* 209: of_action_nicira_dec_ttl */
@@ -4346,19 +4346,19 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     8,    /* 286: of_instruction_goto_table */
     4,    /* 287: of_instruction_header */
     4,    /* 288: of_instruction_id */
-    8,    /* 289: of_instruction_id_apply_actions */
-    16,   /* 290: of_instruction_id_bsn */
-    16,   /* 291: of_instruction_id_bsn_arp_offload */
-    16,   /* 292: of_instruction_id_bsn_dhcp_offload */
-    16,   /* 293: of_instruction_id_bsn_disable_split_horizon_check */
-    16,   /* 294: of_instruction_id_bsn_disable_src_mac_check */
-    8,    /* 295: of_instruction_id_clear_actions */
+    4,    /* 289: of_instruction_id_apply_actions */
+    12,   /* 290: of_instruction_id_bsn */
+    12,   /* 291: of_instruction_id_bsn_arp_offload */
+    12,   /* 292: of_instruction_id_bsn_dhcp_offload */
+    12,   /* 293: of_instruction_id_bsn_disable_split_horizon_check */
+    12,   /* 294: of_instruction_id_bsn_disable_src_mac_check */
+    4,    /* 295: of_instruction_id_clear_actions */
     8,    /* 296: of_instruction_id_experimenter */
-    7,    /* 297: of_instruction_id_goto_table */
+    4,    /* 297: of_instruction_id_goto_table */
     4,    /* 298: of_instruction_id_header */
     4,    /* 299: of_instruction_id_meter */
-    8,    /* 300: of_instruction_id_write_actions */
-    8,    /* 301: of_instruction_id_write_metadata */
+    4,    /* 300: of_instruction_id_write_actions */
+    4,    /* 301: of_instruction_id_write_metadata */
     8,    /* 302: of_instruction_meter */
     8,    /* 303: of_instruction_write_actions */
     24,   /* 304: of_instruction_write_metadata */

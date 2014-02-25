@@ -28,7 +28,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 abstract class OFActionIdNiciraVer13 {
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int MINIMUM_LENGTH = 16;
+    final static int MINIMUM_LENGTH = 10;
 
 
     public final static OFActionIdNiciraVer13.Reader READER = new Reader();

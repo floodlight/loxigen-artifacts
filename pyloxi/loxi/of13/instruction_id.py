@@ -77,7 +77,6 @@ class apply_actions(instruction_id):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -90,7 +89,6 @@ class apply_actions(instruction_id):
         _len = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_len - (2 + 2))
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -178,7 +176,6 @@ class bsn(experimenter):
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -199,7 +196,6 @@ class bsn(experimenter):
         _experimenter = reader.read("!L")[0]
         assert(_experimenter == 6035143)
         obj.subtype = reader.read("!L")[0]
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -231,7 +227,6 @@ class bsn_arp_offload(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -248,7 +243,6 @@ class bsn_arp_offload(bsn):
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 1)
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -279,7 +273,6 @@ class bsn_dhcp_offload(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -296,7 +289,6 @@ class bsn_dhcp_offload(bsn):
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 2)
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -327,7 +319,6 @@ class bsn_disable_split_horizon_check(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -344,7 +335,6 @@ class bsn_disable_split_horizon_check(bsn):
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 3)
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -375,7 +365,6 @@ class bsn_disable_src_mac_check(bsn):
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.subtype))
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -392,7 +381,6 @@ class bsn_disable_src_mac_check(bsn):
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 0)
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -419,7 +407,6 @@ class clear_actions(instruction_id):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -432,7 +419,6 @@ class clear_actions(instruction_id):
         _len = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_len - (2 + 2))
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -459,7 +445,6 @@ class goto_table(instruction_id):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append('\x00' * 3)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -472,7 +457,6 @@ class goto_table(instruction_id):
         _len = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_len - (2 + 2))
-        reader.skip(3)
         return obj
 
     def __eq__(self, other):
@@ -537,7 +521,6 @@ class write_actions(instruction_id):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -550,7 +533,6 @@ class write_actions(instruction_id):
         _len = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_len - (2 + 2))
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
@@ -577,7 +559,6 @@ class write_metadata(instruction_id):
         packed = []
         packed.append(struct.pack("!H", self.type))
         packed.append(struct.pack("!H", 0)) # placeholder for len at index 1
-        packed.append('\x00' * 4)
         length = sum([len(x) for x in packed])
         packed[1] = struct.pack("!H", length)
         return ''.join(packed)
@@ -590,7 +571,6 @@ class write_metadata(instruction_id):
         _len = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_len - (2 + 2))
-        reader.skip(4)
         return obj
 
     def __eq__(self, other):
