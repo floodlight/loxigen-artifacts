@@ -29,9 +29,11 @@ public interface OFInstructionIds {
 
     OFInstructionIdApplyActions applyActions();
     OFInstructionIdBsnArpOffload bsnArpOffload();
+    OFInstructionIdBsnDeny bsnDeny();
     OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
     OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
+    OFInstructionIdBsnPermit bsnPermit();
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();
     OFInstructionIdMeter meter();

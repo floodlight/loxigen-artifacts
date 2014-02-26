@@ -68,6 +68,10 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.0");
     }
 
+    public OFInstructionBsnDeny bsnDeny() {
+        throw new UnsupportedOperationException("OFInstructionBsnDeny not supported in version 1.0");
+    }
+
     public OFInstructionBsnDhcpOffload bsnDhcpOffload() {
         throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.0");
     }
@@ -78,6 +82,10 @@ public class OFInstructionsVer10 implements OFInstructions {
 
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.0");
+    }
+
+    public OFInstructionBsnPermit bsnPermit() {
+        throw new UnsupportedOperationException("OFInstructionBsnPermit not supported in version 1.0");
     }
 
     public OFInstructionMeter.Builder buildMeter() {

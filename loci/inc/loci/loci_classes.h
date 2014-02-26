@@ -294,9 +294,11 @@ typedef of_object_t of_hello_elem_versionbitmap_t;
 typedef of_object_t of_instruction_apply_actions_t;
 typedef of_object_t of_instruction_bsn_t;
 typedef of_object_t of_instruction_bsn_arp_offload_t;
+typedef of_object_t of_instruction_bsn_deny_t;
 typedef of_object_t of_instruction_bsn_dhcp_offload_t;
 typedef of_object_t of_instruction_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_bsn_disable_src_mac_check_t;
+typedef of_object_t of_instruction_bsn_permit_t;
 typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
 typedef of_object_t of_instruction_goto_table_t;
@@ -304,9 +306,11 @@ typedef of_object_t of_instruction_header_t;
 typedef of_object_t of_instruction_id_apply_actions_t;
 typedef of_object_t of_instruction_id_bsn_t;
 typedef of_object_t of_instruction_id_bsn_arp_offload_t;
+typedef of_object_t of_instruction_id_bsn_deny_t;
 typedef of_object_t of_instruction_id_bsn_dhcp_offload_t;
 typedef of_object_t of_instruction_id_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
+typedef of_object_t of_instruction_id_bsn_permit_t;
 typedef of_object_t of_instruction_id_clear_actions_t;
 typedef of_object_t of_instruction_id_experimenter_t;
 typedef of_object_t of_instruction_id_goto_table_t;
@@ -2252,6 +2256,11 @@ extern of_instruction_bsn_arp_offload_t *
 extern void of_instruction_bsn_arp_offload_init(
     of_instruction_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_bsn_deny_t *
+    of_instruction_bsn_deny_new(of_version_t version);
+extern void of_instruction_bsn_deny_init(
+    of_instruction_bsn_deny_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_bsn_dhcp_offload_t *
     of_instruction_bsn_dhcp_offload_new(of_version_t version);
 extern void of_instruction_bsn_dhcp_offload_init(
@@ -2266,6 +2275,11 @@ extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_new(of_version_t version);
 extern void of_instruction_bsn_disable_src_mac_check_init(
     of_instruction_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_bsn_permit_t *
+    of_instruction_bsn_permit_new(of_version_t version);
+extern void of_instruction_bsn_permit_init(
+    of_instruction_bsn_permit_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_new(of_version_t version);
@@ -2307,6 +2321,11 @@ extern of_instruction_id_bsn_arp_offload_t *
 extern void of_instruction_id_bsn_arp_offload_init(
     of_instruction_id_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_id_bsn_deny_t *
+    of_instruction_id_bsn_deny_new(of_version_t version);
+extern void of_instruction_id_bsn_deny_init(
+    of_instruction_id_bsn_deny_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_id_bsn_dhcp_offload_t *
     of_instruction_id_bsn_dhcp_offload_new(of_version_t version);
 extern void of_instruction_id_bsn_dhcp_offload_init(
@@ -2321,6 +2340,11 @@ extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_new(of_version_t version);
 extern void of_instruction_id_bsn_disable_src_mac_check_init(
     of_instruction_id_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_permit_t *
+    of_instruction_id_bsn_permit_new(of_version_t version);
+extern void of_instruction_id_bsn_permit_init(
+    of_instruction_id_bsn_permit_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_new(of_version_t version);
@@ -6310,6 +6334,17 @@ of_instruction_bsn_arp_offload_delete(of_instruction_bsn_arp_offload_t *obj) {
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_deny_t
+ * @param obj An instance of type of_instruction_bsn_deny_t
+ *
+ * \ingroup of_instruction_bsn_deny
+ */
+static inline void
+of_instruction_bsn_deny_delete(of_instruction_bsn_deny_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_bsn_dhcp_offload_t
  * @param obj An instance of type of_instruction_bsn_dhcp_offload_t
  *
@@ -6339,6 +6374,17 @@ of_instruction_bsn_disable_split_horizon_check_delete(of_instruction_bsn_disable
  */
 static inline void
 of_instruction_bsn_disable_src_mac_check_delete(of_instruction_bsn_disable_src_mac_check_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_bsn_permit_t
+ * @param obj An instance of type of_instruction_bsn_permit_t
+ *
+ * \ingroup of_instruction_bsn_permit
+ */
+static inline void
+of_instruction_bsn_permit_delete(of_instruction_bsn_permit_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -6431,6 +6477,17 @@ of_instruction_id_bsn_arp_offload_delete(of_instruction_id_bsn_arp_offload_t *ob
 }
 
 /**
+ * Delete an object of type of_instruction_id_bsn_deny_t
+ * @param obj An instance of type of_instruction_id_bsn_deny_t
+ *
+ * \ingroup of_instruction_id_bsn_deny
+ */
+static inline void
+of_instruction_id_bsn_deny_delete(of_instruction_id_bsn_deny_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_id_bsn_dhcp_offload_t
  * @param obj An instance of type of_instruction_id_bsn_dhcp_offload_t
  *
@@ -6460,6 +6517,17 @@ of_instruction_id_bsn_disable_split_horizon_check_delete(of_instruction_id_bsn_d
  */
 static inline void
 of_instruction_id_bsn_disable_src_mac_check_delete(of_instruction_id_bsn_disable_src_mac_check_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_permit_t
+ * @param obj An instance of type of_instruction_id_bsn_permit_t
+ *
+ * \ingroup of_instruction_id_bsn_permit
+ */
+static inline void
+of_instruction_id_bsn_permit_delete(of_instruction_id_bsn_permit_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -15737,6 +15805,22 @@ extern void of_instruction_bsn_arp_offload_subtype_get(
     of_instruction_bsn_arp_offload_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_bsn_deny */
+
+extern void of_instruction_bsn_deny_experimenter_set(
+    of_instruction_bsn_deny_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_deny_experimenter_get(
+    of_instruction_bsn_deny_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_deny_subtype_set(
+    of_instruction_bsn_deny_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_deny_subtype_get(
+    of_instruction_bsn_deny_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_bsn_dhcp_offload */
 
 extern void of_instruction_bsn_dhcp_offload_experimenter_set(
@@ -15783,6 +15867,22 @@ extern void of_instruction_bsn_disable_src_mac_check_subtype_set(
     uint32_t subtype);
 extern void of_instruction_bsn_disable_src_mac_check_subtype_get(
     of_instruction_bsn_disable_src_mac_check_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_bsn_permit */
+
+extern void of_instruction_bsn_permit_experimenter_set(
+    of_instruction_bsn_permit_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_permit_experimenter_get(
+    of_instruction_bsn_permit_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_permit_subtype_set(
+    of_instruction_bsn_permit_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_permit_subtype_get(
+    of_instruction_bsn_permit_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_clear_actions */
@@ -15848,6 +15948,22 @@ extern void of_instruction_id_bsn_arp_offload_subtype_get(
     of_instruction_id_bsn_arp_offload_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_id_bsn_deny */
+
+extern void of_instruction_id_bsn_deny_experimenter_set(
+    of_instruction_id_bsn_deny_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_deny_experimenter_get(
+    of_instruction_id_bsn_deny_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_deny_subtype_set(
+    of_instruction_id_bsn_deny_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_deny_subtype_get(
+    of_instruction_id_bsn_deny_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_id_bsn_dhcp_offload */
 
 extern void of_instruction_id_bsn_dhcp_offload_experimenter_set(
@@ -15894,6 +16010,22 @@ extern void of_instruction_id_bsn_disable_src_mac_check_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_disable_src_mac_check_subtype_get(
     of_instruction_id_bsn_disable_src_mac_check_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_permit */
+
+extern void of_instruction_id_bsn_permit_experimenter_set(
+    of_instruction_id_bsn_permit_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_permit_experimenter_get(
+    of_instruction_id_bsn_permit_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_permit_subtype_set(
+    of_instruction_id_bsn_permit_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_permit_subtype_get(
+    of_instruction_id_bsn_permit_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_clear_actions */
@@ -19176,9 +19308,11 @@ union of_instruction_u {
     of_instruction_apply_actions_t apply_actions;
     of_instruction_bsn_t bsn;
     of_instruction_bsn_arp_offload_t bsn_arp_offload;
+    of_instruction_bsn_deny_t bsn_deny;
     of_instruction_bsn_dhcp_offload_t bsn_dhcp_offload;
     of_instruction_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
     of_instruction_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
+    of_instruction_bsn_permit_t bsn_permit;
     of_instruction_clear_actions_t clear_actions;
     of_instruction_experimenter_t experimenter;
     of_instruction_goto_table_t goto_table;
@@ -19227,9 +19361,11 @@ union of_instruction_id_u {
     of_instruction_id_apply_actions_t apply_actions;
     of_instruction_id_bsn_t bsn;
     of_instruction_id_bsn_arp_offload_t bsn_arp_offload;
+    of_instruction_id_bsn_deny_t bsn_deny;
     of_instruction_id_bsn_dhcp_offload_t bsn_dhcp_offload;
     of_instruction_id_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
     of_instruction_id_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
+    of_instruction_id_bsn_permit_t bsn_permit;
     of_instruction_id_clear_actions_t clear_actions;
     of_instruction_id_experimenter_t experimenter;
     of_instruction_id_goto_table_t goto_table;

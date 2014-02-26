@@ -56,6 +56,9 @@ abstract class OFInstructionBsnVer13 {
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFInstructionBsnArpOffloadVer13
                    return OFInstructionBsnArpOffloadVer13.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFInstructionBsnDenyVer13
+                   return OFInstructionBsnDenyVer13.READER.readFrom(bb);
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFInstructionBsnDhcpOffloadVer13
                    return OFInstructionBsnDhcpOffloadVer13.READER.readFrom(bb);
@@ -65,6 +68,9 @@ abstract class OFInstructionBsnVer13 {
                case 0x0:
                    // discriminator value 0x0L=0x0L for class OFInstructionBsnDisableSrcMacCheckVer13
                    return OFInstructionBsnDisableSrcMacCheckVer13.READER.readFrom(bb);
+               case 0x4:
+                   // discriminator value 0x4L=0x4L for class OFInstructionBsnPermitVer13
+                   return OFInstructionBsnPermitVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFInstructionBsnVer13: " + subtype);
             }

@@ -7035,6 +7035,15 @@ extern int of_instruction_bsn_arp_offload_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_bsn_arp_offload_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_arp_offload_t *obj, int value);
 
+extern int of_instruction_bsn_deny_OF_VERSION_1_3_populate(
+    of_instruction_bsn_deny_t *obj, int value);
+extern int of_instruction_bsn_deny_OF_VERSION_1_3_check(
+    of_instruction_bsn_deny_t *obj, int value);
+extern int of_instruction_bsn_deny_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_deny_t *obj, int value);
+extern int of_instruction_bsn_deny_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_deny_t *obj, int value);
+
 extern int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_populate(
     of_instruction_bsn_dhcp_offload_t *obj, int value);
 extern int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_check(
@@ -7061,6 +7070,15 @@ extern int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_populate_scal
     of_instruction_bsn_disable_src_mac_check_t *obj, int value);
 extern int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_disable_src_mac_check_t *obj, int value);
+
+extern int of_instruction_bsn_permit_OF_VERSION_1_3_populate(
+    of_instruction_bsn_permit_t *obj, int value);
+extern int of_instruction_bsn_permit_OF_VERSION_1_3_check(
+    of_instruction_bsn_permit_t *obj, int value);
+extern int of_instruction_bsn_permit_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_permit_t *obj, int value);
+extern int of_instruction_bsn_permit_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_permit_t *obj, int value);
 
 extern int of_instruction_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_clear_actions_t *obj, int value);
@@ -7125,6 +7143,15 @@ extern int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_arp_offload_t *obj, int value);
 
+extern int of_instruction_id_bsn_deny_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_deny_t *obj, int value);
+extern int of_instruction_id_bsn_deny_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_deny_t *obj, int value);
+extern int of_instruction_id_bsn_deny_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_deny_t *obj, int value);
+extern int of_instruction_id_bsn_deny_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_deny_t *obj, int value);
+
 extern int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_populate(
     of_instruction_id_bsn_dhcp_offload_t *obj, int value);
 extern int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_check(
@@ -7151,6 +7178,15 @@ extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_populate_s
     of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
 extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
+
+extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_permit_t *obj, int value);
+extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_permit_t *obj, int value);
+extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_permit_t *obj, int value);
+extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_permit_t *obj, int value);
 
 extern int of_instruction_id_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_id_clear_actions_t *obj, int value);

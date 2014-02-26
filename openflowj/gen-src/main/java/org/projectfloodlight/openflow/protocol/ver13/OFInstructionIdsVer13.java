@@ -39,6 +39,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnArpOffloadVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnDeny bsnDeny() {
+        return OFInstructionIdBsnDenyVer13.INSTANCE;
+    }
+
     public OFInstructionIdBsnDhcpOffload bsnDhcpOffload() {
         return OFInstructionIdBsnDhcpOffloadVer13.INSTANCE;
     }
@@ -49,6 +53,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
 
     public OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         return OFInstructionIdBsnDisableSrcMacCheckVer13.INSTANCE;
+    }
+
+    public OFInstructionIdBsnPermit bsnPermit() {
+        return OFInstructionIdBsnPermitVer13.INSTANCE;
     }
 
     public OFInstructionIdClearActions clearActions() {

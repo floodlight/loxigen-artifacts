@@ -77,6 +77,10 @@ public class OFInstructionsVer12 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.2");
     }
 
+    public OFInstructionBsnDeny bsnDeny() {
+        throw new UnsupportedOperationException("OFInstructionBsnDeny not supported in version 1.2");
+    }
+
     public OFInstructionBsnDhcpOffload bsnDhcpOffload() {
         throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.2");
     }
@@ -87,6 +91,10 @@ public class OFInstructionsVer12 implements OFInstructions {
 
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.2");
+    }
+
+    public OFInstructionBsnPermit bsnPermit() {
+        throw new UnsupportedOperationException("OFInstructionBsnPermit not supported in version 1.2");
     }
 
     public OFInstructionMeter.Builder buildMeter() {
