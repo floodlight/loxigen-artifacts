@@ -35,7 +35,7 @@ of_table_feature_prop_next_tables_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x3); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x3); /* type */
         break;
     default:
         UNREACHABLE();
@@ -337,7 +337,7 @@ of_table_feature_prop_wildcards_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0xa); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xa); /* type */
         break;
     default:
         UNREACHABLE();
@@ -639,7 +639,7 @@ of_table_feature_prop_write_actions_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x4); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x4); /* type */
         break;
     default:
         UNREACHABLE();
@@ -941,7 +941,7 @@ of_table_feature_prop_write_actions_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x5); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
         break;
     default:
         UNREACHABLE();
@@ -1243,7 +1243,7 @@ of_table_feature_prop_write_setfield_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0xc); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xc); /* type */
         break;
     default:
         UNREACHABLE();
@@ -1545,7 +1545,7 @@ of_table_feature_prop_write_setfield_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0xd); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xd); /* type */
         break;
     default:
         UNREACHABLE();
@@ -2598,7 +2598,7 @@ of_table_features_failed_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xd); /* err_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xd); /* err_type */
         break;
     default:
         UNREACHABLE();
@@ -3047,7 +3047,7 @@ of_table_features_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xc); /* stats_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xc); /* stats_type */
         break;
     default:
         UNREACHABLE();
@@ -3548,7 +3548,7 @@ of_table_features_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xc); /* stats_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xc); /* stats_type */
         break;
     default:
         UNREACHABLE();

@@ -37,7 +37,7 @@ of_action_push_vlan_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x11); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x11); /* type */
         break;
     default:
         UNREACHABLE();
@@ -273,7 +273,7 @@ of_action_set_mpls_label_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_1:
-        *(uint16_t *)(buf + 0) = htobe16(0xd); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xd); /* type */
         break;
     default:
         UNREACHABLE();
@@ -505,7 +505,7 @@ of_action_set_mpls_tc_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_1:
-        *(uint16_t *)(buf + 0) = htobe16(0xe); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xe); /* type */
         break;
     default:
         UNREACHABLE();
@@ -739,7 +739,7 @@ of_action_set_mpls_ttl_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0xf); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xf); /* type */
         break;
     default:
         UNREACHABLE();
@@ -975,7 +975,7 @@ of_action_set_nw_ecn_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_1:
-        *(uint16_t *)(buf + 0) = htobe16(0x8); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x8); /* type */
         break;
     default:
         UNREACHABLE();
@@ -1209,7 +1209,7 @@ of_action_set_nw_ttl_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x17); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x17); /* type */
         break;
     default:
         UNREACHABLE();
@@ -1447,7 +1447,7 @@ of_action_set_queue_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x15); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x15); /* type */
         break;
     default:
         UNREACHABLE();
@@ -1687,7 +1687,7 @@ of_bad_instruction_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x3); /* err_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x3); /* err_type */
         break;
     default:
         UNREACHABLE();
@@ -2150,7 +2150,7 @@ of_bad_match_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x4); /* err_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x4); /* err_type */
         break;
     default:
         UNREACHABLE();
@@ -3991,7 +3991,7 @@ of_group_add_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0xf; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x0); /* command */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x0); /* command */
         break;
     default:
         UNREACHABLE();
@@ -4588,7 +4588,7 @@ of_group_delete_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0xf; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x2); /* command */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x2); /* command */
         break;
     default:
         UNREACHABLE();
@@ -5634,7 +5634,7 @@ of_group_desc_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x7); /* stats_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x7); /* stats_type */
         break;
     default:
         UNREACHABLE();
@@ -6149,7 +6149,7 @@ of_group_desc_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x7); /* stats_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x7); /* stats_type */
         break;
     default:
         UNREACHABLE();
@@ -6512,7 +6512,7 @@ of_group_mod_failed_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x6); /* err_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x6); /* err_type */
         break;
     default:
         UNREACHABLE();
@@ -6975,7 +6975,7 @@ of_group_modify_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0xf; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x1); /* command */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x1); /* command */
         break;
     default:
         UNREACHABLE();
@@ -8347,7 +8347,7 @@ of_group_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x6); /* stats_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x6); /* stats_type */
         break;
     default:
         UNREACHABLE();
@@ -8862,7 +8862,7 @@ of_group_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x6); /* stats_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x6); /* stats_type */
         break;
     default:
         UNREACHABLE();
@@ -9425,7 +9425,7 @@ of_instruction_apply_actions_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x4); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x4); /* type */
         break;
     default:
         UNREACHABLE();
@@ -9733,7 +9733,7 @@ of_instruction_clear_actions_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x5); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
         break;
     default:
         UNREACHABLE();
@@ -10190,7 +10190,7 @@ of_instruction_goto_table_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x1); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x1); /* type */
         break;
     default:
         UNREACHABLE();
@@ -10428,7 +10428,7 @@ of_instruction_write_actions_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x3); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x3); /* type */
         break;
     default:
         UNREACHABLE();
@@ -10736,7 +10736,7 @@ of_instruction_write_metadata_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = htobe16(0x2); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x2); /* type */
         break;
     default:
         UNREACHABLE();
@@ -11054,7 +11054,7 @@ of_match_v2_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_1:
-        *(uint16_t *)(buf + 0) = htobe16(0x0); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x0); /* type */
         break;
     default:
         UNREACHABLE();
@@ -12842,7 +12842,7 @@ of_switch_config_failed_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xa); /* err_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xa); /* err_type */
         break;
     default:
         UNREACHABLE();
@@ -13305,7 +13305,7 @@ of_table_mod_failed_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0x8); /* err_type */
+        *(uint16_t *)(buf + 8) = U16_HTON(0x8); /* err_type */
         break;
     default:
         UNREACHABLE();

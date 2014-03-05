@@ -1,1 +1,1 @@
-40ad8b6548acdb15b90f04427a1ebf9e4cc2c8a4 Merge into master from pull request #213: Adding unpadded Instruction Ids for ofp_table_features_prop_instructions* (https://github.com/floodlight/loxigen/pull/213)
+f53332e53bb842c468a9e7d8a98e4ef7e6714e96 Merge into master from pull request #203: loci: fix byte swapping on OS X (https://github.com/floodlight/loxigen/pull/203)

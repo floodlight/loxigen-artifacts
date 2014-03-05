@@ -37,8 +37,8 @@ of_bsn_controller_connections_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x38); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x38); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -675,9 +675,9 @@ of_bsn_flow_checksum_bucket_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0xa); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0xa); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -1334,9 +1334,9 @@ of_bsn_flow_checksum_bucket_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0xa); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0xa); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -1923,8 +1923,8 @@ of_bsn_flow_idle_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x28); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x28); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -2699,8 +2699,8 @@ of_bsn_flow_idle_enable_get_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x27); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x27); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -3209,8 +3209,8 @@ of_bsn_flow_idle_enable_get_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x26); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x26); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -3641,8 +3641,8 @@ of_bsn_flow_idle_enable_set_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x25); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x25); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -4229,8 +4229,8 @@ of_bsn_flow_idle_enable_set_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x24); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x24); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -4945,9 +4945,9 @@ of_bsn_gentable_bucket_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x5); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x5); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -5604,9 +5604,9 @@ of_bsn_gentable_bucket_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x5); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x5); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -6193,8 +6193,8 @@ of_bsn_gentable_clear_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x31); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x31); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -6859,8 +6859,8 @@ of_bsn_gentable_clear_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x30); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x30); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -7970,9 +7970,9 @@ of_bsn_gentable_desc_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x4); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x4); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -8629,9 +8629,9 @@ of_bsn_gentable_desc_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x4); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x4); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -9140,8 +9140,8 @@ of_bsn_gentable_entry_add_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x2e); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x2e); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -10022,8 +10022,8 @@ of_bsn_gentable_entry_delete_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x2f); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x2f); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -11185,9 +11185,9 @@ of_bsn_gentable_entry_desc_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x2); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x2); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -11844,9 +11844,9 @@ of_bsn_gentable_entry_desc_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x2); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x2); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -13016,9 +13016,9 @@ of_bsn_gentable_entry_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x3); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x3); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -13675,9 +13675,9 @@ of_bsn_gentable_entry_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x3); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x3); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -14420,8 +14420,8 @@ of_bsn_gentable_set_buckets_size_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x32); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x32); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -15370,9 +15370,9 @@ of_bsn_gentable_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x7); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x7); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -16029,9 +16029,9 @@ of_bsn_gentable_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
-        *(uint16_t *)(buf + 8) = htobe16(0xffff); /* stats_type */
-        *(uint32_t *)(buf + 16) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 20) = htobe32(0x7); /* subtype */
+        *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
+        *(uint32_t *)(buf + 16) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 20) = U32_HTON(0x7); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -16540,8 +16540,8 @@ of_bsn_get_switch_pipeline_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x34); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x34); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -17050,8 +17050,8 @@ of_bsn_get_switch_pipeline_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x33); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x33); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -17482,8 +17482,8 @@ of_bsn_lacp_convergence_notif_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_3:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x4; /* type */
-        *(uint32_t *)(buf + 8) = htobe32(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 12) = htobe32(0x2b); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 12) = U32_HTON(0x2b); /* subtype */
         break;
     default:
         UNREACHABLE();

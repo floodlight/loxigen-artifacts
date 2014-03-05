@@ -36,7 +36,7 @@ of_oxm_eth_src_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000806); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000806); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -265,7 +265,7 @@ of_oxm_eth_src_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x8000090c); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x8000090c); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -574,7 +574,7 @@ of_oxm_eth_type_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000a02); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000a02); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -803,7 +803,7 @@ of_oxm_eth_type_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000b04); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000b04); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -1112,7 +1112,7 @@ of_oxm_icmpv4_code_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80002801); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80002801); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -1341,7 +1341,7 @@ of_oxm_icmpv4_code_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80002902); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80002902); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -1650,7 +1650,7 @@ of_oxm_icmpv4_type_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80002601); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80002601); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -1879,7 +1879,7 @@ of_oxm_icmpv4_type_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80002702); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80002702); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -2188,7 +2188,7 @@ of_oxm_icmpv6_code_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003c01); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003c01); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -2417,7 +2417,7 @@ of_oxm_icmpv6_code_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003d02); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003d02); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -2726,7 +2726,7 @@ of_oxm_icmpv6_type_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003a01); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003a01); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -2955,7 +2955,7 @@ of_oxm_icmpv6_type_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003b02); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003b02); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -3264,7 +3264,7 @@ of_oxm_in_phy_port_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000204); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000204); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -3494,7 +3494,7 @@ of_oxm_in_phy_port_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000308); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000308); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -3805,7 +3805,7 @@ of_oxm_in_port_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000004); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000004); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -4035,7 +4035,7 @@ of_oxm_in_port_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80000108); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000108); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -4346,7 +4346,7 @@ of_oxm_ip_dscp_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001001); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001001); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -4575,7 +4575,7 @@ of_oxm_ip_dscp_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001102); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001102); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -4884,7 +4884,7 @@ of_oxm_ip_ecn_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001201); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001201); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -5113,7 +5113,7 @@ of_oxm_ip_ecn_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001302); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001302); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -5422,7 +5422,7 @@ of_oxm_ip_proto_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001401); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001401); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -5651,7 +5651,7 @@ of_oxm_ip_proto_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001502); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001502); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -5960,7 +5960,7 @@ of_oxm_ipv4_dst_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001804); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001804); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -6189,7 +6189,7 @@ of_oxm_ipv4_dst_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001908); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001908); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -6498,7 +6498,7 @@ of_oxm_ipv4_src_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001604); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001604); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -6727,7 +6727,7 @@ of_oxm_ipv4_src_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80001708); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80001708); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -7036,7 +7036,7 @@ of_oxm_ipv6_dst_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003610); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003610); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -7265,7 +7265,7 @@ of_oxm_ipv6_dst_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003720); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003720); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -7574,7 +7574,7 @@ of_oxm_ipv6_flabel_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003804); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003804); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -7803,7 +7803,7 @@ of_oxm_ipv6_flabel_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80003908); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80003908); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -8112,7 +8112,7 @@ of_oxm_ipv6_nd_sll_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x80004006); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80004006); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -8341,7 +8341,7 @@ of_oxm_ipv6_nd_sll_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = htobe32(0x8000410c); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x8000410c); /* type_len */
         break;
     default:
         UNREACHABLE();
