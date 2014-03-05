@@ -1,1 +1,1 @@
-b9f27402d7e4d9e5a07bf41cb1dffac04206ceb7 Merge into master from pull request #210: loci: chunk multiple classes into each C file (https://github.com/floodlight/loxigen/pull/210)
+113d8bffbc8c4419e8e58de16d926a19c740a0a7 Merge into master from pull request #214: loci: decide members to ignore in tests using the IR (https://github.com/floodlight/loxigen/pull/214)
