@@ -28,7 +28,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFTableFeaturePropInstructions extends OFObject, OFTableFeatureProp {
     int getType();
-    List<OFInstruction> getInstructionIds();
+    List<OFInstructionId> getInstructionIds();
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -37,8 +37,8 @@ public interface OFTableFeaturePropInstructions extends OFObject, OFTableFeature
     public interface Builder extends OFTableFeatureProp.Builder {
         OFTableFeaturePropInstructions build();
         int getType();
-        List<OFInstruction> getInstructionIds();
-        Builder setInstructionIds(List<OFInstruction> instructionIds);
+        List<OFInstructionId> getInstructionIds();
+        Builder setInstructionIds(List<OFInstructionId> instructionIds);
         OFVersion getVersion();
     }
 }

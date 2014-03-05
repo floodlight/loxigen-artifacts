@@ -141,6 +141,8 @@ of_instruction_id_meter_init(of_instruction_id_meter_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -293,6 +295,8 @@ of_instruction_id_write_actions_init(of_instruction_id_write_actions_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -444,6 +448,8 @@ of_instruction_id_write_metadata_init(of_instruction_id_write_metadata_t *obj,
     obj->wire_length_set = of_tlv16_wire_length_set;
 
     obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
 
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
@@ -10538,11 +10544,11 @@ of_table_feature_prop_instructions_init(of_table_feature_prop_instructions_t *ob
 
 
 /**
- * Bind an object of type of_list_instruction_t to the parent of type of_table_feature_prop_instructions for
+ * Bind an object of type of_list_instruction_id_t to the parent of type of_table_feature_prop_instructions for
  * member instruction_ids
  * @param obj Pointer to an object of type of_table_feature_prop_instructions.
  * @param instruction_ids Pointer to the child object of type
- * of_list_instruction_t to be filled out.
+ * of_list_instruction_id_t to be filled out.
  * \ingroup of_table_feature_prop_instructions
  *
  * The parameter instruction_ids is filled out to point to the same underlying
@@ -10552,7 +10558,7 @@ of_table_feature_prop_instructions_init(of_table_feature_prop_instructions_t *ob
 void
 of_table_feature_prop_instructions_instruction_ids_bind(
     of_table_feature_prop_instructions_t *obj,
-    of_list_instruction_t *instruction_ids)
+    of_list_instruction_id_t *instruction_ids)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -10580,7 +10586,7 @@ of_table_feature_prop_instructions_instruction_ids_bind(
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
-    of_list_instruction_init(instruction_ids, obj->version, 0, 1);
+    of_list_instruction_id_init(instruction_ids, obj->version, 0, 1);
     /* Attach to parent */
     instruction_ids->parent = (of_object_t *)obj;
     instruction_ids->wire_object.wbuf = obj->wire_object.wbuf;
@@ -10594,28 +10600,28 @@ of_table_feature_prop_instructions_instruction_ids_bind(
 }
 
 /**
- * Create a copy of instruction_ids into a new variable of type of_list_instruction_t from
+ * Create a copy of instruction_ids into a new variable of type of_list_instruction_id_t from
  * a of_table_feature_prop_instructions instance.
  *
  * @param obj Pointer to the source of type of_table_feature_prop_instructions_t
- * @returns A pointer to a new instance of type of_list_instruction_t whose contents
+ * @returns A pointer to a new instance of type of_list_instruction_id_t whose contents
  * match that of instruction_ids from source
  * @returns NULL if an error occurs
  */
-of_list_instruction_t *
+of_list_instruction_id_t *
 of_table_feature_prop_instructions_instruction_ids_get(of_table_feature_prop_instructions_t *obj) {
-    of_list_instruction_t _instruction_ids;
-    of_list_instruction_t *_instruction_ids_ptr;
+    of_list_instruction_id_t _instruction_ids;
+    of_list_instruction_id_t *_instruction_ids_ptr;
 
     of_table_feature_prop_instructions_instruction_ids_bind(obj, &_instruction_ids);
-    _instruction_ids_ptr = (of_list_instruction_t *)of_object_dup(&_instruction_ids);
+    _instruction_ids_ptr = (of_list_instruction_id_t *)of_object_dup(&_instruction_ids);
     return _instruction_ids_ptr;
 }
 
 /**
  * Set instruction_ids in an object of type of_table_feature_prop_instructions.
  * @param obj Pointer to an object of type of_table_feature_prop_instructions.
- * @param instruction_ids Pointer to the child of type of_list_instruction_t.
+ * @param instruction_ids Pointer to the child of type of_list_instruction_id_t.
  *
  * If the child's wire buffer is the same as the parent's, then
  * nothing is done as the changes have already been registered in the
@@ -10625,7 +10631,7 @@ of_table_feature_prop_instructions_instruction_ids_get(of_table_feature_prop_ins
 int WARN_UNUSED_RESULT
 of_table_feature_prop_instructions_instruction_ids_set(
     of_table_feature_prop_instructions_t *obj,
-    of_list_instruction_t *instruction_ids)
+    of_list_instruction_id_t *instruction_ids)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -10840,11 +10846,11 @@ of_table_feature_prop_instructions_miss_init(of_table_feature_prop_instructions_
 
 
 /**
- * Bind an object of type of_list_instruction_t to the parent of type of_table_feature_prop_instructions_miss for
+ * Bind an object of type of_list_instruction_id_t to the parent of type of_table_feature_prop_instructions_miss for
  * member instruction_ids
  * @param obj Pointer to an object of type of_table_feature_prop_instructions_miss.
  * @param instruction_ids Pointer to the child object of type
- * of_list_instruction_t to be filled out.
+ * of_list_instruction_id_t to be filled out.
  * \ingroup of_table_feature_prop_instructions_miss
  *
  * The parameter instruction_ids is filled out to point to the same underlying
@@ -10854,7 +10860,7 @@ of_table_feature_prop_instructions_miss_init(of_table_feature_prop_instructions_
 void
 of_table_feature_prop_instructions_miss_instruction_ids_bind(
     of_table_feature_prop_instructions_miss_t *obj,
-    of_list_instruction_t *instruction_ids)
+    of_list_instruction_id_t *instruction_ids)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -10882,7 +10888,7 @@ of_table_feature_prop_instructions_miss_instruction_ids_bind(
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
-    of_list_instruction_init(instruction_ids, obj->version, 0, 1);
+    of_list_instruction_id_init(instruction_ids, obj->version, 0, 1);
     /* Attach to parent */
     instruction_ids->parent = (of_object_t *)obj;
     instruction_ids->wire_object.wbuf = obj->wire_object.wbuf;
@@ -10896,28 +10902,28 @@ of_table_feature_prop_instructions_miss_instruction_ids_bind(
 }
 
 /**
- * Create a copy of instruction_ids into a new variable of type of_list_instruction_t from
+ * Create a copy of instruction_ids into a new variable of type of_list_instruction_id_t from
  * a of_table_feature_prop_instructions_miss instance.
  *
  * @param obj Pointer to the source of type of_table_feature_prop_instructions_miss_t
- * @returns A pointer to a new instance of type of_list_instruction_t whose contents
+ * @returns A pointer to a new instance of type of_list_instruction_id_t whose contents
  * match that of instruction_ids from source
  * @returns NULL if an error occurs
  */
-of_list_instruction_t *
+of_list_instruction_id_t *
 of_table_feature_prop_instructions_miss_instruction_ids_get(of_table_feature_prop_instructions_miss_t *obj) {
-    of_list_instruction_t _instruction_ids;
-    of_list_instruction_t *_instruction_ids_ptr;
+    of_list_instruction_id_t _instruction_ids;
+    of_list_instruction_id_t *_instruction_ids_ptr;
 
     of_table_feature_prop_instructions_miss_instruction_ids_bind(obj, &_instruction_ids);
-    _instruction_ids_ptr = (of_list_instruction_t *)of_object_dup(&_instruction_ids);
+    _instruction_ids_ptr = (of_list_instruction_id_t *)of_object_dup(&_instruction_ids);
     return _instruction_ids_ptr;
 }
 
 /**
  * Set instruction_ids in an object of type of_table_feature_prop_instructions_miss.
  * @param obj Pointer to an object of type of_table_feature_prop_instructions_miss.
- * @param instruction_ids Pointer to the child of type of_list_instruction_t.
+ * @param instruction_ids Pointer to the child of type of_list_instruction_id_t.
  *
  * If the child's wire buffer is the same as the parent's, then
  * nothing is done as the changes have already been registered in the
@@ -10927,7 +10933,7 @@ of_table_feature_prop_instructions_miss_instruction_ids_get(of_table_feature_pro
 int WARN_UNUSED_RESULT
 of_table_feature_prop_instructions_miss_instruction_ids_set(
     of_table_feature_prop_instructions_miss_t *obj,
-    of_list_instruction_t *instruction_ids)
+    of_list_instruction_id_t *instruction_ids)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */

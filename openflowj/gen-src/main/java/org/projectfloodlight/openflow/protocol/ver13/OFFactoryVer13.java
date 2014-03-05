@@ -1155,7 +1155,7 @@ public class OFFactoryVer13 implements OFFactory {
     public OFTableFeaturePropInstructions.Builder buildTableFeaturePropInstructions() {
         return new OFTableFeaturePropInstructionsVer13.Builder();
     }
-    public OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstruction> instructionIds) {
+    public OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstructionId> instructionIds) {
         return new OFTableFeaturePropInstructionsVer13(
                 instructionIds
                     );
@@ -1164,7 +1164,7 @@ public class OFFactoryVer13 implements OFFactory {
     public OFTableFeaturePropInstructionsMiss.Builder buildTableFeaturePropInstructionsMiss() {
         return new OFTableFeaturePropInstructionsMissVer13.Builder();
     }
-    public OFTableFeaturePropInstructionsMiss tableFeaturePropInstructionsMiss(List<OFInstruction> instructionIds) {
+    public OFTableFeaturePropInstructionsMiss tableFeaturePropInstructionsMiss(List<OFInstructionId> instructionIds) {
         return new OFTableFeaturePropInstructionsMissVer13(
                 instructionIds
                     );

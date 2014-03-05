@@ -3797,6 +3797,8 @@ of_instruction_id_init(of_instruction_id_t *obj_p,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -3948,6 +3950,8 @@ of_instruction_id_apply_actions_init(of_instruction_id_apply_actions_t *obj,
     obj->wire_length_set = of_tlv16_wire_length_set;
 
     obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
 
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
@@ -4341,6 +4345,8 @@ of_instruction_id_experimenter_init(of_instruction_id_experimenter_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -4535,6 +4541,8 @@ of_instruction_id_bsn_init(of_instruction_id_bsn_t *obj,
     obj->wire_length_set = of_tlv16_wire_length_set;
 
     obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
 
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
@@ -5158,6 +5166,8 @@ of_instruction_id_bsn_arp_offload_init(of_instruction_id_bsn_arp_offload_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -5779,6 +5789,8 @@ of_instruction_id_bsn_deny_init(of_instruction_id_bsn_deny_t *obj,
     obj->wire_length_set = of_tlv16_wire_length_set;
 
     obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
 
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
@@ -6402,6 +6414,8 @@ of_instruction_id_bsn_dhcp_offload_init(of_instruction_id_bsn_dhcp_offload_t *ob
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -7023,6 +7037,8 @@ of_instruction_id_bsn_disable_split_horizon_check_init(of_instruction_id_bsn_dis
     obj->wire_length_set = of_tlv16_wire_length_set;
 
     obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
 
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
@@ -7646,6 +7662,8 @@ of_instruction_id_bsn_disable_src_mac_check_init(of_instruction_id_bsn_disable_s
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -8268,6 +8286,8 @@ of_instruction_id_bsn_permit_init(of_instruction_id_bsn_permit_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -8576,6 +8596,8 @@ of_instruction_id_clear_actions_init(of_instruction_id_clear_actions_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;
@@ -8727,6 +8749,8 @@ of_instruction_id_goto_table_init(of_instruction_id_goto_table_t *obj,
     obj->wire_length_set = of_tlv16_wire_length_set;
 
     obj->wire_length_get = of_tlv16_wire_length_get;
+
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
 
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {

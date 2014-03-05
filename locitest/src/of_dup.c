@@ -33139,8 +33139,8 @@ of_table_feature_prop_instructions_OF_VERSION_1_3_dup(
 {
     of_table_feature_prop_instructions_t *dst;
 
-    of_list_instruction_t src_list;
-    of_list_instruction_t *dst_list;
+    of_list_instruction_id_t src_list;
+    of_list_instruction_id_t *dst_list;
 
     if ((dst = of_table_feature_prop_instructions_new(src->version)) == NULL) {
         return NULL;
@@ -33148,13 +33148,13 @@ of_table_feature_prop_instructions_OF_VERSION_1_3_dup(
 
     of_table_feature_prop_instructions_instruction_ids_bind(
         src, &src_list);
-    dst_list = of_list_instruction_OF_VERSION_1_3_dup(&src_list);
+    dst_list = of_list_instruction_id_OF_VERSION_1_3_dup(&src_list);
     if (dst_list == NULL) {
         of_table_feature_prop_instructions_delete(dst);
         return NULL;
     }
     of_table_feature_prop_instructions_instruction_ids_set(dst, dst_list);
-    of_list_instruction_delete(dst_list);
+    of_list_instruction_id_delete(dst_list);
 
     return dst;
 }
@@ -33173,8 +33173,8 @@ of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dup(
 {
     of_table_feature_prop_instructions_miss_t *dst;
 
-    of_list_instruction_t src_list;
-    of_list_instruction_t *dst_list;
+    of_list_instruction_id_t src_list;
+    of_list_instruction_id_t *dst_list;
 
     if ((dst = of_table_feature_prop_instructions_miss_new(src->version)) == NULL) {
         return NULL;
@@ -33182,13 +33182,13 @@ of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dup(
 
     of_table_feature_prop_instructions_miss_instruction_ids_bind(
         src, &src_list);
-    dst_list = of_list_instruction_OF_VERSION_1_3_dup(&src_list);
+    dst_list = of_list_instruction_id_OF_VERSION_1_3_dup(&src_list);
     if (dst_list == NULL) {
         of_table_feature_prop_instructions_miss_delete(dst);
         return NULL;
     }
     of_table_feature_prop_instructions_miss_instruction_ids_set(dst, dst_list);
-    of_list_instruction_delete(dst_list);
+    of_list_instruction_id_delete(dst_list);
 
     return dst;
 }
@@ -34407,6 +34407,40 @@ of_list_instruction_OF_VERSION_1_3_dup(
             return NULL;
         }
         _TRY_FREE(of_list_instruction_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_instruction_id
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_instruction_id.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_instruction_id_t *
+of_list_instruction_id_OF_VERSION_1_3_dup(
+    of_list_instruction_id_t *src)
+{
+    of_instruction_id_t src_elt;
+    of_instruction_id_t *dst_elt;
+    int rv;
+    of_list_instruction_id_t *dst;
+
+    if ((dst = of_list_instruction_id_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_INSTRUCTION_ID_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_instruction_id_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_instruction_id_append(dst, dst_elt),
             dst, NULL);
         of_object_delete((of_object_t *)dst_elt);
     }
@@ -42901,6 +42935,19 @@ of_list_instruction_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_list_instruction_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_instruction_id_t *
+of_list_instruction_id_dup(
+    of_list_instruction_id_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_instruction_id_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

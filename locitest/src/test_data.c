@@ -1840,6 +1840,30 @@ test_of13_instruction_bsn_disable_src_mac_check(void) {
     return TEST_PASS;
 }
 
+/* Generated from of13/instruction_id_goto_table.data */
+static int
+test_of13_instruction_id_goto_table(void) {
+    uint8_t binary[] = {
+        0x00, 0x01, 0x00, 0x04, 
+    };
+
+    of_object_t *obj;
+
+    obj = of_instruction_id_goto_table_new(OF_VERSION_1_3);
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
 /* Generated from of13/oxm_bsn_global_vrf_allowed.data */
 static int
 test_of13_oxm_bsn_global_vrf_allowed(void) {
@@ -1988,6 +2012,7 @@ test_datafiles(void)
     RUN_TEST(of13_bsn_set_aux_cxns_reply);
     RUN_TEST(of13_bsn_set_aux_cxns_request);
     RUN_TEST(of13_instruction_bsn_disable_src_mac_check);
+    RUN_TEST(of13_instruction_id_goto_table);
     RUN_TEST(of13_oxm_bsn_global_vrf_allowed);
     RUN_TEST(of13_oxm_bsn_in_ports_masked_128);
     RUN_TEST(of13_oxm_bsn_l3_src_class_id);

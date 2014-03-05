@@ -22930,7 +22930,7 @@ function dissect_of_table_feature_prop_instructions_v4(reader, subtree)
     reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.length')
-    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
+    read_list(reader, dissect_of_instruction_id_v4, subtree, 'of_instruction_id')
     return 'of_table_feature_prop_instructions'
 end
 of_table_feature_prop_v4_dissectors[0] = dissect_of_table_feature_prop_instructions_v4
@@ -22943,7 +22943,7 @@ function dissect_of_table_feature_prop_instructions_miss_v4(reader, subtree)
     reader = orig_reader.slice(_length)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.length')
-    read_list(reader, dissect_of_instruction_v4, subtree, 'of_instruction')
+    read_list(reader, dissect_of_instruction_id_v4, subtree, 'of_instruction_id')
     return 'of_table_feature_prop_instructions_miss'
 end
 of_table_feature_prop_v4_dissectors[1] = dissect_of_table_feature_prop_instructions_miss_v4

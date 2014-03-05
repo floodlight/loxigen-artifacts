@@ -34055,6 +34055,44 @@ test_of_list_instruction_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_list_instruction_id_OF_VERSION_1_3(void)
+{
+    of_list_instruction_id_t *obj;
+    obj = of_list_instruction_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 0);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_LIST_INSTRUCTION_ID);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 0);
+    }
+    if (obj->wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        obj->wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_LIST_INSTRUCTION_ID);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_list_instruction_id_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_list_instruction_id_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_list_instruction_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_list_meter_band_OF_VERSION_1_3(void)
 {
     of_list_meter_band_t *obj;
@@ -35577,6 +35615,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_list_group_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_hello_elem_OF_VERSION_1_3);
     RUN_TEST(of_list_instruction_OF_VERSION_1_3);
+    RUN_TEST(of_list_instruction_id_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_band_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_band_stats_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_stats_OF_VERSION_1_3);

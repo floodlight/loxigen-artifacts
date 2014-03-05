@@ -475,6 +475,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_list_group_stats_entry_init,
     (of_object_init_f)of_list_hello_elem_init,
     (of_object_init_f)of_list_instruction_init,
+    (of_object_init_f)of_list_instruction_id_init,
     (of_object_init_f)of_list_meter_band_init,
     (of_object_init_f)of_list_meter_band_stats_init,
     (of_object_init_f)of_list_meter_stats_init,

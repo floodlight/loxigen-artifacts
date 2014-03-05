@@ -1866,6 +1866,10 @@ extern of_list_instruction_t *
     of_list_instruction_dup(
         of_list_instruction_t *src);
 
+extern of_list_instruction_id_t *
+    of_list_instruction_id_dup(
+        of_list_instruction_id_t *src);
+
 extern of_list_meter_band_t *
     of_list_meter_band_dup(
         of_list_meter_band_t *src);
@@ -5817,6 +5821,10 @@ extern of_list_hello_elem_t *
 extern of_list_instruction_t *
     of_list_instruction_OF_VERSION_1_3_dup(
         of_list_instruction_t *src);
+
+extern of_list_instruction_id_t *
+    of_list_instruction_id_OF_VERSION_1_3_dup(
+        of_list_instruction_id_t *src);
 
 extern of_list_meter_band_t *
     of_list_meter_band_OF_VERSION_1_3_dup(

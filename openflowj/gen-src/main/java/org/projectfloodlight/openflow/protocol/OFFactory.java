@@ -286,9 +286,9 @@ public interface OFFactory extends XidGenerator {
     OFTableFeaturePropExperimenter.Builder buildTableFeaturePropExperimenter() throws UnsupportedOperationException;
     OFTableFeaturePropExperimenterMiss.Builder buildTableFeaturePropExperimenterMiss() throws UnsupportedOperationException;
     OFTableFeaturePropInstructions.Builder buildTableFeaturePropInstructions() throws UnsupportedOperationException;
-    OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstruction> instructionIds);
+    OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstructionId> instructionIds);
     OFTableFeaturePropInstructionsMiss.Builder buildTableFeaturePropInstructionsMiss() throws UnsupportedOperationException;
-    OFTableFeaturePropInstructionsMiss tableFeaturePropInstructionsMiss(List<OFInstruction> instructionIds);
+    OFTableFeaturePropInstructionsMiss tableFeaturePropInstructionsMiss(List<OFInstructionId> instructionIds);
     OFTableFeaturePropMatch.Builder buildTableFeaturePropMatch() throws UnsupportedOperationException;
     OFTableFeaturePropMatch tableFeaturePropMatch(List<U32> oxmIds);
     OFTableFeaturePropNextTables.Builder buildTableFeaturePropNextTables() throws UnsupportedOperationException;

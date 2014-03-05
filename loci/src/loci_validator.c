@@ -561,6 +561,7 @@ static inline int of_list_oxm_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_meter_stats_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_meter_band_stats_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_meter_band_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_list_instruction_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_instruction_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_hello_elem_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_list_group_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8801,6 +8802,99 @@ of_list_meter_band_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_list_instruction_id_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    while (len >= 4) {
+        of_object_id_t e_id;
+        uint16_t e_type, e_len;
+        buf_u16_get(buf, &e_type);
+        buf_u16_get(buf+2, &e_len);
+        e_id = of_instruction_id_to_object_id(e_type, OF_VERSION_1_3);
+        switch (e_id) {
+        case OF_INSTRUCTION_ID_BSN:
+            if (of_instruction_id_bsn_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_CLEAR_ACTIONS:
+            if (of_instruction_id_clear_actions_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK:
+            if (of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_WRITE_ACTIONS:
+            if (of_instruction_id_write_actions_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD:
+            if (of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK:
+            if (of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_APPLY_ACTIONS:
+            if (of_instruction_id_apply_actions_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_METER:
+            if (of_instruction_id_meter_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_BSN_PERMIT:
+            if (of_instruction_id_bsn_permit_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_BSN_DENY:
+            if (of_instruction_id_bsn_deny_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_EXPERIMENTER:
+            if (of_instruction_id_experimenter_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD:
+            if (of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_WRITE_METADATA:
+            if (of_instruction_id_write_metadata_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_ID_GOTO_TABLE:
+            if (of_instruction_id_goto_table_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        default:
+            return -1;
+        }
+        buf += e_len;
+        len -= e_len;
+    }
+    if (len != 0) {
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_list_instruction_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     while (len >= 4) {
@@ -9683,7 +9777,7 @@ of_table_feature_prop_instructions_miss_OF_VERSION_1_3_validate(uint8_t *buf, in
     {    int instruction_ids_len = len - 4;
 
 
-        if (of_list_instruction_OF_VERSION_1_3_validate(buf + 4, instruction_ids_len) < 0) {
+        if (of_list_instruction_id_OF_VERSION_1_3_validate(buf + 4, instruction_ids_len) < 0) {
             return -1;
         }
     }
@@ -9703,7 +9797,7 @@ of_table_feature_prop_instructions_OF_VERSION_1_3_validate(uint8_t *buf, int len
     {    int instruction_ids_len = len - 4;
 
 
-        if (of_list_instruction_OF_VERSION_1_3_validate(buf + 4, instruction_ids_len) < 0) {
+        if (of_list_instruction_id_OF_VERSION_1_3_validate(buf + 4, instruction_ids_len) < 0) {
             return -1;
         }
     }

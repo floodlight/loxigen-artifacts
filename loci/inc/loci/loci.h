@@ -203,6 +203,7 @@ int of_experimenter_stats_reply_to_object_id(uint32_t experimenter, uint32_t sub
 of_object_id_t of_action_to_object_id(int action, of_version_t version);
 of_object_id_t of_action_id_to_object_id(int action_id, of_version_t version);
 of_object_id_t of_instruction_to_object_id(int instruction, of_version_t version);
+of_object_id_t of_instruction_id_to_object_id(int instruction, of_version_t version);
 of_object_id_t of_queue_prop_to_object_id(int queue_prop, of_version_t version);
 of_object_id_t of_table_feature_prop_to_object_id(int table_feature_prop, of_version_t version);
 of_object_id_t of_meter_band_to_object_id(int meter_band, of_version_t version);
@@ -516,6 +517,8 @@ extern void of_u16_len_wire_length_set(of_object_t *obj, int bytes);
 extern void of_action_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 extern void of_action_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 extern void of_instruction_wire_object_id_get(of_object_t *obj,
+    of_object_id_t *id);
+extern void of_instruction_id_wire_object_id_get(of_object_t *obj,
     of_object_id_t *id);
 extern void of_queue_prop_wire_object_id_get(of_object_t *obj,
     of_object_id_t *id);

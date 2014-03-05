@@ -38,10 +38,10 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
     final static byte WIRE_VERSION = 4;
     final static int MINIMUM_LENGTH = 4;
 
-        private final static List<OFInstruction> DEFAULT_INSTRUCTION_IDS = ImmutableList.<OFInstruction>of();
+        private final static List<OFInstructionId> DEFAULT_INSTRUCTION_IDS = ImmutableList.<OFInstructionId>of();
 
     // OF message fields
-    private final List<OFInstruction> instructionIds;
+    private final List<OFInstructionId> instructionIds;
 //
     // Immutable default instance
     final static OFTableFeaturePropInstructionsMissVer13 DEFAULT = new OFTableFeaturePropInstructionsMissVer13(
@@ -49,7 +49,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFTableFeaturePropInstructionsMissVer13(List<OFInstruction> instructionIds) {
+    OFTableFeaturePropInstructionsMissVer13(List<OFInstructionId> instructionIds) {
         this.instructionIds = instructionIds;
     }
 
@@ -60,7 +60,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
     }
 
     @Override
-    public List<OFInstruction> getInstructionIds() {
+    public List<OFInstructionId> getInstructionIds() {
         return instructionIds;
     }
 
@@ -80,7 +80,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
 
         // OF message fields
         private boolean instructionIdsSet;
-        private List<OFInstruction> instructionIds;
+        private List<OFInstructionId> instructionIds;
 
         BuilderWithParent(OFTableFeaturePropInstructionsMissVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -92,12 +92,12 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
     }
 
     @Override
-    public List<OFInstruction> getInstructionIds() {
+    public List<OFInstructionId> getInstructionIds() {
         return instructionIds;
     }
 
     @Override
-    public OFTableFeaturePropInstructionsMiss.Builder setInstructionIds(List<OFInstruction> instructionIds) {
+    public OFTableFeaturePropInstructionsMiss.Builder setInstructionIds(List<OFInstructionId> instructionIds) {
         this.instructionIds = instructionIds;
         this.instructionIdsSet = true;
         return this;
@@ -111,7 +111,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
 
         @Override
         public OFTableFeaturePropInstructionsMiss build() {
-                List<OFInstruction> instructionIds = this.instructionIdsSet ? this.instructionIds : parentMessage.instructionIds;
+                List<OFInstructionId> instructionIds = this.instructionIdsSet ? this.instructionIds : parentMessage.instructionIds;
                 if(instructionIds == null)
                     throw new NullPointerException("Property instructionIds must not be null");
 
@@ -126,7 +126,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
     static class Builder implements OFTableFeaturePropInstructionsMiss.Builder {
         // OF message fields
         private boolean instructionIdsSet;
-        private List<OFInstruction> instructionIds;
+        private List<OFInstructionId> instructionIds;
 
     @Override
     public int getType() {
@@ -134,12 +134,12 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
     }
 
     @Override
-    public List<OFInstruction> getInstructionIds() {
+    public List<OFInstructionId> getInstructionIds() {
         return instructionIds;
     }
 
     @Override
-    public OFTableFeaturePropInstructionsMiss.Builder setInstructionIds(List<OFInstruction> instructionIds) {
+    public OFTableFeaturePropInstructionsMiss.Builder setInstructionIds(List<OFInstructionId> instructionIds) {
         this.instructionIds = instructionIds;
         this.instructionIdsSet = true;
         return this;
@@ -152,7 +152,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
 //
         @Override
         public OFTableFeaturePropInstructionsMiss build() {
-            List<OFInstruction> instructionIds = this.instructionIdsSet ? this.instructionIds : DEFAULT_INSTRUCTION_IDS;
+            List<OFInstructionId> instructionIds = this.instructionIdsSet ? this.instructionIds : DEFAULT_INSTRUCTION_IDS;
             if(instructionIds == null)
                 throw new NullPointerException("Property instructionIds must not be null");
 
@@ -184,7 +184,7 @@ class OFTableFeaturePropInstructionsMissVer13 implements OFTableFeaturePropInstr
             }
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
-            List<OFInstruction> instructionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionVer13.READER);
+            List<OFInstructionId> instructionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFInstructionIdVer13.READER);
 
             OFTableFeaturePropInstructionsMissVer13 tableFeaturePropInstructionsMissVer13 = new OFTableFeaturePropInstructionsMissVer13(
                     instructionIds

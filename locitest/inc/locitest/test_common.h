@@ -8619,6 +8619,15 @@ extern int of_list_instruction_OF_VERSION_1_3_populate_scalars(
 extern int of_list_instruction_OF_VERSION_1_3_check_scalars(
     of_list_instruction_t *obj, int value);
 
+extern int of_list_instruction_id_OF_VERSION_1_3_populate(
+    of_list_instruction_id_t *obj, int value);
+extern int of_list_instruction_id_OF_VERSION_1_3_check(
+    of_list_instruction_id_t *obj, int value);
+extern int of_list_instruction_id_OF_VERSION_1_3_populate_scalars(
+    of_list_instruction_id_t *obj, int value);
+extern int of_list_instruction_id_OF_VERSION_1_3_check_scalars(
+    of_list_instruction_id_t *obj, int value);
+
 extern int of_list_meter_band_OF_VERSION_1_3_populate(
     of_list_meter_band_t *obj, int value);
 extern int of_list_meter_band_OF_VERSION_1_3_check(
@@ -9184,6 +9193,13 @@ extern int
 extern int
     list_check_of_list_instruction_OF_VERSION_1_3(
     of_list_instruction_t *list, int value);
+
+extern int
+    list_setup_of_list_instruction_id_OF_VERSION_1_3(
+    of_list_instruction_id_t *list, int value);
+extern int
+    list_check_of_list_instruction_id_OF_VERSION_1_3(
+    of_list_instruction_id_t *list, int value);
 
 extern int
     list_setup_of_list_meter_band_OF_VERSION_1_3(

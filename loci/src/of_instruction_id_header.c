@@ -106,6 +106,8 @@ of_instruction_id_header_init(of_instruction_id_header_t *obj,
 
     obj->wire_length_get = of_tlv16_wire_length_get;
 
+    obj->wire_type_get = of_instruction_id_wire_object_id_get;
+
     /* Grow the wire buffer */
     if (obj->wire_object.wbuf != NULL) {
         int tot_bytes;

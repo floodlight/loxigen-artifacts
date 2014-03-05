@@ -120,6 +120,40 @@ of_instruction_to_object_id(int instruction, of_version_t version)
 }
 
 /**
+ * instruction_id wire type to object ID array.
+ * Treat as private; use function accessor below
+ */
+
+extern const of_object_id_t *const of_instruction_id_type_to_id[OF_VERSION_ARRAY_MAX];
+
+#define OF_INSTRUCTION_ID_ITEM_COUNT 7
+
+
+/**
+ * Map an instruction_id wire value to an OF object
+ * @param instruction_id The instruction_id type wire value
+ * @param version The version associated with the check
+ * @return The instruction_id OF object type
+ * @return OF_OBJECT_INVALID if type does not map to an object
+ *
+ */
+of_object_id_t
+of_instruction_id_to_object_id(int instruction_id, of_version_t version)
+{
+    if (!OF_VERSION_OKAY(version)) {
+        return OF_OBJECT_INVALID;
+    }
+    if (instruction_id == OF_EXPERIMENTER_TYPE) {
+        return OF_INSTRUCTION_ID_EXPERIMENTER;
+    }
+    if (instruction_id < 0 || instruction_id >= OF_INSTRUCTION_ID_ITEM_COUNT) {
+        return OF_OBJECT_INVALID;
+    }
+
+    return of_instruction_id_type_to_id[version][instruction_id];
+}
+
+/**
  * queue_prop wire type to object ID array.
  * Treat as private; use function accessor below
  */
@@ -1593,6 +1627,62 @@ const of_object_id_t *const of_instruction_type_to_id[OF_VERSION_ARRAY_MAX] = {
     of_instruction_type_to_id_v2,
     of_instruction_type_to_id_v3,
     of_instruction_type_to_id_v4,
+
+};
+
+static const of_object_id_t
+of_instruction_id_type_to_id_v1[OF_INSTRUCTION_ID_ITEM_COUNT] = {
+    OF_OBJECT_INVALID,             /* 0 (Invalid) */
+    OF_OBJECT_INVALID,             /* 1 (Invalid) */
+    OF_OBJECT_INVALID,             /* 2 (Invalid) */
+    OF_OBJECT_INVALID,             /* 3 (Invalid) */
+    OF_OBJECT_INVALID,             /* 4 (Invalid) */
+    OF_OBJECT_INVALID,             /* 5 (Invalid) */
+    OF_OBJECT_INVALID              /* 6 (Invalid) */
+};
+static const of_object_id_t
+of_instruction_id_type_to_id_v2[OF_INSTRUCTION_ID_ITEM_COUNT] = {
+    OF_OBJECT_INVALID,             /* 0 (Invalid) */
+    OF_OBJECT_INVALID,             /* 1 (Invalid) */
+    OF_OBJECT_INVALID,             /* 2 (Invalid) */
+    OF_OBJECT_INVALID,             /* 3 (Invalid) */
+    OF_OBJECT_INVALID,             /* 4 (Invalid) */
+    OF_OBJECT_INVALID,             /* 5 (Invalid) */
+    OF_OBJECT_INVALID              /* 6 (Invalid) */
+};
+static const of_object_id_t
+of_instruction_id_type_to_id_v3[OF_INSTRUCTION_ID_ITEM_COUNT] = {
+    OF_OBJECT_INVALID,             /* 0 (Invalid) */
+    OF_OBJECT_INVALID,             /* 1 (Invalid) */
+    OF_OBJECT_INVALID,             /* 2 (Invalid) */
+    OF_OBJECT_INVALID,             /* 3 (Invalid) */
+    OF_OBJECT_INVALID,             /* 4 (Invalid) */
+    OF_OBJECT_INVALID,             /* 5 (Invalid) */
+    OF_OBJECT_INVALID              /* 6 (Invalid) */
+};
+static const of_object_id_t
+of_instruction_id_type_to_id_v4[OF_INSTRUCTION_ID_ITEM_COUNT] = {
+    OF_OBJECT_INVALID,             /* 0 (Invalid) */
+    OF_INSTRUCTION_ID_GOTO_TABLE,  /* 1 */
+    OF_INSTRUCTION_ID_WRITE_METADATA, /* 2 */
+    OF_INSTRUCTION_ID_WRITE_ACTIONS, /* 3 */
+    OF_INSTRUCTION_ID_APPLY_ACTIONS, /* 4 */
+    OF_INSTRUCTION_ID_CLEAR_ACTIONS, /* 5 */
+    OF_INSTRUCTION_ID_METER        /* 6 */
+};
+
+/**
+ * Maps from of_instruction_id wire type values to LOCI object ids
+ *
+ * Indexed by wire version which is 1-based.
+ */
+
+const of_object_id_t *const of_instruction_id_type_to_id[OF_VERSION_ARRAY_MAX] = {
+    NULL,
+    of_instruction_id_type_to_id_v1,
+    of_instruction_id_type_to_id_v2,
+    of_instruction_id_type_to_id_v3,
+    of_instruction_id_type_to_id_v4,
 
 };
 
@@ -3084,21 +3174,22 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 461: of_list_group_stats_entry */
     -1,   /* 462: of_list_hello_elem */
     -1,   /* 463: of_list_instruction */
-    -1,   /* 464: of_list_meter_band */
-    -1,   /* 465: of_list_meter_band_stats */
-    -1,   /* 466: of_list_meter_stats */
-    -1,   /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    -1,   /* 473: of_list_table_feature_prop */
-    -1,   /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    -1,   /* 476: of_list_uint32 */
-    -1,   /* 477: of_list_uint64 */
-    -1    /* 478: of_list_uint8 */
+    -1,   /* 464: of_list_instruction_id */
+    -1,   /* 465: of_list_meter_band */
+    -1,   /* 466: of_list_meter_band_stats */
+    -1,   /* 467: of_list_meter_stats */
+    -1,   /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    -1,   /* 474: of_list_table_feature_prop */
+    -1,   /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    -1,   /* 477: of_list_uint32 */
+    -1,   /* 478: of_list_uint64 */
+    -1    /* 479: of_list_uint8 */
 };
 
 static const int
@@ -3567,21 +3658,22 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     0,    /* 461: of_list_group_stats_entry */
     -1,   /* 462: of_list_hello_elem */
     0,    /* 463: of_list_instruction */
-    -1,   /* 464: of_list_meter_band */
-    -1,   /* 465: of_list_meter_band_stats */
-    -1,   /* 466: of_list_meter_stats */
-    -1,   /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    -1,   /* 473: of_list_table_feature_prop */
-    -1,   /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    -1,   /* 476: of_list_uint32 */
-    -1,   /* 477: of_list_uint64 */
-    -1    /* 478: of_list_uint8 */
+    -1,   /* 464: of_list_instruction_id */
+    -1,   /* 465: of_list_meter_band */
+    -1,   /* 466: of_list_meter_band_stats */
+    -1,   /* 467: of_list_meter_stats */
+    -1,   /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    -1,   /* 474: of_list_table_feature_prop */
+    -1,   /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    -1,   /* 477: of_list_uint32 */
+    -1,   /* 478: of_list_uint64 */
+    -1    /* 479: of_list_uint8 */
 };
 
 static const int
@@ -4050,21 +4142,22 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     0,    /* 461: of_list_group_stats_entry */
     -1,   /* 462: of_list_hello_elem */
     0,    /* 463: of_list_instruction */
-    -1,   /* 464: of_list_meter_band */
-    -1,   /* 465: of_list_meter_band_stats */
-    -1,   /* 466: of_list_meter_stats */
-    0,    /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    -1,   /* 473: of_list_table_feature_prop */
-    -1,   /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    -1,   /* 476: of_list_uint32 */
-    -1,   /* 477: of_list_uint64 */
-    -1    /* 478: of_list_uint8 */
+    -1,   /* 464: of_list_instruction_id */
+    -1,   /* 465: of_list_meter_band */
+    -1,   /* 466: of_list_meter_band_stats */
+    -1,   /* 467: of_list_meter_stats */
+    0,    /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    -1,   /* 474: of_list_table_feature_prop */
+    -1,   /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    -1,   /* 477: of_list_uint32 */
+    -1,   /* 478: of_list_uint64 */
+    -1    /* 479: of_list_uint8 */
 };
 
 static const int
@@ -4533,21 +4626,22 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     0,    /* 461: of_list_group_stats_entry */
     0,    /* 462: of_list_hello_elem */
     0,    /* 463: of_list_instruction */
-    0,    /* 464: of_list_meter_band */
-    0,    /* 465: of_list_meter_band_stats */
-    0,    /* 466: of_list_meter_stats */
-    0,    /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    0,    /* 473: of_list_table_feature_prop */
-    0,    /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    0,    /* 476: of_list_uint32 */
-    0,    /* 477: of_list_uint64 */
-    0     /* 478: of_list_uint8 */
+    0,    /* 464: of_list_instruction_id */
+    0,    /* 465: of_list_meter_band */
+    0,    /* 466: of_list_meter_band_stats */
+    0,    /* 467: of_list_meter_stats */
+    0,    /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    0,    /* 474: of_list_table_feature_prop */
+    0,    /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    0,    /* 477: of_list_uint32 */
+    0,    /* 478: of_list_uint64 */
+    0     /* 479: of_list_uint8 */
 };
 
 /**
@@ -5033,21 +5127,22 @@ of_object_extra_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 461: of_list_group_stats_entry */
     -1,   /* 462: of_list_hello_elem */
     -1,   /* 463: of_list_instruction */
-    -1,   /* 464: of_list_meter_band */
-    -1,   /* 465: of_list_meter_band_stats */
-    -1,   /* 466: of_list_meter_stats */
-    -1,   /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    -1,   /* 473: of_list_table_feature_prop */
-    -1,   /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    -1,   /* 476: of_list_uint32 */
-    -1,   /* 477: of_list_uint64 */
-    -1    /* 478: of_list_uint8 */
+    -1,   /* 464: of_list_instruction_id */
+    -1,   /* 465: of_list_meter_band */
+    -1,   /* 466: of_list_meter_band_stats */
+    -1,   /* 467: of_list_meter_stats */
+    -1,   /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    -1,   /* 474: of_list_table_feature_prop */
+    -1,   /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    -1,   /* 477: of_list_uint32 */
+    -1,   /* 478: of_list_uint64 */
+    -1    /* 479: of_list_uint8 */
 };
 
 static const int
@@ -5516,21 +5611,22 @@ of_object_extra_len_v2[OF_OBJECT_COUNT] = {
     0,    /* 461: of_list_group_stats_entry */
     -1,   /* 462: of_list_hello_elem */
     0,    /* 463: of_list_instruction */
-    -1,   /* 464: of_list_meter_band */
-    -1,   /* 465: of_list_meter_band_stats */
-    -1,   /* 466: of_list_meter_stats */
-    -1,   /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    -1,   /* 473: of_list_table_feature_prop */
-    -1,   /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    -1,   /* 476: of_list_uint32 */
-    -1,   /* 477: of_list_uint64 */
-    -1    /* 478: of_list_uint8 */
+    -1,   /* 464: of_list_instruction_id */
+    -1,   /* 465: of_list_meter_band */
+    -1,   /* 466: of_list_meter_band_stats */
+    -1,   /* 467: of_list_meter_stats */
+    -1,   /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    -1,   /* 474: of_list_table_feature_prop */
+    -1,   /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    -1,   /* 477: of_list_uint32 */
+    -1,   /* 478: of_list_uint64 */
+    -1    /* 479: of_list_uint8 */
 };
 
 static const int
@@ -5999,21 +6095,22 @@ of_object_extra_len_v3[OF_OBJECT_COUNT] = {
     0,    /* 461: of_list_group_stats_entry */
     -1,   /* 462: of_list_hello_elem */
     0,    /* 463: of_list_instruction */
-    -1,   /* 464: of_list_meter_band */
-    -1,   /* 465: of_list_meter_band_stats */
-    -1,   /* 466: of_list_meter_stats */
-    0,    /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    -1,   /* 473: of_list_table_feature_prop */
-    -1,   /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    -1,   /* 476: of_list_uint32 */
-    -1,   /* 477: of_list_uint64 */
-    -1    /* 478: of_list_uint8 */
+    -1,   /* 464: of_list_instruction_id */
+    -1,   /* 465: of_list_meter_band */
+    -1,   /* 466: of_list_meter_band_stats */
+    -1,   /* 467: of_list_meter_stats */
+    0,    /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    -1,   /* 474: of_list_table_feature_prop */
+    -1,   /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    -1,   /* 477: of_list_uint32 */
+    -1,   /* 478: of_list_uint64 */
+    -1    /* 479: of_list_uint8 */
 };
 
 static const int
@@ -6482,21 +6579,22 @@ of_object_extra_len_v4[OF_OBJECT_COUNT] = {
     0,    /* 461: of_list_group_stats_entry */
     0,    /* 462: of_list_hello_elem */
     0,    /* 463: of_list_instruction */
-    0,    /* 464: of_list_meter_band */
-    0,    /* 465: of_list_meter_band_stats */
-    0,    /* 466: of_list_meter_stats */
-    0,    /* 467: of_list_oxm */
-    0,    /* 468: of_list_packet_queue */
-    0,    /* 469: of_list_port_desc */
-    0,    /* 470: of_list_port_stats_entry */
-    0,    /* 471: of_list_queue_prop */
-    0,    /* 472: of_list_queue_stats_entry */
-    0,    /* 473: of_list_table_feature_prop */
-    0,    /* 474: of_list_table_features */
-    0,    /* 475: of_list_table_stats_entry */
-    0,    /* 476: of_list_uint32 */
-    0,    /* 477: of_list_uint64 */
-    0     /* 478: of_list_uint8 */
+    0,    /* 464: of_list_instruction_id */
+    0,    /* 465: of_list_meter_band */
+    0,    /* 466: of_list_meter_band_stats */
+    0,    /* 467: of_list_meter_stats */
+    0,    /* 468: of_list_oxm */
+    0,    /* 469: of_list_packet_queue */
+    0,    /* 470: of_list_port_desc */
+    0,    /* 471: of_list_port_stats_entry */
+    0,    /* 472: of_list_queue_prop */
+    0,    /* 473: of_list_queue_stats_entry */
+    0,    /* 474: of_list_table_feature_prop */
+    0,    /* 475: of_list_table_features */
+    0,    /* 476: of_list_table_stats_entry */
+    0,    /* 477: of_list_uint32 */
+    0,    /* 478: of_list_uint64 */
+    0     /* 479: of_list_uint8 */
 };
 
 /**
@@ -6783,6 +6881,43 @@ extension_instruction_object_id_get(of_object_t *obj, of_object_id_t *id)
     return OF_ERROR_NONE;
 }
 
+
+/**
+ * @fixme to do when we have instruction extensions
+ * See extension_action above
+ */
+
+static int
+extension_instruction_id_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    uint32_t exp_id;
+    uint8_t *buf;
+
+    *id = OF_INSTRUCTION_ID_EXPERIMENTER;
+
+    buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+
+    buf_u32_get(buf + OF_INSTRUCTION_EXPERIMENTER_ID_OFFSET, &exp_id);
+
+    switch (exp_id) {
+    case OF_EXPERIMENTER_ID_BSN: {
+        uint32_t subtype;
+        buf_u32_get(buf + OF_INSTRUCTION_EXPERIMENTER_SUBTYPE_OFFSET, &subtype);
+        switch (subtype) {
+        case 0: *id = OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK; break;
+        case 1: *id = OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD; break;
+        case 2: *id = OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD; break;
+        case 3: *id = OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK; break;
+        case 4: *id = OF_INSTRUCTION_ID_BSN_PERMIT; break;
+        case 5: *id = OF_INSTRUCTION_ID_BSN_DENY; break;
+        }
+        break;
+    }
+    }
+
+    return OF_ERROR_NONE;
+}
+
 /**
  * Get the object ID based on the wire buffer for an instruction object
  * @param obj The object being referenced
@@ -6806,6 +6941,29 @@ of_instruction_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     LOCI_ASSERT(*id != OF_OBJECT_INVALID);
 }
 
+/**
+ * Get the object ID based on the wire buffer for an instruction ID object
+ * @param obj The object being referenced
+ * @param id Where to store the object ID
+ */
+
+
+void
+of_instruction_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    int wire_type;
+
+    of_tlv16_wire_type_get(obj, &wire_type);
+    if (wire_type == OF_EXPERIMENTER_TYPE) {
+        extension_instruction_id_object_id_get(obj, id);
+        return;
+    }
+
+    LOCI_ASSERT(wire_type >= 0 && wire_type < OF_INSTRUCTION_ID_ITEM_COUNT);
+
+    *id = of_instruction_id_type_to_id[obj->version][wire_type];
+    LOCI_ASSERT(*id != OF_OBJECT_INVALID);
+}
 
 /**
  * @fixme to do when we have queue_prop extensions

@@ -1615,6 +1615,32 @@ test_of_list_instruction_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_list_instruction_id_OF_VERSION_1_3(void)
+{
+    of_list_instruction_id_t *list;
+    int value = 1;
+
+    list = of_list_instruction_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_INSTRUCTION_ID);
+
+    value = list_setup_of_list_instruction_id_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = list_check_of_list_instruction_id_OF_VERSION_1_3(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_instruction_id_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_list_meter_band_OF_VERSION_1_3(void)
 {
     of_list_meter_band_t *list;
@@ -2068,6 +2094,7 @@ run_list_tests(void)
     RUN_TEST(of_list_group_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_list_hello_elem_OF_VERSION_1_3);
     RUN_TEST(of_list_instruction_OF_VERSION_1_3);
+    RUN_TEST(of_list_instruction_id_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_band_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_band_stats_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_stats_OF_VERSION_1_3);

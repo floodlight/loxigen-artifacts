@@ -7854,8 +7854,8 @@ typedef struct of_table_feature_prop_header_s of_table_feature_prop_header_t;
  * accessors available in all versions unless noted otherwise
  *
  * @param instruction_ids_get/set ( OF_1_3).
- *   Accessors for instruction_ids, a variable of type of_list_instruction.  Functions
- *   are of type of_table_feature_prop_instructions_of_list_instruction_get_f and _set_f.
+ *   Accessors for instruction_ids, a variable of type of_list_instruction_id.  Functions
+ *   are of type of_table_feature_prop_instructions_of_list_instruction_id_get_f and _set_f.
  *
  */
 typedef struct of_table_feature_prop_instructions_s of_table_feature_prop_instructions_t;
@@ -7865,8 +7865,8 @@ typedef struct of_table_feature_prop_instructions_s of_table_feature_prop_instru
  * accessors available in all versions unless noted otherwise
  *
  * @param instruction_ids_get/set ( OF_1_3).
- *   Accessors for instruction_ids, a variable of type of_list_instruction.  Functions
- *   are of type of_table_feature_prop_instructions_miss_of_list_instruction_get_f and _set_f.
+ *   Accessors for instruction_ids, a variable of type of_list_instruction_id.  Functions
+ *   are of type of_table_feature_prop_instructions_miss_of_list_instruction_id_get_f and _set_f.
  *
  */
 typedef struct of_table_feature_prop_instructions_miss_s of_table_feature_prop_instructions_miss_t;
@@ -8442,6 +8442,21 @@ typedef struct of_list_hello_elem_s of_list_hello_elem_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_instruction_s of_list_instruction_t;
+
+/**
+ * Structure for of_list_instruction_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_instruction_id_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_instruction_id_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_instruction_id_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_instruction_id_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_instruction_id_s of_list_instruction_id_t;
 
 /**
  * Structure for of_list_meter_band object.  Get/set

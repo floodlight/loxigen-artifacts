@@ -27412,6 +27412,24 @@ test_of_list_instruction_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_list_instruction_id_OF_VERSION_1_3_scalar(void)
+{
+    of_list_instruction_id_t *obj;
+
+    obj = of_list_instruction_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 0);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_LIST_INSTRUCTION_ID);
+
+    of_list_instruction_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_list_meter_band_OF_VERSION_1_3_scalar(void)
 {
     of_list_meter_band_t *obj;
@@ -28634,6 +28652,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_list_group_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_hello_elem_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_instruction_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_list_instruction_id_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_meter_band_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_meter_band_stats_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_meter_stats_OF_VERSION_1_3_scalar);

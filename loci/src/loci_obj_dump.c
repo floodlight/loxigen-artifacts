@@ -25168,15 +25168,15 @@ of_table_feature_prop_instructions_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 {
     int out = 0;
 
-    of_list_instruction_t list;
-    of_instruction_t elt;
+    of_list_instruction_id_t list;
+    of_instruction_id_t elt;
     int rv;
 
     out += writer(cookie, "Object of type of_table_feature_prop_instructions\n");
 
-    out += writer(cookie, "List of of_instruction_t\n");
+    out += writer(cookie, "List of of_instruction_id_t\n");
     of_table_feature_prop_instructions_instruction_ids_bind(obj, &list);
-    OF_LIST_INSTRUCTION_ITER(&list, &elt, rv) {
+    OF_LIST_INSTRUCTION_ID_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
 
@@ -25188,15 +25188,15 @@ of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dump(loci_writer_f writer
 {
     int out = 0;
 
-    of_list_instruction_t list;
-    of_instruction_t elt;
+    of_list_instruction_id_t list;
+    of_instruction_id_t elt;
     int rv;
 
     out += writer(cookie, "Object of type of_table_feature_prop_instructions_miss\n");
 
-    out += writer(cookie, "List of of_instruction_t\n");
+    out += writer(cookie, "List of of_instruction_id_t\n");
     of_table_feature_prop_instructions_miss_instruction_ids_bind(obj, &list);
-    OF_LIST_INSTRUCTION_ITER(&list, &elt, rv) {
+    OF_LIST_INSTRUCTION_ID_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
 
@@ -25724,6 +25724,16 @@ of_list_instruction_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_l
     int out = 0;
 
     out += writer(cookie, "Object of type of_list_instruction\n");
+
+    return out;
+}
+
+int
+of_list_instruction_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_instruction_id_t *obj)
+{
+    int out = 0;
+
+    out += writer(cookie, "Object of type of_list_instruction_id\n");
 
     return out;
 }
@@ -26704,6 +26714,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_list_packet_queue_OF_VERSION_1_0_dump,
     of_list_port_desc_OF_VERSION_1_0_dump,
     of_list_port_stats_entry_OF_VERSION_1_0_dump,
@@ -27183,6 +27194,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_list_group_stats_entry_OF_VERSION_1_1_dump,
     unknown_dump,
     of_list_instruction_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -27669,6 +27681,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_list_oxm_OF_VERSION_1_2_dump,
     of_list_packet_queue_OF_VERSION_1_2_dump,
     of_list_port_desc_OF_VERSION_1_2_dump,
@@ -28149,6 +28162,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_list_group_stats_entry_OF_VERSION_1_3_dump,
     of_list_hello_elem_OF_VERSION_1_3_dump,
     of_list_instruction_OF_VERSION_1_3_dump,
+    of_list_instruction_id_OF_VERSION_1_3_dump,
     of_list_meter_band_OF_VERSION_1_3_dump,
     of_list_meter_band_stats_OF_VERSION_1_3_dump,
     of_list_meter_stats_OF_VERSION_1_3_dump,

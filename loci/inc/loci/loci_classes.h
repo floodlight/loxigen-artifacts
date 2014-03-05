@@ -472,6 +472,7 @@ typedef of_object_t of_list_group_desc_stats_entry_t;
 typedef of_object_t of_list_group_stats_entry_t;
 typedef of_object_t of_list_hello_elem_t;
 typedef of_object_t of_list_instruction_t;
+typedef of_object_t of_list_instruction_id_t;
 typedef of_object_t of_list_meter_band_t;
 typedef of_object_t of_list_meter_band_stats_t;
 typedef of_object_t of_list_meter_stats_t;
@@ -3170,6 +3171,11 @@ extern of_list_instruction_t *
     of_list_instruction_new(of_version_t version);
 extern void of_list_instruction_init(
     of_list_instruction_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_instruction_id_t *
+    of_list_instruction_id_new(of_version_t version);
+extern void of_list_instruction_id_init(
+    of_list_instruction_id_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_meter_band_t *
     of_list_meter_band_new(of_version_t version);
@@ -8343,6 +8349,17 @@ of_list_hello_elem_delete(of_list_hello_elem_t *obj) {
  */
 static inline void
 of_list_instruction_delete(of_list_instruction_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_instruction_id_t
+ * @param obj An instance of type of_list_instruction_id_t
+ *
+ * \ingroup of_list_instruction_id
+ */
+static inline void
+of_list_instruction_id_delete(of_list_instruction_id_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -18004,22 +18021,22 @@ extern void of_table_feature_prop_experimenter_miss_experimenter_data_get(
 
 extern int WARN_UNUSED_RESULT of_table_feature_prop_instructions_instruction_ids_set(
     of_table_feature_prop_instructions_t *obj,
-    of_list_instruction_t *instruction_ids);
+    of_list_instruction_id_t *instruction_ids);
 extern void of_table_feature_prop_instructions_instruction_ids_bind(
     of_table_feature_prop_instructions_t *obj,
-    of_list_instruction_t *instruction_ids);
-extern of_list_instruction_t *of_table_feature_prop_instructions_instruction_ids_get(
+    of_list_instruction_id_t *instruction_ids);
+extern of_list_instruction_id_t *of_table_feature_prop_instructions_instruction_ids_get(
     of_table_feature_prop_instructions_t *obj);
 
 /* Unified accessor functions for of_table_feature_prop_instructions_miss */
 
 extern int WARN_UNUSED_RESULT of_table_feature_prop_instructions_miss_instruction_ids_set(
     of_table_feature_prop_instructions_miss_t *obj,
-    of_list_instruction_t *instruction_ids);
+    of_list_instruction_id_t *instruction_ids);
 extern void of_table_feature_prop_instructions_miss_instruction_ids_bind(
     of_table_feature_prop_instructions_miss_t *obj,
-    of_list_instruction_t *instruction_ids);
-extern of_list_instruction_t *of_table_feature_prop_instructions_miss_instruction_ids_get(
+    of_list_instruction_id_t *instruction_ids);
+extern of_list_instruction_id_t *of_table_feature_prop_instructions_miss_instruction_ids_get(
     of_table_feature_prop_instructions_miss_t *obj);
 
 /* Unified accessor functions for of_table_feature_prop_match */
@@ -18832,6 +18849,29 @@ extern int of_list_instruction_append(
     for ((rv) = of_list_instruction_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_instruction_next((list), (elt)))
+
+/* Unified accessor functions for of_list_instruction_id */
+
+extern int of_list_instruction_id_first(
+    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+extern int of_list_instruction_id_next(
+    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+extern int of_list_instruction_id_append_bind(
+    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+extern int of_list_instruction_id_append(
+    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_instruction_id
+ * @param list Pointer to the list being iterated over of
+ * type of_list_instruction_id
+ * @param elt Pointer to an element of type of_instruction_id
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_INSTRUCTION_ID_ITER(list, elt, rv)  \
+    for ((rv) = of_list_instruction_id_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_instruction_id_next((list), (elt)))
 
 /* Unified accessor functions for of_list_meter_band */
 

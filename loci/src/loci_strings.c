@@ -472,6 +472,7 @@ const char *const of_object_id_str[] = {
     "of_list_group_stats_entry",
     "of_list_hello_elem",
     "of_list_instruction",
+    "of_list_instruction_id",
     "of_list_meter_band",
     "of_list_meter_band_stats",
     "of_list_meter_stats",

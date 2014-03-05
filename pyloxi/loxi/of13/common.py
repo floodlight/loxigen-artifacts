@@ -2982,7 +2982,7 @@ class table_feature_prop_instructions(table_feature_prop):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
-        obj.instruction_ids = loxi.generic_util.unpack_list(reader, instruction.instruction.unpack)
+        obj.instruction_ids = loxi.generic_util.unpack_list(reader, instruction_id.instruction_id.unpack)
         return obj
 
     def __eq__(self, other):
@@ -3029,7 +3029,7 @@ class table_feature_prop_instructions_miss(table_feature_prop):
         _length = reader.read("!H")[0]
         orig_reader = reader
         reader = orig_reader.slice(_length - (2 + 2))
-        obj.instruction_ids = loxi.generic_util.unpack_list(reader, instruction.instruction.unpack)
+        obj.instruction_ids = loxi.generic_util.unpack_list(reader, instruction_id.instruction_id.unpack)
         return obj
 
     def __eq__(self, other):

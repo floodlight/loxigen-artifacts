@@ -1065,14 +1065,14 @@ public class OFFactoryVer11 implements OFFactory {
     public OFTableFeaturePropInstructions.Builder buildTableFeaturePropInstructions() {
         throw new UnsupportedOperationException("OFTableFeaturePropInstructions not supported in version 1.1");
     }
-    public OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstruction> instructionIds) {
+    public OFTableFeaturePropInstructions tableFeaturePropInstructions(List<OFInstructionId> instructionIds) {
         throw new UnsupportedOperationException("OFTableFeaturePropInstructions not supported in version 1.1");
     }
 
     public OFTableFeaturePropInstructionsMiss.Builder buildTableFeaturePropInstructionsMiss() {
         throw new UnsupportedOperationException("OFTableFeaturePropInstructionsMiss not supported in version 1.1");
     }
-    public OFTableFeaturePropInstructionsMiss tableFeaturePropInstructionsMiss(List<OFInstruction> instructionIds) {
+    public OFTableFeaturePropInstructionsMiss tableFeaturePropInstructionsMiss(List<OFInstructionId> instructionIds) {
         throw new UnsupportedOperationException("OFTableFeaturePropInstructionsMiss not supported in version 1.1");
     }
 

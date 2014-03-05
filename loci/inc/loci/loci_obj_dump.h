@@ -992,6 +992,7 @@ int of_list_group_desc_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 int of_list_group_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_group_stats_entry_t *obj);
 int of_list_hello_elem_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_hello_elem_t *obj);
 int of_list_instruction_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_instruction_t *obj);
+int of_list_instruction_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_instruction_id_t *obj);
 int of_list_meter_band_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_meter_band_t *obj);
 int of_list_meter_band_stats_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_meter_band_stats_t *obj);
 int of_list_meter_stats_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_meter_stats_t *obj);
