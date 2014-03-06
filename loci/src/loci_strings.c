@@ -277,7 +277,6 @@ const char *const of_object_id_str[] = {
     "of_bsn_vport_q_in_q",
     "of_bucket",
     "of_bucket_counter",
-    "of_experimenter_stats_header",
     "of_flow_stats_entry",
     "of_group_desc_stats_entry",
     "of_group_stats_entry",

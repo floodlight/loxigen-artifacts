@@ -5662,8 +5662,6 @@ fields['of13.experimenter_error_msg.err_type'] = ProtoField.uint16("of13.experim
 fields['of13.experimenter_error_msg.subtype'] = ProtoField.uint16("of13.experimenter_error_msg.subtype", "subtype", base.DEC, nil)
 fields['of13.experimenter_error_msg.experimenter'] = ProtoField.uint32("of13.experimenter_error_msg.experimenter", "experimenter", base.DEC, nil)
 fields['of13.experimenter_error_msg.data'] = ProtoField.bytes("of13.experimenter_error_msg.data", "data")
-fields['of13.experimenter_stats_header.experimenter'] = ProtoField.uint32("of13.experimenter_stats_header.experimenter", "experimenter", base.DEC, nil)
-fields['of13.experimenter_stats_header.subtype'] = ProtoField.uint32("of13.experimenter_stats_header.subtype", "subtype", base.DEC, nil)
 fields['of13.features_reply.version'] = ProtoField.uint8("of13.features_reply.version", "version", base.DEC, nil)
 fields['of13.features_reply.type'] = ProtoField.uint32("of13.features_reply.type", "type", base.DEC, enum_v4_ofp_type)
 fields['of13.features_reply.length'] = ProtoField.uint16("of13.features_reply.length", "length", base.DEC, nil)
@@ -10600,8 +10598,6 @@ p_of.fields = {
     fields['of13.experimenter_error_msg.subtype'],
     fields['of13.experimenter_error_msg.experimenter'],
     fields['of13.experimenter_error_msg.data'],
-    fields['of13.experimenter_stats_header.experimenter'],
-    fields['of13.experimenter_stats_header.subtype'],
     fields['of13.features_reply.version'],
     fields['of13.features_reply.type'],
     fields['of13.features_reply.length'],
@@ -11696,7 +11692,6 @@ of_experimenter_stats_request_v4_dissectors = {}
 of_bsn_stats_request_v4_dissectors = {}
 of_bsn_tlv_v4_dissectors = {}
 of_bsn_vport_v4_dissectors = {}
-of_experimenter_stats_header_v4_dissectors = {}
 of_flow_mod_v4_dissectors = {}
 of_group_mod_v4_dissectors = {}
 of_hello_elem_v4_dissectors = {}
@@ -20487,11 +20482,6 @@ function dissect_of_experimenter_error_msg_v4(reader, subtree)
 end
 of_error_msg_v4_dissectors[65535] = dissect_of_experimenter_error_msg_v4
 
--- virtual top-level class of_experimenter_stats_header
--- Discriminator is experimenter
-function dissect_of_experimenter_stats_header_v4(reader, subtree)
-    return of_experimenter_stats_header_v4_dissectors[reader.peek(0,4):uint()](reader, subtree)
-end
 -- child class of_features_reply
 -- Child of of_header
 function dissect_of_features_reply_v4(reader, subtree)

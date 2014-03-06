@@ -280,7 +280,6 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_vport_q_in_q_init,
     (of_object_init_f)of_bucket_init,
     (of_object_init_f)of_bucket_counter_init,
-    (of_object_init_f)of_experimenter_stats_header_init,
     (of_object_init_f)of_flow_stats_entry_init,
     (of_object_init_f)of_group_desc_stats_entry_init,
     (of_object_init_f)of_group_stats_entry_init,

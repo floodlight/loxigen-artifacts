@@ -5539,21 +5539,6 @@ typedef struct of_bucket_s of_bucket_t;
 typedef struct of_bucket_counter_s of_bucket_counter_t;
 
 /**
- * Structure for of_experimenter_stats_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param experimenter_get/set ( OF_1_3).
- *   Accessors for experimenter, a variable of type uint32.  Functions
- *   are of type of_experimenter_stats_header_uint32_get_f and _set_f.
- *
- * @param subtype_get/set ( OF_1_3).
- *   Accessors for subtype, a variable of type uint32.  Functions
- *   are of type of_experimenter_stats_header_uint32_get_f and _set_f.
- *
- */
-typedef struct of_experimenter_stats_header_s of_experimenter_stats_header_t;
-
-/**
  * Structure for of_flow_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

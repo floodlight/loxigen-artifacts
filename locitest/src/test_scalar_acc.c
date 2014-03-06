@@ -22127,24 +22127,6 @@ test_of_bucket_counter_OF_VERSION_1_3_scalar(void)
 }
 
 static int
-test_of_experimenter_stats_header_OF_VERSION_1_3_scalar(void)
-{
-    of_experimenter_stats_header_t *obj;
-
-    obj = of_experimenter_stats_header_new(OF_VERSION_1_3);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_STATS_HEADER);
-
-    of_experimenter_stats_header_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
 test_of_flow_stats_entry_OF_VERSION_1_3_scalar(void)
 {
     of_flow_stats_entry_t *obj;
@@ -28466,7 +28448,6 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bucket_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bucket_counter_OF_VERSION_1_3_scalar);
-    RUN_TEST(of_experimenter_stats_header_OF_VERSION_1_3_scalar);
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_desc_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_group_stats_entry_OF_VERSION_1_3_scalar);

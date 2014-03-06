@@ -1086,10 +1086,6 @@ extern of_bucket_counter_t *
     of_bucket_counter_dup(
         of_bucket_counter_t *src);
 
-extern of_experimenter_stats_header_t *
-    of_experimenter_stats_header_dup(
-        of_experimenter_stats_header_t *src);
-
 extern of_flow_stats_entry_t *
     of_flow_stats_entry_dup(
         of_flow_stats_entry_t *src);
@@ -5049,10 +5045,6 @@ extern of_bucket_t *
 extern of_bucket_counter_t *
     of_bucket_counter_OF_VERSION_1_3_dup(
         of_bucket_counter_t *src);
-
-extern of_experimenter_stats_header_t *
-    of_experimenter_stats_header_OF_VERSION_1_3_dup(
-        of_experimenter_stats_header_t *src);
 
 extern of_flow_stats_entry_t *
     of_flow_stats_entry_OF_VERSION_1_3_dup(

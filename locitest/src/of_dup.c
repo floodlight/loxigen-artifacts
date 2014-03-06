@@ -28136,34 +28136,6 @@ of_bucket_counter_OF_VERSION_1_3_dup(
 }
 
 /**
- * Duplicate an object of type of_experimenter_stats_header
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_experimenter_stats_header.
- *
- * The caller is responsible for deleting the returned value
- */
-of_experimenter_stats_header_t *
-of_experimenter_stats_header_OF_VERSION_1_3_dup(
-    of_experimenter_stats_header_t *src)
-{
-    of_experimenter_stats_header_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_experimenter_stats_header_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_experimenter_stats_header_experimenter_get(src, &val32);
-    of_experimenter_stats_header_experimenter_set(dst, val32);
-
-    of_experimenter_stats_header_subtype_get(src, &val32);
-    of_experimenter_stats_header_subtype_set(dst, val32);
-
-    return dst;
-}
-
-/**
  * Duplicate an object of type of_flow_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -39760,19 +39732,6 @@ of_bucket_counter_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bucket_counter_OF_VERSION_1_3_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_experimenter_stats_header_t *
-of_experimenter_stats_header_dup(
-    of_experimenter_stats_header_t *src)
-{
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_experimenter_stats_header_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

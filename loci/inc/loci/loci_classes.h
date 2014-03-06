@@ -284,7 +284,6 @@ typedef of_object_t of_bsn_vport_header_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
 typedef of_object_t of_bucket_t;
 typedef of_object_t of_bucket_counter_t;
-typedef of_object_t of_experimenter_stats_header_t;
 typedef of_object_t of_flow_stats_entry_t;
 typedef of_object_t of_group_desc_stats_entry_t;
 typedef of_object_t of_group_stats_entry_t;
@@ -2196,11 +2195,6 @@ extern of_bucket_counter_t *
     of_bucket_counter_new(of_version_t version);
 extern void of_bucket_counter_init(
     of_bucket_counter_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_experimenter_stats_header_t *
-    of_experimenter_stats_header_new(of_version_t version);
-extern void of_experimenter_stats_header_init(
-    of_experimenter_stats_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_stats_entry_t *
     of_flow_stats_entry_new(of_version_t version);
@@ -6204,17 +6198,6 @@ of_bucket_delete(of_bucket_t *obj) {
  */
 static inline void
 of_bucket_counter_delete(of_bucket_counter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
-}
-
-/**
- * Delete an object of type of_experimenter_stats_header_t
- * @param obj An instance of type of_experimenter_stats_header_t
- *
- * \ingroup of_experimenter_stats_header
- */
-static inline void
-of_experimenter_stats_header_delete(of_experimenter_stats_header_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -15565,22 +15548,6 @@ extern void of_bucket_counter_byte_count_set(
 extern void of_bucket_counter_byte_count_get(
     of_bucket_counter_t *obj,
     uint64_t *byte_count);
-
-/* Unified accessor functions for of_experimenter_stats_header */
-
-extern void of_experimenter_stats_header_experimenter_set(
-    of_experimenter_stats_header_t *obj,
-    uint32_t experimenter);
-extern void of_experimenter_stats_header_experimenter_get(
-    of_experimenter_stats_header_t *obj,
-    uint32_t *experimenter);
-
-extern void of_experimenter_stats_header_subtype_set(
-    of_experimenter_stats_header_t *obj,
-    uint32_t subtype);
-extern void of_experimenter_stats_header_subtype_get(
-    of_experimenter_stats_header_t *obj,
-    uint32_t *subtype);
 
 /* Unified accessor functions for of_flow_stats_entry */
 

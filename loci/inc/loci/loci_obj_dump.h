@@ -806,7 +806,6 @@ int of_bsn_vport_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, 
 int of_bsn_vport_q_in_q_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
 int of_bucket_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bucket_t *obj);
 int of_bucket_counter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj);
-int of_experimenter_stats_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_experimenter_stats_header_t *obj);
 int of_flow_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
 int of_group_desc_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj);
 int of_group_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj);

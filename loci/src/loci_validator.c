@@ -747,7 +747,6 @@ static inline int of_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_group_desc_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_flow_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
-static inline int of_experimenter_stats_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bucket_counter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bucket_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -11543,17 +11542,6 @@ of_flow_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
         if (of_list_instruction_OF_VERSION_1_3_validate(buf + -1, instructions_len) < 0) {
             return -1;
         }
-    }
-
-    return 0;
-}
-
-static inline int
-of_experimenter_stats_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
-{
-    if (len < 8) {
-        VALIDATOR_LOG("Class of_experimenter_stats_header.  Len %d too small, < %d", len, 8);
-        return -1;
     }
 
     return 0;
