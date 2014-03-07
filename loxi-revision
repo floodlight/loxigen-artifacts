@@ -1,1 +1,1 @@
-c64bdb733c1845d6dad67ff22d93dbc5abadf77f Merge into master from pull request #218: openflow_input: remove redundant of_experimenter_stats_header (https://github.com/floodlight/loxigen/pull/218)
+adde1a6fe8d154105564cde5a1ccc9aa4f2a8c80 Merge into master from pull request #219: loci: fix byte order check (https://github.com/floodlight/loxigen/pull/219)
