@@ -49,6 +49,7 @@ of_bsn_bw_clear_data_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_bw_clear_data_request of_bsn_bw_clear_data_request
  */
@@ -500,6 +501,7 @@ of_bsn_bw_enable_get_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1039,6 +1041,7 @@ of_bsn_bw_enable_get_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_bw_enable_get_request of_bsn_bw_enable_get_request
  */
@@ -1490,6 +1493,7 @@ of_bsn_bw_enable_set_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2113,6 +2117,7 @@ of_bsn_bw_enable_set_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_bw_enable_set_request of_bsn_bw_enable_set_request
  */
@@ -2648,6 +2653,7 @@ of_bsn_get_interfaces_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3257,6 +3263,7 @@ of_bsn_get_interfaces_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_get_interfaces_request of_bsn_get_interfaces_request
  */
@@ -3705,6 +3712,7 @@ of_bsn_get_ip_mask_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4295,6 +4303,7 @@ of_bsn_get_ip_mask_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_get_ip_mask_request of_bsn_get_ip_mask_request
  */
@@ -4803,6 +4812,7 @@ of_bsn_get_l2_table_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5393,6 +5403,7 @@ of_bsn_get_l2_table_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_get_l2_table_request of_bsn_get_l2_table_request
  */
@@ -5826,6 +5837,7 @@ of_bsn_get_mirroring_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6365,6 +6377,7 @@ of_bsn_get_mirroring_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_get_mirroring_request of_bsn_get_mirroring_request
  */
@@ -6897,6 +6910,7 @@ of_bsn_hybrid_get_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7487,6 +7501,7 @@ of_bsn_hybrid_get_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_hybrid_get_request of_bsn_hybrid_get_request
  */
@@ -7901,6 +7916,7 @@ of_bsn_hybrid_get_request_subtype_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -8384,6 +8400,7 @@ of_bsn_pdu_rx_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9098,6 +9115,7 @@ of_bsn_pdu_rx_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9922,6 +9940,7 @@ of_bsn_pdu_rx_timeout_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_pdu_rx_timeout of_bsn_pdu_rx_timeout
  */
@@ -10550,6 +10569,7 @@ of_bsn_pdu_tx_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -11264,6 +11284,7 @@ of_bsn_pdu_tx_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -12085,6 +12106,7 @@ of_bsn_set_ip_mask_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_ip_mask of_bsn_set_ip_mask
  */
@@ -12671,6 +12693,7 @@ of_bsn_set_l2_table_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -13339,6 +13362,7 @@ of_bsn_set_l2_table_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_l2_table_request of_bsn_set_l2_table_request
  */
@@ -13930,6 +13954,7 @@ of_bsn_set_mirroring_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_mirroring of_bsn_set_mirroring
  */
@@ -14467,6 +14492,7 @@ of_bsn_set_pktin_suppression_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_pktin_suppression_reply of_bsn_set_pktin_suppression_reply
  */
@@ -15002,6 +15028,7 @@ of_bsn_set_pktin_suppression_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -15874,6 +15901,7 @@ of_bsn_shell_command_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_shell_command of_bsn_shell_command
  */
@@ -16480,6 +16508,7 @@ of_bsn_shell_output_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_shell_output of_bsn_shell_output
  */
@@ -17008,6 +17037,7 @@ of_bsn_shell_status_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_shell_status of_bsn_shell_status
  */
@@ -17500,6 +17530,65 @@ of_bsn_shell_status_status_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_experimenter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -18098,6 +18187,86 @@ of_experimenter_stats_reply_data_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_bsn_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_BSN_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_BSN_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_BSN_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_BSN_LACP_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_BSN_GENTABLE_ENTRY_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_BSN_GENTABLE_DESC_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_BSN_GENTABLE_BUCKET_STATS_REPLY;
+            break;
+        case 0x6:
+            *id = OF_BSN_SWITCH_PIPELINE_STATS_REPLY;
+            break;
+        case 0x7:
+            *id = OF_BSN_GENTABLE_STATS_REPLY;
+            break;
+        case 0x8:
+            *id = OF_BSN_PORT_COUNTER_STATS_REPLY;
+            break;
+        case 0x9:
+            *id = OF_BSN_VLAN_COUNTER_STATS_REPLY;
+            break;
+        case 0xa:
+            *id = OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_TABLE_CHECKSUM_STATS_REPLY;
+            break;
+        default:
+            *id = OF_BSN_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**

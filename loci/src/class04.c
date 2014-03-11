@@ -45,6 +45,7 @@ of_action_push_vlan_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_push_vlan of_action_push_vlan
  */
@@ -281,6 +282,7 @@ of_action_set_mpls_label_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_mpls_label of_action_set_mpls_label
  */
@@ -511,6 +513,7 @@ of_action_set_mpls_tc_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -745,6 +748,7 @@ of_action_set_mpls_ttl_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -983,6 +987,7 @@ of_action_set_nw_ecn_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_nw_ecn of_action_set_nw_ecn
  */
@@ -1215,6 +1220,7 @@ of_action_set_nw_ttl_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1455,6 +1461,7 @@ of_action_set_queue_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_queue of_action_set_queue
  */
@@ -1693,6 +1700,7 @@ of_bad_instruction_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2158,6 +2166,7 @@ of_bad_match_error_msg_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bad_match_error_msg of_bad_match_error_msg
  */
@@ -2602,6 +2611,7 @@ of_bad_match_error_msg_data_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -3136,6 +3146,7 @@ of_bucket_actions_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_bucket_counter of_bucket_counter
  */
@@ -3426,6 +3437,71 @@ of_bucket_counter_byte_count_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_group_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* command */
+        switch (value) {
+        case 0x0:
+            *id = OF_GROUP_ADD;
+            break;
+        case 0x1:
+            *id = OF_GROUP_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_GROUP_DELETE;
+            break;
+        default:
+            *id = OF_GROUP_MOD;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* command */
+        switch (value) {
+        case 0x0:
+            *id = OF_GROUP_ADD;
+            break;
+        case 0x1:
+            *id = OF_GROUP_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_GROUP_DELETE;
+            break;
+        default:
+            *id = OF_GROUP_MOD;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* command */
+        switch (value) {
+        case 0x0:
+            *id = OF_GROUP_ADD;
+            break;
+        case 0x1:
+            *id = OF_GROUP_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_GROUP_DELETE;
+            break;
+        default:
+            *id = OF_GROUP_MOD;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -3997,6 +4073,7 @@ of_group_add_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4596,6 +4673,7 @@ of_group_delete_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_group_delete of_group_delete
  */
@@ -5176,6 +5254,7 @@ of_group_delete_buckets_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_group_desc_stats_entry of_group_desc_stats_entry
  */
@@ -5640,6 +5719,7 @@ of_group_desc_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6157,6 +6237,7 @@ of_group_desc_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_group_desc_stats_request of_group_desc_stats_request
  */
@@ -6518,6 +6599,7 @@ of_group_mod_failed_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6981,6 +7063,7 @@ of_group_modify_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7561,6 +7644,7 @@ of_group_modify_buckets_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -8355,6 +8439,7 @@ of_group_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_group_stats_reply of_group_stats_reply
  */
@@ -8870,6 +8955,7 @@ of_group_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_group_stats_request of_group_stats_request
  */
@@ -9298,6 +9384,101 @@ of_group_stats_request_group_id_set(
 #include "loci_int.h"
 
 
+void
+of_instruction_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_INSTRUCTION_GOTO_TABLE;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_WRITE_METADATA;
+            break;
+        case 0x3:
+            *id = OF_INSTRUCTION_WRITE_ACTIONS;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_APPLY_ACTIONS;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_CLEAR_ACTIONS;
+            break;
+        case 0xffff:
+            of_instruction_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_INSTRUCTION;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_INSTRUCTION_GOTO_TABLE;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_WRITE_METADATA;
+            break;
+        case 0x3:
+            *id = OF_INSTRUCTION_WRITE_ACTIONS;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_APPLY_ACTIONS;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_CLEAR_ACTIONS;
+            break;
+        case 0xffff:
+            of_instruction_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_INSTRUCTION;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_INSTRUCTION_GOTO_TABLE;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_WRITE_METADATA;
+            break;
+        case 0x3:
+            *id = OF_INSTRUCTION_WRITE_ACTIONS;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_APPLY_ACTIONS;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_CLEAR_ACTIONS;
+            break;
+        case 0x6:
+            *id = OF_INSTRUCTION_METER;
+            break;
+        case 0xffff:
+            of_instruction_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_INSTRUCTION;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_instruction of_instruction
  */
@@ -9431,6 +9612,7 @@ of_instruction_apply_actions_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9741,6 +9923,7 @@ of_instruction_clear_actions_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_clear_actions of_instruction_clear_actions
  */
@@ -9880,6 +10063,47 @@ of_instruction_clear_actions_init(of_instruction_clear_actions_t *obj,
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_instruction_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_INSTRUCTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_INSTRUCTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_instruction_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_INSTRUCTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -10198,6 +10422,7 @@ of_instruction_goto_table_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_goto_table of_instruction_goto_table
  */
@@ -10434,6 +10659,7 @@ of_instruction_write_actions_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -10742,6 +10968,7 @@ of_instruction_write_metadata_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -11060,6 +11287,7 @@ of_match_v2_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -12850,6 +13078,7 @@ of_switch_config_failed_error_msg_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_switch_config_failed_error_msg of_switch_config_failed_error_msg
  */
@@ -13311,6 +13540,7 @@ of_table_mod_failed_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

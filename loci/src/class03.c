@@ -46,6 +46,7 @@ of_nicira_controller_role_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_nicira_controller_role_request of_nicira_controller_role_request
  */
@@ -555,6 +556,7 @@ of_packet_in_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1674,6 +1676,7 @@ of_packet_out_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_packet_out of_packet_out
  */
@@ -2373,6 +2376,7 @@ of_packet_out_data_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_packet_queue of_packet_queue
  */
@@ -2829,6 +2833,7 @@ of_packet_queue_properties_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -3936,6 +3941,7 @@ of_port_mod_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_port_mod of_port_mod
  */
@@ -4665,6 +4671,7 @@ of_port_mod_failed_error_msg_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_port_mod_failed_error_msg of_port_mod_failed_error_msg
  */
@@ -5115,6 +5122,7 @@ of_port_mod_failed_error_msg_data_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -6520,6 +6528,7 @@ of_port_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_port_stats_reply of_port_stats_reply
  */
@@ -7052,6 +7061,7 @@ of_port_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_port_stats_request of_port_stats_request
  */
@@ -7506,6 +7516,7 @@ of_port_status_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8038,6 +8049,7 @@ of_queue_get_config_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_queue_get_config_reply of_queue_get_config_reply
  */
@@ -8567,6 +8579,7 @@ of_queue_get_config_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_queue_get_config_request of_queue_get_config_request
  */
@@ -8942,6 +8955,7 @@ of_queue_op_failed_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9396,6 +9410,77 @@ of_queue_op_failed_error_msg_data_set(
 #include "loci_int.h"
 
 
+void
+of_queue_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_QUEUE_PROP_MIN_RATE;
+            break;
+        default:
+            *id = OF_QUEUE_PROP;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_QUEUE_PROP_MIN_RATE;
+            break;
+        default:
+            *id = OF_QUEUE_PROP;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_QUEUE_PROP_MIN_RATE;
+            break;
+        case 0x2:
+            *id = OF_QUEUE_PROP_MAX_RATE;
+            break;
+        case 0xffff:
+            of_queue_prop_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_QUEUE_PROP;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_QUEUE_PROP_MIN_RATE;
+            break;
+        case 0x2:
+            *id = OF_QUEUE_PROP_MAX_RATE;
+            break;
+        case 0xffff:
+            of_queue_prop_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_QUEUE_PROP;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_queue_prop of_queue_prop
  */
@@ -9530,6 +9615,7 @@ of_queue_prop_min_rate_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9755,6 +9841,7 @@ of_queue_prop_min_rate_rate_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -10488,6 +10575,7 @@ of_queue_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_queue_stats_reply of_queue_stats_reply
  */
@@ -11018,6 +11106,7 @@ of_queue_stats_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -11564,6 +11653,7 @@ of_set_config_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_set_config of_set_config
  */
@@ -12018,6 +12108,7 @@ of_table_mod_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_mod of_table_mod
  */
@@ -12450,6 +12541,7 @@ of_table_mod_config_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -13972,6 +14064,7 @@ of_table_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_stats_reply of_table_stats_reply
  */
@@ -14504,6 +14597,7 @@ of_table_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_stats_request of_table_stats_request
  */
@@ -14869,6 +14963,7 @@ of_action_copy_ttl_in_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_copy_ttl_in of_action_copy_ttl_in
  */
@@ -15023,6 +15118,7 @@ of_action_copy_ttl_out_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -15181,6 +15277,7 @@ of_action_dec_mpls_ttl_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_dec_mpls_ttl of_action_dec_mpls_ttl
  */
@@ -15337,6 +15434,7 @@ of_action_dec_nw_ttl_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_dec_nw_ttl of_action_dec_nw_ttl
  */
@@ -15491,6 +15589,7 @@ of_action_group_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -15731,6 +15830,7 @@ of_action_pop_mpls_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_pop_mpls of_action_pop_mpls
  */
@@ -15969,6 +16069,7 @@ of_action_pop_vlan_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_pop_vlan of_action_pop_vlan
  */
@@ -16123,6 +16224,7 @@ of_action_push_mpls_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

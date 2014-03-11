@@ -30,6 +30,7 @@
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_bsn_lacp_stats_entry of_bsn_lacp_stats_entry
  */
@@ -1112,6 +1113,7 @@ of_bsn_lacp_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_lacp_stats_reply of_bsn_lacp_stats_reply
  */
@@ -1771,6 +1773,7 @@ of_bsn_lacp_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_lacp_stats_request of_bsn_lacp_stats_request
  */
@@ -2265,6 +2268,7 @@ of_bsn_lacp_stats_request_subtype_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_bsn_port_counter_stats_entry of_bsn_port_counter_stats_entry
  */
@@ -2640,6 +2644,7 @@ of_bsn_port_counter_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3301,6 +3306,7 @@ of_bsn_port_counter_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_port_counter_stats_request of_bsn_port_counter_stats_request
  */
@@ -3888,6 +3894,7 @@ of_bsn_role_status_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4556,6 +4563,7 @@ of_bsn_set_aux_cxns_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_aux_cxns_reply of_bsn_set_aux_cxns_reply
  */
@@ -5144,6 +5152,7 @@ of_bsn_set_aux_cxns_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_aux_cxns_request of_bsn_set_aux_cxns_request
  */
@@ -5652,6 +5661,7 @@ of_bsn_set_lacp_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6241,6 +6251,7 @@ of_bsn_set_lacp_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7222,6 +7233,7 @@ of_bsn_set_switch_pipeline_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_switch_pipeline_reply of_bsn_set_switch_pipeline_reply
  */
@@ -7732,6 +7744,7 @@ of_bsn_set_switch_pipeline_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_set_switch_pipeline_request of_bsn_set_switch_pipeline_request
  */
@@ -8226,6 +8239,7 @@ of_bsn_set_switch_pipeline_request_pipeline_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_bsn_switch_pipeline_stats_entry of_bsn_switch_pipeline_stats_entry
  */
@@ -8447,6 +8461,7 @@ of_bsn_switch_pipeline_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9108,6 +9123,7 @@ of_bsn_switch_pipeline_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_switch_pipeline_stats_request of_bsn_switch_pipeline_stats_request
  */
@@ -9602,6 +9618,7 @@ of_bsn_switch_pipeline_stats_request_subtype_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_bsn_table_checksum_stats_entry of_bsn_table_checksum_stats_entry
  */
@@ -9901,6 +9918,7 @@ of_bsn_table_checksum_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -10562,6 +10580,7 @@ of_bsn_table_checksum_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_table_checksum_stats_request of_bsn_table_checksum_stats_request
  */
@@ -11070,6 +11089,7 @@ of_bsn_table_set_buckets_size_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -11660,6 +11680,7 @@ of_bsn_time_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_time_reply of_bsn_time_reply
  */
@@ -12170,6 +12191,7 @@ of_bsn_time_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_time_request of_bsn_time_request
  */
@@ -12586,6 +12608,71 @@ of_bsn_time_request_subtype_set(
 #include "loci_int.h"
 
 
+void
+of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_BSN_TLV_PORT;
+            break;
+        case 0x1:
+            *id = OF_BSN_TLV_MAC;
+            break;
+        case 0x2:
+            *id = OF_BSN_TLV_RX_PACKETS;
+            break;
+        case 0x3:
+            *id = OF_BSN_TLV_TX_PACKETS;
+            break;
+        case 0x4:
+            *id = OF_BSN_TLV_IPV4;
+            break;
+        case 0x5:
+            *id = OF_BSN_TLV_IDLE_TIME;
+            break;
+        case 0x6:
+            *id = OF_BSN_TLV_VLAN_VID;
+            break;
+        case 0x7:
+            *id = OF_BSN_TLV_IDLE_NOTIFICATION;
+            break;
+        case 0x8:
+            *id = OF_BSN_TLV_IDLE_TIMEOUT;
+            break;
+        case 0x9:
+            *id = OF_BSN_TLV_UNICAST_QUERY_TIMEOUT;
+            break;
+        case 0xa:
+            *id = OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT;
+            break;
+        case 0xb:
+            *id = OF_BSN_TLV_REQUEST_PACKETS;
+            break;
+        case 0xc:
+            *id = OF_BSN_TLV_REPLY_PACKETS;
+            break;
+        case 0xd:
+            *id = OF_BSN_TLV_MISS_PACKETS;
+            break;
+        case 0xe:
+            *id = OF_BSN_TLV_CIRCUIT_ID;
+            break;
+        default:
+            *id = OF_BSN_TLV;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_bsn_tlv of_bsn_tlv
  */
@@ -12717,6 +12804,7 @@ of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -12949,6 +13037,7 @@ of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -13201,6 +13290,7 @@ of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_idle_notification of_bsn_tlv_idle_notification
  */
@@ -13353,6 +13443,7 @@ of_bsn_tlv_idle_time_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -13587,6 +13678,7 @@ of_bsn_tlv_idle_timeout_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_idle_timeout of_bsn_tlv_idle_timeout
  */
@@ -13817,6 +13909,7 @@ of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -14051,6 +14144,7 @@ of_bsn_tlv_mac_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_mac of_bsn_tlv_mac
  */
@@ -14283,6 +14377,7 @@ of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_miss_packets of_bsn_tlv_miss_packets
  */
@@ -14513,6 +14608,7 @@ of_bsn_tlv_port_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

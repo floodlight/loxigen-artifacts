@@ -44,6 +44,7 @@ of_oxm_ipv6_nd_target_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_ipv6_nd_target of_oxm_ipv6_nd_target
  */
@@ -271,6 +272,7 @@ of_oxm_ipv6_nd_target_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -582,6 +584,7 @@ of_oxm_ipv6_nd_tll_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_ipv6_nd_tll of_oxm_ipv6_nd_tll
  */
@@ -809,6 +812,7 @@ of_oxm_ipv6_nd_tll_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1120,6 +1124,7 @@ of_oxm_ipv6_src_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_ipv6_src of_oxm_ipv6_src
  */
@@ -1347,6 +1352,7 @@ of_oxm_ipv6_src_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1658,6 +1664,7 @@ of_oxm_metadata_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_metadata of_oxm_metadata
  */
@@ -1885,6 +1892,7 @@ of_oxm_metadata_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2196,6 +2204,7 @@ of_oxm_mpls_label_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_mpls_label of_oxm_mpls_label
  */
@@ -2423,6 +2432,7 @@ of_oxm_mpls_label_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2734,6 +2744,7 @@ of_oxm_mpls_tc_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_mpls_tc of_oxm_mpls_tc
  */
@@ -2961,6 +2972,7 @@ of_oxm_mpls_tc_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3272,6 +3284,7 @@ of_oxm_sctp_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_sctp_dst of_oxm_sctp_dst
  */
@@ -3499,6 +3512,7 @@ of_oxm_sctp_dst_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3810,6 +3824,7 @@ of_oxm_sctp_src_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_sctp_src of_oxm_sctp_src
  */
@@ -4037,6 +4052,7 @@ of_oxm_sctp_src_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4348,6 +4364,7 @@ of_oxm_tcp_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_tcp_dst of_oxm_tcp_dst
  */
@@ -4575,6 +4592,7 @@ of_oxm_tcp_dst_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4886,6 +4904,7 @@ of_oxm_tcp_src_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_tcp_src of_oxm_tcp_src
  */
@@ -5113,6 +5132,7 @@ of_oxm_tcp_src_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5424,6 +5444,7 @@ of_oxm_udp_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_udp_dst of_oxm_udp_dst
  */
@@ -5651,6 +5672,7 @@ of_oxm_udp_dst_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5962,6 +5984,7 @@ of_oxm_udp_src_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_udp_src of_oxm_udp_src
  */
@@ -6189,6 +6212,7 @@ of_oxm_udp_src_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6500,6 +6524,7 @@ of_oxm_vlan_pcp_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_vlan_pcp of_oxm_vlan_pcp
  */
@@ -6727,6 +6752,7 @@ of_oxm_vlan_pcp_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7038,6 +7064,7 @@ of_oxm_vlan_vid_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_vlan_vid of_oxm_vlan_vid
  */
@@ -7265,6 +7292,7 @@ of_oxm_vlan_vid_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7560,6 +7588,35 @@ of_oxm_vlan_vid_masked_value_mask_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_queue_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_QUEUE_PROP_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_QUEUE_PROP_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -7873,6 +7930,7 @@ of_queue_prop_max_rate_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_queue_prop_max_rate of_queue_prop_max_rate
  */
@@ -8107,6 +8165,7 @@ of_role_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8544,6 +8603,7 @@ of_role_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

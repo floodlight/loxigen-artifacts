@@ -43,6 +43,7 @@ of_instruction_id_write_actions_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_write_actions of_instruction_id_write_actions
  */
@@ -197,6 +198,7 @@ of_instruction_id_write_metadata_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_write_metadata of_instruction_id_write_metadata
  */
@@ -338,6 +340,35 @@ of_instruction_id_write_metadata_init(of_instruction_id_write_metadata_t *obj,
 #include "loci_int.h"
 
 
+void
+of_meter_band_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_METER_BAND_DROP;
+            break;
+        case 0x2:
+            *id = OF_METER_BAND_DSCP_REMARK;
+            break;
+        case 0xffff:
+            *id = OF_METER_BAND_EXPERIMENTER;
+            break;
+        default:
+            *id = OF_METER_BAND;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_meter_band of_meter_band
  */
@@ -469,6 +500,7 @@ of_meter_band_drop_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -779,6 +811,7 @@ of_meter_band_dscp_remark_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1169,6 +1202,7 @@ of_meter_band_experimenter_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_band_experimenter of_meter_band_experimenter
  */
@@ -1544,6 +1578,7 @@ of_meter_band_experimenter_experimenter_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_meter_band_stats of_meter_band_stats
  */
@@ -1826,6 +1861,7 @@ of_meter_band_stats_byte_band_count_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -2273,6 +2309,7 @@ of_meter_config_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2776,6 +2813,7 @@ of_meter_config_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_config_stats_request of_meter_config_stats_request
  */
@@ -3190,6 +3228,7 @@ of_meter_config_stats_request_meter_id_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -3725,6 +3764,7 @@ of_meter_features_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_features_stats_reply of_meter_features_stats_reply
  */
@@ -4226,6 +4266,7 @@ of_meter_features_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_features_stats_request of_meter_features_stats_request
  */
@@ -4576,6 +4617,7 @@ of_meter_mod_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5157,6 +5199,7 @@ of_meter_mod_failed_error_msg_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_mod_failed_error_msg of_meter_mod_failed_error_msg
  */
@@ -5589,6 +5632,7 @@ of_meter_mod_failed_error_msg_data_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -6355,6 +6399,7 @@ of_meter_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_stats_reply of_meter_stats_reply
  */
@@ -6856,6 +6901,7 @@ of_meter_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_meter_stats_request of_meter_stats_request
  */
@@ -7285,6 +7331,7 @@ of_port_desc_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7788,6 +7835,7 @@ of_port_desc_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_port_desc_stats_request of_port_desc_stats_request
  */
@@ -8126,6 +8174,74 @@ of_port_desc_stats_request_flags_set(
 #include "loci_int.h"
 
 
+void
+of_table_feature_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_TABLE_FEATURE_PROP_INSTRUCTIONS;
+            break;
+        case 0x1:
+            *id = OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS;
+            break;
+        case 0x2:
+            *id = OF_TABLE_FEATURE_PROP_NEXT_TABLES;
+            break;
+        case 0x3:
+            *id = OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS;
+            break;
+        case 0x4:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_ACTIONS;
+            break;
+        case 0x5:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS;
+            break;
+        case 0x6:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_ACTIONS;
+            break;
+        case 0x7:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS;
+            break;
+        case 0x8:
+            *id = OF_TABLE_FEATURE_PROP_MATCH;
+            break;
+        case 0xa:
+            *id = OF_TABLE_FEATURE_PROP_WILDCARDS;
+            break;
+        case 0xc:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_SETFIELD;
+            break;
+        case 0xd:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS;
+            break;
+        case 0xe:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_SETFIELD;
+            break;
+        case 0xf:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS;
+            break;
+        case 0xfffe:
+            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER;
+            break;
+        case 0xffff:
+            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS;
+            break;
+        default:
+            *id = OF_TABLE_FEATURE_PROP;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_table_feature_prop of_table_feature_prop
  */
@@ -8257,6 +8373,7 @@ of_table_feature_prop_apply_actions_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8561,6 +8678,7 @@ of_table_feature_prop_apply_actions_miss_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_apply_actions_miss of_table_feature_prop_apply_actions_miss
  */
@@ -8861,6 +8979,7 @@ of_table_feature_prop_apply_setfield_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9165,6 +9284,7 @@ of_table_feature_prop_apply_setfield_miss_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_apply_setfield_miss of_table_feature_prop_apply_setfield_miss
  */
@@ -9465,6 +9585,7 @@ of_table_feature_prop_experimenter_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9873,6 +9994,7 @@ of_table_feature_prop_experimenter_miss_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_experimenter_miss of_table_feature_prop_experimenter_miss
  */
@@ -10279,6 +10401,7 @@ of_table_feature_prop_instructions_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_instructions of_table_feature_prop_instructions
  */
@@ -10579,6 +10702,7 @@ of_table_feature_prop_instructions_miss_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -10883,6 +11007,7 @@ of_table_feature_prop_match_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_match of_table_feature_prop_match
  */
@@ -11185,6 +11310,7 @@ of_table_feature_prop_next_tables_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_next_tables of_table_feature_prop_next_tables
  */
@@ -11485,6 +11611,7 @@ of_table_feature_prop_next_tables_miss_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

@@ -43,6 +43,7 @@ of_bsn_tlv_reply_packets_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_reply_packets of_bsn_tlv_reply_packets
  */
@@ -273,6 +274,7 @@ of_bsn_tlv_request_packets_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -507,6 +509,7 @@ of_bsn_tlv_rx_packets_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_rx_packets of_bsn_tlv_rx_packets
  */
@@ -737,6 +740,7 @@ of_bsn_tlv_tx_packets_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -971,6 +975,7 @@ of_bsn_tlv_unicast_query_timeout_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_unicast_query_timeout of_bsn_tlv_unicast_query_timeout
  */
@@ -1203,6 +1208,7 @@ of_bsn_tlv_vlan_vid_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_tlv_vlan_vid of_bsn_tlv_vlan_vid
  */
@@ -1420,6 +1426,7 @@ of_bsn_tlv_vlan_vid_value_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -1796,6 +1803,7 @@ of_bsn_vlan_counter_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2457,6 +2465,7 @@ of_bsn_vlan_counter_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_vlan_counter_stats_request of_bsn_vlan_counter_stats_request
  */
@@ -3029,6 +3038,29 @@ of_bsn_vlan_counter_stats_request_vlan_vid_set(
 #include "loci_int.h"
 
 
+void
+of_hello_elem_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_HELLO_ELEM_VERSIONBITMAP;
+            break;
+        default:
+            *id = OF_HELLO_ELEM;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_hello_elem of_hello_elem
  */
@@ -3160,6 +3192,7 @@ of_hello_elem_versionbitmap_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3451,6 +3484,47 @@ of_hello_elem_versionbitmap_bitmaps_set(
 #include "loci_int.h"
 
 
+void
+of_instruction_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x1:
+            *id = OF_INSTRUCTION_ID_GOTO_TABLE;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_ID_WRITE_METADATA;
+            break;
+        case 0x3:
+            *id = OF_INSTRUCTION_ID_WRITE_ACTIONS;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_ID_APPLY_ACTIONS;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_ID_CLEAR_ACTIONS;
+            break;
+        case 0x6:
+            *id = OF_INSTRUCTION_ID_METER;
+            break;
+        case 0xffff:
+            of_instruction_id_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_INSTRUCTION_ID;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_instruction_id of_instruction_id
  */
@@ -3582,6 +3656,7 @@ of_instruction_id_apply_actions_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3723,6 +3798,44 @@ of_instruction_id_apply_actions_init(of_instruction_id_apply_actions_t *obj,
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x0:
+            *id = OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK;
+            break;
+        case 0x1:
+            *id = OF_INSTRUCTION_BSN_ARP_OFFLOAD;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_BSN_DHCP_OFFLOAD;
+            break;
+        case 0x3:
+            *id = OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_BSN_PERMIT;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_BSN_DENY;
+            break;
+        default:
+            *id = OF_INSTRUCTION_BSN;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -4000,6 +4113,29 @@ of_instruction_bsn_subtype_set(
 #include "loci_int.h"
 
 
+void
+of_instruction_id_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_instruction_id_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_INSTRUCTION_ID_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_instruction_id_experimenter of_instruction_id_experimenter
  */
@@ -4195,6 +4331,44 @@ of_instruction_id_experimenter_experimenter_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x0:
+            *id = OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK;
+            break;
+        case 0x1:
+            *id = OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD;
+            break;
+        case 0x3:
+            *id = OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_ID_BSN_PERMIT;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_ID_BSN_DENY;
+            break;
+        default:
+            *id = OF_INSTRUCTION_ID_BSN;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -4485,6 +4659,7 @@ of_instruction_bsn_arp_offload_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4799,6 +4974,7 @@ of_instruction_id_bsn_arp_offload_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_bsn_arp_offload of_instruction_id_bsn_arp_offload
  */
@@ -5109,6 +5285,7 @@ of_instruction_bsn_deny_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5423,6 +5600,7 @@ of_instruction_id_bsn_deny_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_bsn_deny of_instruction_id_bsn_deny
  */
@@ -5733,6 +5911,7 @@ of_instruction_bsn_dhcp_offload_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6047,6 +6226,7 @@ of_instruction_id_bsn_dhcp_offload_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_bsn_dhcp_offload of_instruction_id_bsn_dhcp_offload
  */
@@ -6357,6 +6537,7 @@ of_instruction_bsn_disable_split_horizon_check_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6671,6 +6852,7 @@ of_instruction_id_bsn_disable_split_horizon_check_push_wire_types(of_object_t *o
 }
 
 
+
 /**
  * \defgroup of_instruction_id_bsn_disable_split_horizon_check of_instruction_id_bsn_disable_split_horizon_check
  */
@@ -6981,6 +7163,7 @@ of_instruction_bsn_disable_src_mac_check_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7295,6 +7478,7 @@ of_instruction_id_bsn_disable_src_mac_check_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_bsn_disable_src_mac_check of_instruction_id_bsn_disable_src_mac_check
  */
@@ -7605,6 +7789,7 @@ of_instruction_bsn_permit_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7919,6 +8104,7 @@ of_instruction_id_bsn_permit_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_bsn_permit of_instruction_id_bsn_permit
  */
@@ -8229,6 +8415,7 @@ of_instruction_id_clear_actions_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_clear_actions of_instruction_id_clear_actions
  */
@@ -8383,6 +8570,7 @@ of_instruction_id_goto_table_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_instruction_id_goto_table of_instruction_id_goto_table
  */
@@ -8535,6 +8723,7 @@ of_instruction_meter_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8767,6 +8956,7 @@ of_instruction_id_meter_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

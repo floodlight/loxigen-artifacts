@@ -30,6 +30,266 @@
 #include "loci_int.h"
 
 
+void
+of_action_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_ACTION_OUTPUT;
+            break;
+        case 0x1:
+            *id = OF_ACTION_SET_VLAN_VID;
+            break;
+        case 0x2:
+            *id = OF_ACTION_SET_VLAN_PCP;
+            break;
+        case 0x3:
+            *id = OF_ACTION_STRIP_VLAN;
+            break;
+        case 0x4:
+            *id = OF_ACTION_SET_DL_SRC;
+            break;
+        case 0x5:
+            *id = OF_ACTION_SET_DL_DST;
+            break;
+        case 0x6:
+            *id = OF_ACTION_SET_NW_SRC;
+            break;
+        case 0x7:
+            *id = OF_ACTION_SET_NW_DST;
+            break;
+        case 0x8:
+            *id = OF_ACTION_SET_NW_TOS;
+            break;
+        case 0x9:
+            *id = OF_ACTION_SET_TP_SRC;
+            break;
+        case 0xa:
+            *id = OF_ACTION_SET_TP_DST;
+            break;
+        case 0xb:
+            *id = OF_ACTION_ENQUEUE;
+            break;
+        case 0xffff:
+            of_action_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_ACTION_OUTPUT;
+            break;
+        case 0x1:
+            *id = OF_ACTION_SET_VLAN_VID;
+            break;
+        case 0x2:
+            *id = OF_ACTION_SET_VLAN_PCP;
+            break;
+        case 0x3:
+            *id = OF_ACTION_SET_DL_SRC;
+            break;
+        case 0x4:
+            *id = OF_ACTION_SET_DL_DST;
+            break;
+        case 0x5:
+            *id = OF_ACTION_SET_NW_SRC;
+            break;
+        case 0x6:
+            *id = OF_ACTION_SET_NW_DST;
+            break;
+        case 0x7:
+            *id = OF_ACTION_SET_NW_TOS;
+            break;
+        case 0x8:
+            *id = OF_ACTION_SET_NW_ECN;
+            break;
+        case 0x9:
+            *id = OF_ACTION_SET_TP_SRC;
+            break;
+        case 0xa:
+            *id = OF_ACTION_SET_TP_DST;
+            break;
+        case 0xb:
+            *id = OF_ACTION_COPY_TTL_OUT;
+            break;
+        case 0xc:
+            *id = OF_ACTION_COPY_TTL_IN;
+            break;
+        case 0xd:
+            *id = OF_ACTION_SET_MPLS_LABEL;
+            break;
+        case 0xe:
+            *id = OF_ACTION_SET_MPLS_TC;
+            break;
+        case 0xf:
+            *id = OF_ACTION_SET_MPLS_TTL;
+            break;
+        case 0x10:
+            *id = OF_ACTION_DEC_MPLS_TTL;
+            break;
+        case 0x11:
+            *id = OF_ACTION_PUSH_VLAN;
+            break;
+        case 0x12:
+            *id = OF_ACTION_POP_VLAN;
+            break;
+        case 0x13:
+            *id = OF_ACTION_PUSH_MPLS;
+            break;
+        case 0x14:
+            *id = OF_ACTION_POP_MPLS;
+            break;
+        case 0x15:
+            *id = OF_ACTION_SET_QUEUE;
+            break;
+        case 0x16:
+            *id = OF_ACTION_GROUP;
+            break;
+        case 0x17:
+            *id = OF_ACTION_SET_NW_TTL;
+            break;
+        case 0x18:
+            *id = OF_ACTION_DEC_NW_TTL;
+            break;
+        case 0xffff:
+            of_action_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_ACTION_OUTPUT;
+            break;
+        case 0xb:
+            *id = OF_ACTION_COPY_TTL_OUT;
+            break;
+        case 0xc:
+            *id = OF_ACTION_COPY_TTL_IN;
+            break;
+        case 0xf:
+            *id = OF_ACTION_SET_MPLS_TTL;
+            break;
+        case 0x10:
+            *id = OF_ACTION_DEC_MPLS_TTL;
+            break;
+        case 0x11:
+            *id = OF_ACTION_PUSH_VLAN;
+            break;
+        case 0x12:
+            *id = OF_ACTION_POP_VLAN;
+            break;
+        case 0x13:
+            *id = OF_ACTION_PUSH_MPLS;
+            break;
+        case 0x14:
+            *id = OF_ACTION_POP_MPLS;
+            break;
+        case 0x15:
+            *id = OF_ACTION_SET_QUEUE;
+            break;
+        case 0x16:
+            *id = OF_ACTION_GROUP;
+            break;
+        case 0x17:
+            *id = OF_ACTION_SET_NW_TTL;
+            break;
+        case 0x18:
+            *id = OF_ACTION_DEC_NW_TTL;
+            break;
+        case 0x19:
+            *id = OF_ACTION_SET_FIELD;
+            break;
+        case 0xffff:
+            of_action_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_ACTION_OUTPUT;
+            break;
+        case 0xb:
+            *id = OF_ACTION_COPY_TTL_OUT;
+            break;
+        case 0xc:
+            *id = OF_ACTION_COPY_TTL_IN;
+            break;
+        case 0xf:
+            *id = OF_ACTION_SET_MPLS_TTL;
+            break;
+        case 0x10:
+            *id = OF_ACTION_DEC_MPLS_TTL;
+            break;
+        case 0x11:
+            *id = OF_ACTION_PUSH_VLAN;
+            break;
+        case 0x12:
+            *id = OF_ACTION_POP_VLAN;
+            break;
+        case 0x13:
+            *id = OF_ACTION_PUSH_MPLS;
+            break;
+        case 0x14:
+            *id = OF_ACTION_POP_MPLS;
+            break;
+        case 0x15:
+            *id = OF_ACTION_SET_QUEUE;
+            break;
+        case 0x16:
+            *id = OF_ACTION_GROUP;
+            break;
+        case 0x17:
+            *id = OF_ACTION_SET_NW_TTL;
+            break;
+        case 0x18:
+            *id = OF_ACTION_DEC_NW_TTL;
+            break;
+        case 0x19:
+            *id = OF_ACTION_SET_FIELD;
+            break;
+        case 0x1a:
+            *id = OF_ACTION_PUSH_PBB;
+            break;
+        case 0x1b:
+            *id = OF_ACTION_POP_PBB;
+            break;
+        case 0xffff:
+            of_action_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_action of_action
  */
@@ -148,6 +408,77 @@ of_action_init(of_action_t *obj_p,
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_action_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_action_nicira_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_action_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_action_nicira_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_action_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_action_nicira_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_action_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_action_nicira_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_action_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -455,6 +786,77 @@ of_action_experimenter_data_set(
 #include "loci_int.h"
 
 
+void
+of_action_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_ACTION_BSN_MIRROR;
+            break;
+        case 0x2:
+            *id = OF_ACTION_BSN_SET_TUNNEL_DST;
+            break;
+        default:
+            *id = OF_ACTION_BSN;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_ACTION_BSN_MIRROR;
+            break;
+        case 0x2:
+            *id = OF_ACTION_BSN_SET_TUNNEL_DST;
+            break;
+        default:
+            *id = OF_ACTION_BSN;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_ACTION_BSN_MIRROR;
+            break;
+        case 0x2:
+            *id = OF_ACTION_BSN_SET_TUNNEL_DST;
+            break;
+        default:
+            *id = OF_ACTION_BSN;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_ACTION_BSN_MIRROR;
+            break;
+        case 0x2:
+            *id = OF_ACTION_BSN_SET_TUNNEL_DST;
+            break;
+        default:
+            *id = OF_ACTION_BSN;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_action_bsn of_action_bsn
  */
@@ -758,6 +1160,7 @@ of_action_bsn_mirror_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1339,6 +1742,7 @@ of_action_bsn_set_tunnel_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_bsn_set_tunnel_dst of_action_bsn_set_tunnel_dst
  */
@@ -1745,6 +2149,7 @@ of_action_enqueue_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_enqueue of_action_enqueue
  */
@@ -2041,6 +2446,65 @@ of_action_enqueue_queue_id_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_action_nicira_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x12:
+            *id = OF_ACTION_NICIRA_DEC_TTL;
+            break;
+        default:
+            *id = OF_ACTION_NICIRA;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x12:
+            *id = OF_ACTION_NICIRA_DEC_TTL;
+            break;
+        default:
+            *id = OF_ACTION_NICIRA;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x12:
+            *id = OF_ACTION_NICIRA_DEC_TTL;
+            break;
+        default:
+            *id = OF_ACTION_NICIRA;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x12:
+            *id = OF_ACTION_NICIRA_DEC_TTL;
+            break;
+        default:
+            *id = OF_ACTION_NICIRA;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -2346,6 +2810,7 @@ of_action_nicira_dec_ttl_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2671,6 +3136,7 @@ of_action_output_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3007,6 +3473,7 @@ of_action_set_dl_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_dl_dst of_action_set_dl_dst
  */
@@ -3242,6 +3709,7 @@ of_action_set_dl_src_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3481,6 +3949,7 @@ of_action_set_nw_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_nw_dst of_action_set_nw_dst
  */
@@ -3716,6 +4185,7 @@ of_action_set_nw_src_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3955,6 +4425,7 @@ of_action_set_nw_tos_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_nw_tos of_action_set_nw_tos
  */
@@ -4188,6 +4659,7 @@ of_action_set_tp_dst_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4425,6 +4897,7 @@ of_action_set_tp_src_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_tp_src of_action_set_tp_src
  */
@@ -4658,6 +5131,7 @@ of_action_set_vlan_pcp_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4895,6 +5369,7 @@ of_action_set_vlan_vid_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_set_vlan_vid of_action_set_vlan_vid
  */
@@ -5129,6 +5604,7 @@ of_action_strip_vlan_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_action_strip_vlan of_action_strip_vlan
  */
@@ -5268,6 +5744,362 @@ of_action_strip_vlan_init(of_action_strip_vlan_t *obj,
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint8_t value = *(uint8_t *)(buf + 1); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO;
+            break;
+        case 0x1:
+            of_error_msg_wire_object_id_get(obj, id);
+            break;
+        case 0x2:
+            *id = OF_ECHO_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_ECHO_REPLY;
+            break;
+        case 0x4:
+            of_experimenter_wire_object_id_get(obj, id);
+            break;
+        case 0x5:
+            *id = OF_FEATURES_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_FEATURES_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GET_CONFIG_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GET_CONFIG_REPLY;
+            break;
+        case 0x9:
+            *id = OF_SET_CONFIG;
+            break;
+        case 0xa:
+            *id = OF_PACKET_IN;
+            break;
+        case 0xb:
+            *id = OF_FLOW_REMOVED;
+            break;
+        case 0xc:
+            *id = OF_PORT_STATUS;
+            break;
+        case 0xd:
+            *id = OF_PACKET_OUT;
+            break;
+        case 0xe:
+            of_flow_mod_wire_object_id_get(obj, id);
+            break;
+        case 0xf:
+            *id = OF_PORT_MOD;
+            break;
+        case 0x10:
+            of_stats_request_wire_object_id_get(obj, id);
+            break;
+        case 0x11:
+            of_stats_reply_wire_object_id_get(obj, id);
+            break;
+        case 0x12:
+            *id = OF_BARRIER_REQUEST;
+            break;
+        case 0x13:
+            *id = OF_BARRIER_REPLY;
+            break;
+        case 0x14:
+            *id = OF_QUEUE_GET_CONFIG_REQUEST;
+            break;
+        case 0x15:
+            *id = OF_QUEUE_GET_CONFIG_REPLY;
+            break;
+        case 0x16:
+            *id = OF_TABLE_MOD;
+            break;
+        default:
+            *id = OF_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint8_t value = *(uint8_t *)(buf + 1); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO;
+            break;
+        case 0x1:
+            of_error_msg_wire_object_id_get(obj, id);
+            break;
+        case 0x2:
+            *id = OF_ECHO_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_ECHO_REPLY;
+            break;
+        case 0x4:
+            of_experimenter_wire_object_id_get(obj, id);
+            break;
+        case 0x5:
+            *id = OF_FEATURES_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_FEATURES_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GET_CONFIG_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GET_CONFIG_REPLY;
+            break;
+        case 0x9:
+            *id = OF_SET_CONFIG;
+            break;
+        case 0xa:
+            *id = OF_PACKET_IN;
+            break;
+        case 0xb:
+            *id = OF_FLOW_REMOVED;
+            break;
+        case 0xc:
+            *id = OF_PORT_STATUS;
+            break;
+        case 0xd:
+            *id = OF_PACKET_OUT;
+            break;
+        case 0xe:
+            of_flow_mod_wire_object_id_get(obj, id);
+            break;
+        case 0xf:
+            of_group_mod_wire_object_id_get(obj, id);
+            break;
+        case 0x10:
+            *id = OF_PORT_MOD;
+            break;
+        case 0x11:
+            *id = OF_TABLE_MOD;
+            break;
+        case 0x12:
+            of_stats_request_wire_object_id_get(obj, id);
+            break;
+        case 0x13:
+            of_stats_reply_wire_object_id_get(obj, id);
+            break;
+        case 0x14:
+            *id = OF_BARRIER_REQUEST;
+            break;
+        case 0x15:
+            *id = OF_BARRIER_REPLY;
+            break;
+        case 0x16:
+            *id = OF_QUEUE_GET_CONFIG_REQUEST;
+            break;
+        case 0x17:
+            *id = OF_QUEUE_GET_CONFIG_REPLY;
+            break;
+        default:
+            *id = OF_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint8_t value = *(uint8_t *)(buf + 1); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO;
+            break;
+        case 0x1:
+            of_error_msg_wire_object_id_get(obj, id);
+            break;
+        case 0x2:
+            *id = OF_ECHO_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_ECHO_REPLY;
+            break;
+        case 0x4:
+            of_experimenter_wire_object_id_get(obj, id);
+            break;
+        case 0x5:
+            *id = OF_FEATURES_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_FEATURES_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GET_CONFIG_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GET_CONFIG_REPLY;
+            break;
+        case 0x9:
+            *id = OF_SET_CONFIG;
+            break;
+        case 0xa:
+            *id = OF_PACKET_IN;
+            break;
+        case 0xb:
+            *id = OF_FLOW_REMOVED;
+            break;
+        case 0xc:
+            *id = OF_PORT_STATUS;
+            break;
+        case 0xd:
+            *id = OF_PACKET_OUT;
+            break;
+        case 0xe:
+            of_flow_mod_wire_object_id_get(obj, id);
+            break;
+        case 0xf:
+            of_group_mod_wire_object_id_get(obj, id);
+            break;
+        case 0x10:
+            *id = OF_PORT_MOD;
+            break;
+        case 0x11:
+            *id = OF_TABLE_MOD;
+            break;
+        case 0x12:
+            of_stats_request_wire_object_id_get(obj, id);
+            break;
+        case 0x13:
+            of_stats_reply_wire_object_id_get(obj, id);
+            break;
+        case 0x14:
+            *id = OF_BARRIER_REQUEST;
+            break;
+        case 0x15:
+            *id = OF_BARRIER_REPLY;
+            break;
+        case 0x16:
+            *id = OF_QUEUE_GET_CONFIG_REQUEST;
+            break;
+        case 0x17:
+            *id = OF_QUEUE_GET_CONFIG_REPLY;
+            break;
+        case 0x18:
+            *id = OF_ROLE_REQUEST;
+            break;
+        case 0x19:
+            *id = OF_ROLE_REPLY;
+            break;
+        default:
+            *id = OF_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint8_t value = *(uint8_t *)(buf + 1); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO;
+            break;
+        case 0x1:
+            of_error_msg_wire_object_id_get(obj, id);
+            break;
+        case 0x2:
+            *id = OF_ECHO_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_ECHO_REPLY;
+            break;
+        case 0x4:
+            of_experimenter_wire_object_id_get(obj, id);
+            break;
+        case 0x5:
+            *id = OF_FEATURES_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_FEATURES_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GET_CONFIG_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GET_CONFIG_REPLY;
+            break;
+        case 0x9:
+            *id = OF_SET_CONFIG;
+            break;
+        case 0xa:
+            *id = OF_PACKET_IN;
+            break;
+        case 0xb:
+            *id = OF_FLOW_REMOVED;
+            break;
+        case 0xc:
+            *id = OF_PORT_STATUS;
+            break;
+        case 0xd:
+            *id = OF_PACKET_OUT;
+            break;
+        case 0xe:
+            of_flow_mod_wire_object_id_get(obj, id);
+            break;
+        case 0xf:
+            of_group_mod_wire_object_id_get(obj, id);
+            break;
+        case 0x10:
+            *id = OF_PORT_MOD;
+            break;
+        case 0x11:
+            *id = OF_TABLE_MOD;
+            break;
+        case 0x12:
+            of_stats_request_wire_object_id_get(obj, id);
+            break;
+        case 0x13:
+            of_stats_reply_wire_object_id_get(obj, id);
+            break;
+        case 0x14:
+            *id = OF_BARRIER_REQUEST;
+            break;
+        case 0x15:
+            *id = OF_BARRIER_REPLY;
+            break;
+        case 0x16:
+            *id = OF_QUEUE_GET_CONFIG_REQUEST;
+            break;
+        case 0x17:
+            *id = OF_QUEUE_GET_CONFIG_REPLY;
+            break;
+        case 0x18:
+            *id = OF_ROLE_REQUEST;
+            break;
+        case 0x19:
+            *id = OF_ROLE_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_ASYNC_GET_REQUEST;
+            break;
+        case 0x1b:
+            *id = OF_ASYNC_GET_REPLY;
+            break;
+        case 0x1c:
+            *id = OF_ASYNC_SET;
+            break;
+        case 0x1d:
+            *id = OF_METER_MOD;
+            break;
+        default:
+            *id = OF_HEADER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -5465,6 +6297,176 @@ of_header_xid_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REPLY;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REPLY;
+            break;
+        case 0xffff:
+            of_experimenter_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REPLY;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REPLY;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REPLY;
+            break;
+        case 0xffff:
+            of_experimenter_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REPLY;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REPLY;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REPLY;
+            break;
+        case 0x8:
+            *id = OF_GROUP_FEATURES_STATS_REPLY;
+            break;
+        case 0xffff:
+            of_experimenter_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REPLY;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REPLY;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REPLY;
+            break;
+        case 0x8:
+            *id = OF_GROUP_FEATURES_STATS_REPLY;
+            break;
+        case 0x9:
+            *id = OF_METER_STATS_REPLY;
+            break;
+        case 0xa:
+            *id = OF_METER_CONFIG_STATS_REPLY;
+            break;
+        case 0xb:
+            *id = OF_METER_FEATURES_STATS_REPLY;
+            break;
+        case 0xc:
+            *id = OF_TABLE_FEATURES_STATS_REPLY;
+            break;
+        case 0xd:
+            *id = OF_PORT_DESC_STATS_REPLY;
+            break;
+        case 0xffff:
+            of_experimenter_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REPLY;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -5811,6 +6813,7 @@ of_aggregate_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6427,6 +7430,176 @@ of_aggregate_stats_reply_flow_count_set(
 #include "loci_int.h"
 
 
+void
+of_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REQUEST;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REQUEST;
+            break;
+        case 0xffff:
+            of_experimenter_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REQUEST;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REQUEST;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REQUEST;
+            break;
+        case 0xffff:
+            of_experimenter_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REQUEST;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REQUEST;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GROUP_FEATURES_STATS_REQUEST;
+            break;
+        case 0xffff:
+            of_experimenter_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REQUEST;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REQUEST;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GROUP_FEATURES_STATS_REQUEST;
+            break;
+        case 0x9:
+            *id = OF_METER_STATS_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_METER_CONFIG_STATS_REQUEST;
+            break;
+        case 0xb:
+            *id = OF_METER_FEATURES_STATS_REQUEST;
+            break;
+        case 0xc:
+            *id = OF_TABLE_FEATURES_STATS_REQUEST;
+            break;
+        case 0xd:
+            *id = OF_PORT_DESC_STATS_REQUEST;
+            break;
+        case 0xffff:
+            of_experimenter_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_stats_request of_stats_request
  */
@@ -6771,6 +7944,7 @@ of_aggregate_stats_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7680,6 +8854,188 @@ of_aggregate_stats_request_match_set(
 #include "loci_int.h"
 
 
+void
+of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* err_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO_FAILED_ERROR_MSG;
+            break;
+        case 0x1:
+            *id = OF_BAD_REQUEST_ERROR_MSG;
+            break;
+        case 0x2:
+            *id = OF_BAD_ACTION_ERROR_MSG;
+            break;
+        case 0x3:
+            *id = OF_FLOW_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x4:
+            *id = OF_PORT_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_OP_FAILED_ERROR_MSG;
+            break;
+        default:
+            *id = OF_ERROR_MSG;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* err_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO_FAILED_ERROR_MSG;
+            break;
+        case 0x1:
+            *id = OF_BAD_REQUEST_ERROR_MSG;
+            break;
+        case 0x2:
+            *id = OF_BAD_ACTION_ERROR_MSG;
+            break;
+        case 0x3:
+            *id = OF_BAD_INSTRUCTION_ERROR_MSG;
+            break;
+        case 0x4:
+            *id = OF_BAD_MATCH_ERROR_MSG;
+            break;
+        case 0x5:
+            *id = OF_FLOW_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x6:
+            *id = OF_GROUP_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x7:
+            *id = OF_PORT_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x8:
+            *id = OF_TABLE_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x9:
+            *id = OF_QUEUE_OP_FAILED_ERROR_MSG;
+            break;
+        case 0xa:
+            *id = OF_SWITCH_CONFIG_FAILED_ERROR_MSG;
+            break;
+        default:
+            *id = OF_ERROR_MSG;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* err_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO_FAILED_ERROR_MSG;
+            break;
+        case 0x1:
+            *id = OF_BAD_REQUEST_ERROR_MSG;
+            break;
+        case 0x2:
+            *id = OF_BAD_ACTION_ERROR_MSG;
+            break;
+        case 0x3:
+            *id = OF_BAD_INSTRUCTION_ERROR_MSG;
+            break;
+        case 0x4:
+            *id = OF_BAD_MATCH_ERROR_MSG;
+            break;
+        case 0x5:
+            *id = OF_FLOW_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x6:
+            *id = OF_GROUP_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x7:
+            *id = OF_PORT_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x8:
+            *id = OF_TABLE_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x9:
+            *id = OF_QUEUE_OP_FAILED_ERROR_MSG;
+            break;
+        case 0xa:
+            *id = OF_SWITCH_CONFIG_FAILED_ERROR_MSG;
+            break;
+        case 0xb:
+            *id = OF_ROLE_REQUEST_FAILED_ERROR_MSG;
+            break;
+        case 0xffff:
+            *id = OF_EXPERIMENTER_ERROR_MSG;
+            break;
+        default:
+            *id = OF_ERROR_MSG;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* err_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO_FAILED_ERROR_MSG;
+            break;
+        case 0x1:
+            *id = OF_BAD_REQUEST_ERROR_MSG;
+            break;
+        case 0x2:
+            *id = OF_BAD_ACTION_ERROR_MSG;
+            break;
+        case 0x3:
+            *id = OF_BAD_INSTRUCTION_ERROR_MSG;
+            break;
+        case 0x4:
+            *id = OF_BAD_MATCH_ERROR_MSG;
+            break;
+        case 0x5:
+            *id = OF_FLOW_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x6:
+            *id = OF_GROUP_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x7:
+            *id = OF_PORT_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x8:
+            *id = OF_TABLE_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x9:
+            *id = OF_QUEUE_OP_FAILED_ERROR_MSG;
+            break;
+        case 0xa:
+            *id = OF_SWITCH_CONFIG_FAILED_ERROR_MSG;
+            break;
+        case 0xb:
+            *id = OF_ROLE_REQUEST_FAILED_ERROR_MSG;
+            break;
+        case 0xc:
+            *id = OF_METER_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0xd:
+            *id = OF_TABLE_FEATURES_FAILED_ERROR_MSG;
+            break;
+        case 0xffff:
+            *id = OF_EXPERIMENTER_ERROR_MSG;
+            break;
+        default:
+            *id = OF_ERROR_MSG;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_error_msg of_error_msg
  */
@@ -7936,6 +9292,7 @@ of_bad_action_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8406,6 +9763,7 @@ of_bad_request_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8880,6 +10238,7 @@ of_barrier_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_barrier_reply of_barrier_reply
  */
@@ -9166,6 +10525,7 @@ of_barrier_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_barrier_request of_barrier_request
  */
@@ -9430,6 +10790,77 @@ of_barrier_request_xid_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_nicira_header_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_bsn_header_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_nicira_header_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_bsn_header_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_nicira_header_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_bsn_header_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_nicira_header_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_bsn_header_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -9942,6 +11373,431 @@ of_experimenter_data_set(
 #include "loci_int.h"
 
 
+void
+of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        case 0x0:
+            *id = OF_BSN_SET_IP_MASK;
+            break;
+        case 0x1:
+            *id = OF_BSN_GET_IP_MASK_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_BSN_GET_IP_MASK_REPLY;
+            break;
+        case 0x3:
+            *id = OF_BSN_SET_MIRRORING;
+            break;
+        case 0x4:
+            *id = OF_BSN_GET_MIRRORING_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GET_MIRRORING_REPLY;
+            break;
+        case 0x6:
+            *id = OF_BSN_SHELL_COMMAND;
+            break;
+        case 0x7:
+            *id = OF_BSN_SHELL_OUTPUT;
+            break;
+        case 0x8:
+            *id = OF_BSN_SHELL_STATUS;
+            break;
+        case 0x9:
+            *id = OF_BSN_GET_INTERFACES_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_GET_INTERFACES_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST;
+            break;
+        case 0xc:
+            *id = OF_BSN_SET_L2_TABLE_REQUEST;
+            break;
+        case 0xd:
+            *id = OF_BSN_GET_L2_TABLE_REQUEST;
+            break;
+        case 0xe:
+            *id = OF_BSN_GET_L2_TABLE_REPLY;
+            break;
+        case 0xf:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REQUEST;
+            break;
+        case 0x10:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REPLY;
+            break;
+        case 0x11:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST;
+            break;
+        case 0x12:
+            *id = OF_BSN_BW_ENABLE_SET_REQUEST;
+            break;
+        case 0x13:
+            *id = OF_BSN_BW_ENABLE_GET_REQUEST;
+            break;
+        case 0x14:
+            *id = OF_BSN_BW_ENABLE_GET_REPLY;
+            break;
+        case 0x15:
+            *id = OF_BSN_BW_CLEAR_DATA_REQUEST;
+            break;
+        case 0x16:
+            *id = OF_BSN_BW_CLEAR_DATA_REPLY;
+            break;
+        case 0x17:
+            *id = OF_BSN_BW_ENABLE_SET_REPLY;
+            break;
+        case 0x18:
+            *id = OF_BSN_SET_L2_TABLE_REPLY;
+            break;
+        case 0x19:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REPLY;
+            break;
+        case 0x1b:
+            *id = OF_BSN_HYBRID_GET_REQUEST;
+            break;
+        case 0x1c:
+            *id = OF_BSN_HYBRID_GET_REPLY;
+            break;
+        case 0x1f:
+            *id = OF_BSN_PDU_TX_REQUEST;
+            break;
+        case 0x20:
+            *id = OF_BSN_PDU_TX_REPLY;
+            break;
+        case 0x21:
+            *id = OF_BSN_PDU_RX_REQUEST;
+            break;
+        case 0x22:
+            *id = OF_BSN_PDU_RX_REPLY;
+            break;
+        case 0x23:
+            *id = OF_BSN_PDU_RX_TIMEOUT;
+            break;
+        default:
+            *id = OF_BSN_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        case 0x3:
+            *id = OF_BSN_SET_MIRRORING;
+            break;
+        case 0x4:
+            *id = OF_BSN_GET_MIRRORING_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GET_MIRRORING_REPLY;
+            break;
+        case 0x9:
+            *id = OF_BSN_GET_INTERFACES_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_GET_INTERFACES_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST;
+            break;
+        case 0xf:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REQUEST;
+            break;
+        case 0x10:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REPLY;
+            break;
+        case 0x11:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST;
+            break;
+        case 0x12:
+            *id = OF_BSN_BW_ENABLE_SET_REQUEST;
+            break;
+        case 0x13:
+            *id = OF_BSN_BW_ENABLE_GET_REQUEST;
+            break;
+        case 0x14:
+            *id = OF_BSN_BW_ENABLE_GET_REPLY;
+            break;
+        case 0x15:
+            *id = OF_BSN_BW_CLEAR_DATA_REQUEST;
+            break;
+        case 0x16:
+            *id = OF_BSN_BW_CLEAR_DATA_REPLY;
+            break;
+        case 0x17:
+            *id = OF_BSN_BW_ENABLE_SET_REPLY;
+            break;
+        case 0x19:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REPLY;
+            break;
+        case 0x1f:
+            *id = OF_BSN_PDU_TX_REQUEST;
+            break;
+        case 0x20:
+            *id = OF_BSN_PDU_TX_REPLY;
+            break;
+        case 0x21:
+            *id = OF_BSN_PDU_RX_REQUEST;
+            break;
+        case 0x22:
+            *id = OF_BSN_PDU_RX_REPLY;
+            break;
+        case 0x23:
+            *id = OF_BSN_PDU_RX_TIMEOUT;
+            break;
+        default:
+            *id = OF_BSN_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        case 0x3:
+            *id = OF_BSN_SET_MIRRORING;
+            break;
+        case 0x4:
+            *id = OF_BSN_GET_MIRRORING_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GET_MIRRORING_REPLY;
+            break;
+        case 0x9:
+            *id = OF_BSN_GET_INTERFACES_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_GET_INTERFACES_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST;
+            break;
+        case 0xf:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REQUEST;
+            break;
+        case 0x10:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REPLY;
+            break;
+        case 0x11:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST;
+            break;
+        case 0x12:
+            *id = OF_BSN_BW_ENABLE_SET_REQUEST;
+            break;
+        case 0x13:
+            *id = OF_BSN_BW_ENABLE_GET_REQUEST;
+            break;
+        case 0x14:
+            *id = OF_BSN_BW_ENABLE_GET_REPLY;
+            break;
+        case 0x15:
+            *id = OF_BSN_BW_CLEAR_DATA_REQUEST;
+            break;
+        case 0x16:
+            *id = OF_BSN_BW_CLEAR_DATA_REPLY;
+            break;
+        case 0x17:
+            *id = OF_BSN_BW_ENABLE_SET_REPLY;
+            break;
+        case 0x19:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REPLY;
+            break;
+        case 0x1f:
+            *id = OF_BSN_PDU_TX_REQUEST;
+            break;
+        case 0x20:
+            *id = OF_BSN_PDU_TX_REPLY;
+            break;
+        case 0x21:
+            *id = OF_BSN_PDU_RX_REQUEST;
+            break;
+        case 0x22:
+            *id = OF_BSN_PDU_RX_REPLY;
+            break;
+        case 0x23:
+            *id = OF_BSN_PDU_RX_TIMEOUT;
+            break;
+        default:
+            *id = OF_BSN_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        case 0x3:
+            *id = OF_BSN_SET_MIRRORING;
+            break;
+        case 0x4:
+            *id = OF_BSN_GET_MIRRORING_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GET_MIRRORING_REPLY;
+            break;
+        case 0x9:
+            *id = OF_BSN_GET_INTERFACES_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_GET_INTERFACES_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST;
+            break;
+        case 0xf:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REQUEST;
+            break;
+        case 0x10:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REPLY;
+            break;
+        case 0x11:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST;
+            break;
+        case 0x12:
+            *id = OF_BSN_BW_ENABLE_SET_REQUEST;
+            break;
+        case 0x13:
+            *id = OF_BSN_BW_ENABLE_GET_REQUEST;
+            break;
+        case 0x14:
+            *id = OF_BSN_BW_ENABLE_GET_REPLY;
+            break;
+        case 0x15:
+            *id = OF_BSN_BW_CLEAR_DATA_REQUEST;
+            break;
+        case 0x16:
+            *id = OF_BSN_BW_CLEAR_DATA_REPLY;
+            break;
+        case 0x17:
+            *id = OF_BSN_BW_ENABLE_SET_REPLY;
+            break;
+        case 0x19:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REPLY;
+            break;
+        case 0x1f:
+            *id = OF_BSN_PDU_TX_REQUEST;
+            break;
+        case 0x20:
+            *id = OF_BSN_PDU_TX_REPLY;
+            break;
+        case 0x21:
+            *id = OF_BSN_PDU_RX_REQUEST;
+            break;
+        case 0x22:
+            *id = OF_BSN_PDU_RX_REPLY;
+            break;
+        case 0x23:
+            *id = OF_BSN_PDU_RX_TIMEOUT;
+            break;
+        case 0x24:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST;
+            break;
+        case 0x25:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY;
+            break;
+        case 0x26:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST;
+            break;
+        case 0x27:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY;
+            break;
+        case 0x28:
+            *id = OF_BSN_FLOW_IDLE;
+            break;
+        case 0x29:
+            *id = OF_BSN_SET_LACP_REQUEST;
+            break;
+        case 0x2a:
+            *id = OF_BSN_SET_LACP_REPLY;
+            break;
+        case 0x2b:
+            *id = OF_BSN_LACP_CONVERGENCE_NOTIF;
+            break;
+        case 0x2c:
+            *id = OF_BSN_TIME_REQUEST;
+            break;
+        case 0x2d:
+            *id = OF_BSN_TIME_REPLY;
+            break;
+        case 0x2e:
+            *id = OF_BSN_GENTABLE_ENTRY_ADD;
+            break;
+        case 0x2f:
+            *id = OF_BSN_GENTABLE_ENTRY_DELETE;
+            break;
+        case 0x30:
+            *id = OF_BSN_GENTABLE_CLEAR_REQUEST;
+            break;
+        case 0x31:
+            *id = OF_BSN_GENTABLE_CLEAR_REPLY;
+            break;
+        case 0x32:
+            *id = OF_BSN_GENTABLE_SET_BUCKETS_SIZE;
+            break;
+        case 0x33:
+            *id = OF_BSN_GET_SWITCH_PIPELINE_REQUEST;
+            break;
+        case 0x34:
+            *id = OF_BSN_GET_SWITCH_PIPELINE_REPLY;
+            break;
+        case 0x35:
+            *id = OF_BSN_SET_SWITCH_PIPELINE_REQUEST;
+            break;
+        case 0x36:
+            *id = OF_BSN_SET_SWITCH_PIPELINE_REPLY;
+            break;
+        case 0x37:
+            *id = OF_BSN_ROLE_STATUS;
+            break;
+        case 0x38:
+            *id = OF_BSN_CONTROLLER_CONNECTIONS_REQUEST;
+            break;
+        case 0x39:
+            *id = OF_BSN_CONTROLLER_CONNECTIONS_REPLY;
+            break;
+        case 0x3a:
+            *id = OF_BSN_SET_AUX_CXNS_REQUEST;
+            break;
+        case 0x3b:
+            *id = OF_BSN_SET_AUX_CXNS_REPLY;
+            break;
+        case 0x3c:
+            *id = OF_BSN_ARP_IDLE;
+            break;
+        case 0x3d:
+            *id = OF_BSN_TABLE_SET_BUCKETS_SIZE;
+            break;
+        default:
+            *id = OF_BSN_HEADER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_bsn_header of_bsn_header
  */
@@ -10367,6 +12223,7 @@ of_bsn_bw_clear_data_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

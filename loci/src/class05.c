@@ -30,6 +30,551 @@
 #include "loci_int.h"
 
 
+void
+of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 0)); /* type_len */
+        switch (value) {
+        case 0x30010:
+            *id = OF_OXM_BSN_IN_PORTS_128;
+            break;
+        case 0x30120:
+            *id = OF_OXM_BSN_IN_PORTS_128_MASKED;
+            break;
+        case 0x30204:
+            *id = OF_OXM_BSN_LAG_ID;
+            break;
+        case 0x30308:
+            *id = OF_OXM_BSN_LAG_ID_MASKED;
+            break;
+        case 0x30404:
+            *id = OF_OXM_BSN_VRF;
+            break;
+        case 0x30508:
+            *id = OF_OXM_BSN_VRF_MASKED;
+            break;
+        case 0x30601:
+            *id = OF_OXM_BSN_GLOBAL_VRF_ALLOWED;
+            break;
+        case 0x30702:
+            *id = OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED;
+            break;
+        case 0x30804:
+            *id = OF_OXM_BSN_L3_INTERFACE_CLASS_ID;
+            break;
+        case 0x30908:
+            *id = OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED;
+            break;
+        case 0x30a04:
+            *id = OF_OXM_BSN_L3_SRC_CLASS_ID;
+            break;
+        case 0x30b08:
+            *id = OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED;
+            break;
+        case 0x30c04:
+            *id = OF_OXM_BSN_L3_DST_CLASS_ID;
+            break;
+        case 0x30d08:
+            *id = OF_OXM_BSN_L3_DST_CLASS_ID_MASKED;
+            break;
+        case 0x80000004:
+            *id = OF_OXM_IN_PORT;
+            break;
+        case 0x80000108:
+            *id = OF_OXM_IN_PORT_MASKED;
+            break;
+        case 0x80000204:
+            *id = OF_OXM_IN_PHY_PORT;
+            break;
+        case 0x80000308:
+            *id = OF_OXM_IN_PHY_PORT_MASKED;
+            break;
+        case 0x80000408:
+            *id = OF_OXM_METADATA;
+            break;
+        case 0x80000510:
+            *id = OF_OXM_METADATA_MASKED;
+            break;
+        case 0x80000606:
+            *id = OF_OXM_ETH_DST;
+            break;
+        case 0x8000070c:
+            *id = OF_OXM_ETH_DST_MASKED;
+            break;
+        case 0x80000806:
+            *id = OF_OXM_ETH_SRC;
+            break;
+        case 0x8000090c:
+            *id = OF_OXM_ETH_SRC_MASKED;
+            break;
+        case 0x80000a02:
+            *id = OF_OXM_ETH_TYPE;
+            break;
+        case 0x80000b04:
+            *id = OF_OXM_ETH_TYPE_MASKED;
+            break;
+        case 0x80000c02:
+            *id = OF_OXM_VLAN_VID;
+            break;
+        case 0x80000d04:
+            *id = OF_OXM_VLAN_VID_MASKED;
+            break;
+        case 0x80000e01:
+            *id = OF_OXM_VLAN_PCP;
+            break;
+        case 0x80000f02:
+            *id = OF_OXM_VLAN_PCP_MASKED;
+            break;
+        case 0x80001001:
+            *id = OF_OXM_IP_DSCP;
+            break;
+        case 0x80001102:
+            *id = OF_OXM_IP_DSCP_MASKED;
+            break;
+        case 0x80001201:
+            *id = OF_OXM_IP_ECN;
+            break;
+        case 0x80001302:
+            *id = OF_OXM_IP_ECN_MASKED;
+            break;
+        case 0x80001401:
+            *id = OF_OXM_IP_PROTO;
+            break;
+        case 0x80001502:
+            *id = OF_OXM_IP_PROTO_MASKED;
+            break;
+        case 0x80001604:
+            *id = OF_OXM_IPV4_SRC;
+            break;
+        case 0x80001708:
+            *id = OF_OXM_IPV4_SRC_MASKED;
+            break;
+        case 0x80001804:
+            *id = OF_OXM_IPV4_DST;
+            break;
+        case 0x80001908:
+            *id = OF_OXM_IPV4_DST_MASKED;
+            break;
+        case 0x80001a02:
+            *id = OF_OXM_TCP_SRC;
+            break;
+        case 0x80001b04:
+            *id = OF_OXM_TCP_SRC_MASKED;
+            break;
+        case 0x80001c02:
+            *id = OF_OXM_TCP_DST;
+            break;
+        case 0x80001d04:
+            *id = OF_OXM_TCP_DST_MASKED;
+            break;
+        case 0x80001e02:
+            *id = OF_OXM_UDP_SRC;
+            break;
+        case 0x80001f04:
+            *id = OF_OXM_UDP_SRC_MASKED;
+            break;
+        case 0x80002002:
+            *id = OF_OXM_UDP_DST;
+            break;
+        case 0x80002104:
+            *id = OF_OXM_UDP_DST_MASKED;
+            break;
+        case 0x80002202:
+            *id = OF_OXM_SCTP_SRC;
+            break;
+        case 0x80002304:
+            *id = OF_OXM_SCTP_SRC_MASKED;
+            break;
+        case 0x80002402:
+            *id = OF_OXM_SCTP_DST;
+            break;
+        case 0x80002504:
+            *id = OF_OXM_SCTP_DST_MASKED;
+            break;
+        case 0x80002601:
+            *id = OF_OXM_ICMPV4_TYPE;
+            break;
+        case 0x80002702:
+            *id = OF_OXM_ICMPV4_TYPE_MASKED;
+            break;
+        case 0x80002801:
+            *id = OF_OXM_ICMPV4_CODE;
+            break;
+        case 0x80002902:
+            *id = OF_OXM_ICMPV4_CODE_MASKED;
+            break;
+        case 0x80002a02:
+            *id = OF_OXM_ARP_OP;
+            break;
+        case 0x80002b04:
+            *id = OF_OXM_ARP_OP_MASKED;
+            break;
+        case 0x80002c04:
+            *id = OF_OXM_ARP_SPA;
+            break;
+        case 0x80002d08:
+            *id = OF_OXM_ARP_SPA_MASKED;
+            break;
+        case 0x80002e04:
+            *id = OF_OXM_ARP_TPA;
+            break;
+        case 0x80002f08:
+            *id = OF_OXM_ARP_TPA_MASKED;
+            break;
+        case 0x80003006:
+            *id = OF_OXM_ARP_SHA;
+            break;
+        case 0x8000310c:
+            *id = OF_OXM_ARP_SHA_MASKED;
+            break;
+        case 0x80003206:
+            *id = OF_OXM_ARP_THA;
+            break;
+        case 0x8000330c:
+            *id = OF_OXM_ARP_THA_MASKED;
+            break;
+        case 0x80003410:
+            *id = OF_OXM_IPV6_SRC;
+            break;
+        case 0x80003520:
+            *id = OF_OXM_IPV6_SRC_MASKED;
+            break;
+        case 0x80003610:
+            *id = OF_OXM_IPV6_DST;
+            break;
+        case 0x80003720:
+            *id = OF_OXM_IPV6_DST_MASKED;
+            break;
+        case 0x80003804:
+            *id = OF_OXM_IPV6_FLABEL;
+            break;
+        case 0x80003908:
+            *id = OF_OXM_IPV6_FLABEL_MASKED;
+            break;
+        case 0x80003a01:
+            *id = OF_OXM_ICMPV6_TYPE;
+            break;
+        case 0x80003b02:
+            *id = OF_OXM_ICMPV6_TYPE_MASKED;
+            break;
+        case 0x80003c01:
+            *id = OF_OXM_ICMPV6_CODE;
+            break;
+        case 0x80003d02:
+            *id = OF_OXM_ICMPV6_CODE_MASKED;
+            break;
+        case 0x80003e10:
+            *id = OF_OXM_IPV6_ND_TARGET;
+            break;
+        case 0x80003f20:
+            *id = OF_OXM_IPV6_ND_TARGET_MASKED;
+            break;
+        case 0x80004006:
+            *id = OF_OXM_IPV6_ND_SLL;
+            break;
+        case 0x8000410c:
+            *id = OF_OXM_IPV6_ND_SLL_MASKED;
+            break;
+        case 0x80004206:
+            *id = OF_OXM_IPV6_ND_TLL;
+            break;
+        case 0x8000430c:
+            *id = OF_OXM_IPV6_ND_TLL_MASKED;
+            break;
+        case 0x80004404:
+            *id = OF_OXM_MPLS_LABEL;
+            break;
+        case 0x80004508:
+            *id = OF_OXM_MPLS_LABEL_MASKED;
+            break;
+        case 0x80004601:
+            *id = OF_OXM_MPLS_TC;
+            break;
+        case 0x80004702:
+            *id = OF_OXM_MPLS_TC_MASKED;
+            break;
+        default:
+            *id = OF_OXM;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 0)); /* type_len */
+        switch (value) {
+        case 0x30010:
+            *id = OF_OXM_BSN_IN_PORTS_128;
+            break;
+        case 0x30120:
+            *id = OF_OXM_BSN_IN_PORTS_128_MASKED;
+            break;
+        case 0x30204:
+            *id = OF_OXM_BSN_LAG_ID;
+            break;
+        case 0x30308:
+            *id = OF_OXM_BSN_LAG_ID_MASKED;
+            break;
+        case 0x30404:
+            *id = OF_OXM_BSN_VRF;
+            break;
+        case 0x30508:
+            *id = OF_OXM_BSN_VRF_MASKED;
+            break;
+        case 0x30601:
+            *id = OF_OXM_BSN_GLOBAL_VRF_ALLOWED;
+            break;
+        case 0x30702:
+            *id = OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED;
+            break;
+        case 0x30804:
+            *id = OF_OXM_BSN_L3_INTERFACE_CLASS_ID;
+            break;
+        case 0x30908:
+            *id = OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED;
+            break;
+        case 0x30a04:
+            *id = OF_OXM_BSN_L3_SRC_CLASS_ID;
+            break;
+        case 0x30b08:
+            *id = OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED;
+            break;
+        case 0x30c04:
+            *id = OF_OXM_BSN_L3_DST_CLASS_ID;
+            break;
+        case 0x30d08:
+            *id = OF_OXM_BSN_L3_DST_CLASS_ID_MASKED;
+            break;
+        case 0x80000004:
+            *id = OF_OXM_IN_PORT;
+            break;
+        case 0x80000108:
+            *id = OF_OXM_IN_PORT_MASKED;
+            break;
+        case 0x80000204:
+            *id = OF_OXM_IN_PHY_PORT;
+            break;
+        case 0x80000308:
+            *id = OF_OXM_IN_PHY_PORT_MASKED;
+            break;
+        case 0x80000408:
+            *id = OF_OXM_METADATA;
+            break;
+        case 0x80000510:
+            *id = OF_OXM_METADATA_MASKED;
+            break;
+        case 0x80000606:
+            *id = OF_OXM_ETH_DST;
+            break;
+        case 0x8000070c:
+            *id = OF_OXM_ETH_DST_MASKED;
+            break;
+        case 0x80000806:
+            *id = OF_OXM_ETH_SRC;
+            break;
+        case 0x8000090c:
+            *id = OF_OXM_ETH_SRC_MASKED;
+            break;
+        case 0x80000a02:
+            *id = OF_OXM_ETH_TYPE;
+            break;
+        case 0x80000b04:
+            *id = OF_OXM_ETH_TYPE_MASKED;
+            break;
+        case 0x80000c02:
+            *id = OF_OXM_VLAN_VID;
+            break;
+        case 0x80000d04:
+            *id = OF_OXM_VLAN_VID_MASKED;
+            break;
+        case 0x80000e01:
+            *id = OF_OXM_VLAN_PCP;
+            break;
+        case 0x80000f02:
+            *id = OF_OXM_VLAN_PCP_MASKED;
+            break;
+        case 0x80001001:
+            *id = OF_OXM_IP_DSCP;
+            break;
+        case 0x80001102:
+            *id = OF_OXM_IP_DSCP_MASKED;
+            break;
+        case 0x80001201:
+            *id = OF_OXM_IP_ECN;
+            break;
+        case 0x80001302:
+            *id = OF_OXM_IP_ECN_MASKED;
+            break;
+        case 0x80001401:
+            *id = OF_OXM_IP_PROTO;
+            break;
+        case 0x80001502:
+            *id = OF_OXM_IP_PROTO_MASKED;
+            break;
+        case 0x80001604:
+            *id = OF_OXM_IPV4_SRC;
+            break;
+        case 0x80001708:
+            *id = OF_OXM_IPV4_SRC_MASKED;
+            break;
+        case 0x80001804:
+            *id = OF_OXM_IPV4_DST;
+            break;
+        case 0x80001908:
+            *id = OF_OXM_IPV4_DST_MASKED;
+            break;
+        case 0x80001a02:
+            *id = OF_OXM_TCP_SRC;
+            break;
+        case 0x80001b04:
+            *id = OF_OXM_TCP_SRC_MASKED;
+            break;
+        case 0x80001c02:
+            *id = OF_OXM_TCP_DST;
+            break;
+        case 0x80001d04:
+            *id = OF_OXM_TCP_DST_MASKED;
+            break;
+        case 0x80001e02:
+            *id = OF_OXM_UDP_SRC;
+            break;
+        case 0x80001f04:
+            *id = OF_OXM_UDP_SRC_MASKED;
+            break;
+        case 0x80002002:
+            *id = OF_OXM_UDP_DST;
+            break;
+        case 0x80002104:
+            *id = OF_OXM_UDP_DST_MASKED;
+            break;
+        case 0x80002202:
+            *id = OF_OXM_SCTP_SRC;
+            break;
+        case 0x80002304:
+            *id = OF_OXM_SCTP_SRC_MASKED;
+            break;
+        case 0x80002402:
+            *id = OF_OXM_SCTP_DST;
+            break;
+        case 0x80002504:
+            *id = OF_OXM_SCTP_DST_MASKED;
+            break;
+        case 0x80002601:
+            *id = OF_OXM_ICMPV4_TYPE;
+            break;
+        case 0x80002702:
+            *id = OF_OXM_ICMPV4_TYPE_MASKED;
+            break;
+        case 0x80002801:
+            *id = OF_OXM_ICMPV4_CODE;
+            break;
+        case 0x80002902:
+            *id = OF_OXM_ICMPV4_CODE_MASKED;
+            break;
+        case 0x80002a02:
+            *id = OF_OXM_ARP_OP;
+            break;
+        case 0x80002b04:
+            *id = OF_OXM_ARP_OP_MASKED;
+            break;
+        case 0x80002c04:
+            *id = OF_OXM_ARP_SPA;
+            break;
+        case 0x80002d08:
+            *id = OF_OXM_ARP_SPA_MASKED;
+            break;
+        case 0x80002e04:
+            *id = OF_OXM_ARP_TPA;
+            break;
+        case 0x80002f08:
+            *id = OF_OXM_ARP_TPA_MASKED;
+            break;
+        case 0x80003006:
+            *id = OF_OXM_ARP_SHA;
+            break;
+        case 0x8000310c:
+            *id = OF_OXM_ARP_SHA_MASKED;
+            break;
+        case 0x80003206:
+            *id = OF_OXM_ARP_THA;
+            break;
+        case 0x8000330c:
+            *id = OF_OXM_ARP_THA_MASKED;
+            break;
+        case 0x80003410:
+            *id = OF_OXM_IPV6_SRC;
+            break;
+        case 0x80003520:
+            *id = OF_OXM_IPV6_SRC_MASKED;
+            break;
+        case 0x80003610:
+            *id = OF_OXM_IPV6_DST;
+            break;
+        case 0x80003720:
+            *id = OF_OXM_IPV6_DST_MASKED;
+            break;
+        case 0x80003804:
+            *id = OF_OXM_IPV6_FLABEL;
+            break;
+        case 0x80003908:
+            *id = OF_OXM_IPV6_FLABEL_MASKED;
+            break;
+        case 0x80003a01:
+            *id = OF_OXM_ICMPV6_TYPE;
+            break;
+        case 0x80003b02:
+            *id = OF_OXM_ICMPV6_TYPE_MASKED;
+            break;
+        case 0x80003c01:
+            *id = OF_OXM_ICMPV6_CODE;
+            break;
+        case 0x80003d02:
+            *id = OF_OXM_ICMPV6_CODE_MASKED;
+            break;
+        case 0x80003e10:
+            *id = OF_OXM_IPV6_ND_TARGET;
+            break;
+        case 0x80003f20:
+            *id = OF_OXM_IPV6_ND_TARGET_MASKED;
+            break;
+        case 0x80004006:
+            *id = OF_OXM_IPV6_ND_SLL;
+            break;
+        case 0x8000410c:
+            *id = OF_OXM_IPV6_ND_SLL_MASKED;
+            break;
+        case 0x80004206:
+            *id = OF_OXM_IPV6_ND_TLL;
+            break;
+        case 0x8000430c:
+            *id = OF_OXM_IPV6_ND_TLL_MASKED;
+            break;
+        case 0x80004404:
+            *id = OF_OXM_MPLS_LABEL;
+            break;
+        case 0x80004508:
+            *id = OF_OXM_MPLS_LABEL_MASKED;
+            break;
+        case 0x80004601:
+            *id = OF_OXM_MPLS_TC;
+            break;
+        case 0x80004702:
+            *id = OF_OXM_MPLS_TC_MASKED;
+            break;
+        default:
+            *id = OF_OXM;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_oxm of_oxm
  */
@@ -161,6 +706,7 @@ of_action_set_field_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -416,6 +962,7 @@ of_experimenter_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -952,6 +1499,7 @@ of_group_features_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2112,6 +2660,7 @@ of_group_features_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_group_features_stats_request of_group_features_stats_request
  */
@@ -2468,6 +3017,7 @@ of_match_v3_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_match_v3 of_match_v3
  */
@@ -2771,6 +3321,7 @@ of_oxm_arp_op_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_arp_op of_oxm_arp_op
  */
@@ -2998,6 +3549,7 @@ of_oxm_arp_op_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3309,6 +3861,7 @@ of_oxm_arp_sha_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_arp_sha of_oxm_arp_sha
  */
@@ -3536,6 +4089,7 @@ of_oxm_arp_sha_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3847,6 +4401,7 @@ of_oxm_arp_spa_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_arp_spa of_oxm_arp_spa
  */
@@ -4074,6 +4629,7 @@ of_oxm_arp_spa_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4385,6 +4941,7 @@ of_oxm_arp_tha_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_arp_tha of_oxm_arp_tha
  */
@@ -4612,6 +5169,7 @@ of_oxm_arp_tha_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4923,6 +5481,7 @@ of_oxm_arp_tpa_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_arp_tpa of_oxm_arp_tpa
  */
@@ -5150,6 +5709,7 @@ of_oxm_arp_tpa_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5461,6 +6021,7 @@ of_oxm_bsn_global_vrf_allowed_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_global_vrf_allowed of_oxm_bsn_global_vrf_allowed
  */
@@ -5688,6 +6249,7 @@ of_oxm_bsn_global_vrf_allowed_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5999,6 +6561,7 @@ of_oxm_bsn_in_ports_128_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_in_ports_128 of_oxm_bsn_in_ports_128
  */
@@ -6226,6 +6789,7 @@ of_oxm_bsn_in_ports_128_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -6537,6 +7101,7 @@ of_oxm_bsn_l3_dst_class_id_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_l3_dst_class_id of_oxm_bsn_l3_dst_class_id
  */
@@ -6764,6 +7329,7 @@ of_oxm_bsn_l3_dst_class_id_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7075,6 +7641,7 @@ of_oxm_bsn_l3_interface_class_id_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_l3_interface_class_id of_oxm_bsn_l3_interface_class_id
  */
@@ -7302,6 +7869,7 @@ of_oxm_bsn_l3_interface_class_id_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7613,6 +8181,7 @@ of_oxm_bsn_l3_src_class_id_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_l3_src_class_id of_oxm_bsn_l3_src_class_id
  */
@@ -7840,6 +8409,7 @@ of_oxm_bsn_l3_src_class_id_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8151,6 +8721,7 @@ of_oxm_bsn_lag_id_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_lag_id of_oxm_bsn_lag_id
  */
@@ -8378,6 +8949,7 @@ of_oxm_bsn_lag_id_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -8689,6 +9261,7 @@ of_oxm_bsn_vrf_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_bsn_vrf of_oxm_bsn_vrf
  */
@@ -8916,6 +9489,7 @@ of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -9227,6 +9801,7 @@ of_oxm_eth_dst_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_oxm_eth_dst of_oxm_eth_dst
  */
@@ -9454,6 +10029,7 @@ of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

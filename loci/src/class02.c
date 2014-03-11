@@ -30,6 +30,65 @@
 #include "loci_int.h"
 
 
+void
+of_experimenter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        switch (value) {
+        case 0x5c16c7:
+            of_bsn_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_experimenter_stats_request of_experimenter_stats_request
  */
@@ -628,6 +687,86 @@ of_experimenter_stats_request_data_set(
 #include "loci_int.h"
 
 
+void
+of_bsn_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_BSN_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_BSN_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_BSN_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_BSN_LACP_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_BSN_GENTABLE_ENTRY_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_BSN_GENTABLE_DESC_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GENTABLE_BUCKET_STATS_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_BSN_SWITCH_PIPELINE_STATS_REQUEST;
+            break;
+        case 0x7:
+            *id = OF_BSN_GENTABLE_STATS_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_BSN_PORT_COUNTER_STATS_REQUEST;
+            break;
+        case 0x9:
+            *id = OF_BSN_VLAN_COUNTER_STATS_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST;
+            break;
+        case 0xb:
+            *id = OF_BSN_TABLE_CHECKSUM_STATS_REQUEST;
+            break;
+        default:
+            *id = OF_BSN_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_bsn_stats_request of_bsn_stats_request
  */
@@ -1137,6 +1276,7 @@ of_bsn_virtual_port_create_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1741,6 +1881,65 @@ of_bsn_virtual_port_create_reply_vport_no_set(
 #include "loci_int.h"
 
 
+void
+of_bsn_vport_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_BSN_VPORT_Q_IN_Q;
+            break;
+        default:
+            *id = OF_BSN_VPORT;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_BSN_VPORT_Q_IN_Q;
+            break;
+        default:
+            *id = OF_BSN_VPORT;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_BSN_VPORT_Q_IN_Q;
+            break;
+        default:
+            *id = OF_BSN_VPORT;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_BSN_VPORT_Q_IN_Q;
+            break;
+        default:
+            *id = OF_BSN_VPORT;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_bsn_vport of_bsn_vport
  */
@@ -1871,6 +2070,7 @@ of_bsn_vport_q_in_q_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -2528,6 +2728,7 @@ of_bsn_virtual_port_create_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_virtual_port_create_request of_bsn_virtual_port_create_request
  */
@@ -3135,6 +3336,7 @@ of_bsn_virtual_port_remove_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_bsn_virtual_port_remove_reply of_bsn_virtual_port_remove_reply
  */
@@ -3670,6 +3872,7 @@ of_bsn_virtual_port_remove_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -4210,6 +4413,7 @@ of_desc_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5024,6 +5228,7 @@ of_desc_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_desc_stats_request of_desc_stats_request
  */
@@ -5389,6 +5594,7 @@ of_echo_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -5776,6 +5982,7 @@ of_echo_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_echo_request of_echo_request
  */
@@ -6159,6 +6366,7 @@ of_features_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -7170,6 +7378,7 @@ of_features_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_features_request of_features_request
  */
@@ -7434,6 +7643,113 @@ of_features_request_xid_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
+
+void
+of_flow_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        switch (value) {
+        case 0x0:
+            *id = OF_FLOW_ADD;
+            break;
+        case 0x1:
+            *id = OF_FLOW_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_FLOW_MODIFY_STRICT;
+            break;
+        case 0x3:
+            *id = OF_FLOW_DELETE;
+            break;
+        case 0x4:
+            *id = OF_FLOW_DELETE_STRICT;
+            break;
+        default:
+            *id = OF_FLOW_MOD;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        switch (value) {
+        case 0x0:
+            *id = OF_FLOW_ADD;
+            break;
+        case 0x1:
+            *id = OF_FLOW_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_FLOW_MODIFY_STRICT;
+            break;
+        case 0x3:
+            *id = OF_FLOW_DELETE;
+            break;
+        case 0x4:
+            *id = OF_FLOW_DELETE_STRICT;
+            break;
+        default:
+            *id = OF_FLOW_MOD;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        switch (value) {
+        case 0x0:
+            *id = OF_FLOW_ADD;
+            break;
+        case 0x1:
+            *id = OF_FLOW_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_FLOW_MODIFY_STRICT;
+            break;
+        case 0x3:
+            *id = OF_FLOW_DELETE;
+            break;
+        case 0x4:
+            *id = OF_FLOW_DELETE_STRICT;
+            break;
+        default:
+            *id = OF_FLOW_MOD;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        switch (value) {
+        case 0x0:
+            *id = OF_FLOW_ADD;
+            break;
+        case 0x1:
+            *id = OF_FLOW_MODIFY;
+            break;
+        case 0x2:
+            *id = OF_FLOW_MODIFY_STRICT;
+            break;
+        case 0x3:
+            *id = OF_FLOW_DELETE;
+            break;
+        case 0x4:
+            *id = OF_FLOW_DELETE_STRICT;
+            break;
+        default:
+            *id = OF_FLOW_MOD;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
 
 
 /**
@@ -8999,6 +9315,7 @@ of_flow_add_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -10592,6 +10909,7 @@ of_flow_delete_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_flow_delete of_flow_delete
  */
@@ -12181,6 +12499,7 @@ of_flow_delete_strict_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -13774,6 +14093,7 @@ of_flow_mod_failed_error_msg_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_flow_mod_failed_error_msg of_flow_mod_failed_error_msg
  */
@@ -14246,6 +14566,7 @@ of_flow_modify_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -15839,6 +16160,7 @@ of_flow_modify_strict_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_flow_modify_strict of_flow_modify_strict
  */
@@ -17425,6 +17747,7 @@ of_flow_removed_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_flow_removed of_flow_removed
  */
@@ -18689,6 +19012,7 @@ of_flow_removed_match_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -20152,6 +20476,7 @@ of_flow_stats_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_flow_stats_reply of_flow_stats_reply
  */
@@ -20682,6 +21007,7 @@ of_flow_stats_request_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -21608,6 +21934,7 @@ of_get_config_reply_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_get_config_reply of_get_config_reply
  */
@@ -22059,6 +22386,7 @@ of_get_config_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_get_config_request of_get_config_request
  */
@@ -22340,6 +22668,7 @@ of_hello_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -22772,6 +23101,7 @@ of_hello_failed_error_msg_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -23224,6 +23554,7 @@ of_hello_failed_error_msg_data_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -24369,6 +24700,59 @@ of_match_v1_tcp_dst_set(
 #include "loci_int.h"
 
 
+void
+of_nicira_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_0: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        case 0xa:
+            *id = OF_NICIRA_CONTROLLER_ROLE_REQUEST;
+            break;
+        case 0xb:
+            *id = OF_NICIRA_CONTROLLER_ROLE_REPLY;
+            break;
+        default:
+            *id = OF_NICIRA_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_1: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_NICIRA_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_2: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_NICIRA_HEADER;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        default:
+            *id = OF_NICIRA_HEADER;
+            break;
+        }
+        break;
+    }
+    default:
+        LOCI_ASSERT(0);
+    }
+}
+
+
 /**
  * \defgroup of_nicira_header of_nicira_header
  */
@@ -24791,6 +25175,7 @@ of_nicira_controller_role_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**

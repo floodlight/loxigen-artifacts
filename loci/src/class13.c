@@ -43,6 +43,7 @@ of_table_feature_prop_wildcards_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_wildcards of_table_feature_prop_wildcards
  */
@@ -343,6 +344,7 @@ of_table_feature_prop_write_actions_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -647,6 +649,7 @@ of_table_feature_prop_write_actions_miss_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_write_actions_miss of_table_feature_prop_write_actions_miss
  */
@@ -947,6 +950,7 @@ of_table_feature_prop_write_setfield_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -1251,6 +1255,7 @@ of_table_feature_prop_write_setfield_miss_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_feature_prop_write_setfield_miss of_table_feature_prop_write_setfield_miss
  */
@@ -1538,6 +1543,7 @@ of_table_feature_prop_write_setfield_miss_oxm_ids_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
@@ -2304,6 +2310,7 @@ of_table_features_failed_error_msg_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_features_failed_error_msg of_table_features_failed_error_msg
  */
@@ -2751,6 +2758,7 @@ of_table_features_stats_reply_push_wire_types(of_object_t *obj)
         UNREACHABLE();
     }
 }
+
 
 
 /**
@@ -3254,6 +3262,7 @@ of_table_features_stats_request_push_wire_types(of_object_t *obj)
 }
 
 
+
 /**
  * \defgroup of_table_features_stats_request of_table_features_stats_request
  */
@@ -3740,6 +3749,7 @@ of_table_features_stats_request_entries_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_uint32 of_uint32
  */
@@ -3946,6 +3956,7 @@ of_uint32_value_set(
 #include "loci_int.h"
 
 
+
 /**
  * \defgroup of_uint64 of_uint64
  */
@@ -4150,6 +4161,7 @@ of_uint64_value_set(
 
 #include "loci_log.h"
 #include "loci_int.h"
+
 
 
 /**
