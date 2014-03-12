@@ -19,6 +19,7 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -26,6 +27,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 36);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -59,6 +63,7 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -66,6 +71,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -99,6 +107,7 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -106,6 +115,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_ACTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_ACTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_action_error_msg_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -139,6 +151,7 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -146,6 +159,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_REQUEST_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_request_error_msg_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -179,6 +195,7 @@ test_of_barrier_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -186,6 +203,9 @@ test_of_barrier_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -219,6 +239,7 @@ test_of_barrier_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -226,6 +247,9 @@ test_of_barrier_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -259,6 +283,7 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -266,6 +291,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -299,6 +327,7 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -306,6 +335,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -339,6 +371,7 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -346,6 +379,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -379,6 +415,7 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -386,6 +423,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -419,6 +459,7 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -426,6 +467,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -459,6 +503,7 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -466,6 +511,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -499,6 +547,7 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -506,6 +555,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -539,6 +591,7 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -546,6 +599,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -579,6 +635,7 @@ test_of_bsn_get_ip_mask_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_ip_mask_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -586,6 +643,9 @@ test_of_bsn_get_ip_mask_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_IP_MASK_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_IP_MASK_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_ip_mask_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -619,6 +679,7 @@ test_of_bsn_get_ip_mask_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_ip_mask_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -626,6 +687,9 @@ test_of_bsn_get_ip_mask_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_IP_MASK_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_IP_MASK_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_ip_mask_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -659,6 +723,7 @@ test_of_bsn_get_l2_table_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_l2_table_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -666,6 +731,9 @@ test_of_bsn_get_l2_table_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_L2_TABLE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_L2_TABLE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_l2_table_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -699,6 +767,7 @@ test_of_bsn_get_l2_table_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_l2_table_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -706,6 +775,9 @@ test_of_bsn_get_l2_table_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_L2_TABLE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_L2_TABLE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_l2_table_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -739,6 +811,7 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -746,6 +819,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -779,6 +855,7 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -786,6 +863,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -819,6 +899,7 @@ test_of_bsn_hybrid_get_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_hybrid_get_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -826,6 +907,9 @@ test_of_bsn_hybrid_get_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_HYBRID_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_HYBRID_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_hybrid_get_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -859,6 +943,7 @@ test_of_bsn_hybrid_get_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_hybrid_get_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -866,6 +951,9 @@ test_of_bsn_hybrid_get_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_HYBRID_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_HYBRID_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_hybrid_get_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -899,6 +987,7 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -906,6 +995,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 23);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -939,6 +1031,7 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -946,6 +1039,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 26);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -979,6 +1075,7 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -986,6 +1083,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 19);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_TIMEOUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_TIMEOUT);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_timeout_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1019,6 +1119,7 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1026,6 +1127,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 23);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1059,6 +1163,7 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1066,6 +1171,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 26);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1099,6 +1207,7 @@ test_of_bsn_set_ip_mask_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_ip_mask_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1106,6 +1215,9 @@ test_of_bsn_set_ip_mask_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_IP_MASK);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_IP_MASK);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_ip_mask_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1139,6 +1251,7 @@ test_of_bsn_set_l2_table_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_l2_table_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1146,6 +1259,9 @@ test_of_bsn_set_l2_table_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_L2_TABLE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_L2_TABLE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_l2_table_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1179,6 +1295,7 @@ test_of_bsn_set_l2_table_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_l2_table_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1186,6 +1303,9 @@ test_of_bsn_set_l2_table_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_L2_TABLE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_L2_TABLE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_l2_table_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1219,6 +1339,7 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1226,6 +1347,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_MIRRORING);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_MIRRORING);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_mirroring_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1259,6 +1383,7 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1266,6 +1391,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1299,6 +1427,7 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1306,6 +1435,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1339,6 +1471,7 @@ test_of_bsn_shell_command_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_shell_command_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1346,6 +1479,9 @@ test_of_bsn_shell_command_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SHELL_COMMAND);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SHELL_COMMAND);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_shell_command_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1379,6 +1515,7 @@ test_of_bsn_shell_output_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_shell_output_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1386,6 +1523,9 @@ test_of_bsn_shell_output_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SHELL_OUTPUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SHELL_OUTPUT);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_shell_output_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1419,6 +1559,7 @@ test_of_bsn_shell_status_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_shell_status_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1426,6 +1567,9 @@ test_of_bsn_shell_status_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SHELL_STATUS);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SHELL_STATUS);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_shell_status_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1459,6 +1603,7 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1466,6 +1611,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1499,6 +1647,7 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1506,6 +1655,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 48);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1539,6 +1691,7 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1546,6 +1699,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1579,6 +1735,7 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1586,6 +1743,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1619,6 +1779,7 @@ test_of_desc_stats_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1626,6 +1787,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 1068);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1659,6 +1823,7 @@ test_of_desc_stats_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1666,6 +1831,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1699,6 +1867,7 @@ test_of_echo_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1706,6 +1875,9 @@ test_of_echo_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1739,6 +1911,7 @@ test_of_echo_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1746,6 +1919,9 @@ test_of_echo_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1779,6 +1955,7 @@ test_of_features_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1786,6 +1963,9 @@ test_of_features_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_features_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1819,6 +1999,7 @@ test_of_features_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1826,6 +2007,9 @@ test_of_features_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_features_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1859,6 +2043,7 @@ test_of_flow_add_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1866,6 +2051,9 @@ test_of_flow_add_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 72);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_add_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1899,6 +2087,7 @@ test_of_flow_delete_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1906,6 +2095,9 @@ test_of_flow_delete_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 72);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1939,6 +2131,7 @@ test_of_flow_delete_strict_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1946,6 +2139,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 72);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_strict_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -1979,6 +2175,7 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -1986,6 +2183,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_mod_failed_error_msg_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2019,6 +2219,7 @@ test_of_flow_modify_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2026,6 +2227,9 @@ test_of_flow_modify_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 72);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2059,6 +2263,7 @@ test_of_flow_modify_strict_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2066,6 +2271,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 72);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_strict_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2099,6 +2307,7 @@ test_of_flow_removed_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2106,6 +2315,9 @@ test_of_flow_removed_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 88);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_REMOVED);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_REMOVED);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_removed_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2139,6 +2351,7 @@ test_of_flow_stats_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2146,6 +2359,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2179,6 +2395,7 @@ test_of_flow_stats_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2186,6 +2403,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2219,6 +2439,7 @@ test_of_get_config_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2226,6 +2447,9 @@ test_of_get_config_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2259,6 +2483,7 @@ test_of_get_config_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2266,6 +2491,9 @@ test_of_get_config_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2299,6 +2527,7 @@ test_of_hello_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2306,6 +2535,9 @@ test_of_hello_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2339,6 +2571,7 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2346,6 +2579,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_failed_error_msg_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2379,6 +2615,7 @@ test_of_nicira_controller_role_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_nicira_controller_role_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2386,6 +2623,9 @@ test_of_nicira_controller_role_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_NICIRA_CONTROLLER_ROLE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_NICIRA_CONTROLLER_ROLE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_nicira_controller_role_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2419,6 +2659,7 @@ test_of_nicira_controller_role_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_nicira_controller_role_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2426,6 +2667,9 @@ test_of_nicira_controller_role_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_NICIRA_CONTROLLER_ROLE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_NICIRA_CONTROLLER_ROLE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_nicira_controller_role_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2459,6 +2703,7 @@ test_of_packet_in_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2466,6 +2711,9 @@ test_of_packet_in_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 18);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_IN);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_IN);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_in_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2499,6 +2747,7 @@ test_of_packet_out_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2506,6 +2755,9 @@ test_of_packet_out_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_OUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_OUT);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_out_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2539,6 +2791,7 @@ test_of_port_mod_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2546,6 +2799,9 @@ test_of_port_mod_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2579,6 +2835,7 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2586,6 +2843,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_failed_error_msg_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2619,6 +2879,7 @@ test_of_port_stats_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2626,6 +2887,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2659,6 +2923,7 @@ test_of_port_stats_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2666,6 +2931,9 @@ test_of_port_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2699,6 +2967,7 @@ test_of_port_status_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2706,6 +2975,9 @@ test_of_port_status_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 64);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATUS);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATUS);
 
     /* Set up incrementing values for scalar members */
     value = of_port_status_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2739,6 +3011,7 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2746,6 +3019,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2779,6 +3055,7 @@ test_of_queue_get_config_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2786,6 +3063,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2819,6 +3099,7 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2826,6 +3107,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_op_failed_error_msg_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2859,6 +3143,7 @@ test_of_queue_stats_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2866,6 +3151,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2899,6 +3187,7 @@ test_of_queue_stats_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2906,6 +3195,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2939,6 +3231,7 @@ test_of_set_config_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2946,6 +3239,9 @@ test_of_set_config_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SET_CONFIG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SET_CONFIG);
 
     /* Set up incrementing values for scalar members */
     value = of_set_config_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -2979,6 +3275,7 @@ test_of_table_mod_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -2986,6 +3283,9 @@ test_of_table_mod_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -3019,6 +3319,7 @@ test_of_table_stats_reply_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -3026,6 +3327,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_reply_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -3059,6 +3363,7 @@ test_of_table_stats_request_create_OF_VERSION_1_0(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
@@ -3066,6 +3371,9 @@ test_of_table_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_request_OF_VERSION_1_0_populate_scalars(obj, 1);
@@ -3099,6 +3407,7 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3106,6 +3415,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3139,6 +3451,7 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3146,6 +3459,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3179,6 +3495,7 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3186,6 +3503,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_ACTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_ACTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_action_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3219,6 +3539,7 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_instruction_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3226,6 +3547,9 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_INSTRUCTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_INSTRUCTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_instruction_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3259,6 +3583,7 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_match_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3266,6 +3591,9 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_MATCH_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_MATCH_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_match_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3299,6 +3627,7 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3306,6 +3635,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_REQUEST_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_request_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3339,6 +3671,7 @@ test_of_barrier_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3346,6 +3679,9 @@ test_of_barrier_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3379,6 +3715,7 @@ test_of_barrier_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3386,6 +3723,9 @@ test_of_barrier_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3419,6 +3759,7 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3426,6 +3767,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3459,6 +3803,7 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3466,6 +3811,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3499,6 +3847,7 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3506,6 +3855,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3539,6 +3891,7 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3546,6 +3899,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3579,6 +3935,7 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3586,6 +3943,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3619,6 +3979,7 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3626,6 +3987,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3659,6 +4023,7 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3666,6 +4031,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3699,6 +4067,7 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3706,6 +4075,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3739,6 +4111,7 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3746,6 +4119,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3779,6 +4155,7 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3786,6 +4163,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3819,6 +4199,7 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3826,6 +4207,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3859,6 +4243,7 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3866,6 +4251,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3899,6 +4287,7 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3906,6 +4295,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 21);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_TIMEOUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_TIMEOUT);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_timeout_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3939,6 +4331,7 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3946,6 +4339,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -3979,6 +4375,7 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -3986,6 +4383,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4019,6 +4419,7 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4026,6 +4427,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_MIRRORING);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_MIRRORING);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_mirroring_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4059,6 +4463,7 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4066,6 +4471,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4099,6 +4507,7 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4106,6 +4515,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4139,6 +4551,7 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4146,6 +4559,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4179,6 +4595,7 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4186,6 +4603,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 48);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4219,6 +4639,7 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4226,6 +4647,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4259,6 +4683,7 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4266,6 +4691,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4299,6 +4727,7 @@ test_of_desc_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4306,6 +4735,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 1072);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4339,6 +4771,7 @@ test_of_desc_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4346,6 +4779,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4379,6 +4815,7 @@ test_of_echo_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4386,6 +4823,9 @@ test_of_echo_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4419,6 +4859,7 @@ test_of_echo_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4426,6 +4867,9 @@ test_of_echo_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4459,6 +4903,7 @@ test_of_features_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4466,6 +4911,9 @@ test_of_features_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_features_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4499,6 +4947,7 @@ test_of_features_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4506,6 +4955,9 @@ test_of_features_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_features_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4539,6 +4991,7 @@ test_of_flow_add_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4546,6 +4999,9 @@ test_of_flow_add_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_add_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4579,6 +5035,7 @@ test_of_flow_delete_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4586,6 +5043,9 @@ test_of_flow_delete_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4619,6 +5079,7 @@ test_of_flow_delete_strict_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4626,6 +5087,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_strict_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4659,6 +5123,7 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4666,6 +5131,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_mod_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4699,6 +5167,7 @@ test_of_flow_modify_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4706,6 +5175,9 @@ test_of_flow_modify_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4739,6 +5211,7 @@ test_of_flow_modify_strict_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4746,6 +5219,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_strict_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4779,6 +5255,7 @@ test_of_flow_removed_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4786,6 +5263,9 @@ test_of_flow_removed_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_REMOVED);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_REMOVED);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_removed_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4819,6 +5299,7 @@ test_of_flow_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4826,6 +5307,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4859,6 +5343,7 @@ test_of_flow_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4866,6 +5351,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 136);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4899,6 +5387,7 @@ test_of_get_config_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4906,6 +5395,9 @@ test_of_get_config_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4939,6 +5431,7 @@ test_of_get_config_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4946,6 +5439,9 @@ test_of_get_config_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -4979,6 +5475,7 @@ test_of_group_add_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_add_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -4986,6 +5483,9 @@ test_of_group_add_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_group_add_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5019,6 +5519,7 @@ test_of_group_delete_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_delete_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5026,6 +5527,9 @@ test_of_group_delete_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_group_delete_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5059,6 +5563,7 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_desc_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5066,6 +5571,9 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_desc_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5099,6 +5607,7 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_desc_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5106,6 +5615,9 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_desc_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5139,6 +5651,7 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_mod_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5146,6 +5659,9 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_group_mod_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5179,6 +5695,7 @@ test_of_group_modify_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_modify_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5186,6 +5703,9 @@ test_of_group_modify_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_modify_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5219,6 +5739,7 @@ test_of_group_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5226,6 +5747,9 @@ test_of_group_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5259,6 +5783,7 @@ test_of_group_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5266,6 +5791,9 @@ test_of_group_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5299,6 +5827,7 @@ test_of_hello_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5306,6 +5835,9 @@ test_of_hello_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5339,6 +5871,7 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5346,6 +5879,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5379,6 +5915,7 @@ test_of_packet_in_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5386,6 +5923,9 @@ test_of_packet_in_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_IN);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_IN);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_in_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5419,6 +5959,7 @@ test_of_packet_out_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5426,6 +5967,9 @@ test_of_packet_out_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_OUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_OUT);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_out_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5459,6 +6003,7 @@ test_of_port_mod_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5466,6 +6011,9 @@ test_of_port_mod_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5499,6 +6047,7 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5506,6 +6055,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5539,6 +6091,7 @@ test_of_port_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5546,6 +6099,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5579,6 +6135,7 @@ test_of_port_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5586,6 +6143,9 @@ test_of_port_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5619,6 +6179,7 @@ test_of_port_status_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5626,6 +6187,9 @@ test_of_port_status_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 80);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATUS);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATUS);
 
     /* Set up incrementing values for scalar members */
     value = of_port_status_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5659,6 +6223,7 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5666,6 +6231,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5699,6 +6267,7 @@ test_of_queue_get_config_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5706,6 +6275,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5739,6 +6311,7 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5746,6 +6319,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_op_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5779,6 +6355,7 @@ test_of_queue_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5786,6 +6363,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5819,6 +6399,7 @@ test_of_queue_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5826,6 +6407,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5859,6 +6443,7 @@ test_of_set_config_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5866,6 +6451,9 @@ test_of_set_config_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SET_CONFIG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SET_CONFIG);
 
     /* Set up incrementing values for scalar members */
     value = of_set_config_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5899,6 +6487,7 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_switch_config_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5906,6 +6495,9 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_switch_config_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5939,6 +6531,7 @@ test_of_table_mod_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5946,6 +6539,9 @@ test_of_table_mod_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -5979,6 +6575,7 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_failed_error_msg_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -5986,6 +6583,9 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_failed_error_msg_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -6019,6 +6619,7 @@ test_of_table_stats_reply_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -6026,6 +6627,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_reply_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -6059,6 +6663,7 @@ test_of_table_stats_request_create_OF_VERSION_1_1(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
@@ -6066,6 +6671,9 @@ test_of_table_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_request_OF_VERSION_1_1_populate_scalars(obj, 1);
@@ -6099,6 +6707,7 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6106,6 +6715,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6139,6 +6751,7 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6146,6 +6759,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6179,6 +6795,7 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6186,6 +6803,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_ACTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_ACTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_action_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6219,6 +6839,7 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_instruction_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6226,6 +6847,9 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_INSTRUCTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_INSTRUCTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_instruction_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6259,6 +6883,7 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_match_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6266,6 +6891,9 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_MATCH_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_MATCH_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_match_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6299,6 +6927,7 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6306,6 +6935,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_REQUEST_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_request_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6339,6 +6971,7 @@ test_of_barrier_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6346,6 +6979,9 @@ test_of_barrier_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6379,6 +7015,7 @@ test_of_barrier_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6386,6 +7023,9 @@ test_of_barrier_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6419,6 +7059,7 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6426,6 +7067,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6459,6 +7103,7 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6466,6 +7111,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6499,6 +7147,7 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6506,6 +7155,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6539,6 +7191,7 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6546,6 +7199,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6579,6 +7235,7 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6586,6 +7243,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6619,6 +7279,7 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6626,6 +7287,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6659,6 +7323,7 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6666,6 +7331,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6699,6 +7367,7 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6706,6 +7375,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6739,6 +7411,7 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6746,6 +7419,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6779,6 +7455,7 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6786,6 +7463,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6819,6 +7499,7 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6826,6 +7507,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6859,6 +7543,7 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6866,6 +7551,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6899,6 +7587,7 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6906,6 +7595,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 21);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_TIMEOUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_TIMEOUT);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_timeout_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6939,6 +7631,7 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6946,6 +7639,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -6979,6 +7675,7 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -6986,6 +7683,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7019,6 +7719,7 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7026,6 +7727,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_MIRRORING);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_MIRRORING);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_mirroring_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7059,6 +7763,7 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7066,6 +7771,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7099,6 +7807,7 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7106,6 +7815,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7139,6 +7851,7 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7146,6 +7859,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7179,6 +7895,7 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7186,6 +7903,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 48);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7219,6 +7939,7 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7226,6 +7947,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7259,6 +7983,7 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7266,6 +7991,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7299,6 +8027,7 @@ test_of_desc_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7306,6 +8035,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 1072);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7339,6 +8071,7 @@ test_of_desc_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7346,6 +8079,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7379,6 +8115,7 @@ test_of_echo_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7386,6 +8123,9 @@ test_of_echo_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7419,6 +8159,7 @@ test_of_echo_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7426,6 +8167,9 @@ test_of_echo_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7459,6 +8203,7 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_experimenter_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7466,6 +8211,9 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_EXPERIMENTER_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_experimenter_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7499,6 +8247,7 @@ test_of_features_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7506,6 +8255,9 @@ test_of_features_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_features_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7539,6 +8291,7 @@ test_of_features_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7546,6 +8299,9 @@ test_of_features_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_features_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7579,6 +8335,7 @@ test_of_flow_add_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7586,6 +8343,9 @@ test_of_flow_add_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_add_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7619,6 +8379,7 @@ test_of_flow_delete_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7626,6 +8387,9 @@ test_of_flow_delete_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7659,6 +8423,7 @@ test_of_flow_delete_strict_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7666,6 +8431,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_strict_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7699,6 +8467,7 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7706,6 +8475,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_mod_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7739,6 +8511,7 @@ test_of_flow_modify_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7746,6 +8519,9 @@ test_of_flow_modify_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7779,6 +8555,7 @@ test_of_flow_modify_strict_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7786,6 +8563,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_strict_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7819,6 +8599,7 @@ test_of_flow_removed_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7826,6 +8607,9 @@ test_of_flow_removed_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_REMOVED);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_REMOVED);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_removed_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7859,6 +8643,7 @@ test_of_flow_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7866,6 +8651,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7899,6 +8687,7 @@ test_of_flow_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7906,6 +8695,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7939,6 +8731,7 @@ test_of_get_config_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7946,6 +8739,9 @@ test_of_get_config_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -7979,6 +8775,7 @@ test_of_get_config_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -7986,6 +8783,9 @@ test_of_get_config_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8019,6 +8819,7 @@ test_of_group_add_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_add_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8026,6 +8827,9 @@ test_of_group_add_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_group_add_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8059,6 +8863,7 @@ test_of_group_delete_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_delete_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8066,6 +8871,9 @@ test_of_group_delete_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_group_delete_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8099,6 +8907,7 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_desc_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8106,6 +8915,9 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_desc_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8139,6 +8951,7 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_desc_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8146,6 +8959,9 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_desc_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8179,6 +8995,7 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_features_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8186,6 +9003,9 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_FEATURES_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_features_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8219,6 +9039,7 @@ test_of_group_features_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_features_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8226,6 +9047,9 @@ test_of_group_features_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_FEATURES_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_features_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8259,6 +9083,7 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_mod_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8266,6 +9091,9 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_group_mod_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8299,6 +9127,7 @@ test_of_group_modify_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_modify_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8306,6 +9135,9 @@ test_of_group_modify_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_modify_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8339,6 +9171,7 @@ test_of_group_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8346,6 +9179,9 @@ test_of_group_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8379,6 +9215,7 @@ test_of_group_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8386,6 +9223,9 @@ test_of_group_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8419,6 +9259,7 @@ test_of_hello_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8426,6 +9267,9 @@ test_of_hello_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8459,6 +9303,7 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8466,6 +9311,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8499,6 +9347,7 @@ test_of_packet_in_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8506,6 +9355,9 @@ test_of_packet_in_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 26);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_IN);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_IN);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_in_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8539,6 +9391,7 @@ test_of_packet_out_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8546,6 +9399,9 @@ test_of_packet_out_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_OUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_OUT);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_out_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8579,6 +9435,7 @@ test_of_port_mod_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8586,6 +9443,9 @@ test_of_port_mod_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8619,6 +9479,7 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8626,6 +9487,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8659,6 +9523,7 @@ test_of_port_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8666,6 +9531,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8699,6 +9567,7 @@ test_of_port_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8706,6 +9575,9 @@ test_of_port_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8739,6 +9611,7 @@ test_of_port_status_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8746,6 +9619,9 @@ test_of_port_status_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 80);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATUS);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATUS);
 
     /* Set up incrementing values for scalar members */
     value = of_port_status_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8779,6 +9655,7 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8786,6 +9663,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8819,6 +9699,7 @@ test_of_queue_get_config_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8826,6 +9707,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8859,6 +9743,7 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8866,6 +9751,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_op_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8899,6 +9787,7 @@ test_of_queue_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8906,6 +9795,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8939,6 +9831,7 @@ test_of_queue_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8946,6 +9839,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -8979,6 +9875,7 @@ test_of_role_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_role_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -8986,6 +9883,9 @@ test_of_role_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ROLE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ROLE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_role_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9019,6 +9919,7 @@ test_of_role_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_role_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9026,6 +9927,9 @@ test_of_role_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ROLE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ROLE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_role_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9059,6 +9963,7 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_role_request_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9066,6 +9971,9 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ROLE_REQUEST_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ROLE_REQUEST_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_role_request_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9099,6 +10007,7 @@ test_of_set_config_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9106,6 +10015,9 @@ test_of_set_config_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SET_CONFIG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SET_CONFIG);
 
     /* Set up incrementing values for scalar members */
     value = of_set_config_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9139,6 +10051,7 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_switch_config_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9146,6 +10059,9 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_switch_config_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9179,6 +10095,7 @@ test_of_table_mod_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9186,6 +10103,9 @@ test_of_table_mod_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9219,6 +10139,7 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_failed_error_msg_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9226,6 +10147,9 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_failed_error_msg_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9259,6 +10183,7 @@ test_of_table_stats_reply_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9266,6 +10191,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_reply_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9299,6 +10227,7 @@ test_of_table_stats_request_create_OF_VERSION_1_2(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
@@ -9306,6 +10235,9 @@ test_of_table_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_request_OF_VERSION_1_2_populate_scalars(obj, 1);
@@ -9339,6 +10271,7 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9346,6 +10279,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9379,6 +10315,7 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9386,6 +10323,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_AGGREGATE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_AGGREGATE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_aggregate_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9419,6 +10359,7 @@ test_of_async_get_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_async_get_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9426,6 +10367,9 @@ test_of_async_get_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ASYNC_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ASYNC_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_async_get_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9459,6 +10403,7 @@ test_of_async_get_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_async_get_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9466,6 +10411,9 @@ test_of_async_get_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ASYNC_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ASYNC_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_async_get_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9499,6 +10447,7 @@ test_of_async_set_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_async_set_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9506,6 +10455,9 @@ test_of_async_set_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ASYNC_SET);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ASYNC_SET);
 
     /* Set up incrementing values for scalar members */
     value = of_async_set_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9539,6 +10491,7 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9546,6 +10499,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_ACTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_ACTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_action_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9579,6 +10535,7 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_instruction_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9586,6 +10543,9 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_INSTRUCTION_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_INSTRUCTION_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_instruction_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9619,6 +10579,7 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_match_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9626,6 +10587,9 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_MATCH_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_MATCH_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_match_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9659,6 +10623,7 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9666,6 +10631,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BAD_REQUEST_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_REQUEST_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_bad_request_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9699,6 +10667,7 @@ test_of_barrier_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9706,6 +10675,9 @@ test_of_barrier_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9739,6 +10711,7 @@ test_of_barrier_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9746,6 +10719,9 @@ test_of_barrier_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BARRIER_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BARRIER_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_barrier_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9779,6 +10755,7 @@ test_of_bsn_arp_idle_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_arp_idle_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9786,6 +10763,9 @@ test_of_bsn_arp_idle_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_ARP_IDLE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_ARP_IDLE);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_arp_idle_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9819,6 +10799,7 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9826,6 +10807,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9859,6 +10843,7 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9866,6 +10851,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_CLEAR_DATA_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_clear_data_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9899,6 +10887,7 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9906,6 +10895,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9939,6 +10931,7 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9946,6 +10939,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_get_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -9979,6 +10975,7 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -9986,6 +10983,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10019,6 +11019,7 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10026,6 +11027,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_BW_ENABLE_SET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_bw_enable_set_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10059,6 +11063,7 @@ test_of_bsn_controller_connections_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_controller_connections_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10066,6 +11071,9 @@ test_of_bsn_controller_connections_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTIONS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_CONTROLLER_CONNECTIONS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_controller_connections_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10099,6 +11107,7 @@ test_of_bsn_controller_connections_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_controller_connections_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10106,6 +11115,9 @@ test_of_bsn_controller_connections_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTIONS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_CONTROLLER_CONNECTIONS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_controller_connections_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10139,6 +11151,7 @@ test_of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_checksum_bucket_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10146,6 +11159,9 @@ test_of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10179,6 +11195,7 @@ test_of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_checksum_bucket_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10186,6 +11203,9 @@ test_of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10219,6 +11239,7 @@ test_of_bsn_flow_idle_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10226,6 +11247,9 @@ test_of_bsn_flow_idle_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_idle_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10259,6 +11283,7 @@ test_of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_get_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10266,6 +11291,9 @@ test_of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10299,6 +11327,7 @@ test_of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_get_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10306,6 +11335,9 @@ test_of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10339,6 +11371,7 @@ test_of_bsn_flow_idle_enable_set_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_set_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10346,6 +11379,9 @@ test_of_bsn_flow_idle_enable_set_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10379,6 +11415,7 @@ test_of_bsn_flow_idle_enable_set_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_set_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10386,6 +11423,9 @@ test_of_bsn_flow_idle_enable_set_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10419,6 +11459,7 @@ test_of_bsn_gentable_bucket_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_bucket_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10426,6 +11467,9 @@ test_of_bsn_gentable_bucket_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_BUCKET_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_BUCKET_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10459,6 +11503,7 @@ test_of_bsn_gentable_bucket_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_bucket_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10466,6 +11511,9 @@ test_of_bsn_gentable_bucket_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 26);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_BUCKET_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_BUCKET_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10499,6 +11547,7 @@ test_of_bsn_gentable_clear_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_clear_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10506,6 +11555,9 @@ test_of_bsn_gentable_clear_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_CLEAR_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_CLEAR_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_clear_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10539,6 +11591,7 @@ test_of_bsn_gentable_clear_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_clear_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10546,6 +11599,9 @@ test_of_bsn_gentable_clear_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 52);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_CLEAR_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_CLEAR_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_clear_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10579,6 +11635,7 @@ test_of_bsn_gentable_desc_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_desc_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10586,6 +11643,9 @@ test_of_bsn_gentable_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10619,6 +11679,7 @@ test_of_bsn_gentable_desc_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_desc_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10626,6 +11687,9 @@ test_of_bsn_gentable_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10659,6 +11723,7 @@ test_of_bsn_gentable_entry_add_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_add_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10666,6 +11731,9 @@ test_of_bsn_gentable_entry_add_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 36);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_entry_add_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10699,6 +11767,7 @@ test_of_bsn_gentable_entry_delete_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_delete_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10706,6 +11775,9 @@ test_of_bsn_gentable_entry_delete_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 18);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_entry_delete_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10739,6 +11811,7 @@ test_of_bsn_gentable_entry_desc_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_desc_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10746,6 +11819,9 @@ test_of_bsn_gentable_entry_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10779,6 +11855,7 @@ test_of_bsn_gentable_entry_desc_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_desc_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10786,6 +11863,9 @@ test_of_bsn_gentable_entry_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 60);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10819,6 +11899,7 @@ test_of_bsn_gentable_entry_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10826,6 +11907,9 @@ test_of_bsn_gentable_entry_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10859,6 +11943,7 @@ test_of_bsn_gentable_entry_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10866,6 +11951,9 @@ test_of_bsn_gentable_entry_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 60);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10899,6 +11987,7 @@ test_of_bsn_gentable_set_buckets_size_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_set_buckets_size_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10906,6 +11995,9 @@ test_of_bsn_gentable_set_buckets_size_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_SET_BUCKETS_SIZE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_SET_BUCKETS_SIZE);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10939,6 +12031,7 @@ test_of_bsn_gentable_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10946,6 +12039,9 @@ test_of_bsn_gentable_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -10979,6 +12075,7 @@ test_of_bsn_gentable_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_gentable_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -10986,6 +12083,9 @@ test_of_bsn_gentable_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_gentable_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11019,6 +12119,7 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11026,6 +12127,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11059,6 +12163,7 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11066,6 +12171,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_INTERFACES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_INTERFACES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_interfaces_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11099,6 +12207,7 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11106,6 +12215,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11139,6 +12251,7 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11146,6 +12259,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_MIRRORING_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_MIRRORING_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_mirroring_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11179,6 +12295,7 @@ test_of_bsn_get_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_switch_pipeline_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11186,6 +12303,9 @@ test_of_bsn_get_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 272);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11219,6 +12339,7 @@ test_of_bsn_get_switch_pipeline_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_get_switch_pipeline_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11226,6 +12347,9 @@ test_of_bsn_get_switch_pipeline_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11259,6 +12383,7 @@ test_of_bsn_lacp_convergence_notif_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_lacp_convergence_notif_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11266,6 +12391,9 @@ test_of_bsn_lacp_convergence_notif_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 52);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_LACP_CONVERGENCE_NOTIF);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LACP_CONVERGENCE_NOTIF);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_lacp_convergence_notif_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11299,6 +12427,7 @@ test_of_bsn_lacp_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_lacp_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11306,6 +12435,9 @@ test_of_bsn_lacp_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_LACP_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LACP_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_lacp_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11339,6 +12471,7 @@ test_of_bsn_lacp_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_lacp_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11346,6 +12479,9 @@ test_of_bsn_lacp_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_LACP_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LACP_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_lacp_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11379,6 +12515,7 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11386,6 +12523,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11419,6 +12559,7 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11426,6 +12567,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11459,6 +12603,7 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11466,6 +12611,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 21);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_RX_TIMEOUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_RX_TIMEOUT);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_rx_timeout_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11499,6 +12647,7 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11506,6 +12655,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 25);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11539,6 +12691,7 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11546,6 +12699,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PDU_TX_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PDU_TX_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_pdu_tx_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11579,6 +12735,7 @@ test_of_bsn_port_counter_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_port_counter_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11586,6 +12743,9 @@ test_of_bsn_port_counter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PORT_COUNTER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PORT_COUNTER_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_port_counter_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11619,6 +12779,7 @@ test_of_bsn_port_counter_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_port_counter_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11626,6 +12787,9 @@ test_of_bsn_port_counter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 28);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_PORT_COUNTER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PORT_COUNTER_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_port_counter_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11659,6 +12823,7 @@ test_of_bsn_role_status_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_role_status_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11666,6 +12831,9 @@ test_of_bsn_role_status_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_ROLE_STATUS);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_ROLE_STATUS);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_role_status_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11699,6 +12867,7 @@ test_of_bsn_set_aux_cxns_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_aux_cxns_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11706,6 +12875,9 @@ test_of_bsn_set_aux_cxns_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_AUX_CXNS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_AUX_CXNS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11739,6 +12911,7 @@ test_of_bsn_set_aux_cxns_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_aux_cxns_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11746,6 +12919,9 @@ test_of_bsn_set_aux_cxns_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_AUX_CXNS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_AUX_CXNS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_aux_cxns_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11779,6 +12955,7 @@ test_of_bsn_set_lacp_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_lacp_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11786,6 +12963,9 @@ test_of_bsn_set_lacp_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_LACP_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_LACP_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_lacp_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11819,6 +12999,7 @@ test_of_bsn_set_lacp_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_lacp_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11826,6 +13007,9 @@ test_of_bsn_set_lacp_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 38);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_LACP_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_LACP_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_lacp_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11859,6 +13043,7 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11866,6 +13051,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_MIRRORING);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_MIRRORING);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_mirroring_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11899,6 +13087,7 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11906,6 +13095,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11939,6 +13131,7 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11946,6 +13139,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -11979,6 +13175,7 @@ test_of_bsn_set_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_switch_pipeline_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -11986,6 +13183,9 @@ test_of_bsn_set_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12019,6 +13219,7 @@ test_of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_set_switch_pipeline_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12026,6 +13227,9 @@ test_of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 272);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12059,6 +13263,7 @@ test_of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_switch_pipeline_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12066,6 +13271,9 @@ test_of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12099,6 +13307,7 @@ test_of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_switch_pipeline_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12106,6 +13315,9 @@ test_of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12139,6 +13351,7 @@ test_of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_table_checksum_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12146,6 +13359,9 @@ test_of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12179,6 +13395,7 @@ test_of_bsn_table_checksum_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_table_checksum_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12186,6 +13403,9 @@ test_of_bsn_table_checksum_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_table_checksum_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12219,6 +13439,7 @@ test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_table_set_buckets_size_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12226,6 +13447,9 @@ test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TABLE_SET_BUCKETS_SIZE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TABLE_SET_BUCKETS_SIZE);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_table_set_buckets_size_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12259,6 +13483,7 @@ test_of_bsn_time_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_time_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12266,6 +13491,9 @@ test_of_bsn_time_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TIME_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TIME_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_time_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12299,6 +13527,7 @@ test_of_bsn_time_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_time_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12306,6 +13535,9 @@ test_of_bsn_time_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_TIME_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TIME_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_time_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12339,6 +13571,7 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12346,6 +13579,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12379,6 +13615,7 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12386,6 +13623,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 48);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_create_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12419,6 +13659,7 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12426,6 +13667,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12459,6 +13703,7 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12466,6 +13711,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_virtual_port_remove_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12499,6 +13747,7 @@ test_of_bsn_vlan_counter_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_vlan_counter_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12506,6 +13755,9 @@ test_of_bsn_vlan_counter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VLAN_COUNTER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VLAN_COUNTER_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12539,6 +13791,7 @@ test_of_bsn_vlan_counter_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_bsn_vlan_counter_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12546,6 +13799,9 @@ test_of_bsn_vlan_counter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 26);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VLAN_COUNTER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VLAN_COUNTER_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12579,6 +13835,7 @@ test_of_desc_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12586,6 +13843,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 1072);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12619,6 +13879,7 @@ test_of_desc_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12626,6 +13887,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_desc_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12659,6 +13923,7 @@ test_of_echo_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12666,6 +13931,9 @@ test_of_echo_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12699,6 +13967,7 @@ test_of_echo_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12706,6 +13975,9 @@ test_of_echo_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ECHO_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ECHO_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_echo_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12739,6 +14011,7 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_experimenter_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12746,6 +14019,9 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_EXPERIMENTER_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_experimenter_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12779,6 +14055,7 @@ test_of_features_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12786,6 +14063,9 @@ test_of_features_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_features_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12819,6 +14099,7 @@ test_of_features_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12826,6 +14107,9 @@ test_of_features_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FEATURES_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FEATURES_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_features_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12859,6 +14143,7 @@ test_of_flow_add_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12866,6 +14151,9 @@ test_of_flow_add_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_add_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12899,6 +14187,7 @@ test_of_flow_delete_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12906,6 +14195,9 @@ test_of_flow_delete_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12939,6 +14231,7 @@ test_of_flow_delete_strict_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12946,6 +14239,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_DELETE_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_DELETE_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_delete_strict_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -12979,6 +14275,7 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -12986,6 +14283,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_mod_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13019,6 +14319,7 @@ test_of_flow_modify_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13026,6 +14327,9 @@ test_of_flow_modify_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13059,6 +14363,7 @@ test_of_flow_modify_strict_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13066,6 +14371,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_MODIFY_STRICT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MODIFY_STRICT);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_modify_strict_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13099,6 +14407,7 @@ test_of_flow_removed_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13106,6 +14415,9 @@ test_of_flow_removed_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_REMOVED);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_REMOVED);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_removed_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13139,6 +14451,7 @@ test_of_flow_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13146,6 +14459,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13179,6 +14495,7 @@ test_of_flow_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13186,6 +14503,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_FLOW_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_flow_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13219,6 +14539,7 @@ test_of_get_config_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13226,6 +14547,9 @@ test_of_get_config_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13259,6 +14583,7 @@ test_of_get_config_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13266,6 +14591,9 @@ test_of_get_config_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_get_config_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13299,6 +14627,7 @@ test_of_group_add_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_add_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13306,6 +14635,9 @@ test_of_group_add_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_ADD);
 
     /* Set up incrementing values for scalar members */
     value = of_group_add_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13339,6 +14671,7 @@ test_of_group_delete_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_delete_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13346,6 +14679,9 @@ test_of_group_delete_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DELETE);
 
     /* Set up incrementing values for scalar members */
     value = of_group_delete_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13379,6 +14715,7 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_desc_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13386,6 +14723,9 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_desc_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13419,6 +14759,7 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_desc_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13426,6 +14767,9 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_desc_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13459,6 +14803,7 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_features_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13466,6 +14811,9 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_FEATURES_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_features_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13499,6 +14847,7 @@ test_of_group_features_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_features_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13506,6 +14855,9 @@ test_of_group_features_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_FEATURES_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_FEATURES_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_features_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13539,6 +14891,7 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_mod_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13546,6 +14899,9 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_group_mod_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13579,6 +14935,7 @@ test_of_group_modify_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_modify_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13586,6 +14943,9 @@ test_of_group_modify_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_MODIFY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_MODIFY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_modify_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13619,6 +14979,7 @@ test_of_group_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13626,6 +14987,9 @@ test_of_group_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_group_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13659,6 +15023,7 @@ test_of_group_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_group_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13666,6 +15031,9 @@ test_of_group_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_GROUP_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_GROUP_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_group_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13699,6 +15067,7 @@ test_of_hello_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13706,6 +15075,9 @@ test_of_hello_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 8);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13739,6 +15111,7 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13746,6 +15119,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_HELLO_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_HELLO_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_hello_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13779,6 +15155,7 @@ test_of_meter_config_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_config_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13786,6 +15163,9 @@ test_of_meter_config_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_CONFIG_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_CONFIG_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_config_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13819,6 +15199,7 @@ test_of_meter_config_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_config_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13826,6 +15207,9 @@ test_of_meter_config_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_CONFIG_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_CONFIG_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_config_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13859,6 +15243,7 @@ test_of_meter_features_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_features_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13866,6 +15251,9 @@ test_of_meter_features_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 32);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_FEATURES_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_FEATURES_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_features_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13899,6 +15287,7 @@ test_of_meter_features_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_features_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13906,6 +15295,9 @@ test_of_meter_features_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_FEATURES_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_FEATURES_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_features_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13939,6 +15331,7 @@ test_of_meter_mod_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_mod_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13946,6 +15339,9 @@ test_of_meter_mod_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_mod_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -13979,6 +15375,7 @@ test_of_meter_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_mod_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -13986,6 +15383,9 @@ test_of_meter_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_mod_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14019,6 +15419,7 @@ test_of_meter_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14026,6 +15427,9 @@ test_of_meter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14059,6 +15463,7 @@ test_of_meter_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_meter_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14066,6 +15471,9 @@ test_of_meter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_METER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_METER_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_meter_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14099,6 +15507,7 @@ test_of_packet_in_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14106,6 +15515,9 @@ test_of_packet_in_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 34);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_IN);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_IN);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_in_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14139,6 +15551,7 @@ test_of_packet_out_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14146,6 +15559,9 @@ test_of_packet_out_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PACKET_OUT);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PACKET_OUT);
 
     /* Set up incrementing values for scalar members */
     value = of_packet_out_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14179,6 +15595,7 @@ test_of_port_desc_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_desc_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14186,6 +15603,9 @@ test_of_port_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_DESC_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_port_desc_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14219,6 +15639,7 @@ test_of_port_desc_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_desc_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14226,6 +15647,9 @@ test_of_port_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_DESC_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_port_desc_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14259,6 +15683,7 @@ test_of_port_mod_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14266,6 +15691,9 @@ test_of_port_mod_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 40);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14299,6 +15727,7 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14306,6 +15735,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_port_mod_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14339,6 +15771,7 @@ test_of_port_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14346,6 +15779,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14379,6 +15815,7 @@ test_of_port_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14386,6 +15823,9 @@ test_of_port_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_port_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14419,6 +15859,7 @@ test_of_port_status_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14426,6 +15867,9 @@ test_of_port_status_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 80);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_PORT_STATUS);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_PORT_STATUS);
 
     /* Set up incrementing values for scalar members */
     value = of_port_status_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14459,6 +15903,7 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14466,6 +15911,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14499,6 +15947,7 @@ test_of_queue_get_config_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14506,6 +15955,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_GET_CONFIG_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_GET_CONFIG_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_get_config_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14539,6 +15991,7 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14546,6 +15999,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_OP_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_op_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14579,6 +16035,7 @@ test_of_queue_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14586,6 +16043,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14619,6 +16079,7 @@ test_of_queue_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14626,6 +16087,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_QUEUE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_QUEUE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_queue_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14659,6 +16123,7 @@ test_of_role_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_role_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14666,6 +16131,9 @@ test_of_role_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ROLE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ROLE_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_role_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14699,6 +16167,7 @@ test_of_role_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_role_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14706,6 +16175,9 @@ test_of_role_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 24);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ROLE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ROLE_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_role_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14739,6 +16211,7 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_role_request_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14746,6 +16219,9 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_ROLE_REQUEST_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ROLE_REQUEST_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_role_request_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14779,6 +16255,7 @@ test_of_set_config_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14786,6 +16263,9 @@ test_of_set_config_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SET_CONFIG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SET_CONFIG);
 
     /* Set up incrementing values for scalar members */
     value = of_set_config_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14819,6 +16299,7 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_switch_config_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14826,6 +16307,9 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_switch_config_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14859,6 +16343,7 @@ test_of_table_features_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_features_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14866,6 +16351,9 @@ test_of_table_features_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_FEATURES_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_FEATURES_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_table_features_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14899,6 +16387,7 @@ test_of_table_features_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_features_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14906,6 +16395,9 @@ test_of_table_features_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_FEATURES_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_FEATURES_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_table_features_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14939,6 +16431,7 @@ test_of_table_features_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_features_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14946,6 +16439,9 @@ test_of_table_features_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_FEATURES_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_FEATURES_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_table_features_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -14979,6 +16475,7 @@ test_of_table_mod_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -14986,6 +16483,9 @@ test_of_table_mod_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -15019,6 +16519,7 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_mod_failed_error_msg_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -15026,6 +16527,9 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_MOD_FAILED_ERROR_MSG);
 
     /* Set up incrementing values for scalar members */
     value = of_table_mod_failed_error_msg_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -15059,6 +16563,7 @@ test_of_table_stats_reply_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -15066,6 +16571,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REPLY);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
@@ -15099,6 +16607,7 @@ test_of_table_stats_request_create_OF_VERSION_1_3(void)
     uint8_t *msg_buf;
     int value;
     int len;
+    of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
@@ -15106,6 +16615,9 @@ test_of_table_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(obj->length == 16);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_TABLE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_TABLE_STATS_REQUEST);
 
     /* Set up incrementing values for scalar members */
     value = of_table_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);

@@ -1,1 +1,1 @@
-764a45f513b0d48abb71813ea89124829221d319 Merge into master from pull request #222: openflow_input: add bsn_egr_port_group_id extension (https://github.com/floodlight/loxigen/pull/222)
+0ab7418dde3e00917b816fce5968c44d768a270d Merge into master from pull request #223: loci: fix bug in new wire type parsers (https://github.com/floodlight/loxigen/pull/223)

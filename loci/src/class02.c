@@ -48,7 +48,7 @@ of_experimenter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_
         break;
     }
     case OF_VERSION_1_1: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 16)); /* experimenter */
         switch (value) {
         case 0x5c16c7:
             of_bsn_stats_request_wire_object_id_get(obj, id);
@@ -60,7 +60,7 @@ of_experimenter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_
         break;
     }
     case OF_VERSION_1_2: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 16)); /* experimenter */
         switch (value) {
         case 0x5c16c7:
             of_bsn_stats_request_wire_object_id_get(obj, id);
@@ -72,7 +72,7 @@ of_experimenter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_
         break;
     }
     case OF_VERSION_1_3: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 16)); /* experimenter */
         switch (value) {
         case 0x5c16c7:
             of_bsn_stats_request_wire_object_id_get(obj, id);
@@ -7675,7 +7675,7 @@ of_flow_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         break;
     }
     case OF_VERSION_1_1: {
-        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        uint8_t value = *(uint8_t *)(buf + 25); /* _command */
         switch (value) {
         case 0x0:
             *id = OF_FLOW_ADD;
@@ -7699,7 +7699,7 @@ of_flow_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         break;
     }
     case OF_VERSION_1_2: {
-        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        uint8_t value = *(uint8_t *)(buf + 25); /* _command */
         switch (value) {
         case 0x0:
             *id = OF_FLOW_ADD;
@@ -7723,7 +7723,7 @@ of_flow_mod_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         break;
     }
     case OF_VERSION_1_3: {
-        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 56)); /* _command */
+        uint8_t value = *(uint8_t *)(buf + 25); /* _command */
         switch (value) {
         case 0x0:
             *id = OF_FLOW_ADD;

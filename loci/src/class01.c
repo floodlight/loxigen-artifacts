@@ -17550,7 +17550,7 @@ of_experimenter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t 
         break;
     }
     case OF_VERSION_1_1: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 16)); /* experimenter */
         switch (value) {
         case 0x5c16c7:
             of_bsn_stats_reply_wire_object_id_get(obj, id);
@@ -17562,7 +17562,7 @@ of_experimenter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t 
         break;
     }
     case OF_VERSION_1_2: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 16)); /* experimenter */
         switch (value) {
         case 0x5c16c7:
             of_bsn_stats_reply_wire_object_id_get(obj, id);
@@ -17574,7 +17574,7 @@ of_experimenter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t 
         break;
     }
     case OF_VERSION_1_3: {
-        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* experimenter */
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 16)); /* experimenter */
         switch (value) {
         case 0x5c16c7:
             of_bsn_stats_reply_wire_object_id_get(obj, id);
