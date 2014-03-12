@@ -339,6 +339,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_arp_tha_masked",
     "of_oxm_arp_tpa",
     "of_oxm_arp_tpa_masked",
+    "of_oxm_bsn_egr_port_group_id",
+    "of_oxm_bsn_egr_port_group_id_masked",
     "of_oxm_bsn_global_vrf_allowed",
     "of_oxm_bsn_global_vrf_allowed_masked",
     "of_oxm_bsn_in_ports_128",

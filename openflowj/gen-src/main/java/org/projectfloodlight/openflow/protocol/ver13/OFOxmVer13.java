@@ -72,6 +72,12 @@ abstract class OFOxmVer13 {
                case (int) 0x80002f08:
                    // discriminator value 0x80002f08L=0x80002f08L for class OFOxmArpTpaMaskedVer13
                    return OFOxmArpTpaMaskedVer13.READER.readFrom(bb);
+               case 0x30e04:
+                   // discriminator value 0x30e04L=0x30e04L for class OFOxmBsnEgrPortGroupIdVer13
+                   return OFOxmBsnEgrPortGroupIdVer13.READER.readFrom(bb);
+               case 0x30f08:
+                   // discriminator value 0x30f08L=0x30f08L for class OFOxmBsnEgrPortGroupIdMaskedVer13
+                   return OFOxmBsnEgrPortGroupIdMaskedVer13.READER.readFrom(bb);
                case 0x30601:
                    // discriminator value 0x30601L=0x30601L for class OFOxmBsnGlobalVrfAllowedVer13
                    return OFOxmBsnGlobalVrfAllowedVer13.READER.readFrom(bb);

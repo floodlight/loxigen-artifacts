@@ -181,6 +181,8 @@ void of_oxm_arp_tha_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_arp_tha_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_arp_tpa_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_arp_tpa_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_egr_port_group_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_egr_port_group_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_global_vrf_allowed_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_global_vrf_allowed_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_in_ports_128_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -770,6 +772,8 @@ typedef of_object_t of_oxm_arp_tha_t;
 typedef of_object_t of_oxm_arp_tha_masked_t;
 typedef of_object_t of_oxm_arp_tpa_t;
 typedef of_object_t of_oxm_arp_tpa_masked_t;
+typedef of_object_t of_oxm_bsn_egr_port_group_id_t;
+typedef of_object_t of_oxm_bsn_egr_port_group_id_masked_t;
 typedef of_object_t of_oxm_bsn_global_vrf_allowed_t;
 typedef of_object_t of_oxm_bsn_global_vrf_allowed_masked_t;
 typedef of_object_t of_oxm_bsn_in_ports_128_t;
@@ -2934,6 +2938,16 @@ extern of_oxm_arp_tpa_masked_t *
     of_oxm_arp_tpa_masked_new(of_version_t version);
 extern void of_oxm_arp_tpa_masked_init(
     of_oxm_arp_tpa_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_egr_port_group_id_t *
+    of_oxm_bsn_egr_port_group_id_new(of_version_t version);
+extern void of_oxm_bsn_egr_port_group_id_init(
+    of_oxm_bsn_egr_port_group_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_egr_port_group_id_masked_t *
+    of_oxm_bsn_egr_port_group_id_masked_new(of_version_t version);
+extern void of_oxm_bsn_egr_port_group_id_masked_init(
+    of_oxm_bsn_egr_port_group_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_oxm_bsn_global_vrf_allowed_t *
     of_oxm_bsn_global_vrf_allowed_new(of_version_t version);
@@ -7309,6 +7323,28 @@ of_oxm_arp_tpa_delete(of_oxm_arp_tpa_t *obj) {
  */
 static inline void
 of_oxm_arp_tpa_masked_delete(of_oxm_arp_tpa_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_egr_port_group_id_t
+ * @param obj An instance of type of_oxm_bsn_egr_port_group_id_t
+ *
+ * \ingroup of_oxm_bsn_egr_port_group_id
+ */
+static inline void
+of_oxm_bsn_egr_port_group_id_delete(of_oxm_bsn_egr_port_group_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_egr_port_group_id_masked_t
+ * @param obj An instance of type of_oxm_bsn_egr_port_group_id_masked_t
+ *
+ * \ingroup of_oxm_bsn_egr_port_group_id_masked
+ */
+static inline void
+of_oxm_bsn_egr_port_group_id_masked_delete(of_oxm_bsn_egr_port_group_id_masked_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17071,6 +17107,31 @@ extern void of_oxm_arp_tpa_masked_value_mask_get(
     of_oxm_arp_tpa_masked_t *obj,
     uint32_t *value_mask);
 
+/* Unified accessor functions for of_oxm_bsn_egr_port_group_id */
+
+extern void of_oxm_bsn_egr_port_group_id_value_set(
+    of_oxm_bsn_egr_port_group_id_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_egr_port_group_id_value_get(
+    of_oxm_bsn_egr_port_group_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_egr_port_group_id_masked */
+
+extern void of_oxm_bsn_egr_port_group_id_masked_value_set(
+    of_oxm_bsn_egr_port_group_id_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_egr_port_group_id_masked_value_get(
+    of_oxm_bsn_egr_port_group_id_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_egr_port_group_id_masked_value_mask_set(
+    of_oxm_bsn_egr_port_group_id_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_egr_port_group_id_masked_value_mask_get(
+    of_oxm_bsn_egr_port_group_id_masked_t *obj,
+    uint32_t *value_mask);
+
 /* Unified accessor functions for of_oxm_bsn_global_vrf_allowed */
 
 extern void of_oxm_bsn_global_vrf_allowed_value_set(
@@ -19879,6 +19940,8 @@ union of_oxm_u {
     of_oxm_arp_tha_masked_t arp_tha_masked;
     of_oxm_arp_tpa_t arp_tpa;
     of_oxm_arp_tpa_masked_t arp_tpa_masked;
+    of_oxm_bsn_egr_port_group_id_t bsn_egr_port_group_id;
+    of_oxm_bsn_egr_port_group_id_masked_t bsn_egr_port_group_id_masked;
     of_oxm_bsn_global_vrf_allowed_t bsn_global_vrf_allowed;
     of_oxm_bsn_global_vrf_allowed_masked_t bsn_global_vrf_allowed_masked;
     of_oxm_bsn_in_ports_128_t bsn_in_ports_128;

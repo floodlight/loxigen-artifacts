@@ -12196,6 +12196,68 @@ test_of_oxm_arp_tpa_masked_OF_VERSION_1_2_scalar(void)
 }
 
 static int
+test_of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_bsn_egr_port_group_id_t *obj;
+
+    obj = of_oxm_bsn_egr_port_group_id_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_egr_port_group_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_bsn_egr_port_group_id_masked_t *obj;
+
+    obj = of_oxm_bsn_egr_port_group_id_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_egr_port_group_id_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_scalar(void)
 {
     of_oxm_bsn_global_vrf_allowed_t *obj;
@@ -23715,6 +23777,68 @@ test_of_oxm_arp_tpa_masked_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_bsn_egr_port_group_id_t *obj;
+
+    obj = of_oxm_bsn_egr_port_group_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_egr_port_group_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_bsn_egr_port_group_id_masked_t *obj;
+
+    obj = of_oxm_bsn_egr_port_group_id_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED);
+
+    if (obj->wire_length_get != NULL) {
+        int length;
+
+        obj->wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_egr_port_group_id_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_scalar(void)
 {
     of_oxm_bsn_global_vrf_allowed_t *obj;
@@ -28111,6 +28235,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_arp_tha_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_arp_tpa_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_arp_tpa_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_128_OF_VERSION_1_2_scalar);
@@ -28503,6 +28629,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_arp_tha_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_arp_tpa_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_arp_tpa_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_128_OF_VERSION_1_3_scalar);

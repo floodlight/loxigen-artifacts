@@ -342,6 +342,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_oxm_arp_tha_masked_init,
     (of_object_init_f)of_oxm_arp_tpa_init,
     (of_object_init_f)of_oxm_arp_tpa_masked_init,
+    (of_object_init_f)of_oxm_bsn_egr_port_group_id_init,
+    (of_object_init_f)of_oxm_bsn_egr_port_group_id_masked_init,
     (of_object_init_f)of_oxm_bsn_global_vrf_allowed_init,
     (of_object_init_f)of_oxm_bsn_global_vrf_allowed_masked_init,
     (of_object_init_f)of_oxm_bsn_in_ports_128_init,

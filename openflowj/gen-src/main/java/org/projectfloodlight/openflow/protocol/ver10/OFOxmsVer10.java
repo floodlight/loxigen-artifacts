@@ -101,6 +101,20 @@ public class OFOxmsVer10 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmArpTpaMasked not supported in version 1.0");
     }
 
+    public OFOxmBsnEgrPortGroupId.Builder buildBsnEgrPortGroupId() {
+        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupId not supported in version 1.0");
+    }
+    public OFOxmBsnEgrPortGroupId bsnEgrPortGroupId(ClassId value) {
+        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupId not supported in version 1.0");
+    }
+
+    public OFOxmBsnEgrPortGroupIdMasked.Builder buildBsnEgrPortGroupIdMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupIdMasked not supported in version 1.0");
+    }
+    public OFOxmBsnEgrPortGroupIdMasked bsnEgrPortGroupIdMasked(ClassId value, ClassId mask) {
+        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupIdMasked not supported in version 1.0");
+    }
+
     public OFOxmBsnGlobalVrfAllowed.Builder buildBsnGlobalVrfAllowed() {
         throw new UnsupportedOperationException("OFOxmBsnGlobalVrfAllowed not supported in version 1.0");
     }
@@ -650,6 +664,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)arpTha((MacAddress)((Object)value)));
             case ARP_TPA:
                 return (OFOxm<F>)((Object)arpTpa((IPv4Address)((Object)value)));
+            case BSN_EGR_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnEgrPortGroupId((ClassId)((Object)value)));
             case BSN_GLOBAL_VRF_ALLOWED:
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowed((OFBooleanValue)((Object)value)));
             case BSN_IN_PORTS_128:
@@ -744,6 +760,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)arpThaMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case ARP_TPA:
                 return (OFOxm<F>)((Object)arpTpaMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
+            case BSN_EGR_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnEgrPortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_GLOBAL_VRF_ALLOWED:
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowedMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_IN_PORTS_128:
@@ -838,6 +856,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)arpThaMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case ARP_TPA:
                 return (OFOxm<F>)((Object)arpTpaMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
+            case BSN_EGR_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnEgrPortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_GLOBAL_VRF_ALLOWED:
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowedMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_IN_PORTS_128:

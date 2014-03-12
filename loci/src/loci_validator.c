@@ -405,6 +405,8 @@ static inline int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_validate(uint8_t
 static inline int of_oxm_bsn_in_ports_128_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_arp_tpa_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_arp_tpa_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_arp_tha_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
@@ -692,6 +694,8 @@ static inline int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_validate(uint8_t
 static inline int of_oxm_bsn_in_ports_128_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_arp_tpa_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_arp_tpa_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_arp_tha_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -6494,6 +6498,28 @@ of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_egr_port_group_id_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_egr_port_group_id.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_oxm_arp_tpa_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -10855,6 +10881,28 @@ of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 5) {
         VALIDATOR_LOG("Class of_oxm_bsn_global_vrf_allowed.  Len %d too small, < %d", len, 5);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_egr_port_group_id_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_egr_port_group_id.  Len %d too small, < %d", len, 8);
         return -1;
     }
 

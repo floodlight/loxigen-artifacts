@@ -1334,6 +1334,14 @@ extern of_oxm_arp_tpa_masked_t *
     of_oxm_arp_tpa_masked_dup(
         of_oxm_arp_tpa_masked_t *src);
 
+extern of_oxm_bsn_egr_port_group_id_t *
+    of_oxm_bsn_egr_port_group_id_dup(
+        of_oxm_bsn_egr_port_group_id_t *src);
+
+extern of_oxm_bsn_egr_port_group_id_masked_t *
+    of_oxm_bsn_egr_port_group_id_masked_dup(
+        of_oxm_bsn_egr_port_group_id_masked_t *src);
+
 extern of_oxm_bsn_global_vrf_allowed_t *
     of_oxm_bsn_global_vrf_allowed_dup(
         of_oxm_bsn_global_vrf_allowed_t *src);
@@ -3678,6 +3686,14 @@ extern of_oxm_arp_tpa_masked_t *
     of_oxm_arp_tpa_masked_OF_VERSION_1_2_dup(
         of_oxm_arp_tpa_masked_t *src);
 
+extern of_oxm_bsn_egr_port_group_id_t *
+    of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_dup(
+        of_oxm_bsn_egr_port_group_id_t *src);
+
+extern of_oxm_bsn_egr_port_group_id_masked_t *
+    of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_egr_port_group_id_masked_t *src);
+
 extern of_oxm_bsn_global_vrf_allowed_t *
     of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(
         of_oxm_bsn_global_vrf_allowed_t *src);
@@ -5285,6 +5301,14 @@ extern of_oxm_arp_tpa_t *
 extern of_oxm_arp_tpa_masked_t *
     of_oxm_arp_tpa_masked_OF_VERSION_1_3_dup(
         of_oxm_arp_tpa_masked_t *src);
+
+extern of_oxm_bsn_egr_port_group_id_t *
+    of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(
+        of_oxm_bsn_egr_port_group_id_t *src);
+
+extern of_oxm_bsn_egr_port_group_id_masked_t *
+    of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_egr_port_group_id_masked_t *src);
 
 extern of_oxm_bsn_global_vrf_allowed_t *
     of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(

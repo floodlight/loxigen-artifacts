@@ -469,6 +469,8 @@ int of_oxm_arp_tha_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_ox
 int of_oxm_arp_tha_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_arp_tha_masked_t *obj);
 int of_oxm_arp_tpa_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_t *obj);
 int of_oxm_arp_tpa_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_masked_t *obj);
+int of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_t *obj);
+int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_masked_t *obj);
 int of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_t *obj);
 int of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_masked_t *obj);
 int of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_in_ports_128_t *obj);
@@ -861,6 +863,8 @@ int of_oxm_arp_tha_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_ox
 int of_oxm_arp_tha_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_arp_tha_masked_t *obj);
 int of_oxm_arp_tpa_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_t *obj);
 int of_oxm_arp_tpa_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_masked_t *obj);
+int of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_t *obj);
+int of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_masked_t *obj);
 int of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_t *obj);
 int of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_masked_t *obj);
 int of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_in_ports_128_t *obj);

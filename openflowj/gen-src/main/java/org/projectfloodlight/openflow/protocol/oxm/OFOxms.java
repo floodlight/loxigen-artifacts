@@ -47,6 +47,10 @@ public interface OFOxms {
     OFOxmArpTpa arpTpa(IPv4Address value);
     OFOxmArpTpaMasked.Builder buildArpTpaMasked() throws UnsupportedOperationException;
     OFOxmArpTpaMasked arpTpaMasked(IPv4Address value, IPv4Address mask);
+    OFOxmBsnEgrPortGroupId.Builder buildBsnEgrPortGroupId() throws UnsupportedOperationException;
+    OFOxmBsnEgrPortGroupId bsnEgrPortGroupId(ClassId value);
+    OFOxmBsnEgrPortGroupIdMasked.Builder buildBsnEgrPortGroupIdMasked() throws UnsupportedOperationException;
+    OFOxmBsnEgrPortGroupIdMasked bsnEgrPortGroupIdMasked(ClassId value, ClassId mask);
     OFOxmBsnGlobalVrfAllowed.Builder buildBsnGlobalVrfAllowed() throws UnsupportedOperationException;
     OFOxmBsnGlobalVrfAllowed bsnGlobalVrfAllowed(OFBooleanValue value);
     OFOxmBsnGlobalVrfAllowedMasked.Builder buildBsnGlobalVrfAllowedMasked() throws UnsupportedOperationException;
