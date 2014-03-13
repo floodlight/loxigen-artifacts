@@ -34,7 +34,7 @@ public interface OFAggregateStatsRequest extends OFObject, OFStatsRequest<OFAggr
     Set<OFStatsRequestFlags> getFlags();
     TableId getTableId();
     OFPort getOutPort();
-    long getOutGroup() throws UnsupportedOperationException;
+    OFGroup getOutGroup() throws UnsupportedOperationException;
     U64 getCookie() throws UnsupportedOperationException;
     U64 getCookieMask() throws UnsupportedOperationException;
     Match getMatch();
@@ -55,8 +55,8 @@ public interface OFAggregateStatsRequest extends OFObject, OFStatsRequest<OFAggr
         Builder setTableId(TableId tableId);
         OFPort getOutPort();
         Builder setOutPort(OFPort outPort);
-        long getOutGroup() throws UnsupportedOperationException;
-        Builder setOutGroup(long outGroup) throws UnsupportedOperationException;
+        OFGroup getOutGroup() throws UnsupportedOperationException;
+        Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException;
         U64 getCookie() throws UnsupportedOperationException;
         Builder setCookie(U64 cookie) throws UnsupportedOperationException;
         U64 getCookieMask() throws UnsupportedOperationException;

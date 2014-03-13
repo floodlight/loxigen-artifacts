@@ -1,1 +1,1 @@
-0ab7418dde3e00917b816fce5968c44d768a270d Merge into master from pull request #223: loci: fix bug in new wire type parsers (https://github.com/floodlight/loxigen/pull/223)
+fd2f04304448cf0505ea23aa326e83026993712e Merge into master from pull request #224: java_gen: make of_aggregate_stats_request.out_group type OFGroup (https://github.com/floodlight/loxigen/pull/224)

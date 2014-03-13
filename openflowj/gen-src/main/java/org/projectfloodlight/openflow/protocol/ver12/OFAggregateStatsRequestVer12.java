@@ -41,7 +41,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
         private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static OFPort DEFAULT_OUT_PORT = OFPort.ANY;
-        private final static long DEFAULT_OUT_GROUP = 0x0L;
+        private final static OFGroup DEFAULT_OUT_GROUP = OFGroup.ANY;
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_COOKIE_MASK = U64.ZERO;
         private final static Match DEFAULT_MATCH = OFFactoryVer12.MATCH_WILDCARD_ALL;
@@ -51,7 +51,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
     private final Set<OFStatsRequestFlags> flags;
     private final TableId tableId;
     private final OFPort outPort;
-    private final long outGroup;
+    private final OFGroup outGroup;
     private final U64 cookie;
     private final U64 cookieMask;
     private final Match match;
@@ -62,7 +62,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFAggregateStatsRequestVer12(long xid, Set<OFStatsRequestFlags> flags, TableId tableId, OFPort outPort, long outGroup, U64 cookie, U64 cookieMask, Match match) {
+    OFAggregateStatsRequestVer12(long xid, Set<OFStatsRequestFlags> flags, TableId tableId, OFPort outPort, OFGroup outGroup, U64 cookie, U64 cookieMask, Match match) {
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;
@@ -110,7 +110,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
     }
 
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
@@ -148,7 +148,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
         private boolean outPortSet;
         private OFPort outPort;
         private boolean outGroupSet;
-        private long outGroup;
+        private OFGroup outGroup;
         private boolean cookieSet;
         private U64 cookie;
         private boolean cookieMaskSet;
@@ -220,12 +220,12 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
     @Override
-    public OFAggregateStatsRequest.Builder setOutGroup(long outGroup) {
+    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) {
         this.outGroup = outGroup;
         this.outGroupSet = true;
         return this;
@@ -277,7 +277,9 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
                 OFPort outPort = this.outPortSet ? this.outPort : parentMessage.outPort;
                 if(outPort == null)
                     throw new NullPointerException("Property outPort must not be null");
-                long outGroup = this.outGroupSet ? this.outGroup : parentMessage.outGroup;
+                OFGroup outGroup = this.outGroupSet ? this.outGroup : parentMessage.outGroup;
+                if(outGroup == null)
+                    throw new NullPointerException("Property outGroup must not be null");
                 U64 cookie = this.cookieSet ? this.cookie : parentMessage.cookie;
                 if(cookie == null)
                     throw new NullPointerException("Property cookie must not be null");
@@ -314,7 +316,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
         private boolean outPortSet;
         private OFPort outPort;
         private boolean outGroupSet;
-        private long outGroup;
+        private OFGroup outGroup;
         private boolean cookieSet;
         private U64 cookie;
         private boolean cookieMaskSet;
@@ -382,12 +384,12 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
-    public long getOutGroup() {
+    public OFGroup getOutGroup() {
         return outGroup;
     }
 
     @Override
-    public OFAggregateStatsRequest.Builder setOutGroup(long outGroup) {
+    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) {
         this.outGroup = outGroup;
         this.outGroupSet = true;
         return this;
@@ -438,7 +440,9 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
             OFPort outPort = this.outPortSet ? this.outPort : DEFAULT_OUT_PORT;
             if(outPort == null)
                 throw new NullPointerException("Property outPort must not be null");
-            long outGroup = this.outGroupSet ? this.outGroup : DEFAULT_OUT_GROUP;
+            OFGroup outGroup = this.outGroupSet ? this.outGroup : DEFAULT_OUT_GROUP;
+            if(outGroup == null)
+                throw new NullPointerException("Property outGroup must not be null");
             U64 cookie = this.cookieSet ? this.cookie : DEFAULT_COOKIE;
             if(cookie == null)
                 throw new NullPointerException("Property cookie must not be null");
@@ -500,7 +504,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
             // pad: 3 bytes
             bb.skipBytes(3);
             OFPort outPort = OFPort.read4Bytes(bb);
-            long outGroup = U32.f(bb.readInt());
+            OFGroup outGroup = OFGroup.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
@@ -545,7 +549,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
             message.tableId.putTo(sink);
             // skip pad (3 bytes)
             message.outPort.putTo(sink);
-            sink.putLong(message.outGroup);
+            message.outGroup.putTo(sink);
             // skip pad (4 bytes)
             message.cookie.putTo(sink);
             message.cookieMask.putTo(sink);
@@ -581,7 +585,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
             // pad: 3 bytes
             bb.writeZero(3);
             message.outPort.write4Bytes(bb);
-            bb.writeInt(U32.t(message.outGroup));
+            message.outGroup.write4Bytes(bb);
             // pad: 4 bytes
             bb.writeZero(4);
             bb.writeLong(message.cookie.getValue());
@@ -644,7 +648,10 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
                 return false;
         } else if (!outPort.equals(other.outPort))
             return false;
-        if( outGroup != other.outGroup)
+        if (outGroup == null) {
+            if (other.outGroup != null)
+                return false;
+        } else if (!outGroup.equals(other.outGroup))
             return false;
         if (cookie == null) {
             if (other.cookie != null)
@@ -673,7 +680,7 @@ class OFAggregateStatsRequestVer12 implements OFAggregateStatsRequest {
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime * result + ((outPort == null) ? 0 : outPort.hashCode());
-        result = prime *  (int) (outGroup ^ (outGroup >>> 32));
+        result = prime * result + ((outGroup == null) ? 0 : outGroup.hashCode());
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((cookieMask == null) ? 0 : cookieMask.hashCode());
         result = prime * result + ((match == null) ? 0 : match.hashCode());

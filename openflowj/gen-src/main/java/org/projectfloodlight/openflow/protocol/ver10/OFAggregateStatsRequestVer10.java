@@ -101,7 +101,7 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
     }
 
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
@@ -205,12 +205,12 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFAggregateStatsRequest.Builder setOutGroup(long outGroup) throws UnsupportedOperationException {
+    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
@@ -345,12 +345,12 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
         return this;
     }
     @Override
-    public long getOutGroup()throws UnsupportedOperationException {
+    public OFGroup getOutGroup()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
 
     @Override
-    public OFAggregateStatsRequest.Builder setOutGroup(long outGroup) throws UnsupportedOperationException {
+    public OFAggregateStatsRequest.Builder setOutGroup(OFGroup outGroup) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property outGroup not supported in version 1.0");
     }
     @Override
