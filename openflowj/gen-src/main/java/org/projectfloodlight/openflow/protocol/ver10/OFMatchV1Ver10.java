@@ -1188,11 +1188,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                     wildcards &= ~OFPFW_DL_TYPE;
                     break;
                 case ICMPV4_CODE:
-                    setTcpDst((TransportPort) value);
+                    setTcpDst(TransportPort.of(((ICMPv4Code)value).getCode()));
                     wildcards &= ~OFPFW_TP_DST;
                     break;
                 case ICMPV4_TYPE:
-                    setTcpSrc((TransportPort) value);
+                    setTcpSrc(TransportPort.of(((ICMPv4Type)value).getType()));
                     wildcards &= ~OFPFW_TP_SRC;
                     break;
                 case IN_PORT:
@@ -1977,11 +1977,11 @@ class OFMatchV1Ver10 implements OFMatchV1 {
                     wildcards &= ~OFPFW_DL_TYPE;
                     break;
                 case ICMPV4_CODE:
-                    setTcpDst((TransportPort) value);
+                    setTcpDst(TransportPort.of(((ICMPv4Code)value).getCode()));
                     wildcards &= ~OFPFW_TP_DST;
                     break;
                 case ICMPV4_TYPE:
-                    setTcpSrc((TransportPort) value);
+                    setTcpSrc(TransportPort.of(((ICMPv4Type)value).getType()));
                     wildcards &= ~OFPFW_TP_SRC;
                     break;
                 case IN_PORT:

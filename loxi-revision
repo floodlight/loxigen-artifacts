@@ -1,1 +1,1 @@
-21edcd566433c1624b469aa10671b453bc9aa202 Merge into master from pull request #227: ArpOpcode is updated to add toString() (https://github.com/floodlight/loxigen/pull/227)
+28facb20a27a5118ece1de1463eee9c54e68e19c Merge into master from pull request #226: ICMPv4Type and ICMPv4Code cannot be converted into TransportPort. Thus, ... (https://github.com/floodlight/loxigen/pull/226)
