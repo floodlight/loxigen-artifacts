@@ -1,1 +1,1 @@
-fd2f04304448cf0505ea23aa326e83026993712e Merge into master from pull request #224: java_gen: make of_aggregate_stats_request.out_group type OFGroup (https://github.com/floodlight/loxigen/pull/224)
+21edcd566433c1624b469aa10671b453bc9aa202 Merge into master from pull request #227: ArpOpcode is updated to add toString() (https://github.com/floodlight/loxigen/pull/227)
