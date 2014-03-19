@@ -1,1 +1,1 @@
-28facb20a27a5118ece1de1463eee9c54e68e19c Merge into master from pull request #226: ICMPv4Type and ICMPv4Code cannot be converted into TransportPort. Thus, ... (https://github.com/floodlight/loxigen/pull/226)
+8c9f6021ef426d84d2fa2dd49b65c9ab6c447b67 Merge into master from pull request #229: openflow_input: add bsn_packet_of_death extension (https://github.com/floodlight/loxigen/pull/229)

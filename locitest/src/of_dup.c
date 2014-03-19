@@ -28538,6 +28538,11 @@ of_instruction_OF_VERSION_1_3_dup(
             &src->bsn_dhcp_offload);
     }
 
+    if (src->header.object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
+        return (of_instruction_t *)of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(
+            &src->bsn_packet_of_death);
+    }
+
     if (src->header.object_id == OF_INSTRUCTION_GOTO_TABLE) {
         return (of_instruction_t *)of_instruction_goto_table_OF_VERSION_1_3_dup(
             &src->goto_table);
@@ -28754,6 +28759,34 @@ of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_instruction_bsn_packet_of_death
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_packet_of_death.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_packet_of_death_t *
+of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(
+    of_instruction_bsn_packet_of_death_t *src)
+{
+    of_instruction_bsn_packet_of_death_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_packet_of_death_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_packet_of_death_experimenter_get(src, &val32);
+    of_instruction_bsn_packet_of_death_experimenter_set(dst, val32);
+
+    of_instruction_bsn_packet_of_death_subtype_get(src, &val32);
+    of_instruction_bsn_packet_of_death_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_instruction_bsn_permit
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -28947,6 +28980,11 @@ of_instruction_id_OF_VERSION_1_3_dup(
     if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
         return (of_instruction_id_t *)of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
             &src->bsn_dhcp_offload);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(
+            &src->bsn_packet_of_death);
     }
 
     if (src->header.object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
@@ -29147,6 +29185,34 @@ of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_disable_src_mac_check_subtype_get(src, &val32);
     of_instruction_id_bsn_disable_src_mac_check_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_packet_of_death
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_packet_of_death.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_packet_of_death_t *
+of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_packet_of_death_t *src)
+{
+    of_instruction_id_bsn_packet_of_death_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_packet_of_death_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_packet_of_death_experimenter_get(src, &val32);
+    of_instruction_id_bsn_packet_of_death_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_packet_of_death_subtype_get(src, &val32);
+    of_instruction_id_bsn_packet_of_death_subtype_set(dst, val32);
 
     return dst;
 }
@@ -40115,6 +40181,19 @@ of_instruction_bsn_disable_src_mac_check_dup(
     return NULL;
 }
 
+of_instruction_bsn_packet_of_death_t *
+of_instruction_bsn_packet_of_death_dup(
+    of_instruction_bsn_packet_of_death_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_instruction_bsn_permit_t *
 of_instruction_bsn_permit_dup(
     of_instruction_bsn_permit_t *src)
@@ -40310,6 +40389,19 @@ of_instruction_id_bsn_disable_src_mac_check_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_packet_of_death_t *
+of_instruction_id_bsn_packet_of_death_dup(
+    of_instruction_id_bsn_packet_of_death_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

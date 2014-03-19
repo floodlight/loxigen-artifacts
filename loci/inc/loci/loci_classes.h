@@ -385,6 +385,8 @@ void of_instruction_bsn_disable_split_horizon_check_wire_object_id_get(of_object
 void of_instruction_id_bsn_disable_split_horizon_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_bsn_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_bsn_disable_src_mac_check_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_bsn_packet_of_death_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_id_bsn_packet_of_death_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_bsn_permit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_bsn_permit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_clear_actions_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -728,6 +730,7 @@ typedef of_object_t of_instruction_bsn_deny_t;
 typedef of_object_t of_instruction_bsn_dhcp_offload_t;
 typedef of_object_t of_instruction_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_bsn_disable_src_mac_check_t;
+typedef of_object_t of_instruction_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_bsn_permit_t;
 typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
@@ -740,6 +743,7 @@ typedef of_object_t of_instruction_id_bsn_deny_t;
 typedef of_object_t of_instruction_id_bsn_dhcp_offload_t;
 typedef of_object_t of_instruction_id_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
+typedef of_object_t of_instruction_id_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_id_bsn_permit_t;
 typedef of_object_t of_instruction_id_clear_actions_t;
 typedef of_object_t of_instruction_id_experimenter_t;
@@ -2704,6 +2708,11 @@ extern of_instruction_bsn_disable_src_mac_check_t *
 extern void of_instruction_bsn_disable_src_mac_check_init(
     of_instruction_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_bsn_packet_of_death_t *
+    of_instruction_bsn_packet_of_death_new(of_version_t version);
+extern void of_instruction_bsn_packet_of_death_init(
+    of_instruction_bsn_packet_of_death_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_bsn_permit_t *
     of_instruction_bsn_permit_new(of_version_t version);
 extern void of_instruction_bsn_permit_init(
@@ -2768,6 +2777,11 @@ extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_new(of_version_t version);
 extern void of_instruction_id_bsn_disable_src_mac_check_init(
     of_instruction_id_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_packet_of_death_t *
+    of_instruction_id_bsn_packet_of_death_new(of_version_t version);
+extern void of_instruction_id_bsn_packet_of_death_init(
+    of_instruction_id_bsn_packet_of_death_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_id_bsn_permit_t *
     of_instruction_id_bsn_permit_new(of_version_t version);
@@ -6810,6 +6824,17 @@ of_instruction_bsn_disable_src_mac_check_delete(of_instruction_bsn_disable_src_m
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_packet_of_death_t
+ * @param obj An instance of type of_instruction_bsn_packet_of_death_t
+ *
+ * \ingroup of_instruction_bsn_packet_of_death
+ */
+static inline void
+of_instruction_bsn_packet_of_death_delete(of_instruction_bsn_packet_of_death_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_bsn_permit_t
  * @param obj An instance of type of_instruction_bsn_permit_t
  *
@@ -6949,6 +6974,17 @@ of_instruction_id_bsn_disable_split_horizon_check_delete(of_instruction_id_bsn_d
  */
 static inline void
 of_instruction_id_bsn_disable_src_mac_check_delete(of_instruction_id_bsn_disable_src_mac_check_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_packet_of_death_t
+ * @param obj An instance of type of_instruction_id_bsn_packet_of_death_t
+ *
+ * \ingroup of_instruction_id_bsn_packet_of_death
+ */
+static inline void
+of_instruction_id_bsn_packet_of_death_delete(of_instruction_id_bsn_packet_of_death_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -16318,6 +16354,22 @@ extern void of_instruction_bsn_disable_src_mac_check_subtype_get(
     of_instruction_bsn_disable_src_mac_check_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_bsn_packet_of_death */
+
+extern void of_instruction_bsn_packet_of_death_experimenter_set(
+    of_instruction_bsn_packet_of_death_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_packet_of_death_experimenter_get(
+    of_instruction_bsn_packet_of_death_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_packet_of_death_subtype_set(
+    of_instruction_bsn_packet_of_death_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_packet_of_death_subtype_get(
+    of_instruction_bsn_packet_of_death_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_bsn_permit */
 
 extern void of_instruction_bsn_permit_experimenter_set(
@@ -16459,6 +16511,22 @@ extern void of_instruction_id_bsn_disable_src_mac_check_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_disable_src_mac_check_subtype_get(
     of_instruction_id_bsn_disable_src_mac_check_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_packet_of_death */
+
+extern void of_instruction_id_bsn_packet_of_death_experimenter_set(
+    of_instruction_id_bsn_packet_of_death_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_packet_of_death_experimenter_get(
+    of_instruction_id_bsn_packet_of_death_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_packet_of_death_subtype_set(
+    of_instruction_id_bsn_packet_of_death_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_packet_of_death_subtype_get(
+    of_instruction_id_bsn_packet_of_death_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_bsn_permit */
@@ -19809,6 +19877,7 @@ union of_instruction_u {
     of_instruction_bsn_dhcp_offload_t bsn_dhcp_offload;
     of_instruction_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
     of_instruction_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
+    of_instruction_bsn_packet_of_death_t bsn_packet_of_death;
     of_instruction_bsn_permit_t bsn_permit;
     of_instruction_clear_actions_t clear_actions;
     of_instruction_experimenter_t experimenter;
@@ -19862,6 +19931,7 @@ union of_instruction_id_u {
     of_instruction_id_bsn_dhcp_offload_t bsn_dhcp_offload;
     of_instruction_id_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
     of_instruction_id_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
+    of_instruction_id_bsn_packet_of_death_t bsn_packet_of_death;
     of_instruction_id_bsn_permit_t bsn_permit;
     of_instruction_id_clear_actions_t clear_actions;
     of_instruction_id_experimenter_t experimenter;

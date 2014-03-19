@@ -6028,6 +6028,14 @@ fields['of13.instruction_id_bsn_disable_src_mac_check.type'] = ProtoField.uint16
 fields['of13.instruction_id_bsn_disable_src_mac_check.len'] = ProtoField.uint16("of13.instruction_id_bsn_disable_src_mac_check.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_src_mac_check.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_disable_src_mac_check.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_src_mac_check.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_disable_src_mac_check.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_packet_of_death.type'] = ProtoField.uint16("of13.instruction_bsn_packet_of_death.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_packet_of_death.len'] = ProtoField.uint16("of13.instruction_bsn_packet_of_death.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of13.instruction_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_packet_of_death.subtype'] = ProtoField.uint32("of13.instruction_bsn_packet_of_death.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_packet_of_death.type'] = ProtoField.uint16("of13.instruction_id_bsn_packet_of_death.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_packet_of_death.len'] = ProtoField.uint16("of13.instruction_id_bsn_packet_of_death.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_packet_of_death.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_packet_of_death.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_bsn_permit.type'] = ProtoField.uint16("of13.instruction_bsn_permit.type", "type", base.DEC, nil)
 fields['of13.instruction_bsn_permit.len'] = ProtoField.uint16("of13.instruction_bsn_permit.len", "len", base.DEC, nil)
 fields['of13.instruction_bsn_permit.experimenter'] = ProtoField.uint32("of13.instruction_bsn_permit.experimenter", "experimenter", base.DEC, nil)
@@ -10974,6 +10982,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_disable_src_mac_check.len'],
     fields['of13.instruction_id_bsn_disable_src_mac_check.experimenter'],
     fields['of13.instruction_id_bsn_disable_src_mac_check.subtype'],
+    fields['of13.instruction_bsn_packet_of_death.type'],
+    fields['of13.instruction_bsn_packet_of_death.len'],
+    fields['of13.instruction_bsn_packet_of_death.experimenter'],
+    fields['of13.instruction_bsn_packet_of_death.subtype'],
+    fields['of13.instruction_id_bsn_packet_of_death.type'],
+    fields['of13.instruction_id_bsn_packet_of_death.len'],
+    fields['of13.instruction_id_bsn_packet_of_death.experimenter'],
+    fields['of13.instruction_id_bsn_packet_of_death.subtype'],
     fields['of13.instruction_bsn_permit.type'],
     fields['of13.instruction_bsn_permit.len'],
     fields['of13.instruction_bsn_permit.experimenter'],
@@ -21273,6 +21289,29 @@ function dissect_of_instruction_id_bsn_disable_src_mac_check_v4(reader, subtree)
     return 'of_instruction_id_bsn_disable_src_mac_check'
 end
 of_instruction_id_bsn_v4_dissectors[0] = dissect_of_instruction_id_bsn_disable_src_mac_check_v4
+
+-- child class of_instruction_bsn_packet_of_death
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_packet_of_death_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_packet_of_death.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_packet_of_death.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_packet_of_death.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_packet_of_death.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_packet_of_death'
+end
+of_instruction_bsn_v4_dissectors[6] = dissect_of_instruction_bsn_packet_of_death_v4
+
+-- child class of_instruction_id_bsn_packet_of_death
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_packet_of_death_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_packet_of_death.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_packet_of_death.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_packet_of_death.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_packet_of_death.subtype')
+    return 'of_instruction_id_bsn_packet_of_death'
+end
+of_instruction_id_bsn_v4_dissectors[6] = dissect_of_instruction_id_bsn_packet_of_death_v4
 
 -- child class of_instruction_bsn_permit
 -- Child of of_instruction_bsn

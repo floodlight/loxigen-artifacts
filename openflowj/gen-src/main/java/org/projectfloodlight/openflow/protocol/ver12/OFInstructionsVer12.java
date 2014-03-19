@@ -93,6 +93,10 @@ public class OFInstructionsVer12 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.2");
     }
 
+    public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
+        throw new UnsupportedOperationException("OFInstructionBsnPacketOfDeath not supported in version 1.2");
+    }
+
     public OFInstructionBsnPermit bsnPermit() {
         throw new UnsupportedOperationException("OFInstructionBsnPermit not supported in version 1.2");
     }

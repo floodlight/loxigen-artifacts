@@ -93,6 +93,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnDisableSrcMacCheckVer13.INSTANCE;
     }
 
+    public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
+        return OFInstructionBsnPacketOfDeathVer13.INSTANCE;
+    }
+
     public OFInstructionBsnPermit bsnPermit() {
         return OFInstructionBsnPermitVer13.INSTANCE;
     }

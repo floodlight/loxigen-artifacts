@@ -42,6 +42,7 @@ public interface OFInstructions {
     OFInstructionBsnDhcpOffload bsnDhcpOffload();
     OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
+    OFInstructionBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionBsnPermit bsnPermit();
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);

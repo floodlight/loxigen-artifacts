@@ -5796,6 +5796,21 @@ typedef struct of_instruction_bsn_disable_split_horizon_check_s of_instruction_b
 typedef struct of_instruction_bsn_disable_src_mac_check_s of_instruction_bsn_disable_src_mac_check_t;
 
 /**
+ * Structure for of_instruction_bsn_packet_of_death object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_packet_of_death_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_packet_of_death_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_packet_of_death_s of_instruction_bsn_packet_of_death_t;
+
+/**
  * Structure for of_instruction_bsn_permit object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5953,6 +5968,21 @@ typedef struct of_instruction_id_bsn_disable_split_horizon_check_s of_instructio
  *
  */
 typedef struct of_instruction_id_bsn_disable_src_mac_check_s of_instruction_id_bsn_disable_src_mac_check_t;
+
+/**
+ * Structure for of_instruction_id_bsn_packet_of_death object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_packet_of_death_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_packet_of_death_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_packet_of_death_s of_instruction_id_bsn_packet_of_death_t;
 
 /**
  * Structure for of_instruction_id_bsn_permit object.  Get/set

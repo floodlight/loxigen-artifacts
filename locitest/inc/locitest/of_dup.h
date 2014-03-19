@@ -1146,6 +1146,10 @@ extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_dup(
         of_instruction_bsn_disable_src_mac_check_t *src);
 
+extern of_instruction_bsn_packet_of_death_t *
+    of_instruction_bsn_packet_of_death_dup(
+        of_instruction_bsn_packet_of_death_t *src);
+
 extern of_instruction_bsn_permit_t *
     of_instruction_bsn_permit_dup(
         of_instruction_bsn_permit_t *src);
@@ -1197,6 +1201,10 @@ extern of_instruction_id_bsn_disable_split_horizon_check_t *
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_dup(
         of_instruction_id_bsn_disable_src_mac_check_t *src);
+
+extern of_instruction_id_bsn_packet_of_death_t *
+    of_instruction_id_bsn_packet_of_death_dup(
+        of_instruction_id_bsn_packet_of_death_t *src);
 
 extern of_instruction_id_bsn_permit_t *
     of_instruction_id_bsn_permit_dup(
@@ -5122,6 +5130,10 @@ extern of_instruction_bsn_disable_src_mac_check_t *
     of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
         of_instruction_bsn_disable_src_mac_check_t *src);
 
+extern of_instruction_bsn_packet_of_death_t *
+    of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(
+        of_instruction_bsn_packet_of_death_t *src);
+
 extern of_instruction_bsn_permit_t *
     of_instruction_bsn_permit_OF_VERSION_1_3_dup(
         of_instruction_bsn_permit_t *src);
@@ -5173,6 +5185,10 @@ extern of_instruction_id_bsn_disable_split_horizon_check_t *
 extern of_instruction_id_bsn_disable_src_mac_check_t *
     of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_disable_src_mac_check_t *src);
+
+extern of_instruction_id_bsn_packet_of_death_t *
+    of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_packet_of_death_t *src);
 
 extern of_instruction_id_bsn_permit_t *
     of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(

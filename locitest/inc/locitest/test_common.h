@@ -7080,6 +7080,15 @@ extern int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_populate_scal
 extern int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_disable_src_mac_check_t *obj, int value);
 
+extern int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_populate(
+    of_instruction_bsn_packet_of_death_t *obj, int value);
+extern int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_check(
+    of_instruction_bsn_packet_of_death_t *obj, int value);
+extern int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_packet_of_death_t *obj, int value);
+extern int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_packet_of_death_t *obj, int value);
+
 extern int of_instruction_bsn_permit_OF_VERSION_1_3_populate(
     of_instruction_bsn_permit_t *obj, int value);
 extern int of_instruction_bsn_permit_OF_VERSION_1_3_check(
@@ -7187,6 +7196,15 @@ extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_populate_s
     of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
 extern int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_disable_src_mac_check_t *obj, int value);
+
+extern int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_packet_of_death_t *obj, int value);
+extern int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_packet_of_death_t *obj, int value);
+extern int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_packet_of_death_t *obj, int value);
+extern int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_packet_of_death_t *obj, int value);
 
 extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_populate(
     of_instruction_id_bsn_permit_t *obj, int value);

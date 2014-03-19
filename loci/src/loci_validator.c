@@ -726,6 +726,7 @@ static inline int of_instruction_id_goto_table_OF_VERSION_1_3_validate(uint8_t *
 static inline int of_instruction_id_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_clear_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_permit_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -738,6 +739,7 @@ static inline int of_instruction_goto_table_OF_VERSION_1_3_validate(uint8_t *buf
 static inline int of_instruction_experimenter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_clear_actions_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_permit_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -8896,6 +8898,11 @@ of_list_instruction_id_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH:
+            if (of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_INSTRUCTION_ID_WRITE_METADATA:
             if (of_instruction_id_write_metadata_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -8986,6 +8993,11 @@ of_list_instruction_OF_VERSION_1_3_validate(uint8_t *buf, int len)
             break;
         case OF_INSTRUCTION_BSN_DHCP_OFFLOAD:
             if (of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_INSTRUCTION_BSN_PACKET_OF_DEATH:
+            if (of_instruction_bsn_packet_of_death_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -11276,6 +11288,17 @@ of_instruction_id_bsn_permit_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_instruction_id_bsn_packet_of_death.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -11401,6 +11424,17 @@ of_instruction_bsn_permit_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 16) {
         VALIDATOR_LOG("Class of_instruction_bsn_permit.  Len %d too small, < %d", len, 16);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_instruction_bsn_packet_of_death_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 16) {
+        VALIDATOR_LOG("Class of_instruction_bsn_packet_of_death.  Len %d too small, < %d", len, 16);
         return -1;
     }
 
