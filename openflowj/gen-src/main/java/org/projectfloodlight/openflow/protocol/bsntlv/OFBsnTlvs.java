@@ -52,6 +52,14 @@ public interface OFBsnTlvs {
     OFBsnTlvRxPackets rxPackets(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;
     OFBsnTlvTxPackets txPackets(U64 value);
+    OFBsnTlvUdfAnchor.Builder buildUdfAnchor() throws UnsupportedOperationException;
+    OFBsnTlvUdfAnchor udfAnchor(OFBsnUdfAnchor value);
+    OFBsnTlvUdfId.Builder buildUdfId() throws UnsupportedOperationException;
+    OFBsnTlvUdfId udfId(int value);
+    OFBsnTlvUdfLength.Builder buildUdfLength() throws UnsupportedOperationException;
+    OFBsnTlvUdfLength udfLength(int value);
+    OFBsnTlvUdfOffset.Builder buildUdfOffset() throws UnsupportedOperationException;
+    OFBsnTlvUdfOffset udfOffset(int value);
     OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;

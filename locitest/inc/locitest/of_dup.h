@@ -1054,6 +1054,22 @@ extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_dup(
         of_bsn_tlv_tx_packets_t *src);
 
+extern of_bsn_tlv_udf_anchor_t *
+    of_bsn_tlv_udf_anchor_dup(
+        of_bsn_tlv_udf_anchor_t *src);
+
+extern of_bsn_tlv_udf_id_t *
+    of_bsn_tlv_udf_id_dup(
+        of_bsn_tlv_udf_id_t *src);
+
+extern of_bsn_tlv_udf_length_t *
+    of_bsn_tlv_udf_length_dup(
+        of_bsn_tlv_udf_length_t *src);
+
+extern of_bsn_tlv_udf_offset_t *
+    of_bsn_tlv_udf_offset_dup(
+        of_bsn_tlv_udf_offset_t *src);
+
 extern of_bsn_tlv_unicast_query_timeout_t *
     of_bsn_tlv_unicast_query_timeout_dup(
         of_bsn_tlv_unicast_query_timeout_t *src);
@@ -1397,6 +1413,70 @@ extern of_oxm_bsn_lag_id_t *
 extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_dup(
         of_oxm_bsn_lag_id_masked_t *src);
+
+extern of_oxm_bsn_udf0_t *
+    of_oxm_bsn_udf0_dup(
+        of_oxm_bsn_udf0_t *src);
+
+extern of_oxm_bsn_udf0_masked_t *
+    of_oxm_bsn_udf0_masked_dup(
+        of_oxm_bsn_udf0_masked_t *src);
+
+extern of_oxm_bsn_udf1_t *
+    of_oxm_bsn_udf1_dup(
+        of_oxm_bsn_udf1_t *src);
+
+extern of_oxm_bsn_udf1_masked_t *
+    of_oxm_bsn_udf1_masked_dup(
+        of_oxm_bsn_udf1_masked_t *src);
+
+extern of_oxm_bsn_udf2_t *
+    of_oxm_bsn_udf2_dup(
+        of_oxm_bsn_udf2_t *src);
+
+extern of_oxm_bsn_udf2_masked_t *
+    of_oxm_bsn_udf2_masked_dup(
+        of_oxm_bsn_udf2_masked_t *src);
+
+extern of_oxm_bsn_udf3_t *
+    of_oxm_bsn_udf3_dup(
+        of_oxm_bsn_udf3_t *src);
+
+extern of_oxm_bsn_udf3_masked_t *
+    of_oxm_bsn_udf3_masked_dup(
+        of_oxm_bsn_udf3_masked_t *src);
+
+extern of_oxm_bsn_udf4_t *
+    of_oxm_bsn_udf4_dup(
+        of_oxm_bsn_udf4_t *src);
+
+extern of_oxm_bsn_udf4_masked_t *
+    of_oxm_bsn_udf4_masked_dup(
+        of_oxm_bsn_udf4_masked_t *src);
+
+extern of_oxm_bsn_udf5_t *
+    of_oxm_bsn_udf5_dup(
+        of_oxm_bsn_udf5_t *src);
+
+extern of_oxm_bsn_udf5_masked_t *
+    of_oxm_bsn_udf5_masked_dup(
+        of_oxm_bsn_udf5_masked_t *src);
+
+extern of_oxm_bsn_udf6_t *
+    of_oxm_bsn_udf6_dup(
+        of_oxm_bsn_udf6_t *src);
+
+extern of_oxm_bsn_udf6_masked_t *
+    of_oxm_bsn_udf6_masked_dup(
+        of_oxm_bsn_udf6_masked_t *src);
+
+extern of_oxm_bsn_udf7_t *
+    of_oxm_bsn_udf7_dup(
+        of_oxm_bsn_udf7_t *src);
+
+extern of_oxm_bsn_udf7_masked_t *
+    of_oxm_bsn_udf7_masked_dup(
+        of_oxm_bsn_udf7_masked_t *src);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_dup(
@@ -3750,6 +3830,70 @@ extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dup(
         of_oxm_bsn_lag_id_masked_t *src);
 
+extern of_oxm_bsn_udf0_t *
+    of_oxm_bsn_udf0_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf0_t *src);
+
+extern of_oxm_bsn_udf0_masked_t *
+    of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf0_masked_t *src);
+
+extern of_oxm_bsn_udf1_t *
+    of_oxm_bsn_udf1_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf1_t *src);
+
+extern of_oxm_bsn_udf1_masked_t *
+    of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf1_masked_t *src);
+
+extern of_oxm_bsn_udf2_t *
+    of_oxm_bsn_udf2_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf2_t *src);
+
+extern of_oxm_bsn_udf2_masked_t *
+    of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf2_masked_t *src);
+
+extern of_oxm_bsn_udf3_t *
+    of_oxm_bsn_udf3_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf3_t *src);
+
+extern of_oxm_bsn_udf3_masked_t *
+    of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf3_masked_t *src);
+
+extern of_oxm_bsn_udf4_t *
+    of_oxm_bsn_udf4_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf4_t *src);
+
+extern of_oxm_bsn_udf4_masked_t *
+    of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf4_masked_t *src);
+
+extern of_oxm_bsn_udf5_t *
+    of_oxm_bsn_udf5_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf5_t *src);
+
+extern of_oxm_bsn_udf5_masked_t *
+    of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf5_masked_t *src);
+
+extern of_oxm_bsn_udf6_t *
+    of_oxm_bsn_udf6_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf6_t *src);
+
+extern of_oxm_bsn_udf6_masked_t *
+    of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf6_masked_t *src);
+
+extern of_oxm_bsn_udf7_t *
+    of_oxm_bsn_udf7_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf7_t *src);
+
+extern of_oxm_bsn_udf7_masked_t *
+    of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_udf7_masked_t *src);
+
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_OF_VERSION_1_2_dup(
         of_oxm_bsn_vrf_t *src);
@@ -5038,6 +5182,22 @@ extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
         of_bsn_tlv_tx_packets_t *src);
 
+extern of_bsn_tlv_udf_anchor_t *
+    of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(
+        of_bsn_tlv_udf_anchor_t *src);
+
+extern of_bsn_tlv_udf_id_t *
+    of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(
+        of_bsn_tlv_udf_id_t *src);
+
+extern of_bsn_tlv_udf_length_t *
+    of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(
+        of_bsn_tlv_udf_length_t *src);
+
+extern of_bsn_tlv_udf_offset_t *
+    of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(
+        of_bsn_tlv_udf_offset_t *src);
+
 extern of_bsn_tlv_unicast_query_timeout_t *
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
         of_bsn_tlv_unicast_query_timeout_t *src);
@@ -5373,6 +5533,70 @@ extern of_oxm_bsn_lag_id_t *
 extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dup(
         of_oxm_bsn_lag_id_masked_t *src);
+
+extern of_oxm_bsn_udf0_t *
+    of_oxm_bsn_udf0_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf0_t *src);
+
+extern of_oxm_bsn_udf0_masked_t *
+    of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf0_masked_t *src);
+
+extern of_oxm_bsn_udf1_t *
+    of_oxm_bsn_udf1_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf1_t *src);
+
+extern of_oxm_bsn_udf1_masked_t *
+    of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf1_masked_t *src);
+
+extern of_oxm_bsn_udf2_t *
+    of_oxm_bsn_udf2_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf2_t *src);
+
+extern of_oxm_bsn_udf2_masked_t *
+    of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf2_masked_t *src);
+
+extern of_oxm_bsn_udf3_t *
+    of_oxm_bsn_udf3_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf3_t *src);
+
+extern of_oxm_bsn_udf3_masked_t *
+    of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf3_masked_t *src);
+
+extern of_oxm_bsn_udf4_t *
+    of_oxm_bsn_udf4_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf4_t *src);
+
+extern of_oxm_bsn_udf4_masked_t *
+    of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf4_masked_t *src);
+
+extern of_oxm_bsn_udf5_t *
+    of_oxm_bsn_udf5_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf5_t *src);
+
+extern of_oxm_bsn_udf5_masked_t *
+    of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf5_masked_t *src);
+
+extern of_oxm_bsn_udf6_t *
+    of_oxm_bsn_udf6_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf6_t *src);
+
+extern of_oxm_bsn_udf6_masked_t *
+    of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf6_masked_t *src);
+
+extern of_oxm_bsn_udf7_t *
+    of_oxm_bsn_udf7_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf7_t *src);
+
+extern of_oxm_bsn_udf7_masked_t *
+    of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_udf7_masked_t *src);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_OF_VERSION_1_3_dup(

@@ -259,6 +259,158 @@ public class OFOxmsVer12 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnUdf0.Builder buildBsnUdf0() {
+        return new OFOxmBsnUdf0Ver12.Builder();
+    }
+    public OFOxmBsnUdf0 bsnUdf0(UDF value) {
+        return new OFOxmBsnUdf0Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf0Masked.Builder buildBsnUdf0Masked() {
+        return new OFOxmBsnUdf0MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf0Masked bsnUdf0Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf0MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf1.Builder buildBsnUdf1() {
+        return new OFOxmBsnUdf1Ver12.Builder();
+    }
+    public OFOxmBsnUdf1 bsnUdf1(UDF value) {
+        return new OFOxmBsnUdf1Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf1Masked.Builder buildBsnUdf1Masked() {
+        return new OFOxmBsnUdf1MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf1Masked bsnUdf1Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf1MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf2.Builder buildBsnUdf2() {
+        return new OFOxmBsnUdf2Ver12.Builder();
+    }
+    public OFOxmBsnUdf2 bsnUdf2(UDF value) {
+        return new OFOxmBsnUdf2Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf2Masked.Builder buildBsnUdf2Masked() {
+        return new OFOxmBsnUdf2MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf2Masked bsnUdf2Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf2MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf3.Builder buildBsnUdf3() {
+        return new OFOxmBsnUdf3Ver12.Builder();
+    }
+    public OFOxmBsnUdf3 bsnUdf3(UDF value) {
+        return new OFOxmBsnUdf3Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf3Masked.Builder buildBsnUdf3Masked() {
+        return new OFOxmBsnUdf3MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf3Masked bsnUdf3Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf3MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf4.Builder buildBsnUdf4() {
+        return new OFOxmBsnUdf4Ver12.Builder();
+    }
+    public OFOxmBsnUdf4 bsnUdf4(UDF value) {
+        return new OFOxmBsnUdf4Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf4Masked.Builder buildBsnUdf4Masked() {
+        return new OFOxmBsnUdf4MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf4Masked bsnUdf4Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf4MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf5.Builder buildBsnUdf5() {
+        return new OFOxmBsnUdf5Ver12.Builder();
+    }
+    public OFOxmBsnUdf5 bsnUdf5(UDF value) {
+        return new OFOxmBsnUdf5Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf5Masked.Builder buildBsnUdf5Masked() {
+        return new OFOxmBsnUdf5MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf5Masked bsnUdf5Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf5MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf6.Builder buildBsnUdf6() {
+        return new OFOxmBsnUdf6Ver12.Builder();
+    }
+    public OFOxmBsnUdf6 bsnUdf6(UDF value) {
+        return new OFOxmBsnUdf6Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf6Masked.Builder buildBsnUdf6Masked() {
+        return new OFOxmBsnUdf6MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf6Masked bsnUdf6Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf6MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnUdf7.Builder buildBsnUdf7() {
+        return new OFOxmBsnUdf7Ver12.Builder();
+    }
+    public OFOxmBsnUdf7 bsnUdf7(UDF value) {
+        return new OFOxmBsnUdf7Ver12(
+                value
+                    );
+    }
+
+    public OFOxmBsnUdf7Masked.Builder buildBsnUdf7Masked() {
+        return new OFOxmBsnUdf7MaskedVer12.Builder();
+    }
+    public OFOxmBsnUdf7Masked bsnUdf7Masked(UDF value, UDF mask) {
+        return new OFOxmBsnUdf7MaskedVer12(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnVrf.Builder buildBsnVrf() {
         return new OFOxmBsnVrfVer12.Builder();
     }
@@ -898,6 +1050,22 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnL3SrcClassId((ClassId)((Object)value)));
             case BSN_LAG_ID:
                 return (OFOxm<F>)((Object)bsnLagId((LagId)((Object)value)));
+            case BSN_UDF0:
+                return (OFOxm<F>)((Object)bsnUdf0((UDF)((Object)value)));
+            case BSN_UDF1:
+                return (OFOxm<F>)((Object)bsnUdf1((UDF)((Object)value)));
+            case BSN_UDF2:
+                return (OFOxm<F>)((Object)bsnUdf2((UDF)((Object)value)));
+            case BSN_UDF3:
+                return (OFOxm<F>)((Object)bsnUdf3((UDF)((Object)value)));
+            case BSN_UDF4:
+                return (OFOxm<F>)((Object)bsnUdf4((UDF)((Object)value)));
+            case BSN_UDF5:
+                return (OFOxm<F>)((Object)bsnUdf5((UDF)((Object)value)));
+            case BSN_UDF6:
+                return (OFOxm<F>)((Object)bsnUdf6((UDF)((Object)value)));
+            case BSN_UDF7:
+                return (OFOxm<F>)((Object)bsnUdf7((UDF)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
             case ETH_DST:
@@ -994,6 +1162,22 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnL3SrcClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_LAG_ID:
                 return (OFOxm<F>)((Object)bsnLagIdMasked((LagId)((Object)value), (LagId)((Object)mask)));
+            case BSN_UDF0:
+                return (OFOxm<F>)((Object)bsnUdf0Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF1:
+                return (OFOxm<F>)((Object)bsnUdf1Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF2:
+                return (OFOxm<F>)((Object)bsnUdf2Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF3:
+                return (OFOxm<F>)((Object)bsnUdf3Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF4:
+                return (OFOxm<F>)((Object)bsnUdf4Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF5:
+                return (OFOxm<F>)((Object)bsnUdf5Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF6:
+                return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_UDF7:
+                return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)value), (UDF)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
             case ETH_DST:
@@ -1090,6 +1274,22 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnL3SrcClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_LAG_ID:
                 return (OFOxm<F>)((Object)bsnLagIdMasked((LagId)((Object)(masked.getValue())), (LagId)((Object)(masked.getMask()))));
+            case BSN_UDF0:
+                return (OFOxm<F>)((Object)bsnUdf0Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF1:
+                return (OFOxm<F>)((Object)bsnUdf1Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF2:
+                return (OFOxm<F>)((Object)bsnUdf2Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF3:
+                return (OFOxm<F>)((Object)bsnUdf3Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF4:
+                return (OFOxm<F>)((Object)bsnUdf4Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF5:
+                return (OFOxm<F>)((Object)bsnUdf5Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF6:
+                return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_UDF7:
+                return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
             case ETH_DST:

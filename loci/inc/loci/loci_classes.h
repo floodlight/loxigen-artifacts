@@ -195,6 +195,22 @@ void of_oxm_bsn_l3_src_class_id_wire_object_id_get(of_object_t *obj, of_object_i
 void of_oxm_bsn_l3_src_class_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_lag_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_lag_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf0_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf0_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf1_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf1_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf2_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf2_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf3_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf3_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf4_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf5_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf5_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf6_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf6_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf7_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_udf7_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_vrf_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -363,6 +379,10 @@ void of_bsn_tlv_reply_packets_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_request_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udf_anchor_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udf_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udf_length_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udf_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_unicast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -710,6 +730,10 @@ typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
+typedef of_object_t of_bsn_tlv_udf_anchor_t;
+typedef of_object_t of_bsn_tlv_udf_id_t;
+typedef of_object_t of_bsn_tlv_udf_length_t;
+typedef of_object_t of_bsn_tlv_udf_offset_t;
 typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
@@ -790,6 +814,22 @@ typedef of_object_t of_oxm_bsn_l3_src_class_id_t;
 typedef of_object_t of_oxm_bsn_l3_src_class_id_masked_t;
 typedef of_object_t of_oxm_bsn_lag_id_t;
 typedef of_object_t of_oxm_bsn_lag_id_masked_t;
+typedef of_object_t of_oxm_bsn_udf0_t;
+typedef of_object_t of_oxm_bsn_udf0_masked_t;
+typedef of_object_t of_oxm_bsn_udf1_t;
+typedef of_object_t of_oxm_bsn_udf1_masked_t;
+typedef of_object_t of_oxm_bsn_udf2_t;
+typedef of_object_t of_oxm_bsn_udf2_masked_t;
+typedef of_object_t of_oxm_bsn_udf3_t;
+typedef of_object_t of_oxm_bsn_udf3_masked_t;
+typedef of_object_t of_oxm_bsn_udf4_t;
+typedef of_object_t of_oxm_bsn_udf4_masked_t;
+typedef of_object_t of_oxm_bsn_udf5_t;
+typedef of_object_t of_oxm_bsn_udf5_masked_t;
+typedef of_object_t of_oxm_bsn_udf6_t;
+typedef of_object_t of_oxm_bsn_udf6_masked_t;
+typedef of_object_t of_oxm_bsn_udf7_t;
+typedef of_object_t of_oxm_bsn_udf7_masked_t;
 typedef of_object_t of_oxm_bsn_vrf_t;
 typedef of_object_t of_oxm_bsn_vrf_masked_t;
 typedef of_object_t of_oxm_eth_dst_t;
@@ -2593,6 +2633,26 @@ extern of_bsn_tlv_tx_packets_t *
 extern void of_bsn_tlv_tx_packets_init(
     of_bsn_tlv_tx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_udf_anchor_t *
+    of_bsn_tlv_udf_anchor_new(of_version_t version);
+extern void of_bsn_tlv_udf_anchor_init(
+    of_bsn_tlv_udf_anchor_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_udf_id_t *
+    of_bsn_tlv_udf_id_new(of_version_t version);
+extern void of_bsn_tlv_udf_id_init(
+    of_bsn_tlv_udf_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_udf_length_t *
+    of_bsn_tlv_udf_length_new(of_version_t version);
+extern void of_bsn_tlv_udf_length_init(
+    of_bsn_tlv_udf_length_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_udf_offset_t *
+    of_bsn_tlv_udf_offset_new(of_version_t version);
+extern void of_bsn_tlv_udf_offset_init(
+    of_bsn_tlv_udf_offset_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_unicast_query_timeout_t *
     of_bsn_tlv_unicast_query_timeout_new(of_version_t version);
 extern void of_bsn_tlv_unicast_query_timeout_init(
@@ -3022,6 +3082,86 @@ extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_lag_id_masked_init(
     of_oxm_bsn_lag_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf0_t *
+    of_oxm_bsn_udf0_new(of_version_t version);
+extern void of_oxm_bsn_udf0_init(
+    of_oxm_bsn_udf0_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf0_masked_t *
+    of_oxm_bsn_udf0_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf0_masked_init(
+    of_oxm_bsn_udf0_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf1_t *
+    of_oxm_bsn_udf1_new(of_version_t version);
+extern void of_oxm_bsn_udf1_init(
+    of_oxm_bsn_udf1_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf1_masked_t *
+    of_oxm_bsn_udf1_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf1_masked_init(
+    of_oxm_bsn_udf1_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf2_t *
+    of_oxm_bsn_udf2_new(of_version_t version);
+extern void of_oxm_bsn_udf2_init(
+    of_oxm_bsn_udf2_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf2_masked_t *
+    of_oxm_bsn_udf2_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf2_masked_init(
+    of_oxm_bsn_udf2_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf3_t *
+    of_oxm_bsn_udf3_new(of_version_t version);
+extern void of_oxm_bsn_udf3_init(
+    of_oxm_bsn_udf3_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf3_masked_t *
+    of_oxm_bsn_udf3_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf3_masked_init(
+    of_oxm_bsn_udf3_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf4_t *
+    of_oxm_bsn_udf4_new(of_version_t version);
+extern void of_oxm_bsn_udf4_init(
+    of_oxm_bsn_udf4_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf4_masked_t *
+    of_oxm_bsn_udf4_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf4_masked_init(
+    of_oxm_bsn_udf4_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf5_t *
+    of_oxm_bsn_udf5_new(of_version_t version);
+extern void of_oxm_bsn_udf5_init(
+    of_oxm_bsn_udf5_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf5_masked_t *
+    of_oxm_bsn_udf5_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf5_masked_init(
+    of_oxm_bsn_udf5_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf6_t *
+    of_oxm_bsn_udf6_new(of_version_t version);
+extern void of_oxm_bsn_udf6_init(
+    of_oxm_bsn_udf6_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf6_masked_t *
+    of_oxm_bsn_udf6_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf6_masked_init(
+    of_oxm_bsn_udf6_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf7_t *
+    of_oxm_bsn_udf7_new(of_version_t version);
+extern void of_oxm_bsn_udf7_init(
+    of_oxm_bsn_udf7_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_udf7_masked_t *
+    of_oxm_bsn_udf7_masked_new(of_version_t version);
+extern void of_oxm_bsn_udf7_masked_init(
+    of_oxm_bsn_udf7_masked_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_new(of_version_t version);
@@ -6571,6 +6711,50 @@ of_bsn_tlv_tx_packets_delete(of_bsn_tlv_tx_packets_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_udf_anchor_t
+ * @param obj An instance of type of_bsn_tlv_udf_anchor_t
+ *
+ * \ingroup of_bsn_tlv_udf_anchor
+ */
+static inline void
+of_bsn_tlv_udf_anchor_delete(of_bsn_tlv_udf_anchor_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_udf_id_t
+ * @param obj An instance of type of_bsn_tlv_udf_id_t
+ *
+ * \ingroup of_bsn_tlv_udf_id
+ */
+static inline void
+of_bsn_tlv_udf_id_delete(of_bsn_tlv_udf_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_udf_length_t
+ * @param obj An instance of type of_bsn_tlv_udf_length_t
+ *
+ * \ingroup of_bsn_tlv_udf_length
+ */
+static inline void
+of_bsn_tlv_udf_length_delete(of_bsn_tlv_udf_length_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_udf_offset_t
+ * @param obj An instance of type of_bsn_tlv_udf_offset_t
+ *
+ * \ingroup of_bsn_tlv_udf_offset
+ */
+static inline void
+of_bsn_tlv_udf_offset_delete(of_bsn_tlv_udf_offset_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_unicast_query_timeout_t
  * @param obj An instance of type of_bsn_tlv_unicast_query_timeout_t
  *
@@ -7513,6 +7697,182 @@ of_oxm_bsn_lag_id_delete(of_oxm_bsn_lag_id_t *obj) {
  */
 static inline void
 of_oxm_bsn_lag_id_masked_delete(of_oxm_bsn_lag_id_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf0_t
+ * @param obj An instance of type of_oxm_bsn_udf0_t
+ *
+ * \ingroup of_oxm_bsn_udf0
+ */
+static inline void
+of_oxm_bsn_udf0_delete(of_oxm_bsn_udf0_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf0_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf0_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf0_masked
+ */
+static inline void
+of_oxm_bsn_udf0_masked_delete(of_oxm_bsn_udf0_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf1_t
+ * @param obj An instance of type of_oxm_bsn_udf1_t
+ *
+ * \ingroup of_oxm_bsn_udf1
+ */
+static inline void
+of_oxm_bsn_udf1_delete(of_oxm_bsn_udf1_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf1_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf1_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf1_masked
+ */
+static inline void
+of_oxm_bsn_udf1_masked_delete(of_oxm_bsn_udf1_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf2_t
+ * @param obj An instance of type of_oxm_bsn_udf2_t
+ *
+ * \ingroup of_oxm_bsn_udf2
+ */
+static inline void
+of_oxm_bsn_udf2_delete(of_oxm_bsn_udf2_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf2_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf2_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf2_masked
+ */
+static inline void
+of_oxm_bsn_udf2_masked_delete(of_oxm_bsn_udf2_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf3_t
+ * @param obj An instance of type of_oxm_bsn_udf3_t
+ *
+ * \ingroup of_oxm_bsn_udf3
+ */
+static inline void
+of_oxm_bsn_udf3_delete(of_oxm_bsn_udf3_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf3_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf3_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf3_masked
+ */
+static inline void
+of_oxm_bsn_udf3_masked_delete(of_oxm_bsn_udf3_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf4_t
+ * @param obj An instance of type of_oxm_bsn_udf4_t
+ *
+ * \ingroup of_oxm_bsn_udf4
+ */
+static inline void
+of_oxm_bsn_udf4_delete(of_oxm_bsn_udf4_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf4_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf4_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf4_masked
+ */
+static inline void
+of_oxm_bsn_udf4_masked_delete(of_oxm_bsn_udf4_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf5_t
+ * @param obj An instance of type of_oxm_bsn_udf5_t
+ *
+ * \ingroup of_oxm_bsn_udf5
+ */
+static inline void
+of_oxm_bsn_udf5_delete(of_oxm_bsn_udf5_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf5_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf5_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf5_masked
+ */
+static inline void
+of_oxm_bsn_udf5_masked_delete(of_oxm_bsn_udf5_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf6_t
+ * @param obj An instance of type of_oxm_bsn_udf6_t
+ *
+ * \ingroup of_oxm_bsn_udf6
+ */
+static inline void
+of_oxm_bsn_udf6_delete(of_oxm_bsn_udf6_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf6_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf6_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf6_masked
+ */
+static inline void
+of_oxm_bsn_udf6_masked_delete(of_oxm_bsn_udf6_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf7_t
+ * @param obj An instance of type of_oxm_bsn_udf7_t
+ *
+ * \ingroup of_oxm_bsn_udf7
+ */
+static inline void
+of_oxm_bsn_udf7_delete(of_oxm_bsn_udf7_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_udf7_masked_t
+ * @param obj An instance of type of_oxm_bsn_udf7_masked_t
+ *
+ * \ingroup of_oxm_bsn_udf7_masked
+ */
+static inline void
+of_oxm_bsn_udf7_masked_delete(of_oxm_bsn_udf7_masked_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -15920,6 +16280,42 @@ extern void of_bsn_tlv_tx_packets_value_get(
     of_bsn_tlv_tx_packets_t *obj,
     uint64_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_udf_anchor */
+
+extern void of_bsn_tlv_udf_anchor_value_set(
+    of_bsn_tlv_udf_anchor_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_udf_anchor_value_get(
+    of_bsn_tlv_udf_anchor_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_udf_id */
+
+extern void of_bsn_tlv_udf_id_value_set(
+    of_bsn_tlv_udf_id_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_udf_id_value_get(
+    of_bsn_tlv_udf_id_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_udf_length */
+
+extern void of_bsn_tlv_udf_length_value_set(
+    of_bsn_tlv_udf_length_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_udf_length_value_get(
+    of_bsn_tlv_udf_length_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_udf_offset */
+
+extern void of_bsn_tlv_udf_offset_value_set(
+    of_bsn_tlv_udf_offset_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_udf_offset_value_get(
+    of_bsn_tlv_udf_offset_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_unicast_query_timeout */
 
 extern void of_bsn_tlv_unicast_query_timeout_value_set(
@@ -17348,6 +17744,206 @@ extern void of_oxm_bsn_lag_id_masked_value_mask_set(
     uint32_t value_mask);
 extern void of_oxm_bsn_lag_id_masked_value_mask_get(
     of_oxm_bsn_lag_id_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf0 */
+
+extern void of_oxm_bsn_udf0_value_set(
+    of_oxm_bsn_udf0_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf0_value_get(
+    of_oxm_bsn_udf0_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf0_masked */
+
+extern void of_oxm_bsn_udf0_masked_value_set(
+    of_oxm_bsn_udf0_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf0_masked_value_get(
+    of_oxm_bsn_udf0_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf0_masked_value_mask_set(
+    of_oxm_bsn_udf0_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf0_masked_value_mask_get(
+    of_oxm_bsn_udf0_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf1 */
+
+extern void of_oxm_bsn_udf1_value_set(
+    of_oxm_bsn_udf1_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf1_value_get(
+    of_oxm_bsn_udf1_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf1_masked */
+
+extern void of_oxm_bsn_udf1_masked_value_set(
+    of_oxm_bsn_udf1_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf1_masked_value_get(
+    of_oxm_bsn_udf1_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf1_masked_value_mask_set(
+    of_oxm_bsn_udf1_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf1_masked_value_mask_get(
+    of_oxm_bsn_udf1_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf2 */
+
+extern void of_oxm_bsn_udf2_value_set(
+    of_oxm_bsn_udf2_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf2_value_get(
+    of_oxm_bsn_udf2_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf2_masked */
+
+extern void of_oxm_bsn_udf2_masked_value_set(
+    of_oxm_bsn_udf2_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf2_masked_value_get(
+    of_oxm_bsn_udf2_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf2_masked_value_mask_set(
+    of_oxm_bsn_udf2_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf2_masked_value_mask_get(
+    of_oxm_bsn_udf2_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf3 */
+
+extern void of_oxm_bsn_udf3_value_set(
+    of_oxm_bsn_udf3_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf3_value_get(
+    of_oxm_bsn_udf3_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf3_masked */
+
+extern void of_oxm_bsn_udf3_masked_value_set(
+    of_oxm_bsn_udf3_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf3_masked_value_get(
+    of_oxm_bsn_udf3_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf3_masked_value_mask_set(
+    of_oxm_bsn_udf3_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf3_masked_value_mask_get(
+    of_oxm_bsn_udf3_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf4 */
+
+extern void of_oxm_bsn_udf4_value_set(
+    of_oxm_bsn_udf4_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf4_value_get(
+    of_oxm_bsn_udf4_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf4_masked */
+
+extern void of_oxm_bsn_udf4_masked_value_set(
+    of_oxm_bsn_udf4_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf4_masked_value_get(
+    of_oxm_bsn_udf4_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf4_masked_value_mask_set(
+    of_oxm_bsn_udf4_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf4_masked_value_mask_get(
+    of_oxm_bsn_udf4_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf5 */
+
+extern void of_oxm_bsn_udf5_value_set(
+    of_oxm_bsn_udf5_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf5_value_get(
+    of_oxm_bsn_udf5_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf5_masked */
+
+extern void of_oxm_bsn_udf5_masked_value_set(
+    of_oxm_bsn_udf5_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf5_masked_value_get(
+    of_oxm_bsn_udf5_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf5_masked_value_mask_set(
+    of_oxm_bsn_udf5_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf5_masked_value_mask_get(
+    of_oxm_bsn_udf5_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf6 */
+
+extern void of_oxm_bsn_udf6_value_set(
+    of_oxm_bsn_udf6_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf6_value_get(
+    of_oxm_bsn_udf6_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf6_masked */
+
+extern void of_oxm_bsn_udf6_masked_value_set(
+    of_oxm_bsn_udf6_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf6_masked_value_get(
+    of_oxm_bsn_udf6_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf6_masked_value_mask_set(
+    of_oxm_bsn_udf6_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf6_masked_value_mask_get(
+    of_oxm_bsn_udf6_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_udf7 */
+
+extern void of_oxm_bsn_udf7_value_set(
+    of_oxm_bsn_udf7_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf7_value_get(
+    of_oxm_bsn_udf7_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_udf7_masked */
+
+extern void of_oxm_bsn_udf7_masked_value_set(
+    of_oxm_bsn_udf7_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_udf7_masked_value_get(
+    of_oxm_bsn_udf7_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_udf7_masked_value_mask_set(
+    of_oxm_bsn_udf7_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_udf7_masked_value_mask_get(
+    of_oxm_bsn_udf7_masked_t *obj,
     uint32_t *value_mask);
 
 /* Unified accessor functions for of_oxm_bsn_vrf */
@@ -19910,6 +20506,10 @@ union of_bsn_tlv_u {
     of_bsn_tlv_request_packets_t request_packets;
     of_bsn_tlv_rx_packets_t rx_packets;
     of_bsn_tlv_tx_packets_t tx_packets;
+    of_bsn_tlv_udf_anchor_t udf_anchor;
+    of_bsn_tlv_udf_id_t udf_id;
+    of_bsn_tlv_udf_length_t udf_length;
+    of_bsn_tlv_udf_offset_t udf_offset;
     of_bsn_tlv_unicast_query_timeout_t unicast_query_timeout;
     of_bsn_tlv_vlan_vid_t vlan_vid;
 };
@@ -20024,6 +20624,22 @@ union of_oxm_u {
     of_oxm_bsn_l3_src_class_id_masked_t bsn_l3_src_class_id_masked;
     of_oxm_bsn_lag_id_t bsn_lag_id;
     of_oxm_bsn_lag_id_masked_t bsn_lag_id_masked;
+    of_oxm_bsn_udf0_t bsn_udf0;
+    of_oxm_bsn_udf0_masked_t bsn_udf0_masked;
+    of_oxm_bsn_udf1_t bsn_udf1;
+    of_oxm_bsn_udf1_masked_t bsn_udf1_masked;
+    of_oxm_bsn_udf2_t bsn_udf2;
+    of_oxm_bsn_udf2_masked_t bsn_udf2_masked;
+    of_oxm_bsn_udf3_t bsn_udf3;
+    of_oxm_bsn_udf3_masked_t bsn_udf3_masked;
+    of_oxm_bsn_udf4_t bsn_udf4;
+    of_oxm_bsn_udf4_masked_t bsn_udf4_masked;
+    of_oxm_bsn_udf5_t bsn_udf5;
+    of_oxm_bsn_udf5_masked_t bsn_udf5_masked;
+    of_oxm_bsn_udf6_t bsn_udf6;
+    of_oxm_bsn_udf6_masked_t bsn_udf6_masked;
+    of_oxm_bsn_udf7_t bsn_udf7;
+    of_oxm_bsn_udf7_masked_t bsn_udf7_masked;
     of_oxm_bsn_vrf_t bsn_vrf;
     of_oxm_bsn_vrf_masked_t bsn_vrf_masked;
     of_oxm_eth_dst_t eth_dst;

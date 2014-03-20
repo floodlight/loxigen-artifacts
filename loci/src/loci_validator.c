@@ -393,6 +393,22 @@ static inline int of_oxm_eth_dst_masked_OF_VERSION_1_2_validate(uint8_t *buf, in
 static inline int of_oxm_eth_dst_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_vrf_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_vrf_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf7_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf7_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf6_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf6_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf5_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf5_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf4_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf4_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf3_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf3_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf2_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf2_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf1_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf1_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf0_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf0_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_lag_id_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len);
@@ -682,6 +698,22 @@ static inline int of_oxm_eth_dst_masked_OF_VERSION_1_3_validate(uint8_t *buf, in
 static inline int of_oxm_eth_dst_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_vrf_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_vrf_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf7_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf6_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf6_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf5_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf5_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf4_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf4_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf3_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf3_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf2_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf2_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf1_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf1_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf0_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_oxm_bsn_udf0_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_lag_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -760,6 +792,10 @@ static inline int of_bsn_vport_header_OF_VERSION_1_3_validate(uint8_t *buf, int 
 static inline int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_udf_offset_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_udf_length_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_udf_id_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_udf_anchor_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_rx_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_request_packets_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -6368,6 +6404,182 @@ of_oxm_bsn_vrf_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_oxm_bsn_udf7_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf7_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf7_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf7.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf6_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf6_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf6_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf6.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf5_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf5_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf5_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf5.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf4_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf4_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf4_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf4.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf3_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf3_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf3_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf3.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf2_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf2_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf2_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf2.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf1_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf1_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf1_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf1.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf0_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf0_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf0_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf0.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -9122,8 +9334,23 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_BSN_TLV_UDF_LENGTH:
+            if (of_bsn_tlv_udf_length_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_UDF_ID:
+            if (of_bsn_tlv_udf_id_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_BSN_TLV_CIRCUIT_ID:
             if (of_bsn_tlv_circuit_id_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
+        case OF_BSN_TLV_REQUEST_PACKETS:
+            if (of_bsn_tlv_request_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -9167,6 +9394,11 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT:
+            if (of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_BSN_TLV_TX_PACKETS:
             if (of_bsn_tlv_tx_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -9177,13 +9409,13 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
-        case OF_BSN_TLV_REQUEST_PACKETS:
-            if (of_bsn_tlv_request_packets_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+        case OF_BSN_TLV_UDF_OFFSET:
+            if (of_bsn_tlv_udf_offset_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
-        case OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT:
-            if (of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+        case OF_BSN_TLV_UDF_ANCHOR:
+            if (of_bsn_tlv_udf_anchor_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -10768,6 +11000,182 @@ of_oxm_bsn_vrf_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_oxm_bsn_udf7_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf7_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf7_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf7.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf6_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf6_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf6_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf6.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf5_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf5_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf5_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf5.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf4_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf4_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf4_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf4.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf3_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf3_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf3_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf3.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf2_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf2_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf2_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf2.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf1_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf1_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf1_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf1.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf0_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 12) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf0_masked.  Len %d too small, < %d", len, 12);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_oxm_bsn_udf0_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_oxm_bsn_udf0.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 12) {
@@ -11718,6 +12126,50 @@ of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 8) {
         VALIDATOR_LOG("Class of_bsn_tlv_unicast_query_timeout.  Len %d too small, < %d", len, 8);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_udf_offset_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_bsn_tlv_udf_offset.  Len %d too small, < %d", len, 6);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_udf_length_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_bsn_tlv_udf_length.  Len %d too small, < %d", len, 6);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_udf_id_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_bsn_tlv_udf_id.  Len %d too small, < %d", len, 6);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_udf_anchor_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 6) {
+        VALIDATOR_LOG("Class of_bsn_tlv_udf_anchor.  Len %d too small, < %d", len, 6);
         return -1;
     }
 

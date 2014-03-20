@@ -266,6 +266,17 @@ ofp_bsn_port_counter_map = {
     11: 'OFP_BSN_PORT_COUNTER_TX_ERRORS',
 }
 
+# Identifiers from group ofp_bsn_udf_anchor
+OFP_BSN_UDF_ANCHOR_PACKET_START = 0
+OFP_BSN_UDF_ANCHOR_L3_HEADER_START = 1
+OFP_BSN_UDF_ANCHOR_L4_HEADER_START = 2
+
+ofp_bsn_udf_anchor_map = {
+    0: 'OFP_BSN_UDF_ANCHOR_PACKET_START',
+    1: 'OFP_BSN_UDF_ANCHOR_L3_HEADER_START',
+    2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START',
+}
+
 # Identifiers from group ofp_bsn_vport_q_in_q_untagged
 OF_BSN_VPORT_Q_IN_Q_UNTAGGED = 65535
 

@@ -117,6 +117,14 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case BSN_L3_INTERFACE_CLASS_ID:
             case BSN_L3_SRC_CLASS_ID:
             case BSN_LAG_ID:
+            case BSN_UDF0:
+            case BSN_UDF1:
+            case BSN_UDF2:
+            case BSN_UDF3:
+            case BSN_UDF4:
+            case BSN_UDF5:
+            case BSN_UDF6:
+            case BSN_UDF7:
             case BSN_VRF:
             case ETH_DST:
             case ETH_SRC:

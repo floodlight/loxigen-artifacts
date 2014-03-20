@@ -5419,6 +5419,50 @@ typedef struct of_bsn_tlv_rx_packets_s of_bsn_tlv_rx_packets_t;
 typedef struct of_bsn_tlv_tx_packets_s of_bsn_tlv_tx_packets_t;
 
 /**
+ * Structure for of_bsn_tlv_udf_anchor object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_udf_anchor_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_udf_anchor_s of_bsn_tlv_udf_anchor_t;
+
+/**
+ * Structure for of_bsn_tlv_udf_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_udf_id_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_udf_id_s of_bsn_tlv_udf_id_t;
+
+/**
+ * Structure for of_bsn_tlv_udf_length object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_udf_length_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_udf_length_s of_bsn_tlv_udf_length_t;
+
+/**
+ * Structure for of_bsn_tlv_udf_offset object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_udf_offset_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_udf_offset_s of_bsn_tlv_udf_offset_t;
+
+/**
  * Structure for of_bsn_tlv_unicast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6731,6 +6775,214 @@ typedef struct of_oxm_bsn_lag_id_s of_oxm_bsn_lag_id_t;
  *
  */
 typedef struct of_oxm_bsn_lag_id_masked_s of_oxm_bsn_lag_id_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf0 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf0_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf0_s of_oxm_bsn_udf0_t;
+
+/**
+ * Structure for of_oxm_bsn_udf0_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf0_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf0_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf0_masked_s of_oxm_bsn_udf0_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf1 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf1_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf1_s of_oxm_bsn_udf1_t;
+
+/**
+ * Structure for of_oxm_bsn_udf1_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf1_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf1_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf1_masked_s of_oxm_bsn_udf1_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf2 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf2_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf2_s of_oxm_bsn_udf2_t;
+
+/**
+ * Structure for of_oxm_bsn_udf2_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf2_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf2_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf2_masked_s of_oxm_bsn_udf2_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf3 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf3_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf3_s of_oxm_bsn_udf3_t;
+
+/**
+ * Structure for of_oxm_bsn_udf3_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf3_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf3_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf3_masked_s of_oxm_bsn_udf3_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf4 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf4_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf4_s of_oxm_bsn_udf4_t;
+
+/**
+ * Structure for of_oxm_bsn_udf4_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf4_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf4_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf4_masked_s of_oxm_bsn_udf4_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf5 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf5_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf5_s of_oxm_bsn_udf5_t;
+
+/**
+ * Structure for of_oxm_bsn_udf5_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf5_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf5_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf5_masked_s of_oxm_bsn_udf5_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf6 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf6_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf6_s of_oxm_bsn_udf6_t;
+
+/**
+ * Structure for of_oxm_bsn_udf6_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf6_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf6_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf6_masked_s of_oxm_bsn_udf6_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_udf7 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf7_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf7_s of_oxm_bsn_udf7_t;
+
+/**
+ * Structure for of_oxm_bsn_udf7_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf7_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_udf7_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_udf7_masked_s of_oxm_bsn_udf7_masked_t;
 
 /**
  * Structure for of_oxm_bsn_vrf object.  Get/set

@@ -13299,6 +13299,302 @@ of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie,
 }
 
 int
+of_oxm_bsn_udf0_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf0\n");
+
+    of_oxm_bsn_udf0_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf0_masked\n");
+
+    of_oxm_bsn_udf0_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf0_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf1_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf1\n");
+
+    of_oxm_bsn_udf1_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf1_masked\n");
+
+    of_oxm_bsn_udf1_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf1_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf2_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf2\n");
+
+    of_oxm_bsn_udf2_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf2_masked\n");
+
+    of_oxm_bsn_udf2_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf2_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf3_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf3\n");
+
+    of_oxm_bsn_udf3_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf3_masked\n");
+
+    of_oxm_bsn_udf3_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf3_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf4_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf4\n");
+
+    of_oxm_bsn_udf4_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf4_masked\n");
+
+    of_oxm_bsn_udf4_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf4_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf5_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf5\n");
+
+    of_oxm_bsn_udf5_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf5_masked\n");
+
+    of_oxm_bsn_udf5_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf5_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf6_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf6\n");
+
+    of_oxm_bsn_udf6_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf6_masked\n");
+
+    of_oxm_bsn_udf6_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf6_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf7_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf7\n");
+
+    of_oxm_bsn_udf7_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf7_masked\n");
+
+    of_oxm_bsn_udf7_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf7_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_bsn_vrf_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_t *obj)
 {
     int out = 0;
@@ -21993,6 +22289,70 @@ of_bsn_tlv_tx_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_anchor_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_udf_anchor\n");
+
+    of_bsn_tlv_udf_anchor_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_udf_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_id_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_udf_id\n");
+
+    of_bsn_tlv_udf_id_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_udf_length_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_length_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_udf_length\n");
+
+    of_bsn_tlv_udf_length_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_udf_offset_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_offset_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_udf_offset\n");
+
+    of_bsn_tlv_udf_offset_value_get(obj, &val16);
+    out += writer(cookie, "  value (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_unicast_query_timeout_t *obj)
 {
     int out = 0;
@@ -23612,6 +23972,302 @@ of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
     out += writer(cookie, "\n");
 
     of_oxm_bsn_lag_id_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf0_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf0\n");
+
+    of_oxm_bsn_udf0_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf0_masked\n");
+
+    of_oxm_bsn_udf0_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf0_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf1_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf1\n");
+
+    of_oxm_bsn_udf1_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf1_masked\n");
+
+    of_oxm_bsn_udf1_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf1_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf2_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf2\n");
+
+    of_oxm_bsn_udf2_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf2_masked\n");
+
+    of_oxm_bsn_udf2_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf2_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf3_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf3\n");
+
+    of_oxm_bsn_udf3_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf3_masked\n");
+
+    of_oxm_bsn_udf3_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf3_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf4_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf4\n");
+
+    of_oxm_bsn_udf4_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf4_masked\n");
+
+    of_oxm_bsn_udf4_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf4_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf5_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf5\n");
+
+    of_oxm_bsn_udf5_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf5_masked\n");
+
+    of_oxm_bsn_udf5_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf5_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf6_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf6\n");
+
+    of_oxm_bsn_udf6_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf6_masked\n");
+
+    of_oxm_bsn_udf6_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf6_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf7_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf7\n");
+
+    of_oxm_bsn_udf7_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_udf7_masked\n");
+
+    of_oxm_bsn_udf7_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_udf7_masked_value_mask_get(obj, &val32);
     out += writer(cookie, "  value_mask (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
@@ -26097,6 +26753,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_l3_dst_class_id (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_l3_dst_class_id);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_l3_dst_class_id);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_IPV6_ND_SLL_ACTIVE_TEST(match)) {
         out += writer(cookie, "  ipv6_nd_sll (of_mac_addr_t) active: Value ");
         out += LOCI_DUMP_mac(writer, cookie, match->fields.ipv6_nd_sll);
@@ -26113,11 +26777,27 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  ipv6_nd_tll (of_mac_addr_t) active: Value ");
+        out += LOCI_DUMP_mac(writer, cookie, match->fields.ipv6_nd_tll);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_mac(writer, cookie, match->masks.ipv6_nd_tll);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         out += writer(cookie, "  bsn_egr_port_group_id (uint32_t) active: Value ");
         out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_egr_port_group_id);
         out += writer(cookie, "\n    Mask ");
         out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_egr_port_group_id);
+        out += writer(cookie, "\n");
+    }
+
+    if (OF_MATCH_MASK_BSN_UDF2_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf2 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf2);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf2);
         out += writer(cookie, "\n");
     }
 
@@ -26169,6 +26849,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_BSN_UDF7_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf7 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf7);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf7);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_ACTIVE_TEST(match)) {
         out += writer(cookie, "  bsn_l3_src_class_id (uint32_t) active: Value ");
         out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_l3_src_class_id);
@@ -26214,6 +26902,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += LOCI_DUMP_u8(writer, cookie, match->fields.ip_ecn);
         out += writer(cookie, "\n    Mask ");
         out += LOCI_DUMP_u8(writer, cookie, match->masks.ip_ecn);
+        out += writer(cookie, "\n");
+    }
+
+    if (OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf4 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf4);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf4);
         out += writer(cookie, "\n");
     }
 
@@ -26281,19 +26977,27 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
-    if (OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(match)) {
-        out += writer(cookie, "  bsn_l3_dst_class_id (uint32_t) active: Value ");
-        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_l3_dst_class_id);
+    if (OF_MATCH_MASK_BSN_UDF1_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf1 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf1);
         out += writer(cookie, "\n    Mask ");
-        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_l3_dst_class_id);
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf1);
         out += writer(cookie, "\n");
     }
 
-    if (OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(match)) {
-        out += writer(cookie, "  ipv6_nd_tll (of_mac_addr_t) active: Value ");
-        out += LOCI_DUMP_mac(writer, cookie, match->fields.ipv6_nd_tll);
+    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf0 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf0);
         out += writer(cookie, "\n    Mask ");
-        out += LOCI_DUMP_mac(writer, cookie, match->masks.ipv6_nd_tll);
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf0);
+        out += writer(cookie, "\n");
+    }
+
+    if (OF_MATCH_MASK_BSN_UDF3_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf3 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf3);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf3);
         out += writer(cookie, "\n");
     }
 
@@ -26302,6 +27006,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += LOCI_DUMP_u8(writer, cookie, match->fields.icmpv4_type);
         out += writer(cookie, "\n    Mask ");
         out += LOCI_DUMP_u8(writer, cookie, match->masks.icmpv4_type);
+        out += writer(cookie, "\n");
+    }
+
+    if (OF_MATCH_MASK_BSN_UDF5_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf5 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf5);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf5);
         out += writer(cookie, "\n");
     }
 
@@ -26318,6 +27030,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += LOCI_DUMP_u16(writer, cookie, match->fields.tcp_dst);
         out += writer(cookie, "\n    Mask ");
         out += LOCI_DUMP_u16(writer, cookie, match->masks.tcp_dst);
+        out += writer(cookie, "\n");
+    }
+
+    if (OF_MATCH_MASK_BSN_UDF6_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_udf6 (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_udf6);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_udf6);
         out += writer(cookie, "\n");
     }
 
@@ -26614,6 +27334,10 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -26660,6 +27384,22 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_match_v1_OF_VERSION_1_0_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -27101,6 +27841,10 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_1_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_1_dump,
     of_bucket_OF_VERSION_1_1_dump,
@@ -27148,6 +27892,22 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_instruction_write_metadata_OF_VERSION_1_1_dump,
     unknown_dump,
     of_match_v2_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -27588,6 +28348,10 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     of_bucket_OF_VERSION_1_2_dump,
@@ -27670,6 +28434,22 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_lag_id_OF_VERSION_1_2_dump,
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf0_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf1_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf2_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf3_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf4_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf5_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf6_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf7_OF_VERSION_1_2_dump,
+    of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_vrf_OF_VERSION_1_2_dump,
     of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dump,
     of_oxm_eth_dst_OF_VERSION_1_2_dump,
@@ -28071,6 +28851,10 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_request_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_tx_packets_OF_VERSION_1_3_dump,
+    of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dump,
+    of_bsn_tlv_udf_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_udf_length_OF_VERSION_1_3_dump,
+    of_bsn_tlv_udf_offset_OF_VERSION_1_3_dump,
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dump,
     of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dump,
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump,
@@ -28157,6 +28941,22 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_lag_id_OF_VERSION_1_3_dump,
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf0_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf1_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf2_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf3_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf4_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf5_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf6_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf7_OF_VERSION_1_3_dump,
+    of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_vrf_OF_VERSION_1_3_dump,
     of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dump,
     of_oxm_eth_dst_OF_VERSION_1_3_dump,

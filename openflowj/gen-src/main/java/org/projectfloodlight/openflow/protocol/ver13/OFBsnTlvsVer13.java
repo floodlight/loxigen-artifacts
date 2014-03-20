@@ -143,6 +143,42 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvUdfAnchor.Builder buildUdfAnchor() {
+        return new OFBsnTlvUdfAnchorVer13.Builder();
+    }
+    public OFBsnTlvUdfAnchor udfAnchor(OFBsnUdfAnchor value) {
+        return new OFBsnTlvUdfAnchorVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvUdfId.Builder buildUdfId() {
+        return new OFBsnTlvUdfIdVer13.Builder();
+    }
+    public OFBsnTlvUdfId udfId(int value) {
+        return new OFBsnTlvUdfIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvUdfLength.Builder buildUdfLength() {
+        return new OFBsnTlvUdfLengthVer13.Builder();
+    }
+    public OFBsnTlvUdfLength udfLength(int value) {
+        return new OFBsnTlvUdfLengthVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvUdfOffset.Builder buildUdfOffset() {
+        return new OFBsnTlvUdfOffsetVer13.Builder();
+    }
+    public OFBsnTlvUdfOffset udfOffset(int value) {
+        return new OFBsnTlvUdfOffsetVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
         return new OFBsnTlvUnicastQueryTimeoutVer13.Builder();
     }

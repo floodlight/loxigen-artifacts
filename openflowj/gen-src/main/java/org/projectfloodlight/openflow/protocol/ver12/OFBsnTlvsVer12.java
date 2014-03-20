@@ -119,6 +119,34 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.2");
     }
 
+    public OFBsnTlvUdfAnchor.Builder buildUdfAnchor() {
+        throw new UnsupportedOperationException("OFBsnTlvUdfAnchor not supported in version 1.2");
+    }
+    public OFBsnTlvUdfAnchor udfAnchor(OFBsnUdfAnchor value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdfAnchor not supported in version 1.2");
+    }
+
+    public OFBsnTlvUdfId.Builder buildUdfId() {
+        throw new UnsupportedOperationException("OFBsnTlvUdfId not supported in version 1.2");
+    }
+    public OFBsnTlvUdfId udfId(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdfId not supported in version 1.2");
+    }
+
+    public OFBsnTlvUdfLength.Builder buildUdfLength() {
+        throw new UnsupportedOperationException("OFBsnTlvUdfLength not supported in version 1.2");
+    }
+    public OFBsnTlvUdfLength udfLength(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdfLength not supported in version 1.2");
+    }
+
+    public OFBsnTlvUdfOffset.Builder buildUdfOffset() {
+        throw new UnsupportedOperationException("OFBsnTlvUdfOffset not supported in version 1.2");
+    }
+    public OFBsnTlvUdfOffset udfOffset(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdfOffset not supported in version 1.2");
+    }
+
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.2");
     }

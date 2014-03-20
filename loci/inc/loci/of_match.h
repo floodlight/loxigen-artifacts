@@ -31,27 +31,35 @@
     | ((uint64_t)1 << OF_OXM_INDEX_IPV6_SRC)\
     | ((uint64_t)1 << OF_OXM_INDEX_SCTP_SRC)\
     | ((uint64_t)1 << OF_OXM_INDEX_ICMPV6_CODE)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_DST_CLASS_ID)\
     | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_SLL)\
     | ((uint64_t)1 << OF_OXM_INDEX_MPLS_TC)\
+    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TLL)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_EGR_PORT_GROUP_ID)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF2)\
     | ((uint64_t)1 << OF_OXM_INDEX_ARP_OP)\
     | ((uint64_t)1 << OF_OXM_INDEX_ARP_THA)\
     | ((uint64_t)1 << OF_OXM_INDEX_METADATA)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF7)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_SRC_CLASS_ID)\
     | ((uint64_t)1 << OF_OXM_INDEX_SCTP_DST)\
     | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_CODE)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_VRF)\
     | ((uint64_t)1 << OF_OXM_INDEX_IP_ECN)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF4)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_GLOBAL_VRF_ALLOWED)\
     | ((uint64_t)1 << OF_OXM_INDEX_UDP_DST)\
     | ((uint64_t)1 << OF_OXM_INDEX_ARP_SPA)\
     | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TARGET)\
     | ((uint64_t)1 << OF_OXM_INDEX_IN_PHY_PORT)\
     | ((uint64_t)1 << OF_OXM_INDEX_UDP_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_DST_CLASS_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TLL)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF1)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF0)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF3)\
     | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_TYPE)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF5)\
     | ((uint64_t)1 << OF_OXM_INDEX_MPLS_LABEL)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF6)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_INTERFACE_CLASS_ID))
 
 #define OF_MATCH_V2_INCOMPAT ( (uint64_t)0 \
@@ -65,24 +73,32 @@
     | ((uint64_t)1 << OF_OXM_INDEX_IPV6_SRC)\
     | ((uint64_t)1 << OF_OXM_INDEX_SCTP_SRC)\
     | ((uint64_t)1 << OF_OXM_INDEX_ICMPV6_CODE)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_DST_CLASS_ID)\
     | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_SLL)\
+    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TLL)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_EGR_PORT_GROUP_ID)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF2)\
     | ((uint64_t)1 << OF_OXM_INDEX_ARP_OP)\
     | ((uint64_t)1 << OF_OXM_INDEX_ARP_THA)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF7)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_SRC_CLASS_ID)\
     | ((uint64_t)1 << OF_OXM_INDEX_SCTP_DST)\
     | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_CODE)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_VRF)\
     | ((uint64_t)1 << OF_OXM_INDEX_IP_ECN)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF4)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_GLOBAL_VRF_ALLOWED)\
     | ((uint64_t)1 << OF_OXM_INDEX_UDP_DST)\
     | ((uint64_t)1 << OF_OXM_INDEX_ARP_SPA)\
     | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TARGET)\
     | ((uint64_t)1 << OF_OXM_INDEX_IN_PHY_PORT)\
     | ((uint64_t)1 << OF_OXM_INDEX_UDP_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_DST_CLASS_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TLL)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF1)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF0)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF3)\
     | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_TYPE)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF5)\
+    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF6)\
     | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_INTERFACE_CLASS_ID))
 
 /* Indexed by version number */
@@ -134,6 +150,14 @@ typedef struct of_match_fields_s {
     uint32_t             bsn_l3_src_class_id;
     uint32_t             bsn_l3_dst_class_id;
     uint32_t             bsn_egr_port_group_id;
+    uint32_t             bsn_udf2;
+    uint32_t             bsn_udf7;
+    uint32_t             bsn_udf4;
+    uint32_t             bsn_udf1;
+    uint32_t             bsn_udf0;
+    uint32_t             bsn_udf3;
+    uint32_t             bsn_udf5;
+    uint32_t             bsn_udf6;
 
 } of_match_fields_t;
 
@@ -527,6 +551,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for bsn_l3_dst_class_id */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_l3_dst_class_id, q_m->bsn_l3_dst_class_id)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_l3_dst_class_id, q_f->bsn_l3_dst_class_id,
+            q_m->bsn_l3_dst_class_id)) {
+        return 0;
+    }
+
     /* Mask and values for ipv6_nd_sll */
     if (!OF_MORE_SPECIFIC_MAC_ADDR(&e_m->ipv6_nd_sll, &q_m->ipv6_nd_sll)) {
         return 0;
@@ -545,12 +578,30 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for ipv6_nd_tll */
+    if (!OF_MORE_SPECIFIC_MAC_ADDR(&e_m->ipv6_nd_tll, &q_m->ipv6_nd_tll)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_MAC_ADDR(&e_f->ipv6_nd_tll, &q_f->ipv6_nd_tll,
+            &q_m->ipv6_nd_tll)) {
+        return 0;
+    }
+
     /* Mask and values for bsn_egr_port_group_id */
     if (!OF_MORE_SPECIFIC_INT(e_m->bsn_egr_port_group_id, q_m->bsn_egr_port_group_id)) {
         return 0;
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_egr_port_group_id, q_f->bsn_egr_port_group_id,
             q_m->bsn_egr_port_group_id)) {
+        return 0;
+    }
+
+    /* Mask and values for bsn_udf2 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf2, q_m->bsn_udf2)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf2, q_f->bsn_udf2,
+            q_m->bsn_udf2)) {
         return 0;
     }
 
@@ -608,6 +659,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for bsn_udf7 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf7, q_m->bsn_udf7)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf7, q_f->bsn_udf7,
+            q_m->bsn_udf7)) {
+        return 0;
+    }
+
     /* Mask and values for bsn_l3_src_class_id */
     if (!OF_MORE_SPECIFIC_INT(e_m->bsn_l3_src_class_id, q_m->bsn_l3_src_class_id)) {
         return 0;
@@ -659,6 +719,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->ip_ecn, q_f->ip_ecn,
             q_m->ip_ecn)) {
+        return 0;
+    }
+
+    /* Mask and values for bsn_udf4 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf4, q_m->bsn_udf4)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf4, q_f->bsn_udf4,
+            q_m->bsn_udf4)) {
         return 0;
     }
 
@@ -734,21 +803,30 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
-    /* Mask and values for bsn_l3_dst_class_id */
-    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_l3_dst_class_id, q_m->bsn_l3_dst_class_id)) {
+    /* Mask and values for bsn_udf1 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf1, q_m->bsn_udf1)) {
         return 0;
     }
-    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_l3_dst_class_id, q_f->bsn_l3_dst_class_id,
-            q_m->bsn_l3_dst_class_id)) {
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf1, q_f->bsn_udf1,
+            q_m->bsn_udf1)) {
         return 0;
     }
 
-    /* Mask and values for ipv6_nd_tll */
-    if (!OF_MORE_SPECIFIC_MAC_ADDR(&e_m->ipv6_nd_tll, &q_m->ipv6_nd_tll)) {
+    /* Mask and values for bsn_udf0 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf0, q_m->bsn_udf0)) {
         return 0;
     }
-    if (!OF_RESTRICTED_MATCH_MAC_ADDR(&e_f->ipv6_nd_tll, &q_f->ipv6_nd_tll,
-            &q_m->ipv6_nd_tll)) {
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf0, q_f->bsn_udf0,
+            q_m->bsn_udf0)) {
+        return 0;
+    }
+
+    /* Mask and values for bsn_udf3 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf3, q_m->bsn_udf3)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf3, q_f->bsn_udf3,
+            q_m->bsn_udf3)) {
         return 0;
     }
 
@@ -758,6 +836,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->icmpv4_type, q_f->icmpv4_type,
             q_m->icmpv4_type)) {
+        return 0;
+    }
+
+    /* Mask and values for bsn_udf5 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf5, q_m->bsn_udf5)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf5, q_f->bsn_udf5,
+            q_m->bsn_udf5)) {
         return 0;
     }
 
@@ -776,6 +863,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->tcp_dst, q_f->tcp_dst,
             q_m->tcp_dst)) {
+        return 0;
+    }
+
+    /* Mask and values for bsn_udf6 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf6, q_m->bsn_udf6)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf6, q_f->bsn_udf6,
+            q_m->bsn_udf6)) {
         return 0;
     }
 
@@ -907,6 +1003,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
+    /* Check overlap for bsn_l3_dst_class_id */
+    if (!OF_OVERLAP_INT(f1->bsn_l3_dst_class_id, f2->bsn_l3_dst_class_id,
+        m2->bsn_l3_dst_class_id, m1->bsn_l3_dst_class_id)) {
+        return 0; /* This field differentiates; all done */
+    }
+
     /* Check overlap for ipv6_nd_sll */
     if (!OF_OVERLAP_MAC_ADDR(&f1->ipv6_nd_sll, &f2->ipv6_nd_sll,
         &m2->ipv6_nd_sll, &m1->ipv6_nd_sll)) {
@@ -919,9 +1021,21 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
+    /* Check overlap for ipv6_nd_tll */
+    if (!OF_OVERLAP_MAC_ADDR(&f1->ipv6_nd_tll, &f2->ipv6_nd_tll,
+        &m2->ipv6_nd_tll, &m1->ipv6_nd_tll)) {
+        return 0; /* This field differentiates; all done */
+    }
+
     /* Check overlap for bsn_egr_port_group_id */
     if (!OF_OVERLAP_INT(f1->bsn_egr_port_group_id, f2->bsn_egr_port_group_id,
         m2->bsn_egr_port_group_id, m1->bsn_egr_port_group_id)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_udf2 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf2, f2->bsn_udf2,
+        m2->bsn_udf2, m1->bsn_udf2)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -961,6 +1075,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
+    /* Check overlap for bsn_udf7 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf7, f2->bsn_udf7,
+        m2->bsn_udf7, m1->bsn_udf7)) {
+        return 0; /* This field differentiates; all done */
+    }
+
     /* Check overlap for bsn_l3_src_class_id */
     if (!OF_OVERLAP_INT(f1->bsn_l3_src_class_id, f2->bsn_l3_src_class_id,
         m2->bsn_l3_src_class_id, m1->bsn_l3_src_class_id)) {
@@ -994,6 +1114,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for ip_ecn */
     if (!OF_OVERLAP_INT(f1->ip_ecn, f2->ip_ecn,
         m2->ip_ecn, m1->ip_ecn)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_udf4 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf4, f2->bsn_udf4,
+        m2->bsn_udf4, m1->bsn_udf4)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -1045,21 +1171,33 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
-    /* Check overlap for bsn_l3_dst_class_id */
-    if (!OF_OVERLAP_INT(f1->bsn_l3_dst_class_id, f2->bsn_l3_dst_class_id,
-        m2->bsn_l3_dst_class_id, m1->bsn_l3_dst_class_id)) {
+    /* Check overlap for bsn_udf1 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf1, f2->bsn_udf1,
+        m2->bsn_udf1, m1->bsn_udf1)) {
         return 0; /* This field differentiates; all done */
     }
 
-    /* Check overlap for ipv6_nd_tll */
-    if (!OF_OVERLAP_MAC_ADDR(&f1->ipv6_nd_tll, &f2->ipv6_nd_tll,
-        &m2->ipv6_nd_tll, &m1->ipv6_nd_tll)) {
+    /* Check overlap for bsn_udf0 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf0, f2->bsn_udf0,
+        m2->bsn_udf0, m1->bsn_udf0)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_udf3 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf3, f2->bsn_udf3,
+        m2->bsn_udf3, m1->bsn_udf3)) {
         return 0; /* This field differentiates; all done */
     }
 
     /* Check overlap for icmpv4_type */
     if (!OF_OVERLAP_INT(f1->icmpv4_type, f2->icmpv4_type,
         m2->icmpv4_type, m1->icmpv4_type)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_udf5 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf5, f2->bsn_udf5,
+        m2->bsn_udf5, m1->bsn_udf5)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -1072,6 +1210,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for tcp_dst */
     if (!OF_OVERLAP_INT(f1->tcp_dst, f2->tcp_dst,
         m2->tcp_dst, m1->tcp_dst)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_udf6 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf6, f2->bsn_udf6,
+        m2->bsn_udf6, m1->bsn_udf6)) {
         return 0; /* This field differentiates; all done */
     }
 

@@ -86,6 +86,54 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x30f08:
             *id = OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED;
             break;
+        case 0x31004:
+            *id = OF_OXM_BSN_UDF0;
+            break;
+        case 0x31108:
+            *id = OF_OXM_BSN_UDF0_MASKED;
+            break;
+        case 0x31204:
+            *id = OF_OXM_BSN_UDF1;
+            break;
+        case 0x31308:
+            *id = OF_OXM_BSN_UDF1_MASKED;
+            break;
+        case 0x31404:
+            *id = OF_OXM_BSN_UDF2;
+            break;
+        case 0x31508:
+            *id = OF_OXM_BSN_UDF2_MASKED;
+            break;
+        case 0x31604:
+            *id = OF_OXM_BSN_UDF3;
+            break;
+        case 0x31708:
+            *id = OF_OXM_BSN_UDF3_MASKED;
+            break;
+        case 0x31804:
+            *id = OF_OXM_BSN_UDF4;
+            break;
+        case 0x31908:
+            *id = OF_OXM_BSN_UDF4_MASKED;
+            break;
+        case 0x31a04:
+            *id = OF_OXM_BSN_UDF5;
+            break;
+        case 0x31b08:
+            *id = OF_OXM_BSN_UDF5_MASKED;
+            break;
+        case 0x31c04:
+            *id = OF_OXM_BSN_UDF6;
+            break;
+        case 0x31d08:
+            *id = OF_OXM_BSN_UDF6_MASKED;
+            break;
+        case 0x31e04:
+            *id = OF_OXM_BSN_UDF7;
+            break;
+        case 0x31f08:
+            *id = OF_OXM_BSN_UDF7_MASKED;
+            break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
             break;
@@ -358,6 +406,54 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x30f08:
             *id = OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED;
+            break;
+        case 0x31004:
+            *id = OF_OXM_BSN_UDF0;
+            break;
+        case 0x31108:
+            *id = OF_OXM_BSN_UDF0_MASKED;
+            break;
+        case 0x31204:
+            *id = OF_OXM_BSN_UDF1;
+            break;
+        case 0x31308:
+            *id = OF_OXM_BSN_UDF1_MASKED;
+            break;
+        case 0x31404:
+            *id = OF_OXM_BSN_UDF2;
+            break;
+        case 0x31508:
+            *id = OF_OXM_BSN_UDF2_MASKED;
+            break;
+        case 0x31604:
+            *id = OF_OXM_BSN_UDF3;
+            break;
+        case 0x31708:
+            *id = OF_OXM_BSN_UDF3_MASKED;
+            break;
+        case 0x31804:
+            *id = OF_OXM_BSN_UDF4;
+            break;
+        case 0x31908:
+            *id = OF_OXM_BSN_UDF4_MASKED;
+            break;
+        case 0x31a04:
+            *id = OF_OXM_BSN_UDF5;
+            break;
+        case 0x31b08:
+            *id = OF_OXM_BSN_UDF5_MASKED;
+            break;
+        case 0x31c04:
+            *id = OF_OXM_BSN_UDF6;
+            break;
+        case 0x31d08:
+            *id = OF_OXM_BSN_UDF6_MASKED;
+            break;
+        case 0x31e04:
+            *id = OF_OXM_BSN_UDF7;
+            break;
+        case 0x31f08:
+            *id = OF_OXM_BSN_UDF7_MASKED;
             break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
@@ -9799,13 +9895,13 @@ of_oxm_bsn_lag_id_masked_value_mask_set(
 #include "loci_int.h"
 
 static void
-of_oxm_bsn_vrf_push_wire_types(of_object_t *obj)
+of_oxm_bsn_udf0_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = U32_HTON(0x30404); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x31004); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -9815,23 +9911,23 @@ of_oxm_bsn_vrf_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_oxm_bsn_vrf of_oxm_bsn_vrf
+ * \defgroup of_oxm_bsn_udf0 of_oxm_bsn_udf0
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_oxm_bsn_vrf_push_wire_values(of_oxm_bsn_vrf_t *obj)
+of_oxm_bsn_udf0_push_wire_values(of_oxm_bsn_udf0_t *obj)
 {
 
-    of_oxm_bsn_vrf_push_wire_types(obj);
+    of_oxm_bsn_udf0_push_wire_types(obj);
 
     return OF_ERROR_NONE;
 }
 
 /**
- * Create a new of_oxm_bsn_vrf object
+ * Create a new of_oxm_bsn_udf0 object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -9842,25 +9938,25 @@ of_oxm_bsn_vrf_push_wire_values(of_oxm_bsn_vrf_t *obj)
  * Use new_from_message to bind an existing message to a message object,
  * or a _get function for non-message objects.
  *
- * \ingroup of_oxm_bsn_vrf
+ * \ingroup of_oxm_bsn_udf0
  */
 
-of_oxm_bsn_vrf_t *
-of_oxm_bsn_vrf_new(of_version_t version)
+of_oxm_bsn_udf0_t *
+of_oxm_bsn_udf0_new(of_version_t version)
 {
-    of_oxm_bsn_vrf_t *obj;
+    of_oxm_bsn_udf0_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF] + of_object_extra_len[version][OF_OXM_BSN_VRF];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
 
     /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_vrf_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_udf0_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
-    of_oxm_bsn_vrf_init(obj, version, bytes, 0);
+    of_oxm_bsn_udf0_init(obj, version, bytes, 0);
 
-    if (of_oxm_bsn_vrf_push_wire_values(obj) < 0) {
+    if (of_oxm_bsn_udf0_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -9869,7 +9965,7 @@ of_oxm_bsn_vrf_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_oxm_bsn_vrf.
+ * Initialize an object of type of_oxm_bsn_udf0.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -9886,24 +9982,24 @@ of_oxm_bsn_vrf_new(of_version_t version)
  */
 
 void
-of_oxm_bsn_vrf_init(of_oxm_bsn_vrf_t *obj,
+of_oxm_bsn_udf0_init(of_oxm_bsn_udf0_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_BSN_VRF] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_BSN_UDF0] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF] + of_object_extra_len[version][OF_OXM_BSN_VRF];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_OXM_BSN_VRF;
+    obj->object_id = OF_OXM_BSN_UDF0;
 
     /* Set up the object's function pointers */
 
-    obj->wire_type_set = of_oxm_bsn_vrf_push_wire_types;
+    obj->wire_type_set = of_oxm_bsn_udf0_push_wire_types;
 
     obj->wire_length_get = of_oxm_wire_length_get;
     obj->wire_type_get = of_oxm_wire_object_id_get;
@@ -9919,15 +10015,15 @@ of_oxm_bsn_vrf_init(of_oxm_bsn_vrf_t *obj,
 
 
 /**
- * Get value from an object of type of_oxm_bsn_vrf.
- * @param obj Pointer to an object of type of_oxm_bsn_vrf.
+ * Get value from an object of type of_oxm_bsn_udf0.
+ * @param obj Pointer to an object of type of_oxm_bsn_udf0.
  * @param value Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_oxm_bsn_vrf_value_get(
-    of_oxm_bsn_vrf_t *obj,
+of_oxm_bsn_udf0_value_get(
+    of_oxm_bsn_udf0_t *obj,
     uint32_t *value)
 {
     of_wire_buffer_t *wbuf;
@@ -9935,7 +10031,7 @@ of_oxm_bsn_vrf_value_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_VRF);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -9960,13 +10056,13 @@ of_oxm_bsn_vrf_value_get(
 }
 
 /**
- * Set value in an object of type of_oxm_bsn_vrf.
- * @param obj Pointer to an object of type of_oxm_bsn_vrf.
+ * Set value in an object of type of_oxm_bsn_udf0.
+ * @param obj Pointer to an object of type of_oxm_bsn_udf0.
  * @param value The value to write into the object
  */
 void
-of_oxm_bsn_vrf_value_set(
-    of_oxm_bsn_vrf_t *obj,
+of_oxm_bsn_udf0_value_set(
+    of_oxm_bsn_udf0_t *obj,
     uint32_t value)
 {
     of_wire_buffer_t *wbuf;
@@ -9974,7 +10070,7 @@ of_oxm_bsn_vrf_value_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_VRF);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -10029,13 +10125,13 @@ of_oxm_bsn_vrf_value_set(
 #include "loci_int.h"
 
 static void
-of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj)
+of_oxm_bsn_udf0_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = U32_HTON(0x30508); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x31108); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -10045,23 +10141,23 @@ of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_oxm_bsn_vrf_masked of_oxm_bsn_vrf_masked
+ * \defgroup of_oxm_bsn_udf0_masked of_oxm_bsn_udf0_masked
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_oxm_bsn_vrf_masked_push_wire_values(of_oxm_bsn_vrf_masked_t *obj)
+of_oxm_bsn_udf0_masked_push_wire_values(of_oxm_bsn_udf0_masked_t *obj)
 {
 
-    of_oxm_bsn_vrf_masked_push_wire_types(obj);
+    of_oxm_bsn_udf0_masked_push_wire_types(obj);
 
     return OF_ERROR_NONE;
 }
 
 /**
- * Create a new of_oxm_bsn_vrf_masked object
+ * Create a new of_oxm_bsn_udf0_masked object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -10072,25 +10168,25 @@ of_oxm_bsn_vrf_masked_push_wire_values(of_oxm_bsn_vrf_masked_t *obj)
  * Use new_from_message to bind an existing message to a message object,
  * or a _get function for non-message objects.
  *
- * \ingroup of_oxm_bsn_vrf_masked
+ * \ingroup of_oxm_bsn_udf0_masked
  */
 
-of_oxm_bsn_vrf_masked_t *
-of_oxm_bsn_vrf_masked_new(of_version_t version)
+of_oxm_bsn_udf0_masked_t *
+of_oxm_bsn_udf0_masked_new(of_version_t version)
 {
-    of_oxm_bsn_vrf_masked_t *obj;
+    of_oxm_bsn_udf0_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED] + of_object_extra_len[version][OF_OXM_BSN_VRF_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF0_MASKED];
 
     /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_vrf_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_udf0_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
-    of_oxm_bsn_vrf_masked_init(obj, version, bytes, 0);
+    of_oxm_bsn_udf0_masked_init(obj, version, bytes, 0);
 
-    if (of_oxm_bsn_vrf_masked_push_wire_values(obj) < 0) {
+    if (of_oxm_bsn_udf0_masked_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -10099,7 +10195,7 @@ of_oxm_bsn_vrf_masked_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_oxm_bsn_vrf_masked.
+ * Initialize an object of type of_oxm_bsn_udf0_masked.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -10116,24 +10212,24 @@ of_oxm_bsn_vrf_masked_new(of_version_t version)
  */
 
 void
-of_oxm_bsn_vrf_masked_init(of_oxm_bsn_vrf_masked_t *obj,
+of_oxm_bsn_udf0_masked_init(of_oxm_bsn_udf0_masked_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED] + of_object_extra_len[version][OF_OXM_BSN_VRF_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF0_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_OXM_BSN_VRF_MASKED;
+    obj->object_id = OF_OXM_BSN_UDF0_MASKED;
 
     /* Set up the object's function pointers */
 
-    obj->wire_type_set = of_oxm_bsn_vrf_masked_push_wire_types;
+    obj->wire_type_set = of_oxm_bsn_udf0_masked_push_wire_types;
 
     obj->wire_length_get = of_oxm_wire_length_get;
     obj->wire_type_get = of_oxm_wire_object_id_get;
@@ -10149,15 +10245,15 @@ of_oxm_bsn_vrf_masked_init(of_oxm_bsn_vrf_masked_t *obj,
 
 
 /**
- * Get value from an object of type of_oxm_bsn_vrf_masked.
- * @param obj Pointer to an object of type of_oxm_bsn_vrf_masked.
+ * Get value from an object of type of_oxm_bsn_udf0_masked.
+ * @param obj Pointer to an object of type of_oxm_bsn_udf0_masked.
  * @param value Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_oxm_bsn_vrf_masked_value_get(
-    of_oxm_bsn_vrf_masked_t *obj,
+of_oxm_bsn_udf0_masked_value_get(
+    of_oxm_bsn_udf0_masked_t *obj,
     uint32_t *value)
 {
     of_wire_buffer_t *wbuf;
@@ -10165,7 +10261,7 @@ of_oxm_bsn_vrf_masked_value_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_VRF_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -10190,13 +10286,13 @@ of_oxm_bsn_vrf_masked_value_get(
 }
 
 /**
- * Set value in an object of type of_oxm_bsn_vrf_masked.
- * @param obj Pointer to an object of type of_oxm_bsn_vrf_masked.
+ * Set value in an object of type of_oxm_bsn_udf0_masked.
+ * @param obj Pointer to an object of type of_oxm_bsn_udf0_masked.
  * @param value The value to write into the object
  */
 void
-of_oxm_bsn_vrf_masked_value_set(
-    of_oxm_bsn_vrf_masked_t *obj,
+of_oxm_bsn_udf0_masked_value_set(
+    of_oxm_bsn_udf0_masked_t *obj,
     uint32_t value)
 {
     of_wire_buffer_t *wbuf;
@@ -10204,7 +10300,7 @@ of_oxm_bsn_vrf_masked_value_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_VRF_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -10229,15 +10325,15 @@ of_oxm_bsn_vrf_masked_value_set(
 }
 
 /**
- * Get value_mask from an object of type of_oxm_bsn_vrf_masked.
- * @param obj Pointer to an object of type of_oxm_bsn_vrf_masked.
+ * Get value_mask from an object of type of_oxm_bsn_udf0_masked.
+ * @param obj Pointer to an object of type of_oxm_bsn_udf0_masked.
  * @param value_mask Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_oxm_bsn_vrf_masked_value_mask_get(
-    of_oxm_bsn_vrf_masked_t *obj,
+of_oxm_bsn_udf0_masked_value_mask_get(
+    of_oxm_bsn_udf0_masked_t *obj,
     uint32_t *value_mask)
 {
     of_wire_buffer_t *wbuf;
@@ -10245,7 +10341,7 @@ of_oxm_bsn_vrf_masked_value_mask_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_VRF_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -10270,13 +10366,13 @@ of_oxm_bsn_vrf_masked_value_mask_get(
 }
 
 /**
- * Set value_mask in an object of type of_oxm_bsn_vrf_masked.
- * @param obj Pointer to an object of type of_oxm_bsn_vrf_masked.
+ * Set value_mask in an object of type of_oxm_bsn_udf0_masked.
+ * @param obj Pointer to an object of type of_oxm_bsn_udf0_masked.
  * @param value_mask The value to write into the object
  */
 void
-of_oxm_bsn_vrf_masked_value_mask_set(
-    of_oxm_bsn_vrf_masked_t *obj,
+of_oxm_bsn_udf0_masked_value_mask_set(
+    of_oxm_bsn_udf0_masked_t *obj,
     uint32_t value_mask)
 {
     of_wire_buffer_t *wbuf;
@@ -10284,7 +10380,7 @@ of_oxm_bsn_vrf_masked_value_mask_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_VRF_MASKED);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0_MASKED);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);

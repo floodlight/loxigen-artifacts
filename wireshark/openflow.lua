@@ -1184,19 +1184,37 @@ local enum_v4_ofp_stats_type = {
     [65535] = "OFPST_EXPERIMENTER",
 }
 
-local enum_v4_ofp_bsn_port_counter = {
-    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
-    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
-    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
-    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
-    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
-    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
-    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
-    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
-    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
-    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
-    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
-    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
+local enum_v4_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
+    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
 }
 
 local enum_v4_ofp_flow_mod_flags = {
@@ -1637,37 +1655,19 @@ local enum_v4_ofp_port_mod_failed_code = {
     [4] = "OFPPMFC_EPERM",
 }
 
-local enum_v4_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
-    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
+local enum_v4_ofp_bsn_port_counter = {
+    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
+    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
+    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
+    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
+    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
+    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
+    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
+    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
+    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
+    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
+    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
 }
 
 local enum_v4_ofp_packet_in_reason = {
@@ -1731,6 +1731,12 @@ local enum_v4_ofp_port_features = {
     [8192] = "OFPPF_AUTONEG",
     [16384] = "OFPPF_PAUSE",
     [32768] = "OFPPF_PAUSE_ASYM",
+}
+
+local enum_v4_ofp_bsn_udf_anchor = {
+    [0] = "OFP_BSN_UDF_ANCHOR_PACKET_START",
+    [1] = "OFP_BSN_UDF_ANCHOR_L3_HEADER_START",
+    [2] = "OFP_BSN_UDF_ANCHOR_L4_HEADER_START",
 }
 
 
@@ -4291,6 +4297,46 @@ fields['of12.oxm_bsn_lag_id.value'] = ProtoField.uint32("of12.oxm_bsn_lag_id.val
 fields['of12.oxm_bsn_lag_id_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_lag_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_lag_id_masked.value'] = ProtoField.uint32("of12.oxm_bsn_lag_id_masked.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_lag_id_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_lag_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf0.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf0.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf0.value'] = ProtoField.uint32("of12.oxm_bsn_udf0.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf0_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf0_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf0_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf0_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf0_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf0_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf1.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf1.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf1.value'] = ProtoField.uint32("of12.oxm_bsn_udf1.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf1_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf1_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf1_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf1_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf1_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf1_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf2.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf2.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf2.value'] = ProtoField.uint32("of12.oxm_bsn_udf2.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf2_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf2_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf2_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf2_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf2_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf2_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf3.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf3.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf3.value'] = ProtoField.uint32("of12.oxm_bsn_udf3.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf3_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf3_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf3_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf3_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf3_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf3_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf4.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf4.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf4.value'] = ProtoField.uint32("of12.oxm_bsn_udf4.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf4_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf4_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf4_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf4_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf4_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf4_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf5.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf5.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf5.value'] = ProtoField.uint32("of12.oxm_bsn_udf5.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf5_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf5_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf5_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf5_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf5_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf5_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf6.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf6.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf6.value'] = ProtoField.uint32("of12.oxm_bsn_udf6.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf6_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf6_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf6_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf6_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf6_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf6_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_udf7.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf7.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf7.value'] = ProtoField.uint32("of12.oxm_bsn_udf7.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of12.oxm_bsn_vrf.type_len'] = ProtoField.uint32("of12.oxm_bsn_vrf.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_vrf.value'] = ProtoField.uint32("of12.oxm_bsn_vrf.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_vrf_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_vrf_masked.type_len", "type_len", base.DEC, nil)
@@ -5560,6 +5606,18 @@ fields['of13.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_rx_pac
 fields['of13.bsn_tlv_tx_packets.type'] = ProtoField.uint16("of13.bsn_tlv_tx_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tx_packets.length'] = ProtoField.uint16("of13.bsn_tlv_tx_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_tx_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_udf_anchor.type'] = ProtoField.uint16("of13.bsn_tlv_udf_anchor.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_udf_anchor.length'] = ProtoField.uint16("of13.bsn_tlv_udf_anchor.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_udf_anchor.value'] = ProtoField.uint32("of13.bsn_tlv_udf_anchor.value", "value", base.DEC, enum_v4_ofp_bsn_udf_anchor)
+fields['of13.bsn_tlv_udf_id.type'] = ProtoField.uint16("of13.bsn_tlv_udf_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_udf_id.length'] = ProtoField.uint16("of13.bsn_tlv_udf_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_udf_id.value'] = ProtoField.uint16("of13.bsn_tlv_udf_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_udf_length.type'] = ProtoField.uint16("of13.bsn_tlv_udf_length.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_udf_length.length'] = ProtoField.uint16("of13.bsn_tlv_udf_length.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_udf_length.value'] = ProtoField.uint16("of13.bsn_tlv_udf_length.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_udf_offset.type'] = ProtoField.uint16("of13.bsn_tlv_udf_offset.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_udf_offset.length'] = ProtoField.uint16("of13.bsn_tlv_udf_offset.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_udf_offset.value'] = ProtoField.uint16("of13.bsn_tlv_udf_offset.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
@@ -6230,6 +6288,46 @@ fields['of13.oxm_bsn_lag_id.value'] = ProtoField.uint32("of13.oxm_bsn_lag_id.val
 fields['of13.oxm_bsn_lag_id_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_lag_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_lag_id_masked.value'] = ProtoField.uint32("of13.oxm_bsn_lag_id_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_lag_id_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_lag_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf0.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf0.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf0.value'] = ProtoField.uint32("of13.oxm_bsn_udf0.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf0_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf0_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf0_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf0_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf0_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf0_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf1.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf1.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf1.value'] = ProtoField.uint32("of13.oxm_bsn_udf1.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf1_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf1_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf1_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf1_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf1_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf1_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf2.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf2.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf2.value'] = ProtoField.uint32("of13.oxm_bsn_udf2.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf2_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf2_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf2_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf2_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf2_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf2_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf3.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf3.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf3.value'] = ProtoField.uint32("of13.oxm_bsn_udf3.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf3_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf3_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf3_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf3_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf3_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf3_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf4.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf4.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf4.value'] = ProtoField.uint32("of13.oxm_bsn_udf4.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf4_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf4_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf4_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf4_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf4_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf4_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf5.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf5.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf5.value'] = ProtoField.uint32("of13.oxm_bsn_udf5.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf5_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf5_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf5_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf5_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf5_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf5_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf6.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf6.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf6.value'] = ProtoField.uint32("of13.oxm_bsn_udf6.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf6_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf6_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf6_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf6_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf6_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf6_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_udf7.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf7.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf7.value'] = ProtoField.uint32("of13.oxm_bsn_udf7.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_bsn_vrf.type_len'] = ProtoField.uint32("of13.oxm_bsn_vrf.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_vrf.value'] = ProtoField.uint32("of13.oxm_bsn_vrf.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_vrf_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_vrf_masked.type_len", "type_len", base.DEC, nil)
@@ -9245,6 +9343,46 @@ p_of.fields = {
     fields['of12.oxm_bsn_lag_id_masked.type_len'],
     fields['of12.oxm_bsn_lag_id_masked.value'],
     fields['of12.oxm_bsn_lag_id_masked.value_mask'],
+    fields['of12.oxm_bsn_udf0.type_len'],
+    fields['of12.oxm_bsn_udf0.value'],
+    fields['of12.oxm_bsn_udf0_masked.type_len'],
+    fields['of12.oxm_bsn_udf0_masked.value'],
+    fields['of12.oxm_bsn_udf0_masked.value_mask'],
+    fields['of12.oxm_bsn_udf1.type_len'],
+    fields['of12.oxm_bsn_udf1.value'],
+    fields['of12.oxm_bsn_udf1_masked.type_len'],
+    fields['of12.oxm_bsn_udf1_masked.value'],
+    fields['of12.oxm_bsn_udf1_masked.value_mask'],
+    fields['of12.oxm_bsn_udf2.type_len'],
+    fields['of12.oxm_bsn_udf2.value'],
+    fields['of12.oxm_bsn_udf2_masked.type_len'],
+    fields['of12.oxm_bsn_udf2_masked.value'],
+    fields['of12.oxm_bsn_udf2_masked.value_mask'],
+    fields['of12.oxm_bsn_udf3.type_len'],
+    fields['of12.oxm_bsn_udf3.value'],
+    fields['of12.oxm_bsn_udf3_masked.type_len'],
+    fields['of12.oxm_bsn_udf3_masked.value'],
+    fields['of12.oxm_bsn_udf3_masked.value_mask'],
+    fields['of12.oxm_bsn_udf4.type_len'],
+    fields['of12.oxm_bsn_udf4.value'],
+    fields['of12.oxm_bsn_udf4_masked.type_len'],
+    fields['of12.oxm_bsn_udf4_masked.value'],
+    fields['of12.oxm_bsn_udf4_masked.value_mask'],
+    fields['of12.oxm_bsn_udf5.type_len'],
+    fields['of12.oxm_bsn_udf5.value'],
+    fields['of12.oxm_bsn_udf5_masked.type_len'],
+    fields['of12.oxm_bsn_udf5_masked.value'],
+    fields['of12.oxm_bsn_udf5_masked.value_mask'],
+    fields['of12.oxm_bsn_udf6.type_len'],
+    fields['of12.oxm_bsn_udf6.value'],
+    fields['of12.oxm_bsn_udf6_masked.type_len'],
+    fields['of12.oxm_bsn_udf6_masked.value'],
+    fields['of12.oxm_bsn_udf6_masked.value_mask'],
+    fields['of12.oxm_bsn_udf7.type_len'],
+    fields['of12.oxm_bsn_udf7.value'],
+    fields['of12.oxm_bsn_udf7_masked.type_len'],
+    fields['of12.oxm_bsn_udf7_masked.value'],
+    fields['of12.oxm_bsn_udf7_masked.value_mask'],
     fields['of12.oxm_bsn_vrf.type_len'],
     fields['of12.oxm_bsn_vrf.value'],
     fields['of12.oxm_bsn_vrf_masked.type_len'],
@@ -10514,6 +10652,18 @@ p_of.fields = {
     fields['of13.bsn_tlv_tx_packets.type'],
     fields['of13.bsn_tlv_tx_packets.length'],
     fields['of13.bsn_tlv_tx_packets.value'],
+    fields['of13.bsn_tlv_udf_anchor.type'],
+    fields['of13.bsn_tlv_udf_anchor.length'],
+    fields['of13.bsn_tlv_udf_anchor.value'],
+    fields['of13.bsn_tlv_udf_id.type'],
+    fields['of13.bsn_tlv_udf_id.length'],
+    fields['of13.bsn_tlv_udf_id.value'],
+    fields['of13.bsn_tlv_udf_length.type'],
+    fields['of13.bsn_tlv_udf_length.length'],
+    fields['of13.bsn_tlv_udf_length.value'],
+    fields['of13.bsn_tlv_udf_offset.type'],
+    fields['of13.bsn_tlv_udf_offset.length'],
+    fields['of13.bsn_tlv_udf_offset.value'],
     fields['of13.bsn_tlv_unicast_query_timeout.type'],
     fields['of13.bsn_tlv_unicast_query_timeout.length'],
     fields['of13.bsn_tlv_unicast_query_timeout.value'],
@@ -11184,6 +11334,46 @@ p_of.fields = {
     fields['of13.oxm_bsn_lag_id_masked.type_len'],
     fields['of13.oxm_bsn_lag_id_masked.value'],
     fields['of13.oxm_bsn_lag_id_masked.value_mask'],
+    fields['of13.oxm_bsn_udf0.type_len'],
+    fields['of13.oxm_bsn_udf0.value'],
+    fields['of13.oxm_bsn_udf0_masked.type_len'],
+    fields['of13.oxm_bsn_udf0_masked.value'],
+    fields['of13.oxm_bsn_udf0_masked.value_mask'],
+    fields['of13.oxm_bsn_udf1.type_len'],
+    fields['of13.oxm_bsn_udf1.value'],
+    fields['of13.oxm_bsn_udf1_masked.type_len'],
+    fields['of13.oxm_bsn_udf1_masked.value'],
+    fields['of13.oxm_bsn_udf1_masked.value_mask'],
+    fields['of13.oxm_bsn_udf2.type_len'],
+    fields['of13.oxm_bsn_udf2.value'],
+    fields['of13.oxm_bsn_udf2_masked.type_len'],
+    fields['of13.oxm_bsn_udf2_masked.value'],
+    fields['of13.oxm_bsn_udf2_masked.value_mask'],
+    fields['of13.oxm_bsn_udf3.type_len'],
+    fields['of13.oxm_bsn_udf3.value'],
+    fields['of13.oxm_bsn_udf3_masked.type_len'],
+    fields['of13.oxm_bsn_udf3_masked.value'],
+    fields['of13.oxm_bsn_udf3_masked.value_mask'],
+    fields['of13.oxm_bsn_udf4.type_len'],
+    fields['of13.oxm_bsn_udf4.value'],
+    fields['of13.oxm_bsn_udf4_masked.type_len'],
+    fields['of13.oxm_bsn_udf4_masked.value'],
+    fields['of13.oxm_bsn_udf4_masked.value_mask'],
+    fields['of13.oxm_bsn_udf5.type_len'],
+    fields['of13.oxm_bsn_udf5.value'],
+    fields['of13.oxm_bsn_udf5_masked.type_len'],
+    fields['of13.oxm_bsn_udf5_masked.value'],
+    fields['of13.oxm_bsn_udf5_masked.value_mask'],
+    fields['of13.oxm_bsn_udf6.type_len'],
+    fields['of13.oxm_bsn_udf6.value'],
+    fields['of13.oxm_bsn_udf6_masked.type_len'],
+    fields['of13.oxm_bsn_udf6_masked.value'],
+    fields['of13.oxm_bsn_udf6_masked.value_mask'],
+    fields['of13.oxm_bsn_udf7.type_len'],
+    fields['of13.oxm_bsn_udf7.value'],
+    fields['of13.oxm_bsn_udf7_masked.type_len'],
+    fields['of13.oxm_bsn_udf7_masked.value'],
+    fields['of13.oxm_bsn_udf7_masked.value_mask'],
     fields['of13.oxm_bsn_vrf.type_len'],
     fields['of13.oxm_bsn_vrf.value'],
     fields['of13.oxm_bsn_vrf_masked.type_len'],
@@ -17196,6 +17386,158 @@ function dissect_of_oxm_bsn_lag_id_masked_v3(reader, subtree)
 end
 of_oxm_v3_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v3
 
+-- child class of_oxm_bsn_udf0
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf0_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf0.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf0.value')
+    return 'of_oxm_bsn_udf0'
+end
+of_oxm_v3_dissectors[200708] = dissect_of_oxm_bsn_udf0_v3
+
+-- child class of_oxm_bsn_udf0_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf0_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf0_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf0_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf0_masked.value_mask')
+    return 'of_oxm_bsn_udf0_masked'
+end
+of_oxm_v3_dissectors[200968] = dissect_of_oxm_bsn_udf0_masked_v3
+
+-- child class of_oxm_bsn_udf1
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf1_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf1.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf1.value')
+    return 'of_oxm_bsn_udf1'
+end
+of_oxm_v3_dissectors[201220] = dissect_of_oxm_bsn_udf1_v3
+
+-- child class of_oxm_bsn_udf1_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf1_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf1_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf1_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf1_masked.value_mask')
+    return 'of_oxm_bsn_udf1_masked'
+end
+of_oxm_v3_dissectors[201480] = dissect_of_oxm_bsn_udf1_masked_v3
+
+-- child class of_oxm_bsn_udf2
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf2_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf2.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf2.value')
+    return 'of_oxm_bsn_udf2'
+end
+of_oxm_v3_dissectors[201732] = dissect_of_oxm_bsn_udf2_v3
+
+-- child class of_oxm_bsn_udf2_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf2_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf2_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf2_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf2_masked.value_mask')
+    return 'of_oxm_bsn_udf2_masked'
+end
+of_oxm_v3_dissectors[201992] = dissect_of_oxm_bsn_udf2_masked_v3
+
+-- child class of_oxm_bsn_udf3
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf3_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf3.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf3.value')
+    return 'of_oxm_bsn_udf3'
+end
+of_oxm_v3_dissectors[202244] = dissect_of_oxm_bsn_udf3_v3
+
+-- child class of_oxm_bsn_udf3_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf3_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf3_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf3_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf3_masked.value_mask')
+    return 'of_oxm_bsn_udf3_masked'
+end
+of_oxm_v3_dissectors[202504] = dissect_of_oxm_bsn_udf3_masked_v3
+
+-- child class of_oxm_bsn_udf4
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf4_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf4.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf4.value')
+    return 'of_oxm_bsn_udf4'
+end
+of_oxm_v3_dissectors[202756] = dissect_of_oxm_bsn_udf4_v3
+
+-- child class of_oxm_bsn_udf4_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf4_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf4_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf4_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf4_masked.value_mask')
+    return 'of_oxm_bsn_udf4_masked'
+end
+of_oxm_v3_dissectors[203016] = dissect_of_oxm_bsn_udf4_masked_v3
+
+-- child class of_oxm_bsn_udf5
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf5_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf5.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf5.value')
+    return 'of_oxm_bsn_udf5'
+end
+of_oxm_v3_dissectors[203268] = dissect_of_oxm_bsn_udf5_v3
+
+-- child class of_oxm_bsn_udf5_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf5_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf5_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf5_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf5_masked.value_mask')
+    return 'of_oxm_bsn_udf5_masked'
+end
+of_oxm_v3_dissectors[203528] = dissect_of_oxm_bsn_udf5_masked_v3
+
+-- child class of_oxm_bsn_udf6
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf6_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf6.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf6.value')
+    return 'of_oxm_bsn_udf6'
+end
+of_oxm_v3_dissectors[203780] = dissect_of_oxm_bsn_udf6_v3
+
+-- child class of_oxm_bsn_udf6_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf6_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf6_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf6_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf6_masked.value_mask')
+    return 'of_oxm_bsn_udf6_masked'
+end
+of_oxm_v3_dissectors[204040] = dissect_of_oxm_bsn_udf6_masked_v3
+
+-- child class of_oxm_bsn_udf7
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf7_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf7.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf7.value')
+    return 'of_oxm_bsn_udf7'
+end
+of_oxm_v3_dissectors[204292] = dissect_of_oxm_bsn_udf7_v3
+
+-- child class of_oxm_bsn_udf7_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf7_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf7_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf7_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_udf7_masked.value_mask')
+    return 'of_oxm_bsn_udf7_masked'
+end
+of_oxm_v3_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v3
+
 -- child class of_oxm_bsn_vrf
 -- Child of of_oxm
 function dissect_of_oxm_bsn_vrf_v3(reader, subtree)
@@ -20293,6 +20635,46 @@ function dissect_of_bsn_tlv_tx_packets_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[3] = dissect_of_bsn_tlv_tx_packets_v4
 
+-- child class of_bsn_tlv_udf_anchor
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_anchor_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_anchor.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_anchor.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_anchor.value')
+    return 'of_bsn_tlv_udf_anchor'
+end
+of_bsn_tlv_v4_dissectors[16] = dissect_of_bsn_tlv_udf_anchor_v4
+
+-- child class of_bsn_tlv_udf_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_id.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_id.value')
+    return 'of_bsn_tlv_udf_id'
+end
+of_bsn_tlv_v4_dissectors[15] = dissect_of_bsn_tlv_udf_id_v4
+
+-- child class of_bsn_tlv_udf_length
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_length_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_length.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_length.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_length.value')
+    return 'of_bsn_tlv_udf_length'
+end
+of_bsn_tlv_v4_dissectors[18] = dissect_of_bsn_tlv_udf_length_v4
+
+-- child class of_bsn_tlv_udf_offset
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_udf_offset_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_offset.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_offset.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_udf_offset.value')
+    return 'of_bsn_tlv_udf_offset'
+end
+of_bsn_tlv_v4_dissectors[17] = dissect_of_bsn_tlv_udf_offset_v4
+
 -- child class of_bsn_tlv_unicast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_unicast_query_timeout_v4(reader, subtree)
@@ -21902,6 +22284,158 @@ function dissect_of_oxm_bsn_lag_id_masked_v4(reader, subtree)
     return 'of_oxm_bsn_lag_id_masked'
 end
 of_oxm_v4_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v4
+
+-- child class of_oxm_bsn_udf0
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf0_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf0.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf0.value')
+    return 'of_oxm_bsn_udf0'
+end
+of_oxm_v4_dissectors[200708] = dissect_of_oxm_bsn_udf0_v4
+
+-- child class of_oxm_bsn_udf0_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf0_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf0_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf0_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf0_masked.value_mask')
+    return 'of_oxm_bsn_udf0_masked'
+end
+of_oxm_v4_dissectors[200968] = dissect_of_oxm_bsn_udf0_masked_v4
+
+-- child class of_oxm_bsn_udf1
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf1_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf1.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf1.value')
+    return 'of_oxm_bsn_udf1'
+end
+of_oxm_v4_dissectors[201220] = dissect_of_oxm_bsn_udf1_v4
+
+-- child class of_oxm_bsn_udf1_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf1_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf1_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf1_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf1_masked.value_mask')
+    return 'of_oxm_bsn_udf1_masked'
+end
+of_oxm_v4_dissectors[201480] = dissect_of_oxm_bsn_udf1_masked_v4
+
+-- child class of_oxm_bsn_udf2
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf2_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf2.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf2.value')
+    return 'of_oxm_bsn_udf2'
+end
+of_oxm_v4_dissectors[201732] = dissect_of_oxm_bsn_udf2_v4
+
+-- child class of_oxm_bsn_udf2_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf2_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf2_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf2_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf2_masked.value_mask')
+    return 'of_oxm_bsn_udf2_masked'
+end
+of_oxm_v4_dissectors[201992] = dissect_of_oxm_bsn_udf2_masked_v4
+
+-- child class of_oxm_bsn_udf3
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf3_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf3.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf3.value')
+    return 'of_oxm_bsn_udf3'
+end
+of_oxm_v4_dissectors[202244] = dissect_of_oxm_bsn_udf3_v4
+
+-- child class of_oxm_bsn_udf3_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf3_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf3_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf3_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf3_masked.value_mask')
+    return 'of_oxm_bsn_udf3_masked'
+end
+of_oxm_v4_dissectors[202504] = dissect_of_oxm_bsn_udf3_masked_v4
+
+-- child class of_oxm_bsn_udf4
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf4_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf4.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf4.value')
+    return 'of_oxm_bsn_udf4'
+end
+of_oxm_v4_dissectors[202756] = dissect_of_oxm_bsn_udf4_v4
+
+-- child class of_oxm_bsn_udf4_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf4_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf4_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf4_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf4_masked.value_mask')
+    return 'of_oxm_bsn_udf4_masked'
+end
+of_oxm_v4_dissectors[203016] = dissect_of_oxm_bsn_udf4_masked_v4
+
+-- child class of_oxm_bsn_udf5
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf5_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf5.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf5.value')
+    return 'of_oxm_bsn_udf5'
+end
+of_oxm_v4_dissectors[203268] = dissect_of_oxm_bsn_udf5_v4
+
+-- child class of_oxm_bsn_udf5_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf5_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf5_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf5_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf5_masked.value_mask')
+    return 'of_oxm_bsn_udf5_masked'
+end
+of_oxm_v4_dissectors[203528] = dissect_of_oxm_bsn_udf5_masked_v4
+
+-- child class of_oxm_bsn_udf6
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf6_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf6.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf6.value')
+    return 'of_oxm_bsn_udf6'
+end
+of_oxm_v4_dissectors[203780] = dissect_of_oxm_bsn_udf6_v4
+
+-- child class of_oxm_bsn_udf6_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf6_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf6_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf6_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf6_masked.value_mask')
+    return 'of_oxm_bsn_udf6_masked'
+end
+of_oxm_v4_dissectors[204040] = dissect_of_oxm_bsn_udf6_masked_v4
+
+-- child class of_oxm_bsn_udf7
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf7_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf7.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf7.value')
+    return 'of_oxm_bsn_udf7'
+end
+of_oxm_v4_dissectors[204292] = dissect_of_oxm_bsn_udf7_v4
+
+-- child class of_oxm_bsn_udf7_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_udf7_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf7_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf7_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_udf7_masked.value_mask')
+    return 'of_oxm_bsn_udf7_masked'
+end
+of_oxm_v4_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v4
 
 -- child class of_oxm_bsn_vrf
 -- Child of of_oxm
