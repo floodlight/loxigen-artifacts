@@ -1687,6 +1687,7 @@ local enum_v4_ofp_packet_in_reason = {
     [139] = "OFPR_BSN_ARP",
     [140] = "OFPR_BSN_DHCP",
     [141] = "OFPR_BSN_DEBUG",
+    [142] = "OFPR_BSN_PACKET_OF_DEATH",
 }
 
 local enum_v4_of_bsn_vlan_counter_t = {

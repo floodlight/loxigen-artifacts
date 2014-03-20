@@ -40,5 +40,6 @@ public enum OFPacketInReason {
      BSN_FRAGMENTATION_REQUIRED,
      BSN_ARP,
      BSN_DHCP,
-     BSN_DEBUG;
+     BSN_DEBUG,
+     BSN_PACKET_OF_DEATH;
 }

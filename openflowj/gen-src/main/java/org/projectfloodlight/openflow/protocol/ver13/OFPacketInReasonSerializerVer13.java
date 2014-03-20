@@ -45,6 +45,7 @@ public class OFPacketInReasonSerializerVer13 {
     public final static byte BSN_ARP_VAL = (byte) 0x8b;
     public final static byte BSN_DHCP_VAL = (byte) 0x8c;
     public final static byte BSN_DEBUG_VAL = (byte) 0x8d;
+    public final static byte BSN_PACKET_OF_DEATH_VAL = (byte) 0x8e;
 
     public static OFPacketInReason readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -96,6 +97,8 @@ public class OFPacketInReasonSerializerVer13 {
                 return OFPacketInReason.BSN_DHCP;
             case BSN_DEBUG_VAL:
                 return OFPacketInReason.BSN_DEBUG;
+            case BSN_PACKET_OF_DEATH_VAL:
+                return OFPacketInReason.BSN_PACKET_OF_DEATH;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFPacketInReason in version 1.3: " + val);
         }
@@ -136,6 +139,8 @@ public class OFPacketInReasonSerializerVer13 {
                 return BSN_DHCP_VAL;
             case BSN_DEBUG:
                 return BSN_DEBUG_VAL;
+            case BSN_PACKET_OF_DEATH:
+                return BSN_PACKET_OF_DEATH_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFPacketInReason in version 1.3: " + e);
         }

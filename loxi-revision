@@ -1,1 +1,1 @@
-8c9f6021ef426d84d2fa2dd49b65c9ab6c447b67 Merge into master from pull request #229: openflow_input: add bsn_packet_of_death extension (https://github.com/floodlight/loxigen/pull/229)
+f8dda5b470c7ba23e8b1489a3e96649f0a5d45ed Merge into master from pull request #232: openflow_input: add OFPR_BSN_PACKET_OF_DEATH (https://github.com/floodlight/loxigen/pull/232)
