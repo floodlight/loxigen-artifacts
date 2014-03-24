@@ -18257,6 +18257,12 @@ of_bsn_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb:
             *id = OF_BSN_TABLE_CHECKSUM_STATS_REPLY;
             break;
+        case 0xc:
+            *id = OF_BSN_DEBUG_COUNTER_STATS_REPLY;
+            break;
+        case 0xd:
+            *id = OF_BSN_DEBUG_COUNTER_DESC_STATS_REPLY;
+            break;
         default:
             *id = OF_BSN_STATS_REPLY;
             break;

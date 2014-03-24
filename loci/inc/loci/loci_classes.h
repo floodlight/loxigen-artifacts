@@ -312,6 +312,12 @@ void of_bsn_arp_idle_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_controller_connection_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_controller_connections_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_controller_connections_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_debug_counter_desc_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_debug_counter_desc_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_debug_counter_desc_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_debug_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_debug_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_debug_counter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_flow_checksum_bucket_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_flow_checksum_bucket_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_flow_checksum_bucket_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -493,6 +499,10 @@ typedef of_object_t of_bsn_bw_enable_set_reply_t;
 typedef of_object_t of_bsn_bw_enable_set_request_t;
 typedef of_object_t of_bsn_controller_connections_reply_t;
 typedef of_object_t of_bsn_controller_connections_request_t;
+typedef of_object_t of_bsn_debug_counter_desc_stats_reply_t;
+typedef of_object_t of_bsn_debug_counter_desc_stats_request_t;
+typedef of_object_t of_bsn_debug_counter_stats_reply_t;
+typedef of_object_t of_bsn_debug_counter_stats_request_t;
 typedef of_object_t of_bsn_flow_checksum_bucket_stats_reply_t;
 typedef of_object_t of_bsn_flow_checksum_bucket_stats_request_t;
 typedef of_object_t of_bsn_flow_idle_t;
@@ -705,6 +715,8 @@ typedef of_object_t of_action_set_vlan_pcp_t;
 typedef of_object_t of_action_set_vlan_vid_t;
 typedef of_object_t of_action_strip_vlan_t;
 typedef of_object_t of_bsn_controller_connection_t;
+typedef of_object_t of_bsn_debug_counter_desc_stats_entry_t;
+typedef of_object_t of_bsn_debug_counter_stats_entry_t;
 typedef of_object_t of_bsn_flow_checksum_bucket_stats_entry_t;
 typedef of_object_t of_bsn_gentable_bucket_stats_entry_t;
 typedef of_object_t of_bsn_gentable_desc_stats_entry_t;
@@ -928,6 +940,8 @@ typedef of_object_t of_uint8_t;
 typedef of_object_t of_list_action_t;
 typedef of_object_t of_list_action_id_t;
 typedef of_object_t of_list_bsn_controller_connection_t;
+typedef of_object_t of_list_bsn_debug_counter_desc_stats_entry_t;
+typedef of_object_t of_list_bsn_debug_counter_stats_entry_t;
 typedef of_object_t of_list_bsn_flow_checksum_bucket_stats_entry_t;
 typedef of_object_t of_list_bsn_gentable_bucket_stats_entry_t;
 typedef of_object_t of_list_bsn_gentable_desc_stats_entry_t;
@@ -1130,6 +1144,34 @@ extern of_bsn_controller_connections_request_t *
     of_bsn_controller_connections_request_new_from_message(of_message_t msg);
 extern void of_bsn_controller_connections_request_init(
     of_bsn_controller_connections_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_debug_counter_desc_stats_reply_t *
+    of_bsn_debug_counter_desc_stats_reply_new(of_version_t version);
+extern of_bsn_debug_counter_desc_stats_reply_t *
+    of_bsn_debug_counter_desc_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_debug_counter_desc_stats_reply_init(
+    of_bsn_debug_counter_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_debug_counter_desc_stats_request_t *
+    of_bsn_debug_counter_desc_stats_request_new(of_version_t version);
+extern of_bsn_debug_counter_desc_stats_request_t *
+    of_bsn_debug_counter_desc_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_debug_counter_desc_stats_request_init(
+    of_bsn_debug_counter_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_debug_counter_stats_reply_t *
+    of_bsn_debug_counter_stats_reply_new(of_version_t version);
+extern of_bsn_debug_counter_stats_reply_t *
+    of_bsn_debug_counter_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_debug_counter_stats_reply_init(
+    of_bsn_debug_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_debug_counter_stats_request_t *
+    of_bsn_debug_counter_stats_request_new(of_version_t version);
+extern of_bsn_debug_counter_stats_request_t *
+    of_bsn_debug_counter_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_debug_counter_stats_request_init(
+    of_bsn_debug_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_checksum_bucket_stats_reply_t *
     of_bsn_flow_checksum_bucket_stats_reply_new(of_version_t version);
@@ -2503,6 +2545,16 @@ extern of_bsn_controller_connection_t *
 extern void of_bsn_controller_connection_init(
     of_bsn_controller_connection_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_debug_counter_desc_stats_entry_t *
+    of_bsn_debug_counter_desc_stats_entry_new(of_version_t version);
+extern void of_bsn_debug_counter_desc_stats_entry_init(
+    of_bsn_debug_counter_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_debug_counter_stats_entry_t *
+    of_bsn_debug_counter_stats_entry_new(of_version_t version);
+extern void of_bsn_debug_counter_stats_entry_init(
+    of_bsn_debug_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_flow_checksum_bucket_stats_entry_t *
     of_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version);
 extern void of_bsn_flow_checksum_bucket_stats_entry_init(
@@ -3663,6 +3715,16 @@ extern of_list_bsn_controller_connection_t *
 extern void of_list_bsn_controller_connection_init(
     of_list_bsn_controller_connection_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_list_bsn_debug_counter_desc_stats_entry_t *
+    of_list_bsn_debug_counter_desc_stats_entry_new(of_version_t version);
+extern void of_list_bsn_debug_counter_desc_stats_entry_init(
+    of_list_bsn_debug_counter_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_debug_counter_stats_entry_t *
+    of_list_bsn_debug_counter_stats_entry_new(of_version_t version);
+extern void of_list_bsn_debug_counter_stats_entry_init(
+    of_list_bsn_debug_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_list_bsn_flow_checksum_bucket_stats_entry_t *
     of_list_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version);
 extern void of_list_bsn_flow_checksum_bucket_stats_entry_init(
@@ -4067,6 +4129,50 @@ of_bsn_controller_connections_reply_delete(of_bsn_controller_connections_reply_t
  */
 static inline void
 of_bsn_controller_connections_request_delete(of_bsn_controller_connections_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_debug_counter_desc_stats_reply_t
+ * @param obj An instance of type of_bsn_debug_counter_desc_stats_reply_t
+ *
+ * \ingroup of_bsn_debug_counter_desc_stats_reply
+ */
+static inline void
+of_bsn_debug_counter_desc_stats_reply_delete(of_bsn_debug_counter_desc_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_debug_counter_desc_stats_request_t
+ * @param obj An instance of type of_bsn_debug_counter_desc_stats_request_t
+ *
+ * \ingroup of_bsn_debug_counter_desc_stats_request
+ */
+static inline void
+of_bsn_debug_counter_desc_stats_request_delete(of_bsn_debug_counter_desc_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_debug_counter_stats_reply_t
+ * @param obj An instance of type of_bsn_debug_counter_stats_reply_t
+ *
+ * \ingroup of_bsn_debug_counter_stats_reply
+ */
+static inline void
+of_bsn_debug_counter_stats_reply_delete(of_bsn_debug_counter_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_debug_counter_stats_request_t
+ * @param obj An instance of type of_bsn_debug_counter_stats_request_t
+ *
+ * \ingroup of_bsn_debug_counter_stats_request
+ */
+static inline void
+of_bsn_debug_counter_stats_request_delete(of_bsn_debug_counter_stats_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -6421,6 +6527,28 @@ of_action_strip_vlan_delete(of_action_strip_vlan_t *obj) {
  */
 static inline void
 of_bsn_controller_connection_delete(of_bsn_controller_connection_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_debug_counter_desc_stats_entry_t
+ * @param obj An instance of type of_bsn_debug_counter_desc_stats_entry_t
+ *
+ * \ingroup of_bsn_debug_counter_desc_stats_entry
+ */
+static inline void
+of_bsn_debug_counter_desc_stats_entry_delete(of_bsn_debug_counter_desc_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_debug_counter_stats_entry_t
+ * @param obj An instance of type of_bsn_debug_counter_stats_entry_t
+ *
+ * \ingroup of_bsn_debug_counter_stats_entry
+ */
+static inline void
+of_bsn_debug_counter_stats_entry_delete(of_bsn_debug_counter_stats_entry_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -8977,6 +9105,28 @@ of_list_bsn_controller_connection_delete(of_list_bsn_controller_connection_t *ob
 }
 
 /**
+ * Delete an object of type of_list_bsn_debug_counter_desc_stats_entry_t
+ * @param obj An instance of type of_list_bsn_debug_counter_desc_stats_entry_t
+ *
+ * \ingroup of_list_bsn_debug_counter_desc_stats_entry
+ */
+static inline void
+of_list_bsn_debug_counter_desc_stats_entry_delete(of_list_bsn_debug_counter_desc_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_debug_counter_stats_entry_t
+ * @param obj An instance of type of_list_bsn_debug_counter_stats_entry_t
+ *
+ * \ingroup of_list_bsn_debug_counter_stats_entry
+ */
+static inline void
+of_list_bsn_debug_counter_stats_entry_delete(of_list_bsn_debug_counter_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_list_bsn_flow_checksum_bucket_stats_entry_t
  * @param obj An instance of type of_list_bsn_flow_checksum_bucket_stats_entry_t
  *
@@ -10010,6 +10160,144 @@ extern void of_bsn_controller_connections_request_subtype_set(
     uint32_t subtype);
 extern void of_bsn_controller_connections_request_subtype_get(
     of_bsn_controller_connections_request_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_bsn_debug_counter_desc_stats_reply */
+
+extern void of_bsn_debug_counter_desc_stats_reply_xid_set(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_debug_counter_desc_stats_reply_xid_get(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_debug_counter_desc_stats_reply_flags_set(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_debug_counter_desc_stats_reply_flags_get(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_debug_counter_desc_stats_reply_experimenter_set(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_debug_counter_desc_stats_reply_experimenter_get(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_debug_counter_desc_stats_reply_subtype_set(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_debug_counter_desc_stats_reply_subtype_get(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_debug_counter_desc_stats_reply_entries_set(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    of_list_bsn_debug_counter_desc_stats_entry_t *entries);
+extern void of_bsn_debug_counter_desc_stats_reply_entries_bind(
+    of_bsn_debug_counter_desc_stats_reply_t *obj,
+    of_list_bsn_debug_counter_desc_stats_entry_t *entries);
+extern of_list_bsn_debug_counter_desc_stats_entry_t *of_bsn_debug_counter_desc_stats_reply_entries_get(
+    of_bsn_debug_counter_desc_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_debug_counter_desc_stats_request */
+
+extern void of_bsn_debug_counter_desc_stats_request_xid_set(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_debug_counter_desc_stats_request_xid_get(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_debug_counter_desc_stats_request_flags_set(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_debug_counter_desc_stats_request_flags_get(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_debug_counter_desc_stats_request_experimenter_set(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_debug_counter_desc_stats_request_experimenter_get(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_debug_counter_desc_stats_request_subtype_set(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_debug_counter_desc_stats_request_subtype_get(
+    of_bsn_debug_counter_desc_stats_request_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_bsn_debug_counter_stats_reply */
+
+extern void of_bsn_debug_counter_stats_reply_xid_set(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_debug_counter_stats_reply_xid_get(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_debug_counter_stats_reply_flags_set(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_debug_counter_stats_reply_flags_get(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_debug_counter_stats_reply_experimenter_set(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_debug_counter_stats_reply_experimenter_get(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_debug_counter_stats_reply_subtype_set(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_debug_counter_stats_reply_subtype_get(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_debug_counter_stats_reply_entries_set(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    of_list_bsn_debug_counter_stats_entry_t *entries);
+extern void of_bsn_debug_counter_stats_reply_entries_bind(
+    of_bsn_debug_counter_stats_reply_t *obj,
+    of_list_bsn_debug_counter_stats_entry_t *entries);
+extern of_list_bsn_debug_counter_stats_entry_t *of_bsn_debug_counter_stats_reply_entries_get(
+    of_bsn_debug_counter_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_debug_counter_stats_request */
+
+extern void of_bsn_debug_counter_stats_request_xid_set(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_debug_counter_stats_request_xid_get(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_debug_counter_stats_request_flags_set(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_debug_counter_stats_request_flags_get(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_debug_counter_stats_request_experimenter_set(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_debug_counter_stats_request_experimenter_get(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_debug_counter_stats_request_subtype_set(
+    of_bsn_debug_counter_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_debug_counter_stats_request_subtype_get(
+    of_bsn_debug_counter_stats_request_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_bsn_flow_checksum_bucket_stats_reply */
@@ -15891,6 +16179,45 @@ extern void of_bsn_controller_connection_uri_get(
     of_bsn_controller_connection_t *obj,
     of_desc_str_t *uri);
 
+/* Unified accessor functions for of_bsn_debug_counter_desc_stats_entry */
+
+extern void of_bsn_debug_counter_desc_stats_entry_counter_id_set(
+    of_bsn_debug_counter_desc_stats_entry_t *obj,
+    uint64_t counter_id);
+extern void of_bsn_debug_counter_desc_stats_entry_counter_id_get(
+    of_bsn_debug_counter_desc_stats_entry_t *obj,
+    uint64_t *counter_id);
+
+extern void of_bsn_debug_counter_desc_stats_entry_name_set(
+    of_bsn_debug_counter_desc_stats_entry_t *obj,
+    of_str64_t name);
+extern void of_bsn_debug_counter_desc_stats_entry_name_get(
+    of_bsn_debug_counter_desc_stats_entry_t *obj,
+    of_str64_t *name);
+
+extern void of_bsn_debug_counter_desc_stats_entry_description_set(
+    of_bsn_debug_counter_desc_stats_entry_t *obj,
+    of_desc_str_t description);
+extern void of_bsn_debug_counter_desc_stats_entry_description_get(
+    of_bsn_debug_counter_desc_stats_entry_t *obj,
+    of_desc_str_t *description);
+
+/* Unified accessor functions for of_bsn_debug_counter_stats_entry */
+
+extern void of_bsn_debug_counter_stats_entry_counter_id_set(
+    of_bsn_debug_counter_stats_entry_t *obj,
+    uint64_t counter_id);
+extern void of_bsn_debug_counter_stats_entry_counter_id_get(
+    of_bsn_debug_counter_stats_entry_t *obj,
+    uint64_t *counter_id);
+
+extern void of_bsn_debug_counter_stats_entry_value_set(
+    of_bsn_debug_counter_stats_entry_t *obj,
+    uint64_t value);
+extern void of_bsn_debug_counter_stats_entry_value_get(
+    of_bsn_debug_counter_stats_entry_t *obj,
+    uint64_t *value);
+
 /* Unified accessor functions for of_bsn_flow_checksum_bucket_stats_entry */
 
 extern void of_bsn_flow_checksum_bucket_stats_entry_checksum_set(
@@ -19510,6 +19837,52 @@ extern int of_list_bsn_controller_connection_append(
     for ((rv) = of_list_bsn_controller_connection_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_controller_connection_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_debug_counter_desc_stats_entry */
+
+extern int of_list_bsn_debug_counter_desc_stats_entry_first(
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+extern int of_list_bsn_debug_counter_desc_stats_entry_next(
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+extern int of_list_bsn_debug_counter_desc_stats_entry_append_bind(
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+extern int of_list_bsn_debug_counter_desc_stats_entry_append(
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_debug_counter_desc_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_debug_counter_desc_stats_entry
+ * @param elt Pointer to an element of type of_bsn_debug_counter_desc_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_DEBUG_COUNTER_DESC_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_debug_counter_desc_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_debug_counter_desc_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_debug_counter_stats_entry */
+
+extern int of_list_bsn_debug_counter_stats_entry_first(
+    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+extern int of_list_bsn_debug_counter_stats_entry_next(
+    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+extern int of_list_bsn_debug_counter_stats_entry_append_bind(
+    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+extern int of_list_bsn_debug_counter_stats_entry_append(
+    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_debug_counter_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_debug_counter_stats_entry
+ * @param elt Pointer to an element of type of_bsn_debug_counter_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_DEBUG_COUNTER_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_debug_counter_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_debug_counter_stats_entry_next((list), (elt)))
 
 /* Unified accessor functions for of_list_bsn_flow_checksum_bucket_stats_entry */
 

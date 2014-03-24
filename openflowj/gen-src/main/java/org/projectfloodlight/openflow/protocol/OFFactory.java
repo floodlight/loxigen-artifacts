@@ -179,6 +179,15 @@ public interface OFFactory extends XidGenerator {
     OFBsnControllerConnectionsReply bsnControllerConnectionsReply(List<OFBsnControllerConnection> connections);
     OFBsnControllerConnectionsRequest.Builder buildBsnControllerConnectionsRequest() throws UnsupportedOperationException;
     OFBsnControllerConnectionsRequest bsnControllerConnectionsRequest();
+    OFBsnDebugCounterDescStatsEntry.Builder buildBsnDebugCounterDescStatsEntry() throws UnsupportedOperationException;
+    OFBsnDebugCounterDescStatsReply.Builder buildBsnDebugCounterDescStatsReply() throws UnsupportedOperationException;
+    OFBsnDebugCounterDescStatsRequest.Builder buildBsnDebugCounterDescStatsRequest() throws UnsupportedOperationException;
+    OFBsnDebugCounterDescStatsRequest bsnDebugCounterDescStatsRequest(Set<OFStatsRequestFlags> flags);
+    OFBsnDebugCounterStatsEntry.Builder buildBsnDebugCounterStatsEntry() throws UnsupportedOperationException;
+    OFBsnDebugCounterStatsEntry bsnDebugCounterStatsEntry(U64 counterId, U64 value);
+    OFBsnDebugCounterStatsReply.Builder buildBsnDebugCounterStatsReply() throws UnsupportedOperationException;
+    OFBsnDebugCounterStatsRequest.Builder buildBsnDebugCounterStatsRequest() throws UnsupportedOperationException;
+    OFBsnDebugCounterStatsRequest bsnDebugCounterStatsRequest(Set<OFStatsRequestFlags> flags);
     OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() throws UnsupportedOperationException;
     OFBsnFlowChecksumBucketStatsEntry bsnFlowChecksumBucketStatsEntry(U64 checksum);
     OFBsnFlowChecksumBucketStatsReply.Builder buildBsnFlowChecksumBucketStatsReply() throws UnsupportedOperationException;

@@ -681,6 +681,39 @@ public class OFFactoryVer10 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnControllerConnectionsRequest not supported in version 1.0");
     }
 
+    public OFBsnDebugCounterDescStatsEntry.Builder buildBsnDebugCounterDescStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsEntry not supported in version 1.0");
+    }
+
+    public OFBsnDebugCounterDescStatsReply.Builder buildBsnDebugCounterDescStatsReply() {
+        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsReply not supported in version 1.0");
+    }
+
+    public OFBsnDebugCounterDescStatsRequest.Builder buildBsnDebugCounterDescStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsRequest not supported in version 1.0");
+    }
+    public OFBsnDebugCounterDescStatsRequest bsnDebugCounterDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsRequest not supported in version 1.0");
+    }
+
+    public OFBsnDebugCounterStatsEntry.Builder buildBsnDebugCounterStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnDebugCounterStatsEntry not supported in version 1.0");
+    }
+    public OFBsnDebugCounterStatsEntry bsnDebugCounterStatsEntry(U64 counterId, U64 value) {
+        throw new UnsupportedOperationException("OFBsnDebugCounterStatsEntry not supported in version 1.0");
+    }
+
+    public OFBsnDebugCounterStatsReply.Builder buildBsnDebugCounterStatsReply() {
+        throw new UnsupportedOperationException("OFBsnDebugCounterStatsReply not supported in version 1.0");
+    }
+
+    public OFBsnDebugCounterStatsRequest.Builder buildBsnDebugCounterStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnDebugCounterStatsRequest not supported in version 1.0");
+    }
+    public OFBsnDebugCounterStatsRequest bsnDebugCounterStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnDebugCounterStatsRequest not supported in version 1.0");
+    }
+
     public OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() {
         throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsEntry not supported in version 1.0");
     }

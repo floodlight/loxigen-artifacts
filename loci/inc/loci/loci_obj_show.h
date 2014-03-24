@@ -608,6 +608,10 @@ int of_bsn_bw_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 int of_bsn_bw_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_request_t *obj);
 int of_bsn_controller_connections_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connections_reply_t *obj);
 int of_bsn_controller_connections_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connections_request_t *obj);
+int of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_desc_stats_reply_t *obj);
+int of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_desc_stats_request_t *obj);
+int of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_stats_reply_t *obj);
+int of_bsn_debug_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_stats_request_t *obj);
 int of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_reply_t *obj);
 int of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_request_t *obj);
 int of_bsn_flow_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_t *obj);
@@ -792,6 +796,8 @@ int of_action_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 int of_action_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_nw_ttl_t *obj);
 int of_action_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_queue_t *obj);
 int of_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connection_t *obj);
+int of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_desc_stats_entry_t *obj);
+int of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_stats_entry_t *obj);
 int of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_entry_t *obj);
 int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_bucket_stats_entry_t *obj);
 int of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_desc_stats_entry_t *obj);
@@ -1013,6 +1019,8 @@ int of_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint8_t 
 int of_list_action_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_action_t *obj);
 int of_list_action_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_action_id_t *obj);
 int of_list_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_controller_connection_t *obj);
+int of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_debug_counter_desc_stats_entry_t *obj);
+int of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_debug_counter_stats_entry_t *obj);
 int of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_flow_checksum_bucket_stats_entry_t *obj);
 int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_bucket_stats_entry_t *obj);
 int of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_desc_stats_entry_t *obj);

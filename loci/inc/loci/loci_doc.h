@@ -491,6 +491,106 @@ typedef struct of_bsn_controller_connections_reply_s of_bsn_controller_connectio
 typedef struct of_bsn_controller_connections_request_s of_bsn_controller_connections_request_t;
 
 /**
+ * Structure for of_bsn_debug_counter_desc_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_debug_counter_desc_stats_entry.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_reply_of_list_bsn_debug_counter_desc_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_debug_counter_desc_stats_reply_s of_bsn_debug_counter_desc_stats_reply_t;
+
+/**
+ * Structure for of_bsn_debug_counter_desc_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_debug_counter_desc_stats_request_s of_bsn_debug_counter_desc_stats_request_t;
+
+/**
+ * Structure for of_bsn_debug_counter_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_debug_counter_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_debug_counter_stats_entry.  Functions
+ *   are of type of_bsn_debug_counter_stats_reply_of_list_bsn_debug_counter_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_debug_counter_stats_reply_s of_bsn_debug_counter_stats_reply_t;
+
+/**
+ * Structure for of_bsn_debug_counter_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_debug_counter_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_debug_counter_stats_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_debug_counter_stats_request_s of_bsn_debug_counter_stats_request_t;
+
+/**
  * Structure for of_bsn_flow_checksum_bucket_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5049,6 +5149,40 @@ typedef struct of_action_strip_vlan_s of_action_strip_vlan_t;
 typedef struct of_bsn_controller_connection_s of_bsn_controller_connection_t;
 
 /**
+ * Structure for of_bsn_debug_counter_desc_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param counter_id_get/set ( OF_1_3).
+ *   Accessors for counter_id, a variable of type uint64.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_entry_uint64_get_f and _set_f.
+ *
+ * @param name_get/set ( OF_1_3).
+ *   Accessors for name, a variable of type of_str64.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_entry_of_str64_get_f and _set_f.
+ *
+ * @param description_get/set ( OF_1_3).
+ *   Accessors for description, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_debug_counter_desc_stats_entry_of_desc_str_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_debug_counter_desc_stats_entry_s of_bsn_debug_counter_desc_stats_entry_t;
+
+/**
+ * Structure for of_bsn_debug_counter_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param counter_id_get/set ( OF_1_3).
+ *   Accessors for counter_id, a variable of type uint64.  Functions
+ *   are of type of_bsn_debug_counter_stats_entry_uint64_get_f and _set_f.
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_debug_counter_stats_entry_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_debug_counter_stats_entry_s of_bsn_debug_counter_stats_entry_t;
+
+/**
  * Structure for of_bsn_flow_checksum_bucket_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -8435,6 +8569,36 @@ typedef struct of_list_action_id_s of_list_action_id_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_bsn_controller_connection_s of_list_bsn_controller_connection_t;
+
+/**
+ * Structure for of_list_bsn_debug_counter_desc_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_debug_counter_desc_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_debug_counter_desc_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_debug_counter_desc_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_debug_counter_desc_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_debug_counter_desc_stats_entry_s of_list_bsn_debug_counter_desc_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_debug_counter_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_debug_counter_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_debug_counter_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_debug_counter_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_debug_counter_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_debug_counter_stats_entry_s of_list_bsn_debug_counter_stats_entry_t;
 
 /**
  * Structure for of_list_bsn_flow_checksum_bucket_stats_entry object.  Get/set

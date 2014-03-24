@@ -679,6 +679,48 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnDebugCounterDescStatsEntry.Builder buildBsnDebugCounterDescStatsEntry() {
+        return new OFBsnDebugCounterDescStatsEntryVer13.Builder();
+    }
+
+    public OFBsnDebugCounterDescStatsReply.Builder buildBsnDebugCounterDescStatsReply() {
+        return new OFBsnDebugCounterDescStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnDebugCounterDescStatsRequest.Builder buildBsnDebugCounterDescStatsRequest() {
+        return new OFBsnDebugCounterDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnDebugCounterDescStatsRequest bsnDebugCounterDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnDebugCounterDescStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
+    public OFBsnDebugCounterStatsEntry.Builder buildBsnDebugCounterStatsEntry() {
+        return new OFBsnDebugCounterStatsEntryVer13.Builder();
+    }
+    public OFBsnDebugCounterStatsEntry bsnDebugCounterStatsEntry(U64 counterId, U64 value) {
+        return new OFBsnDebugCounterStatsEntryVer13(
+                counterId,
+                      value
+                    );
+    }
+
+    public OFBsnDebugCounterStatsReply.Builder buildBsnDebugCounterStatsReply() {
+        return new OFBsnDebugCounterStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnDebugCounterStatsRequest.Builder buildBsnDebugCounterStatsRequest() {
+        return new OFBsnDebugCounterStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnDebugCounterStatsRequest bsnDebugCounterStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnDebugCounterStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
     public OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() {
         return new OFBsnFlowChecksumBucketStatsEntryVer13.Builder();
     }

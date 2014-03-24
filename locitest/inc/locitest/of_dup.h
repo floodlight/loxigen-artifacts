@@ -94,6 +94,22 @@ extern of_bsn_controller_connections_request_t *
     of_bsn_controller_connections_request_dup(
         of_bsn_controller_connections_request_t *src);
 
+extern of_bsn_debug_counter_desc_stats_reply_t *
+    of_bsn_debug_counter_desc_stats_reply_dup(
+        of_bsn_debug_counter_desc_stats_reply_t *src);
+
+extern of_bsn_debug_counter_desc_stats_request_t *
+    of_bsn_debug_counter_desc_stats_request_dup(
+        of_bsn_debug_counter_desc_stats_request_t *src);
+
+extern of_bsn_debug_counter_stats_reply_t *
+    of_bsn_debug_counter_stats_reply_dup(
+        of_bsn_debug_counter_stats_reply_t *src);
+
+extern of_bsn_debug_counter_stats_request_t *
+    of_bsn_debug_counter_stats_request_dup(
+        of_bsn_debug_counter_stats_request_t *src);
+
 extern of_bsn_flow_checksum_bucket_stats_reply_t *
     of_bsn_flow_checksum_bucket_stats_reply_dup(
         of_bsn_flow_checksum_bucket_stats_reply_t *src);
@@ -949,6 +965,14 @@ extern of_action_strip_vlan_t *
 extern of_bsn_controller_connection_t *
     of_bsn_controller_connection_dup(
         of_bsn_controller_connection_t *src);
+
+extern of_bsn_debug_counter_desc_stats_entry_t *
+    of_bsn_debug_counter_desc_stats_entry_dup(
+        of_bsn_debug_counter_desc_stats_entry_t *src);
+
+extern of_bsn_debug_counter_stats_entry_t *
+    of_bsn_debug_counter_stats_entry_dup(
+        of_bsn_debug_counter_stats_entry_t *src);
 
 extern of_bsn_flow_checksum_bucket_stats_entry_t *
     of_bsn_flow_checksum_bucket_stats_entry_dup(
@@ -1877,6 +1901,14 @@ extern of_list_action_id_t *
 extern of_list_bsn_controller_connection_t *
     of_list_bsn_controller_connection_dup(
         of_list_bsn_controller_connection_t *src);
+
+extern of_list_bsn_debug_counter_desc_stats_entry_t *
+    of_list_bsn_debug_counter_desc_stats_entry_dup(
+        of_list_bsn_debug_counter_desc_stats_entry_t *src);
+
+extern of_list_bsn_debug_counter_stats_entry_t *
+    of_list_bsn_debug_counter_stats_entry_dup(
+        of_list_bsn_debug_counter_stats_entry_t *src);
 
 extern of_list_bsn_flow_checksum_bucket_stats_entry_t *
     of_list_bsn_flow_checksum_bucket_stats_entry_dup(
@@ -4334,6 +4366,22 @@ extern of_bsn_controller_connections_request_t *
     of_bsn_controller_connections_request_OF_VERSION_1_3_dup(
         of_bsn_controller_connections_request_t *src);
 
+extern of_bsn_debug_counter_desc_stats_reply_t *
+    of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_debug_counter_desc_stats_reply_t *src);
+
+extern of_bsn_debug_counter_desc_stats_request_t *
+    of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_debug_counter_desc_stats_request_t *src);
+
+extern of_bsn_debug_counter_stats_reply_t *
+    of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_debug_counter_stats_reply_t *src);
+
+extern of_bsn_debug_counter_stats_request_t *
+    of_bsn_debug_counter_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_debug_counter_stats_request_t *src);
+
 extern of_bsn_flow_checksum_bucket_stats_reply_t *
     of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_dup(
         of_bsn_flow_checksum_bucket_stats_reply_t *src);
@@ -5077,6 +5125,14 @@ extern of_action_set_queue_t *
 extern of_bsn_controller_connection_t *
     of_bsn_controller_connection_OF_VERSION_1_3_dup(
         of_bsn_controller_connection_t *src);
+
+extern of_bsn_debug_counter_desc_stats_entry_t *
+    of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_debug_counter_desc_stats_entry_t *src);
+
+extern of_bsn_debug_counter_stats_entry_t *
+    of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_debug_counter_stats_entry_t *src);
 
 extern of_bsn_flow_checksum_bucket_stats_entry_t *
     of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_dup(
@@ -5997,6 +6053,14 @@ extern of_list_action_id_t *
 extern of_list_bsn_controller_connection_t *
     of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
         of_list_bsn_controller_connection_t *src);
+
+extern of_list_bsn_debug_counter_desc_stats_entry_t *
+    of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_debug_counter_desc_stats_entry_t *src);
+
+extern of_list_bsn_debug_counter_stats_entry_t *
+    of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_debug_counter_stats_entry_t *src);
 
 extern of_list_bsn_flow_checksum_bucket_stats_entry_t *
     of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_dup(

@@ -88,6 +88,108 @@ class bsn_controller_connection(loxi.OFObject):
         q.text('}')
 
 
+class bsn_debug_counter_desc_stats_entry(loxi.OFObject):
+
+    def __init__(self, counter_id=None, name=None, description=None):
+        if counter_id != None:
+            self.counter_id = counter_id
+        else:
+            self.counter_id = 0
+        if name != None:
+            self.name = name
+        else:
+            self.name = ""
+        if description != None:
+            self.description = description
+        else:
+            self.description = ""
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!Q", self.counter_id))
+        packed.append(struct.pack("!64s", self.name))
+        packed.append(struct.pack("!256s", self.description))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_debug_counter_desc_stats_entry()
+        obj.counter_id = reader.read("!Q")[0]
+        obj.name = reader.read("!64s")[0].rstrip("\x00")
+        obj.description = reader.read("!256s")[0].rstrip("\x00")
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.counter_id != other.counter_id: return False
+        if self.name != other.name: return False
+        if self.description != other.description: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_debug_counter_desc_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("counter_id = ");
+                q.text("%#x" % self.counter_id)
+                q.text(","); q.breakable()
+                q.text("name = ");
+                q.pp(self.name)
+                q.text(","); q.breakable()
+                q.text("description = ");
+                q.pp(self.description)
+            q.breakable()
+        q.text('}')
+
+
+class bsn_debug_counter_stats_entry(loxi.OFObject):
+
+    def __init__(self, counter_id=None, value=None):
+        if counter_id != None:
+            self.counter_id = counter_id
+        else:
+            self.counter_id = 0
+        if value != None:
+            self.value = value
+        else:
+            self.value = 0
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!Q", self.counter_id))
+        packed.append(struct.pack("!Q", self.value))
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_debug_counter_stats_entry()
+        obj.counter_id = reader.read("!Q")[0]
+        obj.value = reader.read("!Q")[0]
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.counter_id != other.counter_id: return False
+        if self.value != other.value: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_debug_counter_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("counter_id = ");
+                q.text("%#x" % self.counter_id)
+                q.text(","); q.breakable()
+                q.text("value = ");
+                q.text("%#x" % self.value)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_flow_checksum_bucket_stats_entry(loxi.OFObject):
 
     def __init__(self, checksum=None):

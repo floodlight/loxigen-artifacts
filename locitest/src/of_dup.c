@@ -20692,6 +20692,172 @@ of_bsn_controller_connections_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_debug_counter_desc_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_debug_counter_desc_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_debug_counter_desc_stats_reply_t *
+of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_debug_counter_desc_stats_reply_t *src)
+{
+    of_bsn_debug_counter_desc_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_debug_counter_desc_stats_entry_t src_list;
+    of_list_bsn_debug_counter_desc_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_debug_counter_desc_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_debug_counter_desc_stats_reply_xid_get(src, &val32);
+    of_bsn_debug_counter_desc_stats_reply_xid_set(dst, val32);
+
+    of_bsn_debug_counter_desc_stats_reply_flags_get(src, &val16);
+    of_bsn_debug_counter_desc_stats_reply_flags_set(dst, val16);
+
+    of_bsn_debug_counter_desc_stats_reply_experimenter_get(src, &val32);
+    of_bsn_debug_counter_desc_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_debug_counter_desc_stats_reply_subtype_get(src, &val32);
+    of_bsn_debug_counter_desc_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_debug_counter_desc_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_debug_counter_desc_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_debug_counter_desc_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_debug_counter_desc_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_debug_counter_desc_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_debug_counter_desc_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_debug_counter_desc_stats_request_t *
+of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_debug_counter_desc_stats_request_t *src)
+{
+    of_bsn_debug_counter_desc_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_debug_counter_desc_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_debug_counter_desc_stats_request_xid_get(src, &val32);
+    of_bsn_debug_counter_desc_stats_request_xid_set(dst, val32);
+
+    of_bsn_debug_counter_desc_stats_request_flags_get(src, &val16);
+    of_bsn_debug_counter_desc_stats_request_flags_set(dst, val16);
+
+    of_bsn_debug_counter_desc_stats_request_experimenter_get(src, &val32);
+    of_bsn_debug_counter_desc_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_debug_counter_desc_stats_request_subtype_get(src, &val32);
+    of_bsn_debug_counter_desc_stats_request_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_debug_counter_stats_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_debug_counter_stats_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_debug_counter_stats_reply_t *
+of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_dup(
+    of_bsn_debug_counter_stats_reply_t *src)
+{
+    of_bsn_debug_counter_stats_reply_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_debug_counter_stats_entry_t src_list;
+    of_list_bsn_debug_counter_stats_entry_t *dst_list;
+
+    if ((dst = of_bsn_debug_counter_stats_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_debug_counter_stats_reply_xid_get(src, &val32);
+    of_bsn_debug_counter_stats_reply_xid_set(dst, val32);
+
+    of_bsn_debug_counter_stats_reply_flags_get(src, &val16);
+    of_bsn_debug_counter_stats_reply_flags_set(dst, val16);
+
+    of_bsn_debug_counter_stats_reply_experimenter_get(src, &val32);
+    of_bsn_debug_counter_stats_reply_experimenter_set(dst, val32);
+
+    of_bsn_debug_counter_stats_reply_subtype_get(src, &val32);
+    of_bsn_debug_counter_stats_reply_subtype_set(dst, val32);
+
+    of_bsn_debug_counter_stats_reply_entries_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_debug_counter_stats_reply_delete(dst);
+        return NULL;
+    }
+    of_bsn_debug_counter_stats_reply_entries_set(dst, dst_list);
+    of_list_bsn_debug_counter_stats_entry_delete(dst_list);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_debug_counter_stats_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_debug_counter_stats_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_debug_counter_stats_request_t *
+of_bsn_debug_counter_stats_request_OF_VERSION_1_3_dup(
+    of_bsn_debug_counter_stats_request_t *src)
+{
+    of_bsn_debug_counter_stats_request_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_debug_counter_stats_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_debug_counter_stats_request_xid_get(src, &val32);
+    of_bsn_debug_counter_stats_request_xid_set(dst, val32);
+
+    of_bsn_debug_counter_stats_request_flags_get(src, &val16);
+    of_bsn_debug_counter_stats_request_flags_set(dst, val16);
+
+    of_bsn_debug_counter_stats_request_experimenter_get(src, &val32);
+    of_bsn_debug_counter_stats_request_experimenter_set(dst, val32);
+
+    of_bsn_debug_counter_stats_request_subtype_get(src, &val32);
+    of_bsn_debug_counter_stats_request_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_flow_checksum_bucket_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -27621,6 +27787,67 @@ of_bsn_controller_connection_OF_VERSION_1_3_dup(
 
     of_bsn_controller_connection_uri_get(src, &desc_str);
     of_bsn_controller_connection_uri_set(dst, desc_str);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_debug_counter_desc_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_debug_counter_desc_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_debug_counter_desc_stats_entry_t *
+of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_debug_counter_desc_stats_entry_t *src)
+{
+    of_bsn_debug_counter_desc_stats_entry_t *dst;
+    uint64_t val64;
+    of_str64_t str64;
+    of_desc_str_t desc_str;
+
+    if ((dst = of_bsn_debug_counter_desc_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_debug_counter_desc_stats_entry_counter_id_get(src, &val64);
+    of_bsn_debug_counter_desc_stats_entry_counter_id_set(dst, val64);
+
+    of_bsn_debug_counter_desc_stats_entry_name_get(src, &str64);
+    of_bsn_debug_counter_desc_stats_entry_name_set(dst, str64);
+
+    of_bsn_debug_counter_desc_stats_entry_description_get(src, &desc_str);
+    of_bsn_debug_counter_desc_stats_entry_description_set(dst, desc_str);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_debug_counter_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_debug_counter_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_debug_counter_stats_entry_t *
+of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(
+    of_bsn_debug_counter_stats_entry_t *src)
+{
+    of_bsn_debug_counter_stats_entry_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_debug_counter_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_debug_counter_stats_entry_counter_id_get(src, &val64);
+    of_bsn_debug_counter_stats_entry_counter_id_set(dst, val64);
+
+    of_bsn_debug_counter_stats_entry_value_get(src, &val64);
+    of_bsn_debug_counter_stats_entry_value_set(dst, val64);
 
     return dst;
 }
@@ -35027,6 +35254,74 @@ of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_bsn_debug_counter_desc_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_debug_counter_desc_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_debug_counter_desc_stats_entry_t *
+of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_debug_counter_desc_stats_entry_t *src)
+{
+    of_bsn_debug_counter_desc_stats_entry_t src_elt;
+    of_bsn_debug_counter_desc_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_debug_counter_desc_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_debug_counter_desc_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_DEBUG_COUNTER_DESC_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_debug_counter_desc_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate a list of type of_list_bsn_debug_counter_stats_entry
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_bsn_debug_counter_stats_entry.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_bsn_debug_counter_stats_entry_t *
+of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(
+    of_list_bsn_debug_counter_stats_entry_t *src)
+{
+    of_bsn_debug_counter_stats_entry_t src_elt;
+    of_bsn_debug_counter_stats_entry_t *dst_elt;
+    int rv;
+    of_list_bsn_debug_counter_stats_entry_t *dst;
+
+    if ((dst = of_list_bsn_debug_counter_stats_entry_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_BSN_DEBUG_COUNTER_STATS_ENTRY_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_bsn_debug_counter_stats_entry_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_bsn_flow_checksum_bucket_stats_entry
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -36664,6 +36959,58 @@ of_bsn_controller_connections_request_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_controller_connections_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_debug_counter_desc_stats_reply_t *
+of_bsn_debug_counter_desc_stats_reply_dup(
+    of_bsn_debug_counter_desc_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_debug_counter_desc_stats_request_t *
+of_bsn_debug_counter_desc_stats_request_dup(
+    of_bsn_debug_counter_desc_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_debug_counter_stats_reply_t *
+of_bsn_debug_counter_stats_reply_dup(
+    of_bsn_debug_counter_stats_reply_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_debug_counter_stats_request_t *
+of_bsn_debug_counter_stats_request_dup(
+    of_bsn_debug_counter_stats_request_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_debug_counter_stats_request_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */
@@ -40552,6 +40899,32 @@ of_bsn_controller_connection_dup(
     return NULL;
 }
 
+of_bsn_debug_counter_desc_stats_entry_t *
+of_bsn_debug_counter_desc_stats_entry_dup(
+    of_bsn_debug_counter_desc_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_debug_counter_stats_entry_t *
+of_bsn_debug_counter_stats_entry_dup(
+    of_bsn_debug_counter_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_flow_checksum_bucket_stats_entry_t *
 of_bsn_flow_checksum_bucket_stats_entry_dup(
     of_bsn_flow_checksum_bucket_stats_entry_t *src)
@@ -44274,6 +44647,32 @@ of_list_bsn_controller_connection_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_list_bsn_controller_connection_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_debug_counter_desc_stats_entry_t *
+of_list_bsn_debug_counter_desc_stats_entry_dup(
+    of_list_bsn_debug_counter_desc_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_list_bsn_debug_counter_stats_entry_t *
+of_list_bsn_debug_counter_stats_entry_dup(
+    of_list_bsn_debug_counter_stats_entry_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

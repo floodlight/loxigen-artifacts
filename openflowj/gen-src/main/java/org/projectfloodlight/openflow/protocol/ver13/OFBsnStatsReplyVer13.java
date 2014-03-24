@@ -65,6 +65,12 @@ abstract class OFBsnStatsReplyVer13 {
             int subtype = bb.readInt();
             bb.readerIndex(start);
             switch(subtype) {
+               case 0xd:
+                   // discriminator value 0xdL=0xdL for class OFBsnDebugCounterDescStatsReplyVer13
+                   return OFBsnDebugCounterDescStatsReplyVer13.READER.readFrom(bb);
+               case 0xc:
+                   // discriminator value 0xcL=0xcL for class OFBsnDebugCounterStatsReplyVer13
+                   return OFBsnDebugCounterStatsReplyVer13.READER.readFrom(bb);
                case 0xa:
                    // discriminator value 0xaL=0xaL for class OFBsnFlowChecksumBucketStatsReplyVer13
                    return OFBsnFlowChecksumBucketStatsReplyVer13.READER.readFrom(bb);
