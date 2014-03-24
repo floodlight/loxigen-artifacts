@@ -1,1 +1,1 @@
-e19601a1297dcd7b91239a4a3ded1b4feda1409c Merge into master from pull request #235: loci: fix compilation with GCC <= 4.4 (https://github.com/floodlight/loxigen/pull/235)
+01cfbb25743fc99588520a299e1eb882265aa2e1 Merge into master from pull request #234: OFVlanVidMatch: enable correct conversion of VlanVid.NO_MASK (https://github.com/floodlight/loxigen/pull/234)
