@@ -1,1 +1,1 @@
-f1710d16c82fa792f5a695b355f44877743f584e Merge into master from pull request #231: add of_str64_t string type (https://github.com/floodlight/loxigen/pull/231)
+e19601a1297dcd7b91239a4a3ded1b4feda1409c Merge into master from pull request #235: loci: fix compilation with GCC <= 4.4 (https://github.com/floodlight/loxigen/pull/235)
