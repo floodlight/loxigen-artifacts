@@ -99,6 +99,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x6:
                    // discriminator value 0x6=0x6 for class OFBsnTlvVlanVidVer13
                    return OFBsnTlvVlanVidVer13.READER.readFrom(bb);
+               case (short) 0x13:
+                   // discriminator value 0x13=0x13 for class OFBsnTlvVrfVer13
+                   return OFBsnTlvVrfVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator type of class OFBsnTlvVer13: " + type);
             }

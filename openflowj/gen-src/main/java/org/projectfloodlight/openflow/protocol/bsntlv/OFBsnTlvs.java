@@ -64,6 +64,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;
     OFBsnTlvVlanVid vlanVid(VlanVid value);
+    OFBsnTlvVrf.Builder buildVrf() throws UnsupportedOperationException;
+    OFBsnTlvVrf vrf(long value);
 
     OFMessageReader<OFBsnTlv> getReader();
     OFVersion getVersion();

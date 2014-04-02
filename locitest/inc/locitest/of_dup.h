@@ -1102,6 +1102,10 @@ extern of_bsn_tlv_vlan_vid_t *
     of_bsn_tlv_vlan_vid_dup(
         of_bsn_tlv_vlan_vid_t *src);
 
+extern of_bsn_tlv_vrf_t *
+    of_bsn_tlv_vrf_dup(
+        of_bsn_tlv_vrf_t *src);
+
 extern of_bsn_vlan_counter_stats_entry_t *
     of_bsn_vlan_counter_stats_entry_dup(
         of_bsn_vlan_counter_stats_entry_t *src);
@@ -5261,6 +5265,10 @@ extern of_bsn_tlv_unicast_query_timeout_t *
 extern of_bsn_tlv_vlan_vid_t *
     of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
         of_bsn_tlv_vlan_vid_t *src);
+
+extern of_bsn_tlv_vrf_t *
+    of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
+        of_bsn_tlv_vrf_t *src);
 
 extern of_bsn_vlan_counter_stats_entry_t *
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(

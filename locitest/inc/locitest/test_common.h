@@ -7152,6 +7152,15 @@ extern int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_vlan_vid_t *obj, int value);
 
+extern int of_bsn_tlv_vrf_OF_VERSION_1_3_populate(
+    of_bsn_tlv_vrf_t *obj, int value);
+extern int of_bsn_tlv_vrf_OF_VERSION_1_3_check(
+    of_bsn_tlv_vrf_t *obj, int value);
+extern int of_bsn_tlv_vrf_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_vrf_t *obj, int value);
+extern int of_bsn_tlv_vrf_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_vrf_t *obj, int value);
+
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_populate(
     of_bsn_vlan_counter_stats_entry_t *obj, int value);
 extern int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_check(

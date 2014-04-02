@@ -792,6 +792,7 @@ static inline int of_bucket_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_tlv_vrf_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_udf_offset_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -9382,6 +9383,11 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
+        case OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT:
+            if (of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+                return -1;
+            }
+            break;
         case OF_BSN_TLV_MAC:
             if (of_bsn_tlv_mac_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
@@ -9402,8 +9408,8 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
-        case OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT:
-            if (of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+        case OF_BSN_TLV_UDF_ANCHOR:
+            if (of_bsn_tlv_udf_anchor_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -9422,8 +9428,8 @@ of_list_bsn_tlv_OF_VERSION_1_3_validate(uint8_t *buf, int len)
                 return -1;
             }
             break;
-        case OF_BSN_TLV_UDF_ANCHOR:
-            if (of_bsn_tlv_udf_anchor_OF_VERSION_1_3_validate(buf, e_len) < 0) {
+        case OF_BSN_TLV_VRF:
+            if (of_bsn_tlv_vrf_OF_VERSION_1_3_validate(buf, e_len) < 0) {
                 return -1;
             }
             break;
@@ -12133,6 +12139,17 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len)
         if (of_list_uint64_OF_VERSION_1_3_validate(buf + 8, values_len) < 0) {
             return -1;
         }
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_tlv_vrf_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_bsn_tlv_vrf.  Len %d too small, < %d", len, 8);
+        return -1;
     }
 
     return 0;

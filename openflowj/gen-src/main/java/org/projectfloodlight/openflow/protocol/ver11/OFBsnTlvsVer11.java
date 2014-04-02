@@ -161,6 +161,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.1");
     }
 
+    public OFBsnTlvVrf.Builder buildVrf() {
+        throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.1");
+    }
+    public OFBsnTlvVrf vrf(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.1");
+    }
+
     public OFMessageReader<OFBsnTlv> getReader() {
         throw new UnsupportedOperationException("Reader<OFBsnTlv> not supported in version 1.1");
     }

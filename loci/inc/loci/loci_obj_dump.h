@@ -829,6 +829,7 @@ int of_bsn_tlv_udf_length_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie
 int of_bsn_tlv_udf_offset_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_offset_t *obj);
 int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_unicast_query_timeout_t *obj);
 int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_vlan_vid_t *obj);
+int of_bsn_tlv_vrf_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_vrf_t *obj);
 int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_entry_t *obj);
 int of_bsn_vport_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);

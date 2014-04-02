@@ -391,6 +391,7 @@ void of_bsn_tlv_udf_length_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_udf_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_unicast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -748,6 +749,7 @@ typedef of_object_t of_bsn_tlv_udf_length_t;
 typedef of_object_t of_bsn_tlv_udf_offset_t;
 typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
+typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_header_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
@@ -2714,6 +2716,11 @@ extern of_bsn_tlv_vlan_vid_t *
     of_bsn_tlv_vlan_vid_new(of_version_t version);
 extern void of_bsn_tlv_vlan_vid_init(
     of_bsn_tlv_vlan_vid_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_vrf_t *
+    of_bsn_tlv_vrf_new(of_version_t version);
+extern void of_bsn_tlv_vrf_init(
+    of_bsn_tlv_vrf_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_vlan_counter_stats_entry_t *
     of_bsn_vlan_counter_stats_entry_new(of_version_t version);
@@ -6901,6 +6908,17 @@ of_bsn_tlv_unicast_query_timeout_delete(of_bsn_tlv_unicast_query_timeout_t *obj)
  */
 static inline void
 of_bsn_tlv_vlan_vid_delete(of_bsn_tlv_vlan_vid_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_vrf_t
+ * @param obj An instance of type of_bsn_tlv_vrf_t
+ *
+ * \ingroup of_bsn_tlv_vrf
+ */
+static inline void
+of_bsn_tlv_vrf_delete(of_bsn_tlv_vrf_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -16661,6 +16679,15 @@ extern void of_bsn_tlv_vlan_vid_value_get(
     of_bsn_tlv_vlan_vid_t *obj,
     uint16_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_vrf */
+
+extern void of_bsn_tlv_vrf_value_set(
+    of_bsn_tlv_vrf_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_vrf_value_get(
+    of_bsn_tlv_vrf_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_vlan_counter_stats_entry */
 
 extern void of_bsn_vlan_counter_stats_entry_vlan_vid_set(
@@ -20885,6 +20912,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_udf_offset_t udf_offset;
     of_bsn_tlv_unicast_query_timeout_t unicast_query_timeout;
     of_bsn_tlv_vlan_vid_t vlan_vid;
+    of_bsn_tlv_vrf_t vrf;
 };
 
 /**

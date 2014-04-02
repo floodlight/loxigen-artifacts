@@ -5663,6 +5663,9 @@ fields['of13.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of13.bsn
 fields['of13.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vrf.type'] = ProtoField.uint16("of13.bsn_tlv_vrf.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vrf.length'] = ProtoField.uint16("of13.bsn_tlv_vrf.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vrf.value'] = ProtoField.uint32("of13.bsn_tlv_vrf.value", "value", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_reply.version'] = ProtoField.uint8("of13.bsn_virtual_port_create_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_reply.type'] = ProtoField.uint8("of13.bsn_virtual_port_create_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_reply.length'] = ProtoField.uint16("of13.bsn_virtual_port_create_reply.length", "length", base.DEC, nil)
@@ -10748,6 +10751,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_vlan_vid.type'],
     fields['of13.bsn_tlv_vlan_vid.length'],
     fields['of13.bsn_tlv_vlan_vid.value'],
+    fields['of13.bsn_tlv_vrf.type'],
+    fields['of13.bsn_tlv_vrf.length'],
+    fields['of13.bsn_tlv_vrf.value'],
     fields['of13.bsn_virtual_port_create_reply.version'],
     fields['of13.bsn_virtual_port_create_reply.type'],
     fields['of13.bsn_virtual_port_create_reply.length'],
@@ -20857,6 +20863,16 @@ function dissect_of_bsn_tlv_vlan_vid_v4(reader, subtree)
     return 'of_bsn_tlv_vlan_vid'
 end
 of_bsn_tlv_v4_dissectors[6] = dissect_of_bsn_tlv_vlan_vid_v4
+
+-- child class of_bsn_tlv_vrf
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vrf_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vrf.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vrf.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_vrf.value')
+    return 'of_bsn_tlv_vrf'
+end
+of_bsn_tlv_v4_dissectors[19] = dissect_of_bsn_tlv_vrf_v4
 
 -- child class of_bsn_virtual_port_create_reply
 -- Child of of_bsn_header

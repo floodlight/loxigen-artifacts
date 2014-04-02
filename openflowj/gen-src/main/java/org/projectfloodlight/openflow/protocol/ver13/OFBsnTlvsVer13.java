@@ -197,6 +197,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvVrf.Builder buildVrf() {
+        return new OFBsnTlvVrfVer13.Builder();
+    }
+    public OFBsnTlvVrf vrf(long value) {
+        return new OFBsnTlvVrfVer13(
+                value
+                    );
+    }
+
     public OFMessageReader<OFBsnTlv> getReader() {
         return OFBsnTlvVer13.READER;
     }

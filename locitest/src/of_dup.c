@@ -28324,6 +28324,11 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->udf_id);
     }
 
+    if (src->header.object_id == OF_BSN_TLV_VRF) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
+            &src->vrf);
+    }
+
     if (src->header.object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
         return (of_bsn_tlv_t *)of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
             &src->idle_notification);
@@ -28850,6 +28855,31 @@ of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_vlan_vid_value_get(src, &val16);
     of_bsn_tlv_vlan_vid_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vrf
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vrf.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vrf_t *
+of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
+    of_bsn_tlv_vrf_t *src)
+{
+    of_bsn_tlv_vrf_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_vrf_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vrf_value_get(src, &val32);
+    of_bsn_tlv_vrf_value_set(dst, val32);
 
     return dst;
 }
@@ -41347,6 +41377,19 @@ of_bsn_tlv_vlan_vid_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_vrf_t *
+of_bsn_tlv_vrf_dup(
+    of_bsn_tlv_vrf_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

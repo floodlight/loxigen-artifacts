@@ -5619,6 +5619,17 @@ typedef struct of_bsn_tlv_unicast_query_timeout_s of_bsn_tlv_unicast_query_timeo
 typedef struct of_bsn_tlv_vlan_vid_s of_bsn_tlv_vlan_vid_t;
 
 /**
+ * Structure for of_bsn_tlv_vrf object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_vrf_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_vrf_s of_bsn_tlv_vrf_t;
+
+/**
  * Structure for of_bsn_vlan_counter_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
