@@ -58,7 +58,6 @@ of_list_queue_stats_entry_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_LIST_QUEUE_STATS_ENTRY] + of_object_extra_len[version][OF_LIST_QUEUE_STATS_ENTRY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_list_queue_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }

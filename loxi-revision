@@ -1,1 +1,1 @@
-767b11df765065ac1f815ceeb27690747b67fb09 Merge into master from pull request #236: openflow_input: add bsn_vrf TLV (https://github.com/floodlight/loxigen/pull/236)
+24b6c19d413555f2aaf9129c552f5128964fefe8 Merge into master from pull request #237: loci: use minimal allocation for fixed-length objects (https://github.com/floodlight/loxigen/pull/237)

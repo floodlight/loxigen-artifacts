@@ -93,8 +93,7 @@ of_nicira_controller_role_request_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_NICIRA_CONTROLLER_ROLE_REQUEST] + of_object_extra_len[version][OF_NICIRA_CONTROLLER_ROLE_REQUEST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_nicira_controller_role_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_nicira_controller_role_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -605,7 +604,6 @@ of_packet_in_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PACKET_IN] + of_object_extra_len[version][OF_PACKET_IN];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_packet_in_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -1723,7 +1721,6 @@ of_packet_out_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PACKET_OUT] + of_object_extra_len[version][OF_PACKET_OUT];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_packet_out_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -2416,7 +2413,6 @@ of_packet_queue_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PACKET_QUEUE] + of_object_extra_len[version][OF_PACKET_QUEUE];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_packet_queue_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -2873,7 +2869,6 @@ of_port_desc_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC] + of_object_extra_len[version][OF_PORT_DESC];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_desc_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -3988,7 +3983,6 @@ of_port_mod_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_MOD] + of_object_extra_len[version][OF_PORT_MOD];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_mod_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -4718,7 +4712,6 @@ of_port_mod_failed_error_msg_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_PORT_MOD_FAILED_ERROR_MSG];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_mod_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -5162,7 +5155,6 @@ of_port_stats_entry_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_STATS_ENTRY] + of_object_extra_len[version][OF_PORT_STATS_ENTRY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -6575,7 +6567,6 @@ of_port_stats_reply_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_STATS_REPLY] + of_object_extra_len[version][OF_PORT_STATS_REPLY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -7108,7 +7099,6 @@ of_port_stats_request_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_STATS_REQUEST] + of_object_extra_len[version][OF_PORT_STATS_REQUEST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -7565,7 +7555,6 @@ of_port_status_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_PORT_STATUS] + of_object_extra_len[version][OF_PORT_STATUS];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_port_status_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -8096,7 +8085,6 @@ of_queue_get_config_reply_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_GET_CONFIG_REPLY] + of_object_extra_len[version][OF_QUEUE_GET_CONFIG_REPLY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_get_config_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -8626,7 +8614,6 @@ of_queue_get_config_request_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_GET_CONFIG_REQUEST] + of_object_extra_len[version][OF_QUEUE_GET_CONFIG_REQUEST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_get_config_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -9004,7 +8991,6 @@ of_queue_op_failed_error_msg_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_OP_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_QUEUE_OP_FAILED_ERROR_MSG];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_op_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -9508,7 +9494,6 @@ of_queue_prop_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_PROP] + of_object_extra_len[version][OF_QUEUE_PROP];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -9660,8 +9645,7 @@ of_queue_prop_min_rate_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_PROP_MIN_RATE] + of_object_extra_len[version][OF_QUEUE_PROP_MIN_RATE];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_queue_prop_min_rate_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_queue_prop_min_rate_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -9881,7 +9865,6 @@ of_queue_stats_entry_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_STATS_ENTRY] + of_object_extra_len[version][OF_QUEUE_STATS_ENTRY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -10622,7 +10605,6 @@ of_queue_stats_reply_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_STATS_REPLY] + of_object_extra_len[version][OF_QUEUE_STATS_REPLY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -11155,7 +11137,6 @@ of_queue_stats_request_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_QUEUE_STATS_REQUEST] + of_object_extra_len[version][OF_QUEUE_STATS_REQUEST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_queue_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -11700,8 +11681,7 @@ of_set_config_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_SET_CONFIG] + of_object_extra_len[version][OF_SET_CONFIG];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_set_config_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_set_config_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -12155,8 +12135,7 @@ of_table_mod_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_TABLE_MOD] + of_object_extra_len[version][OF_TABLE_MOD];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_table_mod_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_table_mod_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -12581,7 +12560,6 @@ of_table_stats_entry_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_TABLE_STATS_ENTRY] + of_object_extra_len[version][OF_TABLE_STATS_ENTRY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_table_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -14111,7 +14089,6 @@ of_table_stats_reply_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_TABLE_STATS_REPLY] + of_object_extra_len[version][OF_TABLE_STATS_REPLY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_table_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -14644,7 +14621,6 @@ of_table_stats_request_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_TABLE_STATS_REQUEST] + of_object_extra_len[version][OF_TABLE_STATS_REQUEST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_table_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -15006,8 +14982,7 @@ of_action_copy_ttl_in_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_COPY_TTL_IN] + of_object_extra_len[version][OF_ACTION_COPY_TTL_IN];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_copy_ttl_in_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_copy_ttl_in_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15163,8 +15138,7 @@ of_action_copy_ttl_out_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_COPY_TTL_OUT] + of_object_extra_len[version][OF_ACTION_COPY_TTL_OUT];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_copy_ttl_out_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_copy_ttl_out_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15320,8 +15294,7 @@ of_action_dec_mpls_ttl_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_DEC_MPLS_TTL] + of_object_extra_len[version][OF_ACTION_DEC_MPLS_TTL];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_dec_mpls_ttl_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_dec_mpls_ttl_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15477,8 +15450,7 @@ of_action_dec_nw_ttl_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_DEC_NW_TTL] + of_object_extra_len[version][OF_ACTION_DEC_NW_TTL];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_dec_nw_ttl_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_dec_nw_ttl_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15634,8 +15606,7 @@ of_action_group_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_GROUP] + of_object_extra_len[version][OF_ACTION_GROUP];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_group_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_group_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15873,8 +15844,7 @@ of_action_pop_mpls_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_POP_MPLS] + of_object_extra_len[version][OF_ACTION_POP_MPLS];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_pop_mpls_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_pop_mpls_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -16112,8 +16082,7 @@ of_action_pop_vlan_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_POP_VLAN] + of_object_extra_len[version][OF_ACTION_POP_VLAN];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_pop_vlan_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_pop_vlan_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -16269,8 +16238,7 @@ of_action_push_mpls_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_PUSH_MPLS] + of_object_extra_len[version][OF_ACTION_PUSH_MPLS];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_action_push_mpls_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_action_push_mpls_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 

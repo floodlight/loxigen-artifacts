@@ -84,8 +84,7 @@ of_oxm_in_port_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IN_PORT] + of_object_extra_len[version][OF_OXM_IN_PORT];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_in_port_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_in_port_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -315,8 +314,7 @@ of_oxm_in_port_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED] + of_object_extra_len[version][OF_OXM_IN_PORT_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_in_port_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_in_port_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -627,8 +625,7 @@ of_oxm_ip_dscp_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP] + of_object_extra_len[version][OF_OXM_IP_DSCP];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ip_dscp_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ip_dscp_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -857,8 +854,7 @@ of_oxm_ip_dscp_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED] + of_object_extra_len[version][OF_OXM_IP_DSCP_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ip_dscp_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ip_dscp_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1167,8 +1163,7 @@ of_oxm_ip_ecn_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_ECN] + of_object_extra_len[version][OF_OXM_IP_ECN];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ip_ecn_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ip_ecn_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1397,8 +1392,7 @@ of_oxm_ip_ecn_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED] + of_object_extra_len[version][OF_OXM_IP_ECN_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ip_ecn_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ip_ecn_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1707,8 +1701,7 @@ of_oxm_ip_proto_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO] + of_object_extra_len[version][OF_OXM_IP_PROTO];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ip_proto_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ip_proto_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1937,8 +1930,7 @@ of_oxm_ip_proto_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED] + of_object_extra_len[version][OF_OXM_IP_PROTO_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ip_proto_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ip_proto_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2247,8 +2239,7 @@ of_oxm_ipv4_dst_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST] + of_object_extra_len[version][OF_OXM_IPV4_DST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv4_dst_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv4_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2477,8 +2468,7 @@ of_oxm_ipv4_dst_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED] + of_object_extra_len[version][OF_OXM_IPV4_DST_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv4_dst_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv4_dst_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2787,8 +2777,7 @@ of_oxm_ipv4_src_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC] + of_object_extra_len[version][OF_OXM_IPV4_SRC];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv4_src_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv4_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3017,8 +3006,7 @@ of_oxm_ipv4_src_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED] + of_object_extra_len[version][OF_OXM_IPV4_SRC_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv4_src_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv4_src_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3327,8 +3315,7 @@ of_oxm_ipv6_dst_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST] + of_object_extra_len[version][OF_OXM_IPV6_DST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_dst_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3557,8 +3544,7 @@ of_oxm_ipv6_dst_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_DST_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_dst_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_dst_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3867,8 +3853,7 @@ of_oxm_ipv6_flabel_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL] + of_object_extra_len[version][OF_OXM_IPV6_FLABEL];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_flabel_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_flabel_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4097,8 +4082,7 @@ of_oxm_ipv6_flabel_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_FLABEL_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_flabel_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_flabel_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4407,8 +4391,7 @@ of_oxm_ipv6_nd_sll_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL] + of_object_extra_len[version][OF_OXM_IPV6_ND_SLL];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_nd_sll_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_nd_sll_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4637,8 +4620,7 @@ of_oxm_ipv6_nd_sll_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_SLL_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_nd_sll_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_nd_sll_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4947,8 +4929,7 @@ of_oxm_ipv6_nd_target_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET] + of_object_extra_len[version][OF_OXM_IPV6_ND_TARGET];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_nd_target_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_nd_target_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5177,8 +5158,7 @@ of_oxm_ipv6_nd_target_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_TARGET_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_nd_target_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_nd_target_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5487,8 +5467,7 @@ of_oxm_ipv6_nd_tll_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL] + of_object_extra_len[version][OF_OXM_IPV6_ND_TLL];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_nd_tll_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_nd_tll_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5717,8 +5696,7 @@ of_oxm_ipv6_nd_tll_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_TLL_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_nd_tll_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_nd_tll_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6027,8 +6005,7 @@ of_oxm_ipv6_src_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC] + of_object_extra_len[version][OF_OXM_IPV6_SRC];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_src_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6257,8 +6234,7 @@ of_oxm_ipv6_src_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_SRC_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_ipv6_src_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_ipv6_src_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6567,8 +6543,7 @@ of_oxm_metadata_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_METADATA] + of_object_extra_len[version][OF_OXM_METADATA];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_metadata_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_metadata_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6797,8 +6772,7 @@ of_oxm_metadata_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED] + of_object_extra_len[version][OF_OXM_METADATA_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_metadata_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_metadata_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7107,8 +7081,7 @@ of_oxm_mpls_label_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_MPLS_LABEL] + of_object_extra_len[version][OF_OXM_MPLS_LABEL];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_mpls_label_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_mpls_label_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7337,8 +7310,7 @@ of_oxm_mpls_label_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_MPLS_LABEL_MASKED] + of_object_extra_len[version][OF_OXM_MPLS_LABEL_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_mpls_label_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_mpls_label_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7647,8 +7619,7 @@ of_oxm_mpls_tc_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_MPLS_TC] + of_object_extra_len[version][OF_OXM_MPLS_TC];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_mpls_tc_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_mpls_tc_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7877,8 +7848,7 @@ of_oxm_mpls_tc_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_MPLS_TC_MASKED] + of_object_extra_len[version][OF_OXM_MPLS_TC_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_mpls_tc_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_mpls_tc_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8187,8 +8157,7 @@ of_oxm_sctp_dst_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_SCTP_DST] + of_object_extra_len[version][OF_OXM_SCTP_DST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_sctp_dst_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_sctp_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8417,8 +8386,7 @@ of_oxm_sctp_dst_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_SCTP_DST_MASKED] + of_object_extra_len[version][OF_OXM_SCTP_DST_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_sctp_dst_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_sctp_dst_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 

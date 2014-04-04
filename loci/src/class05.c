@@ -710,7 +710,6 @@ of_oxm_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM] + of_object_extra_len[version][OF_OXM];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_oxm_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -859,7 +858,6 @@ of_action_set_field_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_ACTION_SET_FIELD] + of_object_extra_len[version][OF_ACTION_SET_FIELD];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_action_set_field_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -1119,7 +1117,6 @@ of_experimenter_error_msg_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_EXPERIMENTER_ERROR_MSG] + of_object_extra_len[version][OF_EXPERIMENTER_ERROR_MSG];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_experimenter_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -1656,8 +1653,7 @@ of_group_features_stats_reply_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_GROUP_FEATURES_STATS_REPLY] + of_object_extra_len[version][OF_GROUP_FEATURES_STATS_REPLY];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_group_features_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_features_stats_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2815,8 +2811,7 @@ of_group_features_stats_request_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_GROUP_FEATURES_STATS_REQUEST] + of_object_extra_len[version][OF_GROUP_FEATURES_STATS_REQUEST];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_group_features_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_group_features_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3168,7 +3163,6 @@ of_match_v3_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_MATCH_V3] + of_object_extra_len[version][OF_MATCH_V3];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
     if ((obj = (of_match_v3_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
@@ -3469,8 +3463,7 @@ of_oxm_arp_op_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_OP] + of_object_extra_len[version][OF_OXM_ARP_OP];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_op_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_op_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3699,8 +3692,7 @@ of_oxm_arp_op_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_OP_MASKED] + of_object_extra_len[version][OF_OXM_ARP_OP_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_op_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_op_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4009,8 +4001,7 @@ of_oxm_arp_sha_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_SHA] + of_object_extra_len[version][OF_OXM_ARP_SHA];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_sha_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_sha_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4239,8 +4230,7 @@ of_oxm_arp_sha_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_SHA_MASKED] + of_object_extra_len[version][OF_OXM_ARP_SHA_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_sha_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_sha_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4549,8 +4539,7 @@ of_oxm_arp_spa_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_SPA] + of_object_extra_len[version][OF_OXM_ARP_SPA];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_spa_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_spa_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4779,8 +4768,7 @@ of_oxm_arp_spa_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_SPA_MASKED] + of_object_extra_len[version][OF_OXM_ARP_SPA_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_spa_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_spa_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5089,8 +5077,7 @@ of_oxm_arp_tha_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_THA] + of_object_extra_len[version][OF_OXM_ARP_THA];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_tha_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_tha_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5319,8 +5306,7 @@ of_oxm_arp_tha_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_THA_MASKED] + of_object_extra_len[version][OF_OXM_ARP_THA_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_tha_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_tha_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5629,8 +5615,7 @@ of_oxm_arp_tpa_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_TPA] + of_object_extra_len[version][OF_OXM_ARP_TPA];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_tpa_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_tpa_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5859,8 +5844,7 @@ of_oxm_arp_tpa_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_ARP_TPA_MASKED] + of_object_extra_len[version][OF_OXM_ARP_TPA_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_arp_tpa_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_arp_tpa_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6169,8 +6153,7 @@ of_oxm_bsn_egr_port_group_id_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_EGR_PORT_GROUP_ID] + of_object_extra_len[version][OF_OXM_BSN_EGR_PORT_GROUP_ID];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_egr_port_group_id_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_egr_port_group_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6399,8 +6382,7 @@ of_oxm_bsn_egr_port_group_id_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_egr_port_group_id_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_egr_port_group_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6709,8 +6691,7 @@ of_oxm_bsn_global_vrf_allowed_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_GLOBAL_VRF_ALLOWED] + of_object_extra_len[version][OF_OXM_BSN_GLOBAL_VRF_ALLOWED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_global_vrf_allowed_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_global_vrf_allowed_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6939,8 +6920,7 @@ of_oxm_bsn_global_vrf_allowed_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED] + of_object_extra_len[version][OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_global_vrf_allowed_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_global_vrf_allowed_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7249,8 +7229,7 @@ of_oxm_bsn_in_ports_128_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_IN_PORTS_128] + of_object_extra_len[version][OF_OXM_BSN_IN_PORTS_128];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_in_ports_128_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_in_ports_128_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7479,8 +7458,7 @@ of_oxm_bsn_in_ports_128_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_IN_PORTS_128_MASKED] + of_object_extra_len[version][OF_OXM_BSN_IN_PORTS_128_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_in_ports_128_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_in_ports_128_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7789,8 +7767,7 @@ of_oxm_bsn_l3_dst_class_id_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_L3_DST_CLASS_ID] + of_object_extra_len[version][OF_OXM_BSN_L3_DST_CLASS_ID];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_l3_dst_class_id_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_l3_dst_class_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8019,8 +7996,7 @@ of_oxm_bsn_l3_dst_class_id_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_L3_DST_CLASS_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_L3_DST_CLASS_ID_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_l3_dst_class_id_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_l3_dst_class_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8329,8 +8305,7 @@ of_oxm_bsn_l3_interface_class_id_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_L3_INTERFACE_CLASS_ID] + of_object_extra_len[version][OF_OXM_BSN_L3_INTERFACE_CLASS_ID];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_l3_interface_class_id_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_l3_interface_class_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8559,8 +8534,7 @@ of_oxm_bsn_l3_interface_class_id_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_l3_interface_class_id_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_l3_interface_class_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8869,8 +8843,7 @@ of_oxm_bsn_l3_src_class_id_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_L3_SRC_CLASS_ID] + of_object_extra_len[version][OF_OXM_BSN_L3_SRC_CLASS_ID];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_l3_src_class_id_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_l3_src_class_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -9099,8 +9072,7 @@ of_oxm_bsn_l3_src_class_id_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_l3_src_class_id_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_l3_src_class_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -9409,8 +9381,7 @@ of_oxm_bsn_lag_id_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_LAG_ID] + of_object_extra_len[version][OF_OXM_BSN_LAG_ID];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_lag_id_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_lag_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -9639,8 +9610,7 @@ of_oxm_bsn_lag_id_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_LAG_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_LAG_ID_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_lag_id_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_lag_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -9949,8 +9919,7 @@ of_oxm_bsn_udf0_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_udf0_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_udf0_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -10179,8 +10148,7 @@ of_oxm_bsn_udf0_masked_new(of_version_t version)
 
     bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF0_MASKED];
 
-    /* Allocate a maximum-length wire buffer assuming we'll be appending to it. */
-    if ((obj = (of_oxm_bsn_udf0_masked_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = (of_oxm_bsn_udf0_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
