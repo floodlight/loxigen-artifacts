@@ -1,1 +1,1 @@
-27a64222e92b38e23b253657c702986c0604145a Merge into master from pull request #240: Use aux id java type for of controller connection message (https://github.com/floodlight/loxigen/pull/240)
+ffa04cc24b045e010c3020e2cbb8ce31cbec8895 Merge into master from pull request #241: java_gen/pom.xml: adapt to extended floodlight-buildinfo format (https://github.com/floodlight/loxigen/pull/241)
