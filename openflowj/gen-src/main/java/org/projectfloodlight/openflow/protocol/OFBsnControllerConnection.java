@@ -27,7 +27,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnControllerConnection extends OFObject {
     OFBsnControllerConnectionState getState();
-    short getAuxiliaryId();
+    OFAuxId getAuxiliaryId();
     OFControllerRole getRole();
     String getUri();
     OFVersion getVersion();
@@ -39,8 +39,8 @@ public interface OFBsnControllerConnection extends OFObject {
         OFBsnControllerConnection build();
         OFBsnControllerConnectionState getState();
         Builder setState(OFBsnControllerConnectionState state);
-        short getAuxiliaryId();
-        Builder setAuxiliaryId(short auxiliaryId);
+        OFAuxId getAuxiliaryId();
+        Builder setAuxiliaryId(OFAuxId auxiliaryId);
         OFControllerRole getRole();
         Builder setRole(OFControllerRole role);
         String getUri();

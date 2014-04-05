@@ -36,18 +36,18 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 264;
 
-        private final static short DEFAULT_AUXILIARY_ID = (short) 0x0;
+        private final static OFAuxId DEFAULT_AUXILIARY_ID = OFAuxId.MAIN;
         private final static String DEFAULT_URI = "";
 
     // OF message fields
     private final OFBsnControllerConnectionState state;
-    private final short auxiliaryId;
+    private final OFAuxId auxiliaryId;
     private final OFControllerRole role;
     private final String uri;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnControllerConnectionVer13(OFBsnControllerConnectionState state, short auxiliaryId, OFControllerRole role, String uri) {
+    OFBsnControllerConnectionVer13(OFBsnControllerConnectionState state, OFAuxId auxiliaryId, OFControllerRole role, String uri) {
         this.state = state;
         this.auxiliaryId = auxiliaryId;
         this.role = role;
@@ -61,7 +61,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     }
 
     @Override
-    public short getAuxiliaryId() {
+    public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
 
@@ -93,7 +93,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         private boolean stateSet;
         private OFBsnControllerConnectionState state;
         private boolean auxiliaryIdSet;
-        private short auxiliaryId;
+        private OFAuxId auxiliaryId;
         private boolean roleSet;
         private OFControllerRole role;
         private boolean uriSet;
@@ -115,12 +115,12 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         return this;
     }
     @Override
-    public short getAuxiliaryId() {
+    public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
 
     @Override
-    public OFBsnControllerConnection.Builder setAuxiliaryId(short auxiliaryId) {
+    public OFBsnControllerConnection.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
         this.auxiliaryId = auxiliaryId;
         this.auxiliaryIdSet = true;
         return this;
@@ -159,7 +159,9 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
                 OFBsnControllerConnectionState state = this.stateSet ? this.state : parentMessage.state;
                 if(state == null)
                     throw new NullPointerException("Property state must not be null");
-                short auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : parentMessage.auxiliaryId;
+                OFAuxId auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : parentMessage.auxiliaryId;
+                if(auxiliaryId == null)
+                    throw new NullPointerException("Property auxiliaryId must not be null");
                 OFControllerRole role = this.roleSet ? this.role : parentMessage.role;
                 if(role == null)
                     throw new NullPointerException("Property role must not be null");
@@ -183,7 +185,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         private boolean stateSet;
         private OFBsnControllerConnectionState state;
         private boolean auxiliaryIdSet;
-        private short auxiliaryId;
+        private OFAuxId auxiliaryId;
         private boolean roleSet;
         private OFControllerRole role;
         private boolean uriSet;
@@ -201,12 +203,12 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         return this;
     }
     @Override
-    public short getAuxiliaryId() {
+    public OFAuxId getAuxiliaryId() {
         return auxiliaryId;
     }
 
     @Override
-    public OFBsnControllerConnection.Builder setAuxiliaryId(short auxiliaryId) {
+    public OFBsnControllerConnection.Builder setAuxiliaryId(OFAuxId auxiliaryId) {
         this.auxiliaryId = auxiliaryId;
         this.auxiliaryIdSet = true;
         return this;
@@ -245,7 +247,9 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
                 throw new IllegalStateException("Property state doesn't have default value -- must be set");
             if(state == null)
                 throw new NullPointerException("Property state must not be null");
-            short auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : DEFAULT_AUXILIARY_ID;
+            OFAuxId auxiliaryId = this.auxiliaryIdSet ? this.auxiliaryId : DEFAULT_AUXILIARY_ID;
+            if(auxiliaryId == null)
+                throw new NullPointerException("Property auxiliaryId must not be null");
             if(!this.roleSet)
                 throw new IllegalStateException("Property role doesn't have default value -- must be set");
             if(role == null)
@@ -271,7 +275,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         @Override
         public OFBsnControllerConnection readFrom(ChannelBuffer bb) throws OFParseError {
             OFBsnControllerConnectionState state = OFBsnControllerConnectionStateSerializerVer13.readFrom(bb);
-            short auxiliaryId = U8.f(bb.readByte());
+            OFAuxId auxiliaryId = OFAuxId.readByte(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             OFControllerRole role = OFControllerRoleSerializerVer13.readFrom(bb);
@@ -299,7 +303,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         @Override
         public void funnel(OFBsnControllerConnectionVer13 message, PrimitiveSink sink) {
             OFBsnControllerConnectionStateSerializerVer13.putTo(message.state, sink);
-            sink.putShort(message.auxiliaryId);
+            message.auxiliaryId.putTo(sink);
             // skip pad (2 bytes)
             OFControllerRoleSerializerVer13.putTo(message.role, sink);
             sink.putUnencodedChars(message.uri);
@@ -316,7 +320,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         @Override
         public void write(ChannelBuffer bb, OFBsnControllerConnectionVer13 message) {
             OFBsnControllerConnectionStateSerializerVer13.writeTo(bb, message.state);
-            bb.writeByte(U8.t(message.auxiliaryId));
+            message.auxiliaryId.writeByte(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             OFControllerRoleSerializerVer13.writeTo(bb, message.role);
@@ -355,7 +359,10 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
                 return false;
         } else if (!state.equals(other.state))
             return false;
-        if( auxiliaryId != other.auxiliaryId)
+        if (auxiliaryId == null) {
+            if (other.auxiliaryId != null)
+                return false;
+        } else if (!auxiliaryId.equals(other.auxiliaryId))
             return false;
         if (role == null) {
             if (other.role != null)
@@ -376,7 +383,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
         int result = 1;
 
         result = prime * result + ((state == null) ? 0 : state.hashCode());
-        result = prime * result + auxiliaryId;
+        result = prime * result + ((auxiliaryId == null) ? 0 : auxiliaryId.hashCode());
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + ((uri == null) ? 0 : uri.hashCode());
         return result;

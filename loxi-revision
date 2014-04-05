@@ -1,1 +1,1 @@
-24b6c19d413555f2aaf9129c552f5128964fefe8 Merge into master from pull request #237: loci: use minimal allocation for fixed-length objects (https://github.com/floodlight/loxigen/pull/237)
+27a64222e92b38e23b253657c702986c0604145a Merge into master from pull request #240: Use aux id java type for of controller connection message (https://github.com/floodlight/loxigen/pull/240)
