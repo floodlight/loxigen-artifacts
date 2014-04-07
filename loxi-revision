@@ -1,1 +1,1 @@
-1c5679af766cc2785f088707e83dbd5b6ac0a698 Merge into master from pull request #238: shrink of_object_t (https://github.com/floodlight/loxigen/pull/238)
+68c19db0fa9a4465577ce17947e04bfb0bb88bf4 Merge into master from pull request #242: loci: lazily zero wire buffer (https://github.com/floodlight/loxigen/pull/242)

@@ -2919,7 +2919,8 @@ of_match_serialize(of_version_t version, of_match_t *match, of_octets_t *octets)
                 of_match_v1_delete(wire_match);
                 return rv;
             }
-            octets->bytes = OF_MATCH_BYTES(wire_match->length);
+            of_wire_buffer_grow(wire_match->wbuf, OF_MATCH_BYTES(wire_match->length));
+            octets->bytes = wire_match->wbuf->current_bytes;
             of_object_wire_buffer_steal((of_object_t *)wire_match,
                                         &octets->data);
             of_match_v1_delete(wire_match);
@@ -2937,7 +2938,8 @@ of_match_serialize(of_version_t version, of_match_t *match, of_octets_t *octets)
                 of_match_v2_delete(wire_match);
                 return rv;
             }
-            octets->bytes = OF_MATCH_BYTES(wire_match->length);
+            of_wire_buffer_grow(wire_match->wbuf, OF_MATCH_BYTES(wire_match->length));
+            octets->bytes = wire_match->wbuf->current_bytes;
             of_object_wire_buffer_steal((of_object_t *)wire_match,
                                         &octets->data);
             of_match_v2_delete(wire_match);
@@ -2955,7 +2957,8 @@ of_match_serialize(of_version_t version, of_match_t *match, of_octets_t *octets)
                 of_match_v3_delete(wire_match);
                 return rv;
             }
-            octets->bytes = OF_MATCH_BYTES(wire_match->length);
+            of_wire_buffer_grow(wire_match->wbuf, OF_MATCH_BYTES(wire_match->length));
+            octets->bytes = wire_match->wbuf->current_bytes;
             of_object_wire_buffer_steal((of_object_t *)wire_match,
                                         &octets->data);
             of_match_v3_delete(wire_match);
@@ -2973,7 +2976,8 @@ of_match_serialize(of_version_t version, of_match_t *match, of_octets_t *octets)
                 of_match_v4_delete(wire_match);
                 return rv;
             }
-            octets->bytes = OF_MATCH_BYTES(wire_match->length);
+            of_wire_buffer_grow(wire_match->wbuf, OF_MATCH_BYTES(wire_match->length));
+            octets->bytes = wire_match->wbuf->current_bytes;
             of_object_wire_buffer_steal((of_object_t *)wire_match,
                                         &octets->data);
             of_match_v4_delete(wire_match);
