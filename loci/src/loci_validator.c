@@ -7138,8 +7138,8 @@ of_action_set_mpls_ttl_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 static inline int
 of_action_set_field_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 {
-    if (len < 4) {
-        VALIDATOR_LOG("Class of_action_set_field.  Len %d too small, < %d", len, 4);
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_action_set_field.  Len %d too small, < %d", len, 8);
         return -1;
     }
 
@@ -12592,8 +12592,8 @@ of_action_set_mpls_ttl_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_action_set_field_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 4) {
-        VALIDATOR_LOG("Class of_action_set_field.  Len %d too small, < %d", len, 4);
+    if (len < 8) {
+        VALIDATOR_LOG("Class of_action_set_field.  Len %d too small, < %d", len, 8);
         return -1;
     }
 

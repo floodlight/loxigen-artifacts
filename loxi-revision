@@ -1,1 +1,1 @@
-68c19db0fa9a4465577ce17947e04bfb0bb88bf4 Merge into master from pull request #242: loci: lazily zero wire buffer (https://github.com/floodlight/loxigen/pull/242)
+ac2a2da3d8ce47f2591899fac634873bd1e2cb60 Merge into master from pull request #243: loci: add clean API to get OXM from a set-field action (https://github.com/floodlight/loxigen/pull/243)

@@ -12345,14 +12345,13 @@ int
 of_action_set_field_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
 {
     int out = 0;
-    of_octets_t octets;
+
+    of_oxm_header_t oxm;
 
     out += writer(cookie, "Object of type of_action_set_field\n");
 
-    of_action_set_field_field_get(obj, &octets);
-    out += writer(cookie, "  field (of_octets_t):  ");
-    out += LOCI_DUMP_octets(writer, cookie, octets);
-    out += writer(cookie, "\n");
+    of_action_set_field_field_bind(obj, &oxm);
+    out += of_oxm_header_OF_VERSION_1_2_dump(writer, cookie, &oxm);
 
     return out;
 }
@@ -21809,14 +21808,13 @@ int
 of_action_set_field_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
 {
     int out = 0;
-    of_octets_t octets;
+
+    of_oxm_header_t oxm;
 
     out += writer(cookie, "Object of type of_action_set_field\n");
 
-    of_action_set_field_field_get(obj, &octets);
-    out += writer(cookie, "  field (of_octets_t):  ");
-    out += LOCI_DUMP_octets(writer, cookie, octets);
-    out += writer(cookie, "\n");
+    of_action_set_field_field_bind(obj, &oxm);
+    out += of_oxm_header_OF_VERSION_1_3_dump(writer, cookie, &oxm);
 
     return out;
 }

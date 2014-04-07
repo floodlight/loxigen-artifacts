@@ -16502,10 +16502,12 @@ extern void of_action_set_dl_src_dl_addr_get(
 
 extern int WARN_UNUSED_RESULT of_action_set_field_field_set(
     of_action_set_field_t *obj,
-    of_octets_t *field);
-extern void of_action_set_field_field_get(
+    of_oxm_header_t *field);
+extern void of_action_set_field_field_bind(
     of_action_set_field_t *obj,
-    of_octets_t *field);
+    of_oxm_header_t *field);
+extern of_oxm_header_t *of_action_set_field_field_get(
+    of_action_set_field_t *obj);
 
 /* Unified accessor functions for of_action_set_mpls_label */
 

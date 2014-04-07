@@ -4969,8 +4969,8 @@ typedef struct of_action_set_dl_src_s of_action_set_dl_src_t;
  * accessors available in all versions unless noted otherwise
  *
  * @param field_get/set ( OF_1_2 OF_1_3).
- *   Accessors for field, a variable of type of_octets.  Functions
- *   are of type of_action_set_field_of_octets_get_f and _set_f.
+ *   Accessors for field, a variable of type of_oxm_header.  Functions
+ *   are of type of_action_set_field_of_oxm_header_get_f and _set_f.
  *
  */
 typedef struct of_action_set_field_s of_action_set_field_t;

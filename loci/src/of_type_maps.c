@@ -4001,7 +4001,7 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     8,    /* 220: of_action_push_vlan */
     -1,   /* 221: of_action_set_dl_dst */
     -1,   /* 222: of_action_set_dl_src */
-    4,    /* 223: of_action_set_field */
+    8,    /* 223: of_action_set_field */
     -1,   /* 224: of_action_set_mpls_label */
     -1,   /* 225: of_action_set_mpls_tc */
     8,    /* 226: of_action_set_mpls_ttl */
@@ -4517,7 +4517,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     8,    /* 220: of_action_push_vlan */
     -1,   /* 221: of_action_set_dl_dst */
     -1,   /* 222: of_action_set_dl_src */
-    4,    /* 223: of_action_set_field */
+    8,    /* 223: of_action_set_field */
     -1,   /* 224: of_action_set_mpls_label */
     -1,   /* 225: of_action_set_mpls_tc */
     8,    /* 226: of_action_set_mpls_ttl */

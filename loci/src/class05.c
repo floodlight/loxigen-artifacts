@@ -911,16 +911,21 @@ of_action_set_field_init(of_action_set_field_t *obj,
 
 
 /**
- * Get field from an object of type of_action_set_field.
+ * Bind an object of type of_oxm_header_t to the parent of type of_action_set_field for
+ * member field
  * @param obj Pointer to an object of type of_action_set_field.
  * @param field Pointer to the child object of type
- * of_octets_t to be filled out.
+ * of_oxm_header_t to be filled out.
+ * \ingroup of_action_set_field
+ *
+ * The parameter field is filled out to point to the same underlying
+ * wire buffer as its parent.
  *
  */
 void
-of_action_set_field_field_get(
+of_action_set_field_field_bind(
     of_action_set_field_t *obj,
-    of_octets_t *field)
+    of_oxm_header_t *field)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -938,7 +943,7 @@ of_action_set_field_field_get(
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
         offset = 4;
-        cur_len = _END_LEN(obj, offset);
+        cur_len = 4;
         break;
     default:
         LOCI_ASSERT(0);
@@ -947,9 +952,15 @@ of_action_set_field_field_get(
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
-    LOCI_ASSERT(cur_len + abs_offset <= WBUF_CURRENT_BYTES(wbuf));
-    field->bytes = cur_len;
-    field->data = OF_WIRE_BUFFER_INDEX(wbuf, abs_offset);
+
+    /* Initialize child */
+    of_oxm_header_init(field, obj->version, 0, 1);
+    /* Attach to parent */
+    field->parent = (of_object_t *)obj;
+    field->wbuf = obj->wbuf;
+    field->obj_offset = abs_offset;
+    field->length = cur_len;
+    of_object_wire_init(field, OF_OXM, 0);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -957,14 +968,38 @@ of_action_set_field_field_get(
 }
 
 /**
+ * Create a copy of field into a new variable of type of_oxm_header_t from
+ * a of_action_set_field instance.
+ *
+ * @param obj Pointer to the source of type of_action_set_field_t
+ * @returns A pointer to a new instance of type of_oxm_header_t whose contents
+ * match that of field from source
+ * @returns NULL if an error occurs
+ */
+of_oxm_header_t *
+of_action_set_field_field_get(of_action_set_field_t *obj) {
+    of_oxm_header_t _field;
+    of_oxm_header_t *_field_ptr;
+
+    of_action_set_field_field_bind(obj, &_field);
+    _field_ptr = (of_oxm_header_t *)of_object_dup(&_field);
+    return _field_ptr;
+}
+
+/**
  * Set field in an object of type of_action_set_field.
  * @param obj Pointer to an object of type of_action_set_field.
- * @param field The value to write into the object
+ * @param field Pointer to the child of type of_oxm_header_t.
+ *
+ * If the child's wire buffer is the same as the parent's, then
+ * nothing is done as the changes have already been registered in the
+ * parent.  Otherwise, the data in the child's wire buffer is inserted
+ * into the parent's and the appropriate lengths are updated.
  */
 int WARN_UNUSED_RESULT
 of_action_set_field_field_set(
     of_action_set_field_t *obj,
-    of_octets_t *field)
+    of_oxm_header_t *field)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -983,7 +1018,7 @@ of_action_set_field_field_set(
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
         offset = 4;
-        cur_len = _END_LEN(obj, offset);
+        cur_len = 4;
         break;
     default:
         LOCI_ASSERT(0);
@@ -992,9 +1027,24 @@ of_action_set_field_field_set(
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
-    new_len = field->bytes;
-    of_wire_buffer_grow(wbuf, abs_offset + (new_len - cur_len));
-    of_wire_buffer_octets_data_set(wbuf, abs_offset, field, cur_len);
+
+    /* LOCI object type */
+    new_len = field->length;
+    /* If underlying buffer already shared; nothing to do */
+    if (obj->wbuf == field->wbuf) {
+        of_wire_buffer_grow(wbuf, abs_offset + new_len);
+        /* Verify that the offsets are correct */
+        LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(field, 0));
+        /* LOCI_ASSERT(new_len == cur_len); */ /* fixme: may fail for OXM lists */
+        return OF_ERROR_NONE;
+    }
+
+    /* Otherwise, replace existing object in data buffer */
+    of_wire_buffer_replace_data(wbuf, abs_offset, cur_len,
+        OF_OBJECT_BUFFER_INDEX(field, 0), new_len);
+
+    /* @fixme Shouldn't this precede copying value's data to buffer? */
+    of_object_wire_length_set((of_object_t *)field, field->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;

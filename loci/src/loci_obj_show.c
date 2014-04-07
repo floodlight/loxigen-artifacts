@@ -11616,12 +11616,11 @@ int
 of_action_set_field_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
 {
     int out = 0;
-    of_octets_t octets;
 
-    of_action_set_field_field_get(obj, &octets);
-    out += writer(cookie, "field=");
-    out += LOCI_SHOW_octets_field(writer, cookie, octets);
-    out += writer(cookie, " ");
+    of_oxm_header_t oxm;
+
+    of_action_set_field_field_bind(obj, &oxm);
+    out += of_oxm_header_OF_VERSION_1_2_show(writer, cookie, &oxm);
 
     return out;
 }
@@ -20425,12 +20424,11 @@ int
 of_action_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
 {
     int out = 0;
-    of_octets_t octets;
 
-    of_action_set_field_field_get(obj, &octets);
-    out += writer(cookie, "field=");
-    out += LOCI_SHOW_octets_field(writer, cookie, octets);
-    out += writer(cookie, " ");
+    of_oxm_header_t oxm;
+
+    of_action_set_field_field_bind(obj, &oxm);
+    out += of_oxm_header_OF_VERSION_1_3_show(writer, cookie, &oxm);
 
     return out;
 }

@@ -15012,14 +15012,23 @@ of_action_set_field_OF_VERSION_1_2_dup(
     of_action_set_field_t *src)
 {
     of_action_set_field_t *dst;
-    of_octets_t octets;
+
+    of_oxm_header_t src_oxm;
+    of_oxm_header_t *dst_oxm;
 
     if ((dst = of_action_set_field_new(src->version)) == NULL) {
         return NULL;
     }
 
-    of_action_set_field_field_get(src, &octets);
-    of_action_set_field_field_set(dst, &octets);
+    of_action_set_field_field_bind(
+        src, &src_oxm);
+    dst_oxm = of_oxm_header_OF_VERSION_1_2_dup(&src_oxm);
+    if (dst_oxm == NULL) {
+        of_action_set_field_delete(dst);
+        return NULL;
+    }
+    of_action_set_field_field_set(dst, dst_oxm);
+    of_oxm_header_delete(dst_oxm);
 
     return dst;
 }
@@ -27668,14 +27677,23 @@ of_action_set_field_OF_VERSION_1_3_dup(
     of_action_set_field_t *src)
 {
     of_action_set_field_t *dst;
-    of_octets_t octets;
+
+    of_oxm_header_t src_oxm;
+    of_oxm_header_t *dst_oxm;
 
     if ((dst = of_action_set_field_new(src->version)) == NULL) {
         return NULL;
     }
 
-    of_action_set_field_field_get(src, &octets);
-    of_action_set_field_field_set(dst, &octets);
+    of_action_set_field_field_bind(
+        src, &src_oxm);
+    dst_oxm = of_oxm_header_OF_VERSION_1_3_dup(&src_oxm);
+    if (dst_oxm == NULL) {
+        of_action_set_field_delete(dst);
+        return NULL;
+    }
+    of_action_set_field_field_set(dst, dst_oxm);
+    of_oxm_header_delete(dst_oxm);
 
     return dst;
 }
