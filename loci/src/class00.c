@@ -362,18 +362,12 @@ of_action_init(of_action_t *obj_p,
     obj->length = bytes;
     obj->object_id = OF_ACTION;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -549,20 +543,12 @@ of_action_experimenter_init(of_action_experimenter_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_EXPERIMENTER;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -924,20 +910,12 @@ of_action_bsn_init(of_action_bsn_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_BSN;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1140,7 +1118,7 @@ of_action_bsn_subtype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_bsn_mirror_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1249,22 +1227,12 @@ of_action_bsn_mirror_init(of_action_bsn_mirror_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_BSN_MIRROR;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_bsn_mirror_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1719,7 +1687,7 @@ of_action_bsn_mirror_copy_stage_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_bsn_set_tunnel_dst_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1828,22 +1796,12 @@ of_action_bsn_set_tunnel_dst_init(of_action_bsn_set_tunnel_dst_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_BSN_SET_TUNNEL_DST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_bsn_set_tunnel_dst_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2130,7 +2088,7 @@ of_action_bsn_set_tunnel_dst_dst_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_enqueue_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2234,22 +2192,12 @@ of_action_enqueue_init(of_action_enqueue_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_ENQUEUE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_enqueue_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2570,20 +2518,12 @@ of_action_nicira_init(of_action_nicira_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_NICIRA;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2786,7 +2726,7 @@ of_action_nicira_subtype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_nicira_dec_ttl_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2895,22 +2835,12 @@ of_action_nicira_dec_ttl_init(of_action_nicira_dec_ttl_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_NICIRA_DEC_TTL;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_nicira_dec_ttl_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3113,7 +3043,7 @@ of_action_nicira_dec_ttl_subtype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_output_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3220,22 +3150,12 @@ of_action_output_init(of_action_output_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_OUTPUT;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_output_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3447,7 +3367,7 @@ of_action_output_max_len_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_dl_dst_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3554,22 +3474,12 @@ of_action_set_dl_dst_init(of_action_set_dl_dst_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_DL_DST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_dl_dst_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3684,7 +3594,7 @@ of_action_set_dl_dst_dl_addr_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_dl_src_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3791,22 +3701,12 @@ of_action_set_dl_src_init(of_action_set_dl_src_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_DL_SRC;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_dl_src_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3921,7 +3821,7 @@ of_action_set_dl_src_dl_addr_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_nw_dst_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4028,22 +3928,12 @@ of_action_set_nw_dst_init(of_action_set_nw_dst_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_NW_DST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_nw_dst_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4158,7 +4048,7 @@ of_action_set_nw_dst_nw_addr_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_nw_src_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4265,22 +4155,12 @@ of_action_set_nw_src_init(of_action_set_nw_src_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_NW_SRC;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_nw_src_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4395,7 +4275,7 @@ of_action_set_nw_src_nw_addr_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_nw_tos_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4502,22 +4382,12 @@ of_action_set_nw_tos_init(of_action_set_nw_tos_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_NW_TOS;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_nw_tos_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4632,7 +4502,7 @@ of_action_set_nw_tos_nw_tos_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_tp_dst_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4737,22 +4607,12 @@ of_action_set_tp_dst_init(of_action_set_tp_dst_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_TP_DST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_tp_dst_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4867,7 +4727,7 @@ of_action_set_tp_dst_tp_port_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_tp_src_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4972,22 +4832,12 @@ of_action_set_tp_src_init(of_action_set_tp_src_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_TP_SRC;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_tp_src_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5102,7 +4952,7 @@ of_action_set_tp_src_tp_port_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_vlan_pcp_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5207,22 +5057,12 @@ of_action_set_vlan_pcp_init(of_action_set_vlan_pcp_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_VLAN_PCP;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_vlan_pcp_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5337,7 +5177,7 @@ of_action_set_vlan_pcp_vlan_pcp_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_set_vlan_vid_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5442,22 +5282,12 @@ of_action_set_vlan_vid_init(of_action_set_vlan_vid_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_SET_VLAN_VID;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_set_vlan_vid_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5572,7 +5402,7 @@ of_action_set_vlan_vid_vlan_vid_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_action_strip_vlan_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5676,22 +5506,12 @@ of_action_strip_vlan_init(of_action_strip_vlan_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ACTION_STRIP_VLAN;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_action_strip_vlan_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_action_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6152,14 +5972,12 @@ of_header_init(of_header_t *obj,
     obj->length = bytes;
     obj->object_id = OF_HEADER;
 
-    /* Set up the object's function pointers */
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6518,17 +6336,12 @@ of_stats_reply_init(of_stats_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_STATS_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6771,7 +6584,7 @@ of_stats_reply_flags_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_aggregate_stats_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6888,19 +6701,12 @@ of_aggregate_stats_reply_init(of_aggregate_stats_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_AGGREGATE_STATS_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_aggregate_stats_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7647,17 +7453,12 @@ of_stats_request_init(of_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7900,7 +7701,7 @@ of_stats_request_flags_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_aggregate_stats_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -8023,19 +7824,12 @@ of_aggregate_stats_request_init(of_aggregate_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_AGGREGATE_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_aggregate_stats_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -9081,17 +8875,12 @@ of_error_msg_init(of_error_msg_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ERROR_MSG;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -9250,7 +9039,7 @@ of_error_msg_xid_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bad_action_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -9363,19 +9152,12 @@ of_bad_action_error_msg_init(of_bad_action_error_msg_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BAD_ACTION_ERROR_MSG;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bad_action_error_msg_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -9720,7 +9502,7 @@ of_bad_action_error_msg_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bad_request_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -9833,19 +9615,12 @@ of_bad_request_error_msg_init(of_bad_request_error_msg_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BAD_REQUEST_ERROR_MSG;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bad_request_error_msg_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -10190,7 +9965,7 @@ of_bad_request_error_msg_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_barrier_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -10305,19 +10080,12 @@ of_barrier_reply_init(of_barrier_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BARRIER_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_barrier_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -10476,7 +10244,7 @@ of_barrier_reply_xid_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_barrier_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -10591,19 +10359,12 @@ of_barrier_request_init(of_barrier_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BARRIER_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_barrier_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -10903,17 +10664,12 @@ of_experimenter_init(of_experimenter_t *obj,
     obj->length = bytes;
     obj->object_id = OF_EXPERIMENTER;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -11837,17 +11593,12 @@ of_bsn_header_init(of_bsn_header_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BSN_HEADER;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -12174,7 +11925,7 @@ of_bsn_header_subtype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bsn_bw_clear_data_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -12288,19 +12039,12 @@ of_bsn_bw_clear_data_reply_init(of_bsn_bw_clear_data_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BSN_BW_CLEAR_DATA_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bsn_bw_clear_data_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 

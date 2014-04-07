@@ -29,7 +29,7 @@
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_feature_prop_write_actions_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -133,22 +133,12 @@ of_table_feature_prop_write_actions_init(of_table_feature_prop_write_actions_t *
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURE_PROP_WRITE_ACTIONS;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_feature_prop_write_actions_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_table_feature_prop_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -199,9 +189,8 @@ of_table_feature_prop_write_actions_action_ids_bind(
     of_list_action_id_init(action_ids, obj->version, 0, 1);
     /* Attach to parent */
     action_ids->parent = (of_object_t *)obj;
-    action_ids->wire_object.wbuf = obj->wire_object.wbuf;
-    action_ids->wire_object.obj_offset = abs_offset;
-    action_ids->wire_object.owned = 0;
+    action_ids->wbuf = obj->wbuf;
+    action_ids->obj_offset = abs_offset;
     action_ids->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -272,7 +261,7 @@ of_table_feature_prop_write_actions_action_ids_set(
     /* LOCI object type */
     new_len = action_ids->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == action_ids->wire_object.wbuf) {
+    if (obj->wbuf == action_ids->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(action_ids, 0));
@@ -285,9 +274,7 @@ of_table_feature_prop_write_actions_action_ids_set(
         OF_OBJECT_BUFFER_INDEX(action_ids, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (action_ids->wire_length_set != NULL) {
-        action_ids->wire_length_set((of_object_t *)action_ids, action_ids->length);
-    }
+    of_object_wire_length_set((of_object_t *)action_ids, action_ids->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -331,7 +318,7 @@ of_table_feature_prop_write_actions_action_ids_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_feature_prop_write_actions_miss_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -435,22 +422,12 @@ of_table_feature_prop_write_actions_miss_init(of_table_feature_prop_write_action
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_feature_prop_write_actions_miss_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_table_feature_prop_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -501,9 +478,8 @@ of_table_feature_prop_write_actions_miss_action_ids_bind(
     of_list_action_id_init(action_ids, obj->version, 0, 1);
     /* Attach to parent */
     action_ids->parent = (of_object_t *)obj;
-    action_ids->wire_object.wbuf = obj->wire_object.wbuf;
-    action_ids->wire_object.obj_offset = abs_offset;
-    action_ids->wire_object.owned = 0;
+    action_ids->wbuf = obj->wbuf;
+    action_ids->obj_offset = abs_offset;
     action_ids->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -574,7 +550,7 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
     /* LOCI object type */
     new_len = action_ids->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == action_ids->wire_object.wbuf) {
+    if (obj->wbuf == action_ids->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(action_ids, 0));
@@ -587,9 +563,7 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
         OF_OBJECT_BUFFER_INDEX(action_ids, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (action_ids->wire_length_set != NULL) {
-        action_ids->wire_length_set((of_object_t *)action_ids, action_ids->length);
-    }
+    of_object_wire_length_set((of_object_t *)action_ids, action_ids->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -633,7 +607,7 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_feature_prop_write_setfield_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -737,22 +711,12 @@ of_table_feature_prop_write_setfield_init(of_table_feature_prop_write_setfield_t
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURE_PROP_WRITE_SETFIELD;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_feature_prop_write_setfield_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_table_feature_prop_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -803,9 +767,8 @@ of_table_feature_prop_write_setfield_oxm_ids_bind(
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
     oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wire_object.wbuf = obj->wire_object.wbuf;
-    oxm_ids->wire_object.obj_offset = abs_offset;
-    oxm_ids->wire_object.owned = 0;
+    oxm_ids->wbuf = obj->wbuf;
+    oxm_ids->obj_offset = abs_offset;
     oxm_ids->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -876,7 +839,7 @@ of_table_feature_prop_write_setfield_oxm_ids_set(
     /* LOCI object type */
     new_len = oxm_ids->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == oxm_ids->wire_object.wbuf) {
+    if (obj->wbuf == oxm_ids->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(oxm_ids, 0));
@@ -889,9 +852,7 @@ of_table_feature_prop_write_setfield_oxm_ids_set(
         OF_OBJECT_BUFFER_INDEX(oxm_ids, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (oxm_ids->wire_length_set != NULL) {
-        oxm_ids->wire_length_set((of_object_t *)oxm_ids, oxm_ids->length);
-    }
+    of_object_wire_length_set((of_object_t *)oxm_ids, oxm_ids->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -935,7 +896,7 @@ of_table_feature_prop_write_setfield_oxm_ids_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_feature_prop_write_setfield_miss_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1039,22 +1000,12 @@ of_table_feature_prop_write_setfield_miss_init(of_table_feature_prop_write_setfi
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_feature_prop_write_setfield_miss_push_wire_types;
-
-    obj->wire_length_set = of_tlv16_wire_length_set;
-
-    obj->wire_length_get = of_tlv16_wire_length_get;
-
-    obj->wire_type_get = of_table_feature_prop_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1105,9 +1056,8 @@ of_table_feature_prop_write_setfield_miss_oxm_ids_bind(
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
     oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wire_object.wbuf = obj->wire_object.wbuf;
-    oxm_ids->wire_object.obj_offset = abs_offset;
-    oxm_ids->wire_object.owned = 0;
+    oxm_ids->wbuf = obj->wbuf;
+    oxm_ids->obj_offset = abs_offset;
     oxm_ids->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1178,7 +1128,7 @@ of_table_feature_prop_write_setfield_miss_oxm_ids_set(
     /* LOCI object type */
     new_len = oxm_ids->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == oxm_ids->wire_object.wbuf) {
+    if (obj->wbuf == oxm_ids->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(oxm_ids, 0));
@@ -1191,9 +1141,7 @@ of_table_feature_prop_write_setfield_miss_oxm_ids_set(
         OF_OBJECT_BUFFER_INDEX(oxm_ids, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (oxm_ids->wire_length_set != NULL) {
-        oxm_ids->wire_length_set((of_object_t *)oxm_ids, oxm_ids->length);
-    }
+    of_object_wire_length_set((of_object_t *)oxm_ids, oxm_ids->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -1250,7 +1198,7 @@ static inline int
 of_table_features_push_wire_values(of_table_features_t *obj)
 {
 
-    obj->wire_length_set((of_object_t *)obj, obj->length);
+    of_object_wire_length_set((of_object_t *)obj, obj->length);
 
     return OF_ERROR_NONE;
 }
@@ -1325,17 +1273,12 @@ of_table_features_init(of_table_features_t *obj,
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURES;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_u16_len_wire_length_get;
-    obj->wire_length_set = of_u16_len_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1854,9 +1797,8 @@ of_table_features_properties_bind(
     of_list_table_feature_prop_init(properties, obj->version, 0, 1);
     /* Attach to parent */
     properties->parent = (of_object_t *)obj;
-    properties->wire_object.wbuf = obj->wire_object.wbuf;
-    properties->wire_object.obj_offset = abs_offset;
-    properties->wire_object.owned = 0;
+    properties->wbuf = obj->wbuf;
+    properties->obj_offset = abs_offset;
     properties->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -1927,7 +1869,7 @@ of_table_features_properties_set(
     /* LOCI object type */
     new_len = properties->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == properties->wire_object.wbuf) {
+    if (obj->wbuf == properties->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(properties, 0));
@@ -1940,9 +1882,7 @@ of_table_features_properties_set(
         OF_OBJECT_BUFFER_INDEX(properties, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (properties->wire_length_set != NULL) {
-        properties->wire_length_set((of_object_t *)properties, properties->length);
-    }
+    of_object_wire_length_set((of_object_t *)properties, properties->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -1986,7 +1926,7 @@ of_table_features_properties_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_features_failed_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2096,19 +2036,12 @@ of_table_features_failed_error_msg_init(of_table_features_failed_error_msg_t *ob
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURES_FAILED_ERROR_MSG;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_features_failed_error_msg_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2435,7 +2368,7 @@ of_table_features_failed_error_msg_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_features_stats_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2545,19 +2478,12 @@ of_table_features_stats_reply_init(of_table_features_stats_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURES_STATS_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_features_stats_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2804,9 +2730,8 @@ of_table_features_stats_reply_entries_bind(
     of_list_table_features_init(entries, obj->version, 0, 1);
     /* Attach to parent */
     entries->parent = (of_object_t *)obj;
-    entries->wire_object.wbuf = obj->wire_object.wbuf;
-    entries->wire_object.obj_offset = abs_offset;
-    entries->wire_object.owned = 0;
+    entries->wbuf = obj->wbuf;
+    entries->obj_offset = abs_offset;
     entries->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -2877,7 +2802,7 @@ of_table_features_stats_reply_entries_set(
     /* LOCI object type */
     new_len = entries->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == entries->wire_object.wbuf) {
+    if (obj->wbuf == entries->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(entries, 0));
@@ -2890,9 +2815,7 @@ of_table_features_stats_reply_entries_set(
         OF_OBJECT_BUFFER_INDEX(entries, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (entries->wire_length_set != NULL) {
-        entries->wire_length_set((of_object_t *)entries, entries->length);
-    }
+    of_object_wire_length_set((of_object_t *)entries, entries->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -2936,7 +2859,7 @@ of_table_features_stats_reply_entries_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_table_features_stats_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3046,19 +2969,12 @@ of_table_features_stats_request_init(of_table_features_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_TABLE_FEATURES_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_table_features_stats_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3305,9 +3221,8 @@ of_table_features_stats_request_entries_bind(
     of_list_table_features_init(entries, obj->version, 0, 1);
     /* Attach to parent */
     entries->parent = (of_object_t *)obj;
-    entries->wire_object.wbuf = obj->wire_object.wbuf;
-    entries->wire_object.obj_offset = abs_offset;
-    entries->wire_object.owned = 0;
+    entries->wbuf = obj->wbuf;
+    entries->obj_offset = abs_offset;
     entries->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -3378,7 +3293,7 @@ of_table_features_stats_request_entries_set(
     /* LOCI object type */
     new_len = entries->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == entries->wire_object.wbuf) {
+    if (obj->wbuf == entries->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(entries, 0));
@@ -3391,9 +3306,7 @@ of_table_features_stats_request_entries_set(
         OF_OBJECT_BUFFER_INDEX(entries, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (entries->wire_length_set != NULL) {
-        entries->wire_length_set((of_object_t *)entries, entries->length);
-    }
+    of_object_wire_length_set((of_object_t *)entries, entries->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -3523,14 +3436,12 @@ of_uint32_init(of_uint32_t *obj,
     obj->length = bytes;
     obj->object_id = OF_UINT32;
 
-    /* Set up the object's function pointers */
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3729,14 +3640,12 @@ of_uint64_init(of_uint64_t *obj,
     obj->length = bytes;
     obj->object_id = OF_UINT64;
 
-    /* Set up the object's function pointers */
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3935,14 +3844,12 @@ of_uint8_init(of_uint8_t *obj,
     obj->length = bytes;
     obj->object_id = OF_UINT8;
 
-    /* Set up the object's function pointers */
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 

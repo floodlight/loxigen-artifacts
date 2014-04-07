@@ -3021,7 +3021,7 @@ of_match_deserialize(of_version_t version, of_match_t *match,
 
             /* Free the wire buffer control block without freeing
              * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wire_object.wbuf, &tmp);
+            of_wire_buffer_steal(wire_match.wbuf, &tmp);
         }
         break;
 
@@ -3037,7 +3037,7 @@ of_match_deserialize(of_version_t version, of_match_t *match,
 
             /* Free the wire buffer control block without freeing
              * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wire_object.wbuf, &tmp);
+            of_wire_buffer_steal(wire_match.wbuf, &tmp);
         }
         break;
 
@@ -3053,7 +3053,7 @@ of_match_deserialize(of_version_t version, of_match_t *match,
 
             /* Free the wire buffer control block without freeing
              * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wire_object.wbuf, &tmp);
+            of_wire_buffer_steal(wire_match.wbuf, &tmp);
         }
         break;
 
@@ -3069,7 +3069,7 @@ of_match_deserialize(of_version_t version, of_match_t *match,
 
             /* Free the wire buffer control block without freeing
              * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wire_object.wbuf, &tmp);
+            of_wire_buffer_steal(wire_match.wbuf, &tmp);
         }
         break;
 

@@ -22,6 +22,7 @@
 #include <loci/of_match.h>
 #include <loci/of_object.h>
 #include <loci/loci_classes.h>
+#include <loci/loci_class_metadata.h>
 
 /****************************************************************
  *
@@ -74,7 +75,7 @@ extern loci_logger_f loci_logger;
  * Treat as private
  */
 #define OF_OBJECT_TO_MESSAGE(obj) \
-    ((of_message_t)(WBUF_BUF((obj)->wire_object.wbuf)))
+    ((of_message_t)(WBUF_BUF((obj)->wbuf)))
 
 /**
  * Macro for the fixed length part of an object
@@ -549,8 +550,8 @@ extern int of_match_to_wire_match_v3(of_match_t *src, of_match_v3_t *dst);
  */
 #define OF_LENGTH_CHECK_ASSERT(obj) \
     LOCI_ASSERT(((obj)->parent != NULL) || \
-     ((obj)->wire_object.wbuf == NULL) || \
-     (WBUF_CURRENT_BYTES((obj)->wire_object.wbuf) == (obj)->length))
+     ((obj)->wbuf == NULL) || \
+     (WBUF_CURRENT_BYTES((obj)->wbuf) == (obj)->length))
 
 #define OF_DEBUG_DUMP
 #if defined(OF_DEBUG_DUMP)

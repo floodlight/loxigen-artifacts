@@ -158,17 +158,12 @@ of_experimenter_stats_request_init(of_experimenter_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_EXPERIMENTER_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -841,17 +836,12 @@ of_bsn_stats_request_init(of_bsn_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BSN_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1262,7 +1252,7 @@ of_bsn_stats_request_subtype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bsn_virtual_port_create_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1376,19 +1366,12 @@ of_bsn_virtual_port_create_reply_init(of_bsn_virtual_port_create_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BSN_VIRTUAL_PORT_CREATE_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bsn_virtual_port_create_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2015,14 +1998,12 @@ of_bsn_vport_init(of_bsn_vport_t *obj_p,
     obj->length = bytes;
     obj->object_id = OF_BSN_VPORT;
 
-    /* Set up the object's function pointers */
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2057,7 +2038,7 @@ of_bsn_vport_init(of_bsn_vport_t *obj_p,
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bsn_vport_q_in_q_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2161,16 +2142,12 @@ of_bsn_vport_q_in_q_init(of_bsn_vport_q_in_q_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BSN_VPORT_Q_IN_Q;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bsn_vport_q_in_q_push_wire_types;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2709,7 +2686,7 @@ of_bsn_vport_q_in_q_if_name_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bsn_virtual_port_create_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2823,19 +2800,12 @@ of_bsn_virtual_port_create_request_init(of_bsn_virtual_port_create_request_t *ob
     obj->length = bytes;
     obj->object_id = OF_BSN_VIRTUAL_PORT_CREATE_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bsn_virtual_port_create_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3181,9 +3151,8 @@ of_bsn_virtual_port_create_request_vport_bind(
     of_bsn_vport_q_in_q_init(vport, obj->version, 0, 1);
     /* Attach to parent */
     vport->parent = (of_object_t *)obj;
-    vport->wire_object.wbuf = obj->wire_object.wbuf;
-    vport->wire_object.obj_offset = abs_offset;
-    vport->wire_object.owned = 0;
+    vport->wbuf = obj->wbuf;
+    vport->obj_offset = abs_offset;
     vport->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -3257,7 +3226,7 @@ of_bsn_virtual_port_create_request_vport_set(
     /* LOCI object type */
     new_len = vport->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == vport->wire_object.wbuf) {
+    if (obj->wbuf == vport->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(vport, 0));
@@ -3270,9 +3239,7 @@ of_bsn_virtual_port_create_request_vport_set(
         OF_OBJECT_BUFFER_INDEX(vport, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (vport->wire_length_set != NULL) {
-        vport->wire_length_set((of_object_t *)vport, vport->length);
-    }
+    of_object_wire_length_set((of_object_t *)vport, vport->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -3316,7 +3283,7 @@ of_bsn_virtual_port_create_request_vport_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bsn_virtual_port_remove_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3430,19 +3397,12 @@ of_bsn_virtual_port_remove_reply_init(of_bsn_virtual_port_remove_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_BSN_VIRTUAL_PORT_REMOVE_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bsn_virtual_port_remove_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3853,7 +3813,7 @@ of_bsn_virtual_port_remove_reply_status_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_bsn_virtual_port_remove_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3967,19 +3927,12 @@ of_bsn_virtual_port_remove_request_init(of_bsn_virtual_port_remove_request_t *ob
     obj->length = bytes;
     obj->object_id = OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_bsn_virtual_port_remove_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4390,7 +4343,7 @@ of_bsn_virtual_port_remove_request_vport_no_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_desc_stats_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4507,19 +4460,12 @@ of_desc_stats_reply_init(of_desc_stats_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_DESC_STATS_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_desc_stats_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5202,7 +5148,7 @@ of_desc_stats_reply_dp_desc_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_desc_stats_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5319,19 +5265,12 @@ of_desc_stats_request_init(of_desc_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_DESC_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_desc_stats_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5574,7 +5513,7 @@ of_desc_stats_request_flags_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_echo_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5686,19 +5625,12 @@ of_echo_reply_init(of_echo_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ECHO_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_echo_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5959,7 +5891,7 @@ of_echo_reply_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_echo_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6071,19 +6003,12 @@ of_echo_request_init(of_echo_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_ECHO_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_echo_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6344,7 +6269,7 @@ of_echo_request_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_features_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6456,19 +6381,12 @@ of_features_reply_init(of_features_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FEATURES_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_features_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7141,9 +7059,8 @@ of_features_reply_ports_bind(
     of_list_port_desc_init(ports, obj->version, 0, 1);
     /* Attach to parent */
     ports->parent = (of_object_t *)obj;
-    ports->wire_object.wbuf = obj->wire_object.wbuf;
-    ports->wire_object.obj_offset = abs_offset;
-    ports->wire_object.owned = 0;
+    ports->wbuf = obj->wbuf;
+    ports->obj_offset = abs_offset;
     ports->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -7216,7 +7133,7 @@ of_features_reply_ports_set(
     /* LOCI object type */
     new_len = ports->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == ports->wire_object.wbuf) {
+    if (obj->wbuf == ports->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(ports, 0));
@@ -7229,9 +7146,7 @@ of_features_reply_ports_set(
         OF_OBJECT_BUFFER_INDEX(ports, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (ports->wire_length_set != NULL) {
-        ports->wire_length_set((of_object_t *)ports, ports->length);
-    }
+    of_object_wire_length_set((of_object_t *)ports, ports->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -7353,7 +7268,7 @@ of_features_reply_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_features_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -7465,19 +7380,12 @@ of_features_request_init(of_features_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FEATURES_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_features_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7819,17 +7727,12 @@ of_flow_mod_init(of_flow_mod_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_MOD;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -9000,9 +8903,8 @@ of_flow_mod_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -9078,7 +8980,7 @@ of_flow_mod_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -9091,9 +8993,7 @@ of_flow_mod_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -9153,9 +9053,8 @@ of_flow_mod_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -9226,7 +9125,7 @@ of_flow_mod_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -9239,9 +9138,7 @@ of_flow_mod_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -9285,7 +9182,7 @@ of_flow_mod_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_add_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -9408,19 +9305,12 @@ of_flow_add_init(of_flow_add_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_ADD;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_add_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -10591,9 +10481,8 @@ of_flow_add_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -10669,7 +10558,7 @@ of_flow_add_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -10682,9 +10571,7 @@ of_flow_add_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -10744,9 +10631,8 @@ of_flow_add_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -10817,7 +10703,7 @@ of_flow_add_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -10830,9 +10716,7 @@ of_flow_add_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -10876,7 +10760,7 @@ of_flow_add_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_delete_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -10999,19 +10883,12 @@ of_flow_delete_init(of_flow_delete_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_DELETE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_delete_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -12182,9 +12059,8 @@ of_flow_delete_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -12260,7 +12136,7 @@ of_flow_delete_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -12273,9 +12149,7 @@ of_flow_delete_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -12335,9 +12209,8 @@ of_flow_delete_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -12408,7 +12281,7 @@ of_flow_delete_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -12421,9 +12294,7 @@ of_flow_delete_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -12467,7 +12338,7 @@ of_flow_delete_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_delete_strict_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -12590,19 +12461,12 @@ of_flow_delete_strict_init(of_flow_delete_strict_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_DELETE_STRICT;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_delete_strict_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -13773,9 +13637,8 @@ of_flow_delete_strict_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -13851,7 +13714,7 @@ of_flow_delete_strict_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -13864,9 +13727,7 @@ of_flow_delete_strict_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -13926,9 +13787,8 @@ of_flow_delete_strict_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -13999,7 +13859,7 @@ of_flow_delete_strict_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -14012,9 +13872,7 @@ of_flow_delete_strict_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -14058,7 +13916,7 @@ of_flow_delete_strict_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_mod_failed_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -14175,19 +14033,12 @@ of_flow_mod_failed_error_msg_init(of_flow_mod_failed_error_msg_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_MOD_FAILED_ERROR_MSG;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_mod_failed_error_msg_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -14532,7 +14383,7 @@ of_flow_mod_failed_error_msg_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_modify_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -14655,19 +14506,12 @@ of_flow_modify_init(of_flow_modify_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_MODIFY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_modify_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -15838,9 +15682,8 @@ of_flow_modify_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -15916,7 +15759,7 @@ of_flow_modify_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -15929,9 +15772,7 @@ of_flow_modify_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -15991,9 +15832,8 @@ of_flow_modify_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -16064,7 +15904,7 @@ of_flow_modify_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -16077,9 +15917,7 @@ of_flow_modify_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -16123,7 +15961,7 @@ of_flow_modify_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_modify_strict_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -16246,19 +16084,12 @@ of_flow_modify_strict_init(of_flow_modify_strict_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_MODIFY_STRICT;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_modify_strict_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -17429,9 +17260,8 @@ of_flow_modify_strict_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -17507,7 +17337,7 @@ of_flow_modify_strict_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -17520,9 +17350,7 @@ of_flow_modify_strict_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -17582,9 +17410,8 @@ of_flow_modify_strict_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -17655,7 +17482,7 @@ of_flow_modify_strict_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -17668,9 +17495,7 @@ of_flow_modify_strict_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -17714,7 +17539,7 @@ of_flow_modify_strict_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_removed_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -17832,19 +17657,12 @@ of_flow_removed_init(of_flow_removed_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_REMOVED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_removed_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -19010,7 +18828,7 @@ static inline int
 of_flow_stats_entry_push_wire_values(of_flow_stats_entry_t *obj)
 {
 
-    obj->wire_length_set((of_object_t *)obj, obj->length);
+    of_object_wire_length_set((of_object_t *)obj, obj->length);
 
     return OF_ERROR_NONE;
 }
@@ -19091,17 +18909,12 @@ of_flow_stats_entry_init(of_flow_stats_entry_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_STATS_ENTRY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_u16_len_wire_length_get;
-    obj->wire_length_set = of_u16_len_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -20151,9 +19964,8 @@ of_flow_stats_entry_instructions_bind(
     of_list_instruction_init(instructions, obj->version, 0, 1);
     /* Attach to parent */
     instructions->parent = (of_object_t *)obj;
-    instructions->wire_object.wbuf = obj->wire_object.wbuf;
-    instructions->wire_object.obj_offset = abs_offset;
-    instructions->wire_object.owned = 0;
+    instructions->wbuf = obj->wbuf;
+    instructions->obj_offset = abs_offset;
     instructions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -20229,7 +20041,7 @@ of_flow_stats_entry_instructions_set(
     /* LOCI object type */
     new_len = instructions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == instructions->wire_object.wbuf) {
+    if (obj->wbuf == instructions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(instructions, 0));
@@ -20242,9 +20054,7 @@ of_flow_stats_entry_instructions_set(
         OF_OBJECT_BUFFER_INDEX(instructions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (instructions->wire_length_set != NULL) {
-        instructions->wire_length_set((of_object_t *)instructions, instructions->length);
-    }
+    of_object_wire_length_set((of_object_t *)instructions, instructions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -20304,9 +20114,8 @@ of_flow_stats_entry_actions_bind(
     of_list_action_init(actions, obj->version, 0, 1);
     /* Attach to parent */
     actions->parent = (of_object_t *)obj;
-    actions->wire_object.wbuf = obj->wire_object.wbuf;
-    actions->wire_object.obj_offset = abs_offset;
-    actions->wire_object.owned = 0;
+    actions->wbuf = obj->wbuf;
+    actions->obj_offset = abs_offset;
     actions->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -20377,7 +20186,7 @@ of_flow_stats_entry_actions_set(
     /* LOCI object type */
     new_len = actions->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == actions->wire_object.wbuf) {
+    if (obj->wbuf == actions->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(actions, 0));
@@ -20390,9 +20199,7 @@ of_flow_stats_entry_actions_set(
         OF_OBJECT_BUFFER_INDEX(actions, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (actions->wire_length_set != NULL) {
-        actions->wire_length_set((of_object_t *)actions, actions->length);
-    }
+    of_object_wire_length_set((of_object_t *)actions, actions->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -20436,7 +20243,7 @@ of_flow_stats_entry_actions_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_stats_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -20553,19 +20360,12 @@ of_flow_stats_reply_init(of_flow_stats_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_STATS_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_stats_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -20830,9 +20630,8 @@ of_flow_stats_reply_entries_bind(
     of_list_flow_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
     entries->parent = (of_object_t *)obj;
-    entries->wire_object.wbuf = obj->wire_object.wbuf;
-    entries->wire_object.obj_offset = abs_offset;
-    entries->wire_object.owned = 0;
+    entries->wbuf = obj->wbuf;
+    entries->obj_offset = abs_offset;
     entries->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -20909,7 +20708,7 @@ of_flow_stats_reply_entries_set(
     /* LOCI object type */
     new_len = entries->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == entries->wire_object.wbuf) {
+    if (obj->wbuf == entries->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(entries, 0));
@@ -20922,9 +20721,7 @@ of_flow_stats_reply_entries_set(
         OF_OBJECT_BUFFER_INDEX(entries, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (entries->wire_length_set != NULL) {
-        entries->wire_length_set((of_object_t *)entries, entries->length);
-    }
+    of_object_wire_length_set((of_object_t *)entries, entries->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -20968,7 +20765,7 @@ of_flow_stats_reply_entries_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_flow_stats_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -21091,19 +20888,12 @@ of_flow_stats_request_init(of_flow_stats_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_FLOW_STATS_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_flow_stats_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -21897,7 +21687,7 @@ of_flow_stats_request_match_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_get_config_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -22009,19 +21799,12 @@ of_get_config_reply_init(of_get_config_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_GET_CONFIG_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_get_config_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -22348,7 +22131,7 @@ of_get_config_reply_miss_send_len_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_get_config_request_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -22460,19 +22243,12 @@ of_get_config_request_init(of_get_config_request_t *obj,
     obj->length = bytes;
     obj->object_id = OF_GET_CONFIG_REQUEST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_get_config_request_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -22631,7 +22407,7 @@ of_get_config_request_xid_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_hello_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -22743,19 +22519,12 @@ of_hello_init(of_hello_t *obj,
     obj->length = bytes;
     obj->object_id = OF_HELLO;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_hello_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -22930,9 +22699,8 @@ of_hello_elements_bind(
     of_list_hello_elem_init(elements, obj->version, 0, 1);
     /* Attach to parent */
     elements->parent = (of_object_t *)obj;
-    elements->wire_object.wbuf = obj->wire_object.wbuf;
-    elements->wire_object.obj_offset = abs_offset;
-    elements->wire_object.owned = 0;
+    elements->wbuf = obj->wbuf;
+    elements->obj_offset = abs_offset;
     elements->length = cur_len;
 
     OF_LENGTH_CHECK_ASSERT(obj);
@@ -23003,7 +22771,7 @@ of_hello_elements_set(
     /* LOCI object type */
     new_len = elements->length;
     /* If underlying buffer already shared; nothing to do */
-    if (obj->wire_object.wbuf == elements->wire_object.wbuf) {
+    if (obj->wbuf == elements->wbuf) {
         of_wire_buffer_grow(wbuf, abs_offset + new_len);
         /* Verify that the offsets are correct */
         LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(elements, 0));
@@ -23016,9 +22784,7 @@ of_hello_elements_set(
         OF_OBJECT_BUFFER_INDEX(elements, 0), new_len);
 
     /* @fixme Shouldn't this precede copying value's data to buffer? */
-    if (elements->wire_length_set != NULL) {
-        elements->wire_length_set((of_object_t *)elements, elements->length);
-    }
+    of_object_wire_length_set((of_object_t *)elements, elements->length);
 
     /* Not scalar, update lengths if needed */
     delta = new_len - cur_len;
@@ -23062,7 +22828,7 @@ of_hello_elements_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_hello_failed_error_msg_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -23175,19 +22941,12 @@ of_hello_failed_error_msg_init(of_hello_failed_error_msg_t *obj,
     obj->length = bytes;
     obj->object_id = OF_HELLO_FAILED_ERROR_MSG;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_hello_failed_error_msg_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -23618,14 +23377,12 @@ of_match_v1_init(of_match_v1_t *obj,
     obj->length = bytes;
     obj->object_id = OF_MATCH_V1;
 
-    /* Set up the object's function pointers */
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -24798,17 +24555,12 @@ of_nicira_header_init(of_nicira_header_t *obj,
     obj->length = bytes;
     obj->object_id = OF_NICIRA_HEADER;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -25135,7 +24887,7 @@ of_nicira_header_subtype_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_nicira_controller_role_reply_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -25246,19 +24998,12 @@ of_nicira_controller_role_reply_init(of_nicira_controller_role_reply_t *obj,
     obj->length = bytes;
     obj->object_id = OF_NICIRA_CONTROLLER_ROLE_REPLY;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_nicira_controller_role_reply_push_wire_types;
-
-    obj->wire_length_get = of_object_message_wire_length_get;
-    obj->wire_length_set = of_object_message_wire_length_set;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 

@@ -29,7 +29,7 @@
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf1_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -131,19 +131,12 @@ of_oxm_bsn_udf1_init(of_oxm_bsn_udf1_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF1;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf1_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -258,7 +251,7 @@ of_oxm_bsn_udf1_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf1_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -360,19 +353,12 @@ of_oxm_bsn_udf1_masked_init(of_oxm_bsn_udf1_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF1_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf1_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -567,7 +553,7 @@ of_oxm_bsn_udf1_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf2_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -669,19 +655,12 @@ of_oxm_bsn_udf2_init(of_oxm_bsn_udf2_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF2;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf2_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -796,7 +775,7 @@ of_oxm_bsn_udf2_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf2_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -898,19 +877,12 @@ of_oxm_bsn_udf2_masked_init(of_oxm_bsn_udf2_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF2_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf2_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1105,7 +1077,7 @@ of_oxm_bsn_udf2_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf3_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1207,19 +1179,12 @@ of_oxm_bsn_udf3_init(of_oxm_bsn_udf3_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF3;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf3_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1334,7 +1299,7 @@ of_oxm_bsn_udf3_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf3_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1436,19 +1401,12 @@ of_oxm_bsn_udf3_masked_init(of_oxm_bsn_udf3_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF3_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf3_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1643,7 +1601,7 @@ of_oxm_bsn_udf3_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf4_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1745,19 +1703,12 @@ of_oxm_bsn_udf4_init(of_oxm_bsn_udf4_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF4;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf4_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -1872,7 +1823,7 @@ of_oxm_bsn_udf4_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf4_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -1974,19 +1925,12 @@ of_oxm_bsn_udf4_masked_init(of_oxm_bsn_udf4_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF4_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf4_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2181,7 +2125,7 @@ of_oxm_bsn_udf4_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf5_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2283,19 +2227,12 @@ of_oxm_bsn_udf5_init(of_oxm_bsn_udf5_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF5;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf5_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2410,7 +2347,7 @@ of_oxm_bsn_udf5_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf5_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2512,19 +2449,12 @@ of_oxm_bsn_udf5_masked_init(of_oxm_bsn_udf5_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF5_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf5_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2719,7 +2649,7 @@ of_oxm_bsn_udf5_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf6_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -2821,19 +2751,12 @@ of_oxm_bsn_udf6_init(of_oxm_bsn_udf6_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF6;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf6_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -2948,7 +2871,7 @@ of_oxm_bsn_udf6_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf6_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3050,19 +2973,12 @@ of_oxm_bsn_udf6_masked_init(of_oxm_bsn_udf6_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF6_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf6_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3257,7 +3173,7 @@ of_oxm_bsn_udf6_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf7_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3359,19 +3275,12 @@ of_oxm_bsn_udf7_init(of_oxm_bsn_udf7_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF7;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf7_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3486,7 +3395,7 @@ of_oxm_bsn_udf7_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_udf7_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3588,19 +3497,12 @@ of_oxm_bsn_udf7_masked_init(of_oxm_bsn_udf7_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_UDF7_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_udf7_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -3795,7 +3697,7 @@ of_oxm_bsn_udf7_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_vrf_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -3897,19 +3799,12 @@ of_oxm_bsn_vrf_init(of_oxm_bsn_vrf_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_VRF;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_vrf_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4024,7 +3919,7 @@ of_oxm_bsn_vrf_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4126,19 +4021,12 @@ of_oxm_bsn_vrf_masked_init(of_oxm_bsn_vrf_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_BSN_VRF_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_bsn_vrf_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4333,7 +4221,7 @@ of_oxm_bsn_vrf_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_eth_dst_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4435,19 +4323,12 @@ of_oxm_eth_dst_init(of_oxm_eth_dst_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ETH_DST;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_eth_dst_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4562,7 +4443,7 @@ of_oxm_eth_dst_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4664,19 +4545,12 @@ of_oxm_eth_dst_masked_init(of_oxm_eth_dst_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ETH_DST_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_eth_dst_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -4871,7 +4745,7 @@ of_oxm_eth_dst_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_eth_src_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -4973,19 +4847,12 @@ of_oxm_eth_src_init(of_oxm_eth_src_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ETH_SRC;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_eth_src_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5100,7 +4967,7 @@ of_oxm_eth_src_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_eth_src_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5202,19 +5069,12 @@ of_oxm_eth_src_masked_init(of_oxm_eth_src_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ETH_SRC_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_eth_src_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5409,7 +5269,7 @@ of_oxm_eth_src_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_eth_type_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5511,19 +5371,12 @@ of_oxm_eth_type_init(of_oxm_eth_type_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ETH_TYPE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_eth_type_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5638,7 +5491,7 @@ of_oxm_eth_type_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_eth_type_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -5740,19 +5593,12 @@ of_oxm_eth_type_masked_init(of_oxm_eth_type_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ETH_TYPE_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_eth_type_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -5947,7 +5793,7 @@ of_oxm_eth_type_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv4_code_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6049,19 +5895,12 @@ of_oxm_icmpv4_code_init(of_oxm_icmpv4_code_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV4_CODE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv4_code_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6176,7 +6015,7 @@ of_oxm_icmpv4_code_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv4_code_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6278,19 +6117,12 @@ of_oxm_icmpv4_code_masked_init(of_oxm_icmpv4_code_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV4_CODE_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv4_code_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6485,7 +6317,7 @@ of_oxm_icmpv4_code_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv4_type_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6587,19 +6419,12 @@ of_oxm_icmpv4_type_init(of_oxm_icmpv4_type_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV4_TYPE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv4_type_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -6714,7 +6539,7 @@ of_oxm_icmpv4_type_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv4_type_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -6816,19 +6641,12 @@ of_oxm_icmpv4_type_masked_init(of_oxm_icmpv4_type_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV4_TYPE_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv4_type_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7023,7 +6841,7 @@ of_oxm_icmpv4_type_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv6_code_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -7125,19 +6943,12 @@ of_oxm_icmpv6_code_init(of_oxm_icmpv6_code_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV6_CODE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv6_code_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7252,7 +7063,7 @@ of_oxm_icmpv6_code_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv6_code_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -7354,19 +7165,12 @@ of_oxm_icmpv6_code_masked_init(of_oxm_icmpv6_code_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV6_CODE_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv6_code_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7561,7 +7365,7 @@ of_oxm_icmpv6_code_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv6_type_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -7663,19 +7467,12 @@ of_oxm_icmpv6_type_init(of_oxm_icmpv6_type_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV6_TYPE;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv6_type_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -7790,7 +7587,7 @@ of_oxm_icmpv6_type_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_icmpv6_type_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -7892,19 +7689,12 @@ of_oxm_icmpv6_type_masked_init(of_oxm_icmpv6_type_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_ICMPV6_TYPE_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_icmpv6_type_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -8099,7 +7889,7 @@ of_oxm_icmpv6_type_masked_value_mask_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_in_phy_port_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -8201,19 +7991,12 @@ of_oxm_in_phy_port_init(of_oxm_in_phy_port_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_IN_PHY_PORT;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_in_phy_port_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
@@ -8329,7 +8112,7 @@ of_oxm_in_phy_port_value_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
-static void
+void
 of_oxm_in_phy_port_masked_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -8431,19 +8214,12 @@ of_oxm_in_phy_port_masked_init(of_oxm_in_phy_port_masked_t *obj,
     obj->length = bytes;
     obj->object_id = OF_OXM_IN_PHY_PORT_MASKED;
 
-    /* Set up the object's function pointers */
-
-    obj->wire_type_set = of_oxm_in_phy_port_masked_push_wire_types;
-
-    obj->wire_length_get = of_oxm_wire_length_get;
-    obj->wire_type_get = of_oxm_wire_object_id_get;
-
     /* Grow the wire buffer */
-    if (obj->wire_object.wbuf != NULL) {
+    if (obj->wbuf != NULL) {
         int tot_bytes;
 
-        tot_bytes = bytes + obj->wire_object.obj_offset;
-        of_wire_buffer_grow(obj->wire_object.wbuf, tot_bytes);
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
 
