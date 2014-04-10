@@ -824,8 +824,6 @@ typedef enum of_object_id_e {
     OF_LIST_UINT64 = 510,
     OF_LIST_UINT8 = 511,
 
-    /* Generic stats request/reply types; pseudo objects */
-
     OF_OBJECT_COUNT = 512
 } of_object_id_t;
 
