@@ -42,6 +42,9 @@ abstract class OFBsnVportVer10 {
             short type = bb.readShort();
             bb.readerIndex(start);
             switch(type) {
+               case (short) 0x1:
+                   // discriminator value 0x1=0x1 for class OFBsnVportL2GreVer10
+                   return OFBsnVportL2GreVer10.READER.readFrom(bb);
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnVportQInQVer10
                    return OFBsnVportQInQVer10.READER.readFrom(bb);

@@ -31,7 +31,7 @@ public interface OFBsnVirtualPortCreateRequest extends OFObject, OFBsnHeader, OF
     long getXid();
     long getExperimenter();
     long getSubtype();
-    OFBsnVportQInQ getVport();
+    OFBsnVport getVport();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -44,7 +44,7 @@ public interface OFBsnVirtualPortCreateRequest extends OFObject, OFBsnHeader, OF
         Builder setXid(long xid);
         long getExperimenter();
         long getSubtype();
-        OFBsnVportQInQ getVport();
-        Builder setVport(OFBsnVportQInQ vport);
+        OFBsnVport getVport();
+        Builder setVport(OFBsnVport vport);
     }
 }

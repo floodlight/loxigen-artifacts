@@ -2524,8 +2524,8 @@ typedef struct of_bsn_virtual_port_create_reply_s of_bsn_virtual_port_create_rep
  *   are of type of_bsn_virtual_port_create_request_uint32_get_f and _set_f.
  *
  * @param vport_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
- *   Accessors for vport, a variable of type of_bsn_vport_q_in_q.  Functions
- *   are of type of_bsn_virtual_port_create_request_of_bsn_vport_q_in_q_get_f and _set_f.
+ *   Accessors for vport, a variable of type of_bsn_vport_header.  Functions
+ *   are of type of_bsn_virtual_port_create_request_of_bsn_vport_header_get_f and _set_f.
  *
  */
 typedef struct of_bsn_virtual_port_create_request_s of_bsn_virtual_port_create_request_t;
@@ -5657,6 +5657,53 @@ typedef struct of_bsn_vport_s of_bsn_vport_t;
  *
  */
 typedef struct of_bsn_vport_header_s of_bsn_vport_header_t;
+
+/**
+ * Structure for of_bsn_vport_l2gre object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for flags, a variable of type uint32.  Functions
+ *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
+ *
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for port_no, a variable of type of_port_no.  Functions
+ *   are of type of_bsn_vport_l2gre_of_port_no_get_f and _set_f.
+ *
+ * @param local_mac_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for local_mac, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_vport_l2gre_of_mac_addr_get_f and _set_f.
+ *
+ * @param nh_mac_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for nh_mac, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_vport_l2gre_of_mac_addr_get_f and _set_f.
+ *
+ * @param src_ip_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for src_ip, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_vport_l2gre_of_ipv4_get_f and _set_f.
+ *
+ * @param dst_ip_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for dst_ip, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_vport_l2gre_of_ipv4_get_f and _set_f.
+ *
+ * @param dscp_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for dscp, a variable of type uint8.  Functions
+ *   are of type of_bsn_vport_l2gre_uint8_get_f and _set_f.
+ *
+ * @param ttl_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for ttl, a variable of type uint8.  Functions
+ *   are of type of_bsn_vport_l2gre_uint8_get_f and _set_f.
+ *
+ * @param vpn_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for vpn, a variable of type uint32.  Functions
+ *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
+ *
+ * @param if_name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for if_name, a variable of type of_port_name.  Functions
+ *   are of type of_bsn_vport_l2gre_of_port_name_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_vport_l2gre_s of_bsn_vport_l2gre_t;
 
 /**
  * Structure for of_bsn_vport_q_in_q object.  Get/set

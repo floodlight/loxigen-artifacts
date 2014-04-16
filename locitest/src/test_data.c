@@ -1814,6 +1814,107 @@ test_of13_bsn_set_aux_cxns_request(void) {
     return TEST_PASS;
 }
 
+/* Generated from of13/bsn_virtual_port_create_request__l2gre.data */
+static int
+test_of13_bsn_virtual_port_create_request__l2gre(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x48, 0x01, 0x02, 0x03, 0x04, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x0f, 
+        0x00, 0x01, 0x00, 0x38, 0x00, 0x00, 0x00, 0x03, 
+        0x00, 0x00, 0x00, 0x01, 0x0a, 0x0b, 0x0c, 0x0d, 
+        0x0e, 0x0f, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 
+        0xc0, 0x00, 0x00, 0x02, 0xc0, 0x00, 0x10, 0x02, 
+        0x01, 0x40, 0x00, 0x00, 0x00, 0x00, 0xbe, 0xef, 
+        0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
+    of_bsn_virtual_port_create_request_xid_set(obj, 0x01020304);
+    {
+        of_object_t *vport = of_bsn_vport_l2gre_new(OF_VERSION_1_3);
+        {
+            of_port_name_t if_name = "foo";
+            of_mac_addr_t local_mac = { { 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f } };
+            of_mac_addr_t nh_mac = { { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 } };
+            of_bsn_vport_l2gre_flags_set(vport,
+                OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID |
+                OF_BSN_VPORT_L2GRE_DSCP_ASSIGN);
+            of_bsn_vport_l2gre_port_no_set(vport, 1);
+            of_bsn_vport_l2gre_local_mac_set(vport, local_mac);
+            of_bsn_vport_l2gre_nh_mac_set(vport, nh_mac);
+            of_bsn_vport_l2gre_src_ip_set(vport, 0xc0000002);
+            of_bsn_vport_l2gre_dst_ip_set(vport, 0xc0001002);
+            of_bsn_vport_l2gre_dscp_set(vport, 1);
+            of_bsn_vport_l2gre_ttl_set(vport, 64);
+            of_bsn_vport_l2gre_vpn_set(vport, 0xbeef);
+            of_bsn_vport_l2gre_if_name_set(vport, if_name);
+        }
+        of_bsn_virtual_port_create_request_vport_set(obj, vport);
+        of_object_delete(vport);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
+/* Generated from of13/bsn_virtual_port_create_request__q_in_q.data */
+static int
+test_of13_bsn_virtual_port_create_request__q_in_q(void) {
+    uint8_t binary[] = {
+        0x04, 0x04, 0x00, 0x30, 0x01, 0x02, 0x03, 0x04, 
+        0x00, 0x5c, 0x16, 0xc7, 0x00, 0x00, 0x00, 0x0f, 
+        0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x01, 
+        0x00, 0x02, 0x00, 0x03, 0x00, 0x04, 0x00, 0x05, 
+        0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+        
+    };
+
+    of_object_t *obj;
+
+    obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
+    of_bsn_virtual_port_create_request_xid_set(obj, 0x01020304);
+    {
+        of_object_t *vport = of_bsn_vport_q_in_q_new(OF_VERSION_1_3);
+        {
+            of_port_name_t if_name = "foo";
+            of_bsn_vport_q_in_q_port_no_set(vport, 1);
+            of_bsn_vport_q_in_q_ingress_tpid_set(vport, 2);
+            of_bsn_vport_q_in_q_ingress_vlan_id_set(vport, 3);
+            of_bsn_vport_q_in_q_egress_tpid_set(vport, 4);
+            of_bsn_vport_q_in_q_egress_vlan_id_set(vport, 5);
+            of_bsn_vport_q_in_q_if_name_set(vport, if_name);
+        }
+        of_bsn_virtual_port_create_request_vport_set(obj, vport);
+        of_object_delete(vport);
+    }
+
+    if (sizeof(binary) != WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj))
+        || memcmp(binary, WBUF_BUF(OF_OBJECT_TO_WBUF(obj)), sizeof(binary))) {
+	show_failure(binary, sizeof(binary),
+		     WBUF_BUF(OF_OBJECT_TO_WBUF(obj)),
+		     WBUF_CURRENT_BYTES(OF_OBJECT_TO_WBUF(obj)));
+	of_object_delete(obj);
+	return TEST_FAIL;
+    }
+
+    of_object_delete(obj);
+    return TEST_PASS;
+}
+
 /* Generated from of13/instruction_bsn_disable_src_mac_check.data */
 static int
 test_of13_instruction_bsn_disable_src_mac_check(void) {
@@ -2011,6 +2112,8 @@ test_datafiles(void)
     RUN_TEST(of13_bsn_lacp_stats_request);
     RUN_TEST(of13_bsn_set_aux_cxns_reply);
     RUN_TEST(of13_bsn_set_aux_cxns_request);
+    RUN_TEST(of13_bsn_virtual_port_create_request__l2gre);
+    RUN_TEST(of13_bsn_virtual_port_create_request__q_in_q);
     RUN_TEST(of13_instruction_bsn_disable_src_mac_check);
     RUN_TEST(of13_instruction_id_goto_table);
     RUN_TEST(of13_oxm_bsn_global_vrf_allowed);

@@ -1118,6 +1118,10 @@ extern of_bsn_vport_header_t *
     of_bsn_vport_header_dup(
         of_bsn_vport_header_t *src);
 
+extern of_bsn_vport_l2gre_t *
+    of_bsn_vport_l2gre_dup(
+        of_bsn_vport_l2gre_t *src);
+
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_dup(
         of_bsn_vport_q_in_q_t *src);
@@ -2502,6 +2506,10 @@ extern of_bsn_vport_header_t *
     of_bsn_vport_header_OF_VERSION_1_0_dup(
         of_bsn_vport_header_t *src);
 
+extern of_bsn_vport_l2gre_t *
+    of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
+        of_bsn_vport_l2gre_t *src);
+
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(
         of_bsn_vport_q_in_q_t *src);
@@ -3077,6 +3085,10 @@ extern of_bsn_vport_t *
 extern of_bsn_vport_header_t *
     of_bsn_vport_header_OF_VERSION_1_1_dup(
         of_bsn_vport_header_t *src);
+
+extern of_bsn_vport_l2gre_t *
+    of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
+        of_bsn_vport_l2gre_t *src);
 
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(
@@ -3701,6 +3713,10 @@ extern of_bsn_vport_t *
 extern of_bsn_vport_header_t *
     of_bsn_vport_header_OF_VERSION_1_2_dup(
         of_bsn_vport_header_t *src);
+
+extern of_bsn_vport_l2gre_t *
+    of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
+        of_bsn_vport_l2gre_t *src);
 
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(
@@ -5281,6 +5297,10 @@ extern of_bsn_vport_t *
 extern of_bsn_vport_header_t *
     of_bsn_vport_header_OF_VERSION_1_3_dup(
         of_bsn_vport_header_t *src);
+
+extern of_bsn_vport_l2gre_t *
+    of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
+        of_bsn_vport_l2gre_t *src);
 
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(

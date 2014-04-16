@@ -1,1 +1,1 @@
-25e077e9cd8e1c74f82088b6434bc637f65e11c3 Merge into master from pull request #248: update VlanVid.ofVlan to accept NO_MASK (https://github.com/floodlight/loxigen/pull/248)
+a406f06790a87e20ad368704e4032d69ad5f2dce Merge into master from pull request #246: Fix bsn_vport subtype and add l2gre vport (https://github.com/floodlight/loxigen/pull/246)

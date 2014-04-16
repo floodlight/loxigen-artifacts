@@ -141,14 +141,16 @@ void of_bsn_virtual_port_create_reply_wire_object_id_get(of_object_t *obj, of_ob
 void of_bsn_virtual_port_create_reply_push_wire_types(of_object_t *obj);
 void of_bsn_vport_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vport_push_wire_types(of_object_t *obj);
-void of_bsn_vport_q_in_q_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_bsn_vport_q_in_q_push_wire_types(of_object_t *obj);
 void of_bsn_virtual_port_create_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_virtual_port_create_request_push_wire_types(of_object_t *obj);
 void of_bsn_virtual_port_remove_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_virtual_port_remove_reply_push_wire_types(of_object_t *obj);
 void of_bsn_virtual_port_remove_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_virtual_port_remove_request_push_wire_types(of_object_t *obj);
+void of_bsn_vport_l2gre_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vport_l2gre_push_wire_types(of_object_t *obj);
+void of_bsn_vport_q_in_q_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vport_q_in_q_push_wire_types(of_object_t *obj);
 void of_desc_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_desc_stats_reply_push_wire_types(of_object_t *obj);
 void of_desc_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1211,6 +1213,7 @@ typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_header_t;
+typedef of_object_t of_bsn_vport_l2gre_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
 typedef of_object_t of_bucket_t;
 typedef of_object_t of_bucket_counter_t;
@@ -3195,6 +3198,11 @@ extern of_bsn_vport_header_t *
     of_bsn_vport_header_new(of_version_t version);
 extern void of_bsn_vport_header_init(
     of_bsn_vport_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vport_l2gre_t *
+    of_bsn_vport_l2gre_new(of_version_t version);
+extern void of_bsn_vport_l2gre_init(
+    of_bsn_vport_l2gre_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_new(of_version_t version);
@@ -7411,6 +7419,17 @@ of_bsn_vport_delete(of_bsn_vport_t *obj) {
  */
 static inline void
 of_bsn_vport_header_delete(of_bsn_vport_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vport_l2gre_t
+ * @param obj An instance of type of_bsn_vport_l2gre_t
+ *
+ * \ingroup of_bsn_vport_l2gre
+ */
+static inline void
+of_bsn_vport_l2gre_delete(of_bsn_vport_l2gre_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -13457,11 +13476,11 @@ extern void of_bsn_virtual_port_create_request_subtype_get(
 
 extern void of_bsn_virtual_port_create_request_vport_set(
     of_bsn_virtual_port_create_request_t *obj,
-    of_bsn_vport_q_in_q_t *vport);
+    of_bsn_vport_header_t *vport);
 extern void of_bsn_virtual_port_create_request_vport_bind(
     of_bsn_virtual_port_create_request_t *obj,
-    of_bsn_vport_q_in_q_t *vport);
-extern of_bsn_vport_q_in_q_t *of_bsn_virtual_port_create_request_vport_get(
+    of_bsn_vport_header_t *vport);
+extern of_bsn_vport_header_t *of_bsn_virtual_port_create_request_vport_get(
     of_bsn_virtual_port_create_request_t *obj);
 
 /* Unified accessor functions for of_bsn_virtual_port_remove_reply */
@@ -17168,6 +17187,78 @@ extern of_list_uint64_t *of_bsn_vlan_counter_stats_entry_values_get(
     of_bsn_vlan_counter_stats_entry_t *obj);
 
 /* Unified accessor functions for of_bsn_vport_header */
+
+/* Unified accessor functions for of_bsn_vport_l2gre */
+
+extern void of_bsn_vport_l2gre_flags_set(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t flags);
+extern void of_bsn_vport_l2gre_flags_get(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t *flags);
+
+extern void of_bsn_vport_l2gre_port_no_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_no_t port_no);
+extern void of_bsn_vport_l2gre_port_no_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_no_t *port_no);
+
+extern void of_bsn_vport_l2gre_local_mac_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_mac_addr_t local_mac);
+extern void of_bsn_vport_l2gre_local_mac_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_mac_addr_t *local_mac);
+
+extern void of_bsn_vport_l2gre_nh_mac_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_mac_addr_t nh_mac);
+extern void of_bsn_vport_l2gre_nh_mac_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_mac_addr_t *nh_mac);
+
+extern void of_bsn_vport_l2gre_src_ip_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_ipv4_t src_ip);
+extern void of_bsn_vport_l2gre_src_ip_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_ipv4_t *src_ip);
+
+extern void of_bsn_vport_l2gre_dst_ip_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_ipv4_t dst_ip);
+extern void of_bsn_vport_l2gre_dst_ip_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_ipv4_t *dst_ip);
+
+extern void of_bsn_vport_l2gre_dscp_set(
+    of_bsn_vport_l2gre_t *obj,
+    uint8_t dscp);
+extern void of_bsn_vport_l2gre_dscp_get(
+    of_bsn_vport_l2gre_t *obj,
+    uint8_t *dscp);
+
+extern void of_bsn_vport_l2gre_ttl_set(
+    of_bsn_vport_l2gre_t *obj,
+    uint8_t ttl);
+extern void of_bsn_vport_l2gre_ttl_get(
+    of_bsn_vport_l2gre_t *obj,
+    uint8_t *ttl);
+
+extern void of_bsn_vport_l2gre_vpn_set(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t vpn);
+extern void of_bsn_vport_l2gre_vpn_get(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t *vpn);
+
+extern void of_bsn_vport_l2gre_if_name_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_name_t if_name);
+extern void of_bsn_vport_l2gre_if_name_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_name_t *if_name);
 
 /* Unified accessor functions for of_bsn_vport_q_in_q */
 
@@ -21238,6 +21329,7 @@ union of_hello_elem_u {
 
 union of_bsn_vport_u {
     of_bsn_vport_header_t header; /* Generic instance */
+    of_bsn_vport_l2gre_t l2gre;
     of_bsn_vport_q_in_q_t q_in_q;
 };
 

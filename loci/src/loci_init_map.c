@@ -288,6 +288,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_vlan_counter_stats_entry_init,
     (of_object_init_f)of_bsn_vport_init,
     (of_object_init_f)of_bsn_vport_header_init,
+    (of_object_init_f)of_bsn_vport_l2gre_init,
     (of_object_init_f)of_bsn_vport_q_in_q_init,
     (of_object_init_f)of_bucket_init,
     (of_object_init_f)of_bucket_counter_init,

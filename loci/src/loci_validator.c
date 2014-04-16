@@ -38,6 +38,7 @@ static inline int of_match_v1_OF_VERSION_1_0_validate(uint8_t *buf, int len);
 static inline int of_header_OF_VERSION_1_0_validate(uint8_t *buf, int len);
 static inline int of_flow_stats_entry_OF_VERSION_1_0_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_0_validate(uint8_t *buf, int len);
+static inline int of_bsn_vport_l2gre_OF_VERSION_1_0_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_header_OF_VERSION_1_0_validate(uint8_t *buf, int len);
 static inline int of_bsn_interface_OF_VERSION_1_0_validate(uint8_t *buf, int len);
 static inline int of_action_strip_vlan_OF_VERSION_1_0_validate(uint8_t *buf, int len);
@@ -183,6 +184,7 @@ static inline int of_flow_stats_entry_OF_VERSION_1_1_validate(uint8_t *buf, int 
 static inline int of_bucket_counter_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_bucket_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_1_validate(uint8_t *buf, int len);
+static inline int of_bsn_vport_l2gre_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_header_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_bsn_interface_OF_VERSION_1_1_validate(uint8_t *buf, int len);
 static inline int of_action_set_vlan_vid_OF_VERSION_1_1_validate(uint8_t *buf, int len);
@@ -448,6 +450,7 @@ static inline int of_flow_stats_entry_OF_VERSION_1_2_validate(uint8_t *buf, int 
 static inline int of_bucket_counter_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_bucket_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_2_validate(uint8_t *buf, int len);
+static inline int of_bsn_vport_l2gre_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_header_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_bsn_interface_OF_VERSION_1_2_validate(uint8_t *buf, int len);
 static inline int of_action_set_queue_OF_VERSION_1_2_validate(uint8_t *buf, int len);
@@ -790,6 +793,7 @@ static inline int of_flow_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int 
 static inline int of_bucket_counter_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bucket_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_q_in_q_OF_VERSION_1_3_validate(uint8_t *buf, int len);
+static inline int of_bsn_vport_l2gre_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vport_header_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_validate(uint8_t *buf, int len);
 static inline int of_bsn_tlv_vrf_OF_VERSION_1_3_validate(uint8_t *buf, int len);
@@ -1375,6 +1379,17 @@ of_bsn_vport_q_in_q_OF_VERSION_1_0_validate(uint8_t *buf, int len)
 {
     if (len < 32) {
         VALIDATOR_LOG("Class of_bsn_vport_q_in_q.  Len %d too small, < %d", len, 32);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
+of_bsn_vport_l2gre_OF_VERSION_1_0_validate(uint8_t *buf, int len)
+{
+    if (len < 54) {
+        VALIDATOR_LOG("Class of_bsn_vport_l2gre.  Len %d too small, < %d", len, 54);
         return -1;
     }
 
@@ -2255,8 +2270,8 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_0_validate(uint8_t *buf, int len)
 static inline int
 of_bsn_virtual_port_create_request_OF_VERSION_1_0_validate(uint8_t *buf, int len)
 {
-    if (len < 48) {
-        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 48);
+    if (len < 20) {
+        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 20);
         return -1;
     }
 
@@ -3565,6 +3580,17 @@ of_bsn_vport_q_in_q_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_vport_l2gre_OF_VERSION_1_1_validate(uint8_t *buf, int len)
+{
+    if (len < 56) {
+        VALIDATOR_LOG("Class of_bsn_vport_l2gre.  Len %d too small, < %d", len, 56);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_vport_header_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
@@ -4734,8 +4760,8 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 static inline int
 of_bsn_virtual_port_create_request_OF_VERSION_1_1_validate(uint8_t *buf, int len)
 {
-    if (len < 48) {
-        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 48);
+    if (len < 20) {
+        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 20);
         return -1;
     }
 
@@ -7081,6 +7107,17 @@ of_bsn_vport_q_in_q_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_vport_l2gre_OF_VERSION_1_2_validate(uint8_t *buf, int len)
+{
+    if (len < 56) {
+        VALIDATOR_LOG("Class of_bsn_vport_l2gre.  Len %d too small, < %d", len, 56);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_vport_header_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
@@ -8213,8 +8250,8 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 static inline int
 of_bsn_virtual_port_create_request_OF_VERSION_1_2_validate(uint8_t *buf, int len)
 {
-    if (len < 48) {
-        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 48);
+    if (len < 20) {
+        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 20);
         return -1;
     }
 
@@ -12114,6 +12151,17 @@ of_bsn_vport_q_in_q_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 }
 
 static inline int
+of_bsn_vport_l2gre_OF_VERSION_1_3_validate(uint8_t *buf, int len)
+{
+    if (len < 56) {
+        VALIDATOR_LOG("Class of_bsn_vport_l2gre.  Len %d too small, < %d", len, 56);
+        return -1;
+    }
+
+    return 0;
+}
+
+static inline int
 of_bsn_vport_header_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
     if (len < 4) {
@@ -14170,8 +14218,8 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 static inline int
 of_bsn_virtual_port_create_request_OF_VERSION_1_3_validate(uint8_t *buf, int len)
 {
-    if (len < 48) {
-        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 48);
+    if (len < 20) {
+        VALIDATOR_LOG("Class of_bsn_virtual_port_create_request.  Len %d too small, < %d", len, 20);
         return -1;
     }
 

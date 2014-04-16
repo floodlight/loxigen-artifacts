@@ -185,6 +185,12 @@ local enum_v1_ofp_queue_properties = {
     [1] = "OFPQT_MIN_RATE",
 }
 
+local enum_v1_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+}
+
 local enum_v1_ofp_flow_wildcards = {
     [1] = "OFPFW_IN_PORT",
     [2] = "OFPFW_DL_VLAN",
@@ -484,6 +490,12 @@ local enum_v2_ofp_table_mod_failed_code = {
 local enum_v2_ofp_queue_properties = {
     [0] = "OFPQT_NONE",
     [1] = "OFPQT_MIN_RATE",
+}
+
+local enum_v2_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
 }
 
 local enum_v2_ofp_flow_wildcards = {
@@ -869,19 +881,10 @@ local enum_v3_ofp_capabilities = {
     [256] = "OFPC_PORT_BLOCKED",
 }
 
-local enum_v3_ofp_bad_match_code = {
-    [0] = "OFPBMC_BAD_TYPE",
-    [1] = "OFPBMC_BAD_LEN",
-    [2] = "OFPBMC_BAD_TAG",
-    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
-    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
-    [5] = "OFPBMC_BAD_WILDCARDS",
-    [6] = "OFPBMC_BAD_FIELD",
-    [7] = "OFPBMC_BAD_VALUE",
-    [8] = "OFPBMC_BAD_MASK",
-    [9] = "OFPBMC_BAD_PREREQ",
-    [10] = "OFPBMC_DUP_FIELD",
-    [11] = "OFPBMC_EPERM",
+local enum_v3_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
 }
 
 local enum_v3_ofp_flow_removed_reason = {
@@ -1095,6 +1098,21 @@ local enum_v3_ofp_port_mod_failed_code = {
     [2] = "OFPPMFC_BAD_CONFIG",
     [3] = "OFPPMFC_BAD_ADVERTISE",
     [4] = "OFPPMFC_EPERM",
+}
+
+local enum_v3_ofp_bad_match_code = {
+    [0] = "OFPBMC_BAD_TYPE",
+    [1] = "OFPBMC_BAD_LEN",
+    [2] = "OFPBMC_BAD_TAG",
+    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
+    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
+    [5] = "OFPBMC_BAD_WILDCARDS",
+    [6] = "OFPBMC_BAD_FIELD",
+    [7] = "OFPBMC_BAD_VALUE",
+    [8] = "OFPBMC_BAD_MASK",
+    [9] = "OFPBMC_BAD_PREREQ",
+    [10] = "OFPBMC_DUP_FIELD",
+    [11] = "OFPBMC_EPERM",
 }
 
 local enum_v3_ofp_type = {
@@ -1366,19 +1384,10 @@ local enum_v4_ofp_capabilities = {
     [256] = "OFPC_PORT_BLOCKED",
 }
 
-local enum_v4_ofp_bad_match_code = {
-    [0] = "OFPBMC_BAD_TYPE",
-    [1] = "OFPBMC_BAD_LEN",
-    [2] = "OFPBMC_BAD_TAG",
-    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
-    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
-    [5] = "OFPBMC_BAD_WILDCARDS",
-    [6] = "OFPBMC_BAD_FIELD",
-    [7] = "OFPBMC_BAD_VALUE",
-    [8] = "OFPBMC_BAD_MASK",
-    [9] = "OFPBMC_BAD_PREREQ",
-    [10] = "OFPBMC_DUP_FIELD",
-    [11] = "OFPBMC_EPERM",
+local enum_v4_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
 }
 
 local enum_v4_ofp_ipv6exthdr_flags = {
@@ -1653,6 +1662,21 @@ local enum_v4_ofp_port_mod_failed_code = {
     [2] = "OFPPMFC_BAD_CONFIG",
     [3] = "OFPPMFC_BAD_ADVERTISE",
     [4] = "OFPPMFC_EPERM",
+}
+
+local enum_v4_ofp_bad_match_code = {
+    [0] = "OFPBMC_BAD_TYPE",
+    [1] = "OFPBMC_BAD_LEN",
+    [2] = "OFPBMC_BAD_TAG",
+    [3] = "OFPBMC_BAD_DL_ADDR_MASK",
+    [4] = "OFPBMC_BAD_NW_ADDR_MASK",
+    [5] = "OFPBMC_BAD_WILDCARDS",
+    [6] = "OFPBMC_BAD_FIELD",
+    [7] = "OFPBMC_BAD_VALUE",
+    [8] = "OFPBMC_BAD_MASK",
+    [9] = "OFPBMC_BAD_PREREQ",
+    [10] = "OFPBMC_DUP_FIELD",
+    [11] = "OFPBMC_EPERM",
 }
 
 local enum_v4_ofp_bsn_port_counter = {
@@ -2159,14 +2183,6 @@ fields['of10.bsn_virtual_port_create_reply.status'] = ProtoField.uint32("of10.bs
 fields['of10.bsn_virtual_port_create_reply.vport_no'] = ProtoField.uint32("of10.bsn_virtual_port_create_reply.vport_no", "vport_no", base.DEC, nil)
 fields['of10.bsn_vport.type'] = ProtoField.uint16("of10.bsn_vport.type", "type", base.DEC, nil)
 fields['of10.bsn_vport.length'] = ProtoField.uint16("of10.bsn_vport.length", "length", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.type'] = ProtoField.uint16("of10.bsn_vport_q_in_q.type", "type", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.length'] = ProtoField.uint16("of10.bsn_vport_q_in_q.length", "length", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of10.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of10.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of10.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of10.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of10.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
-fields['of10.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of10.bsn_vport_q_in_q.if_name", "if_name")
 fields['of10.bsn_virtual_port_create_request.version'] = ProtoField.uint8("of10.bsn_virtual_port_create_request.version", "version", base.DEC, nil)
 fields['of10.bsn_virtual_port_create_request.type'] = ProtoField.uint8("of10.bsn_virtual_port_create_request.type", "type", base.DEC, nil)
 fields['of10.bsn_virtual_port_create_request.length'] = ProtoField.uint16("of10.bsn_virtual_port_create_request.length", "length", base.DEC, nil)
@@ -2188,6 +2204,26 @@ fields['of10.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of10.bsn
 fields['of10.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of10.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of10.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of10.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of10.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of10.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.type'] = ProtoField.uint16("of10.bsn_vport_l2gre.type", "type", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.length'] = ProtoField.uint16("of10.bsn_vport_l2gre.length", "length", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.flags'] = ProtoField.uint32("of10.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v1_ofp_bsn_vport_l2gre_flags)
+fields['of10.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of10.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of10.bsn_vport_l2gre.local_mac", "local_mac")
+fields['of10.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of10.bsn_vport_l2gre.nh_mac", "nh_mac")
+fields['of10.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of10.bsn_vport_l2gre.src_ip", "src_ip")
+fields['of10.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of10.bsn_vport_l2gre.dst_ip", "dst_ip")
+fields['of10.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of10.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of10.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of10.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of10.bsn_vport_l2gre.if_name", "if_name")
+fields['of10.bsn_vport_q_in_q.type'] = ProtoField.uint16("of10.bsn_vport_q_in_q.type", "type", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.length'] = ProtoField.uint16("of10.bsn_vport_q_in_q.length", "length", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of10.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of10.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of10.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of10.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of10.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
+fields['of10.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of10.bsn_vport_q_in_q.if_name", "if_name")
 fields['of10.desc_stats_reply.version'] = ProtoField.uint8("of10.desc_stats_reply.version", "version", base.DEC, nil)
 fields['of10.desc_stats_reply.type'] = ProtoField.uint32("of10.desc_stats_reply.type", "type", base.DEC, enum_v1_ofp_type)
 fields['of10.desc_stats_reply.length'] = ProtoField.uint16("of10.desc_stats_reply.length", "length", base.DEC, nil)
@@ -2946,14 +2982,6 @@ fields['of11.bsn_virtual_port_create_reply.status'] = ProtoField.uint32("of11.bs
 fields['of11.bsn_virtual_port_create_reply.vport_no'] = ProtoField.uint32("of11.bsn_virtual_port_create_reply.vport_no", "vport_no", base.DEC, nil)
 fields['of11.bsn_vport.type'] = ProtoField.uint16("of11.bsn_vport.type", "type", base.DEC, nil)
 fields['of11.bsn_vport.length'] = ProtoField.uint16("of11.bsn_vport.length", "length", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.type'] = ProtoField.uint16("of11.bsn_vport_q_in_q.type", "type", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.length'] = ProtoField.uint16("of11.bsn_vport_q_in_q.length", "length", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of11.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of11.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of11.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of11.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of11.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
-fields['of11.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of11.bsn_vport_q_in_q.if_name", "if_name")
 fields['of11.bsn_virtual_port_create_request.version'] = ProtoField.uint8("of11.bsn_virtual_port_create_request.version", "version", base.DEC, nil)
 fields['of11.bsn_virtual_port_create_request.type'] = ProtoField.uint8("of11.bsn_virtual_port_create_request.type", "type", base.DEC, nil)
 fields['of11.bsn_virtual_port_create_request.length'] = ProtoField.uint16("of11.bsn_virtual_port_create_request.length", "length", base.DEC, nil)
@@ -2975,6 +3003,26 @@ fields['of11.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of11.bsn
 fields['of11.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of11.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of11.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of11.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of11.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of11.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.type'] = ProtoField.uint16("of11.bsn_vport_l2gre.type", "type", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.length'] = ProtoField.uint16("of11.bsn_vport_l2gre.length", "length", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.flags'] = ProtoField.uint32("of11.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v2_ofp_bsn_vport_l2gre_flags)
+fields['of11.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of11.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of11.bsn_vport_l2gre.local_mac", "local_mac")
+fields['of11.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of11.bsn_vport_l2gre.nh_mac", "nh_mac")
+fields['of11.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of11.bsn_vport_l2gre.src_ip", "src_ip")
+fields['of11.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of11.bsn_vport_l2gre.dst_ip", "dst_ip")
+fields['of11.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of11.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of11.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of11.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of11.bsn_vport_l2gre.if_name", "if_name")
+fields['of11.bsn_vport_q_in_q.type'] = ProtoField.uint16("of11.bsn_vport_q_in_q.type", "type", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.length'] = ProtoField.uint16("of11.bsn_vport_q_in_q.length", "length", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of11.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of11.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of11.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of11.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of11.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
+fields['of11.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of11.bsn_vport_q_in_q.if_name", "if_name")
 fields['of11.bucket.len'] = ProtoField.uint16("of11.bucket.len", "len", base.DEC, nil)
 fields['of11.bucket.weight'] = ProtoField.uint16("of11.bucket.weight", "weight", base.DEC, nil)
 fields['of11.bucket.watch_port'] = ProtoField.uint32("of11.bucket.watch_port", "watch_port", base.DEC, nil)
@@ -3848,14 +3896,6 @@ fields['of12.bsn_virtual_port_create_reply.status'] = ProtoField.uint32("of12.bs
 fields['of12.bsn_virtual_port_create_reply.vport_no'] = ProtoField.uint32("of12.bsn_virtual_port_create_reply.vport_no", "vport_no", base.DEC, nil)
 fields['of12.bsn_vport.type'] = ProtoField.uint16("of12.bsn_vport.type", "type", base.DEC, nil)
 fields['of12.bsn_vport.length'] = ProtoField.uint16("of12.bsn_vport.length", "length", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.type'] = ProtoField.uint16("of12.bsn_vport_q_in_q.type", "type", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.length'] = ProtoField.uint16("of12.bsn_vport_q_in_q.length", "length", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of12.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of12.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of12.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of12.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of12.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
-fields['of12.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of12.bsn_vport_q_in_q.if_name", "if_name")
 fields['of12.bsn_virtual_port_create_request.version'] = ProtoField.uint8("of12.bsn_virtual_port_create_request.version", "version", base.DEC, nil)
 fields['of12.bsn_virtual_port_create_request.type'] = ProtoField.uint8("of12.bsn_virtual_port_create_request.type", "type", base.DEC, nil)
 fields['of12.bsn_virtual_port_create_request.length'] = ProtoField.uint16("of12.bsn_virtual_port_create_request.length", "length", base.DEC, nil)
@@ -3877,6 +3917,26 @@ fields['of12.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of12.bsn
 fields['of12.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of12.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of12.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of12.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of12.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of12.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.type'] = ProtoField.uint16("of12.bsn_vport_l2gre.type", "type", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.length'] = ProtoField.uint16("of12.bsn_vport_l2gre.length", "length", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.flags'] = ProtoField.uint32("of12.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v3_ofp_bsn_vport_l2gre_flags)
+fields['of12.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of12.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of12.bsn_vport_l2gre.local_mac", "local_mac")
+fields['of12.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of12.bsn_vport_l2gre.nh_mac", "nh_mac")
+fields['of12.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of12.bsn_vport_l2gre.src_ip", "src_ip")
+fields['of12.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of12.bsn_vport_l2gre.dst_ip", "dst_ip")
+fields['of12.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of12.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of12.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of12.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of12.bsn_vport_l2gre.if_name", "if_name")
+fields['of12.bsn_vport_q_in_q.type'] = ProtoField.uint16("of12.bsn_vport_q_in_q.type", "type", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.length'] = ProtoField.uint16("of12.bsn_vport_q_in_q.length", "length", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of12.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of12.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of12.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of12.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of12.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
+fields['of12.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of12.bsn_vport_q_in_q.if_name", "if_name")
 fields['of12.bucket.len'] = ProtoField.uint16("of12.bucket.len", "len", base.DEC, nil)
 fields['of12.bucket.weight'] = ProtoField.uint16("of12.bucket.weight", "weight", base.DEC, nil)
 fields['of12.bucket.watch_port'] = ProtoField.uint32("of12.bucket.watch_port", "watch_port", base.DEC, nil)
@@ -5676,14 +5736,6 @@ fields['of13.bsn_virtual_port_create_reply.status'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_virtual_port_create_reply.vport_no'] = ProtoField.uint32("of13.bsn_virtual_port_create_reply.vport_no", "vport_no", base.DEC, nil)
 fields['of13.bsn_vport.type'] = ProtoField.uint16("of13.bsn_vport.type", "type", base.DEC, nil)
 fields['of13.bsn_vport.length'] = ProtoField.uint16("of13.bsn_vport.length", "length", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.type'] = ProtoField.uint16("of13.bsn_vport_q_in_q.type", "type", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.length'] = ProtoField.uint16("of13.bsn_vport_q_in_q.length", "length", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of13.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of13.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of13.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of13.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of13.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
-fields['of13.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of13.bsn_vport_q_in_q.if_name", "if_name")
 fields['of13.bsn_virtual_port_create_request.version'] = ProtoField.uint8("of13.bsn_virtual_port_create_request.version", "version", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_request.type'] = ProtoField.uint8("of13.bsn_virtual_port_create_request.type", "type", base.DEC, nil)
 fields['of13.bsn_virtual_port_create_request.length'] = ProtoField.uint16("of13.bsn_virtual_port_create_request.length", "length", base.DEC, nil)
@@ -5726,6 +5778,26 @@ fields['of13.bsn_vlan_counter_stats_request.flags'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_vlan_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_vlan_counter_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_request.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_request.vlan_vid", "vlan_vid", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.type'] = ProtoField.uint16("of13.bsn_vport_l2gre.type", "type", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.length'] = ProtoField.uint16("of13.bsn_vport_l2gre.length", "length", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.flags'] = ProtoField.uint32("of13.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v4_ofp_bsn_vport_l2gre_flags)
+fields['of13.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of13.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of13.bsn_vport_l2gre.local_mac", "local_mac")
+fields['of13.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of13.bsn_vport_l2gre.nh_mac", "nh_mac")
+fields['of13.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of13.bsn_vport_l2gre.src_ip", "src_ip")
+fields['of13.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of13.bsn_vport_l2gre.dst_ip", "dst_ip")
+fields['of13.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of13.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of13.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of13.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of13.bsn_vport_l2gre.if_name", "if_name")
+fields['of13.bsn_vport_q_in_q.type'] = ProtoField.uint16("of13.bsn_vport_q_in_q.type", "type", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.length'] = ProtoField.uint16("of13.bsn_vport_q_in_q.length", "length", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.port_no'] = ProtoField.uint32("of13.bsn_vport_q_in_q.port_no", "port_no", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.ingress_tpid'] = ProtoField.uint16("of13.bsn_vport_q_in_q.ingress_tpid", "ingress_tpid", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of13.bsn_vport_q_in_q.ingress_vlan_id", "ingress_vlan_id", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of13.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of13.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
+fields['of13.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of13.bsn_vport_q_in_q.if_name", "if_name")
 fields['of13.bucket.len'] = ProtoField.uint16("of13.bucket.len", "len", base.DEC, nil)
 fields['of13.bucket.weight'] = ProtoField.uint16("of13.bucket.weight", "weight", base.DEC, nil)
 fields['of13.bucket.watch_port'] = ProtoField.uint32("of13.bucket.watch_port", "watch_port", base.DEC, nil)
@@ -7247,14 +7319,6 @@ p_of.fields = {
     fields['of10.bsn_virtual_port_create_reply.vport_no'],
     fields['of10.bsn_vport.type'],
     fields['of10.bsn_vport.length'],
-    fields['of10.bsn_vport_q_in_q.type'],
-    fields['of10.bsn_vport_q_in_q.length'],
-    fields['of10.bsn_vport_q_in_q.port_no'],
-    fields['of10.bsn_vport_q_in_q.ingress_tpid'],
-    fields['of10.bsn_vport_q_in_q.ingress_vlan_id'],
-    fields['of10.bsn_vport_q_in_q.egress_tpid'],
-    fields['of10.bsn_vport_q_in_q.egress_vlan_id'],
-    fields['of10.bsn_vport_q_in_q.if_name'],
     fields['of10.bsn_virtual_port_create_request.version'],
     fields['of10.bsn_virtual_port_create_request.type'],
     fields['of10.bsn_virtual_port_create_request.length'],
@@ -7276,6 +7340,26 @@ p_of.fields = {
     fields['of10.bsn_virtual_port_remove_request.experimenter'],
     fields['of10.bsn_virtual_port_remove_request.subtype'],
     fields['of10.bsn_virtual_port_remove_request.vport_no'],
+    fields['of10.bsn_vport_l2gre.type'],
+    fields['of10.bsn_vport_l2gre.length'],
+    fields['of10.bsn_vport_l2gre.flags'],
+    fields['of10.bsn_vport_l2gre.port_no'],
+    fields['of10.bsn_vport_l2gre.local_mac'],
+    fields['of10.bsn_vport_l2gre.nh_mac'],
+    fields['of10.bsn_vport_l2gre.src_ip'],
+    fields['of10.bsn_vport_l2gre.dst_ip'],
+    fields['of10.bsn_vport_l2gre.dscp'],
+    fields['of10.bsn_vport_l2gre.ttl'],
+    fields['of10.bsn_vport_l2gre.vpn'],
+    fields['of10.bsn_vport_l2gre.if_name'],
+    fields['of10.bsn_vport_q_in_q.type'],
+    fields['of10.bsn_vport_q_in_q.length'],
+    fields['of10.bsn_vport_q_in_q.port_no'],
+    fields['of10.bsn_vport_q_in_q.ingress_tpid'],
+    fields['of10.bsn_vport_q_in_q.ingress_vlan_id'],
+    fields['of10.bsn_vport_q_in_q.egress_tpid'],
+    fields['of10.bsn_vport_q_in_q.egress_vlan_id'],
+    fields['of10.bsn_vport_q_in_q.if_name'],
     fields['of10.desc_stats_reply.version'],
     fields['of10.desc_stats_reply.type'],
     fields['of10.desc_stats_reply.length'],
@@ -8034,14 +8118,6 @@ p_of.fields = {
     fields['of11.bsn_virtual_port_create_reply.vport_no'],
     fields['of11.bsn_vport.type'],
     fields['of11.bsn_vport.length'],
-    fields['of11.bsn_vport_q_in_q.type'],
-    fields['of11.bsn_vport_q_in_q.length'],
-    fields['of11.bsn_vport_q_in_q.port_no'],
-    fields['of11.bsn_vport_q_in_q.ingress_tpid'],
-    fields['of11.bsn_vport_q_in_q.ingress_vlan_id'],
-    fields['of11.bsn_vport_q_in_q.egress_tpid'],
-    fields['of11.bsn_vport_q_in_q.egress_vlan_id'],
-    fields['of11.bsn_vport_q_in_q.if_name'],
     fields['of11.bsn_virtual_port_create_request.version'],
     fields['of11.bsn_virtual_port_create_request.type'],
     fields['of11.bsn_virtual_port_create_request.length'],
@@ -8063,6 +8139,26 @@ p_of.fields = {
     fields['of11.bsn_virtual_port_remove_request.experimenter'],
     fields['of11.bsn_virtual_port_remove_request.subtype'],
     fields['of11.bsn_virtual_port_remove_request.vport_no'],
+    fields['of11.bsn_vport_l2gre.type'],
+    fields['of11.bsn_vport_l2gre.length'],
+    fields['of11.bsn_vport_l2gre.flags'],
+    fields['of11.bsn_vport_l2gre.port_no'],
+    fields['of11.bsn_vport_l2gre.local_mac'],
+    fields['of11.bsn_vport_l2gre.nh_mac'],
+    fields['of11.bsn_vport_l2gre.src_ip'],
+    fields['of11.bsn_vport_l2gre.dst_ip'],
+    fields['of11.bsn_vport_l2gre.dscp'],
+    fields['of11.bsn_vport_l2gre.ttl'],
+    fields['of11.bsn_vport_l2gre.vpn'],
+    fields['of11.bsn_vport_l2gre.if_name'],
+    fields['of11.bsn_vport_q_in_q.type'],
+    fields['of11.bsn_vport_q_in_q.length'],
+    fields['of11.bsn_vport_q_in_q.port_no'],
+    fields['of11.bsn_vport_q_in_q.ingress_tpid'],
+    fields['of11.bsn_vport_q_in_q.ingress_vlan_id'],
+    fields['of11.bsn_vport_q_in_q.egress_tpid'],
+    fields['of11.bsn_vport_q_in_q.egress_vlan_id'],
+    fields['of11.bsn_vport_q_in_q.if_name'],
     fields['of11.bucket.len'],
     fields['of11.bucket.weight'],
     fields['of11.bucket.watch_port'],
@@ -8936,14 +9032,6 @@ p_of.fields = {
     fields['of12.bsn_virtual_port_create_reply.vport_no'],
     fields['of12.bsn_vport.type'],
     fields['of12.bsn_vport.length'],
-    fields['of12.bsn_vport_q_in_q.type'],
-    fields['of12.bsn_vport_q_in_q.length'],
-    fields['of12.bsn_vport_q_in_q.port_no'],
-    fields['of12.bsn_vport_q_in_q.ingress_tpid'],
-    fields['of12.bsn_vport_q_in_q.ingress_vlan_id'],
-    fields['of12.bsn_vport_q_in_q.egress_tpid'],
-    fields['of12.bsn_vport_q_in_q.egress_vlan_id'],
-    fields['of12.bsn_vport_q_in_q.if_name'],
     fields['of12.bsn_virtual_port_create_request.version'],
     fields['of12.bsn_virtual_port_create_request.type'],
     fields['of12.bsn_virtual_port_create_request.length'],
@@ -8965,6 +9053,26 @@ p_of.fields = {
     fields['of12.bsn_virtual_port_remove_request.experimenter'],
     fields['of12.bsn_virtual_port_remove_request.subtype'],
     fields['of12.bsn_virtual_port_remove_request.vport_no'],
+    fields['of12.bsn_vport_l2gre.type'],
+    fields['of12.bsn_vport_l2gre.length'],
+    fields['of12.bsn_vport_l2gre.flags'],
+    fields['of12.bsn_vport_l2gre.port_no'],
+    fields['of12.bsn_vport_l2gre.local_mac'],
+    fields['of12.bsn_vport_l2gre.nh_mac'],
+    fields['of12.bsn_vport_l2gre.src_ip'],
+    fields['of12.bsn_vport_l2gre.dst_ip'],
+    fields['of12.bsn_vport_l2gre.dscp'],
+    fields['of12.bsn_vport_l2gre.ttl'],
+    fields['of12.bsn_vport_l2gre.vpn'],
+    fields['of12.bsn_vport_l2gre.if_name'],
+    fields['of12.bsn_vport_q_in_q.type'],
+    fields['of12.bsn_vport_q_in_q.length'],
+    fields['of12.bsn_vport_q_in_q.port_no'],
+    fields['of12.bsn_vport_q_in_q.ingress_tpid'],
+    fields['of12.bsn_vport_q_in_q.ingress_vlan_id'],
+    fields['of12.bsn_vport_q_in_q.egress_tpid'],
+    fields['of12.bsn_vport_q_in_q.egress_vlan_id'],
+    fields['of12.bsn_vport_q_in_q.if_name'],
     fields['of12.bucket.len'],
     fields['of12.bucket.weight'],
     fields['of12.bucket.watch_port'],
@@ -10764,14 +10872,6 @@ p_of.fields = {
     fields['of13.bsn_virtual_port_create_reply.vport_no'],
     fields['of13.bsn_vport.type'],
     fields['of13.bsn_vport.length'],
-    fields['of13.bsn_vport_q_in_q.type'],
-    fields['of13.bsn_vport_q_in_q.length'],
-    fields['of13.bsn_vport_q_in_q.port_no'],
-    fields['of13.bsn_vport_q_in_q.ingress_tpid'],
-    fields['of13.bsn_vport_q_in_q.ingress_vlan_id'],
-    fields['of13.bsn_vport_q_in_q.egress_tpid'],
-    fields['of13.bsn_vport_q_in_q.egress_vlan_id'],
-    fields['of13.bsn_vport_q_in_q.if_name'],
     fields['of13.bsn_virtual_port_create_request.version'],
     fields['of13.bsn_virtual_port_create_request.type'],
     fields['of13.bsn_virtual_port_create_request.length'],
@@ -10814,6 +10914,26 @@ p_of.fields = {
     fields['of13.bsn_vlan_counter_stats_request.experimenter'],
     fields['of13.bsn_vlan_counter_stats_request.subtype'],
     fields['of13.bsn_vlan_counter_stats_request.vlan_vid'],
+    fields['of13.bsn_vport_l2gre.type'],
+    fields['of13.bsn_vport_l2gre.length'],
+    fields['of13.bsn_vport_l2gre.flags'],
+    fields['of13.bsn_vport_l2gre.port_no'],
+    fields['of13.bsn_vport_l2gre.local_mac'],
+    fields['of13.bsn_vport_l2gre.nh_mac'],
+    fields['of13.bsn_vport_l2gre.src_ip'],
+    fields['of13.bsn_vport_l2gre.dst_ip'],
+    fields['of13.bsn_vport_l2gre.dscp'],
+    fields['of13.bsn_vport_l2gre.ttl'],
+    fields['of13.bsn_vport_l2gre.vpn'],
+    fields['of13.bsn_vport_l2gre.if_name'],
+    fields['of13.bsn_vport_q_in_q.type'],
+    fields['of13.bsn_vport_q_in_q.length'],
+    fields['of13.bsn_vport_q_in_q.port_no'],
+    fields['of13.bsn_vport_q_in_q.ingress_tpid'],
+    fields['of13.bsn_vport_q_in_q.ingress_vlan_id'],
+    fields['of13.bsn_vport_q_in_q.egress_tpid'],
+    fields['of13.bsn_vport_q_in_q.egress_vlan_id'],
+    fields['of13.bsn_vport_q_in_q.if_name'],
     fields['of13.bucket.len'],
     fields['of13.bucket.weight'],
     fields['of13.bucket.watch_port'],
@@ -12884,31 +13004,19 @@ of_bsn_header_v1_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v1
 function dissect_of_bsn_vport_v1(reader, subtree)
     return of_bsn_vport_v1_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
--- child class of_bsn_vport_q_in_q
--- Child of of_bsn_vport
-function dissect_of_bsn_vport_q_in_q_v1(reader, subtree)
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.type')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.length')
-    read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.port_no')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.ingress_tpid')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.ingress_vlan_id')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.egress_tpid')
-    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.egress_vlan_id')
-    read_of_port_name_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.if_name')
-    return 'of_bsn_vport_q_in_q'
-end
-of_bsn_vport_v1_dissectors[0] = dissect_of_bsn_vport_q_in_q_v1
-
 -- child class of_bsn_virtual_port_create_request
 -- Child of of_bsn_header
 function dissect_of_bsn_virtual_port_create_request_v1(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.version')
     read_uint8_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.type')
     read_uint16_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.length')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.xid')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.experimenter')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.subtype')
-    read_of_bsn_vport_q_in_q_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.vport')
+    read_of_bsn_vport_t(reader, 1, subtree, 'of10.bsn_virtual_port_create_request.vport')
     return 'of_bsn_virtual_port_create_request'
 end
 of_bsn_header_v1_dissectors[15] = dissect_of_bsn_virtual_port_create_request_v1
@@ -12940,6 +13048,41 @@ function dissect_of_bsn_virtual_port_remove_request_v1(reader, subtree)
     return 'of_bsn_virtual_port_remove_request'
 end
 of_bsn_header_v1_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v1
+
+-- child class of_bsn_vport_l2gre
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_l2gre_v1(reader, subtree)
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.type')
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.length')
+    read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.flags')
+    read_of_port_no_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.port_no')
+    read_of_mac_addr_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.local_mac')
+    read_of_mac_addr_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.nh_mac')
+    read_of_ipv4_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.src_ip')
+    read_of_ipv4_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.dst_ip')
+    read_uint8_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.dscp')
+    read_uint8_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.ttl')
+    reader.skip(2)
+    read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.vpn')
+    read_of_port_name_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.if_name')
+    return 'of_bsn_vport_l2gre'
+end
+of_bsn_vport_v1_dissectors[1] = dissect_of_bsn_vport_l2gre_v1
+
+-- child class of_bsn_vport_q_in_q
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_q_in_q_v1(reader, subtree)
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.type')
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.length')
+    read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.port_no')
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.ingress_tpid')
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.ingress_vlan_id')
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.egress_tpid')
+    read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.egress_vlan_id')
+    read_of_port_name_t(reader, 1, subtree, 'of10.bsn_vport_q_in_q.if_name')
+    return 'of_bsn_vport_q_in_q'
+end
+of_bsn_vport_v1_dissectors[0] = dissect_of_bsn_vport_q_in_q_v1
 
 -- child class of_desc_stats_reply
 -- Child of of_stats_reply
@@ -14552,31 +14695,19 @@ of_bsn_header_v2_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v2
 function dissect_of_bsn_vport_v2(reader, subtree)
     return of_bsn_vport_v2_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
--- child class of_bsn_vport_q_in_q
--- Child of of_bsn_vport
-function dissect_of_bsn_vport_q_in_q_v2(reader, subtree)
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.type')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.length')
-    read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.port_no')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.ingress_tpid')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.ingress_vlan_id')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.egress_tpid')
-    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.egress_vlan_id')
-    read_of_port_name_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.if_name')
-    return 'of_bsn_vport_q_in_q'
-end
-of_bsn_vport_v2_dissectors[0] = dissect_of_bsn_vport_q_in_q_v2
-
 -- child class of_bsn_virtual_port_create_request
 -- Child of of_bsn_header
 function dissect_of_bsn_virtual_port_create_request_v2(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.version')
     read_uint8_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.type')
     read_uint16_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.length')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.xid')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.experimenter')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.subtype')
-    read_of_bsn_vport_q_in_q_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.vport')
+    read_of_bsn_vport_t(reader, 2, subtree, 'of11.bsn_virtual_port_create_request.vport')
     return 'of_bsn_virtual_port_create_request'
 end
 of_bsn_header_v2_dissectors[15] = dissect_of_bsn_virtual_port_create_request_v2
@@ -14608,6 +14739,41 @@ function dissect_of_bsn_virtual_port_remove_request_v2(reader, subtree)
     return 'of_bsn_virtual_port_remove_request'
 end
 of_bsn_header_v2_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v2
+
+-- child class of_bsn_vport_l2gre
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_l2gre_v2(reader, subtree)
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.type')
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.length')
+    read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.flags')
+    read_of_port_no_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.port_no')
+    read_of_mac_addr_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.local_mac')
+    read_of_mac_addr_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.nh_mac')
+    read_of_ipv4_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.src_ip')
+    read_of_ipv4_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.dst_ip')
+    read_uint8_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.dscp')
+    read_uint8_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.ttl')
+    reader.skip(2)
+    read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.vpn')
+    read_of_port_name_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.if_name')
+    return 'of_bsn_vport_l2gre'
+end
+of_bsn_vport_v2_dissectors[1] = dissect_of_bsn_vport_l2gre_v2
+
+-- child class of_bsn_vport_q_in_q
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_q_in_q_v2(reader, subtree)
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.type')
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.length')
+    read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.port_no')
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.ingress_tpid')
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.ingress_vlan_id')
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.egress_tpid')
+    read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.egress_vlan_id')
+    read_of_port_name_t(reader, 2, subtree, 'of11.bsn_vport_q_in_q.if_name')
+    return 'of_bsn_vport_q_in_q'
+end
+of_bsn_vport_v2_dissectors[0] = dissect_of_bsn_vport_q_in_q_v2
 
 -- top-level class of_bucket
 function dissect_of_bucket_v2(reader, subtree)
@@ -16441,31 +16607,19 @@ of_bsn_header_v3_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v3
 function dissect_of_bsn_vport_v3(reader, subtree)
     return of_bsn_vport_v3_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
--- child class of_bsn_vport_q_in_q
--- Child of of_bsn_vport
-function dissect_of_bsn_vport_q_in_q_v3(reader, subtree)
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.type')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.length')
-    read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.port_no')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.ingress_tpid')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.ingress_vlan_id')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.egress_tpid')
-    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.egress_vlan_id')
-    read_of_port_name_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.if_name')
-    return 'of_bsn_vport_q_in_q'
-end
-of_bsn_vport_v3_dissectors[0] = dissect_of_bsn_vport_q_in_q_v3
-
 -- child class of_bsn_virtual_port_create_request
 -- Child of of_bsn_header
 function dissect_of_bsn_virtual_port_create_request_v3(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.version')
     read_uint8_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.type')
     read_uint16_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.length')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.xid')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.experimenter')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.subtype')
-    read_of_bsn_vport_q_in_q_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.vport')
+    read_of_bsn_vport_t(reader, 3, subtree, 'of12.bsn_virtual_port_create_request.vport')
     return 'of_bsn_virtual_port_create_request'
 end
 of_bsn_header_v3_dissectors[15] = dissect_of_bsn_virtual_port_create_request_v3
@@ -16497,6 +16651,41 @@ function dissect_of_bsn_virtual_port_remove_request_v3(reader, subtree)
     return 'of_bsn_virtual_port_remove_request'
 end
 of_bsn_header_v3_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v3
+
+-- child class of_bsn_vport_l2gre
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_l2gre_v3(reader, subtree)
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.type')
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.length')
+    read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.flags')
+    read_of_port_no_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.port_no')
+    read_of_mac_addr_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.local_mac')
+    read_of_mac_addr_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.nh_mac')
+    read_of_ipv4_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.src_ip')
+    read_of_ipv4_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.dst_ip')
+    read_uint8_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.dscp')
+    read_uint8_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.ttl')
+    reader.skip(2)
+    read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.vpn')
+    read_of_port_name_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.if_name')
+    return 'of_bsn_vport_l2gre'
+end
+of_bsn_vport_v3_dissectors[1] = dissect_of_bsn_vport_l2gre_v3
+
+-- child class of_bsn_vport_q_in_q
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_q_in_q_v3(reader, subtree)
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.type')
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.length')
+    read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.port_no')
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.ingress_tpid')
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.ingress_vlan_id')
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.egress_tpid')
+    read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.egress_vlan_id')
+    read_of_port_name_t(reader, 3, subtree, 'of12.bsn_vport_q_in_q.if_name')
+    return 'of_bsn_vport_q_in_q'
+end
+of_bsn_vport_v3_dissectors[0] = dissect_of_bsn_vport_q_in_q_v3
 
 -- top-level class of_bucket
 function dissect_of_bucket_v3(reader, subtree)
@@ -20894,31 +21083,19 @@ of_bsn_header_v4_dissectors[16] = dissect_of_bsn_virtual_port_create_reply_v4
 function dissect_of_bsn_vport_v4(reader, subtree)
     return of_bsn_vport_v4_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
--- child class of_bsn_vport_q_in_q
--- Child of of_bsn_vport
-function dissect_of_bsn_vport_q_in_q_v4(reader, subtree)
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.type')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.length')
-    read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.port_no')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.ingress_tpid')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.ingress_vlan_id')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.egress_tpid')
-    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.egress_vlan_id')
-    read_of_port_name_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.if_name')
-    return 'of_bsn_vport_q_in_q'
-end
-of_bsn_vport_v4_dissectors[0] = dissect_of_bsn_vport_q_in_q_v4
-
 -- child class of_bsn_virtual_port_create_request
 -- Child of of_bsn_header
 function dissect_of_bsn_virtual_port_create_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.version')
     read_uint8_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.type')
     read_uint16_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.length')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.xid')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.experimenter')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.subtype')
-    read_of_bsn_vport_q_in_q_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.vport')
+    read_of_bsn_vport_t(reader, 4, subtree, 'of13.bsn_virtual_port_create_request.vport')
     return 'of_bsn_virtual_port_create_request'
 end
 of_bsn_header_v4_dissectors[15] = dissect_of_bsn_virtual_port_create_request_v4
@@ -20998,6 +21175,41 @@ function dissect_of_bsn_vlan_counter_stats_request_v4(reader, subtree)
     return 'of_bsn_vlan_counter_stats_request'
 end
 of_bsn_stats_request_v4_dissectors[9] = dissect_of_bsn_vlan_counter_stats_request_v4
+
+-- child class of_bsn_vport_l2gre
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_l2gre_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.flags')
+    read_of_port_no_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.port_no')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.local_mac')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.nh_mac')
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.src_ip')
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.dst_ip')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.dscp')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.ttl')
+    reader.skip(2)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.vpn')
+    read_of_port_name_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.if_name')
+    return 'of_bsn_vport_l2gre'
+end
+of_bsn_vport_v4_dissectors[1] = dissect_of_bsn_vport_l2gre_v4
+
+-- child class of_bsn_vport_q_in_q
+-- Child of of_bsn_vport
+function dissect_of_bsn_vport_q_in_q_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.port_no')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.ingress_tpid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.ingress_vlan_id')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.egress_tpid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.egress_vlan_id')
+    read_of_port_name_t(reader, 4, subtree, 'of13.bsn_vport_q_in_q.if_name')
+    return 'of_bsn_vport_q_in_q'
+end
+of_bsn_vport_v4_dissectors[0] = dissect_of_bsn_vport_q_in_q_v4
 
 -- top-level class of_bucket
 function dissect_of_bucket_v4(reader, subtree)

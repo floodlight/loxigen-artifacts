@@ -294,14 +294,10 @@ public class OFFactoryVer12 implements OFFactory {
         return new OFBsnVirtualPortCreateReplyVer12.Builder().setXid(nextXid());
     }
 
-    public OFBsnVportQInQ.Builder buildBsnVportQInQ() {
-        return new OFBsnVportQInQVer12.Builder();
-    }
-
     public OFBsnVirtualPortCreateRequest.Builder buildBsnVirtualPortCreateRequest() {
         return new OFBsnVirtualPortCreateRequestVer12.Builder().setXid(nextXid());
     }
-    public OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest(OFBsnVportQInQ vport) {
+    public OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest(OFBsnVport vport) {
         return new OFBsnVirtualPortCreateRequestVer12(
                 nextXid(),
                       vport
@@ -326,6 +322,14 @@ public class OFFactoryVer12 implements OFFactory {
                 nextXid(),
                       vportNo
                     );
+    }
+
+    public OFBsnVportL2Gre.Builder buildBsnVportL2Gre() {
+        return new OFBsnVportL2GreVer12.Builder();
+    }
+
+    public OFBsnVportQInQ.Builder buildBsnVportQInQ() {
+        return new OFBsnVportQInQVer12.Builder();
     }
 
     public OFDescStatsReply.Builder buildDescStatsReply() {

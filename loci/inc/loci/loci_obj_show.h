@@ -151,6 +151,7 @@ int of_action_set_vlan_vid_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 int of_action_strip_vlan_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_strip_vlan_t *obj);
 int of_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj);
 int of_bsn_vport_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj);
+int of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
 int of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
 int of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *obj);
@@ -292,6 +293,7 @@ int of_action_set_vlan_pcp_OF_VERSION_1_1_show(loci_writer_f writer, void* cooki
 int of_action_set_vlan_vid_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_vlan_vid_t *obj);
 int of_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj);
 int of_bsn_vport_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj);
+int of_bsn_vport_l2gre_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
 int of_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bucket_t *obj);
 int of_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj);
@@ -444,6 +446,7 @@ int of_action_set_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 int of_action_set_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_set_queue_t *obj);
 int of_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj);
 int of_bsn_vport_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj);
+int of_bsn_vport_l2gre_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
 int of_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bucket_t *obj);
 int of_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj);
@@ -832,6 +835,7 @@ int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 int of_bsn_tlv_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_vrf_t *obj);
 int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_entry_t *obj);
 int of_bsn_vport_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj);
+int of_bsn_vport_l2gre_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
 int of_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_t *obj);
 int of_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj);

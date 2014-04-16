@@ -1382,7 +1382,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_dump(loci_writer_f writer, voi
     int out = 0;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t vport;
+    of_bsn_vport_header_t bsn_vport;
 
     out += writer(cookie, "Object of type of_bsn_virtual_port_create_request\n");
 
@@ -1401,8 +1401,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_dump(loci_writer_f writer, voi
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_bsn_virtual_port_create_request_vport_bind(obj, &vport);
-    out += of_bsn_vport_q_in_q_OF_VERSION_1_0_dump(writer, cookie, &vport);
+    of_bsn_virtual_port_create_request_vport_bind(obj, &bsn_vport);
+    out += of_bsn_vport_header_OF_VERSION_1_0_dump(writer, cookie, &bsn_vport);
 
     return out;
 }
@@ -3474,6 +3474,72 @@ of_bsn_vport_header_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_b
 }
 
 int
+of_bsn_vport_l2gre_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    out += writer(cookie, "Object of type of_bsn_vport_l2gre\n");
+
+    of_bsn_vport_l2gre_flags_get(obj, &val32);
+    out += writer(cookie, "  flags (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_port_no_get(obj, &port_no);
+    out += writer(cookie, "  port_no (of_port_no_t):  ");
+    out += LOCI_DUMP_port_no(writer, cookie, port_no);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  local_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_nh_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  nh_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_src_ip_get(obj, &ipv4);
+    out += writer(cookie, "  src_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dst_ip_get(obj, &ipv4);
+    out += writer(cookie, "  dst_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dscp_get(obj, &val8);
+    out += writer(cookie, "  dscp (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_ttl_get(obj, &val8);
+    out += writer(cookie, "  ttl (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_vpn_get(obj, &val32);
+    out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_if_name_get(obj, &port_name);
+    out += writer(cookie, "  if_name (of_port_name_t):  ");
+    out += LOCI_DUMP_port_name(writer, cookie, port_name);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_vport_q_in_q_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
 {
     int out = 0;
@@ -5070,7 +5136,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_dump(loci_writer_f writer, voi
     int out = 0;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t vport;
+    of_bsn_vport_header_t bsn_vport;
 
     out += writer(cookie, "Object of type of_bsn_virtual_port_create_request\n");
 
@@ -5089,8 +5155,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_dump(loci_writer_f writer, voi
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_bsn_virtual_port_create_request_vport_bind(obj, &vport);
-    out += of_bsn_vport_q_in_q_OF_VERSION_1_1_dump(writer, cookie, &vport);
+    of_bsn_virtual_port_create_request_vport_bind(obj, &bsn_vport);
+    out += of_bsn_vport_header_OF_VERSION_1_1_dump(writer, cookie, &bsn_vport);
 
     return out;
 }
@@ -7750,6 +7816,72 @@ of_bsn_vport_header_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_b
 }
 
 int
+of_bsn_vport_l2gre_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    out += writer(cookie, "Object of type of_bsn_vport_l2gre\n");
+
+    of_bsn_vport_l2gre_flags_get(obj, &val32);
+    out += writer(cookie, "  flags (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_port_no_get(obj, &port_no);
+    out += writer(cookie, "  port_no (of_port_no_t):  ");
+    out += LOCI_DUMP_port_no(writer, cookie, port_no);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  local_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_nh_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  nh_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_src_ip_get(obj, &ipv4);
+    out += writer(cookie, "  src_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dst_ip_get(obj, &ipv4);
+    out += writer(cookie, "  dst_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dscp_get(obj, &val8);
+    out += writer(cookie, "  dscp (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_ttl_get(obj, &val8);
+    out += writer(cookie, "  ttl (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_vpn_get(obj, &val32);
+    out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_if_name_get(obj, &port_name);
+    out += writer(cookie, "  if_name (of_port_name_t):  ");
+    out += LOCI_DUMP_port_name(writer, cookie, port_name);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_vport_q_in_q_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
 {
     int out = 0;
@@ -9726,7 +9858,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_dump(loci_writer_f writer, voi
     int out = 0;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t vport;
+    of_bsn_vport_header_t bsn_vport;
 
     out += writer(cookie, "Object of type of_bsn_virtual_port_create_request\n");
 
@@ -9745,8 +9877,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_dump(loci_writer_f writer, voi
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_bsn_virtual_port_create_request_vport_bind(obj, &vport);
-    out += of_bsn_vport_q_in_q_OF_VERSION_1_2_dump(writer, cookie, &vport);
+    of_bsn_virtual_port_create_request_vport_bind(obj, &bsn_vport);
+    out += of_bsn_vport_header_OF_VERSION_1_2_dump(writer, cookie, &bsn_vport);
 
     return out;
 }
@@ -12443,6 +12575,72 @@ of_bsn_vport_header_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_b
     int out = 0;
 
     out += writer(cookie, "Object of type of_bsn_vport_header\n");
+
+    return out;
+}
+
+int
+of_bsn_vport_l2gre_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    out += writer(cookie, "Object of type of_bsn_vport_l2gre\n");
+
+    of_bsn_vport_l2gre_flags_get(obj, &val32);
+    out += writer(cookie, "  flags (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_port_no_get(obj, &port_no);
+    out += writer(cookie, "  port_no (of_port_no_t):  ");
+    out += LOCI_DUMP_port_no(writer, cookie, port_no);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  local_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_nh_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  nh_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_src_ip_get(obj, &ipv4);
+    out += writer(cookie, "  src_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dst_ip_get(obj, &ipv4);
+    out += writer(cookie, "  dst_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dscp_get(obj, &val8);
+    out += writer(cookie, "  dscp (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_ttl_get(obj, &val8);
+    out += writer(cookie, "  ttl (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_vpn_get(obj, &val32);
+    out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_if_name_get(obj, &port_name);
+    out += writer(cookie, "  if_name (of_port_name_t):  ");
+    out += LOCI_DUMP_port_name(writer, cookie, port_name);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -18414,7 +18612,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_dump(loci_writer_f writer, voi
     int out = 0;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t vport;
+    of_bsn_vport_header_t bsn_vport;
 
     out += writer(cookie, "Object of type of_bsn_virtual_port_create_request\n");
 
@@ -18433,8 +18631,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_dump(loci_writer_f writer, voi
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_bsn_virtual_port_create_request_vport_bind(obj, &vport);
-    out += of_bsn_vport_q_in_q_OF_VERSION_1_3_dump(writer, cookie, &vport);
+    of_bsn_virtual_port_create_request_vport_bind(obj, &bsn_vport);
+    out += of_bsn_vport_header_OF_VERSION_1_3_dump(writer, cookie, &bsn_vport);
 
     return out;
 }
@@ -22627,6 +22825,72 @@ of_bsn_vport_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_b
     int out = 0;
 
     out += writer(cookie, "Object of type of_bsn_vport_header\n");
+
+    return out;
+}
+
+int
+of_bsn_vport_l2gre_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    out += writer(cookie, "Object of type of_bsn_vport_l2gre\n");
+
+    of_bsn_vport_l2gre_flags_get(obj, &val32);
+    out += writer(cookie, "  flags (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_port_no_get(obj, &port_no);
+    out += writer(cookie, "  port_no (of_port_no_t):  ");
+    out += LOCI_DUMP_port_no(writer, cookie, port_no);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  local_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_nh_mac_get(obj, &mac_addr);
+    out += writer(cookie, "  nh_mac (of_mac_addr_t):  ");
+    out += LOCI_DUMP_mac(writer, cookie, mac_addr);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_src_ip_get(obj, &ipv4);
+    out += writer(cookie, "  src_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dst_ip_get(obj, &ipv4);
+    out += writer(cookie, "  dst_ip (of_ipv4_t):  ");
+    out += LOCI_DUMP_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_dscp_get(obj, &val8);
+    out += writer(cookie, "  dscp (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_ttl_get(obj, &val8);
+    out += writer(cookie, "  ttl (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_vpn_get(obj, &val32);
+    out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_if_name_get(obj, &port_name);
+    out += writer(cookie, "  if_name (of_port_name_t):  ");
+    out += LOCI_DUMP_port_name(writer, cookie, port_name);
+    out += writer(cookie, "\n");
 
     return out;
 }
@@ -27577,6 +27841,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_0_dump,
+    of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -28093,6 +28358,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_1_dump,
+    of_bsn_vport_l2gre_OF_VERSION_1_1_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_1_dump,
     of_bucket_OF_VERSION_1_1_dump,
     of_bucket_counter_OF_VERSION_1_1_dump,
@@ -28609,6 +28875,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_2_dump,
+    of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
     of_bucket_OF_VERSION_1_2_dump,
     of_bucket_counter_OF_VERSION_1_2_dump,
@@ -29125,6 +29392,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump,
     unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_3_dump,
+    of_bsn_vport_l2gre_OF_VERSION_1_3_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_3_dump,
     of_bucket_OF_VERSION_1_3_dump,
     of_bucket_counter_OF_VERSION_1_3_dump,

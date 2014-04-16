@@ -34,17 +34,17 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
     private static final Logger logger = LoggerFactory.getLogger(OFBsnVirtualPortCreateRequestVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int LENGTH = 48;
+    final static int MINIMUM_LENGTH = 20;
 
         private final static long DEFAULT_XID = 0x0L;
 
     // OF message fields
     private final long xid;
-    private final OFBsnVportQInQ vport;
+    private final OFBsnVport vport;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnVirtualPortCreateRequestVer13(long xid, OFBsnVportQInQ vport) {
+    OFBsnVirtualPortCreateRequestVer13(long xid, OFBsnVport vport) {
         this.xid = xid;
         this.vport = vport;
     }
@@ -76,7 +76,7 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public OFBsnVportQInQ getVport() {
+    public OFBsnVport getVport() {
         return vport;
     }
 
@@ -93,7 +93,7 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
         private boolean xidSet;
         private long xid;
         private boolean vportSet;
-        private OFBsnVportQInQ vport;
+        private OFBsnVport vport;
 
         BuilderWithParent(OFBsnVirtualPortCreateRequestVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -131,12 +131,12 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public OFBsnVportQInQ getVport() {
+    public OFBsnVport getVport() {
         return vport;
     }
 
     @Override
-    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVportQInQ vport) {
+    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVport vport) {
         this.vport = vport;
         this.vportSet = true;
         return this;
@@ -146,7 +146,7 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
         @Override
         public OFBsnVirtualPortCreateRequest build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                OFBsnVportQInQ vport = this.vportSet ? this.vport : parentMessage.vport;
+                OFBsnVport vport = this.vportSet ? this.vport : parentMessage.vport;
                 if(vport == null)
                     throw new NullPointerException("Property vport must not be null");
 
@@ -164,7 +164,7 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
         private boolean xidSet;
         private long xid;
         private boolean vportSet;
-        private OFBsnVportQInQ vport;
+        private OFBsnVport vport;
 
     @Override
     public OFVersion getVersion() {
@@ -198,12 +198,12 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
     }
 
     @Override
-    public OFBsnVportQInQ getVport() {
+    public OFBsnVport getVport() {
         return vport;
     }
 
     @Override
-    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVportQInQ vport) {
+    public OFBsnVirtualPortCreateRequest.Builder setVport(OFBsnVport vport) {
         this.vport = vport;
         this.vportSet = true;
         return this;
@@ -241,8 +241,8 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
             if(type != (byte) 0x4)
                 throw new OFParseError("Wrong type: Expected=OFType.EXPERIMENTER(4), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 48)
-                throw new OFParseError("Wrong length: Expected=48(48), got="+length);
+            if(length < MINIMUM_LENGTH)
+                throw new OFParseError("Wrong length: Expected to be >= " + MINIMUM_LENGTH + ", was: " + length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -259,7 +259,7 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
             int subtype = bb.readInt();
             if(subtype != 0xf)
                 throw new OFParseError("Wrong subtype: Expected=0xfL(0xfL), got="+subtype);
-            OFBsnVportQInQ vport = OFBsnVportQInQVer13.READER.readFrom(bb);
+            OFBsnVport vport = OFBsnVportVer13.READER.readFrom(bb);
 
             OFBsnVirtualPortCreateRequestVer13 bsnVirtualPortCreateRequestVer13 = new OFBsnVirtualPortCreateRequestVer13(
                     xid,
@@ -284,8 +284,7 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
             sink.putByte((byte) 0x4);
             // fixed value property type = 4
             sink.putByte((byte) 0x4);
-            // fixed value property length = 48
-            sink.putShort((short) 0x30);
+            // FIXME: skip funnel of length
             sink.putLong(message.xid);
             // fixed value property experimenter = 0x5c16c7L
             sink.putInt(0x5c16c7);
@@ -304,12 +303,15 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
     static class Writer implements OFMessageWriter<OFBsnVirtualPortCreateRequestVer13> {
         @Override
         public void write(ChannelBuffer bb, OFBsnVirtualPortCreateRequestVer13 message) {
+            int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 4
             bb.writeByte((byte) 0x4);
-            // fixed value property length = 48
-            bb.writeShort((short) 0x30);
+            // length is length of variable message, will be updated at the end
+            int lengthIndex = bb.writerIndex();
+            bb.writeShort(U16.t(0));
+
             bb.writeInt(U32.t(message.xid));
             // fixed value property experimenter = 0x5c16c7L
             bb.writeInt(0x5c16c7);
@@ -317,6 +319,9 @@ class OFBsnVirtualPortCreateRequestVer13 implements OFBsnVirtualPortCreateReques
             bb.writeInt(0xf);
             message.vport.writeTo(bb);
 
+            // update length field
+            int length = bb.writerIndex() - startIndex;
+            bb.setShort(lengthIndex, length);
 
         }
     }

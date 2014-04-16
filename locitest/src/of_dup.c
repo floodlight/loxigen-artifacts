@@ -1493,8 +1493,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t src_vport;
-    of_bsn_vport_q_in_q_t *dst_vport;
+    of_bsn_vport_header_t src_bsn_vport;
+    of_bsn_vport_header_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -1510,14 +1510,14 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_dup(
     of_bsn_virtual_port_create_request_subtype_set(dst, val32);
 
     of_bsn_virtual_port_create_request_vport_bind(
-        src, &src_vport);
-    dst_vport = of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(&src_vport);
-    if (dst_vport == NULL) {
+        src, &src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_0_dup(&src_bsn_vport);
+    if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
-    of_bsn_virtual_port_create_request_vport_set(dst, dst_vport);
-    of_bsn_vport_q_in_q_delete(dst_vport);
+    of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
+    of_bsn_vport_header_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -4044,6 +4044,11 @@ of_bsn_vport_OF_VERSION_1_0_dup(
             &src->q_in_q);
     }
 
+    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
+        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
+            &src->l2gre);
+    }
+
     return NULL;
 }
 
@@ -4064,6 +4069,63 @@ of_bsn_vport_header_OF_VERSION_1_0_dup(
     if ((dst = of_bsn_vport_header_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vport_l2gre
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vport_l2gre.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vport_l2gre_t *
+of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
+    of_bsn_vport_l2gre_t *src)
+{
+    of_bsn_vport_l2gre_t *dst;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    if ((dst = of_bsn_vport_l2gre_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vport_l2gre_flags_get(src, &val32);
+    of_bsn_vport_l2gre_flags_set(dst, val32);
+
+    of_bsn_vport_l2gre_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_nh_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_nh_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_src_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_src_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dst_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_dst_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dscp_get(src, &val8);
+    of_bsn_vport_l2gre_dscp_set(dst, val8);
+
+    of_bsn_vport_l2gre_ttl_get(src, &val8);
+    of_bsn_vport_l2gre_ttl_set(dst, val8);
+
+    of_bsn_vport_l2gre_vpn_get(src, &val32);
+    of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_if_name_get(src, &port_name);
+    of_bsn_vport_l2gre_if_name_set(dst, port_name);
 
     return dst;
 }
@@ -5984,8 +6046,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t src_vport;
-    of_bsn_vport_q_in_q_t *dst_vport;
+    of_bsn_vport_header_t src_bsn_vport;
+    of_bsn_vport_header_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -6001,14 +6063,14 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_dup(
     of_bsn_virtual_port_create_request_subtype_set(dst, val32);
 
     of_bsn_virtual_port_create_request_vport_bind(
-        src, &src_vport);
-    dst_vport = of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(&src_vport);
-    if (dst_vport == NULL) {
+        src, &src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_1_dup(&src_bsn_vport);
+    if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
-    of_bsn_virtual_port_create_request_vport_set(dst, dst_vport);
-    of_bsn_vport_q_in_q_delete(dst_vport);
+    of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
+    of_bsn_vport_header_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -9340,6 +9402,11 @@ of_bsn_vport_OF_VERSION_1_1_dup(
             &src->q_in_q);
     }
 
+    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
+        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
+            &src->l2gre);
+    }
+
     return NULL;
 }
 
@@ -9360,6 +9427,63 @@ of_bsn_vport_header_OF_VERSION_1_1_dup(
     if ((dst = of_bsn_vport_header_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vport_l2gre
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vport_l2gre.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vport_l2gre_t *
+of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
+    of_bsn_vport_l2gre_t *src)
+{
+    of_bsn_vport_l2gre_t *dst;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    if ((dst = of_bsn_vport_l2gre_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vport_l2gre_flags_get(src, &val32);
+    of_bsn_vport_l2gre_flags_set(dst, val32);
+
+    of_bsn_vport_l2gre_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_nh_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_nh_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_src_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_src_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dst_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_dst_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dscp_get(src, &val8);
+    of_bsn_vport_l2gre_dscp_set(dst, val8);
+
+    of_bsn_vport_l2gre_ttl_get(src, &val8);
+    of_bsn_vport_l2gre_ttl_set(dst, val8);
+
+    of_bsn_vport_l2gre_vpn_get(src, &val32);
+    of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_if_name_get(src, &port_name);
+    of_bsn_vport_l2gre_if_name_set(dst, port_name);
 
     return dst;
 }
@@ -11899,8 +12023,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t src_vport;
-    of_bsn_vport_q_in_q_t *dst_vport;
+    of_bsn_vport_header_t src_bsn_vport;
+    of_bsn_vport_header_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -11916,14 +12040,14 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_dup(
     of_bsn_virtual_port_create_request_subtype_set(dst, val32);
 
     of_bsn_virtual_port_create_request_vport_bind(
-        src, &src_vport);
-    dst_vport = of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(&src_vport);
-    if (dst_vport == NULL) {
+        src, &src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_2_dup(&src_bsn_vport);
+    if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
-    of_bsn_virtual_port_create_request_vport_set(dst, dst_vport);
-    of_bsn_vport_q_in_q_delete(dst_vport);
+    of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
+    of_bsn_vport_header_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -15161,6 +15285,11 @@ of_bsn_vport_OF_VERSION_1_2_dup(
             &src->q_in_q);
     }
 
+    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
+        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
+            &src->l2gre);
+    }
+
     return NULL;
 }
 
@@ -15181,6 +15310,63 @@ of_bsn_vport_header_OF_VERSION_1_2_dup(
     if ((dst = of_bsn_vport_header_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vport_l2gre
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vport_l2gre.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vport_l2gre_t *
+of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
+    of_bsn_vport_l2gre_t *src)
+{
+    of_bsn_vport_l2gre_t *dst;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    if ((dst = of_bsn_vport_l2gre_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vport_l2gre_flags_get(src, &val32);
+    of_bsn_vport_l2gre_flags_set(dst, val32);
+
+    of_bsn_vport_l2gre_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_nh_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_nh_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_src_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_src_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dst_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_dst_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dscp_get(src, &val8);
+    of_bsn_vport_l2gre_dscp_set(dst, val8);
+
+    of_bsn_vport_l2gre_ttl_get(src, &val8);
+    of_bsn_vport_l2gre_ttl_set(dst, val8);
+
+    of_bsn_vport_l2gre_vpn_get(src, &val32);
+    of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_if_name_get(src, &port_name);
+    of_bsn_vport_l2gre_if_name_set(dst, port_name);
 
     return dst;
 }
@@ -23289,8 +23475,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_q_in_q_t src_vport;
-    of_bsn_vport_q_in_q_t *dst_vport;
+    of_bsn_vport_header_t src_bsn_vport;
+    of_bsn_vport_header_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -23306,14 +23492,14 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_dup(
     of_bsn_virtual_port_create_request_subtype_set(dst, val32);
 
     of_bsn_virtual_port_create_request_vport_bind(
-        src, &src_vport);
-    dst_vport = of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(&src_vport);
-    if (dst_vport == NULL) {
+        src, &src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_3_dup(&src_bsn_vport);
+    if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
-    of_bsn_virtual_port_create_request_vport_set(dst, dst_vport);
-    of_bsn_vport_q_in_q_delete(dst_vport);
+    of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
+    of_bsn_vport_header_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -28957,6 +29143,11 @@ of_bsn_vport_OF_VERSION_1_3_dup(
             &src->q_in_q);
     }
 
+    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
+        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
+            &src->l2gre);
+    }
+
     return NULL;
 }
 
@@ -28977,6 +29168,63 @@ of_bsn_vport_header_OF_VERSION_1_3_dup(
     if ((dst = of_bsn_vport_header_new(src->version)) == NULL) {
         return NULL;
     }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vport_l2gre
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vport_l2gre.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vport_l2gre_t *
+of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
+    of_bsn_vport_l2gre_t *src)
+{
+    of_bsn_vport_l2gre_t *dst;
+    uint32_t val32;
+    of_port_no_t port_no;
+    of_mac_addr_t mac_addr;
+    of_ipv4_t ipv4;
+    uint8_t val8;
+    of_port_name_t port_name;
+
+    if ((dst = of_bsn_vport_l2gre_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vport_l2gre_flags_get(src, &val32);
+    of_bsn_vport_l2gre_flags_set(dst, val32);
+
+    of_bsn_vport_l2gre_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_nh_mac_get(src, &mac_addr);
+    of_bsn_vport_l2gre_nh_mac_set(dst, mac_addr);
+
+    of_bsn_vport_l2gre_src_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_src_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dst_ip_get(src, &ipv4);
+    of_bsn_vport_l2gre_dst_ip_set(dst, ipv4);
+
+    of_bsn_vport_l2gre_dscp_get(src, &val8);
+    of_bsn_vport_l2gre_dscp_set(dst, val8);
+
+    of_bsn_vport_l2gre_ttl_get(src, &val8);
+    of_bsn_vport_l2gre_ttl_set(dst, val8);
+
+    of_bsn_vport_l2gre_vpn_get(src, &val32);
+    of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_if_name_get(src, &port_name);
+    of_bsn_vport_l2gre_if_name_set(dst, port_name);
 
     return dst;
 }
@@ -41471,6 +41719,31 @@ of_bsn_vport_header_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_vport_header_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_vport_l2gre_t *
+of_bsn_vport_l2gre_dup(
+    of_bsn_vport_l2gre_t *src)
+{
+
+    if (src->version == OF_VERSION_1_0) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

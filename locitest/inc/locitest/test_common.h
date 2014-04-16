@@ -1049,6 +1049,15 @@ extern int of_bsn_vport_header_OF_VERSION_1_0_populate_scalars(
 extern int of_bsn_vport_header_OF_VERSION_1_0_check_scalars(
     of_bsn_vport_header_t *obj, int value);
 
+extern int of_bsn_vport_l2gre_OF_VERSION_1_0_populate(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_0_check(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_0_populate_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_0_check_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
+
 extern int of_bsn_vport_q_in_q_OF_VERSION_1_0_populate(
     of_bsn_vport_q_in_q_t *obj, int value);
 extern int of_bsn_vport_q_in_q_OF_VERSION_1_0_check(
@@ -2317,6 +2326,15 @@ extern int of_bsn_vport_header_OF_VERSION_1_1_populate_scalars(
     of_bsn_vport_header_t *obj, int value);
 extern int of_bsn_vport_header_OF_VERSION_1_1_check_scalars(
     of_bsn_vport_header_t *obj, int value);
+
+extern int of_bsn_vport_l2gre_OF_VERSION_1_1_populate(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_1_check(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_1_populate_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_1_check_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
 
 extern int of_bsn_vport_q_in_q_OF_VERSION_1_1_populate(
     of_bsn_vport_q_in_q_t *obj, int value);
@@ -3685,6 +3703,15 @@ extern int of_bsn_vport_header_OF_VERSION_1_2_populate_scalars(
     of_bsn_vport_header_t *obj, int value);
 extern int of_bsn_vport_header_OF_VERSION_1_2_check_scalars(
     of_bsn_vport_header_t *obj, int value);
+
+extern int of_bsn_vport_l2gre_OF_VERSION_1_2_populate(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_2_check(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_2_populate_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_2_check_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
 
 extern int of_bsn_vport_q_in_q_OF_VERSION_1_2_populate(
     of_bsn_vport_q_in_q_t *obj, int value);
@@ -7177,6 +7204,15 @@ extern int of_bsn_vport_header_OF_VERSION_1_3_populate_scalars(
     of_bsn_vport_header_t *obj, int value);
 extern int of_bsn_vport_header_OF_VERSION_1_3_check_scalars(
     of_bsn_vport_header_t *obj, int value);
+
+extern int of_bsn_vport_l2gre_OF_VERSION_1_3_populate(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_3_check(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_3_populate_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
+extern int of_bsn_vport_l2gre_OF_VERSION_1_3_check_scalars(
+    of_bsn_vport_l2gre_t *obj, int value);
 
 extern int of_bsn_vport_q_in_q_OF_VERSION_1_3_populate(
     of_bsn_vport_q_in_q_t *obj, int value);

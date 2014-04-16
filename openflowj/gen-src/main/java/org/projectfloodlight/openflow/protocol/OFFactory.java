@@ -92,13 +92,14 @@ public interface OFFactory extends XidGenerator {
     OFBsnShellStatus.Builder buildBsnShellStatus() throws UnsupportedOperationException;
     OFBsnShellStatus bsnShellStatus(long status);
     OFBsnVirtualPortCreateReply.Builder buildBsnVirtualPortCreateReply();
-    OFBsnVportQInQ.Builder buildBsnVportQInQ();
     OFBsnVirtualPortCreateRequest.Builder buildBsnVirtualPortCreateRequest();
-    OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest(OFBsnVportQInQ vport);
+    OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest(OFBsnVport vport);
     OFBsnVirtualPortRemoveReply.Builder buildBsnVirtualPortRemoveReply();
     OFBsnVirtualPortRemoveReply bsnVirtualPortRemoveReply(long status);
     OFBsnVirtualPortRemoveRequest.Builder buildBsnVirtualPortRemoveRequest();
     OFBsnVirtualPortRemoveRequest bsnVirtualPortRemoveRequest(long vportNo);
+    OFBsnVportL2Gre.Builder buildBsnVportL2Gre();
+    OFBsnVportQInQ.Builder buildBsnVportQInQ();
     OFDescStatsReply.Builder buildDescStatsReply();
     OFDescStatsRequest.Builder buildDescStatsRequest();
     OFDescStatsRequest descStatsRequest(Set<OFStatsRequestFlags> flags);

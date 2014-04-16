@@ -1447,7 +1447,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_0_scalar(void)
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_0);
-    TEST_ASSERT(obj->length == 48);
+    TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
@@ -1461,7 +1461,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_0_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 48);
+        TEST_ASSERT(length == 20);
     }
 
     /* Set up incrementing values for scalar members */
@@ -3740,6 +3740,43 @@ test_of_bsn_vport_header_OF_VERSION_1_0_scalar(void)
 }
 
 static int
+test_of_bsn_vport_l2gre_OF_VERSION_1_0_scalar(void)
+{
+    of_bsn_vport_l2gre_t *obj;
+
+    obj = of_bsn_vport_l2gre_new(OF_VERSION_1_0);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_0);
+    TEST_ASSERT(obj->length == 54);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_vport_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_VPORT_L2GRE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 54);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vport_l2gre_OF_VERSION_1_0_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vport_l2gre_OF_VERSION_1_0_check_scalars(obj, 1) != 0);
+
+    of_bsn_vport_l2gre_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_vport_q_in_q_OF_VERSION_1_0_scalar(void)
 {
     of_bsn_vport_q_in_q_t *obj;
@@ -5293,7 +5330,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_1_scalar(void)
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 48);
+    TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
@@ -5307,7 +5344,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_1_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 48);
+        TEST_ASSERT(length == 20);
     }
 
     /* Set up incrementing values for scalar members */
@@ -8381,6 +8418,43 @@ test_of_bsn_vport_header_OF_VERSION_1_1_scalar(void)
 }
 
 static int
+test_of_bsn_vport_l2gre_OF_VERSION_1_1_scalar(void)
+{
+    of_bsn_vport_l2gre_t *obj;
+
+    obj = of_bsn_vport_l2gre_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_vport_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_VPORT_L2GRE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 56);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vport_l2gre_OF_VERSION_1_1_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vport_l2gre_OF_VERSION_1_1_check_scalars(obj, 1) != 0);
+
+    of_bsn_vport_l2gre_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_vport_q_in_q_OF_VERSION_1_1_scalar(void)
 {
     of_bsn_vport_q_in_q_t *obj;
@@ -10369,7 +10443,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_2_scalar(void)
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 48);
+    TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
@@ -10383,7 +10457,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_2_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 48);
+        TEST_ASSERT(length == 20);
     }
 
     /* Set up incrementing values for scalar members */
@@ -13266,6 +13340,43 @@ test_of_bsn_vport_header_OF_VERSION_1_2_scalar(void)
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_HEADER);
 
     of_bsn_vport_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vport_l2gre_OF_VERSION_1_2_scalar(void)
+{
+    of_bsn_vport_l2gre_t *obj;
+
+    obj = of_bsn_vport_l2gre_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_vport_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_VPORT_L2GRE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 56);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vport_l2gre_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vport_l2gre_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_bsn_vport_l2gre_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -21160,7 +21271,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_3_scalar(void)
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 48);
+    TEST_ASSERT(obj->length == 20);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
 
@@ -21174,7 +21285,7 @@ test_of_bsn_virtual_port_create_request_OF_VERSION_1_3_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 48);
+        TEST_ASSERT(length == 20);
     }
 
     /* Set up incrementing values for scalar members */
@@ -26653,6 +26764,43 @@ test_of_bsn_vport_header_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_HEADER);
 
     of_bsn_vport_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vport_l2gre_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_vport_l2gre_t *obj;
+
+    obj = of_bsn_vport_l2gre_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_vport_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_VPORT_L2GRE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 56);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vport_l2gre_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vport_l2gre_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_vport_l2gre_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -33992,6 +34140,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_action_strip_vlan_OF_VERSION_1_0_scalar);
     RUN_TEST(of_bsn_interface_OF_VERSION_1_0_scalar);
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_0_scalar);
+    RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_0_scalar);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_0_scalar);
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_0_scalar);
     RUN_TEST(of_header_OF_VERSION_1_0_scalar);
@@ -34133,6 +34282,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_action_set_vlan_vid_OF_VERSION_1_1_scalar);
     RUN_TEST(of_bsn_interface_OF_VERSION_1_1_scalar);
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_1_scalar);
+    RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_1_scalar);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_1_scalar);
     RUN_TEST(of_bucket_OF_VERSION_1_1_scalar);
     RUN_TEST(of_bucket_counter_OF_VERSION_1_1_scalar);
@@ -34285,6 +34435,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_action_set_queue_OF_VERSION_1_2_scalar);
     RUN_TEST(of_bsn_interface_OF_VERSION_1_2_scalar);
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_2_scalar);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_2_scalar);
     RUN_TEST(of_bucket_OF_VERSION_1_2_scalar);
     RUN_TEST(of_bucket_counter_OF_VERSION_1_2_scalar);
@@ -34673,6 +34824,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_vrf_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bucket_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bucket_counter_OF_VERSION_1_3_scalar);
