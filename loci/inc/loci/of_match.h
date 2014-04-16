@@ -171,15 +171,19 @@ typedef struct of_match_s {
     of_match_fields_t masks;
 } of_match_t;
 
-/**
- * Mask the values in the match structure according to its fields
+/*
+ * AND 'len' bytes starting from 'value' with the corresponding byte in
+ * 'mask'.
  */
-static inline void of_match_values_mask(of_match_t *match)
+static inline void
+of_memmask(void *value, const void *mask, size_t len)
 {
-    int idx;
+    int i;
+    uint8_t *v = value;
+    const uint8_t *m = mask;
 
-    for (idx = 0; idx < sizeof(of_match_fields_t); idx++) {
-        ((uint8_t *)&match->fields)[idx] &= ((uint8_t *)&match->masks)[idx];
+    for (i = 0; i < len; i++) {
+        v[i] &= m[i];
     }
 }
 

@@ -1,1 +1,1 @@
-3c2fb9914cc8e40feb73b3acf2dff8d4bb46b099 Merge into master from pull request #247: openflow_input: add bsn_pktin_flag extension (https://github.com/floodlight/loxigen/pull/247)
+4c9d1ec52942d8d11847d0374903b221b41d5646 Merge into master from pull request #239: loci: only mask partially wildcarded fields (https://github.com/floodlight/loxigen/pull/239)
