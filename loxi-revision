@@ -1,1 +1,1 @@
-a406f06790a87e20ad368704e4032d69ad5f2dce Merge into master from pull request #246: Fix bsn_vport subtype and add l2gre vport (https://github.com/floodlight/loxigen/pull/246)
+3c2fb9914cc8e40feb73b3acf2dff8d4bb46b099 Merge into master from pull request #247: openflow_input: add bsn_pktin_flag extension (https://github.com/floodlight/loxigen/pull/247)

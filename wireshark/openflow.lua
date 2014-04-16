@@ -1279,6 +1279,19 @@ local enum_v4_ofp_bad_request_code = {
     [13] = "OFPBRC_MULTIPART_BUFFER_OVERFLOW",
 }
 
+local enum_v4_ofp_bsn_pktin_flag = {
+    [1] = "OFP_BSN_PKTIN_FLAG_PDU",
+    [2] = "OFP_BSN_PKTIN_FLAG_NEW_HOST",
+    [4] = "OFP_BSN_PKTIN_FLAG_STATION_MOVE",
+    [8] = "OFP_BSN_PKTIN_FLAG_ARP",
+    [16] = "OFP_BSN_PKTIN_FLAG_DHCP",
+    [32] = "OFP_BSN_PKTIN_FLAG_L2_CPU",
+    [64] = "OFP_BSN_PKTIN_FLAG_DEBUG",
+    [128] = "OFP_BSN_PKTIN_FLAG_TTL_EXPIRED",
+    [256] = "OFP_BSN_PKTIN_FLAG_L3_MISS",
+    [512] = "OFP_BSN_PKTIN_FLAG_L3_CPU",
+}
+
 local enum_v4_ofp_bad_instruction_code = {
     [0] = "OFPBIC_UNKNOWN_INST",
     [1] = "OFPBIC_UNSUP_INST",
