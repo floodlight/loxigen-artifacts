@@ -1,1 +1,1 @@
-4c9d1ec52942d8d11847d0374903b221b41d5646 Merge into master from pull request #239: loci: only mask partially wildcarded fields (https://github.com/floodlight/loxigen/pull/239)
+bfdf35bfa58677b3b62ccc00b8e7d0e86aa67ca8 Merge into master from pull request #250: loci: do not generate header classes for messages (https://github.com/floodlight/loxigen/pull/250)
