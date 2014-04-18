@@ -71,6 +71,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_header_init,
     (of_object_init_f)of_bsn_hybrid_get_reply_init,
     (of_object_init_f)of_bsn_hybrid_get_request_init,
+    (of_object_init_f)of_bsn_image_desc_stats_reply_init,
+    (of_object_init_f)of_bsn_image_desc_stats_request_init,
     (of_object_init_f)of_bsn_lacp_convergence_notif_init,
     (of_object_init_f)of_bsn_lacp_stats_reply_init,
     (of_object_init_f)of_bsn_lacp_stats_request_init,

@@ -901,6 +901,20 @@ public class OFFactoryVer13 implements OFFactory {
                     );
     }
 
+    public OFBsnImageDescStatsReply.Builder buildBsnImageDescStatsReply() {
+        return new OFBsnImageDescStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnImageDescStatsRequest.Builder buildBsnImageDescStatsRequest() {
+        return new OFBsnImageDescStatsRequestVer13.Builder().setXid(nextXid());
+    }
+    public OFBsnImageDescStatsRequest bsnImageDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        return new OFBsnImageDescStatsRequestVer13(
+                nextXid(),
+                      flags
+                    );
+    }
+
     public OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() {
         return new OFBsnLacpConvergenceNotifVer13.Builder().setXid(nextXid());
     }

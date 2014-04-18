@@ -68,6 +68,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_header",
     "of_bsn_hybrid_get_reply",
     "of_bsn_hybrid_get_request",
+    "of_bsn_image_desc_stats_reply",
+    "of_bsn_image_desc_stats_request",
     "of_bsn_lacp_convergence_notif",
     "of_bsn_lacp_stats_reply",
     "of_bsn_lacp_stats_request",

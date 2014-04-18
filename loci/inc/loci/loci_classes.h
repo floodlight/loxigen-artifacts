@@ -693,6 +693,10 @@ void of_bsn_get_switch_pipeline_reply_wire_object_id_get(of_object_t *obj, of_ob
 void of_bsn_get_switch_pipeline_reply_push_wire_types(of_object_t *obj);
 void of_bsn_get_switch_pipeline_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_get_switch_pipeline_request_push_wire_types(of_object_t *obj);
+void of_bsn_image_desc_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_image_desc_stats_reply_push_wire_types(of_object_t *obj);
+void of_bsn_image_desc_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_image_desc_stats_request_push_wire_types(of_object_t *obj);
 void of_bsn_lacp_convergence_notif_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_lacp_convergence_notif_push_wire_types(of_object_t *obj);
 void of_bsn_lacp_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1000,6 +1004,8 @@ typedef of_object_t of_bsn_get_switch_pipeline_request_t;
 typedef of_object_t of_bsn_header_t;
 typedef of_object_t of_bsn_hybrid_get_reply_t;
 typedef of_object_t of_bsn_hybrid_get_request_t;
+typedef of_object_t of_bsn_image_desc_stats_reply_t;
+typedef of_object_t of_bsn_image_desc_stats_request_t;
 typedef of_object_t of_bsn_lacp_convergence_notif_t;
 typedef of_object_t of_bsn_lacp_stats_reply_t;
 typedef of_object_t of_bsn_lacp_stats_request_t;
@@ -1881,6 +1887,20 @@ extern of_bsn_hybrid_get_request_t *
     of_bsn_hybrid_get_request_new_from_message(of_message_t msg);
 extern void of_bsn_hybrid_get_request_init(
     of_bsn_hybrid_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_image_desc_stats_reply_t *
+    of_bsn_image_desc_stats_reply_new(of_version_t version);
+extern of_bsn_image_desc_stats_reply_t *
+    of_bsn_image_desc_stats_reply_new_from_message(of_message_t msg);
+extern void of_bsn_image_desc_stats_reply_init(
+    of_bsn_image_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_image_desc_stats_request_t *
+    of_bsn_image_desc_stats_request_new(of_version_t version);
+extern of_bsn_image_desc_stats_request_t *
+    of_bsn_image_desc_stats_request_new_from_message(of_message_t msg);
+extern void of_bsn_image_desc_stats_request_init(
+    of_bsn_image_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_lacp_convergence_notif_t *
     of_bsn_lacp_convergence_notif_new(of_version_t version);
@@ -5032,6 +5052,28 @@ of_bsn_hybrid_get_reply_delete(of_bsn_hybrid_get_reply_t *obj) {
  */
 static inline void
 of_bsn_hybrid_get_request_delete(of_bsn_hybrid_get_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_image_desc_stats_reply_t
+ * @param obj An instance of type of_bsn_image_desc_stats_reply_t
+ *
+ * \ingroup of_bsn_image_desc_stats_reply
+ */
+static inline void
+of_bsn_image_desc_stats_reply_delete(of_bsn_image_desc_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_image_desc_stats_request_t
+ * @param obj An instance of type of_bsn_image_desc_stats_request_t
+ *
+ * \ingroup of_bsn_image_desc_stats_request
+ */
+static inline void
+of_bsn_image_desc_stats_request_delete(of_bsn_image_desc_stats_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -12032,6 +12074,80 @@ extern void of_bsn_hybrid_get_request_subtype_set(
     uint32_t subtype);
 extern void of_bsn_hybrid_get_request_subtype_get(
     of_bsn_hybrid_get_request_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_bsn_image_desc_stats_reply */
+
+extern void of_bsn_image_desc_stats_reply_xid_set(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_image_desc_stats_reply_xid_get(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_image_desc_stats_reply_flags_set(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_image_desc_stats_reply_flags_get(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_image_desc_stats_reply_experimenter_set(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_image_desc_stats_reply_experimenter_get(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_image_desc_stats_reply_subtype_set(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_image_desc_stats_reply_subtype_get(
+    of_bsn_image_desc_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_image_desc_stats_reply_image_checksum_set(
+    of_bsn_image_desc_stats_reply_t *obj,
+    of_desc_str_t image_checksum);
+extern void of_bsn_image_desc_stats_reply_image_checksum_get(
+    of_bsn_image_desc_stats_reply_t *obj,
+    of_desc_str_t *image_checksum);
+
+extern void of_bsn_image_desc_stats_reply_startup_config_checksum_set(
+    of_bsn_image_desc_stats_reply_t *obj,
+    of_desc_str_t startup_config_checksum);
+extern void of_bsn_image_desc_stats_reply_startup_config_checksum_get(
+    of_bsn_image_desc_stats_reply_t *obj,
+    of_desc_str_t *startup_config_checksum);
+
+/* Unified accessor functions for of_bsn_image_desc_stats_request */
+
+extern void of_bsn_image_desc_stats_request_xid_set(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_image_desc_stats_request_xid_get(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_image_desc_stats_request_flags_set(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_image_desc_stats_request_flags_get(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_image_desc_stats_request_experimenter_set(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_image_desc_stats_request_experimenter_get(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_image_desc_stats_request_subtype_set(
+    of_bsn_image_desc_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_image_desc_stats_request_subtype_get(
+    of_bsn_image_desc_stats_request_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_bsn_lacp_convergence_notif */

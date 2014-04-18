@@ -89,6 +89,9 @@ abstract class OFBsnStatsRequestVer13 {
                case 0x7:
                    // discriminator value 0x7L=0x7L for class OFBsnGentableStatsRequestVer13
                    return OFBsnGentableStatsRequestVer13.READER.readFrom(bb);
+               case 0xe:
+                   // discriminator value 0xeL=0xeL for class OFBsnImageDescStatsRequestVer13
+                   return OFBsnImageDescStatsRequestVer13.READER.readFrom(bb);
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFBsnLacpStatsRequestVer13
                    return OFBsnLacpStatsRequestVer13.READER.readFrom(bb);

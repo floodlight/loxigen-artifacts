@@ -229,6 +229,9 @@ public interface OFFactory extends XidGenerator {
     OFBsnGetSwitchPipelineReply bsnGetSwitchPipelineReply(String pipeline);
     OFBsnGetSwitchPipelineRequest.Builder buildBsnGetSwitchPipelineRequest() throws UnsupportedOperationException;
     OFBsnGetSwitchPipelineRequest bsnGetSwitchPipelineRequest();
+    OFBsnImageDescStatsReply.Builder buildBsnImageDescStatsReply() throws UnsupportedOperationException;
+    OFBsnImageDescStatsRequest.Builder buildBsnImageDescStatsRequest() throws UnsupportedOperationException;
+    OFBsnImageDescStatsRequest bsnImageDescStatsRequest(Set<OFStatsRequestFlags> flags);
     OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() throws UnsupportedOperationException;
     OFBsnLacpStatsEntry.Builder buildBsnLacpStatsEntry() throws UnsupportedOperationException;
     OFBsnLacpStatsReply.Builder buildBsnLacpStatsReply() throws UnsupportedOperationException;

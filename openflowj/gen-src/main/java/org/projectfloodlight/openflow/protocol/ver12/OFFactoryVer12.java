@@ -860,6 +860,17 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnGetSwitchPipelineRequest not supported in version 1.2");
     }
 
+    public OFBsnImageDescStatsReply.Builder buildBsnImageDescStatsReply() {
+        throw new UnsupportedOperationException("OFBsnImageDescStatsReply not supported in version 1.2");
+    }
+
+    public OFBsnImageDescStatsRequest.Builder buildBsnImageDescStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnImageDescStatsRequest not supported in version 1.2");
+    }
+    public OFBsnImageDescStatsRequest bsnImageDescStatsRequest(Set<OFStatsRequestFlags> flags) {
+        throw new UnsupportedOperationException("OFBsnImageDescStatsRequest not supported in version 1.2");
+    }
+
     public OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() {
         throw new UnsupportedOperationException("OFBsnLacpConvergenceNotif not supported in version 1.2");
     }

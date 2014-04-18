@@ -17406,6 +17406,81 @@ of_bsn_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_hea
 }
 
 int
+of_bsn_image_desc_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_image_desc_stats_reply_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_desc_str_t desc_str;
+
+    out += writer(cookie, "Object of type of_bsn_image_desc_stats_reply\n");
+
+    of_bsn_image_desc_stats_reply_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_reply_flags_get(obj, &val16);
+    out += writer(cookie, "  flags (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_reply_image_checksum_get(obj, &desc_str);
+    out += writer(cookie, "  image_checksum (of_desc_str_t):  ");
+    out += LOCI_DUMP_desc_str(writer, cookie, desc_str);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_reply_startup_config_checksum_get(obj, &desc_str);
+    out += writer(cookie, "  startup_config_checksum (of_desc_str_t):  ");
+    out += LOCI_DUMP_desc_str(writer, cookie, desc_str);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_image_desc_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_image_desc_stats_request_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_image_desc_stats_request\n");
+
+    of_bsn_image_desc_stats_request_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_request_flags_get(obj, &val16);
+    out += writer(cookie, "  flags (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_image_desc_stats_request_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_lacp_convergence_notif_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_lacp_convergence_notif_t *obj)
 {
     int out = 0;
@@ -27627,6 +27702,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_pdu_rx_reply_OF_VERSION_1_0_dump,
     of_bsn_pdu_rx_request_OF_VERSION_1_0_dump,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_0_dump,
@@ -28139,6 +28216,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_header_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -28661,6 +28740,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_pdu_rx_reply_OF_VERSION_1_2_dump,
     of_bsn_pdu_rx_request_OF_VERSION_1_2_dump,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_2_dump,
@@ -29175,6 +29256,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_header_OF_VERSION_1_3_dump,
     unknown_dump,
     unknown_dump,
+    of_bsn_image_desc_stats_reply_OF_VERSION_1_3_dump,
+    of_bsn_image_desc_stats_request_OF_VERSION_1_3_dump,
     of_bsn_lacp_convergence_notif_OF_VERSION_1_3_dump,
     of_bsn_lacp_stats_reply_OF_VERSION_1_3_dump,
     of_bsn_lacp_stats_request_OF_VERSION_1_3_dump,

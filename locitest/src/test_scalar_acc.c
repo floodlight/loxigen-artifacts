@@ -20192,6 +20192,80 @@ test_of_bsn_header_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_image_desc_stats_reply_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_image_desc_stats_reply_t *obj;
+
+    obj = of_bsn_image_desc_stats_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 536);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_IMAGE_DESC_STATS_REPLY);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_IMAGE_DESC_STATS_REPLY);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 536);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_image_desc_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_image_desc_stats_reply_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_image_desc_stats_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_image_desc_stats_request_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_image_desc_stats_request_t *obj;
+
+    obj = of_bsn_image_desc_stats_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_IMAGE_DESC_STATS_REQUEST);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_IMAGE_DESC_STATS_REQUEST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_image_desc_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_image_desc_stats_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_image_desc_stats_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_lacp_convergence_notif_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_lacp_convergence_notif_t *obj;
@@ -34633,6 +34707,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_header_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_image_desc_stats_reply_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_image_desc_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_lacp_convergence_notif_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_lacp_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_lacp_stats_request_OF_VERSION_1_3_scalar);

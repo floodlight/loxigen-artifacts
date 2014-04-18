@@ -1492,6 +1492,60 @@ typedef struct of_bsn_hybrid_get_reply_s of_bsn_hybrid_get_reply_t;
 typedef struct of_bsn_hybrid_get_request_s of_bsn_hybrid_get_request_t;
 
 /**
+ * Structure for of_bsn_image_desc_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_image_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_image_desc_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_image_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_image_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param image_checksum_get/set ( OF_1_3).
+ *   Accessors for image_checksum, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_image_desc_stats_reply_of_desc_str_get_f and _set_f.
+ *
+ * @param startup_config_checksum_get/set ( OF_1_3).
+ *   Accessors for startup_config_checksum, a variable of type of_desc_str.  Functions
+ *   are of type of_bsn_image_desc_stats_reply_of_desc_str_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_image_desc_stats_reply_s of_bsn_image_desc_stats_reply_t;
+
+/**
+ * Structure for of_bsn_image_desc_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_image_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_image_desc_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_image_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_image_desc_stats_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_image_desc_stats_request_s of_bsn_image_desc_stats_request_t;
+
+/**
  * Structure for of_bsn_lacp_convergence_notif object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

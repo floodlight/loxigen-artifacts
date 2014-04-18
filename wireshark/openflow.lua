@@ -5418,6 +5418,24 @@ fields['of13.bsn_get_switch_pipeline_request.length'] = ProtoField.uint16("of13.
 fields['of13.bsn_get_switch_pipeline_request.xid'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_request.xid", "xid", base.DEC, nil)
 fields['of13.bsn_get_switch_pipeline_request.experimenter'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_get_switch_pipeline_request.subtype'] = ProtoField.uint32("of13.bsn_get_switch_pipeline_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.version'] = ProtoField.uint8("of13.bsn_image_desc_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.type'] = ProtoField.uint8("of13.bsn_image_desc_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.length'] = ProtoField.uint16("of13.bsn_image_desc_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.xid'] = ProtoField.uint32("of13.bsn_image_desc_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_image_desc_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.flags'] = ProtoField.uint32("of13.bsn_image_desc_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_image_desc_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_image_desc_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_image_desc_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_reply.image_checksum'] = ProtoField.stringz("of13.bsn_image_desc_stats_reply.image_checksum", "image_checksum")
+fields['of13.bsn_image_desc_stats_reply.startup_config_checksum'] = ProtoField.stringz("of13.bsn_image_desc_stats_reply.startup_config_checksum", "startup_config_checksum")
+fields['of13.bsn_image_desc_stats_request.version'] = ProtoField.uint8("of13.bsn_image_desc_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_request.type'] = ProtoField.uint8("of13.bsn_image_desc_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_request.length'] = ProtoField.uint16("of13.bsn_image_desc_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_request.xid'] = ProtoField.uint32("of13.bsn_image_desc_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_image_desc_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_request.flags'] = ProtoField.uint32("of13.bsn_image_desc_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_image_desc_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_image_desc_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_image_desc_stats_request.subtype'] = ProtoField.uint32("of13.bsn_image_desc_stats_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_interface.hw_addr'] = ProtoField.ether("of13.bsn_interface.hw_addr", "hw_addr")
 fields['of13.bsn_interface.name'] = ProtoField.stringz("of13.bsn_interface.name", "name")
 fields['of13.bsn_interface.ipv4_addr'] = ProtoField.ipv4("of13.bsn_interface.ipv4_addr", "ipv4_addr")
@@ -10554,6 +10572,24 @@ p_of.fields = {
     fields['of13.bsn_get_switch_pipeline_request.xid'],
     fields['of13.bsn_get_switch_pipeline_request.experimenter'],
     fields['of13.bsn_get_switch_pipeline_request.subtype'],
+    fields['of13.bsn_image_desc_stats_reply.version'],
+    fields['of13.bsn_image_desc_stats_reply.type'],
+    fields['of13.bsn_image_desc_stats_reply.length'],
+    fields['of13.bsn_image_desc_stats_reply.xid'],
+    fields['of13.bsn_image_desc_stats_reply.stats_type'],
+    fields['of13.bsn_image_desc_stats_reply.flags'],
+    fields['of13.bsn_image_desc_stats_reply.experimenter'],
+    fields['of13.bsn_image_desc_stats_reply.subtype'],
+    fields['of13.bsn_image_desc_stats_reply.image_checksum'],
+    fields['of13.bsn_image_desc_stats_reply.startup_config_checksum'],
+    fields['of13.bsn_image_desc_stats_request.version'],
+    fields['of13.bsn_image_desc_stats_request.type'],
+    fields['of13.bsn_image_desc_stats_request.length'],
+    fields['of13.bsn_image_desc_stats_request.xid'],
+    fields['of13.bsn_image_desc_stats_request.stats_type'],
+    fields['of13.bsn_image_desc_stats_request.flags'],
+    fields['of13.bsn_image_desc_stats_request.experimenter'],
+    fields['of13.bsn_image_desc_stats_request.subtype'],
     fields['of13.bsn_interface.hw_addr'],
     fields['of13.bsn_interface.name'],
     fields['of13.bsn_interface.ipv4_addr'],
@@ -20358,6 +20394,40 @@ function dissect_of_bsn_get_switch_pipeline_request_v4(reader, subtree)
     return 'of_bsn_get_switch_pipeline_request'
 end
 of_bsn_header_v4_dissectors[51] = dissect_of_bsn_get_switch_pipeline_request_v4
+
+-- child class of_bsn_image_desc_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_image_desc_stats_reply_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.subtype')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.image_checksum')
+    read_of_desc_str_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_reply.startup_config_checksum')
+    return 'of_bsn_image_desc_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[14] = dissect_of_bsn_image_desc_stats_reply_v4
+
+-- child class of_bsn_image_desc_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_image_desc_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_image_desc_stats_request.subtype')
+    return 'of_bsn_image_desc_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[14] = dissect_of_bsn_image_desc_stats_request_v4
 
 -- top-level class of_bsn_interface
 function dissect_of_bsn_interface_v4(reader, subtree)

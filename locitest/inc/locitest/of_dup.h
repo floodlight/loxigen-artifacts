@@ -250,6 +250,14 @@ extern of_bsn_hybrid_get_request_t *
     of_bsn_hybrid_get_request_dup(
         of_bsn_hybrid_get_request_t *src);
 
+extern of_bsn_image_desc_stats_reply_t *
+    of_bsn_image_desc_stats_reply_dup(
+        of_bsn_image_desc_stats_reply_t *src);
+
+extern of_bsn_image_desc_stats_request_t *
+    of_bsn_image_desc_stats_request_dup(
+        of_bsn_image_desc_stats_request_t *src);
+
 extern of_bsn_lacp_convergence_notif_t *
     of_bsn_lacp_convergence_notif_dup(
         of_bsn_lacp_convergence_notif_t *src);
@@ -4517,6 +4525,14 @@ extern of_bsn_get_switch_pipeline_request_t *
 extern of_bsn_header_t *
     of_bsn_header_OF_VERSION_1_3_dup(
         of_bsn_header_t *src);
+
+extern of_bsn_image_desc_stats_reply_t *
+    of_bsn_image_desc_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_image_desc_stats_reply_t *src);
+
+extern of_bsn_image_desc_stats_request_t *
+    of_bsn_image_desc_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_image_desc_stats_request_t *src);
 
 extern of_bsn_lacp_convergence_notif_t *
     of_bsn_lacp_convergence_notif_OF_VERSION_1_3_dup(
