@@ -418,9 +418,9 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_bsn_virtual_port_create_reply_push_wire_types,
     },
     [OF_BSN_VPORT] = {
-        .wire_length_get=NULL,
-        .wire_length_set=NULL,
-        .wire_type_get=NULL,
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_vport_wire_object_id_get,
         .wire_type_set=NULL,
     },
     [OF_BSN_VIRTUAL_PORT_CREATE_REQUEST] = {
@@ -442,15 +442,15 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_bsn_virtual_port_remove_request_push_wire_types,
     },
     [OF_BSN_VPORT_L2GRE] = {
-        .wire_length_get=NULL,
-        .wire_length_set=NULL,
-        .wire_type_get=NULL,
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_vport_wire_object_id_get,
         .wire_type_set=of_bsn_vport_l2gre_push_wire_types,
     },
     [OF_BSN_VPORT_Q_IN_Q] = {
-        .wire_length_get=NULL,
-        .wire_length_set=NULL,
-        .wire_type_get=NULL,
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_vport_wire_object_id_get,
         .wire_type_set=of_bsn_vport_q_in_q_push_wire_types,
     },
     [OF_DESC_STATS_REPLY] = {
@@ -2785,6 +2785,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_action_id_wire_object_id_get,
+        .wire_type_set=NULL,
+    },
+    [OF_BSN_VPORT_HEADER] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_vport_wire_object_id_get,
         .wire_type_set=NULL,
     },
     [OF_INSTRUCTION_HEADER] = {

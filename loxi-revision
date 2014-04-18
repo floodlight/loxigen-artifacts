@@ -1,1 +1,1 @@
-bfdf35bfa58677b3b62ccc00b8e7d0e86aa67ca8 Merge into master from pull request #250: loci: do not generate header classes for messages (https://github.com/floodlight/loxigen/pull/250)
+767c1484c2ae17ae63342eb2be5e42b8d364413c Merge into master from pull request #252: Fix bsn_vport subtype and add l2gre vport (https://github.com/floodlight/loxigen/pull/252)

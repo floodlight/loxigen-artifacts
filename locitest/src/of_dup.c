@@ -1493,8 +1493,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_header_t src_bsn_vport;
-    of_bsn_vport_header_t *dst_bsn_vport;
+    of_bsn_vport_q_in_q_t src_bsn_vport;
+    of_bsn_vport_q_in_q_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -1511,13 +1511,13 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_dup(
 
     of_bsn_virtual_port_create_request_vport_bind(
         src, &src_bsn_vport);
-    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_0_dup(&src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(&src_bsn_vport);
     if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
     of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
-    of_bsn_vport_header_delete(dst_bsn_vport);
+    of_bsn_vport_q_in_q_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -6046,8 +6046,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_header_t src_bsn_vport;
-    of_bsn_vport_header_t *dst_bsn_vport;
+    of_bsn_vport_q_in_q_t src_bsn_vport;
+    of_bsn_vport_q_in_q_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -6064,13 +6064,13 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_dup(
 
     of_bsn_virtual_port_create_request_vport_bind(
         src, &src_bsn_vport);
-    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_1_dup(&src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(&src_bsn_vport);
     if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
     of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
-    of_bsn_vport_header_delete(dst_bsn_vport);
+    of_bsn_vport_q_in_q_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -12023,8 +12023,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_header_t src_bsn_vport;
-    of_bsn_vport_header_t *dst_bsn_vport;
+    of_bsn_vport_q_in_q_t src_bsn_vport;
+    of_bsn_vport_q_in_q_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -12041,13 +12041,13 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_dup(
 
     of_bsn_virtual_port_create_request_vport_bind(
         src, &src_bsn_vport);
-    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_2_dup(&src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(&src_bsn_vport);
     if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
     of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
-    of_bsn_vport_header_delete(dst_bsn_vport);
+    of_bsn_vport_q_in_q_delete(dst_bsn_vport);
 
     return dst;
 }
@@ -23475,8 +23475,8 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_dup(
     of_bsn_virtual_port_create_request_t *dst;
     uint32_t val32;
 
-    of_bsn_vport_header_t src_bsn_vport;
-    of_bsn_vport_header_t *dst_bsn_vport;
+    of_bsn_vport_q_in_q_t src_bsn_vport;
+    of_bsn_vport_q_in_q_t *dst_bsn_vport;
 
     if ((dst = of_bsn_virtual_port_create_request_new(src->version)) == NULL) {
         return NULL;
@@ -23493,13 +23493,13 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_dup(
 
     of_bsn_virtual_port_create_request_vport_bind(
         src, &src_bsn_vport);
-    dst_bsn_vport = of_bsn_vport_header_OF_VERSION_1_3_dup(&src_bsn_vport);
+    dst_bsn_vport = of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(&src_bsn_vport);
     if (dst_bsn_vport == NULL) {
         of_bsn_virtual_port_create_request_delete(dst);
         return NULL;
     }
     of_bsn_virtual_port_create_request_vport_set(dst, dst_bsn_vport);
-    of_bsn_vport_header_delete(dst_bsn_vport);
+    of_bsn_vport_q_in_q_delete(dst_bsn_vport);
 
     return dst;
 }
