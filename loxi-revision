@@ -1,1 +1,1 @@
-3a35d5212c5cbfa19ce605191855d1b6a9124b89 Merge into master from pull request #256: loci: fix compiler warning due to large constant (https://github.com/floodlight/loxigen/pull/256)
+ff11f806f7f700c7c9eb90138e2a0e08d90cb36c Merge into master from pull request #257: loci: OF_HEADER is a message (https://github.com/floodlight/loxigen/pull/257)

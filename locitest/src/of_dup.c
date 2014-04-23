@@ -2561,6 +2561,31 @@ of_get_config_request_OF_VERSION_1_0_dup(
 }
 
 /**
+ * Duplicate an object of type of_header
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_header.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_header_t *
+of_header_OF_VERSION_1_0_dup(
+    of_header_t *src)
+{
+    of_header_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_header_xid_get(src, &val32);
+    of_header_xid_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_hello
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -4237,31 +4262,6 @@ of_flow_stats_entry_OF_VERSION_1_0_dup(
     }
     of_flow_stats_entry_actions_set(dst, dst_list);
     of_list_action_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_header
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_header.
- *
- * The caller is responsible for deleting the returned value
- */
-of_header_t *
-of_header_OF_VERSION_1_0_dup(
-    of_header_t *src)
-{
-    of_header_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_header_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_header_xid_get(src, &val32);
-    of_header_xid_set(dst, val32);
 
     return dst;
 }
@@ -7545,6 +7545,31 @@ of_group_stats_request_OF_VERSION_1_1_dup(
 }
 
 /**
+ * Duplicate an object of type of_header
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_header.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_header_t *
+of_header_OF_VERSION_1_1_dup(
+    of_header_t *src)
+{
+    of_header_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_header_xid_get(src, &val32);
+    of_header_xid_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_hello
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -9759,31 +9784,6 @@ of_group_stats_entry_OF_VERSION_1_1_dup(
     }
     of_group_stats_entry_bucket_stats_set(dst, dst_list);
     of_list_bucket_counter_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_header
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_header.
- *
- * The caller is responsible for deleting the returned value
- */
-of_header_t *
-of_header_OF_VERSION_1_1_dup(
-    of_header_t *src)
-{
-    of_header_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_header_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_header_xid_get(src, &val32);
-    of_header_xid_set(dst, val32);
 
     return dst;
 }
@@ -13655,6 +13655,31 @@ of_group_stats_request_OF_VERSION_1_2_dup(
 }
 
 /**
+ * Duplicate an object of type of_header
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_header.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_header_t *
+of_header_OF_VERSION_1_2_dup(
+    of_header_t *src)
+{
+    of_header_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_header_xid_get(src, &val32);
+    of_header_xid_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_hello
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -15642,31 +15667,6 @@ of_group_stats_entry_OF_VERSION_1_2_dup(
     }
     of_group_stats_entry_bucket_stats_set(dst, dst_list);
     of_list_bucket_counter_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_header
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_header.
- *
- * The caller is responsible for deleting the returned value
- */
-of_header_t *
-of_header_OF_VERSION_1_2_dup(
-    of_header_t *src)
-{
-    of_header_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_header_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_header_xid_get(src, &val32);
-    of_header_xid_set(dst, val32);
 
     return dst;
 }
@@ -25252,6 +25252,31 @@ of_group_stats_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_header
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_header.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_header_t *
+of_header_OF_VERSION_1_3_dup(
+    of_header_t *src)
+{
+    of_header_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_header_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_header_xid_get(src, &val32);
+    of_header_xid_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_hello
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -29586,31 +29611,6 @@ of_group_stats_entry_OF_VERSION_1_3_dup(
     }
     of_group_stats_entry_bucket_stats_set(dst, dst_list);
     of_list_bucket_counter_delete(dst_list);
-
-    return dst;
-}
-
-/**
- * Duplicate an object of type of_header
- * using accessor functions
- * @param src Pointer to object to be duplicated
- * @returns A new object of type of_header.
- *
- * The caller is responsible for deleting the returned value
- */
-of_header_t *
-of_header_OF_VERSION_1_3_dup(
-    of_header_t *src)
-{
-    of_header_t *dst;
-    uint32_t val32;
-
-    if ((dst = of_header_new(src->version)) == NULL) {
-        return NULL;
-    }
-
-    of_header_xid_get(src, &val32);
-    of_header_xid_set(dst, val32);
 
     return dst;
 }
@@ -39422,6 +39422,31 @@ of_group_stats_request_dup(
     return NULL;
 }
 
+of_header_t *
+of_header_dup(
+    of_header_t *src)
+{
+
+    if (src->version == OF_VERSION_1_0) {
+        return of_header_OF_VERSION_1_0_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_1) {
+        return of_header_OF_VERSION_1_1_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_header_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_header_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_hello_t *
 of_hello_dup(
     of_hello_t *src)
@@ -41981,31 +42006,6 @@ of_group_stats_entry_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_group_stats_entry_OF_VERSION_1_3_dup(src);
-    }
-
-    /* Class not supported in given version */
-    return NULL;
-}
-
-of_header_t *
-of_header_dup(
-    of_header_t *src)
-{
-
-    if (src->version == OF_VERSION_1_0) {
-        return of_header_OF_VERSION_1_0_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_1) {
-        return of_header_OF_VERSION_1_1_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_2) {
-        return of_header_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->version == OF_VERSION_1_3) {
-        return of_header_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

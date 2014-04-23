@@ -5983,6 +5983,46 @@ of_header_init(of_header_t *obj,
 
 
 /**
+ * Create a new of_header object and bind it to an existing message
+ *
+ * @param msg The message to bind the new object to
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * \ingroup of_header
+ */
+
+of_header_t *
+of_header_new_from_message(of_message_t msg)
+{
+    of_header_t *obj = NULL;
+    of_version_t version;
+    int length;
+
+    if (msg == NULL) return NULL;
+
+    version = of_message_version_get(msg);
+    if (!OF_VERSION_OKAY(version)) return NULL;
+
+    length = of_message_length_get(msg);
+
+    if ((obj = (of_header_t *)of_object_new(-1)) == NULL) {
+        return NULL;
+    }
+
+    of_header_init(obj, version, 0, 0);
+
+    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
+                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
+       FREE(obj);
+       return NULL;
+    }
+    obj->length = length;
+    obj->version = version;
+
+    return obj;
+}
+
+/**
  * Get xid from an object of type of_header.
  * @param obj Pointer to an object of type of_header.
  * @param xid Pointer to the child object of type

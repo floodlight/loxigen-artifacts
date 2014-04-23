@@ -3723,6 +3723,17 @@ typedef struct of_group_stats_reply_s of_group_stats_reply_t;
 typedef struct of_group_stats_request_s of_group_stats_request_t;
 
 /**
+ * Structure for of_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_header_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_header_s of_header_t;
+
+/**
  * Structure for of_hello object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5940,17 +5951,6 @@ typedef struct of_group_desc_stats_entry_s of_group_desc_stats_entry_t;
  *
  */
 typedef struct of_group_stats_entry_s of_group_stats_entry_t;
-
-/**
- * Structure for of_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
- *   Accessors for xid, a variable of type uint32.  Functions
- *   are of type of_header_uint32_get_f and _set_f.
- *
- */
-typedef struct of_header_s of_header_t;
 
 /**
  * Structure for of_hello_elem object.  Get/set

@@ -2275,6 +2275,20 @@ of_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -3444,20 +3458,6 @@ of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_f
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "xid=");
-    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
-    out += writer(cookie, " ");
 
     return out;
 }
@@ -6199,6 +6199,20 @@ of_group_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -7652,20 +7666,6 @@ of_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "xid=");
-    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
-    out += writer(cookie, " ");
 
     return out;
 }
@@ -10768,6 +10768,20 @@ of_group_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -12137,20 +12151,6 @@ of_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "xid=");
-    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
-    out += writer(cookie, " ");
 
     return out;
 }
@@ -19067,6 +19067,20 @@ of_group_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -21752,20 +21766,6 @@ of_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "xid=");
-    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
-    out += writer(cookie, " ");
 
     return out;
 }
@@ -25876,6 +25876,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    of_header_OF_VERSION_1_0_show,
     of_hello_OF_VERSION_1_0_show,
     of_hello_failed_error_msg_OF_VERSION_1_0_show,
     unknown_show,
@@ -26025,7 +26026,6 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
-    of_header_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -26395,6 +26395,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_group_modify_OF_VERSION_1_1_show,
     of_group_stats_reply_OF_VERSION_1_1_show,
     of_group_stats_request_OF_VERSION_1_1_show,
+    of_header_OF_VERSION_1_1_show,
     of_hello_OF_VERSION_1_1_show,
     of_hello_failed_error_msg_OF_VERSION_1_1_show,
     unknown_show,
@@ -26544,7 +26545,6 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_1_show,
     of_group_desc_stats_entry_OF_VERSION_1_1_show,
     of_group_stats_entry_OF_VERSION_1_1_show,
-    of_header_OF_VERSION_1_1_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -26914,6 +26914,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_group_modify_OF_VERSION_1_2_show,
     of_group_stats_reply_OF_VERSION_1_2_show,
     of_group_stats_request_OF_VERSION_1_2_show,
+    of_header_OF_VERSION_1_2_show,
     of_hello_OF_VERSION_1_2_show,
     of_hello_failed_error_msg_OF_VERSION_1_2_show,
     unknown_show,
@@ -27063,7 +27064,6 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_2_show,
     of_group_desc_stats_entry_OF_VERSION_1_2_show,
     of_group_stats_entry_OF_VERSION_1_2_show,
-    of_header_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -27433,6 +27433,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_group_modify_OF_VERSION_1_3_show,
     of_group_stats_reply_OF_VERSION_1_3_show,
     of_group_stats_request_OF_VERSION_1_3_show,
+    of_header_OF_VERSION_1_3_show,
     of_hello_OF_VERSION_1_3_show,
     of_hello_failed_error_msg_OF_VERSION_1_3_show,
     of_meter_config_stats_reply_OF_VERSION_1_3_show,
@@ -27582,7 +27583,6 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_3_show,
     of_group_desc_stats_entry_OF_VERSION_1_3_show,
     of_group_stats_entry_OF_VERSION_1_3_show,
-    of_header_OF_VERSION_1_3_show,
     unknown_show,
     of_hello_elem_header_OF_VERSION_1_3_show,
     of_hello_elem_versionbitmap_OF_VERSION_1_3_show,

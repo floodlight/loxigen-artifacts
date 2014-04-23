@@ -2315,6 +2315,23 @@ test_of_get_config_request_OF_VERSION_1_0(void)
 }
 
 static int
+test_of_header_OF_VERSION_1_0(void)
+{
+    of_header_t *obj;
+    obj = of_header_new(OF_VERSION_1_0);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_0);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_HEADER);
+
+    of_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_hello_OF_VERSION_1_0(void)
 {
     of_hello_t *obj;
@@ -3927,23 +3944,6 @@ test_of_flow_stats_entry_OF_VERSION_1_0(void)
         obj, 1) != 0);
 
     of_flow_stats_entry_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_header_OF_VERSION_1_0(void)
-{
-    of_header_t *obj;
-    obj = of_header_new(OF_VERSION_1_0);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_0);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_HEADER);
-
-    of_header_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -6818,6 +6818,23 @@ test_of_group_stats_request_OF_VERSION_1_1(void)
 }
 
 static int
+test_of_header_OF_VERSION_1_1(void)
+{
+    of_header_t *obj;
+    obj = of_header_new(OF_VERSION_1_1);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_1);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_HEADER);
+
+    of_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_hello_OF_VERSION_1_1(void)
 {
     of_hello_t *obj;
@@ -9076,23 +9093,6 @@ test_of_group_stats_entry_OF_VERSION_1_1(void)
         obj, 1) != 0);
 
     of_group_stats_entry_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_header_OF_VERSION_1_1(void)
-{
-    of_header_t *obj;
-    obj = of_header_new(OF_VERSION_1_1);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_HEADER);
-
-    of_header_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -12495,6 +12495,23 @@ test_of_group_stats_request_OF_VERSION_1_2(void)
 }
 
 static int
+test_of_header_OF_VERSION_1_2(void)
+{
+    of_header_t *obj;
+    obj = of_header_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_HEADER);
+
+    of_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_hello_OF_VERSION_1_2(void)
 {
     of_hello_t *obj;
@@ -14449,23 +14466,6 @@ test_of_group_stats_entry_OF_VERSION_1_2(void)
         obj, 1) != 0);
 
     of_group_stats_entry_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_header_OF_VERSION_1_2(void)
-{
-    of_header_t *obj;
-    obj = of_header_new(OF_VERSION_1_2);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_HEADER);
-
-    of_header_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -24096,6 +24096,23 @@ test_of_group_stats_request_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_header_OF_VERSION_1_3(void)
+{
+    of_header_t *obj;
+    obj = of_header_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_HEADER);
+
+    of_header_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_hello_OF_VERSION_1_3(void)
 {
     of_hello_t *obj;
@@ -28719,23 +28736,6 @@ test_of_group_stats_entry_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_group_stats_entry_delete(obj);
-
-    /* To do: Check memory */
-    return TEST_PASS;
-}
-
-static int
-test_of_header_OF_VERSION_1_3(void)
-{
-    of_header_t *obj;
-    obj = of_header_new(OF_VERSION_1_3);
-    TEST_ASSERT(obj != NULL);
-    TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 8);
-    TEST_ASSERT(obj->parent == NULL);
-    TEST_ASSERT(obj->object_id == OF_HEADER);
-
-    of_header_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -36879,6 +36879,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_request_OF_VERSION_1_0);
     RUN_TEST(of_get_config_reply_OF_VERSION_1_0);
     RUN_TEST(of_get_config_request_OF_VERSION_1_0);
+    RUN_TEST(of_header_OF_VERSION_1_0);
     RUN_TEST(of_hello_OF_VERSION_1_0);
     RUN_TEST(of_hello_failed_error_msg_OF_VERSION_1_0);
     RUN_TEST(of_nicira_controller_role_reply_OF_VERSION_1_0);
@@ -36926,7 +36927,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_0);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_0);
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_0);
-    RUN_TEST(of_header_OF_VERSION_1_0);
     RUN_TEST(of_match_v1_OF_VERSION_1_0);
     RUN_TEST(of_packet_queue_OF_VERSION_1_0);
     RUN_TEST(of_port_desc_OF_VERSION_1_0);
@@ -37008,6 +37008,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_group_modify_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_1);
+    RUN_TEST(of_header_OF_VERSION_1_1);
     RUN_TEST(of_hello_OF_VERSION_1_1);
     RUN_TEST(of_hello_failed_error_msg_OF_VERSION_1_1);
     RUN_TEST(of_nicira_header_OF_VERSION_1_1);
@@ -37072,7 +37073,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_1);
     RUN_TEST(of_group_desc_stats_entry_OF_VERSION_1_1);
     RUN_TEST(of_group_stats_entry_OF_VERSION_1_1);
-    RUN_TEST(of_header_OF_VERSION_1_1);
     RUN_TEST(of_instruction_apply_actions_OF_VERSION_1_1);
     RUN_TEST(of_instruction_clear_actions_OF_VERSION_1_1);
     RUN_TEST(of_instruction_experimenter_OF_VERSION_1_1);
@@ -37169,6 +37169,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_group_modify_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_2);
+    RUN_TEST(of_header_OF_VERSION_1_2);
     RUN_TEST(of_hello_OF_VERSION_1_2);
     RUN_TEST(of_hello_failed_error_msg_OF_VERSION_1_2);
     RUN_TEST(of_nicira_header_OF_VERSION_1_2);
@@ -37225,7 +37226,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_2);
     RUN_TEST(of_group_desc_stats_entry_OF_VERSION_1_2);
     RUN_TEST(of_group_stats_entry_OF_VERSION_1_2);
-    RUN_TEST(of_header_OF_VERSION_1_2);
     RUN_TEST(of_instruction_apply_actions_OF_VERSION_1_2);
     RUN_TEST(of_instruction_clear_actions_OF_VERSION_1_2);
     RUN_TEST(of_instruction_experimenter_OF_VERSION_1_2);
@@ -37487,6 +37487,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_group_modify_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_request_OF_VERSION_1_3);
+    RUN_TEST(of_header_OF_VERSION_1_3);
     RUN_TEST(of_hello_OF_VERSION_1_3);
     RUN_TEST(of_hello_failed_error_msg_OF_VERSION_1_3);
     RUN_TEST(of_meter_config_stats_reply_OF_VERSION_1_3);
@@ -37616,7 +37617,6 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_group_desc_stats_entry_OF_VERSION_1_3);
     RUN_TEST(of_group_stats_entry_OF_VERSION_1_3);
-    RUN_TEST(of_header_OF_VERSION_1_3);
     RUN_TEST(of_hello_elem_header_OF_VERSION_1_3);
     RUN_TEST(of_hello_elem_versionbitmap_OF_VERSION_1_3);
     RUN_TEST(of_instruction_apply_actions_OF_VERSION_1_3);

@@ -1081,6 +1081,7 @@ typedef of_object_t of_group_mod_failed_error_msg_t;
 typedef of_object_t of_group_modify_t;
 typedef of_object_t of_group_stats_reply_t;
 typedef of_object_t of_group_stats_request_t;
+typedef of_object_t of_header_t;
 typedef of_object_t of_hello_t;
 typedef of_object_t of_hello_failed_error_msg_t;
 typedef of_object_t of_meter_config_stats_reply_t;
@@ -1226,7 +1227,6 @@ typedef of_object_t of_bucket_counter_t;
 typedef of_object_t of_flow_stats_entry_t;
 typedef of_object_t of_group_desc_stats_entry_t;
 typedef of_object_t of_group_stats_entry_t;
-typedef of_object_t of_header_t;
 typedef of_object_t of_hello_elem_header_t;
 typedef of_object_t of_hello_elem_versionbitmap_t;
 typedef of_object_t of_instruction_apply_actions_t;
@@ -2427,6 +2427,13 @@ extern of_group_stats_request_t *
 extern void of_group_stats_request_init(
     of_group_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_header_t *
+    of_header_new(of_version_t version);
+extern of_header_t *
+    of_header_new_from_message(of_message_t msg);
+extern void of_header_init(
+    of_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_hello_t *
     of_hello_new(of_version_t version);
 extern of_hello_t *
@@ -3253,11 +3260,6 @@ extern of_group_stats_entry_t *
     of_group_stats_entry_new(of_version_t version);
 extern void of_group_stats_entry_init(
     of_group_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_header_t *
-    of_header_new(of_version_t version);
-extern void of_header_init(
-    of_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_hello_elem_t *
     of_hello_elem_new(of_version_t version);
@@ -5903,6 +5905,17 @@ of_group_stats_request_delete(of_group_stats_request_t *obj) {
 }
 
 /**
+ * Delete an object of type of_header_t
+ * @param obj An instance of type of_header_t
+ *
+ * \ingroup of_header
+ */
+static inline void
+of_header_delete(of_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_hello_t
  * @param obj An instance of type of_hello_t
  *
@@ -7538,17 +7551,6 @@ of_group_desc_stats_entry_delete(of_group_desc_stats_entry_t *obj) {
  */
 static inline void
 of_group_stats_entry_delete(of_group_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
-}
-
-/**
- * Delete an object of type of_header_t
- * @param obj An instance of type of_header_t
- *
- * \ingroup of_header
- */
-static inline void
-of_header_delete(of_header_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -15243,6 +15245,15 @@ extern void of_group_stats_request_group_id_get(
     of_group_stats_request_t *obj,
     uint32_t *group_id);
 
+/* Unified accessor functions for of_header */
+
+extern void of_header_xid_set(
+    of_header_t *obj,
+    uint32_t xid);
+extern void of_header_xid_get(
+    of_header_t *obj,
+    uint32_t *xid);
+
 /* Unified accessor functions for of_hello */
 
 extern void of_hello_xid_set(
@@ -17642,15 +17653,6 @@ extern void of_group_stats_entry_bucket_stats_bind(
     of_list_bucket_counter_t *bucket_stats);
 extern of_list_bucket_counter_t *of_group_stats_entry_bucket_stats_get(
     of_group_stats_entry_t *obj);
-
-/* Unified accessor functions for of_header */
-
-extern void of_header_xid_set(
-    of_header_t *obj,
-    uint32_t xid);
-extern void of_header_xid_get(
-    of_header_t *obj,
-    uint32_t *xid);
 
 /* Unified accessor functions for of_hello_elem_header */
 

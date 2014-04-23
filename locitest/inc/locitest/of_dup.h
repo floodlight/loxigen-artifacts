@@ -558,6 +558,10 @@ extern of_group_stats_request_t *
     of_group_stats_request_dup(
         of_group_stats_request_t *src);
 
+extern of_header_t *
+    of_header_dup(
+        of_header_t *src);
+
 extern of_hello_t *
     of_hello_dup(
         of_hello_t *src);
@@ -1153,10 +1157,6 @@ extern of_group_desc_stats_entry_t *
 extern of_group_stats_entry_t *
     of_group_stats_entry_dup(
         of_group_stats_entry_t *src);
-
-extern of_header_t *
-    of_header_dup(
-        of_header_t *src);
 
 extern of_hello_elem_t *
     of_hello_elem_dup(
@@ -2330,6 +2330,10 @@ extern of_get_config_request_t *
     of_get_config_request_OF_VERSION_1_0_dup(
         of_get_config_request_t *src);
 
+extern of_header_t *
+    of_header_OF_VERSION_1_0_dup(
+        of_header_t *src);
+
 extern of_hello_t *
     of_hello_OF_VERSION_1_0_dup(
         of_hello_t *src);
@@ -2525,10 +2529,6 @@ extern of_bsn_vport_q_in_q_t *
 extern of_flow_stats_entry_t *
     of_flow_stats_entry_OF_VERSION_1_0_dup(
         of_flow_stats_entry_t *src);
-
-extern of_header_t *
-    of_header_OF_VERSION_1_0_dup(
-        of_header_t *src);
 
 extern of_match_v1_t *
     of_match_v1_OF_VERSION_1_0_dup(
@@ -2858,6 +2858,10 @@ extern of_group_stats_request_t *
     of_group_stats_request_OF_VERSION_1_1_dup(
         of_group_stats_request_t *src);
 
+extern of_header_t *
+    of_header_OF_VERSION_1_1_dup(
+        of_header_t *src);
+
 extern of_hello_t *
     of_hello_OF_VERSION_1_1_dup(
         of_hello_t *src);
@@ -3121,10 +3125,6 @@ extern of_group_desc_stats_entry_t *
 extern of_group_stats_entry_t *
     of_group_stats_entry_OF_VERSION_1_1_dup(
         of_group_stats_entry_t *src);
-
-extern of_header_t *
-    of_header_OF_VERSION_1_1_dup(
-        of_header_t *src);
 
 extern of_instruction_t *
     of_instruction_OF_VERSION_1_1_dup(
@@ -3518,6 +3518,10 @@ extern of_group_stats_request_t *
     of_group_stats_request_OF_VERSION_1_2_dup(
         of_group_stats_request_t *src);
 
+extern of_header_t *
+    of_header_OF_VERSION_1_2_dup(
+        of_header_t *src);
+
 extern of_hello_t *
     of_hello_OF_VERSION_1_2_dup(
         of_hello_t *src);
@@ -3749,10 +3753,6 @@ extern of_group_desc_stats_entry_t *
 extern of_group_stats_entry_t *
     of_group_stats_entry_OF_VERSION_1_2_dup(
         of_group_stats_entry_t *src);
-
-extern of_header_t *
-    of_header_OF_VERSION_1_2_dup(
-        of_header_t *src);
 
 extern of_instruction_t *
     of_instruction_OF_VERSION_1_2_dup(
@@ -4810,6 +4810,10 @@ extern of_group_stats_request_t *
     of_group_stats_request_OF_VERSION_1_3_dup(
         of_group_stats_request_t *src);
 
+extern of_header_t *
+    of_header_OF_VERSION_1_3_dup(
+        of_header_t *src);
+
 extern of_hello_t *
     of_hello_OF_VERSION_1_3_dup(
         of_hello_t *src);
@@ -5341,10 +5345,6 @@ extern of_group_desc_stats_entry_t *
 extern of_group_stats_entry_t *
     of_group_stats_entry_OF_VERSION_1_3_dup(
         of_group_stats_entry_t *src);
-
-extern of_header_t *
-    of_header_OF_VERSION_1_3_dup(
-        of_header_t *src);
 
 extern of_hello_elem_t *
     of_hello_elem_OF_VERSION_1_3_dup(

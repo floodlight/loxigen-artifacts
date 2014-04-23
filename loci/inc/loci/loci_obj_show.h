@@ -107,6 +107,7 @@ int of_flow_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, 
 int of_flow_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_stats_request_t *obj);
 int of_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_get_config_reply_t *obj);
 int of_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_get_config_request_t *obj);
+int of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_hello_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_hello_t *obj);
 int of_hello_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj);
 int of_nicira_controller_role_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_nicira_controller_role_reply_t *obj);
@@ -154,7 +155,6 @@ int of_bsn_vport_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, 
 int of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
 int of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
-int of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_match_v1_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_match_v1_t *obj);
 int of_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packet_queue_t *obj);
 int of_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_desc_t *obj);
@@ -236,6 +236,7 @@ int of_group_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void
 int of_group_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj);
 int of_group_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj);
 int of_group_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj);
+int of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_hello_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_hello_t *obj);
 int of_hello_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj);
 int of_nicira_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj);
@@ -300,7 +301,6 @@ int of_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 int of_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
 int of_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj);
 int of_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj);
-int of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_instruction_apply_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj);
 int of_instruction_clear_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj);
 int of_instruction_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj);
@@ -397,6 +397,7 @@ int of_group_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void
 int of_group_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj);
 int of_group_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj);
 int of_group_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj);
+int of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_hello_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_hello_t *obj);
 int of_hello_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj);
 int of_nicira_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj);
@@ -453,7 +454,6 @@ int of_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 int of_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
 int of_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj);
 int of_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj);
-int of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_instruction_apply_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj);
 int of_instruction_clear_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj);
 int of_instruction_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj);
@@ -715,6 +715,7 @@ int of_group_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void
 int of_group_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj);
 int of_group_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj);
 int of_group_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj);
+int of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_hello_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_t *obj);
 int of_hello_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj);
 int of_meter_config_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_config_stats_reply_t *obj);
@@ -844,7 +845,6 @@ int of_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 int of_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
 int of_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj);
 int of_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj);
-int of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_header_t *obj);
 int of_hello_elem_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_elem_header_t *obj);
 int of_hello_elem_versionbitmap_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_elem_versionbitmap_t *obj);
 int of_instruction_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj);

@@ -2396,6 +2396,22 @@ of_get_config_request_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_header_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_header\n");
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -3653,22 +3669,6 @@ of_flow_stats_entry_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_f
     OF_LIST_ACTION_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    out += writer(cookie, "Object of type of_header\n");
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "  xid (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
 
     return out;
 }
@@ -6556,6 +6556,22 @@ of_group_stats_request_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_header_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_header\n");
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -8128,22 +8144,6 @@ of_group_stats_entry_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_
     OF_LIST_BUCKET_COUNTER_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    out += writer(cookie, "Object of type of_header\n");
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "  xid (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
 
     return out;
 }
@@ -11420,6 +11420,22 @@ of_group_stats_request_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_header_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_header\n");
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -12892,22 +12908,6 @@ of_group_stats_entry_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_
     OF_LIST_BUCKET_COUNTER_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    out += writer(cookie, "Object of type of_header\n");
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "  xid (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
 
     return out;
 }
@@ -20311,6 +20311,22 @@ of_group_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_header\n");
+
+    of_header_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_hello_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_hello_t *obj)
 {
     int out = 0;
@@ -23232,22 +23248,6 @@ of_group_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_
     OF_LIST_BUCKET_COUNTER_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
-
-    return out;
-}
-
-int
-of_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_header_t *obj)
-{
-    int out = 0;
-    uint32_t val32;
-
-    out += writer(cookie, "Object of type of_header\n");
-
-    of_header_xid_get(obj, &val32);
-    out += writer(cookie, "  xid (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
 
     return out;
 }
@@ -27776,6 +27776,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    of_header_OF_VERSION_1_0_dump,
     of_hello_OF_VERSION_1_0_dump,
     of_hello_failed_error_msg_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -27925,7 +27926,6 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
-    of_header_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -28295,6 +28295,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_group_modify_OF_VERSION_1_1_dump,
     of_group_stats_reply_OF_VERSION_1_1_dump,
     of_group_stats_request_OF_VERSION_1_1_dump,
+    of_header_OF_VERSION_1_1_dump,
     of_hello_OF_VERSION_1_1_dump,
     of_hello_failed_error_msg_OF_VERSION_1_1_dump,
     unknown_dump,
@@ -28444,7 +28445,6 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_1_dump,
     of_group_desc_stats_entry_OF_VERSION_1_1_dump,
     of_group_stats_entry_OF_VERSION_1_1_dump,
-    of_header_OF_VERSION_1_1_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -28814,6 +28814,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_group_modify_OF_VERSION_1_2_dump,
     of_group_stats_reply_OF_VERSION_1_2_dump,
     of_group_stats_request_OF_VERSION_1_2_dump,
+    of_header_OF_VERSION_1_2_dump,
     of_hello_OF_VERSION_1_2_dump,
     of_hello_failed_error_msg_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -28963,7 +28964,6 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_2_dump,
     of_group_desc_stats_entry_OF_VERSION_1_2_dump,
     of_group_stats_entry_OF_VERSION_1_2_dump,
-    of_header_OF_VERSION_1_2_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -29333,6 +29333,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_group_modify_OF_VERSION_1_3_dump,
     of_group_stats_reply_OF_VERSION_1_3_dump,
     of_group_stats_request_OF_VERSION_1_3_dump,
+    of_header_OF_VERSION_1_3_dump,
     of_hello_OF_VERSION_1_3_dump,
     of_hello_failed_error_msg_OF_VERSION_1_3_dump,
     of_meter_config_stats_reply_OF_VERSION_1_3_dump,
@@ -29482,7 +29483,6 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_flow_stats_entry_OF_VERSION_1_3_dump,
     of_group_desc_stats_entry_OF_VERSION_1_3_dump,
     of_group_stats_entry_OF_VERSION_1_3_dump,
-    of_header_OF_VERSION_1_3_dump,
     unknown_dump,
     of_hello_elem_header_OF_VERSION_1_3_dump,
     of_hello_elem_versionbitmap_OF_VERSION_1_3_dump,

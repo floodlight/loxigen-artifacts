@@ -653,6 +653,15 @@ extern int of_get_config_request_OF_VERSION_1_0_populate_scalars(
 extern int of_get_config_request_OF_VERSION_1_0_check_scalars(
     of_get_config_request_t *obj, int value);
 
+extern int of_header_OF_VERSION_1_0_populate(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_0_check(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_0_populate_scalars(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_0_check_scalars(
+    of_header_t *obj, int value);
+
 extern int of_hello_OF_VERSION_1_0_populate(
     of_hello_t *obj, int value);
 extern int of_hello_OF_VERSION_1_0_check(
@@ -1075,15 +1084,6 @@ extern int of_flow_stats_entry_OF_VERSION_1_0_populate_scalars(
     of_flow_stats_entry_t *obj, int value);
 extern int of_flow_stats_entry_OF_VERSION_1_0_check_scalars(
     of_flow_stats_entry_t *obj, int value);
-
-extern int of_header_OF_VERSION_1_0_populate(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_0_check(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_0_populate_scalars(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_0_check_scalars(
-    of_header_t *obj, int value);
 
 extern int of_match_v1_OF_VERSION_1_0_populate(
     of_match_v1_t *obj, int value);
@@ -1814,6 +1814,15 @@ extern int of_group_stats_request_OF_VERSION_1_1_populate_scalars(
 extern int of_group_stats_request_OF_VERSION_1_1_check_scalars(
     of_group_stats_request_t *obj, int value);
 
+extern int of_header_OF_VERSION_1_1_populate(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_1_check(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_1_populate_scalars(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_1_check_scalars(
+    of_header_t *obj, int value);
+
 extern int of_hello_OF_VERSION_1_1_populate(
     of_hello_t *obj, int value);
 extern int of_hello_OF_VERSION_1_1_check(
@@ -2389,15 +2398,6 @@ extern int of_group_stats_entry_OF_VERSION_1_1_populate_scalars(
     of_group_stats_entry_t *obj, int value);
 extern int of_group_stats_entry_OF_VERSION_1_1_check_scalars(
     of_group_stats_entry_t *obj, int value);
-
-extern int of_header_OF_VERSION_1_1_populate(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_1_check(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_1_populate_scalars(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_1_check_scalars(
-    of_header_t *obj, int value);
 
 extern int of_instruction_apply_actions_OF_VERSION_1_1_populate(
     of_instruction_apply_actions_t *obj, int value);
@@ -3263,6 +3263,15 @@ extern int of_group_stats_request_OF_VERSION_1_2_populate_scalars(
 extern int of_group_stats_request_OF_VERSION_1_2_check_scalars(
     of_group_stats_request_t *obj, int value);
 
+extern int of_header_OF_VERSION_1_2_populate(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_2_check(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_2_populate_scalars(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_2_check_scalars(
+    of_header_t *obj, int value);
+
 extern int of_hello_OF_VERSION_1_2_populate(
     of_hello_t *obj, int value);
 extern int of_hello_OF_VERSION_1_2_check(
@@ -3766,15 +3775,6 @@ extern int of_group_stats_entry_OF_VERSION_1_2_populate_scalars(
     of_group_stats_entry_t *obj, int value);
 extern int of_group_stats_entry_OF_VERSION_1_2_check_scalars(
     of_group_stats_entry_t *obj, int value);
-
-extern int of_header_OF_VERSION_1_2_populate(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_2_check(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_2_populate_scalars(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_2_check_scalars(
-    of_header_t *obj, int value);
 
 extern int of_instruction_apply_actions_OF_VERSION_1_2_populate(
     of_instruction_apply_actions_t *obj, int value);
@@ -6125,6 +6125,15 @@ extern int of_group_stats_request_OF_VERSION_1_3_populate_scalars(
 extern int of_group_stats_request_OF_VERSION_1_3_check_scalars(
     of_group_stats_request_t *obj, int value);
 
+extern int of_header_OF_VERSION_1_3_populate(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_3_check(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_3_populate_scalars(
+    of_header_t *obj, int value);
+extern int of_header_OF_VERSION_1_3_check_scalars(
+    of_header_t *obj, int value);
+
 extern int of_hello_OF_VERSION_1_3_populate(
     of_hello_t *obj, int value);
 extern int of_hello_OF_VERSION_1_3_check(
@@ -7285,15 +7294,6 @@ extern int of_group_stats_entry_OF_VERSION_1_3_populate_scalars(
     of_group_stats_entry_t *obj, int value);
 extern int of_group_stats_entry_OF_VERSION_1_3_check_scalars(
     of_group_stats_entry_t *obj, int value);
-
-extern int of_header_OF_VERSION_1_3_populate(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_3_check(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_3_populate_scalars(
-    of_header_t *obj, int value);
-extern int of_header_OF_VERSION_1_3_check_scalars(
-    of_header_t *obj, int value);
 
 extern int of_hello_elem_header_OF_VERSION_1_3_populate(
     of_hello_elem_header_t *obj, int value);
