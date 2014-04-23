@@ -1,1 +1,1 @@
-ce61a8482cfce78e03d947c9e17a63c691ad040d Merge into master from pull request #245: Rewrite LOCI validator (https://github.com/floodlight/loxigen/pull/245)
+3a35d5212c5cbfa19ce605191855d1b6a9124b89 Merge into master from pull request #256: loci: fix compiler warning due to large constant (https://github.com/floodlight/loxigen/pull/256)

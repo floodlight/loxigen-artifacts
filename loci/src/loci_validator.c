@@ -1121,31 +1121,31 @@ loci_validate_of_action_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_action_experimenter_OF_VERSION_1_0(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_action_enqueue_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_action_output_OF_VERSION_1_0(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_action_set_dl_dst_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_action_set_dl_src_OF_VERSION_1_0(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_action_set_nw_dst_OF_VERSION_1_0(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_action_set_nw_src_OF_VERSION_1_0(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_action_set_nw_tos_OF_VERSION_1_0(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_action_set_tp_dst_OF_VERSION_1_0(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_action_set_tp_src_OF_VERSION_1_0(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_set_vlan_pcp_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_action_set_vlan_vid_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_action_strip_vlan_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1174,9 +1174,9 @@ loci_validate_of_action_experimenter_OF_VERSION_1_0(uint8_t *data, int len, int 
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_action_bsn_OF_VERSION_1_0(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_action_nicira_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1205,9 +1205,9 @@ loci_validate_of_action_bsn_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_0(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1308,7 +1308,7 @@ loci_validate_of_action_nicira_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 18:
+    case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1625,51 +1625,51 @@ loci_validate_of_header_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 1, &wire_type);
     switch (wire_type) {
-    case 17:
+    case 0x11:
         return loci_validate_of_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_error_msg_OF_VERSION_1_0(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_barrier_reply_OF_VERSION_1_0(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_barrier_request_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_experimenter_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_echo_reply_OF_VERSION_1_0(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_echo_request_OF_VERSION_1_0(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_features_reply_OF_VERSION_1_0(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_features_request_OF_VERSION_1_0(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_flow_mod_OF_VERSION_1_0(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_flow_removed_OF_VERSION_1_0(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_get_config_reply_OF_VERSION_1_0(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_get_config_request_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_OF_VERSION_1_0(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_packet_in_OF_VERSION_1_0(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_packet_out_OF_VERSION_1_0(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_port_mod_OF_VERSION_1_0(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_port_status_OF_VERSION_1_0(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_queue_get_config_reply_OF_VERSION_1_0(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_queue_get_config_request_OF_VERSION_1_0(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_set_config_OF_VERSION_1_0(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_table_mod_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1698,19 +1698,19 @@ loci_validate_of_stats_reply_OF_VERSION_1_0(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_reply_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_reply_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1763,19 +1763,19 @@ loci_validate_of_stats_request_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_request_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_request_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1829,17 +1829,17 @@ loci_validate_of_error_msg_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_bad_action_error_msg_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bad_request_error_msg_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_flow_mod_failed_error_msg_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_failed_error_msg_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_mod_failed_error_msg_OF_VERSION_1_0(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_op_failed_error_msg_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1962,9 +1962,9 @@ loci_validate_of_experimenter_OF_VERSION_1_0(uint8_t *data, int len, int *out_le
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_header_OF_VERSION_1_0(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_nicira_header_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -1993,73 +1993,73 @@ loci_validate_of_bsn_header_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 22:
+    case 0x16:
         return loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_0(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_0(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_0(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_0(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_0(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_0(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_get_interfaces_reply_OF_VERSION_1_0(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_0(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_bsn_get_ip_mask_reply_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_get_ip_mask_request_OF_VERSION_1_0(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_bsn_get_l2_table_reply_OF_VERSION_1_0(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_bsn_get_l2_table_request_OF_VERSION_1_0(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_0(data, len, out_len);
-    case 28:
+    case 0x1c:
         return loci_validate_of_bsn_hybrid_get_reply_OF_VERSION_1_0(data, len, out_len);
-    case 27:
+    case 0x1b:
         return loci_validate_of_bsn_hybrid_get_request_OF_VERSION_1_0(data, len, out_len);
-    case 34:
+    case 0x22:
         return loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_0(data, len, out_len);
-    case 33:
+    case 0x21:
         return loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_0(data, len, out_len);
-    case 35:
+    case 0x23:
         return loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_0(data, len, out_len);
-    case 32:
+    case 0x20:
         return loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_0(data, len, out_len);
-    case 31:
+    case 0x1f:
         return loci_validate_of_bsn_pdu_tx_request_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_bsn_set_ip_mask_OF_VERSION_1_0(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_bsn_set_l2_table_reply_OF_VERSION_1_0(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_bsn_set_l2_table_request_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_set_mirroring_OF_VERSION_1_0(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_0(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_0(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_bsn_shell_command_OF_VERSION_1_0(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_bsn_shell_output_OF_VERSION_1_0(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_bsn_shell_status_OF_VERSION_1_0(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_0(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_0(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_0(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -2824,7 +2824,7 @@ loci_validate_of_experimenter_stats_reply_OF_VERSION_1_0(uint8_t *data, int len,
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_reply_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -2880,7 +2880,7 @@ loci_validate_of_experimenter_stats_request_OF_VERSION_1_0(uint8_t *data, int le
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_request_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -2960,9 +2960,9 @@ loci_validate_of_bsn_vport_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_0(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -3257,15 +3257,15 @@ loci_validate_of_flow_mod_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 56, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_flow_add_OF_VERSION_1_0(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_flow_delete_OF_VERSION_1_0(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_flow_delete_strict_OF_VERSION_1_0(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_modify_OF_VERSION_1_0(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_flow_modify_strict_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -3686,9 +3686,9 @@ loci_validate_of_nicira_header_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 11:
+    case 0xb:
         return loci_validate_of_nicira_controller_role_reply_OF_VERSION_1_0(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_nicira_controller_role_request_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -4080,7 +4080,7 @@ loci_validate_of_queue_prop_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_queue_prop_min_rate_OF_VERSION_1_0(data, len, out_len);
     }
 
@@ -4529,57 +4529,57 @@ loci_validate_of_action_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_action_experimenter_OF_VERSION_1_1(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_action_copy_ttl_in_OF_VERSION_1_1(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_action_copy_ttl_out_OF_VERSION_1_1(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_action_dec_mpls_ttl_OF_VERSION_1_1(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_action_dec_nw_ttl_OF_VERSION_1_1(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_action_group_OF_VERSION_1_1(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_action_output_OF_VERSION_1_1(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_action_pop_mpls_OF_VERSION_1_1(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_action_pop_vlan_OF_VERSION_1_1(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_action_push_mpls_OF_VERSION_1_1(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_action_push_vlan_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_action_set_dl_dst_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_action_set_dl_src_OF_VERSION_1_1(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_action_set_mpls_label_OF_VERSION_1_1(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_action_set_mpls_tc_OF_VERSION_1_1(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_action_set_mpls_ttl_OF_VERSION_1_1(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_action_set_nw_dst_OF_VERSION_1_1(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_action_set_nw_ecn_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_action_set_nw_src_OF_VERSION_1_1(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_action_set_nw_tos_OF_VERSION_1_1(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_action_set_nw_ttl_OF_VERSION_1_1(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_action_set_queue_OF_VERSION_1_1(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_action_set_tp_dst_OF_VERSION_1_1(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_action_set_tp_src_OF_VERSION_1_1(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_set_vlan_pcp_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_action_set_vlan_vid_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -4608,9 +4608,9 @@ loci_validate_of_action_experimenter_OF_VERSION_1_1(uint8_t *data, int len, int 
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_action_bsn_OF_VERSION_1_1(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_action_nicira_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -4639,9 +4639,9 @@ loci_validate_of_action_bsn_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_1(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -4838,7 +4838,7 @@ loci_validate_of_action_nicira_OF_VERSION_1_1(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 18:
+    case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -5371,53 +5371,53 @@ loci_validate_of_header_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 1, &wire_type);
     switch (wire_type) {
-    case 19:
+    case 0x13:
         return loci_validate_of_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_barrier_reply_OF_VERSION_1_1(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_barrier_request_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_experimenter_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_echo_reply_OF_VERSION_1_1(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_echo_request_OF_VERSION_1_1(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_features_reply_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_features_request_OF_VERSION_1_1(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_flow_mod_OF_VERSION_1_1(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_flow_removed_OF_VERSION_1_1(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_get_config_reply_OF_VERSION_1_1(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_get_config_request_OF_VERSION_1_1(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_group_mod_OF_VERSION_1_1(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_OF_VERSION_1_1(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_packet_in_OF_VERSION_1_1(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_packet_out_OF_VERSION_1_1(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_port_mod_OF_VERSION_1_1(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_port_status_OF_VERSION_1_1(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_queue_get_config_reply_OF_VERSION_1_1(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_queue_get_config_request_OF_VERSION_1_1(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_set_config_OF_VERSION_1_1(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_table_mod_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -5446,23 +5446,23 @@ loci_validate_of_stats_reply_OF_VERSION_1_1(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_group_desc_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_reply_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_reply_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -5515,23 +5515,23 @@ loci_validate_of_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_group_desc_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_request_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_request_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -5585,27 +5585,27 @@ loci_validate_of_error_msg_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_bad_action_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bad_instruction_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bad_match_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bad_request_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_flow_mod_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_mod_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_port_mod_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_queue_op_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_switch_config_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_table_mod_failed_error_msg_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -5774,9 +5774,9 @@ loci_validate_of_experimenter_OF_VERSION_1_1(uint8_t *data, int len, int *out_le
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_header_OF_VERSION_1_1(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_nicira_header_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -5805,49 +5805,49 @@ loci_validate_of_bsn_header_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 22:
+    case 0x16:
         return loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_1(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_1(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_1(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_1(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_1(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_1(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_get_interfaces_reply_OF_VERSION_1_1(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_1(data, len, out_len);
-    case 34:
+    case 0x22:
         return loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_1(data, len, out_len);
-    case 33:
+    case 0x21:
         return loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_1(data, len, out_len);
-    case 35:
+    case 0x23:
         return loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_1(data, len, out_len);
-    case 32:
+    case 0x20:
         return loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_1(data, len, out_len);
-    case 31:
+    case 0x1f:
         return loci_validate_of_bsn_pdu_tx_request_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_set_mirroring_OF_VERSION_1_1(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_1(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_1(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_1(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_1(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -6326,7 +6326,7 @@ loci_validate_of_experimenter_stats_reply_OF_VERSION_1_1(uint8_t *data, int len,
     uint32_t wire_type;
     buf_u32_get(data + 16, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_reply_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -6382,7 +6382,7 @@ loci_validate_of_experimenter_stats_request_OF_VERSION_1_1(uint8_t *data, int le
     uint32_t wire_type;
     buf_u32_get(data + 16, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_request_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -6462,9 +6462,9 @@ loci_validate_of_bsn_vport_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_1(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -6803,15 +6803,15 @@ loci_validate_of_flow_mod_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 25, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_flow_add_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_flow_delete_OF_VERSION_1_1(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_flow_delete_strict_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_modify_OF_VERSION_1_1(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_flow_modify_strict_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -7169,11 +7169,11 @@ loci_validate_of_group_mod_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_group_add_OF_VERSION_1_1(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_group_delete_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_group_modify_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -7521,17 +7521,17 @@ loci_validate_of_instruction_OF_VERSION_1_1(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 4:
+    case 0x4:
         return loci_validate_of_instruction_apply_actions_OF_VERSION_1_1(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_instruction_clear_actions_OF_VERSION_1_1(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_instruction_experimenter_OF_VERSION_1_1(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_instruction_goto_table_OF_VERSION_1_1(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_instruction_write_actions_OF_VERSION_1_1(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_instruction_write_metadata_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -8081,7 +8081,7 @@ loci_validate_of_queue_prop_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_queue_prop_min_rate_OF_VERSION_1_1(data, len, out_len);
     }
 
@@ -8591,35 +8591,35 @@ loci_validate_of_action_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_action_experimenter_OF_VERSION_1_2(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_action_copy_ttl_in_OF_VERSION_1_2(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_action_copy_ttl_out_OF_VERSION_1_2(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_action_dec_mpls_ttl_OF_VERSION_1_2(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_action_dec_nw_ttl_OF_VERSION_1_2(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_action_group_OF_VERSION_1_2(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_action_output_OF_VERSION_1_2(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_action_pop_mpls_OF_VERSION_1_2(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_action_pop_vlan_OF_VERSION_1_2(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_action_push_mpls_OF_VERSION_1_2(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_action_push_vlan_OF_VERSION_1_2(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_action_set_field_OF_VERSION_1_2(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_action_set_mpls_ttl_OF_VERSION_1_2(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_action_set_nw_ttl_OF_VERSION_1_2(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_action_set_queue_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -8648,9 +8648,9 @@ loci_validate_of_action_experimenter_OF_VERSION_1_2(uint8_t *data, int len, int 
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_action_bsn_OF_VERSION_1_2(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_action_nicira_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -8679,9 +8679,9 @@ loci_validate_of_action_bsn_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_2(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -8878,7 +8878,7 @@ loci_validate_of_action_nicira_OF_VERSION_1_2(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 18:
+    case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9043,213 +9043,213 @@ loci_validate_of_oxm_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 2147494402:
+    case 0x80002a02:
         return loci_validate_of_oxm_arp_op_OF_VERSION_1_2(data, len, out_len);
-    case 2147494660:
+    case 0x80002b04:
         return loci_validate_of_oxm_arp_op_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147495942:
+    case 0x80003006:
         return loci_validate_of_oxm_arp_sha_OF_VERSION_1_2(data, len, out_len);
-    case 2147496204:
+    case 0x8000310c:
         return loci_validate_of_oxm_arp_sha_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147494916:
+    case 0x80002c04:
         return loci_validate_of_oxm_arp_spa_OF_VERSION_1_2(data, len, out_len);
-    case 2147495176:
+    case 0x80002d08:
         return loci_validate_of_oxm_arp_spa_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147496454:
+    case 0x80003206:
         return loci_validate_of_oxm_arp_tha_OF_VERSION_1_2(data, len, out_len);
-    case 2147496716:
+    case 0x8000330c:
         return loci_validate_of_oxm_arp_tha_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147495428:
+    case 0x80002e04:
         return loci_validate_of_oxm_arp_tpa_OF_VERSION_1_2(data, len, out_len);
-    case 2147495688:
+    case 0x80002f08:
         return loci_validate_of_oxm_arp_tpa_masked_OF_VERSION_1_2(data, len, out_len);
-    case 200196:
+    case 0x30e04:
         return loci_validate_of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2(data, len, out_len);
-    case 200456:
+    case 0x30f08:
         return loci_validate_of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2(data, len, out_len);
-    case 198145:
+    case 0x30601:
         return loci_validate_of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2(data, len, out_len);
-    case 198402:
+    case 0x30702:
         return loci_validate_of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2(data, len, out_len);
-    case 196624:
+    case 0x30010:
         return loci_validate_of_oxm_bsn_in_ports_128_OF_VERSION_1_2(data, len, out_len);
-    case 196896:
+    case 0x30120:
         return loci_validate_of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2(data, len, out_len);
-    case 199684:
+    case 0x30c04:
         return loci_validate_of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2(data, len, out_len);
-    case 199944:
+    case 0x30d08:
         return loci_validate_of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2(data, len, out_len);
-    case 198660:
+    case 0x30804:
         return loci_validate_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2(data, len, out_len);
-    case 198920:
+    case 0x30908:
         return loci_validate_of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2(data, len, out_len);
-    case 199172:
+    case 0x30a04:
         return loci_validate_of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2(data, len, out_len);
-    case 199432:
+    case 0x30b08:
         return loci_validate_of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2(data, len, out_len);
-    case 197124:
+    case 0x30204:
         return loci_validate_of_oxm_bsn_lag_id_OF_VERSION_1_2(data, len, out_len);
-    case 197384:
+    case 0x30308:
         return loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_2(data, len, out_len);
-    case 200708:
+    case 0x31004:
         return loci_validate_of_oxm_bsn_udf0_OF_VERSION_1_2(data, len, out_len);
-    case 200968:
+    case 0x31108:
         return loci_validate_of_oxm_bsn_udf0_masked_OF_VERSION_1_2(data, len, out_len);
-    case 201220:
+    case 0x31204:
         return loci_validate_of_oxm_bsn_udf1_OF_VERSION_1_2(data, len, out_len);
-    case 201480:
+    case 0x31308:
         return loci_validate_of_oxm_bsn_udf1_masked_OF_VERSION_1_2(data, len, out_len);
-    case 201732:
+    case 0x31404:
         return loci_validate_of_oxm_bsn_udf2_OF_VERSION_1_2(data, len, out_len);
-    case 201992:
+    case 0x31508:
         return loci_validate_of_oxm_bsn_udf2_masked_OF_VERSION_1_2(data, len, out_len);
-    case 202244:
+    case 0x31604:
         return loci_validate_of_oxm_bsn_udf3_OF_VERSION_1_2(data, len, out_len);
-    case 202504:
+    case 0x31708:
         return loci_validate_of_oxm_bsn_udf3_masked_OF_VERSION_1_2(data, len, out_len);
-    case 202756:
+    case 0x31804:
         return loci_validate_of_oxm_bsn_udf4_OF_VERSION_1_2(data, len, out_len);
-    case 203016:
+    case 0x31908:
         return loci_validate_of_oxm_bsn_udf4_masked_OF_VERSION_1_2(data, len, out_len);
-    case 203268:
+    case 0x31a04:
         return loci_validate_of_oxm_bsn_udf5_OF_VERSION_1_2(data, len, out_len);
-    case 203528:
+    case 0x31b08:
         return loci_validate_of_oxm_bsn_udf5_masked_OF_VERSION_1_2(data, len, out_len);
-    case 203780:
+    case 0x31c04:
         return loci_validate_of_oxm_bsn_udf6_OF_VERSION_1_2(data, len, out_len);
-    case 204040:
+    case 0x31d08:
         return loci_validate_of_oxm_bsn_udf6_masked_OF_VERSION_1_2(data, len, out_len);
-    case 204292:
+    case 0x31e04:
         return loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_2(data, len, out_len);
-    case 204552:
+    case 0x31f08:
         return loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_2(data, len, out_len);
-    case 197636:
+    case 0x30404:
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_2(data, len, out_len);
-    case 197896:
+    case 0x30508:
         return loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147485190:
+    case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_2(data, len, out_len);
-    case 2147485452:
+    case 0x8000070c:
         return loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147485702:
+    case 0x80000806:
         return loci_validate_of_oxm_eth_src_OF_VERSION_1_2(data, len, out_len);
-    case 2147485964:
+    case 0x8000090c:
         return loci_validate_of_oxm_eth_src_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147486210:
+    case 0x80000a02:
         return loci_validate_of_oxm_eth_type_OF_VERSION_1_2(data, len, out_len);
-    case 2147486468:
+    case 0x80000b04:
         return loci_validate_of_oxm_eth_type_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147493889:
+    case 0x80002801:
         return loci_validate_of_oxm_icmpv4_code_OF_VERSION_1_2(data, len, out_len);
-    case 2147494146:
+    case 0x80002902:
         return loci_validate_of_oxm_icmpv4_code_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147493377:
+    case 0x80002601:
         return loci_validate_of_oxm_icmpv4_type_OF_VERSION_1_2(data, len, out_len);
-    case 2147493634:
+    case 0x80002702:
         return loci_validate_of_oxm_icmpv4_type_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147499009:
+    case 0x80003c01:
         return loci_validate_of_oxm_icmpv6_code_OF_VERSION_1_2(data, len, out_len);
-    case 2147499266:
+    case 0x80003d02:
         return loci_validate_of_oxm_icmpv6_code_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147498497:
+    case 0x80003a01:
         return loci_validate_of_oxm_icmpv6_type_OF_VERSION_1_2(data, len, out_len);
-    case 2147498754:
+    case 0x80003b02:
         return loci_validate_of_oxm_icmpv6_type_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147484164:
+    case 0x80000204:
         return loci_validate_of_oxm_in_phy_port_OF_VERSION_1_2(data, len, out_len);
-    case 2147484424:
+    case 0x80000308:
         return loci_validate_of_oxm_in_phy_port_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147483652:
+    case 0x80000004:
         return loci_validate_of_oxm_in_port_OF_VERSION_1_2(data, len, out_len);
-    case 2147483912:
+    case 0x80000108:
         return loci_validate_of_oxm_in_port_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147487745:
+    case 0x80001001:
         return loci_validate_of_oxm_ip_dscp_OF_VERSION_1_2(data, len, out_len);
-    case 2147488002:
+    case 0x80001102:
         return loci_validate_of_oxm_ip_dscp_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147488257:
+    case 0x80001201:
         return loci_validate_of_oxm_ip_ecn_OF_VERSION_1_2(data, len, out_len);
-    case 2147488514:
+    case 0x80001302:
         return loci_validate_of_oxm_ip_ecn_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147488769:
+    case 0x80001401:
         return loci_validate_of_oxm_ip_proto_OF_VERSION_1_2(data, len, out_len);
-    case 2147489026:
+    case 0x80001502:
         return loci_validate_of_oxm_ip_proto_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147489796:
+    case 0x80001804:
         return loci_validate_of_oxm_ipv4_dst_OF_VERSION_1_2(data, len, out_len);
-    case 2147490056:
+    case 0x80001908:
         return loci_validate_of_oxm_ipv4_dst_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147489284:
+    case 0x80001604:
         return loci_validate_of_oxm_ipv4_src_OF_VERSION_1_2(data, len, out_len);
-    case 2147489544:
+    case 0x80001708:
         return loci_validate_of_oxm_ipv4_src_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147497488:
+    case 0x80003610:
         return loci_validate_of_oxm_ipv6_dst_OF_VERSION_1_2(data, len, out_len);
-    case 2147497760:
+    case 0x80003720:
         return loci_validate_of_oxm_ipv6_dst_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147497988:
+    case 0x80003804:
         return loci_validate_of_oxm_ipv6_flabel_OF_VERSION_1_2(data, len, out_len);
-    case 2147498248:
+    case 0x80003908:
         return loci_validate_of_oxm_ipv6_flabel_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147500038:
+    case 0x80004006:
         return loci_validate_of_oxm_ipv6_nd_sll_OF_VERSION_1_2(data, len, out_len);
-    case 2147500300:
+    case 0x8000410c:
         return loci_validate_of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147499536:
+    case 0x80003e10:
         return loci_validate_of_oxm_ipv6_nd_target_OF_VERSION_1_2(data, len, out_len);
-    case 2147499808:
+    case 0x80003f20:
         return loci_validate_of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147500550:
+    case 0x80004206:
         return loci_validate_of_oxm_ipv6_nd_tll_OF_VERSION_1_2(data, len, out_len);
-    case 2147500812:
+    case 0x8000430c:
         return loci_validate_of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147496976:
+    case 0x80003410:
         return loci_validate_of_oxm_ipv6_src_OF_VERSION_1_2(data, len, out_len);
-    case 2147497248:
+    case 0x80003520:
         return loci_validate_of_oxm_ipv6_src_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147484680:
+    case 0x80000408:
         return loci_validate_of_oxm_metadata_OF_VERSION_1_2(data, len, out_len);
-    case 2147484944:
+    case 0x80000510:
         return loci_validate_of_oxm_metadata_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147501060:
+    case 0x80004404:
         return loci_validate_of_oxm_mpls_label_OF_VERSION_1_2(data, len, out_len);
-    case 2147501320:
+    case 0x80004508:
         return loci_validate_of_oxm_mpls_label_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147501569:
+    case 0x80004601:
         return loci_validate_of_oxm_mpls_tc_OF_VERSION_1_2(data, len, out_len);
-    case 2147501826:
+    case 0x80004702:
         return loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147492866:
+    case 0x80002402:
         return loci_validate_of_oxm_sctp_dst_OF_VERSION_1_2(data, len, out_len);
-    case 2147493124:
+    case 0x80002504:
         return loci_validate_of_oxm_sctp_dst_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147492354:
+    case 0x80002202:
         return loci_validate_of_oxm_sctp_src_OF_VERSION_1_2(data, len, out_len);
-    case 2147492612:
+    case 0x80002304:
         return loci_validate_of_oxm_sctp_src_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147490818:
+    case 0x80001c02:
         return loci_validate_of_oxm_tcp_dst_OF_VERSION_1_2(data, len, out_len);
-    case 2147491076:
+    case 0x80001d04:
         return loci_validate_of_oxm_tcp_dst_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147490306:
+    case 0x80001a02:
         return loci_validate_of_oxm_tcp_src_OF_VERSION_1_2(data, len, out_len);
-    case 2147490564:
+    case 0x80001b04:
         return loci_validate_of_oxm_tcp_src_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147491842:
+    case 0x80002002:
         return loci_validate_of_oxm_udp_dst_OF_VERSION_1_2(data, len, out_len);
-    case 2147492100:
+    case 0x80002104:
         return loci_validate_of_oxm_udp_dst_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147491330:
+    case 0x80001e02:
         return loci_validate_of_oxm_udp_src_OF_VERSION_1_2(data, len, out_len);
-    case 2147491588:
+    case 0x80001f04:
         return loci_validate_of_oxm_udp_src_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147487233:
+    case 0x80000e01:
         return loci_validate_of_oxm_vlan_pcp_OF_VERSION_1_2(data, len, out_len);
-    case 2147487490:
+    case 0x80000f02:
         return loci_validate_of_oxm_vlan_pcp_masked_OF_VERSION_1_2(data, len, out_len);
-    case 2147486722:
+    case 0x80000c02:
         return loci_validate_of_oxm_vlan_vid_OF_VERSION_1_2(data, len, out_len);
-    case 2147486980:
+    case 0x80000d04:
         return loci_validate_of_oxm_vlan_vid_masked_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9373,57 +9373,57 @@ loci_validate_of_header_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 1, &wire_type);
     switch (wire_type) {
-    case 19:
+    case 0x13:
         return loci_validate_of_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_barrier_reply_OF_VERSION_1_2(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_barrier_request_OF_VERSION_1_2(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_experimenter_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_echo_reply_OF_VERSION_1_2(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_echo_request_OF_VERSION_1_2(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_features_reply_OF_VERSION_1_2(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_features_request_OF_VERSION_1_2(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_flow_mod_OF_VERSION_1_2(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_flow_removed_OF_VERSION_1_2(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_get_config_reply_OF_VERSION_1_2(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_get_config_request_OF_VERSION_1_2(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_group_mod_OF_VERSION_1_2(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_OF_VERSION_1_2(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_packet_in_OF_VERSION_1_2(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_packet_out_OF_VERSION_1_2(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_port_mod_OF_VERSION_1_2(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_port_status_OF_VERSION_1_2(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_queue_get_config_reply_OF_VERSION_1_2(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_queue_get_config_request_OF_VERSION_1_2(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_role_reply_OF_VERSION_1_2(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_role_request_OF_VERSION_1_2(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_set_config_OF_VERSION_1_2(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_table_mod_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9452,25 +9452,25 @@ loci_validate_of_stats_reply_OF_VERSION_1_2(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_group_desc_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_group_features_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_reply_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_reply_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9523,25 +9523,25 @@ loci_validate_of_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_group_desc_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_group_features_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_request_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_request_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9594,31 +9594,31 @@ loci_validate_of_error_msg_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_bad_action_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bad_instruction_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bad_match_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bad_request_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_flow_mod_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_mod_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_port_mod_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_queue_op_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_role_request_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_switch_config_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_table_mod_failed_error_msg_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9787,9 +9787,9 @@ loci_validate_of_experimenter_OF_VERSION_1_2(uint8_t *data, int len, int *out_le
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_header_OF_VERSION_1_2(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_nicira_header_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -9818,49 +9818,49 @@ loci_validate_of_bsn_header_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 22:
+    case 0x16:
         return loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_2(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_2(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_2(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_2(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_2(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_2(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_get_interfaces_reply_OF_VERSION_1_2(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_2(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_2(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_2(data, len, out_len);
-    case 34:
+    case 0x22:
         return loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_2(data, len, out_len);
-    case 33:
+    case 0x21:
         return loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_2(data, len, out_len);
-    case 35:
+    case 0x23:
         return loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_2(data, len, out_len);
-    case 32:
+    case 0x20:
         return loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_2(data, len, out_len);
-    case 31:
+    case 0x1f:
         return loci_validate_of_bsn_pdu_tx_request_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_set_mirroring_OF_VERSION_1_2(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_2(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_2(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_2(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_2(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_2(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -10339,7 +10339,7 @@ loci_validate_of_experimenter_stats_reply_OF_VERSION_1_2(uint8_t *data, int len,
     uint32_t wire_type;
     buf_u32_get(data + 16, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_reply_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -10395,7 +10395,7 @@ loci_validate_of_experimenter_stats_request_OF_VERSION_1_2(uint8_t *data, int le
     uint32_t wire_type;
     buf_u32_get(data + 16, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_request_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -10475,9 +10475,9 @@ loci_validate_of_bsn_vport_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_2(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -10839,15 +10839,15 @@ loci_validate_of_flow_mod_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 25, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_flow_add_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_flow_delete_OF_VERSION_1_2(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_flow_delete_strict_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_modify_OF_VERSION_1_2(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_flow_modify_strict_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -11175,11 +11175,11 @@ loci_validate_of_group_mod_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_group_add_OF_VERSION_1_2(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_group_delete_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_group_modify_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -11575,17 +11575,17 @@ loci_validate_of_instruction_OF_VERSION_1_2(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 4:
+    case 0x4:
         return loci_validate_of_instruction_apply_actions_OF_VERSION_1_2(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_instruction_clear_actions_OF_VERSION_1_2(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_instruction_experimenter_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_instruction_goto_table_OF_VERSION_1_2(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_instruction_write_actions_OF_VERSION_1_2(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_instruction_write_metadata_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -13804,11 +13804,11 @@ loci_validate_of_queue_prop_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_queue_prop_experimenter_OF_VERSION_1_2(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_queue_prop_max_rate_OF_VERSION_1_2(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_queue_prop_min_rate_OF_VERSION_1_2(data, len, out_len);
     }
 
@@ -14830,39 +14830,39 @@ loci_validate_of_action_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_action_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_action_copy_ttl_in_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_action_copy_ttl_out_OF_VERSION_1_3(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_action_dec_mpls_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_action_dec_nw_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_action_group_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_action_output_OF_VERSION_1_3(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_action_pop_mpls_OF_VERSION_1_3(data, len, out_len);
-    case 27:
+    case 0x1b:
         return loci_validate_of_action_pop_pbb_OF_VERSION_1_3(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_action_pop_vlan_OF_VERSION_1_3(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_action_push_mpls_OF_VERSION_1_3(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_action_push_pbb_OF_VERSION_1_3(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_action_push_vlan_OF_VERSION_1_3(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_action_set_field_OF_VERSION_1_3(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_action_set_mpls_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_action_set_nw_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_action_set_queue_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -14891,39 +14891,39 @@ loci_validate_of_action_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_action_id_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_action_id_copy_ttl_in_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_action_id_copy_ttl_out_OF_VERSION_1_3(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_action_id_dec_mpls_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_action_id_dec_nw_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_action_id_group_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_action_id_output_OF_VERSION_1_3(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_action_id_pop_mpls_OF_VERSION_1_3(data, len, out_len);
-    case 27:
+    case 0x1b:
         return loci_validate_of_action_id_pop_pbb_OF_VERSION_1_3(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_action_id_pop_vlan_OF_VERSION_1_3(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_action_id_push_mpls_OF_VERSION_1_3(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_action_id_push_pbb_OF_VERSION_1_3(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_action_id_push_vlan_OF_VERSION_1_3(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_action_id_set_field_OF_VERSION_1_3(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_action_id_set_mpls_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_action_id_set_nw_ttl_OF_VERSION_1_3(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_action_id_set_queue_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -14952,9 +14952,9 @@ loci_validate_of_action_experimenter_OF_VERSION_1_3(uint8_t *data, int len, int 
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_action_bsn_OF_VERSION_1_3(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_action_nicira_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -14983,9 +14983,9 @@ loci_validate_of_action_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -15014,9 +15014,9 @@ loci_validate_of_action_id_experimenter_OF_VERSION_1_3(uint8_t *data, int len, i
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_action_id_bsn_OF_VERSION_1_3(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_action_id_nicira_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -15045,9 +15045,9 @@ loci_validate_of_action_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_action_id_bsn_mirror_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -15412,7 +15412,7 @@ loci_validate_of_action_nicira_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 18:
+    case 0x12:
         return loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -15441,7 +15441,7 @@ loci_validate_of_action_id_nicira_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 18:
+    case 0x12:
         return loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -15846,213 +15846,213 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 2147494402:
+    case 0x80002a02:
         return loci_validate_of_oxm_arp_op_OF_VERSION_1_3(data, len, out_len);
-    case 2147494660:
+    case 0x80002b04:
         return loci_validate_of_oxm_arp_op_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147495942:
+    case 0x80003006:
         return loci_validate_of_oxm_arp_sha_OF_VERSION_1_3(data, len, out_len);
-    case 2147496204:
+    case 0x8000310c:
         return loci_validate_of_oxm_arp_sha_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147494916:
+    case 0x80002c04:
         return loci_validate_of_oxm_arp_spa_OF_VERSION_1_3(data, len, out_len);
-    case 2147495176:
+    case 0x80002d08:
         return loci_validate_of_oxm_arp_spa_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147496454:
+    case 0x80003206:
         return loci_validate_of_oxm_arp_tha_OF_VERSION_1_3(data, len, out_len);
-    case 2147496716:
+    case 0x8000330c:
         return loci_validate_of_oxm_arp_tha_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147495428:
+    case 0x80002e04:
         return loci_validate_of_oxm_arp_tpa_OF_VERSION_1_3(data, len, out_len);
-    case 2147495688:
+    case 0x80002f08:
         return loci_validate_of_oxm_arp_tpa_masked_OF_VERSION_1_3(data, len, out_len);
-    case 200196:
+    case 0x30e04:
         return loci_validate_of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3(data, len, out_len);
-    case 200456:
+    case 0x30f08:
         return loci_validate_of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3(data, len, out_len);
-    case 198145:
+    case 0x30601:
         return loci_validate_of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3(data, len, out_len);
-    case 198402:
+    case 0x30702:
         return loci_validate_of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3(data, len, out_len);
-    case 196624:
+    case 0x30010:
         return loci_validate_of_oxm_bsn_in_ports_128_OF_VERSION_1_3(data, len, out_len);
-    case 196896:
+    case 0x30120:
         return loci_validate_of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3(data, len, out_len);
-    case 199684:
+    case 0x30c04:
         return loci_validate_of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3(data, len, out_len);
-    case 199944:
+    case 0x30d08:
         return loci_validate_of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3(data, len, out_len);
-    case 198660:
+    case 0x30804:
         return loci_validate_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3(data, len, out_len);
-    case 198920:
+    case 0x30908:
         return loci_validate_of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3(data, len, out_len);
-    case 199172:
+    case 0x30a04:
         return loci_validate_of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3(data, len, out_len);
-    case 199432:
+    case 0x30b08:
         return loci_validate_of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3(data, len, out_len);
-    case 197124:
+    case 0x30204:
         return loci_validate_of_oxm_bsn_lag_id_OF_VERSION_1_3(data, len, out_len);
-    case 197384:
+    case 0x30308:
         return loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_3(data, len, out_len);
-    case 200708:
+    case 0x31004:
         return loci_validate_of_oxm_bsn_udf0_OF_VERSION_1_3(data, len, out_len);
-    case 200968:
+    case 0x31108:
         return loci_validate_of_oxm_bsn_udf0_masked_OF_VERSION_1_3(data, len, out_len);
-    case 201220:
+    case 0x31204:
         return loci_validate_of_oxm_bsn_udf1_OF_VERSION_1_3(data, len, out_len);
-    case 201480:
+    case 0x31308:
         return loci_validate_of_oxm_bsn_udf1_masked_OF_VERSION_1_3(data, len, out_len);
-    case 201732:
+    case 0x31404:
         return loci_validate_of_oxm_bsn_udf2_OF_VERSION_1_3(data, len, out_len);
-    case 201992:
+    case 0x31508:
         return loci_validate_of_oxm_bsn_udf2_masked_OF_VERSION_1_3(data, len, out_len);
-    case 202244:
+    case 0x31604:
         return loci_validate_of_oxm_bsn_udf3_OF_VERSION_1_3(data, len, out_len);
-    case 202504:
+    case 0x31708:
         return loci_validate_of_oxm_bsn_udf3_masked_OF_VERSION_1_3(data, len, out_len);
-    case 202756:
+    case 0x31804:
         return loci_validate_of_oxm_bsn_udf4_OF_VERSION_1_3(data, len, out_len);
-    case 203016:
+    case 0x31908:
         return loci_validate_of_oxm_bsn_udf4_masked_OF_VERSION_1_3(data, len, out_len);
-    case 203268:
+    case 0x31a04:
         return loci_validate_of_oxm_bsn_udf5_OF_VERSION_1_3(data, len, out_len);
-    case 203528:
+    case 0x31b08:
         return loci_validate_of_oxm_bsn_udf5_masked_OF_VERSION_1_3(data, len, out_len);
-    case 203780:
+    case 0x31c04:
         return loci_validate_of_oxm_bsn_udf6_OF_VERSION_1_3(data, len, out_len);
-    case 204040:
+    case 0x31d08:
         return loci_validate_of_oxm_bsn_udf6_masked_OF_VERSION_1_3(data, len, out_len);
-    case 204292:
+    case 0x31e04:
         return loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_3(data, len, out_len);
-    case 204552:
+    case 0x31f08:
         return loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(data, len, out_len);
-    case 197636:
+    case 0x30404:
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(data, len, out_len);
-    case 197896:
+    case 0x30508:
         return loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147485190:
+    case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(data, len, out_len);
-    case 2147485452:
+    case 0x8000070c:
         return loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147485702:
+    case 0x80000806:
         return loci_validate_of_oxm_eth_src_OF_VERSION_1_3(data, len, out_len);
-    case 2147485964:
+    case 0x8000090c:
         return loci_validate_of_oxm_eth_src_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147486210:
+    case 0x80000a02:
         return loci_validate_of_oxm_eth_type_OF_VERSION_1_3(data, len, out_len);
-    case 2147486468:
+    case 0x80000b04:
         return loci_validate_of_oxm_eth_type_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147493889:
+    case 0x80002801:
         return loci_validate_of_oxm_icmpv4_code_OF_VERSION_1_3(data, len, out_len);
-    case 2147494146:
+    case 0x80002902:
         return loci_validate_of_oxm_icmpv4_code_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147493377:
+    case 0x80002601:
         return loci_validate_of_oxm_icmpv4_type_OF_VERSION_1_3(data, len, out_len);
-    case 2147493634:
+    case 0x80002702:
         return loci_validate_of_oxm_icmpv4_type_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147499009:
+    case 0x80003c01:
         return loci_validate_of_oxm_icmpv6_code_OF_VERSION_1_3(data, len, out_len);
-    case 2147499266:
+    case 0x80003d02:
         return loci_validate_of_oxm_icmpv6_code_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147498497:
+    case 0x80003a01:
         return loci_validate_of_oxm_icmpv6_type_OF_VERSION_1_3(data, len, out_len);
-    case 2147498754:
+    case 0x80003b02:
         return loci_validate_of_oxm_icmpv6_type_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147484164:
+    case 0x80000204:
         return loci_validate_of_oxm_in_phy_port_OF_VERSION_1_3(data, len, out_len);
-    case 2147484424:
+    case 0x80000308:
         return loci_validate_of_oxm_in_phy_port_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147483652:
+    case 0x80000004:
         return loci_validate_of_oxm_in_port_OF_VERSION_1_3(data, len, out_len);
-    case 2147483912:
+    case 0x80000108:
         return loci_validate_of_oxm_in_port_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147487745:
+    case 0x80001001:
         return loci_validate_of_oxm_ip_dscp_OF_VERSION_1_3(data, len, out_len);
-    case 2147488002:
+    case 0x80001102:
         return loci_validate_of_oxm_ip_dscp_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147488257:
+    case 0x80001201:
         return loci_validate_of_oxm_ip_ecn_OF_VERSION_1_3(data, len, out_len);
-    case 2147488514:
+    case 0x80001302:
         return loci_validate_of_oxm_ip_ecn_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147488769:
+    case 0x80001401:
         return loci_validate_of_oxm_ip_proto_OF_VERSION_1_3(data, len, out_len);
-    case 2147489026:
+    case 0x80001502:
         return loci_validate_of_oxm_ip_proto_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147489796:
+    case 0x80001804:
         return loci_validate_of_oxm_ipv4_dst_OF_VERSION_1_3(data, len, out_len);
-    case 2147490056:
+    case 0x80001908:
         return loci_validate_of_oxm_ipv4_dst_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147489284:
+    case 0x80001604:
         return loci_validate_of_oxm_ipv4_src_OF_VERSION_1_3(data, len, out_len);
-    case 2147489544:
+    case 0x80001708:
         return loci_validate_of_oxm_ipv4_src_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147497488:
+    case 0x80003610:
         return loci_validate_of_oxm_ipv6_dst_OF_VERSION_1_3(data, len, out_len);
-    case 2147497760:
+    case 0x80003720:
         return loci_validate_of_oxm_ipv6_dst_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147497988:
+    case 0x80003804:
         return loci_validate_of_oxm_ipv6_flabel_OF_VERSION_1_3(data, len, out_len);
-    case 2147498248:
+    case 0x80003908:
         return loci_validate_of_oxm_ipv6_flabel_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147500038:
+    case 0x80004006:
         return loci_validate_of_oxm_ipv6_nd_sll_OF_VERSION_1_3(data, len, out_len);
-    case 2147500300:
+    case 0x8000410c:
         return loci_validate_of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147499536:
+    case 0x80003e10:
         return loci_validate_of_oxm_ipv6_nd_target_OF_VERSION_1_3(data, len, out_len);
-    case 2147499808:
+    case 0x80003f20:
         return loci_validate_of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147500550:
+    case 0x80004206:
         return loci_validate_of_oxm_ipv6_nd_tll_OF_VERSION_1_3(data, len, out_len);
-    case 2147500812:
+    case 0x8000430c:
         return loci_validate_of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147496976:
+    case 0x80003410:
         return loci_validate_of_oxm_ipv6_src_OF_VERSION_1_3(data, len, out_len);
-    case 2147497248:
+    case 0x80003520:
         return loci_validate_of_oxm_ipv6_src_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147484680:
+    case 0x80000408:
         return loci_validate_of_oxm_metadata_OF_VERSION_1_3(data, len, out_len);
-    case 2147484944:
+    case 0x80000510:
         return loci_validate_of_oxm_metadata_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147501060:
+    case 0x80004404:
         return loci_validate_of_oxm_mpls_label_OF_VERSION_1_3(data, len, out_len);
-    case 2147501320:
+    case 0x80004508:
         return loci_validate_of_oxm_mpls_label_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147501569:
+    case 0x80004601:
         return loci_validate_of_oxm_mpls_tc_OF_VERSION_1_3(data, len, out_len);
-    case 2147501826:
+    case 0x80004702:
         return loci_validate_of_oxm_mpls_tc_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147492866:
+    case 0x80002402:
         return loci_validate_of_oxm_sctp_dst_OF_VERSION_1_3(data, len, out_len);
-    case 2147493124:
+    case 0x80002504:
         return loci_validate_of_oxm_sctp_dst_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147492354:
+    case 0x80002202:
         return loci_validate_of_oxm_sctp_src_OF_VERSION_1_3(data, len, out_len);
-    case 2147492612:
+    case 0x80002304:
         return loci_validate_of_oxm_sctp_src_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147490818:
+    case 0x80001c02:
         return loci_validate_of_oxm_tcp_dst_OF_VERSION_1_3(data, len, out_len);
-    case 2147491076:
+    case 0x80001d04:
         return loci_validate_of_oxm_tcp_dst_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147490306:
+    case 0x80001a02:
         return loci_validate_of_oxm_tcp_src_OF_VERSION_1_3(data, len, out_len);
-    case 2147490564:
+    case 0x80001b04:
         return loci_validate_of_oxm_tcp_src_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147491842:
+    case 0x80002002:
         return loci_validate_of_oxm_udp_dst_OF_VERSION_1_3(data, len, out_len);
-    case 2147492100:
+    case 0x80002104:
         return loci_validate_of_oxm_udp_dst_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147491330:
+    case 0x80001e02:
         return loci_validate_of_oxm_udp_src_OF_VERSION_1_3(data, len, out_len);
-    case 2147491588:
+    case 0x80001f04:
         return loci_validate_of_oxm_udp_src_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147487233:
+    case 0x80000e01:
         return loci_validate_of_oxm_vlan_pcp_OF_VERSION_1_3(data, len, out_len);
-    case 2147487490:
+    case 0x80000f02:
         return loci_validate_of_oxm_vlan_pcp_masked_OF_VERSION_1_3(data, len, out_len);
-    case 2147486722:
+    case 0x80000c02:
         return loci_validate_of_oxm_vlan_vid_OF_VERSION_1_3(data, len, out_len);
-    case 2147486980:
+    case 0x80000d04:
         return loci_validate_of_oxm_vlan_vid_masked_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -16272,65 +16272,65 @@ loci_validate_of_header_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 1, &wire_type);
     switch (wire_type) {
-    case 19:
+    case 0x13:
         return loci_validate_of_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 27:
+    case 0x1b:
         return loci_validate_of_async_get_reply_OF_VERSION_1_3(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_async_get_request_OF_VERSION_1_3(data, len, out_len);
-    case 28:
+    case 0x1c:
         return loci_validate_of_async_set_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_barrier_reply_OF_VERSION_1_3(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_barrier_request_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_echo_reply_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_echo_request_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_features_reply_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_features_request_OF_VERSION_1_3(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_flow_mod_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_flow_removed_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_get_config_reply_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_get_config_request_OF_VERSION_1_3(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_group_mod_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_OF_VERSION_1_3(data, len, out_len);
-    case 29:
+    case 0x1d:
         return loci_validate_of_meter_mod_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_packet_in_OF_VERSION_1_3(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_packet_out_OF_VERSION_1_3(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_port_mod_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_port_status_OF_VERSION_1_3(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_queue_get_config_reply_OF_VERSION_1_3(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_queue_get_config_request_OF_VERSION_1_3(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_role_reply_OF_VERSION_1_3(data, len, out_len);
-    case 24:
+    case 0x18:
         return loci_validate_of_role_request_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_set_config_OF_VERSION_1_3(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_table_mod_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -16359,35 +16359,35 @@ loci_validate_of_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_group_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_group_features_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_meter_config_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_meter_features_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_meter_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_port_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_table_features_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_reply_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -16440,35 +16440,35 @@ loci_validate_of_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_aggregate_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_group_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_group_features_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_meter_config_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_meter_features_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_meter_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_port_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_port_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_queue_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_table_features_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_stats_request_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -16593,35 +16593,35 @@ loci_validate_of_error_msg_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 2:
+    case 0x2:
         return loci_validate_of_bad_action_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bad_instruction_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bad_match_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bad_request_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_experimenter_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_flow_mod_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_group_mod_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_hello_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_meter_mod_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_port_mod_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_queue_op_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_role_request_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_switch_config_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_table_features_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_table_mod_failed_error_msg_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -16790,9 +16790,9 @@ loci_validate_of_experimenter_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_header_OF_VERSION_1_3(data, len, out_len);
-    case 8992:
+    case 0x2320:
         return loci_validate_of_nicira_header_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -16821,101 +16821,101 @@ loci_validate_of_bsn_header_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 12, &wire_type);
     switch (wire_type) {
-    case 60:
+    case 0x3c:
         return loci_validate_of_bsn_arp_idle_OF_VERSION_1_3(data, len, out_len);
-    case 22:
+    case 0x16:
         return loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_3(data, len, out_len);
-    case 21:
+    case 0x15:
         return loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_3(data, len, out_len);
-    case 20:
+    case 0x14:
         return loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_3(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_3(data, len, out_len);
-    case 23:
+    case 0x17:
         return loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_3(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_3(data, len, out_len);
-    case 57:
+    case 0x39:
         return loci_validate_of_bsn_controller_connections_reply_OF_VERSION_1_3(data, len, out_len);
-    case 56:
+    case 0x38:
         return loci_validate_of_bsn_controller_connections_request_OF_VERSION_1_3(data, len, out_len);
-    case 40:
+    case 0x28:
         return loci_validate_of_bsn_flow_idle_OF_VERSION_1_3(data, len, out_len);
-    case 39:
+    case 0x27:
         return loci_validate_of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3(data, len, out_len);
-    case 38:
+    case 0x26:
         return loci_validate_of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3(data, len, out_len);
-    case 37:
+    case 0x25:
         return loci_validate_of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3(data, len, out_len);
-    case 36:
+    case 0x24:
         return loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3(data, len, out_len);
-    case 49:
+    case 0x31:
         return loci_validate_of_bsn_gentable_clear_reply_OF_VERSION_1_3(data, len, out_len);
-    case 48:
+    case 0x30:
         return loci_validate_of_bsn_gentable_clear_request_OF_VERSION_1_3(data, len, out_len);
-    case 46:
+    case 0x2e:
         return loci_validate_of_bsn_gentable_entry_add_OF_VERSION_1_3(data, len, out_len);
-    case 47:
+    case 0x2f:
         return loci_validate_of_bsn_gentable_entry_delete_OF_VERSION_1_3(data, len, out_len);
-    case 50:
+    case 0x32:
         return loci_validate_of_bsn_gentable_set_buckets_size_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_get_interfaces_reply_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_3(data, len, out_len);
-    case 52:
+    case 0x34:
         return loci_validate_of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3(data, len, out_len);
-    case 51:
+    case 0x33:
         return loci_validate_of_bsn_get_switch_pipeline_request_OF_VERSION_1_3(data, len, out_len);
-    case 43:
+    case 0x2b:
         return loci_validate_of_bsn_lacp_convergence_notif_OF_VERSION_1_3(data, len, out_len);
-    case 34:
+    case 0x22:
         return loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_3(data, len, out_len);
-    case 33:
+    case 0x21:
         return loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_3(data, len, out_len);
-    case 35:
+    case 0x23:
         return loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_3(data, len, out_len);
-    case 32:
+    case 0x20:
         return loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_3(data, len, out_len);
-    case 31:
+    case 0x1f:
         return loci_validate_of_bsn_pdu_tx_request_OF_VERSION_1_3(data, len, out_len);
-    case 55:
+    case 0x37:
         return loci_validate_of_bsn_role_status_OF_VERSION_1_3(data, len, out_len);
-    case 59:
+    case 0x3b:
         return loci_validate_of_bsn_set_aux_cxns_reply_OF_VERSION_1_3(data, len, out_len);
-    case 58:
+    case 0x3a:
         return loci_validate_of_bsn_set_aux_cxns_request_OF_VERSION_1_3(data, len, out_len);
-    case 42:
+    case 0x2a:
         return loci_validate_of_bsn_set_lacp_reply_OF_VERSION_1_3(data, len, out_len);
-    case 41:
+    case 0x29:
         return loci_validate_of_bsn_set_lacp_request_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_set_mirroring_OF_VERSION_1_3(data, len, out_len);
-    case 25:
+    case 0x19:
         return loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_3(data, len, out_len);
-    case 54:
+    case 0x36:
         return loci_validate_of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3(data, len, out_len);
-    case 53:
+    case 0x35:
         return loci_validate_of_bsn_set_switch_pipeline_request_OF_VERSION_1_3(data, len, out_len);
-    case 61:
+    case 0x3d:
         return loci_validate_of_bsn_table_set_buckets_size_OF_VERSION_1_3(data, len, out_len);
-    case 45:
+    case 0x2d:
         return loci_validate_of_bsn_time_reply_OF_VERSION_1_3(data, len, out_len);
-    case 44:
+    case 0x2c:
         return loci_validate_of_bsn_time_request_OF_VERSION_1_3(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_3(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_3(data, len, out_len);
-    case 26:
+    case 0x1a:
         return loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_3(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -17196,7 +17196,7 @@ loci_validate_of_experimenter_stats_reply_OF_VERSION_1_3(uint8_t *data, int len,
     uint32_t wire_type;
     buf_u32_get(data + 16, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_reply_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -17225,33 +17225,33 @@ loci_validate_of_bsn_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out
     uint32_t wire_type;
     buf_u32_get(data + 20, &wire_type);
     switch (wire_type) {
-    case 13:
+    case 0xd:
         return loci_validate_of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_bsn_debug_counter_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_bsn_gentable_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_bsn_image_desc_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_lacp_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_bsn_port_counter_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_table_checksum_stats_reply_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -17308,7 +17308,7 @@ loci_validate_of_experimenter_stats_request_OF_VERSION_1_3(uint8_t *data, int le
     uint32_t wire_type;
     buf_u32_get(data + 16, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_bsn_stats_request_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -17337,33 +17337,33 @@ loci_validate_of_bsn_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *o
     uint32_t wire_type;
     buf_u32_get(data + 20, &wire_type);
     switch (wire_type) {
-    case 13:
+    case 0xd:
         return loci_validate_of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_gentable_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_gentable_entry_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_bsn_gentable_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_bsn_image_desc_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_lacp_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_bsn_port_counter_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_table_checksum_stats_request_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -19143,45 +19143,45 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 10:
+    case 0xa:
         return loci_validate_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_bsn_tlv_circuit_id_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_bsn_tlv_idle_notification_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_bsn_tlv_idle_time_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_bsn_tlv_idle_timeout_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_tlv_mac_OF_VERSION_1_3(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_bsn_tlv_port_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_bsn_tlv_reply_packets_OF_VERSION_1_3(data, len, out_len);
-    case 11:
+    case 0xb:
         return loci_validate_of_bsn_tlv_request_packets_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_bsn_tlv_rx_packets_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_bsn_tlv_tx_packets_OF_VERSION_1_3(data, len, out_len);
-    case 16:
+    case 0x10:
         return loci_validate_of_bsn_tlv_udf_anchor_OF_VERSION_1_3(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_bsn_tlv_udf_id_OF_VERSION_1_3(data, len, out_len);
-    case 18:
+    case 0x12:
         return loci_validate_of_bsn_tlv_udf_length_OF_VERSION_1_3(data, len, out_len);
-    case 17:
+    case 0x11:
         return loci_validate_of_bsn_tlv_udf_offset_OF_VERSION_1_3(data, len, out_len);
-    case 9:
+    case 0x9:
         return loci_validate_of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(data, len, out_len);
-    case 19:
+    case 0x13:
         return loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -19713,9 +19713,9 @@ loci_validate_of_bsn_vport_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -20153,15 +20153,15 @@ loci_validate_of_flow_mod_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint8_t wire_type;
     buf_u8_get(data + 25, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_flow_add_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_flow_delete_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_flow_delete_strict_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_flow_modify_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_flow_modify_strict_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -20489,11 +20489,11 @@ loci_validate_of_group_mod_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 0:
+    case 0x0:
         return loci_validate_of_group_add_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_group_delete_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_group_modify_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -20870,7 +20870,7 @@ loci_validate_of_hello_elem_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_hello_elem_versionbitmap_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -20950,19 +20950,19 @@ loci_validate_of_instruction_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 4:
+    case 0x4:
         return loci_validate_of_instruction_apply_actions_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_instruction_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_instruction_clear_actions_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_instruction_goto_table_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_instruction_meter_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_instruction_write_actions_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_instruction_write_metadata_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -20991,19 +20991,19 @@ loci_validate_of_instruction_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 4:
+    case 0x4:
         return loci_validate_of_instruction_id_apply_actions_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_instruction_id_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_instruction_id_clear_actions_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_instruction_id_goto_table_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_instruction_id_meter_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_instruction_id_write_actions_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_instruction_id_write_metadata_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -21084,7 +21084,7 @@ loci_validate_of_instruction_experimenter_OF_VERSION_1_3(uint8_t *data, int len,
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_instruction_bsn_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -21113,19 +21113,19 @@ loci_validate_of_instruction_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_instruction_bsn_arp_offload_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_instruction_bsn_deny_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_instruction_bsn_dhcp_offload_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_instruction_bsn_packet_of_death_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_instruction_bsn_permit_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -21154,7 +21154,7 @@ loci_validate_of_instruction_id_experimenter_OF_VERSION_1_3(uint8_t *data, int l
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
-    case 6035143:
+    case 0x5c16c7:
         return loci_validate_of_instruction_id_bsn_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -21183,19 +21183,19 @@ loci_validate_of_instruction_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_instruction_id_bsn_arp_offload_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_instruction_id_bsn_deny_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
-    case 6:
+    case 0x6:
         return loci_validate_of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_instruction_id_bsn_permit_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -21832,11 +21832,11 @@ loci_validate_of_meter_band_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 1:
+    case 0x1:
         return loci_validate_of_meter_band_drop_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_meter_band_dscp_remark_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_meter_band_experimenter_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -24288,11 +24288,11 @@ loci_validate_of_queue_prop_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 65535:
+    case 0xffff:
         return loci_validate_of_queue_prop_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_queue_prop_max_rate_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_queue_prop_min_rate_OF_VERSION_1_3(data, len, out_len);
     }
 
@@ -24582,37 +24582,37 @@ loci_validate_of_table_feature_prop_OF_VERSION_1_3(uint8_t *data, int len, int *
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 6:
+    case 0x6:
         return loci_validate_of_table_feature_prop_apply_actions_OF_VERSION_1_3(data, len, out_len);
-    case 7:
+    case 0x7:
         return loci_validate_of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3(data, len, out_len);
-    case 14:
+    case 0xe:
         return loci_validate_of_table_feature_prop_apply_setfield_OF_VERSION_1_3(data, len, out_len);
-    case 15:
+    case 0xf:
         return loci_validate_of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3(data, len, out_len);
-    case 65534:
+    case 0xfffe:
         return loci_validate_of_table_feature_prop_experimenter_OF_VERSION_1_3(data, len, out_len);
-    case 65535:
+    case 0xffff:
         return loci_validate_of_table_feature_prop_experimenter_miss_OF_VERSION_1_3(data, len, out_len);
-    case 0:
+    case 0x0:
         return loci_validate_of_table_feature_prop_instructions_OF_VERSION_1_3(data, len, out_len);
-    case 1:
+    case 0x1:
         return loci_validate_of_table_feature_prop_instructions_miss_OF_VERSION_1_3(data, len, out_len);
-    case 8:
+    case 0x8:
         return loci_validate_of_table_feature_prop_match_OF_VERSION_1_3(data, len, out_len);
-    case 2:
+    case 0x2:
         return loci_validate_of_table_feature_prop_next_tables_OF_VERSION_1_3(data, len, out_len);
-    case 3:
+    case 0x3:
         return loci_validate_of_table_feature_prop_next_tables_miss_OF_VERSION_1_3(data, len, out_len);
-    case 10:
+    case 0xa:
         return loci_validate_of_table_feature_prop_wildcards_OF_VERSION_1_3(data, len, out_len);
-    case 4:
+    case 0x4:
         return loci_validate_of_table_feature_prop_write_actions_OF_VERSION_1_3(data, len, out_len);
-    case 5:
+    case 0x5:
         return loci_validate_of_table_feature_prop_write_actions_miss_OF_VERSION_1_3(data, len, out_len);
-    case 12:
+    case 0xc:
         return loci_validate_of_table_feature_prop_write_setfield_OF_VERSION_1_3(data, len, out_len);
-    case 13:
+    case 0xd:
         return loci_validate_of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3(data, len, out_len);
     }
 
