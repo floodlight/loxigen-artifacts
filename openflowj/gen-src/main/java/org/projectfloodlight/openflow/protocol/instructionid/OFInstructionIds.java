@@ -35,6 +35,7 @@ public interface OFInstructionIds {
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionIdBsnPermit bsnPermit();
+    OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus();
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();
     OFInstructionIdMeter meter();

@@ -74,6 +74,9 @@ abstract class OFInstructionIdBsnVer13 {
                case 0x4:
                    // discriminator value 0x4L=0x4L for class OFInstructionIdBsnPermitVer13
                    return OFInstructionIdBsnPermitVer13.READER.readFrom(bb);
+               case 0x7:
+                   // discriminator value 0x7L=0x7L for class OFInstructionIdBsnPrioritizePdusVer13
+                   return OFInstructionIdBsnPrioritizePdusVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFInstructionIdBsnVer13: " + subtype);
             }

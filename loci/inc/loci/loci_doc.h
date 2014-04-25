@@ -6116,6 +6116,21 @@ typedef struct of_instruction_bsn_packet_of_death_s of_instruction_bsn_packet_of
 typedef struct of_instruction_bsn_permit_s of_instruction_bsn_permit_t;
 
 /**
+ * Structure for of_instruction_bsn_prioritize_pdus object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_prioritize_pdus_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_prioritize_pdus_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_prioritize_pdus_s of_instruction_bsn_prioritize_pdus_t;
+
+/**
  * Structure for of_instruction_clear_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6288,6 +6303,21 @@ typedef struct of_instruction_id_bsn_packet_of_death_s of_instruction_id_bsn_pac
  *
  */
 typedef struct of_instruction_id_bsn_permit_s of_instruction_id_bsn_permit_t;
+
+/**
+ * Structure for of_instruction_id_bsn_prioritize_pdus object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_prioritize_pdus_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_prioritize_pdus_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_prioritize_pdus_s of_instruction_id_bsn_prioritize_pdus_t;
 
 /**
  * Structure for of_instruction_id_clear_actions object.  Get/set

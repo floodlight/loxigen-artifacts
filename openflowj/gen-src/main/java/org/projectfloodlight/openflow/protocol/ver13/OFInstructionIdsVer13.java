@@ -63,6 +63,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnPermitVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus() {
+        return OFInstructionIdBsnPrioritizePdusVer13.INSTANCE;
+    }
+
     public OFInstructionIdClearActions clearActions() {
         return OFInstructionIdClearActionsVer13.INSTANCE;
     }

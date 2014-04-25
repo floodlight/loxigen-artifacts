@@ -101,6 +101,10 @@ public class OFInstructionsVer12 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnPermit not supported in version 1.2");
     }
 
+    public OFInstructionBsnPrioritizePdus bsnPrioritizePdus() {
+        throw new UnsupportedOperationException("OFInstructionBsnPrioritizePdus not supported in version 1.2");
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.2");
     }

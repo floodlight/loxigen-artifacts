@@ -29777,6 +29777,11 @@ of_instruction_OF_VERSION_1_3_dup(
             &src->bsn_disable_src_mac_check);
     }
 
+    if (src->header.object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
+        return (of_instruction_t *)of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
+            &src->bsn_prioritize_pdus);
+    }
+
     return NULL;
 }
 
@@ -30039,6 +30044,34 @@ of_instruction_bsn_permit_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_instruction_bsn_prioritize_pdus
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_prioritize_pdus.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_prioritize_pdus_t *
+of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
+    of_instruction_bsn_prioritize_pdus_t *src)
+{
+    of_instruction_bsn_prioritize_pdus_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_prioritize_pdus_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_prioritize_pdus_experimenter_get(src, &val32);
+    of_instruction_bsn_prioritize_pdus_experimenter_set(dst, val32);
+
+    of_instruction_bsn_prioritize_pdus_subtype_get(src, &val32);
+    of_instruction_bsn_prioritize_pdus_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_instruction_clear_actions
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30219,6 +30252,11 @@ of_instruction_id_OF_VERSION_1_3_dup(
     if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
         return (of_instruction_id_t *)of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
             &src->bsn_disable_src_mac_check);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
+            &src->bsn_prioritize_pdus);
     }
 
     return NULL;
@@ -30465,6 +30503,34 @@ of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_permit_subtype_get(src, &val32);
     of_instruction_id_bsn_permit_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_prioritize_pdus
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_prioritize_pdus.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_prioritize_pdus_t *
+of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_prioritize_pdus_t *src)
+{
+    of_instruction_id_bsn_prioritize_pdus_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_prioritize_pdus_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_prioritize_pdus_experimenter_get(src, &val32);
+    of_instruction_id_bsn_prioritize_pdus_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_prioritize_pdus_subtype_get(src, &val32);
+    of_instruction_id_bsn_prioritize_pdus_subtype_set(dst, val32);
 
     return dst;
 }
@@ -42197,6 +42263,19 @@ of_instruction_bsn_permit_dup(
     return NULL;
 }
 
+of_instruction_bsn_prioritize_pdus_t *
+of_instruction_bsn_prioritize_pdus_dup(
+    of_instruction_bsn_prioritize_pdus_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_instruction_clear_actions_t *
 of_instruction_clear_actions_dup(
     of_instruction_clear_actions_t *src)
@@ -42405,6 +42484,19 @@ of_instruction_id_bsn_permit_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_prioritize_pdus_t *
+of_instruction_id_bsn_prioritize_pdus_dup(
+    of_instruction_id_bsn_prioritize_pdus_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

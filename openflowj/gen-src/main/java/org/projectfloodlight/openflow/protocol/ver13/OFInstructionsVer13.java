@@ -101,6 +101,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnPermitVer13.INSTANCE;
     }
 
+    public OFInstructionBsnPrioritizePdus bsnPrioritizePdus() {
+        return OFInstructionBsnPrioritizePdusVer13.INSTANCE;
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         return new OFInstructionMeterVer13.Builder();
     }

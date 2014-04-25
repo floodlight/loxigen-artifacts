@@ -7394,6 +7394,15 @@ extern int of_instruction_bsn_permit_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_bsn_permit_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_permit_t *obj, int value);
 
+extern int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_populate(
+    of_instruction_bsn_prioritize_pdus_t *obj, int value);
+extern int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_check(
+    of_instruction_bsn_prioritize_pdus_t *obj, int value);
+extern int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_prioritize_pdus_t *obj, int value);
+extern int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_prioritize_pdus_t *obj, int value);
+
 extern int of_instruction_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_clear_actions_t *obj, int value);
 extern int of_instruction_clear_actions_OF_VERSION_1_3_check(
@@ -7510,6 +7519,15 @@ extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_populate_scalars(
     of_instruction_id_bsn_permit_t *obj, int value);
 extern int of_instruction_id_bsn_permit_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_permit_t *obj, int value);
+
+extern int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_prioritize_pdus_t *obj, int value);
+extern int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_prioritize_pdus_t *obj, int value);
+extern int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_prioritize_pdus_t *obj, int value);
+extern int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_prioritize_pdus_t *obj, int value);
 
 extern int of_instruction_id_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_id_clear_actions_t *obj, int value);

@@ -6248,6 +6248,14 @@ fields['of13.instruction_id_bsn_permit.type'] = ProtoField.uint16("of13.instruct
 fields['of13.instruction_id_bsn_permit.len'] = ProtoField.uint16("of13.instruction_id_bsn_permit.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_permit.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_permit.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_permit.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_permit.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_prioritize_pdus.type'] = ProtoField.uint16("of13.instruction_bsn_prioritize_pdus.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_prioritize_pdus.len'] = ProtoField.uint16("of13.instruction_bsn_prioritize_pdus.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_prioritize_pdus.experimenter'] = ProtoField.uint32("of13.instruction_bsn_prioritize_pdus.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_prioritize_pdus.subtype'] = ProtoField.uint32("of13.instruction_bsn_prioritize_pdus.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_prioritize_pdus.type'] = ProtoField.uint16("of13.instruction_id_bsn_prioritize_pdus.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_prioritize_pdus.len'] = ProtoField.uint16("of13.instruction_id_bsn_prioritize_pdus.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_prioritize_pdus.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_prioritize_pdus.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_prioritize_pdus.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_prioritize_pdus.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_clear_actions.type'] = ProtoField.uint16("of13.instruction_clear_actions.type", "type", base.DEC, nil)
 fields['of13.instruction_clear_actions.len'] = ProtoField.uint16("of13.instruction_clear_actions.len", "len", base.DEC, nil)
 fields['of13.instruction_id_clear_actions.type'] = ProtoField.uint16("of13.instruction_id_clear_actions.type", "type", base.DEC, nil)
@@ -11402,6 +11410,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_permit.len'],
     fields['of13.instruction_id_bsn_permit.experimenter'],
     fields['of13.instruction_id_bsn_permit.subtype'],
+    fields['of13.instruction_bsn_prioritize_pdus.type'],
+    fields['of13.instruction_bsn_prioritize_pdus.len'],
+    fields['of13.instruction_bsn_prioritize_pdus.experimenter'],
+    fields['of13.instruction_bsn_prioritize_pdus.subtype'],
+    fields['of13.instruction_id_bsn_prioritize_pdus.type'],
+    fields['of13.instruction_id_bsn_prioritize_pdus.len'],
+    fields['of13.instruction_id_bsn_prioritize_pdus.experimenter'],
+    fields['of13.instruction_id_bsn_prioritize_pdus.subtype'],
     fields['of13.instruction_clear_actions.type'],
     fields['of13.instruction_clear_actions.len'],
     fields['of13.instruction_id_clear_actions.type'],
@@ -22192,6 +22208,29 @@ function dissect_of_instruction_id_bsn_permit_v4(reader, subtree)
     return 'of_instruction_id_bsn_permit'
 end
 of_instruction_id_bsn_v4_dissectors[4] = dissect_of_instruction_id_bsn_permit_v4
+
+-- child class of_instruction_bsn_prioritize_pdus
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_prioritize_pdus_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_prioritize_pdus.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_prioritize_pdus.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_prioritize_pdus.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_prioritize_pdus.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_prioritize_pdus'
+end
+of_instruction_bsn_v4_dissectors[7] = dissect_of_instruction_bsn_prioritize_pdus_v4
+
+-- child class of_instruction_id_bsn_prioritize_pdus
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_prioritize_pdus_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_prioritize_pdus.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_prioritize_pdus.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_prioritize_pdus.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_prioritize_pdus.subtype')
+    return 'of_instruction_id_bsn_prioritize_pdus'
+end
+of_instruction_id_bsn_v4_dissectors[7] = dissect_of_instruction_id_bsn_prioritize_pdus_v4
 
 -- child class of_instruction_clear_actions
 -- Child of of_instruction

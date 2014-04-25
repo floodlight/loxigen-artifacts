@@ -44,6 +44,7 @@ public interface OFInstructions {
     OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionBsnPermit bsnPermit();
+    OFInstructionBsnPrioritizePdus bsnPrioritizePdus();
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);
 

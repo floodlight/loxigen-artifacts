@@ -63,6 +63,10 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnPermit not supported in version 1.1");
     }
 
+    public OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnPrioritizePdus not supported in version 1.1");
+    }
+
     public OFInstructionIdClearActions clearActions() {
         throw new UnsupportedOperationException("OFInstructionIdClearActions not supported in version 1.1");
     }

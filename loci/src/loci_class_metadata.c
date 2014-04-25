@@ -2499,6 +2499,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_instruction_id_wire_object_id_get,
         .wire_type_set=of_instruction_id_bsn_permit_push_wire_types,
     },
+    [OF_INSTRUCTION_BSN_PRIORITIZE_PDUS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_instruction_wire_object_id_get,
+        .wire_type_set=of_instruction_bsn_prioritize_pdus_push_wire_types,
+    },
+    [OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_instruction_id_wire_object_id_get,
+        .wire_type_set=of_instruction_id_bsn_prioritize_pdus_push_wire_types,
+    },
     [OF_INSTRUCTION_ID_CLEAR_ACTIONS] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

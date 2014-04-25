@@ -3696,6 +3696,9 @@ of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x6:
             *id = OF_INSTRUCTION_BSN_PACKET_OF_DEATH;
             break;
+        case 0x7:
+            *id = OF_INSTRUCTION_BSN_PRIORITIZE_PDUS;
+            break;
         default:
             *id = OF_INSTRUCTION_BSN;
             break;
@@ -4213,6 +4216,9 @@ of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x6:
             *id = OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH;
+            break;
+        case 0x7:
+            *id = OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS;
             break;
         default:
             *id = OF_INSTRUCTION_ID_BSN;
@@ -8720,12 +8726,14 @@ of_instruction_id_bsn_permit_subtype_set(
 #include "loci_int.h"
 
 void
-of_instruction_id_clear_actions_push_wire_types(of_object_t *obj)
+of_instruction_bsn_prioritize_pdus_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
+        *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x7); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -8735,17 +8743,17 @@ of_instruction_id_clear_actions_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_instruction_id_clear_actions of_instruction_id_clear_actions
+ * \defgroup of_instruction_bsn_prioritize_pdus of_instruction_bsn_prioritize_pdus
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_instruction_id_clear_actions_push_wire_values(of_instruction_id_clear_actions_t *obj)
+of_instruction_bsn_prioritize_pdus_push_wire_values(of_instruction_bsn_prioritize_pdus_t *obj)
 {
 
-    of_instruction_id_clear_actions_push_wire_types(obj);
+    of_instruction_bsn_prioritize_pdus_push_wire_types(obj);
 
     /* TLV obj; set length */
     of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
@@ -8754,7 +8762,7 @@ of_instruction_id_clear_actions_push_wire_values(of_instruction_id_clear_actions
 }
 
 /**
- * Create a new of_instruction_id_clear_actions object
+ * Create a new of_instruction_bsn_prioritize_pdus object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -8765,24 +8773,24 @@ of_instruction_id_clear_actions_push_wire_values(of_instruction_id_clear_actions
  * Use new_from_message to bind an existing message to a message object,
  * or a _get function for non-message objects.
  *
- * \ingroup of_instruction_id_clear_actions
+ * \ingroup of_instruction_bsn_prioritize_pdus
  */
 
-of_instruction_id_clear_actions_t *
-of_instruction_id_clear_actions_new(of_version_t version)
+of_instruction_bsn_prioritize_pdus_t *
+of_instruction_bsn_prioritize_pdus_new(of_version_t version)
 {
-    of_instruction_id_clear_actions_t *obj;
+    of_instruction_bsn_prioritize_pdus_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS] + of_object_extra_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS];
 
-    if ((obj = (of_instruction_id_clear_actions_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_bsn_prioritize_pdus_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_instruction_id_clear_actions_init(obj, version, bytes, 0);
+    of_instruction_bsn_prioritize_pdus_init(obj, version, bytes, 0);
 
-    if (of_instruction_id_clear_actions_push_wire_values(obj) < 0) {
+    if (of_instruction_bsn_prioritize_pdus_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -8791,7 +8799,7 @@ of_instruction_id_clear_actions_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_instruction_id_clear_actions.
+ * Initialize an object of type of_instruction_bsn_prioritize_pdus.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -8808,20 +8816,20 @@ of_instruction_id_clear_actions_new(of_version_t version)
  */
 
 void
-of_instruction_id_clear_actions_init(of_instruction_id_clear_actions_t *obj,
+of_instruction_bsn_prioritize_pdus_init(of_instruction_bsn_prioritize_pdus_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS] + of_object_extra_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS] + of_object_extra_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_INSTRUCTION_ID_CLEAR_ACTIONS;
+    obj->object_id = OF_INSTRUCTION_BSN_PRIORITIZE_PDUS;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -8832,6 +8840,162 @@ of_instruction_id_clear_actions_init(of_instruction_id_clear_actions_t *obj,
     }
 }
 
+
+/**
+ * Get experimenter from an object of type of_instruction_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_bsn_prioritize_pdus.
+ * @param experimenter Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_instruction_bsn_prioritize_pdus_experimenter_get(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t *experimenter)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set experimenter in an object of type of_instruction_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_bsn_prioritize_pdus.
+ * @param experimenter The value to write into the object
+ */
+void
+of_instruction_bsn_prioritize_pdus_experimenter_set(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t experimenter)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get subtype from an object of type of_instruction_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_bsn_prioritize_pdus.
+ * @param subtype Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_instruction_bsn_prioritize_pdus_subtype_get(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t *subtype)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set subtype in an object of type of_instruction_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_bsn_prioritize_pdus.
+ * @param subtype The value to write into the object
+ */
+void
+of_instruction_bsn_prioritize_pdus_subtype_set(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t subtype)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -8864,12 +9028,14 @@ of_instruction_id_clear_actions_init(of_instruction_id_clear_actions_t *obj,
 #include "loci_int.h"
 
 void
-of_instruction_id_goto_table_push_wire_types(of_object_t *obj)
+of_instruction_id_bsn_prioritize_pdus_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x1); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
+        *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
+        *(uint32_t *)(buf + 8) = U32_HTON(0x7); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -8879,17 +9045,17 @@ of_instruction_id_goto_table_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_instruction_id_goto_table of_instruction_id_goto_table
+ * \defgroup of_instruction_id_bsn_prioritize_pdus of_instruction_id_bsn_prioritize_pdus
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_instruction_id_goto_table_push_wire_values(of_instruction_id_goto_table_t *obj)
+of_instruction_id_bsn_prioritize_pdus_push_wire_values(of_instruction_id_bsn_prioritize_pdus_t *obj)
 {
 
-    of_instruction_id_goto_table_push_wire_types(obj);
+    of_instruction_id_bsn_prioritize_pdus_push_wire_types(obj);
 
     /* TLV obj; set length */
     of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
@@ -8898,7 +9064,7 @@ of_instruction_id_goto_table_push_wire_values(of_instruction_id_goto_table_t *ob
 }
 
 /**
- * Create a new of_instruction_id_goto_table object
+ * Create a new of_instruction_id_bsn_prioritize_pdus object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -8909,24 +9075,24 @@ of_instruction_id_goto_table_push_wire_values(of_instruction_id_goto_table_t *ob
  * Use new_from_message to bind an existing message to a message object,
  * or a _get function for non-message objects.
  *
- * \ingroup of_instruction_id_goto_table
+ * \ingroup of_instruction_id_bsn_prioritize_pdus
  */
 
-of_instruction_id_goto_table_t *
-of_instruction_id_goto_table_new(of_version_t version)
+of_instruction_id_bsn_prioritize_pdus_t *
+of_instruction_id_bsn_prioritize_pdus_new(of_version_t version)
 {
-    of_instruction_id_goto_table_t *obj;
+    of_instruction_id_bsn_prioritize_pdus_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_GOTO_TABLE] + of_object_extra_len[version][OF_INSTRUCTION_ID_GOTO_TABLE];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS] + of_object_extra_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS];
 
-    if ((obj = (of_instruction_id_goto_table_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_id_bsn_prioritize_pdus_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_instruction_id_goto_table_init(obj, version, bytes, 0);
+    of_instruction_id_bsn_prioritize_pdus_init(obj, version, bytes, 0);
 
-    if (of_instruction_id_goto_table_push_wire_values(obj) < 0) {
+    if (of_instruction_id_bsn_prioritize_pdus_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -8935,7 +9101,7 @@ of_instruction_id_goto_table_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_instruction_id_goto_table.
+ * Initialize an object of type of_instruction_id_bsn_prioritize_pdus.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -8952,20 +9118,20 @@ of_instruction_id_goto_table_new(of_version_t version)
  */
 
 void
-of_instruction_id_goto_table_init(of_instruction_id_goto_table_t *obj,
+of_instruction_id_bsn_prioritize_pdus_init(of_instruction_id_bsn_prioritize_pdus_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_GOTO_TABLE] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_GOTO_TABLE] + of_object_extra_len[version][OF_INSTRUCTION_ID_GOTO_TABLE];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS] + of_object_extra_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_INSTRUCTION_ID_GOTO_TABLE;
+    obj->object_id = OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -8976,3 +9142,159 @@ of_instruction_id_goto_table_init(of_instruction_id_goto_table_t *obj,
     }
 }
 
+
+/**
+ * Get experimenter from an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param experimenter Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_instruction_id_bsn_prioritize_pdus_experimenter_get(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t *experimenter)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set experimenter in an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param experimenter The value to write into the object
+ */
+void
+of_instruction_id_bsn_prioritize_pdus_experimenter_set(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t experimenter)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get subtype from an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param subtype Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_instruction_id_bsn_prioritize_pdus_subtype_get(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t *subtype)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set subtype in an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_prioritize_pdus.
+ * @param subtype The value to write into the object
+ */
+void
+of_instruction_id_bsn_prioritize_pdus_subtype_set(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t subtype)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 8;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}

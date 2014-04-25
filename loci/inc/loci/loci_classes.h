@@ -833,6 +833,10 @@ void of_instruction_bsn_permit_wire_object_id_get(of_object_t *obj, of_object_id
 void of_instruction_bsn_permit_push_wire_types(of_object_t *obj);
 void of_instruction_id_bsn_permit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_bsn_permit_push_wire_types(of_object_t *obj);
+void of_instruction_bsn_prioritize_pdus_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_bsn_prioritize_pdus_push_wire_types(of_object_t *obj);
+void of_instruction_id_bsn_prioritize_pdus_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_id_bsn_prioritize_pdus_push_wire_types(of_object_t *obj);
 void of_instruction_id_clear_actions_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_clear_actions_push_wire_types(of_object_t *obj);
 void of_instruction_id_goto_table_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1238,6 +1242,7 @@ typedef of_object_t of_instruction_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_bsn_permit_t;
+typedef of_object_t of_instruction_bsn_prioritize_pdus_t;
 typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
 typedef of_object_t of_instruction_goto_table_t;
@@ -1251,6 +1256,7 @@ typedef of_object_t of_instruction_id_bsn_disable_split_horizon_check_t;
 typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_id_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_id_bsn_permit_t;
+typedef of_object_t of_instruction_id_bsn_prioritize_pdus_t;
 typedef of_object_t of_instruction_id_clear_actions_t;
 typedef of_object_t of_instruction_id_experimenter_t;
 typedef of_object_t of_instruction_id_goto_table_t;
@@ -3326,6 +3332,11 @@ extern of_instruction_bsn_permit_t *
 extern void of_instruction_bsn_permit_init(
     of_instruction_bsn_permit_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_bsn_prioritize_pdus_t *
+    of_instruction_bsn_prioritize_pdus_new(of_version_t version);
+extern void of_instruction_bsn_prioritize_pdus_init(
+    of_instruction_bsn_prioritize_pdus_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_new(of_version_t version);
 extern void of_instruction_clear_actions_init(
@@ -3395,6 +3406,11 @@ extern of_instruction_id_bsn_permit_t *
     of_instruction_id_bsn_permit_new(of_version_t version);
 extern void of_instruction_id_bsn_permit_init(
     of_instruction_id_bsn_permit_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_prioritize_pdus_t *
+    of_instruction_id_bsn_prioritize_pdus_new(of_version_t version);
+extern void of_instruction_id_bsn_prioritize_pdus_init(
+    of_instruction_id_bsn_prioritize_pdus_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_new(of_version_t version);
@@ -7698,6 +7714,17 @@ of_instruction_bsn_permit_delete(of_instruction_bsn_permit_t *obj) {
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_prioritize_pdus_t
+ * @param obj An instance of type of_instruction_bsn_prioritize_pdus_t
+ *
+ * \ingroup of_instruction_bsn_prioritize_pdus
+ */
+static inline void
+of_instruction_bsn_prioritize_pdus_delete(of_instruction_bsn_prioritize_pdus_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_clear_actions_t
  * @param obj An instance of type of_instruction_clear_actions_t
  *
@@ -7848,6 +7875,17 @@ of_instruction_id_bsn_packet_of_death_delete(of_instruction_id_bsn_packet_of_dea
  */
 static inline void
 of_instruction_id_bsn_permit_delete(of_instruction_id_bsn_permit_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_prioritize_pdus_t
+ * @param obj An instance of type of_instruction_id_bsn_prioritize_pdus_t
+ *
+ * \ingroup of_instruction_id_bsn_prioritize_pdus
+ */
+static inline void
+of_instruction_id_bsn_prioritize_pdus_delete(of_instruction_id_bsn_prioritize_pdus_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17806,6 +17844,22 @@ extern void of_instruction_bsn_permit_subtype_get(
     of_instruction_bsn_permit_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_bsn_prioritize_pdus */
+
+extern void of_instruction_bsn_prioritize_pdus_experimenter_set(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_prioritize_pdus_experimenter_get(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_prioritize_pdus_subtype_set(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_prioritize_pdus_subtype_get(
+    of_instruction_bsn_prioritize_pdus_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_clear_actions */
 
 /* Unified accessor functions for of_instruction_experimenter */
@@ -17963,6 +18017,22 @@ extern void of_instruction_id_bsn_permit_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_permit_subtype_get(
     of_instruction_id_bsn_permit_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_prioritize_pdus */
+
+extern void of_instruction_id_bsn_prioritize_pdus_experimenter_set(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_prioritize_pdus_experimenter_get(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_prioritize_pdus_subtype_set(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_prioritize_pdus_subtype_get(
+    of_instruction_id_bsn_prioritize_pdus_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_clear_actions */
@@ -21546,6 +21616,7 @@ union of_instruction_u {
     of_instruction_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
     of_instruction_bsn_packet_of_death_t bsn_packet_of_death;
     of_instruction_bsn_permit_t bsn_permit;
+    of_instruction_bsn_prioritize_pdus_t bsn_prioritize_pdus;
     of_instruction_clear_actions_t clear_actions;
     of_instruction_experimenter_t experimenter;
     of_instruction_goto_table_t goto_table;
@@ -21605,6 +21676,7 @@ union of_instruction_id_u {
     of_instruction_id_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
     of_instruction_id_bsn_packet_of_death_t bsn_packet_of_death;
     of_instruction_id_bsn_permit_t bsn_permit;
+    of_instruction_id_bsn_prioritize_pdus_t bsn_prioritize_pdus;
     of_instruction_id_clear_actions_t clear_actions;
     of_instruction_id_experimenter_t experimenter;
     of_instruction_id_goto_table_t goto_table;

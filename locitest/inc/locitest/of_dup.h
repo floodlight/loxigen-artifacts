@@ -1210,6 +1210,10 @@ extern of_instruction_bsn_permit_t *
     of_instruction_bsn_permit_dup(
         of_instruction_bsn_permit_t *src);
 
+extern of_instruction_bsn_prioritize_pdus_t *
+    of_instruction_bsn_prioritize_pdus_dup(
+        of_instruction_bsn_prioritize_pdus_t *src);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_dup(
         of_instruction_clear_actions_t *src);
@@ -1265,6 +1269,10 @@ extern of_instruction_id_bsn_packet_of_death_t *
 extern of_instruction_id_bsn_permit_t *
     of_instruction_id_bsn_permit_dup(
         of_instruction_id_bsn_permit_t *src);
+
+extern of_instruction_id_bsn_prioritize_pdus_t *
+    of_instruction_id_bsn_prioritize_pdus_dup(
+        of_instruction_id_bsn_prioritize_pdus_t *src);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_dup(
@@ -5398,6 +5406,10 @@ extern of_instruction_bsn_permit_t *
     of_instruction_bsn_permit_OF_VERSION_1_3_dup(
         of_instruction_bsn_permit_t *src);
 
+extern of_instruction_bsn_prioritize_pdus_t *
+    of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
+        of_instruction_bsn_prioritize_pdus_t *src);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_OF_VERSION_1_3_dup(
         of_instruction_clear_actions_t *src);
@@ -5453,6 +5465,10 @@ extern of_instruction_id_bsn_packet_of_death_t *
 extern of_instruction_id_bsn_permit_t *
     of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_permit_t *src);
+
+extern of_instruction_id_bsn_prioritize_pdus_t *
+    of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_prioritize_pdus_t *src);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_OF_VERSION_1_3_dup(
