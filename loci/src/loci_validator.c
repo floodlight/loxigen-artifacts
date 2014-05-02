@@ -1233,8 +1233,6 @@ loci_validate_of_action_bsn_mirror_OF_VERSION_1_0(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1257,8 +1255,6 @@ loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_0(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1280,8 +1276,6 @@ loci_validate_of_action_enqueue_OF_VERSION_1_0(uint8_t *data, int len, int *out_
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1334,8 +1328,6 @@ loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_0(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1357,8 +1349,6 @@ loci_validate_of_action_output_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1382,8 +1372,6 @@ loci_validate_of_action_set_dl_dst_OF_VERSION_1_0(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1405,8 +1393,6 @@ loci_validate_of_action_set_dl_src_OF_VERSION_1_0(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1430,8 +1416,6 @@ loci_validate_of_action_set_nw_dst_OF_VERSION_1_0(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1453,8 +1437,6 @@ loci_validate_of_action_set_nw_src_OF_VERSION_1_0(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1478,8 +1460,6 @@ loci_validate_of_action_set_nw_tos_OF_VERSION_1_0(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1501,8 +1481,6 @@ loci_validate_of_action_set_tp_dst_OF_VERSION_1_0(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1526,8 +1504,6 @@ loci_validate_of_action_set_tp_src_OF_VERSION_1_0(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1549,8 +1525,6 @@ loci_validate_of_action_set_vlan_pcp_OF_VERSION_1_0(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1574,8 +1548,6 @@ loci_validate_of_action_set_vlan_vid_OF_VERSION_1_0(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1597,8 +1569,6 @@ loci_validate_of_action_strip_vlan_OF_VERSION_1_0(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1736,8 +1706,6 @@ loci_validate_of_aggregate_stats_reply_OF_VERSION_1_0(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1800,8 +1768,6 @@ loci_validate_of_aggregate_stats_request_OF_VERSION_1_0(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 56) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -1911,8 +1877,6 @@ loci_validate_of_barrier_reply_OF_VERSION_1_0(uint8_t *data, int len, int *out_l
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -1934,8 +1898,6 @@ loci_validate_of_barrier_request_OF_VERSION_1_0(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2085,8 +2047,6 @@ loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_0(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2108,8 +2068,6 @@ loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_0(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2133,8 +2091,6 @@ loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_0(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2156,8 +2112,6 @@ loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_0(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2181,8 +2135,6 @@ loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_0(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2204,8 +2156,6 @@ loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_0(uint8_t *data, int len
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2257,8 +2207,6 @@ loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_0(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2280,8 +2228,6 @@ loci_validate_of_bsn_get_ip_mask_reply_OF_VERSION_1_0(uint8_t *data, int len, in
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2305,8 +2251,6 @@ loci_validate_of_bsn_get_ip_mask_request_OF_VERSION_1_0(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2328,8 +2272,6 @@ loci_validate_of_bsn_get_l2_table_reply_OF_VERSION_1_0(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2353,8 +2295,6 @@ loci_validate_of_bsn_get_l2_table_request_OF_VERSION_1_0(uint8_t *data, int len,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2376,8 +2316,6 @@ loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_0(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2401,8 +2339,6 @@ loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_0(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2425,8 +2361,6 @@ loci_validate_of_bsn_hybrid_get_reply_OF_VERSION_1_0(uint8_t *data, int len, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2448,8 +2382,6 @@ loci_validate_of_bsn_hybrid_get_request_OF_VERSION_1_0(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2488,8 +2420,6 @@ loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_0(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 23) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2536,8 +2466,6 @@ loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_0(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2559,8 +2487,6 @@ loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_0(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 23) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2607,8 +2533,6 @@ loci_validate_of_bsn_set_ip_mask_OF_VERSION_1_0(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2630,8 +2554,6 @@ loci_validate_of_bsn_set_l2_table_reply_OF_VERSION_1_0(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2655,8 +2577,6 @@ loci_validate_of_bsn_set_l2_table_request_OF_VERSION_1_0(uint8_t *data, int len,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2678,8 +2598,6 @@ loci_validate_of_bsn_set_mirroring_OF_VERSION_1_0(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2703,8 +2621,6 @@ loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_0(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -2726,8 +2642,6 @@ loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_0(uint8_t *data,
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2796,8 +2710,6 @@ loci_validate_of_bsn_shell_status_OF_VERSION_1_0(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -2933,8 +2845,6 @@ loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_0(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3012,8 +2922,6 @@ loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_0(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3035,8 +2943,6 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_0(uint8_t *data, i
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -3060,8 +2966,6 @@ loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_0(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3083,8 +2987,6 @@ loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_0(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -3108,8 +3010,6 @@ loci_validate_of_desc_stats_reply_OF_VERSION_1_0(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3131,8 +3031,6 @@ loci_validate_of_desc_stats_request_OF_VERSION_1_0(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -3229,8 +3127,6 @@ loci_validate_of_features_request_OF_VERSION_1_0(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -3465,8 +3361,6 @@ loci_validate_of_flow_removed_OF_VERSION_1_0(uint8_t *data, int len, int *out_le
         return -1;
     }
 
-    len = wire_len;
-
 
 
     // TODO validate of_match_t
@@ -3547,8 +3441,6 @@ loci_validate_of_flow_stats_request_OF_VERSION_1_0(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
     // TODO validate of_match_t
@@ -3572,8 +3464,6 @@ loci_validate_of_get_config_reply_OF_VERSION_1_0(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3596,8 +3486,6 @@ loci_validate_of_get_config_request_OF_VERSION_1_0(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3619,8 +3507,6 @@ loci_validate_of_hello_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -3714,8 +3600,6 @@ loci_validate_of_nicira_controller_role_reply_OF_VERSION_1_0(uint8_t *data, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3737,8 +3621,6 @@ loci_validate_of_nicira_controller_role_request_OF_VERSION_1_0(uint8_t *data, in
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -3863,8 +3745,6 @@ loci_validate_of_port_mod_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3954,8 +3834,6 @@ loci_validate_of_port_stats_request_OF_VERSION_1_0(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -3977,8 +3855,6 @@ loci_validate_of_port_status_OF_VERSION_1_0(uint8_t *data, int len, int *out_len
     if (wire_len > len || wire_len < 64) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4029,8 +3905,6 @@ loci_validate_of_queue_get_config_request_OF_VERSION_1_0(uint8_t *data, int len,
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4106,8 +3980,6 @@ loci_validate_of_queue_prop_min_rate_OF_VERSION_1_0(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4174,8 +4046,6 @@ loci_validate_of_queue_stats_request_OF_VERSION_1_0(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4198,8 +4068,6 @@ loci_validate_of_set_config_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4221,8 +4089,6 @@ loci_validate_of_table_mod_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4289,8 +4155,6 @@ loci_validate_of_table_stats_request_OF_VERSION_1_0(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4667,8 +4531,6 @@ loci_validate_of_action_bsn_mirror_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4690,8 +4552,6 @@ loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_1(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4715,8 +4575,6 @@ loci_validate_of_action_copy_ttl_in_OF_VERSION_1_1(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4738,8 +4596,6 @@ loci_validate_of_action_copy_ttl_out_OF_VERSION_1_1(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4763,8 +4619,6 @@ loci_validate_of_action_dec_mpls_ttl_OF_VERSION_1_1(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4787,8 +4641,6 @@ loci_validate_of_action_dec_nw_ttl_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4810,8 +4662,6 @@ loci_validate_of_action_group_OF_VERSION_1_1(uint8_t *data, int len, int *out_le
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4864,8 +4714,6 @@ loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_1(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4887,8 +4735,6 @@ loci_validate_of_action_output_OF_VERSION_1_1(uint8_t *data, int len, int *out_l
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4912,8 +4758,6 @@ loci_validate_of_action_pop_mpls_OF_VERSION_1_1(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4935,8 +4779,6 @@ loci_validate_of_action_pop_vlan_OF_VERSION_1_1(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -4960,8 +4802,6 @@ loci_validate_of_action_push_mpls_OF_VERSION_1_1(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -4983,8 +4823,6 @@ loci_validate_of_action_push_vlan_OF_VERSION_1_1(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5008,8 +4846,6 @@ loci_validate_of_action_set_dl_dst_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5031,8 +4867,6 @@ loci_validate_of_action_set_dl_src_OF_VERSION_1_1(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5056,8 +4890,6 @@ loci_validate_of_action_set_mpls_label_OF_VERSION_1_1(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5079,8 +4911,6 @@ loci_validate_of_action_set_mpls_tc_OF_VERSION_1_1(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5104,8 +4934,6 @@ loci_validate_of_action_set_mpls_ttl_OF_VERSION_1_1(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5127,8 +4955,6 @@ loci_validate_of_action_set_nw_dst_OF_VERSION_1_1(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5152,8 +4978,6 @@ loci_validate_of_action_set_nw_ecn_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5175,8 +4999,6 @@ loci_validate_of_action_set_nw_src_OF_VERSION_1_1(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5200,8 +5022,6 @@ loci_validate_of_action_set_nw_tos_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5223,8 +5043,6 @@ loci_validate_of_action_set_nw_ttl_OF_VERSION_1_1(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5248,8 +5066,6 @@ loci_validate_of_action_set_queue_OF_VERSION_1_1(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5271,8 +5087,6 @@ loci_validate_of_action_set_tp_dst_OF_VERSION_1_1(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5296,8 +5110,6 @@ loci_validate_of_action_set_tp_src_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5320,8 +5132,6 @@ loci_validate_of_action_set_vlan_pcp_OF_VERSION_1_1(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5343,8 +5153,6 @@ loci_validate_of_action_set_vlan_vid_OF_VERSION_1_1(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5488,8 +5296,6 @@ loci_validate_of_aggregate_stats_reply_OF_VERSION_1_1(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5556,8 +5362,6 @@ loci_validate_of_aggregate_stats_request_OF_VERSION_1_1(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 136) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5723,8 +5527,6 @@ loci_validate_of_barrier_reply_OF_VERSION_1_1(uint8_t *data, int len, int *out_l
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5746,8 +5548,6 @@ loci_validate_of_barrier_request_OF_VERSION_1_1(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5873,8 +5673,6 @@ loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_1(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5896,8 +5694,6 @@ loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_1(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5921,8 +5717,6 @@ loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_1(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5944,8 +5738,6 @@ loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_1(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -5969,8 +5761,6 @@ loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_1(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -5992,8 +5782,6 @@ loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_1(uint8_t *data, int len
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6045,8 +5833,6 @@ loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_1(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6069,8 +5855,6 @@ loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_1(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6092,8 +5876,6 @@ loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_1(uint8_t *data, int len
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6132,8 +5914,6 @@ loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_1(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 25) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6180,8 +5960,6 @@ loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_1(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6203,8 +5981,6 @@ loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_1(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 25) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6251,8 +6027,6 @@ loci_validate_of_bsn_set_mirroring_OF_VERSION_1_1(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6275,8 +6049,6 @@ loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6298,8 +6070,6 @@ loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_1(uint8_t *data,
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6435,8 +6205,6 @@ loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_1(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6514,8 +6282,6 @@ loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_1(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6537,8 +6303,6 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_1(uint8_t *data, i
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6562,8 +6326,6 @@ loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_1(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6585,8 +6347,6 @@ loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_1(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6654,8 +6414,6 @@ loci_validate_of_desc_stats_reply_OF_VERSION_1_1(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -6677,8 +6435,6 @@ loci_validate_of_desc_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -6775,8 +6531,6 @@ loci_validate_of_features_request_OF_VERSION_1_1(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -7011,8 +6765,6 @@ loci_validate_of_flow_removed_OF_VERSION_1_1(uint8_t *data, int len, int *out_le
         return -1;
     }
 
-    len = wire_len;
-
 
 
     // TODO validate of_match_t
@@ -7093,8 +6845,6 @@ loci_validate_of_flow_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
     // TODO validate of_match_t
@@ -7118,8 +6868,6 @@ loci_validate_of_get_config_reply_OF_VERSION_1_1(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7141,8 +6889,6 @@ loci_validate_of_get_config_request_OF_VERSION_1_1(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -7316,8 +7062,6 @@ loci_validate_of_group_desc_stats_request_OF_VERSION_1_1(uint8_t *data, int len,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7447,8 +7191,6 @@ loci_validate_of_group_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7470,8 +7212,6 @@ loci_validate_of_hello_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -7585,8 +7325,6 @@ loci_validate_of_instruction_clear_actions_OF_VERSION_1_1(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7635,8 +7373,6 @@ loci_validate_of_instruction_goto_table_OF_VERSION_1_1(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -7688,8 +7424,6 @@ loci_validate_of_instruction_write_metadata_OF_VERSION_1_1(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7711,8 +7445,6 @@ loci_validate_of_match_v2_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 88) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -7864,8 +7596,6 @@ loci_validate_of_port_mod_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7955,8 +7685,6 @@ loci_validate_of_port_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -7978,8 +7706,6 @@ loci_validate_of_port_status_OF_VERSION_1_1(uint8_t *data, int len, int *out_len
     if (wire_len > len || wire_len < 80) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8030,8 +7756,6 @@ loci_validate_of_queue_get_config_request_OF_VERSION_1_1(uint8_t *data, int len,
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8107,8 +7831,6 @@ loci_validate_of_queue_prop_min_rate_OF_VERSION_1_1(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8175,8 +7897,6 @@ loci_validate_of_queue_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8198,8 +7918,6 @@ loci_validate_of_set_config_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8245,8 +7963,6 @@ loci_validate_of_table_mod_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8336,8 +8052,6 @@ loci_validate_of_table_stats_request_OF_VERSION_1_1(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8707,8 +8421,6 @@ loci_validate_of_action_bsn_mirror_OF_VERSION_1_2(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8730,8 +8442,6 @@ loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_2(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8755,8 +8465,6 @@ loci_validate_of_action_copy_ttl_in_OF_VERSION_1_2(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8778,8 +8486,6 @@ loci_validate_of_action_copy_ttl_out_OF_VERSION_1_2(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8803,8 +8509,6 @@ loci_validate_of_action_dec_mpls_ttl_OF_VERSION_1_2(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8827,8 +8531,6 @@ loci_validate_of_action_dec_nw_ttl_OF_VERSION_1_2(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8850,8 +8552,6 @@ loci_validate_of_action_group_OF_VERSION_1_2(uint8_t *data, int len, int *out_le
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8904,8 +8604,6 @@ loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_2(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8927,8 +8625,6 @@ loci_validate_of_action_output_OF_VERSION_1_2(uint8_t *data, int len, int *out_l
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -8952,8 +8648,6 @@ loci_validate_of_action_pop_mpls_OF_VERSION_1_2(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -8975,8 +8669,6 @@ loci_validate_of_action_pop_vlan_OF_VERSION_1_2(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9000,8 +8692,6 @@ loci_validate_of_action_push_mpls_OF_VERSION_1_2(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -9023,8 +8713,6 @@ loci_validate_of_action_push_vlan_OF_VERSION_1_2(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9298,8 +8986,6 @@ loci_validate_of_action_set_mpls_ttl_OF_VERSION_1_2(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -9322,8 +9008,6 @@ loci_validate_of_action_set_nw_ttl_OF_VERSION_1_2(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -9345,8 +9029,6 @@ loci_validate_of_action_set_queue_OF_VERSION_1_2(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9495,8 +9177,6 @@ loci_validate_of_aggregate_stats_reply_OF_VERSION_1_2(uint8_t *data, int len, in
     if (wire_len > len || wire_len < 40) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9736,8 +9416,6 @@ loci_validate_of_barrier_reply_OF_VERSION_1_2(uint8_t *data, int len, int *out_l
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -9759,8 +9437,6 @@ loci_validate_of_barrier_request_OF_VERSION_1_2(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9886,8 +9562,6 @@ loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_2(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -9909,8 +9583,6 @@ loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_2(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9934,8 +9606,6 @@ loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_2(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -9957,8 +9627,6 @@ loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_2(uint8_t *data, int len
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -9982,8 +9650,6 @@ loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_2(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10005,8 +9671,6 @@ loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_2(uint8_t *data, int len
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10058,8 +9722,6 @@ loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_2(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10082,8 +9744,6 @@ loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_2(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10105,8 +9765,6 @@ loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_2(uint8_t *data, int len
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10145,8 +9803,6 @@ loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_2(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 25) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10193,8 +9849,6 @@ loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_2(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10216,8 +9870,6 @@ loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_2(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 25) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10264,8 +9916,6 @@ loci_validate_of_bsn_set_mirroring_OF_VERSION_1_2(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10288,8 +9938,6 @@ loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_2(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10311,8 +9959,6 @@ loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_2(uint8_t *data,
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10448,8 +10094,6 @@ loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_2(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10527,8 +10171,6 @@ loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_2(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10550,8 +10192,6 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_2(uint8_t *data, i
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10575,8 +10215,6 @@ loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_2(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10598,8 +10236,6 @@ loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_2(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10667,8 +10303,6 @@ loci_validate_of_desc_stats_reply_OF_VERSION_1_2(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -10690,8 +10324,6 @@ loci_validate_of_desc_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -10811,8 +10443,6 @@ loci_validate_of_features_request_OF_VERSION_1_2(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -11124,8 +10754,6 @@ loci_validate_of_get_config_reply_OF_VERSION_1_2(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -11147,8 +10775,6 @@ loci_validate_of_get_config_request_OF_VERSION_1_2(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -11322,8 +10948,6 @@ loci_validate_of_group_desc_stats_request_OF_VERSION_1_2(uint8_t *data, int len,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -11346,8 +10970,6 @@ loci_validate_of_group_features_stats_reply_OF_VERSION_1_2(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -11369,8 +10991,6 @@ loci_validate_of_group_features_stats_request_OF_VERSION_1_2(uint8_t *data, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -11501,8 +11121,6 @@ loci_validate_of_group_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -11524,8 +11142,6 @@ loci_validate_of_hello_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -11639,8 +11255,6 @@ loci_validate_of_instruction_clear_actions_OF_VERSION_1_2(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -11689,8 +11303,6 @@ loci_validate_of_instruction_goto_table_OF_VERSION_1_2(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -11741,8 +11353,6 @@ loci_validate_of_instruction_write_metadata_OF_VERSION_1_2(uint8_t *data, int le
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -13587,8 +13197,6 @@ loci_validate_of_port_mod_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -13678,8 +13286,6 @@ loci_validate_of_port_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -13701,8 +13307,6 @@ loci_validate_of_port_status_OF_VERSION_1_2(uint8_t *data, int len, int *out_len
     if (wire_len > len || wire_len < 80) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -13753,8 +13357,6 @@ loci_validate_of_queue_get_config_request_OF_VERSION_1_2(uint8_t *data, int len,
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -13861,8 +13463,6 @@ loci_validate_of_queue_prop_max_rate_OF_VERSION_1_2(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -13884,8 +13484,6 @@ loci_validate_of_queue_prop_min_rate_OF_VERSION_1_2(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -13953,8 +13551,6 @@ loci_validate_of_queue_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -13977,8 +13573,6 @@ loci_validate_of_role_reply_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -14000,8 +13594,6 @@ loci_validate_of_role_request_OF_VERSION_1_2(uint8_t *data, int len, int *out_le
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -14048,8 +13640,6 @@ loci_validate_of_set_config_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -14094,8 +13684,6 @@ loci_validate_of_table_mod_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -14185,8 +13773,6 @@ loci_validate_of_table_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15073,8 +14659,6 @@ loci_validate_of_action_bsn_mirror_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15096,8 +14680,6 @@ loci_validate_of_action_id_bsn_mirror_OF_VERSION_1_3(uint8_t *data, int len, int
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15121,8 +14703,6 @@ loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_3(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15144,8 +14724,6 @@ loci_validate_of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3(uint8_t *data, int 
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15169,8 +14747,6 @@ loci_validate_of_action_copy_ttl_in_OF_VERSION_1_3(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15192,8 +14768,6 @@ loci_validate_of_action_id_copy_ttl_in_OF_VERSION_1_3(uint8_t *data, int len, in
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15217,8 +14791,6 @@ loci_validate_of_action_copy_ttl_out_OF_VERSION_1_3(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15240,8 +14812,6 @@ loci_validate_of_action_id_copy_ttl_out_OF_VERSION_1_3(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15265,8 +14835,6 @@ loci_validate_of_action_dec_mpls_ttl_OF_VERSION_1_3(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15288,8 +14856,6 @@ loci_validate_of_action_id_dec_mpls_ttl_OF_VERSION_1_3(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15313,8 +14879,6 @@ loci_validate_of_action_dec_nw_ttl_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15336,8 +14900,6 @@ loci_validate_of_action_id_dec_nw_ttl_OF_VERSION_1_3(uint8_t *data, int len, int
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15361,8 +14923,6 @@ loci_validate_of_action_group_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15384,8 +14944,6 @@ loci_validate_of_action_id_group_OF_VERSION_1_3(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15467,8 +15025,6 @@ loci_validate_of_action_nicira_dec_ttl_OF_VERSION_1_3(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15490,8 +15046,6 @@ loci_validate_of_action_id_nicira_dec_ttl_OF_VERSION_1_3(uint8_t *data, int len,
     if (wire_len > len || wire_len < 10) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15515,8 +15069,6 @@ loci_validate_of_action_output_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15538,8 +15090,6 @@ loci_validate_of_action_id_output_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15563,8 +15113,6 @@ loci_validate_of_action_pop_mpls_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15586,8 +15134,6 @@ loci_validate_of_action_id_pop_mpls_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15611,8 +15157,6 @@ loci_validate_of_action_pop_pbb_OF_VERSION_1_3(uint8_t *data, int len, int *out_
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15634,8 +15178,6 @@ loci_validate_of_action_id_pop_pbb_OF_VERSION_1_3(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15659,8 +15201,6 @@ loci_validate_of_action_pop_vlan_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15682,8 +15222,6 @@ loci_validate_of_action_id_pop_vlan_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15707,8 +15245,6 @@ loci_validate_of_action_push_mpls_OF_VERSION_1_3(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15730,8 +15266,6 @@ loci_validate_of_action_id_push_mpls_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15755,8 +15289,6 @@ loci_validate_of_action_push_pbb_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15778,8 +15310,6 @@ loci_validate_of_action_id_push_pbb_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -15803,8 +15333,6 @@ loci_validate_of_action_push_vlan_OF_VERSION_1_3(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -15826,8 +15354,6 @@ loci_validate_of_action_id_push_vlan_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16101,8 +15627,6 @@ loci_validate_of_action_id_set_field_OF_VERSION_1_3(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16124,8 +15648,6 @@ loci_validate_of_action_set_mpls_ttl_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16149,8 +15671,6 @@ loci_validate_of_action_id_set_mpls_ttl_OF_VERSION_1_3(uint8_t *data, int len, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16172,8 +15692,6 @@ loci_validate_of_action_set_nw_ttl_OF_VERSION_1_3(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16197,8 +15715,6 @@ loci_validate_of_action_id_set_nw_ttl_OF_VERSION_1_3(uint8_t *data, int len, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16221,8 +15737,6 @@ loci_validate_of_action_set_queue_OF_VERSION_1_3(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16244,8 +15758,6 @@ loci_validate_of_action_id_set_queue_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16413,8 +15925,6 @@ loci_validate_of_aggregate_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16518,8 +16028,6 @@ loci_validate_of_async_get_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16542,8 +16050,6 @@ loci_validate_of_async_get_request_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16565,8 +16071,6 @@ loci_validate_of_async_set_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16739,8 +16243,6 @@ loci_validate_of_barrier_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16762,8 +16264,6 @@ loci_validate_of_barrier_request_OF_VERSION_1_3(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16941,8 +16441,6 @@ loci_validate_of_bsn_arp_idle_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -16964,8 +16462,6 @@ loci_validate_of_bsn_bw_clear_data_reply_OF_VERSION_1_3(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -16989,8 +16485,6 @@ loci_validate_of_bsn_bw_clear_data_request_OF_VERSION_1_3(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17012,8 +16506,6 @@ loci_validate_of_bsn_bw_enable_get_reply_OF_VERSION_1_3(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17037,8 +16529,6 @@ loci_validate_of_bsn_bw_enable_get_request_OF_VERSION_1_3(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17061,8 +16551,6 @@ loci_validate_of_bsn_bw_enable_set_reply_OF_VERSION_1_3(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17084,8 +16572,6 @@ loci_validate_of_bsn_bw_enable_set_request_OF_VERSION_1_3(uint8_t *data, int len
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17152,8 +16638,6 @@ loci_validate_of_bsn_controller_connections_request_OF_VERSION_1_3(uint8_t *data
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17389,8 +16873,6 @@ loci_validate_of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3(uint8_t *da
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17456,8 +16938,6 @@ loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17525,8 +17005,6 @@ loci_validate_of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3(uint8_t *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17573,8 +17051,6 @@ loci_validate_of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3(uint8_t *data, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17596,8 +17072,6 @@ loci_validate_of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3(uint8_t *data, 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17621,8 +17095,6 @@ loci_validate_of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3(uint8_t *data, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17644,8 +17116,6 @@ loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3(uint8_t *data, 
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17713,8 +17183,6 @@ loci_validate_of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3(uint8_t *data,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17736,8 +17204,6 @@ loci_validate_of_bsn_gentable_clear_reply_OF_VERSION_1_3(uint8_t *data, int len,
     if (wire_len > len || wire_len < 28) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17761,8 +17227,6 @@ loci_validate_of_bsn_gentable_clear_request_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -17784,8 +17248,6 @@ loci_validate_of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(uint8_t *data, int
     if (wire_len > len || wire_len < 48) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17836,8 +17298,6 @@ loci_validate_of_bsn_gentable_desc_stats_request_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -17987,8 +17447,6 @@ loci_validate_of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3(uint8_t *d
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18074,8 +17532,6 @@ loci_validate_of_bsn_gentable_entry_stats_request_OF_VERSION_1_3(uint8_t *data, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18097,8 +17553,6 @@ loci_validate_of_bsn_gentable_set_buckets_size_OF_VERSION_1_3(uint8_t *data, int
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18166,8 +17620,6 @@ loci_validate_of_bsn_gentable_stats_request_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18218,8 +17670,6 @@ loci_validate_of_bsn_get_interfaces_request_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18241,8 +17691,6 @@ loci_validate_of_bsn_get_mirroring_reply_OF_VERSION_1_3(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18266,8 +17714,6 @@ loci_validate_of_bsn_get_mirroring_request_OF_VERSION_1_3(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18289,8 +17735,6 @@ loci_validate_of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3(uint8_t *data, int
     if (wire_len > len || wire_len < 272) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18314,8 +17758,6 @@ loci_validate_of_bsn_get_switch_pipeline_request_OF_VERSION_1_3(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18338,8 +17780,6 @@ loci_validate_of_bsn_image_desc_stats_reply_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18361,8 +17801,6 @@ loci_validate_of_bsn_image_desc_stats_request_OF_VERSION_1_3(uint8_t *data, int 
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18401,8 +17839,6 @@ loci_validate_of_bsn_lacp_convergence_notif_OF_VERSION_1_3(uint8_t *data, int le
     if (wire_len > len || wire_len < 52) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18470,8 +17906,6 @@ loci_validate_of_bsn_lacp_stats_request_OF_VERSION_1_3(uint8_t *data, int len, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18493,8 +17927,6 @@ loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 25) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18541,8 +17973,6 @@ loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_3(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18564,8 +17994,6 @@ loci_validate_of_bsn_pdu_tx_reply_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 25) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18668,8 +18096,6 @@ loci_validate_of_bsn_port_counter_stats_request_OF_VERSION_1_3(uint8_t *data, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18691,8 +18117,6 @@ loci_validate_of_bsn_role_status_OF_VERSION_1_3(uint8_t *data, int len, int *out
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18716,8 +18140,6 @@ loci_validate_of_bsn_set_aux_cxns_reply_OF_VERSION_1_3(uint8_t *data, int len, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18739,8 +18161,6 @@ loci_validate_of_bsn_set_aux_cxns_request_OF_VERSION_1_3(uint8_t *data, int len,
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18764,8 +18184,6 @@ loci_validate_of_bsn_set_lacp_reply_OF_VERSION_1_3(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18787,8 +18205,6 @@ loci_validate_of_bsn_set_lacp_request_OF_VERSION_1_3(uint8_t *data, int len, int
     if (wire_len > len || wire_len < 38) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18812,8 +18228,6 @@ loci_validate_of_bsn_set_mirroring_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18835,8 +18249,6 @@ loci_validate_of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18860,8 +18272,6 @@ loci_validate_of_bsn_set_pktin_suppression_request_OF_VERSION_1_3(uint8_t *data,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18884,8 +18294,6 @@ loci_validate_of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -18907,8 +18315,6 @@ loci_validate_of_bsn_set_switch_pipeline_request_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 272) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -18976,8 +18382,6 @@ loci_validate_of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3(uint8_t *data,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19044,8 +18448,6 @@ loci_validate_of_bsn_table_checksum_stats_request_OF_VERSION_1_3(uint8_t *data, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19067,8 +18469,6 @@ loci_validate_of_bsn_table_set_buckets_size_OF_VERSION_1_3(uint8_t *data, int le
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19092,8 +18492,6 @@ loci_validate_of_bsn_time_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19115,8 +18513,6 @@ loci_validate_of_bsn_time_request_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19207,8 +18603,6 @@ loci_validate_of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19254,8 +18648,6 @@ loci_validate_of_bsn_tlv_idle_notification_OF_VERSION_1_3(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19277,8 +18669,6 @@ loci_validate_of_bsn_tlv_idle_time_OF_VERSION_1_3(uint8_t *data, int len, int *o
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19302,8 +18692,6 @@ loci_validate_of_bsn_tlv_idle_timeout_OF_VERSION_1_3(uint8_t *data, int len, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19325,8 +18713,6 @@ loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19350,8 +18736,6 @@ loci_validate_of_bsn_tlv_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19373,8 +18757,6 @@ loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(uint8_t *data, int len, int
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19398,8 +18780,6 @@ loci_validate_of_bsn_tlv_port_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19421,8 +18801,6 @@ loci_validate_of_bsn_tlv_reply_packets_OF_VERSION_1_3(uint8_t *data, int len, in
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19446,8 +18824,6 @@ loci_validate_of_bsn_tlv_request_packets_OF_VERSION_1_3(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19469,8 +18845,6 @@ loci_validate_of_bsn_tlv_rx_packets_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19494,8 +18868,6 @@ loci_validate_of_bsn_tlv_tx_packets_OF_VERSION_1_3(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19517,8 +18889,6 @@ loci_validate_of_bsn_tlv_udf_anchor_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 6) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19542,8 +18912,6 @@ loci_validate_of_bsn_tlv_udf_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19565,8 +18933,6 @@ loci_validate_of_bsn_tlv_udf_length_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 6) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19590,8 +18956,6 @@ loci_validate_of_bsn_tlv_udf_offset_OF_VERSION_1_3(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19613,8 +18977,6 @@ loci_validate_of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3(uint8_t *data, int
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19638,8 +19000,6 @@ loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19662,8 +19022,6 @@ loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19685,8 +19043,6 @@ loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_3(uint8_t *data, int
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19765,8 +19121,6 @@ loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_3(uint8_t *data, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19788,8 +19142,6 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 20) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19869,8 +19221,6 @@ loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(uint8_t *data, in
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19893,8 +19243,6 @@ loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -19916,8 +19264,6 @@ loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 32) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -19985,8 +19331,6 @@ loci_validate_of_desc_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -20008,8 +19352,6 @@ loci_validate_of_desc_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -20102,8 +19444,6 @@ loci_validate_of_features_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -20125,8 +19465,6 @@ loci_validate_of_features_request_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -20438,8 +19776,6 @@ loci_validate_of_get_config_reply_OF_VERSION_1_3(uint8_t *data, int len, int *ou
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -20461,8 +19797,6 @@ loci_validate_of_get_config_request_OF_VERSION_1_3(uint8_t *data, int len, int *
     if (wire_len > len || wire_len < 8) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -20636,8 +19970,6 @@ loci_validate_of_group_desc_stats_request_OF_VERSION_1_3(uint8_t *data, int len,
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -20660,8 +19992,6 @@ loci_validate_of_group_features_stats_reply_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -20683,8 +20013,6 @@ loci_validate_of_group_features_stats_request_OF_VERSION_1_3(uint8_t *data, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -20814,8 +20142,6 @@ loci_validate_of_group_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21057,8 +20383,6 @@ loci_validate_of_instruction_id_apply_actions_OF_VERSION_1_3(uint8_t *data, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21225,8 +20549,6 @@ loci_validate_of_instruction_bsn_arp_offload_OF_VERSION_1_3(uint8_t *data, int l
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21248,8 +20570,6 @@ loci_validate_of_instruction_id_bsn_arp_offload_OF_VERSION_1_3(uint8_t *data, in
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21273,8 +20593,6 @@ loci_validate_of_instruction_bsn_deny_OF_VERSION_1_3(uint8_t *data, int len, int
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21296,8 +20614,6 @@ loci_validate_of_instruction_id_bsn_deny_OF_VERSION_1_3(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21321,8 +20637,6 @@ loci_validate_of_instruction_bsn_dhcp_offload_OF_VERSION_1_3(uint8_t *data, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21344,8 +20658,6 @@ loci_validate_of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3(uint8_t *data, i
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21369,8 +20681,6 @@ loci_validate_of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3(uint
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21392,8 +20702,6 @@ loci_validate_of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3(u
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21417,8 +20725,6 @@ loci_validate_of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3(uint8_t *d
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21440,8 +20746,6 @@ loci_validate_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(uint8_t
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21465,8 +20769,6 @@ loci_validate_of_instruction_bsn_packet_of_death_OF_VERSION_1_3(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21488,8 +20790,6 @@ loci_validate_of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3(uint8_t *data
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21513,8 +20813,6 @@ loci_validate_of_instruction_bsn_permit_OF_VERSION_1_3(uint8_t *data, int len, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21536,8 +20834,6 @@ loci_validate_of_instruction_id_bsn_permit_OF_VERSION_1_3(uint8_t *data, int len
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21561,8 +20857,6 @@ loci_validate_of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3(uint8_t *data, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21584,8 +20878,6 @@ loci_validate_of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3(uint8_t *data
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21609,8 +20901,6 @@ loci_validate_of_instruction_clear_actions_OF_VERSION_1_3(uint8_t *data, int len
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21632,8 +20922,6 @@ loci_validate_of_instruction_id_clear_actions_OF_VERSION_1_3(uint8_t *data, int 
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21657,8 +20945,6 @@ loci_validate_of_instruction_goto_table_OF_VERSION_1_3(uint8_t *data, int len, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21680,8 +20966,6 @@ loci_validate_of_instruction_id_goto_table_OF_VERSION_1_3(uint8_t *data, int len
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21705,8 +20989,6 @@ loci_validate_of_instruction_meter_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21728,8 +21010,6 @@ loci_validate_of_instruction_id_meter_OF_VERSION_1_3(uint8_t *data, int len, int
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21781,8 +21061,6 @@ loci_validate_of_instruction_id_write_actions_OF_VERSION_1_3(uint8_t *data, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21805,8 +21083,6 @@ loci_validate_of_instruction_write_metadata_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21828,8 +21104,6 @@ loci_validate_of_instruction_id_write_metadata_OF_VERSION_1_3(uint8_t *data, int
     if (wire_len > len || wire_len < 4) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -21914,8 +21188,6 @@ loci_validate_of_meter_band_drop_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21938,8 +21210,6 @@ loci_validate_of_meter_band_dscp_remark_OF_VERSION_1_3(uint8_t *data, int len, i
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -21961,8 +21231,6 @@ loci_validate_of_meter_band_experimenter_OF_VERSION_1_3(uint8_t *data, int len, 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -22058,8 +21326,6 @@ loci_validate_of_meter_config_stats_request_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -22098,8 +21364,6 @@ loci_validate_of_meter_features_stats_reply_OF_VERSION_1_3(uint8_t *data, int le
         return -1;
     }
 
-    len = wire_len;
-
 
 
     // TODO validate of_meter_features_t
@@ -22122,8 +21386,6 @@ loci_validate_of_meter_features_stats_request_OF_VERSION_1_3(uint8_t *data, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -22253,8 +21515,6 @@ loci_validate_of_meter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -24099,8 +23359,6 @@ loci_validate_of_port_desc_stats_request_OF_VERSION_1_3(uint8_t *data, int len, 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -24122,8 +23380,6 @@ loci_validate_of_port_mod_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 40) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -24214,8 +23470,6 @@ loci_validate_of_port_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -24237,8 +23491,6 @@ loci_validate_of_port_status_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
     if (wire_len > len || wire_len < 80) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -24289,8 +23541,6 @@ loci_validate_of_queue_get_config_request_OF_VERSION_1_3(uint8_t *data, int len,
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -24397,8 +23647,6 @@ loci_validate_of_queue_prop_max_rate_OF_VERSION_1_3(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -24420,8 +23668,6 @@ loci_validate_of_queue_prop_min_rate_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -24489,8 +23735,6 @@ loci_validate_of_queue_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int 
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -24513,8 +23757,6 @@ loci_validate_of_role_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -24536,8 +23778,6 @@ loci_validate_of_role_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -24583,8 +23823,6 @@ loci_validate_of_set_config_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
-
-    len = wire_len;
 
 
 
@@ -25235,8 +24473,6 @@ loci_validate_of_table_mod_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return -1;
     }
 
-    len = wire_len;
-
 
 
 
@@ -25325,8 +24561,6 @@ loci_validate_of_table_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 16) {
         return -1;
     }
-
-    len = wire_len;
 
 
 

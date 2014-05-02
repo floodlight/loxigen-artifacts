@@ -1,1 +1,1 @@
-411505bf4854bb3d2b64593337d834906aa3f56f Merge into master from pull request #259: openflow_input : bsn_prioritize_pdus (https://github.com/floodlight/loxigen/pull/259)
+bbb582a37becb2ab88daf43e3ec028f17f8e8765 Merge into master from pull request #260: loci: workaround a clang analyzer warning (https://github.com/floodlight/loxigen/pull/260)
