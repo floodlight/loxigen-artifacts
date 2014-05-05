@@ -37,16 +37,16 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     final static int LENGTH = 24;
 
         private final static long DEFAULT_ENTRY_COUNT = 0x0L;
-        private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
 
     // OF message fields
     private final GenTableId tableId;
     private final long entryCount;
-    private final OFChecksum128 checksum;
+    private final U128 checksum;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableStatsEntryVer13(GenTableId tableId, long entryCount, OFChecksum128 checksum) {
+    OFBsnGentableStatsEntryVer13(GenTableId tableId, long entryCount, U128 checksum) {
         this.tableId = tableId;
         this.entryCount = entryCount;
         this.checksum = checksum;
@@ -64,7 +64,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     }
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
@@ -88,7 +88,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         private boolean entryCountSet;
         private long entryCount;
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
 
         BuilderWithParent(OFBsnGentableStatsEntryVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -117,12 +117,12 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         return this;
     }
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableStatsEntry.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -140,7 +140,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
                 long entryCount = this.entryCountSet ? this.entryCount : parentMessage.entryCount;
-                OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
+                U128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
 
@@ -161,7 +161,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         private boolean entryCountSet;
         private long entryCount;
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
 
     @Override
     public GenTableId getTableId() {
@@ -186,12 +186,12 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
         return this;
     }
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableStatsEntry.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableStatsEntry.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
@@ -209,7 +209,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
             long entryCount = this.entryCountSet ? this.entryCount : DEFAULT_ENTRY_COUNT;
-            OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
+            U128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
 
@@ -232,7 +232,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
             // pad: 2 bytes
             bb.skipBytes(2);
             long entryCount = U32.f(bb.readInt());
-            OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
+            U128 checksum = U128.read16Bytes(bb);
 
             OFBsnGentableStatsEntryVer13 bsnGentableStatsEntryVer13 = new OFBsnGentableStatsEntryVer13(
                     tableId,

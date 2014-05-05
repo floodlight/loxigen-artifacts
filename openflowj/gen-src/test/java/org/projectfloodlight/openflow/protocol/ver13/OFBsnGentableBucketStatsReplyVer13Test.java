@@ -51,8 +51,8 @@ public class OFBsnGentableBucketStatsReplyVer13Test {
         builder.setXid(0x12345678)
     .setEntries(
         ImmutableList.<OFBsnGentableBucketStatsEntry>of(
-            factory.bsnGentableBucketStatsEntry(OFChecksum128.of(0x8877665544332211L, 0xFFEEDDCCBBAA9988L)),
-            factory.bsnGentableBucketStatsEntry(OFChecksum128.of(0x1234234534564567L, 0x56786789789A89ABL))
+            factory.bsnGentableBucketStatsEntry(U128.of(0x8877665544332211L, 0xFFEEDDCCBBAA9988L)),
+            factory.bsnGentableBucketStatsEntry(U128.of(0x1234234534564567L, 0x56786789789A89ABL))
         )
     );
         OFBsnGentableBucketStatsReply bsnGentableBucketStatsReply = builder.build();
@@ -70,8 +70,8 @@ public class OFBsnGentableBucketStatsReplyVer13Test {
         builder.setXid(0x12345678)
     .setEntries(
         ImmutableList.<OFBsnGentableBucketStatsEntry>of(
-            factory.bsnGentableBucketStatsEntry(OFChecksum128.of(0x8877665544332211L, 0xFFEEDDCCBBAA9988L)),
-            factory.bsnGentableBucketStatsEntry(OFChecksum128.of(0x1234234534564567L, 0x56786789789A89ABL))
+            factory.bsnGentableBucketStatsEntry(U128.of(0x8877665544332211L, 0xFFEEDDCCBBAA9988L)),
+            factory.bsnGentableBucketStatsEntry(U128.of(0x1234234534564567L, 0x56786789789A89ABL))
         )
     );
         OFBsnGentableBucketStatsReply bsnGentableBucketStatsReplyBuilt = builder.build();

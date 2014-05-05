@@ -49,7 +49,7 @@ public class OFBsnGentableEntryAddVer13Test {
     public void testWrite() {
         OFBsnGentableEntryAdd.Builder builder = factory.buildBsnGentableEntryAdd();
         builder.setXid(0x12345678)
-    .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998877L))
+    .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998877L))
     .setTableId(GenTableId.of(20))
     .setKey(
         ImmutableList.<OFBsnTlv>of(
@@ -76,7 +76,7 @@ public class OFBsnGentableEntryAddVer13Test {
     public void testRead() throws Exception {
         OFBsnGentableEntryAdd.Builder builder = factory.buildBsnGentableEntryAdd();
         builder.setXid(0x12345678)
-    .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998877L))
+    .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998877L))
     .setTableId(GenTableId.of(20))
     .setKey(
         ImmutableList.<OFBsnTlv>of(

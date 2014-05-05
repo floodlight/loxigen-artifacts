@@ -27,7 +27,7 @@ import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFBsnGentableEntryDescStatsEntry extends OFObject {
-    OFChecksum128 getChecksum();
+    U128 getChecksum();
     List<OFBsnTlv> getKey();
     List<OFBsnTlv> getValue();
     OFVersion getVersion();
@@ -37,8 +37,8 @@ public interface OFBsnGentableEntryDescStatsEntry extends OFObject {
     Builder createBuilder();
     public interface Builder  {
         OFBsnGentableEntryDescStatsEntry build();
-        OFChecksum128 getChecksum();
-        Builder setChecksum(OFChecksum128 checksum);
+        U128 getChecksum();
+        Builder setChecksum(U128 checksum);
         List<OFBsnTlv> getKey();
         Builder setKey(List<OFBsnTlv> key);
         List<OFBsnTlv> getValue();

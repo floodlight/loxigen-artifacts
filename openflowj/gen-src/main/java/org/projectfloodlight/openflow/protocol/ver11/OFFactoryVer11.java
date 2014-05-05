@@ -752,7 +752,7 @@ public class OFFactoryVer11 implements OFFactory {
     public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
         throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.1");
     }
-    public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(OFChecksum128 checksum) {
+    public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(U128 checksum) {
         throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.1");
     }
 

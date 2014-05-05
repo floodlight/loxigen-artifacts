@@ -47,8 +47,8 @@ public class OFBsnGentableClearRequestVer13Test {
     public void testWrite() {
         OFBsnGentableClearRequest.Builder builder = factory.buildBsnGentableClearRequest();
         builder.setXid(0x12345678)
-    .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
-    .setChecksumMask(OFChecksum128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
+    .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
+    .setChecksumMask(U128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
     .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequest = builder.build();
         ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
@@ -63,8 +63,8 @@ public class OFBsnGentableClearRequestVer13Test {
     public void testRead() throws Exception {
         OFBsnGentableClearRequest.Builder builder = factory.buildBsnGentableClearRequest();
         builder.setXid(0x12345678)
-    .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
-    .setChecksumMask(OFChecksum128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
+    .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA990000L))
+    .setChecksumMask(U128.of(0xFFFFFFFFFFFFFFFFL, 0xFFFFFFFFFFFF0000L))
     .setTableId(GenTableId.of(20));
         OFBsnGentableClearRequest bsnGentableClearRequestBuilt = builder.build();
 

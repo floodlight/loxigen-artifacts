@@ -39,19 +39,19 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsRequestFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsRequestFlags>of();
-        private final static OFChecksum128 DEFAULT_CHECKSUM = OFChecksum128.ZERO;
-        private final static OFChecksum128 DEFAULT_CHECKSUM_MASK = OFChecksum128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM = U128.ZERO;
+        private final static U128 DEFAULT_CHECKSUM_MASK = U128.ZERO;
 
     // OF message fields
     private final long xid;
     private final Set<OFStatsRequestFlags> flags;
     private final GenTableId tableId;
-    private final OFChecksum128 checksum;
-    private final OFChecksum128 checksumMask;
+    private final U128 checksum;
+    private final U128 checksumMask;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnGentableEntryStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, GenTableId tableId, OFChecksum128 checksum, OFChecksum128 checksumMask) {
+    OFBsnGentableEntryStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, GenTableId tableId, U128 checksum, U128 checksumMask) {
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;
@@ -101,12 +101,12 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
     }
 
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFChecksum128 getChecksumMask() {
+    public U128 getChecksumMask() {
         return checksumMask;
     }
 
@@ -127,9 +127,9 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         private boolean tableIdSet;
         private GenTableId tableId;
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
         private boolean checksumMaskSet;
-        private OFChecksum128 checksumMask;
+        private U128 checksumMask;
 
         BuilderWithParent(OFBsnGentableEntryStatsRequestVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -194,23 +194,23 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         return this;
     }
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableEntryStatsRequest.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableEntryStatsRequest.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
     }
     @Override
-    public OFChecksum128 getChecksumMask() {
+    public U128 getChecksumMask() {
         return checksumMask;
     }
 
     @Override
-    public OFBsnGentableEntryStatsRequest.Builder setChecksumMask(OFChecksum128 checksumMask) {
+    public OFBsnGentableEntryStatsRequest.Builder setChecksumMask(U128 checksumMask) {
         this.checksumMask = checksumMask;
         this.checksumMaskSet = true;
         return this;
@@ -226,10 +226,10 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
                 GenTableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
                 if(tableId == null)
                     throw new NullPointerException("Property tableId must not be null");
-                OFChecksum128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
+                U128 checksum = this.checksumSet ? this.checksum : parentMessage.checksum;
                 if(checksum == null)
                     throw new NullPointerException("Property checksum must not be null");
-                OFChecksum128 checksumMask = this.checksumMaskSet ? this.checksumMask : parentMessage.checksumMask;
+                U128 checksumMask = this.checksumMaskSet ? this.checksumMask : parentMessage.checksumMask;
                 if(checksumMask == null)
                     throw new NullPointerException("Property checksumMask must not be null");
 
@@ -254,9 +254,9 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         private boolean tableIdSet;
         private GenTableId tableId;
         private boolean checksumSet;
-        private OFChecksum128 checksum;
+        private U128 checksum;
         private boolean checksumMaskSet;
-        private OFChecksum128 checksumMask;
+        private U128 checksumMask;
 
     @Override
     public OFVersion getVersion() {
@@ -317,23 +317,23 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
         return this;
     }
     @Override
-    public OFChecksum128 getChecksum() {
+    public U128 getChecksum() {
         return checksum;
     }
 
     @Override
-    public OFBsnGentableEntryStatsRequest.Builder setChecksum(OFChecksum128 checksum) {
+    public OFBsnGentableEntryStatsRequest.Builder setChecksum(U128 checksum) {
         this.checksum = checksum;
         this.checksumSet = true;
         return this;
     }
     @Override
-    public OFChecksum128 getChecksumMask() {
+    public U128 getChecksumMask() {
         return checksumMask;
     }
 
     @Override
-    public OFBsnGentableEntryStatsRequest.Builder setChecksumMask(OFChecksum128 checksumMask) {
+    public OFBsnGentableEntryStatsRequest.Builder setChecksumMask(U128 checksumMask) {
         this.checksumMask = checksumMask;
         this.checksumMaskSet = true;
         return this;
@@ -349,10 +349,10 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
                 throw new IllegalStateException("Property tableId doesn't have default value -- must be set");
             if(tableId == null)
                 throw new NullPointerException("Property tableId must not be null");
-            OFChecksum128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
+            U128 checksum = this.checksumSet ? this.checksum : DEFAULT_CHECKSUM;
             if(checksum == null)
                 throw new NullPointerException("Property checksum must not be null");
-            OFChecksum128 checksumMask = this.checksumMaskSet ? this.checksumMask : DEFAULT_CHECKSUM_MASK;
+            U128 checksumMask = this.checksumMaskSet ? this.checksumMask : DEFAULT_CHECKSUM_MASK;
             if(checksumMask == null)
                 throw new NullPointerException("Property checksumMask must not be null");
 
@@ -411,8 +411,8 @@ class OFBsnGentableEntryStatsRequestVer13 implements OFBsnGentableEntryStatsRequ
             GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
-            OFChecksum128 checksum = OFChecksum128.read16Bytes(bb);
-            OFChecksum128 checksumMask = OFChecksum128.read16Bytes(bb);
+            U128 checksum = U128.read16Bytes(bb);
+            U128 checksumMask = U128.read16Bytes(bb);
 
             OFBsnGentableEntryStatsRequestVer13 bsnGentableEntryStatsRequestVer13 = new OFBsnGentableEntryStatsRequestVer13(
                     xid,

@@ -35,8 +35,8 @@ public interface OFBsnGentableEntryDescStatsRequest extends OFObject, OFBsnStats
     long getExperimenter();
     long getSubtype();
     GenTableId getTableId();
-    OFChecksum128 getChecksum();
-    OFChecksum128 getChecksumMask();
+    U128 getChecksum();
+    U128 getChecksumMask();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -54,9 +54,9 @@ public interface OFBsnGentableEntryDescStatsRequest extends OFObject, OFBsnStats
         long getSubtype();
         GenTableId getTableId();
         Builder setTableId(GenTableId tableId);
-        OFChecksum128 getChecksum();
-        Builder setChecksum(OFChecksum128 checksum);
-        OFChecksum128 getChecksumMask();
-        Builder setChecksumMask(OFChecksum128 checksumMask);
+        U128 getChecksum();
+        Builder setChecksum(U128 checksum);
+        U128 getChecksumMask();
+        Builder setChecksumMask(U128 checksumMask);
     }
 }

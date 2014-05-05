@@ -33,7 +33,7 @@ public interface OFBsnGentableEntryAdd extends OFObject, OFBsnHeader {
     long getExperimenter();
     long getSubtype();
     GenTableId getTableId();
-    OFChecksum128 getChecksum();
+    U128 getChecksum();
     List<OFBsnTlv> getKey();
     List<OFBsnTlv> getValue();
 
@@ -50,8 +50,8 @@ public interface OFBsnGentableEntryAdd extends OFObject, OFBsnHeader {
         long getSubtype();
         GenTableId getTableId();
         Builder setTableId(GenTableId tableId);
-        OFChecksum128 getChecksum();
-        Builder setChecksum(OFChecksum128 checksum);
+        U128 getChecksum();
+        Builder setChecksum(U128 checksum);
         List<OFBsnTlv> getKey();
         Builder setKey(List<OFBsnTlv> key);
         List<OFBsnTlv> getValue();

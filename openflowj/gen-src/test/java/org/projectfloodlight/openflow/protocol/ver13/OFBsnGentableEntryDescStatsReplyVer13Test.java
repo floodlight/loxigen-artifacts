@@ -52,7 +52,7 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
     .setEntries(
         ImmutableList.<OFBsnGentableEntryDescStatsEntry>of(
             factory.buildBsnGentableEntryDescStatsEntry()
-                .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998800L))
+                .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998800L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
                     factory.bsnTlvs().port(OFPort.of(5))
                 ))
@@ -61,7 +61,7 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
                 ))
                 .build(),
             factory.buildBsnGentableEntryDescStatsEntry()
-                .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998801L))
+                .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998801L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
                     factory.bsnTlvs().port(OFPort.of(6))
                 ))
@@ -87,7 +87,7 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
     .setEntries(
         ImmutableList.<OFBsnGentableEntryDescStatsEntry>of(
             factory.buildBsnGentableEntryDescStatsEntry()
-                .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998800L))
+                .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998800L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
                     factory.bsnTlvs().port(OFPort.of(5))
                 ))
@@ -96,7 +96,7 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
                 ))
                 .build(),
             factory.buildBsnGentableEntryDescStatsEntry()
-                .setChecksum(OFChecksum128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998801L))
+                .setChecksum(U128.of(0xFEDCBA9876543210L, 0xFFEECCBBAA998801L))
                 .setKey(ImmutableList.<OFBsnTlv>of(
                     factory.bsnTlvs().port(OFPort.of(6))
                 ))

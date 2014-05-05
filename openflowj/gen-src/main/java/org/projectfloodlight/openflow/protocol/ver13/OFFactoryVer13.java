@@ -782,7 +782,7 @@ public class OFFactoryVer13 implements OFFactory {
     public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
         return new OFBsnGentableBucketStatsEntryVer13.Builder();
     }
-    public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(OFChecksum128 checksum) {
+    public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(U128 checksum) {
         return new OFBsnGentableBucketStatsEntryVer13(
                 checksum
                     );

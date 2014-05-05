@@ -1,1 +1,1 @@
-bbb582a37becb2ab88daf43e3ec028f17f8e8765 Merge into master from pull request #260: loci: workaround a clang analyzer warning (https://github.com/floodlight/loxigen/pull/260)
+0a92b3a65bf1a247e8975ce77ea240550790723c Merge into master from pull request #258: java_gen: Hash-related functions for U64, renamed OFChecksum128 to U128 (https://github.com/floodlight/loxigen/pull/258)
