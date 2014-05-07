@@ -15,92 +15,6 @@
 #include "loci_log.h"
 #include <loci/loci.h>
 
-
-/* Some internal macros and utility functions */
-
-/* For counting bits in a uint32 */
-#define _VAL_AND_5s(v)  ((v) & 0x55555555)
-#define _VAL_EVERY_OTHER(v)  (_VAL_AND_5s(v) + _VAL_AND_5s(v >> 1))
-#define _VAL_AND_3s(v)  ((v) & 0x33333333)
-#define _VAL_PAIRS(v)  (_VAL_AND_3s(v) + _VAL_AND_3s(v >> 2))
-#define _VAL_QUADS(v)  (((val) + ((val) >> 4)) & 0x0F0F0F0F)
-#define _VAL_BYTES(v)  ((val) + ((val) >> 8))
-
-/**
- * Counts the number of bits set in an integer
- */
-static inline int
-_COUNT_BITS(unsigned int val)
-{
-    val = _VAL_EVERY_OTHER(val);
-    val = _VAL_PAIRS(val);
-    val = _VAL_QUADS(val);
-    val = _VAL_BYTES(val);
-
-    return (val & 0XFF) + ((val >> 16) & 0xFF);
-}
-
-/* Indexed by version number */
-const uint64_t of_match_incompat[4] = {
-    -1,
-    OF_MATCH_V1_INCOMPAT,
-    OF_MATCH_V2_INCOMPAT,
-    0
-};
-
-
-/**
- * IP Mask map.  IP maks wildcards from OF 1.0 are interpretted as
- * indices into the map below.
- */
-
-int of_ip_mask_map_init_done = 0;
-uint32_t of_ip_mask_map[OF_IP_MASK_MAP_COUNT];
-void
-of_ip_mask_map_init(void)
-{
-    int idx;
-
-    MEMSET(of_ip_mask_map, 0, sizeof(of_ip_mask_map));
-    for (idx = 0; idx < 32; idx++) {
-        of_ip_mask_map[idx] = ~((1U << idx) - 1);
-    }
-
-    of_ip_mask_map_init_done = 1;
-}
-
-/**
- * @brief Set non-default IP mask for given index
- */
-int
-of_ip_mask_map_set(int index, uint32_t mask)
-{
-    OF_IP_MASK_INIT_CHECK;
-
-    if ((index < 0) || (index >= OF_IP_MASK_MAP_COUNT)) {
-        return OF_ERROR_RANGE;
-    }
-    of_ip_mask_map[index] = mask;
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * @brief Get a non-default IP mask for given index
- */
-int
-of_ip_mask_map_get(int index, uint32_t *mask)
-{
-    OF_IP_MASK_INIT_CHECK;
-
-    if ((mask == NULL) || (index < 0) || (index >= OF_IP_MASK_MAP_COUNT)) {
-        return OF_ERROR_RANGE;
-    }
-    *mask = of_ip_mask_map[index];
-
-    return OF_ERROR_NONE;
-}
-
 /**
  * @brief Return the index (used as the WC field in 1.0 match) given the mask
  */
@@ -109,25 +23,29 @@ int
 of_ip_mask_to_index(uint32_t mask)
 {
     int idx;
-
-    OF_IP_MASK_INIT_CHECK;
+    uint32_t cmask;
 
     /* Handle most common cases directly */
-    if ((mask == 0) && (of_ip_mask_map[63] == 0)) {
+    if (mask == 0) {
         return 63;
     }
-    if ((mask == 0xffffffff) && (of_ip_mask_map[0] == 0xffffffff)) {
+    if (mask == 0xffffffff) {
         return 0;
     }
 
-    for (idx = 0; idx < OF_IP_MASK_MAP_COUNT; idx++) {
-        if (mask == of_ip_mask_map[idx]) {
-            return idx;
-        }
+    if ((~mask + 1) & ~mask) {
+        LOCI_LOG_INFO("OF 1.0: Could not map IP addr mask 0x%x", mask);
+        return 63;
     }
 
-    LOCI_LOG_INFO("OF 1.0: Could not map IP addr mask 0x%x", mask);
-    return 0x3f;
+    idx = 0;
+    cmask = ~mask;
+    while (cmask) {
+        cmask >>= 1;
+        idx += 1;
+    }
+
+    return idx;
 }
 
 /**
@@ -137,14 +55,11 @@ of_ip_mask_to_index(uint32_t mask)
 uint32_t
 of_ip_index_to_mask(int index)
 {
-    OF_IP_MASK_INIT_CHECK;
-
-    if (index >= OF_IP_MASK_MAP_COUNT) {
-        LOCI_LOG_INFO("IP index to map: bad index %d", index);
+    if (index >= 32) {
         return 0;
+    } else {
+        return 0xffffffff << index;
     }
-
-    return of_ip_mask_map[index];
 }
 
 

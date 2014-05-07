@@ -18,91 +18,6 @@
 
 
 #include <loci/loci_base.h>
-
-/* Identify bits in unified match that are incompatible with V1, V2 matches */
-#define OF_MATCH_V1_INCOMPAT ( (uint64_t)0 \
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_FLABEL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_LAG_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_DST)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_TPA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV6_TYPE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_IN_PORTS_128)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_SHA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_SCTP_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV6_CODE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_DST_CLASS_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_SLL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_MPLS_TC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TLL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_EGR_PORT_GROUP_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF2)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_OP)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_THA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_METADATA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF7)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_SRC_CLASS_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_SCTP_DST)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_CODE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_VRF)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IP_ECN)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF4)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_GLOBAL_VRF_ALLOWED)\
-    | ((uint64_t)1 << OF_OXM_INDEX_UDP_DST)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_SPA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TARGET)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IN_PHY_PORT)\
-    | ((uint64_t)1 << OF_OXM_INDEX_UDP_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF1)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF0)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF3)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_TYPE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF5)\
-    | ((uint64_t)1 << OF_OXM_INDEX_MPLS_LABEL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF6)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_INTERFACE_CLASS_ID))
-
-#define OF_MATCH_V2_INCOMPAT ( (uint64_t)0 \
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_FLABEL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_LAG_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_DST)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_TPA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV6_TYPE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_IN_PORTS_128)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_SHA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_SCTP_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV6_CODE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_DST_CLASS_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_SLL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TLL)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_EGR_PORT_GROUP_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF2)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_OP)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_THA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF7)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_SRC_CLASS_ID)\
-    | ((uint64_t)1 << OF_OXM_INDEX_SCTP_DST)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_CODE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_VRF)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IP_ECN)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF4)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_GLOBAL_VRF_ALLOWED)\
-    | ((uint64_t)1 << OF_OXM_INDEX_UDP_DST)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ARP_SPA)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IPV6_ND_TARGET)\
-    | ((uint64_t)1 << OF_OXM_INDEX_IN_PHY_PORT)\
-    | ((uint64_t)1 << OF_OXM_INDEX_UDP_SRC)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF1)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF0)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF3)\
-    | ((uint64_t)1 << OF_OXM_INDEX_ICMPV4_TYPE)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF5)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_UDF6)\
-    | ((uint64_t)1 << OF_OXM_INDEX_BSN_L3_INTERFACE_CLASS_ID))
-
-/* Indexed by version number */
-extern const uint64_t of_match_incompat[4];
 /* Unified, flat OpenFlow match structure based on OF 1.2 */
 typedef struct of_match_fields_s {
     /* Version 1.2 is used for field names */
@@ -188,35 +103,13 @@ of_memmask(void *value, const void *mask, size_t len)
 }
 
 /**
- * IP Mask map.  IP maks wildcards from OF 1.0 are interpretted as
- * indices into the map below.
- *
- * of_ip_mask_map: Array mapping index to mask
- * of_ip_mask_use_map: Boolean indication set when map is initialized
- * of_ip_mask_map_init: Initialize to default values; set "use map".
- */
-#define OF_IP_MASK_MAP_COUNT 64
-extern uint32_t of_ip_mask_map[OF_IP_MASK_MAP_COUNT];
-extern int of_ip_mask_map_init_done;
-
-#define OF_IP_MASK_INIT_CHECK     if (!of_ip_mask_map_init_done) of_ip_mask_map_init()
-
-/**
- * Initialize map
- */
-extern void of_ip_mask_map_init(void);
-
-extern int of_ip_mask_map_set(int index, uint32_t mask);
-extern int of_ip_mask_map_get(int index, uint32_t *mask);
-
-/**
- * @brief Map from mask to index
+ * @brief Map from mask to OF 1.0 wildcard
  */
 
 extern int of_ip_mask_to_index(uint32_t mask);
 
 /**
- * @brief Map from index to mask
+ * @brief Map from OF 1.0 wildcard to mask
  */
 
 extern uint32_t of_ip_index_to_mask(int index);

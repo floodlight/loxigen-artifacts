@@ -18,7 +18,6 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_0(void)
     of_aggregate_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_0);
@@ -36,12 +35,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REPLY);
     obj = of_aggregate_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -62,7 +58,6 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_0(void)
     of_aggregate_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_0);
@@ -80,12 +75,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REQUEST);
     obj = of_aggregate_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -106,7 +98,6 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_0(void)
     of_bad_action_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_0);
@@ -124,12 +115,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_action_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_ACTION_ERROR_MSG);
     obj = of_bad_action_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -150,7 +138,6 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_0(void)
     of_bad_request_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_0);
@@ -168,12 +155,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_request_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_REQUEST_ERROR_MSG);
     obj = of_bad_request_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -194,7 +178,6 @@ test_of_barrier_reply_create_OF_VERSION_1_0(void)
     of_barrier_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_0);
@@ -212,12 +195,9 @@ test_of_barrier_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REPLY);
     obj = of_barrier_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -238,7 +218,6 @@ test_of_barrier_request_create_OF_VERSION_1_0(void)
     of_barrier_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_0);
@@ -256,12 +235,9 @@ test_of_barrier_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REQUEST);
     obj = of_barrier_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -282,7 +258,6 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_0(void)
     of_bsn_bw_clear_data_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_0);
@@ -300,12 +275,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REPLY);
     obj = of_bsn_bw_clear_data_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -326,7 +298,6 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_0(void)
     of_bsn_bw_clear_data_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_0);
@@ -344,12 +315,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REQUEST);
     obj = of_bsn_bw_clear_data_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -370,7 +338,6 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_0(void)
     of_bsn_bw_enable_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_0);
@@ -388,12 +355,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REPLY);
     obj = of_bsn_bw_enable_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -414,7 +378,6 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_0(void)
     of_bsn_bw_enable_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_0);
@@ -432,12 +395,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REQUEST);
     obj = of_bsn_bw_enable_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -458,7 +418,6 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_0(void)
     of_bsn_bw_enable_set_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_0);
@@ -476,12 +435,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REPLY);
     obj = of_bsn_bw_enable_set_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -502,7 +458,6 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_0(void)
     of_bsn_bw_enable_set_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_0);
@@ -520,12 +475,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REQUEST);
     obj = of_bsn_bw_enable_set_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -546,7 +498,6 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_0(void)
     of_bsn_get_interfaces_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_0);
@@ -564,12 +515,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REPLY);
     obj = of_bsn_get_interfaces_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -590,7 +538,6 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_0(void)
     of_bsn_get_interfaces_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_0);
@@ -608,12 +555,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REQUEST);
     obj = of_bsn_get_interfaces_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -634,7 +578,6 @@ test_of_bsn_get_ip_mask_reply_create_OF_VERSION_1_0(void)
     of_bsn_get_ip_mask_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_ip_mask_reply_new(OF_VERSION_1_0);
@@ -652,12 +595,9 @@ test_of_bsn_get_ip_mask_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_ip_mask_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_IP_MASK_REPLY);
     obj = of_bsn_get_ip_mask_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -678,7 +618,6 @@ test_of_bsn_get_ip_mask_request_create_OF_VERSION_1_0(void)
     of_bsn_get_ip_mask_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_ip_mask_request_new(OF_VERSION_1_0);
@@ -696,12 +635,9 @@ test_of_bsn_get_ip_mask_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_ip_mask_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_IP_MASK_REQUEST);
     obj = of_bsn_get_ip_mask_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -722,7 +658,6 @@ test_of_bsn_get_l2_table_reply_create_OF_VERSION_1_0(void)
     of_bsn_get_l2_table_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_l2_table_reply_new(OF_VERSION_1_0);
@@ -740,12 +675,9 @@ test_of_bsn_get_l2_table_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_l2_table_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_L2_TABLE_REPLY);
     obj = of_bsn_get_l2_table_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -766,7 +698,6 @@ test_of_bsn_get_l2_table_request_create_OF_VERSION_1_0(void)
     of_bsn_get_l2_table_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_l2_table_request_new(OF_VERSION_1_0);
@@ -784,12 +715,9 @@ test_of_bsn_get_l2_table_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_l2_table_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_L2_TABLE_REQUEST);
     obj = of_bsn_get_l2_table_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -810,7 +738,6 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_0(void)
     of_bsn_get_mirroring_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_0);
@@ -828,12 +755,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REPLY);
     obj = of_bsn_get_mirroring_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -854,7 +778,6 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_0(void)
     of_bsn_get_mirroring_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_0);
@@ -872,12 +795,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REQUEST);
     obj = of_bsn_get_mirroring_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -898,7 +818,6 @@ test_of_bsn_hybrid_get_reply_create_OF_VERSION_1_0(void)
     of_bsn_hybrid_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_hybrid_get_reply_new(OF_VERSION_1_0);
@@ -916,12 +835,9 @@ test_of_bsn_hybrid_get_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_hybrid_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_HYBRID_GET_REPLY);
     obj = of_bsn_hybrid_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -942,7 +858,6 @@ test_of_bsn_hybrid_get_request_create_OF_VERSION_1_0(void)
     of_bsn_hybrid_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_hybrid_get_request_new(OF_VERSION_1_0);
@@ -960,12 +875,9 @@ test_of_bsn_hybrid_get_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_hybrid_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_HYBRID_GET_REQUEST);
     obj = of_bsn_hybrid_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -986,7 +898,6 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_0(void)
     of_bsn_pdu_rx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_0);
@@ -1004,12 +915,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REPLY);
     obj = of_bsn_pdu_rx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1030,7 +938,6 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_0(void)
     of_bsn_pdu_rx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_0);
@@ -1048,12 +955,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REQUEST);
     obj = of_bsn_pdu_rx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1074,7 +978,6 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_0(void)
     of_bsn_pdu_rx_timeout_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_0);
@@ -1092,12 +995,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_timeout_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_TIMEOUT);
     obj = of_bsn_pdu_rx_timeout_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1118,7 +1018,6 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_0(void)
     of_bsn_pdu_tx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_0);
@@ -1136,12 +1035,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REPLY);
     obj = of_bsn_pdu_tx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1162,7 +1058,6 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_0(void)
     of_bsn_pdu_tx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_0);
@@ -1180,12 +1075,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REQUEST);
     obj = of_bsn_pdu_tx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1206,7 +1098,6 @@ test_of_bsn_set_ip_mask_create_OF_VERSION_1_0(void)
     of_bsn_set_ip_mask_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_ip_mask_new(OF_VERSION_1_0);
@@ -1224,12 +1115,9 @@ test_of_bsn_set_ip_mask_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_ip_mask_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_IP_MASK);
     obj = of_bsn_set_ip_mask_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1250,7 +1138,6 @@ test_of_bsn_set_l2_table_reply_create_OF_VERSION_1_0(void)
     of_bsn_set_l2_table_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_l2_table_reply_new(OF_VERSION_1_0);
@@ -1268,12 +1155,9 @@ test_of_bsn_set_l2_table_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_l2_table_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_L2_TABLE_REPLY);
     obj = of_bsn_set_l2_table_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1294,7 +1178,6 @@ test_of_bsn_set_l2_table_request_create_OF_VERSION_1_0(void)
     of_bsn_set_l2_table_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_l2_table_request_new(OF_VERSION_1_0);
@@ -1312,12 +1195,9 @@ test_of_bsn_set_l2_table_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_l2_table_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_L2_TABLE_REQUEST);
     obj = of_bsn_set_l2_table_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1338,7 +1218,6 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_0(void)
     of_bsn_set_mirroring_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_0);
@@ -1356,12 +1235,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_mirroring_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_MIRRORING);
     obj = of_bsn_set_mirroring_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1382,7 +1258,6 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_0(void)
     of_bsn_set_pktin_suppression_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_0);
@@ -1400,12 +1275,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
     obj = of_bsn_set_pktin_suppression_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1426,7 +1298,6 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_0(void)
     of_bsn_set_pktin_suppression_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_0);
@@ -1444,12 +1315,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
     obj = of_bsn_set_pktin_suppression_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1470,7 +1338,6 @@ test_of_bsn_shell_command_create_OF_VERSION_1_0(void)
     of_bsn_shell_command_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_shell_command_new(OF_VERSION_1_0);
@@ -1488,12 +1355,9 @@ test_of_bsn_shell_command_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_shell_command_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SHELL_COMMAND);
     obj = of_bsn_shell_command_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1514,7 +1378,6 @@ test_of_bsn_shell_output_create_OF_VERSION_1_0(void)
     of_bsn_shell_output_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_shell_output_new(OF_VERSION_1_0);
@@ -1532,12 +1395,9 @@ test_of_bsn_shell_output_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_shell_output_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SHELL_OUTPUT);
     obj = of_bsn_shell_output_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1558,7 +1418,6 @@ test_of_bsn_shell_status_create_OF_VERSION_1_0(void)
     of_bsn_shell_status_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_shell_status_new(OF_VERSION_1_0);
@@ -1576,12 +1435,9 @@ test_of_bsn_shell_status_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_shell_status_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SHELL_STATUS);
     obj = of_bsn_shell_status_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1602,7 +1458,6 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_0(void)
     of_bsn_virtual_port_create_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_0);
@@ -1620,12 +1475,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
     obj = of_bsn_virtual_port_create_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1646,7 +1498,6 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_0(void)
     of_bsn_virtual_port_create_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_0);
@@ -1664,12 +1515,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
     obj = of_bsn_virtual_port_create_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1690,7 +1538,6 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_0(void)
     of_bsn_virtual_port_remove_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_0);
@@ -1708,12 +1555,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
     obj = of_bsn_virtual_port_remove_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1734,7 +1578,6 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_0(void)
     of_bsn_virtual_port_remove_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_0);
@@ -1752,12 +1595,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
     obj = of_bsn_virtual_port_remove_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1778,7 +1618,6 @@ test_of_desc_stats_reply_create_OF_VERSION_1_0(void)
     of_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_0);
@@ -1796,12 +1635,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REPLY);
     obj = of_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1822,7 +1658,6 @@ test_of_desc_stats_request_create_OF_VERSION_1_0(void)
     of_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_0);
@@ -1840,12 +1675,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REQUEST);
     obj = of_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1866,7 +1698,6 @@ test_of_echo_reply_create_OF_VERSION_1_0(void)
     of_echo_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_0);
@@ -1884,12 +1715,9 @@ test_of_echo_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REPLY);
     obj = of_echo_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1910,7 +1738,6 @@ test_of_echo_request_create_OF_VERSION_1_0(void)
     of_echo_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_0);
@@ -1928,12 +1755,9 @@ test_of_echo_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REQUEST);
     obj = of_echo_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1954,7 +1778,6 @@ test_of_features_reply_create_OF_VERSION_1_0(void)
     of_features_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_0);
@@ -1972,12 +1795,9 @@ test_of_features_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REPLY);
     obj = of_features_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -1998,7 +1818,6 @@ test_of_features_request_create_OF_VERSION_1_0(void)
     of_features_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_0);
@@ -2016,12 +1835,9 @@ test_of_features_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REQUEST);
     obj = of_features_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2042,7 +1858,6 @@ test_of_flow_add_create_OF_VERSION_1_0(void)
     of_flow_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_0);
@@ -2060,12 +1875,9 @@ test_of_flow_add_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_ADD);
     obj = of_flow_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2086,7 +1898,6 @@ test_of_flow_delete_create_OF_VERSION_1_0(void)
     of_flow_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_0);
@@ -2104,12 +1915,9 @@ test_of_flow_delete_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE);
     obj = of_flow_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2130,7 +1938,6 @@ test_of_flow_delete_strict_create_OF_VERSION_1_0(void)
     of_flow_delete_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_0);
@@ -2148,12 +1955,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE_STRICT);
     obj = of_flow_delete_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2174,7 +1978,6 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     of_flow_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_0);
@@ -2192,12 +1995,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MOD_FAILED_ERROR_MSG);
     obj = of_flow_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2218,7 +2018,6 @@ test_of_flow_modify_create_OF_VERSION_1_0(void)
     of_flow_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_0);
@@ -2236,12 +2035,9 @@ test_of_flow_modify_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY);
     obj = of_flow_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2262,7 +2058,6 @@ test_of_flow_modify_strict_create_OF_VERSION_1_0(void)
     of_flow_modify_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_0);
@@ -2280,12 +2075,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY_STRICT);
     obj = of_flow_modify_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2306,7 +2098,6 @@ test_of_flow_removed_create_OF_VERSION_1_0(void)
     of_flow_removed_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_0);
@@ -2324,12 +2115,9 @@ test_of_flow_removed_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_removed_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_REMOVED);
     obj = of_flow_removed_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2350,7 +2138,6 @@ test_of_flow_stats_reply_create_OF_VERSION_1_0(void)
     of_flow_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_0);
@@ -2368,12 +2155,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REPLY);
     obj = of_flow_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2394,7 +2178,6 @@ test_of_flow_stats_request_create_OF_VERSION_1_0(void)
     of_flow_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_0);
@@ -2412,12 +2195,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REQUEST);
     obj = of_flow_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2438,7 +2218,6 @@ test_of_get_config_reply_create_OF_VERSION_1_0(void)
     of_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_0);
@@ -2456,12 +2235,9 @@ test_of_get_config_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REPLY);
     obj = of_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2482,7 +2258,6 @@ test_of_get_config_request_create_OF_VERSION_1_0(void)
     of_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_0);
@@ -2500,12 +2275,9 @@ test_of_get_config_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REQUEST);
     obj = of_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2526,7 +2298,6 @@ test_of_hello_create_OF_VERSION_1_0(void)
     of_hello_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_0);
@@ -2544,12 +2315,9 @@ test_of_hello_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO);
     obj = of_hello_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2570,7 +2338,6 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_0(void)
     of_hello_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_0);
@@ -2588,12 +2355,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO_FAILED_ERROR_MSG);
     obj = of_hello_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2614,7 +2378,6 @@ test_of_nicira_controller_role_reply_create_OF_VERSION_1_0(void)
     of_nicira_controller_role_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_nicira_controller_role_reply_new(OF_VERSION_1_0);
@@ -2632,12 +2395,9 @@ test_of_nicira_controller_role_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_nicira_controller_role_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_NICIRA_CONTROLLER_ROLE_REPLY);
     obj = of_nicira_controller_role_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2658,7 +2418,6 @@ test_of_nicira_controller_role_request_create_OF_VERSION_1_0(void)
     of_nicira_controller_role_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_nicira_controller_role_request_new(OF_VERSION_1_0);
@@ -2676,12 +2435,9 @@ test_of_nicira_controller_role_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_nicira_controller_role_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_NICIRA_CONTROLLER_ROLE_REQUEST);
     obj = of_nicira_controller_role_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2702,7 +2458,6 @@ test_of_packet_in_create_OF_VERSION_1_0(void)
     of_packet_in_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_0);
@@ -2720,12 +2475,9 @@ test_of_packet_in_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_in_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_IN);
     obj = of_packet_in_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2746,7 +2498,6 @@ test_of_packet_out_create_OF_VERSION_1_0(void)
     of_packet_out_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_0);
@@ -2764,12 +2515,9 @@ test_of_packet_out_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_out_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_OUT);
     obj = of_packet_out_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2790,7 +2538,6 @@ test_of_port_mod_create_OF_VERSION_1_0(void)
     of_port_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_0);
@@ -2808,12 +2555,9 @@ test_of_port_mod_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD);
     obj = of_port_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2834,7 +2578,6 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     of_port_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_0);
@@ -2852,12 +2595,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD_FAILED_ERROR_MSG);
     obj = of_port_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2878,7 +2618,6 @@ test_of_port_stats_reply_create_OF_VERSION_1_0(void)
     of_port_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_0);
@@ -2896,12 +2635,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REPLY);
     obj = of_port_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2922,7 +2658,6 @@ test_of_port_stats_request_create_OF_VERSION_1_0(void)
     of_port_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_0);
@@ -2940,12 +2675,9 @@ test_of_port_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REQUEST);
     obj = of_port_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -2966,7 +2698,6 @@ test_of_port_status_create_OF_VERSION_1_0(void)
     of_port_status_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_0);
@@ -2984,12 +2715,9 @@ test_of_port_status_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_status_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATUS);
     obj = of_port_status_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3010,7 +2738,6 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_0(void)
     of_queue_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_0);
@@ -3028,12 +2755,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REPLY);
     obj = of_queue_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3054,7 +2778,6 @@ test_of_queue_get_config_request_create_OF_VERSION_1_0(void)
     of_queue_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_0);
@@ -3072,12 +2795,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REQUEST);
     obj = of_queue_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3098,7 +2818,6 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_0(void)
     of_queue_op_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_0);
@@ -3116,12 +2835,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_op_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_OP_FAILED_ERROR_MSG);
     obj = of_queue_op_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3142,7 +2858,6 @@ test_of_queue_stats_reply_create_OF_VERSION_1_0(void)
     of_queue_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_0);
@@ -3160,12 +2875,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REPLY);
     obj = of_queue_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3186,7 +2898,6 @@ test_of_queue_stats_request_create_OF_VERSION_1_0(void)
     of_queue_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_0);
@@ -3204,12 +2915,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REQUEST);
     obj = of_queue_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3230,7 +2938,6 @@ test_of_set_config_create_OF_VERSION_1_0(void)
     of_set_config_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_0);
@@ -3248,12 +2955,9 @@ test_of_set_config_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_set_config_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SET_CONFIG);
     obj = of_set_config_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3274,7 +2978,6 @@ test_of_table_mod_create_OF_VERSION_1_0(void)
     of_table_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_0);
@@ -3292,12 +2995,9 @@ test_of_table_mod_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD);
     obj = of_table_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3318,7 +3018,6 @@ test_of_table_stats_reply_create_OF_VERSION_1_0(void)
     of_table_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_0);
@@ -3336,12 +3035,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REPLY);
     obj = of_table_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3362,7 +3058,6 @@ test_of_table_stats_request_create_OF_VERSION_1_0(void)
     of_table_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_0);
@@ -3380,12 +3075,9 @@ test_of_table_stats_request_create_OF_VERSION_1_0(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REQUEST);
     obj = of_table_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3406,7 +3098,6 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_1(void)
     of_aggregate_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_1);
@@ -3424,12 +3115,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REPLY);
     obj = of_aggregate_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3450,7 +3138,6 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_1(void)
     of_aggregate_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_1);
@@ -3468,12 +3155,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REQUEST);
     obj = of_aggregate_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3494,7 +3178,6 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_1(void)
     of_bad_action_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_1);
@@ -3512,12 +3195,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_action_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_ACTION_ERROR_MSG);
     obj = of_bad_action_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3538,7 +3218,6 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_1(void)
     of_bad_instruction_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_instruction_error_msg_new(OF_VERSION_1_1);
@@ -3556,12 +3235,9 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_instruction_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_INSTRUCTION_ERROR_MSG);
     obj = of_bad_instruction_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3582,7 +3258,6 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_1(void)
     of_bad_match_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_match_error_msg_new(OF_VERSION_1_1);
@@ -3600,12 +3275,9 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_match_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_MATCH_ERROR_MSG);
     obj = of_bad_match_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3626,7 +3298,6 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_1(void)
     of_bad_request_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_1);
@@ -3644,12 +3315,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_request_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_REQUEST_ERROR_MSG);
     obj = of_bad_request_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3670,7 +3338,6 @@ test_of_barrier_reply_create_OF_VERSION_1_1(void)
     of_barrier_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_1);
@@ -3688,12 +3355,9 @@ test_of_barrier_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REPLY);
     obj = of_barrier_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3714,7 +3378,6 @@ test_of_barrier_request_create_OF_VERSION_1_1(void)
     of_barrier_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_1);
@@ -3732,12 +3395,9 @@ test_of_barrier_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REQUEST);
     obj = of_barrier_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3758,7 +3418,6 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_1(void)
     of_bsn_bw_clear_data_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_1);
@@ -3776,12 +3435,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REPLY);
     obj = of_bsn_bw_clear_data_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3802,7 +3458,6 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_1(void)
     of_bsn_bw_clear_data_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_1);
@@ -3820,12 +3475,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REQUEST);
     obj = of_bsn_bw_clear_data_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3846,7 +3498,6 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_1(void)
     of_bsn_bw_enable_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_1);
@@ -3864,12 +3515,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REPLY);
     obj = of_bsn_bw_enable_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3890,7 +3538,6 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_1(void)
     of_bsn_bw_enable_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_1);
@@ -3908,12 +3555,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REQUEST);
     obj = of_bsn_bw_enable_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3934,7 +3578,6 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_1(void)
     of_bsn_bw_enable_set_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_1);
@@ -3952,12 +3595,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REPLY);
     obj = of_bsn_bw_enable_set_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -3978,7 +3618,6 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_1(void)
     of_bsn_bw_enable_set_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_1);
@@ -3996,12 +3635,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REQUEST);
     obj = of_bsn_bw_enable_set_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4022,7 +3658,6 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_1(void)
     of_bsn_get_interfaces_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_1);
@@ -4040,12 +3675,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REPLY);
     obj = of_bsn_get_interfaces_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4066,7 +3698,6 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_1(void)
     of_bsn_get_interfaces_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_1);
@@ -4084,12 +3715,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REQUEST);
     obj = of_bsn_get_interfaces_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4110,7 +3738,6 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_1(void)
     of_bsn_get_mirroring_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_1);
@@ -4128,12 +3755,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REPLY);
     obj = of_bsn_get_mirroring_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4154,7 +3778,6 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_1(void)
     of_bsn_get_mirroring_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_1);
@@ -4172,12 +3795,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REQUEST);
     obj = of_bsn_get_mirroring_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4198,7 +3818,6 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_1(void)
     of_bsn_pdu_rx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_1);
@@ -4216,12 +3835,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REPLY);
     obj = of_bsn_pdu_rx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4242,7 +3858,6 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_1(void)
     of_bsn_pdu_rx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_1);
@@ -4260,12 +3875,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REQUEST);
     obj = of_bsn_pdu_rx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4286,7 +3898,6 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_1(void)
     of_bsn_pdu_rx_timeout_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_1);
@@ -4304,12 +3915,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_timeout_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_TIMEOUT);
     obj = of_bsn_pdu_rx_timeout_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4330,7 +3938,6 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_1(void)
     of_bsn_pdu_tx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_1);
@@ -4348,12 +3955,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REPLY);
     obj = of_bsn_pdu_tx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4374,7 +3978,6 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_1(void)
     of_bsn_pdu_tx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_1);
@@ -4392,12 +3995,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REQUEST);
     obj = of_bsn_pdu_tx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4418,7 +4018,6 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_1(void)
     of_bsn_set_mirroring_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_1);
@@ -4436,12 +4035,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_mirroring_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_MIRRORING);
     obj = of_bsn_set_mirroring_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4462,7 +4058,6 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_1(void)
     of_bsn_set_pktin_suppression_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_1);
@@ -4480,12 +4075,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
     obj = of_bsn_set_pktin_suppression_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4506,7 +4098,6 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_1(void)
     of_bsn_set_pktin_suppression_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_1);
@@ -4524,12 +4115,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
     obj = of_bsn_set_pktin_suppression_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4550,7 +4138,6 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_1(void)
     of_bsn_virtual_port_create_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_1);
@@ -4568,12 +4155,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
     obj = of_bsn_virtual_port_create_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4594,7 +4178,6 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_1(void)
     of_bsn_virtual_port_create_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_1);
@@ -4612,12 +4195,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
     obj = of_bsn_virtual_port_create_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4638,7 +4218,6 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_1(void)
     of_bsn_virtual_port_remove_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_1);
@@ -4656,12 +4235,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
     obj = of_bsn_virtual_port_remove_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4682,7 +4258,6 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_1(void)
     of_bsn_virtual_port_remove_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_1);
@@ -4700,12 +4275,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
     obj = of_bsn_virtual_port_remove_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4726,7 +4298,6 @@ test_of_desc_stats_reply_create_OF_VERSION_1_1(void)
     of_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_1);
@@ -4744,12 +4315,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REPLY);
     obj = of_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4770,7 +4338,6 @@ test_of_desc_stats_request_create_OF_VERSION_1_1(void)
     of_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_1);
@@ -4788,12 +4355,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REQUEST);
     obj = of_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4814,7 +4378,6 @@ test_of_echo_reply_create_OF_VERSION_1_1(void)
     of_echo_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_1);
@@ -4832,12 +4395,9 @@ test_of_echo_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REPLY);
     obj = of_echo_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4858,7 +4418,6 @@ test_of_echo_request_create_OF_VERSION_1_1(void)
     of_echo_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_1);
@@ -4876,12 +4435,9 @@ test_of_echo_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REQUEST);
     obj = of_echo_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4902,7 +4458,6 @@ test_of_features_reply_create_OF_VERSION_1_1(void)
     of_features_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_1);
@@ -4920,12 +4475,9 @@ test_of_features_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REPLY);
     obj = of_features_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4946,7 +4498,6 @@ test_of_features_request_create_OF_VERSION_1_1(void)
     of_features_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_1);
@@ -4964,12 +4515,9 @@ test_of_features_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REQUEST);
     obj = of_features_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -4990,7 +4538,6 @@ test_of_flow_add_create_OF_VERSION_1_1(void)
     of_flow_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_1);
@@ -5008,12 +4555,9 @@ test_of_flow_add_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_ADD);
     obj = of_flow_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5034,7 +4578,6 @@ test_of_flow_delete_create_OF_VERSION_1_1(void)
     of_flow_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_1);
@@ -5052,12 +4595,9 @@ test_of_flow_delete_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE);
     obj = of_flow_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5078,7 +4618,6 @@ test_of_flow_delete_strict_create_OF_VERSION_1_1(void)
     of_flow_delete_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_1);
@@ -5096,12 +4635,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE_STRICT);
     obj = of_flow_delete_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5122,7 +4658,6 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     of_flow_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_1);
@@ -5140,12 +4675,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MOD_FAILED_ERROR_MSG);
     obj = of_flow_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5166,7 +4698,6 @@ test_of_flow_modify_create_OF_VERSION_1_1(void)
     of_flow_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_1);
@@ -5184,12 +4715,9 @@ test_of_flow_modify_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY);
     obj = of_flow_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5210,7 +4738,6 @@ test_of_flow_modify_strict_create_OF_VERSION_1_1(void)
     of_flow_modify_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_1);
@@ -5228,12 +4755,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY_STRICT);
     obj = of_flow_modify_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5254,7 +4778,6 @@ test_of_flow_removed_create_OF_VERSION_1_1(void)
     of_flow_removed_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_1);
@@ -5272,12 +4795,9 @@ test_of_flow_removed_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_removed_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_REMOVED);
     obj = of_flow_removed_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5298,7 +4818,6 @@ test_of_flow_stats_reply_create_OF_VERSION_1_1(void)
     of_flow_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_1);
@@ -5316,12 +4835,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REPLY);
     obj = of_flow_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5342,7 +4858,6 @@ test_of_flow_stats_request_create_OF_VERSION_1_1(void)
     of_flow_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_1);
@@ -5360,12 +4875,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REQUEST);
     obj = of_flow_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5386,7 +4898,6 @@ test_of_get_config_reply_create_OF_VERSION_1_1(void)
     of_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_1);
@@ -5404,12 +4915,9 @@ test_of_get_config_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REPLY);
     obj = of_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5430,7 +4938,6 @@ test_of_get_config_request_create_OF_VERSION_1_1(void)
     of_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_1);
@@ -5448,12 +4955,9 @@ test_of_get_config_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REQUEST);
     obj = of_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5474,7 +4978,6 @@ test_of_group_add_create_OF_VERSION_1_1(void)
     of_group_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_add_new(OF_VERSION_1_1);
@@ -5492,12 +4995,9 @@ test_of_group_add_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_ADD);
     obj = of_group_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5518,7 +5018,6 @@ test_of_group_delete_create_OF_VERSION_1_1(void)
     of_group_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_delete_new(OF_VERSION_1_1);
@@ -5536,12 +5035,9 @@ test_of_group_delete_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DELETE);
     obj = of_group_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5562,7 +5058,6 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_1(void)
     of_group_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_desc_stats_reply_new(OF_VERSION_1_1);
@@ -5580,12 +5075,9 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DESC_STATS_REPLY);
     obj = of_group_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5606,7 +5098,6 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_1(void)
     of_group_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_desc_stats_request_new(OF_VERSION_1_1);
@@ -5624,12 +5115,9 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DESC_STATS_REQUEST);
     obj = of_group_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5650,7 +5138,6 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     of_group_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_mod_failed_error_msg_new(OF_VERSION_1_1);
@@ -5668,12 +5155,9 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MOD_FAILED_ERROR_MSG);
     obj = of_group_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5694,7 +5178,6 @@ test_of_group_modify_create_OF_VERSION_1_1(void)
     of_group_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_modify_new(OF_VERSION_1_1);
@@ -5712,12 +5195,9 @@ test_of_group_modify_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MODIFY);
     obj = of_group_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5738,7 +5218,6 @@ test_of_group_stats_reply_create_OF_VERSION_1_1(void)
     of_group_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_stats_reply_new(OF_VERSION_1_1);
@@ -5756,12 +5235,9 @@ test_of_group_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_STATS_REPLY);
     obj = of_group_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5782,7 +5258,6 @@ test_of_group_stats_request_create_OF_VERSION_1_1(void)
     of_group_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_stats_request_new(OF_VERSION_1_1);
@@ -5800,12 +5275,9 @@ test_of_group_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_STATS_REQUEST);
     obj = of_group_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5826,7 +5298,6 @@ test_of_hello_create_OF_VERSION_1_1(void)
     of_hello_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_1);
@@ -5844,12 +5315,9 @@ test_of_hello_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO);
     obj = of_hello_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5870,7 +5338,6 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_1(void)
     of_hello_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_1);
@@ -5888,12 +5355,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO_FAILED_ERROR_MSG);
     obj = of_hello_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5914,7 +5378,6 @@ test_of_packet_in_create_OF_VERSION_1_1(void)
     of_packet_in_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_1);
@@ -5932,12 +5395,9 @@ test_of_packet_in_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_in_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_IN);
     obj = of_packet_in_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -5958,7 +5418,6 @@ test_of_packet_out_create_OF_VERSION_1_1(void)
     of_packet_out_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_1);
@@ -5976,12 +5435,9 @@ test_of_packet_out_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_out_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_OUT);
     obj = of_packet_out_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6002,7 +5458,6 @@ test_of_port_mod_create_OF_VERSION_1_1(void)
     of_port_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_1);
@@ -6020,12 +5475,9 @@ test_of_port_mod_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD);
     obj = of_port_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6046,7 +5498,6 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     of_port_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_1);
@@ -6064,12 +5515,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD_FAILED_ERROR_MSG);
     obj = of_port_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6090,7 +5538,6 @@ test_of_port_stats_reply_create_OF_VERSION_1_1(void)
     of_port_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_1);
@@ -6108,12 +5555,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REPLY);
     obj = of_port_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6134,7 +5578,6 @@ test_of_port_stats_request_create_OF_VERSION_1_1(void)
     of_port_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_1);
@@ -6152,12 +5595,9 @@ test_of_port_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REQUEST);
     obj = of_port_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6178,7 +5618,6 @@ test_of_port_status_create_OF_VERSION_1_1(void)
     of_port_status_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_1);
@@ -6196,12 +5635,9 @@ test_of_port_status_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_status_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATUS);
     obj = of_port_status_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6222,7 +5658,6 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_1(void)
     of_queue_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_1);
@@ -6240,12 +5675,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REPLY);
     obj = of_queue_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6266,7 +5698,6 @@ test_of_queue_get_config_request_create_OF_VERSION_1_1(void)
     of_queue_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_1);
@@ -6284,12 +5715,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REQUEST);
     obj = of_queue_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6310,7 +5738,6 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_1(void)
     of_queue_op_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_1);
@@ -6328,12 +5755,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_op_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_OP_FAILED_ERROR_MSG);
     obj = of_queue_op_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6354,7 +5778,6 @@ test_of_queue_stats_reply_create_OF_VERSION_1_1(void)
     of_queue_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_1);
@@ -6372,12 +5795,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REPLY);
     obj = of_queue_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6398,7 +5818,6 @@ test_of_queue_stats_request_create_OF_VERSION_1_1(void)
     of_queue_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_1);
@@ -6416,12 +5835,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REQUEST);
     obj = of_queue_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6442,7 +5858,6 @@ test_of_set_config_create_OF_VERSION_1_1(void)
     of_set_config_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_1);
@@ -6460,12 +5875,9 @@ test_of_set_config_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_set_config_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SET_CONFIG);
     obj = of_set_config_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6486,7 +5898,6 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_1(void)
     of_switch_config_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_switch_config_failed_error_msg_new(OF_VERSION_1_1);
@@ -6504,12 +5915,9 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_switch_config_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
     obj = of_switch_config_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6530,7 +5938,6 @@ test_of_table_mod_create_OF_VERSION_1_1(void)
     of_table_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_1);
@@ -6548,12 +5955,9 @@ test_of_table_mod_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD);
     obj = of_table_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6574,7 +5978,6 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     of_table_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_failed_error_msg_new(OF_VERSION_1_1);
@@ -6592,12 +5995,9 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD_FAILED_ERROR_MSG);
     obj = of_table_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6618,7 +6018,6 @@ test_of_table_stats_reply_create_OF_VERSION_1_1(void)
     of_table_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_1);
@@ -6636,12 +6035,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REPLY);
     obj = of_table_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6662,7 +6058,6 @@ test_of_table_stats_request_create_OF_VERSION_1_1(void)
     of_table_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_1);
@@ -6680,12 +6075,9 @@ test_of_table_stats_request_create_OF_VERSION_1_1(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REQUEST);
     obj = of_table_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6706,7 +6098,6 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_2(void)
     of_aggregate_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_2);
@@ -6724,12 +6115,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REPLY);
     obj = of_aggregate_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6750,7 +6138,6 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_2(void)
     of_aggregate_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_2);
@@ -6768,12 +6155,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REQUEST);
     obj = of_aggregate_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6794,7 +6178,6 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_2(void)
     of_bad_action_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_2);
@@ -6812,12 +6195,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_action_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_ACTION_ERROR_MSG);
     obj = of_bad_action_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6838,7 +6218,6 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_2(void)
     of_bad_instruction_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_instruction_error_msg_new(OF_VERSION_1_2);
@@ -6856,12 +6235,9 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_instruction_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_INSTRUCTION_ERROR_MSG);
     obj = of_bad_instruction_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6882,7 +6258,6 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_2(void)
     of_bad_match_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_match_error_msg_new(OF_VERSION_1_2);
@@ -6900,12 +6275,9 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_match_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_MATCH_ERROR_MSG);
     obj = of_bad_match_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6926,7 +6298,6 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_2(void)
     of_bad_request_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_2);
@@ -6944,12 +6315,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_request_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_REQUEST_ERROR_MSG);
     obj = of_bad_request_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -6970,7 +6338,6 @@ test_of_barrier_reply_create_OF_VERSION_1_2(void)
     of_barrier_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_2);
@@ -6988,12 +6355,9 @@ test_of_barrier_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REPLY);
     obj = of_barrier_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7014,7 +6378,6 @@ test_of_barrier_request_create_OF_VERSION_1_2(void)
     of_barrier_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_2);
@@ -7032,12 +6395,9 @@ test_of_barrier_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REQUEST);
     obj = of_barrier_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7058,7 +6418,6 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_2(void)
     of_bsn_bw_clear_data_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_2);
@@ -7076,12 +6435,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REPLY);
     obj = of_bsn_bw_clear_data_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7102,7 +6458,6 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_2(void)
     of_bsn_bw_clear_data_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_2);
@@ -7120,12 +6475,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REQUEST);
     obj = of_bsn_bw_clear_data_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7146,7 +6498,6 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_2(void)
     of_bsn_bw_enable_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_2);
@@ -7164,12 +6515,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REPLY);
     obj = of_bsn_bw_enable_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7190,7 +6538,6 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_2(void)
     of_bsn_bw_enable_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_2);
@@ -7208,12 +6555,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REQUEST);
     obj = of_bsn_bw_enable_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7234,7 +6578,6 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_2(void)
     of_bsn_bw_enable_set_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_2);
@@ -7252,12 +6595,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REPLY);
     obj = of_bsn_bw_enable_set_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7278,7 +6618,6 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_2(void)
     of_bsn_bw_enable_set_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_2);
@@ -7296,12 +6635,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REQUEST);
     obj = of_bsn_bw_enable_set_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7322,7 +6658,6 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_2(void)
     of_bsn_get_interfaces_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_2);
@@ -7340,12 +6675,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REPLY);
     obj = of_bsn_get_interfaces_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7366,7 +6698,6 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_2(void)
     of_bsn_get_interfaces_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_2);
@@ -7384,12 +6715,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REQUEST);
     obj = of_bsn_get_interfaces_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7410,7 +6738,6 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_2(void)
     of_bsn_get_mirroring_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_2);
@@ -7428,12 +6755,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REPLY);
     obj = of_bsn_get_mirroring_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7454,7 +6778,6 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_2(void)
     of_bsn_get_mirroring_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_2);
@@ -7472,12 +6795,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REQUEST);
     obj = of_bsn_get_mirroring_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7498,7 +6818,6 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_2(void)
     of_bsn_pdu_rx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_2);
@@ -7516,12 +6835,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REPLY);
     obj = of_bsn_pdu_rx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7542,7 +6858,6 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_2(void)
     of_bsn_pdu_rx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_2);
@@ -7560,12 +6875,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REQUEST);
     obj = of_bsn_pdu_rx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7586,7 +6898,6 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_2(void)
     of_bsn_pdu_rx_timeout_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_2);
@@ -7604,12 +6915,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_timeout_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_TIMEOUT);
     obj = of_bsn_pdu_rx_timeout_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7630,7 +6938,6 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_2(void)
     of_bsn_pdu_tx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_2);
@@ -7648,12 +6955,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REPLY);
     obj = of_bsn_pdu_tx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7674,7 +6978,6 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_2(void)
     of_bsn_pdu_tx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_2);
@@ -7692,12 +6995,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REQUEST);
     obj = of_bsn_pdu_tx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7718,7 +7018,6 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_2(void)
     of_bsn_set_mirroring_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_2);
@@ -7736,12 +7035,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_mirroring_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_MIRRORING);
     obj = of_bsn_set_mirroring_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7762,7 +7058,6 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_2(void)
     of_bsn_set_pktin_suppression_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_2);
@@ -7780,12 +7075,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
     obj = of_bsn_set_pktin_suppression_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7806,7 +7098,6 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_2(void)
     of_bsn_set_pktin_suppression_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_2);
@@ -7824,12 +7115,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
     obj = of_bsn_set_pktin_suppression_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7850,7 +7138,6 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_2(void)
     of_bsn_virtual_port_create_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_2);
@@ -7868,12 +7155,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
     obj = of_bsn_virtual_port_create_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7894,7 +7178,6 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_2(void)
     of_bsn_virtual_port_create_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_2);
@@ -7912,12 +7195,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
     obj = of_bsn_virtual_port_create_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7938,7 +7218,6 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_2(void)
     of_bsn_virtual_port_remove_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_2);
@@ -7956,12 +7235,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
     obj = of_bsn_virtual_port_remove_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -7982,7 +7258,6 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_2(void)
     of_bsn_virtual_port_remove_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_2);
@@ -8000,12 +7275,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
     obj = of_bsn_virtual_port_remove_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8026,7 +7298,6 @@ test_of_desc_stats_reply_create_OF_VERSION_1_2(void)
     of_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_2);
@@ -8044,12 +7315,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REPLY);
     obj = of_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8070,7 +7338,6 @@ test_of_desc_stats_request_create_OF_VERSION_1_2(void)
     of_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_2);
@@ -8088,12 +7355,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REQUEST);
     obj = of_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8114,7 +7378,6 @@ test_of_echo_reply_create_OF_VERSION_1_2(void)
     of_echo_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_2);
@@ -8132,12 +7395,9 @@ test_of_echo_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REPLY);
     obj = of_echo_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8158,7 +7418,6 @@ test_of_echo_request_create_OF_VERSION_1_2(void)
     of_echo_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_2);
@@ -8176,12 +7435,9 @@ test_of_echo_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REQUEST);
     obj = of_echo_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8202,7 +7458,6 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_2(void)
     of_experimenter_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_experimenter_error_msg_new(OF_VERSION_1_2);
@@ -8220,12 +7475,9 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_experimenter_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_EXPERIMENTER_ERROR_MSG);
     obj = of_experimenter_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8246,7 +7498,6 @@ test_of_features_reply_create_OF_VERSION_1_2(void)
     of_features_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_2);
@@ -8264,12 +7515,9 @@ test_of_features_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REPLY);
     obj = of_features_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8290,7 +7538,6 @@ test_of_features_request_create_OF_VERSION_1_2(void)
     of_features_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_2);
@@ -8308,12 +7555,9 @@ test_of_features_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REQUEST);
     obj = of_features_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8334,7 +7578,6 @@ test_of_flow_add_create_OF_VERSION_1_2(void)
     of_flow_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_2);
@@ -8352,12 +7595,9 @@ test_of_flow_add_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_ADD);
     obj = of_flow_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8378,7 +7618,6 @@ test_of_flow_delete_create_OF_VERSION_1_2(void)
     of_flow_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_2);
@@ -8396,12 +7635,9 @@ test_of_flow_delete_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE);
     obj = of_flow_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8422,7 +7658,6 @@ test_of_flow_delete_strict_create_OF_VERSION_1_2(void)
     of_flow_delete_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_2);
@@ -8440,12 +7675,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE_STRICT);
     obj = of_flow_delete_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8466,7 +7698,6 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     of_flow_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_2);
@@ -8484,12 +7715,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MOD_FAILED_ERROR_MSG);
     obj = of_flow_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8510,7 +7738,6 @@ test_of_flow_modify_create_OF_VERSION_1_2(void)
     of_flow_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_2);
@@ -8528,12 +7755,9 @@ test_of_flow_modify_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY);
     obj = of_flow_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8554,7 +7778,6 @@ test_of_flow_modify_strict_create_OF_VERSION_1_2(void)
     of_flow_modify_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_2);
@@ -8572,12 +7795,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY_STRICT);
     obj = of_flow_modify_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8598,7 +7818,6 @@ test_of_flow_removed_create_OF_VERSION_1_2(void)
     of_flow_removed_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_2);
@@ -8616,12 +7835,9 @@ test_of_flow_removed_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_removed_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_REMOVED);
     obj = of_flow_removed_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8642,7 +7858,6 @@ test_of_flow_stats_reply_create_OF_VERSION_1_2(void)
     of_flow_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_2);
@@ -8660,12 +7875,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REPLY);
     obj = of_flow_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8686,7 +7898,6 @@ test_of_flow_stats_request_create_OF_VERSION_1_2(void)
     of_flow_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_2);
@@ -8704,12 +7915,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REQUEST);
     obj = of_flow_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8730,7 +7938,6 @@ test_of_get_config_reply_create_OF_VERSION_1_2(void)
     of_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_2);
@@ -8748,12 +7955,9 @@ test_of_get_config_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REPLY);
     obj = of_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8774,7 +7978,6 @@ test_of_get_config_request_create_OF_VERSION_1_2(void)
     of_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_2);
@@ -8792,12 +7995,9 @@ test_of_get_config_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REQUEST);
     obj = of_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8818,7 +8018,6 @@ test_of_group_add_create_OF_VERSION_1_2(void)
     of_group_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_add_new(OF_VERSION_1_2);
@@ -8836,12 +8035,9 @@ test_of_group_add_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_ADD);
     obj = of_group_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8862,7 +8058,6 @@ test_of_group_delete_create_OF_VERSION_1_2(void)
     of_group_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_delete_new(OF_VERSION_1_2);
@@ -8880,12 +8075,9 @@ test_of_group_delete_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DELETE);
     obj = of_group_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8906,7 +8098,6 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_2(void)
     of_group_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_desc_stats_reply_new(OF_VERSION_1_2);
@@ -8924,12 +8115,9 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DESC_STATS_REPLY);
     obj = of_group_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8950,7 +8138,6 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_2(void)
     of_group_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_desc_stats_request_new(OF_VERSION_1_2);
@@ -8968,12 +8155,9 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DESC_STATS_REQUEST);
     obj = of_group_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -8994,7 +8178,6 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_2(void)
     of_group_features_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_features_stats_reply_new(OF_VERSION_1_2);
@@ -9012,12 +8195,9 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_features_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_FEATURES_STATS_REPLY);
     obj = of_group_features_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9038,7 +8218,6 @@ test_of_group_features_stats_request_create_OF_VERSION_1_2(void)
     of_group_features_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_features_stats_request_new(OF_VERSION_1_2);
@@ -9056,12 +8235,9 @@ test_of_group_features_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_features_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_FEATURES_STATS_REQUEST);
     obj = of_group_features_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9082,7 +8258,6 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     of_group_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_mod_failed_error_msg_new(OF_VERSION_1_2);
@@ -9100,12 +8275,9 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MOD_FAILED_ERROR_MSG);
     obj = of_group_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9126,7 +8298,6 @@ test_of_group_modify_create_OF_VERSION_1_2(void)
     of_group_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_modify_new(OF_VERSION_1_2);
@@ -9144,12 +8315,9 @@ test_of_group_modify_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MODIFY);
     obj = of_group_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9170,7 +8338,6 @@ test_of_group_stats_reply_create_OF_VERSION_1_2(void)
     of_group_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_stats_reply_new(OF_VERSION_1_2);
@@ -9188,12 +8355,9 @@ test_of_group_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_STATS_REPLY);
     obj = of_group_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9214,7 +8378,6 @@ test_of_group_stats_request_create_OF_VERSION_1_2(void)
     of_group_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_stats_request_new(OF_VERSION_1_2);
@@ -9232,12 +8395,9 @@ test_of_group_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_STATS_REQUEST);
     obj = of_group_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9258,7 +8418,6 @@ test_of_hello_create_OF_VERSION_1_2(void)
     of_hello_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_2);
@@ -9276,12 +8435,9 @@ test_of_hello_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO);
     obj = of_hello_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9302,7 +8458,6 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_2(void)
     of_hello_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_2);
@@ -9320,12 +8475,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO_FAILED_ERROR_MSG);
     obj = of_hello_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9346,7 +8498,6 @@ test_of_packet_in_create_OF_VERSION_1_2(void)
     of_packet_in_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_2);
@@ -9364,12 +8515,9 @@ test_of_packet_in_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_in_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_IN);
     obj = of_packet_in_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9390,7 +8538,6 @@ test_of_packet_out_create_OF_VERSION_1_2(void)
     of_packet_out_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_2);
@@ -9408,12 +8555,9 @@ test_of_packet_out_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_out_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_OUT);
     obj = of_packet_out_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9434,7 +8578,6 @@ test_of_port_mod_create_OF_VERSION_1_2(void)
     of_port_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_2);
@@ -9452,12 +8595,9 @@ test_of_port_mod_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD);
     obj = of_port_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9478,7 +8618,6 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     of_port_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_2);
@@ -9496,12 +8635,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD_FAILED_ERROR_MSG);
     obj = of_port_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9522,7 +8658,6 @@ test_of_port_stats_reply_create_OF_VERSION_1_2(void)
     of_port_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_2);
@@ -9540,12 +8675,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REPLY);
     obj = of_port_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9566,7 +8698,6 @@ test_of_port_stats_request_create_OF_VERSION_1_2(void)
     of_port_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_2);
@@ -9584,12 +8715,9 @@ test_of_port_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REQUEST);
     obj = of_port_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9610,7 +8738,6 @@ test_of_port_status_create_OF_VERSION_1_2(void)
     of_port_status_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_2);
@@ -9628,12 +8755,9 @@ test_of_port_status_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_status_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATUS);
     obj = of_port_status_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9654,7 +8778,6 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_2(void)
     of_queue_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_2);
@@ -9672,12 +8795,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REPLY);
     obj = of_queue_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9698,7 +8818,6 @@ test_of_queue_get_config_request_create_OF_VERSION_1_2(void)
     of_queue_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_2);
@@ -9716,12 +8835,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REQUEST);
     obj = of_queue_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9742,7 +8858,6 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_2(void)
     of_queue_op_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_2);
@@ -9760,12 +8875,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_op_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_OP_FAILED_ERROR_MSG);
     obj = of_queue_op_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9786,7 +8898,6 @@ test_of_queue_stats_reply_create_OF_VERSION_1_2(void)
     of_queue_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_2);
@@ -9804,12 +8915,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REPLY);
     obj = of_queue_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9830,7 +8938,6 @@ test_of_queue_stats_request_create_OF_VERSION_1_2(void)
     of_queue_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_2);
@@ -9848,12 +8955,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REQUEST);
     obj = of_queue_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9874,7 +8978,6 @@ test_of_role_reply_create_OF_VERSION_1_2(void)
     of_role_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_role_reply_new(OF_VERSION_1_2);
@@ -9892,12 +8995,9 @@ test_of_role_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_role_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ROLE_REPLY);
     obj = of_role_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9918,7 +9018,6 @@ test_of_role_request_create_OF_VERSION_1_2(void)
     of_role_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_role_request_new(OF_VERSION_1_2);
@@ -9936,12 +9035,9 @@ test_of_role_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_role_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ROLE_REQUEST);
     obj = of_role_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -9962,7 +9058,6 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_2(void)
     of_role_request_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_role_request_failed_error_msg_new(OF_VERSION_1_2);
@@ -9980,12 +9075,9 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_role_request_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ROLE_REQUEST_FAILED_ERROR_MSG);
     obj = of_role_request_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10006,7 +9098,6 @@ test_of_set_config_create_OF_VERSION_1_2(void)
     of_set_config_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_2);
@@ -10024,12 +9115,9 @@ test_of_set_config_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_set_config_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SET_CONFIG);
     obj = of_set_config_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10050,7 +9138,6 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_2(void)
     of_switch_config_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_switch_config_failed_error_msg_new(OF_VERSION_1_2);
@@ -10068,12 +9155,9 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_switch_config_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
     obj = of_switch_config_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10094,7 +9178,6 @@ test_of_table_mod_create_OF_VERSION_1_2(void)
     of_table_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_2);
@@ -10112,12 +9195,9 @@ test_of_table_mod_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD);
     obj = of_table_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10138,7 +9218,6 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     of_table_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_failed_error_msg_new(OF_VERSION_1_2);
@@ -10156,12 +9235,9 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD_FAILED_ERROR_MSG);
     obj = of_table_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10182,7 +9258,6 @@ test_of_table_stats_reply_create_OF_VERSION_1_2(void)
     of_table_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_2);
@@ -10200,12 +9275,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REPLY);
     obj = of_table_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10226,7 +9298,6 @@ test_of_table_stats_request_create_OF_VERSION_1_2(void)
     of_table_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_2);
@@ -10244,12 +9315,9 @@ test_of_table_stats_request_create_OF_VERSION_1_2(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REQUEST);
     obj = of_table_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10270,7 +9338,6 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_3(void)
     of_aggregate_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_reply_new(OF_VERSION_1_3);
@@ -10288,12 +9355,9 @@ test_of_aggregate_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REPLY);
     obj = of_aggregate_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10314,7 +9378,6 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_3(void)
     of_aggregate_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_aggregate_stats_request_new(OF_VERSION_1_3);
@@ -10332,12 +9395,9 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_aggregate_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_AGGREGATE_STATS_REQUEST);
     obj = of_aggregate_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10358,7 +9418,6 @@ test_of_async_get_reply_create_OF_VERSION_1_3(void)
     of_async_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_async_get_reply_new(OF_VERSION_1_3);
@@ -10376,12 +9435,9 @@ test_of_async_get_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_async_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ASYNC_GET_REPLY);
     obj = of_async_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10402,7 +9458,6 @@ test_of_async_get_request_create_OF_VERSION_1_3(void)
     of_async_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_async_get_request_new(OF_VERSION_1_3);
@@ -10420,12 +9475,9 @@ test_of_async_get_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_async_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ASYNC_GET_REQUEST);
     obj = of_async_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10446,7 +9498,6 @@ test_of_async_set_create_OF_VERSION_1_3(void)
     of_async_set_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_async_set_new(OF_VERSION_1_3);
@@ -10464,12 +9515,9 @@ test_of_async_set_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_async_set_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ASYNC_SET);
     obj = of_async_set_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10490,7 +9538,6 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_3(void)
     of_bad_action_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_action_error_msg_new(OF_VERSION_1_3);
@@ -10508,12 +9555,9 @@ test_of_bad_action_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_action_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_ACTION_ERROR_MSG);
     obj = of_bad_action_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10534,7 +9578,6 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_3(void)
     of_bad_instruction_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_instruction_error_msg_new(OF_VERSION_1_3);
@@ -10552,12 +9595,9 @@ test_of_bad_instruction_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_instruction_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_INSTRUCTION_ERROR_MSG);
     obj = of_bad_instruction_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10578,7 +9618,6 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_3(void)
     of_bad_match_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_match_error_msg_new(OF_VERSION_1_3);
@@ -10596,12 +9635,9 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_match_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_MATCH_ERROR_MSG);
     obj = of_bad_match_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10622,7 +9658,6 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_3(void)
     of_bad_request_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bad_request_error_msg_new(OF_VERSION_1_3);
@@ -10640,12 +9675,9 @@ test_of_bad_request_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bad_request_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BAD_REQUEST_ERROR_MSG);
     obj = of_bad_request_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10666,7 +9698,6 @@ test_of_barrier_reply_create_OF_VERSION_1_3(void)
     of_barrier_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_reply_new(OF_VERSION_1_3);
@@ -10684,12 +9715,9 @@ test_of_barrier_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REPLY);
     obj = of_barrier_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10710,7 +9738,6 @@ test_of_barrier_request_create_OF_VERSION_1_3(void)
     of_barrier_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_barrier_request_new(OF_VERSION_1_3);
@@ -10728,12 +9755,9 @@ test_of_barrier_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_barrier_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BARRIER_REQUEST);
     obj = of_barrier_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10754,7 +9778,6 @@ test_of_bsn_arp_idle_create_OF_VERSION_1_3(void)
     of_bsn_arp_idle_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_arp_idle_new(OF_VERSION_1_3);
@@ -10772,12 +9795,9 @@ test_of_bsn_arp_idle_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_arp_idle_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_ARP_IDLE);
     obj = of_bsn_arp_idle_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10798,7 +9818,6 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_3(void)
     of_bsn_bw_clear_data_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_reply_new(OF_VERSION_1_3);
@@ -10816,12 +9835,9 @@ test_of_bsn_bw_clear_data_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REPLY);
     obj = of_bsn_bw_clear_data_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10842,7 +9858,6 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_3(void)
     of_bsn_bw_clear_data_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_clear_data_request_new(OF_VERSION_1_3);
@@ -10860,12 +9875,9 @@ test_of_bsn_bw_clear_data_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_clear_data_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_CLEAR_DATA_REQUEST);
     obj = of_bsn_bw_clear_data_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10886,7 +9898,6 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_3(void)
     of_bsn_bw_enable_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_reply_new(OF_VERSION_1_3);
@@ -10904,12 +9915,9 @@ test_of_bsn_bw_enable_get_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REPLY);
     obj = of_bsn_bw_enable_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10930,7 +9938,6 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_3(void)
     of_bsn_bw_enable_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_get_request_new(OF_VERSION_1_3);
@@ -10948,12 +9955,9 @@ test_of_bsn_bw_enable_get_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_GET_REQUEST);
     obj = of_bsn_bw_enable_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -10974,7 +9978,6 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_3(void)
     of_bsn_bw_enable_set_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_reply_new(OF_VERSION_1_3);
@@ -10992,12 +9995,9 @@ test_of_bsn_bw_enable_set_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REPLY);
     obj = of_bsn_bw_enable_set_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11018,7 +10018,6 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_3(void)
     of_bsn_bw_enable_set_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_bw_enable_set_request_new(OF_VERSION_1_3);
@@ -11036,12 +10035,9 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_bw_enable_set_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_BW_ENABLE_SET_REQUEST);
     obj = of_bsn_bw_enable_set_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11062,7 +10058,6 @@ test_of_bsn_controller_connections_reply_create_OF_VERSION_1_3(void)
     of_bsn_controller_connections_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_controller_connections_reply_new(OF_VERSION_1_3);
@@ -11080,12 +10075,9 @@ test_of_bsn_controller_connections_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_controller_connections_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_CONTROLLER_CONNECTIONS_REPLY);
     obj = of_bsn_controller_connections_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11106,7 +10098,6 @@ test_of_bsn_controller_connections_request_create_OF_VERSION_1_3(void)
     of_bsn_controller_connections_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_controller_connections_request_new(OF_VERSION_1_3);
@@ -11124,12 +10115,9 @@ test_of_bsn_controller_connections_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_controller_connections_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_CONTROLLER_CONNECTIONS_REQUEST);
     obj = of_bsn_controller_connections_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11150,7 +10138,6 @@ test_of_bsn_debug_counter_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_debug_counter_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_debug_counter_desc_stats_reply_new(OF_VERSION_1_3);
@@ -11168,12 +10155,9 @@ test_of_bsn_debug_counter_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_debug_counter_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_DEBUG_COUNTER_DESC_STATS_REPLY);
     obj = of_bsn_debug_counter_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11194,7 +10178,6 @@ test_of_bsn_debug_counter_desc_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_debug_counter_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_debug_counter_desc_stats_request_new(OF_VERSION_1_3);
@@ -11212,12 +10195,9 @@ test_of_bsn_debug_counter_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_debug_counter_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_DEBUG_COUNTER_DESC_STATS_REQUEST);
     obj = of_bsn_debug_counter_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11238,7 +10218,6 @@ test_of_bsn_debug_counter_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_debug_counter_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_debug_counter_stats_reply_new(OF_VERSION_1_3);
@@ -11256,12 +10235,9 @@ test_of_bsn_debug_counter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_debug_counter_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_DEBUG_COUNTER_STATS_REPLY);
     obj = of_bsn_debug_counter_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11282,7 +10258,6 @@ test_of_bsn_debug_counter_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_debug_counter_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_debug_counter_stats_request_new(OF_VERSION_1_3);
@@ -11300,12 +10275,9 @@ test_of_bsn_debug_counter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_debug_counter_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_DEBUG_COUNTER_STATS_REQUEST);
     obj = of_bsn_debug_counter_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11326,7 +10298,6 @@ test_of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_flow_checksum_bucket_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_checksum_bucket_stats_reply_new(OF_VERSION_1_3);
@@ -11344,12 +10315,9 @@ test_of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_checksum_bucket_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
     obj = of_bsn_flow_checksum_bucket_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11370,7 +10338,6 @@ test_of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_flow_checksum_bucket_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_checksum_bucket_stats_request_new(OF_VERSION_1_3);
@@ -11388,12 +10355,9 @@ test_of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_checksum_bucket_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
     obj = of_bsn_flow_checksum_bucket_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11414,7 +10378,6 @@ test_of_bsn_flow_idle_create_OF_VERSION_1_3(void)
     of_bsn_flow_idle_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_new(OF_VERSION_1_3);
@@ -11432,12 +10395,9 @@ test_of_bsn_flow_idle_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_idle_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_IDLE);
     obj = of_bsn_flow_idle_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11458,7 +10418,6 @@ test_of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_3(void)
     of_bsn_flow_idle_enable_get_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_get_reply_new(OF_VERSION_1_3);
@@ -11476,12 +10435,9 @@ test_of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_idle_enable_get_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY);
     obj = of_bsn_flow_idle_enable_get_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11502,7 +10458,6 @@ test_of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_3(void)
     of_bsn_flow_idle_enable_get_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_get_request_new(OF_VERSION_1_3);
@@ -11520,12 +10475,9 @@ test_of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_idle_enable_get_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST);
     obj = of_bsn_flow_idle_enable_get_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11546,7 +10498,6 @@ test_of_bsn_flow_idle_enable_set_reply_create_OF_VERSION_1_3(void)
     of_bsn_flow_idle_enable_set_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_set_reply_new(OF_VERSION_1_3);
@@ -11564,12 +10515,9 @@ test_of_bsn_flow_idle_enable_set_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_idle_enable_set_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY);
     obj = of_bsn_flow_idle_enable_set_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11590,7 +10538,6 @@ test_of_bsn_flow_idle_enable_set_request_create_OF_VERSION_1_3(void)
     of_bsn_flow_idle_enable_set_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_flow_idle_enable_set_request_new(OF_VERSION_1_3);
@@ -11608,12 +10555,9 @@ test_of_bsn_flow_idle_enable_set_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_flow_idle_enable_set_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST);
     obj = of_bsn_flow_idle_enable_set_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11634,7 +10578,6 @@ test_of_bsn_gentable_bucket_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_gentable_bucket_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_bucket_stats_reply_new(OF_VERSION_1_3);
@@ -11652,12 +10595,9 @@ test_of_bsn_gentable_bucket_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_bucket_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_BUCKET_STATS_REPLY);
     obj = of_bsn_gentable_bucket_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11678,7 +10618,6 @@ test_of_bsn_gentable_bucket_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_gentable_bucket_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_bucket_stats_request_new(OF_VERSION_1_3);
@@ -11696,12 +10635,9 @@ test_of_bsn_gentable_bucket_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_bucket_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_BUCKET_STATS_REQUEST);
     obj = of_bsn_gentable_bucket_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11722,7 +10658,6 @@ test_of_bsn_gentable_clear_reply_create_OF_VERSION_1_3(void)
     of_bsn_gentable_clear_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_clear_reply_new(OF_VERSION_1_3);
@@ -11740,12 +10675,9 @@ test_of_bsn_gentable_clear_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_clear_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_CLEAR_REPLY);
     obj = of_bsn_gentable_clear_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11766,7 +10698,6 @@ test_of_bsn_gentable_clear_request_create_OF_VERSION_1_3(void)
     of_bsn_gentable_clear_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_clear_request_new(OF_VERSION_1_3);
@@ -11784,12 +10715,9 @@ test_of_bsn_gentable_clear_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_clear_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_CLEAR_REQUEST);
     obj = of_bsn_gentable_clear_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11810,7 +10738,6 @@ test_of_bsn_gentable_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_gentable_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_desc_stats_reply_new(OF_VERSION_1_3);
@@ -11828,12 +10755,9 @@ test_of_bsn_gentable_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_DESC_STATS_REPLY);
     obj = of_bsn_gentable_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11854,7 +10778,6 @@ test_of_bsn_gentable_desc_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_gentable_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_desc_stats_request_new(OF_VERSION_1_3);
@@ -11872,12 +10795,9 @@ test_of_bsn_gentable_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_DESC_STATS_REQUEST);
     obj = of_bsn_gentable_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11898,7 +10818,6 @@ test_of_bsn_gentable_entry_add_create_OF_VERSION_1_3(void)
     of_bsn_gentable_entry_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_add_new(OF_VERSION_1_3);
@@ -11916,12 +10835,9 @@ test_of_bsn_gentable_entry_add_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_entry_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_ENTRY_ADD);
     obj = of_bsn_gentable_entry_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11942,7 +10858,6 @@ test_of_bsn_gentable_entry_delete_create_OF_VERSION_1_3(void)
     of_bsn_gentable_entry_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_delete_new(OF_VERSION_1_3);
@@ -11960,12 +10875,9 @@ test_of_bsn_gentable_entry_delete_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_entry_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_ENTRY_DELETE);
     obj = of_bsn_gentable_entry_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -11986,7 +10898,6 @@ test_of_bsn_gentable_entry_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_gentable_entry_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_desc_stats_reply_new(OF_VERSION_1_3);
@@ -12004,12 +10915,9 @@ test_of_bsn_gentable_entry_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_entry_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY);
     obj = of_bsn_gentable_entry_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12030,7 +10938,6 @@ test_of_bsn_gentable_entry_desc_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_gentable_entry_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_desc_stats_request_new(OF_VERSION_1_3);
@@ -12048,12 +10955,9 @@ test_of_bsn_gentable_entry_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_entry_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST);
     obj = of_bsn_gentable_entry_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12074,7 +10978,6 @@ test_of_bsn_gentable_entry_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_gentable_entry_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_stats_reply_new(OF_VERSION_1_3);
@@ -12092,12 +10995,9 @@ test_of_bsn_gentable_entry_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_entry_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_ENTRY_STATS_REPLY);
     obj = of_bsn_gentable_entry_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12118,7 +11018,6 @@ test_of_bsn_gentable_entry_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_gentable_entry_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_entry_stats_request_new(OF_VERSION_1_3);
@@ -12136,12 +11035,9 @@ test_of_bsn_gentable_entry_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_entry_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_ENTRY_STATS_REQUEST);
     obj = of_bsn_gentable_entry_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12162,7 +11058,6 @@ test_of_bsn_gentable_set_buckets_size_create_OF_VERSION_1_3(void)
     of_bsn_gentable_set_buckets_size_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_set_buckets_size_new(OF_VERSION_1_3);
@@ -12180,12 +11075,9 @@ test_of_bsn_gentable_set_buckets_size_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_set_buckets_size_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_SET_BUCKETS_SIZE);
     obj = of_bsn_gentable_set_buckets_size_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12206,7 +11098,6 @@ test_of_bsn_gentable_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_gentable_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_stats_reply_new(OF_VERSION_1_3);
@@ -12224,12 +11115,9 @@ test_of_bsn_gentable_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_STATS_REPLY);
     obj = of_bsn_gentable_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12250,7 +11138,6 @@ test_of_bsn_gentable_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_gentable_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_gentable_stats_request_new(OF_VERSION_1_3);
@@ -12268,12 +11155,9 @@ test_of_bsn_gentable_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_gentable_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GENTABLE_STATS_REQUEST);
     obj = of_bsn_gentable_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12294,7 +11178,6 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_3(void)
     of_bsn_get_interfaces_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_reply_new(OF_VERSION_1_3);
@@ -12312,12 +11195,9 @@ test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REPLY);
     obj = of_bsn_get_interfaces_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12338,7 +11218,6 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_3(void)
     of_bsn_get_interfaces_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_interfaces_request_new(OF_VERSION_1_3);
@@ -12356,12 +11235,9 @@ test_of_bsn_get_interfaces_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_interfaces_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_INTERFACES_REQUEST);
     obj = of_bsn_get_interfaces_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12382,7 +11258,6 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_3(void)
     of_bsn_get_mirroring_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_reply_new(OF_VERSION_1_3);
@@ -12400,12 +11275,9 @@ test_of_bsn_get_mirroring_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REPLY);
     obj = of_bsn_get_mirroring_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12426,7 +11298,6 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_3(void)
     of_bsn_get_mirroring_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_mirroring_request_new(OF_VERSION_1_3);
@@ -12444,12 +11315,9 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_mirroring_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_MIRRORING_REQUEST);
     obj = of_bsn_get_mirroring_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12470,7 +11338,6 @@ test_of_bsn_get_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     of_bsn_get_switch_pipeline_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_switch_pipeline_reply_new(OF_VERSION_1_3);
@@ -12488,12 +11355,9 @@ test_of_bsn_get_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_switch_pipeline_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
     obj = of_bsn_get_switch_pipeline_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12514,7 +11378,6 @@ test_of_bsn_get_switch_pipeline_request_create_OF_VERSION_1_3(void)
     of_bsn_get_switch_pipeline_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_get_switch_pipeline_request_new(OF_VERSION_1_3);
@@ -12532,12 +11395,9 @@ test_of_bsn_get_switch_pipeline_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_get_switch_pipeline_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
     obj = of_bsn_get_switch_pipeline_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12558,7 +11418,6 @@ test_of_bsn_image_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_image_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_image_desc_stats_reply_new(OF_VERSION_1_3);
@@ -12576,12 +11435,9 @@ test_of_bsn_image_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_image_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_IMAGE_DESC_STATS_REPLY);
     obj = of_bsn_image_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12602,7 +11458,6 @@ test_of_bsn_image_desc_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_image_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_image_desc_stats_request_new(OF_VERSION_1_3);
@@ -12620,12 +11475,9 @@ test_of_bsn_image_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_image_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_IMAGE_DESC_STATS_REQUEST);
     obj = of_bsn_image_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12646,7 +11498,6 @@ test_of_bsn_lacp_convergence_notif_create_OF_VERSION_1_3(void)
     of_bsn_lacp_convergence_notif_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_lacp_convergence_notif_new(OF_VERSION_1_3);
@@ -12664,12 +11515,9 @@ test_of_bsn_lacp_convergence_notif_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_lacp_convergence_notif_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_LACP_CONVERGENCE_NOTIF);
     obj = of_bsn_lacp_convergence_notif_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12690,7 +11538,6 @@ test_of_bsn_lacp_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_lacp_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_lacp_stats_reply_new(OF_VERSION_1_3);
@@ -12708,12 +11555,9 @@ test_of_bsn_lacp_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_lacp_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_LACP_STATS_REPLY);
     obj = of_bsn_lacp_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12734,7 +11578,6 @@ test_of_bsn_lacp_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_lacp_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_lacp_stats_request_new(OF_VERSION_1_3);
@@ -12752,12 +11595,9 @@ test_of_bsn_lacp_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_lacp_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_LACP_STATS_REQUEST);
     obj = of_bsn_lacp_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12778,7 +11618,6 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_3(void)
     of_bsn_pdu_rx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_reply_new(OF_VERSION_1_3);
@@ -12796,12 +11635,9 @@ test_of_bsn_pdu_rx_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REPLY);
     obj = of_bsn_pdu_rx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12822,7 +11658,6 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_3(void)
     of_bsn_pdu_rx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_request_new(OF_VERSION_1_3);
@@ -12840,12 +11675,9 @@ test_of_bsn_pdu_rx_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_REQUEST);
     obj = of_bsn_pdu_rx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12866,7 +11698,6 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_3(void)
     of_bsn_pdu_rx_timeout_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_rx_timeout_new(OF_VERSION_1_3);
@@ -12884,12 +11715,9 @@ test_of_bsn_pdu_rx_timeout_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_rx_timeout_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_RX_TIMEOUT);
     obj = of_bsn_pdu_rx_timeout_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12910,7 +11738,6 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_3(void)
     of_bsn_pdu_tx_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_reply_new(OF_VERSION_1_3);
@@ -12928,12 +11755,9 @@ test_of_bsn_pdu_tx_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REPLY);
     obj = of_bsn_pdu_tx_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12954,7 +11778,6 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_3(void)
     of_bsn_pdu_tx_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_pdu_tx_request_new(OF_VERSION_1_3);
@@ -12972,12 +11795,9 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_pdu_tx_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PDU_TX_REQUEST);
     obj = of_bsn_pdu_tx_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -12998,7 +11818,6 @@ test_of_bsn_port_counter_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_port_counter_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_port_counter_stats_reply_new(OF_VERSION_1_3);
@@ -13016,12 +11835,9 @@ test_of_bsn_port_counter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_port_counter_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PORT_COUNTER_STATS_REPLY);
     obj = of_bsn_port_counter_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13042,7 +11858,6 @@ test_of_bsn_port_counter_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_port_counter_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_port_counter_stats_request_new(OF_VERSION_1_3);
@@ -13060,12 +11875,9 @@ test_of_bsn_port_counter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_port_counter_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_PORT_COUNTER_STATS_REQUEST);
     obj = of_bsn_port_counter_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13086,7 +11898,6 @@ test_of_bsn_role_status_create_OF_VERSION_1_3(void)
     of_bsn_role_status_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_role_status_new(OF_VERSION_1_3);
@@ -13104,12 +11915,9 @@ test_of_bsn_role_status_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_role_status_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_ROLE_STATUS);
     obj = of_bsn_role_status_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13130,7 +11938,6 @@ test_of_bsn_set_aux_cxns_reply_create_OF_VERSION_1_3(void)
     of_bsn_set_aux_cxns_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_aux_cxns_reply_new(OF_VERSION_1_3);
@@ -13148,12 +11955,9 @@ test_of_bsn_set_aux_cxns_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_aux_cxns_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_AUX_CXNS_REPLY);
     obj = of_bsn_set_aux_cxns_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13174,7 +11978,6 @@ test_of_bsn_set_aux_cxns_request_create_OF_VERSION_1_3(void)
     of_bsn_set_aux_cxns_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_aux_cxns_request_new(OF_VERSION_1_3);
@@ -13192,12 +11995,9 @@ test_of_bsn_set_aux_cxns_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_aux_cxns_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_AUX_CXNS_REQUEST);
     obj = of_bsn_set_aux_cxns_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13218,7 +12018,6 @@ test_of_bsn_set_lacp_reply_create_OF_VERSION_1_3(void)
     of_bsn_set_lacp_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_lacp_reply_new(OF_VERSION_1_3);
@@ -13236,12 +12035,9 @@ test_of_bsn_set_lacp_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_lacp_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_LACP_REPLY);
     obj = of_bsn_set_lacp_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13262,7 +12058,6 @@ test_of_bsn_set_lacp_request_create_OF_VERSION_1_3(void)
     of_bsn_set_lacp_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_lacp_request_new(OF_VERSION_1_3);
@@ -13280,12 +12075,9 @@ test_of_bsn_set_lacp_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_lacp_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_LACP_REQUEST);
     obj = of_bsn_set_lacp_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13306,7 +12098,6 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_3(void)
     of_bsn_set_mirroring_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_mirroring_new(OF_VERSION_1_3);
@@ -13324,12 +12115,9 @@ test_of_bsn_set_mirroring_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_mirroring_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_MIRRORING);
     obj = of_bsn_set_mirroring_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13350,7 +12138,6 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_3(void)
     of_bsn_set_pktin_suppression_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_reply_new(OF_VERSION_1_3);
@@ -13368,12 +12155,9 @@ test_of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REPLY);
     obj = of_bsn_set_pktin_suppression_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13394,7 +12178,6 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_3(void)
     of_bsn_set_pktin_suppression_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_pktin_suppression_request_new(OF_VERSION_1_3);
@@ -13412,12 +12195,9 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_pktin_suppression_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST);
     obj = of_bsn_set_pktin_suppression_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13438,7 +12218,6 @@ test_of_bsn_set_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     of_bsn_set_switch_pipeline_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_switch_pipeline_reply_new(OF_VERSION_1_3);
@@ -13456,12 +12235,9 @@ test_of_bsn_set_switch_pipeline_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_switch_pipeline_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
     obj = of_bsn_set_switch_pipeline_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13482,7 +12258,6 @@ test_of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_3(void)
     of_bsn_set_switch_pipeline_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_set_switch_pipeline_request_new(OF_VERSION_1_3);
@@ -13500,12 +12275,9 @@ test_of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_set_switch_pipeline_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
     obj = of_bsn_set_switch_pipeline_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13526,7 +12298,6 @@ test_of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_switch_pipeline_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_switch_pipeline_stats_reply_new(OF_VERSION_1_3);
@@ -13544,12 +12315,9 @@ test_of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_switch_pipeline_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
     obj = of_bsn_switch_pipeline_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13570,7 +12338,6 @@ test_of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_switch_pipeline_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_switch_pipeline_stats_request_new(OF_VERSION_1_3);
@@ -13588,12 +12355,9 @@ test_of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_switch_pipeline_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
     obj = of_bsn_switch_pipeline_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13614,7 +12378,6 @@ test_of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_table_checksum_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_table_checksum_stats_reply_new(OF_VERSION_1_3);
@@ -13632,12 +12395,9 @@ test_of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_table_checksum_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
     obj = of_bsn_table_checksum_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13658,7 +12418,6 @@ test_of_bsn_table_checksum_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_table_checksum_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_table_checksum_stats_request_new(OF_VERSION_1_3);
@@ -13676,12 +12435,9 @@ test_of_bsn_table_checksum_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_table_checksum_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
     obj = of_bsn_table_checksum_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13702,7 +12458,6 @@ test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_3(void)
     of_bsn_table_set_buckets_size_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_table_set_buckets_size_new(OF_VERSION_1_3);
@@ -13720,12 +12475,9 @@ test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_table_set_buckets_size_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TABLE_SET_BUCKETS_SIZE);
     obj = of_bsn_table_set_buckets_size_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13746,7 +12498,6 @@ test_of_bsn_time_reply_create_OF_VERSION_1_3(void)
     of_bsn_time_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_time_reply_new(OF_VERSION_1_3);
@@ -13764,12 +12515,9 @@ test_of_bsn_time_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_time_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TIME_REPLY);
     obj = of_bsn_time_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13790,7 +12538,6 @@ test_of_bsn_time_request_create_OF_VERSION_1_3(void)
     of_bsn_time_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_time_request_new(OF_VERSION_1_3);
@@ -13808,12 +12555,9 @@ test_of_bsn_time_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_time_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_TIME_REQUEST);
     obj = of_bsn_time_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13834,7 +12578,6 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_3(void)
     of_bsn_virtual_port_create_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_reply_new(OF_VERSION_1_3);
@@ -13852,12 +12595,9 @@ test_of_bsn_virtual_port_create_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REPLY);
     obj = of_bsn_virtual_port_create_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13878,7 +12618,6 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_3(void)
     of_bsn_virtual_port_create_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_create_request_new(OF_VERSION_1_3);
@@ -13896,12 +12635,9 @@ test_of_bsn_virtual_port_create_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_create_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_CREATE_REQUEST);
     obj = of_bsn_virtual_port_create_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13922,7 +12658,6 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_3(void)
     of_bsn_virtual_port_remove_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_reply_new(OF_VERSION_1_3);
@@ -13940,12 +12675,9 @@ test_of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REPLY);
     obj = of_bsn_virtual_port_remove_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -13966,7 +12698,6 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_3(void)
     of_bsn_virtual_port_remove_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_3);
@@ -13984,12 +12715,9 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_virtual_port_remove_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST);
     obj = of_bsn_virtual_port_remove_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14010,7 +12738,6 @@ test_of_bsn_vlan_counter_stats_reply_create_OF_VERSION_1_3(void)
     of_bsn_vlan_counter_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_vlan_counter_stats_reply_new(OF_VERSION_1_3);
@@ -14028,12 +12755,9 @@ test_of_bsn_vlan_counter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_vlan_counter_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VLAN_COUNTER_STATS_REPLY);
     obj = of_bsn_vlan_counter_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14054,7 +12778,6 @@ test_of_bsn_vlan_counter_stats_request_create_OF_VERSION_1_3(void)
     of_bsn_vlan_counter_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_bsn_vlan_counter_stats_request_new(OF_VERSION_1_3);
@@ -14072,12 +12795,9 @@ test_of_bsn_vlan_counter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_bsn_vlan_counter_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_BSN_VLAN_COUNTER_STATS_REQUEST);
     obj = of_bsn_vlan_counter_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14098,7 +12818,6 @@ test_of_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_reply_new(OF_VERSION_1_3);
@@ -14116,12 +12835,9 @@ test_of_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REPLY);
     obj = of_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14142,7 +12858,6 @@ test_of_desc_stats_request_create_OF_VERSION_1_3(void)
     of_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_desc_stats_request_new(OF_VERSION_1_3);
@@ -14160,12 +12875,9 @@ test_of_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_DESC_STATS_REQUEST);
     obj = of_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14186,7 +12898,6 @@ test_of_echo_reply_create_OF_VERSION_1_3(void)
     of_echo_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_reply_new(OF_VERSION_1_3);
@@ -14204,12 +12915,9 @@ test_of_echo_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REPLY);
     obj = of_echo_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14230,7 +12938,6 @@ test_of_echo_request_create_OF_VERSION_1_3(void)
     of_echo_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_echo_request_new(OF_VERSION_1_3);
@@ -14248,12 +12955,9 @@ test_of_echo_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_echo_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ECHO_REQUEST);
     obj = of_echo_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14274,7 +12978,6 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_3(void)
     of_experimenter_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_experimenter_error_msg_new(OF_VERSION_1_3);
@@ -14292,12 +12995,9 @@ test_of_experimenter_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_experimenter_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_EXPERIMENTER_ERROR_MSG);
     obj = of_experimenter_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14318,7 +13018,6 @@ test_of_features_reply_create_OF_VERSION_1_3(void)
     of_features_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_reply_new(OF_VERSION_1_3);
@@ -14336,12 +13035,9 @@ test_of_features_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REPLY);
     obj = of_features_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14362,7 +13058,6 @@ test_of_features_request_create_OF_VERSION_1_3(void)
     of_features_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_features_request_new(OF_VERSION_1_3);
@@ -14380,12 +13075,9 @@ test_of_features_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_features_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FEATURES_REQUEST);
     obj = of_features_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14406,7 +13098,6 @@ test_of_flow_add_create_OF_VERSION_1_3(void)
     of_flow_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_add_new(OF_VERSION_1_3);
@@ -14424,12 +13115,9 @@ test_of_flow_add_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_ADD);
     obj = of_flow_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14450,7 +13138,6 @@ test_of_flow_delete_create_OF_VERSION_1_3(void)
     of_flow_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_new(OF_VERSION_1_3);
@@ -14468,12 +13155,9 @@ test_of_flow_delete_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE);
     obj = of_flow_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14494,7 +13178,6 @@ test_of_flow_delete_strict_create_OF_VERSION_1_3(void)
     of_flow_delete_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_delete_strict_new(OF_VERSION_1_3);
@@ -14512,12 +13195,9 @@ test_of_flow_delete_strict_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_delete_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_DELETE_STRICT);
     obj = of_flow_delete_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14538,7 +13218,6 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     of_flow_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_mod_failed_error_msg_new(OF_VERSION_1_3);
@@ -14556,12 +13235,9 @@ test_of_flow_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MOD_FAILED_ERROR_MSG);
     obj = of_flow_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14582,7 +13258,6 @@ test_of_flow_modify_create_OF_VERSION_1_3(void)
     of_flow_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_new(OF_VERSION_1_3);
@@ -14600,12 +13275,9 @@ test_of_flow_modify_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY);
     obj = of_flow_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14626,7 +13298,6 @@ test_of_flow_modify_strict_create_OF_VERSION_1_3(void)
     of_flow_modify_strict_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_modify_strict_new(OF_VERSION_1_3);
@@ -14644,12 +13315,9 @@ test_of_flow_modify_strict_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_modify_strict_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_MODIFY_STRICT);
     obj = of_flow_modify_strict_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14670,7 +13338,6 @@ test_of_flow_removed_create_OF_VERSION_1_3(void)
     of_flow_removed_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_removed_new(OF_VERSION_1_3);
@@ -14688,12 +13355,9 @@ test_of_flow_removed_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_removed_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_REMOVED);
     obj = of_flow_removed_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14714,7 +13378,6 @@ test_of_flow_stats_reply_create_OF_VERSION_1_3(void)
     of_flow_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_reply_new(OF_VERSION_1_3);
@@ -14732,12 +13395,9 @@ test_of_flow_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REPLY);
     obj = of_flow_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14758,7 +13418,6 @@ test_of_flow_stats_request_create_OF_VERSION_1_3(void)
     of_flow_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_flow_stats_request_new(OF_VERSION_1_3);
@@ -14776,12 +13435,9 @@ test_of_flow_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_flow_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_FLOW_STATS_REQUEST);
     obj = of_flow_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14802,7 +13458,6 @@ test_of_get_config_reply_create_OF_VERSION_1_3(void)
     of_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_reply_new(OF_VERSION_1_3);
@@ -14820,12 +13475,9 @@ test_of_get_config_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REPLY);
     obj = of_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14846,7 +13498,6 @@ test_of_get_config_request_create_OF_VERSION_1_3(void)
     of_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_get_config_request_new(OF_VERSION_1_3);
@@ -14864,12 +13515,9 @@ test_of_get_config_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GET_CONFIG_REQUEST);
     obj = of_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14890,7 +13538,6 @@ test_of_group_add_create_OF_VERSION_1_3(void)
     of_group_add_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_add_new(OF_VERSION_1_3);
@@ -14908,12 +13555,9 @@ test_of_group_add_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_add_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_ADD);
     obj = of_group_add_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14934,7 +13578,6 @@ test_of_group_delete_create_OF_VERSION_1_3(void)
     of_group_delete_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_delete_new(OF_VERSION_1_3);
@@ -14952,12 +13595,9 @@ test_of_group_delete_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_delete_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DELETE);
     obj = of_group_delete_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -14978,7 +13618,6 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_group_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_desc_stats_reply_new(OF_VERSION_1_3);
@@ -14996,12 +13635,9 @@ test_of_group_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DESC_STATS_REPLY);
     obj = of_group_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15022,7 +13658,6 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_3(void)
     of_group_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_desc_stats_request_new(OF_VERSION_1_3);
@@ -15040,12 +13675,9 @@ test_of_group_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_DESC_STATS_REQUEST);
     obj = of_group_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15066,7 +13698,6 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_3(void)
     of_group_features_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_features_stats_reply_new(OF_VERSION_1_3);
@@ -15084,12 +13715,9 @@ test_of_group_features_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_features_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_FEATURES_STATS_REPLY);
     obj = of_group_features_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15110,7 +13738,6 @@ test_of_group_features_stats_request_create_OF_VERSION_1_3(void)
     of_group_features_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_features_stats_request_new(OF_VERSION_1_3);
@@ -15128,12 +13755,9 @@ test_of_group_features_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_features_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_FEATURES_STATS_REQUEST);
     obj = of_group_features_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15154,7 +13778,6 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     of_group_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_mod_failed_error_msg_new(OF_VERSION_1_3);
@@ -15172,12 +13795,9 @@ test_of_group_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MOD_FAILED_ERROR_MSG);
     obj = of_group_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15198,7 +13818,6 @@ test_of_group_modify_create_OF_VERSION_1_3(void)
     of_group_modify_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_modify_new(OF_VERSION_1_3);
@@ -15216,12 +13835,9 @@ test_of_group_modify_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_modify_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_MODIFY);
     obj = of_group_modify_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15242,7 +13858,6 @@ test_of_group_stats_reply_create_OF_VERSION_1_3(void)
     of_group_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_stats_reply_new(OF_VERSION_1_3);
@@ -15260,12 +13875,9 @@ test_of_group_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_STATS_REPLY);
     obj = of_group_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15286,7 +13898,6 @@ test_of_group_stats_request_create_OF_VERSION_1_3(void)
     of_group_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_group_stats_request_new(OF_VERSION_1_3);
@@ -15304,12 +13915,9 @@ test_of_group_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_group_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_GROUP_STATS_REQUEST);
     obj = of_group_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15330,7 +13938,6 @@ test_of_hello_create_OF_VERSION_1_3(void)
     of_hello_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_new(OF_VERSION_1_3);
@@ -15348,12 +13955,9 @@ test_of_hello_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO);
     obj = of_hello_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15374,7 +13978,6 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_3(void)
     of_hello_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_hello_failed_error_msg_new(OF_VERSION_1_3);
@@ -15392,12 +13995,9 @@ test_of_hello_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_hello_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_HELLO_FAILED_ERROR_MSG);
     obj = of_hello_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15418,7 +14018,6 @@ test_of_meter_config_stats_reply_create_OF_VERSION_1_3(void)
     of_meter_config_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_config_stats_reply_new(OF_VERSION_1_3);
@@ -15436,12 +14035,9 @@ test_of_meter_config_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_config_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_CONFIG_STATS_REPLY);
     obj = of_meter_config_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15462,7 +14058,6 @@ test_of_meter_config_stats_request_create_OF_VERSION_1_3(void)
     of_meter_config_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_config_stats_request_new(OF_VERSION_1_3);
@@ -15480,12 +14075,9 @@ test_of_meter_config_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_config_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_CONFIG_STATS_REQUEST);
     obj = of_meter_config_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15506,7 +14098,6 @@ test_of_meter_features_stats_reply_create_OF_VERSION_1_3(void)
     of_meter_features_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_features_stats_reply_new(OF_VERSION_1_3);
@@ -15524,12 +14115,9 @@ test_of_meter_features_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_features_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_FEATURES_STATS_REPLY);
     obj = of_meter_features_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15550,7 +14138,6 @@ test_of_meter_features_stats_request_create_OF_VERSION_1_3(void)
     of_meter_features_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_features_stats_request_new(OF_VERSION_1_3);
@@ -15568,12 +14155,9 @@ test_of_meter_features_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_features_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_FEATURES_STATS_REQUEST);
     obj = of_meter_features_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15594,7 +14178,6 @@ test_of_meter_mod_create_OF_VERSION_1_3(void)
     of_meter_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_mod_new(OF_VERSION_1_3);
@@ -15612,12 +14195,9 @@ test_of_meter_mod_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_MOD);
     obj = of_meter_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15638,7 +14218,6 @@ test_of_meter_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     of_meter_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_mod_failed_error_msg_new(OF_VERSION_1_3);
@@ -15656,12 +14235,9 @@ test_of_meter_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_MOD_FAILED_ERROR_MSG);
     obj = of_meter_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15682,7 +14258,6 @@ test_of_meter_stats_reply_create_OF_VERSION_1_3(void)
     of_meter_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_stats_reply_new(OF_VERSION_1_3);
@@ -15700,12 +14275,9 @@ test_of_meter_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_STATS_REPLY);
     obj = of_meter_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15726,7 +14298,6 @@ test_of_meter_stats_request_create_OF_VERSION_1_3(void)
     of_meter_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_meter_stats_request_new(OF_VERSION_1_3);
@@ -15744,12 +14315,9 @@ test_of_meter_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_meter_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_METER_STATS_REQUEST);
     obj = of_meter_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15770,7 +14338,6 @@ test_of_packet_in_create_OF_VERSION_1_3(void)
     of_packet_in_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_in_new(OF_VERSION_1_3);
@@ -15788,12 +14355,9 @@ test_of_packet_in_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_in_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_IN);
     obj = of_packet_in_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15814,7 +14378,6 @@ test_of_packet_out_create_OF_VERSION_1_3(void)
     of_packet_out_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_packet_out_new(OF_VERSION_1_3);
@@ -15832,12 +14395,9 @@ test_of_packet_out_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_packet_out_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PACKET_OUT);
     obj = of_packet_out_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15858,7 +14418,6 @@ test_of_port_desc_stats_reply_create_OF_VERSION_1_3(void)
     of_port_desc_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_desc_stats_reply_new(OF_VERSION_1_3);
@@ -15876,12 +14435,9 @@ test_of_port_desc_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_desc_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_DESC_STATS_REPLY);
     obj = of_port_desc_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15902,7 +14458,6 @@ test_of_port_desc_stats_request_create_OF_VERSION_1_3(void)
     of_port_desc_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_desc_stats_request_new(OF_VERSION_1_3);
@@ -15920,12 +14475,9 @@ test_of_port_desc_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_desc_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_DESC_STATS_REQUEST);
     obj = of_port_desc_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15946,7 +14498,6 @@ test_of_port_mod_create_OF_VERSION_1_3(void)
     of_port_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_new(OF_VERSION_1_3);
@@ -15964,12 +14515,9 @@ test_of_port_mod_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD);
     obj = of_port_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -15990,7 +14538,6 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     of_port_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_mod_failed_error_msg_new(OF_VERSION_1_3);
@@ -16008,12 +14555,9 @@ test_of_port_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_MOD_FAILED_ERROR_MSG);
     obj = of_port_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16034,7 +14578,6 @@ test_of_port_stats_reply_create_OF_VERSION_1_3(void)
     of_port_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_reply_new(OF_VERSION_1_3);
@@ -16052,12 +14595,9 @@ test_of_port_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REPLY);
     obj = of_port_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16078,7 +14618,6 @@ test_of_port_stats_request_create_OF_VERSION_1_3(void)
     of_port_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_stats_request_new(OF_VERSION_1_3);
@@ -16096,12 +14635,9 @@ test_of_port_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATS_REQUEST);
     obj = of_port_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16122,7 +14658,6 @@ test_of_port_status_create_OF_VERSION_1_3(void)
     of_port_status_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_port_status_new(OF_VERSION_1_3);
@@ -16140,12 +14675,9 @@ test_of_port_status_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_port_status_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_PORT_STATUS);
     obj = of_port_status_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16166,7 +14698,6 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_3(void)
     of_queue_get_config_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_reply_new(OF_VERSION_1_3);
@@ -16184,12 +14715,9 @@ test_of_queue_get_config_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REPLY);
     obj = of_queue_get_config_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16210,7 +14738,6 @@ test_of_queue_get_config_request_create_OF_VERSION_1_3(void)
     of_queue_get_config_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_get_config_request_new(OF_VERSION_1_3);
@@ -16228,12 +14755,9 @@ test_of_queue_get_config_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_get_config_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_GET_CONFIG_REQUEST);
     obj = of_queue_get_config_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16254,7 +14778,6 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_3(void)
     of_queue_op_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_op_failed_error_msg_new(OF_VERSION_1_3);
@@ -16272,12 +14795,9 @@ test_of_queue_op_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_op_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_OP_FAILED_ERROR_MSG);
     obj = of_queue_op_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16298,7 +14818,6 @@ test_of_queue_stats_reply_create_OF_VERSION_1_3(void)
     of_queue_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_reply_new(OF_VERSION_1_3);
@@ -16316,12 +14835,9 @@ test_of_queue_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REPLY);
     obj = of_queue_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16342,7 +14858,6 @@ test_of_queue_stats_request_create_OF_VERSION_1_3(void)
     of_queue_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_queue_stats_request_new(OF_VERSION_1_3);
@@ -16360,12 +14875,9 @@ test_of_queue_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_queue_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_QUEUE_STATS_REQUEST);
     obj = of_queue_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16386,7 +14898,6 @@ test_of_role_reply_create_OF_VERSION_1_3(void)
     of_role_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_role_reply_new(OF_VERSION_1_3);
@@ -16404,12 +14915,9 @@ test_of_role_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_role_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ROLE_REPLY);
     obj = of_role_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16430,7 +14938,6 @@ test_of_role_request_create_OF_VERSION_1_3(void)
     of_role_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_role_request_new(OF_VERSION_1_3);
@@ -16448,12 +14955,9 @@ test_of_role_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_role_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ROLE_REQUEST);
     obj = of_role_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16474,7 +14978,6 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_3(void)
     of_role_request_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_role_request_failed_error_msg_new(OF_VERSION_1_3);
@@ -16492,12 +14995,9 @@ test_of_role_request_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_role_request_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_ROLE_REQUEST_FAILED_ERROR_MSG);
     obj = of_role_request_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16518,7 +15018,6 @@ test_of_set_config_create_OF_VERSION_1_3(void)
     of_set_config_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_set_config_new(OF_VERSION_1_3);
@@ -16536,12 +15035,9 @@ test_of_set_config_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_set_config_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SET_CONFIG);
     obj = of_set_config_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16562,7 +15058,6 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_3(void)
     of_switch_config_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_switch_config_failed_error_msg_new(OF_VERSION_1_3);
@@ -16580,12 +15075,9 @@ test_of_switch_config_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_switch_config_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_SWITCH_CONFIG_FAILED_ERROR_MSG);
     obj = of_switch_config_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16606,7 +15098,6 @@ test_of_table_features_failed_error_msg_create_OF_VERSION_1_3(void)
     of_table_features_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_features_failed_error_msg_new(OF_VERSION_1_3);
@@ -16624,12 +15115,9 @@ test_of_table_features_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_features_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_FEATURES_FAILED_ERROR_MSG);
     obj = of_table_features_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16650,7 +15138,6 @@ test_of_table_features_stats_reply_create_OF_VERSION_1_3(void)
     of_table_features_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_features_stats_reply_new(OF_VERSION_1_3);
@@ -16668,12 +15155,9 @@ test_of_table_features_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_features_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_FEATURES_STATS_REPLY);
     obj = of_table_features_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16694,7 +15178,6 @@ test_of_table_features_stats_request_create_OF_VERSION_1_3(void)
     of_table_features_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_features_stats_request_new(OF_VERSION_1_3);
@@ -16712,12 +15195,9 @@ test_of_table_features_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_features_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_FEATURES_STATS_REQUEST);
     obj = of_table_features_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16738,7 +15218,6 @@ test_of_table_mod_create_OF_VERSION_1_3(void)
     of_table_mod_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_new(OF_VERSION_1_3);
@@ -16756,12 +15235,9 @@ test_of_table_mod_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD);
     obj = of_table_mod_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16782,7 +15258,6 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     of_table_mod_failed_error_msg_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_mod_failed_error_msg_new(OF_VERSION_1_3);
@@ -16800,12 +15275,9 @@ test_of_table_mod_failed_error_msg_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_mod_failed_error_msg_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_MOD_FAILED_ERROR_MSG);
     obj = of_table_mod_failed_error_msg_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16826,7 +15298,6 @@ test_of_table_stats_reply_create_OF_VERSION_1_3(void)
     of_table_stats_reply_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_reply_new(OF_VERSION_1_3);
@@ -16844,12 +15315,9 @@ test_of_table_stats_reply_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_reply_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REPLY);
     obj = of_table_stats_reply_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);
@@ -16870,7 +15338,6 @@ test_of_table_stats_request_create_OF_VERSION_1_3(void)
     of_table_stats_request_t *obj;
     uint8_t *msg_buf;
     int value;
-    int len;
     of_object_id_t object_id;
 
     obj = of_table_stats_request_new(OF_VERSION_1_3);
@@ -16888,12 +15355,9 @@ test_of_table_stats_request_create_OF_VERSION_1_3(void)
     TEST_ASSERT(value != 0);
 
     /* Grab the underlying buffer from the message */
-    len = obj->length;
     of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
     TEST_ASSERT(msg_buf != NULL);
     of_table_stats_request_delete(obj);
-    /* TODO:  */
-    TEST_ASSERT(of_message_to_object_id(msg_buf, len) == OF_TABLE_STATS_REQUEST);
     obj = of_table_stats_request_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf));
 
     TEST_ASSERT(obj != NULL);

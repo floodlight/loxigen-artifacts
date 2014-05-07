@@ -1,1 +1,1 @@
-0a92b3a65bf1a247e8975ce77ea240550790723c Merge into master from pull request #258: java_gen: Hash-related functions for U64, renamed OFChecksum128 to U128 (https://github.com/floodlight/loxigen/pull/258)
+b4ab3f6d37180983c965f5939010089ff1fbcb67 Merge into master from pull request #261: Remove more dead code from LOCI (https://github.com/floodlight/loxigen/pull/261)
