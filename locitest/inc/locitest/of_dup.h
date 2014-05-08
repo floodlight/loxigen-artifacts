@@ -1074,6 +1074,14 @@ extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_dup(
         of_bsn_tlv_port_t *src);
 
+extern of_bsn_tlv_queue_id_t *
+    of_bsn_tlv_queue_id_dup(
+        of_bsn_tlv_queue_id_t *src);
+
+extern of_bsn_tlv_queue_weight_t *
+    of_bsn_tlv_queue_weight_dup(
+        of_bsn_tlv_queue_weight_t *src);
+
 extern of_bsn_tlv_reply_packets_t *
     of_bsn_tlv_reply_packets_dup(
         of_bsn_tlv_reply_packets_t *src);
@@ -5269,6 +5277,14 @@ extern of_bsn_tlv_miss_packets_t *
 extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
         of_bsn_tlv_port_t *src);
+
+extern of_bsn_tlv_queue_id_t *
+    of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(
+        of_bsn_tlv_queue_id_t *src);
+
+extern of_bsn_tlv_queue_weight_t *
+    of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
+        of_bsn_tlv_queue_weight_t *src);
 
 extern of_bsn_tlv_reply_packets_t *
     of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(

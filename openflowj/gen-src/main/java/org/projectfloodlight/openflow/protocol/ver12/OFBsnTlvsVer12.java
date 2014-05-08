@@ -91,6 +91,20 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
     }
 
+    public OFBsnTlvQueueId.Builder buildQueueId() {
+        throw new UnsupportedOperationException("OFBsnTlvQueueId not supported in version 1.2");
+    }
+    public OFBsnTlvQueueId queueId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvQueueId not supported in version 1.2");
+    }
+
+    public OFBsnTlvQueueWeight.Builder buildQueueWeight() {
+        throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.2");
+    }
+    public OFBsnTlvQueueWeight queueWeight(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.2");
+    }
+
     public OFBsnTlvReplyPackets.Builder buildReplyPackets() {
         throw new UnsupportedOperationException("OFBsnTlvReplyPackets not supported in version 1.2");
     }

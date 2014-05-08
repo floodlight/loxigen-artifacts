@@ -22709,6 +22709,38 @@ of_bsn_tlv_port_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_t
 }
 
 int
+of_bsn_tlv_queue_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_id_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_queue_id\n");
+
+    of_bsn_tlv_queue_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_bsn_tlv_queue_weight_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_weight_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_bsn_tlv_queue_weight\n");
+
+    of_bsn_tlv_queue_weight_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_tlv_reply_packets_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_reply_packets_t *obj)
 {
     int out = 0;
@@ -27960,6 +27992,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_0_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_0_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_dump,
@@ -28453,6 +28487,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_bsn_interface_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -29002,6 +29038,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_bsn_vport_header_OF_VERSION_1_2_dump,
     of_bsn_vport_l2gre_OF_VERSION_1_2_dump,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_dump,
@@ -29510,6 +29548,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mac_OF_VERSION_1_3_dump,
     of_bsn_tlv_miss_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_port_OF_VERSION_1_3_dump,
+    of_bsn_tlv_queue_id_OF_VERSION_1_3_dump,
+    of_bsn_tlv_queue_weight_OF_VERSION_1_3_dump,
     of_bsn_tlv_reply_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_request_packets_OF_VERSION_1_3_dump,
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dump,

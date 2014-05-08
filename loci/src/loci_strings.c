@@ -274,6 +274,8 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_mac",
     "of_bsn_tlv_miss_packets",
     "of_bsn_tlv_port",
+    "of_bsn_tlv_queue_id",
+    "of_bsn_tlv_queue_weight",
     "of_bsn_tlv_reply_packets",
     "of_bsn_tlv_request_packets",
     "of_bsn_tlv_rx_packets",

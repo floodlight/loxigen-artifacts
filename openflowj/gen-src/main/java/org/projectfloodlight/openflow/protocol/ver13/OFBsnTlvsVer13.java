@@ -107,6 +107,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvQueueId.Builder buildQueueId() {
+        return new OFBsnTlvQueueIdVer13.Builder();
+    }
+    public OFBsnTlvQueueId queueId(long value) {
+        return new OFBsnTlvQueueIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvQueueWeight.Builder buildQueueWeight() {
+        return new OFBsnTlvQueueWeightVer13.Builder();
+    }
+    public OFBsnTlvQueueWeight queueWeight(long value) {
+        return new OFBsnTlvQueueWeightVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvReplyPackets.Builder buildReplyPackets() {
         return new OFBsnTlvReplyPacketsVer13.Builder();
     }

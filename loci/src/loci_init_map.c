@@ -277,6 +277,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_mac_init,
     (of_object_init_f)of_bsn_tlv_miss_packets_init,
     (of_object_init_f)of_bsn_tlv_port_init,
+    (of_object_init_f)of_bsn_tlv_queue_id_init,
+    (of_object_init_f)of_bsn_tlv_queue_weight_init,
     (of_object_init_f)of_bsn_tlv_reply_packets_init,
     (of_object_init_f)of_bsn_tlv_request_packets_init,
     (of_object_init_f)of_bsn_tlv_rx_packets_init,

@@ -44,6 +44,10 @@ public interface OFBsnTlvs {
     OFBsnTlvMissPackets missPackets(U64 value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvQueueId.Builder buildQueueId() throws UnsupportedOperationException;
+    OFBsnTlvQueueId queueId(long value);
+    OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;
+    OFBsnTlvQueueWeight queueWeight(long value);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
     OFBsnTlvReplyPackets replyPackets(U64 value);
     OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;

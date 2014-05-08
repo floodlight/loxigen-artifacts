@@ -5724,6 +5724,12 @@ fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_queue_id.type'] = ProtoField.uint16("of13.bsn_tlv_queue_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_queue_id.length'] = ProtoField.uint16("of13.bsn_tlv_queue_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_queue_id.value'] = ProtoField.uint32("of13.bsn_tlv_queue_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_queue_weight.type'] = ProtoField.uint16("of13.bsn_tlv_queue_weight.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_queue_weight.length'] = ProtoField.uint16("of13.bsn_tlv_queue_weight.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_queue_weight.value'] = ProtoField.uint32("of13.bsn_tlv_queue_weight.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_reply_packets.type'] = ProtoField.uint16("of13.bsn_tlv_reply_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_reply_packets.length'] = ProtoField.uint16("of13.bsn_tlv_reply_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_reply_packets.value", "value", base.DEC, nil)
@@ -10886,6 +10892,12 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_queue_id.type'],
+    fields['of13.bsn_tlv_queue_id.length'],
+    fields['of13.bsn_tlv_queue_id.value'],
+    fields['of13.bsn_tlv_queue_weight.type'],
+    fields['of13.bsn_tlv_queue_weight.length'],
+    fields['of13.bsn_tlv_queue_weight.value'],
     fields['of13.bsn_tlv_reply_packets.type'],
     fields['of13.bsn_tlv_reply_packets.length'],
     fields['of13.bsn_tlv_reply_packets.value'],
@@ -21051,6 +21063,26 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
+
+-- child class of_bsn_tlv_queue_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_queue_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_queue_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_queue_id.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_queue_id.value')
+    return 'of_bsn_tlv_queue_id'
+end
+of_bsn_tlv_v4_dissectors[20] = dissect_of_bsn_tlv_queue_id_v4
+
+-- child class of_bsn_tlv_queue_weight
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_queue_weight_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_queue_weight.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_queue_weight.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_queue_weight.value')
+    return 'of_bsn_tlv_queue_weight'
+end
+of_bsn_tlv_v4_dissectors[21] = dissect_of_bsn_tlv_queue_weight_v4
 
 -- child class of_bsn_tlv_reply_packets
 -- Child of of_bsn_tlv

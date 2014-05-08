@@ -1,1 +1,1 @@
-b4ab3f6d37180983c965f5939010089ff1fbcb67 Merge into master from pull request #261: Remove more dead code from LOCI (https://github.com/floodlight/loxigen/pull/261)
+ffc28e6e06a516230942239b83f33b5d28a3a0f1 Merge into master from pull request #262: Add queue_id and queue_weight tlvs (https://github.com/floodlight/loxigen/pull/262)

@@ -763,6 +763,10 @@ void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_queue_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_queue_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_queue_weight_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_queue_weight_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_reply_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_reply_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_request_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1211,6 +1215,8 @@ typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_port_t;
+typedef of_object_t of_bsn_tlv_queue_id_t;
+typedef of_object_t of_bsn_tlv_queue_weight_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
@@ -3161,6 +3167,16 @@ extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_new(of_version_t version);
 extern void of_bsn_tlv_port_init(
     of_bsn_tlv_port_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_queue_id_t *
+    of_bsn_tlv_queue_id_new(of_version_t version);
+extern void of_bsn_tlv_queue_id_init(
+    of_bsn_tlv_queue_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_queue_weight_t *
+    of_bsn_tlv_queue_weight_new(of_version_t version);
+extern void of_bsn_tlv_queue_weight_init(
+    of_bsn_tlv_queue_weight_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_reply_packets_t *
     of_bsn_tlv_reply_packets_new(of_version_t version);
@@ -7336,6 +7352,28 @@ of_bsn_tlv_miss_packets_delete(of_bsn_tlv_miss_packets_t *obj) {
  */
 static inline void
 of_bsn_tlv_port_delete(of_bsn_tlv_port_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_queue_id_t
+ * @param obj An instance of type of_bsn_tlv_queue_id_t
+ *
+ * \ingroup of_bsn_tlv_queue_id
+ */
+static inline void
+of_bsn_tlv_queue_id_delete(of_bsn_tlv_queue_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_queue_weight_t
+ * @param obj An instance of type of_bsn_tlv_queue_weight_t
+ *
+ * \ingroup of_bsn_tlv_queue_weight
+ */
+static inline void
+of_bsn_tlv_queue_weight_delete(of_bsn_tlv_queue_weight_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17234,6 +17272,24 @@ extern void of_bsn_tlv_port_value_get(
     of_bsn_tlv_port_t *obj,
     of_port_no_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_queue_id */
+
+extern void of_bsn_tlv_queue_id_value_set(
+    of_bsn_tlv_queue_id_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_queue_id_value_get(
+    of_bsn_tlv_queue_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_queue_weight */
+
+extern void of_bsn_tlv_queue_weight_value_set(
+    of_bsn_tlv_queue_weight_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_queue_weight_value_get(
+    of_bsn_tlv_queue_weight_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_reply_packets */
 
 extern void of_bsn_tlv_reply_packets_value_set(
@@ -21644,6 +21700,8 @@ union of_bsn_tlv_u {
     of_bsn_tlv_mac_t mac;
     of_bsn_tlv_miss_packets_t miss_packets;
     of_bsn_tlv_port_t port;
+    of_bsn_tlv_queue_id_t queue_id;
+    of_bsn_tlv_queue_weight_t queue_weight;
     of_bsn_tlv_reply_packets_t reply_packets;
     of_bsn_tlv_request_packets_t request_packets;
     of_bsn_tlv_rx_packets_t rx_packets;
