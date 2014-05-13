@@ -1,1 +1,1 @@
-ffc28e6e06a516230942239b83f33b5d28a3a0f1 Merge into master from pull request #262: Add queue_id and queue_weight tlvs (https://github.com/floodlight/loxigen/pull/262)
+c14212426540c182ce50cf707d8440b077fe805c Merge into master from pull request #265: TransportPort.of must accept NO_MASK value (https://github.com/floodlight/loxigen/pull/265)
