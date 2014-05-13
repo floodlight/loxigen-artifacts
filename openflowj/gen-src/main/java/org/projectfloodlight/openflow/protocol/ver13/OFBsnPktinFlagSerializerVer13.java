@@ -43,6 +43,7 @@ public class OFBsnPktinFlagSerializerVer13 {
     public final static long BSN_PKTIN_FLAG_TTL_EXPIRED_VAL = 0x80L;
     public final static long BSN_PKTIN_FLAG_L3_MISS_VAL = 0x100L;
     public final static long BSN_PKTIN_FLAG_L3_CPU_VAL = 0x200L;
+    public final static long BSN_PKTIN_FLAG_INGRESS_ACL_VAL = 0x400L;
 
     public static Set<OFBsnPktinFlag> readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -84,6 +85,8 @@ public class OFBsnPktinFlagSerializerVer13 {
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_L3_MISS);
         if((val & BSN_PKTIN_FLAG_L3_CPU_VAL) != 0)
             set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_L3_CPU);
+        if((val & BSN_PKTIN_FLAG_INGRESS_ACL_VAL) != 0)
+            set.add(OFBsnPktinFlag.BSN_PKTIN_FLAG_INGRESS_ACL);
         return Collections.unmodifiableSet(set);
     }
 
@@ -121,6 +124,9 @@ public class OFBsnPktinFlagSerializerVer13 {
                     break;
                 case BSN_PKTIN_FLAG_L3_CPU:
                     wireValue |= BSN_PKTIN_FLAG_L3_CPU_VAL;
+                    break;
+                case BSN_PKTIN_FLAG_INGRESS_ACL:
+                    wireValue |= BSN_PKTIN_FLAG_INGRESS_ACL_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnPktinFlag in version 1.3: " + e);

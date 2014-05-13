@@ -1,1 +1,1 @@
-c14212426540c182ce50cf707d8440b077fe805c Merge into master from pull request #265: TransportPort.of must accept NO_MASK value (https://github.com/floodlight/loxigen/pull/265)
+feffbeb20c838ffeba38c71daec4d834cfb37900 Merge into master from pull request #266: Add OFP_BSN_PKTIN_FLAG_INGRESS_ACL pktin flag. (https://github.com/floodlight/loxigen/pull/266)

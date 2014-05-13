@@ -1290,6 +1290,7 @@ local enum_v4_ofp_bsn_pktin_flag = {
     [128] = "OFP_BSN_PKTIN_FLAG_TTL_EXPIRED",
     [256] = "OFP_BSN_PKTIN_FLAG_L3_MISS",
     [512] = "OFP_BSN_PKTIN_FLAG_L3_CPU",
+    [1024] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL",
 }
 
 local enum_v4_ofp_bad_instruction_code = {
