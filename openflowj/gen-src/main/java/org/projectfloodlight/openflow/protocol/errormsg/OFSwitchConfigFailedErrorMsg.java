@@ -31,7 +31,7 @@ public interface OFSwitchConfigFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFSwitchConfigFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFSwitchConfigFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFSwitchConfigFailedCode getCode();
         Builder setCode(OFSwitchConfigFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

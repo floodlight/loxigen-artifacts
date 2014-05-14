@@ -31,7 +31,7 @@ public interface OFHelloFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFHelloFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFHelloFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFHelloFailedCode getCode();
         Builder setCode(OFHelloFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

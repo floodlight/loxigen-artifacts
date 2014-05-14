@@ -29,7 +29,6 @@ import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
-import java.util.Arrays;
 
 class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFExperimenterErrorMsgVer13.class);
@@ -40,21 +39,16 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         private final static long DEFAULT_XID = 0x0L;
         private final static int DEFAULT_SUBTYPE = 0x0;
         private final static long DEFAULT_EXPERIMENTER = 0x0L;
-        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
     private final int subtype;
     private final long experimenter;
-    private final byte[] data;
+    private final OFErrorCauseData data;
 //
-    // Immutable default instance
-    final static OFExperimenterErrorMsgVer13 DEFAULT = new OFExperimenterErrorMsgVer13(
-        DEFAULT_XID, DEFAULT_SUBTYPE, DEFAULT_EXPERIMENTER, DEFAULT_DATA
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFExperimenterErrorMsgVer13(long xid, int subtype, long experimenter, byte[] data) {
+    OFExperimenterErrorMsgVer13(long xid, int subtype, long experimenter, OFErrorCauseData data) {
         this.xid = xid;
         this.subtype = subtype;
         this.experimenter = experimenter;
@@ -93,7 +87,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
     }
 
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
@@ -114,7 +108,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         private boolean experimenterSet;
         private long experimenter;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
         BuilderWithParent(OFExperimenterErrorMsgVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -169,12 +163,12 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFExperimenterErrorMsg.Builder setData(byte[] data) {
+    public OFExperimenterErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -186,7 +180,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
                 int subtype = this.subtypeSet ? this.subtype : parentMessage.subtype;
                 long experimenter = this.experimenterSet ? this.experimenter : parentMessage.experimenter;
-                byte[] data = this.dataSet ? this.data : parentMessage.data;
+                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -210,7 +204,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         private boolean experimenterSet;
         private long experimenter;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
     @Override
     public OFVersion getVersion() {
@@ -261,12 +255,12 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFExperimenterErrorMsg.Builder setData(byte[] data) {
+    public OFExperimenterErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -277,7 +271,8 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
             int subtype = this.subtypeSet ? this.subtype : DEFAULT_SUBTYPE;
             long experimenter = this.experimenterSet ? this.experimenter : DEFAULT_EXPERIMENTER;
-            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
+            if(!this.dataSet)
+                throw new IllegalStateException("Property data doesn't have default value -- must be set");
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -323,7 +318,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.EXPERIMENTER(65535), got="+errType);
             int subtype = U16.f(bb.readShort());
             long experimenter = U32.f(bb.readInt());
-            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
 
             OFExperimenterErrorMsgVer13 experimenterErrorMsgVer13 = new OFExperimenterErrorMsgVer13(
                     xid,
@@ -356,7 +351,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
             sink.putShort((short) 0xffff);
             sink.putInt(message.subtype);
             sink.putLong(message.experimenter);
-            sink.putBytes(message.data);
+            message.data.putTo(sink);
         }
     }
 
@@ -383,7 +378,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
             bb.writeShort((short) 0xffff);
             bb.writeShort(U16.t(message.subtype));
             bb.writeInt(U32.t(message.experimenter));
-            bb.writeBytes(message.data);
+            message.data.writeTo(bb);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -401,7 +396,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         b.append(", ");
         b.append("experimenter=").append(experimenter);
         b.append(", ");
-        b.append("data=").append(Arrays.toString(data));
+        b.append("data=").append(data);
         b.append(")");
         return b.toString();
     }
@@ -422,8 +417,11 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
             return false;
         if( experimenter != other.experimenter)
             return false;
-        if (!Arrays.equals(data, other.data))
+        if (data == null) {
+            if (other.data != null)
                 return false;
+        } else if (!data.equals(other.data))
+            return false;
         return true;
     }
 
@@ -435,7 +433,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + subtype;
         result = prime *  (int) (experimenter ^ (experimenter >>> 32));
-        result = prime * result + Arrays.hashCode(data);
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
     }
 

@@ -31,7 +31,7 @@ public interface OFTableModFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFTableModFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFTableModFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFTableModFailedCode getCode();
         Builder setCode(OFTableModFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

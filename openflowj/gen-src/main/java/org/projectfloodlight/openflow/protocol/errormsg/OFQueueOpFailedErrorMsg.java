@@ -31,7 +31,7 @@ public interface OFQueueOpFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFQueueOpFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFQueueOpFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFQueueOpFailedCode getCode();
         Builder setCode(OFQueueOpFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

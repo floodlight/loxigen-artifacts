@@ -32,7 +32,7 @@ public interface OFExperimenterErrorMsg extends OFObject, OFErrorMsg {
     OFErrorType getErrType();
     int getSubtype();
     long getExperimenter();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -48,7 +48,7 @@ public interface OFExperimenterErrorMsg extends OFObject, OFErrorMsg {
         Builder setSubtype(int subtype);
         long getExperimenter();
         Builder setExperimenter(long experimenter);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

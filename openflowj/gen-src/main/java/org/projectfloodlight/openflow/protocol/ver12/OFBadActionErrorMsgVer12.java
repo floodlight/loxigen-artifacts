@@ -29,7 +29,6 @@ import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
-import java.util.Arrays;
 
 class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFBadActionErrorMsgVer12.class);
@@ -38,16 +37,15 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
     private final OFBadActionCode code;
-    private final byte[] data;
+    private final OFErrorCauseData data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBadActionErrorMsgVer12(long xid, OFBadActionCode code, byte[] data) {
+    OFBadActionErrorMsgVer12(long xid, OFBadActionCode code, OFErrorCauseData data) {
         this.xid = xid;
         this.code = code;
         this.data = data;
@@ -80,7 +78,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
     }
 
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
@@ -99,7 +97,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
         private boolean codeSet;
         private OFBadActionCode code;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
         BuilderWithParent(OFBadActionErrorMsgVer12 parentMessage) {
             this.parentMessage = parentMessage;
@@ -143,12 +141,12 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFBadActionErrorMsg.Builder setData(byte[] data) {
+    public OFBadActionErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -161,7 +159,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
                 OFBadActionCode code = this.codeSet ? this.code : parentMessage.code;
                 if(code == null)
                     throw new NullPointerException("Property code must not be null");
-                byte[] data = this.dataSet ? this.data : parentMessage.data;
+                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -182,7 +180,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
         private boolean codeSet;
         private OFBadActionCode code;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
     @Override
     public OFVersion getVersion() {
@@ -222,12 +220,12 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFBadActionErrorMsg.Builder setData(byte[] data) {
+    public OFBadActionErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -240,7 +238,8 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
+            if(!this.dataSet)
+                throw new IllegalStateException("Property data doesn't have default value -- must be set");
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -284,7 +283,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
             if(errType != (short) 0x2)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.BAD_ACTION(2), got="+errType);
             OFBadActionCode code = OFBadActionCodeSerializerVer12.readFrom(bb);
-            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_12);
 
             OFBadActionErrorMsgVer12 badActionErrorMsgVer12 = new OFBadActionErrorMsgVer12(
                     xid,
@@ -315,7 +314,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
             // fixed value property errType = 2
             sink.putShort((short) 0x2);
             OFBadActionCodeSerializerVer12.putTo(message.code, sink);
-            sink.putBytes(message.data);
+            message.data.putTo(sink);
         }
     }
 
@@ -341,7 +340,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
             // fixed value property errType = 2
             bb.writeShort((short) 0x2);
             OFBadActionCodeSerializerVer12.writeTo(bb, message.code);
-            bb.writeBytes(message.data);
+            message.data.writeTo(bb);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -357,7 +356,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
         b.append(", ");
         b.append("code=").append(code);
         b.append(", ");
-        b.append("data=").append(Arrays.toString(data));
+        b.append("data=").append(data);
         b.append(")");
         return b.toString();
     }
@@ -379,8 +378,11 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
                 return false;
         } else if (!code.equals(other.code))
             return false;
-        if (!Arrays.equals(data, other.data))
+        if (data == null) {
+            if (other.data != null)
                 return false;
+        } else if (!data.equals(other.data))
+            return false;
         return true;
     }
 
@@ -391,7 +393,7 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + Arrays.hashCode(data);
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
     }
 

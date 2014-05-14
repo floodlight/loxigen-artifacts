@@ -31,7 +31,7 @@ public interface OFRoleRequestFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFRoleRequestFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFRoleRequestFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFRoleRequestFailedCode getCode();
         Builder setCode(OFRoleRequestFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

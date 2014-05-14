@@ -31,7 +31,7 @@ public interface OFBadInstructionErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFBadInstructionCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFBadInstructionErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFBadInstructionCode getCode();
         Builder setCode(OFBadInstructionCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

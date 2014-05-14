@@ -31,7 +31,7 @@ public interface OFBadMatchErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFBadMatchCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFBadMatchErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFBadMatchCode getCode();
         Builder setCode(OFBadMatchCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

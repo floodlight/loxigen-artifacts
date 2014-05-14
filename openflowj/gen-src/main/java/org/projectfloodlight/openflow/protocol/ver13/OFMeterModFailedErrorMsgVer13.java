@@ -29,7 +29,6 @@ import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
-import java.util.Arrays;
 
 class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFMeterModFailedErrorMsgVer13.class);
@@ -38,16 +37,15 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
     private final OFMeterModFailedCode code;
-    private final byte[] data;
+    private final OFErrorCauseData data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFMeterModFailedErrorMsgVer13(long xid, OFMeterModFailedCode code, byte[] data) {
+    OFMeterModFailedErrorMsgVer13(long xid, OFMeterModFailedCode code, OFErrorCauseData data) {
         this.xid = xid;
         this.code = code;
         this.data = data;
@@ -80,7 +78,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
     }
 
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
@@ -99,7 +97,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
         private boolean codeSet;
         private OFMeterModFailedCode code;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
         BuilderWithParent(OFMeterModFailedErrorMsgVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -143,12 +141,12 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFMeterModFailedErrorMsg.Builder setData(byte[] data) {
+    public OFMeterModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -161,7 +159,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
                 OFMeterModFailedCode code = this.codeSet ? this.code : parentMessage.code;
                 if(code == null)
                     throw new NullPointerException("Property code must not be null");
-                byte[] data = this.dataSet ? this.data : parentMessage.data;
+                OFErrorCauseData data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -182,7 +180,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
         private boolean codeSet;
         private OFMeterModFailedCode code;
         private boolean dataSet;
-        private byte[] data;
+        private OFErrorCauseData data;
 
     @Override
     public OFVersion getVersion() {
@@ -222,12 +220,12 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFErrorCauseData getData() {
         return data;
     }
 
     @Override
-    public OFMeterModFailedErrorMsg.Builder setData(byte[] data) {
+    public OFMeterModFailedErrorMsg.Builder setData(OFErrorCauseData data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -240,7 +238,8 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
+            if(!this.dataSet)
+                throw new IllegalStateException("Property data doesn't have default value -- must be set");
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -284,7 +283,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
             if(errType != (short) 0xc)
                 throw new OFParseError("Wrong errType: Expected=OFErrorType.METER_MOD_FAILED(12), got="+errType);
             OFMeterModFailedCode code = OFMeterModFailedCodeSerializerVer13.readFrom(bb);
-            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            OFErrorCauseData data = OFErrorCauseData.read(bb, length - (bb.readerIndex() - start), OFVersion.OF_13);
 
             OFMeterModFailedErrorMsgVer13 meterModFailedErrorMsgVer13 = new OFMeterModFailedErrorMsgVer13(
                     xid,
@@ -315,7 +314,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
             // fixed value property errType = 12
             sink.putShort((short) 0xc);
             OFMeterModFailedCodeSerializerVer13.putTo(message.code, sink);
-            sink.putBytes(message.data);
+            message.data.putTo(sink);
         }
     }
 
@@ -341,7 +340,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
             // fixed value property errType = 12
             bb.writeShort((short) 0xc);
             OFMeterModFailedCodeSerializerVer13.writeTo(bb, message.code);
-            bb.writeBytes(message.data);
+            message.data.writeTo(bb);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -357,7 +356,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
         b.append(", ");
         b.append("code=").append(code);
         b.append(", ");
-        b.append("data=").append(Arrays.toString(data));
+        b.append("data=").append(data);
         b.append(")");
         return b.toString();
     }
@@ -379,8 +378,11 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
                 return false;
         } else if (!code.equals(other.code))
             return false;
-        if (!Arrays.equals(data, other.data))
+        if (data == null) {
+            if (other.data != null)
                 return false;
+        } else if (!data.equals(other.data))
+            return false;
         return true;
     }
 
@@ -391,7 +393,7 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((code == null) ? 0 : code.hashCode());
-        result = prime * result + Arrays.hashCode(data);
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
     }
 

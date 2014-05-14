@@ -48,7 +48,7 @@ public class OFBadMatchErrorMsgVer13Test {
         OFBadMatchErrorMsg.Builder builder = factory.buildBadMatchErrorMsg();
         builder.setXid(0x12345678)
     .setCode(OFBadMatchCode.BAD_MASK)
-    .setData(new byte[] { 0x61, 0x62, 0x63 });;
+    .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
         OFBadMatchErrorMsg badMatchErrorMsg = builder.build();
         ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
         badMatchErrorMsg.writeTo(bb);
@@ -63,7 +63,7 @@ public class OFBadMatchErrorMsgVer13Test {
         OFBadMatchErrorMsg.Builder builder = factory.buildBadMatchErrorMsg();
         builder.setXid(0x12345678)
     .setCode(OFBadMatchCode.BAD_MASK)
-    .setData(new byte[] { 0x61, 0x62, 0x63 });;
+    .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
         OFBadMatchErrorMsg badMatchErrorMsgBuilt = builder.build();
 
         ChannelBuffer input = ChannelBuffers.copiedBuffer(BAD_MATCH_ERROR_MSG_SERIALIZED);

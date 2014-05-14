@@ -48,7 +48,7 @@ public class OFBadRequestErrorMsgVer13Test {
         OFBadRequestErrorMsg.Builder builder = factory.buildBadRequestErrorMsg();
         builder.setXid(0x12345678)
     .setCode(OFBadRequestCode.BUFFER_UNKNOWN)
-    .setData(new byte[] { 0x61, 0x62, 0x63 });;
+    .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
         OFBadRequestErrorMsg badRequestErrorMsg = builder.build();
         ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
         badRequestErrorMsg.writeTo(bb);
@@ -63,7 +63,7 @@ public class OFBadRequestErrorMsgVer13Test {
         OFBadRequestErrorMsg.Builder builder = factory.buildBadRequestErrorMsg();
         builder.setXid(0x12345678)
     .setCode(OFBadRequestCode.BUFFER_UNKNOWN)
-    .setData(new byte[] { 0x61, 0x62, 0x63 });;
+    .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
         OFBadRequestErrorMsg badRequestErrorMsgBuilt = builder.build();
 
         ChannelBuffer input = ChannelBuffers.copiedBuffer(BAD_REQUEST_ERROR_MSG_SERIALIZED);

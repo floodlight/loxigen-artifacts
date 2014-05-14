@@ -31,7 +31,7 @@ public interface OFTableFeaturesFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFTableFeaturesFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFTableFeaturesFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFTableFeaturesFailedCode getCode();
         Builder setCode(OFTableFeaturesFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

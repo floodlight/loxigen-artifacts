@@ -31,7 +31,7 @@ public interface OFPortModFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFPortModFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFPortModFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFPortModFailedCode getCode();
         Builder setCode(OFPortModFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }

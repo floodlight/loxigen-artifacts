@@ -31,7 +31,7 @@ public interface OFGroupModFailedErrorMsg extends OFObject, OFErrorMsg {
     long getXid();
     OFErrorType getErrType();
     OFGroupModFailedCode getCode();
-    byte[] getData();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,7 +45,7 @@ public interface OFGroupModFailedErrorMsg extends OFObject, OFErrorMsg {
         OFErrorType getErrType();
         OFGroupModFailedCode getCode();
         Builder setCode(OFGroupModFailedCode code);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFErrorCauseData getData();
+        Builder setData(OFErrorCauseData data);
     }
 }
