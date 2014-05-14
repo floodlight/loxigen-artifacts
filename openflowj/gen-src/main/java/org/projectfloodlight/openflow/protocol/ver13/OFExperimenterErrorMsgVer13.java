@@ -39,6 +39,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
         private final static long DEFAULT_XID = 0x0L;
         private final static int DEFAULT_SUBTYPE = 0x0;
         private final static long DEFAULT_EXPERIMENTER = 0x0L;
+        private final static OFErrorCauseData DEFAULT_DATA = OFErrorCauseData.NONE;
 
     // OF message fields
     private final long xid;
@@ -46,6 +47,10 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
     private final long experimenter;
     private final OFErrorCauseData data;
 //
+    // Immutable default instance
+    final static OFExperimenterErrorMsgVer13 DEFAULT = new OFExperimenterErrorMsgVer13(
+        DEFAULT_XID, DEFAULT_SUBTYPE, DEFAULT_EXPERIMENTER, DEFAULT_DATA
+    );
 
     // package private constructor - used by readers, builders, and factory
     OFExperimenterErrorMsgVer13(long xid, int subtype, long experimenter, OFErrorCauseData data) {
@@ -271,8 +276,7 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
             int subtype = this.subtypeSet ? this.subtype : DEFAULT_SUBTYPE;
             long experimenter = this.experimenterSet ? this.experimenter : DEFAULT_EXPERIMENTER;
-            if(!this.dataSet)
-                throw new IllegalStateException("Property data doesn't have default value -- must be set");
+            OFErrorCauseData data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 

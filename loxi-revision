@@ -1,1 +1,1 @@
-c77bebf074d5737483a133962725a8181ffdd2b8 Merge into master from pull request #263: OFErrorMsg: add OFErrorCauseData wrapper for nicer toStrings BSC-5349 (https://github.com/floodlight/loxigen/pull/263)
+43ee9a83c29119ee84931bb85275eeda07cf2f75 Merge into master from pull request #268: java/OFErrorCauseData: fix regression - URGENT (https://github.com/floodlight/loxigen/pull/268)

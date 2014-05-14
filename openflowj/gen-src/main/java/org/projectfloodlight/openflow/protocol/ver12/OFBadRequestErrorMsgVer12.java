@@ -37,6 +37,7 @@ class OFBadRequestErrorMsgVer12 implements OFBadRequestErrorMsg {
     final static int MINIMUM_LENGTH = 12;
 
         private final static long DEFAULT_XID = 0x0L;
+        private final static OFErrorCauseData DEFAULT_DATA = OFErrorCauseData.NONE;
 
     // OF message fields
     private final long xid;
@@ -238,8 +239,7 @@ class OFBadRequestErrorMsgVer12 implements OFBadRequestErrorMsg {
                 throw new IllegalStateException("Property code doesn't have default value -- must be set");
             if(code == null)
                 throw new NullPointerException("Property code must not be null");
-            if(!this.dataSet)
-                throw new IllegalStateException("Property data doesn't have default value -- must be set");
+            OFErrorCauseData data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
