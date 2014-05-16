@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Iterator;
-import com.google.common.collect.UnmodifiableIterator;
+import com.google.common.collect.AbstractIterator;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
@@ -203,7 +203,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         return oxm != null && oxm.isMasked();
     }
 
-    private class MatchFieldIterator extends UnmodifiableIterator<MatchField<?>> {
+    private class MatchFieldIterator extends AbstractIterator<MatchField<?>> {
         private Iterator<OFOxm<?>> oxmIterator;
 
         MatchFieldIterator() {
@@ -211,14 +211,14 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         }
 
         @Override
-        public boolean hasNext() {
-            return oxmIterator.hasNext();
-        }
-
-        @Override
-        public MatchField<?> next() {
-            OFOxm<?> next = oxmIterator.next();
-            return next.getMatchField();
+        protected MatchField<?> computeNext() {
+            while(oxmIterator.hasNext()) {
+                OFOxm<?> oxm = oxmIterator.next();
+                if(oxm.getMatchField().arePrerequisitesOK(OFMatchV3Ver13.this))
+                   return oxm.getMatchField();
+            }
+            endOfData();
+            return null;
         }
     }
 
