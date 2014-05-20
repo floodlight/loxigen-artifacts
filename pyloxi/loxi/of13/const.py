@@ -293,6 +293,29 @@ ofp_bsn_port_counter_map = {
     11: 'OFP_BSN_PORT_COUNTER_TX_ERRORS',
 }
 
+# Identifiers from group ofp_bsn_tcp_flag
+OFP_BSN_TCP_FLAG_FIN = 1
+OFP_BSN_TCP_FLAG_SYN = 2
+OFP_BSN_TCP_FLAG_RST = 4
+OFP_BSN_TCP_FLAG_PSH = 8
+OFP_BSN_TCP_FLAG_ACK = 16
+OFP_BSN_TCP_FLAG_URG = 32
+OFP_BSN_TCP_FLAG_ECE = 64
+OFP_BSN_TCP_FLAG_CWR = 128
+OFP_BSN_TCP_FLAG_NS = 256
+
+ofp_bsn_tcp_flag_map = {
+    1: 'OFP_BSN_TCP_FLAG_FIN',
+    2: 'OFP_BSN_TCP_FLAG_SYN',
+    4: 'OFP_BSN_TCP_FLAG_RST',
+    8: 'OFP_BSN_TCP_FLAG_PSH',
+    16: 'OFP_BSN_TCP_FLAG_ACK',
+    32: 'OFP_BSN_TCP_FLAG_URG',
+    64: 'OFP_BSN_TCP_FLAG_ECE',
+    128: 'OFP_BSN_TCP_FLAG_CWR',
+    256: 'OFP_BSN_TCP_FLAG_NS',
+}
+
 # Identifiers from group ofp_bsn_udf_anchor
 OFP_BSN_UDF_ANCHOR_PACKET_START = 0
 OFP_BSN_UDF_ANCHOR_L3_HEADER_START = 1

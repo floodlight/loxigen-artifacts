@@ -486,6 +486,8 @@ int of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* c
 int of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_src_class_id_masked_t *obj);
 int of_oxm_bsn_lag_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_t *obj);
 int of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_masked_t *obj);
+int of_oxm_bsn_tcp_flags_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_t *obj);
+int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_masked_t *obj);
 int of_oxm_bsn_udf0_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj);
 int of_oxm_bsn_udf0_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_masked_t *obj);
 int of_oxm_bsn_udf1_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_t *obj);
@@ -916,6 +918,8 @@ int of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 int of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_src_class_id_masked_t *obj);
 int of_oxm_bsn_lag_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_t *obj);
 int of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_masked_t *obj);
+int of_oxm_bsn_tcp_flags_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_t *obj);
+int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_masked_t *obj);
 int of_oxm_bsn_udf0_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj);
 int of_oxm_bsn_udf0_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_masked_t *obj);
 int of_oxm_bsn_udf1_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_t *obj);

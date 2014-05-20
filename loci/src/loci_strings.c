@@ -373,6 +373,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_bsn_l3_src_class_id_masked",
     "of_oxm_bsn_lag_id",
     "of_oxm_bsn_lag_id_masked",
+    "of_oxm_bsn_tcp_flags",
+    "of_oxm_bsn_tcp_flags_masked",
     "of_oxm_bsn_udf0",
     "of_oxm_bsn_udf0_masked",
     "of_oxm_bsn_udf1",

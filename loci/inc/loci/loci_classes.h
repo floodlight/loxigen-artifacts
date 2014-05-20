@@ -387,6 +387,10 @@ void of_oxm_bsn_lag_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_lag_id_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_lag_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_lag_id_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_tcp_flags_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_tcp_flags_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_tcp_flags_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_tcp_flags_masked_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_udf0_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_udf0_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_udf0_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1308,6 +1312,8 @@ typedef of_object_t of_oxm_bsn_l3_src_class_id_t;
 typedef of_object_t of_oxm_bsn_l3_src_class_id_masked_t;
 typedef of_object_t of_oxm_bsn_lag_id_t;
 typedef of_object_t of_oxm_bsn_lag_id_masked_t;
+typedef of_object_t of_oxm_bsn_tcp_flags_t;
+typedef of_object_t of_oxm_bsn_tcp_flags_masked_t;
 typedef of_object_t of_oxm_bsn_udf0_t;
 typedef of_object_t of_oxm_bsn_udf0_masked_t;
 typedef of_object_t of_oxm_bsn_udf1_t;
@@ -3662,6 +3668,16 @@ extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_lag_id_masked_init(
     of_oxm_bsn_lag_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_tcp_flags_t *
+    of_oxm_bsn_tcp_flags_new(of_version_t version);
+extern void of_oxm_bsn_tcp_flags_init(
+    of_oxm_bsn_tcp_flags_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_tcp_flags_masked_t *
+    of_oxm_bsn_tcp_flags_masked_new(of_version_t version);
+extern void of_oxm_bsn_tcp_flags_masked_init(
+    of_oxm_bsn_tcp_flags_masked_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_oxm_bsn_udf0_t *
     of_oxm_bsn_udf0_new(of_version_t version);
@@ -8441,6 +8457,28 @@ of_oxm_bsn_lag_id_delete(of_oxm_bsn_lag_id_t *obj) {
  */
 static inline void
 of_oxm_bsn_lag_id_masked_delete(of_oxm_bsn_lag_id_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_tcp_flags_t
+ * @param obj An instance of type of_oxm_bsn_tcp_flags_t
+ *
+ * \ingroup of_oxm_bsn_tcp_flags
+ */
+static inline void
+of_oxm_bsn_tcp_flags_delete(of_oxm_bsn_tcp_flags_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_tcp_flags_masked_t
+ * @param obj An instance of type of_oxm_bsn_tcp_flags_masked_t
+ *
+ * \ingroup of_oxm_bsn_tcp_flags_masked
+ */
+static inline void
+of_oxm_bsn_tcp_flags_masked_delete(of_oxm_bsn_tcp_flags_masked_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -18896,6 +18934,31 @@ extern void of_oxm_bsn_lag_id_masked_value_mask_get(
     of_oxm_bsn_lag_id_masked_t *obj,
     uint32_t *value_mask);
 
+/* Unified accessor functions for of_oxm_bsn_tcp_flags */
+
+extern void of_oxm_bsn_tcp_flags_value_set(
+    of_oxm_bsn_tcp_flags_t *obj,
+    uint16_t value);
+extern void of_oxm_bsn_tcp_flags_value_get(
+    of_oxm_bsn_tcp_flags_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_tcp_flags_masked */
+
+extern void of_oxm_bsn_tcp_flags_masked_value_set(
+    of_oxm_bsn_tcp_flags_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_bsn_tcp_flags_masked_value_get(
+    of_oxm_bsn_tcp_flags_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_bsn_tcp_flags_masked_value_mask_set(
+    of_oxm_bsn_tcp_flags_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_bsn_tcp_flags_masked_value_mask_get(
+    of_oxm_bsn_tcp_flags_masked_t *obj,
+    uint16_t *value_mask);
+
 /* Unified accessor functions for of_oxm_bsn_udf0 */
 
 extern void of_oxm_bsn_udf0_value_set(
@@ -21826,6 +21889,8 @@ union of_oxm_u {
     of_oxm_bsn_l3_src_class_id_masked_t bsn_l3_src_class_id_masked;
     of_oxm_bsn_lag_id_t bsn_lag_id;
     of_oxm_bsn_lag_id_masked_t bsn_lag_id_masked;
+    of_oxm_bsn_tcp_flags_t bsn_tcp_flags;
+    of_oxm_bsn_tcp_flags_masked_t bsn_tcp_flags_masked;
     of_oxm_bsn_udf0_t bsn_udf0;
     of_oxm_bsn_udf0_masked_t bsn_udf0_masked;
     of_oxm_bsn_udf1_t bsn_udf1;

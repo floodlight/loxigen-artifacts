@@ -1470,6 +1470,14 @@ extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_dup(
         of_oxm_bsn_lag_id_masked_t *src);
 
+extern of_oxm_bsn_tcp_flags_t *
+    of_oxm_bsn_tcp_flags_dup(
+        of_oxm_bsn_tcp_flags_t *src);
+
+extern of_oxm_bsn_tcp_flags_masked_t *
+    of_oxm_bsn_tcp_flags_masked_dup(
+        of_oxm_bsn_tcp_flags_masked_t *src);
+
 extern of_oxm_bsn_udf0_t *
     of_oxm_bsn_udf0_dup(
         of_oxm_bsn_udf0_t *src);
@@ -3906,6 +3914,14 @@ extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dup(
         of_oxm_bsn_lag_id_masked_t *src);
 
+extern of_oxm_bsn_tcp_flags_t *
+    of_oxm_bsn_tcp_flags_OF_VERSION_1_2_dup(
+        of_oxm_bsn_tcp_flags_t *src);
+
+extern of_oxm_bsn_tcp_flags_masked_t *
+    of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_tcp_flags_masked_t *src);
+
 extern of_oxm_bsn_udf0_t *
     of_oxm_bsn_udf0_OF_VERSION_1_2_dup(
         of_oxm_bsn_udf0_t *src);
@@ -5665,6 +5681,14 @@ extern of_oxm_bsn_lag_id_t *
 extern of_oxm_bsn_lag_id_masked_t *
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dup(
         of_oxm_bsn_lag_id_masked_t *src);
+
+extern of_oxm_bsn_tcp_flags_t *
+    of_oxm_bsn_tcp_flags_OF_VERSION_1_3_dup(
+        of_oxm_bsn_tcp_flags_t *src);
+
+extern of_oxm_bsn_tcp_flags_masked_t *
+    of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_tcp_flags_masked_t *src);
 
 extern of_oxm_bsn_udf0_t *
     of_oxm_bsn_udf0_OF_VERSION_1_3_dup(

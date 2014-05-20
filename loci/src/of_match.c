@@ -167,6 +167,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_IP_ECN_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -433,6 +437,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_BSN_VRF_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1649,6 +1657,27 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_udf7_value_set(elt, src->fields.bsn_udf7);
         }
     }
+    if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_TEST(src)) {
+            of_oxm_bsn_tcp_flags_masked_t *elt;
+            elt = &oxm_entry.bsn_tcp_flags_masked;
+
+            of_oxm_bsn_tcp_flags_masked_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_bsn_tcp_flags_masked_value_set(elt,
+                   src->fields.bsn_tcp_flags);
+            of_oxm_bsn_tcp_flags_masked_value_mask_set(elt,
+                   src->masks.bsn_tcp_flags);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_tcp_flags_t *elt;
+            elt = &oxm_entry.bsn_tcp_flags;
+            of_oxm_bsn_tcp_flags_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_bsn_tcp_flags_value_set(elt, src->fields.bsn_tcp_flags);
+        }
+    }
     if (OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF4_EXACT_TEST(src)) {
             of_oxm_bsn_udf4_masked_t *elt;
@@ -2504,6 +2533,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_bsn_vrf_value_get(
                 &oxm_entry.bsn_vrf,
                 &dst->fields.bsn_vrf);
+            break;
+
+        case OF_OXM_BSN_TCP_FLAGS_MASKED:
+            of_oxm_bsn_tcp_flags_masked_value_mask_get(
+                &oxm_entry.bsn_tcp_flags_masked,
+                &dst->masks.bsn_tcp_flags);
+            of_oxm_bsn_tcp_flags_masked_value_get(
+                &oxm_entry.bsn_tcp_flags,
+                &dst->fields.bsn_tcp_flags);
+            of_memmask(&dst->fields.bsn_tcp_flags, &dst->masks.bsn_tcp_flags, sizeof(&dst->fields.bsn_tcp_flags));
+            break;
+        case OF_OXM_BSN_TCP_FLAGS:
+            OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_SET(dst);
+            of_oxm_bsn_tcp_flags_value_get(
+                &oxm_entry.bsn_tcp_flags,
+                &dst->fields.bsn_tcp_flags);
             break;
 
         case OF_OXM_IP_ECN_MASKED:

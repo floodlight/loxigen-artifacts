@@ -871,14 +871,16 @@ local enum_v3_ofp_role_request_failed_code = {
     [2] = "OFPRRFC_BAD_ROLE",
 }
 
-local enum_v3_ofp_capabilities = {
-    [1] = "OFPC_FLOW_STATS",
-    [2] = "OFPC_TABLE_STATS",
-    [4] = "OFPC_PORT_STATS",
-    [8] = "OFPC_GROUP_STATS",
-    [32] = "OFPC_IP_REASM",
-    [64] = "OFPC_QUEUE_STATS",
-    [256] = "OFPC_PORT_BLOCKED",
+local enum_v3_ofp_bsn_tcp_flag = {
+    [1] = "OFP_BSN_TCP_FLAG_FIN",
+    [2] = "OFP_BSN_TCP_FLAG_SYN",
+    [4] = "OFP_BSN_TCP_FLAG_RST",
+    [8] = "OFP_BSN_TCP_FLAG_PSH",
+    [16] = "OFP_BSN_TCP_FLAG_ACK",
+    [32] = "OFP_BSN_TCP_FLAG_URG",
+    [64] = "OFP_BSN_TCP_FLAG_ECE",
+    [128] = "OFP_BSN_TCP_FLAG_CWR",
+    [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
 local enum_v3_ofp_bsn_vport_l2gre_flags = {
@@ -1079,6 +1081,16 @@ local enum_v3_ofp_bad_action_code = {
     [13] = "OFPBAC_BAD_SET_TYPE",
     [14] = "OFPBAC_BAD_SET_LEN",
     [15] = "OFPBAC_BAD_SET_ARGUMENT",
+}
+
+local enum_v3_ofp_capabilities = {
+    [1] = "OFPC_FLOW_STATS",
+    [2] = "OFPC_TABLE_STATS",
+    [4] = "OFPC_PORT_STATS",
+    [8] = "OFPC_GROUP_STATS",
+    [32] = "OFPC_IP_REASM",
+    [64] = "OFPC_QUEUE_STATS",
+    [256] = "OFPC_PORT_BLOCKED",
 }
 
 local enum_v3_ofp_flow_mod_failed_code = {
@@ -1657,6 +1669,18 @@ local enum_v4_ofp_meter_mod_command = {
     [0] = "OFPMC_ADD",
     [1] = "OFPMC_MODIFY",
     [2] = "OFPMC_DELETE",
+}
+
+local enum_v4_ofp_bsn_tcp_flag = {
+    [1] = "OFP_BSN_TCP_FLAG_FIN",
+    [2] = "OFP_BSN_TCP_FLAG_SYN",
+    [4] = "OFP_BSN_TCP_FLAG_RST",
+    [8] = "OFP_BSN_TCP_FLAG_PSH",
+    [16] = "OFP_BSN_TCP_FLAG_ACK",
+    [32] = "OFP_BSN_TCP_FLAG_URG",
+    [64] = "OFP_BSN_TCP_FLAG_ECE",
+    [128] = "OFP_BSN_TCP_FLAG_CWR",
+    [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
 local enum_v4_ofp_flow_mod_failed_code = {
@@ -4371,6 +4395,11 @@ fields['of12.oxm_bsn_lag_id.value'] = ProtoField.uint32("of12.oxm_bsn_lag_id.val
 fields['of12.oxm_bsn_lag_id_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_lag_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_lag_id_masked.value'] = ProtoField.uint32("of12.oxm_bsn_lag_id_masked.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_lag_id_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_lag_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_tcp_flags.type_len'] = ProtoField.uint32("of12.oxm_bsn_tcp_flags.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_tcp_flags.value'] = ProtoField.uint16("of12.oxm_bsn_tcp_flags.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_tcp_flags_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_tcp_flags_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_tcp_flags_masked.value'] = ProtoField.uint16("of12.oxm_bsn_tcp_flags_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_tcp_flags_masked.value_mask'] = ProtoField.uint16("of12.oxm_bsn_tcp_flags_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of12.oxm_bsn_udf0.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf0.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_udf0.value'] = ProtoField.uint32("of12.oxm_bsn_udf0.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_udf0_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf0_masked.type_len", "type_len", base.DEC, nil)
@@ -6448,6 +6477,11 @@ fields['of13.oxm_bsn_lag_id.value'] = ProtoField.uint32("of13.oxm_bsn_lag_id.val
 fields['of13.oxm_bsn_lag_id_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_lag_id_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_lag_id_masked.value'] = ProtoField.uint32("of13.oxm_bsn_lag_id_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_lag_id_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_lag_id_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_tcp_flags.type_len'] = ProtoField.uint32("of13.oxm_bsn_tcp_flags.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_tcp_flags.value'] = ProtoField.uint16("of13.oxm_bsn_tcp_flags.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_tcp_flags_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_tcp_flags_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_tcp_flags_masked.value'] = ProtoField.uint16("of13.oxm_bsn_tcp_flags_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_tcp_flags_masked.value_mask'] = ProtoField.uint16("of13.oxm_bsn_tcp_flags_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_bsn_udf0.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf0.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_udf0.value'] = ProtoField.uint32("of13.oxm_bsn_udf0.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_udf0_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf0_masked.type_len", "type_len", base.DEC, nil)
@@ -9539,6 +9573,11 @@ p_of.fields = {
     fields['of12.oxm_bsn_lag_id_masked.type_len'],
     fields['of12.oxm_bsn_lag_id_masked.value'],
     fields['of12.oxm_bsn_lag_id_masked.value_mask'],
+    fields['of12.oxm_bsn_tcp_flags.type_len'],
+    fields['of12.oxm_bsn_tcp_flags.value'],
+    fields['of12.oxm_bsn_tcp_flags_masked.type_len'],
+    fields['of12.oxm_bsn_tcp_flags_masked.value'],
+    fields['of12.oxm_bsn_tcp_flags_masked.value_mask'],
     fields['of12.oxm_bsn_udf0.type_len'],
     fields['of12.oxm_bsn_udf0.value'],
     fields['of12.oxm_bsn_udf0_masked.type_len'],
@@ -11616,6 +11655,11 @@ p_of.fields = {
     fields['of13.oxm_bsn_lag_id_masked.type_len'],
     fields['of13.oxm_bsn_lag_id_masked.value'],
     fields['of13.oxm_bsn_lag_id_masked.value_mask'],
+    fields['of13.oxm_bsn_tcp_flags.type_len'],
+    fields['of13.oxm_bsn_tcp_flags.value'],
+    fields['of13.oxm_bsn_tcp_flags_masked.type_len'],
+    fields['of13.oxm_bsn_tcp_flags_masked.value'],
+    fields['of13.oxm_bsn_tcp_flags_masked.value_mask'],
     fields['of13.oxm_bsn_udf0.type_len'],
     fields['of13.oxm_bsn_udf0.value'],
     fields['of13.oxm_bsn_udf0_masked.type_len'],
@@ -17737,6 +17781,25 @@ function dissect_of_oxm_bsn_lag_id_masked_v3(reader, subtree)
 end
 of_oxm_v3_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v3
 
+-- child class of_oxm_bsn_tcp_flags
+-- Child of of_oxm
+function dissect_of_oxm_bsn_tcp_flags_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_tcp_flags.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_bsn_tcp_flags.value')
+    return 'of_oxm_bsn_tcp_flags'
+end
+of_oxm_v3_dissectors[204802] = dissect_of_oxm_bsn_tcp_flags_v3
+
+-- child class of_oxm_bsn_tcp_flags_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_tcp_flags_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_tcp_flags_masked.type_len')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_bsn_tcp_flags_masked.value')
+    read_uint16_t(reader, 3, subtree, 'of12.oxm_bsn_tcp_flags_masked.value_mask')
+    return 'of_oxm_bsn_tcp_flags_masked'
+end
+of_oxm_v3_dissectors[205060] = dissect_of_oxm_bsn_tcp_flags_masked_v3
+
 -- child class of_oxm_bsn_udf0
 -- Child of of_oxm
 function dissect_of_oxm_bsn_udf0_v3(reader, subtree)
@@ -22830,6 +22893,25 @@ function dissect_of_oxm_bsn_lag_id_masked_v4(reader, subtree)
     return 'of_oxm_bsn_lag_id_masked'
 end
 of_oxm_v4_dissectors[197384] = dissect_of_oxm_bsn_lag_id_masked_v4
+
+-- child class of_oxm_bsn_tcp_flags
+-- Child of of_oxm
+function dissect_of_oxm_bsn_tcp_flags_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_tcp_flags.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_bsn_tcp_flags.value')
+    return 'of_oxm_bsn_tcp_flags'
+end
+of_oxm_v4_dissectors[204802] = dissect_of_oxm_bsn_tcp_flags_v4
+
+-- child class of_oxm_bsn_tcp_flags_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_tcp_flags_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_tcp_flags_masked.type_len')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_bsn_tcp_flags_masked.value')
+    read_uint16_t(reader, 4, subtree, 'of13.oxm_bsn_tcp_flags_masked.value_mask')
+    return 'of_oxm_bsn_tcp_flags_masked'
+end
+of_oxm_v4_dissectors[205060] = dissect_of_oxm_bsn_tcp_flags_masked_v4
 
 -- child class of_oxm_bsn_udf0
 -- Child of of_oxm

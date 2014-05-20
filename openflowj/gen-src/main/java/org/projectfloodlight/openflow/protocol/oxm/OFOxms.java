@@ -75,6 +75,10 @@ public interface OFOxms {
     OFOxmBsnLagId bsnLagId(LagId value);
     OFOxmBsnLagIdMasked.Builder buildBsnLagIdMasked() throws UnsupportedOperationException;
     OFOxmBsnLagIdMasked bsnLagIdMasked(LagId value, LagId mask);
+    OFOxmBsnTcpFlags.Builder buildBsnTcpFlags() throws UnsupportedOperationException;
+    OFOxmBsnTcpFlags bsnTcpFlags(U16 value);
+    OFOxmBsnTcpFlagsMasked.Builder buildBsnTcpFlagsMasked() throws UnsupportedOperationException;
+    OFOxmBsnTcpFlagsMasked bsnTcpFlagsMasked(U16 value, U16 mask);
     OFOxmBsnUdf0.Builder buildBsnUdf0() throws UnsupportedOperationException;
     OFOxmBsnUdf0 bsnUdf0(UDF value);
     OFOxmBsnUdf0Masked.Builder buildBsnUdf0Masked() throws UnsupportedOperationException;

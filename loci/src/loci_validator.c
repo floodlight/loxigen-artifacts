@@ -420,6 +420,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_src_class_id_OF_V
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_lag_id_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_tcp_flags_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf0_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf0_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf1_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -830,6 +832,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_src_class_id_OF_V
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_lag_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_tcp_flags_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf0_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf0_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf1_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -8783,6 +8787,10 @@ loci_validate_of_oxm_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_lag_id_OF_VERSION_1_2(data, len, out_len);
     case 0x30308:
         return loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x32002:
+        return loci_validate_of_oxm_bsn_tcp_flags_OF_VERSION_1_2(data, len, out_len);
+    case 0x32104:
+        return loci_validate_of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2(data, len, out_len);
     case 0x31004:
         return loci_validate_of_oxm_bsn_udf0_OF_VERSION_1_2(data, len, out_len);
     case 0x31108:
@@ -11794,6 +11802,38 @@ loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_2(uint8_t *data, int len, in
     }
 
     len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_tcp_flags_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 
@@ -15424,6 +15464,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_lag_id_OF_VERSION_1_3(data, len, out_len);
     case 0x30308:
         return loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x32002:
+        return loci_validate_of_oxm_bsn_tcp_flags_OF_VERSION_1_3(data, len, out_len);
+    case 0x32104:
+        return loci_validate_of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x31004:
         return loci_validate_of_oxm_bsn_udf0_OF_VERSION_1_3(data, len, out_len);
     case 0x31108:
@@ -21976,6 +22020,38 @@ loci_validate_of_oxm_bsn_lag_id_masked_OF_VERSION_1_3(uint8_t *data, int len, in
     }
 
     len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_tcp_flags_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
 
 
 

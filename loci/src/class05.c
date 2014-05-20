@@ -590,6 +590,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x31f08:
             *id = OF_OXM_BSN_UDF7_MASKED;
             break;
+        case 0x32002:
+            *id = OF_OXM_BSN_TCP_FLAGS;
+            break;
+        case 0x32104:
+            *id = OF_OXM_BSN_TCP_FLAGS_MASKED;
+            break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
             break;
@@ -910,6 +916,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x31f08:
             *id = OF_OXM_BSN_UDF7_MASKED;
+            break;
+        case 0x32002:
+            *id = OF_OXM_BSN_TCP_FLAGS;
+            break;
+        case 0x32104:
+            *id = OF_OXM_BSN_TCP_FLAGS_MASKED;
             break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
@@ -10156,13 +10168,13 @@ of_oxm_bsn_lag_id_masked_value_mask_set(
 #include "loci_int.h"
 
 void
-of_oxm_bsn_udf0_push_wire_types(of_object_t *obj)
+of_oxm_bsn_tcp_flags_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        *(uint32_t *)(buf + 0) = U32_HTON(0x31004); /* type_len */
+        *(uint32_t *)(buf + 0) = U32_HTON(0x32002); /* type_len */
         break;
     default:
         UNREACHABLE();
@@ -10172,23 +10184,23 @@ of_oxm_bsn_udf0_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_oxm_bsn_udf0 of_oxm_bsn_udf0
+ * \defgroup of_oxm_bsn_tcp_flags of_oxm_bsn_tcp_flags
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_oxm_bsn_udf0_push_wire_values(of_oxm_bsn_udf0_t *obj)
+of_oxm_bsn_tcp_flags_push_wire_values(of_oxm_bsn_tcp_flags_t *obj)
 {
 
-    of_oxm_bsn_udf0_push_wire_types(obj);
+    of_oxm_bsn_tcp_flags_push_wire_types(obj);
 
     return OF_ERROR_NONE;
 }
 
 /**
- * Create a new of_oxm_bsn_udf0 object
+ * Create a new of_oxm_bsn_tcp_flags object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -10199,24 +10211,24 @@ of_oxm_bsn_udf0_push_wire_values(of_oxm_bsn_udf0_t *obj)
  * Use new_from_message to bind an existing message to a message object,
  * or a _get function for non-message objects.
  *
- * \ingroup of_oxm_bsn_udf0
+ * \ingroup of_oxm_bsn_tcp_flags
  */
 
-of_oxm_bsn_udf0_t *
-of_oxm_bsn_udf0_new(of_version_t version)
+of_oxm_bsn_tcp_flags_t *
+of_oxm_bsn_tcp_flags_new(of_version_t version)
 {
-    of_oxm_bsn_udf0_t *obj;
+    of_oxm_bsn_tcp_flags_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS] + of_object_extra_len[version][OF_OXM_BSN_TCP_FLAGS];
 
-    if ((obj = (of_oxm_bsn_udf0_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = (of_oxm_bsn_tcp_flags_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_oxm_bsn_udf0_init(obj, version, bytes, 0);
+    of_oxm_bsn_tcp_flags_init(obj, version, bytes, 0);
 
-    if (of_oxm_bsn_udf0_push_wire_values(obj) < 0) {
+    if (of_oxm_bsn_tcp_flags_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -10225,7 +10237,7 @@ of_oxm_bsn_udf0_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_oxm_bsn_udf0.
+ * Initialize an object of type of_oxm_bsn_tcp_flags.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -10242,20 +10254,20 @@ of_oxm_bsn_udf0_new(of_version_t version)
  */
 
 void
-of_oxm_bsn_udf0_init(of_oxm_bsn_udf0_t *obj,
+of_oxm_bsn_tcp_flags_init(of_oxm_bsn_tcp_flags_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_BSN_UDF0] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS] + of_object_extra_len[version][OF_OXM_BSN_TCP_FLAGS];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_OXM_BSN_UDF0;
+    obj->object_id = OF_OXM_BSN_TCP_FLAGS;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -10268,23 +10280,23 @@ of_oxm_bsn_udf0_init(of_oxm_bsn_udf0_t *obj,
 
 
 /**
- * Get value from an object of type of_oxm_bsn_udf0.
- * @param obj Pointer to an object of type of_oxm_bsn_udf0.
+ * Get value from an object of type of_oxm_bsn_tcp_flags.
+ * @param obj Pointer to an object of type of_oxm_bsn_tcp_flags.
  * @param value Pointer to the child object of type
- * uint32_t to be filled out.
+ * uint16_t to be filled out.
  *
  */
 void
-of_oxm_bsn_udf0_value_get(
-    of_oxm_bsn_udf0_t *obj,
-    uint32_t *value)
+of_oxm_bsn_tcp_flags_value_get(
+    of_oxm_bsn_tcp_flags_t *obj,
+    uint16_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_TCP_FLAGS);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -10301,7 +10313,7 @@ of_oxm_bsn_udf0_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, value);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -10309,21 +10321,21 @@ of_oxm_bsn_udf0_value_get(
 }
 
 /**
- * Set value in an object of type of_oxm_bsn_udf0.
- * @param obj Pointer to an object of type of_oxm_bsn_udf0.
+ * Set value in an object of type of_oxm_bsn_tcp_flags.
+ * @param obj Pointer to an object of type of_oxm_bsn_tcp_flags.
  * @param value The value to write into the object
  */
 void
-of_oxm_bsn_udf0_value_set(
-    of_oxm_bsn_udf0_t *obj,
-    uint32_t value)
+of_oxm_bsn_tcp_flags_value_set(
+    of_oxm_bsn_tcp_flags_t *obj,
+    uint16_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_UDF0);
+    LOCI_ASSERT(obj->object_id == OF_OXM_BSN_TCP_FLAGS);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -10340,7 +10352,7 @@ of_oxm_bsn_udf0_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, value);
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

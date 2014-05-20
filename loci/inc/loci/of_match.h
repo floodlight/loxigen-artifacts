@@ -67,6 +67,7 @@ typedef struct of_match_fields_s {
     uint32_t             bsn_egr_port_group_id;
     uint32_t             bsn_udf2;
     uint32_t             bsn_udf7;
+    uint16_t             bsn_tcp_flags;
     uint32_t             bsn_udf4;
     uint32_t             bsn_udf1;
     uint32_t             bsn_udf0;
@@ -610,6 +611,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for bsn_tcp_flags */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_tcp_flags, q_m->bsn_tcp_flags)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_tcp_flags, q_f->bsn_tcp_flags,
+            q_m->bsn_tcp_flags)) {
+        return 0;
+    }
+
     /* Mask and values for ip_ecn */
     if (!OF_MORE_SPECIFIC_INT(e_m->ip_ecn, q_m->ip_ecn)) {
         return 0;
@@ -1005,6 +1015,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for bsn_vrf */
     if (!OF_OVERLAP_INT(f1->bsn_vrf, f2->bsn_vrf,
         m2->bsn_vrf, m1->bsn_vrf)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_tcp_flags */
+    if (!OF_OVERLAP_INT(f1->bsn_tcp_flags, f2->bsn_tcp_flags,
+        m2->bsn_tcp_flags, m1->bsn_tcp_flags)) {
         return 0; /* This field differentiates; all done */
     }
 

@@ -4064,6 +4064,24 @@ extern int of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_populate_scalars(
 extern int of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_check_scalars(
     of_oxm_bsn_lag_id_masked_t *obj, int value);
 
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_2_populate(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_2_check(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_populate(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_check(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+
 extern int of_oxm_bsn_udf0_OF_VERSION_1_2_populate(
     of_oxm_bsn_udf0_t *obj, int value);
 extern int of_oxm_bsn_udf0_OF_VERSION_1_2_check(
@@ -7933,6 +7951,24 @@ extern int of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_populate_scalars(
     of_oxm_bsn_lag_id_masked_t *obj, int value);
 extern int of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_bsn_lag_id_masked_t *obj, int value);
+
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_3_populate(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_3_check(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_tcp_flags_t *obj, int value);
+
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_populate(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_check(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
+extern int of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_tcp_flags_masked_t *obj, int value);
 
 extern int of_oxm_bsn_udf0_OF_VERSION_1_3_populate(
     of_oxm_bsn_udf0_t *obj, int value);

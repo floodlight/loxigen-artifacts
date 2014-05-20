@@ -12678,6 +12678,39 @@ of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_oxm_bsn_tcp_flags_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_oxm_bsn_tcp_flags_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_masked_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_oxm_bsn_tcp_flags_masked_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_tcp_flags_masked_value_mask_get(obj, &val16);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_u16_value_mask(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_oxm_bsn_udf0_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj)
 {
     int out = 0;
@@ -22986,6 +23019,39 @@ of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_oxm_bsn_tcp_flags_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_oxm_bsn_tcp_flags_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_masked_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_oxm_bsn_tcp_flags_masked_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_tcp_flags_masked_value_mask_get(obj, &val16);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_u16_value_mask(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_oxm_bsn_udf0_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj)
 {
     int out = 0;
@@ -25633,6 +25699,14 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
+    if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_tcp_flags active=");
+        out += LOCI_SHOW_u16_bsn_tcp_flags(writer, cookie, match->fields.bsn_tcp_flags);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u16_bsn_tcp_flags(writer, cookie, match->masks.bsn_tcp_flags);
+        out += writer(cookie, " ");
+    }
+
     if (OF_MATCH_MASK_IP_ECN_ACTIVE_TEST(match)) {
         out += writer(cookie, "ip_ecn active=");
         out += LOCI_SHOW_u8_ip_ecn(writer, cookie, match->fields.ip_ecn);
@@ -26134,6 +26208,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_match_v1_OF_VERSION_1_0_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -26774,6 +26850,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_packet_queue_OF_VERSION_1_1_show,
     of_port_desc_OF_VERSION_1_1_show,
     of_port_stats_entry_OF_VERSION_1_1_show,
@@ -27216,6 +27294,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_lag_id_OF_VERSION_1_2_show,
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_show,
+    of_oxm_bsn_tcp_flags_OF_VERSION_1_2_show,
+    of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_udf0_OF_VERSION_1_2_show,
     of_oxm_bsn_udf0_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_udf1_OF_VERSION_1_2_show,
@@ -27739,6 +27819,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_lag_id_OF_VERSION_1_3_show,
     of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_show,
+    of_oxm_bsn_tcp_flags_OF_VERSION_1_3_show,
+    of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_udf0_OF_VERSION_1_3_show,
     of_oxm_bsn_udf0_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_udf1_OF_VERSION_1_3_show,

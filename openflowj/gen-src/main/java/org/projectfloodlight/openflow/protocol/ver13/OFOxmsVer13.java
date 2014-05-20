@@ -259,6 +259,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnTcpFlags.Builder buildBsnTcpFlags() {
+        return new OFOxmBsnTcpFlagsVer13.Builder();
+    }
+    public OFOxmBsnTcpFlags bsnTcpFlags(U16 value) {
+        return new OFOxmBsnTcpFlagsVer13(
+                value
+                    );
+    }
+
+    public OFOxmBsnTcpFlagsMasked.Builder buildBsnTcpFlagsMasked() {
+        return new OFOxmBsnTcpFlagsMaskedVer13.Builder();
+    }
+    public OFOxmBsnTcpFlagsMasked bsnTcpFlagsMasked(U16 value, U16 mask) {
+        return new OFOxmBsnTcpFlagsMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnUdf0.Builder buildBsnUdf0() {
         return new OFOxmBsnUdf0Ver13.Builder();
     }
@@ -1050,6 +1069,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnL3SrcClassId((ClassId)((Object)value)));
             case BSN_LAG_ID:
                 return (OFOxm<F>)((Object)bsnLagId((LagId)((Object)value)));
+            case BSN_TCP_FLAGS:
+                return (OFOxm<F>)((Object)bsnTcpFlags((U16)((Object)value)));
             case BSN_UDF0:
                 return (OFOxm<F>)((Object)bsnUdf0((UDF)((Object)value)));
             case BSN_UDF1:
@@ -1162,6 +1183,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnL3SrcClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_LAG_ID:
                 return (OFOxm<F>)((Object)bsnLagIdMasked((LagId)((Object)value), (LagId)((Object)mask)));
+            case BSN_TCP_FLAGS:
+                return (OFOxm<F>)((Object)bsnTcpFlagsMasked((U16)((Object)value), (U16)((Object)mask)));
             case BSN_UDF0:
                 return (OFOxm<F>)((Object)bsnUdf0Masked((UDF)((Object)value), (UDF)((Object)mask)));
             case BSN_UDF1:
@@ -1274,6 +1297,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnL3SrcClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_LAG_ID:
                 return (OFOxm<F>)((Object)bsnLagIdMasked((LagId)((Object)(masked.getValue())), (LagId)((Object)(masked.getMask()))));
+            case BSN_TCP_FLAGS:
+                return (OFOxm<F>)((Object)bsnTcpFlagsMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case BSN_UDF0:
                 return (OFOxm<F>)((Object)bsnUdf0Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
             case BSN_UDF1:
