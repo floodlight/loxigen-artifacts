@@ -28648,6 +28648,11 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->idle_notification);
     }
 
+    if (src->header.object_id == OF_BSN_TLV_CRC_ENABLED) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
+            &src->crc_enabled);
+    }
+
     if (src->header.object_id == OF_BSN_TLV_PORT) {
         return (of_bsn_tlv_t *)of_bsn_tlv_port_OF_VERSION_1_3_dup(
             &src->port);
@@ -28792,6 +28797,31 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_circuit_id_value_get(src, &octets);
     of_bsn_tlv_circuit_id_value_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_crc_enabled
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_crc_enabled.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_crc_enabled_t *
+of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
+    of_bsn_tlv_crc_enabled_t *src)
+{
+    of_bsn_tlv_crc_enabled_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_crc_enabled_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_crc_enabled_value_get(src, &val8);
+    of_bsn_tlv_crc_enabled_value_set(dst, val8);
 
     return dst;
 }
@@ -41789,6 +41819,19 @@ of_bsn_tlv_circuit_id_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_crc_enabled_t *
+of_bsn_tlv_crc_enabled_dup(
+    of_bsn_tlv_crc_enabled_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

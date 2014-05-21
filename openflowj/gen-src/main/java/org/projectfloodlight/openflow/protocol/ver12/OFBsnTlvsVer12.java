@@ -45,6 +45,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.2");
     }
 
+    public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
+        throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.2");
+    }
+    public OFBsnTlvCrcEnabled crcEnabled(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.2");
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.2");
     }

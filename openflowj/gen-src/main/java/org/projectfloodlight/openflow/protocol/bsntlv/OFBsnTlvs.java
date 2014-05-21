@@ -31,6 +31,8 @@ public interface OFBsnTlvs {
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
+    OFBsnTlvCrcEnabled.Builder buildCrcEnabled() throws UnsupportedOperationException;
+    OFBsnTlvCrcEnabled crcEnabled(short value);
     OFBsnTlvIdleNotification idleNotification();
     OFBsnTlvIdleTime.Builder buildIdleTime() throws UnsupportedOperationException;
     OFBsnTlvIdleTime idleTime(U64 value);

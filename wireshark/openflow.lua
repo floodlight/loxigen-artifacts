@@ -5734,6 +5734,9 @@ fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.b
 fields['of13.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit_id.value", "value")
+fields['of13.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.type'] = ProtoField.uint16("of13.bsn_tlv_idle_time.type", "type", base.DEC, nil)
@@ -10912,6 +10915,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_circuit_id.type'],
     fields['of13.bsn_tlv_circuit_id.length'],
     fields['of13.bsn_tlv_circuit_id.value'],
+    fields['of13.bsn_tlv_crc_enabled.type'],
+    fields['of13.bsn_tlv_crc_enabled.length'],
+    fields['of13.bsn_tlv_crc_enabled.value'],
     fields['of13.bsn_tlv_idle_notification.type'],
     fields['of13.bsn_tlv_idle_notification.length'],
     fields['of13.bsn_tlv_idle_time.type'],
@@ -21058,6 +21064,16 @@ function dissect_of_bsn_tlv_circuit_id_v4(reader, subtree)
     return 'of_bsn_tlv_circuit_id'
 end
 of_bsn_tlv_v4_dissectors[14] = dissect_of_bsn_tlv_circuit_id_v4
+
+-- child class of_bsn_tlv_crc_enabled
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_crc_enabled_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_crc_enabled.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_crc_enabled.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_crc_enabled.value')
+    return 'of_bsn_tlv_crc_enabled'
+end
+of_bsn_tlv_v4_dissectors[22] = dissect_of_bsn_tlv_crc_enabled_v4
 
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv

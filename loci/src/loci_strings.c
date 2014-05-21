@@ -266,6 +266,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv",
     "of_bsn_tlv_broadcast_query_timeout",
     "of_bsn_tlv_circuit_id",
+    "of_bsn_tlv_crc_enabled",
     "of_bsn_tlv_header",
     "of_bsn_tlv_idle_notification",
     "of_bsn_tlv_idle_time",

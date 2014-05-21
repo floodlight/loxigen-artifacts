@@ -753,6 +753,8 @@ void of_bsn_tlv_broadcast_query_timeout_wire_object_id_get(of_object_t *obj, of_
 void of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_notification_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_time_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1211,6 +1213,7 @@ typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
+typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_header_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
@@ -3133,6 +3136,11 @@ extern of_bsn_tlv_circuit_id_t *
     of_bsn_tlv_circuit_id_new(of_version_t version);
 extern void of_bsn_tlv_circuit_id_init(
     of_bsn_tlv_circuit_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_crc_enabled_t *
+    of_bsn_tlv_crc_enabled_new(of_version_t version);
+extern void of_bsn_tlv_crc_enabled_init(
+    of_bsn_tlv_crc_enabled_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_new(of_version_t version);
@@ -7280,6 +7288,17 @@ of_bsn_tlv_broadcast_query_timeout_delete(of_bsn_tlv_broadcast_query_timeout_t *
  */
 static inline void
 of_bsn_tlv_circuit_id_delete(of_bsn_tlv_circuit_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_crc_enabled_t
+ * @param obj An instance of type of_bsn_tlv_crc_enabled_t
+ *
+ * \ingroup of_bsn_tlv_crc_enabled
+ */
+static inline void
+of_bsn_tlv_crc_enabled_delete(of_bsn_tlv_crc_enabled_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17252,6 +17271,15 @@ extern void of_bsn_tlv_circuit_id_value_get(
     of_bsn_tlv_circuit_id_t *obj,
     of_octets_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_crc_enabled */
+
+extern void of_bsn_tlv_crc_enabled_value_set(
+    of_bsn_tlv_crc_enabled_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_crc_enabled_value_get(
+    of_bsn_tlv_crc_enabled_t *obj,
+    uint8_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_header */
 
 /* Unified accessor functions for of_bsn_tlv_idle_notification */
@@ -21756,6 +21784,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_header_t header; /* Generic instance */
     of_bsn_tlv_broadcast_query_timeout_t broadcast_query_timeout;
     of_bsn_tlv_circuit_id_t circuit_id;
+    of_bsn_tlv_crc_enabled_t crc_enabled;
     of_bsn_tlv_idle_notification_t idle_notification;
     of_bsn_tlv_idle_time_t idle_time;
     of_bsn_tlv_idle_timeout_t idle_timeout;

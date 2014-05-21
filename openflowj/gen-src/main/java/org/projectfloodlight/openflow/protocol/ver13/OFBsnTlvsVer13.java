@@ -49,6 +49,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
+        return new OFBsnTlvCrcEnabledVer13.Builder();
+    }
+    public OFBsnTlvCrcEnabled crcEnabled(short value) {
+        return new OFBsnTlvCrcEnabledVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }

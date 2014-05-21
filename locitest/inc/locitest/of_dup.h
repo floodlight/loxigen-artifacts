@@ -1042,6 +1042,10 @@ extern of_bsn_tlv_circuit_id_t *
     of_bsn_tlv_circuit_id_dup(
         of_bsn_tlv_circuit_id_t *src);
 
+extern of_bsn_tlv_crc_enabled_t *
+    of_bsn_tlv_crc_enabled_dup(
+        of_bsn_tlv_crc_enabled_t *src);
+
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_dup(
         of_bsn_tlv_header_t *src);
@@ -5261,6 +5265,10 @@ extern of_bsn_tlv_broadcast_query_timeout_t *
 extern of_bsn_tlv_circuit_id_t *
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
         of_bsn_tlv_circuit_id_t *src);
+
+extern of_bsn_tlv_crc_enabled_t *
+    of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
+        of_bsn_tlv_crc_enabled_t *src);
 
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_OF_VERSION_1_3_dup(
