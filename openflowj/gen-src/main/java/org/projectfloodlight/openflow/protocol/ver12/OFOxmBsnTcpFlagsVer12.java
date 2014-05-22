@@ -231,7 +231,7 @@ class OFOxmBsnTcpFlagsVer12 implements OFOxmBsnTcpFlags {
             int typeLen = bb.readInt();
             if(typeLen != 0x32002)
                 throw new OFParseError("Wrong typeLen: Expected=0x32002L(0x32002L), got="+typeLen);
-            U16 value = U16.of(bb.readByte());
+            U16 value = U16.of(bb.readShort());
 
             OFOxmBsnTcpFlagsVer12 oxmBsnTcpFlagsVer12 = new OFOxmBsnTcpFlagsVer12(
                     value
@@ -268,7 +268,7 @@ class OFOxmBsnTcpFlagsVer12 implements OFOxmBsnTcpFlags {
         public void write(ChannelBuffer bb, OFOxmBsnTcpFlagsVer12 message) {
             // fixed value property typeLen = 0x32002L
             bb.writeInt(0x32002);
-            bb.writeByte(message.value.getRaw());
+            bb.writeShort(message.value.getRaw());
 
 
         }

@@ -263,8 +263,8 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
             int typeLen = bb.readInt();
             if(typeLen != 0x32104)
                 throw new OFParseError("Wrong typeLen: Expected=0x32104L(0x32104L), got="+typeLen);
-            U16 value = U16.of(bb.readByte());
-            U16 mask = U16.of(bb.readByte());
+            U16 value = U16.of(bb.readShort());
+            U16 mask = U16.of(bb.readShort());
 
             OFOxmBsnTcpFlagsMaskedVer12 oxmBsnTcpFlagsMaskedVer12 = new OFOxmBsnTcpFlagsMaskedVer12(
                     value,
@@ -303,8 +303,8 @@ class OFOxmBsnTcpFlagsMaskedVer12 implements OFOxmBsnTcpFlagsMasked {
         public void write(ChannelBuffer bb, OFOxmBsnTcpFlagsMaskedVer12 message) {
             // fixed value property typeLen = 0x32104L
             bb.writeInt(0x32104);
-            bb.writeByte(message.value.getRaw());
-            bb.writeByte(message.mask.getRaw());
+            bb.writeShort(message.value.getRaw());
+            bb.writeShort(message.mask.getRaw());
 
 
         }
