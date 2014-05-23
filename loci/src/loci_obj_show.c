@@ -25545,11 +25545,11 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(match)) {
-        out += writer(cookie, "sctp_src active=");
-        out += LOCI_SHOW_u16_sctp_src(writer, cookie, match->fields.sctp_src);
+    if (OF_MATCH_MASK_ETH_SRC_ACTIVE_TEST(match)) {
+        out += writer(cookie, "eth_src active=");
+        out += LOCI_SHOW_mac_eth_src(writer, cookie, match->fields.eth_src);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_sctp_src(writer, cookie, match->masks.sctp_src);
+        out += LOCI_SHOW_mac_eth_src(writer, cookie, match->masks.eth_src);
         out += writer(cookie, " ");
     }
 
@@ -25569,27 +25569,27 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_l3_dst_class_id active=");
-        out += LOCI_SHOW_u32_bsn_l3_dst_class_id(writer, cookie, match->fields.bsn_l3_dst_class_id);
+    if (OF_MATCH_MASK_UDP_SRC_ACTIVE_TEST(match)) {
+        out += writer(cookie, "udp_src active=");
+        out += LOCI_SHOW_u16_udp_src(writer, cookie, match->fields.udp_src);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_l3_dst_class_id(writer, cookie, match->masks.bsn_l3_dst_class_id);
+        out += LOCI_SHOW_u16_udp_src(writer, cookie, match->masks.udp_src);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_IPV6_ND_SLL_ACTIVE_TEST(match)) {
-        out += writer(cookie, "ipv6_nd_sll active=");
-        out += LOCI_SHOW_mac_ipv6_nd_sll(writer, cookie, match->fields.ipv6_nd_sll);
+    if (OF_MATCH_MASK_IPV4_DST_ACTIVE_TEST(match)) {
+        out += writer(cookie, "ipv4_dst active=");
+        out += LOCI_SHOW_ipv4_ipv4_dst(writer, cookie, match->fields.ipv4_dst);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_mac_ipv6_nd_sll(writer, cookie, match->masks.ipv6_nd_sll);
+        out += LOCI_SHOW_ipv4_ipv4_dst(writer, cookie, match->masks.ipv4_dst);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(match)) {
-        out += writer(cookie, "mpls_tc active=");
-        out += LOCI_SHOW_u8_mpls_tc(writer, cookie, match->fields.mpls_tc);
+    if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(match)) {
+        out += writer(cookie, "arp_op active=");
+        out += LOCI_SHOW_u16_arp_op(writer, cookie, match->fields.arp_op);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u8_mpls_tc(writer, cookie, match->masks.mpls_tc);
+        out += LOCI_SHOW_u16_arp_op(writer, cookie, match->masks.arp_op);
         out += writer(cookie, " ");
     }
 
@@ -25609,11 +25609,11 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_BSN_UDF2_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_udf2 active=");
-        out += LOCI_SHOW_u32_bsn_udf2(writer, cookie, match->fields.bsn_udf2);
+    if (OF_MATCH_MASK_ICMPV4_TYPE_ACTIVE_TEST(match)) {
+        out += writer(cookie, "icmpv4_type active=");
+        out += LOCI_SHOW_u8_icmpv4_type(writer, cookie, match->fields.icmpv4_type);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_udf2(writer, cookie, match->masks.bsn_udf2);
+        out += LOCI_SHOW_u8_icmpv4_type(writer, cookie, match->masks.icmpv4_type);
         out += writer(cookie, " ");
     }
 
@@ -25625,19 +25625,19 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(match)) {
-        out += writer(cookie, "arp_op active=");
-        out += LOCI_SHOW_u16_arp_op(writer, cookie, match->fields.arp_op);
+    if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(match)) {
+        out += writer(cookie, "ipv6_nd_target active=");
+        out += LOCI_SHOW_ipv6_ipv6_nd_target(writer, cookie, match->fields.ipv6_nd_target);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_arp_op(writer, cookie, match->masks.arp_op);
+        out += LOCI_SHOW_ipv6_ipv6_nd_target(writer, cookie, match->masks.ipv6_nd_target);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_VLAN_VID_ACTIVE_TEST(match)) {
-        out += writer(cookie, "vlan_vid active=");
-        out += LOCI_SHOW_u16_vlan_vid(writer, cookie, match->fields.vlan_vid);
+    if (OF_MATCH_MASK_MPLS_LABEL_ACTIVE_TEST(match)) {
+        out += writer(cookie, "mpls_label active=");
+        out += LOCI_SHOW_u32_mpls_label(writer, cookie, match->fields.mpls_label);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_vlan_vid(writer, cookie, match->masks.vlan_vid);
+        out += LOCI_SHOW_u32_mpls_label(writer, cookie, match->masks.mpls_label);
         out += writer(cookie, " ");
     }
 
@@ -25657,43 +25657,19 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_METADATA_ACTIVE_TEST(match)) {
-        out += writer(cookie, "metadata active=");
-        out += LOCI_SHOW_u64_metadata(writer, cookie, match->fields.metadata);
+    if (OF_MATCH_MASK_BSN_L3_INTERFACE_CLASS_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_l3_interface_class_id active=");
+        out += LOCI_SHOW_u32_bsn_l3_interface_class_id(writer, cookie, match->fields.bsn_l3_interface_class_id);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u64_metadata(writer, cookie, match->masks.metadata);
+        out += LOCI_SHOW_u32_bsn_l3_interface_class_id(writer, cookie, match->masks.bsn_l3_interface_class_id);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_BSN_UDF7_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_udf7 active=");
-        out += LOCI_SHOW_u32_bsn_udf7(writer, cookie, match->fields.bsn_udf7);
+    if (OF_MATCH_MASK_TCP_DST_ACTIVE_TEST(match)) {
+        out += writer(cookie, "tcp_dst active=");
+        out += LOCI_SHOW_u16_tcp_dst(writer, cookie, match->fields.tcp_dst);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_udf7(writer, cookie, match->masks.bsn_udf7);
-        out += writer(cookie, " ");
-    }
-
-    if (OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_l3_src_class_id active=");
-        out += LOCI_SHOW_u32_bsn_l3_src_class_id(writer, cookie, match->fields.bsn_l3_src_class_id);
-        out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_l3_src_class_id(writer, cookie, match->masks.bsn_l3_src_class_id);
-        out += writer(cookie, " ");
-    }
-
-    if (OF_MATCH_MASK_SCTP_DST_ACTIVE_TEST(match)) {
-        out += writer(cookie, "sctp_dst active=");
-        out += LOCI_SHOW_u16_sctp_dst(writer, cookie, match->fields.sctp_dst);
-        out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_sctp_dst(writer, cookie, match->masks.sctp_dst);
-        out += writer(cookie, " ");
-    }
-
-    if (OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(match)) {
-        out += writer(cookie, "icmpv4_code active=");
-        out += LOCI_SHOW_u8_icmpv4_code(writer, cookie, match->fields.icmpv4_code);
-        out += writer(cookie, "/");
-        out += LOCI_SHOW_u8_icmpv4_code(writer, cookie, match->masks.icmpv4_code);
+        out += LOCI_SHOW_u16_tcp_dst(writer, cookie, match->masks.tcp_dst);
         out += writer(cookie, " ");
     }
 
@@ -25705,6 +25681,38 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
+    if (OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(match)) {
+        out += writer(cookie, "icmpv4_code active=");
+        out += LOCI_SHOW_u8_icmpv4_code(writer, cookie, match->fields.icmpv4_code);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u8_icmpv4_code(writer, cookie, match->masks.icmpv4_code);
+        out += writer(cookie, " ");
+    }
+
+    if (OF_MATCH_MASK_SCTP_DST_ACTIVE_TEST(match)) {
+        out += writer(cookie, "sctp_dst active=");
+        out += LOCI_SHOW_u16_sctp_dst(writer, cookie, match->fields.sctp_dst);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u16_sctp_dst(writer, cookie, match->masks.sctp_dst);
+        out += writer(cookie, " ");
+    }
+
+    if (OF_MATCH_MASK_VLAN_VID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "vlan_vid active=");
+        out += LOCI_SHOW_u16_vlan_vid(writer, cookie, match->fields.vlan_vid);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u16_vlan_vid(writer, cookie, match->masks.vlan_vid);
+        out += writer(cookie, " ");
+    }
+
+    if (OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_l3_src_class_id active=");
+        out += LOCI_SHOW_u32_bsn_l3_src_class_id(writer, cookie, match->fields.bsn_l3_src_class_id);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u32_bsn_l3_src_class_id(writer, cookie, match->masks.bsn_l3_src_class_id);
+        out += writer(cookie, " ");
+    }
+
     if (OF_MATCH_MASK_BSN_VRF_ACTIVE_TEST(match)) {
         out += writer(cookie, "bsn_vrf active=");
         out += LOCI_SHOW_u32_bsn_vrf(writer, cookie, match->fields.bsn_vrf);
@@ -25713,11 +25721,19 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_tcp_flags active=");
-        out += LOCI_SHOW_u16_bsn_tcp_flags(writer, cookie, match->fields.bsn_tcp_flags);
+    if (OF_MATCH_MASK_ARP_SPA_ACTIVE_TEST(match)) {
+        out += writer(cookie, "arp_spa active=");
+        out += LOCI_SHOW_u32_arp_spa(writer, cookie, match->fields.arp_spa);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_bsn_tcp_flags(writer, cookie, match->masks.bsn_tcp_flags);
+        out += LOCI_SHOW_u32_arp_spa(writer, cookie, match->masks.arp_spa);
+        out += writer(cookie, " ");
+    }
+
+    if (OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(match)) {
+        out += writer(cookie, "ip_proto active=");
+        out += LOCI_SHOW_u8_ip_proto(writer, cookie, match->fields.ip_proto);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u8_ip_proto(writer, cookie, match->masks.ip_proto);
         out += writer(cookie, " ");
     }
 
@@ -25726,14 +25742,6 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += LOCI_SHOW_u8_ip_ecn(writer, cookie, match->fields.ip_ecn);
         out += writer(cookie, "/");
         out += LOCI_SHOW_u8_ip_ecn(writer, cookie, match->masks.ip_ecn);
-        out += writer(cookie, " ");
-    }
-
-    if (OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_udf4 active=");
-        out += LOCI_SHOW_u32_bsn_udf4(writer, cookie, match->fields.bsn_udf4);
-        out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_udf4(writer, cookie, match->masks.bsn_udf4);
         out += writer(cookie, " ");
     }
 
@@ -25753,19 +25761,19 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_ARP_SPA_ACTIVE_TEST(match)) {
-        out += writer(cookie, "arp_spa active=");
-        out += LOCI_SHOW_u32_arp_spa(writer, cookie, match->fields.arp_spa);
+    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_udf0 active=");
+        out += LOCI_SHOW_u32_bsn_udf0(writer, cookie, match->fields.bsn_udf0);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_arp_spa(writer, cookie, match->masks.arp_spa);
+        out += LOCI_SHOW_u32_bsn_udf0(writer, cookie, match->masks.bsn_udf0);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(match)) {
-        out += writer(cookie, "ipv6_nd_target active=");
-        out += LOCI_SHOW_ipv6_ipv6_nd_target(writer, cookie, match->fields.ipv6_nd_target);
+    if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(match)) {
+        out += writer(cookie, "sctp_src active=");
+        out += LOCI_SHOW_u16_sctp_src(writer, cookie, match->fields.sctp_src);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_ipv6_ipv6_nd_target(writer, cookie, match->masks.ipv6_nd_target);
+        out += LOCI_SHOW_u16_sctp_src(writer, cookie, match->masks.sctp_src);
         out += writer(cookie, " ");
     }
 
@@ -25777,27 +25785,27 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_IPV4_DST_ACTIVE_TEST(match)) {
-        out += writer(cookie, "ipv4_dst active=");
-        out += LOCI_SHOW_ipv4_ipv4_dst(writer, cookie, match->fields.ipv4_dst);
+    if (OF_MATCH_MASK_IPV6_ND_SLL_ACTIVE_TEST(match)) {
+        out += writer(cookie, "ipv6_nd_sll active=");
+        out += LOCI_SHOW_mac_ipv6_nd_sll(writer, cookie, match->fields.ipv6_nd_sll);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_ipv4_ipv4_dst(writer, cookie, match->masks.ipv4_dst);
+        out += LOCI_SHOW_mac_ipv6_nd_sll(writer, cookie, match->masks.ipv6_nd_sll);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_ETH_SRC_ACTIVE_TEST(match)) {
-        out += writer(cookie, "eth_src active=");
-        out += LOCI_SHOW_mac_eth_src(writer, cookie, match->fields.eth_src);
+    if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(match)) {
+        out += writer(cookie, "mpls_tc active=");
+        out += LOCI_SHOW_u8_mpls_tc(writer, cookie, match->fields.mpls_tc);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_mac_eth_src(writer, cookie, match->masks.eth_src);
+        out += LOCI_SHOW_u8_mpls_tc(writer, cookie, match->masks.mpls_tc);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_UDP_SRC_ACTIVE_TEST(match)) {
-        out += writer(cookie, "udp_src active=");
-        out += LOCI_SHOW_u16_udp_src(writer, cookie, match->fields.udp_src);
+    if (OF_MATCH_MASK_METADATA_ACTIVE_TEST(match)) {
+        out += writer(cookie, "metadata active=");
+        out += LOCI_SHOW_u64_metadata(writer, cookie, match->fields.metadata);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_udp_src(writer, cookie, match->masks.udp_src);
+        out += LOCI_SHOW_u64_metadata(writer, cookie, match->masks.metadata);
         out += writer(cookie, " ");
     }
 
@@ -25809,11 +25817,11 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_udf0 active=");
-        out += LOCI_SHOW_u32_bsn_udf0(writer, cookie, match->fields.bsn_udf0);
+    if (OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_l3_dst_class_id active=");
+        out += LOCI_SHOW_u32_bsn_l3_dst_class_id(writer, cookie, match->fields.bsn_l3_dst_class_id);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_udf0(writer, cookie, match->masks.bsn_udf0);
+        out += LOCI_SHOW_u32_bsn_l3_dst_class_id(writer, cookie, match->masks.bsn_l3_dst_class_id);
         out += writer(cookie, " ");
     }
 
@@ -25825,11 +25833,11 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_ICMPV4_TYPE_ACTIVE_TEST(match)) {
-        out += writer(cookie, "icmpv4_type active=");
-        out += LOCI_SHOW_u8_icmpv4_type(writer, cookie, match->fields.icmpv4_type);
+    if (OF_MATCH_MASK_BSN_UDF2_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_udf2 active=");
+        out += LOCI_SHOW_u32_bsn_udf2(writer, cookie, match->fields.bsn_udf2);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u8_icmpv4_type(writer, cookie, match->masks.icmpv4_type);
+        out += LOCI_SHOW_u32_bsn_udf2(writer, cookie, match->masks.bsn_udf2);
         out += writer(cookie, " ");
     }
 
@@ -25841,19 +25849,19 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_MPLS_LABEL_ACTIVE_TEST(match)) {
-        out += writer(cookie, "mpls_label active=");
-        out += LOCI_SHOW_u32_mpls_label(writer, cookie, match->fields.mpls_label);
+    if (OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_udf4 active=");
+        out += LOCI_SHOW_u32_bsn_udf4(writer, cookie, match->fields.bsn_udf4);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_mpls_label(writer, cookie, match->masks.mpls_label);
+        out += LOCI_SHOW_u32_bsn_udf4(writer, cookie, match->masks.bsn_udf4);
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_TCP_DST_ACTIVE_TEST(match)) {
-        out += writer(cookie, "tcp_dst active=");
-        out += LOCI_SHOW_u16_tcp_dst(writer, cookie, match->fields.tcp_dst);
+    if (OF_MATCH_MASK_BSN_UDF7_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_udf7 active=");
+        out += LOCI_SHOW_u32_bsn_udf7(writer, cookie, match->fields.bsn_udf7);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u16_tcp_dst(writer, cookie, match->masks.tcp_dst);
+        out += LOCI_SHOW_u32_bsn_udf7(writer, cookie, match->masks.bsn_udf7);
         out += writer(cookie, " ");
     }
 
@@ -25865,19 +25873,11 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
-    if (OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(match)) {
-        out += writer(cookie, "ip_proto active=");
-        out += LOCI_SHOW_u8_ip_proto(writer, cookie, match->fields.ip_proto);
+    if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_tcp_flags active=");
+        out += LOCI_SHOW_u16_bsn_tcp_flags(writer, cookie, match->fields.bsn_tcp_flags);
         out += writer(cookie, "/");
-        out += LOCI_SHOW_u8_ip_proto(writer, cookie, match->masks.ip_proto);
-        out += writer(cookie, " ");
-    }
-
-    if (OF_MATCH_MASK_BSN_L3_INTERFACE_CLASS_ID_ACTIVE_TEST(match)) {
-        out += writer(cookie, "bsn_l3_interface_class_id active=");
-        out += LOCI_SHOW_u32_bsn_l3_interface_class_id(writer, cookie, match->fields.bsn_l3_interface_class_id);
-        out += writer(cookie, "/");
-        out += LOCI_SHOW_u32_bsn_l3_interface_class_id(writer, cookie, match->masks.bsn_l3_interface_class_id);
+        out += LOCI_SHOW_u16_bsn_tcp_flags(writer, cookie, match->masks.bsn_tcp_flags);
         out += writer(cookie, " ");
     }
 

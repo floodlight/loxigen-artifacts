@@ -1,1 +1,1 @@
-8dcf8a2618adfd827a20169c34401ed04a25d383 Merge into master from pull request #273: openflowj: fix u16obj read/write (https://github.com/floodlight/loxigen/pull/273)
+415d879292453a18b6080c75da2e2975b4513d2e Merge into master from pull request #274: loci: generate match tables from the IR (https://github.com/floodlight/loxigen/pull/274)
