@@ -41,6 +41,16 @@ public class OFBsnPortCounterSerializerVer13 {
     public final static byte BSN_PORT_COUNTER_TX_PACKETS_MULTICAST_VAL = (byte) 0x9;
     public final static byte BSN_PORT_COUNTER_TX_DROPPED_VAL = (byte) 0xa;
     public final static byte BSN_PORT_COUNTER_TX_ERRORS_VAL = (byte) 0xb;
+    public final static byte BSN_PORT_COUNTER_RX_RUNTS_VAL = (byte) 0xc;
+    public final static byte BSN_PORT_COUNTER_RX_GIANTS_VAL = (byte) 0xd;
+    public final static byte BSN_PORT_COUNTER_RX_CRC_ERRORS_VAL = (byte) 0xe;
+    public final static byte BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS_VAL = (byte) 0xf;
+    public final static byte BSN_PORT_COUNTER_RX_SYMBOL_ERRORS_VAL = (byte) 0x10;
+    public final static byte BSN_PORT_COUNTER_RX_PAUSE_INPUT_VAL = (byte) 0x11;
+    public final static byte BSN_PORT_COUNTER_TX_COLLISIONS_VAL = (byte) 0x12;
+    public final static byte BSN_PORT_COUNTER_TX_LATE_COLLISIONS_VAL = (byte) 0x13;
+    public final static byte BSN_PORT_COUNTER_TX_DEFERRED_VAL = (byte) 0x14;
+    public final static byte BSN_PORT_COUNTER_TX_PAUSE_OUTPUT_VAL = (byte) 0x15;
 
     public static OFBsnPortCounter readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -84,6 +94,26 @@ public class OFBsnPortCounterSerializerVer13 {
                 return OFBsnPortCounter.BSN_PORT_COUNTER_TX_DROPPED;
             case BSN_PORT_COUNTER_TX_ERRORS_VAL:
                 return OFBsnPortCounter.BSN_PORT_COUNTER_TX_ERRORS;
+            case BSN_PORT_COUNTER_RX_RUNTS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_RUNTS;
+            case BSN_PORT_COUNTER_RX_GIANTS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_GIANTS;
+            case BSN_PORT_COUNTER_RX_CRC_ERRORS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_CRC_ERRORS;
+            case BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS;
+            case BSN_PORT_COUNTER_RX_SYMBOL_ERRORS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_SYMBOL_ERRORS;
+            case BSN_PORT_COUNTER_RX_PAUSE_INPUT_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_RX_PAUSE_INPUT;
+            case BSN_PORT_COUNTER_TX_COLLISIONS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_COLLISIONS;
+            case BSN_PORT_COUNTER_TX_LATE_COLLISIONS_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_LATE_COLLISIONS;
+            case BSN_PORT_COUNTER_TX_DEFERRED_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_DEFERRED;
+            case BSN_PORT_COUNTER_TX_PAUSE_OUTPUT_VAL:
+                return OFBsnPortCounter.BSN_PORT_COUNTER_TX_PAUSE_OUTPUT;
             default:
                 throw new IllegalArgumentException("Illegal wire value for type OFBsnPortCounter in version 1.3: " + val);
         }
@@ -116,6 +146,26 @@ public class OFBsnPortCounterSerializerVer13 {
                 return BSN_PORT_COUNTER_TX_DROPPED_VAL;
             case BSN_PORT_COUNTER_TX_ERRORS:
                 return BSN_PORT_COUNTER_TX_ERRORS_VAL;
+            case BSN_PORT_COUNTER_RX_RUNTS:
+                return BSN_PORT_COUNTER_RX_RUNTS_VAL;
+            case BSN_PORT_COUNTER_RX_GIANTS:
+                return BSN_PORT_COUNTER_RX_GIANTS_VAL;
+            case BSN_PORT_COUNTER_RX_CRC_ERRORS:
+                return BSN_PORT_COUNTER_RX_CRC_ERRORS_VAL;
+            case BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS:
+                return BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS_VAL;
+            case BSN_PORT_COUNTER_RX_SYMBOL_ERRORS:
+                return BSN_PORT_COUNTER_RX_SYMBOL_ERRORS_VAL;
+            case BSN_PORT_COUNTER_RX_PAUSE_INPUT:
+                return BSN_PORT_COUNTER_RX_PAUSE_INPUT_VAL;
+            case BSN_PORT_COUNTER_TX_COLLISIONS:
+                return BSN_PORT_COUNTER_TX_COLLISIONS_VAL;
+            case BSN_PORT_COUNTER_TX_LATE_COLLISIONS:
+                return BSN_PORT_COUNTER_TX_LATE_COLLISIONS_VAL;
+            case BSN_PORT_COUNTER_TX_DEFERRED:
+                return BSN_PORT_COUNTER_TX_DEFERRED_VAL;
+            case BSN_PORT_COUNTER_TX_PAUSE_OUTPUT:
+                return BSN_PORT_COUNTER_TX_PAUSE_OUTPUT_VAL;
             default:
                 throw new IllegalArgumentException("Illegal enum value for type OFBsnPortCounter in version 1.3: " + e);
         }
