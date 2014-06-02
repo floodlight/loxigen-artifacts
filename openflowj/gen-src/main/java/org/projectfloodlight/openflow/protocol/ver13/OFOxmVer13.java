@@ -360,6 +360,12 @@ abstract class OFOxmVer13 {
                case (int) 0x80000d04:
                    // discriminator value 0x80000d04L=0x80000d04L for class OFOxmVlanVidMaskedVer13
                    return OFOxmVlanVidMaskedVer13.READER.readFrom(bb);
+               case (int) 0x80004c08:
+                   // discriminator value 0x80004c08L=0x80004c08L for class OFOxmTunnelIdVer13
+                   return OFOxmTunnelIdVer13.READER.readFrom(bb);
+               case (int) 0x80004d10:
+                   // discriminator value 0x80004d10L=0x80004d10L for class OFOxmTunnelIdMaskedVer13
+                   return OFOxmTunnelIdMaskedVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator typeLen of class OFOxmVer13: " + typeLen);
             }

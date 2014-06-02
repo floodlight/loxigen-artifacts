@@ -773,6 +773,20 @@ public class OFOxmsVer10 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmVlanVidMasked not supported in version 1.0");
     }
 
+    public OFOxmTunnelId.Builder buildTunnelId() {
+        throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.0");
+    }
+    public OFOxmTunnelId tunnelId(U64 value) {
+        throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.0");
+    }
+
+    public OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() {
+        throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.0");
+    }
+    public OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask) {
+        throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.0");
+    }
+
     public OFMessageReader<OFOxm<?>> getReader() {
         throw new UnsupportedOperationException("Reader<OFOxm<?>> not supported in version 1.0");
     }
@@ -886,6 +900,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1000,6 +1016,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1114,6 +1132,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
             default:
                 return null;
         }

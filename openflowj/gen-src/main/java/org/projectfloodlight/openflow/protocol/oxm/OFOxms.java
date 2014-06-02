@@ -239,6 +239,10 @@ public interface OFOxms {
     OFOxmVlanVid vlanVid(OFVlanVidMatch value);
     OFOxmVlanVidMasked.Builder buildVlanVidMasked() throws UnsupportedOperationException;
     OFOxmVlanVidMasked vlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask);
+    OFOxmTunnelId.Builder buildTunnelId() throws UnsupportedOperationException;
+    OFOxmTunnelId tunnelId(U64 value);
+    OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() throws UnsupportedOperationException;
+    OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask);
 
     OFMessageReader<OFOxm<?>> getReader();
     OFVersion getVersion();

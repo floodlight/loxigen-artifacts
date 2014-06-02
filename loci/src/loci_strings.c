@@ -449,6 +449,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_tcp_dst_masked",
     "of_oxm_tcp_src",
     "of_oxm_tcp_src_masked",
+    "of_oxm_tunnel_id",
+    "of_oxm_tunnel_id_masked",
     "of_oxm_udp_dst",
     "of_oxm_udp_dst_masked",
     "of_oxm_udp_src",

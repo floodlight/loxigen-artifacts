@@ -6675,6 +6675,11 @@ fields['of13.oxm_tcp_src.value'] = ProtoField.uint16("of13.oxm_tcp_src.value", "
 fields['of13.oxm_tcp_src_masked.type_len'] = ProtoField.uint32("of13.oxm_tcp_src_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_tcp_src_masked.value'] = ProtoField.uint16("of13.oxm_tcp_src_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_tcp_src_masked.value_mask'] = ProtoField.uint16("of13.oxm_tcp_src_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_tunnel_id.type_len'] = ProtoField.uint32("of13.oxm_tunnel_id.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_tunnel_id.value'] = ProtoField.uint64("of13.oxm_tunnel_id.value", "value", base.DEC, nil)
+fields['of13.oxm_tunnel_id_masked.type_len'] = ProtoField.uint32("of13.oxm_tunnel_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_tunnel_id_masked.value'] = ProtoField.uint64("of13.oxm_tunnel_id_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_tunnel_id_masked.value_mask'] = ProtoField.uint64("of13.oxm_tunnel_id_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_udp_dst.type_len'] = ProtoField.uint32("of13.oxm_udp_dst.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_udp_dst.value'] = ProtoField.uint16("of13.oxm_udp_dst.value", "value", base.DEC, nil)
 fields['of13.oxm_udp_dst_masked.type_len'] = ProtoField.uint32("of13.oxm_udp_dst_masked.type_len", "type_len", base.DEC, nil)
@@ -11856,6 +11861,11 @@ p_of.fields = {
     fields['of13.oxm_tcp_src_masked.type_len'],
     fields['of13.oxm_tcp_src_masked.value'],
     fields['of13.oxm_tcp_src_masked.value_mask'],
+    fields['of13.oxm_tunnel_id.type_len'],
+    fields['of13.oxm_tunnel_id.value'],
+    fields['of13.oxm_tunnel_id_masked.type_len'],
+    fields['of13.oxm_tunnel_id_masked.value'],
+    fields['of13.oxm_tunnel_id_masked.value_mask'],
     fields['of13.oxm_udp_dst.type_len'],
     fields['of13.oxm_udp_dst.value'],
     fields['of13.oxm_udp_dst_masked.type_len'],
@@ -23622,6 +23632,25 @@ function dissect_of_oxm_tcp_src_masked_v4(reader, subtree)
     return 'of_oxm_tcp_src_masked'
 end
 of_oxm_v4_dissectors[2147490564] = dissect_of_oxm_tcp_src_masked_v4
+
+-- child class of_oxm_tunnel_id
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_id_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_tunnel_id.type_len')
+    read_uint64_t(reader, 4, subtree, 'of13.oxm_tunnel_id.value')
+    return 'of_oxm_tunnel_id'
+end
+of_oxm_v4_dissectors[2147503112] = dissect_of_oxm_tunnel_id_v4
+
+-- child class of_oxm_tunnel_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_tunnel_id_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_tunnel_id_masked.type_len')
+    read_uint64_t(reader, 4, subtree, 'of13.oxm_tunnel_id_masked.value')
+    read_uint64_t(reader, 4, subtree, 'of13.oxm_tunnel_id_masked.value_mask')
+    return 'of_oxm_tunnel_id_masked'
+end
+of_oxm_v4_dissectors[2147503376] = dissect_of_oxm_tunnel_id_masked_v4
 
 -- child class of_oxm_udp_dst
 -- Child of of_oxm

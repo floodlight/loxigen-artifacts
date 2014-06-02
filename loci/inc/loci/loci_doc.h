@@ -8055,6 +8055,32 @@ typedef struct of_oxm_tcp_src_s of_oxm_tcp_src_t;
 typedef struct of_oxm_tcp_src_masked_s of_oxm_tcp_src_masked_t;
 
 /**
+ * Structure for of_oxm_tunnel_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_oxm_tunnel_id_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_tunnel_id_s of_oxm_tunnel_id_t;
+
+/**
+ * Structure for of_oxm_tunnel_id_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_oxm_tunnel_id_masked_uint64_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_3).
+ *   Accessors for value_mask, a variable of type uint64.  Functions
+ *   are of type of_oxm_tunnel_id_masked_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_tunnel_id_masked_s of_oxm_tunnel_id_masked_t;
+
+/**
  * Structure for of_oxm_udp_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

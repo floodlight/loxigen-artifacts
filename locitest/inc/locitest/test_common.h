@@ -8636,6 +8636,24 @@ extern int of_oxm_tcp_src_masked_OF_VERSION_1_3_populate_scalars(
 extern int of_oxm_tcp_src_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_tcp_src_masked_t *obj, int value);
 
+extern int of_oxm_tunnel_id_OF_VERSION_1_3_populate(
+    of_oxm_tunnel_id_t *obj, int value);
+extern int of_oxm_tunnel_id_OF_VERSION_1_3_check(
+    of_oxm_tunnel_id_t *obj, int value);
+extern int of_oxm_tunnel_id_OF_VERSION_1_3_populate_scalars(
+    of_oxm_tunnel_id_t *obj, int value);
+extern int of_oxm_tunnel_id_OF_VERSION_1_3_check_scalars(
+    of_oxm_tunnel_id_t *obj, int value);
+
+extern int of_oxm_tunnel_id_masked_OF_VERSION_1_3_populate(
+    of_oxm_tunnel_id_masked_t *obj, int value);
+extern int of_oxm_tunnel_id_masked_OF_VERSION_1_3_check(
+    of_oxm_tunnel_id_masked_t *obj, int value);
+extern int of_oxm_tunnel_id_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_tunnel_id_masked_t *obj, int value);
+extern int of_oxm_tunnel_id_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_tunnel_id_masked_t *obj, int value);
+
 extern int of_oxm_udp_dst_OF_VERSION_1_3_populate(
     of_oxm_udp_dst_t *obj, int value);
 extern int of_oxm_udp_dst_OF_VERSION_1_3_check(

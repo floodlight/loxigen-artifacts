@@ -907,6 +907,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_tcp_dst_OF_VERSION_1_3(u
 static int __attribute__((unused)) loci_validate_of_oxm_tcp_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tcp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_tcp_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_tunnel_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_udp_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -15613,6 +15615,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_tcp_src_OF_VERSION_1_3(data, len, out_len);
     case 0x80001b04:
         return loci_validate_of_oxm_tcp_src_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x80004c08:
+        return loci_validate_of_oxm_tunnel_id_OF_VERSION_1_3(data, len, out_len);
+    case 0x80004d10:
+        return loci_validate_of_oxm_tunnel_id_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x80002002:
         return loci_validate_of_oxm_udp_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x80002104:
@@ -23229,6 +23235,38 @@ loci_validate_of_oxm_tcp_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *
     }
 
     len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_tunnel_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 20) {
+        return -1;
+    }
+
+    len = 20;
 
 
 

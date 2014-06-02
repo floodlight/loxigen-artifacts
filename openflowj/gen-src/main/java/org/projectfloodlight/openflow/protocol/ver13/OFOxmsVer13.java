@@ -1038,6 +1038,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmTunnelId.Builder buildTunnelId() {
+        return new OFOxmTunnelIdVer13.Builder();
+    }
+    public OFOxmTunnelId tunnelId(U64 value) {
+        return new OFOxmTunnelIdVer13(
+                value
+                    );
+    }
+
+    public OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() {
+        return new OFOxmTunnelIdMaskedVer13.Builder();
+    }
+    public OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask) {
+        return new OFOxmTunnelIdMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFMessageReader<OFOxm<?>> getReader() {
         return OFOxmVer13.READER;
     }
@@ -1151,6 +1170,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1265,6 +1286,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1379,6 +1402,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case TUNNEL_ID:
+                return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
             default:
                 return null;
         }

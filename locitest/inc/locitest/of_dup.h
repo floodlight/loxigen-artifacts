@@ -1774,6 +1774,14 @@ extern of_oxm_tcp_src_masked_t *
     of_oxm_tcp_src_masked_dup(
         of_oxm_tcp_src_masked_t *src);
 
+extern of_oxm_tunnel_id_t *
+    of_oxm_tunnel_id_dup(
+        of_oxm_tunnel_id_t *src);
+
+extern of_oxm_tunnel_id_masked_t *
+    of_oxm_tunnel_id_masked_dup(
+        of_oxm_tunnel_id_masked_t *src);
+
 extern of_oxm_udp_dst_t *
     of_oxm_udp_dst_dup(
         of_oxm_udp_dst_t *src);
@@ -5989,6 +5997,14 @@ extern of_oxm_tcp_src_t *
 extern of_oxm_tcp_src_masked_t *
     of_oxm_tcp_src_masked_OF_VERSION_1_3_dup(
         of_oxm_tcp_src_masked_t *src);
+
+extern of_oxm_tunnel_id_t *
+    of_oxm_tunnel_id_OF_VERSION_1_3_dup(
+        of_oxm_tunnel_id_t *src);
+
+extern of_oxm_tunnel_id_masked_t *
+    of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(
+        of_oxm_tunnel_id_masked_t *src);
 
 extern of_oxm_udp_dst_t *
     of_oxm_udp_dst_OF_VERSION_1_3_dup(

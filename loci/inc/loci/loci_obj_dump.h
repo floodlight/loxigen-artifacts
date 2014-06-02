@@ -994,6 +994,8 @@ int of_oxm_tcp_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_ox
 int of_oxm_tcp_dst_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_masked_t *obj);
 int of_oxm_tcp_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_tcp_src_t *obj);
 int of_oxm_tcp_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_tcp_src_masked_t *obj);
+int of_oxm_tunnel_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_tunnel_id_t *obj);
+int of_oxm_tunnel_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_tunnel_id_masked_t *obj);
 int of_oxm_udp_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_udp_dst_t *obj);
 int of_oxm_udp_dst_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_udp_dst_masked_t *obj);
 int of_oxm_udp_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_udp_src_t *obj);

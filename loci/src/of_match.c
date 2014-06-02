@@ -119,6 +119,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -397,6 +401,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1447,6 +1455,27 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_mpls_tc_value_set(elt, src->fields.mpls_tc);
         }
     }
+    if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_TUNNEL_ID_EXACT_TEST(src)) {
+            of_oxm_tunnel_id_masked_t *elt;
+            elt = &oxm_entry.tunnel_id_masked;
+
+            of_oxm_tunnel_id_masked_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_tunnel_id_masked_value_set(elt,
+                   src->fields.tunnel_id);
+            of_oxm_tunnel_id_masked_value_mask_set(elt,
+                   src->masks.tunnel_id);
+        } else {  /* Active, but not masked */
+            of_oxm_tunnel_id_t *elt;
+            elt = &oxm_entry.tunnel_id;
+            of_oxm_tunnel_id_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_tunnel_id_value_set(elt, src->fields.tunnel_id);
+        }
+    }
     if (OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_TEST(src)) {
             of_oxm_bsn_in_ports_128_masked_t *elt;
@@ -2309,6 +2338,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_ipv6_nd_tll_value_get(
                 &oxm_entry.ipv6_nd_tll,
                 &dst->fields.ipv6_nd_tll);
+            break;
+
+        case OF_OXM_TUNNEL_ID_MASKED:
+            of_oxm_tunnel_id_masked_value_mask_get(
+                &oxm_entry.tunnel_id_masked,
+                &dst->masks.tunnel_id);
+            of_oxm_tunnel_id_masked_value_get(
+                &oxm_entry.tunnel_id,
+                &dst->fields.tunnel_id);
+            of_memmask(&dst->fields.tunnel_id, &dst->masks.tunnel_id, sizeof(&dst->fields.tunnel_id));
+            break;
+        case OF_OXM_TUNNEL_ID:
+            OF_MATCH_MASK_TUNNEL_ID_EXACT_SET(dst);
+            of_oxm_tunnel_id_value_get(
+                &oxm_entry.tunnel_id,
+                &dst->fields.tunnel_id);
             break;
 
         case OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED:

@@ -1139,6 +1139,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x80004702:
             *id = OF_OXM_MPLS_TC_MASKED;
             break;
+        case 0x80004c08:
+            *id = OF_OXM_TUNNEL_ID;
+            break;
+        case 0x80004d10:
+            *id = OF_OXM_TUNNEL_ID_MASKED;
+            break;
         default:
             *id = OF_OXM;
             break;

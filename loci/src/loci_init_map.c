@@ -452,6 +452,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_oxm_tcp_dst_masked_init,
     (of_object_init_f)of_oxm_tcp_src_init,
     (of_object_init_f)of_oxm_tcp_src_masked_init,
+    (of_object_init_f)of_oxm_tunnel_id_init,
+    (of_object_init_f)of_oxm_tunnel_id_masked_init,
     (of_object_init_f)of_oxm_udp_dst_init,
     (of_object_init_f)of_oxm_udp_dst_masked_init,
     (of_object_init_f)of_oxm_udp_src_init,

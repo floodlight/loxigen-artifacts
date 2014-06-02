@@ -57,6 +57,7 @@ typedef struct of_match_fields_s {
     of_mac_addr_t        ipv6_nd_tll;
     uint32_t             mpls_label;
     uint8_t              mpls_tc;
+    uint64_t             tunnel_id;
     of_bitmap_128_t      bsn_in_ports_128;
     uint32_t             bsn_lag_id;
     uint32_t             bsn_vrf;
@@ -482,6 +483,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_MAC_ADDR(&e_f->ipv6_nd_tll, &q_f->ipv6_nd_tll,
             &q_m->ipv6_nd_tll)) {
+        return 0;
+    }
+
+    /* Mask and values for tunnel_id */
+    if (!OF_MORE_SPECIFIC_INT(e_m->tunnel_id, q_m->tunnel_id)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->tunnel_id, q_f->tunnel_id,
+            q_m->tunnel_id)) {
         return 0;
     }
 
@@ -931,6 +941,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for ipv6_nd_tll */
     if (!OF_OVERLAP_MAC_ADDR(&f1->ipv6_nd_tll, &f2->ipv6_nd_tll,
         &m2->ipv6_nd_tll, &m1->ipv6_nd_tll)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for tunnel_id */
+    if (!OF_OVERLAP_INT(f1->tunnel_id, f2->tunnel_id,
+        m2->tunnel_id, m1->tunnel_id)) {
         return 0; /* This field differentiates; all done */
     }
 
