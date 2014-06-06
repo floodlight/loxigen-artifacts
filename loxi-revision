@@ -1,1 +1,1 @@
-047e9c12739e1f63e11de602cf789295e9c4b3f2 Merge into master from pull request #277: java_gen.PrimitiveSinkUtils - add putNullableTo (https://github.com/floodlight/loxigen/pull/277)
+ed09bfe4d391f4dbddffa36746b218ed3f5682c1 Merge into master from pull request #278: java_gen.PrimitiveSinkUtils: add support for putting nullable Strings, better support for null (https://github.com/floodlight/loxigen/pull/278)
