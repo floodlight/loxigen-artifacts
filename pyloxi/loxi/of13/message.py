@@ -7557,7 +7557,8 @@ class bsn_table_set_buckets_size(bsn_header):
         packed.append(struct.pack("!L", self.xid))
         packed.append(struct.pack("!L", self.experimenter))
         packed.append(struct.pack("!L", self.subtype))
-        packed.append(struct.pack("!H", self.table_id))
+        packed.append('\x00' * 1)
+        packed.append(struct.pack("!B", self.table_id))
         packed.append('\x00' * 2)
         packed.append(struct.pack("!L", self.buckets_size))
         length = sum([len(x) for x in packed])
@@ -7579,7 +7580,8 @@ class bsn_table_set_buckets_size(bsn_header):
         assert(_experimenter == 6035143)
         _subtype = reader.read("!L")[0]
         assert(_subtype == 61)
-        obj.table_id = reader.read("!H")[0]
+        reader.skip(1)
+        obj.table_id = reader.read("!B")[0]
         reader.skip(2)
         obj.buckets_size = reader.read("!L")[0]
         return obj

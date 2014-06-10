@@ -18592,7 +18592,7 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_dump(loci_writer_f writer, void* co
 {
     int out = 0;
     uint32_t val32;
-    uint16_t val16;
+    uint8_t val8;
 
     out += writer(cookie, "Object of type of_bsn_table_set_buckets_size\n");
 
@@ -18611,9 +18611,9 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_dump(loci_writer_f writer, void* co
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_bsn_table_set_buckets_size_table_id_get(obj, &val16);
-    out += writer(cookie, "  table_id (uint16_t):  ");
-    out += LOCI_DUMP_u16(writer, cookie, val16);
+    of_bsn_table_set_buckets_size_table_id_get(obj, &val8);
+    out += writer(cookie, "  table_id (uint8_t):  ");
+    out += LOCI_DUMP_u8(writer, cookie, val8);
     out += writer(cookie, "\n");
 
     of_bsn_table_set_buckets_size_buckets_size_get(obj, &val32);

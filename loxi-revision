@@ -1,1 +1,1 @@
-b082bcd13a0bb8270df593d3ae468b95450a55a5 Merge into master from pull request #279: wireshark: improve dissection in case of missing segments (https://github.com/floodlight/loxigen/pull/279)
+7b7c3619cf68d3654b301cc92efd4341cddfe323 Merge into master from pull request #280: bsn_flow_checksum: change table_id type to 8 bits for consistency (https://github.com/floodlight/loxigen/pull/280)

@@ -13638,10 +13638,10 @@ extern void of_bsn_table_set_buckets_size_subtype_get(
 
 extern void of_bsn_table_set_buckets_size_table_id_set(
     of_bsn_table_set_buckets_size_t *obj,
-    uint16_t table_id);
+    uint8_t table_id);
 extern void of_bsn_table_set_buckets_size_table_id_get(
     of_bsn_table_set_buckets_size_t *obj,
-    uint16_t *table_id);
+    uint8_t *table_id);
 
 extern void of_bsn_table_set_buckets_size_buckets_size_set(
     of_bsn_table_set_buckets_size_t *obj,

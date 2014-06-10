@@ -37,12 +37,12 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
     final static int LENGTH = 24;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static int DEFAULT_TABLE_ID = 0x0;
+        private final static TableId DEFAULT_TABLE_ID = TableId.ALL;
         private final static long DEFAULT_BUCKETS_SIZE = 0x0L;
 
     // OF message fields
     private final long xid;
-    private final int tableId;
+    private final TableId tableId;
     private final long bucketsSize;
 //
     // Immutable default instance
@@ -51,7 +51,7 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnTableSetBucketsSizeVer13(long xid, int tableId, long bucketsSize) {
+    OFBsnTableSetBucketsSizeVer13(long xid, TableId tableId, long bucketsSize) {
         this.xid = xid;
         this.tableId = tableId;
         this.bucketsSize = bucketsSize;
@@ -84,7 +84,7 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
     }
 
     @Override
-    public int getTableId() {
+    public TableId getTableId() {
         return tableId;
     }
 
@@ -106,7 +106,7 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private TableId tableId;
         private boolean bucketsSizeSet;
         private long bucketsSize;
 
@@ -146,12 +146,12 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
     }
 
     @Override
-    public int getTableId() {
+    public TableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnTableSetBucketsSize.Builder setTableId(int tableId) {
+    public OFBsnTableSetBucketsSize.Builder setTableId(TableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -172,7 +172,9 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
         @Override
         public OFBsnTableSetBucketsSize build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                int tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                TableId tableId = this.tableIdSet ? this.tableId : parentMessage.tableId;
+                if(tableId == null)
+                    throw new NullPointerException("Property tableId must not be null");
                 long bucketsSize = this.bucketsSizeSet ? this.bucketsSize : parentMessage.bucketsSize;
 
                 //
@@ -190,7 +192,7 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
         private boolean xidSet;
         private long xid;
         private boolean tableIdSet;
-        private int tableId;
+        private TableId tableId;
         private boolean bucketsSizeSet;
         private long bucketsSize;
 
@@ -226,12 +228,12 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
     }
 
     @Override
-    public int getTableId() {
+    public TableId getTableId() {
         return tableId;
     }
 
     @Override
-    public OFBsnTableSetBucketsSize.Builder setTableId(int tableId) {
+    public OFBsnTableSetBucketsSize.Builder setTableId(TableId tableId) {
         this.tableId = tableId;
         this.tableIdSet = true;
         return this;
@@ -251,7 +253,9 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
         @Override
         public OFBsnTableSetBucketsSize build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            int tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            TableId tableId = this.tableIdSet ? this.tableId : DEFAULT_TABLE_ID;
+            if(tableId == null)
+                throw new NullPointerException("Property tableId must not be null");
             long bucketsSize = this.bucketsSizeSet ? this.bucketsSize : DEFAULT_BUCKETS_SIZE;
 
 
@@ -297,7 +301,9 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
             int subtype = bb.readInt();
             if(subtype != 0x3d)
                 throw new OFParseError("Wrong subtype: Expected=0x3dL(0x3dL), got="+subtype);
-            int tableId = U16.f(bb.readShort());
+            // pad: 1 bytes
+            bb.skipBytes(1);
+            TableId tableId = TableId.readByte(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             long bucketsSize = U32.f(bb.readInt());
@@ -333,7 +339,8 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
             sink.putInt(0x5c16c7);
             // fixed value property subtype = 0x3dL
             sink.putInt(0x3d);
-            sink.putInt(message.tableId);
+            // skip pad (1 bytes)
+            message.tableId.putTo(sink);
             // skip pad (2 bytes)
             sink.putLong(message.bucketsSize);
         }
@@ -359,7 +366,9 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
             bb.writeInt(0x5c16c7);
             // fixed value property subtype = 0x3dL
             bb.writeInt(0x3d);
-            bb.writeShort(U16.t(message.tableId));
+            // pad: 1 bytes
+            bb.writeZero(1);
+            message.tableId.writeByte(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             bb.writeInt(U32.t(message.bucketsSize));
@@ -392,7 +401,10 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
 
         if( xid != other.xid)
             return false;
-        if( tableId != other.tableId)
+        if (tableId == null) {
+            if (other.tableId != null)
+                return false;
+        } else if (!tableId.equals(other.tableId))
             return false;
         if( bucketsSize != other.bucketsSize)
             return false;
@@ -405,7 +417,7 @@ class OFBsnTableSetBucketsSizeVer13 implements OFBsnTableSetBucketsSize {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime * result + tableId;
+        result = prime * result + ((tableId == null) ? 0 : tableId.hashCode());
         result = prime *  (int) (bucketsSize ^ (bucketsSize >>> 32));
         return result;
     }

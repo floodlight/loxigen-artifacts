@@ -9107,13 +9107,13 @@ of_bsn_table_set_buckets_size_subtype_set(
  * Get table_id from an object of type of_bsn_table_set_buckets_size.
  * @param obj Pointer to an object of type of_bsn_table_set_buckets_size.
  * @param table_id Pointer to the child object of type
- * uint16_t to be filled out.
+ * uint8_t to be filled out.
  *
  */
 void
 of_bsn_table_set_buckets_size_table_id_get(
     of_bsn_table_set_buckets_size_t *obj,
-    uint16_t *table_id)
+    uint8_t *table_id)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -9128,7 +9128,7 @@ of_bsn_table_set_buckets_size_table_id_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
-        offset = 16;
+        offset = 17;
         break;
     default:
         LOCI_ASSERT(0);
@@ -9136,7 +9136,7 @@ of_bsn_table_set_buckets_size_table_id_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_get(wbuf, abs_offset, table_id);
+    of_wire_buffer_u8_get(wbuf, abs_offset, table_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -9151,7 +9151,7 @@ of_bsn_table_set_buckets_size_table_id_get(
 void
 of_bsn_table_set_buckets_size_table_id_set(
     of_bsn_table_set_buckets_size_t *obj,
-    uint16_t table_id)
+    uint8_t table_id)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -9166,7 +9166,7 @@ of_bsn_table_set_buckets_size_table_id_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
-        offset = 16;
+        offset = 17;
         break;
     default:
         LOCI_ASSERT(0);
@@ -9174,7 +9174,7 @@ of_bsn_table_set_buckets_size_table_id_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u16_set(wbuf, abs_offset, table_id);
+    of_wire_buffer_u8_set(wbuf, abs_offset, table_id);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

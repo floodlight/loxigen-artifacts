@@ -23473,7 +23473,7 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_dup(
 {
     of_bsn_table_set_buckets_size_t *dst;
     uint32_t val32;
-    uint16_t val16;
+    uint8_t val8;
 
     if ((dst = of_bsn_table_set_buckets_size_new(src->version)) == NULL) {
         return NULL;
@@ -23488,8 +23488,8 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_dup(
     of_bsn_table_set_buckets_size_subtype_get(src, &val32);
     of_bsn_table_set_buckets_size_subtype_set(dst, val32);
 
-    of_bsn_table_set_buckets_size_table_id_get(src, &val16);
-    of_bsn_table_set_buckets_size_table_id_set(dst, val16);
+    of_bsn_table_set_buckets_size_table_id_get(src, &val8);
+    of_bsn_table_set_buckets_size_table_id_set(dst, val8);
 
     of_bsn_table_set_buckets_size_buckets_size_get(src, &val32);
     of_bsn_table_set_buckets_size_buckets_size_set(dst, val32);

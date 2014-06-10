@@ -2482,8 +2482,8 @@ typedef struct of_bsn_table_checksum_stats_request_s of_bsn_table_checksum_stats
  *   are of type of_bsn_table_set_buckets_size_uint32_get_f and _set_f.
  *
  * @param table_id_get/set ( OF_1_3).
- *   Accessors for table_id, a variable of type uint16.  Functions
- *   are of type of_bsn_table_set_buckets_size_uint16_get_f and _set_f.
+ *   Accessors for table_id, a variable of type uint8.  Functions
+ *   are of type of_bsn_table_set_buckets_size_uint8_get_f and _set_f.
  *
  * @param buckets_size_get/set ( OF_1_3).
  *   Accessors for buckets_size, a variable of type uint32.  Functions

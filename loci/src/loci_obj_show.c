@@ -17416,7 +17416,7 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 {
     int out = 0;
     uint32_t val32;
-    uint16_t val16;
+    uint8_t val8;
 
     of_bsn_table_set_buckets_size_xid_get(obj, &val32);
     out += writer(cookie, "xid=");
@@ -17433,9 +17433,9 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* co
     out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_bsn_table_set_buckets_size_table_id_get(obj, &val16);
+    of_bsn_table_set_buckets_size_table_id_get(obj, &val8);
     out += writer(cookie, "table_id=");
-    out += LOCI_SHOW_u16_table_id(writer, cookie, val16);
+    out += LOCI_SHOW_u8_table_id(writer, cookie, val8);
     out += writer(cookie, " ");
 
     of_bsn_table_set_buckets_size_buckets_size_get(obj, &val32);
