@@ -1,1 +1,1 @@
-7b7c3619cf68d3654b301cc92efd4341cddfe323 Merge into master from pull request #280: bsn_flow_checksum: change table_id type to 8 bits for consistency (https://github.com/floodlight/loxigen/pull/280)
+c8f68f067a7e49da5a1dd512456a089d626c3c27 Merge into master from pull request #282: Bump version number (https://github.com/floodlight/loxigen/pull/282)
