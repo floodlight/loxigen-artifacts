@@ -1,1 +1,1 @@
-4648c6f6bc38ba2d0d44b6446d8dc825b2e1dae0 Merge into master from pull request #286: loci: remove minimum wire buffer allocation size (https://github.com/floodlight/loxigen/pull/286)
+dd9c2f3b010914f40ec42e7ee3c39dd454f1c73a Merge into master from pull request #285: LOXI-59: IPAdddress hould have a factory function for InetAddress (https://github.com/floodlight/loxigen/pull/285)
