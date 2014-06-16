@@ -30,6 +30,7 @@ public interface OFBsnVportL2Gre extends OFObject, OFBsnVport {
     int getType();
     Set<OFBsnVportL2GreFlags> getFlags();
     OFPort getPortNo();
+    OFPort getLoopbackPortNo();
     MacAddress getLocalMac();
     MacAddress getNhMac();
     IPv4Address getSrcIp();
@@ -50,6 +51,8 @@ public interface OFBsnVportL2Gre extends OFObject, OFBsnVport {
         Builder setFlags(Set<OFBsnVportL2GreFlags> flags);
         OFPort getPortNo();
         Builder setPortNo(OFPort portNo);
+        OFPort getLoopbackPortNo();
+        Builder setLoopbackPortNo(OFPort loopbackPortNo);
         MacAddress getLocalMac();
         Builder setLocalMac(MacAddress localMac);
         MacAddress getNhMac();

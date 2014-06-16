@@ -1,1 +1,1 @@
-dd9c2f3b010914f40ec42e7ee3c39dd454f1c73a Merge into master from pull request #285: LOXI-59: IPAdddress hould have a factory function for InetAddress (https://github.com/floodlight/loxigen/pull/285)
+d421394c0f231ec63a4863ecec5abfccf16a6a7b Merge into master from pull request #281: Add loopback port to l2gre vport. (https://github.com/floodlight/loxigen/pull/281)

@@ -3304,6 +3304,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bs
     out += LOCI_SHOW_port_no_port_no(writer, cookie, port_no);
     out += writer(cookie, " ");
 
+    of_bsn_vport_l2gre_loopback_port_no_get(obj, &port_no);
+    out += writer(cookie, "loopback_port_no=");
+    out += LOCI_SHOW_port_no_loopback_port_no(writer, cookie, port_no);
+    out += writer(cookie, " ");
+
     of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
     out += writer(cookie, "local_mac=");
     out += LOCI_SHOW_mac_local_mac(writer, cookie, mac_addr);
@@ -7382,6 +7387,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bs
     of_bsn_vport_l2gre_port_no_get(obj, &port_no);
     out += writer(cookie, "port_no=");
     out += LOCI_SHOW_port_no_port_no(writer, cookie, port_no);
+    out += writer(cookie, " ");
+
+    of_bsn_vport_l2gre_loopback_port_no_get(obj, &port_no);
+    out += writer(cookie, "loopback_port_no=");
+    out += LOCI_SHOW_port_no_loopback_port_no(writer, cookie, port_no);
     out += writer(cookie, " ");
 
     of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
@@ -11867,6 +11877,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bs
     of_bsn_vport_l2gre_port_no_get(obj, &port_no);
     out += writer(cookie, "port_no=");
     out += LOCI_SHOW_port_no_port_no(writer, cookie, port_no);
+    out += writer(cookie, " ");
+
+    of_bsn_vport_l2gre_loopback_port_no_get(obj, &port_no);
+    out += writer(cookie, "loopback_port_no=");
+    out += LOCI_SHOW_port_no_loopback_port_no(writer, cookie, port_no);
     out += writer(cookie, " ");
 
     of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);
@@ -21542,6 +21557,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
     of_bsn_vport_l2gre_port_no_get(obj, &port_no);
     out += writer(cookie, "port_no=");
     out += LOCI_SHOW_port_no_port_no(writer, cookie, port_no);
+    out += writer(cookie, " ");
+
+    of_bsn_vport_l2gre_loopback_port_no_get(obj, &port_no);
+    out += writer(cookie, "loopback_port_no=");
+    out += LOCI_SHOW_port_no_loopback_port_no(writer, cookie, port_no);
     out += writer(cookie, " ");
 
     of_bsn_vport_l2gre_local_mac_get(obj, &mac_addr);

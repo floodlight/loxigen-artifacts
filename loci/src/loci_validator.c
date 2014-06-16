@@ -2963,15 +2963,15 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_0(uint8_t *data, i
 static int
 loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
 {
-    if (len < 54) {
+    if (len < 56) {
         return -1;
     }
 
-    len = 54;
+    len = 56;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 54) {
+    if (wire_len > len || wire_len < 56) {
         return -1;
     }
 
@@ -6323,15 +6323,15 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_1(uint8_t *data, i
 static int
 loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
 {
-    if (len < 56) {
+    if (len < 60) {
         return -1;
     }
 
-    len = 56;
+    len = 60;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 56) {
+    if (wire_len > len || wire_len < 60) {
         return -1;
     }
 
@@ -10216,15 +10216,15 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_2(uint8_t *data, i
 static int
 loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
 {
-    if (len < 56) {
+    if (len < 60) {
         return -1;
     }
 
-    len = 56;
+    len = 60;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 56) {
+    if (wire_len > len || wire_len < 60) {
         return -1;
     }
 
@@ -19356,15 +19356,15 @@ loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(uint8_t *data, in
 static int
 loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
-    if (len < 56) {
+    if (len < 60) {
         return -1;
     }
 
-    len = 56;
+    len = 60;
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 56) {
+    if (wire_len > len || wire_len < 60) {
         return -1;
     }
 

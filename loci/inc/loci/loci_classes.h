@@ -17529,6 +17529,13 @@ extern void of_bsn_vport_l2gre_port_no_get(
     of_bsn_vport_l2gre_t *obj,
     of_port_no_t *port_no);
 
+extern void of_bsn_vport_l2gre_loopback_port_no_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_no_t loopback_port_no);
+extern void of_bsn_vport_l2gre_loopback_port_no_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_no_t *loopback_port_no);
+
 extern void of_bsn_vport_l2gre_local_mac_set(
     of_bsn_vport_l2gre_t *obj,
     of_mac_addr_t local_mac);

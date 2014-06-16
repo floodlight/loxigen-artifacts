@@ -3765,7 +3765,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_0_scalar(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_0);
-    TEST_ASSERT(obj->length == 54);
+    TEST_ASSERT(obj->length == 56);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -3779,7 +3779,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_0_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 54);
+        TEST_ASSERT(length == 56);
     }
 
     /* Set up incrementing values for scalar members */
@@ -8443,7 +8443,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_1_scalar(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->length == 60);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -8457,7 +8457,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_1_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 56);
+        TEST_ASSERT(length == 60);
     }
 
     /* Set up incrementing values for scalar members */
@@ -13371,7 +13371,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_2_scalar(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->length == 60);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -13385,7 +13385,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_2_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 56);
+        TEST_ASSERT(length == 60);
     }
 
     /* Set up incrementing values for scalar members */
@@ -27054,7 +27054,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_3_scalar(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->length == 60);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -27068,7 +27068,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_3_scalar(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 56);
+        TEST_ASSERT(length == 60);
     }
 
     /* Set up incrementing values for scalar members */

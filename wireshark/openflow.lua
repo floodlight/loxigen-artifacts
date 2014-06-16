@@ -189,6 +189,7 @@ local enum_v1_ofp_bsn_vport_l2gre_flags = {
     [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
 }
 
 local enum_v1_ofp_flow_wildcards = {
@@ -496,6 +497,7 @@ local enum_v2_ofp_bsn_vport_l2gre_flags = {
     [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
 }
 
 local enum_v2_ofp_flow_wildcards = {
@@ -887,6 +889,7 @@ local enum_v3_ofp_bsn_vport_l2gre_flags = {
     [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
 }
 
 local enum_v3_ofp_flow_removed_reason = {
@@ -1414,6 +1417,7 @@ local enum_v4_ofp_bsn_vport_l2gre_flags = {
     [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
 }
 
 local enum_v4_ofp_ipv6exthdr_flags = {
@@ -2256,6 +2260,7 @@ fields['of10.bsn_vport_l2gre.type'] = ProtoField.uint16("of10.bsn_vport_l2gre.ty
 fields['of10.bsn_vport_l2gre.length'] = ProtoField.uint16("of10.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of10.bsn_vport_l2gre.flags'] = ProtoField.uint32("of10.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v1_ofp_bsn_vport_l2gre_flags)
 fields['of10.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of10.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.loopback_port_no'] = ProtoField.uint32("of10.bsn_vport_l2gre.loopback_port_no", "loopback_port_no", base.DEC, nil)
 fields['of10.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of10.bsn_vport_l2gre.local_mac", "local_mac")
 fields['of10.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of10.bsn_vport_l2gre.nh_mac", "nh_mac")
 fields['of10.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of10.bsn_vport_l2gre.src_ip", "src_ip")
@@ -3055,6 +3060,7 @@ fields['of11.bsn_vport_l2gre.type'] = ProtoField.uint16("of11.bsn_vport_l2gre.ty
 fields['of11.bsn_vport_l2gre.length'] = ProtoField.uint16("of11.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of11.bsn_vport_l2gre.flags'] = ProtoField.uint32("of11.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v2_ofp_bsn_vport_l2gre_flags)
 fields['of11.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of11.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.loopback_port_no'] = ProtoField.uint32("of11.bsn_vport_l2gre.loopback_port_no", "loopback_port_no", base.DEC, nil)
 fields['of11.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of11.bsn_vport_l2gre.local_mac", "local_mac")
 fields['of11.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of11.bsn_vport_l2gre.nh_mac", "nh_mac")
 fields['of11.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of11.bsn_vport_l2gre.src_ip", "src_ip")
@@ -3969,6 +3975,7 @@ fields['of12.bsn_vport_l2gre.type'] = ProtoField.uint16("of12.bsn_vport_l2gre.ty
 fields['of12.bsn_vport_l2gre.length'] = ProtoField.uint16("of12.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of12.bsn_vport_l2gre.flags'] = ProtoField.uint32("of12.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v3_ofp_bsn_vport_l2gre_flags)
 fields['of12.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of12.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.loopback_port_no'] = ProtoField.uint32("of12.bsn_vport_l2gre.loopback_port_no", "loopback_port_no", base.DEC, nil)
 fields['of12.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of12.bsn_vport_l2gre.local_mac", "local_mac")
 fields['of12.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of12.bsn_vport_l2gre.nh_mac", "nh_mac")
 fields['of12.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of12.bsn_vport_l2gre.src_ip", "src_ip")
@@ -5862,6 +5869,7 @@ fields['of13.bsn_vport_l2gre.type'] = ProtoField.uint16("of13.bsn_vport_l2gre.ty
 fields['of13.bsn_vport_l2gre.length'] = ProtoField.uint16("of13.bsn_vport_l2gre.length", "length", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.flags'] = ProtoField.uint32("of13.bsn_vport_l2gre.flags", "flags", base.HEX, enum_v4_ofp_bsn_vport_l2gre_flags)
 fields['of13.bsn_vport_l2gre.port_no'] = ProtoField.uint32("of13.bsn_vport_l2gre.port_no", "port_no", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.loopback_port_no'] = ProtoField.uint32("of13.bsn_vport_l2gre.loopback_port_no", "loopback_port_no", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.local_mac'] = ProtoField.ether("of13.bsn_vport_l2gre.local_mac", "local_mac")
 fields['of13.bsn_vport_l2gre.nh_mac'] = ProtoField.ether("of13.bsn_vport_l2gre.nh_mac", "nh_mac")
 fields['of13.bsn_vport_l2gre.src_ip'] = ProtoField.ipv4("of13.bsn_vport_l2gre.src_ip", "src_ip")
@@ -7442,6 +7450,7 @@ p_of.fields = {
     fields['of10.bsn_vport_l2gre.length'],
     fields['of10.bsn_vport_l2gre.flags'],
     fields['of10.bsn_vport_l2gre.port_no'],
+    fields['of10.bsn_vport_l2gre.loopback_port_no'],
     fields['of10.bsn_vport_l2gre.local_mac'],
     fields['of10.bsn_vport_l2gre.nh_mac'],
     fields['of10.bsn_vport_l2gre.src_ip'],
@@ -8241,6 +8250,7 @@ p_of.fields = {
     fields['of11.bsn_vport_l2gre.length'],
     fields['of11.bsn_vport_l2gre.flags'],
     fields['of11.bsn_vport_l2gre.port_no'],
+    fields['of11.bsn_vport_l2gre.loopback_port_no'],
     fields['of11.bsn_vport_l2gre.local_mac'],
     fields['of11.bsn_vport_l2gre.nh_mac'],
     fields['of11.bsn_vport_l2gre.src_ip'],
@@ -9155,6 +9165,7 @@ p_of.fields = {
     fields['of12.bsn_vport_l2gre.length'],
     fields['of12.bsn_vport_l2gre.flags'],
     fields['of12.bsn_vport_l2gre.port_no'],
+    fields['of12.bsn_vport_l2gre.loopback_port_no'],
     fields['of12.bsn_vport_l2gre.local_mac'],
     fields['of12.bsn_vport_l2gre.nh_mac'],
     fields['of12.bsn_vport_l2gre.src_ip'],
@@ -11048,6 +11059,7 @@ p_of.fields = {
     fields['of13.bsn_vport_l2gre.length'],
     fields['of13.bsn_vport_l2gre.flags'],
     fields['of13.bsn_vport_l2gre.port_no'],
+    fields['of13.bsn_vport_l2gre.loopback_port_no'],
     fields['of13.bsn_vport_l2gre.local_mac'],
     fields['of13.bsn_vport_l2gre.nh_mac'],
     fields['of13.bsn_vport_l2gre.src_ip'],
@@ -13204,6 +13216,7 @@ function dissect_of_bsn_vport_l2gre_v1(reader, subtree)
     read_uint16_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.length')
     read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.flags')
     read_of_port_no_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.port_no')
+    read_of_port_no_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.loopback_port_no')
     read_of_mac_addr_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.local_mac')
     read_of_mac_addr_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.nh_mac')
     read_of_ipv4_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.src_ip')
@@ -14895,6 +14908,7 @@ function dissect_of_bsn_vport_l2gre_v2(reader, subtree)
     read_uint16_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.length')
     read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.flags')
     read_of_port_no_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.port_no')
+    read_of_port_no_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.loopback_port_no')
     read_of_mac_addr_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.local_mac')
     read_of_mac_addr_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.nh_mac')
     read_of_ipv4_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.src_ip')
@@ -16807,6 +16821,7 @@ function dissect_of_bsn_vport_l2gre_v3(reader, subtree)
     read_uint16_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.length')
     read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.flags')
     read_of_port_no_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.port_no')
+    read_of_port_no_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.loopback_port_no')
     read_of_mac_addr_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.local_mac')
     read_of_mac_addr_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.nh_mac')
     read_of_ipv4_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.src_ip')
@@ -21415,6 +21430,7 @@ function dissect_of_bsn_vport_l2gre_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.length')
     read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.flags')
     read_of_port_no_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.port_no')
+    read_of_port_no_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.loopback_port_no')
     read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.local_mac')
     read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.nh_mac')
     read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.src_ip')

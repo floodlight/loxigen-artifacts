@@ -27,5 +27,6 @@ import org.projectfloodlight.openflow.exceptions.*;
 public enum OFBsnVportL2GreFlags {
      BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID,
      BSN_VPORT_L2GRE_DSCP_ASSIGN,
-     BSN_VPORT_L2GRE_DSCP_COPY;
+     BSN_VPORT_L2GRE_DSCP_COPY,
+     BSN_VPORT_L2GRE_LOOPBACK_IS_VALID;
 }

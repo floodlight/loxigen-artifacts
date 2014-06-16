@@ -4002,6 +4002,95 @@ of_bsn_vport_l2gre_port_no_set(
 }
 
 /**
+ * Get loopback_port_no from an object of type of_bsn_vport_l2gre.
+ * @param obj Pointer to an object of type of_bsn_vport_l2gre.
+ * @param loopback_port_no Pointer to the child object of type
+ * of_port_no_t to be filled out.
+ *
+ */
+void
+of_bsn_vport_l2gre_loopback_port_no_get(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_no_t *loopback_port_no)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_0:
+        offset = 10;
+        break;
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 12;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_port_no_get(ver, wbuf, abs_offset, loopback_port_no);
+    OF_PORT_NO_VALUE_CHECK(*loopback_port_no, ver);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set loopback_port_no in an object of type of_bsn_vport_l2gre.
+ * @param obj Pointer to an object of type of_bsn_vport_l2gre.
+ * @param loopback_port_no The value to write into the object
+ */
+void
+of_bsn_vport_l2gre_loopback_port_no_set(
+    of_bsn_vport_l2gre_t *obj,
+    of_port_no_t loopback_port_no)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_0:
+        offset = 10;
+        break;
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 12;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_port_no_set(ver, wbuf, abs_offset, loopback_port_no);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
  * Get local_mac from an object of type of_bsn_vport_l2gre.
  * @param obj Pointer to an object of type of_bsn_vport_l2gre.
  * @param local_mac Pointer to the child object of type
@@ -4026,12 +4115,12 @@ of_bsn_vport_l2gre_local_mac_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 10;
+        offset = 12;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 12;
+        offset = 16;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4069,12 +4158,12 @@ of_bsn_vport_l2gre_local_mac_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 10;
+        offset = 12;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 12;
+        offset = 16;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4114,12 +4203,12 @@ of_bsn_vport_l2gre_nh_mac_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 16;
+        offset = 18;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 18;
+        offset = 22;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4157,12 +4246,12 @@ of_bsn_vport_l2gre_nh_mac_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 16;
+        offset = 18;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 18;
+        offset = 22;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4202,12 +4291,12 @@ of_bsn_vport_l2gre_src_ip_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 22;
+        offset = 24;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 24;
+        offset = 28;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4245,12 +4334,12 @@ of_bsn_vport_l2gre_src_ip_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 22;
+        offset = 24;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 24;
+        offset = 28;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4290,12 +4379,12 @@ of_bsn_vport_l2gre_dst_ip_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 26;
+        offset = 28;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 28;
+        offset = 32;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4333,12 +4422,12 @@ of_bsn_vport_l2gre_dst_ip_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 26;
+        offset = 28;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 28;
+        offset = 32;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4378,12 +4467,12 @@ of_bsn_vport_l2gre_dscp_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 30;
+        offset = 32;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 32;
+        offset = 36;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4421,12 +4510,12 @@ of_bsn_vport_l2gre_dscp_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 30;
+        offset = 32;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 32;
+        offset = 36;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4466,12 +4555,12 @@ of_bsn_vport_l2gre_ttl_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 31;
+        offset = 33;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 33;
+        offset = 37;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4509,12 +4598,12 @@ of_bsn_vport_l2gre_ttl_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 31;
+        offset = 33;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 33;
+        offset = 37;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4554,12 +4643,12 @@ of_bsn_vport_l2gre_vpn_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 34;
+        offset = 36;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 36;
+        offset = 40;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4597,12 +4686,12 @@ of_bsn_vport_l2gre_vpn_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 34;
+        offset = 36;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 36;
+        offset = 40;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4642,12 +4731,12 @@ of_bsn_vport_l2gre_if_name_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 38;
+        offset = 40;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 40;
+        offset = 44;
         break;
     default:
         LOCI_ASSERT(0);
@@ -4685,12 +4774,12 @@ of_bsn_vport_l2gre_if_name_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 38;
+        offset = 40;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 40;
+        offset = 44;
         break;
     default:
         LOCI_ASSERT(0);

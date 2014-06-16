@@ -35,10 +35,11 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnVportL2GreVer10.class);
     // version: 1.0
     final static byte WIRE_VERSION = 1;
-    final static int LENGTH = 54;
+    final static int LENGTH = 56;
 
         private final static Set<OFBsnVportL2GreFlags> DEFAULT_FLAGS = ImmutableSet.<OFBsnVportL2GreFlags>of();
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
+        private final static OFPort DEFAULT_LOOPBACK_PORT_NO = OFPort.ANY;
         private final static MacAddress DEFAULT_LOCAL_MAC = MacAddress.NONE;
         private final static MacAddress DEFAULT_NH_MAC = MacAddress.NONE;
         private final static IPv4Address DEFAULT_SRC_IP = IPv4Address.NONE;
@@ -51,6 +52,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
     // OF message fields
     private final Set<OFBsnVportL2GreFlags> flags;
     private final OFPort portNo;
+    private final OFPort loopbackPortNo;
     private final MacAddress localMac;
     private final MacAddress nhMac;
     private final IPv4Address srcIp;
@@ -62,13 +64,14 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
 //
     // Immutable default instance
     final static OFBsnVportL2GreVer10 DEFAULT = new OFBsnVportL2GreVer10(
-        DEFAULT_FLAGS, DEFAULT_PORT_NO, DEFAULT_LOCAL_MAC, DEFAULT_NH_MAC, DEFAULT_SRC_IP, DEFAULT_DST_IP, DEFAULT_DSCP, DEFAULT_TTL, DEFAULT_VPN, DEFAULT_IF_NAME
+        DEFAULT_FLAGS, DEFAULT_PORT_NO, DEFAULT_LOOPBACK_PORT_NO, DEFAULT_LOCAL_MAC, DEFAULT_NH_MAC, DEFAULT_SRC_IP, DEFAULT_DST_IP, DEFAULT_DSCP, DEFAULT_TTL, DEFAULT_VPN, DEFAULT_IF_NAME
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnVportL2GreVer10(Set<OFBsnVportL2GreFlags> flags, OFPort portNo, MacAddress localMac, MacAddress nhMac, IPv4Address srcIp, IPv4Address dstIp, short dscp, short ttl, long vpn, String ifName) {
+    OFBsnVportL2GreVer10(Set<OFBsnVportL2GreFlags> flags, OFPort portNo, OFPort loopbackPortNo, MacAddress localMac, MacAddress nhMac, IPv4Address srcIp, IPv4Address dstIp, short dscp, short ttl, long vpn, String ifName) {
         this.flags = flags;
         this.portNo = portNo;
+        this.loopbackPortNo = loopbackPortNo;
         this.localMac = localMac;
         this.nhMac = nhMac;
         this.srcIp = srcIp;
@@ -93,6 +96,11 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
     @Override
     public OFPort getPortNo() {
         return portNo;
+    }
+
+    @Override
+    public OFPort getLoopbackPortNo() {
+        return loopbackPortNo;
     }
 
     @Override
@@ -154,6 +162,8 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
         private Set<OFBsnVportL2GreFlags> flags;
         private boolean portNoSet;
         private OFPort portNo;
+        private boolean loopbackPortNoSet;
+        private OFPort loopbackPortNo;
         private boolean localMacSet;
         private MacAddress localMac;
         private boolean nhMacSet;
@@ -200,6 +210,17 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
     public OFBsnVportL2Gre.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getLoopbackPortNo() {
+        return loopbackPortNo;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setLoopbackPortNo(OFPort loopbackPortNo) {
+        this.loopbackPortNo = loopbackPortNo;
+        this.loopbackPortNoSet = true;
         return this;
     }
     @Override
@@ -305,6 +326,9 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
                 OFPort portNo = this.portNoSet ? this.portNo : parentMessage.portNo;
                 if(portNo == null)
                     throw new NullPointerException("Property portNo must not be null");
+                OFPort loopbackPortNo = this.loopbackPortNoSet ? this.loopbackPortNo : parentMessage.loopbackPortNo;
+                if(loopbackPortNo == null)
+                    throw new NullPointerException("Property loopbackPortNo must not be null");
                 MacAddress localMac = this.localMacSet ? this.localMac : parentMessage.localMac;
                 if(localMac == null)
                     throw new NullPointerException("Property localMac must not be null");
@@ -328,6 +352,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
                 return new OFBsnVportL2GreVer10(
                     flags,
                     portNo,
+                    loopbackPortNo,
                     localMac,
                     nhMac,
                     srcIp,
@@ -347,6 +372,8 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
         private Set<OFBsnVportL2GreFlags> flags;
         private boolean portNoSet;
         private OFPort portNo;
+        private boolean loopbackPortNoSet;
+        private OFPort loopbackPortNo;
         private boolean localMacSet;
         private MacAddress localMac;
         private boolean nhMacSet;
@@ -389,6 +416,17 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
     public OFBsnVportL2Gre.Builder setPortNo(OFPort portNo) {
         this.portNo = portNo;
         this.portNoSet = true;
+        return this;
+    }
+    @Override
+    public OFPort getLoopbackPortNo() {
+        return loopbackPortNo;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setLoopbackPortNo(OFPort loopbackPortNo) {
+        this.loopbackPortNo = loopbackPortNo;
+        this.loopbackPortNoSet = true;
         return this;
     }
     @Override
@@ -493,6 +531,9 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
             OFPort portNo = this.portNoSet ? this.portNo : DEFAULT_PORT_NO;
             if(portNo == null)
                 throw new NullPointerException("Property portNo must not be null");
+            OFPort loopbackPortNo = this.loopbackPortNoSet ? this.loopbackPortNo : DEFAULT_LOOPBACK_PORT_NO;
+            if(loopbackPortNo == null)
+                throw new NullPointerException("Property loopbackPortNo must not be null");
             MacAddress localMac = this.localMacSet ? this.localMac : DEFAULT_LOCAL_MAC;
             if(localMac == null)
                 throw new NullPointerException("Property localMac must not be null");
@@ -516,6 +557,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
             return new OFBsnVportL2GreVer10(
                     flags,
                     portNo,
+                    loopbackPortNo,
                     localMac,
                     nhMac,
                     srcIp,
@@ -540,8 +582,8 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
             if(type != (short) 0x1)
                 throw new OFParseError("Wrong type: Expected=0x1(0x1), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 54)
-                throw new OFParseError("Wrong length: Expected=54(54), got="+length);
+            if(length != 56)
+                throw new OFParseError("Wrong length: Expected=56(56), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -551,6 +593,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
                 logger.trace("readFrom - length={}", length);
             Set<OFBsnVportL2GreFlags> flags = OFBsnVportL2GreFlagsSerializerVer10.readFrom(bb);
             OFPort portNo = OFPort.read2Bytes(bb);
+            OFPort loopbackPortNo = OFPort.read2Bytes(bb);
             MacAddress localMac = MacAddress.read6Bytes(bb);
             MacAddress nhMac = MacAddress.read6Bytes(bb);
             IPv4Address srcIp = IPv4Address.read4Bytes(bb);
@@ -565,6 +608,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
             OFBsnVportL2GreVer10 bsnVportL2GreVer10 = new OFBsnVportL2GreVer10(
                     flags,
                       portNo,
+                      loopbackPortNo,
                       localMac,
                       nhMac,
                       srcIp,
@@ -591,10 +635,11 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
         public void funnel(OFBsnVportL2GreVer10 message, PrimitiveSink sink) {
             // fixed value property type = 0x1
             sink.putShort((short) 0x1);
-            // fixed value property length = 54
-            sink.putShort((short) 0x36);
+            // fixed value property length = 56
+            sink.putShort((short) 0x38);
             OFBsnVportL2GreFlagsSerializerVer10.putTo(message.flags, sink);
             message.portNo.putTo(sink);
+            message.loopbackPortNo.putTo(sink);
             message.localMac.putTo(sink);
             message.nhMac.putTo(sink);
             message.srcIp.putTo(sink);
@@ -618,10 +663,11 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
         public void write(ChannelBuffer bb, OFBsnVportL2GreVer10 message) {
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);
-            // fixed value property length = 54
-            bb.writeShort((short) 0x36);
+            // fixed value property length = 56
+            bb.writeShort((short) 0x38);
             OFBsnVportL2GreFlagsSerializerVer10.writeTo(bb, message.flags);
             message.portNo.write2Bytes(bb);
+            message.loopbackPortNo.write2Bytes(bb);
             message.localMac.write6Bytes(bb);
             message.nhMac.write6Bytes(bb);
             message.srcIp.write4Bytes(bb);
@@ -643,6 +689,8 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
         b.append("flags=").append(flags);
         b.append(", ");
         b.append("portNo=").append(portNo);
+        b.append(", ");
+        b.append("loopbackPortNo=").append(loopbackPortNo);
         b.append(", ");
         b.append("localMac=").append(localMac);
         b.append(", ");
@@ -682,6 +730,11 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
             if (other.portNo != null)
                 return false;
         } else if (!portNo.equals(other.portNo))
+            return false;
+        if (loopbackPortNo == null) {
+            if (other.loopbackPortNo != null)
+                return false;
+        } else if (!loopbackPortNo.equals(other.loopbackPortNo))
             return false;
         if (localMac == null) {
             if (other.localMac != null)
@@ -724,6 +777,7 @@ class OFBsnVportL2GreVer10 implements OFBsnVportL2Gre {
 
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((portNo == null) ? 0 : portNo.hashCode());
+        result = prime * result + ((loopbackPortNo == null) ? 0 : loopbackPortNo.hashCode());
         result = prime * result + ((localMac == null) ? 0 : localMac.hashCode());
         result = prime * result + ((nhMac == null) ? 0 : nhMac.hashCode());
         result = prime * result + ((srcIp == null) ? 0 : srcIp.hashCode());

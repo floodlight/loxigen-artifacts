@@ -4128,6 +4128,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
     of_bsn_vport_l2gre_port_no_get(src, &port_no);
     of_bsn_vport_l2gre_port_no_set(dst, port_no);
 
+    of_bsn_vport_l2gre_loopback_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_loopback_port_no_set(dst, port_no);
+
     of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
     of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
 
@@ -9485,6 +9488,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
 
     of_bsn_vport_l2gre_port_no_get(src, &port_no);
     of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_loopback_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_loopback_port_no_set(dst, port_no);
 
     of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
     of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
@@ -15368,6 +15374,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
 
     of_bsn_vport_l2gre_port_no_get(src, &port_no);
     of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_loopback_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_loopback_port_no_set(dst, port_no);
 
     of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
     of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
@@ -29456,6 +29465,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
 
     of_bsn_vport_l2gre_port_no_get(src, &port_no);
     of_bsn_vport_l2gre_port_no_set(dst, port_no);
+
+    of_bsn_vport_l2gre_loopback_port_no_get(src, &port_no);
+    of_bsn_vport_l2gre_loopback_port_no_set(dst, port_no);
 
     of_bsn_vport_l2gre_local_mac_get(src, &mac_addr);
     of_bsn_vport_l2gre_local_mac_set(dst, mac_addr);
