@@ -1492,1259 +1492,900 @@ extern void of_object_delete(of_object_t *obj);
  * New operator declarations
  *
  * _new: Create a new object for writing; includes init
- * _new_from_message: Create a new instance of the object and bind the
- *    message data to the object
  * _init: Initialize and optionally allocate buffer space for an
  *    automatic instance
  *
- * _new and _from_message require a delete operation to be called
- * on the object.
+ * _new and requires a delete operation to be called on the object.
  *
  ****************************************************************/
 
 extern of_aggregate_stats_reply_t *
     of_aggregate_stats_reply_new(of_version_t version);
-extern of_aggregate_stats_reply_t *
-    of_aggregate_stats_reply_new_from_message(of_message_t msg);
 extern void of_aggregate_stats_reply_init(
     of_aggregate_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_aggregate_stats_request_t *
     of_aggregate_stats_request_new(of_version_t version);
-extern of_aggregate_stats_request_t *
-    of_aggregate_stats_request_new_from_message(of_message_t msg);
 extern void of_aggregate_stats_request_init(
     of_aggregate_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_async_get_reply_t *
     of_async_get_reply_new(of_version_t version);
-extern of_async_get_reply_t *
-    of_async_get_reply_new_from_message(of_message_t msg);
 extern void of_async_get_reply_init(
     of_async_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_async_get_request_t *
     of_async_get_request_new(of_version_t version);
-extern of_async_get_request_t *
-    of_async_get_request_new_from_message(of_message_t msg);
 extern void of_async_get_request_init(
     of_async_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_async_set_t *
     of_async_set_new(of_version_t version);
-extern of_async_set_t *
-    of_async_set_new_from_message(of_message_t msg);
 extern void of_async_set_init(
     of_async_set_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bad_action_error_msg_t *
     of_bad_action_error_msg_new(of_version_t version);
-extern of_bad_action_error_msg_t *
-    of_bad_action_error_msg_new_from_message(of_message_t msg);
 extern void of_bad_action_error_msg_init(
     of_bad_action_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bad_instruction_error_msg_t *
     of_bad_instruction_error_msg_new(of_version_t version);
-extern of_bad_instruction_error_msg_t *
-    of_bad_instruction_error_msg_new_from_message(of_message_t msg);
 extern void of_bad_instruction_error_msg_init(
     of_bad_instruction_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bad_match_error_msg_t *
     of_bad_match_error_msg_new(of_version_t version);
-extern of_bad_match_error_msg_t *
-    of_bad_match_error_msg_new_from_message(of_message_t msg);
 extern void of_bad_match_error_msg_init(
     of_bad_match_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bad_request_error_msg_t *
     of_bad_request_error_msg_new(of_version_t version);
-extern of_bad_request_error_msg_t *
-    of_bad_request_error_msg_new_from_message(of_message_t msg);
 extern void of_bad_request_error_msg_init(
     of_bad_request_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_barrier_reply_t *
     of_barrier_reply_new(of_version_t version);
-extern of_barrier_reply_t *
-    of_barrier_reply_new_from_message(of_message_t msg);
 extern void of_barrier_reply_init(
     of_barrier_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_barrier_request_t *
     of_barrier_request_new(of_version_t version);
-extern of_barrier_request_t *
-    of_barrier_request_new_from_message(of_message_t msg);
 extern void of_barrier_request_init(
     of_barrier_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_arp_idle_t *
     of_bsn_arp_idle_new(of_version_t version);
-extern of_bsn_arp_idle_t *
-    of_bsn_arp_idle_new_from_message(of_message_t msg);
 extern void of_bsn_arp_idle_init(
     of_bsn_arp_idle_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_clear_data_reply_t *
     of_bsn_bw_clear_data_reply_new(of_version_t version);
-extern of_bsn_bw_clear_data_reply_t *
-    of_bsn_bw_clear_data_reply_new_from_message(of_message_t msg);
 extern void of_bsn_bw_clear_data_reply_init(
     of_bsn_bw_clear_data_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_clear_data_request_t *
     of_bsn_bw_clear_data_request_new(of_version_t version);
-extern of_bsn_bw_clear_data_request_t *
-    of_bsn_bw_clear_data_request_new_from_message(of_message_t msg);
 extern void of_bsn_bw_clear_data_request_init(
     of_bsn_bw_clear_data_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_enable_get_reply_t *
     of_bsn_bw_enable_get_reply_new(of_version_t version);
-extern of_bsn_bw_enable_get_reply_t *
-    of_bsn_bw_enable_get_reply_new_from_message(of_message_t msg);
 extern void of_bsn_bw_enable_get_reply_init(
     of_bsn_bw_enable_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_enable_get_request_t *
     of_bsn_bw_enable_get_request_new(of_version_t version);
-extern of_bsn_bw_enable_get_request_t *
-    of_bsn_bw_enable_get_request_new_from_message(of_message_t msg);
 extern void of_bsn_bw_enable_get_request_init(
     of_bsn_bw_enable_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_enable_set_reply_t *
     of_bsn_bw_enable_set_reply_new(of_version_t version);
-extern of_bsn_bw_enable_set_reply_t *
-    of_bsn_bw_enable_set_reply_new_from_message(of_message_t msg);
 extern void of_bsn_bw_enable_set_reply_init(
     of_bsn_bw_enable_set_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_bw_enable_set_request_t *
     of_bsn_bw_enable_set_request_new(of_version_t version);
-extern of_bsn_bw_enable_set_request_t *
-    of_bsn_bw_enable_set_request_new_from_message(of_message_t msg);
 extern void of_bsn_bw_enable_set_request_init(
     of_bsn_bw_enable_set_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_controller_connections_reply_t *
     of_bsn_controller_connections_reply_new(of_version_t version);
-extern of_bsn_controller_connections_reply_t *
-    of_bsn_controller_connections_reply_new_from_message(of_message_t msg);
 extern void of_bsn_controller_connections_reply_init(
     of_bsn_controller_connections_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_controller_connections_request_t *
     of_bsn_controller_connections_request_new(of_version_t version);
-extern of_bsn_controller_connections_request_t *
-    of_bsn_controller_connections_request_new_from_message(of_message_t msg);
 extern void of_bsn_controller_connections_request_init(
     of_bsn_controller_connections_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_debug_counter_desc_stats_reply_t *
     of_bsn_debug_counter_desc_stats_reply_new(of_version_t version);
-extern of_bsn_debug_counter_desc_stats_reply_t *
-    of_bsn_debug_counter_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_debug_counter_desc_stats_reply_init(
     of_bsn_debug_counter_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_debug_counter_desc_stats_request_t *
     of_bsn_debug_counter_desc_stats_request_new(of_version_t version);
-extern of_bsn_debug_counter_desc_stats_request_t *
-    of_bsn_debug_counter_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_debug_counter_desc_stats_request_init(
     of_bsn_debug_counter_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_debug_counter_stats_reply_t *
     of_bsn_debug_counter_stats_reply_new(of_version_t version);
-extern of_bsn_debug_counter_stats_reply_t *
-    of_bsn_debug_counter_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_debug_counter_stats_reply_init(
     of_bsn_debug_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_debug_counter_stats_request_t *
     of_bsn_debug_counter_stats_request_new(of_version_t version);
-extern of_bsn_debug_counter_stats_request_t *
-    of_bsn_debug_counter_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_debug_counter_stats_request_init(
     of_bsn_debug_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_checksum_bucket_stats_reply_t *
     of_bsn_flow_checksum_bucket_stats_reply_new(of_version_t version);
-extern of_bsn_flow_checksum_bucket_stats_reply_t *
-    of_bsn_flow_checksum_bucket_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_flow_checksum_bucket_stats_reply_init(
     of_bsn_flow_checksum_bucket_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_checksum_bucket_stats_request_t *
     of_bsn_flow_checksum_bucket_stats_request_new(of_version_t version);
-extern of_bsn_flow_checksum_bucket_stats_request_t *
-    of_bsn_flow_checksum_bucket_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_flow_checksum_bucket_stats_request_init(
     of_bsn_flow_checksum_bucket_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_idle_t *
     of_bsn_flow_idle_new(of_version_t version);
-extern of_bsn_flow_idle_t *
-    of_bsn_flow_idle_new_from_message(of_message_t msg);
 extern void of_bsn_flow_idle_init(
     of_bsn_flow_idle_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_idle_enable_get_reply_t *
     of_bsn_flow_idle_enable_get_reply_new(of_version_t version);
-extern of_bsn_flow_idle_enable_get_reply_t *
-    of_bsn_flow_idle_enable_get_reply_new_from_message(of_message_t msg);
 extern void of_bsn_flow_idle_enable_get_reply_init(
     of_bsn_flow_idle_enable_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_idle_enable_get_request_t *
     of_bsn_flow_idle_enable_get_request_new(of_version_t version);
-extern of_bsn_flow_idle_enable_get_request_t *
-    of_bsn_flow_idle_enable_get_request_new_from_message(of_message_t msg);
 extern void of_bsn_flow_idle_enable_get_request_init(
     of_bsn_flow_idle_enable_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_idle_enable_set_reply_t *
     of_bsn_flow_idle_enable_set_reply_new(of_version_t version);
-extern of_bsn_flow_idle_enable_set_reply_t *
-    of_bsn_flow_idle_enable_set_reply_new_from_message(of_message_t msg);
 extern void of_bsn_flow_idle_enable_set_reply_init(
     of_bsn_flow_idle_enable_set_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_flow_idle_enable_set_request_t *
     of_bsn_flow_idle_enable_set_request_new(of_version_t version);
-extern of_bsn_flow_idle_enable_set_request_t *
-    of_bsn_flow_idle_enable_set_request_new_from_message(of_message_t msg);
 extern void of_bsn_flow_idle_enable_set_request_init(
     of_bsn_flow_idle_enable_set_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_bucket_stats_reply_t *
     of_bsn_gentable_bucket_stats_reply_new(of_version_t version);
-extern of_bsn_gentable_bucket_stats_reply_t *
-    of_bsn_gentable_bucket_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_bucket_stats_reply_init(
     of_bsn_gentable_bucket_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_bucket_stats_request_t *
     of_bsn_gentable_bucket_stats_request_new(of_version_t version);
-extern of_bsn_gentable_bucket_stats_request_t *
-    of_bsn_gentable_bucket_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_bucket_stats_request_init(
     of_bsn_gentable_bucket_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_clear_reply_t *
     of_bsn_gentable_clear_reply_new(of_version_t version);
-extern of_bsn_gentable_clear_reply_t *
-    of_bsn_gentable_clear_reply_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_clear_reply_init(
     of_bsn_gentable_clear_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_clear_request_t *
     of_bsn_gentable_clear_request_new(of_version_t version);
-extern of_bsn_gentable_clear_request_t *
-    of_bsn_gentable_clear_request_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_clear_request_init(
     of_bsn_gentable_clear_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_desc_stats_reply_t *
     of_bsn_gentable_desc_stats_reply_new(of_version_t version);
-extern of_bsn_gentable_desc_stats_reply_t *
-    of_bsn_gentable_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_desc_stats_reply_init(
     of_bsn_gentable_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_desc_stats_request_t *
     of_bsn_gentable_desc_stats_request_new(of_version_t version);
-extern of_bsn_gentable_desc_stats_request_t *
-    of_bsn_gentable_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_desc_stats_request_init(
     of_bsn_gentable_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_entry_add_t *
     of_bsn_gentable_entry_add_new(of_version_t version);
-extern of_bsn_gentable_entry_add_t *
-    of_bsn_gentable_entry_add_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_entry_add_init(
     of_bsn_gentable_entry_add_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_entry_delete_t *
     of_bsn_gentable_entry_delete_new(of_version_t version);
-extern of_bsn_gentable_entry_delete_t *
-    of_bsn_gentable_entry_delete_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_entry_delete_init(
     of_bsn_gentable_entry_delete_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_entry_desc_stats_reply_t *
     of_bsn_gentable_entry_desc_stats_reply_new(of_version_t version);
-extern of_bsn_gentable_entry_desc_stats_reply_t *
-    of_bsn_gentable_entry_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_entry_desc_stats_reply_init(
     of_bsn_gentable_entry_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_entry_desc_stats_request_t *
     of_bsn_gentable_entry_desc_stats_request_new(of_version_t version);
-extern of_bsn_gentable_entry_desc_stats_request_t *
-    of_bsn_gentable_entry_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_entry_desc_stats_request_init(
     of_bsn_gentable_entry_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_entry_stats_reply_t *
     of_bsn_gentable_entry_stats_reply_new(of_version_t version);
-extern of_bsn_gentable_entry_stats_reply_t *
-    of_bsn_gentable_entry_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_entry_stats_reply_init(
     of_bsn_gentable_entry_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_entry_stats_request_t *
     of_bsn_gentable_entry_stats_request_new(of_version_t version);
-extern of_bsn_gentable_entry_stats_request_t *
-    of_bsn_gentable_entry_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_entry_stats_request_init(
     of_bsn_gentable_entry_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_set_buckets_size_t *
     of_bsn_gentable_set_buckets_size_new(of_version_t version);
-extern of_bsn_gentable_set_buckets_size_t *
-    of_bsn_gentable_set_buckets_size_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_set_buckets_size_init(
     of_bsn_gentable_set_buckets_size_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_stats_reply_t *
     of_bsn_gentable_stats_reply_new(of_version_t version);
-extern of_bsn_gentable_stats_reply_t *
-    of_bsn_gentable_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_stats_reply_init(
     of_bsn_gentable_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_gentable_stats_request_t *
     of_bsn_gentable_stats_request_new(of_version_t version);
-extern of_bsn_gentable_stats_request_t *
-    of_bsn_gentable_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_gentable_stats_request_init(
     of_bsn_gentable_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_interfaces_reply_t *
     of_bsn_get_interfaces_reply_new(of_version_t version);
-extern of_bsn_get_interfaces_reply_t *
-    of_bsn_get_interfaces_reply_new_from_message(of_message_t msg);
 extern void of_bsn_get_interfaces_reply_init(
     of_bsn_get_interfaces_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_interfaces_request_t *
     of_bsn_get_interfaces_request_new(of_version_t version);
-extern of_bsn_get_interfaces_request_t *
-    of_bsn_get_interfaces_request_new_from_message(of_message_t msg);
 extern void of_bsn_get_interfaces_request_init(
     of_bsn_get_interfaces_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_ip_mask_reply_t *
     of_bsn_get_ip_mask_reply_new(of_version_t version);
-extern of_bsn_get_ip_mask_reply_t *
-    of_bsn_get_ip_mask_reply_new_from_message(of_message_t msg);
 extern void of_bsn_get_ip_mask_reply_init(
     of_bsn_get_ip_mask_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_ip_mask_request_t *
     of_bsn_get_ip_mask_request_new(of_version_t version);
-extern of_bsn_get_ip_mask_request_t *
-    of_bsn_get_ip_mask_request_new_from_message(of_message_t msg);
 extern void of_bsn_get_ip_mask_request_init(
     of_bsn_get_ip_mask_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_l2_table_reply_t *
     of_bsn_get_l2_table_reply_new(of_version_t version);
-extern of_bsn_get_l2_table_reply_t *
-    of_bsn_get_l2_table_reply_new_from_message(of_message_t msg);
 extern void of_bsn_get_l2_table_reply_init(
     of_bsn_get_l2_table_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_l2_table_request_t *
     of_bsn_get_l2_table_request_new(of_version_t version);
-extern of_bsn_get_l2_table_request_t *
-    of_bsn_get_l2_table_request_new_from_message(of_message_t msg);
 extern void of_bsn_get_l2_table_request_init(
     of_bsn_get_l2_table_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_mirroring_reply_t *
     of_bsn_get_mirroring_reply_new(of_version_t version);
-extern of_bsn_get_mirroring_reply_t *
-    of_bsn_get_mirroring_reply_new_from_message(of_message_t msg);
 extern void of_bsn_get_mirroring_reply_init(
     of_bsn_get_mirroring_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_mirroring_request_t *
     of_bsn_get_mirroring_request_new(of_version_t version);
-extern of_bsn_get_mirroring_request_t *
-    of_bsn_get_mirroring_request_new_from_message(of_message_t msg);
 extern void of_bsn_get_mirroring_request_init(
     of_bsn_get_mirroring_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_switch_pipeline_reply_t *
     of_bsn_get_switch_pipeline_reply_new(of_version_t version);
-extern of_bsn_get_switch_pipeline_reply_t *
-    of_bsn_get_switch_pipeline_reply_new_from_message(of_message_t msg);
 extern void of_bsn_get_switch_pipeline_reply_init(
     of_bsn_get_switch_pipeline_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_get_switch_pipeline_request_t *
     of_bsn_get_switch_pipeline_request_new(of_version_t version);
-extern of_bsn_get_switch_pipeline_request_t *
-    of_bsn_get_switch_pipeline_request_new_from_message(of_message_t msg);
 extern void of_bsn_get_switch_pipeline_request_init(
     of_bsn_get_switch_pipeline_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_header_t *
     of_bsn_header_new(of_version_t version);
-extern of_bsn_header_t *
-    of_bsn_header_new_from_message(of_message_t msg);
 extern void of_bsn_header_init(
     of_bsn_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_hybrid_get_reply_t *
     of_bsn_hybrid_get_reply_new(of_version_t version);
-extern of_bsn_hybrid_get_reply_t *
-    of_bsn_hybrid_get_reply_new_from_message(of_message_t msg);
 extern void of_bsn_hybrid_get_reply_init(
     of_bsn_hybrid_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_hybrid_get_request_t *
     of_bsn_hybrid_get_request_new(of_version_t version);
-extern of_bsn_hybrid_get_request_t *
-    of_bsn_hybrid_get_request_new_from_message(of_message_t msg);
 extern void of_bsn_hybrid_get_request_init(
     of_bsn_hybrid_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_image_desc_stats_reply_t *
     of_bsn_image_desc_stats_reply_new(of_version_t version);
-extern of_bsn_image_desc_stats_reply_t *
-    of_bsn_image_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_image_desc_stats_reply_init(
     of_bsn_image_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_image_desc_stats_request_t *
     of_bsn_image_desc_stats_request_new(of_version_t version);
-extern of_bsn_image_desc_stats_request_t *
-    of_bsn_image_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_image_desc_stats_request_init(
     of_bsn_image_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_lacp_convergence_notif_t *
     of_bsn_lacp_convergence_notif_new(of_version_t version);
-extern of_bsn_lacp_convergence_notif_t *
-    of_bsn_lacp_convergence_notif_new_from_message(of_message_t msg);
 extern void of_bsn_lacp_convergence_notif_init(
     of_bsn_lacp_convergence_notif_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_lacp_stats_reply_t *
     of_bsn_lacp_stats_reply_new(of_version_t version);
-extern of_bsn_lacp_stats_reply_t *
-    of_bsn_lacp_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_lacp_stats_reply_init(
     of_bsn_lacp_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_lacp_stats_request_t *
     of_bsn_lacp_stats_request_new(of_version_t version);
-extern of_bsn_lacp_stats_request_t *
-    of_bsn_lacp_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_lacp_stats_request_init(
     of_bsn_lacp_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_pdu_rx_reply_t *
     of_bsn_pdu_rx_reply_new(of_version_t version);
-extern of_bsn_pdu_rx_reply_t *
-    of_bsn_pdu_rx_reply_new_from_message(of_message_t msg);
 extern void of_bsn_pdu_rx_reply_init(
     of_bsn_pdu_rx_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_pdu_rx_request_t *
     of_bsn_pdu_rx_request_new(of_version_t version);
-extern of_bsn_pdu_rx_request_t *
-    of_bsn_pdu_rx_request_new_from_message(of_message_t msg);
 extern void of_bsn_pdu_rx_request_init(
     of_bsn_pdu_rx_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_pdu_rx_timeout_t *
     of_bsn_pdu_rx_timeout_new(of_version_t version);
-extern of_bsn_pdu_rx_timeout_t *
-    of_bsn_pdu_rx_timeout_new_from_message(of_message_t msg);
 extern void of_bsn_pdu_rx_timeout_init(
     of_bsn_pdu_rx_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_pdu_tx_reply_t *
     of_bsn_pdu_tx_reply_new(of_version_t version);
-extern of_bsn_pdu_tx_reply_t *
-    of_bsn_pdu_tx_reply_new_from_message(of_message_t msg);
 extern void of_bsn_pdu_tx_reply_init(
     of_bsn_pdu_tx_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_pdu_tx_request_t *
     of_bsn_pdu_tx_request_new(of_version_t version);
-extern of_bsn_pdu_tx_request_t *
-    of_bsn_pdu_tx_request_new_from_message(of_message_t msg);
 extern void of_bsn_pdu_tx_request_init(
     of_bsn_pdu_tx_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_port_counter_stats_reply_t *
     of_bsn_port_counter_stats_reply_new(of_version_t version);
-extern of_bsn_port_counter_stats_reply_t *
-    of_bsn_port_counter_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_port_counter_stats_reply_init(
     of_bsn_port_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_port_counter_stats_request_t *
     of_bsn_port_counter_stats_request_new(of_version_t version);
-extern of_bsn_port_counter_stats_request_t *
-    of_bsn_port_counter_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_port_counter_stats_request_init(
     of_bsn_port_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_role_status_t *
     of_bsn_role_status_new(of_version_t version);
-extern of_bsn_role_status_t *
-    of_bsn_role_status_new_from_message(of_message_t msg);
 extern void of_bsn_role_status_init(
     of_bsn_role_status_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_aux_cxns_reply_t *
     of_bsn_set_aux_cxns_reply_new(of_version_t version);
-extern of_bsn_set_aux_cxns_reply_t *
-    of_bsn_set_aux_cxns_reply_new_from_message(of_message_t msg);
 extern void of_bsn_set_aux_cxns_reply_init(
     of_bsn_set_aux_cxns_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_aux_cxns_request_t *
     of_bsn_set_aux_cxns_request_new(of_version_t version);
-extern of_bsn_set_aux_cxns_request_t *
-    of_bsn_set_aux_cxns_request_new_from_message(of_message_t msg);
 extern void of_bsn_set_aux_cxns_request_init(
     of_bsn_set_aux_cxns_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_ip_mask_t *
     of_bsn_set_ip_mask_new(of_version_t version);
-extern of_bsn_set_ip_mask_t *
-    of_bsn_set_ip_mask_new_from_message(of_message_t msg);
 extern void of_bsn_set_ip_mask_init(
     of_bsn_set_ip_mask_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_l2_table_reply_t *
     of_bsn_set_l2_table_reply_new(of_version_t version);
-extern of_bsn_set_l2_table_reply_t *
-    of_bsn_set_l2_table_reply_new_from_message(of_message_t msg);
 extern void of_bsn_set_l2_table_reply_init(
     of_bsn_set_l2_table_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_l2_table_request_t *
     of_bsn_set_l2_table_request_new(of_version_t version);
-extern of_bsn_set_l2_table_request_t *
-    of_bsn_set_l2_table_request_new_from_message(of_message_t msg);
 extern void of_bsn_set_l2_table_request_init(
     of_bsn_set_l2_table_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_lacp_reply_t *
     of_bsn_set_lacp_reply_new(of_version_t version);
-extern of_bsn_set_lacp_reply_t *
-    of_bsn_set_lacp_reply_new_from_message(of_message_t msg);
 extern void of_bsn_set_lacp_reply_init(
     of_bsn_set_lacp_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_lacp_request_t *
     of_bsn_set_lacp_request_new(of_version_t version);
-extern of_bsn_set_lacp_request_t *
-    of_bsn_set_lacp_request_new_from_message(of_message_t msg);
 extern void of_bsn_set_lacp_request_init(
     of_bsn_set_lacp_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_mirroring_t *
     of_bsn_set_mirroring_new(of_version_t version);
-extern of_bsn_set_mirroring_t *
-    of_bsn_set_mirroring_new_from_message(of_message_t msg);
 extern void of_bsn_set_mirroring_init(
     of_bsn_set_mirroring_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_pktin_suppression_reply_t *
     of_bsn_set_pktin_suppression_reply_new(of_version_t version);
-extern of_bsn_set_pktin_suppression_reply_t *
-    of_bsn_set_pktin_suppression_reply_new_from_message(of_message_t msg);
 extern void of_bsn_set_pktin_suppression_reply_init(
     of_bsn_set_pktin_suppression_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_pktin_suppression_request_t *
     of_bsn_set_pktin_suppression_request_new(of_version_t version);
-extern of_bsn_set_pktin_suppression_request_t *
-    of_bsn_set_pktin_suppression_request_new_from_message(of_message_t msg);
 extern void of_bsn_set_pktin_suppression_request_init(
     of_bsn_set_pktin_suppression_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_switch_pipeline_reply_t *
     of_bsn_set_switch_pipeline_reply_new(of_version_t version);
-extern of_bsn_set_switch_pipeline_reply_t *
-    of_bsn_set_switch_pipeline_reply_new_from_message(of_message_t msg);
 extern void of_bsn_set_switch_pipeline_reply_init(
     of_bsn_set_switch_pipeline_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_set_switch_pipeline_request_t *
     of_bsn_set_switch_pipeline_request_new(of_version_t version);
-extern of_bsn_set_switch_pipeline_request_t *
-    of_bsn_set_switch_pipeline_request_new_from_message(of_message_t msg);
 extern void of_bsn_set_switch_pipeline_request_init(
     of_bsn_set_switch_pipeline_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_shell_command_t *
     of_bsn_shell_command_new(of_version_t version);
-extern of_bsn_shell_command_t *
-    of_bsn_shell_command_new_from_message(of_message_t msg);
 extern void of_bsn_shell_command_init(
     of_bsn_shell_command_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_shell_output_t *
     of_bsn_shell_output_new(of_version_t version);
-extern of_bsn_shell_output_t *
-    of_bsn_shell_output_new_from_message(of_message_t msg);
 extern void of_bsn_shell_output_init(
     of_bsn_shell_output_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_shell_status_t *
     of_bsn_shell_status_new(of_version_t version);
-extern of_bsn_shell_status_t *
-    of_bsn_shell_status_new_from_message(of_message_t msg);
 extern void of_bsn_shell_status_init(
     of_bsn_shell_status_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_stats_reply_t *
     of_bsn_stats_reply_new(of_version_t version);
-extern of_bsn_stats_reply_t *
-    of_bsn_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_stats_reply_init(
     of_bsn_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_stats_request_t *
     of_bsn_stats_request_new(of_version_t version);
-extern of_bsn_stats_request_t *
-    of_bsn_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_stats_request_init(
     of_bsn_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_switch_pipeline_stats_reply_t *
     of_bsn_switch_pipeline_stats_reply_new(of_version_t version);
-extern of_bsn_switch_pipeline_stats_reply_t *
-    of_bsn_switch_pipeline_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_switch_pipeline_stats_reply_init(
     of_bsn_switch_pipeline_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_switch_pipeline_stats_request_t *
     of_bsn_switch_pipeline_stats_request_new(of_version_t version);
-extern of_bsn_switch_pipeline_stats_request_t *
-    of_bsn_switch_pipeline_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_switch_pipeline_stats_request_init(
     of_bsn_switch_pipeline_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_table_checksum_stats_reply_t *
     of_bsn_table_checksum_stats_reply_new(of_version_t version);
-extern of_bsn_table_checksum_stats_reply_t *
-    of_bsn_table_checksum_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_table_checksum_stats_reply_init(
     of_bsn_table_checksum_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_table_checksum_stats_request_t *
     of_bsn_table_checksum_stats_request_new(of_version_t version);
-extern of_bsn_table_checksum_stats_request_t *
-    of_bsn_table_checksum_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_table_checksum_stats_request_init(
     of_bsn_table_checksum_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_table_set_buckets_size_t *
     of_bsn_table_set_buckets_size_new(of_version_t version);
-extern of_bsn_table_set_buckets_size_t *
-    of_bsn_table_set_buckets_size_new_from_message(of_message_t msg);
 extern void of_bsn_table_set_buckets_size_init(
     of_bsn_table_set_buckets_size_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_time_reply_t *
     of_bsn_time_reply_new(of_version_t version);
-extern of_bsn_time_reply_t *
-    of_bsn_time_reply_new_from_message(of_message_t msg);
 extern void of_bsn_time_reply_init(
     of_bsn_time_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_time_request_t *
     of_bsn_time_request_new(of_version_t version);
-extern of_bsn_time_request_t *
-    of_bsn_time_request_new_from_message(of_message_t msg);
 extern void of_bsn_time_request_init(
     of_bsn_time_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_virtual_port_create_reply_t *
     of_bsn_virtual_port_create_reply_new(of_version_t version);
-extern of_bsn_virtual_port_create_reply_t *
-    of_bsn_virtual_port_create_reply_new_from_message(of_message_t msg);
 extern void of_bsn_virtual_port_create_reply_init(
     of_bsn_virtual_port_create_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_virtual_port_create_request_t *
     of_bsn_virtual_port_create_request_new(of_version_t version);
-extern of_bsn_virtual_port_create_request_t *
-    of_bsn_virtual_port_create_request_new_from_message(of_message_t msg);
 extern void of_bsn_virtual_port_create_request_init(
     of_bsn_virtual_port_create_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_virtual_port_remove_reply_t *
     of_bsn_virtual_port_remove_reply_new(of_version_t version);
-extern of_bsn_virtual_port_remove_reply_t *
-    of_bsn_virtual_port_remove_reply_new_from_message(of_message_t msg);
 extern void of_bsn_virtual_port_remove_reply_init(
     of_bsn_virtual_port_remove_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_virtual_port_remove_request_t *
     of_bsn_virtual_port_remove_request_new(of_version_t version);
-extern of_bsn_virtual_port_remove_request_t *
-    of_bsn_virtual_port_remove_request_new_from_message(of_message_t msg);
 extern void of_bsn_virtual_port_remove_request_init(
     of_bsn_virtual_port_remove_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_vlan_counter_stats_reply_t *
     of_bsn_vlan_counter_stats_reply_new(of_version_t version);
-extern of_bsn_vlan_counter_stats_reply_t *
-    of_bsn_vlan_counter_stats_reply_new_from_message(of_message_t msg);
 extern void of_bsn_vlan_counter_stats_reply_init(
     of_bsn_vlan_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_vlan_counter_stats_request_t *
     of_bsn_vlan_counter_stats_request_new(of_version_t version);
-extern of_bsn_vlan_counter_stats_request_t *
-    of_bsn_vlan_counter_stats_request_new_from_message(of_message_t msg);
 extern void of_bsn_vlan_counter_stats_request_init(
     of_bsn_vlan_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_new(of_version_t version);
-extern of_desc_stats_reply_t *
-    of_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_desc_stats_reply_init(
     of_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_desc_stats_request_t *
     of_desc_stats_request_new(of_version_t version);
-extern of_desc_stats_request_t *
-    of_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_desc_stats_request_init(
     of_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_echo_reply_t *
     of_echo_reply_new(of_version_t version);
-extern of_echo_reply_t *
-    of_echo_reply_new_from_message(of_message_t msg);
 extern void of_echo_reply_init(
     of_echo_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_echo_request_t *
     of_echo_request_new(of_version_t version);
-extern of_echo_request_t *
-    of_echo_request_new_from_message(of_message_t msg);
 extern void of_echo_request_init(
     of_echo_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_error_msg_t *
     of_error_msg_new(of_version_t version);
-extern of_error_msg_t *
-    of_error_msg_new_from_message(of_message_t msg);
 extern void of_error_msg_init(
     of_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_experimenter_t *
     of_experimenter_new(of_version_t version);
-extern of_experimenter_t *
-    of_experimenter_new_from_message(of_message_t msg);
 extern void of_experimenter_init(
     of_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_experimenter_error_msg_t *
     of_experimenter_error_msg_new(of_version_t version);
-extern of_experimenter_error_msg_t *
-    of_experimenter_error_msg_new_from_message(of_message_t msg);
 extern void of_experimenter_error_msg_init(
     of_experimenter_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_experimenter_stats_reply_t *
     of_experimenter_stats_reply_new(of_version_t version);
-extern of_experimenter_stats_reply_t *
-    of_experimenter_stats_reply_new_from_message(of_message_t msg);
 extern void of_experimenter_stats_reply_init(
     of_experimenter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_experimenter_stats_request_t *
     of_experimenter_stats_request_new(of_version_t version);
-extern of_experimenter_stats_request_t *
-    of_experimenter_stats_request_new_from_message(of_message_t msg);
 extern void of_experimenter_stats_request_init(
     of_experimenter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_features_reply_t *
     of_features_reply_new(of_version_t version);
-extern of_features_reply_t *
-    of_features_reply_new_from_message(of_message_t msg);
 extern void of_features_reply_init(
     of_features_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_features_request_t *
     of_features_request_new(of_version_t version);
-extern of_features_request_t *
-    of_features_request_new_from_message(of_message_t msg);
 extern void of_features_request_init(
     of_features_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_add_t *
     of_flow_add_new(of_version_t version);
-extern of_flow_add_t *
-    of_flow_add_new_from_message(of_message_t msg);
 extern void of_flow_add_init(
     of_flow_add_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_delete_t *
     of_flow_delete_new(of_version_t version);
-extern of_flow_delete_t *
-    of_flow_delete_new_from_message(of_message_t msg);
 extern void of_flow_delete_init(
     of_flow_delete_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_delete_strict_t *
     of_flow_delete_strict_new(of_version_t version);
-extern of_flow_delete_strict_t *
-    of_flow_delete_strict_new_from_message(of_message_t msg);
 extern void of_flow_delete_strict_init(
     of_flow_delete_strict_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_mod_t *
     of_flow_mod_new(of_version_t version);
-extern of_flow_mod_t *
-    of_flow_mod_new_from_message(of_message_t msg);
 extern void of_flow_mod_init(
     of_flow_mod_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_mod_failed_error_msg_t *
     of_flow_mod_failed_error_msg_new(of_version_t version);
-extern of_flow_mod_failed_error_msg_t *
-    of_flow_mod_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_flow_mod_failed_error_msg_init(
     of_flow_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_modify_t *
     of_flow_modify_new(of_version_t version);
-extern of_flow_modify_t *
-    of_flow_modify_new_from_message(of_message_t msg);
 extern void of_flow_modify_init(
     of_flow_modify_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_modify_strict_t *
     of_flow_modify_strict_new(of_version_t version);
-extern of_flow_modify_strict_t *
-    of_flow_modify_strict_new_from_message(of_message_t msg);
 extern void of_flow_modify_strict_init(
     of_flow_modify_strict_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_removed_t *
     of_flow_removed_new(of_version_t version);
-extern of_flow_removed_t *
-    of_flow_removed_new_from_message(of_message_t msg);
 extern void of_flow_removed_init(
     of_flow_removed_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_stats_reply_t *
     of_flow_stats_reply_new(of_version_t version);
-extern of_flow_stats_reply_t *
-    of_flow_stats_reply_new_from_message(of_message_t msg);
 extern void of_flow_stats_reply_init(
     of_flow_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_stats_request_t *
     of_flow_stats_request_new(of_version_t version);
-extern of_flow_stats_request_t *
-    of_flow_stats_request_new_from_message(of_message_t msg);
 extern void of_flow_stats_request_init(
     of_flow_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_get_config_reply_t *
     of_get_config_reply_new(of_version_t version);
-extern of_get_config_reply_t *
-    of_get_config_reply_new_from_message(of_message_t msg);
 extern void of_get_config_reply_init(
     of_get_config_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_get_config_request_t *
     of_get_config_request_new(of_version_t version);
-extern of_get_config_request_t *
-    of_get_config_request_new_from_message(of_message_t msg);
 extern void of_get_config_request_init(
     of_get_config_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_add_t *
     of_group_add_new(of_version_t version);
-extern of_group_add_t *
-    of_group_add_new_from_message(of_message_t msg);
 extern void of_group_add_init(
     of_group_add_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_delete_t *
     of_group_delete_new(of_version_t version);
-extern of_group_delete_t *
-    of_group_delete_new_from_message(of_message_t msg);
 extern void of_group_delete_init(
     of_group_delete_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_desc_stats_reply_t *
     of_group_desc_stats_reply_new(of_version_t version);
-extern of_group_desc_stats_reply_t *
-    of_group_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_group_desc_stats_reply_init(
     of_group_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_desc_stats_request_t *
     of_group_desc_stats_request_new(of_version_t version);
-extern of_group_desc_stats_request_t *
-    of_group_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_group_desc_stats_request_init(
     of_group_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_features_stats_reply_t *
     of_group_features_stats_reply_new(of_version_t version);
-extern of_group_features_stats_reply_t *
-    of_group_features_stats_reply_new_from_message(of_message_t msg);
 extern void of_group_features_stats_reply_init(
     of_group_features_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_features_stats_request_t *
     of_group_features_stats_request_new(of_version_t version);
-extern of_group_features_stats_request_t *
-    of_group_features_stats_request_new_from_message(of_message_t msg);
 extern void of_group_features_stats_request_init(
     of_group_features_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_mod_t *
     of_group_mod_new(of_version_t version);
-extern of_group_mod_t *
-    of_group_mod_new_from_message(of_message_t msg);
 extern void of_group_mod_init(
     of_group_mod_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_mod_failed_error_msg_t *
     of_group_mod_failed_error_msg_new(of_version_t version);
-extern of_group_mod_failed_error_msg_t *
-    of_group_mod_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_group_mod_failed_error_msg_init(
     of_group_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_modify_t *
     of_group_modify_new(of_version_t version);
-extern of_group_modify_t *
-    of_group_modify_new_from_message(of_message_t msg);
 extern void of_group_modify_init(
     of_group_modify_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_stats_reply_t *
     of_group_stats_reply_new(of_version_t version);
-extern of_group_stats_reply_t *
-    of_group_stats_reply_new_from_message(of_message_t msg);
 extern void of_group_stats_reply_init(
     of_group_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_group_stats_request_t *
     of_group_stats_request_new(of_version_t version);
-extern of_group_stats_request_t *
-    of_group_stats_request_new_from_message(of_message_t msg);
 extern void of_group_stats_request_init(
     of_group_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_header_t *
     of_header_new(of_version_t version);
-extern of_header_t *
-    of_header_new_from_message(of_message_t msg);
 extern void of_header_init(
     of_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_hello_t *
     of_hello_new(of_version_t version);
-extern of_hello_t *
-    of_hello_new_from_message(of_message_t msg);
 extern void of_hello_init(
     of_hello_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_hello_failed_error_msg_t *
     of_hello_failed_error_msg_new(of_version_t version);
-extern of_hello_failed_error_msg_t *
-    of_hello_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_hello_failed_error_msg_init(
     of_hello_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_config_stats_reply_t *
     of_meter_config_stats_reply_new(of_version_t version);
-extern of_meter_config_stats_reply_t *
-    of_meter_config_stats_reply_new_from_message(of_message_t msg);
 extern void of_meter_config_stats_reply_init(
     of_meter_config_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_config_stats_request_t *
     of_meter_config_stats_request_new(of_version_t version);
-extern of_meter_config_stats_request_t *
-    of_meter_config_stats_request_new_from_message(of_message_t msg);
 extern void of_meter_config_stats_request_init(
     of_meter_config_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_features_stats_reply_t *
     of_meter_features_stats_reply_new(of_version_t version);
-extern of_meter_features_stats_reply_t *
-    of_meter_features_stats_reply_new_from_message(of_message_t msg);
 extern void of_meter_features_stats_reply_init(
     of_meter_features_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_features_stats_request_t *
     of_meter_features_stats_request_new(of_version_t version);
-extern of_meter_features_stats_request_t *
-    of_meter_features_stats_request_new_from_message(of_message_t msg);
 extern void of_meter_features_stats_request_init(
     of_meter_features_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_mod_t *
     of_meter_mod_new(of_version_t version);
-extern of_meter_mod_t *
-    of_meter_mod_new_from_message(of_message_t msg);
 extern void of_meter_mod_init(
     of_meter_mod_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_mod_failed_error_msg_t *
     of_meter_mod_failed_error_msg_new(of_version_t version);
-extern of_meter_mod_failed_error_msg_t *
-    of_meter_mod_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_meter_mod_failed_error_msg_init(
     of_meter_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_stats_reply_t *
     of_meter_stats_reply_new(of_version_t version);
-extern of_meter_stats_reply_t *
-    of_meter_stats_reply_new_from_message(of_message_t msg);
 extern void of_meter_stats_reply_init(
     of_meter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_meter_stats_request_t *
     of_meter_stats_request_new(of_version_t version);
-extern of_meter_stats_request_t *
-    of_meter_stats_request_new_from_message(of_message_t msg);
 extern void of_meter_stats_request_init(
     of_meter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_nicira_controller_role_reply_t *
     of_nicira_controller_role_reply_new(of_version_t version);
-extern of_nicira_controller_role_reply_t *
-    of_nicira_controller_role_reply_new_from_message(of_message_t msg);
 extern void of_nicira_controller_role_reply_init(
     of_nicira_controller_role_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_nicira_controller_role_request_t *
     of_nicira_controller_role_request_new(of_version_t version);
-extern of_nicira_controller_role_request_t *
-    of_nicira_controller_role_request_new_from_message(of_message_t msg);
 extern void of_nicira_controller_role_request_init(
     of_nicira_controller_role_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_nicira_header_t *
     of_nicira_header_new(of_version_t version);
-extern of_nicira_header_t *
-    of_nicira_header_new_from_message(of_message_t msg);
 extern void of_nicira_header_init(
     of_nicira_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_packet_in_t *
     of_packet_in_new(of_version_t version);
-extern of_packet_in_t *
-    of_packet_in_new_from_message(of_message_t msg);
 extern void of_packet_in_init(
     of_packet_in_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_packet_out_t *
     of_packet_out_new(of_version_t version);
-extern of_packet_out_t *
-    of_packet_out_new_from_message(of_message_t msg);
 extern void of_packet_out_init(
     of_packet_out_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_desc_stats_reply_t *
     of_port_desc_stats_reply_new(of_version_t version);
-extern of_port_desc_stats_reply_t *
-    of_port_desc_stats_reply_new_from_message(of_message_t msg);
 extern void of_port_desc_stats_reply_init(
     of_port_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_desc_stats_request_t *
     of_port_desc_stats_request_new(of_version_t version);
-extern of_port_desc_stats_request_t *
-    of_port_desc_stats_request_new_from_message(of_message_t msg);
 extern void of_port_desc_stats_request_init(
     of_port_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_mod_t *
     of_port_mod_new(of_version_t version);
-extern of_port_mod_t *
-    of_port_mod_new_from_message(of_message_t msg);
 extern void of_port_mod_init(
     of_port_mod_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_mod_failed_error_msg_t *
     of_port_mod_failed_error_msg_new(of_version_t version);
-extern of_port_mod_failed_error_msg_t *
-    of_port_mod_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_port_mod_failed_error_msg_init(
     of_port_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_stats_reply_t *
     of_port_stats_reply_new(of_version_t version);
-extern of_port_stats_reply_t *
-    of_port_stats_reply_new_from_message(of_message_t msg);
 extern void of_port_stats_reply_init(
     of_port_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_stats_request_t *
     of_port_stats_request_new(of_version_t version);
-extern of_port_stats_request_t *
-    of_port_stats_request_new_from_message(of_message_t msg);
 extern void of_port_stats_request_init(
     of_port_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_port_status_t *
     of_port_status_new(of_version_t version);
-extern of_port_status_t *
-    of_port_status_new_from_message(of_message_t msg);
 extern void of_port_status_init(
     of_port_status_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_queue_get_config_reply_t *
     of_queue_get_config_reply_new(of_version_t version);
-extern of_queue_get_config_reply_t *
-    of_queue_get_config_reply_new_from_message(of_message_t msg);
 extern void of_queue_get_config_reply_init(
     of_queue_get_config_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_queue_get_config_request_t *
     of_queue_get_config_request_new(of_version_t version);
-extern of_queue_get_config_request_t *
-    of_queue_get_config_request_new_from_message(of_message_t msg);
 extern void of_queue_get_config_request_init(
     of_queue_get_config_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_queue_op_failed_error_msg_t *
     of_queue_op_failed_error_msg_new(of_version_t version);
-extern of_queue_op_failed_error_msg_t *
-    of_queue_op_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_queue_op_failed_error_msg_init(
     of_queue_op_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_queue_stats_reply_t *
     of_queue_stats_reply_new(of_version_t version);
-extern of_queue_stats_reply_t *
-    of_queue_stats_reply_new_from_message(of_message_t msg);
 extern void of_queue_stats_reply_init(
     of_queue_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_queue_stats_request_t *
     of_queue_stats_request_new(of_version_t version);
-extern of_queue_stats_request_t *
-    of_queue_stats_request_new_from_message(of_message_t msg);
 extern void of_queue_stats_request_init(
     of_queue_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_role_reply_t *
     of_role_reply_new(of_version_t version);
-extern of_role_reply_t *
-    of_role_reply_new_from_message(of_message_t msg);
 extern void of_role_reply_init(
     of_role_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_role_request_t *
     of_role_request_new(of_version_t version);
-extern of_role_request_t *
-    of_role_request_new_from_message(of_message_t msg);
 extern void of_role_request_init(
     of_role_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_role_request_failed_error_msg_t *
     of_role_request_failed_error_msg_new(of_version_t version);
-extern of_role_request_failed_error_msg_t *
-    of_role_request_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_role_request_failed_error_msg_init(
     of_role_request_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_set_config_t *
     of_set_config_new(of_version_t version);
-extern of_set_config_t *
-    of_set_config_new_from_message(of_message_t msg);
 extern void of_set_config_init(
     of_set_config_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_stats_reply_t *
     of_stats_reply_new(of_version_t version);
-extern of_stats_reply_t *
-    of_stats_reply_new_from_message(of_message_t msg);
 extern void of_stats_reply_init(
     of_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_stats_request_t *
     of_stats_request_new(of_version_t version);
-extern of_stats_request_t *
-    of_stats_request_new_from_message(of_message_t msg);
 extern void of_stats_request_init(
     of_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_switch_config_failed_error_msg_t *
     of_switch_config_failed_error_msg_new(of_version_t version);
-extern of_switch_config_failed_error_msg_t *
-    of_switch_config_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_switch_config_failed_error_msg_init(
     of_switch_config_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_features_failed_error_msg_t *
     of_table_features_failed_error_msg_new(of_version_t version);
-extern of_table_features_failed_error_msg_t *
-    of_table_features_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_table_features_failed_error_msg_init(
     of_table_features_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_features_stats_reply_t *
     of_table_features_stats_reply_new(of_version_t version);
-extern of_table_features_stats_reply_t *
-    of_table_features_stats_reply_new_from_message(of_message_t msg);
 extern void of_table_features_stats_reply_init(
     of_table_features_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_features_stats_request_t *
     of_table_features_stats_request_new(of_version_t version);
-extern of_table_features_stats_request_t *
-    of_table_features_stats_request_new_from_message(of_message_t msg);
 extern void of_table_features_stats_request_init(
     of_table_features_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_mod_t *
     of_table_mod_new(of_version_t version);
-extern of_table_mod_t *
-    of_table_mod_new_from_message(of_message_t msg);
 extern void of_table_mod_init(
     of_table_mod_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_mod_failed_error_msg_t *
     of_table_mod_failed_error_msg_new(of_version_t version);
-extern of_table_mod_failed_error_msg_t *
-    of_table_mod_failed_error_msg_new_from_message(of_message_t msg);
 extern void of_table_mod_failed_error_msg_init(
     of_table_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_stats_reply_t *
     of_table_stats_reply_new(of_version_t version);
-extern of_table_stats_reply_t *
-    of_table_stats_reply_new_from_message(of_message_t msg);
 extern void of_table_stats_reply_init(
     of_table_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_stats_request_t *
     of_table_stats_request_new(of_version_t version);
-extern of_table_stats_request_t *
-    of_table_stats_request_new_from_message(of_message_t msg);
 extern void of_table_stats_request_init(
     of_table_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 

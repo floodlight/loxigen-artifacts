@@ -117,12 +117,18 @@ test_match_3(void)
     of_match_t match2;
     int value = 1;
     of_octets_t octets;
+    of_object_storage_t storage;
+    memset(&storage, 0, sizeof(storage));
+    storage.obj.wbuf = &storage.wbuf;
 
     /* Serialize to version OF_VERSION_1_0 */
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_0, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_0, &match1, &octets) ==
         OF_ERROR_NONE);
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_0, &match2, &octets) ==
+    storage.obj.wbuf->buf = octets.data;
+    storage.obj.wbuf->alloc_bytes = octets.bytes;
+    storage.obj.wbuf->current_bytes = octets.bytes;
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_0, &match2, &storage.obj, 0, octets.bytes) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);
@@ -131,7 +137,10 @@ test_match_3(void)
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_1, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_1, &match1, &octets) ==
         OF_ERROR_NONE);
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_1, &match2, &octets) ==
+    storage.obj.wbuf->buf = octets.data;
+    storage.obj.wbuf->alloc_bytes = octets.bytes;
+    storage.obj.wbuf->current_bytes = octets.bytes;
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_1, &match2, &storage.obj, 0, octets.bytes) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);
@@ -140,7 +149,10 @@ test_match_3(void)
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_2, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_2, &match1, &octets) ==
         OF_ERROR_NONE);
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_2, &match2, &octets) ==
+    storage.obj.wbuf->buf = octets.data;
+    storage.obj.wbuf->alloc_bytes = octets.bytes;
+    storage.obj.wbuf->current_bytes = octets.bytes;
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_2, &match2, &storage.obj, 0, octets.bytes) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);
@@ -149,7 +161,10 @@ test_match_3(void)
     TEST_ASSERT((value = of_match_populate(&match1, OF_VERSION_1_3, value)) > 0);
     TEST_ASSERT(of_match_serialize(OF_VERSION_1_3, &match1, &octets) ==
         OF_ERROR_NONE);
-    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_3, &match2, &octets) ==
+    storage.obj.wbuf->buf = octets.data;
+    storage.obj.wbuf->alloc_bytes = octets.bytes;
+    storage.obj.wbuf->current_bytes = octets.bytes;
+    TEST_ASSERT(of_match_deserialize(OF_VERSION_1_3, &match2, &storage.obj, 0, octets.bytes) ==
         OF_ERROR_NONE);
     TEST_ASSERT(memcmp(&match1, &match2, sizeof(match1)) == 0);
     FREE(octets.data);

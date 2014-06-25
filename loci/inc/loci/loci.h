@@ -153,7 +153,7 @@ extern void of_meter_stats_wire_length_set(of_object_t *obj, int bytes);
 extern int of_match_serialize(of_version_t version, of_match_t *match,
                               of_octets_t *octets);
 extern int of_match_deserialize(of_version_t version, of_match_t *match,
-                                of_octets_t *octets);
+                                of_object_t *parent, int offset, int length);
 extern int of_match_v1_to_match(of_match_v1_t *src, of_match_t *dst);
 extern int of_match_v2_to_match(of_match_v2_t *src, of_match_t *dst);
 extern int of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst);

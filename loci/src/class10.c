@@ -79,9 +79,6 @@ of_bsn_flow_idle_enable_get_reply_push_wire_values(of_bsn_flow_idle_enable_get_r
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_flow_idle_enable_get_reply
  */
 
@@ -149,46 +146,6 @@ of_bsn_flow_idle_enable_get_reply_init(of_bsn_flow_idle_enable_get_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_flow_idle_enable_get_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_flow_idle_enable_get_reply
- */
-
-of_bsn_flow_idle_enable_get_reply_t *
-of_bsn_flow_idle_enable_get_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_flow_idle_enable_get_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_flow_idle_enable_get_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_flow_idle_enable_get_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_get_reply.
@@ -582,9 +539,6 @@ of_bsn_flow_idle_enable_get_request_push_wire_values(of_bsn_flow_idle_enable_get
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_flow_idle_enable_get_request
  */
 
@@ -652,46 +606,6 @@ of_bsn_flow_idle_enable_get_request_init(of_bsn_flow_idle_enable_get_request_t *
     }
 }
 
-
-/**
- * Create a new of_bsn_flow_idle_enable_get_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_flow_idle_enable_get_request
- */
-
-of_bsn_flow_idle_enable_get_request_t *
-of_bsn_flow_idle_enable_get_request_new_from_message(of_message_t msg)
-{
-    of_bsn_flow_idle_enable_get_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_flow_idle_enable_get_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_flow_idle_enable_get_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_get_request.
@@ -1007,9 +921,6 @@ of_bsn_flow_idle_enable_set_reply_push_wire_values(of_bsn_flow_idle_enable_set_r
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_flow_idle_enable_set_reply
  */
 
@@ -1077,46 +988,6 @@ of_bsn_flow_idle_enable_set_reply_init(of_bsn_flow_idle_enable_set_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_flow_idle_enable_set_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_flow_idle_enable_set_reply
- */
-
-of_bsn_flow_idle_enable_set_reply_t *
-of_bsn_flow_idle_enable_set_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_flow_idle_enable_set_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_flow_idle_enable_set_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_flow_idle_enable_set_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_set_reply.
@@ -1588,9 +1459,6 @@ of_bsn_flow_idle_enable_set_request_push_wire_values(of_bsn_flow_idle_enable_set
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_flow_idle_enable_set_request
  */
 
@@ -1658,46 +1526,6 @@ of_bsn_flow_idle_enable_set_request_init(of_bsn_flow_idle_enable_set_request_t *
     }
 }
 
-
-/**
- * Create a new of_bsn_flow_idle_enable_set_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_flow_idle_enable_set_request
- */
-
-of_bsn_flow_idle_enable_set_request_t *
-of_bsn_flow_idle_enable_set_request_new_from_message(of_message_t msg)
-{
-    of_bsn_flow_idle_enable_set_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_flow_idle_enable_set_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_flow_idle_enable_set_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_set_request.
@@ -2066,9 +1894,6 @@ of_bsn_gentable_bucket_stats_entry_push_wire_values(of_bsn_gentable_bucket_stats
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_bucket_stats_entry
  */
 
@@ -2296,9 +2121,6 @@ of_bsn_gentable_bucket_stats_reply_push_wire_values(of_bsn_gentable_bucket_stats
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_bucket_stats_reply
  */
 
@@ -2366,46 +2188,6 @@ of_bsn_gentable_bucket_stats_reply_init(of_bsn_gentable_bucket_stats_reply_t *ob
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_bucket_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_bucket_stats_reply
- */
-
-of_bsn_gentable_bucket_stats_reply_t *
-of_bsn_gentable_bucket_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_bucket_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_bucket_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_bucket_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_bucket_stats_reply.
@@ -2764,10 +2546,7 @@ of_bsn_gentable_bucket_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_gentable_bucket_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -2945,9 +2724,6 @@ of_bsn_gentable_bucket_stats_request_push_wire_values(of_bsn_gentable_bucket_sta
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_bucket_stats_request
  */
 
@@ -3015,46 +2791,6 @@ of_bsn_gentable_bucket_stats_request_init(of_bsn_gentable_bucket_stats_request_t
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_bucket_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_bucket_stats_request
- */
-
-of_bsn_gentable_bucket_stats_request_t *
-of_bsn_gentable_bucket_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_bucket_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_bucket_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_bucket_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_bucket_stats_request.
@@ -3526,9 +3262,6 @@ of_bsn_gentable_clear_reply_push_wire_values(of_bsn_gentable_clear_reply_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_clear_reply
  */
 
@@ -3596,46 +3329,6 @@ of_bsn_gentable_clear_reply_init(of_bsn_gentable_clear_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_clear_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_clear_reply
- */
-
-of_bsn_gentable_clear_reply_t *
-of_bsn_gentable_clear_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_clear_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_clear_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_clear_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_clear_reply.
@@ -4185,9 +3878,6 @@ of_bsn_gentable_clear_request_push_wire_values(of_bsn_gentable_clear_request_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_clear_request
  */
 
@@ -4255,46 +3945,6 @@ of_bsn_gentable_clear_request_init(of_bsn_gentable_clear_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_clear_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_clear_request
- */
-
-of_bsn_gentable_clear_request_t *
-of_bsn_gentable_clear_request_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_clear_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_clear_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_clear_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_clear_request.
@@ -4821,9 +4471,6 @@ of_bsn_gentable_desc_stats_entry_push_wire_values(of_bsn_gentable_desc_stats_ent
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_desc_stats_entry
  */
 
@@ -5285,9 +4932,6 @@ of_bsn_gentable_desc_stats_reply_push_wire_values(of_bsn_gentable_desc_stats_rep
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_desc_stats_reply
  */
 
@@ -5355,46 +4999,6 @@ of_bsn_gentable_desc_stats_reply_init(of_bsn_gentable_desc_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_desc_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_desc_stats_reply
- */
-
-of_bsn_gentable_desc_stats_reply_t *
-of_bsn_gentable_desc_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_desc_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_desc_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_desc_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_desc_stats_reply.
@@ -5753,10 +5357,7 @@ of_bsn_gentable_desc_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_gentable_desc_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -5934,9 +5535,6 @@ of_bsn_gentable_desc_stats_request_push_wire_values(of_bsn_gentable_desc_stats_r
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_desc_stats_request
  */
 
@@ -6004,46 +5602,6 @@ of_bsn_gentable_desc_stats_request_init(of_bsn_gentable_desc_stats_request_t *ob
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_desc_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_desc_stats_request
- */
-
-of_bsn_gentable_desc_stats_request_t *
-of_bsn_gentable_desc_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_desc_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_desc_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_desc_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_desc_stats_request.
@@ -6437,9 +5995,6 @@ of_bsn_gentable_entry_add_push_wire_values(of_bsn_gentable_entry_add_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_add
  */
 
@@ -6507,46 +6062,6 @@ of_bsn_gentable_entry_add_init(of_bsn_gentable_entry_add_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_entry_add object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_entry_add
- */
-
-of_bsn_gentable_entry_add_t *
-of_bsn_gentable_entry_add_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_entry_add_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_entry_add_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_entry_add_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_add.
@@ -6983,10 +6498,7 @@ of_bsn_gentable_entry_add_key_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(key, obj->version, 0, 1);
     /* Attach to parent */
-    key->parent = (of_object_t *)obj;
-    key->wbuf = obj->wbuf;
-    key->obj_offset = abs_offset;
-    key->length = cur_len;
+    of_object_attach(obj, key, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7128,10 +6640,7 @@ of_bsn_gentable_entry_add_value_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(value, obj->version, 0, 1);
     /* Attach to parent */
-    value->parent = (of_object_t *)obj;
-    value->wbuf = obj->wbuf;
-    value->obj_offset = abs_offset;
-    value->length = cur_len;
+    of_object_attach(obj, value, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7308,9 +6817,6 @@ of_bsn_gentable_entry_delete_push_wire_values(of_bsn_gentable_entry_delete_t *ob
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_delete
  */
 
@@ -7378,46 +6884,6 @@ of_bsn_gentable_entry_delete_init(of_bsn_gentable_entry_delete_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_entry_delete object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_entry_delete
- */
-
-of_bsn_gentable_entry_delete_t *
-of_bsn_gentable_entry_delete_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_entry_delete_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_entry_delete_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_entry_delete_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_delete.
@@ -7776,10 +7242,7 @@ of_bsn_gentable_entry_delete_key_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(key, obj->version, 0, 1);
     /* Attach to parent */
-    key->parent = (of_object_t *)obj;
-    key->wbuf = obj->wbuf;
-    key->obj_offset = abs_offset;
-    key->length = cur_len;
+    of_object_attach(obj, key, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7932,9 +7395,6 @@ of_bsn_gentable_entry_desc_stats_entry_push_wire_values(of_bsn_gentable_entry_de
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_bsn_gentable_entry_desc_stats_entry
  */
@@ -8127,10 +7587,7 @@ of_bsn_gentable_entry_desc_stats_entry_key_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(key, obj->version, 0, 1);
     /* Attach to parent */
-    key->parent = (of_object_t *)obj;
-    key->wbuf = obj->wbuf;
-    key->obj_offset = abs_offset;
-    key->length = cur_len;
+    of_object_attach(obj, key, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -8272,10 +7729,7 @@ of_bsn_gentable_entry_desc_stats_entry_value_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(value, obj->version, 0, 1);
     /* Attach to parent */
-    value->parent = (of_object_t *)obj;
-    value->wbuf = obj->wbuf;
-    value->obj_offset = abs_offset;
-    value->length = cur_len;
+    of_object_attach(obj, value, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -8453,9 +7907,6 @@ of_bsn_gentable_entry_desc_stats_reply_push_wire_values(of_bsn_gentable_entry_de
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_desc_stats_reply
  */
 
@@ -8523,46 +7974,6 @@ of_bsn_gentable_entry_desc_stats_reply_init(of_bsn_gentable_entry_desc_stats_rep
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_entry_desc_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_entry_desc_stats_reply
- */
-
-of_bsn_gentable_entry_desc_stats_reply_t *
-of_bsn_gentable_entry_desc_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_entry_desc_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_entry_desc_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_entry_desc_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_desc_stats_reply.
@@ -8921,10 +8332,7 @@ of_bsn_gentable_entry_desc_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_gentable_entry_desc_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -9102,9 +8510,6 @@ of_bsn_gentable_entry_desc_stats_request_push_wire_values(of_bsn_gentable_entry_
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_desc_stats_request
  */
 
@@ -9172,46 +8577,6 @@ of_bsn_gentable_entry_desc_stats_request_init(of_bsn_gentable_entry_desc_stats_r
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_entry_desc_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_entry_desc_stats_request
- */
-
-of_bsn_gentable_entry_desc_stats_request_t *
-of_bsn_gentable_entry_desc_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_entry_desc_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_entry_desc_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_entry_desc_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_desc_stats_request.
@@ -9816,9 +9181,6 @@ of_bsn_gentable_entry_stats_entry_push_wire_values(of_bsn_gentable_entry_stats_e
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_stats_entry
  */
 
@@ -9932,10 +9294,7 @@ of_bsn_gentable_entry_stats_entry_key_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(key, obj->version, 0, 1);
     /* Attach to parent */
-    key->parent = (of_object_t *)obj;
-    key->wbuf = obj->wbuf;
-    key->obj_offset = abs_offset;
-    key->length = cur_len;
+    of_object_attach(obj, key, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -10077,10 +9436,7 @@ of_bsn_gentable_entry_stats_entry_stats_bind(
     /* Initialize child */
     of_list_bsn_tlv_init(stats, obj->version, 0, 1);
     /* Attach to parent */
-    stats->parent = (of_object_t *)obj;
-    stats->wbuf = obj->wbuf;
-    stats->obj_offset = abs_offset;
-    stats->length = cur_len;
+    of_object_attach(obj, stats, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -10258,9 +9614,6 @@ of_bsn_gentable_entry_stats_reply_push_wire_values(of_bsn_gentable_entry_stats_r
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_stats_reply
  */
 
@@ -10328,46 +9681,6 @@ of_bsn_gentable_entry_stats_reply_init(of_bsn_gentable_entry_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_entry_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_entry_stats_reply
- */
-
-of_bsn_gentable_entry_stats_reply_t *
-of_bsn_gentable_entry_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_entry_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_entry_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_entry_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_stats_reply.
@@ -10726,10 +10039,7 @@ of_bsn_gentable_entry_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_gentable_entry_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -10907,9 +10217,6 @@ of_bsn_gentable_entry_stats_request_push_wire_values(of_bsn_gentable_entry_stats
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_entry_stats_request
  */
 
@@ -10977,46 +10284,6 @@ of_bsn_gentable_entry_stats_request_init(of_bsn_gentable_entry_stats_request_t *
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_entry_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_entry_stats_request
- */
-
-of_bsn_gentable_entry_stats_request_t *
-of_bsn_gentable_entry_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_entry_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_entry_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_entry_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_stats_request.
@@ -11644,9 +10911,6 @@ of_bsn_gentable_set_buckets_size_push_wire_values(of_bsn_gentable_set_buckets_si
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_set_buckets_size
  */
 
@@ -11714,46 +10978,6 @@ of_bsn_gentable_set_buckets_size_init(of_bsn_gentable_set_buckets_size_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_set_buckets_size object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_set_buckets_size
- */
-
-of_bsn_gentable_set_buckets_size_t *
-of_bsn_gentable_set_buckets_size_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_set_buckets_size_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_set_buckets_size_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_set_buckets_size_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_set_buckets_size.
@@ -12200,9 +11424,6 @@ of_bsn_gentable_stats_entry_push_wire_values(of_bsn_gentable_stats_entry_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_stats_entry
  */
 
@@ -12586,9 +11807,6 @@ of_bsn_gentable_stats_reply_push_wire_values(of_bsn_gentable_stats_reply_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_stats_reply
  */
 
@@ -12656,46 +11874,6 @@ of_bsn_gentable_stats_reply_init(of_bsn_gentable_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_stats_reply
- */
-
-of_bsn_gentable_stats_reply_t *
-of_bsn_gentable_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_stats_reply.
@@ -13054,10 +12232,7 @@ of_bsn_gentable_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_gentable_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -13235,9 +12410,6 @@ of_bsn_gentable_stats_request_push_wire_values(of_bsn_gentable_stats_request_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_gentable_stats_request
  */
 
@@ -13305,46 +12477,6 @@ of_bsn_gentable_stats_request_init(of_bsn_gentable_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_gentable_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_gentable_stats_request
- */
-
-of_bsn_gentable_stats_request_t *
-of_bsn_gentable_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_gentable_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_gentable_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_gentable_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_gentable_stats_request.
@@ -13738,9 +12870,6 @@ of_bsn_get_switch_pipeline_reply_push_wire_values(of_bsn_get_switch_pipeline_rep
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_get_switch_pipeline_reply
  */
 
@@ -13808,46 +12937,6 @@ of_bsn_get_switch_pipeline_reply_init(of_bsn_get_switch_pipeline_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_get_switch_pipeline_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_get_switch_pipeline_reply
- */
-
-of_bsn_get_switch_pipeline_reply_t *
-of_bsn_get_switch_pipeline_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_get_switch_pipeline_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_get_switch_pipeline_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_get_switch_pipeline_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_get_switch_pipeline_reply.
@@ -14241,9 +13330,6 @@ of_bsn_get_switch_pipeline_request_push_wire_values(of_bsn_get_switch_pipeline_r
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_get_switch_pipeline_request
  */
 
@@ -14311,46 +13397,6 @@ of_bsn_get_switch_pipeline_request_init(of_bsn_get_switch_pipeline_request_t *ob
     }
 }
 
-
-/**
- * Create a new of_bsn_get_switch_pipeline_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_get_switch_pipeline_request
- */
-
-of_bsn_get_switch_pipeline_request_t *
-of_bsn_get_switch_pipeline_request_new_from_message(of_message_t msg)
-{
-    of_bsn_get_switch_pipeline_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_get_switch_pipeline_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_get_switch_pipeline_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_get_switch_pipeline_request.
@@ -14667,9 +13713,6 @@ of_bsn_image_desc_stats_reply_push_wire_values(of_bsn_image_desc_stats_reply_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_image_desc_stats_reply
  */
 
@@ -14737,46 +13780,6 @@ of_bsn_image_desc_stats_reply_init(of_bsn_image_desc_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_image_desc_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_image_desc_stats_reply
- */
-
-of_bsn_image_desc_stats_reply_t *
-of_bsn_image_desc_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_image_desc_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_image_desc_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_image_desc_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_image_desc_stats_reply.
@@ -15327,9 +14330,6 @@ of_bsn_image_desc_stats_request_push_wire_values(of_bsn_image_desc_stats_request
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_image_desc_stats_request
  */
 
@@ -15397,46 +14397,6 @@ of_bsn_image_desc_stats_request_init(of_bsn_image_desc_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_image_desc_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_image_desc_stats_request
- */
-
-of_bsn_image_desc_stats_request_t *
-of_bsn_image_desc_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_image_desc_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_image_desc_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_image_desc_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_image_desc_stats_request.
@@ -15830,9 +14790,6 @@ of_bsn_lacp_convergence_notif_push_wire_values(of_bsn_lacp_convergence_notif_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_lacp_convergence_notif
  */
 
@@ -15900,46 +14857,6 @@ of_bsn_lacp_convergence_notif_init(of_bsn_lacp_convergence_notif_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_lacp_convergence_notif object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_lacp_convergence_notif
- */
-
-of_bsn_lacp_convergence_notif_t *
-of_bsn_lacp_convergence_notif_new_from_message(of_message_t msg)
-{
-    of_bsn_lacp_convergence_notif_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_lacp_convergence_notif_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_lacp_convergence_notif_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_lacp_convergence_notif.
@@ -17167,9 +16084,6 @@ of_bsn_lacp_stats_entry_push_wire_values(of_bsn_lacp_stats_entry_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_lacp_stats_entry
  */
 
@@ -18256,9 +17170,6 @@ of_bsn_lacp_stats_reply_push_wire_values(of_bsn_lacp_stats_reply_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_lacp_stats_reply
  */
 
@@ -18326,46 +17237,6 @@ of_bsn_lacp_stats_reply_init(of_bsn_lacp_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_lacp_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_lacp_stats_reply
- */
-
-of_bsn_lacp_stats_reply_t *
-of_bsn_lacp_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_lacp_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_lacp_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_lacp_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_lacp_stats_reply.
@@ -18724,10 +17595,7 @@ of_bsn_lacp_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_lacp_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -18905,9 +17773,6 @@ of_bsn_lacp_stats_request_push_wire_values(of_bsn_lacp_stats_request_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_lacp_stats_request
  */
 
@@ -18975,46 +17840,6 @@ of_bsn_lacp_stats_request_init(of_bsn_lacp_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_lacp_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_lacp_stats_request
- */
-
-of_bsn_lacp_stats_request_t *
-of_bsn_lacp_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_lacp_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_lacp_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_lacp_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_lacp_stats_request.

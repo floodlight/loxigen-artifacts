@@ -72,9 +72,6 @@ of_table_feature_prop_apply_actions_push_wire_values(of_table_feature_prop_apply
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_apply_actions
  */
 
@@ -188,10 +185,7 @@ of_table_feature_prop_apply_actions_action_ids_bind(
     /* Initialize child */
     of_list_action_id_init(action_ids, obj->version, 0, 1);
     /* Attach to parent */
-    action_ids->parent = (of_object_t *)obj;
-    action_ids->wbuf = obj->wbuf;
-    action_ids->obj_offset = abs_offset;
-    action_ids->length = cur_len;
+    of_object_attach(obj, action_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -361,9 +355,6 @@ of_table_feature_prop_apply_actions_miss_push_wire_values(of_table_feature_prop_
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_apply_actions_miss
  */
 
@@ -477,10 +468,7 @@ of_table_feature_prop_apply_actions_miss_action_ids_bind(
     /* Initialize child */
     of_list_action_id_init(action_ids, obj->version, 0, 1);
     /* Attach to parent */
-    action_ids->parent = (of_object_t *)obj;
-    action_ids->wbuf = obj->wbuf;
-    action_ids->obj_offset = abs_offset;
-    action_ids->length = cur_len;
+    of_object_attach(obj, action_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -650,9 +638,6 @@ of_table_feature_prop_apply_setfield_push_wire_values(of_table_feature_prop_appl
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_apply_setfield
  */
 
@@ -766,10 +751,7 @@ of_table_feature_prop_apply_setfield_oxm_ids_bind(
     /* Initialize child */
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
-    oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wbuf = obj->wbuf;
-    oxm_ids->obj_offset = abs_offset;
-    oxm_ids->length = cur_len;
+    of_object_attach(obj, oxm_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -939,9 +921,6 @@ of_table_feature_prop_apply_setfield_miss_push_wire_values(of_table_feature_prop
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_apply_setfield_miss
  */
 
@@ -1055,10 +1034,7 @@ of_table_feature_prop_apply_setfield_miss_oxm_ids_bind(
     /* Initialize child */
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
-    oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wbuf = obj->wbuf;
-    oxm_ids->obj_offset = abs_offset;
-    oxm_ids->length = cur_len;
+    of_object_attach(obj, oxm_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -1227,9 +1203,6 @@ of_table_feature_prop_experimenter_push_wire_values(of_table_feature_prop_experi
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_table_feature_prop_experimenter
  */
@@ -1624,9 +1597,6 @@ of_table_feature_prop_experimenter_miss_push_wire_values(of_table_feature_prop_e
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_experimenter_miss
  */
 
@@ -2020,9 +1990,6 @@ of_table_feature_prop_instructions_push_wire_values(of_table_feature_prop_instru
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_instructions
  */
 
@@ -2136,10 +2103,7 @@ of_table_feature_prop_instructions_instruction_ids_bind(
     /* Initialize child */
     of_list_instruction_id_init(instruction_ids, obj->version, 0, 1);
     /* Attach to parent */
-    instruction_ids->parent = (of_object_t *)obj;
-    instruction_ids->wbuf = obj->wbuf;
-    instruction_ids->obj_offset = abs_offset;
-    instruction_ids->length = cur_len;
+    of_object_attach(obj, instruction_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -2309,9 +2273,6 @@ of_table_feature_prop_instructions_miss_push_wire_values(of_table_feature_prop_i
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_instructions_miss
  */
 
@@ -2425,10 +2386,7 @@ of_table_feature_prop_instructions_miss_instruction_ids_bind(
     /* Initialize child */
     of_list_instruction_id_init(instruction_ids, obj->version, 0, 1);
     /* Attach to parent */
-    instruction_ids->parent = (of_object_t *)obj;
-    instruction_ids->wbuf = obj->wbuf;
-    instruction_ids->obj_offset = abs_offset;
-    instruction_ids->length = cur_len;
+    of_object_attach(obj, instruction_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -2598,9 +2556,6 @@ of_table_feature_prop_match_push_wire_values(of_table_feature_prop_match_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_match
  */
 
@@ -2714,10 +2669,7 @@ of_table_feature_prop_match_oxm_ids_bind(
     /* Initialize child */
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
-    oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wbuf = obj->wbuf;
-    oxm_ids->obj_offset = abs_offset;
-    oxm_ids->length = cur_len;
+    of_object_attach(obj, oxm_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -2887,9 +2839,6 @@ of_table_feature_prop_next_tables_push_wire_values(of_table_feature_prop_next_ta
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_next_tables
  */
 
@@ -3003,10 +2952,7 @@ of_table_feature_prop_next_tables_next_table_ids_bind(
     /* Initialize child */
     of_list_uint8_init(next_table_ids, obj->version, 0, 1);
     /* Attach to parent */
-    next_table_ids->parent = (of_object_t *)obj;
-    next_table_ids->wbuf = obj->wbuf;
-    next_table_ids->obj_offset = abs_offset;
-    next_table_ids->length = cur_len;
+    of_object_attach(obj, next_table_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3176,9 +3122,6 @@ of_table_feature_prop_next_tables_miss_push_wire_values(of_table_feature_prop_ne
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_next_tables_miss
  */
 
@@ -3292,10 +3235,7 @@ of_table_feature_prop_next_tables_miss_next_table_ids_bind(
     /* Initialize child */
     of_list_uint8_init(next_table_ids, obj->version, 0, 1);
     /* Attach to parent */
-    next_table_ids->parent = (of_object_t *)obj;
-    next_table_ids->wbuf = obj->wbuf;
-    next_table_ids->obj_offset = abs_offset;
-    next_table_ids->length = cur_len;
+    of_object_attach(obj, next_table_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3465,9 +3405,6 @@ of_table_feature_prop_wildcards_push_wire_values(of_table_feature_prop_wildcards
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_wildcards
  */
 
@@ -3581,10 +3518,7 @@ of_table_feature_prop_wildcards_oxm_ids_bind(
     /* Initialize child */
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
-    oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wbuf = obj->wbuf;
-    oxm_ids->obj_offset = abs_offset;
-    oxm_ids->length = cur_len;
+    of_object_attach(obj, oxm_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3754,9 +3688,6 @@ of_table_feature_prop_write_actions_push_wire_values(of_table_feature_prop_write
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_write_actions
  */
 
@@ -3870,10 +3801,7 @@ of_table_feature_prop_write_actions_action_ids_bind(
     /* Initialize child */
     of_list_action_id_init(action_ids, obj->version, 0, 1);
     /* Attach to parent */
-    action_ids->parent = (of_object_t *)obj;
-    action_ids->wbuf = obj->wbuf;
-    action_ids->obj_offset = abs_offset;
-    action_ids->length = cur_len;
+    of_object_attach(obj, action_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4043,9 +3971,6 @@ of_table_feature_prop_write_actions_miss_push_wire_values(of_table_feature_prop_
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_write_actions_miss
  */
 
@@ -4159,10 +4084,7 @@ of_table_feature_prop_write_actions_miss_action_ids_bind(
     /* Initialize child */
     of_list_action_id_init(action_ids, obj->version, 0, 1);
     /* Attach to parent */
-    action_ids->parent = (of_object_t *)obj;
-    action_ids->wbuf = obj->wbuf;
-    action_ids->obj_offset = abs_offset;
-    action_ids->length = cur_len;
+    of_object_attach(obj, action_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4332,9 +4254,6 @@ of_table_feature_prop_write_setfield_push_wire_values(of_table_feature_prop_writ
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_write_setfield
  */
 
@@ -4448,10 +4367,7 @@ of_table_feature_prop_write_setfield_oxm_ids_bind(
     /* Initialize child */
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
-    oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wbuf = obj->wbuf;
-    oxm_ids->obj_offset = abs_offset;
-    oxm_ids->length = cur_len;
+    of_object_attach(obj, oxm_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4621,9 +4537,6 @@ of_table_feature_prop_write_setfield_miss_push_wire_values(of_table_feature_prop
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_feature_prop_write_setfield_miss
  */
 
@@ -4737,10 +4650,7 @@ of_table_feature_prop_write_setfield_miss_oxm_ids_bind(
     /* Initialize child */
     of_list_uint32_init(oxm_ids, obj->version, 0, 1);
     /* Attach to parent */
-    oxm_ids->parent = (of_object_t *)obj;
-    oxm_ids->wbuf = obj->wbuf;
-    oxm_ids->obj_offset = abs_offset;
-    oxm_ids->length = cur_len;
+    of_object_attach(obj, oxm_ids, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4893,9 +4803,6 @@ of_table_features_push_wire_values(of_table_features_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_table_features
  */
@@ -5478,10 +5385,7 @@ of_table_features_properties_bind(
     /* Initialize child */
     of_list_table_feature_prop_init(properties, obj->version, 0, 1);
     /* Attach to parent */
-    properties->parent = (of_object_t *)obj;
-    properties->wbuf = obj->wbuf;
-    properties->obj_offset = abs_offset;
-    properties->length = cur_len;
+    of_object_attach(obj, properties, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -5657,9 +5561,6 @@ of_table_features_failed_error_msg_push_wire_values(of_table_features_failed_err
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_features_failed_error_msg
  */
 
@@ -5727,46 +5628,6 @@ of_table_features_failed_error_msg_init(of_table_features_failed_error_msg_t *ob
     }
 }
 
-
-/**
- * Create a new of_table_features_failed_error_msg object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_table_features_failed_error_msg
- */
-
-of_table_features_failed_error_msg_t *
-of_table_features_failed_error_msg_new_from_message(of_message_t msg)
-{
-    of_table_features_failed_error_msg_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_table_features_failed_error_msg_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_table_features_failed_error_msg_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_table_features_failed_error_msg.
@@ -6099,9 +5960,6 @@ of_table_features_stats_reply_push_wire_values(of_table_features_stats_reply_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_features_stats_reply
  */
 
@@ -6169,46 +6027,6 @@ of_table_features_stats_reply_init(of_table_features_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_table_features_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_table_features_stats_reply
- */
-
-of_table_features_stats_reply_t *
-of_table_features_stats_reply_new_from_message(of_message_t msg)
-{
-    of_table_features_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_table_features_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_table_features_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_table_features_stats_reply.
@@ -6411,10 +6229,7 @@ of_table_features_stats_reply_entries_bind(
     /* Initialize child */
     of_list_table_features_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -6590,9 +6405,6 @@ of_table_features_stats_request_push_wire_values(of_table_features_stats_request
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_table_features_stats_request
  */
 
@@ -6660,46 +6472,6 @@ of_table_features_stats_request_init(of_table_features_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_table_features_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_table_features_stats_request
- */
-
-of_table_features_stats_request_t *
-of_table_features_stats_request_new_from_message(of_message_t msg)
-{
-    of_table_features_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_table_features_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_table_features_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_table_features_stats_request.
@@ -6902,10 +6674,7 @@ of_table_features_stats_request_entries_bind(
     /* Initialize child */
     of_list_table_features_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7056,9 +6825,6 @@ of_uint32_push_wire_values(of_uint32_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_uint32
  */
@@ -7261,9 +7027,6 @@ of_uint64_push_wire_values(of_uint64_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_uint64
  */
 
@@ -7464,9 +7227,6 @@ of_uint8_push_wire_values(of_uint8_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_uint8
  */

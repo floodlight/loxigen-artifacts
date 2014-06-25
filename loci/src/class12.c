@@ -72,9 +72,6 @@ of_bsn_tlv_reply_packets_push_wire_values(of_bsn_tlv_reply_packets_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_tlv_reply_packets
  */
 
@@ -293,9 +290,6 @@ of_bsn_tlv_request_packets_push_wire_values(of_bsn_tlv_request_packets_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_bsn_tlv_request_packets
  */
@@ -516,9 +510,6 @@ of_bsn_tlv_rx_packets_push_wire_values(of_bsn_tlv_rx_packets_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_tlv_rx_packets
  */
 
@@ -737,9 +728,6 @@ of_bsn_tlv_tx_packets_push_wire_values(of_bsn_tlv_tx_packets_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_bsn_tlv_tx_packets
  */
@@ -960,9 +948,6 @@ of_bsn_tlv_udf_anchor_push_wire_values(of_bsn_tlv_udf_anchor_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_tlv_udf_anchor
  */
 
@@ -1181,9 +1166,6 @@ of_bsn_tlv_udf_id_push_wire_values(of_bsn_tlv_udf_id_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_bsn_tlv_udf_id
  */
@@ -1404,9 +1386,6 @@ of_bsn_tlv_udf_length_push_wire_values(of_bsn_tlv_udf_length_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_tlv_udf_length
  */
 
@@ -1625,9 +1604,6 @@ of_bsn_tlv_udf_offset_push_wire_values(of_bsn_tlv_udf_offset_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_bsn_tlv_udf_offset
  */
@@ -1848,9 +1824,6 @@ of_bsn_tlv_unicast_query_timeout_push_wire_values(of_bsn_tlv_unicast_query_timeo
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_tlv_unicast_query_timeout
  */
 
@@ -2069,9 +2042,6 @@ of_bsn_tlv_vlan_vid_push_wire_values(of_bsn_tlv_vlan_vid_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_bsn_tlv_vlan_vid
  */
@@ -2292,9 +2262,6 @@ of_bsn_tlv_vrf_push_wire_values(of_bsn_tlv_vrf_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_tlv_vrf
  */
 
@@ -2498,9 +2465,6 @@ of_bsn_vlan_counter_stats_entry_push_wire_values(of_bsn_vlan_counter_stats_entry
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_vlan_counter_stats_entry
  */
 
@@ -2692,10 +2656,7 @@ of_bsn_vlan_counter_stats_entry_values_bind(
     /* Initialize child */
     of_list_uint64_init(values, obj->version, 0, 1);
     /* Attach to parent */
-    values->parent = (of_object_t *)obj;
-    values->wbuf = obj->wbuf;
-    values->obj_offset = abs_offset;
-    values->length = cur_len;
+    of_object_attach(obj, values, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -2873,9 +2834,6 @@ of_bsn_vlan_counter_stats_reply_push_wire_values(of_bsn_vlan_counter_stats_reply
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_vlan_counter_stats_reply
  */
 
@@ -2943,46 +2901,6 @@ of_bsn_vlan_counter_stats_reply_init(of_bsn_vlan_counter_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_vlan_counter_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_vlan_counter_stats_reply
- */
-
-of_bsn_vlan_counter_stats_reply_t *
-of_bsn_vlan_counter_stats_reply_new_from_message(of_message_t msg)
-{
-    of_bsn_vlan_counter_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_vlan_counter_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_vlan_counter_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_vlan_counter_stats_reply.
@@ -3341,10 +3259,7 @@ of_bsn_vlan_counter_stats_reply_entries_bind(
     /* Initialize child */
     of_list_bsn_vlan_counter_stats_entry_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -3522,9 +3437,6 @@ of_bsn_vlan_counter_stats_request_push_wire_values(of_bsn_vlan_counter_stats_req
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_bsn_vlan_counter_stats_request
  */
 
@@ -3592,46 +3504,6 @@ of_bsn_vlan_counter_stats_request_init(of_bsn_vlan_counter_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_bsn_vlan_counter_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_bsn_vlan_counter_stats_request
- */
-
-of_bsn_vlan_counter_stats_request_t *
-of_bsn_vlan_counter_stats_request_new_from_message(of_message_t msg)
-{
-    of_bsn_vlan_counter_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_bsn_vlan_counter_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_vlan_counter_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_bsn_vlan_counter_stats_request.
@@ -4090,9 +3962,6 @@ of_hello_elem_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_hello_elem
  */
 
@@ -4232,9 +4101,6 @@ of_hello_elem_versionbitmap_push_wire_values(of_hello_elem_versionbitmap_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_hello_elem_versionbitmap
  */
 
@@ -4348,10 +4214,7 @@ of_hello_elem_versionbitmap_bitmaps_bind(
     /* Initialize child */
     of_list_uint32_init(bitmaps, obj->version, 0, 1);
     /* Attach to parent */
-    bitmaps->parent = (of_object_t *)obj;
-    bitmaps->wbuf = obj->wbuf;
-    bitmaps->obj_offset = abs_offset;
-    bitmaps->length = cur_len;
+    of_object_attach(obj, bitmaps, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4533,9 +4396,6 @@ of_instruction_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id
  */
 
@@ -4674,9 +4534,6 @@ of_instruction_id_apply_actions_push_wire_values(of_instruction_id_apply_actions
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_id_apply_actions
  */
@@ -4833,9 +4690,6 @@ of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn
  */
@@ -5123,9 +4977,6 @@ of_instruction_id_experimenter_wire_object_id_get(of_object_t *obj, of_object_id
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_experimenter
  */
 
@@ -5354,9 +5205,6 @@ of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_id_bsn
  */
@@ -5651,9 +5499,6 @@ of_instruction_bsn_arp_offload_push_wire_values(of_instruction_bsn_arp_offload_t
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_arp_offload
  */
@@ -5954,9 +5799,6 @@ of_instruction_id_bsn_arp_offload_push_wire_values(of_instruction_id_bsn_arp_off
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_arp_offload
  */
 
@@ -6255,9 +6097,6 @@ of_instruction_bsn_deny_push_wire_values(of_instruction_bsn_deny_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_deny
  */
@@ -6558,9 +6397,6 @@ of_instruction_id_bsn_deny_push_wire_values(of_instruction_id_bsn_deny_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_deny
  */
 
@@ -6859,9 +6695,6 @@ of_instruction_bsn_dhcp_offload_push_wire_values(of_instruction_bsn_dhcp_offload
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_dhcp_offload
  */
@@ -7162,9 +6995,6 @@ of_instruction_id_bsn_dhcp_offload_push_wire_values(of_instruction_id_bsn_dhcp_o
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_dhcp_offload
  */
 
@@ -7463,9 +7293,6 @@ of_instruction_bsn_disable_split_horizon_check_push_wire_values(of_instruction_b
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_disable_split_horizon_check
  */
@@ -7766,9 +7593,6 @@ of_instruction_id_bsn_disable_split_horizon_check_push_wire_values(of_instructio
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_disable_split_horizon_check
  */
 
@@ -8067,9 +7891,6 @@ of_instruction_bsn_disable_src_mac_check_push_wire_values(of_instruction_bsn_dis
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_disable_src_mac_check
  */
@@ -8370,9 +8191,6 @@ of_instruction_id_bsn_disable_src_mac_check_push_wire_values(of_instruction_id_b
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_disable_src_mac_check
  */
 
@@ -8671,9 +8489,6 @@ of_instruction_bsn_packet_of_death_push_wire_values(of_instruction_bsn_packet_of
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_packet_of_death
  */

@@ -70,9 +70,6 @@ of_oxm_bsn_tcp_flags_masked_push_wire_values(of_oxm_bsn_tcp_flags_masked_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_tcp_flags_masked
  */
 
@@ -372,9 +369,6 @@ of_oxm_bsn_udf0_push_wire_values(of_oxm_bsn_udf0_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf0
  */
 
@@ -593,9 +587,6 @@ of_oxm_bsn_udf0_masked_push_wire_values(of_oxm_bsn_udf0_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf0_masked
  */
@@ -896,9 +887,6 @@ of_oxm_bsn_udf1_push_wire_values(of_oxm_bsn_udf1_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf1
  */
 
@@ -1117,9 +1105,6 @@ of_oxm_bsn_udf1_masked_push_wire_values(of_oxm_bsn_udf1_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf1_masked
  */
@@ -1420,9 +1405,6 @@ of_oxm_bsn_udf2_push_wire_values(of_oxm_bsn_udf2_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf2
  */
 
@@ -1641,9 +1623,6 @@ of_oxm_bsn_udf2_masked_push_wire_values(of_oxm_bsn_udf2_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf2_masked
  */
@@ -1944,9 +1923,6 @@ of_oxm_bsn_udf3_push_wire_values(of_oxm_bsn_udf3_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf3
  */
 
@@ -2165,9 +2141,6 @@ of_oxm_bsn_udf3_masked_push_wire_values(of_oxm_bsn_udf3_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf3_masked
  */
@@ -2468,9 +2441,6 @@ of_oxm_bsn_udf4_push_wire_values(of_oxm_bsn_udf4_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf4
  */
 
@@ -2689,9 +2659,6 @@ of_oxm_bsn_udf4_masked_push_wire_values(of_oxm_bsn_udf4_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf4_masked
  */
@@ -2992,9 +2959,6 @@ of_oxm_bsn_udf5_push_wire_values(of_oxm_bsn_udf5_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf5
  */
 
@@ -3213,9 +3177,6 @@ of_oxm_bsn_udf5_masked_push_wire_values(of_oxm_bsn_udf5_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf5_masked
  */
@@ -3516,9 +3477,6 @@ of_oxm_bsn_udf6_push_wire_values(of_oxm_bsn_udf6_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf6
  */
 
@@ -3737,9 +3695,6 @@ of_oxm_bsn_udf6_masked_push_wire_values(of_oxm_bsn_udf6_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf6_masked
  */
@@ -4040,9 +3995,6 @@ of_oxm_bsn_udf7_push_wire_values(of_oxm_bsn_udf7_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_udf7
  */
 
@@ -4261,9 +4213,6 @@ of_oxm_bsn_udf7_masked_push_wire_values(of_oxm_bsn_udf7_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_udf7_masked
  */
@@ -4564,9 +4513,6 @@ of_oxm_bsn_vrf_push_wire_values(of_oxm_bsn_vrf_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_bsn_vrf
  */
 
@@ -4785,9 +4731,6 @@ of_oxm_bsn_vrf_masked_push_wire_values(of_oxm_bsn_vrf_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_bsn_vrf_masked
  */
@@ -5088,9 +5031,6 @@ of_oxm_eth_dst_push_wire_values(of_oxm_eth_dst_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_eth_dst
  */
 
@@ -5309,9 +5249,6 @@ of_oxm_eth_dst_masked_push_wire_values(of_oxm_eth_dst_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_eth_dst_masked
  */
@@ -5612,9 +5549,6 @@ of_oxm_eth_src_push_wire_values(of_oxm_eth_src_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_eth_src
  */
 
@@ -5833,9 +5767,6 @@ of_oxm_eth_src_masked_push_wire_values(of_oxm_eth_src_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_eth_src_masked
  */
@@ -6136,9 +6067,6 @@ of_oxm_eth_type_push_wire_values(of_oxm_eth_type_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_eth_type
  */
 
@@ -6357,9 +6285,6 @@ of_oxm_eth_type_masked_push_wire_values(of_oxm_eth_type_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_eth_type_masked
  */
@@ -6660,9 +6585,6 @@ of_oxm_icmpv4_code_push_wire_values(of_oxm_icmpv4_code_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_icmpv4_code
  */
 
@@ -6881,9 +6803,6 @@ of_oxm_icmpv4_code_masked_push_wire_values(of_oxm_icmpv4_code_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_icmpv4_code_masked
  */
@@ -7184,9 +7103,6 @@ of_oxm_icmpv4_type_push_wire_values(of_oxm_icmpv4_type_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_icmpv4_type
  */
 
@@ -7405,9 +7321,6 @@ of_oxm_icmpv4_type_masked_push_wire_values(of_oxm_icmpv4_type_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_icmpv4_type_masked
  */
@@ -7708,9 +7621,6 @@ of_oxm_icmpv6_code_push_wire_values(of_oxm_icmpv6_code_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_icmpv6_code
  */
 
@@ -7929,9 +7839,6 @@ of_oxm_icmpv6_code_masked_push_wire_values(of_oxm_icmpv6_code_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_icmpv6_code_masked
  */
@@ -8231,9 +8138,6 @@ of_oxm_icmpv6_type_push_wire_values(of_oxm_icmpv6_type_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_icmpv6_type
  */

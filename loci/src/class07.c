@@ -70,9 +70,6 @@ of_oxm_icmpv6_type_masked_push_wire_values(of_oxm_icmpv6_type_masked_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_icmpv6_type_masked
  */
 
@@ -372,9 +369,6 @@ of_oxm_in_phy_port_push_wire_values(of_oxm_in_phy_port_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_in_phy_port
  */
 
@@ -594,9 +588,6 @@ of_oxm_in_phy_port_masked_push_wire_values(of_oxm_in_phy_port_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_in_phy_port_masked
  */
@@ -899,9 +890,6 @@ of_oxm_in_port_push_wire_values(of_oxm_in_port_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_in_port
  */
 
@@ -1121,9 +1109,6 @@ of_oxm_in_port_masked_push_wire_values(of_oxm_in_port_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_in_port_masked
  */
@@ -1426,9 +1411,6 @@ of_oxm_ip_dscp_push_wire_values(of_oxm_ip_dscp_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ip_dscp
  */
 
@@ -1647,9 +1629,6 @@ of_oxm_ip_dscp_masked_push_wire_values(of_oxm_ip_dscp_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ip_dscp_masked
  */
@@ -1950,9 +1929,6 @@ of_oxm_ip_ecn_push_wire_values(of_oxm_ip_ecn_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ip_ecn
  */
 
@@ -2171,9 +2147,6 @@ of_oxm_ip_ecn_masked_push_wire_values(of_oxm_ip_ecn_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ip_ecn_masked
  */
@@ -2474,9 +2447,6 @@ of_oxm_ip_proto_push_wire_values(of_oxm_ip_proto_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ip_proto
  */
 
@@ -2695,9 +2665,6 @@ of_oxm_ip_proto_masked_push_wire_values(of_oxm_ip_proto_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ip_proto_masked
  */
@@ -2998,9 +2965,6 @@ of_oxm_ipv4_dst_push_wire_values(of_oxm_ipv4_dst_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv4_dst
  */
 
@@ -3219,9 +3183,6 @@ of_oxm_ipv4_dst_masked_push_wire_values(of_oxm_ipv4_dst_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv4_dst_masked
  */
@@ -3522,9 +3483,6 @@ of_oxm_ipv4_src_push_wire_values(of_oxm_ipv4_src_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv4_src
  */
 
@@ -3743,9 +3701,6 @@ of_oxm_ipv4_src_masked_push_wire_values(of_oxm_ipv4_src_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv4_src_masked
  */
@@ -4046,9 +4001,6 @@ of_oxm_ipv6_dst_push_wire_values(of_oxm_ipv6_dst_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv6_dst
  */
 
@@ -4267,9 +4219,6 @@ of_oxm_ipv6_dst_masked_push_wire_values(of_oxm_ipv6_dst_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv6_dst_masked
  */
@@ -4570,9 +4519,6 @@ of_oxm_ipv6_flabel_push_wire_values(of_oxm_ipv6_flabel_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv6_flabel
  */
 
@@ -4791,9 +4737,6 @@ of_oxm_ipv6_flabel_masked_push_wire_values(of_oxm_ipv6_flabel_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv6_flabel_masked
  */
@@ -5094,9 +5037,6 @@ of_oxm_ipv6_nd_sll_push_wire_values(of_oxm_ipv6_nd_sll_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv6_nd_sll
  */
 
@@ -5315,9 +5255,6 @@ of_oxm_ipv6_nd_sll_masked_push_wire_values(of_oxm_ipv6_nd_sll_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv6_nd_sll_masked
  */
@@ -5618,9 +5555,6 @@ of_oxm_ipv6_nd_target_push_wire_values(of_oxm_ipv6_nd_target_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv6_nd_target
  */
 
@@ -5839,9 +5773,6 @@ of_oxm_ipv6_nd_target_masked_push_wire_values(of_oxm_ipv6_nd_target_masked_t *ob
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv6_nd_target_masked
  */
@@ -6142,9 +6073,6 @@ of_oxm_ipv6_nd_tll_push_wire_values(of_oxm_ipv6_nd_tll_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv6_nd_tll
  */
 
@@ -6363,9 +6291,6 @@ of_oxm_ipv6_nd_tll_masked_push_wire_values(of_oxm_ipv6_nd_tll_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv6_nd_tll_masked
  */
@@ -6666,9 +6591,6 @@ of_oxm_ipv6_src_push_wire_values(of_oxm_ipv6_src_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_ipv6_src
  */
 
@@ -6887,9 +6809,6 @@ of_oxm_ipv6_src_masked_push_wire_values(of_oxm_ipv6_src_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_ipv6_src_masked
  */
@@ -7190,9 +7109,6 @@ of_oxm_metadata_push_wire_values(of_oxm_metadata_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_metadata
  */
 
@@ -7411,9 +7327,6 @@ of_oxm_metadata_masked_push_wire_values(of_oxm_metadata_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_metadata_masked
  */
@@ -7714,9 +7627,6 @@ of_oxm_mpls_label_push_wire_values(of_oxm_mpls_label_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_mpls_label
  */
 
@@ -7935,9 +7845,6 @@ of_oxm_mpls_label_masked_push_wire_values(of_oxm_mpls_label_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_mpls_label_masked
  */
@@ -8237,9 +8144,6 @@ of_oxm_mpls_tc_push_wire_values(of_oxm_mpls_tc_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_mpls_tc
  */

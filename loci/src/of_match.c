@@ -3059,79 +3059,34 @@ of_match_serialize(of_version_t version, of_match_t *match, of_octets_t *octets)
 
 int
 of_match_deserialize(of_version_t version, of_match_t *match,
-                     of_octets_t *octets)
+                     of_object_t *parent, int offset, int length)
 {
-    if (octets->bytes == 0) { /* No match specified means all wildcards */
-        MEMSET(match, 0, sizeof(*match));
-        match->version = version;
-
-        return OF_ERROR_NONE;
-    }
+    of_object_t obj;
 
     switch (version) {
 
     case OF_VERSION_1_0:
-        { /* FIXME: check init bytes */
-            uint8_t *tmp;
-            of_match_v1_t wire_match;
-            of_match_v1_init(&wire_match,
-                   OF_VERSION_1_0, -1, 1);
-            of_object_buffer_bind((of_object_t *)&wire_match,
-                octets->data, octets->bytes, NULL);
-            OF_TRY(of_match_v1_to_match(&wire_match, match));
-
-            /* Free the wire buffer control block without freeing
-             * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wbuf, &tmp);
-        }
+        of_match_v1_init(&obj, OF_VERSION_1_0, length, 1);
+        of_object_attach(parent, &obj, offset, length);
+        OF_TRY(of_match_v1_to_match(&obj, match));
         break;
 
     case OF_VERSION_1_1:
-        { /* FIXME: check init bytes */
-            uint8_t *tmp;
-            of_match_v2_t wire_match;
-            of_match_v2_init(&wire_match,
-                   OF_VERSION_1_1, -1, 1);
-            of_object_buffer_bind((of_object_t *)&wire_match,
-                octets->data, octets->bytes, NULL);
-            OF_TRY(of_match_v2_to_match(&wire_match, match));
-
-            /* Free the wire buffer control block without freeing
-             * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wbuf, &tmp);
-        }
+        of_match_v2_init(&obj, OF_VERSION_1_1, length, 1);
+        of_object_attach(parent, &obj, offset, length);
+        OF_TRY(of_match_v2_to_match(&obj, match));
         break;
 
     case OF_VERSION_1_2:
-        { /* FIXME: check init bytes */
-            uint8_t *tmp;
-            of_match_v3_t wire_match;
-            of_match_v3_init(&wire_match,
-                   OF_VERSION_1_2, -1, 1);
-            of_object_buffer_bind((of_object_t *)&wire_match,
-                octets->data, octets->bytes, NULL);
-            OF_TRY(of_match_v3_to_match(&wire_match, match));
-
-            /* Free the wire buffer control block without freeing
-             * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wbuf, &tmp);
-        }
+        of_match_v3_init(&obj, OF_VERSION_1_2, length, 1);
+        of_object_attach(parent, &obj, offset, length);
+        OF_TRY(of_match_v3_to_match(&obj, match));
         break;
 
     case OF_VERSION_1_3:
-        { /* FIXME: check init bytes */
-            uint8_t *tmp;
-            of_match_v4_t wire_match;
-            of_match_v4_init(&wire_match,
-                   OF_VERSION_1_3, -1, 1);
-            of_object_buffer_bind((of_object_t *)&wire_match,
-                octets->data, octets->bytes, NULL);
-            OF_TRY(of_match_v4_to_match(&wire_match, match));
-
-            /* Free the wire buffer control block without freeing
-             * octets->bytes. */
-            of_wire_buffer_steal(wire_match.wbuf, &tmp);
-        }
+        of_match_v4_init(&obj, OF_VERSION_1_3, length, 1);
+        of_object_attach(parent, &obj, offset, length);
+        OF_TRY(of_match_v4_to_match(&obj, match));
         break;
 
     default:

@@ -44,9 +44,6 @@
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_list_bsn_gentable_entry_stats_entry
  */
 

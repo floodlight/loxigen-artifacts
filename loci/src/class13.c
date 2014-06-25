@@ -74,9 +74,6 @@ of_instruction_id_bsn_packet_of_death_push_wire_values(of_instruction_id_bsn_pac
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_packet_of_death
  */
 
@@ -375,9 +372,6 @@ of_instruction_bsn_permit_push_wire_values(of_instruction_bsn_permit_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_permit
  */
@@ -678,9 +672,6 @@ of_instruction_id_bsn_permit_push_wire_values(of_instruction_id_bsn_permit_t *ob
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_permit
  */
 
@@ -979,9 +970,6 @@ of_instruction_bsn_prioritize_pdus_push_wire_values(of_instruction_bsn_prioritiz
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_bsn_prioritize_pdus
  */
@@ -1282,9 +1270,6 @@ of_instruction_id_bsn_prioritize_pdus_push_wire_values(of_instruction_id_bsn_pri
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_bsn_prioritize_pdus
  */
 
@@ -1582,9 +1567,6 @@ of_instruction_id_clear_actions_push_wire_values(of_instruction_id_clear_actions
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_clear_actions
  */
 
@@ -1726,9 +1708,6 @@ of_instruction_id_goto_table_push_wire_values(of_instruction_id_goto_table_t *ob
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_goto_table
  */
 
@@ -1869,9 +1848,6 @@ of_instruction_meter_push_wire_values(of_instruction_meter_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_meter
  */
@@ -2092,9 +2068,6 @@ of_instruction_id_meter_push_wire_values(of_instruction_id_meter_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_meter
  */
 
@@ -2235,9 +2208,6 @@ of_instruction_id_write_actions_push_wire_values(of_instruction_id_write_actions
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_instruction_id_write_actions
  */
@@ -2380,9 +2350,6 @@ of_instruction_id_write_metadata_push_wire_values(of_instruction_id_write_metada
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_instruction_id_write_metadata
  */
 
@@ -2524,9 +2491,6 @@ of_meter_band_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_band
  */
 
@@ -2665,9 +2629,6 @@ of_meter_band_drop_push_wire_values(of_meter_band_drop_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_meter_band_drop
  */
@@ -2965,9 +2926,6 @@ of_meter_band_dscp_remark_push_wire_values(of_meter_band_dscp_remark_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_meter_band_dscp_remark
  */
@@ -3344,9 +3302,6 @@ of_meter_band_experimenter_push_wire_values(of_meter_band_experimenter_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_band_experimenter
  */
 
@@ -3704,9 +3659,6 @@ of_meter_band_stats_push_wire_values(of_meter_band_stats_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_band_stats
  */
 
@@ -3986,9 +3938,6 @@ of_meter_config_push_wire_values(of_meter_config_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_config
  */
 
@@ -4258,10 +4207,7 @@ of_meter_config_entries_bind(
     /* Initialize child */
     of_list_meter_band_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4437,9 +4383,6 @@ of_meter_config_stats_reply_push_wire_values(of_meter_config_stats_reply_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_config_stats_reply
  */
 
@@ -4507,46 +4450,6 @@ of_meter_config_stats_reply_init(of_meter_config_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_config_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_config_stats_reply
- */
-
-of_meter_config_stats_reply_t *
-of_meter_config_stats_reply_new_from_message(of_message_t msg)
-{
-    of_meter_config_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_config_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_config_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_config_stats_reply.
@@ -4749,10 +4652,7 @@ of_meter_config_stats_reply_entries_bind(
     /* Initialize child */
     of_list_meter_band_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -4928,9 +4828,6 @@ of_meter_config_stats_request_push_wire_values(of_meter_config_stats_request_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_config_stats_request
  */
 
@@ -4998,46 +4895,6 @@ of_meter_config_stats_request_init(of_meter_config_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_config_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_config_stats_request
- */
-
-of_meter_config_stats_request_t *
-of_meter_config_stats_request_new_from_message(of_message_t msg)
-{
-    of_meter_config_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_config_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_config_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_config_stats_request.
@@ -5327,9 +5184,6 @@ of_meter_features_push_wire_values(of_meter_features_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_meter_features
  */
@@ -5868,9 +5722,6 @@ of_meter_features_stats_reply_push_wire_values(of_meter_features_stats_reply_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_features_stats_reply
  */
 
@@ -5938,46 +5789,6 @@ of_meter_features_stats_reply_init(of_meter_features_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_features_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_features_stats_reply
- */
-
-of_meter_features_stats_reply_t *
-of_meter_features_stats_reply_new_from_message(of_message_t msg)
-{
-    of_meter_features_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_features_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_features_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_features_stats_reply.
@@ -6180,10 +5991,7 @@ of_meter_features_stats_reply_features_bind(
     /* Initialize child */
     of_meter_features_init(features, obj->version, 0, 1);
     /* Attach to parent */
-    features->parent = (of_object_t *)obj;
-    features->wbuf = obj->wbuf;
-    features->obj_offset = abs_offset;
-    features->length = cur_len;
+    of_object_attach(obj, features, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -6359,9 +6167,6 @@ of_meter_features_stats_request_push_wire_values(of_meter_features_stats_request
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_features_stats_request
  */
 
@@ -6429,46 +6234,6 @@ of_meter_features_stats_request_init(of_meter_features_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_features_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_features_stats_request
- */
-
-of_meter_features_stats_request_t *
-of_meter_features_stats_request_new_from_message(of_message_t msg)
-{
-    of_meter_features_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_features_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_features_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_features_stats_request.
@@ -6704,9 +6469,6 @@ of_meter_mod_push_wire_values(of_meter_mod_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_mod
  */
 
@@ -6774,46 +6536,6 @@ of_meter_mod_init(of_meter_mod_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_mod object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_mod
- */
-
-of_meter_mod_t *
-of_meter_mod_new_from_message(of_message_t msg)
-{
-    of_meter_mod_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_mod_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_mod_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_mod.
@@ -7094,10 +6816,7 @@ of_meter_mod_meters_bind(
     /* Initialize child */
     of_list_meter_band_init(meters, obj->version, 0, 1);
     /* Attach to parent */
-    meters->parent = (of_object_t *)obj;
-    meters->wbuf = obj->wbuf;
-    meters->obj_offset = abs_offset;
-    meters->length = cur_len;
+    of_object_attach(obj, meters, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -7273,9 +6992,6 @@ of_meter_mod_failed_error_msg_push_wire_values(of_meter_mod_failed_error_msg_t *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_mod_failed_error_msg
  */
 
@@ -7343,46 +7059,6 @@ of_meter_mod_failed_error_msg_init(of_meter_mod_failed_error_msg_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_mod_failed_error_msg object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_mod_failed_error_msg
- */
-
-of_meter_mod_failed_error_msg_t *
-of_meter_mod_failed_error_msg_new_from_message(of_message_t msg)
-{
-    of_meter_mod_failed_error_msg_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_mod_failed_error_msg_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_mod_failed_error_msg_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_mod_failed_error_msg.
@@ -7692,9 +7368,6 @@ of_meter_stats_push_wire_values(of_meter_stats_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_meter_stats
  */
@@ -8277,10 +7950,7 @@ of_meter_stats_band_stats_bind(
     /* Initialize child */
     of_list_meter_band_stats_init(band_stats, obj->version, 0, 1);
     /* Attach to parent */
-    band_stats->parent = (of_object_t *)obj;
-    band_stats->wbuf = obj->wbuf;
-    band_stats->obj_offset = abs_offset;
-    band_stats->length = cur_len;
+    of_object_attach(obj, band_stats, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -8456,9 +8126,6 @@ of_meter_stats_reply_push_wire_values(of_meter_stats_reply_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_stats_reply
  */
 
@@ -8526,46 +8193,6 @@ of_meter_stats_reply_init(of_meter_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_stats_reply
- */
-
-of_meter_stats_reply_t *
-of_meter_stats_reply_new_from_message(of_message_t msg)
-{
-    of_meter_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_stats_reply.
@@ -8768,10 +8395,7 @@ of_meter_stats_reply_entries_bind(
     /* Initialize child */
     of_list_meter_stats_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -8947,9 +8571,6 @@ of_meter_stats_request_push_wire_values(of_meter_stats_request_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_meter_stats_request
  */
 
@@ -9017,46 +8638,6 @@ of_meter_stats_request_init(of_meter_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_meter_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_meter_stats_request
- */
-
-of_meter_stats_request_t *
-of_meter_stats_request_new_from_message(of_message_t msg)
-{
-    of_meter_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_meter_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_meter_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_meter_stats_request.
@@ -9362,9 +8943,6 @@ of_oxm_tunnel_id_push_wire_values(of_oxm_tunnel_id_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_oxm_tunnel_id
  */
 
@@ -9580,9 +9158,6 @@ of_oxm_tunnel_id_masked_push_wire_values(of_oxm_tunnel_id_masked_t *obj)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_oxm_tunnel_id_masked
  */
@@ -9887,9 +9462,6 @@ of_port_desc_stats_reply_push_wire_values(of_port_desc_stats_reply_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_port_desc_stats_reply
  */
 
@@ -9957,46 +9529,6 @@ of_port_desc_stats_reply_init(of_port_desc_stats_reply_t *obj,
     }
 }
 
-
-/**
- * Create a new of_port_desc_stats_reply object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_port_desc_stats_reply
- */
-
-of_port_desc_stats_reply_t *
-of_port_desc_stats_reply_new_from_message(of_message_t msg)
-{
-    of_port_desc_stats_reply_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_port_desc_stats_reply_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_stats_reply_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_port_desc_stats_reply.
@@ -10199,10 +9731,7 @@ of_port_desc_stats_reply_entries_bind(
     /* Initialize child */
     of_list_port_desc_init(entries, obj->version, 0, 1);
     /* Attach to parent */
-    entries->parent = (of_object_t *)obj;
-    entries->wbuf = obj->wbuf;
-    entries->obj_offset = abs_offset;
-    entries->length = cur_len;
+    of_object_attach(obj, entries, offset, cur_len);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -10378,9 +9907,6 @@ of_port_desc_stats_request_push_wire_values(of_port_desc_stats_request_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
- *
  * \ingroup of_port_desc_stats_request
  */
 
@@ -10448,46 +9974,6 @@ of_port_desc_stats_request_init(of_port_desc_stats_request_t *obj,
     }
 }
 
-
-/**
- * Create a new of_port_desc_stats_request object and bind it to an existing message
- *
- * @param msg The message to bind the new object to
- * @return Pointer to the newly create object or NULL on error
- *
- * \ingroup of_port_desc_stats_request
- */
-
-of_port_desc_stats_request_t *
-of_port_desc_stats_request_new_from_message(of_message_t msg)
-{
-    of_port_desc_stats_request_t *obj = NULL;
-    of_version_t version;
-    int length;
-
-    if (msg == NULL) return NULL;
-
-    version = of_message_version_get(msg);
-    if (!OF_VERSION_OKAY(version)) return NULL;
-
-    length = of_message_length_get(msg);
-
-    if ((obj = (of_port_desc_stats_request_t *)of_object_new(-1)) == NULL) {
-        return NULL;
-    }
-
-    of_port_desc_stats_request_init(obj, version, 0, 0);
-
-    if ((of_object_buffer_bind((of_object_t *)obj, OF_MESSAGE_TO_BUFFER(msg),
-                               length, OF_MESSAGE_FREE_FUNCTION)) < 0) {
-       FREE(obj);
-       return NULL;
-    }
-    obj->length = length;
-    obj->version = version;
-
-    return obj;
-}
 
 /**
  * Get xid from an object of type of_port_desc_stats_request.
@@ -10756,9 +10242,6 @@ of_table_feature_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  *
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
- *
- * Use new_from_message to bind an existing message to a message object,
- * or a _get function for non-message objects.
  *
  * \ingroup of_table_feature_prop
  */
