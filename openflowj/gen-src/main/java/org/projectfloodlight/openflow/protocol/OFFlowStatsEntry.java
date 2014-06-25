@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
+import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFFlowStatsEntry extends OFObject {
@@ -39,7 +40,7 @@ public interface OFFlowStatsEntry extends OFObject {
     Match getMatch();
     List<OFInstruction> getInstructions() throws UnsupportedOperationException;
     List<OFAction> getActions() throws UnsupportedOperationException;
-    int getFlags() throws UnsupportedOperationException;
+    Set<OFFlowModFlags> getFlags() throws UnsupportedOperationException;
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -71,8 +72,8 @@ public interface OFFlowStatsEntry extends OFObject {
         Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException;
         List<OFAction> getActions() throws UnsupportedOperationException;
         Builder setActions(List<OFAction> actions) throws UnsupportedOperationException;
-        int getFlags() throws UnsupportedOperationException;
-        Builder setFlags(int flags) throws UnsupportedOperationException;
+        Set<OFFlowModFlags> getFlags() throws UnsupportedOperationException;
+        Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

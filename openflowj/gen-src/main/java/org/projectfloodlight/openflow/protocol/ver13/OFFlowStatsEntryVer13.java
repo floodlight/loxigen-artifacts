@@ -25,9 +25,10 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Set;
+import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -44,7 +45,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         private final static int DEFAULT_PRIORITY = 0x0;
         private final static int DEFAULT_IDLE_TIMEOUT = 0x0;
         private final static int DEFAULT_HARD_TIMEOUT = 0x0;
-        private final static int DEFAULT_FLAGS = 0x0;
+        private final static Set<OFFlowModFlags> DEFAULT_FLAGS = ImmutableSet.<OFFlowModFlags>of();
         private final static U64 DEFAULT_COOKIE = U64.ZERO;
         private final static U64 DEFAULT_PACKET_COUNT = U64.ZERO;
         private final static U64 DEFAULT_BYTE_COUNT = U64.ZERO;
@@ -58,7 +59,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     private final int priority;
     private final int idleTimeout;
     private final int hardTimeout;
-    private final int flags;
+    private final Set<OFFlowModFlags> flags;
     private final U64 cookie;
     private final U64 packetCount;
     private final U64 byteCount;
@@ -71,7 +72,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFFlowStatsEntryVer13(TableId tableId, long durationSec, long durationNsec, int priority, int idleTimeout, int hardTimeout, int flags, U64 cookie, U64 packetCount, U64 byteCount, Match match, List<OFInstruction> instructions) {
+    OFFlowStatsEntryVer13(TableId tableId, long durationSec, long durationNsec, int priority, int idleTimeout, int hardTimeout, Set<OFFlowModFlags> flags, U64 cookie, U64 packetCount, U64 byteCount, Match match, List<OFInstruction> instructions) {
         this.tableId = tableId;
         this.durationSec = durationSec;
         this.durationNsec = durationNsec;
@@ -148,7 +149,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getFlags() {
+    public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
 
@@ -180,7 +181,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         private boolean hardTimeoutSet;
         private int hardTimeout;
         private boolean flagsSet;
-        private int flags;
+        private Set<OFFlowModFlags> flags;
         private boolean cookieSet;
         private U64 cookie;
         private boolean packetCountSet;
@@ -327,12 +328,12 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public int getFlags() {
+    public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(int flags) {
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -354,7 +355,9 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
                 int priority = this.prioritySet ? this.priority : parentMessage.priority;
                 int idleTimeout = this.idleTimeoutSet ? this.idleTimeout : parentMessage.idleTimeout;
                 int hardTimeout = this.hardTimeoutSet ? this.hardTimeout : parentMessage.hardTimeout;
-                int flags = this.flagsSet ? this.flags : parentMessage.flags;
+                Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
+                if(flags == null)
+                    throw new NullPointerException("Property flags must not be null");
                 U64 cookie = this.cookieSet ? this.cookie : parentMessage.cookie;
                 if(cookie == null)
                     throw new NullPointerException("Property cookie must not be null");
@@ -405,7 +408,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         private boolean hardTimeoutSet;
         private int hardTimeout;
         private boolean flagsSet;
-        private int flags;
+        private Set<OFFlowModFlags> flags;
         private boolean cookieSet;
         private U64 cookie;
         private boolean packetCountSet;
@@ -548,12 +551,12 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.3");
     }
     @Override
-    public int getFlags() {
+    public Set<OFFlowModFlags> getFlags() {
         return flags;
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(int flags) {
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) {
         this.flags = flags;
         this.flagsSet = true;
         return this;
@@ -574,7 +577,9 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             int priority = this.prioritySet ? this.priority : DEFAULT_PRIORITY;
             int idleTimeout = this.idleTimeoutSet ? this.idleTimeout : DEFAULT_IDLE_TIMEOUT;
             int hardTimeout = this.hardTimeoutSet ? this.hardTimeout : DEFAULT_HARD_TIMEOUT;
-            int flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
+            Set<OFFlowModFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
+            if(flags == null)
+                throw new NullPointerException("Property flags must not be null");
             U64 cookie = this.cookieSet ? this.cookie : DEFAULT_COOKIE;
             if(cookie == null)
                 throw new NullPointerException("Property cookie must not be null");
@@ -634,7 +639,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             int priority = U16.f(bb.readShort());
             int idleTimeout = U16.f(bb.readShort());
             int hardTimeout = U16.f(bb.readShort());
-            int flags = U16.f(bb.readShort());
+            Set<OFFlowModFlags> flags = OFFlowModFlagsSerializerVer13.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
             U64 cookie = U64.ofRaw(bb.readLong());
@@ -680,7 +685,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             sink.putInt(message.priority);
             sink.putInt(message.idleTimeout);
             sink.putInt(message.hardTimeout);
-            sink.putInt(message.flags);
+            OFFlowModFlagsSerializerVer13.putTo(message.flags, sink);
             // skip pad (4 bytes)
             message.cookie.putTo(sink);
             message.packetCount.putTo(sink);
@@ -712,7 +717,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             bb.writeShort(U16.t(message.priority));
             bb.writeShort(U16.t(message.idleTimeout));
             bb.writeShort(U16.t(message.hardTimeout));
-            bb.writeShort(U16.t(message.flags));
+            OFFlowModFlagsSerializerVer13.writeTo(bb, message.flags);
             // pad: 4 bytes
             bb.writeZero(4);
             bb.writeLong(message.cookie.getValue());
@@ -783,7 +788,10 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
             return false;
         if( hardTimeout != other.hardTimeout)
             return false;
-        if( flags != other.flags)
+        if (flags == null) {
+            if (other.flags != null)
+                return false;
+        } else if (!flags.equals(other.flags))
             return false;
         if (cookie == null) {
             if (other.cookie != null)
@@ -824,7 +832,7 @@ class OFFlowStatsEntryVer13 implements OFFlowStatsEntry {
         result = prime * result + priority;
         result = prime * result + idleTimeout;
         result = prime * result + hardTimeout;
-        result = prime * result + flags;
+        result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((cookie == null) ? 0 : cookie.hashCode());
         result = prime * result + ((packetCount == null) ? 0 : packetCount.hashCode());
         result = prime * result + ((byteCount == null) ? 0 : byteCount.hashCode());

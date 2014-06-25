@@ -1,1 +1,1 @@
-cc956a90f13c4088df6fd9f8921f3583ef9e931f Merge into master from pull request #283: remove dead code and speed up match deserialization (https://github.com/floodlight/loxigen/pull/283)
+eeaa0005c4ee22087bffacc60b7dff420d3fc2cc Merge into master from pull request #289: Fix type of of_flow_stats_entry.flags, smaller fixes to Java (https://github.com/floodlight/loxigen/pull/289)

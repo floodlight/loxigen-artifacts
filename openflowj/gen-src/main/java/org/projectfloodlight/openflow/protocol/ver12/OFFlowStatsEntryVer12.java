@@ -145,7 +145,7 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
     }
 
     @Override
-    public int getFlags()throws UnsupportedOperationException {
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
 
@@ -322,12 +322,12 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
     @Override
-    public int getFlags()throws UnsupportedOperationException {
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(int flags) throws UnsupportedOperationException {
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
     @Override
@@ -537,12 +537,12 @@ class OFFlowStatsEntryVer12 implements OFFlowStatsEntry {
             throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
     @Override
-    public int getFlags()throws UnsupportedOperationException {
+    public Set<OFFlowModFlags> getFlags()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
 
     @Override
-    public OFFlowStatsEntry.Builder setFlags(int flags) throws UnsupportedOperationException {
+    public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property flags not supported in version 1.2");
     }
     @Override
