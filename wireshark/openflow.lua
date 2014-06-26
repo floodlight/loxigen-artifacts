@@ -1698,6 +1698,15 @@ local enum_v4_ofp_flow_mod_failed_code = {
     [7] = "OFPFMFC_BAD_FLAGS",
 }
 
+local enum_v4_ofp_bsn_loglevel = {
+    [0] = "OFP_BSN_LOGLEVEL_MSG",
+    [1] = "OFP_BSN_LOGLEVEL_ERROR",
+    [2] = "OFP_BSN_LOGLEVEL_WARN",
+    [3] = "OFP_BSN_LOGLEVEL_INFO",
+    [4] = "OFP_BSN_LOGLEVEL_VERBOSE",
+    [5] = "OFP_BSN_LOGLEVEL_TRACE",
+}
+
 local enum_v4_ofp_port_mod_failed_code = {
     [0] = "OFPPMFC_BAD_PORT",
     [1] = "OFPPMFC_BAD_HW_ADDR",
@@ -5534,6 +5543,14 @@ fields['of13.bsn_lacp_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_l
 fields['of13.bsn_lacp_stats_request.flags'] = ProtoField.uint32("of13.bsn_lacp_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
 fields['of13.bsn_lacp_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_lacp_stats_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_lacp_stats_request.subtype'] = ProtoField.uint32("of13.bsn_lacp_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_log.version'] = ProtoField.uint8("of13.bsn_log.version", "version", base.DEC, nil)
+fields['of13.bsn_log.type'] = ProtoField.uint8("of13.bsn_log.type", "type", base.DEC, nil)
+fields['of13.bsn_log.length'] = ProtoField.uint16("of13.bsn_log.length", "length", base.DEC, nil)
+fields['of13.bsn_log.xid'] = ProtoField.uint32("of13.bsn_log.xid", "xid", base.DEC, nil)
+fields['of13.bsn_log.experimenter'] = ProtoField.uint32("of13.bsn_log.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_log.subtype'] = ProtoField.uint32("of13.bsn_log.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_log.loglevel'] = ProtoField.uint32("of13.bsn_log.loglevel", "loglevel", base.DEC, enum_v4_ofp_bsn_loglevel)
+fields['of13.bsn_log.data'] = ProtoField.bytes("of13.bsn_log.data", "data")
 fields['of13.bsn_pdu_rx_reply.version'] = ProtoField.uint8("of13.bsn_pdu_rx_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_pdu_rx_reply.type'] = ProtoField.uint8("of13.bsn_pdu_rx_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_pdu_rx_reply.length'] = ProtoField.uint16("of13.bsn_pdu_rx_reply.length", "length", base.DEC, nil)
@@ -10724,6 +10741,14 @@ p_of.fields = {
     fields['of13.bsn_lacp_stats_request.flags'],
     fields['of13.bsn_lacp_stats_request.experimenter'],
     fields['of13.bsn_lacp_stats_request.subtype'],
+    fields['of13.bsn_log.version'],
+    fields['of13.bsn_log.type'],
+    fields['of13.bsn_log.length'],
+    fields['of13.bsn_log.xid'],
+    fields['of13.bsn_log.experimenter'],
+    fields['of13.bsn_log.subtype'],
+    fields['of13.bsn_log.loglevel'],
+    fields['of13.bsn_log.data'],
     fields['of13.bsn_pdu_rx_reply.version'],
     fields['of13.bsn_pdu_rx_reply.type'],
     fields['of13.bsn_pdu_rx_reply.length'],
@@ -20650,6 +20675,24 @@ function dissect_of_bsn_lacp_stats_request_v4(reader, subtree)
     return 'of_bsn_lacp_stats_request'
 end
 of_bsn_stats_request_v4_dissectors[1] = dissect_of_bsn_lacp_stats_request_v4
+
+-- child class of_bsn_log
+-- Child of of_bsn_header
+function dissect_of_bsn_log_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_log.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_log.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_log.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_log.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_log.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_log.subtype')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_log.loglevel')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_log.data')
+    return 'of_bsn_log'
+end
+of_bsn_header_v4_dissectors[63] = dissect_of_bsn_log_v4
 
 -- child class of_bsn_pdu_rx_reply
 -- Child of of_bsn_header

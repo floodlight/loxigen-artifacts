@@ -709,6 +709,8 @@ void of_bsn_lacp_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_lacp_stats_reply_push_wire_types(of_object_t *obj);
 void of_bsn_lacp_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_lacp_stats_request_push_wire_types(of_object_t *obj);
+void of_bsn_log_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_log_push_wire_types(of_object_t *obj);
 void of_bsn_port_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_port_counter_stats_entry_push_wire_types(of_object_t *obj);
 void of_bsn_port_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1027,6 +1029,7 @@ typedef of_object_t of_bsn_image_desc_stats_request_t;
 typedef of_object_t of_bsn_lacp_convergence_notif_t;
 typedef of_object_t of_bsn_lacp_stats_reply_t;
 typedef of_object_t of_bsn_lacp_stats_request_t;
+typedef of_object_t of_bsn_log_t;
 typedef of_object_t of_bsn_pdu_rx_reply_t;
 typedef of_object_t of_bsn_pdu_rx_request_t;
 typedef of_object_t of_bsn_pdu_rx_timeout_t;
@@ -1818,6 +1821,11 @@ extern of_bsn_lacp_stats_request_t *
     of_bsn_lacp_stats_request_new(of_version_t version);
 extern void of_bsn_lacp_stats_request_init(
     of_bsn_lacp_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_log_t *
+    of_bsn_log_new(of_version_t version);
+extern void of_bsn_log_init(
+    of_bsn_log_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_pdu_rx_reply_t *
     of_bsn_pdu_rx_reply_new(of_version_t version);
@@ -4822,6 +4830,17 @@ of_bsn_lacp_stats_reply_delete(of_bsn_lacp_stats_reply_t *obj) {
  */
 static inline void
 of_bsn_lacp_stats_request_delete(of_bsn_lacp_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_log_t
+ * @param obj An instance of type of_bsn_log_t
+ *
+ * \ingroup of_bsn_log
+ */
+static inline void
+of_bsn_log_delete(of_bsn_log_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -12139,6 +12158,43 @@ extern void of_bsn_lacp_stats_request_subtype_set(
 extern void of_bsn_lacp_stats_request_subtype_get(
     of_bsn_lacp_stats_request_t *obj,
     uint32_t *subtype);
+
+/* Unified accessor functions for of_bsn_log */
+
+extern void of_bsn_log_xid_set(
+    of_bsn_log_t *obj,
+    uint32_t xid);
+extern void of_bsn_log_xid_get(
+    of_bsn_log_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_log_experimenter_set(
+    of_bsn_log_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_log_experimenter_get(
+    of_bsn_log_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_log_subtype_set(
+    of_bsn_log_t *obj,
+    uint32_t subtype);
+extern void of_bsn_log_subtype_get(
+    of_bsn_log_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_log_loglevel_set(
+    of_bsn_log_t *obj,
+    uint8_t loglevel);
+extern void of_bsn_log_loglevel_get(
+    of_bsn_log_t *obj,
+    uint8_t *loglevel);
+
+extern int WARN_UNUSED_RESULT of_bsn_log_data_set(
+    of_bsn_log_t *obj,
+    of_octets_t *data);
+extern void of_bsn_log_data_get(
+    of_bsn_log_t *obj,
+    of_octets_t *data);
 
 /* Unified accessor functions for of_bsn_pdu_rx_reply */
 

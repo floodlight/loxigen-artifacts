@@ -22537,6 +22537,45 @@ of_bsn_lacp_stats_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_log
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_log.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_log_t *
+of_bsn_log_OF_VERSION_1_3_dup(
+    of_bsn_log_t *src)
+{
+    of_bsn_log_t *dst;
+    uint32_t val32;
+    uint8_t val8;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_log_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_log_xid_get(src, &val32);
+    of_bsn_log_xid_set(dst, val32);
+
+    of_bsn_log_experimenter_get(src, &val32);
+    of_bsn_log_experimenter_set(dst, val32);
+
+    of_bsn_log_subtype_get(src, &val32);
+    of_bsn_log_subtype_set(dst, val32);
+
+    of_bsn_log_loglevel_get(src, &val8);
+    of_bsn_log_loglevel_set(dst, val8);
+
+    of_bsn_log_data_get(src, &octets);
+    of_bsn_log_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_pdu_rx_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -38321,6 +38360,19 @@ of_bsn_lacp_stats_request_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_lacp_stats_request_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_log_t *
+of_bsn_log_dup(
+    of_bsn_log_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_log_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

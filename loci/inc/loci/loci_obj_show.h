@@ -651,6 +651,7 @@ int of_bsn_image_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 int of_bsn_lacp_convergence_notif_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_convergence_notif_t *obj);
 int of_bsn_lacp_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_stats_reply_t *obj);
 int of_bsn_lacp_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_stats_request_t *obj);
+int of_bsn_log_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_log_t *obj);
 int of_bsn_pdu_rx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj);
 int of_bsn_pdu_rx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_request_t *obj);
 int of_bsn_pdu_rx_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_timeout_t *obj);

@@ -237,6 +237,23 @@ ofp_bsn_controller_role_reason_map = {
     2: 'OFP_BSN_CONTROLLER_ROLE_REASON_EXPERIMENTER',
 }
 
+# Identifiers from group ofp_bsn_loglevel
+OFP_BSN_LOGLEVEL_MSG = 0
+OFP_BSN_LOGLEVEL_ERROR = 1
+OFP_BSN_LOGLEVEL_WARN = 2
+OFP_BSN_LOGLEVEL_INFO = 3
+OFP_BSN_LOGLEVEL_VERBOSE = 4
+OFP_BSN_LOGLEVEL_TRACE = 5
+
+ofp_bsn_loglevel_map = {
+    0: 'OFP_BSN_LOGLEVEL_MSG',
+    1: 'OFP_BSN_LOGLEVEL_ERROR',
+    2: 'OFP_BSN_LOGLEVEL_WARN',
+    3: 'OFP_BSN_LOGLEVEL_INFO',
+    4: 'OFP_BSN_LOGLEVEL_VERBOSE',
+    5: 'OFP_BSN_LOGLEVEL_TRACE',
+}
+
 # Identifiers from group ofp_bsn_pktin_flag
 OFP_BSN_PKTIN_FLAG_PDU = 1
 OFP_BSN_PKTIN_FLAG_NEW_HOST = 2

@@ -270,6 +270,10 @@ extern of_bsn_lacp_stats_request_t *
     of_bsn_lacp_stats_request_dup(
         of_bsn_lacp_stats_request_t *src);
 
+extern of_bsn_log_t *
+    of_bsn_log_dup(
+        of_bsn_log_t *src);
+
 extern of_bsn_pdu_rx_reply_t *
     of_bsn_pdu_rx_reply_dup(
         of_bsn_pdu_rx_reply_t *src);
@@ -4589,6 +4593,10 @@ extern of_bsn_lacp_stats_reply_t *
 extern of_bsn_lacp_stats_request_t *
     of_bsn_lacp_stats_request_OF_VERSION_1_3_dup(
         of_bsn_lacp_stats_request_t *src);
+
+extern of_bsn_log_t *
+    of_bsn_log_OF_VERSION_1_3_dup(
+        of_bsn_log_t *src);
 
 extern of_bsn_pdu_rx_reply_t *
     of_bsn_pdu_rx_reply_OF_VERSION_1_3_dup(

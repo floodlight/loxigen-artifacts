@@ -890,6 +890,10 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnLacpStatsRequest not supported in version 1.2");
     }
 
+    public OFBsnLog.Builder buildBsnLog() {
+        throw new UnsupportedOperationException("OFBsnLog not supported in version 1.2");
+    }
+
     public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
         throw new UnsupportedOperationException("OFBsnPortCounterStatsEntry not supported in version 1.2");
     }

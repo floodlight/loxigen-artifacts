@@ -657,6 +657,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_lacp_convergence_notif_O
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_log_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_timeout_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -16428,6 +16429,8 @@ loci_validate_of_bsn_header_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_get_switch_pipeline_request_OF_VERSION_1_3(data, len, out_len);
     case 0x2b:
         return loci_validate_of_bsn_lacp_convergence_notif_OF_VERSION_1_3(data, len, out_len);
+    case 0x3f:
+        return loci_validate_of_bsn_log_OF_VERSION_1_3(data, len, out_len);
     case 0x22:
         return loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_3(data, len, out_len);
     case 0x21:
@@ -17958,6 +17961,29 @@ loci_validate_of_bsn_lacp_stats_request_OF_VERSION_1_3(uint8_t *data, int len, i
     if (wire_len > len || wire_len < 24) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_log_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 17) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 17) {
+        return -1;
+    }
+
+    len = wire_len;
 
 
 

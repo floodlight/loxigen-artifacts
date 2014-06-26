@@ -5549,6 +5549,15 @@ extern int of_bsn_lacp_stats_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_lacp_stats_request_OF_VERSION_1_3_check_scalars(
     of_bsn_lacp_stats_request_t *obj, int value);
 
+extern int of_bsn_log_OF_VERSION_1_3_populate(
+    of_bsn_log_t *obj, int value);
+extern int of_bsn_log_OF_VERSION_1_3_check(
+    of_bsn_log_t *obj, int value);
+extern int of_bsn_log_OF_VERSION_1_3_populate_scalars(
+    of_bsn_log_t *obj, int value);
+extern int of_bsn_log_OF_VERSION_1_3_check_scalars(
+    of_bsn_log_t *obj, int value);
+
 extern int of_bsn_pdu_rx_reply_OF_VERSION_1_3_populate(
     of_bsn_pdu_rx_reply_t *obj, int value);
 extern int of_bsn_pdu_rx_reply_OF_VERSION_1_3_check(

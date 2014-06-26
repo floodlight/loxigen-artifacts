@@ -16564,6 +16564,42 @@ of_bsn_lacp_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
+of_bsn_log_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_log_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint8_t val8;
+    of_octets_t octets;
+
+    of_bsn_log_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_log_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_log_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_log_loglevel_get(obj, &val8);
+    out += writer(cookie, "loglevel=");
+    out += LOCI_SHOW_u8_loglevel(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    of_bsn_log_data_get(obj, &octets);
+    out += writer(cookie, "data=");
+    out += LOCI_SHOW_octets_data(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_pdu_rx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj)
 {
     int out = 0;
@@ -26019,6 +26055,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_0_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_0_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_0_show,
@@ -26540,6 +26577,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_header_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -27075,6 +27113,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_2_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_2_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_2_show,
@@ -27603,6 +27642,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_lacp_convergence_notif_OF_VERSION_1_3_show,
     of_bsn_lacp_stats_reply_OF_VERSION_1_3_show,
     of_bsn_lacp_stats_request_OF_VERSION_1_3_show,
+    of_bsn_log_OF_VERSION_1_3_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_3_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_3_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_3_show,

@@ -1663,6 +1663,33 @@ typedef struct of_bsn_lacp_stats_reply_s of_bsn_lacp_stats_reply_t;
 typedef struct of_bsn_lacp_stats_request_s of_bsn_lacp_stats_request_t;
 
 /**
+ * Structure for of_bsn_log object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_log_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_log_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_log_uint32_get_f and _set_f.
+ *
+ * @param loglevel_get/set ( OF_1_3).
+ *   Accessors for loglevel, a variable of type uint8.  Functions
+ *   are of type of_bsn_log_uint8_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_log_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_log_s of_bsn_log_t;
+
+/**
  * Structure for of_bsn_pdu_rx_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
