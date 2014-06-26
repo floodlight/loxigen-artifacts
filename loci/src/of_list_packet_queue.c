@@ -29,7 +29,88 @@
 #include "loci_log.h"
 #include "loci_int.h"
 
+/**
+ * Associate an iterator with a list
+ * @param list The list to iterate over
+ * @param obj The list entry iteration pointer
+ * @return OF_ERROR_RANGE if the list is empty (end of list)
+ *
+ * The obj instance is completely initialized.  The caller is responsible
+ * for cleaning up any wire buffers associated with obj before this call
+ */
 
+int
+of_list_packet_queue_first(of_list_packet_queue_t *list, of_packet_queue_t *_obj)
+{
+    int rv;
+    of_object_t *obj = (of_object_t *)_obj;
+
+    of_packet_queue_init(_obj, list->version, -1, 1);
+
+    if ((rv = of_list_first(list, obj)) < 0) {
+        return rv;
+    }
+
+
+    of_packet_queue_wire_length_get(obj, &obj->length);
+
+    return rv;
+}
+
+/**
+ * Advance an iterator to the next element in a list
+ * @param list The list being iterated
+ * @param obj The list entry iteration pointer
+ * @return OF_ERROR_RANGE if already at the last entry on the list
+ *
+ */
+
+int
+of_list_packet_queue_next(of_list_packet_queue_t *list, of_packet_queue_t *_obj)
+{
+    int rv;
+    of_object_t *obj = (of_object_t *)_obj;
+
+    if ((rv = of_list_next(list, obj)) < 0) {
+        return rv;
+    }
+
+
+    of_packet_queue_wire_length_get(obj, &obj->length);
+
+    return rv;
+}
+
+/**
+ * Set up to append an object of type of_packet_queue to an of_list_packet_queue.
+ * @param list The list that is prepared for append
+ * @param obj Pointer to object to hold data to append
+ *
+ * The obj instance is completely initialized.  The caller is responsible
+ * for cleaning up any wire buffers associated with obj before this call.
+ *
+ * See the generic documentation for of_list_append_bind.
+ */
+
+int
+of_list_packet_queue_append_bind(of_list_packet_queue_t *list, of_packet_queue_t *obj)
+{
+    return of_list_append_bind(list, (of_object_t *)obj);
+}
+
+/**
+ * Append an object to a of_list_packet_queue list.
+ *
+ * This copies data from obj and leaves item untouched.
+ *
+ * See the generic documentation for of_list_append.
+ */
+
+int
+of_list_packet_queue_append(of_list_packet_queue_t *list, of_packet_queue_t *obj)
+{
+    return of_list_append(list, (of_object_t *)obj);
+}
 
 /**
  * \defgroup of_list_packet_queue of_list_packet_queue
@@ -104,98 +185,5 @@ of_list_packet_queue_init(of_list_packet_queue_t *obj,
         tot_bytes = bytes + obj->obj_offset;
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
-}
-
-
-/**
- * Associate an iterator with a list
- * @param list The list to iterate over
- * @param obj The list entry iteration pointer
- * @return OF_ERROR_RANGE if the list is empty (end of list)
- *
- * The obj instance is completely initialized.  The caller is responsible
- * for cleaning up any wire buffers associated with obj before this call
- */
-
-int
-of_list_packet_queue_first(of_list_packet_queue_t *list,
-    of_packet_queue_t *obj)
-{
-    int rv;
-
-    of_packet_queue_init(obj,
-            list->version, 0, 1);
-    if ((rv = of_list_first((of_object_t *)list, (of_object_t *)obj)) < 0) {
-        return rv;
-    }
-
-    of_object_wire_init((of_object_t *) obj, OF_PACKET_QUEUE,
-                        list->length);
-    if (obj->length == 0) {
-        return OF_ERROR_PARSE;
-    }
-
-    return rv;
-}
-
-/**
- * Advance an iterator to the next element in a list
- * @param list The list being iterated
- * @param obj The list entry iteration pointer
- * @return OF_ERROR_RANGE if already at the last entry on the list
- *
- */
-
-int
-of_list_packet_queue_next(of_list_packet_queue_t *list,
-    of_packet_queue_t *obj)
-{
-    int rv;
-
-    if ((rv = of_list_next((of_object_t *)list, (of_object_t *)obj)) < 0) {
-        return rv;
-    }
-
-    rv = of_object_wire_init((of_object_t *) obj, OF_PACKET_QUEUE,
-        list->length);
-
-    if ((rv == OF_ERROR_NONE) && (obj->length == 0)) {
-        return OF_ERROR_PARSE;
-    }
-
-    return rv;
-}
-
-/**
- * Set up to append an object of type of_packet_queue to an of_list_packet_queue.
- * @param list The list that is prepared for append
- * @param obj Pointer to object to hold data to append
- *
- * The obj instance is completely initialized.  The caller is responsible
- * for cleaning up any wire buffers associated with obj before this call.
- *
- * See the generic documentation for of_list_append_bind.
- */
-
-int
-of_list_packet_queue_append_bind(of_list_packet_queue_t *list,
-    of_packet_queue_t *obj)
-{
-    return of_list_append_bind((of_object_t *)list, (of_object_t *)obj);
-}
-
-/**
- * Append an item to a of_list_packet_queue list.
- *
- * This copies data from item and leaves item untouched.
- *
- * See the generic documentation for of_list_append.
- */
-
-int
-of_list_packet_queue_append(of_list_packet_queue_t *list,
-    of_packet_queue_t *item)
-{
-    return of_list_append((of_object_t *)list, (of_object_t *)item);
 }
 

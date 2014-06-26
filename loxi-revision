@@ -1,1 +1,1 @@
-eeaa0005c4ee22087bffacc60b7dff420d3fc2cc Merge into master from pull request #289: Fix type of of_flow_stats_entry.flags, smaller fixes to Java (https://github.com/floodlight/loxigen/pull/289)
+7d9242512ccec48103ac0358ebe69cac7ff49a31 Merge into master from pull request #284: Convert list accessors to templates and optimize (https://github.com/floodlight/loxigen/pull/284)
