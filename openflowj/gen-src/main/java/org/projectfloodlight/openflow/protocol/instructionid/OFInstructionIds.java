@@ -36,6 +36,7 @@ public interface OFInstructionIds {
     OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionIdBsnPermit bsnPermit();
     OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus();
+    OFInstructionIdBsnRequireVlanXlate bsnRequireVlanXlate();
     OFInstructionIdClearActions clearActions();
     OFInstructionIdGotoTable gotoTable();
     OFInstructionIdMeter meter();

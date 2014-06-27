@@ -105,6 +105,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnPrioritizePdusVer13.INSTANCE;
     }
 
+    public OFInstructionBsnRequireVlanXlate bsnRequireVlanXlate() {
+        return OFInstructionBsnRequireVlanXlateVer13.INSTANCE;
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         return new OFInstructionMeterVer13.Builder();
     }

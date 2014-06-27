@@ -67,6 +67,10 @@ public class OFInstructionIdsVer10 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnPrioritizePdus not supported in version 1.0");
     }
 
+    public OFInstructionIdBsnRequireVlanXlate bsnRequireVlanXlate() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnRequireVlanXlate not supported in version 1.0");
+    }
+
     public OFInstructionIdClearActions clearActions() {
         throw new UnsupportedOperationException("OFInstructionIdClearActions not supported in version 1.0");
     }

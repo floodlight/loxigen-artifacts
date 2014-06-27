@@ -430,6 +430,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnVlanXlatePortGroupId.Builder buildBsnVlanXlatePortGroupId() {
+        return new OFOxmBsnVlanXlatePortGroupIdVer13.Builder();
+    }
+    public OFOxmBsnVlanXlatePortGroupId bsnVlanXlatePortGroupId(ClassId value) {
+        return new OFOxmBsnVlanXlatePortGroupIdVer13(
+                value
+                    );
+    }
+
+    public OFOxmBsnVlanXlatePortGroupIdMasked.Builder buildBsnVlanXlatePortGroupIdMasked() {
+        return new OFOxmBsnVlanXlatePortGroupIdMaskedVer13.Builder();
+    }
+    public OFOxmBsnVlanXlatePortGroupIdMasked bsnVlanXlatePortGroupIdMasked(ClassId value, ClassId mask) {
+        return new OFOxmBsnVlanXlatePortGroupIdMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnVrf.Builder buildBsnVrf() {
         return new OFOxmBsnVrfVer13.Builder();
     }
@@ -1106,6 +1125,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6((UDF)((Object)value)));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7((UDF)((Object)value)));
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnVlanXlatePortGroupId((ClassId)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
             case ETH_DST:
@@ -1222,6 +1243,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)value), (UDF)((Object)mask)));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
             case ETH_DST:
@@ -1338,6 +1361,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
             case ETH_DST:

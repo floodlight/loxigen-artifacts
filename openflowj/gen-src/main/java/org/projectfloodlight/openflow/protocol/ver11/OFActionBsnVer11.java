@@ -54,6 +54,9 @@ abstract class OFActionBsnVer11 {
             int subtype = bb.readInt();
             bb.readerIndex(start);
             switch(subtype) {
+               case 0x4:
+                   // discriminator value 0x4L=0x4L for class OFActionBsnChecksumVer11
+                   return OFActionBsnChecksumVer11.READER.readFrom(bb);
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFActionBsnMirrorVer11
                    return OFActionBsnMirrorVer11.READER.readFrom(bb);

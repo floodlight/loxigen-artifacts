@@ -28,6 +28,7 @@ import java.util.Set;
 public interface OFActionIds {
     // Subfactories
 
+    OFActionIdBsnChecksum bsnChecksum();
     OFActionIdBsnMirror bsnMirror();
     OFActionIdBsnSetTunnelDst bsnSetTunnelDst();
     OFActionIdCopyTtlIn copyTtlIn();

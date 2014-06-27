@@ -195,6 +195,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -473,6 +477,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_IPV6_ND_SLL_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1833,6 +1841,27 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_tcp_flags_value_set(elt, src->fields.bsn_tcp_flags);
         }
     }
+    if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_TEST(src)) {
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_t *elt;
+            elt = &oxm_entry.bsn_vlan_xlate_port_group_id_masked;
+
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_set(elt,
+                   src->fields.bsn_vlan_xlate_port_group_id);
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_set(elt,
+                   src->masks.bsn_vlan_xlate_port_group_id);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_vlan_xlate_port_group_id_t *elt;
+            elt = &oxm_entry.bsn_vlan_xlate_port_group_id;
+            of_oxm_bsn_vlan_xlate_port_group_id_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_bsn_vlan_xlate_port_group_id_value_set(elt, src->fields.bsn_vlan_xlate_port_group_id);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2738,6 +2767,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_ipv6_nd_sll_value_get(
                 &oxm_entry.ipv6_nd_sll,
                 &dst->fields.ipv6_nd_sll);
+            break;
+
+        case OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED:
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(
+                &oxm_entry.bsn_vlan_xlate_port_group_id_masked,
+                &dst->masks.bsn_vlan_xlate_port_group_id);
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(
+                &oxm_entry.bsn_vlan_xlate_port_group_id,
+                &dst->fields.bsn_vlan_xlate_port_group_id);
+            of_memmask(&dst->fields.bsn_vlan_xlate_port_group_id, &dst->masks.bsn_vlan_xlate_port_group_id, sizeof(&dst->fields.bsn_vlan_xlate_port_group_id));
+            break;
+        case OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID:
+            OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_SET(dst);
+            of_oxm_bsn_vlan_xlate_port_group_id_value_get(
+                &oxm_entry.bsn_vlan_xlate_port_group_id,
+                &dst->fields.bsn_vlan_xlate_port_group_id);
             break;
 
         case OF_OXM_MPLS_TC_MASKED:

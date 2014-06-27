@@ -3110,6 +3110,33 @@ of_action_bsn_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
+of_action_bsn_checksum_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    out += writer(cookie, "Object of type of_action_bsn_checksum\n");
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "  checksum (of_checksum_128_t):  ");
+    out += LOCI_DUMP_checksum_128(writer, cookie, checksum_128);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -7273,6 +7300,33 @@ of_action_bsn_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_
     of_action_bsn_subtype_get(obj, &val32);
     out += writer(cookie, "  subtype (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_bsn_checksum_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    out += writer(cookie, "Object of type of_action_bsn_checksum\n");
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "  checksum (of_checksum_128_t):  ");
+    out += LOCI_DUMP_checksum_128(writer, cookie, checksum_128);
     out += writer(cookie, "\n");
 
     return out;
@@ -12225,6 +12279,33 @@ of_action_bsn_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
+of_action_bsn_checksum_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    out += writer(cookie, "Object of type of_action_bsn_checksum\n");
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "  checksum (of_checksum_128_t):  ");
+    out += LOCI_DUMP_checksum_128(writer, cookie, checksum_128);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -13836,6 +13917,43 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, o
     out += writer(cookie, "\n");
 
     of_oxm_bsn_udf7_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_vlan_xlate_port_group_id\n");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_vlan_xlate_port_group_id_masked\n");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(obj, &val32);
     out += writer(cookie, "  value_mask (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
@@ -21669,6 +21787,33 @@ of_action_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
+of_action_bsn_checksum_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    out += writer(cookie, "Object of type of_action_bsn_checksum\n");
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "  checksum (of_checksum_128_t):  ");
+    out += LOCI_DUMP_checksum_128(writer, cookie, checksum_128);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -21833,6 +21978,27 @@ of_action_id_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_acti
     out += writer(cookie, "\n");
 
     of_action_id_bsn_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_action_id_bsn_checksum_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_action_id_bsn_checksum\n");
+
+    of_action_id_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_action_id_bsn_checksum_subtype_get(obj, &val32);
     out += writer(cookie, "  subtype (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
@@ -23740,6 +23906,27 @@ of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 }
 
 int
+of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_bsn_require_vlan_xlate_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_bsn_require_vlan_xlate\n");
+
+    of_instruction_bsn_require_vlan_xlate_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_instruction_bsn_require_vlan_xlate_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_instruction_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
 {
     int out = 0;
@@ -23989,6 +24176,27 @@ of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dump(loci_writer_f writer, 
     out += writer(cookie, "\n");
 
     of_instruction_id_bsn_prioritize_pdus_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_require_vlan_xlate_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_id_bsn_require_vlan_xlate\n");
+
+    of_instruction_id_bsn_require_vlan_xlate_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_instruction_id_bsn_require_vlan_xlate_subtype_get(obj, &val32);
     out += writer(cookie, "  subtype (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
@@ -25145,6 +25353,43 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, o
     out += writer(cookie, "\n");
 
     of_oxm_bsn_udf7_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_vlan_xlate_port_group_id\n");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_vlan_xlate_port_group_id_masked\n");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(obj, &val32);
     out += writer(cookie, "  value_mask (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
@@ -27929,6 +28174,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_vlan_xlate_port_group_id (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_vlan_xlate_port_group_id);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_vlan_xlate_port_group_id);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(match)) {
         out += writer(cookie, "  mpls_tc (uint8_t) active: Value ");
         out += LOCI_DUMP_u8(writer, cookie, match->fields.mpls_tc);
@@ -28213,6 +28466,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_0_dump,
     unknown_dump,
     of_action_bsn_OF_VERSION_1_0_dump,
+    of_action_bsn_checksum_OF_VERSION_1_0_dump,
     of_action_bsn_mirror_OF_VERSION_1_0_dump,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -28223,6 +28477,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_0_dump,
     unknown_dump,
     of_action_header_OF_VERSION_1_0_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -28362,7 +28617,11 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_match_v1_OF_VERSION_1_0_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -28746,6 +29005,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_1_dump,
     unknown_dump,
     of_action_bsn_OF_VERSION_1_1_dump,
+    of_action_bsn_checksum_OF_VERSION_1_1_dump,
     of_action_bsn_mirror_OF_VERSION_1_1_dump,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_dump,
     of_action_copy_ttl_in_OF_VERSION_1_1_dump,
@@ -28756,6 +29016,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_1_dump,
     of_action_group_OF_VERSION_1_1_dump,
     of_action_header_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -28870,6 +29131,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_instruction_clear_actions_OF_VERSION_1_1_dump,
     of_instruction_experimenter_OF_VERSION_1_1_dump,
     of_instruction_goto_table_OF_VERSION_1_1_dump,
@@ -28893,10 +29155,13 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_instruction_write_actions_OF_VERSION_1_1_dump,
     of_instruction_write_metadata_OF_VERSION_1_1_dump,
     unknown_dump,
     of_match_v2_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -29279,6 +29544,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_2_dump,
     unknown_dump,
     of_action_bsn_OF_VERSION_1_2_dump,
+    of_action_bsn_checksum_OF_VERSION_1_2_dump,
     of_action_bsn_mirror_OF_VERSION_1_2_dump,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_dump,
     of_action_copy_ttl_in_OF_VERSION_1_2_dump,
@@ -29289,6 +29555,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_2_dump,
     of_action_group_OF_VERSION_1_2_dump,
     of_action_header_OF_VERSION_1_2_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -29403,10 +29670,12 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_instruction_clear_actions_OF_VERSION_1_2_dump,
     of_instruction_experimenter_OF_VERSION_1_2_dump,
     of_instruction_goto_table_OF_VERSION_1_2_dump,
     of_instruction_header_OF_VERSION_1_2_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -29483,6 +29752,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_udf7_OF_VERSION_1_2_dump,
     of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dump,
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_vrf_OF_VERSION_1_2_dump,
     of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dump,
     of_oxm_eth_dst_OF_VERSION_1_2_dump,
@@ -29812,6 +30083,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_3_dump,
     unknown_dump,
     of_action_bsn_OF_VERSION_1_3_dump,
+    of_action_bsn_checksum_OF_VERSION_1_3_dump,
     of_action_bsn_mirror_OF_VERSION_1_3_dump,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_dump,
     of_action_copy_ttl_in_OF_VERSION_1_3_dump,
@@ -29824,6 +30096,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_action_header_OF_VERSION_1_3_dump,
     unknown_dump,
     of_action_id_bsn_OF_VERSION_1_3_dump,
+    of_action_id_bsn_checksum_OF_VERSION_1_3_dump,
     of_action_id_bsn_mirror_OF_VERSION_1_3_dump,
     of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dump,
     of_action_id_copy_ttl_in_OF_VERSION_1_3_dump,
@@ -29936,6 +30209,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dump,
     of_instruction_bsn_permit_OF_VERSION_1_3_dump,
     of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dump,
+    of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dump,
     of_instruction_clear_actions_OF_VERSION_1_3_dump,
     of_instruction_experimenter_OF_VERSION_1_3_dump,
     of_instruction_goto_table_OF_VERSION_1_3_dump,
@@ -29951,6 +30225,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dump,
     of_instruction_id_bsn_permit_OF_VERSION_1_3_dump,
     of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dump,
+    of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dump,
     of_instruction_id_clear_actions_OF_VERSION_1_3_dump,
     of_instruction_id_experimenter_OF_VERSION_1_3_dump,
     of_instruction_id_goto_table_OF_VERSION_1_3_dump,
@@ -30016,6 +30291,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_udf7_OF_VERSION_1_3_dump,
     of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dump,
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_vrf_OF_VERSION_1_3_dump,
     of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dump,
     of_oxm_eth_dst_OF_VERSION_1_3_dump,

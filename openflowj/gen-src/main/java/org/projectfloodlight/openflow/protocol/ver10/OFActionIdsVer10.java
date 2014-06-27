@@ -32,6 +32,10 @@ public class OFActionIdsVer10 implements OFActionIds {
 
 
 
+    public OFActionIdBsnChecksum bsnChecksum() {
+        throw new UnsupportedOperationException("OFActionIdBsnChecksum not supported in version 1.0");
+    }
+
     public OFActionIdBsnMirror bsnMirror() {
         throw new UnsupportedOperationException("OFActionIdBsnMirror not supported in version 1.0");
     }

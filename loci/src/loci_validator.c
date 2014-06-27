@@ -22,6 +22,7 @@
 static int __attribute__((unused)) loci_validate_of_action_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_experimenter_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_bsn_checksum_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_mirror_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_enqueue_OF_VERSION_1_0(uint8_t *data, int len, int *out_len);
@@ -143,6 +144,7 @@ static int __attribute__((unused)) loci_validate_of_table_stats_request_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_action_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_experimenter_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_bsn_checksum_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_mirror_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_copy_ttl_in_OF_VERSION_1_1(uint8_t *data, int len, int *out_len);
@@ -287,6 +289,7 @@ static int __attribute__((unused)) loci_validate_of_table_stats_request_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_action_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_experimenter_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_bsn_checksum_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_mirror_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_copy_ttl_in_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -438,6 +441,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_OF_VERSION_1_2(
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_2(uint8_t *data, int len, int *out_len);
@@ -538,6 +543,8 @@ static int __attribute__((unused)) loci_validate_of_action_experimenter_OF_VERSI
 static int __attribute__((unused)) loci_validate_of_action_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_experimenter_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_mirror_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_bsn_mirror_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -785,6 +792,8 @@ static int __attribute__((unused)) loci_validate_of_instruction_bsn_permit_OF_VE
 static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_permit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_clear_actions_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_id_clear_actions_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_goto_table_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -855,6 +864,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_OF_VERSION_1_3(
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf6_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1220,11 +1231,35 @@ loci_validate_of_action_bsn_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
+    case 0x4:
+        return loci_validate_of_action_bsn_checksum_OF_VERSION_1_0(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_0(data, len, out_len);
     case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_0(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_bsn_checksum_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
+{
+    if (len < 28) {
+        return -1;
+    }
+
+    len = 28;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 28) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;
@@ -4518,11 +4553,35 @@ loci_validate_of_action_bsn_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
+    case 0x4:
+        return loci_validate_of_action_bsn_checksum_OF_VERSION_1_1(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_1(data, len, out_len);
     case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_1(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_bsn_checksum_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
+{
+    if (len < 28) {
+        return -1;
+    }
+
+    len = 28;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 28) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;
@@ -8408,11 +8467,35 @@ loci_validate_of_action_bsn_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
+    case 0x4:
+        return loci_validate_of_action_bsn_checksum_OF_VERSION_1_2(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_2(data, len, out_len);
     case 0x2:
         return loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_2(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_bsn_checksum_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 28) {
+        return -1;
+    }
+
+    len = 28;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 28) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;
@@ -8830,6 +8913,10 @@ loci_validate_of_oxm_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_2(data, len, out_len);
     case 0x31f08:
         return loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_2(data, len, out_len);
+    case 0x32204:
+        return loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2(data, len, out_len);
+    case 0x32308:
+        return loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2(data, len, out_len);
     case 0x30404:
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_2(data, len, out_len);
     case 0x30508:
@@ -12106,6 +12193,38 @@ loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_2(uint8_t *data, int len, int 
 }
 
 static int
+loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_2(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
@@ -14635,6 +14754,8 @@ loci_validate_of_action_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
+    case 0x4:
+        return loci_validate_of_action_bsn_checksum_OF_VERSION_1_3(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_3(data, len, out_len);
     case 0x2:
@@ -14697,11 +14818,57 @@ loci_validate_of_action_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     uint32_t wire_type;
     buf_u32_get(data + 8, &wire_type);
     switch (wire_type) {
+    case 0x4:
+        return loci_validate_of_action_id_bsn_checksum_OF_VERSION_1_3(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_id_bsn_mirror_OF_VERSION_1_3(data, len, out_len);
     case 0x2:
         return loci_validate_of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 28) {
+        return -1;
+    }
+
+    len = 28;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 28) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;
@@ -15522,6 +15689,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_3(data, len, out_len);
     case 0x31f08:
         return loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x32204:
+        return loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3(data, len, out_len);
+    case 0x32308:
+        return loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x30404:
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(data, len, out_len);
     case 0x30508:
@@ -20706,6 +20877,8 @@ loci_validate_of_instruction_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return loci_validate_of_instruction_bsn_permit_OF_VERSION_1_3(data, len, out_len);
     case 0x7:
         return loci_validate_of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3(data, len, out_len);
+    case 0x8:
+        return loci_validate_of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -20778,6 +20951,8 @@ loci_validate_of_instruction_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *
         return loci_validate_of_instruction_id_bsn_permit_OF_VERSION_1_3(data, len, out_len);
     case 0x7:
         return loci_validate_of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3(data, len, out_len);
+    case 0x8:
+        return loci_validate_of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -21117,6 +21292,50 @@ loci_validate_of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3(uint8_t *data, i
 
 static int
 loci_validate_of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 12) {
         return -1;
@@ -22459,6 +22678,38 @@ loci_validate_of_oxm_bsn_udf7_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
 
 static int
 loci_validate_of_oxm_bsn_udf7_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 12) {
         return -1;

@@ -67,6 +67,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnPrioritizePdusVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnRequireVlanXlate bsnRequireVlanXlate() {
+        return OFInstructionIdBsnRequireVlanXlateVer13.INSTANCE;
+    }
+
     public OFInstructionIdClearActions clearActions() {
         return OFInstructionIdClearActionsVer13.INSTANCE;
     }

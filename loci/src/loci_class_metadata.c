@@ -33,6 +33,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_action_wire_object_id_get,
         .wire_type_set=NULL,
     },
+    [OF_ACTION_BSN_CHECKSUM] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_wire_object_id_get,
+        .wire_type_set=of_action_bsn_checksum_push_wire_types,
+    },
     [OF_ACTION_BSN_MIRROR] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -1269,6 +1275,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_oxm_wire_object_id_get,
         .wire_type_set=of_oxm_bsn_udf7_masked_push_wire_types,
     },
+    [OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_vlan_xlate_port_group_id_push_wire_types,
+    },
+    [OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_types,
+    },
     [OF_OXM_BSN_VRF] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,
@@ -1700,6 +1718,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_action_id_wire_object_id_get,
         .wire_type_set=NULL,
+    },
+    [OF_ACTION_ID_BSN_CHECKSUM] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_id_wire_object_id_get,
+        .wire_type_set=of_action_id_bsn_checksum_push_wire_types,
     },
     [OF_ACTION_ID_BSN_MIRROR] = {
         .wire_length_get=of_tlv16_wire_length_get,
@@ -2564,6 +2588,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_instruction_id_wire_object_id_get,
         .wire_type_set=of_instruction_id_bsn_prioritize_pdus_push_wire_types,
+    },
+    [OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_instruction_wire_object_id_get,
+        .wire_type_set=of_instruction_bsn_require_vlan_xlate_push_wire_types,
+    },
+    [OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_instruction_id_wire_object_id_get,
+        .wire_type_set=of_instruction_id_bsn_require_vlan_xlate_push_wire_types,
     },
     [OF_INSTRUCTION_ID_CLEAR_ACTIONS] = {
         .wire_length_get=of_tlv16_wire_length_get,

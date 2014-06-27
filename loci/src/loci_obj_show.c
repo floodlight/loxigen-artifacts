@@ -2944,6 +2944,31 @@ of_action_bsn_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
+of_action_bsn_checksum_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "checksum=");
+    out += LOCI_SHOW_checksum_128_checksum(writer, cookie, checksum_128);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -6871,6 +6896,31 @@ of_action_bsn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_
     of_action_bsn_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_bsn_checksum_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "checksum=");
+    out += LOCI_SHOW_checksum_128_checksum(writer, cookie, checksum_128);
     out += writer(cookie, " ");
 
     return out;
@@ -11522,6 +11572,31 @@ of_action_bsn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
+of_action_bsn_checksum_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "checksum=");
+    out += LOCI_SHOW_checksum_128_checksum(writer, cookie, checksum_128);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -12982,6 +13057,39 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
     out += writer(cookie, " ");
 
     of_oxm_bsn_udf7_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_u32_value_mask(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_oxm_bsn_vlan_xlate_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u32_value(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u32_value(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(obj, &val32);
     out += writer(cookie, "value_mask=");
     out += LOCI_SHOW_u32_value_mask(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -20346,6 +20454,31 @@ of_action_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
+of_action_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_checksum_128_t checksum_128;
+
+    of_action_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_checksum_checksum_get(obj, &checksum_128);
+    out += writer(cookie, "checksum=");
+    out += LOCI_SHOW_checksum_128_checksum(writer, cookie, checksum_128);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -20490,6 +20623,25 @@ of_action_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_acti
     out += writer(cookie, " ");
 
     of_action_id_bsn_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_id_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_checksum_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_action_id_bsn_checksum_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_bsn_checksum_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -22220,6 +22372,25 @@ of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
+of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_require_vlan_xlate_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_instruction_bsn_require_vlan_xlate_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_bsn_require_vlan_xlate_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_instruction_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
 {
     int out = 0;
@@ -22441,6 +22612,25 @@ of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, 
     out += writer(cookie, " ");
 
     of_instruction_id_bsn_prioritize_pdus_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_require_vlan_xlate_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_instruction_id_bsn_require_vlan_xlate_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_instruction_id_bsn_require_vlan_xlate_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -23479,6 +23669,39 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
     out += writer(cookie, " ");
 
     of_oxm_bsn_udf7_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "value_mask=");
+    out += LOCI_SHOW_u32_value_mask(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_oxm_bsn_vlan_xlate_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u32_value(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u32_value(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(obj, &val32);
     out += writer(cookie, "value_mask=");
     out += LOCI_SHOW_u32_value_mask(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -25999,6 +26222,14 @@ loci_show_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, " ");
     }
 
+    if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "bsn_vlan_xlate_port_group_id active=");
+        out += LOCI_SHOW_u32_bsn_vlan_xlate_port_group_id(writer, cookie, match->fields.bsn_vlan_xlate_port_group_id);
+        out += writer(cookie, "/");
+        out += LOCI_SHOW_u32_bsn_vlan_xlate_port_group_id(writer, cookie, match->masks.bsn_vlan_xlate_port_group_id);
+        out += writer(cookie, " ");
+    }
+
     if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(match)) {
         out += writer(cookie, "mpls_tc active=");
         out += LOCI_SHOW_u8_mpls_tc(writer, cookie, match->fields.mpls_tc);
@@ -26283,6 +26514,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_0_show,
     unknown_show,
     of_action_bsn_OF_VERSION_1_0_show,
+    of_action_bsn_checksum_OF_VERSION_1_0_show,
     of_action_bsn_mirror_OF_VERSION_1_0_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_show,
     unknown_show,
@@ -26293,6 +26525,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_0_show,
     unknown_show,
     of_action_header_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -26432,7 +26665,11 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_match_v1_OF_VERSION_1_0_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -26816,6 +27053,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_1_show,
     unknown_show,
     of_action_bsn_OF_VERSION_1_1_show,
+    of_action_bsn_checksum_OF_VERSION_1_1_show,
     of_action_bsn_mirror_OF_VERSION_1_1_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_show,
     of_action_copy_ttl_in_OF_VERSION_1_1_show,
@@ -26826,6 +27064,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_1_show,
     of_action_group_OF_VERSION_1_1_show,
     of_action_header_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -26940,6 +27179,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_instruction_clear_actions_OF_VERSION_1_1_show,
     of_instruction_experimenter_OF_VERSION_1_1_show,
     of_instruction_goto_table_OF_VERSION_1_1_show,
@@ -26963,10 +27203,13 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_instruction_write_actions_OF_VERSION_1_1_show,
     of_instruction_write_metadata_OF_VERSION_1_1_show,
     unknown_show,
     of_match_v2_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -27349,6 +27592,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_2_show,
     unknown_show,
     of_action_bsn_OF_VERSION_1_2_show,
+    of_action_bsn_checksum_OF_VERSION_1_2_show,
     of_action_bsn_mirror_OF_VERSION_1_2_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_show,
     of_action_copy_ttl_in_OF_VERSION_1_2_show,
@@ -27359,6 +27603,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_2_show,
     of_action_group_OF_VERSION_1_2_show,
     of_action_header_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -27473,10 +27718,12 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_instruction_clear_actions_OF_VERSION_1_2_show,
     of_instruction_experimenter_OF_VERSION_1_2_show,
     of_instruction_goto_table_OF_VERSION_1_2_show,
     of_instruction_header_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -27553,6 +27800,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_bsn_udf6_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_udf7_OF_VERSION_1_2_show,
     of_oxm_bsn_udf7_masked_OF_VERSION_1_2_show,
+    of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_show,
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_show,
     of_oxm_bsn_vrf_OF_VERSION_1_2_show,
     of_oxm_bsn_vrf_masked_OF_VERSION_1_2_show,
     of_oxm_eth_dst_OF_VERSION_1_2_show,
@@ -27882,6 +28131,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_table_stats_request_OF_VERSION_1_3_show,
     unknown_show,
     of_action_bsn_OF_VERSION_1_3_show,
+    of_action_bsn_checksum_OF_VERSION_1_3_show,
     of_action_bsn_mirror_OF_VERSION_1_3_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_show,
     of_action_copy_ttl_in_OF_VERSION_1_3_show,
@@ -27894,6 +28144,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_action_header_OF_VERSION_1_3_show,
     unknown_show,
     of_action_id_bsn_OF_VERSION_1_3_show,
+    of_action_id_bsn_checksum_OF_VERSION_1_3_show,
     of_action_id_bsn_mirror_OF_VERSION_1_3_show,
     of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_show,
     of_action_id_copy_ttl_in_OF_VERSION_1_3_show,
@@ -28006,6 +28257,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_bsn_packet_of_death_OF_VERSION_1_3_show,
     of_instruction_bsn_permit_OF_VERSION_1_3_show,
     of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_show,
+    of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_show,
     of_instruction_clear_actions_OF_VERSION_1_3_show,
     of_instruction_experimenter_OF_VERSION_1_3_show,
     of_instruction_goto_table_OF_VERSION_1_3_show,
@@ -28021,6 +28273,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_show,
     of_instruction_id_bsn_permit_OF_VERSION_1_3_show,
     of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_show,
+    of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_show,
     of_instruction_id_clear_actions_OF_VERSION_1_3_show,
     of_instruction_id_experimenter_OF_VERSION_1_3_show,
     of_instruction_id_goto_table_OF_VERSION_1_3_show,
@@ -28086,6 +28339,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_udf6_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_udf7_OF_VERSION_1_3_show,
     of_oxm_bsn_udf7_masked_OF_VERSION_1_3_show,
+    of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_show,
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_show,
     of_oxm_bsn_vrf_OF_VERSION_1_3_show,
     of_oxm_bsn_vrf_masked_OF_VERSION_1_3_show,
     of_oxm_eth_dst_OF_VERSION_1_3_show,

@@ -11,6 +11,8 @@ void of_action_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_action_experimenter_push_wire_types(of_object_t *obj);
 void of_action_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_bsn_push_wire_types(of_object_t *obj);
+void of_action_bsn_checksum_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_bsn_checksum_push_wire_types(of_object_t *obj);
 void of_action_bsn_mirror_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_bsn_mirror_push_wire_types(of_object_t *obj);
 void of_action_bsn_set_tunnel_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -423,6 +425,10 @@ void of_oxm_bsn_udf7_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_udf7_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_udf7_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_udf7_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_vlan_xlate_port_group_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_vlan_xlate_port_group_id_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_vlan_xlate_port_group_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_vrf_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_vrf_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -567,6 +573,8 @@ void of_action_id_experimenter_wire_object_id_get(of_object_t *obj, of_object_id
 void of_action_id_experimenter_push_wire_types(of_object_t *obj);
 void of_action_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_bsn_push_wire_types(of_object_t *obj);
+void of_action_id_bsn_checksum_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_id_bsn_checksum_push_wire_types(of_object_t *obj);
 void of_action_id_bsn_mirror_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_bsn_mirror_push_wire_types(of_object_t *obj);
 void of_action_id_bsn_set_tunnel_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -855,6 +863,10 @@ void of_instruction_bsn_prioritize_pdus_wire_object_id_get(of_object_t *obj, of_
 void of_instruction_bsn_prioritize_pdus_push_wire_types(of_object_t *obj);
 void of_instruction_id_bsn_prioritize_pdus_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_bsn_prioritize_pdus_push_wire_types(of_object_t *obj);
+void of_instruction_bsn_require_vlan_xlate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_bsn_require_vlan_xlate_push_wire_types(of_object_t *obj);
+void of_instruction_id_bsn_require_vlan_xlate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_id_bsn_require_vlan_xlate_push_wire_types(of_object_t *obj);
 void of_instruction_id_clear_actions_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_clear_actions_push_wire_types(of_object_t *obj);
 void of_instruction_id_goto_table_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1153,6 +1165,7 @@ typedef of_object_t of_table_mod_failed_error_msg_t;
 typedef of_object_t of_table_stats_reply_t;
 typedef of_object_t of_table_stats_request_t;
 typedef of_object_t of_action_bsn_t;
+typedef of_object_t of_action_bsn_checksum_t;
 typedef of_object_t of_action_bsn_mirror_t;
 typedef of_object_t of_action_bsn_set_tunnel_dst_t;
 typedef of_object_t of_action_copy_ttl_in_t;
@@ -1164,6 +1177,7 @@ typedef of_object_t of_action_experimenter_t;
 typedef of_object_t of_action_group_t;
 typedef of_object_t of_action_header_t;
 typedef of_object_t of_action_id_bsn_t;
+typedef of_object_t of_action_id_bsn_checksum_t;
 typedef of_object_t of_action_id_bsn_mirror_t;
 typedef of_object_t of_action_id_bsn_set_tunnel_dst_t;
 typedef of_object_t of_action_id_copy_ttl_in_t;
@@ -1272,6 +1286,7 @@ typedef of_object_t of_instruction_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_bsn_permit_t;
 typedef of_object_t of_instruction_bsn_prioritize_pdus_t;
+typedef of_object_t of_instruction_bsn_require_vlan_xlate_t;
 typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
 typedef of_object_t of_instruction_goto_table_t;
@@ -1286,6 +1301,7 @@ typedef of_object_t of_instruction_id_bsn_disable_src_mac_check_t;
 typedef of_object_t of_instruction_id_bsn_packet_of_death_t;
 typedef of_object_t of_instruction_id_bsn_permit_t;
 typedef of_object_t of_instruction_id_bsn_prioritize_pdus_t;
+typedef of_object_t of_instruction_id_bsn_require_vlan_xlate_t;
 typedef of_object_t of_instruction_id_clear_actions_t;
 typedef of_object_t of_instruction_id_experimenter_t;
 typedef of_object_t of_instruction_id_goto_table_t;
@@ -1349,6 +1365,8 @@ typedef of_object_t of_oxm_bsn_udf6_t;
 typedef of_object_t of_oxm_bsn_udf6_masked_t;
 typedef of_object_t of_oxm_bsn_udf7_t;
 typedef of_object_t of_oxm_bsn_udf7_masked_t;
+typedef of_object_t of_oxm_bsn_vlan_xlate_port_group_id_t;
+typedef of_object_t of_oxm_bsn_vlan_xlate_port_group_id_masked_t;
 typedef of_object_t of_oxm_bsn_vrf_t;
 typedef of_object_t of_oxm_bsn_vrf_masked_t;
 typedef of_object_t of_oxm_eth_dst_t;
@@ -2427,6 +2445,11 @@ extern of_action_bsn_t *
 extern void of_action_bsn_init(
     of_action_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_action_bsn_checksum_t *
+    of_action_bsn_checksum_new(of_version_t version);
+extern void of_action_bsn_checksum_init(
+    of_action_bsn_checksum_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_new(of_version_t version);
 extern void of_action_bsn_mirror_init(
@@ -2486,6 +2509,11 @@ extern of_action_id_bsn_t *
     of_action_id_bsn_new(of_version_t version);
 extern void of_action_id_bsn_init(
     of_action_id_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_action_id_bsn_checksum_t *
+    of_action_id_bsn_checksum_new(of_version_t version);
+extern void of_action_id_bsn_checksum_init(
+    of_action_id_bsn_checksum_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_action_id_bsn_mirror_t *
     of_action_id_bsn_mirror_new(of_version_t version);
@@ -3047,6 +3075,11 @@ extern of_instruction_bsn_prioritize_pdus_t *
 extern void of_instruction_bsn_prioritize_pdus_init(
     of_instruction_bsn_prioritize_pdus_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_bsn_require_vlan_xlate_t *
+    of_instruction_bsn_require_vlan_xlate_new(of_version_t version);
+extern void of_instruction_bsn_require_vlan_xlate_init(
+    of_instruction_bsn_require_vlan_xlate_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_new(of_version_t version);
 extern void of_instruction_clear_actions_init(
@@ -3121,6 +3154,11 @@ extern of_instruction_id_bsn_prioritize_pdus_t *
     of_instruction_id_bsn_prioritize_pdus_new(of_version_t version);
 extern void of_instruction_id_bsn_prioritize_pdus_init(
     of_instruction_id_bsn_prioritize_pdus_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_require_vlan_xlate_t *
+    of_instruction_id_bsn_require_vlan_xlate_new(of_version_t version);
+extern void of_instruction_id_bsn_require_vlan_xlate_init(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_new(of_version_t version);
@@ -3446,6 +3484,16 @@ extern of_oxm_bsn_udf7_masked_t *
     of_oxm_bsn_udf7_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf7_masked_init(
     of_oxm_bsn_udf7_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_new(of_version_t version);
+extern void of_oxm_bsn_vlan_xlate_port_group_id_init(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_masked_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_new(of_version_t version);
+extern void of_oxm_bsn_vlan_xlate_port_group_id_masked_init(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_new(of_version_t version);
@@ -6173,6 +6221,17 @@ of_action_bsn_delete(of_action_bsn_t *obj) {
 }
 
 /**
+ * Delete an object of type of_action_bsn_checksum_t
+ * @param obj An instance of type of_action_bsn_checksum_t
+ *
+ * \ingroup of_action_bsn_checksum
+ */
+static inline void
+of_action_bsn_checksum_delete(of_action_bsn_checksum_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_action_bsn_mirror_t
  * @param obj An instance of type of_action_bsn_mirror_t
  *
@@ -6301,6 +6360,17 @@ of_action_id_delete(of_action_id_t *obj) {
  */
 static inline void
 of_action_id_bsn_delete(of_action_id_bsn_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_action_id_bsn_checksum_t
+ * @param obj An instance of type of_action_id_bsn_checksum_t
+ *
+ * \ingroup of_action_id_bsn_checksum
+ */
+static inline void
+of_action_id_bsn_checksum_delete(of_action_id_bsn_checksum_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -7537,6 +7607,17 @@ of_instruction_bsn_prioritize_pdus_delete(of_instruction_bsn_prioritize_pdus_t *
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_require_vlan_xlate_t
+ * @param obj An instance of type of_instruction_bsn_require_vlan_xlate_t
+ *
+ * \ingroup of_instruction_bsn_require_vlan_xlate
+ */
+static inline void
+of_instruction_bsn_require_vlan_xlate_delete(of_instruction_bsn_require_vlan_xlate_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_clear_actions_t
  * @param obj An instance of type of_instruction_clear_actions_t
  *
@@ -7698,6 +7779,17 @@ of_instruction_id_bsn_permit_delete(of_instruction_id_bsn_permit_t *obj) {
  */
 static inline void
 of_instruction_id_bsn_prioritize_pdus_delete(of_instruction_id_bsn_prioritize_pdus_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_require_vlan_xlate_t
+ * @param obj An instance of type of_instruction_id_bsn_require_vlan_xlate_t
+ *
+ * \ingroup of_instruction_id_bsn_require_vlan_xlate
+ */
+static inline void
+of_instruction_id_bsn_require_vlan_xlate_delete(of_instruction_id_bsn_require_vlan_xlate_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -8413,6 +8505,28 @@ of_oxm_bsn_udf7_delete(of_oxm_bsn_udf7_t *obj) {
  */
 static inline void
 of_oxm_bsn_udf7_masked_delete(of_oxm_bsn_udf7_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_vlan_xlate_port_group_id_t
+ * @param obj An instance of type of_oxm_bsn_vlan_xlate_port_group_id_t
+ *
+ * \ingroup of_oxm_bsn_vlan_xlate_port_group_id
+ */
+static inline void
+of_oxm_bsn_vlan_xlate_port_group_id_delete(of_oxm_bsn_vlan_xlate_port_group_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_vlan_xlate_port_group_id_masked_t
+ * @param obj An instance of type of_oxm_bsn_vlan_xlate_port_group_id_masked_t
+ *
+ * \ingroup of_oxm_bsn_vlan_xlate_port_group_id_masked
+ */
+static inline void
+of_oxm_bsn_vlan_xlate_port_group_id_masked_delete(of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -16322,6 +16436,29 @@ extern void of_action_bsn_subtype_get(
     of_action_bsn_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_action_bsn_checksum */
+
+extern void of_action_bsn_checksum_experimenter_set(
+    of_action_bsn_checksum_t *obj,
+    uint32_t experimenter);
+extern void of_action_bsn_checksum_experimenter_get(
+    of_action_bsn_checksum_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_bsn_checksum_subtype_set(
+    of_action_bsn_checksum_t *obj,
+    uint32_t subtype);
+extern void of_action_bsn_checksum_subtype_get(
+    of_action_bsn_checksum_t *obj,
+    uint32_t *subtype);
+
+extern void of_action_bsn_checksum_checksum_set(
+    of_action_bsn_checksum_t *obj,
+    of_checksum_128_t checksum);
+extern void of_action_bsn_checksum_checksum_get(
+    of_action_bsn_checksum_t *obj,
+    of_checksum_128_t *checksum);
+
 /* Unified accessor functions for of_action_bsn_mirror */
 
 extern void of_action_bsn_mirror_experimenter_set(
@@ -16447,6 +16584,22 @@ extern void of_action_id_bsn_subtype_set(
     uint32_t subtype);
 extern void of_action_id_bsn_subtype_get(
     of_action_id_bsn_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_action_id_bsn_checksum */
+
+extern void of_action_id_bsn_checksum_experimenter_set(
+    of_action_id_bsn_checksum_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_bsn_checksum_experimenter_get(
+    of_action_id_bsn_checksum_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_bsn_checksum_subtype_set(
+    of_action_id_bsn_checksum_t *obj,
+    uint32_t subtype);
+extern void of_action_id_bsn_checksum_subtype_get(
+    of_action_id_bsn_checksum_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_action_id_bsn_mirror */
@@ -17892,6 +18045,22 @@ extern void of_instruction_bsn_prioritize_pdus_subtype_get(
     of_instruction_bsn_prioritize_pdus_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_bsn_require_vlan_xlate */
+
+extern void of_instruction_bsn_require_vlan_xlate_experimenter_set(
+    of_instruction_bsn_require_vlan_xlate_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_require_vlan_xlate_experimenter_get(
+    of_instruction_bsn_require_vlan_xlate_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_require_vlan_xlate_subtype_set(
+    of_instruction_bsn_require_vlan_xlate_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_require_vlan_xlate_subtype_get(
+    of_instruction_bsn_require_vlan_xlate_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_clear_actions */
 
 /* Unified accessor functions for of_instruction_experimenter */
@@ -18065,6 +18234,22 @@ extern void of_instruction_id_bsn_prioritize_pdus_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_prioritize_pdus_subtype_get(
     of_instruction_id_bsn_prioritize_pdus_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_require_vlan_xlate */
+
+extern void of_instruction_id_bsn_require_vlan_xlate_experimenter_set(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_require_vlan_xlate_experimenter_get(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_require_vlan_xlate_subtype_set(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_require_vlan_xlate_subtype_get(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_clear_actions */
@@ -19095,6 +19280,31 @@ extern void of_oxm_bsn_udf7_masked_value_mask_set(
     uint32_t value_mask);
 extern void of_oxm_bsn_udf7_masked_value_mask_get(
     of_oxm_bsn_udf7_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_vlan_xlate_port_group_id */
+
+extern void of_oxm_bsn_vlan_xlate_port_group_id_value_set(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_vlan_xlate_port_group_id_value_get(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_vlan_xlate_port_group_id_masked */
+
+extern void of_oxm_bsn_vlan_xlate_port_group_id_masked_value_set(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_set(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj,
     uint32_t *value_mask);
 
 /* Unified accessor functions for of_oxm_bsn_vrf */
@@ -21665,6 +21875,7 @@ union of_table_feature_prop_u {
 union of_action_u {
     of_action_header_t header; /* Generic instance */
     of_action_bsn_t bsn;
+    of_action_bsn_checksum_t bsn_checksum;
     of_action_bsn_mirror_t bsn_mirror;
     of_action_bsn_set_tunnel_dst_t bsn_set_tunnel_dst;
     of_action_copy_ttl_in_t copy_ttl_in;
@@ -21722,6 +21933,7 @@ union of_instruction_u {
     of_instruction_bsn_packet_of_death_t bsn_packet_of_death;
     of_instruction_bsn_permit_t bsn_permit;
     of_instruction_bsn_prioritize_pdus_t bsn_prioritize_pdus;
+    of_instruction_bsn_require_vlan_xlate_t bsn_require_vlan_xlate;
     of_instruction_clear_actions_t clear_actions;
     of_instruction_experimenter_t experimenter;
     of_instruction_goto_table_t goto_table;
@@ -21785,6 +21997,7 @@ union of_instruction_id_u {
     of_instruction_id_bsn_packet_of_death_t bsn_packet_of_death;
     of_instruction_id_bsn_permit_t bsn_permit;
     of_instruction_id_bsn_prioritize_pdus_t bsn_prioritize_pdus;
+    of_instruction_id_bsn_require_vlan_xlate_t bsn_require_vlan_xlate;
     of_instruction_id_clear_actions_t clear_actions;
     of_instruction_id_experimenter_t experimenter;
     of_instruction_id_goto_table_t goto_table;
@@ -21819,6 +22032,7 @@ union of_meter_band_u {
 union of_action_id_u {
     of_action_id_header_t header; /* Generic instance */
     of_action_id_bsn_t bsn;
+    of_action_id_bsn_checksum_t bsn_checksum;
     of_action_id_bsn_mirror_t bsn_mirror;
     of_action_id_bsn_set_tunnel_dst_t bsn_set_tunnel_dst;
     of_action_id_copy_ttl_in_t copy_ttl_in;
@@ -21894,6 +22108,8 @@ union of_oxm_u {
     of_oxm_bsn_udf6_masked_t bsn_udf6_masked;
     of_oxm_bsn_udf7_t bsn_udf7;
     of_oxm_bsn_udf7_masked_t bsn_udf7_masked;
+    of_oxm_bsn_vlan_xlate_port_group_id_t bsn_vlan_xlate_port_group_id;
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t bsn_vlan_xlate_port_group_id_masked;
     of_oxm_bsn_vrf_t bsn_vrf;
     of_oxm_bsn_vrf_masked_t bsn_vrf_masked;
     of_oxm_eth_dst_t eth_dst;

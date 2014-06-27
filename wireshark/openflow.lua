@@ -1851,6 +1851,11 @@ fields['of10.action_bsn.type'] = ProtoField.uint16("of10.action_bsn.type", "type
 fields['of10.action_bsn.len'] = ProtoField.uint16("of10.action_bsn.len", "len", base.DEC, nil)
 fields['of10.action_bsn.experimenter'] = ProtoField.uint32("of10.action_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of10.action_bsn.subtype'] = ProtoField.uint32("of10.action_bsn.subtype", "subtype", base.DEC, nil)
+fields['of10.action_bsn_checksum.type'] = ProtoField.uint16("of10.action_bsn_checksum.type", "type", base.DEC, nil)
+fields['of10.action_bsn_checksum.len'] = ProtoField.uint16("of10.action_bsn_checksum.len", "len", base.DEC, nil)
+fields['of10.action_bsn_checksum.experimenter'] = ProtoField.uint32("of10.action_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
+fields['of10.action_bsn_checksum.subtype'] = ProtoField.uint32("of10.action_bsn_checksum.subtype", "subtype", base.DEC, nil)
+fields['of10.action_bsn_checksum.checksum'] = ProtoField.bytes("of10.action_bsn_checksum.checksum", "checksum")
 fields['of10.action_bsn_mirror.type'] = ProtoField.uint16("of10.action_bsn_mirror.type", "type", base.DEC, nil)
 fields['of10.action_bsn_mirror.len'] = ProtoField.uint16("of10.action_bsn_mirror.len", "len", base.DEC, nil)
 fields['of10.action_bsn_mirror.experimenter'] = ProtoField.uint32("of10.action_bsn_mirror.experimenter", "experimenter", base.DEC, nil)
@@ -2690,6 +2695,11 @@ fields['of11.action_bsn.type'] = ProtoField.uint16("of11.action_bsn.type", "type
 fields['of11.action_bsn.len'] = ProtoField.uint16("of11.action_bsn.len", "len", base.DEC, nil)
 fields['of11.action_bsn.experimenter'] = ProtoField.uint32("of11.action_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of11.action_bsn.subtype'] = ProtoField.uint32("of11.action_bsn.subtype", "subtype", base.DEC, nil)
+fields['of11.action_bsn_checksum.type'] = ProtoField.uint16("of11.action_bsn_checksum.type", "type", base.DEC, nil)
+fields['of11.action_bsn_checksum.len'] = ProtoField.uint16("of11.action_bsn_checksum.len", "len", base.DEC, nil)
+fields['of11.action_bsn_checksum.experimenter'] = ProtoField.uint32("of11.action_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
+fields['of11.action_bsn_checksum.subtype'] = ProtoField.uint32("of11.action_bsn_checksum.subtype", "subtype", base.DEC, nil)
+fields['of11.action_bsn_checksum.checksum'] = ProtoField.bytes("of11.action_bsn_checksum.checksum", "checksum")
 fields['of11.action_bsn_mirror.type'] = ProtoField.uint16("of11.action_bsn_mirror.type", "type", base.DEC, nil)
 fields['of11.action_bsn_mirror.len'] = ProtoField.uint16("of11.action_bsn_mirror.len", "len", base.DEC, nil)
 fields['of11.action_bsn_mirror.experimenter'] = ProtoField.uint32("of11.action_bsn_mirror.experimenter", "experimenter", base.DEC, nil)
@@ -3635,6 +3645,11 @@ fields['of12.action_bsn.type'] = ProtoField.uint16("of12.action_bsn.type", "type
 fields['of12.action_bsn.len'] = ProtoField.uint16("of12.action_bsn.len", "len", base.DEC, nil)
 fields['of12.action_bsn.experimenter'] = ProtoField.uint32("of12.action_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of12.action_bsn.subtype'] = ProtoField.uint32("of12.action_bsn.subtype", "subtype", base.DEC, nil)
+fields['of12.action_bsn_checksum.type'] = ProtoField.uint16("of12.action_bsn_checksum.type", "type", base.DEC, nil)
+fields['of12.action_bsn_checksum.len'] = ProtoField.uint16("of12.action_bsn_checksum.len", "len", base.DEC, nil)
+fields['of12.action_bsn_checksum.experimenter'] = ProtoField.uint32("of12.action_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
+fields['of12.action_bsn_checksum.subtype'] = ProtoField.uint32("of12.action_bsn_checksum.subtype", "subtype", base.DEC, nil)
+fields['of12.action_bsn_checksum.checksum'] = ProtoField.bytes("of12.action_bsn_checksum.checksum", "checksum")
 fields['of12.action_bsn_mirror.type'] = ProtoField.uint16("of12.action_bsn_mirror.type", "type", base.DEC, nil)
 fields['of12.action_bsn_mirror.len'] = ProtoField.uint16("of12.action_bsn_mirror.len", "len", base.DEC, nil)
 fields['of12.action_bsn_mirror.experimenter'] = ProtoField.uint32("of12.action_bsn_mirror.experimenter", "experimenter", base.DEC, nil)
@@ -4479,6 +4494,11 @@ fields['of12.oxm_bsn_udf7.value'] = ProtoField.uint32("of12.oxm_bsn_udf7.value",
 fields['of12.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of12.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of12.oxm_bsn_vlan_xlate_port_group_id.type_len'] = ProtoField.uint32("of12.oxm_bsn_vlan_xlate_port_group_id.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_vlan_xlate_port_group_id.value'] = ProtoField.uint32("of12.oxm_bsn_vlan_xlate_port_group_id.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_vlan_xlate_port_group_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of12.oxm_bsn_vlan_xlate_port_group_id_masked.value'] = ProtoField.uint32("of12.oxm_bsn_vlan_xlate_port_group_id_masked.value", "value", base.DEC, nil)
+fields['of12.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask'] = ProtoField.uint32("of12.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of12.oxm_bsn_vrf.type_len'] = ProtoField.uint32("of12.oxm_bsn_vrf.type_len", "type_len", base.DEC, nil)
 fields['of12.oxm_bsn_vrf.value'] = ProtoField.uint32("of12.oxm_bsn_vrf.value", "value", base.DEC, nil)
 fields['of12.oxm_bsn_vrf_masked.type_len'] = ProtoField.uint32("of12.oxm_bsn_vrf_masked.type_len", "type_len", base.DEC, nil)
@@ -4865,6 +4885,15 @@ fields['of13.action_id_bsn.type'] = ProtoField.uint16("of13.action_id_bsn.type",
 fields['of13.action_id_bsn.len'] = ProtoField.uint16("of13.action_id_bsn.len", "len", base.DEC, nil)
 fields['of13.action_id_bsn.experimenter'] = ProtoField.uint32("of13.action_id_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of13.action_id_bsn.subtype'] = ProtoField.uint32("of13.action_id_bsn.subtype", "subtype", base.DEC, nil)
+fields['of13.action_bsn_checksum.type'] = ProtoField.uint16("of13.action_bsn_checksum.type", "type", base.DEC, nil)
+fields['of13.action_bsn_checksum.len'] = ProtoField.uint16("of13.action_bsn_checksum.len", "len", base.DEC, nil)
+fields['of13.action_bsn_checksum.experimenter'] = ProtoField.uint32("of13.action_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_bsn_checksum.subtype'] = ProtoField.uint32("of13.action_bsn_checksum.subtype", "subtype", base.DEC, nil)
+fields['of13.action_bsn_checksum.checksum'] = ProtoField.bytes("of13.action_bsn_checksum.checksum", "checksum")
+fields['of13.action_id_bsn_checksum.type'] = ProtoField.uint16("of13.action_id_bsn_checksum.type", "type", base.DEC, nil)
+fields['of13.action_id_bsn_checksum.len'] = ProtoField.uint16("of13.action_id_bsn_checksum.len", "len", base.DEC, nil)
+fields['of13.action_id_bsn_checksum.experimenter'] = ProtoField.uint32("of13.action_id_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_id_bsn_checksum.subtype'] = ProtoField.uint32("of13.action_id_bsn_checksum.subtype", "subtype", base.DEC, nil)
 fields['of13.action_bsn_mirror.type'] = ProtoField.uint16("of13.action_bsn_mirror.type", "type", base.DEC, nil)
 fields['of13.action_bsn_mirror.len'] = ProtoField.uint16("of13.action_bsn_mirror.len", "len", base.DEC, nil)
 fields['of13.action_bsn_mirror.experimenter'] = ProtoField.uint32("of13.action_bsn_mirror.experimenter", "experimenter", base.DEC, nil)
@@ -6364,6 +6393,14 @@ fields['of13.instruction_id_bsn_prioritize_pdus.type'] = ProtoField.uint16("of13
 fields['of13.instruction_id_bsn_prioritize_pdus.len'] = ProtoField.uint16("of13.instruction_id_bsn_prioritize_pdus.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_prioritize_pdus.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_prioritize_pdus.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_prioritize_pdus.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_prioritize_pdus.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_require_vlan_xlate.type'] = ProtoField.uint16("of13.instruction_bsn_require_vlan_xlate.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_require_vlan_xlate.len'] = ProtoField.uint16("of13.instruction_bsn_require_vlan_xlate.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_require_vlan_xlate.experimenter'] = ProtoField.uint32("of13.instruction_bsn_require_vlan_xlate.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_require_vlan_xlate.subtype'] = ProtoField.uint32("of13.instruction_bsn_require_vlan_xlate.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_require_vlan_xlate.type'] = ProtoField.uint16("of13.instruction_id_bsn_require_vlan_xlate.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_require_vlan_xlate.len'] = ProtoField.uint16("of13.instruction_id_bsn_require_vlan_xlate.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_require_vlan_xlate.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_require_vlan_xlate.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_require_vlan_xlate.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_require_vlan_xlate.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_clear_actions.type'] = ProtoField.uint16("of13.instruction_clear_actions.type", "type", base.DEC, nil)
 fields['of13.instruction_clear_actions.len'] = ProtoField.uint16("of13.instruction_clear_actions.len", "len", base.DEC, nil)
 fields['of13.instruction_id_clear_actions.type'] = ProtoField.uint16("of13.instruction_id_clear_actions.type", "type", base.DEC, nil)
@@ -6594,6 +6631,11 @@ fields['of13.oxm_bsn_udf7.value'] = ProtoField.uint32("of13.oxm_bsn_udf7.value",
 fields['of13.oxm_bsn_udf7_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_udf7_masked.value'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_udf7_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_udf7_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_bsn_vlan_xlate_port_group_id.type_len'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_vlan_xlate_port_group_id.value'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.value'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask'] = ProtoField.uint32("of13.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_bsn_vrf.type_len'] = ProtoField.uint32("of13.oxm_bsn_vrf.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_bsn_vrf.value'] = ProtoField.uint32("of13.oxm_bsn_vrf.value", "value", base.DEC, nil)
 fields['of13.oxm_bsn_vrf_masked.type_len'] = ProtoField.uint32("of13.oxm_bsn_vrf_masked.type_len", "type_len", base.DEC, nil)
@@ -7070,6 +7112,11 @@ p_of.fields = {
     fields['of10.action_bsn.len'],
     fields['of10.action_bsn.experimenter'],
     fields['of10.action_bsn.subtype'],
+    fields['of10.action_bsn_checksum.type'],
+    fields['of10.action_bsn_checksum.len'],
+    fields['of10.action_bsn_checksum.experimenter'],
+    fields['of10.action_bsn_checksum.subtype'],
+    fields['of10.action_bsn_checksum.checksum'],
     fields['of10.action_bsn_mirror.type'],
     fields['of10.action_bsn_mirror.len'],
     fields['of10.action_bsn_mirror.experimenter'],
@@ -7909,6 +7956,11 @@ p_of.fields = {
     fields['of11.action_bsn.len'],
     fields['of11.action_bsn.experimenter'],
     fields['of11.action_bsn.subtype'],
+    fields['of11.action_bsn_checksum.type'],
+    fields['of11.action_bsn_checksum.len'],
+    fields['of11.action_bsn_checksum.experimenter'],
+    fields['of11.action_bsn_checksum.subtype'],
+    fields['of11.action_bsn_checksum.checksum'],
     fields['of11.action_bsn_mirror.type'],
     fields['of11.action_bsn_mirror.len'],
     fields['of11.action_bsn_mirror.experimenter'],
@@ -8854,6 +8906,11 @@ p_of.fields = {
     fields['of12.action_bsn.len'],
     fields['of12.action_bsn.experimenter'],
     fields['of12.action_bsn.subtype'],
+    fields['of12.action_bsn_checksum.type'],
+    fields['of12.action_bsn_checksum.len'],
+    fields['of12.action_bsn_checksum.experimenter'],
+    fields['of12.action_bsn_checksum.subtype'],
+    fields['of12.action_bsn_checksum.checksum'],
     fields['of12.action_bsn_mirror.type'],
     fields['of12.action_bsn_mirror.len'],
     fields['of12.action_bsn_mirror.experimenter'],
@@ -9698,6 +9755,11 @@ p_of.fields = {
     fields['of12.oxm_bsn_udf7_masked.type_len'],
     fields['of12.oxm_bsn_udf7_masked.value'],
     fields['of12.oxm_bsn_udf7_masked.value_mask'],
+    fields['of12.oxm_bsn_vlan_xlate_port_group_id.type_len'],
+    fields['of12.oxm_bsn_vlan_xlate_port_group_id.value'],
+    fields['of12.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'],
+    fields['of12.oxm_bsn_vlan_xlate_port_group_id_masked.value'],
+    fields['of12.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask'],
     fields['of12.oxm_bsn_vrf.type_len'],
     fields['of12.oxm_bsn_vrf.value'],
     fields['of12.oxm_bsn_vrf_masked.type_len'],
@@ -10084,6 +10146,15 @@ p_of.fields = {
     fields['of13.action_id_bsn.len'],
     fields['of13.action_id_bsn.experimenter'],
     fields['of13.action_id_bsn.subtype'],
+    fields['of13.action_bsn_checksum.type'],
+    fields['of13.action_bsn_checksum.len'],
+    fields['of13.action_bsn_checksum.experimenter'],
+    fields['of13.action_bsn_checksum.subtype'],
+    fields['of13.action_bsn_checksum.checksum'],
+    fields['of13.action_id_bsn_checksum.type'],
+    fields['of13.action_id_bsn_checksum.len'],
+    fields['of13.action_id_bsn_checksum.experimenter'],
+    fields['of13.action_id_bsn_checksum.subtype'],
     fields['of13.action_bsn_mirror.type'],
     fields['of13.action_bsn_mirror.len'],
     fields['of13.action_bsn_mirror.experimenter'],
@@ -11583,6 +11654,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_prioritize_pdus.len'],
     fields['of13.instruction_id_bsn_prioritize_pdus.experimenter'],
     fields['of13.instruction_id_bsn_prioritize_pdus.subtype'],
+    fields['of13.instruction_bsn_require_vlan_xlate.type'],
+    fields['of13.instruction_bsn_require_vlan_xlate.len'],
+    fields['of13.instruction_bsn_require_vlan_xlate.experimenter'],
+    fields['of13.instruction_bsn_require_vlan_xlate.subtype'],
+    fields['of13.instruction_id_bsn_require_vlan_xlate.type'],
+    fields['of13.instruction_id_bsn_require_vlan_xlate.len'],
+    fields['of13.instruction_id_bsn_require_vlan_xlate.experimenter'],
+    fields['of13.instruction_id_bsn_require_vlan_xlate.subtype'],
     fields['of13.instruction_clear_actions.type'],
     fields['of13.instruction_clear_actions.len'],
     fields['of13.instruction_id_clear_actions.type'],
@@ -11813,6 +11892,11 @@ p_of.fields = {
     fields['of13.oxm_bsn_udf7_masked.type_len'],
     fields['of13.oxm_bsn_udf7_masked.value'],
     fields['of13.oxm_bsn_udf7_masked.value_mask'],
+    fields['of13.oxm_bsn_vlan_xlate_port_group_id.type_len'],
+    fields['of13.oxm_bsn_vlan_xlate_port_group_id.value'],
+    fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len'],
+    fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.value'],
+    fields['of13.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask'],
     fields['of13.oxm_bsn_vrf.type_len'],
     fields['of13.oxm_bsn_vrf.value'],
     fields['of13.oxm_bsn_vrf_masked.type_len'],
@@ -12399,6 +12483,18 @@ function dissect_of_action_bsn_v1(reader, subtree)
     return of_action_bsn_v1_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_experimenter_v1_dissectors[6035143] = dissect_of_action_bsn_v1
+
+-- child class of_action_bsn_checksum
+-- Child of of_action_bsn
+function dissect_of_action_bsn_checksum_v1(reader, subtree)
+    read_uint16_t(reader, 1, subtree, 'of10.action_bsn_checksum.type')
+    read_uint16_t(reader, 1, subtree, 'of10.action_bsn_checksum.len')
+    read_uint32_t(reader, 1, subtree, 'of10.action_bsn_checksum.experimenter')
+    read_uint32_t(reader, 1, subtree, 'of10.action_bsn_checksum.subtype')
+    read_of_checksum_128_t(reader, 1, subtree, 'of10.action_bsn_checksum.checksum')
+    return 'of_action_bsn_checksum'
+end
+of_action_bsn_v1_dissectors[4] = dissect_of_action_bsn_checksum_v1
 
 -- child class of_action_bsn_mirror
 -- Child of of_action_bsn
@@ -14105,6 +14201,18 @@ function dissect_of_action_bsn_v2(reader, subtree)
     return of_action_bsn_v2_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_experimenter_v2_dissectors[6035143] = dissect_of_action_bsn_v2
+
+-- child class of_action_bsn_checksum
+-- Child of of_action_bsn
+function dissect_of_action_bsn_checksum_v2(reader, subtree)
+    read_uint16_t(reader, 2, subtree, 'of11.action_bsn_checksum.type')
+    read_uint16_t(reader, 2, subtree, 'of11.action_bsn_checksum.len')
+    read_uint32_t(reader, 2, subtree, 'of11.action_bsn_checksum.experimenter')
+    read_uint32_t(reader, 2, subtree, 'of11.action_bsn_checksum.subtype')
+    read_of_checksum_128_t(reader, 2, subtree, 'of11.action_bsn_checksum.checksum')
+    return 'of_action_bsn_checksum'
+end
+of_action_bsn_v2_dissectors[4] = dissect_of_action_bsn_checksum_v2
 
 -- child class of_action_bsn_mirror
 -- Child of of_action_bsn
@@ -16127,6 +16235,18 @@ function dissect_of_action_bsn_v3(reader, subtree)
 end
 of_action_experimenter_v3_dissectors[6035143] = dissect_of_action_bsn_v3
 
+-- child class of_action_bsn_checksum
+-- Child of of_action_bsn
+function dissect_of_action_bsn_checksum_v3(reader, subtree)
+    read_uint16_t(reader, 3, subtree, 'of12.action_bsn_checksum.type')
+    read_uint16_t(reader, 3, subtree, 'of12.action_bsn_checksum.len')
+    read_uint32_t(reader, 3, subtree, 'of12.action_bsn_checksum.experimenter')
+    read_uint32_t(reader, 3, subtree, 'of12.action_bsn_checksum.subtype')
+    read_of_checksum_128_t(reader, 3, subtree, 'of12.action_bsn_checksum.checksum')
+    return 'of_action_bsn_checksum'
+end
+of_action_bsn_v3_dissectors[4] = dissect_of_action_bsn_checksum_v3
+
 -- child class of_action_bsn_mirror
 -- Child of of_action_bsn
 function dissect_of_action_bsn_mirror_v3(reader, subtree)
@@ -18073,6 +18193,25 @@ function dissect_of_oxm_bsn_udf7_masked_v3(reader, subtree)
 end
 of_oxm_v3_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v3
 
+-- child class of_oxm_bsn_vlan_xlate_port_group_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vlan_xlate_port_group_id_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_vlan_xlate_port_group_id.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_vlan_xlate_port_group_id.value')
+    return 'of_oxm_bsn_vlan_xlate_port_group_id'
+end
+of_oxm_v3_dissectors[205316] = dissect_of_oxm_bsn_vlan_xlate_port_group_id_v3
+
+-- child class of_oxm_bsn_vlan_xlate_port_group_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vlan_xlate_port_group_id_masked_v3(reader, subtree)
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_vlan_xlate_port_group_id_masked.type_len')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_vlan_xlate_port_group_id_masked.value')
+    read_uint32_t(reader, 3, subtree, 'of12.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask')
+    return 'of_oxm_bsn_vlan_xlate_port_group_id_masked'
+end
+of_oxm_v3_dissectors[205576] = dissect_of_oxm_bsn_vlan_xlate_port_group_id_masked_v3
+
 -- child class of_oxm_bsn_vrf
 -- Child of of_oxm
 function dissect_of_oxm_bsn_vrf_v3(reader, subtree)
@@ -19181,6 +19320,29 @@ function dissect_of_action_id_bsn_v4(reader, subtree)
     return of_action_id_bsn_v4_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_action_id_experimenter_v4_dissectors[6035143] = dissect_of_action_id_bsn_v4
+
+-- child class of_action_bsn_checksum
+-- Child of of_action_bsn
+function dissect_of_action_bsn_checksum_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_bsn_checksum.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_bsn_checksum.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_bsn_checksum.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.action_bsn_checksum.subtype')
+    read_of_checksum_128_t(reader, 4, subtree, 'of13.action_bsn_checksum.checksum')
+    return 'of_action_bsn_checksum'
+end
+of_action_bsn_v4_dissectors[4] = dissect_of_action_bsn_checksum_v4
+
+-- child class of_action_id_bsn_checksum
+-- Child of of_action_id_bsn
+function dissect_of_action_id_bsn_checksum_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn_checksum.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn_checksum.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn_checksum.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn_checksum.subtype')
+    return 'of_action_id_bsn_checksum'
+end
+of_action_id_bsn_v4_dissectors[4] = dissect_of_action_id_bsn_checksum_v4
 
 -- child class of_action_bsn_mirror
 -- Child of of_action_bsn
@@ -22527,6 +22689,29 @@ function dissect_of_instruction_id_bsn_prioritize_pdus_v4(reader, subtree)
 end
 of_instruction_id_bsn_v4_dissectors[7] = dissect_of_instruction_id_bsn_prioritize_pdus_v4
 
+-- child class of_instruction_bsn_require_vlan_xlate
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_require_vlan_xlate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_require_vlan_xlate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_require_vlan_xlate.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_require_vlan_xlate.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_require_vlan_xlate.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_require_vlan_xlate'
+end
+of_instruction_bsn_v4_dissectors[8] = dissect_of_instruction_bsn_require_vlan_xlate_v4
+
+-- child class of_instruction_id_bsn_require_vlan_xlate
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_require_vlan_xlate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_require_vlan_xlate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_require_vlan_xlate.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_require_vlan_xlate.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_require_vlan_xlate.subtype')
+    return 'of_instruction_id_bsn_require_vlan_xlate'
+end
+of_instruction_id_bsn_v4_dissectors[8] = dissect_of_instruction_id_bsn_require_vlan_xlate_v4
+
 -- child class of_instruction_clear_actions
 -- Child of of_instruction
 function dissect_of_instruction_clear_actions_v4(reader, subtree)
@@ -23263,6 +23448,25 @@ function dissect_of_oxm_bsn_udf7_masked_v4(reader, subtree)
     return 'of_oxm_bsn_udf7_masked'
 end
 of_oxm_v4_dissectors[204552] = dissect_of_oxm_bsn_udf7_masked_v4
+
+-- child class of_oxm_bsn_vlan_xlate_port_group_id
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vlan_xlate_port_group_id_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vlan_xlate_port_group_id.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vlan_xlate_port_group_id.value')
+    return 'of_oxm_bsn_vlan_xlate_port_group_id'
+end
+of_oxm_v4_dissectors[205316] = dissect_of_oxm_bsn_vlan_xlate_port_group_id_v4
+
+-- child class of_oxm_bsn_vlan_xlate_port_group_id_masked
+-- Child of of_oxm
+function dissect_of_oxm_bsn_vlan_xlate_port_group_id_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vlan_xlate_port_group_id_masked.type_len')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vlan_xlate_port_group_id_masked.value')
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_bsn_vlan_xlate_port_group_id_masked.value_mask')
+    return 'of_oxm_bsn_vlan_xlate_port_group_id_masked'
+end
+of_oxm_v4_dissectors[205576] = dissect_of_oxm_bsn_vlan_xlate_port_group_id_masked_v4
 
 -- child class of_oxm_bsn_vrf
 -- Child of of_oxm

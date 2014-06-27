@@ -325,6 +325,20 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmBsnUdf7Masked not supported in version 1.1");
     }
 
+    public OFOxmBsnVlanXlatePortGroupId.Builder buildBsnVlanXlatePortGroupId() {
+        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupId not supported in version 1.1");
+    }
+    public OFOxmBsnVlanXlatePortGroupId bsnVlanXlatePortGroupId(ClassId value) {
+        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupId not supported in version 1.1");
+    }
+
+    public OFOxmBsnVlanXlatePortGroupIdMasked.Builder buildBsnVlanXlatePortGroupIdMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupIdMasked not supported in version 1.1");
+    }
+    public OFOxmBsnVlanXlatePortGroupIdMasked bsnVlanXlatePortGroupIdMasked(ClassId value, ClassId mask) {
+        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupIdMasked not supported in version 1.1");
+    }
+
     public OFOxmBsnVrf.Builder buildBsnVrf() {
         throw new UnsupportedOperationException("OFOxmBsnVrf not supported in version 1.1");
     }
@@ -836,6 +850,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6((UDF)((Object)value)));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7((UDF)((Object)value)));
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnVlanXlatePortGroupId((ClassId)((Object)value)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrf((VRF)((Object)value)));
             case ETH_DST:
@@ -952,6 +968,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)value), (UDF)((Object)mask)));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)value), (UDF)((Object)mask)));
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)value), (VRF)((Object)mask)));
             case ETH_DST:
@@ -1068,6 +1086,8 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnUdf6Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
             case BSN_UDF7:
                 return (OFOxm<F>)((Object)bsnUdf7Masked((UDF)((Object)(masked.getValue())), (UDF)((Object)(masked.getMask()))));
+            case BSN_VLAN_XLATE_PORT_GROUP_ID:
+                return (OFOxm<F>)((Object)bsnVlanXlatePortGroupIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_VRF:
                 return (OFOxm<F>)((Object)bsnVrfMasked((VRF)((Object)(masked.getValue())), (VRF)((Object)(masked.getMask()))));
             case ETH_DST:

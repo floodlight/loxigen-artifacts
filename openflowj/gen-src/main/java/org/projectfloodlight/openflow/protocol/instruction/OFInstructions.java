@@ -45,6 +45,7 @@ public interface OFInstructions {
     OFInstructionBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionBsnPermit bsnPermit();
     OFInstructionBsnPrioritizePdus bsnPrioritizePdus();
+    OFInstructionBsnRequireVlanXlate bsnRequireVlanXlate();
     OFInstructionMeter.Builder buildMeter() throws UnsupportedOperationException;
     OFInstructionMeter meter(long meterId);
 

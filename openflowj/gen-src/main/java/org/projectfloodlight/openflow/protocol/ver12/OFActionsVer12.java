@@ -32,6 +32,15 @@ public class OFActionsVer12 implements OFActions {
 
 
 
+    public OFActionBsnChecksum.Builder buildBsnChecksum() {
+        return new OFActionBsnChecksumVer12.Builder();
+    }
+    public OFActionBsnChecksum bsnChecksum(U128 checksum) {
+        return new OFActionBsnChecksumVer12(
+                checksum
+                    );
+    }
+
     public OFActionBsnMirror.Builder buildBsnMirror() {
         return new OFActionBsnMirrorVer12.Builder();
     }

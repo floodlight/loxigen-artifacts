@@ -746,6 +746,10 @@ extern of_action_bsn_t *
     of_action_bsn_dup(
         of_action_bsn_t *src);
 
+extern of_action_bsn_checksum_t *
+    of_action_bsn_checksum_dup(
+        of_action_bsn_checksum_t *src);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_dup(
         of_action_bsn_mirror_t *src);
@@ -793,6 +797,10 @@ extern of_action_id_t *
 extern of_action_id_bsn_t *
     of_action_id_bsn_dup(
         of_action_id_bsn_t *src);
+
+extern of_action_id_bsn_checksum_t *
+    of_action_id_bsn_checksum_dup(
+        of_action_id_bsn_checksum_t *src);
 
 extern of_action_id_bsn_mirror_t *
     of_action_id_bsn_mirror_dup(
@@ -1242,6 +1250,10 @@ extern of_instruction_bsn_prioritize_pdus_t *
     of_instruction_bsn_prioritize_pdus_dup(
         of_instruction_bsn_prioritize_pdus_t *src);
 
+extern of_instruction_bsn_require_vlan_xlate_t *
+    of_instruction_bsn_require_vlan_xlate_dup(
+        of_instruction_bsn_require_vlan_xlate_t *src);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_dup(
         of_instruction_clear_actions_t *src);
@@ -1301,6 +1313,10 @@ extern of_instruction_id_bsn_permit_t *
 extern of_instruction_id_bsn_prioritize_pdus_t *
     of_instruction_id_bsn_prioritize_pdus_dup(
         of_instruction_id_bsn_prioritize_pdus_t *src);
+
+extern of_instruction_id_bsn_require_vlan_xlate_t *
+    of_instruction_id_bsn_require_vlan_xlate_dup(
+        of_instruction_id_bsn_require_vlan_xlate_t *src);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_dup(
@@ -1561,6 +1577,14 @@ extern of_oxm_bsn_udf7_t *
 extern of_oxm_bsn_udf7_masked_t *
     of_oxm_bsn_udf7_masked_dup(
         of_oxm_bsn_udf7_masked_t *src);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_dup(
+        of_oxm_bsn_vlan_xlate_port_group_id_t *src);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_masked_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_dup(
+        of_oxm_bsn_vlan_xlate_port_group_id_masked_t *src);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_dup(
@@ -2490,6 +2514,10 @@ extern of_action_bsn_t *
     of_action_bsn_OF_VERSION_1_0_dup(
         of_action_bsn_t *src);
 
+extern of_action_bsn_checksum_t *
+    of_action_bsn_checksum_OF_VERSION_1_0_dup(
+        of_action_bsn_checksum_t *src);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_OF_VERSION_1_0_dup(
         of_action_bsn_mirror_t *src);
@@ -3017,6 +3045,10 @@ extern of_action_t *
 extern of_action_bsn_t *
     of_action_bsn_OF_VERSION_1_1_dup(
         of_action_bsn_t *src);
+
+extern of_action_bsn_checksum_t *
+    of_action_bsn_checksum_OF_VERSION_1_1_dup(
+        of_action_bsn_checksum_t *src);
 
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_OF_VERSION_1_1_dup(
@@ -3690,6 +3722,10 @@ extern of_action_bsn_t *
     of_action_bsn_OF_VERSION_1_2_dup(
         of_action_bsn_t *src);
 
+extern of_action_bsn_checksum_t *
+    of_action_bsn_checksum_OF_VERSION_1_2_dup(
+        of_action_bsn_checksum_t *src);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_OF_VERSION_1_2_dup(
         of_action_bsn_mirror_t *src);
@@ -4017,6 +4053,14 @@ extern of_oxm_bsn_udf7_t *
 extern of_oxm_bsn_udf7_masked_t *
     of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dup(
         of_oxm_bsn_udf7_masked_t *src);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dup(
+        of_oxm_bsn_vlan_xlate_port_group_id_t *src);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_masked_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dup(
+        of_oxm_bsn_vlan_xlate_port_group_id_masked_t *src);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_OF_VERSION_1_2_dup(
@@ -5054,6 +5098,10 @@ extern of_action_bsn_t *
     of_action_bsn_OF_VERSION_1_3_dup(
         of_action_bsn_t *src);
 
+extern of_action_bsn_checksum_t *
+    of_action_bsn_checksum_OF_VERSION_1_3_dup(
+        of_action_bsn_checksum_t *src);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_OF_VERSION_1_3_dup(
         of_action_bsn_mirror_t *src);
@@ -5097,6 +5145,10 @@ extern of_action_id_t *
 extern of_action_id_bsn_t *
     of_action_id_bsn_OF_VERSION_1_3_dup(
         of_action_id_bsn_t *src);
+
+extern of_action_id_bsn_checksum_t *
+    of_action_id_bsn_checksum_OF_VERSION_1_3_dup(
+        of_action_id_bsn_checksum_t *src);
 
 extern of_action_id_bsn_mirror_t *
     of_action_id_bsn_mirror_OF_VERSION_1_3_dup(
@@ -5494,6 +5546,10 @@ extern of_instruction_bsn_prioritize_pdus_t *
     of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
         of_instruction_bsn_prioritize_pdus_t *src);
 
+extern of_instruction_bsn_require_vlan_xlate_t *
+    of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
+        of_instruction_bsn_require_vlan_xlate_t *src);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_OF_VERSION_1_3_dup(
         of_instruction_clear_actions_t *src);
@@ -5553,6 +5609,10 @@ extern of_instruction_id_bsn_permit_t *
 extern of_instruction_id_bsn_prioritize_pdus_t *
     of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_prioritize_pdus_t *src);
+
+extern of_instruction_id_bsn_require_vlan_xlate_t *
+    of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_require_vlan_xlate_t *src);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_OF_VERSION_1_3_dup(
@@ -5805,6 +5865,14 @@ extern of_oxm_bsn_udf7_t *
 extern of_oxm_bsn_udf7_masked_t *
     of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(
         of_oxm_bsn_udf7_masked_t *src);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dup(
+        of_oxm_bsn_vlan_xlate_port_group_id_t *src);
+
+extern of_oxm_bsn_vlan_xlate_port_group_id_masked_t *
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dup(
+        of_oxm_bsn_vlan_xlate_port_group_id_masked_t *src);
 
 extern of_oxm_bsn_vrf_t *
     of_oxm_bsn_vrf_OF_VERSION_1_3_dup(

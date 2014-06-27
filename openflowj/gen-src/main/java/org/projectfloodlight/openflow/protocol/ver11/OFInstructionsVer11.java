@@ -105,6 +105,10 @@ public class OFInstructionsVer11 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnPrioritizePdus not supported in version 1.1");
     }
 
+    public OFInstructionBsnRequireVlanXlate bsnRequireVlanXlate() {
+        throw new UnsupportedOperationException("OFInstructionBsnRequireVlanXlate not supported in version 1.1");
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.1");
     }

@@ -28,6 +28,8 @@ import java.util.Set;
 public interface OFActions {
     // Subfactories
 
+    OFActionBsnChecksum.Builder buildBsnChecksum();
+    OFActionBsnChecksum bsnChecksum(U128 checksum);
     OFActionBsnMirror.Builder buildBsnMirror();
     OFActionBsnSetTunnelDst.Builder buildBsnSetTunnelDst();
     OFActionBsnSetTunnelDst bsnSetTunnelDst(long dst);

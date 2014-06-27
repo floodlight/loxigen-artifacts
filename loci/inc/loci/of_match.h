@@ -75,6 +75,7 @@ typedef struct of_match_fields_s {
     uint32_t             bsn_udf6;
     uint32_t             bsn_udf7;
     uint16_t             bsn_tcp_flags;
+    uint32_t             bsn_vlan_xlate_port_group_id;
 
 } of_match_fields_t;
 
@@ -711,6 +712,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for bsn_vlan_xlate_port_group_id */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_vlan_xlate_port_group_id, q_m->bsn_vlan_xlate_port_group_id)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_vlan_xlate_port_group_id, q_f->bsn_vlan_xlate_port_group_id,
+            q_m->bsn_vlan_xlate_port_group_id)) {
+        return 0;
+    }
+
     /* Mask and values for mpls_tc */
     if (!OF_MORE_SPECIFIC_INT(e_m->mpls_tc, q_m->mpls_tc)) {
         return 0;
@@ -1091,6 +1101,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for ipv6_nd_sll */
     if (!OF_OVERLAP_MAC_ADDR(&f1->ipv6_nd_sll, &f2->ipv6_nd_sll,
         &m2->ipv6_nd_sll, &m1->ipv6_nd_sll)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_vlan_xlate_port_group_id */
+    if (!OF_OVERLAP_INT(f1->bsn_vlan_xlate_port_group_id, f2->bsn_vlan_xlate_port_group_id,
+        m2->bsn_vlan_xlate_port_group_id, m1->bsn_vlan_xlate_port_group_id)) {
         return 0; /* This field differentiates; all done */
     }
 

@@ -878,6 +878,15 @@ extern int of_action_bsn_OF_VERSION_1_0_populate_scalars(
 extern int of_action_bsn_OF_VERSION_1_0_check_scalars(
     of_action_bsn_t *obj, int value);
 
+extern int of_action_bsn_checksum_OF_VERSION_1_0_populate(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_0_check(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_0_populate_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_0_check_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+
 extern int of_action_bsn_mirror_OF_VERSION_1_0_populate(
     of_action_bsn_mirror_t *obj, int value);
 extern int of_action_bsn_mirror_OF_VERSION_1_0_check(
@@ -2038,6 +2047,15 @@ extern int of_action_bsn_OF_VERSION_1_1_populate_scalars(
     of_action_bsn_t *obj, int value);
 extern int of_action_bsn_OF_VERSION_1_1_check_scalars(
     of_action_bsn_t *obj, int value);
+
+extern int of_action_bsn_checksum_OF_VERSION_1_1_populate(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_1_check(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_1_populate_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_1_check_scalars(
+    of_action_bsn_checksum_t *obj, int value);
 
 extern int of_action_bsn_mirror_OF_VERSION_1_1_populate(
     of_action_bsn_mirror_t *obj, int value);
@@ -3515,6 +3533,15 @@ extern int of_action_bsn_OF_VERSION_1_2_populate_scalars(
 extern int of_action_bsn_OF_VERSION_1_2_check_scalars(
     of_action_bsn_t *obj, int value);
 
+extern int of_action_bsn_checksum_OF_VERSION_1_2_populate(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_2_check(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_2_populate_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_2_check_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+
 extern int of_action_bsn_mirror_OF_VERSION_1_2_populate(
     of_action_bsn_mirror_t *obj, int value);
 extern int of_action_bsn_mirror_OF_VERSION_1_2_check(
@@ -4225,6 +4252,24 @@ extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_2_populate_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
 extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_2_check_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
+
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_populate(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_check(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_populate(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_check(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
 
 extern int of_oxm_bsn_vrf_OF_VERSION_1_2_populate(
     of_oxm_bsn_vrf_t *obj, int value);
@@ -6539,6 +6584,15 @@ extern int of_action_bsn_OF_VERSION_1_3_populate_scalars(
 extern int of_action_bsn_OF_VERSION_1_3_check_scalars(
     of_action_bsn_t *obj, int value);
 
+extern int of_action_bsn_checksum_OF_VERSION_1_3_populate(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_3_check(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_3_populate_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+extern int of_action_bsn_checksum_OF_VERSION_1_3_check_scalars(
+    of_action_bsn_checksum_t *obj, int value);
+
 extern int of_action_bsn_mirror_OF_VERSION_1_3_populate(
     of_action_bsn_mirror_t *obj, int value);
 extern int of_action_bsn_mirror_OF_VERSION_1_3_check(
@@ -6628,6 +6682,15 @@ extern int of_action_id_bsn_OF_VERSION_1_3_populate_scalars(
     of_action_id_bsn_t *obj, int value);
 extern int of_action_id_bsn_OF_VERSION_1_3_check_scalars(
     of_action_id_bsn_t *obj, int value);
+
+extern int of_action_id_bsn_checksum_OF_VERSION_1_3_populate(
+    of_action_id_bsn_checksum_t *obj, int value);
+extern int of_action_id_bsn_checksum_OF_VERSION_1_3_check(
+    of_action_id_bsn_checksum_t *obj, int value);
+extern int of_action_id_bsn_checksum_OF_VERSION_1_3_populate_scalars(
+    of_action_id_bsn_checksum_t *obj, int value);
+extern int of_action_id_bsn_checksum_OF_VERSION_1_3_check_scalars(
+    of_action_id_bsn_checksum_t *obj, int value);
 
 extern int of_action_id_bsn_mirror_OF_VERSION_1_3_populate(
     of_action_id_bsn_mirror_t *obj, int value);
@@ -7484,6 +7547,15 @@ extern int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_prioritize_pdus_t *obj, int value);
 
+extern int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_populate(
+    of_instruction_bsn_require_vlan_xlate_t *obj, int value);
+extern int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_check(
+    of_instruction_bsn_require_vlan_xlate_t *obj, int value);
+extern int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_require_vlan_xlate_t *obj, int value);
+extern int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_require_vlan_xlate_t *obj, int value);
+
 extern int of_instruction_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_clear_actions_t *obj, int value);
 extern int of_instruction_clear_actions_OF_VERSION_1_3_check(
@@ -7609,6 +7681,15 @@ extern int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_populate_scalars
     of_instruction_id_bsn_prioritize_pdus_t *obj, int value);
 extern int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_prioritize_pdus_t *obj, int value);
+
+extern int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj, int value);
+extern int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj, int value);
+extern int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj, int value);
+extern int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_require_vlan_xlate_t *obj, int value);
 
 extern int of_instruction_id_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_id_clear_actions_t *obj, int value);
@@ -8158,6 +8239,24 @@ extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_populate_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
 extern int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_bsn_udf7_masked_t *obj, int value);
+
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_populate(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_check(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, int value);
+
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_populate(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_check(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
+extern int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, int value);
 
 extern int of_oxm_bsn_vrf_OF_VERSION_1_3_populate(
     of_oxm_bsn_vrf_t *obj, int value);

@@ -4652,6 +4652,25 @@ typedef struct of_action_s of_action_t;
 typedef struct of_action_bsn_s of_action_bsn_t;
 
 /**
+ * Structure for of_action_bsn_checksum object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_bsn_checksum_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_action_bsn_checksum_uint32_get_f and _set_f.
+ *
+ * @param checksum_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for checksum, a variable of type of_checksum_128.  Functions
+ *   are of type of_action_bsn_checksum_of_checksum_128_get_f and _set_f.
+ *
+ */
+typedef struct of_action_bsn_checksum_s of_action_bsn_checksum_t;
+
+/**
  * Structure for of_action_bsn_mirror object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -4794,6 +4813,21 @@ typedef struct of_action_id_s of_action_id_t;
  *
  */
 typedef struct of_action_id_bsn_s of_action_id_bsn_t;
+
+/**
+ * Structure for of_action_id_bsn_checksum object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_bsn_checksum_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_action_id_bsn_checksum_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_action_id_bsn_checksum_s of_action_id_bsn_checksum_t;
 
 /**
  * Structure for of_action_id_bsn_mirror object.  Get/set
@@ -6264,6 +6298,21 @@ typedef struct of_instruction_bsn_permit_s of_instruction_bsn_permit_t;
 typedef struct of_instruction_bsn_prioritize_pdus_s of_instruction_bsn_prioritize_pdus_t;
 
 /**
+ * Structure for of_instruction_bsn_require_vlan_xlate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_require_vlan_xlate_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_require_vlan_xlate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_require_vlan_xlate_s of_instruction_bsn_require_vlan_xlate_t;
+
+/**
  * Structure for of_instruction_clear_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6451,6 +6500,21 @@ typedef struct of_instruction_id_bsn_permit_s of_instruction_id_bsn_permit_t;
  *
  */
 typedef struct of_instruction_id_bsn_prioritize_pdus_s of_instruction_id_bsn_prioritize_pdus_t;
+
+/**
+ * Structure for of_instruction_id_bsn_require_vlan_xlate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_require_vlan_xlate_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_require_vlan_xlate_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_require_vlan_xlate_s of_instruction_id_bsn_require_vlan_xlate_t;
 
 /**
  * Structure for of_instruction_id_clear_actions object.  Get/set
@@ -7418,6 +7482,32 @@ typedef struct of_oxm_bsn_udf7_s of_oxm_bsn_udf7_t;
  *
  */
 typedef struct of_oxm_bsn_udf7_masked_s of_oxm_bsn_udf7_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_vlan_xlate_port_group_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_vlan_xlate_port_group_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_vlan_xlate_port_group_id_s of_oxm_bsn_vlan_xlate_port_group_id_t;
+
+/**
+ * Structure for of_oxm_bsn_vlan_xlate_port_group_id_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_vlan_xlate_port_group_id_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_vlan_xlate_port_group_id_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_vlan_xlate_port_group_id_masked_s of_oxm_bsn_vlan_xlate_port_group_id_masked_t;
 
 /**
  * Structure for of_oxm_bsn_vrf object.  Get/set

@@ -132,6 +132,7 @@ int of_table_mod_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_tabl
 int of_table_stats_reply_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj);
 int of_table_stats_request_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj);
 int of_action_bsn_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_bsn_t *obj);
+int of_action_bsn_checksum_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj);
 int of_action_bsn_mirror_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj);
 int of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj);
 int of_action_enqueue_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_action_enqueue_t *obj);
@@ -261,6 +262,7 @@ int of_table_mod_failed_error_msg_OF_VERSION_1_1_dump(loci_writer_f writer, void
 int of_table_stats_reply_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj);
 int of_table_stats_request_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj);
 int of_action_bsn_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_bsn_t *obj);
+int of_action_bsn_checksum_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj);
 int of_action_bsn_mirror_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj);
 int of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj);
 int of_action_copy_ttl_in_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj);
@@ -425,6 +427,7 @@ int of_table_mod_failed_error_msg_OF_VERSION_1_2_dump(loci_writer_f writer, void
 int of_table_stats_reply_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj);
 int of_table_stats_request_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj);
 int of_action_bsn_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_bsn_t *obj);
+int of_action_bsn_checksum_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj);
 int of_action_bsn_mirror_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj);
 int of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj);
 int of_action_copy_ttl_in_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj);
@@ -504,6 +507,8 @@ int of_oxm_bsn_udf6_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_o
 int of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_masked_t *obj);
 int of_oxm_bsn_udf7_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_t *obj);
 int of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_masked_t *obj);
+int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj);
+int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj);
 int of_oxm_bsn_vrf_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_t *obj);
 int of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_masked_t *obj);
 int of_oxm_eth_dst_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_oxm_eth_dst_t *obj);
@@ -761,6 +766,7 @@ int of_table_mod_failed_error_msg_OF_VERSION_1_3_dump(loci_writer_f writer, void
 int of_table_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj);
 int of_table_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj);
 int of_action_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_bsn_t *obj);
+int of_action_bsn_checksum_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj);
 int of_action_bsn_mirror_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj);
 int of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj);
 int of_action_copy_ttl_in_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj);
@@ -771,6 +777,7 @@ int of_action_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cooki
 int of_action_group_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_group_t *obj);
 int of_action_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_header_t *obj);
 int of_action_id_bsn_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_bsn_t *obj);
+int of_action_id_bsn_checksum_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_bsn_checksum_t *obj);
 int of_action_id_bsn_mirror_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_bsn_mirror_t *obj);
 int of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_bsn_set_tunnel_dst_t *obj);
 int of_action_id_copy_ttl_in_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_action_id_copy_ttl_in_t *obj);
@@ -866,6 +873,7 @@ int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dump(loci_writer_f w
 int of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_bsn_packet_of_death_t *obj);
 int of_instruction_bsn_permit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_bsn_permit_t *obj);
 int of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_bsn_prioritize_pdus_t *obj);
+int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_bsn_require_vlan_xlate_t *obj);
 int of_instruction_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj);
 int of_instruction_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj);
 int of_instruction_goto_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_goto_table_t *obj);
@@ -880,6 +888,7 @@ int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dump(loci_writer_
 int of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_packet_of_death_t *obj);
 int of_instruction_id_bsn_permit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_permit_t *obj);
 int of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_prioritize_pdus_t *obj);
+int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_require_vlan_xlate_t *obj);
 int of_instruction_id_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_clear_actions_t *obj);
 int of_instruction_id_experimenter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_experimenter_t *obj);
 int of_instruction_id_goto_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_goto_table_t *obj);
@@ -941,6 +950,8 @@ int of_oxm_bsn_udf6_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
 int of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_masked_t *obj);
 int of_oxm_bsn_udf7_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_t *obj);
 int of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_masked_t *obj);
+int of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj);
+int of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj);
 int of_oxm_bsn_vrf_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_t *obj);
 int of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_masked_t *obj);
 int of_oxm_eth_dst_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_eth_dst_t *obj);

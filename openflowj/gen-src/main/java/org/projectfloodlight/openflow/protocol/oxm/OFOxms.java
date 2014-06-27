@@ -111,6 +111,10 @@ public interface OFOxms {
     OFOxmBsnUdf7 bsnUdf7(UDF value);
     OFOxmBsnUdf7Masked.Builder buildBsnUdf7Masked() throws UnsupportedOperationException;
     OFOxmBsnUdf7Masked bsnUdf7Masked(UDF value, UDF mask);
+    OFOxmBsnVlanXlatePortGroupId.Builder buildBsnVlanXlatePortGroupId() throws UnsupportedOperationException;
+    OFOxmBsnVlanXlatePortGroupId bsnVlanXlatePortGroupId(ClassId value);
+    OFOxmBsnVlanXlatePortGroupIdMasked.Builder buildBsnVlanXlatePortGroupIdMasked() throws UnsupportedOperationException;
+    OFOxmBsnVlanXlatePortGroupIdMasked bsnVlanXlatePortGroupIdMasked(ClassId value, ClassId mask);
     OFOxmBsnVrf.Builder buildBsnVrf() throws UnsupportedOperationException;
     OFOxmBsnVrf bsnVrf(VRF value);
     OFOxmBsnVrfMasked.Builder buildBsnVrfMasked() throws UnsupportedOperationException;

@@ -32,6 +32,10 @@ public class OFActionIdsVer13 implements OFActionIds {
 
 
 
+    public OFActionIdBsnChecksum bsnChecksum() {
+        return OFActionIdBsnChecksumVer13.INSTANCE;
+    }
+
     public OFActionIdBsnMirror bsnMirror() {
         return OFActionIdBsnMirrorVer13.INSTANCE;
     }
