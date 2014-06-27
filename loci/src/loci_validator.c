@@ -719,6 +719,9 @@ static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_reply
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_l2gre_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vrf_counter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bucket_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bucket_counter_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_desc_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -14084,6 +14087,21 @@ loci_validate_of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3(uint8_t *data,
 }
 
 static int __attribute__((unused))
+loci_validate_of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_action_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -16795,6 +16813,8 @@ loci_validate_of_bsn_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return loci_validate_of_bsn_table_checksum_stats_reply_OF_VERSION_1_3(data, len, out_len);
     case 0x9:
         return loci_validate_of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3(data, len, out_len);
+    case 0xf:
+        return loci_validate_of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -16907,6 +16927,8 @@ loci_validate_of_bsn_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return loci_validate_of_bsn_table_checksum_stats_request_OF_VERSION_1_3(data, len, out_len);
     case 0x9:
         return loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(data, len, out_len);
+    case 0xf:
+        return loci_validate_of_bsn_vrf_counter_stats_request_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -19413,6 +19435,84 @@ loci_validate_of_bsn_vport_q_in_q_OF_VERSION_1_3(uint8_t *data, int len, int *ou
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 32) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 0, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_values = len - 8;
+    if (loci_validate_of_list_uint64_OF_VERSION_1_3(data + 8, wire_len_values, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 24) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 24) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_entries = len - 24;
+    if (loci_validate_of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(data + 24, wire_len_entries, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vrf_counter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 28) {
+        return -1;
+    }
+
+    len = 28;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 28) {
         return -1;
     }
 

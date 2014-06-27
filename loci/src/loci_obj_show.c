@@ -17749,6 +17749,82 @@ of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
+of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_reply_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_vrf_counter_stats_entry_t list;
+    of_bsn_vrf_counter_stats_entry_t elt;
+    int rv;
+
+    of_bsn_vrf_counter_stats_reply_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_reply_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u16_flags(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_vrf_counter_stats_entry_t={ ");
+    of_bsn_vrf_counter_stats_reply_entries_bind(obj, &list);
+    OF_LIST_BSN_VRF_COUNTER_STATS_ENTRY_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_request_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_bsn_vrf_counter_stats_request_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_u32_xid(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_request_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_u16_flags(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_request_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vrf_counter_stats_request_vrf_get(obj, &val32);
+    out += writer(cookie, "vrf=");
+    out += LOCI_SHOW_u32_vrf(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj)
 {
     int out = 0;
@@ -21685,6 +21761,31 @@ of_bsn_vport_q_in_q_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
+of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_entry_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_list_uint64_t list;
+    of_uint64_t elt;
+    int rv;
+
+    of_bsn_vrf_counter_stats_entry_vrf_get(obj, &val32);
+    out += writer(cookie, "vrf=");
+    out += LOCI_SHOW_u32_vrf(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_uint64_t={ ");
+    of_bsn_vrf_counter_stats_entry_values_bind(obj, &list);
+    OF_LIST_UINT64_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
 of_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_t *obj)
 {
     int out = 0;
@@ -25363,6 +25464,14 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
+of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_vrf_counter_stats_entry_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_list_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bucket_t *obj)
 {
     int out = 0;
@@ -26094,6 +26203,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_remove_request_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_desc_stats_reply_OF_VERSION_1_0_show,
     of_desc_stats_request_OF_VERSION_1_0_show,
     of_echo_reply_OF_VERSION_1_0_show,
@@ -26276,6 +26387,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_bsn_vport_header_OF_VERSION_1_0_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     of_flow_stats_entry_OF_VERSION_1_0_show,
@@ -26494,6 +26606,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_list_flow_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -26621,6 +26734,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_1_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_show,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     of_desc_stats_reply_OF_VERSION_1_1_show,
@@ -26805,6 +26920,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_vport_header_OF_VERSION_1_1_show,
     of_bsn_vport_l2gre_OF_VERSION_1_1_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_1_show,
+    unknown_show,
     of_bucket_OF_VERSION_1_1_show,
     of_bucket_counter_OF_VERSION_1_1_show,
     of_flow_stats_entry_OF_VERSION_1_1_show,
@@ -27021,6 +27137,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_list_bucket_OF_VERSION_1_1_show,
     of_list_bucket_counter_OF_VERSION_1_1_show,
     of_list_flow_stats_entry_OF_VERSION_1_1_show,
@@ -27150,6 +27267,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_2_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_show,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_2_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     of_desc_stats_reply_OF_VERSION_1_2_show,
@@ -27334,6 +27453,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_bsn_vport_header_OF_VERSION_1_2_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
+    unknown_show,
     of_bucket_OF_VERSION_1_2_show,
     of_bucket_counter_OF_VERSION_1_2_show,
     of_flow_stats_entry_OF_VERSION_1_2_show,
@@ -27550,6 +27670,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_list_bucket_OF_VERSION_1_2_show,
     of_list_bucket_counter_OF_VERSION_1_2_show,
     of_list_flow_stats_entry_OF_VERSION_1_2_show,
@@ -27681,6 +27802,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show,
     of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show,
     of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show,
+    of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show,
+    of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_show,
     of_desc_stats_reply_OF_VERSION_1_3_show,
     of_desc_stats_request_OF_VERSION_1_3_show,
     of_echo_reply_OF_VERSION_1_3_show,
@@ -27863,6 +27986,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_vport_header_OF_VERSION_1_3_show,
     of_bsn_vport_l2gre_OF_VERSION_1_3_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_3_show,
+    of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show,
     of_bucket_OF_VERSION_1_3_show,
     of_bucket_counter_OF_VERSION_1_3_show,
     of_flow_stats_entry_OF_VERSION_1_3_show,
@@ -28079,6 +28203,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show,
     of_list_bsn_tlv_OF_VERSION_1_3_show,
     of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show,
+    of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show,
     of_list_bucket_OF_VERSION_1_3_show,
     of_list_bucket_counter_OF_VERSION_1_3_show,
     of_list_flow_stats_entry_OF_VERSION_1_3_show,

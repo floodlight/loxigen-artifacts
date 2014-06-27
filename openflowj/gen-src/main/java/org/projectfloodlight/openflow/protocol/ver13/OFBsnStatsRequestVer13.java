@@ -107,6 +107,9 @@ abstract class OFBsnStatsRequestVer13 {
                case 0x9:
                    // discriminator value 0x9L=0x9L for class OFBsnVlanCounterStatsRequestVer13
                    return OFBsnVlanCounterStatsRequestVer13.READER.readFrom(bb);
+               case 0xf:
+                   // discriminator value 0xfL=0xfL for class OFBsnVrfCounterStatsRequestVer13
+                   return OFBsnVrfCounterStatsRequestVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnStatsRequestVer13: " + subtype);
             }

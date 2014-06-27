@@ -2409,6 +2409,24 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_vlan_counter_stats_request_push_wire_types,
     },
+    [OF_BSN_VRF_COUNTER_STATS_ENTRY] = {
+        .wire_length_get=of_u16_len_wire_length_get,
+        .wire_length_set=of_u16_len_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=NULL,
+    },
+    [OF_BSN_VRF_COUNTER_STATS_REPLY] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_vrf_counter_stats_reply_push_wire_types,
+    },
+    [OF_BSN_VRF_COUNTER_STATS_REQUEST] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_vrf_counter_stats_request_push_wire_types,
+    },
     [OF_HELLO_ELEM] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

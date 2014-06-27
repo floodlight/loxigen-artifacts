@@ -271,6 +271,10 @@ public interface OFFactory extends XidGenerator {
     OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values);
     OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() throws UnsupportedOperationException;
     OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() throws UnsupportedOperationException;
+    OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() throws UnsupportedOperationException;
+    OFBsnVrfCounterStatsEntry bsnVrfCounterStatsEntry(long vrf, List<U64> values);
+    OFBsnVrfCounterStatsReply.Builder buildBsnVrfCounterStatsReply() throws UnsupportedOperationException;
+    OFBsnVrfCounterStatsRequest.Builder buildBsnVrfCounterStatsRequest() throws UnsupportedOperationException;
     OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() throws UnsupportedOperationException;
     OFHelloElemVersionbitmap helloElemVersionbitmap(List<U32> bitmaps);
     OFMeterBandStats.Builder buildMeterBandStats() throws UnsupportedOperationException;

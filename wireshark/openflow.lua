@@ -1217,37 +1217,9 @@ local enum_v4_ofp_stats_type = {
     [65535] = "OFPST_EXPERIMENTER",
 }
 
-local enum_v4_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
-    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
+local enum_v4_of_bsn_vrf_counter_t = {
+    [0] = "OFP_BSN_VRF_COUNTER_BYTES",
+    [1] = "OFP_BSN_VRF_COUNTER_PACKETS",
 }
 
 local enum_v4_ofp_flow_mod_flags = {
@@ -1403,14 +1375,20 @@ local enum_v4_ofp_role_request_failed_code = {
     [2] = "OFPRRFC_BAD_ROLE",
 }
 
-local enum_v4_ofp_capabilities = {
-    [1] = "OFPC_FLOW_STATS",
-    [2] = "OFPC_TABLE_STATS",
-    [4] = "OFPC_PORT_STATS",
-    [8] = "OFPC_GROUP_STATS",
-    [32] = "OFPC_IP_REASM",
-    [64] = "OFPC_QUEUE_STATS",
-    [256] = "OFPC_PORT_BLOCKED",
+local enum_v4_ofp_bsn_vrf_counter_constants = {
+    [4294967295] = "OFP_BSN_VRF_ALL",
+}
+
+local enum_v4_ofp_bsn_tcp_flag = {
+    [1] = "OFP_BSN_TCP_FLAG_FIN",
+    [2] = "OFP_BSN_TCP_FLAG_SYN",
+    [4] = "OFP_BSN_TCP_FLAG_RST",
+    [8] = "OFP_BSN_TCP_FLAG_PSH",
+    [16] = "OFP_BSN_TCP_FLAG_ACK",
+    [32] = "OFP_BSN_TCP_FLAG_URG",
+    [64] = "OFP_BSN_TCP_FLAG_ECE",
+    [128] = "OFP_BSN_TCP_FLAG_CWR",
+    [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
 local enum_v4_ofp_bsn_vport_l2gre_flags = {
@@ -1569,6 +1547,10 @@ local enum_v4_ofp_error_type = {
     [65535] = "OFPET_EXPERIMENTER",
 }
 
+local enum_v4_ofp_bsn_vlan_counter_constants = {
+    [65535] = "OFP_BSN_VLAN_ALL",
+}
+
 local enum_v4_ofp_group_mod_command = {
     [0] = "OFPGC_ADD",
     [1] = "OFPGC_MODIFY",
@@ -1578,6 +1560,39 @@ local enum_v4_ofp_group_mod_command = {
 local enum_v4_ofp_match_type = {
     [0] = "OFPMT_STANDARD",
     [1] = "OFPMT_OXM",
+}
+
+local enum_v4_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
+    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
 }
 
 local enum_v4_ofp_vlan_id = {
@@ -1675,16 +1690,14 @@ local enum_v4_ofp_meter_mod_command = {
     [2] = "OFPMC_DELETE",
 }
 
-local enum_v4_ofp_bsn_tcp_flag = {
-    [1] = "OFP_BSN_TCP_FLAG_FIN",
-    [2] = "OFP_BSN_TCP_FLAG_SYN",
-    [4] = "OFP_BSN_TCP_FLAG_RST",
-    [8] = "OFP_BSN_TCP_FLAG_PSH",
-    [16] = "OFP_BSN_TCP_FLAG_ACK",
-    [32] = "OFP_BSN_TCP_FLAG_URG",
-    [64] = "OFP_BSN_TCP_FLAG_ECE",
-    [128] = "OFP_BSN_TCP_FLAG_CWR",
-    [256] = "OFP_BSN_TCP_FLAG_NS",
+local enum_v4_ofp_capabilities = {
+    [1] = "OFPC_FLOW_STATS",
+    [2] = "OFPC_TABLE_STATS",
+    [4] = "OFPC_PORT_STATS",
+    [8] = "OFPC_GROUP_STATS",
+    [32] = "OFPC_IP_REASM",
+    [64] = "OFPC_QUEUE_STATS",
+    [256] = "OFPC_PORT_BLOCKED",
 }
 
 local enum_v4_ofp_flow_mod_failed_code = {
@@ -5903,6 +5916,27 @@ fields['of13.bsn_vport_q_in_q.ingress_vlan_id'] = ProtoField.uint16("of13.bsn_vp
 fields['of13.bsn_vport_q_in_q.egress_tpid'] = ProtoField.uint16("of13.bsn_vport_q_in_q.egress_tpid", "egress_tpid", base.DEC, nil)
 fields['of13.bsn_vport_q_in_q.egress_vlan_id'] = ProtoField.uint16("of13.bsn_vport_q_in_q.egress_vlan_id", "egress_vlan_id", base.DEC, nil)
 fields['of13.bsn_vport_q_in_q.if_name'] = ProtoField.stringz("of13.bsn_vport_q_in_q.if_name", "if_name")
+fields['of13.bsn_vrf_counter_stats_entry.length'] = ProtoField.uint16("of13.bsn_vrf_counter_stats_entry.length", "length", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_entry.vrf'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_entry.vrf", "vrf", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_entry.values'] = ProtoField.bytes("of13.bsn_vrf_counter_stats_entry.values", "values")
+fields['of13.bsn_vrf_counter_stats_reply.version'] = ProtoField.uint8("of13.bsn_vrf_counter_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.type'] = ProtoField.uint8("of13.bsn_vrf_counter_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.length'] = ProtoField.uint16("of13.bsn_vrf_counter_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.xid'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_vrf_counter_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.flags'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_vrf_counter_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_reply.entries'] = ProtoField.bytes("of13.bsn_vrf_counter_stats_reply.entries", "entries")
+fields['of13.bsn_vrf_counter_stats_request.version'] = ProtoField.uint8("of13.bsn_vrf_counter_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.type'] = ProtoField.uint8("of13.bsn_vrf_counter_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.length'] = ProtoField.uint16("of13.bsn_vrf_counter_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.xid'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_vrf_counter_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.flags'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_vrf_counter_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.subtype'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_vrf_counter_stats_request.vrf'] = ProtoField.uint32("of13.bsn_vrf_counter_stats_request.vrf", "vrf", base.DEC, nil)
 fields['of13.bucket.len'] = ProtoField.uint16("of13.bucket.len", "len", base.DEC, nil)
 fields['of13.bucket.weight'] = ProtoField.uint16("of13.bucket.weight", "weight", base.DEC, nil)
 fields['of13.bucket.watch_port'] = ProtoField.uint32("of13.bucket.watch_port", "watch_port", base.DEC, nil)
@@ -11101,6 +11135,27 @@ p_of.fields = {
     fields['of13.bsn_vport_q_in_q.egress_tpid'],
     fields['of13.bsn_vport_q_in_q.egress_vlan_id'],
     fields['of13.bsn_vport_q_in_q.if_name'],
+    fields['of13.bsn_vrf_counter_stats_entry.length'],
+    fields['of13.bsn_vrf_counter_stats_entry.vrf'],
+    fields['of13.bsn_vrf_counter_stats_entry.values'],
+    fields['of13.bsn_vrf_counter_stats_reply.version'],
+    fields['of13.bsn_vrf_counter_stats_reply.type'],
+    fields['of13.bsn_vrf_counter_stats_reply.length'],
+    fields['of13.bsn_vrf_counter_stats_reply.xid'],
+    fields['of13.bsn_vrf_counter_stats_reply.stats_type'],
+    fields['of13.bsn_vrf_counter_stats_reply.flags'],
+    fields['of13.bsn_vrf_counter_stats_reply.experimenter'],
+    fields['of13.bsn_vrf_counter_stats_reply.subtype'],
+    fields['of13.bsn_vrf_counter_stats_reply.entries'],
+    fields['of13.bsn_vrf_counter_stats_request.version'],
+    fields['of13.bsn_vrf_counter_stats_request.type'],
+    fields['of13.bsn_vrf_counter_stats_request.length'],
+    fields['of13.bsn_vrf_counter_stats_request.xid'],
+    fields['of13.bsn_vrf_counter_stats_request.stats_type'],
+    fields['of13.bsn_vrf_counter_stats_request.flags'],
+    fields['of13.bsn_vrf_counter_stats_request.experimenter'],
+    fields['of13.bsn_vrf_counter_stats_request.subtype'],
+    fields['of13.bsn_vrf_counter_stats_request.vrf'],
     fields['of13.bucket.len'],
     fields['of13.bucket.weight'],
     fields['of13.bucket.watch_port'],
@@ -21501,6 +21556,54 @@ function dissect_of_bsn_vport_q_in_q_v4(reader, subtree)
     return 'of_bsn_vport_q_in_q'
 end
 of_bsn_vport_v4_dissectors[0] = dissect_of_bsn_vport_q_in_q_v4
+
+-- top-level class of_bsn_vrf_counter_stats_entry
+function dissect_of_bsn_vrf_counter_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_entry.length')
+    reader.skip(2)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_entry.vrf')
+    read_list(reader, dissect_of_uint64_v4, subtree, 'of_uint64')
+    return 'of_bsn_vrf_counter_stats_entry'
+end
+-- child class of_bsn_vrf_counter_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_vrf_counter_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_vrf_counter_stats_entry_v4, subtree, 'of_bsn_vrf_counter_stats_entry')
+    return 'of_bsn_vrf_counter_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[15] = dissect_of_bsn_vrf_counter_stats_reply_v4
+
+-- child class of_bsn_vrf_counter_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_vrf_counter_stats_request_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vrf_counter_stats_request.vrf')
+    return 'of_bsn_vrf_counter_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[15] = dissect_of_bsn_vrf_counter_stats_request_v4
 
 -- top-level class of_bucket
 function dissect_of_bucket_v4(reader, subtree)

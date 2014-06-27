@@ -16726,6 +16726,9 @@ of_bsn_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xe:
             *id = OF_BSN_IMAGE_DESC_STATS_REPLY;
             break;
+        case 0xf:
+            *id = OF_BSN_VRF_COUNTER_STATS_REPLY;
+            break;
         default:
             *id = OF_BSN_STATS_REPLY;
             break;

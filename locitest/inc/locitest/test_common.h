@@ -5846,6 +5846,24 @@ extern int of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_check_scalars(
     of_bsn_vlan_counter_stats_request_t *obj, int value);
 
+extern int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_vrf_counter_stats_reply_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_vrf_counter_stats_reply_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_vrf_counter_stats_reply_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_vrf_counter_stats_reply_t *obj, int value);
+
+extern int of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_vrf_counter_stats_request_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_check(
+    of_bsn_vrf_counter_stats_request_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_vrf_counter_stats_request_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_vrf_counter_stats_request_t *obj, int value);
+
 extern int of_desc_stats_reply_OF_VERSION_1_3_populate(
     of_desc_stats_reply_t *obj, int value);
 extern int of_desc_stats_reply_OF_VERSION_1_3_check(
@@ -7303,6 +7321,15 @@ extern int of_bsn_vport_q_in_q_OF_VERSION_1_3_populate_scalars(
     of_bsn_vport_q_in_q_t *obj, int value);
 extern int of_bsn_vport_q_in_q_OF_VERSION_1_3_check_scalars(
     of_bsn_vport_q_in_q_t *obj, int value);
+
+extern int of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_vrf_counter_stats_entry_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_vrf_counter_stats_entry_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_vrf_counter_stats_entry_t *obj, int value);
+extern int of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_vrf_counter_stats_entry_t *obj, int value);
 
 extern int of_bucket_OF_VERSION_1_3_populate(
     of_bucket_t *obj, int value);
@@ -9167,6 +9194,15 @@ extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_populate_scalars(
 extern int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_check_scalars(
     of_list_bsn_vlan_counter_stats_entry_t *obj, int value);
 
+extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_vrf_counter_stats_entry_t *obj, int value);
+extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_vrf_counter_stats_entry_t *obj, int value);
+extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_vrf_counter_stats_entry_t *obj, int value);
+extern int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_vrf_counter_stats_entry_t *obj, int value);
+
 extern int of_list_bucket_OF_VERSION_1_3_populate(
     of_list_bucket_t *obj, int value);
 extern int of_list_bucket_OF_VERSION_1_3_check(
@@ -9769,6 +9805,13 @@ extern int
 extern int
     list_check_of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3(
     of_list_bsn_vlan_counter_stats_entry_t *list, int value);
+
+extern int
+    list_setup_of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_vrf_counter_stats_entry_t *list, int value);
+extern int
+    list_check_of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3(
+    of_list_bsn_vrf_counter_stats_entry_t *list, int value);
 
 extern int
     list_setup_of_list_bucket_OF_VERSION_1_3(

@@ -426,6 +426,14 @@ extern of_bsn_vlan_counter_stats_request_t *
     of_bsn_vlan_counter_stats_request_dup(
         of_bsn_vlan_counter_stats_request_t *src);
 
+extern of_bsn_vrf_counter_stats_reply_t *
+    of_bsn_vrf_counter_stats_reply_dup(
+        of_bsn_vrf_counter_stats_reply_t *src);
+
+extern of_bsn_vrf_counter_stats_request_t *
+    of_bsn_vrf_counter_stats_request_dup(
+        of_bsn_vrf_counter_stats_request_t *src);
+
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_dup(
         of_desc_stats_reply_t *src);
@@ -1153,6 +1161,10 @@ extern of_bsn_vport_l2gre_t *
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_dup(
         of_bsn_vport_q_in_q_t *src);
+
+extern of_bsn_vrf_counter_stats_entry_t *
+    of_bsn_vrf_counter_stats_entry_dup(
+        of_bsn_vrf_counter_stats_entry_t *src);
 
 extern of_bucket_t *
     of_bucket_dup(
@@ -2017,6 +2029,10 @@ extern of_list_bsn_tlv_t *
 extern of_list_bsn_vlan_counter_stats_entry_t *
     of_list_bsn_vlan_counter_stats_entry_dup(
         of_list_bsn_vlan_counter_stats_entry_t *src);
+
+extern of_list_bsn_vrf_counter_stats_entry_t *
+    of_list_bsn_vrf_counter_stats_entry_dup(
+        of_list_bsn_vrf_counter_stats_entry_t *src);
 
 extern of_list_bucket_t *
     of_list_bucket_dup(
@@ -4726,6 +4742,14 @@ extern of_bsn_vlan_counter_stats_request_t *
     of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_dup(
         of_bsn_vlan_counter_stats_request_t *src);
 
+extern of_bsn_vrf_counter_stats_reply_t *
+    of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_dup(
+        of_bsn_vrf_counter_stats_reply_t *src);
+
+extern of_bsn_vrf_counter_stats_request_t *
+    of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_dup(
+        of_bsn_vrf_counter_stats_request_t *src);
+
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_OF_VERSION_1_3_dup(
         of_desc_stats_reply_t *src);
@@ -5389,6 +5413,10 @@ extern of_bsn_vport_l2gre_t *
 extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(
         of_bsn_vport_q_in_q_t *src);
+
+extern of_bsn_vrf_counter_stats_entry_t *
+    of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_bsn_vrf_counter_stats_entry_t *src);
 
 extern of_bucket_t *
     of_bucket_OF_VERSION_1_3_dup(
@@ -6245,6 +6273,10 @@ extern of_list_bsn_tlv_t *
 extern of_list_bsn_vlan_counter_stats_entry_t *
     of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
         of_list_bsn_vlan_counter_stats_entry_t *src);
+
+extern of_list_bsn_vrf_counter_stats_entry_t *
+    of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dup(
+        of_list_bsn_vrf_counter_stats_entry_t *src);
 
 extern of_list_bucket_t *
     of_list_bucket_OF_VERSION_1_3_dup(

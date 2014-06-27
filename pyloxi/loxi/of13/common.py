@@ -1215,6 +1215,60 @@ class bsn_vport_q_in_q(bsn_vport):
 
 bsn_vport.subtypes[0] = bsn_vport_q_in_q
 
+class bsn_vrf_counter_stats_entry(loxi.OFObject):
+
+    def __init__(self, vrf=None, values=None):
+        if vrf != None:
+            self.vrf = vrf
+        else:
+            self.vrf = 0
+        if values != None:
+            self.values = values
+        else:
+            self.values = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append('\x00' * 2)
+        packed.append(struct.pack("!L", self.vrf))
+        packed.append(loxi.generic_util.pack_list(self.values))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_vrf_counter_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (0 + 2))
+        reader.skip(2)
+        obj.vrf = reader.read("!L")[0]
+        obj.values = loxi.generic_util.unpack_list(reader, common.uint64.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.vrf != other.vrf: return False
+        if self.values != other.values: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_vrf_counter_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("vrf = ");
+                q.text("%#x" % self.vrf)
+                q.text(","); q.breakable()
+                q.text("values = ");
+                q.pp(self.values)
+            q.breakable()
+        q.text('}')
+
+
 class bucket(loxi.OFObject):
 
     def __init__(self, weight=None, watch_port=None, watch_group=None, actions=None):

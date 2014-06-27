@@ -1010,6 +1010,21 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnVlanCounterStatsRequest not supported in version 1.1");
     }
 
+    public OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnVrfCounterStatsEntry not supported in version 1.1");
+    }
+    public OFBsnVrfCounterStatsEntry bsnVrfCounterStatsEntry(long vrf, List<U64> values) {
+        throw new UnsupportedOperationException("OFBsnVrfCounterStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnVrfCounterStatsReply.Builder buildBsnVrfCounterStatsReply() {
+        throw new UnsupportedOperationException("OFBsnVrfCounterStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnVrfCounterStatsRequest.Builder buildBsnVrfCounterStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnVrfCounterStatsRequest not supported in version 1.1");
+    }
+
     public OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() {
         throw new UnsupportedOperationException("OFHelloElemVersionbitmap not supported in version 1.1");
     }

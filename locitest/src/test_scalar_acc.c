@@ -21634,6 +21634,80 @@ test_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_vrf_counter_stats_reply_t *obj;
+
+    obj = of_bsn_vrf_counter_stats_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VRF_COUNTER_STATS_REPLY);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_VRF_COUNTER_STATS_REPLY);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_vrf_counter_stats_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_vrf_counter_stats_request_t *obj;
+
+    obj = of_bsn_vrf_counter_stats_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 28);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VRF_COUNTER_STATS_REQUEST);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_VRF_COUNTER_STATS_REQUEST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 28);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_vrf_counter_stats_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_desc_stats_reply_OF_VERSION_1_3_scalar(void)
 {
     of_desc_stats_reply_t *obj;
@@ -27152,6 +27226,37 @@ test_of_bsn_vport_q_in_q_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_vport_q_in_q_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_vport_q_in_q_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_vrf_counter_stats_entry_t *obj;
+
+    obj = of_bsn_vrf_counter_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VRF_COUNTER_STATS_ENTRY);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_vrf_counter_stats_entry_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -34133,6 +34238,24 @@ test_of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_scalar(void)
+{
+    of_list_bsn_vrf_counter_stats_entry_t *obj;
+
+    obj = of_list_bsn_vrf_counter_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 0);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_LIST_BSN_VRF_COUNTER_STATS_ENTRY);
+
+    of_list_bsn_vrf_counter_stats_entry_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_list_bucket_OF_VERSION_1_3_scalar(void)
 {
     of_list_bucket_t *obj;
@@ -35191,6 +35314,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_virtual_port_remove_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_desc_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_desc_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_echo_reply_OF_VERSION_1_3_scalar);
@@ -35353,6 +35478,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_vport_header_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vport_l2gre_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_vport_q_in_q_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bucket_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bucket_counter_OF_VERSION_1_3_scalar);
     RUN_TEST(of_flow_stats_entry_OF_VERSION_1_3_scalar);
@@ -35560,6 +35686,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bsn_tlv_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bucket_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_bucket_counter_OF_VERSION_1_3_scalar);
     RUN_TEST(of_list_flow_stats_entry_OF_VERSION_1_3_scalar);

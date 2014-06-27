@@ -2712,6 +2712,60 @@ typedef struct of_bsn_vlan_counter_stats_reply_s of_bsn_vlan_counter_stats_reply
 typedef struct of_bsn_vlan_counter_stats_request_s of_bsn_vlan_counter_stats_request_t;
 
 /**
+ * Structure for of_bsn_vrf_counter_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_vrf_counter_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3).
+ *   Accessors for entries, a variable of type of_list_bsn_vrf_counter_stats_entry.  Functions
+ *   are of type of_bsn_vrf_counter_stats_reply_of_list_bsn_vrf_counter_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_vrf_counter_stats_reply_s of_bsn_vrf_counter_stats_reply_t;
+
+/**
+ * Structure for of_bsn_vrf_counter_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_vrf_counter_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_request_uint32_get_f and _set_f.
+ *
+ * @param vrf_get/set ( OF_1_3).
+ *   Accessors for vrf, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_request_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_vrf_counter_stats_request_s of_bsn_vrf_counter_stats_request_t;
+
+/**
  * Structure for of_desc_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5864,6 +5918,21 @@ typedef struct of_bsn_vport_l2gre_s of_bsn_vport_l2gre_t;
  *
  */
 typedef struct of_bsn_vport_q_in_q_s of_bsn_vport_q_in_q_t;
+
+/**
+ * Structure for of_bsn_vrf_counter_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param vrf_get/set ( OF_1_3).
+ *   Accessors for vrf, a variable of type uint32.  Functions
+ *   are of type of_bsn_vrf_counter_stats_entry_uint32_get_f and _set_f.
+ *
+ * @param values_get/set ( OF_1_3).
+ *   Accessors for values, a variable of type of_list_uint64.  Functions
+ *   are of type of_bsn_vrf_counter_stats_entry_of_list_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_vrf_counter_stats_entry_s of_bsn_vrf_counter_stats_entry_t;
 
 /**
  * Structure for of_bucket object.  Get/set
@@ -9052,6 +9121,21 @@ typedef struct of_list_bsn_tlv_s of_list_bsn_tlv_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_bsn_vlan_counter_stats_entry_s of_list_bsn_vlan_counter_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_vrf_counter_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_vrf_counter_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_vrf_counter_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_vrf_counter_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_vrf_counter_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_vrf_counter_stats_entry_s of_list_bsn_vrf_counter_stats_entry_t;
 
 /**
  * Structure for of_list_bucket object.  Get/set

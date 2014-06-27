@@ -56,6 +56,15 @@ of_bsn_vlan_counter_t_map = {
     3: 'OFP_BSN_VLAN_COUNTER_TX_PACKETS',
 }
 
+# Identifiers from group of_bsn_vrf_counter_t
+OFP_BSN_VRF_COUNTER_BYTES = 0
+OFP_BSN_VRF_COUNTER_PACKETS = 1
+
+of_bsn_vrf_counter_t_map = {
+    0: 'OFP_BSN_VRF_COUNTER_BYTES',
+    1: 'OFP_BSN_VRF_COUNTER_PACKETS',
+}
+
 # Identifiers from group ofp_action_type
 OFPAT_OUTPUT = 0
 OFPAT_COPY_TTL_OUT = 11
@@ -364,6 +373,13 @@ ofp_bsn_udf_anchor_map = {
     2: 'OFP_BSN_UDF_ANCHOR_L4_HEADER_START',
 }
 
+# Identifiers from group ofp_bsn_vlan_counter_constants
+OFP_BSN_VLAN_ALL = 65535
+
+ofp_bsn_vlan_counter_constants_map = {
+    65535: 'OFP_BSN_VLAN_ALL',
+}
+
 # Identifiers from group ofp_bsn_vport_l2gre_flags
 OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID = 1
 OF_BSN_VPORT_L2GRE_DSCP_ASSIGN = 2
@@ -391,6 +407,13 @@ OF_BSN_VPORT_STATUS_FAILED = 1
 ofp_bsn_vport_status_map = {
     0: 'OF_BSN_VPORT_STATUS_OK',
     1: 'OF_BSN_VPORT_STATUS_FAILED',
+}
+
+# Identifiers from group ofp_bsn_vrf_counter_constants
+OFP_BSN_VRF_ALL = 4294967295
+
+ofp_bsn_vrf_counter_constants_map = {
+    4294967295: 'OFP_BSN_VRF_ALL',
 }
 
 # Identifiers from group ofp_capabilities

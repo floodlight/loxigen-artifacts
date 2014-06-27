@@ -1093,6 +1093,24 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnVlanCounterStatsRequestVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() {
+        return new OFBsnVrfCounterStatsEntryVer13.Builder();
+    }
+    public OFBsnVrfCounterStatsEntry bsnVrfCounterStatsEntry(long vrf, List<U64> values) {
+        return new OFBsnVrfCounterStatsEntryVer13(
+                vrf,
+                      values
+                    );
+    }
+
+    public OFBsnVrfCounterStatsReply.Builder buildBsnVrfCounterStatsReply() {
+        return new OFBsnVrfCounterStatsReplyVer13.Builder().setXid(nextXid());
+    }
+
+    public OFBsnVrfCounterStatsRequest.Builder buildBsnVrfCounterStatsRequest() {
+        return new OFBsnVrfCounterStatsRequestVer13.Builder().setXid(nextXid());
+    }
+
     public OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() {
         return new OFHelloElemVersionbitmapVer13.Builder();
     }

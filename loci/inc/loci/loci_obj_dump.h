@@ -684,6 +684,8 @@ int of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_dump(loci_writer_f writer, v
 int of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_request_t *obj);
 int of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_reply_t *obj);
 int of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_request_t *obj);
+int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_reply_t *obj);
+int of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_request_t *obj);
 int of_desc_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj);
 int of_desc_stats_request_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_desc_stats_request_t *obj);
 int of_echo_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_echo_reply_t *obj);
@@ -846,6 +848,7 @@ int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, vo
 int of_bsn_vport_header_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj);
 int of_bsn_vport_l2gre_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj);
 int of_bsn_vport_q_in_q_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj);
+int of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_entry_t *obj);
 int of_bucket_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bucket_t *obj);
 int of_bucket_counter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj);
 int of_flow_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj);
@@ -1053,6 +1056,7 @@ int of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dump(loci_writer_f wr
 int of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_bsn_table_checksum_stats_entry_t *obj);
 int of_list_bsn_tlv_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_bsn_tlv_t *obj);
 int of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_bsn_vlan_counter_stats_entry_t *obj);
+int of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_bsn_vrf_counter_stats_entry_t *obj);
 int of_list_bucket_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_bucket_t *obj);
 int of_list_bucket_counter_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_bucket_counter_t *obj);
 int of_list_flow_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_list_flow_stats_entry_t *obj);

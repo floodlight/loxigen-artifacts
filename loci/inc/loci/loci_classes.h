@@ -803,6 +803,12 @@ void of_bsn_vlan_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_obj
 void of_bsn_vlan_counter_stats_reply_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_request_push_wire_types(of_object_t *obj);
+void of_bsn_vrf_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vrf_counter_stats_entry_push_wire_types(of_object_t *obj);
+void of_bsn_vrf_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vrf_counter_stats_reply_push_wire_types(of_object_t *obj);
+void of_bsn_vrf_counter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vrf_counter_stats_request_push_wire_types(of_object_t *obj);
 void of_hello_elem_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_hello_elem_push_wire_types(of_object_t *obj);
 void of_hello_elem_versionbitmap_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1068,6 +1074,8 @@ typedef of_object_t of_bsn_virtual_port_remove_reply_t;
 typedef of_object_t of_bsn_virtual_port_remove_request_t;
 typedef of_object_t of_bsn_vlan_counter_stats_reply_t;
 typedef of_object_t of_bsn_vlan_counter_stats_request_t;
+typedef of_object_t of_bsn_vrf_counter_stats_reply_t;
+typedef of_object_t of_bsn_vrf_counter_stats_request_t;
 typedef of_object_t of_desc_stats_reply_t;
 typedef of_object_t of_desc_stats_request_t;
 typedef of_object_t of_echo_reply_t;
@@ -1246,6 +1254,7 @@ typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_header_t;
 typedef of_object_t of_bsn_vport_l2gre_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
+typedef of_object_t of_bsn_vrf_counter_stats_entry_t;
 typedef of_object_t of_bucket_t;
 typedef of_object_t of_bucket_counter_t;
 typedef of_object_t of_flow_stats_entry_t;
@@ -1455,6 +1464,7 @@ typedef of_object_t of_list_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_list_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_list_bsn_tlv_t;
 typedef of_object_t of_list_bsn_vlan_counter_stats_entry_t;
+typedef of_object_t of_list_bsn_vrf_counter_stats_entry_t;
 typedef of_object_t of_list_bucket_t;
 typedef of_object_t of_list_bucket_counter_t;
 typedef of_object_t of_list_flow_stats_entry_t;
@@ -2016,6 +2026,16 @@ extern of_bsn_vlan_counter_stats_request_t *
     of_bsn_vlan_counter_stats_request_new(of_version_t version);
 extern void of_bsn_vlan_counter_stats_request_init(
     of_bsn_vlan_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vrf_counter_stats_reply_t *
+    of_bsn_vrf_counter_stats_reply_new(of_version_t version);
+extern void of_bsn_vrf_counter_stats_reply_init(
+    of_bsn_vrf_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vrf_counter_stats_request_t *
+    of_bsn_vrf_counter_stats_request_new(of_version_t version);
+extern void of_bsn_vrf_counter_stats_request_init(
+    of_bsn_vrf_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_new(of_version_t version);
@@ -2926,6 +2946,11 @@ extern of_bsn_vport_q_in_q_t *
     of_bsn_vport_q_in_q_new(of_version_t version);
 extern void of_bsn_vport_q_in_q_init(
     of_bsn_vport_q_in_q_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_vrf_counter_stats_entry_t *
+    of_bsn_vrf_counter_stats_entry_new(of_version_t version);
+extern void of_bsn_vrf_counter_stats_entry_init(
+    of_bsn_vrf_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bucket_t *
     of_bucket_new(of_version_t version);
@@ -4006,6 +4031,11 @@ extern of_list_bsn_vlan_counter_stats_entry_t *
     of_list_bsn_vlan_counter_stats_entry_new(of_version_t version);
 extern void of_list_bsn_vlan_counter_stats_entry_init(
     of_list_bsn_vlan_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_bsn_vrf_counter_stats_entry_t *
+    of_list_bsn_vrf_counter_stats_entry_new(of_version_t version);
+extern void of_list_bsn_vrf_counter_stats_entry_init(
+    of_list_bsn_vrf_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_bucket_t *
     of_list_bucket_new(of_version_t version);
@@ -5259,6 +5289,28 @@ of_bsn_vlan_counter_stats_reply_delete(of_bsn_vlan_counter_stats_reply_t *obj) {
  */
 static inline void
 of_bsn_vlan_counter_stats_request_delete(of_bsn_vlan_counter_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vrf_counter_stats_reply_t
+ * @param obj An instance of type of_bsn_vrf_counter_stats_reply_t
+ *
+ * \ingroup of_bsn_vrf_counter_stats_reply
+ */
+static inline void
+of_bsn_vrf_counter_stats_reply_delete(of_bsn_vrf_counter_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vrf_counter_stats_request_t
+ * @param obj An instance of type of_bsn_vrf_counter_stats_request_t
+ *
+ * \ingroup of_bsn_vrf_counter_stats_request
+ */
+static inline void
+of_bsn_vrf_counter_stats_request_delete(of_bsn_vrf_counter_stats_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -7261,6 +7313,17 @@ of_bsn_vport_l2gre_delete(of_bsn_vport_l2gre_t *obj) {
  */
 static inline void
 of_bsn_vport_q_in_q_delete(of_bsn_vport_q_in_q_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_vrf_counter_stats_entry_t
+ * @param obj An instance of type of_bsn_vrf_counter_stats_entry_t
+ *
+ * \ingroup of_bsn_vrf_counter_stats_entry
+ */
+static inline void
+of_bsn_vrf_counter_stats_entry_delete(of_bsn_vrf_counter_stats_entry_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -9637,6 +9700,17 @@ of_list_bsn_tlv_delete(of_list_bsn_tlv_t *obj) {
  */
 static inline void
 of_list_bsn_vlan_counter_stats_entry_delete(of_list_bsn_vlan_counter_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_bsn_vrf_counter_stats_entry_t
+ * @param obj An instance of type of_list_bsn_vrf_counter_stats_entry_t
+ *
+ * \ingroup of_list_bsn_vrf_counter_stats_entry
+ */
+static inline void
+of_list_bsn_vrf_counter_stats_entry_delete(of_list_bsn_vrf_counter_stats_entry_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -13605,6 +13679,82 @@ extern void of_bsn_vlan_counter_stats_request_vlan_vid_get(
     of_bsn_vlan_counter_stats_request_t *obj,
     uint16_t *vlan_vid);
 
+/* Unified accessor functions for of_bsn_vrf_counter_stats_reply */
+
+extern void of_bsn_vrf_counter_stats_reply_xid_set(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_vrf_counter_stats_reply_xid_get(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_vrf_counter_stats_reply_flags_set(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_bsn_vrf_counter_stats_reply_flags_get(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_vrf_counter_stats_reply_experimenter_set(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_vrf_counter_stats_reply_experimenter_get(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_vrf_counter_stats_reply_subtype_set(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_vrf_counter_stats_reply_subtype_get(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_vrf_counter_stats_reply_entries_set(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    of_list_bsn_vrf_counter_stats_entry_t *entries);
+extern void of_bsn_vrf_counter_stats_reply_entries_bind(
+    of_bsn_vrf_counter_stats_reply_t *obj,
+    of_list_bsn_vrf_counter_stats_entry_t *entries);
+extern of_list_bsn_vrf_counter_stats_entry_t *of_bsn_vrf_counter_stats_reply_entries_get(
+    of_bsn_vrf_counter_stats_reply_t *obj);
+
+/* Unified accessor functions for of_bsn_vrf_counter_stats_request */
+
+extern void of_bsn_vrf_counter_stats_request_xid_set(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_vrf_counter_stats_request_xid_get(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_vrf_counter_stats_request_flags_set(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint16_t flags);
+extern void of_bsn_vrf_counter_stats_request_flags_get(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint16_t *flags);
+
+extern void of_bsn_vrf_counter_stats_request_experimenter_set(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_vrf_counter_stats_request_experimenter_get(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_vrf_counter_stats_request_subtype_set(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_vrf_counter_stats_request_subtype_get(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_vrf_counter_stats_request_vrf_set(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t vrf);
+extern void of_bsn_vrf_counter_stats_request_vrf_get(
+    of_bsn_vrf_counter_stats_request_t *obj,
+    uint32_t *vrf);
+
 /* Unified accessor functions for of_desc_stats_reply */
 
 extern void of_desc_stats_reply_xid_set(
@@ -17333,6 +17483,24 @@ extern void of_bsn_vport_q_in_q_if_name_get(
     of_bsn_vport_q_in_q_t *obj,
     of_port_name_t *if_name);
 
+/* Unified accessor functions for of_bsn_vrf_counter_stats_entry */
+
+extern void of_bsn_vrf_counter_stats_entry_vrf_set(
+    of_bsn_vrf_counter_stats_entry_t *obj,
+    uint32_t vrf);
+extern void of_bsn_vrf_counter_stats_entry_vrf_get(
+    of_bsn_vrf_counter_stats_entry_t *obj,
+    uint32_t *vrf);
+
+extern int WARN_UNUSED_RESULT of_bsn_vrf_counter_stats_entry_values_set(
+    of_bsn_vrf_counter_stats_entry_t *obj,
+    of_list_uint64_t *values);
+extern void of_bsn_vrf_counter_stats_entry_values_bind(
+    of_bsn_vrf_counter_stats_entry_t *obj,
+    of_list_uint64_t *values);
+extern of_list_uint64_t *of_bsn_vrf_counter_stats_entry_values_get(
+    of_bsn_vrf_counter_stats_entry_t *obj);
+
 /* Unified accessor functions for of_bucket */
 
 extern void of_bucket_weight_set(
@@ -20863,6 +21031,29 @@ extern int of_list_bsn_vlan_counter_stats_entry_append(
     for ((rv) = of_list_bsn_vlan_counter_stats_entry_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bsn_vlan_counter_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_bsn_vrf_counter_stats_entry */
+
+extern int of_list_bsn_vrf_counter_stats_entry_first(
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+extern int of_list_bsn_vrf_counter_stats_entry_next(
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+extern int of_list_bsn_vrf_counter_stats_entry_append_bind(
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+extern int of_list_bsn_vrf_counter_stats_entry_append(
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bsn_vrf_counter_stats_entry
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bsn_vrf_counter_stats_entry
+ * @param elt Pointer to an element of type of_bsn_vrf_counter_stats_entry
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BSN_VRF_COUNTER_STATS_ENTRY_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bsn_vrf_counter_stats_entry_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bsn_vrf_counter_stats_entry_next((list), (elt)))
 
 /* Unified accessor functions for of_list_bucket */
 
