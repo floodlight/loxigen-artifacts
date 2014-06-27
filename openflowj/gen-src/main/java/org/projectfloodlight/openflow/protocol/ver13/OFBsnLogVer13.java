@@ -29,7 +29,6 @@ import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
-import java.util.Arrays;
 
 class OFBsnLogVer13 implements OFBsnLog {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnLogVer13.class);
@@ -38,16 +37,16 @@ class OFBsnLogVer13 implements OFBsnLog {
     final static int MINIMUM_LENGTH = 17;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static byte[] DEFAULT_DATA = new byte[0];
+        private final static String DEFAULT_DATA = "";
 
     // OF message fields
     private final long xid;
     private final OFBsnLoglevel loglevel;
-    private final byte[] data;
+    private final String data;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnLogVer13(long xid, OFBsnLoglevel loglevel, byte[] data) {
+    OFBsnLogVer13(long xid, OFBsnLoglevel loglevel, String data) {
         this.xid = xid;
         this.loglevel = loglevel;
         this.data = data;
@@ -85,7 +84,7 @@ class OFBsnLogVer13 implements OFBsnLog {
     }
 
     @Override
-    public byte[] getData() {
+    public String getData() {
         return data;
     }
 
@@ -104,7 +103,7 @@ class OFBsnLogVer13 implements OFBsnLog {
         private boolean loglevelSet;
         private OFBsnLoglevel loglevel;
         private boolean dataSet;
-        private byte[] data;
+        private String data;
 
         BuilderWithParent(OFBsnLogVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -153,12 +152,12 @@ class OFBsnLogVer13 implements OFBsnLog {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public String getData() {
         return data;
     }
 
     @Override
-    public OFBsnLog.Builder setData(byte[] data) {
+    public OFBsnLog.Builder setData(String data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -171,7 +170,7 @@ class OFBsnLogVer13 implements OFBsnLog {
                 OFBsnLoglevel loglevel = this.loglevelSet ? this.loglevel : parentMessage.loglevel;
                 if(loglevel == null)
                     throw new NullPointerException("Property loglevel must not be null");
-                byte[] data = this.dataSet ? this.data : parentMessage.data;
+                String data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -192,7 +191,7 @@ class OFBsnLogVer13 implements OFBsnLog {
         private boolean loglevelSet;
         private OFBsnLoglevel loglevel;
         private boolean dataSet;
-        private byte[] data;
+        private String data;
 
     @Override
     public OFVersion getVersion() {
@@ -237,12 +236,12 @@ class OFBsnLogVer13 implements OFBsnLog {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public String getData() {
         return data;
     }
 
     @Override
-    public OFBsnLog.Builder setData(byte[] data) {
+    public OFBsnLog.Builder setData(String data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -255,7 +254,7 @@ class OFBsnLogVer13 implements OFBsnLog {
                 throw new IllegalStateException("Property loglevel doesn't have default value -- must be set");
             if(loglevel == null)
                 throw new NullPointerException("Property loglevel must not be null");
-            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
+            String data = this.dataSet ? this.data : DEFAULT_DATA;
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -303,7 +302,7 @@ class OFBsnLogVer13 implements OFBsnLog {
             if(subtype != 0x3f)
                 throw new OFParseError("Wrong subtype: Expected=0x3fL(0x3fL), got="+subtype);
             OFBsnLoglevel loglevel = OFBsnLoglevelSerializerVer13.readFrom(bb);
-            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            String data = ChannelUtils.readFixedLengthString(bb, length - (bb.readerIndex() - start));
 
             OFBsnLogVer13 bsnLogVer13 = new OFBsnLogVer13(
                     xid,
@@ -336,7 +335,7 @@ class OFBsnLogVer13 implements OFBsnLog {
             // fixed value property subtype = 0x3fL
             sink.putInt(0x3f);
             OFBsnLoglevelSerializerVer13.putTo(message.loglevel, sink);
-            sink.putBytes(message.data);
+            sink.putUnencodedChars(message.data);
         }
     }
 
@@ -364,7 +363,7 @@ class OFBsnLogVer13 implements OFBsnLog {
             // fixed value property subtype = 0x3fL
             bb.writeInt(0x3f);
             OFBsnLoglevelSerializerVer13.writeTo(bb, message.loglevel);
-            bb.writeBytes(message.data);
+            ChannelUtils.writeFixedLengthString(bb, message.data, message.data.length());
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -380,7 +379,7 @@ class OFBsnLogVer13 implements OFBsnLog {
         b.append(", ");
         b.append("loglevel=").append(loglevel);
         b.append(", ");
-        b.append("data=").append(Arrays.toString(data));
+        b.append("data=").append(data);
         b.append(")");
         return b.toString();
     }
@@ -402,8 +401,11 @@ class OFBsnLogVer13 implements OFBsnLog {
                 return false;
         } else if (!loglevel.equals(other.loglevel))
             return false;
-        if (!Arrays.equals(data, other.data))
+        if (data == null) {
+            if (other.data != null)
                 return false;
+        } else if (!data.equals(other.data))
+            return false;
         return true;
     }
 
@@ -414,7 +416,7 @@ class OFBsnLogVer13 implements OFBsnLog {
 
         result = prime *  (int) (xid ^ (xid >>> 32));
         result = prime * result + ((loglevel == null) ? 0 : loglevel.hashCode());
-        result = prime * result + Arrays.hashCode(data);
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
     }
 

@@ -32,7 +32,7 @@ public interface OFBsnLog extends OFObject, OFBsnHeader {
     long getExperimenter();
     long getSubtype();
     OFBsnLoglevel getLoglevel();
-    byte[] getData();
+    String getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -47,7 +47,7 @@ public interface OFBsnLog extends OFObject, OFBsnHeader {
         long getSubtype();
         OFBsnLoglevel getLoglevel();
         Builder setLoglevel(OFBsnLoglevel loglevel);
-        byte[] getData();
-        Builder setData(byte[] data);
+        String getData();
+        Builder setData(String data);
     }
 }
