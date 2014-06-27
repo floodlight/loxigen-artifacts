@@ -1,1 +1,1 @@
-a6678c76b234bce89ba2054a6ee90d0b7e50db61 Merge into master from pull request #293: java_gen: make of_bsn_log a string (https://github.com/floodlight/loxigen/pull/293)
+0377adb1d21737eba2604864a4913894e8f5fc9f Merge into master from pull request #287: LOXI-55: IPAddressWithMask should have a contains that can take any IPAddress (https://github.com/floodlight/loxigen/pull/287)
