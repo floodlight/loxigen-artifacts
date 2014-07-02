@@ -1,1 +1,1 @@
-adf1025ff900de17d46bb8013bb98fa54947aade Merge into master from pull request #294: change checksum combination operation to addition (https://github.com/floodlight/loxigen/pull/294)
+8d427a2a5dc64f7a2e7e09fd242eabeab9cd19ba Merge into master from pull request #295: java/HashValue: add+subtract, remove combineWithValue (https://github.com/floodlight/loxigen/pull/295)
