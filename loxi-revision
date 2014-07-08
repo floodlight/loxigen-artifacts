@@ -1,1 +1,1 @@
-d713295cf799f7489dbe5b6defcc07d9fc8a1fba Merge into master from pull request #296: Add rx and tx packet counts, and other rx/tx errors. (https://github.com/floodlight/loxigen/pull/296)
+2c4d1260433e3e9336d803e76642a5b9034ed190 Merge into master from pull request #297: Methods to create IPv4Address/IPv6Address from prefix length and other enhancements (https://github.com/floodlight/loxigen/pull/297)
