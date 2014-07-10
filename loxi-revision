@@ -1,1 +1,1 @@
-2c4d1260433e3e9336d803e76642a5b9034ed190 Merge into master from pull request #297: Methods to create IPv4Address/IPv6Address from prefix length and other enhancements (https://github.com/floodlight/loxigen/pull/297)
+d521400167a9a8e014afffed95952e3412f85007 Merge into master from pull request #298: Add bsn_disable_vlan_counters instruction. (https://github.com/floodlight/loxigen/pull/298)

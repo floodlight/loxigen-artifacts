@@ -33,6 +33,7 @@ public interface OFInstructionIds {
     OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
     OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
+    OFInstructionIdBsnDisableVlanCounters bsnDisableVlanCounters();
     OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionIdBsnPermit bsnPermit();
     OFInstructionIdBsnPrioritizePdus bsnPrioritizePdus();

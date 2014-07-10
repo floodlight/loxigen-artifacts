@@ -30334,6 +30334,11 @@ of_instruction_OF_VERSION_1_3_dup(
             &src->experimenter);
     }
 
+    if (src->header.object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
+        return (of_instruction_t *)of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
+            &src->bsn_disable_vlan_counters);
+    }
+
     if (src->header.object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
         return (of_instruction_t *)of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(
             &src->bsn_dhcp_offload);
@@ -30560,6 +30565,34 @@ of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
 
     of_instruction_bsn_disable_src_mac_check_subtype_get(src, &val32);
     of_instruction_bsn_disable_src_mac_check_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_disable_vlan_counters
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_disable_vlan_counters.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_disable_vlan_counters_t *
+of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
+    of_instruction_bsn_disable_vlan_counters_t *src)
+{
+    of_instruction_bsn_disable_vlan_counters_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_disable_vlan_counters_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_disable_vlan_counters_experimenter_get(src, &val32);
+    of_instruction_bsn_disable_vlan_counters_experimenter_set(dst, val32);
+
+    of_instruction_bsn_disable_vlan_counters_subtype_get(src, &val32);
+    of_instruction_bsn_disable_vlan_counters_subtype_set(dst, val32);
 
     return dst;
 }
@@ -30844,6 +30877,11 @@ of_instruction_id_OF_VERSION_1_3_dup(
             &src->experimenter);
     }
 
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
+            &src->bsn_disable_vlan_counters);
+    }
+
     if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
         return (of_instruction_id_t *)of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
             &src->bsn_dhcp_offload);
@@ -31057,6 +31095,34 @@ of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_disable_src_mac_check_subtype_get(src, &val32);
     of_instruction_id_bsn_disable_src_mac_check_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_disable_vlan_counters
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_disable_vlan_counters.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_disable_vlan_counters_t *
+of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_disable_vlan_counters_t *src)
+{
+    of_instruction_id_bsn_disable_vlan_counters_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_disable_vlan_counters_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_disable_vlan_counters_experimenter_get(src, &val32);
+    of_instruction_id_bsn_disable_vlan_counters_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_disable_vlan_counters_subtype_get(src, &val32);
+    of_instruction_id_bsn_disable_vlan_counters_subtype_set(dst, val32);
 
     return dst;
 }
@@ -43227,6 +43293,19 @@ of_instruction_bsn_disable_src_mac_check_dup(
     return NULL;
 }
 
+of_instruction_bsn_disable_vlan_counters_t *
+of_instruction_bsn_disable_vlan_counters_dup(
+    of_instruction_bsn_disable_vlan_counters_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_instruction_bsn_packet_of_death_t *
 of_instruction_bsn_packet_of_death_dup(
     of_instruction_bsn_packet_of_death_t *src)
@@ -43461,6 +43540,19 @@ of_instruction_id_bsn_disable_src_mac_check_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_disable_vlan_counters_t *
+of_instruction_id_bsn_disable_vlan_counters_dup(
+    of_instruction_id_bsn_disable_vlan_counters_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

@@ -6374,6 +6374,14 @@ fields['of13.instruction_id_bsn_disable_src_mac_check.type'] = ProtoField.uint16
 fields['of13.instruction_id_bsn_disable_src_mac_check.len'] = ProtoField.uint16("of13.instruction_id_bsn_disable_src_mac_check.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_src_mac_check.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_disable_src_mac_check.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_src_mac_check.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_disable_src_mac_check.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_disable_vlan_counters.type'] = ProtoField.uint16("of13.instruction_bsn_disable_vlan_counters.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of13.instruction_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of13.instruction_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of13.instruction_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16("of13.instruction_id_bsn_disable_vlan_counters.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of13.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_bsn_packet_of_death.type'] = ProtoField.uint16("of13.instruction_bsn_packet_of_death.type", "type", base.DEC, nil)
 fields['of13.instruction_bsn_packet_of_death.len'] = ProtoField.uint16("of13.instruction_bsn_packet_of_death.len", "len", base.DEC, nil)
 fields['of13.instruction_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of13.instruction_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
@@ -11635,6 +11643,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_disable_src_mac_check.len'],
     fields['of13.instruction_id_bsn_disable_src_mac_check.experimenter'],
     fields['of13.instruction_id_bsn_disable_src_mac_check.subtype'],
+    fields['of13.instruction_bsn_disable_vlan_counters.type'],
+    fields['of13.instruction_bsn_disable_vlan_counters.len'],
+    fields['of13.instruction_bsn_disable_vlan_counters.experimenter'],
+    fields['of13.instruction_bsn_disable_vlan_counters.subtype'],
+    fields['of13.instruction_id_bsn_disable_vlan_counters.type'],
+    fields['of13.instruction_id_bsn_disable_vlan_counters.len'],
+    fields['of13.instruction_id_bsn_disable_vlan_counters.experimenter'],
+    fields['of13.instruction_id_bsn_disable_vlan_counters.subtype'],
     fields['of13.instruction_bsn_packet_of_death.type'],
     fields['of13.instruction_bsn_packet_of_death.len'],
     fields['of13.instruction_bsn_packet_of_death.experimenter'],
@@ -22624,6 +22640,29 @@ function dissect_of_instruction_id_bsn_disable_src_mac_check_v4(reader, subtree)
     return 'of_instruction_id_bsn_disable_src_mac_check'
 end
 of_instruction_id_bsn_v4_dissectors[0] = dissect_of_instruction_id_bsn_disable_src_mac_check_v4
+
+-- child class of_instruction_bsn_disable_vlan_counters
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_vlan_counters_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_disable_vlan_counters.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_disable_vlan_counters.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_disable_vlan_counters.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_disable_vlan_counters.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_vlan_counters'
+end
+of_instruction_bsn_v4_dissectors[9] = dissect_of_instruction_bsn_disable_vlan_counters_v4
+
+-- child class of_instruction_id_bsn_disable_vlan_counters
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_disable_vlan_counters_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_vlan_counters.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_vlan_counters.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_vlan_counters.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_vlan_counters.subtype')
+    return 'of_instruction_id_bsn_disable_vlan_counters'
+end
+of_instruction_id_bsn_v4_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v4
 
 -- child class of_instruction_bsn_packet_of_death
 -- Child of of_instruction_bsn

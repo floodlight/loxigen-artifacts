@@ -93,6 +93,10 @@ public class OFInstructionsVer11 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.1");
     }
 
+    public OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters() {
+        throw new UnsupportedOperationException("OFInstructionBsnDisableVlanCounters not supported in version 1.1");
+    }
+
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
         throw new UnsupportedOperationException("OFInstructionBsnPacketOfDeath not supported in version 1.1");
     }

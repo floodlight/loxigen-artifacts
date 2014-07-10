@@ -42,6 +42,7 @@ public interface OFInstructions {
     OFInstructionBsnDhcpOffload bsnDhcpOffload();
     OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
+    OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters();
     OFInstructionBsnPacketOfDeath bsnPacketOfDeath();
     OFInstructionBsnPermit bsnPermit();
     OFInstructionBsnPrioritizePdus bsnPrioritizePdus();

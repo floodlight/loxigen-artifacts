@@ -786,6 +786,8 @@ static int __attribute__((unused)) loci_validate_of_instruction_bsn_disable_spli
 static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_bsn_packet_of_death_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_instruction_bsn_permit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -20871,6 +20873,8 @@ loci_validate_of_instruction_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return loci_validate_of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3(data, len, out_len);
     case 0x0:
         return loci_validate_of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
+    case 0x9:
+        return loci_validate_of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3(data, len, out_len);
     case 0x6:
         return loci_validate_of_instruction_bsn_packet_of_death_OF_VERSION_1_3(data, len, out_len);
     case 0x4:
@@ -20945,6 +20949,8 @@ loci_validate_of_instruction_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *
         return loci_validate_of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3(data, len, out_len);
     case 0x0:
         return loci_validate_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(data, len, out_len);
+    case 0x9:
+        return loci_validate_of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3(data, len, out_len);
     case 0x6:
         return loci_validate_of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3(data, len, out_len);
     case 0x4:
@@ -21160,6 +21166,50 @@ loci_validate_of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3(uint8_t *d
 
 static int
 loci_validate_of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 12) {
         return -1;
