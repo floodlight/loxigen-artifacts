@@ -1,1 +1,1 @@
-d521400167a9a8e014afffed95952e3412f85007 Merge into master from pull request #298: Add bsn_disable_vlan_counters instruction. (https://github.com/floodlight/loxigen/pull/298)
+201b2d72df2f8d39d9e87bebdf5e348772e26716 Merge into master from pull request #299: Cast InetAddress to Inet4Address or Inet6Address to call the specific static methods (https://github.com/floodlight/loxigen/pull/299)
