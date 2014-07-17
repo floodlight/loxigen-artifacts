@@ -1959,14 +1959,14 @@ loci_validate_of_barrier_request_OF_VERSION_1_0(uint8_t *data, int len, int *out
 static int
 loci_validate_of_experimenter_OF_VERSION_1_0(uint8_t *data, int len, int *out_len)
 {
-    if (len < 16) {
+    if (len < 12) {
         return -1;
     }
 
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 16) {
+    if (wire_len > len || wire_len < 12) {
         return -1;
     }
 
@@ -5633,14 +5633,14 @@ loci_validate_of_barrier_request_OF_VERSION_1_1(uint8_t *data, int len, int *out
 static int
 loci_validate_of_experimenter_OF_VERSION_1_1(uint8_t *data, int len, int *out_len)
 {
-    if (len < 16) {
+    if (len < 12) {
         return -1;
     }
 
 
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 16) {
+    if (wire_len > len || wire_len < 12) {
         return -1;
     }
 

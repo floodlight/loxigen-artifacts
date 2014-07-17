@@ -1774,9 +1774,6 @@ of_experimenter_OF_VERSION_1_0_dup(
     of_experimenter_experimenter_get(src, &val32);
     of_experimenter_experimenter_set(dst, val32);
 
-    of_experimenter_subtype_get(src, &val32);
-    of_experimenter_subtype_set(dst, val32);
-
     of_experimenter_data_get(src, &octets);
     of_experimenter_data_set(dst, &octets);
 
@@ -6366,9 +6363,6 @@ of_experimenter_OF_VERSION_1_1_dup(
 
     of_experimenter_experimenter_get(src, &val32);
     of_experimenter_experimenter_set(dst, val32);
-
-    of_experimenter_subtype_get(src, &val32);
-    of_experimenter_subtype_set(dst, val32);
 
     of_experimenter_data_get(src, &octets);
     of_experimenter_data_set(dst, &octets);

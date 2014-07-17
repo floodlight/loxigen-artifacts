@@ -10825,8 +10825,6 @@ of_experimenter_subtype_get(
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
-    case OF_VERSION_1_0:
-    case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
         offset = 12;
@@ -10866,8 +10864,6 @@ of_experimenter_subtype_set(
 
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
-    case OF_VERSION_1_0:
-    case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
         offset = 12;
@@ -10912,6 +10908,9 @@ of_experimenter_data_get(
     switch (ver) {
     case OF_VERSION_1_0:
     case OF_VERSION_1_1:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
         offset = 16;
@@ -10959,6 +10958,9 @@ of_experimenter_data_set(
     switch (ver) {
     case OF_VERSION_1_0:
     case OF_VERSION_1_1:
+        offset = 12;
+        cur_len = _END_LEN(obj, offset);
+        break;
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
         offset = 16;

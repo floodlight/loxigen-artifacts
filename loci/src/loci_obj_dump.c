@@ -1619,11 +1619,6 @@ of_experimenter_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_exper
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
-    of_experimenter_subtype_get(obj, &val32);
-    out += writer(cookie, "  subtype (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
     of_experimenter_data_get(obj, &octets);
     out += writer(cookie, "  data (of_octets_t):  ");
     out += LOCI_DUMP_octets(writer, cookie, octets);
@@ -5402,11 +5397,6 @@ of_experimenter_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_exper
 
     of_experimenter_experimenter_get(obj, &val32);
     out += writer(cookie, "  experimenter (uint32_t):  ");
-    out += LOCI_DUMP_u32(writer, cookie, val32);
-    out += writer(cookie, "\n");
-
-    of_experimenter_subtype_get(obj, &val32);
-    out += writer(cookie, "  subtype (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 

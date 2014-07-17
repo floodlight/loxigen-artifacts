@@ -1522,11 +1522,6 @@ of_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_exper
     out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
     out += writer(cookie, " ");
 
-    of_experimenter_subtype_get(obj, &val32);
-    out += writer(cookie, "subtype=");
-    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
-    out += writer(cookie, " ");
-
     of_experimenter_data_get(obj, &octets);
     out += writer(cookie, "data=");
     out += LOCI_SHOW_octets_data(writer, cookie, octets);
@@ -5080,11 +5075,6 @@ of_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_exper
     of_experimenter_experimenter_get(obj, &val32);
     out += writer(cookie, "experimenter=");
     out += LOCI_SHOW_u32_experimenter(writer, cookie, val32);
-    out += writer(cookie, " ");
-
-    of_experimenter_subtype_get(obj, &val32);
-    out += writer(cookie, "subtype=");
-    out += LOCI_SHOW_u32_subtype(writer, cookie, val32);
     out += writer(cookie, " ");
 
     of_experimenter_data_get(obj, &octets);

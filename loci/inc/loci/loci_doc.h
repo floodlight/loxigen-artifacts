@@ -2868,7 +2868,7 @@ typedef struct of_error_msg_s of_error_msg_t;
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_experimenter_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_2 OF_1_3).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_experimenter_uint32_get_f and _set_f.
  *

@@ -1,1 +1,1 @@
-201b2d72df2f8d39d9e87bebdf5e348772e26716 Merge into master from pull request #299: Cast InetAddress to Inet4Address or Inet6Address to call the specific static methods (https://github.com/floodlight/loxigen/pull/299)
+1dcdc363b51be6f0c8e02648bf5dbbc0b2b2708c Merge into master from pull request #301: openflow_input: remove subtype from OF 1.0 and 1.1 experimenter message (https://github.com/floodlight/loxigen/pull/301)

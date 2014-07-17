@@ -1724,7 +1724,7 @@ test_of_experimenter_OF_VERSION_1_0_scalar(void)
     obj = of_experimenter_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_0);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
 
@@ -5644,7 +5644,7 @@ test_of_experimenter_OF_VERSION_1_1_scalar(void)
     obj = of_experimenter_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->length == 12);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_EXPERIMENTER);
 

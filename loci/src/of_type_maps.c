@@ -132,7 +132,7 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     8,    /* 108: of_echo_reply */
     8,    /* 109: of_echo_request */
     10,   /* 110: of_error_msg */
-    16,   /* 111: of_experimenter */
+    12,   /* 111: of_experimenter */
     -1,   /* 112: of_experimenter_error_msg */
     16,   /* 113: of_experimenter_stats_reply */
     16,   /* 114: of_experimenter_stats_request */
@@ -673,7 +673,7 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     8,    /* 108: of_echo_reply */
     8,    /* 109: of_echo_request */
     10,   /* 110: of_error_msg */
-    16,   /* 111: of_experimenter */
+    12,   /* 111: of_experimenter */
     -1,   /* 112: of_experimenter_error_msg */
     24,   /* 113: of_experimenter_stats_reply */
     24,   /* 114: of_experimenter_stats_request */

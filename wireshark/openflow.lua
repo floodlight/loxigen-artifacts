@@ -1984,7 +1984,6 @@ fields['of10.experimenter.type'] = ProtoField.uint8("of10.experimenter.type", "t
 fields['of10.experimenter.length'] = ProtoField.uint16("of10.experimenter.length", "length", base.DEC, nil)
 fields['of10.experimenter.xid'] = ProtoField.uint32("of10.experimenter.xid", "xid", base.DEC, nil)
 fields['of10.experimenter.experimenter'] = ProtoField.uint32("of10.experimenter.experimenter", "experimenter", base.DEC, nil)
-fields['of10.experimenter.subtype'] = ProtoField.uint32("of10.experimenter.subtype", "subtype", base.DEC, nil)
 fields['of10.experimenter.data'] = ProtoField.bytes("of10.experimenter.data", "data")
 fields['of10.bsn_header.version'] = ProtoField.uint8("of10.bsn_header.version", "version", base.DEC, nil)
 fields['of10.bsn_header.type'] = ProtoField.uint8("of10.bsn_header.type", "type", base.DEC, nil)
@@ -2879,7 +2878,6 @@ fields['of11.experimenter.type'] = ProtoField.uint8("of11.experimenter.type", "t
 fields['of11.experimenter.length'] = ProtoField.uint16("of11.experimenter.length", "length", base.DEC, nil)
 fields['of11.experimenter.xid'] = ProtoField.uint32("of11.experimenter.xid", "xid", base.DEC, nil)
 fields['of11.experimenter.experimenter'] = ProtoField.uint32("of11.experimenter.experimenter", "experimenter", base.DEC, nil)
-fields['of11.experimenter.subtype'] = ProtoField.uint32("of11.experimenter.subtype", "subtype", base.DEC, nil)
 fields['of11.experimenter.data'] = ProtoField.bytes("of11.experimenter.data", "data")
 fields['of11.bsn_header.version'] = ProtoField.uint8("of11.bsn_header.version", "version", base.DEC, nil)
 fields['of11.bsn_header.type'] = ProtoField.uint8("of11.bsn_header.type", "type", base.DEC, nil)
@@ -7253,7 +7251,6 @@ p_of.fields = {
     fields['of10.experimenter.length'],
     fields['of10.experimenter.xid'],
     fields['of10.experimenter.experimenter'],
-    fields['of10.experimenter.subtype'],
     fields['of10.experimenter.data'],
     fields['of10.bsn_header.version'],
     fields['of10.bsn_header.type'],
@@ -8148,7 +8145,6 @@ p_of.fields = {
     fields['of11.experimenter.length'],
     fields['of11.experimenter.xid'],
     fields['of11.experimenter.experimenter'],
-    fields['of11.experimenter.subtype'],
     fields['of11.experimenter.data'],
     fields['of11.bsn_header.version'],
     fields['of11.bsn_header.type'],

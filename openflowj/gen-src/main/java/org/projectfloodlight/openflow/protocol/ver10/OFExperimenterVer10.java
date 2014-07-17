@@ -28,7 +28,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 abstract class OFExperimenterVer10 {
     // version: 1.0
     final static byte WIRE_VERSION = 1;
-    final static int MINIMUM_LENGTH = 16;
+    final static int MINIMUM_LENGTH = 12;
 
 
     public final static OFExperimenterVer10.Reader READER = new Reader();
