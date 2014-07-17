@@ -1,1 +1,1 @@
-1dcdc363b51be6f0c8e02648bf5dbbc0b2b2708c Merge into master from pull request #301: openflow_input: remove subtype from OF 1.0 and 1.1 experimenter message (https://github.com/floodlight/loxigen/pull/301)
+e9d105578e13db5fa6c52f0b8c7b4d80f328b31a Merge into master from pull request #302: wireshark: dissect OpenFlow payload of error messages (https://github.com/floodlight/loxigen/pull/302)

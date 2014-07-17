@@ -12766,7 +12766,7 @@ function dissect_of_bad_action_error_msg_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.bad_action_error_msg.xid')
     read_uint16_t(reader, 1, subtree, 'of10.bad_action_error_msg.err_type')
     read_uint16_t(reader, 1, subtree, 'of10.bad_action_error_msg.code')
-    read_of_octets_t(reader, 1, subtree, 'of10.bad_action_error_msg.data')
+    read_openflow(reader, 1, subtree, 'of10.bad_action_error_msg.data')
     return 'of_bad_action_error_msg'
 end
 of_error_msg_v1_dissectors[2] = dissect_of_bad_action_error_msg_v1
@@ -12783,7 +12783,7 @@ function dissect_of_bad_request_error_msg_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.bad_request_error_msg.xid')
     read_uint16_t(reader, 1, subtree, 'of10.bad_request_error_msg.err_type')
     read_uint16_t(reader, 1, subtree, 'of10.bad_request_error_msg.code')
-    read_of_octets_t(reader, 1, subtree, 'of10.bad_request_error_msg.data')
+    read_openflow(reader, 1, subtree, 'of10.bad_request_error_msg.data')
     return 'of_bad_request_error_msg'
 end
 of_error_msg_v1_dissectors[1] = dissect_of_bad_request_error_msg_v1
@@ -13623,7 +13623,7 @@ function dissect_of_flow_mod_failed_error_msg_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.xid')
     read_uint16_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.data')
+    read_openflow(reader, 1, subtree, 'of10.flow_mod_failed_error_msg.data')
     return 'of_flow_mod_failed_error_msg'
 end
 of_error_msg_v1_dissectors[3] = dissect_of_flow_mod_failed_error_msg_v1
@@ -13800,7 +13800,7 @@ function dissect_of_hello_failed_error_msg_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.hello_failed_error_msg.xid')
     read_uint16_t(reader, 1, subtree, 'of10.hello_failed_error_msg.err_type')
     read_uint16_t(reader, 1, subtree, 'of10.hello_failed_error_msg.code')
-    read_of_octets_t(reader, 1, subtree, 'of10.hello_failed_error_msg.data')
+    read_openflow(reader, 1, subtree, 'of10.hello_failed_error_msg.data')
     return 'of_hello_failed_error_msg'
 end
 of_error_msg_v1_dissectors[0] = dissect_of_hello_failed_error_msg_v1
@@ -13953,7 +13953,7 @@ function dissect_of_port_mod_failed_error_msg_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.xid')
     read_uint16_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 1, subtree, 'of10.port_mod_failed_error_msg.data')
+    read_openflow(reader, 1, subtree, 'of10.port_mod_failed_error_msg.data')
     return 'of_port_mod_failed_error_msg'
 end
 of_error_msg_v1_dissectors[4] = dissect_of_port_mod_failed_error_msg_v1
@@ -14064,7 +14064,7 @@ function dissect_of_queue_op_failed_error_msg_v1(reader, subtree)
     read_uint32_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.xid')
     read_uint16_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.err_type')
     read_uint16_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.code')
-    read_of_octets_t(reader, 1, subtree, 'of10.queue_op_failed_error_msg.data')
+    read_openflow(reader, 1, subtree, 'of10.queue_op_failed_error_msg.data')
     return 'of_queue_op_failed_error_msg'
 end
 of_error_msg_v1_dissectors[5] = dissect_of_queue_op_failed_error_msg_v1
@@ -14626,7 +14626,7 @@ function dissect_of_bad_action_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.bad_action_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.bad_action_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_action_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.bad_action_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.bad_action_error_msg.data')
     return 'of_bad_action_error_msg'
 end
 of_error_msg_v2_dissectors[2] = dissect_of_bad_action_error_msg_v2
@@ -14643,7 +14643,7 @@ function dissect_of_bad_instruction_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.bad_instruction_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.bad_instruction_error_msg.data')
     return 'of_bad_instruction_error_msg'
 end
 of_error_msg_v2_dissectors[3] = dissect_of_bad_instruction_error_msg_v2
@@ -14660,7 +14660,7 @@ function dissect_of_bad_match_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.bad_match_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.bad_match_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_match_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.bad_match_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.bad_match_error_msg.data')
     return 'of_bad_match_error_msg'
 end
 of_error_msg_v2_dissectors[4] = dissect_of_bad_match_error_msg_v2
@@ -14677,7 +14677,7 @@ function dissect_of_bad_request_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.bad_request_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.bad_request_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.bad_request_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.bad_request_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.bad_request_error_msg.data')
     return 'of_bad_request_error_msg'
 end
 of_error_msg_v2_dissectors[1] = dissect_of_bad_request_error_msg_v2
@@ -15360,7 +15360,7 @@ function dissect_of_flow_mod_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.flow_mod_failed_error_msg.data')
     return 'of_flow_mod_failed_error_msg'
 end
 of_error_msg_v2_dissectors[5] = dissect_of_flow_mod_failed_error_msg_v2
@@ -15630,7 +15630,7 @@ function dissect_of_group_mod_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.group_mod_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.group_mod_failed_error_msg.data')
     return 'of_group_mod_failed_error_msg'
 end
 of_error_msg_v2_dissectors[6] = dissect_of_group_mod_failed_error_msg_v2
@@ -15726,7 +15726,7 @@ function dissect_of_hello_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.hello_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.hello_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.hello_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.hello_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.hello_failed_error_msg.data')
     return 'of_hello_failed_error_msg'
 end
 of_error_msg_v2_dissectors[0] = dissect_of_hello_failed_error_msg_v2
@@ -15943,7 +15943,7 @@ function dissect_of_port_mod_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.port_mod_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.port_mod_failed_error_msg.data')
     return 'of_port_mod_failed_error_msg'
 end
 of_error_msg_v2_dissectors[7] = dissect_of_port_mod_failed_error_msg_v2
@@ -16056,7 +16056,7 @@ function dissect_of_queue_op_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.queue_op_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.queue_op_failed_error_msg.data')
     return 'of_queue_op_failed_error_msg'
 end
 of_error_msg_v2_dissectors[9] = dissect_of_queue_op_failed_error_msg_v2
@@ -16146,7 +16146,7 @@ function dissect_of_switch_config_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.switch_config_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.switch_config_failed_error_msg.data')
     return 'of_switch_config_failed_error_msg'
 end
 of_error_msg_v2_dissectors[10] = dissect_of_switch_config_failed_error_msg_v2
@@ -16177,7 +16177,7 @@ function dissect_of_table_mod_failed_error_msg_v2(reader, subtree)
     read_uint32_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.xid')
     read_uint16_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 2, subtree, 'of11.table_mod_failed_error_msg.data')
+    read_openflow(reader, 2, subtree, 'of11.table_mod_failed_error_msg.data')
     return 'of_table_mod_failed_error_msg'
 end
 of_error_msg_v2_dissectors[8] = dissect_of_table_mod_failed_error_msg_v2
@@ -16551,7 +16551,7 @@ function dissect_of_bad_action_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.bad_action_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.bad_action_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_action_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.bad_action_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.bad_action_error_msg.data')
     return 'of_bad_action_error_msg'
 end
 of_error_msg_v3_dissectors[2] = dissect_of_bad_action_error_msg_v3
@@ -16568,7 +16568,7 @@ function dissect_of_bad_instruction_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.bad_instruction_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.bad_instruction_error_msg.data')
     return 'of_bad_instruction_error_msg'
 end
 of_error_msg_v3_dissectors[3] = dissect_of_bad_instruction_error_msg_v3
@@ -16585,7 +16585,7 @@ function dissect_of_bad_match_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.bad_match_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.bad_match_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_match_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.bad_match_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.bad_match_error_msg.data')
     return 'of_bad_match_error_msg'
 end
 of_error_msg_v3_dissectors[4] = dissect_of_bad_match_error_msg_v3
@@ -16602,7 +16602,7 @@ function dissect_of_bad_request_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.bad_request_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.bad_request_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.bad_request_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.bad_request_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.bad_request_error_msg.data')
     return 'of_bad_request_error_msg'
 end
 of_error_msg_v3_dissectors[1] = dissect_of_bad_request_error_msg_v3
@@ -17303,7 +17303,7 @@ function dissect_of_flow_mod_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.flow_mod_failed_error_msg.data')
     return 'of_flow_mod_failed_error_msg'
 end
 of_error_msg_v3_dissectors[5] = dissect_of_flow_mod_failed_error_msg_v3
@@ -17617,7 +17617,7 @@ function dissect_of_group_mod_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.group_mod_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.group_mod_failed_error_msg.data')
     return 'of_group_mod_failed_error_msg'
 end
 of_error_msg_v3_dissectors[6] = dissect_of_group_mod_failed_error_msg_v3
@@ -17713,7 +17713,7 @@ function dissect_of_hello_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.hello_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.hello_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.hello_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.hello_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.hello_failed_error_msg.data')
     return 'of_hello_failed_error_msg'
 end
 of_error_msg_v3_dissectors[0] = dissect_of_hello_failed_error_msg_v3
@@ -18939,7 +18939,7 @@ function dissect_of_port_mod_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.port_mod_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.port_mod_failed_error_msg.data')
     return 'of_port_mod_failed_error_msg'
 end
 of_error_msg_v3_dissectors[7] = dissect_of_port_mod_failed_error_msg_v3
@@ -19052,7 +19052,7 @@ function dissect_of_queue_op_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.queue_op_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.queue_op_failed_error_msg.data')
     return 'of_queue_op_failed_error_msg'
 end
 of_error_msg_v3_dissectors[9] = dissect_of_queue_op_failed_error_msg_v3
@@ -19177,7 +19177,7 @@ function dissect_of_role_request_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.role_request_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.role_request_failed_error_msg.data')
     return 'of_role_request_failed_error_msg'
 end
 of_error_msg_v3_dissectors[11] = dissect_of_role_request_failed_error_msg_v3
@@ -19207,7 +19207,7 @@ function dissect_of_switch_config_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.switch_config_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.switch_config_failed_error_msg.data')
     return 'of_switch_config_failed_error_msg'
 end
 of_error_msg_v3_dissectors[10] = dissect_of_switch_config_failed_error_msg_v3
@@ -19238,7 +19238,7 @@ function dissect_of_table_mod_failed_error_msg_v3(reader, subtree)
     read_uint32_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.xid')
     read_uint16_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 3, subtree, 'of12.table_mod_failed_error_msg.data')
+    read_openflow(reader, 3, subtree, 'of12.table_mod_failed_error_msg.data')
     return 'of_table_mod_failed_error_msg'
 end
 of_error_msg_v3_dissectors[8] = dissect_of_table_mod_failed_error_msg_v3
@@ -19905,7 +19905,7 @@ function dissect_of_bad_action_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.bad_action_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.bad_action_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_action_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.bad_action_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.bad_action_error_msg.data')
     return 'of_bad_action_error_msg'
 end
 of_error_msg_v4_dissectors[2] = dissect_of_bad_action_error_msg_v4
@@ -19922,7 +19922,7 @@ function dissect_of_bad_instruction_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.bad_instruction_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.bad_instruction_error_msg.data')
     return 'of_bad_instruction_error_msg'
 end
 of_error_msg_v4_dissectors[3] = dissect_of_bad_instruction_error_msg_v4
@@ -19939,7 +19939,7 @@ function dissect_of_bad_match_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.bad_match_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.bad_match_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_match_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.bad_match_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.bad_match_error_msg.data')
     return 'of_bad_match_error_msg'
 end
 of_error_msg_v4_dissectors[4] = dissect_of_bad_match_error_msg_v4
@@ -19956,7 +19956,7 @@ function dissect_of_bad_request_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.bad_request_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.bad_request_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.bad_request_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.bad_request_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.bad_request_error_msg.data')
     return 'of_bad_request_error_msg'
 end
 of_error_msg_v4_dissectors[1] = dissect_of_bad_request_error_msg_v4
@@ -22017,7 +22017,7 @@ function dissect_of_flow_mod_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.flow_mod_failed_error_msg.data')
     return 'of_flow_mod_failed_error_msg'
 end
 of_error_msg_v4_dissectors[5] = dissect_of_flow_mod_failed_error_msg_v4
@@ -22332,7 +22332,7 @@ function dissect_of_group_mod_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.group_mod_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.group_mod_failed_error_msg.data')
     return 'of_group_mod_failed_error_msg'
 end
 of_error_msg_v4_dissectors[6] = dissect_of_group_mod_failed_error_msg_v4
@@ -22452,7 +22452,7 @@ function dissect_of_hello_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.hello_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.hello_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.hello_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.hello_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.hello_failed_error_msg.data')
     return 'of_hello_failed_error_msg'
 end
 of_error_msg_v4_dissectors[0] = dissect_of_hello_failed_error_msg_v4
@@ -23027,7 +23027,7 @@ function dissect_of_meter_mod_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.meter_mod_failed_error_msg.data')
     return 'of_meter_mod_failed_error_msg'
 end
 of_error_msg_v4_dissectors[12] = dissect_of_meter_mod_failed_error_msg_v4
@@ -24270,7 +24270,7 @@ function dissect_of_port_mod_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.port_mod_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.port_mod_failed_error_msg.data')
     return 'of_port_mod_failed_error_msg'
 end
 of_error_msg_v4_dissectors[7] = dissect_of_port_mod_failed_error_msg_v4
@@ -24385,7 +24385,7 @@ function dissect_of_queue_op_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.queue_op_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.queue_op_failed_error_msg.data')
     return 'of_queue_op_failed_error_msg'
 end
 of_error_msg_v4_dissectors[9] = dissect_of_queue_op_failed_error_msg_v4
@@ -24512,7 +24512,7 @@ function dissect_of_role_request_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.role_request_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.role_request_failed_error_msg.data')
     return 'of_role_request_failed_error_msg'
 end
 of_error_msg_v4_dissectors[11] = dissect_of_role_request_failed_error_msg_v4
@@ -24542,7 +24542,7 @@ function dissect_of_switch_config_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.switch_config_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.switch_config_failed_error_msg.data')
     return 'of_switch_config_failed_error_msg'
 end
 of_error_msg_v4_dissectors[10] = dissect_of_switch_config_failed_error_msg_v4
@@ -24792,7 +24792,7 @@ function dissect_of_table_features_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.table_features_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.table_features_failed_error_msg.data')
     return 'of_table_features_failed_error_msg'
 end
 of_error_msg_v4_dissectors[13] = dissect_of_table_features_failed_error_msg_v4
@@ -24859,7 +24859,7 @@ function dissect_of_table_mod_failed_error_msg_v4(reader, subtree)
     read_uint32_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.xid')
     read_uint16_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.err_type')
     read_uint16_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.code')
-    read_of_octets_t(reader, 4, subtree, 'of13.table_mod_failed_error_msg.data')
+    read_openflow(reader, 4, subtree, 'of13.table_mod_failed_error_msg.data')
     return 'of_table_mod_failed_error_msg'
 end
 of_error_msg_v4_dissectors[8] = dissect_of_table_mod_failed_error_msg_v4
@@ -25097,6 +25097,17 @@ function read_of_bsn_vport_q_in_q_t(reader, version, subtree, field_name)
     local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
     local info = of_bsn_vport_q_in_q_dissectors[version](reader, child_subtree)
     child_subtree:set_text(info)
+end
+
+function read_openflow(reader, version, subtree, field_name)
+    if reader.is_empty() then
+        return
+    end
+    local child_subtree = subtree:add(fields[field_name], reader.peek_all(0))
+    child_subtree:set_text("OpenFlow message")
+    pcall(function () -- Message may be truncated, ignore errors dissecting
+        p_of.dissector:call(reader.read_all():tvb(), current_pkt, child_subtree)
+    end)
 end
 
 function dissect_of_message(buf, root)
