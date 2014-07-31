@@ -309,7 +309,7 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 285: of_bsn_vlan_counter_stats_entry */
     4,    /* 286: of_bsn_vport */
     4,    /* 287: of_bsn_vport_header */
-    56,   /* 288: of_bsn_vport_l2gre */
+    60,   /* 288: of_bsn_vport_l2gre */
     32,   /* 289: of_bsn_vport_q_in_q */
     -1,   /* 290: of_bsn_vrf_counter_stats_entry */
     -1,   /* 291: of_bucket */
@@ -850,7 +850,7 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     -1,   /* 285: of_bsn_vlan_counter_stats_entry */
     4,    /* 286: of_bsn_vport */
     4,    /* 287: of_bsn_vport_header */
-    60,   /* 288: of_bsn_vport_l2gre */
+    64,   /* 288: of_bsn_vport_l2gre */
     32,   /* 289: of_bsn_vport_q_in_q */
     -1,   /* 290: of_bsn_vrf_counter_stats_entry */
     16,   /* 291: of_bucket */
@@ -1391,7 +1391,7 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     -1,   /* 285: of_bsn_vlan_counter_stats_entry */
     4,    /* 286: of_bsn_vport */
     4,    /* 287: of_bsn_vport_header */
-    60,   /* 288: of_bsn_vport_l2gre */
+    64,   /* 288: of_bsn_vport_l2gre */
     32,   /* 289: of_bsn_vport_q_in_q */
     -1,   /* 290: of_bsn_vrf_counter_stats_entry */
     16,   /* 291: of_bucket */
@@ -1932,7 +1932,7 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     8,    /* 285: of_bsn_vlan_counter_stats_entry */
     4,    /* 286: of_bsn_vport */
     4,    /* 287: of_bsn_vport_header */
-    60,   /* 288: of_bsn_vport_l2gre */
+    64,   /* 288: of_bsn_vport_l2gre */
     32,   /* 289: of_bsn_vport_q_in_q */
     8,    /* 290: of_bsn_vrf_counter_stats_entry */
     16,   /* 291: of_bucket */

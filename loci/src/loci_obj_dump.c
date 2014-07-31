@@ -3574,6 +3574,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_0_dump(loci_writer_f writer, void* cookie, of_bs
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "  rate_limit (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
     of_bsn_vport_l2gre_if_name_get(obj, &port_name);
     out += writer(cookie, "  if_name (of_port_name_t):  ");
     out += LOCI_DUMP_port_name(writer, cookie, port_name);
@@ -7940,6 +7945,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_1_dump(loci_writer_f writer, void* cookie, of_bs
 
     of_bsn_vport_l2gre_vpn_get(obj, &val32);
     out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "  rate_limit (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
@@ -12736,6 +12746,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_bs
 
     of_bsn_vport_l2gre_vpn_get(obj, &val32);
     out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "  rate_limit (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
@@ -23353,6 +23368,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bs
 
     of_bsn_vport_l2gre_vpn_get(obj, &val32);
     out += writer(cookie, "  vpn (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "  rate_limit (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 

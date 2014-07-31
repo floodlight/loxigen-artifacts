@@ -4186,6 +4186,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
     of_bsn_vport_l2gre_vpn_get(src, &val32);
     of_bsn_vport_l2gre_vpn_set(dst, val32);
 
+    of_bsn_vport_l2gre_rate_limit_get(src, &val32);
+    of_bsn_vport_l2gre_rate_limit_set(dst, val32);
+
     of_bsn_vport_l2gre_if_name_get(src, &port_name);
     of_bsn_vport_l2gre_if_name_set(dst, port_name);
 
@@ -9580,6 +9583,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
 
     of_bsn_vport_l2gre_vpn_get(src, &val32);
     of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_rate_limit_get(src, &val32);
+    of_bsn_vport_l2gre_rate_limit_set(dst, val32);
 
     of_bsn_vport_l2gre_if_name_get(src, &port_name);
     of_bsn_vport_l2gre_if_name_set(dst, port_name);
@@ -15503,6 +15509,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
 
     of_bsn_vport_l2gre_vpn_get(src, &val32);
     of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_rate_limit_get(src, &val32);
+    of_bsn_vport_l2gre_rate_limit_set(dst, val32);
 
     of_bsn_vport_l2gre_if_name_get(src, &port_name);
     of_bsn_vport_l2gre_if_name_set(dst, port_name);
@@ -29852,6 +29861,9 @@ of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
 
     of_bsn_vport_l2gre_vpn_get(src, &val32);
     of_bsn_vport_l2gre_vpn_set(dst, val32);
+
+    of_bsn_vport_l2gre_rate_limit_get(src, &val32);
+    of_bsn_vport_l2gre_rate_limit_set(dst, val32);
 
     of_bsn_vport_l2gre_if_name_get(src, &port_name);
     of_bsn_vport_l2gre_if_name_set(dst, port_name);

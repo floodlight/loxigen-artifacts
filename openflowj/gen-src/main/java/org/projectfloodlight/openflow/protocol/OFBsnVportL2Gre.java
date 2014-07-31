@@ -38,6 +38,7 @@ public interface OFBsnVportL2Gre extends OFObject, OFBsnVport {
     short getDscp();
     short getTtl();
     long getVpn();
+    long getRateLimit();
     String getIfName();
     OFVersion getVersion();
 
@@ -67,6 +68,8 @@ public interface OFBsnVportL2Gre extends OFObject, OFBsnVport {
         Builder setTtl(short ttl);
         long getVpn();
         Builder setVpn(long vpn);
+        long getRateLimit();
+        Builder setRateLimit(long rateLimit);
         String getIfName();
         Builder setIfName(String ifName);
         OFVersion getVersion();

@@ -5915,6 +5915,10 @@ typedef struct of_bsn_vport_header_s of_bsn_vport_header_t;
  *   Accessors for vpn, a variable of type uint32.  Functions
  *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
  *
+ * @param rate_limit_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ *   Accessors for rate_limit, a variable of type uint32.  Functions
+ *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
+ *
  * @param if_name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
  *   Accessors for if_name, a variable of type of_port_name.  Functions
  *   are of type of_bsn_vport_l2gre_of_port_name_get_f and _set_f.

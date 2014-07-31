@@ -3880,7 +3880,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_0(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_0);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_0);
-    TEST_ASSERT(obj->length == 56);
+    TEST_ASSERT(obj->length == 60);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -3888,7 +3888,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_0(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 56);
+        TEST_ASSERT(length == 60);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -8915,7 +8915,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_1(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_1);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_1);
-    TEST_ASSERT(obj->length == 60);
+    TEST_ASSERT(obj->length == 64);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -8923,7 +8923,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_1(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 60);
+        TEST_ASSERT(length == 64);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -14326,7 +14326,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_2(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_2);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_2);
-    TEST_ASSERT(obj->length == 60);
+    TEST_ASSERT(obj->length == 64);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -14334,7 +14334,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_2(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 60);
+        TEST_ASSERT(length == 64);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;
@@ -29052,7 +29052,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_3(void)
     obj = of_bsn_vport_l2gre_new(OF_VERSION_1_3);
     TEST_ASSERT(obj != NULL);
     TEST_ASSERT(obj->version == OF_VERSION_1_3);
-    TEST_ASSERT(obj->length == 60);
+    TEST_ASSERT(obj->length == 64);
     TEST_ASSERT(obj->parent == NULL);
     TEST_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
 
@@ -29060,7 +29060,7 @@ test_of_bsn_vport_l2gre_OF_VERSION_1_3(void)
         int length;
 
         loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
-        TEST_ASSERT(length == 60);
+        TEST_ASSERT(length == 64);
     }
     if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
         of_object_id_t obj_id;

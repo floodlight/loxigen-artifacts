@@ -3364,6 +3364,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bs
     out += LOCI_SHOW_u32_vpn(writer, cookie, val32);
     out += writer(cookie, " ");
 
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "rate_limit=");
+    out += LOCI_SHOW_u32_rate_limit(writer, cookie, val32);
+    out += writer(cookie, " ");
+
     of_bsn_vport_l2gre_if_name_get(obj, &port_name);
     out += writer(cookie, "if_name=");
     out += LOCI_SHOW_port_name_if_name(writer, cookie, port_name);
@@ -7467,6 +7472,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bs
     of_bsn_vport_l2gre_vpn_get(obj, &val32);
     out += writer(cookie, "vpn=");
     out += LOCI_SHOW_u32_vpn(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "rate_limit=");
+    out += LOCI_SHOW_u32_rate_limit(writer, cookie, val32);
     out += writer(cookie, " ");
 
     of_bsn_vport_l2gre_if_name_get(obj, &port_name);
@@ -11982,6 +11992,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bs
     of_bsn_vport_l2gre_vpn_get(obj, &val32);
     out += writer(cookie, "vpn=");
     out += LOCI_SHOW_u32_vpn(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "rate_limit=");
+    out += LOCI_SHOW_u32_rate_limit(writer, cookie, val32);
     out += writer(cookie, " ");
 
     of_bsn_vport_l2gre_if_name_get(obj, &port_name);
@@ -21851,6 +21866,11 @@ of_bsn_vport_l2gre_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
     of_bsn_vport_l2gre_vpn_get(obj, &val32);
     out += writer(cookie, "vpn=");
     out += LOCI_SHOW_u32_vpn(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vport_l2gre_rate_limit_get(obj, &val32);
+    out += writer(cookie, "rate_limit=");
+    out += LOCI_SHOW_u32_rate_limit(writer, cookie, val32);
     out += writer(cookie, " ");
 
     of_bsn_vport_l2gre_if_name_get(obj, &port_name);

@@ -17623,6 +17623,13 @@ extern void of_bsn_vport_l2gre_vpn_get(
     of_bsn_vport_l2gre_t *obj,
     uint32_t *vpn);
 
+extern void of_bsn_vport_l2gre_rate_limit_set(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t rate_limit);
+extern void of_bsn_vport_l2gre_rate_limit_get(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t *rate_limit);
+
 extern void of_bsn_vport_l2gre_if_name_set(
     of_bsn_vport_l2gre_t *obj,
     of_port_name_t if_name);

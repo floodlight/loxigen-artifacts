@@ -37,6 +37,7 @@ public class OFBsnVportL2GreFlagsSerializerVer10 {
     public final static int BSN_VPORT_L2GRE_DSCP_ASSIGN_VAL = 0x2;
     public final static int BSN_VPORT_L2GRE_DSCP_COPY_VAL = 0x4;
     public final static int BSN_VPORT_L2GRE_LOOPBACK_IS_VALID_VAL = 0x8;
+    public final static int BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID_VAL = 0x10;
 
     public static Set<OFBsnVportL2GreFlags> readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -66,6 +67,8 @@ public class OFBsnVportL2GreFlagsSerializerVer10 {
             set.add(OFBsnVportL2GreFlags.BSN_VPORT_L2GRE_DSCP_COPY);
         if((val & BSN_VPORT_L2GRE_LOOPBACK_IS_VALID_VAL) != 0)
             set.add(OFBsnVportL2GreFlags.BSN_VPORT_L2GRE_LOOPBACK_IS_VALID);
+        if((val & BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID_VAL) != 0)
+            set.add(OFBsnVportL2GreFlags.BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID);
         return Collections.unmodifiableSet(set);
     }
 
@@ -85,6 +88,9 @@ public class OFBsnVportL2GreFlagsSerializerVer10 {
                     break;
                 case BSN_VPORT_L2GRE_LOOPBACK_IS_VALID:
                     wireValue |= BSN_VPORT_L2GRE_LOOPBACK_IS_VALID_VAL;
+                    break;
+                case BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID:
+                    wireValue |= BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFBsnVportL2GreFlags in version 1.0: " + e);

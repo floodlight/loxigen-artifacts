@@ -4978,6 +4978,94 @@ of_bsn_vport_l2gre_vpn_set(
 }
 
 /**
+ * Get rate_limit from an object of type of_bsn_vport_l2gre.
+ * @param obj Pointer to an object of type of_bsn_vport_l2gre.
+ * @param rate_limit Pointer to the child object of type
+ * uint32_t to be filled out.
+ *
+ */
+void
+of_bsn_vport_l2gre_rate_limit_get(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t *rate_limit)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_0:
+        offset = 40;
+        break;
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 44;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_get(wbuf, abs_offset, rate_limit);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set rate_limit in an object of type of_bsn_vport_l2gre.
+ * @param obj Pointer to an object of type of_bsn_vport_l2gre.
+ * @param rate_limit The value to write into the object
+ */
+void
+of_bsn_vport_l2gre_rate_limit_set(
+    of_bsn_vport_l2gre_t *obj,
+    uint32_t rate_limit)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_VPORT_L2GRE);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_0:
+        offset = 40;
+        break;
+    case OF_VERSION_1_1:
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+        offset = 44;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u32_set(wbuf, abs_offset, rate_limit);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
  * Get if_name from an object of type of_bsn_vport_l2gre.
  * @param obj Pointer to an object of type of_bsn_vport_l2gre.
  * @param if_name Pointer to the child object of type
@@ -5002,12 +5090,12 @@ of_bsn_vport_l2gre_if_name_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 40;
+        offset = 44;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 44;
+        offset = 48;
         break;
     default:
         LOCI_ASSERT(0);
@@ -5045,12 +5133,12 @@ of_bsn_vport_l2gre_if_name_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_0:
-        offset = 40;
+        offset = 44;
         break;
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
-        offset = 44;
+        offset = 48;
         break;
     default:
         LOCI_ASSERT(0);

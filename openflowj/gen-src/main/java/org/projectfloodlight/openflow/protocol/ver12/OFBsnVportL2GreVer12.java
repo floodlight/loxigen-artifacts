@@ -35,7 +35,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
     private static final Logger logger = LoggerFactory.getLogger(OFBsnVportL2GreVer12.class);
     // version: 1.2
     final static byte WIRE_VERSION = 3;
-    final static int LENGTH = 60;
+    final static int LENGTH = 64;
 
         private final static Set<OFBsnVportL2GreFlags> DEFAULT_FLAGS = ImmutableSet.<OFBsnVportL2GreFlags>of();
         private final static OFPort DEFAULT_PORT_NO = OFPort.ANY;
@@ -47,6 +47,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         private final static short DEFAULT_DSCP = (short) 0x0;
         private final static short DEFAULT_TTL = (short) 0x0;
         private final static long DEFAULT_VPN = 0x0L;
+        private final static long DEFAULT_RATE_LIMIT = 0x0L;
         private final static String DEFAULT_IF_NAME = "";
 
     // OF message fields
@@ -60,15 +61,16 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
     private final short dscp;
     private final short ttl;
     private final long vpn;
+    private final long rateLimit;
     private final String ifName;
 //
     // Immutable default instance
     final static OFBsnVportL2GreVer12 DEFAULT = new OFBsnVportL2GreVer12(
-        DEFAULT_FLAGS, DEFAULT_PORT_NO, DEFAULT_LOOPBACK_PORT_NO, DEFAULT_LOCAL_MAC, DEFAULT_NH_MAC, DEFAULT_SRC_IP, DEFAULT_DST_IP, DEFAULT_DSCP, DEFAULT_TTL, DEFAULT_VPN, DEFAULT_IF_NAME
+        DEFAULT_FLAGS, DEFAULT_PORT_NO, DEFAULT_LOOPBACK_PORT_NO, DEFAULT_LOCAL_MAC, DEFAULT_NH_MAC, DEFAULT_SRC_IP, DEFAULT_DST_IP, DEFAULT_DSCP, DEFAULT_TTL, DEFAULT_VPN, DEFAULT_RATE_LIMIT, DEFAULT_IF_NAME
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFBsnVportL2GreVer12(Set<OFBsnVportL2GreFlags> flags, OFPort portNo, OFPort loopbackPortNo, MacAddress localMac, MacAddress nhMac, IPv4Address srcIp, IPv4Address dstIp, short dscp, short ttl, long vpn, String ifName) {
+    OFBsnVportL2GreVer12(Set<OFBsnVportL2GreFlags> flags, OFPort portNo, OFPort loopbackPortNo, MacAddress localMac, MacAddress nhMac, IPv4Address srcIp, IPv4Address dstIp, short dscp, short ttl, long vpn, long rateLimit, String ifName) {
         this.flags = flags;
         this.portNo = portNo;
         this.loopbackPortNo = loopbackPortNo;
@@ -79,6 +81,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         this.dscp = dscp;
         this.ttl = ttl;
         this.vpn = vpn;
+        this.rateLimit = rateLimit;
         this.ifName = ifName;
     }
 
@@ -139,6 +142,11 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
     }
 
     @Override
+    public long getRateLimit() {
+        return rateLimit;
+    }
+
+    @Override
     public String getIfName() {
         return ifName;
     }
@@ -178,6 +186,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         private short ttl;
         private boolean vpnSet;
         private long vpn;
+        private boolean rateLimitSet;
+        private long rateLimit;
         private boolean ifNameSet;
         private String ifName;
 
@@ -301,6 +311,17 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         return this;
     }
     @Override
+    public long getRateLimit() {
+        return rateLimit;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setRateLimit(long rateLimit) {
+        this.rateLimit = rateLimit;
+        this.rateLimitSet = true;
+        return this;
+    }
+    @Override
     public String getIfName() {
         return ifName;
     }
@@ -344,6 +365,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
                 short dscp = this.dscpSet ? this.dscp : parentMessage.dscp;
                 short ttl = this.ttlSet ? this.ttl : parentMessage.ttl;
                 long vpn = this.vpnSet ? this.vpn : parentMessage.vpn;
+                long rateLimit = this.rateLimitSet ? this.rateLimit : parentMessage.rateLimit;
                 String ifName = this.ifNameSet ? this.ifName : parentMessage.ifName;
                 if(ifName == null)
                     throw new NullPointerException("Property ifName must not be null");
@@ -360,6 +382,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
                     dscp,
                     ttl,
                     vpn,
+                    rateLimit,
                     ifName
                 );
         }
@@ -388,6 +411,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         private short ttl;
         private boolean vpnSet;
         private long vpn;
+        private boolean rateLimitSet;
+        private long rateLimit;
         private boolean ifNameSet;
         private String ifName;
 
@@ -507,6 +532,17 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         return this;
     }
     @Override
+    public long getRateLimit() {
+        return rateLimit;
+    }
+
+    @Override
+    public OFBsnVportL2Gre.Builder setRateLimit(long rateLimit) {
+        this.rateLimit = rateLimit;
+        this.rateLimitSet = true;
+        return this;
+    }
+    @Override
     public String getIfName() {
         return ifName;
     }
@@ -549,6 +585,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
             short dscp = this.dscpSet ? this.dscp : DEFAULT_DSCP;
             short ttl = this.ttlSet ? this.ttl : DEFAULT_TTL;
             long vpn = this.vpnSet ? this.vpn : DEFAULT_VPN;
+            long rateLimit = this.rateLimitSet ? this.rateLimit : DEFAULT_RATE_LIMIT;
             String ifName = this.ifNameSet ? this.ifName : DEFAULT_IF_NAME;
             if(ifName == null)
                 throw new NullPointerException("Property ifName must not be null");
@@ -565,6 +602,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
                     dscp,
                     ttl,
                     vpn,
+                    rateLimit,
                     ifName
                 );
         }
@@ -582,8 +620,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
             if(type != (short) 0x1)
                 throw new OFParseError("Wrong type: Expected=0x1(0x1), got="+type);
             int length = U16.f(bb.readShort());
-            if(length != 60)
-                throw new OFParseError("Wrong length: Expected=60(60), got="+length);
+            if(length != 64)
+                throw new OFParseError("Wrong length: Expected=64(64), got="+length);
             if(bb.readableBytes() + (bb.readerIndex() - start) < length) {
                 // Buffer does not have all data yet
                 bb.readerIndex(start);
@@ -603,6 +641,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
             // pad: 2 bytes
             bb.skipBytes(2);
             long vpn = U32.f(bb.readInt());
+            long rateLimit = U32.f(bb.readInt());
             String ifName = ChannelUtils.readFixedLengthString(bb, 16);
 
             OFBsnVportL2GreVer12 bsnVportL2GreVer12 = new OFBsnVportL2GreVer12(
@@ -616,6 +655,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
                       dscp,
                       ttl,
                       vpn,
+                      rateLimit,
                       ifName
                     );
             if(logger.isTraceEnabled())
@@ -635,8 +675,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         public void funnel(OFBsnVportL2GreVer12 message, PrimitiveSink sink) {
             // fixed value property type = 0x1
             sink.putShort((short) 0x1);
-            // fixed value property length = 60
-            sink.putShort((short) 0x3c);
+            // fixed value property length = 64
+            sink.putShort((short) 0x40);
             OFBsnVportL2GreFlagsSerializerVer12.putTo(message.flags, sink);
             message.portNo.putTo(sink);
             message.loopbackPortNo.putTo(sink);
@@ -648,6 +688,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
             sink.putShort(message.ttl);
             // skip pad (2 bytes)
             sink.putLong(message.vpn);
+            sink.putLong(message.rateLimit);
             sink.putUnencodedChars(message.ifName);
         }
     }
@@ -663,8 +704,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         public void write(ChannelBuffer bb, OFBsnVportL2GreVer12 message) {
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);
-            // fixed value property length = 60
-            bb.writeShort((short) 0x3c);
+            // fixed value property length = 64
+            bb.writeShort((short) 0x40);
             OFBsnVportL2GreFlagsSerializerVer12.writeTo(bb, message.flags);
             message.portNo.write4Bytes(bb);
             message.loopbackPortNo.write4Bytes(bb);
@@ -677,6 +718,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
             // pad: 2 bytes
             bb.writeZero(2);
             bb.writeInt(U32.t(message.vpn));
+            bb.writeInt(U32.t(message.rateLimit));
             ChannelUtils.writeFixedLengthString(bb, message.ifName, 16);
 
 
@@ -705,6 +747,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         b.append("ttl=").append(ttl);
         b.append(", ");
         b.append("vpn=").append(vpn);
+        b.append(", ");
+        b.append("rateLimit=").append(rateLimit);
         b.append(", ");
         b.append("ifName=").append(ifName);
         b.append(")");
@@ -762,6 +806,8 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
             return false;
         if( vpn != other.vpn)
             return false;
+        if( rateLimit != other.rateLimit)
+            return false;
         if (ifName == null) {
             if (other.ifName != null)
                 return false;
@@ -785,6 +831,7 @@ class OFBsnVportL2GreVer12 implements OFBsnVportL2Gre {
         result = prime * result + dscp;
         result = prime * result + ttl;
         result = prime *  (int) (vpn ^ (vpn >>> 32));
+        result = prime *  (int) (rateLimit ^ (rateLimit >>> 32));
         result = prime * result + ((ifName == null) ? 0 : ifName.hashCode());
         return result;
     }

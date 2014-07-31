@@ -190,6 +190,7 @@ local enum_v1_ofp_bsn_vport_l2gre_flags = {
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
     [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 local enum_v1_ofp_flow_wildcards = {
@@ -498,6 +499,7 @@ local enum_v2_ofp_bsn_vport_l2gre_flags = {
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
     [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 local enum_v2_ofp_flow_wildcards = {
@@ -890,6 +892,7 @@ local enum_v3_ofp_bsn_vport_l2gre_flags = {
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
     [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 local enum_v3_ofp_flow_removed_reason = {
@@ -1396,6 +1399,7 @@ local enum_v4_ofp_bsn_vport_l2gre_flags = {
     [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
     [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
     [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 local enum_v4_ofp_ipv6exthdr_flags = {
@@ -2299,6 +2303,7 @@ fields['of10.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of10.bsn_vport_l2gre.ds
 fields['of10.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of10.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
 fields['of10.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of10.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
 fields['of10.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of10.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of10.bsn_vport_l2gre.rate_limit'] = ProtoField.uint32("of10.bsn_vport_l2gre.rate_limit", "rate_limit", base.DEC, nil)
 fields['of10.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of10.bsn_vport_l2gre.if_name", "if_name")
 fields['of10.bsn_vport_q_in_q.type'] = ProtoField.uint16("of10.bsn_vport_q_in_q.type", "type", base.DEC, nil)
 fields['of10.bsn_vport_q_in_q.length'] = ProtoField.uint16("of10.bsn_vport_q_in_q.length", "length", base.DEC, nil)
@@ -3103,6 +3108,7 @@ fields['of11.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of11.bsn_vport_l2gre.ds
 fields['of11.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of11.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
 fields['of11.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of11.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
 fields['of11.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of11.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of11.bsn_vport_l2gre.rate_limit'] = ProtoField.uint32("of11.bsn_vport_l2gre.rate_limit", "rate_limit", base.DEC, nil)
 fields['of11.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of11.bsn_vport_l2gre.if_name", "if_name")
 fields['of11.bsn_vport_q_in_q.type'] = ProtoField.uint16("of11.bsn_vport_q_in_q.type", "type", base.DEC, nil)
 fields['of11.bsn_vport_q_in_q.length'] = ProtoField.uint16("of11.bsn_vport_q_in_q.length", "length", base.DEC, nil)
@@ -4023,6 +4029,7 @@ fields['of12.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of12.bsn_vport_l2gre.ds
 fields['of12.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of12.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
 fields['of12.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of12.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
 fields['of12.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of12.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of12.bsn_vport_l2gre.rate_limit'] = ProtoField.uint32("of12.bsn_vport_l2gre.rate_limit", "rate_limit", base.DEC, nil)
 fields['of12.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of12.bsn_vport_l2gre.if_name", "if_name")
 fields['of12.bsn_vport_q_in_q.type'] = ProtoField.uint16("of12.bsn_vport_q_in_q.type", "type", base.DEC, nil)
 fields['of12.bsn_vport_q_in_q.length'] = ProtoField.uint16("of12.bsn_vport_q_in_q.length", "length", base.DEC, nil)
@@ -5939,6 +5946,7 @@ fields['of13.bsn_vport_l2gre.dst_ip'] = ProtoField.ipv4("of13.bsn_vport_l2gre.ds
 fields['of13.bsn_vport_l2gre.dscp'] = ProtoField.uint8("of13.bsn_vport_l2gre.dscp", "dscp", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.ttl'] = ProtoField.uint8("of13.bsn_vport_l2gre.ttl", "ttl", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.vpn'] = ProtoField.uint32("of13.bsn_vport_l2gre.vpn", "vpn", base.DEC, nil)
+fields['of13.bsn_vport_l2gre.rate_limit'] = ProtoField.uint32("of13.bsn_vport_l2gre.rate_limit", "rate_limit", base.DEC, nil)
 fields['of13.bsn_vport_l2gre.if_name'] = ProtoField.stringz("of13.bsn_vport_l2gre.if_name", "if_name")
 fields['of13.bsn_vport_q_in_q.type'] = ProtoField.uint16("of13.bsn_vport_q_in_q.type", "type", base.DEC, nil)
 fields['of13.bsn_vport_q_in_q.length'] = ProtoField.uint16("of13.bsn_vport_q_in_q.length", "length", base.DEC, nil)
@@ -7566,6 +7574,7 @@ p_of.fields = {
     fields['of10.bsn_vport_l2gre.dscp'],
     fields['of10.bsn_vport_l2gre.ttl'],
     fields['of10.bsn_vport_l2gre.vpn'],
+    fields['of10.bsn_vport_l2gre.rate_limit'],
     fields['of10.bsn_vport_l2gre.if_name'],
     fields['of10.bsn_vport_q_in_q.type'],
     fields['of10.bsn_vport_q_in_q.length'],
@@ -8370,6 +8379,7 @@ p_of.fields = {
     fields['of11.bsn_vport_l2gre.dscp'],
     fields['of11.bsn_vport_l2gre.ttl'],
     fields['of11.bsn_vport_l2gre.vpn'],
+    fields['of11.bsn_vport_l2gre.rate_limit'],
     fields['of11.bsn_vport_l2gre.if_name'],
     fields['of11.bsn_vport_q_in_q.type'],
     fields['of11.bsn_vport_q_in_q.length'],
@@ -9290,6 +9300,7 @@ p_of.fields = {
     fields['of12.bsn_vport_l2gre.dscp'],
     fields['of12.bsn_vport_l2gre.ttl'],
     fields['of12.bsn_vport_l2gre.vpn'],
+    fields['of12.bsn_vport_l2gre.rate_limit'],
     fields['of12.bsn_vport_l2gre.if_name'],
     fields['of12.bsn_vport_q_in_q.type'],
     fields['of12.bsn_vport_q_in_q.length'],
@@ -11206,6 +11217,7 @@ p_of.fields = {
     fields['of13.bsn_vport_l2gre.dscp'],
     fields['of13.bsn_vport_l2gre.ttl'],
     fields['of13.bsn_vport_l2gre.vpn'],
+    fields['of13.bsn_vport_l2gre.rate_limit'],
     fields['of13.bsn_vport_l2gre.if_name'],
     fields['of13.bsn_vport_q_in_q.type'],
     fields['of13.bsn_vport_q_in_q.length'],
@@ -13418,6 +13430,7 @@ function dissect_of_bsn_vport_l2gre_v1(reader, subtree)
     read_uint8_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.ttl')
     reader.skip(2)
     read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.vpn')
+    read_uint32_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.rate_limit')
     read_of_port_name_t(reader, 1, subtree, 'of10.bsn_vport_l2gre.if_name')
     return 'of_bsn_vport_l2gre'
 end
@@ -15122,6 +15135,7 @@ function dissect_of_bsn_vport_l2gre_v2(reader, subtree)
     read_uint8_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.ttl')
     reader.skip(2)
     read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.vpn')
+    read_uint32_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.rate_limit')
     read_of_port_name_t(reader, 2, subtree, 'of11.bsn_vport_l2gre.if_name')
     return 'of_bsn_vport_l2gre'
 end
@@ -17047,6 +17061,7 @@ function dissect_of_bsn_vport_l2gre_v3(reader, subtree)
     read_uint8_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.ttl')
     reader.skip(2)
     read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.vpn')
+    read_uint32_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.rate_limit')
     read_of_port_name_t(reader, 3, subtree, 'of12.bsn_vport_l2gre.if_name')
     return 'of_bsn_vport_l2gre'
 end
@@ -21716,6 +21731,7 @@ function dissect_of_bsn_vport_l2gre_v4(reader, subtree)
     read_uint8_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.ttl')
     reader.skip(2)
     read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.vpn')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.rate_limit')
     read_of_port_name_t(reader, 4, subtree, 'of13.bsn_vport_l2gre.if_name')
     return 'of_bsn_vport_l2gre'
 end
