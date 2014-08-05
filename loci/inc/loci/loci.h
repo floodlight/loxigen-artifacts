@@ -177,4 +177,10 @@ extern int of_match_to_wire_match_v3(of_match_t *src, of_match_v3_t *dst);
 extern void dump_match(of_match_t *match);
 #endif /* OF_DEBUG_DUMP */
 
+static inline const char *
+of_class_name(of_object_t *obj)
+{
+    return of_object_id_str[obj->object_id];
+}
+
 #endif /* Top header file */
