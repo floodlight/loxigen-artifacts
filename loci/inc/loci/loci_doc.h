@@ -6332,6 +6332,21 @@ typedef struct of_instruction_bsn_prioritize_pdus_s of_instruction_bsn_prioritiz
 typedef struct of_instruction_bsn_require_vlan_xlate_s of_instruction_bsn_require_vlan_xlate_t;
 
 /**
+ * Structure for of_instruction_bsn_span_destination object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_span_destination_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_span_destination_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_span_destination_s of_instruction_bsn_span_destination_t;
+
+/**
  * Structure for of_instruction_clear_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6549,6 +6564,21 @@ typedef struct of_instruction_id_bsn_prioritize_pdus_s of_instruction_id_bsn_pri
  *
  */
 typedef struct of_instruction_id_bsn_require_vlan_xlate_s of_instruction_id_bsn_require_vlan_xlate_t;
+
+/**
+ * Structure for of_instruction_id_bsn_span_destination object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_span_destination_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_span_destination_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_span_destination_s of_instruction_id_bsn_span_destination_t;
 
 /**
  * Structure for of_instruction_id_clear_actions object.  Get/set

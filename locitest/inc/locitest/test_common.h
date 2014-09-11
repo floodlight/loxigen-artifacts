@@ -7565,6 +7565,15 @@ extern int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_populate_scalars
 extern int of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_require_vlan_xlate_t *obj, int value);
 
+extern int of_instruction_bsn_span_destination_OF_VERSION_1_3_populate(
+    of_instruction_bsn_span_destination_t *obj, int value);
+extern int of_instruction_bsn_span_destination_OF_VERSION_1_3_check(
+    of_instruction_bsn_span_destination_t *obj, int value);
+extern int of_instruction_bsn_span_destination_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_span_destination_t *obj, int value);
+extern int of_instruction_bsn_span_destination_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_span_destination_t *obj, int value);
+
 extern int of_instruction_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_clear_actions_t *obj, int value);
 extern int of_instruction_clear_actions_OF_VERSION_1_3_check(
@@ -7708,6 +7717,15 @@ extern int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_populate_scal
     of_instruction_id_bsn_require_vlan_xlate_t *obj, int value);
 extern int of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_require_vlan_xlate_t *obj, int value);
+
+extern int of_instruction_id_bsn_span_destination_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_span_destination_t *obj, int value);
+extern int of_instruction_id_bsn_span_destination_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_span_destination_t *obj, int value);
+extern int of_instruction_id_bsn_span_destination_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_span_destination_t *obj, int value);
+extern int of_instruction_id_bsn_span_destination_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_span_destination_t *obj, int value);
 
 extern int of_instruction_id_clear_actions_OF_VERSION_1_3_populate(
     of_instruction_id_clear_actions_t *obj, int value);

@@ -6420,6 +6420,14 @@ fields['of13.instruction_id_bsn_require_vlan_xlate.type'] = ProtoField.uint16("o
 fields['of13.instruction_id_bsn_require_vlan_xlate.len'] = ProtoField.uint16("of13.instruction_id_bsn_require_vlan_xlate.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_require_vlan_xlate.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_require_vlan_xlate.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_require_vlan_xlate.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_require_vlan_xlate.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_span_destination.type'] = ProtoField.uint16("of13.instruction_bsn_span_destination.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_span_destination.len'] = ProtoField.uint16("of13.instruction_bsn_span_destination.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_span_destination.experimenter'] = ProtoField.uint32("of13.instruction_bsn_span_destination.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_span_destination.subtype'] = ProtoField.uint32("of13.instruction_bsn_span_destination.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_span_destination.type'] = ProtoField.uint16("of13.instruction_id_bsn_span_destination.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_span_destination.len'] = ProtoField.uint16("of13.instruction_id_bsn_span_destination.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_span_destination.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_span_destination.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_span_destination.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_span_destination.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_clear_actions.type'] = ProtoField.uint16("of13.instruction_clear_actions.type", "type", base.DEC, nil)
 fields['of13.instruction_clear_actions.len'] = ProtoField.uint16("of13.instruction_clear_actions.len", "len", base.DEC, nil)
 fields['of13.instruction_id_clear_actions.type'] = ProtoField.uint16("of13.instruction_id_clear_actions.type", "type", base.DEC, nil)
@@ -11691,6 +11699,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_require_vlan_xlate.len'],
     fields['of13.instruction_id_bsn_require_vlan_xlate.experimenter'],
     fields['of13.instruction_id_bsn_require_vlan_xlate.subtype'],
+    fields['of13.instruction_bsn_span_destination.type'],
+    fields['of13.instruction_bsn_span_destination.len'],
+    fields['of13.instruction_bsn_span_destination.experimenter'],
+    fields['of13.instruction_bsn_span_destination.subtype'],
+    fields['of13.instruction_id_bsn_span_destination.type'],
+    fields['of13.instruction_id_bsn_span_destination.len'],
+    fields['of13.instruction_id_bsn_span_destination.experimenter'],
+    fields['of13.instruction_id_bsn_span_destination.subtype'],
     fields['of13.instruction_clear_actions.type'],
     fields['of13.instruction_clear_actions.len'],
     fields['of13.instruction_id_clear_actions.type'],
@@ -22767,6 +22783,29 @@ function dissect_of_instruction_id_bsn_require_vlan_xlate_v4(reader, subtree)
     return 'of_instruction_id_bsn_require_vlan_xlate'
 end
 of_instruction_id_bsn_v4_dissectors[8] = dissect_of_instruction_id_bsn_require_vlan_xlate_v4
+
+-- child class of_instruction_bsn_span_destination
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_span_destination_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_span_destination.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_span_destination.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_span_destination.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_span_destination.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_span_destination'
+end
+of_instruction_bsn_v4_dissectors[10] = dissect_of_instruction_bsn_span_destination_v4
+
+-- child class of_instruction_id_bsn_span_destination
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_span_destination_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_span_destination.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_span_destination.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_span_destination.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_span_destination.subtype')
+    return 'of_instruction_id_bsn_span_destination'
+end
+of_instruction_id_bsn_v4_dissectors[10] = dissect_of_instruction_id_bsn_span_destination_v4
 
 -- child class of_instruction_clear_actions
 -- Child of of_instruction

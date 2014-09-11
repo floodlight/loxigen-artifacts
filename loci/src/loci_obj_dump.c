@@ -23958,6 +23958,27 @@ of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dump(loci_writer_f writer, 
 }
 
 int
+of_instruction_bsn_span_destination_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_bsn_span_destination_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_bsn_span_destination\n");
+
+    of_instruction_bsn_span_destination_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_instruction_bsn_span_destination_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_instruction_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
 {
     int out = 0;
@@ -24249,6 +24270,27 @@ of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dump(loci_writer_f write
     out += writer(cookie, "\n");
 
     of_instruction_id_bsn_require_vlan_xlate_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_instruction_id_bsn_span_destination_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_instruction_id_bsn_span_destination\n");
+
+    of_instruction_id_bsn_span_destination_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_instruction_id_bsn_span_destination_subtype_get(obj, &val32);
     out += writer(cookie, "  subtype (uint32_t):  ");
     out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
@@ -28673,6 +28715,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_match_v1_OF_VERSION_1_0_dump,
     unknown_dump,
     unknown_dump,
@@ -29187,10 +29231,12 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_instruction_clear_actions_OF_VERSION_1_1_dump,
     of_instruction_experimenter_OF_VERSION_1_1_dump,
     of_instruction_goto_table_OF_VERSION_1_1_dump,
     of_instruction_header_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -29728,10 +29774,12 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_instruction_clear_actions_OF_VERSION_1_2_dump,
     of_instruction_experimenter_OF_VERSION_1_2_dump,
     of_instruction_goto_table_OF_VERSION_1_2_dump,
     of_instruction_header_OF_VERSION_1_2_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -30269,6 +30317,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_bsn_permit_OF_VERSION_1_3_dump,
     of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dump,
     of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dump,
+    of_instruction_bsn_span_destination_OF_VERSION_1_3_dump,
     of_instruction_clear_actions_OF_VERSION_1_3_dump,
     of_instruction_experimenter_OF_VERSION_1_3_dump,
     of_instruction_goto_table_OF_VERSION_1_3_dump,
@@ -30286,6 +30335,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_instruction_id_bsn_permit_OF_VERSION_1_3_dump,
     of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dump,
     of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dump,
+    of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dump,
     of_instruction_id_clear_actions_OF_VERSION_1_3_dump,
     of_instruction_id_experimenter_OF_VERSION_1_3_dump,
     of_instruction_id_goto_table_OF_VERSION_1_3_dump,

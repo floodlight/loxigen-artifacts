@@ -113,6 +113,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnRequireVlanXlateVer13.INSTANCE;
     }
 
+    public OFInstructionBsnSpanDestination bsnSpanDestination() {
+        return OFInstructionBsnSpanDestinationVer13.INSTANCE;
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         return new OFInstructionMeterVer13.Builder();
     }

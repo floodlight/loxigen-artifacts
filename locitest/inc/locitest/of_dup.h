@@ -1258,6 +1258,10 @@ extern of_instruction_bsn_require_vlan_xlate_t *
     of_instruction_bsn_require_vlan_xlate_dup(
         of_instruction_bsn_require_vlan_xlate_t *src);
 
+extern of_instruction_bsn_span_destination_t *
+    of_instruction_bsn_span_destination_dup(
+        of_instruction_bsn_span_destination_t *src);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_dup(
         of_instruction_clear_actions_t *src);
@@ -1325,6 +1329,10 @@ extern of_instruction_id_bsn_prioritize_pdus_t *
 extern of_instruction_id_bsn_require_vlan_xlate_t *
     of_instruction_id_bsn_require_vlan_xlate_dup(
         of_instruction_id_bsn_require_vlan_xlate_t *src);
+
+extern of_instruction_id_bsn_span_destination_t *
+    of_instruction_id_bsn_span_destination_dup(
+        of_instruction_id_bsn_span_destination_t *src);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_dup(
@@ -5562,6 +5570,10 @@ extern of_instruction_bsn_require_vlan_xlate_t *
     of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
         of_instruction_bsn_require_vlan_xlate_t *src);
 
+extern of_instruction_bsn_span_destination_t *
+    of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(
+        of_instruction_bsn_span_destination_t *src);
+
 extern of_instruction_clear_actions_t *
     of_instruction_clear_actions_OF_VERSION_1_3_dup(
         of_instruction_clear_actions_t *src);
@@ -5629,6 +5641,10 @@ extern of_instruction_id_bsn_prioritize_pdus_t *
 extern of_instruction_id_bsn_require_vlan_xlate_t *
     of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_require_vlan_xlate_t *src);
+
+extern of_instruction_id_bsn_span_destination_t *
+    of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_span_destination_t *src);
 
 extern of_instruction_id_clear_actions_t *
     of_instruction_id_clear_actions_OF_VERSION_1_3_dup(

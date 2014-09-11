@@ -75,6 +75,10 @@ public class OFInstructionIdsVer11 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnRequireVlanXlate not supported in version 1.1");
     }
 
+    public OFInstructionIdBsnSpanDestination bsnSpanDestination() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnSpanDestination not supported in version 1.1");
+    }
+
     public OFInstructionIdClearActions clearActions() {
         throw new UnsupportedOperationException("OFInstructionIdClearActions not supported in version 1.1");
     }

@@ -30290,9 +30290,9 @@ of_instruction_OF_VERSION_1_3_dup(
             &src->write_actions);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return (of_instruction_t *)of_instruction_write_metadata_OF_VERSION_1_3_dup(
-            &src->write_metadata);
+    if (src->header.object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
+        return (of_instruction_t *)of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(
+            &src->bsn_span_destination);
     }
 
     if (src->header.object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
@@ -30358,6 +30358,11 @@ of_instruction_OF_VERSION_1_3_dup(
     if (src->header.object_id == OF_INSTRUCTION_GOTO_TABLE) {
         return (of_instruction_t *)of_instruction_goto_table_OF_VERSION_1_3_dup(
             &src->goto_table);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return (of_instruction_t *)of_instruction_write_metadata_OF_VERSION_1_3_dup(
+            &src->write_metadata);
     }
 
     if (src->header.object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
@@ -30716,6 +30721,34 @@ of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_instruction_bsn_span_destination
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_span_destination.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_span_destination_t *
+of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(
+    of_instruction_bsn_span_destination_t *src)
+{
+    of_instruction_bsn_span_destination_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_span_destination_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_span_destination_experimenter_get(src, &val32);
+    of_instruction_bsn_span_destination_experimenter_set(dst, val32);
+
+    of_instruction_bsn_span_destination_subtype_get(src, &val32);
+    of_instruction_bsn_span_destination_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_instruction_clear_actions
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -30833,9 +30866,9 @@ of_instruction_id_OF_VERSION_1_3_dup(
             &src->write_actions);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return (of_instruction_id_t *)of_instruction_id_write_metadata_OF_VERSION_1_3_dup(
-            &src->write_metadata);
+    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
+        return (of_instruction_id_t *)of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(
+            &src->bsn_span_destination);
     }
 
     if (src->header.object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
@@ -30901,6 +30934,11 @@ of_instruction_id_OF_VERSION_1_3_dup(
     if (src->header.object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
         return (of_instruction_id_t *)of_instruction_id_goto_table_OF_VERSION_1_3_dup(
             &src->goto_table);
+    }
+
+    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return (of_instruction_id_t *)of_instruction_id_write_metadata_OF_VERSION_1_3_dup(
+            &src->write_metadata);
     }
 
     if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
@@ -31241,6 +31279,34 @@ of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_require_vlan_xlate_subtype_get(src, &val32);
     of_instruction_id_bsn_require_vlan_xlate_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_span_destination
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_span_destination.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_span_destination_t *
+of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_span_destination_t *src)
+{
+    of_instruction_id_bsn_span_destination_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_span_destination_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_span_destination_experimenter_get(src, &val32);
+    of_instruction_id_bsn_span_destination_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_span_destination_subtype_get(src, &val32);
+    of_instruction_id_bsn_span_destination_subtype_set(dst, val32);
 
     return dst;
 }
@@ -43364,6 +43430,19 @@ of_instruction_bsn_require_vlan_xlate_dup(
     return NULL;
 }
 
+of_instruction_bsn_span_destination_t *
+of_instruction_bsn_span_destination_dup(
+    of_instruction_bsn_span_destination_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_instruction_clear_actions_t *
 of_instruction_clear_actions_dup(
     of_instruction_clear_actions_t *src)
@@ -43611,6 +43690,19 @@ of_instruction_id_bsn_require_vlan_xlate_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_instruction_id_bsn_span_destination_t *
+of_instruction_id_bsn_span_destination_dup(
+    of_instruction_id_bsn_span_destination_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

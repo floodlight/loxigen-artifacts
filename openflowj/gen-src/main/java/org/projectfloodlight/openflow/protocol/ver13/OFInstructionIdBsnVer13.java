@@ -83,6 +83,9 @@ abstract class OFInstructionIdBsnVer13 {
                case 0x8:
                    // discriminator value 0x8L=0x8L for class OFInstructionIdBsnRequireVlanXlateVer13
                    return OFInstructionIdBsnRequireVlanXlateVer13.READER.readFrom(bb);
+               case 0xa:
+                   // discriminator value 0xaL=0xaL for class OFInstructionIdBsnSpanDestinationVer13
+                   return OFInstructionIdBsnSpanDestinationVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFInstructionIdBsnVer13: " + subtype);
             }

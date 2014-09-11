@@ -104,6 +104,10 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnRequireVlanXlate not supported in version 1.0");
     }
 
+    public OFInstructionBsnSpanDestination bsnSpanDestination() {
+        throw new UnsupportedOperationException("OFInstructionBsnSpanDestination not supported in version 1.0");
+    }
+
     public OFInstructionMeter.Builder buildMeter() {
         throw new UnsupportedOperationException("OFInstructionMeter not supported in version 1.0");
     }

@@ -75,6 +75,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnRequireVlanXlateVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnSpanDestination bsnSpanDestination() {
+        return OFInstructionIdBsnSpanDestinationVer13.INSTANCE;
+    }
+
     public OFInstructionIdClearActions clearActions() {
         return OFInstructionIdClearActionsVer13.INSTANCE;
     }
