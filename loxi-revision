@@ -1,1 +1,1 @@
-068d76eba4cad6c818bd2fc0fb2affdeda779ad8 Merge into master from pull request #312: java_gen/pom.xml: Bump version to 0.4.0 (https://github.com/floodlight/loxigen/pull/312)
+0bc0754d659361bc9fdf2a54f96e3ef36b6b2de3 Merge into master from pull request #309: java: discard the IPv6 zone id when parsing addresses (https://github.com/floodlight/loxigen/pull/309)
