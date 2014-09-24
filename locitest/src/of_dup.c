@@ -29014,14 +29014,24 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
     of_bsn_tlv_t *src)
 {
 
+    if (src->header.object_id == OF_BSN_TLV_UDF_ID) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(
+            &src->udf_id);
+    }
+
     if (src->header.object_id == OF_BSN_TLV_CIRCUIT_ID) {
         return (of_bsn_tlv_t *)of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
             &src->circuit_id);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
-            &src->unicast_query_timeout);
+    if (src->header.object_id == OF_BSN_TLV_IDLE_TIME) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
+            &src->idle_time);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_MAC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(
+            &src->external_mac);
     }
 
     if (src->header.object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
@@ -29059,11 +29069,6 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->vlan_vid);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_QUEUE_ID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(
-            &src->queue_id);
-    }
-
     if (src->header.object_id == OF_BSN_TLV_TX_PACKETS) {
         return (of_bsn_tlv_t *)of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
             &src->tx_packets);
@@ -29079,9 +29084,9 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->rx_packets);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IDLE_TIME) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
-            &src->idle_time);
+    if (src->header.object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
+            &src->unicast_query_timeout);
     }
 
     if (src->header.object_id == OF_BSN_TLV_UDF_OFFSET) {
@@ -29094,6 +29099,11 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->queue_weight);
     }
 
+    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
+            &src->external_netmask);
+    }
+
     if (src->header.object_id == OF_BSN_TLV_MISS_PACKETS) {
         return (of_bsn_tlv_t *)of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
             &src->miss_packets);
@@ -29104,14 +29114,24 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->mac);
     }
 
+    if (src->header.object_id == OF_BSN_TLV_INTERNAL_MAC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(
+            &src->internal_mac);
+    }
+
     if (src->header.object_id == OF_BSN_TLV_VRF) {
         return (of_bsn_tlv_t *)of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
             &src->vrf);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDF_ID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(
-            &src->udf_id);
+    if (src->header.object_id == OF_BSN_TLV_QUEUE_ID) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(
+            &src->queue_id);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(
+            &src->internal_gateway_mac);
     }
 
     if (src->header.object_id == OF_BSN_TLV_UDF_ANCHOR) {
@@ -29122,6 +29142,16 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
     if (src->header.object_id == OF_BSN_TLV_UDF_LENGTH) {
         return (of_bsn_tlv_t *)of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(
             &src->udf_length);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
+            &src->external_gateway_ip);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_IP) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(
+            &src->external_ip);
     }
 
     if (src->header.object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
@@ -29203,6 +29233,106 @@ of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_crc_enabled_value_get(src, &val8);
     of_bsn_tlv_crc_enabled_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_external_gateway_ip
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_external_gateway_ip.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_external_gateway_ip_t *
+of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
+    of_bsn_tlv_external_gateway_ip_t *src)
+{
+    of_bsn_tlv_external_gateway_ip_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_external_gateway_ip_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_external_gateway_ip_value_get(src, &ipv4);
+    of_bsn_tlv_external_gateway_ip_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_external_ip
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_external_ip.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_external_ip_t *
+of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(
+    of_bsn_tlv_external_ip_t *src)
+{
+    of_bsn_tlv_external_ip_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_external_ip_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_external_ip_value_get(src, &ipv4);
+    of_bsn_tlv_external_ip_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_external_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_external_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_external_mac_t *
+of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_external_mac_t *src)
+{
+    of_bsn_tlv_external_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_external_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_external_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_external_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_external_netmask
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_external_netmask.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_external_netmask_t *
+of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
+    of_bsn_tlv_external_netmask_t *src)
+{
+    of_bsn_tlv_external_netmask_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_external_netmask_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_external_netmask_value_get(src, &ipv4);
+    of_bsn_tlv_external_netmask_value_set(dst, ipv4);
 
     return dst;
 }
@@ -29295,6 +29425,56 @@ of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_idle_timeout_value_get(src, &val32);
     of_bsn_tlv_idle_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_internal_gateway_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_internal_gateway_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_internal_gateway_mac_t *
+of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_internal_gateway_mac_t *src)
+{
+    of_bsn_tlv_internal_gateway_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_internal_gateway_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_internal_gateway_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_internal_gateway_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_internal_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_internal_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_internal_mac_t *
+of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_internal_mac_t *src)
+{
+    of_bsn_tlv_internal_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_internal_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_internal_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_internal_mac_value_set(dst, mac_addr);
 
     return dst;
 }
@@ -42698,6 +42878,58 @@ of_bsn_tlv_crc_enabled_dup(
     return NULL;
 }
 
+of_bsn_tlv_external_gateway_ip_t *
+of_bsn_tlv_external_gateway_ip_dup(
+    of_bsn_tlv_external_gateway_ip_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_external_ip_t *
+of_bsn_tlv_external_ip_dup(
+    of_bsn_tlv_external_ip_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_external_mac_t *
+of_bsn_tlv_external_mac_dup(
+    of_bsn_tlv_external_mac_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_external_netmask_t *
+of_bsn_tlv_external_netmask_dup(
+    of_bsn_tlv_external_netmask_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_bsn_tlv_header_t *
 of_bsn_tlv_header_dup(
     of_bsn_tlv_header_t *src)
@@ -42744,6 +42976,32 @@ of_bsn_tlv_idle_timeout_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_internal_gateway_mac_t *
+of_bsn_tlv_internal_gateway_mac_dup(
+    of_bsn_tlv_internal_gateway_mac_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_internal_mac_t *
+of_bsn_tlv_internal_mac_dup(
+    of_bsn_tlv_internal_mac_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

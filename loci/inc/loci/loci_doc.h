@@ -5620,6 +5620,50 @@ typedef struct of_bsn_tlv_circuit_id_s of_bsn_tlv_circuit_id_t;
 typedef struct of_bsn_tlv_crc_enabled_s of_bsn_tlv_crc_enabled_t;
 
 /**
+ * Structure for of_bsn_tlv_external_gateway_ip object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_tlv_external_gateway_ip_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_external_gateway_ip_s of_bsn_tlv_external_gateway_ip_t;
+
+/**
+ * Structure for of_bsn_tlv_external_ip object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_tlv_external_ip_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_external_ip_s of_bsn_tlv_external_ip_t;
+
+/**
+ * Structure for of_bsn_tlv_external_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_external_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_external_mac_s of_bsn_tlv_external_mac_t;
+
+/**
+ * Structure for of_bsn_tlv_external_netmask object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_tlv_external_netmask_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
+
+/**
  * Structure for of_bsn_tlv_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5654,6 +5698,28 @@ typedef struct of_bsn_tlv_idle_time_s of_bsn_tlv_idle_time_t;
  *
  */
 typedef struct of_bsn_tlv_idle_timeout_s of_bsn_tlv_idle_timeout_t;
+
+/**
+ * Structure for of_bsn_tlv_internal_gateway_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_internal_gateway_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_internal_gateway_mac_s of_bsn_tlv_internal_gateway_mac_t;
+
+/**
+ * Structure for of_bsn_tlv_internal_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_internal_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_internal_mac_s of_bsn_tlv_internal_mac_t;
 
 /**
  * Structure for of_bsn_tlv_ipv4 object.  Get/set

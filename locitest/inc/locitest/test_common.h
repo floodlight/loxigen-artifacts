@@ -7160,6 +7160,42 @@ extern int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_crc_enabled_t *obj, int value);
 
+extern int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_populate(
+    of_bsn_tlv_external_gateway_ip_t *obj, int value);
+extern int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_check(
+    of_bsn_tlv_external_gateway_ip_t *obj, int value);
+extern int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_external_gateway_ip_t *obj, int value);
+extern int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_external_gateway_ip_t *obj, int value);
+
+extern int of_bsn_tlv_external_ip_OF_VERSION_1_3_populate(
+    of_bsn_tlv_external_ip_t *obj, int value);
+extern int of_bsn_tlv_external_ip_OF_VERSION_1_3_check(
+    of_bsn_tlv_external_ip_t *obj, int value);
+extern int of_bsn_tlv_external_ip_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_external_ip_t *obj, int value);
+extern int of_bsn_tlv_external_ip_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_external_ip_t *obj, int value);
+
+extern int of_bsn_tlv_external_mac_OF_VERSION_1_3_populate(
+    of_bsn_tlv_external_mac_t *obj, int value);
+extern int of_bsn_tlv_external_mac_OF_VERSION_1_3_check(
+    of_bsn_tlv_external_mac_t *obj, int value);
+extern int of_bsn_tlv_external_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_external_mac_t *obj, int value);
+extern int of_bsn_tlv_external_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_external_mac_t *obj, int value);
+
+extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_populate(
+    of_bsn_tlv_external_netmask_t *obj, int value);
+extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_check(
+    of_bsn_tlv_external_netmask_t *obj, int value);
+extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_external_netmask_t *obj, int value);
+extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_external_netmask_t *obj, int value);
+
 extern int of_bsn_tlv_header_OF_VERSION_1_3_populate(
     of_bsn_tlv_header_t *obj, int value);
 extern int of_bsn_tlv_header_OF_VERSION_1_3_check(
@@ -7195,6 +7231,24 @@ extern int of_bsn_tlv_idle_timeout_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_idle_timeout_t *obj, int value);
 extern int of_bsn_tlv_idle_timeout_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_idle_timeout_t *obj, int value);
+
+extern int of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_populate(
+    of_bsn_tlv_internal_gateway_mac_t *obj, int value);
+extern int of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_check(
+    of_bsn_tlv_internal_gateway_mac_t *obj, int value);
+extern int of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_internal_gateway_mac_t *obj, int value);
+extern int of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_internal_gateway_mac_t *obj, int value);
+
+extern int of_bsn_tlv_internal_mac_OF_VERSION_1_3_populate(
+    of_bsn_tlv_internal_mac_t *obj, int value);
+extern int of_bsn_tlv_internal_mac_OF_VERSION_1_3_check(
+    of_bsn_tlv_internal_mac_t *obj, int value);
+extern int of_bsn_tlv_internal_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_internal_mac_t *obj, int value);
+extern int of_bsn_tlv_internal_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_internal_mac_t *obj, int value);
 
 extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_populate(
     of_bsn_tlv_ipv4_t *obj, int value);

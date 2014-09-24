@@ -52,6 +52,34 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.1");
     }
 
+    public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
+        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayIp not supported in version 1.1");
+    }
+    public OFBsnTlvExternalGatewayIp externalGatewayIp(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayIp not supported in version 1.1");
+    }
+
+    public OFBsnTlvExternalIp.Builder buildExternalIp() {
+        throw new UnsupportedOperationException("OFBsnTlvExternalIp not supported in version 1.1");
+    }
+    public OFBsnTlvExternalIp externalIp(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvExternalIp not supported in version 1.1");
+    }
+
+    public OFBsnTlvExternalMac.Builder buildExternalMac() {
+        throw new UnsupportedOperationException("OFBsnTlvExternalMac not supported in version 1.1");
+    }
+    public OFBsnTlvExternalMac externalMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvExternalMac not supported in version 1.1");
+    }
+
+    public OFBsnTlvExternalNetmask.Builder buildExternalNetmask() {
+        throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.1");
+    }
+    public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.1");
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.1");
     }
@@ -68,6 +96,20 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvIdleTimeout idleTimeout(long value) {
         throw new UnsupportedOperationException("OFBsnTlvIdleTimeout not supported in version 1.1");
+    }
+
+    public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
+        throw new UnsupportedOperationException("OFBsnTlvInternalGatewayMac not supported in version 1.1");
+    }
+    public OFBsnTlvInternalGatewayMac internalGatewayMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvInternalGatewayMac not supported in version 1.1");
+    }
+
+    public OFBsnTlvInternalMac.Builder buildInternalMac() {
+        throw new UnsupportedOperationException("OFBsnTlvInternalMac not supported in version 1.1");
+    }
+    public OFBsnTlvInternalMac internalMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvInternalMac not supported in version 1.1");
     }
 
     public OFBsnTlvIpv4.Builder buildIpv4() {

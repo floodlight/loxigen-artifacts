@@ -1,1 +1,1 @@
-0bc0754d659361bc9fdf2a54f96e3ef36b6b2de3 Merge into master from pull request #309: java: discard the IPv6 zone id when parsing addresses (https://github.com/floodlight/loxigen/pull/309)
+3045255e245f08abd2bf45384363bd54028f4f73 Merge into master from pull request #313: openflow_input: add TLVs for NAT gentable (https://github.com/floodlight/loxigen/pull/313)

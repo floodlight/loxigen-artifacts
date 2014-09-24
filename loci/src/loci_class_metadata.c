@@ -2295,6 +2295,30 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_crc_enabled_push_wire_types,
     },
+    [OF_BSN_TLV_EXTERNAL_GATEWAY_IP] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_external_gateway_ip_push_wire_types,
+    },
+    [OF_BSN_TLV_EXTERNAL_IP] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_external_ip_push_wire_types,
+    },
+    [OF_BSN_TLV_EXTERNAL_MAC] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_external_mac_push_wire_types,
+    },
+    [OF_BSN_TLV_EXTERNAL_NETMASK] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_external_netmask_push_wire_types,
+    },
     [OF_BSN_TLV_IDLE_NOTIFICATION] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2312,6 +2336,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_idle_timeout_push_wire_types,
+    },
+    [OF_BSN_TLV_INTERNAL_GATEWAY_MAC] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_internal_gateway_mac_push_wire_types,
+    },
+    [OF_BSN_TLV_INTERNAL_MAC] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_internal_mac_push_wire_types,
     },
     [OF_BSN_TLV_IPV4] = {
         .wire_length_get=of_tlv16_wire_length_get,

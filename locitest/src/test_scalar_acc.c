@@ -26610,6 +26610,154 @@ test_of_bsn_tlv_crc_enabled_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_external_gateway_ip_t *obj;
+
+    obj = of_bsn_tlv_external_gateway_ip_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_external_gateway_ip_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_external_ip_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_external_ip_t *obj;
+
+    obj = of_bsn_tlv_external_ip_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_IP);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_EXTERNAL_IP);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_external_ip_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_external_ip_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_external_ip_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_external_mac_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_external_mac_t *obj;
+
+    obj = of_bsn_tlv_external_mac_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_MAC);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_EXTERNAL_MAC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_external_mac_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_external_mac_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_external_mac_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_external_netmask_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_external_netmask_t *obj;
+
+    obj = of_bsn_tlv_external_netmask_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_NETMASK);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_EXTERNAL_NETMASK);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_external_netmask_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_external_netmask_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_external_netmask_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_header_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_header_t *obj;
@@ -26733,6 +26881,80 @@ test_of_bsn_tlv_idle_timeout_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_tlv_idle_timeout_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_tlv_idle_timeout_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_internal_gateway_mac_t *obj;
+
+    obj = of_bsn_tlv_internal_gateway_mac_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_internal_gateway_mac_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_internal_mac_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_internal_mac_t *obj;
+
+    obj = of_bsn_tlv_internal_mac_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_INTERNAL_MAC);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_INTERNAL_MAC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_internal_mac_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_internal_mac_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_internal_mac_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -36015,10 +36237,16 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_circuit_id_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_crc_enabled_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_external_ip_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_external_mac_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_external_netmask_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_header_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_idle_notification_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_idle_time_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_idle_timeout_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_internal_mac_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_ipv4_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_mac_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_miss_packets_OF_VERSION_1_3_scalar);

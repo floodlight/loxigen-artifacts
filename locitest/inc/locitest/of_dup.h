@@ -1066,6 +1066,22 @@ extern of_bsn_tlv_crc_enabled_t *
     of_bsn_tlv_crc_enabled_dup(
         of_bsn_tlv_crc_enabled_t *src);
 
+extern of_bsn_tlv_external_gateway_ip_t *
+    of_bsn_tlv_external_gateway_ip_dup(
+        of_bsn_tlv_external_gateway_ip_t *src);
+
+extern of_bsn_tlv_external_ip_t *
+    of_bsn_tlv_external_ip_dup(
+        of_bsn_tlv_external_ip_t *src);
+
+extern of_bsn_tlv_external_mac_t *
+    of_bsn_tlv_external_mac_dup(
+        of_bsn_tlv_external_mac_t *src);
+
+extern of_bsn_tlv_external_netmask_t *
+    of_bsn_tlv_external_netmask_dup(
+        of_bsn_tlv_external_netmask_t *src);
+
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_dup(
         of_bsn_tlv_header_t *src);
@@ -1081,6 +1097,14 @@ extern of_bsn_tlv_idle_time_t *
 extern of_bsn_tlv_idle_timeout_t *
     of_bsn_tlv_idle_timeout_dup(
         of_bsn_tlv_idle_timeout_t *src);
+
+extern of_bsn_tlv_internal_gateway_mac_t *
+    of_bsn_tlv_internal_gateway_mac_dup(
+        of_bsn_tlv_internal_gateway_mac_t *src);
+
+extern of_bsn_tlv_internal_mac_t *
+    of_bsn_tlv_internal_mac_dup(
+        of_bsn_tlv_internal_mac_t *src);
 
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_dup(
@@ -5378,6 +5402,22 @@ extern of_bsn_tlv_crc_enabled_t *
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
         of_bsn_tlv_crc_enabled_t *src);
 
+extern of_bsn_tlv_external_gateway_ip_t *
+    of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
+        of_bsn_tlv_external_gateway_ip_t *src);
+
+extern of_bsn_tlv_external_ip_t *
+    of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(
+        of_bsn_tlv_external_ip_t *src);
+
+extern of_bsn_tlv_external_mac_t *
+    of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_external_mac_t *src);
+
+extern of_bsn_tlv_external_netmask_t *
+    of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
+        of_bsn_tlv_external_netmask_t *src);
+
 extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_OF_VERSION_1_3_dup(
         of_bsn_tlv_header_t *src);
@@ -5393,6 +5433,14 @@ extern of_bsn_tlv_idle_time_t *
 extern of_bsn_tlv_idle_timeout_t *
     of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(
         of_bsn_tlv_idle_timeout_t *src);
+
+extern of_bsn_tlv_internal_gateway_mac_t *
+    of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_internal_gateway_mac_t *src);
+
+extern of_bsn_tlv_internal_mac_t *
+    of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_internal_mac_t *src);
 
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(

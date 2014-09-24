@@ -5823,6 +5823,18 @@ fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit
 fields['of13.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_external_gateway_ip.type'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_ip.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_external_gateway_ip.length'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_ip.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_external_gateway_ip.value'] = ProtoField.ipv4("of13.bsn_tlv_external_gateway_ip.value", "value")
+fields['of13.bsn_tlv_external_ip.type'] = ProtoField.uint16("of13.bsn_tlv_external_ip.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_external_ip.length'] = ProtoField.uint16("of13.bsn_tlv_external_ip.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_external_ip.value'] = ProtoField.ipv4("of13.bsn_tlv_external_ip.value", "value")
+fields['of13.bsn_tlv_external_mac.type'] = ProtoField.uint16("of13.bsn_tlv_external_mac.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_external_mac.length'] = ProtoField.uint16("of13.bsn_tlv_external_mac.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_external_mac.value'] = ProtoField.ether("of13.bsn_tlv_external_mac.value", "value")
+fields['of13.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_external_netmask.value", "value")
 fields['of13.bsn_tlv_idle_notification.type'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_notification.length'] = ProtoField.uint16("of13.bsn_tlv_idle_notification.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_time.type'] = ProtoField.uint16("of13.bsn_tlv_idle_time.type", "type", base.DEC, nil)
@@ -5831,6 +5843,12 @@ fields['of13.bsn_tlv_idle_time.value'] = ProtoField.uint64("of13.bsn_tlv_idle_ti
 fields['of13.bsn_tlv_idle_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_idle_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_idle_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_idle_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_idle_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_idle_timeout.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_internal_gateway_mac.type'] = ProtoField.uint16("of13.bsn_tlv_internal_gateway_mac.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_internal_gateway_mac.length'] = ProtoField.uint16("of13.bsn_tlv_internal_gateway_mac.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of13.bsn_tlv_internal_gateway_mac.value", "value")
+fields['of13.bsn_tlv_internal_mac.type'] = ProtoField.uint16("of13.bsn_tlv_internal_mac.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_internal_mac.length'] = ProtoField.uint16("of13.bsn_tlv_internal_mac.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_internal_mac.value'] = ProtoField.ether("of13.bsn_tlv_internal_mac.value", "value")
 fields['of13.bsn_tlv_ipv4.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4.value", "value")
@@ -11102,6 +11120,18 @@ p_of.fields = {
     fields['of13.bsn_tlv_crc_enabled.type'],
     fields['of13.bsn_tlv_crc_enabled.length'],
     fields['of13.bsn_tlv_crc_enabled.value'],
+    fields['of13.bsn_tlv_external_gateway_ip.type'],
+    fields['of13.bsn_tlv_external_gateway_ip.length'],
+    fields['of13.bsn_tlv_external_gateway_ip.value'],
+    fields['of13.bsn_tlv_external_ip.type'],
+    fields['of13.bsn_tlv_external_ip.length'],
+    fields['of13.bsn_tlv_external_ip.value'],
+    fields['of13.bsn_tlv_external_mac.type'],
+    fields['of13.bsn_tlv_external_mac.length'],
+    fields['of13.bsn_tlv_external_mac.value'],
+    fields['of13.bsn_tlv_external_netmask.type'],
+    fields['of13.bsn_tlv_external_netmask.length'],
+    fields['of13.bsn_tlv_external_netmask.value'],
     fields['of13.bsn_tlv_idle_notification.type'],
     fields['of13.bsn_tlv_idle_notification.length'],
     fields['of13.bsn_tlv_idle_time.type'],
@@ -11110,6 +11140,12 @@ p_of.fields = {
     fields['of13.bsn_tlv_idle_timeout.type'],
     fields['of13.bsn_tlv_idle_timeout.length'],
     fields['of13.bsn_tlv_idle_timeout.value'],
+    fields['of13.bsn_tlv_internal_gateway_mac.type'],
+    fields['of13.bsn_tlv_internal_gateway_mac.length'],
+    fields['of13.bsn_tlv_internal_gateway_mac.value'],
+    fields['of13.bsn_tlv_internal_mac.type'],
+    fields['of13.bsn_tlv_internal_mac.length'],
+    fields['of13.bsn_tlv_internal_mac.value'],
     fields['of13.bsn_tlv_ipv4.type'],
     fields['of13.bsn_tlv_ipv4.length'],
     fields['of13.bsn_tlv_ipv4.value'],
@@ -21419,6 +21455,46 @@ function dissect_of_bsn_tlv_crc_enabled_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[22] = dissect_of_bsn_tlv_crc_enabled_v4
 
+-- child class of_bsn_tlv_external_gateway_ip
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_gateway_ip_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_gateway_ip.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_gateway_ip.length')
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_tlv_external_gateway_ip.value')
+    return 'of_bsn_tlv_external_gateway_ip'
+end
+of_bsn_tlv_v4_dissectors[26] = dissect_of_bsn_tlv_external_gateway_ip_v4
+
+-- child class of_bsn_tlv_external_ip
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_ip_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_ip.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_ip.length')
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_tlv_external_ip.value')
+    return 'of_bsn_tlv_external_ip'
+end
+of_bsn_tlv_v4_dissectors[23] = dissect_of_bsn_tlv_external_ip_v4
+
+-- child class of_bsn_tlv_external_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_mac.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_mac.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_external_mac.value')
+    return 'of_bsn_tlv_external_mac'
+end
+of_bsn_tlv_v4_dissectors[24] = dissect_of_bsn_tlv_external_mac_v4
+
+-- child class of_bsn_tlv_external_netmask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_netmask_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_netmask.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_netmask.length')
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_tlv_external_netmask.value')
+    return 'of_bsn_tlv_external_netmask'
+end
+of_bsn_tlv_v4_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v4
+
 -- child class of_bsn_tlv_idle_notification
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_idle_notification_v4(reader, subtree)
@@ -21447,6 +21523,26 @@ function dissect_of_bsn_tlv_idle_timeout_v4(reader, subtree)
     return 'of_bsn_tlv_idle_timeout'
 end
 of_bsn_tlv_v4_dissectors[8] = dissect_of_bsn_tlv_idle_timeout_v4
+
+-- child class of_bsn_tlv_internal_gateway_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_internal_gateway_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_internal_gateway_mac.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_internal_gateway_mac.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_internal_gateway_mac.value')
+    return 'of_bsn_tlv_internal_gateway_mac'
+end
+of_bsn_tlv_v4_dissectors[28] = dissect_of_bsn_tlv_internal_gateway_mac_v4
+
+-- child class of_bsn_tlv_internal_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_internal_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_internal_mac.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_internal_mac.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_internal_mac.value')
+    return 'of_bsn_tlv_internal_mac'
+end
+of_bsn_tlv_v4_dissectors[27] = dissect_of_bsn_tlv_internal_mac_v4
 
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv

@@ -51,6 +51,18 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x16:
                    // discriminator value 0x16=0x16 for class OFBsnTlvCrcEnabledVer13
                    return OFBsnTlvCrcEnabledVer13.READER.readFrom(bb);
+               case (short) 0x1a:
+                   // discriminator value 0x1a=0x1a for class OFBsnTlvExternalGatewayIpVer13
+                   return OFBsnTlvExternalGatewayIpVer13.READER.readFrom(bb);
+               case (short) 0x17:
+                   // discriminator value 0x17=0x17 for class OFBsnTlvExternalIpVer13
+                   return OFBsnTlvExternalIpVer13.READER.readFrom(bb);
+               case (short) 0x18:
+                   // discriminator value 0x18=0x18 for class OFBsnTlvExternalMacVer13
+                   return OFBsnTlvExternalMacVer13.READER.readFrom(bb);
+               case (short) 0x19:
+                   // discriminator value 0x19=0x19 for class OFBsnTlvExternalNetmaskVer13
+                   return OFBsnTlvExternalNetmaskVer13.READER.readFrom(bb);
                case (short) 0x7:
                    // discriminator value 0x7=0x7 for class OFBsnTlvIdleNotificationVer13
                    return OFBsnTlvIdleNotificationVer13.READER.readFrom(bb);
@@ -60,6 +72,12 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x8:
                    // discriminator value 0x8=0x8 for class OFBsnTlvIdleTimeoutVer13
                    return OFBsnTlvIdleTimeoutVer13.READER.readFrom(bb);
+               case (short) 0x1c:
+                   // discriminator value 0x1c=0x1c for class OFBsnTlvInternalGatewayMacVer13
+                   return OFBsnTlvInternalGatewayMacVer13.READER.readFrom(bb);
+               case (short) 0x1b:
+                   // discriminator value 0x1b=0x1b for class OFBsnTlvInternalMacVer13
+                   return OFBsnTlvInternalMacVer13.READER.readFrom(bb);
                case (short) 0x4:
                    // discriminator value 0x4=0x4 for class OFBsnTlvIpv4Ver13
                    return OFBsnTlvIpv4Ver13.READER.readFrom(bb);

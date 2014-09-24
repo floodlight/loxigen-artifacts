@@ -58,6 +58,42 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
+        return new OFBsnTlvExternalGatewayIpVer13.Builder();
+    }
+    public OFBsnTlvExternalGatewayIp externalGatewayIp(IPv4Address value) {
+        return new OFBsnTlvExternalGatewayIpVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvExternalIp.Builder buildExternalIp() {
+        return new OFBsnTlvExternalIpVer13.Builder();
+    }
+    public OFBsnTlvExternalIp externalIp(IPv4Address value) {
+        return new OFBsnTlvExternalIpVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvExternalMac.Builder buildExternalMac() {
+        return new OFBsnTlvExternalMacVer13.Builder();
+    }
+    public OFBsnTlvExternalMac externalMac(MacAddress value) {
+        return new OFBsnTlvExternalMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvExternalNetmask.Builder buildExternalNetmask() {
+        return new OFBsnTlvExternalNetmaskVer13.Builder();
+    }
+    public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
+        return new OFBsnTlvExternalNetmaskVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }
@@ -76,6 +112,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvIdleTimeout idleTimeout(long value) {
         return new OFBsnTlvIdleTimeoutVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
+        return new OFBsnTlvInternalGatewayMacVer13.Builder();
+    }
+    public OFBsnTlvInternalGatewayMac internalGatewayMac(MacAddress value) {
+        return new OFBsnTlvInternalGatewayMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvInternalMac.Builder buildInternalMac() {
+        return new OFBsnTlvInternalMacVer13.Builder();
+    }
+    public OFBsnTlvInternalMac internalMac(MacAddress value) {
+        return new OFBsnTlvInternalMacVer13(
                 value
                     );
     }
