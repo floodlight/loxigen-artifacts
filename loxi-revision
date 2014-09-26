@@ -1,1 +1,1 @@
-3045255e245f08abd2bf45384363bd54028f4f73 Merge into master from pull request #313: openflow_input: add TLVs for NAT gentable (https://github.com/floodlight/loxigen/pull/313)
+070075b0e7728f68efedfc00eeea13f4de5eeae7 Merge into master from pull request #314: wireshark: make enums global instead of local (https://github.com/floodlight/loxigen/pull/314)
