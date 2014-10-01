@@ -54,6 +54,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x1a:
                    // discriminator value 0x1a=0x1a for class OFBsnTlvExternalGatewayIpVer13
                    return OFBsnTlvExternalGatewayIpVer13.READER.readFrom(bb);
+               case (short) 0x1d:
+                   // discriminator value 0x1d=0x1d for class OFBsnTlvExternalGatewayMacVer13
+                   return OFBsnTlvExternalGatewayMacVer13.READER.readFrom(bb);
                case (short) 0x17:
                    // discriminator value 0x17=0x17 for class OFBsnTlvExternalIpVer13
                    return OFBsnTlvExternalIpVer13.READER.readFrom(bb);

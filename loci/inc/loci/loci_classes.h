@@ -767,6 +767,8 @@ void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t 
 void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_gateway_ip_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_external_gateway_ip_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_external_gateway_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_external_gateway_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_ip_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_external_ip_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1264,6 +1266,7 @@ typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_external_gateway_ip_t;
+typedef of_object_t of_bsn_tlv_external_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
@@ -2879,6 +2882,11 @@ extern of_bsn_tlv_external_gateway_ip_t *
     of_bsn_tlv_external_gateway_ip_new(of_version_t version);
 extern void of_bsn_tlv_external_gateway_ip_init(
     of_bsn_tlv_external_gateway_ip_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_external_gateway_mac_t *
+    of_bsn_tlv_external_gateway_mac_new(of_version_t version);
+extern void of_bsn_tlv_external_gateway_mac_init(
+    of_bsn_tlv_external_gateway_mac_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_external_ip_t *
     of_bsn_tlv_external_ip_new(of_version_t version);
@@ -7188,6 +7196,17 @@ of_bsn_tlv_crc_enabled_delete(of_bsn_tlv_crc_enabled_t *obj) {
  */
 static inline void
 of_bsn_tlv_external_gateway_ip_delete(of_bsn_tlv_external_gateway_ip_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_external_gateway_mac_t
+ * @param obj An instance of type of_bsn_tlv_external_gateway_mac_t
+ *
+ * \ingroup of_bsn_tlv_external_gateway_mac
+ */
+static inline void
+of_bsn_tlv_external_gateway_mac_delete(of_bsn_tlv_external_gateway_mac_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17517,6 +17536,15 @@ extern void of_bsn_tlv_external_gateway_ip_value_get(
     of_bsn_tlv_external_gateway_ip_t *obj,
     of_ipv4_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_external_gateway_mac */
+
+extern void of_bsn_tlv_external_gateway_mac_value_set(
+    of_bsn_tlv_external_gateway_mac_t *obj,
+    of_mac_addr_t value);
+extern void of_bsn_tlv_external_gateway_mac_value_get(
+    of_bsn_tlv_external_gateway_mac_t *obj,
+    of_mac_addr_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_external_ip */
 
 extern void of_bsn_tlv_external_ip_value_set(
@@ -22273,6 +22301,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_circuit_id_t circuit_id;
     of_bsn_tlv_crc_enabled_t crc_enabled;
     of_bsn_tlv_external_gateway_ip_t external_gateway_ip;
+    of_bsn_tlv_external_gateway_mac_t external_gateway_mac;
     of_bsn_tlv_external_ip_t external_ip;
     of_bsn_tlv_external_mac_t external_mac;
     of_bsn_tlv_external_netmask_t external_netmask;

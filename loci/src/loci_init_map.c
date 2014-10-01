@@ -276,6 +276,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_circuit_id_init,
     (of_object_init_f)of_bsn_tlv_crc_enabled_init,
     (of_object_init_f)of_bsn_tlv_external_gateway_ip_init,
+    (of_object_init_f)of_bsn_tlv_external_gateway_mac_init,
     (of_object_init_f)of_bsn_tlv_external_ip_init,
     (of_object_init_f)of_bsn_tlv_external_mac_init,
     (of_object_init_f)of_bsn_tlv_external_netmask_init,

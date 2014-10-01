@@ -831,6 +831,7 @@ int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer,
 int of_bsn_tlv_circuit_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_circuit_id_t *obj);
 int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_crc_enabled_t *obj);
 int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_external_gateway_ip_t *obj);
+int of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_external_gateway_mac_t *obj);
 int of_bsn_tlv_external_ip_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_external_ip_t *obj);
 int of_bsn_tlv_external_mac_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_external_mac_t *obj);
 int of_bsn_tlv_external_netmask_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_bsn_tlv_external_netmask_t *obj);

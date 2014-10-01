@@ -273,6 +273,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_circuit_id",
     "of_bsn_tlv_crc_enabled",
     "of_bsn_tlv_external_gateway_ip",
+    "of_bsn_tlv_external_gateway_mac",
     "of_bsn_tlv_external_ip",
     "of_bsn_tlv_external_mac",
     "of_bsn_tlv_external_netmask",

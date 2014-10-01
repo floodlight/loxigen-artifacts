@@ -35,6 +35,8 @@ public interface OFBsnTlvs {
     OFBsnTlvCrcEnabled crcEnabled(short value);
     OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() throws UnsupportedOperationException;
     OFBsnTlvExternalGatewayIp externalGatewayIp(IPv4Address value);
+    OFBsnTlvExternalGatewayMac.Builder buildExternalGatewayMac() throws UnsupportedOperationException;
+    OFBsnTlvExternalGatewayMac externalGatewayMac(MacAddress value);
     OFBsnTlvExternalIp.Builder buildExternalIp() throws UnsupportedOperationException;
     OFBsnTlvExternalIp externalIp(IPv4Address value);
     OFBsnTlvExternalMac.Builder buildExternalMac() throws UnsupportedOperationException;

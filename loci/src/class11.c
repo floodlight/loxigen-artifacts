@@ -13603,6 +13603,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x1c:
             *id = OF_BSN_TLV_INTERNAL_GATEWAY_MAC;
             break;
+        case 0x1d:
+            *id = OF_BSN_TLV_EXTERNAL_GATEWAY_MAC;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -14619,6 +14622,225 @@ of_bsn_tlv_external_gateway_ip_value_set(
 #include "loci_int.h"
 
 void
+of_bsn_tlv_external_gateway_mac_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x1d); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_external_gateway_mac of_bsn_tlv_external_gateway_mac
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bsn_tlv_external_gateway_mac_push_wire_values(of_bsn_tlv_external_gateway_mac_t *obj)
+{
+
+    of_bsn_tlv_external_gateway_mac_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_bsn_tlv_external_gateway_mac object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_external_gateway_mac
+ */
+
+of_bsn_tlv_external_gateway_mac_t *
+of_bsn_tlv_external_gateway_mac_new(of_version_t version)
+{
+    of_bsn_tlv_external_gateway_mac_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_MAC] + of_object_extra_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_MAC];
+
+    if ((obj = (of_bsn_tlv_external_gateway_mac_t *)of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_external_gateway_mac_init(obj, version, bytes, 0);
+
+    if (of_bsn_tlv_external_gateway_mac_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_external_gateway_mac.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_external_gateway_mac_init(of_bsn_tlv_external_gateway_mac_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_MAC] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_MAC] + of_object_extra_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_MAC];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_EXTERNAL_GATEWAY_MAC;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Get value from an object of type of_bsn_tlv_external_gateway_mac.
+ * @param obj Pointer to an object of type of_bsn_tlv_external_gateway_mac.
+ * @param value Pointer to the child object of type
+ * of_mac_addr_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_external_gateway_mac_value_get(
+    of_bsn_tlv_external_gateway_mac_t *obj,
+    of_mac_addr_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_mac_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_external_gateway_mac.
+ * @param obj Pointer to an object of type of_bsn_tlv_external_gateway_mac.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_external_gateway_mac_value_set(
+    of_bsn_tlv_external_gateway_mac_t *obj,
+    of_mac_addr_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_mac_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
 of_bsn_tlv_external_ip_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -15020,225 +15242,6 @@ of_bsn_tlv_external_mac_value_set(
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
     of_wire_buffer_mac_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x19); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_external_netmask of_bsn_tlv_external_netmask
- */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_tlv_external_netmask_push_wire_values(of_bsn_tlv_external_netmask_t *obj)
-{
-
-    of_bsn_tlv_external_netmask_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * Create a new of_bsn_tlv_external_netmask object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_external_netmask
- */
-
-of_bsn_tlv_external_netmask_t *
-of_bsn_tlv_external_netmask_new(of_version_t version)
-{
-    of_bsn_tlv_external_netmask_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_NETMASK] + of_object_extra_len[version][OF_BSN_TLV_EXTERNAL_NETMASK];
-
-    if ((obj = (of_bsn_tlv_external_netmask_t *)of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_external_netmask_init(obj, version, bytes, 0);
-
-    if (of_bsn_tlv_external_netmask_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_external_netmask.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_external_netmask_init(of_bsn_tlv_external_netmask_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_NETMASK] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_NETMASK] + of_object_extra_len[version][OF_BSN_TLV_EXTERNAL_NETMASK];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_EXTERNAL_NETMASK;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-
-/**
- * Get value from an object of type of_bsn_tlv_external_netmask.
- * @param obj Pointer to an object of type of_bsn_tlv_external_netmask.
- * @param value Pointer to the child object of type
- * of_ipv4_t to be filled out.
- *
- */
-void
-of_bsn_tlv_external_netmask_value_get(
-    of_bsn_tlv_external_netmask_t *obj,
-    of_ipv4_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_NETMASK);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_ipv4_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_external_netmask.
- * @param obj Pointer to an object of type of_bsn_tlv_external_netmask.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_external_netmask_value_set(
-    of_bsn_tlv_external_netmask_t *obj,
-    of_ipv4_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_NETMASK);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_ipv4_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

@@ -59,6 +59,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvExternalGatewayIp not supported in version 1.1");
     }
 
+    public OFBsnTlvExternalGatewayMac.Builder buildExternalGatewayMac() {
+        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayMac not supported in version 1.1");
+    }
+    public OFBsnTlvExternalGatewayMac externalGatewayMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvExternalGatewayMac not supported in version 1.1");
+    }
+
     public OFBsnTlvExternalIp.Builder buildExternalIp() {
         throw new UnsupportedOperationException("OFBsnTlvExternalIp not supported in version 1.1");
     }

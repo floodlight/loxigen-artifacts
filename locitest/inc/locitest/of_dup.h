@@ -1070,6 +1070,10 @@ extern of_bsn_tlv_external_gateway_ip_t *
     of_bsn_tlv_external_gateway_ip_dup(
         of_bsn_tlv_external_gateway_ip_t *src);
 
+extern of_bsn_tlv_external_gateway_mac_t *
+    of_bsn_tlv_external_gateway_mac_dup(
+        of_bsn_tlv_external_gateway_mac_t *src);
+
 extern of_bsn_tlv_external_ip_t *
     of_bsn_tlv_external_ip_dup(
         of_bsn_tlv_external_ip_t *src);
@@ -5405,6 +5409,10 @@ extern of_bsn_tlv_crc_enabled_t *
 extern of_bsn_tlv_external_gateway_ip_t *
     of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
         of_bsn_tlv_external_gateway_ip_t *src);
+
+extern of_bsn_tlv_external_gateway_mac_t *
+    of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_external_gateway_mac_t *src);
 
 extern of_bsn_tlv_external_ip_t *
     of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(

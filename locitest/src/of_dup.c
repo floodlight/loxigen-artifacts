@@ -29159,6 +29159,11 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             &src->idle_timeout);
     }
 
+    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(
+            &src->external_gateway_mac);
+    }
+
     return NULL;
 }
 
@@ -29258,6 +29263,31 @@ of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_external_gateway_ip_value_get(src, &ipv4);
     of_bsn_tlv_external_gateway_ip_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_external_gateway_mac
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_external_gateway_mac.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_external_gateway_mac_t *
+of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(
+    of_bsn_tlv_external_gateway_mac_t *src)
+{
+    of_bsn_tlv_external_gateway_mac_t *dst;
+    of_mac_addr_t mac_addr;
+
+    if ((dst = of_bsn_tlv_external_gateway_mac_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_external_gateway_mac_value_get(src, &mac_addr);
+    of_bsn_tlv_external_gateway_mac_value_set(dst, mac_addr);
 
     return dst;
 }
@@ -42885,6 +42915,19 @@ of_bsn_tlv_external_gateway_ip_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_external_gateway_mac_t *
+of_bsn_tlv_external_gateway_mac_dup(
+    of_bsn_tlv_external_gateway_mac_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

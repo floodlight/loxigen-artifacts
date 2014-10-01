@@ -67,6 +67,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvExternalGatewayMac.Builder buildExternalGatewayMac() {
+        return new OFBsnTlvExternalGatewayMacVer13.Builder();
+    }
+    public OFBsnTlvExternalGatewayMac externalGatewayMac(MacAddress value) {
+        return new OFBsnTlvExternalGatewayMacVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvExternalIp.Builder buildExternalIp() {
         return new OFBsnTlvExternalIpVer13.Builder();
     }

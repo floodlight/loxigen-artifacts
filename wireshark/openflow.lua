@@ -5826,6 +5826,9 @@ fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_en
 fields['of13.bsn_tlv_external_gateway_ip.type'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_ip.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_external_gateway_ip.length'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_ip.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_external_gateway_ip.value'] = ProtoField.ipv4("of13.bsn_tlv_external_gateway_ip.value", "value")
+fields['of13.bsn_tlv_external_gateway_mac.type'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_mac.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_external_gateway_mac.length'] = ProtoField.uint16("of13.bsn_tlv_external_gateway_mac.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_external_gateway_mac.value'] = ProtoField.ether("of13.bsn_tlv_external_gateway_mac.value", "value")
 fields['of13.bsn_tlv_external_ip.type'] = ProtoField.uint16("of13.bsn_tlv_external_ip.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_external_ip.length'] = ProtoField.uint16("of13.bsn_tlv_external_ip.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_external_ip.value'] = ProtoField.ipv4("of13.bsn_tlv_external_ip.value", "value")
@@ -11123,6 +11126,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_external_gateway_ip.type'],
     fields['of13.bsn_tlv_external_gateway_ip.length'],
     fields['of13.bsn_tlv_external_gateway_ip.value'],
+    fields['of13.bsn_tlv_external_gateway_mac.type'],
+    fields['of13.bsn_tlv_external_gateway_mac.length'],
+    fields['of13.bsn_tlv_external_gateway_mac.value'],
     fields['of13.bsn_tlv_external_ip.type'],
     fields['of13.bsn_tlv_external_ip.length'],
     fields['of13.bsn_tlv_external_ip.value'],
@@ -21464,6 +21470,16 @@ function dissect_of_bsn_tlv_external_gateway_ip_v4(reader, subtree)
     return 'of_bsn_tlv_external_gateway_ip'
 end
 of_bsn_tlv_v4_dissectors[26] = dissect_of_bsn_tlv_external_gateway_ip_v4
+
+-- child class of_bsn_tlv_external_gateway_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_external_gateway_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_gateway_mac.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_external_gateway_mac.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_external_gateway_mac.value')
+    return 'of_bsn_tlv_external_gateway_mac'
+end
+of_bsn_tlv_v4_dissectors[29] = dissect_of_bsn_tlv_external_gateway_mac_v4
 
 -- child class of_bsn_tlv_external_ip
 -- Child of of_bsn_tlv
