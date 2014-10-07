@@ -1066,6 +1066,14 @@ extern of_bsn_tlv_crc_enabled_t *
     of_bsn_tlv_crc_enabled_dup(
         of_bsn_tlv_crc_enabled_t *src);
 
+extern of_bsn_tlv_eth_dst_t *
+    of_bsn_tlv_eth_dst_dup(
+        of_bsn_tlv_eth_dst_t *src);
+
+extern of_bsn_tlv_eth_src_t *
+    of_bsn_tlv_eth_src_dup(
+        of_bsn_tlv_eth_src_t *src);
+
 extern of_bsn_tlv_external_gateway_ip_t *
     of_bsn_tlv_external_gateway_ip_dup(
         of_bsn_tlv_external_gateway_ip_t *src);
@@ -1090,6 +1098,10 @@ extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_dup(
         of_bsn_tlv_header_t *src);
 
+extern of_bsn_tlv_header_size_t *
+    of_bsn_tlv_header_size_dup(
+        of_bsn_tlv_header_size_t *src);
+
 extern of_bsn_tlv_idle_notification_t *
     of_bsn_tlv_idle_notification_dup(
         of_bsn_tlv_idle_notification_t *src);
@@ -1113,6 +1125,14 @@ extern of_bsn_tlv_internal_mac_t *
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_dup(
         of_bsn_tlv_ipv4_t *src);
+
+extern of_bsn_tlv_ipv4_dst_t *
+    of_bsn_tlv_ipv4_dst_dup(
+        of_bsn_tlv_ipv4_dst_t *src);
+
+extern of_bsn_tlv_ipv4_src_t *
+    of_bsn_tlv_ipv4_src_dup(
+        of_bsn_tlv_ipv4_src_t *src);
 
 extern of_bsn_tlv_mac_t *
     of_bsn_tlv_mac_dup(
@@ -1146,6 +1166,18 @@ extern of_bsn_tlv_rx_packets_t *
     of_bsn_tlv_rx_packets_dup(
         of_bsn_tlv_rx_packets_t *src);
 
+extern of_bsn_tlv_sampling_rate_t *
+    of_bsn_tlv_sampling_rate_dup(
+        of_bsn_tlv_sampling_rate_t *src);
+
+extern of_bsn_tlv_sub_agent_id_t *
+    of_bsn_tlv_sub_agent_id_dup(
+        of_bsn_tlv_sub_agent_id_t *src);
+
+extern of_bsn_tlv_tx_bytes_t *
+    of_bsn_tlv_tx_bytes_dup(
+        of_bsn_tlv_tx_bytes_t *src);
+
 extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_dup(
         of_bsn_tlv_tx_packets_t *src);
@@ -1165,6 +1197,14 @@ extern of_bsn_tlv_udf_length_t *
 extern of_bsn_tlv_udf_offset_t *
     of_bsn_tlv_udf_offset_dup(
         of_bsn_tlv_udf_offset_t *src);
+
+extern of_bsn_tlv_udp_dst_t *
+    of_bsn_tlv_udp_dst_dup(
+        of_bsn_tlv_udp_dst_t *src);
+
+extern of_bsn_tlv_udp_src_t *
+    of_bsn_tlv_udp_src_dup(
+        of_bsn_tlv_udp_src_t *src);
 
 extern of_bsn_tlv_unicast_query_timeout_t *
     of_bsn_tlv_unicast_query_timeout_dup(
@@ -5406,6 +5446,14 @@ extern of_bsn_tlv_crc_enabled_t *
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
         of_bsn_tlv_crc_enabled_t *src);
 
+extern of_bsn_tlv_eth_dst_t *
+    of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(
+        of_bsn_tlv_eth_dst_t *src);
+
+extern of_bsn_tlv_eth_src_t *
+    of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(
+        of_bsn_tlv_eth_src_t *src);
+
 extern of_bsn_tlv_external_gateway_ip_t *
     of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
         of_bsn_tlv_external_gateway_ip_t *src);
@@ -5430,6 +5478,10 @@ extern of_bsn_tlv_header_t *
     of_bsn_tlv_header_OF_VERSION_1_3_dup(
         of_bsn_tlv_header_t *src);
 
+extern of_bsn_tlv_header_size_t *
+    of_bsn_tlv_header_size_OF_VERSION_1_3_dup(
+        of_bsn_tlv_header_size_t *src);
+
 extern of_bsn_tlv_idle_notification_t *
     of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
         of_bsn_tlv_idle_notification_t *src);
@@ -5453,6 +5505,14 @@ extern of_bsn_tlv_internal_mac_t *
 extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
         of_bsn_tlv_ipv4_t *src);
+
+extern of_bsn_tlv_ipv4_dst_t *
+    of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(
+        of_bsn_tlv_ipv4_dst_t *src);
+
+extern of_bsn_tlv_ipv4_src_t *
+    of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(
+        of_bsn_tlv_ipv4_src_t *src);
 
 extern of_bsn_tlv_mac_t *
     of_bsn_tlv_mac_OF_VERSION_1_3_dup(
@@ -5486,6 +5546,18 @@ extern of_bsn_tlv_rx_packets_t *
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
         of_bsn_tlv_rx_packets_t *src);
 
+extern of_bsn_tlv_sampling_rate_t *
+    of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(
+        of_bsn_tlv_sampling_rate_t *src);
+
+extern of_bsn_tlv_sub_agent_id_t *
+    of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(
+        of_bsn_tlv_sub_agent_id_t *src);
+
+extern of_bsn_tlv_tx_bytes_t *
+    of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(
+        of_bsn_tlv_tx_bytes_t *src);
+
 extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
         of_bsn_tlv_tx_packets_t *src);
@@ -5505,6 +5577,14 @@ extern of_bsn_tlv_udf_length_t *
 extern of_bsn_tlv_udf_offset_t *
     of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(
         of_bsn_tlv_udf_offset_t *src);
+
+extern of_bsn_tlv_udp_dst_t *
+    of_bsn_tlv_udp_dst_OF_VERSION_1_3_dup(
+        of_bsn_tlv_udp_dst_t *src);
+
+extern of_bsn_tlv_udp_src_t *
+    of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(
+        of_bsn_tlv_udp_src_t *src);
 
 extern of_bsn_tlv_unicast_query_timeout_t *
     of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(

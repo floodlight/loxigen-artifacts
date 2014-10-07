@@ -33,6 +33,10 @@ public interface OFBsnTlvs {
     OFBsnTlvCircuitId circuitId(byte[] value);
     OFBsnTlvCrcEnabled.Builder buildCrcEnabled() throws UnsupportedOperationException;
     OFBsnTlvCrcEnabled crcEnabled(short value);
+    OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
+    OFBsnTlvEthDst ethDst(MacAddress value);
+    OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;
+    OFBsnTlvEthSrc ethSrc(MacAddress value);
     OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() throws UnsupportedOperationException;
     OFBsnTlvExternalGatewayIp externalGatewayIp(IPv4Address value);
     OFBsnTlvExternalGatewayMac.Builder buildExternalGatewayMac() throws UnsupportedOperationException;
@@ -43,6 +47,8 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalMac externalMac(MacAddress value);
     OFBsnTlvExternalNetmask.Builder buildExternalNetmask() throws UnsupportedOperationException;
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
+    OFBsnTlvHeaderSize.Builder buildHeaderSize() throws UnsupportedOperationException;
+    OFBsnTlvHeaderSize headerSize(long value);
     OFBsnTlvIdleNotification idleNotification();
     OFBsnTlvIdleTime.Builder buildIdleTime() throws UnsupportedOperationException;
     OFBsnTlvIdleTime idleTime(U64 value);
@@ -54,6 +60,10 @@ public interface OFBsnTlvs {
     OFBsnTlvInternalMac internalMac(MacAddress value);
     OFBsnTlvIpv4.Builder buildIpv4() throws UnsupportedOperationException;
     OFBsnTlvIpv4 ipv4(IPv4Address value);
+    OFBsnTlvIpv4Dst.Builder buildIpv4Dst() throws UnsupportedOperationException;
+    OFBsnTlvIpv4Dst ipv4Dst(IPv4Address value);
+    OFBsnTlvIpv4Src.Builder buildIpv4Src() throws UnsupportedOperationException;
+    OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
@@ -70,6 +80,12 @@ public interface OFBsnTlvs {
     OFBsnTlvRequestPackets requestPackets(U64 value);
     OFBsnTlvRxPackets.Builder buildRxPackets() throws UnsupportedOperationException;
     OFBsnTlvRxPackets rxPackets(U64 value);
+    OFBsnTlvSamplingRate.Builder buildSamplingRate() throws UnsupportedOperationException;
+    OFBsnTlvSamplingRate samplingRate(long value);
+    OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
+    OFBsnTlvSubAgentId subAgentId(long value);
+    OFBsnTlvTxBytes.Builder buildTxBytes() throws UnsupportedOperationException;
+    OFBsnTlvTxBytes txBytes(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;
     OFBsnTlvTxPackets txPackets(U64 value);
     OFBsnTlvUdfAnchor.Builder buildUdfAnchor() throws UnsupportedOperationException;
@@ -80,6 +96,10 @@ public interface OFBsnTlvs {
     OFBsnTlvUdfLength udfLength(int value);
     OFBsnTlvUdfOffset.Builder buildUdfOffset() throws UnsupportedOperationException;
     OFBsnTlvUdfOffset udfOffset(int value);
+    OFBsnTlvUdpDst.Builder buildUdpDst() throws UnsupportedOperationException;
+    OFBsnTlvUdpDst udpDst(int value);
+    OFBsnTlvUdpSrc.Builder buildUdpSrc() throws UnsupportedOperationException;
+    OFBsnTlvUdpSrc udpSrc(int value);
     OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;

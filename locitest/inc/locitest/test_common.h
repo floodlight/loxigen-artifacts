@@ -7160,6 +7160,24 @@ extern int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_crc_enabled_t *obj, int value);
 
+extern int of_bsn_tlv_eth_dst_OF_VERSION_1_3_populate(
+    of_bsn_tlv_eth_dst_t *obj, int value);
+extern int of_bsn_tlv_eth_dst_OF_VERSION_1_3_check(
+    of_bsn_tlv_eth_dst_t *obj, int value);
+extern int of_bsn_tlv_eth_dst_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_eth_dst_t *obj, int value);
+extern int of_bsn_tlv_eth_dst_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_eth_dst_t *obj, int value);
+
+extern int of_bsn_tlv_eth_src_OF_VERSION_1_3_populate(
+    of_bsn_tlv_eth_src_t *obj, int value);
+extern int of_bsn_tlv_eth_src_OF_VERSION_1_3_check(
+    of_bsn_tlv_eth_src_t *obj, int value);
+extern int of_bsn_tlv_eth_src_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_eth_src_t *obj, int value);
+extern int of_bsn_tlv_eth_src_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_eth_src_t *obj, int value);
+
 extern int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_populate(
     of_bsn_tlv_external_gateway_ip_t *obj, int value);
 extern int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_check(
@@ -7214,6 +7232,15 @@ extern int of_bsn_tlv_header_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_header_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_header_t *obj, int value);
 
+extern int of_bsn_tlv_header_size_OF_VERSION_1_3_populate(
+    of_bsn_tlv_header_size_t *obj, int value);
+extern int of_bsn_tlv_header_size_OF_VERSION_1_3_check(
+    of_bsn_tlv_header_size_t *obj, int value);
+extern int of_bsn_tlv_header_size_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_header_size_t *obj, int value);
+extern int of_bsn_tlv_header_size_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_header_size_t *obj, int value);
+
 extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_populate(
     of_bsn_tlv_idle_notification_t *obj, int value);
 extern int of_bsn_tlv_idle_notification_OF_VERSION_1_3_check(
@@ -7267,6 +7294,24 @@ extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_ipv4_t *obj, int value);
 extern int of_bsn_tlv_ipv4_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_ipv4_t *obj, int value);
+
+extern int of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_populate(
+    of_bsn_tlv_ipv4_dst_t *obj, int value);
+extern int of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_check(
+    of_bsn_tlv_ipv4_dst_t *obj, int value);
+extern int of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_ipv4_dst_t *obj, int value);
+extern int of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_ipv4_dst_t *obj, int value);
+
+extern int of_bsn_tlv_ipv4_src_OF_VERSION_1_3_populate(
+    of_bsn_tlv_ipv4_src_t *obj, int value);
+extern int of_bsn_tlv_ipv4_src_OF_VERSION_1_3_check(
+    of_bsn_tlv_ipv4_src_t *obj, int value);
+extern int of_bsn_tlv_ipv4_src_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_ipv4_src_t *obj, int value);
+extern int of_bsn_tlv_ipv4_src_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_ipv4_src_t *obj, int value);
 
 extern int of_bsn_tlv_mac_OF_VERSION_1_3_populate(
     of_bsn_tlv_mac_t *obj, int value);
@@ -7340,6 +7385,33 @@ extern int of_bsn_tlv_rx_packets_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_rx_packets_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_rx_packets_t *obj, int value);
 
+extern int of_bsn_tlv_sampling_rate_OF_VERSION_1_3_populate(
+    of_bsn_tlv_sampling_rate_t *obj, int value);
+extern int of_bsn_tlv_sampling_rate_OF_VERSION_1_3_check(
+    of_bsn_tlv_sampling_rate_t *obj, int value);
+extern int of_bsn_tlv_sampling_rate_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_sampling_rate_t *obj, int value);
+extern int of_bsn_tlv_sampling_rate_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_sampling_rate_t *obj, int value);
+
+extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_populate(
+    of_bsn_tlv_sub_agent_id_t *obj, int value);
+extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_check(
+    of_bsn_tlv_sub_agent_id_t *obj, int value);
+extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_sub_agent_id_t *obj, int value);
+extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_sub_agent_id_t *obj, int value);
+
+extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_populate(
+    of_bsn_tlv_tx_bytes_t *obj, int value);
+extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_check(
+    of_bsn_tlv_tx_bytes_t *obj, int value);
+extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_tx_bytes_t *obj, int value);
+extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_tx_bytes_t *obj, int value);
+
 extern int of_bsn_tlv_tx_packets_OF_VERSION_1_3_populate(
     of_bsn_tlv_tx_packets_t *obj, int value);
 extern int of_bsn_tlv_tx_packets_OF_VERSION_1_3_check(
@@ -7384,6 +7456,24 @@ extern int of_bsn_tlv_udf_offset_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_udf_offset_t *obj, int value);
 extern int of_bsn_tlv_udf_offset_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_udf_offset_t *obj, int value);
+
+extern int of_bsn_tlv_udp_dst_OF_VERSION_1_3_populate(
+    of_bsn_tlv_udp_dst_t *obj, int value);
+extern int of_bsn_tlv_udp_dst_OF_VERSION_1_3_check(
+    of_bsn_tlv_udp_dst_t *obj, int value);
+extern int of_bsn_tlv_udp_dst_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_udp_dst_t *obj, int value);
+extern int of_bsn_tlv_udp_dst_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_udp_dst_t *obj, int value);
+
+extern int of_bsn_tlv_udp_src_OF_VERSION_1_3_populate(
+    of_bsn_tlv_udp_src_t *obj, int value);
+extern int of_bsn_tlv_udp_src_OF_VERSION_1_3_check(
+    of_bsn_tlv_udp_src_t *obj, int value);
+extern int of_bsn_tlv_udp_src_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_udp_src_t *obj, int value);
+extern int of_bsn_tlv_udp_src_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_udp_src_t *obj, int value);
 
 extern int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_populate(
     of_bsn_tlv_unicast_query_timeout_t *obj, int value);

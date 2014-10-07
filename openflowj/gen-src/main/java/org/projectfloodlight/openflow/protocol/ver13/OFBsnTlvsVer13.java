@@ -58,6 +58,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvEthDst.Builder buildEthDst() {
+        return new OFBsnTlvEthDstVer13.Builder();
+    }
+    public OFBsnTlvEthDst ethDst(MacAddress value) {
+        return new OFBsnTlvEthDstVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvEthSrc.Builder buildEthSrc() {
+        return new OFBsnTlvEthSrcVer13.Builder();
+    }
+    public OFBsnTlvEthSrc ethSrc(MacAddress value) {
+        return new OFBsnTlvEthSrcVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
         return new OFBsnTlvExternalGatewayIpVer13.Builder();
     }
@@ -99,6 +117,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
         return new OFBsnTlvExternalNetmaskVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
+        return new OFBsnTlvHeaderSizeVer13.Builder();
+    }
+    public OFBsnTlvHeaderSize headerSize(long value) {
+        return new OFBsnTlvHeaderSizeVer13(
                 value
                     );
     }
@@ -148,6 +175,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvIpv4 ipv4(IPv4Address value) {
         return new OFBsnTlvIpv4Ver13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIpv4Dst.Builder buildIpv4Dst() {
+        return new OFBsnTlvIpv4DstVer13.Builder();
+    }
+    public OFBsnTlvIpv4Dst ipv4Dst(IPv4Address value) {
+        return new OFBsnTlvIpv4DstVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIpv4Src.Builder buildIpv4Src() {
+        return new OFBsnTlvIpv4SrcVer13.Builder();
+    }
+    public OFBsnTlvIpv4Src ipv4Src(IPv4Address value) {
+        return new OFBsnTlvIpv4SrcVer13(
                 value
                     );
     }
@@ -224,6 +269,33 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvSamplingRate.Builder buildSamplingRate() {
+        return new OFBsnTlvSamplingRateVer13.Builder();
+    }
+    public OFBsnTlvSamplingRate samplingRate(long value) {
+        return new OFBsnTlvSamplingRateVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvSubAgentId.Builder buildSubAgentId() {
+        return new OFBsnTlvSubAgentIdVer13.Builder();
+    }
+    public OFBsnTlvSubAgentId subAgentId(long value) {
+        return new OFBsnTlvSubAgentIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvTxBytes.Builder buildTxBytes() {
+        return new OFBsnTlvTxBytesVer13.Builder();
+    }
+    public OFBsnTlvTxBytes txBytes(U64 value) {
+        return new OFBsnTlvTxBytesVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvTxPackets.Builder buildTxPackets() {
         return new OFBsnTlvTxPacketsVer13.Builder();
     }
@@ -265,6 +337,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvUdfOffset udfOffset(int value) {
         return new OFBsnTlvUdfOffsetVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvUdpDst.Builder buildUdpDst() {
+        return new OFBsnTlvUdpDstVer13.Builder();
+    }
+    public OFBsnTlvUdpDst udpDst(int value) {
+        return new OFBsnTlvUdpDstVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvUdpSrc.Builder buildUdpSrc() {
+        return new OFBsnTlvUdpSrcVer13.Builder();
+    }
+    public OFBsnTlvUdpSrc udpSrc(int value) {
+        return new OFBsnTlvUdpSrcVer13(
                 value
                     );
     }

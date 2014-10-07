@@ -765,6 +765,10 @@ void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_eth_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_eth_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_gateway_ip_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_external_gateway_ip_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_gateway_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -775,6 +779,8 @@ void of_bsn_tlv_external_mac_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_external_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_header_size_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_header_size_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_notification_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_time_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -787,6 +793,10 @@ void of_bsn_tlv_internal_mac_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_internal_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ipv4_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ipv4_dst_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -803,6 +813,12 @@ void of_bsn_tlv_request_packets_wire_object_id_get(of_object_t *obj, of_object_i
 void of_bsn_tlv_request_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rx_packets_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_sampling_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_sampling_rate_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_sub_agent_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_sub_agent_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_tx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_tx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tx_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_udf_anchor_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -813,6 +829,10 @@ void of_bsn_tlv_udf_length_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_udf_length_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_udf_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_udf_offset_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_udp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udp_dst_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_udp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_udp_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_unicast_query_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_unicast_query_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1265,18 +1285,23 @@ typedef of_object_t of_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
+typedef of_object_t of_bsn_tlv_eth_dst_t;
+typedef of_object_t of_bsn_tlv_eth_src_t;
 typedef of_object_t of_bsn_tlv_external_gateway_ip_t;
 typedef of_object_t of_bsn_tlv_external_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_header_t;
+typedef of_object_t of_bsn_tlv_header_size_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
 typedef of_object_t of_bsn_tlv_idle_timeout_t;
 typedef of_object_t of_bsn_tlv_internal_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_internal_mac_t;
 typedef of_object_t of_bsn_tlv_ipv4_t;
+typedef of_object_t of_bsn_tlv_ipv4_dst_t;
+typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_port_t;
@@ -1285,11 +1310,16 @@ typedef of_object_t of_bsn_tlv_queue_weight_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
+typedef of_object_t of_bsn_tlv_sampling_rate_t;
+typedef of_object_t of_bsn_tlv_sub_agent_id_t;
+typedef of_object_t of_bsn_tlv_tx_bytes_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
 typedef of_object_t of_bsn_tlv_udf_anchor_t;
 typedef of_object_t of_bsn_tlv_udf_id_t;
 typedef of_object_t of_bsn_tlv_udf_length_t;
 typedef of_object_t of_bsn_tlv_udf_offset_t;
+typedef of_object_t of_bsn_tlv_udp_dst_t;
+typedef of_object_t of_bsn_tlv_udp_src_t;
 typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
@@ -2878,6 +2908,16 @@ extern of_bsn_tlv_crc_enabled_t *
 extern void of_bsn_tlv_crc_enabled_init(
     of_bsn_tlv_crc_enabled_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_eth_dst_t *
+    of_bsn_tlv_eth_dst_new(of_version_t version);
+extern void of_bsn_tlv_eth_dst_init(
+    of_bsn_tlv_eth_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_eth_src_t *
+    of_bsn_tlv_eth_src_new(of_version_t version);
+extern void of_bsn_tlv_eth_src_init(
+    of_bsn_tlv_eth_src_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_external_gateway_ip_t *
     of_bsn_tlv_external_gateway_ip_new(of_version_t version);
 extern void of_bsn_tlv_external_gateway_ip_init(
@@ -2908,6 +2948,11 @@ extern of_bsn_tlv_header_t *
 extern void of_bsn_tlv_header_init(
     of_bsn_tlv_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_header_size_t *
+    of_bsn_tlv_header_size_new(of_version_t version);
+extern void of_bsn_tlv_header_size_init(
+    of_bsn_tlv_header_size_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_idle_notification_t *
     of_bsn_tlv_idle_notification_new(of_version_t version);
 extern void of_bsn_tlv_idle_notification_init(
@@ -2937,6 +2982,16 @@ extern of_bsn_tlv_ipv4_t *
     of_bsn_tlv_ipv4_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_init(
     of_bsn_tlv_ipv4_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_ipv4_dst_t *
+    of_bsn_tlv_ipv4_dst_new(of_version_t version);
+extern void of_bsn_tlv_ipv4_dst_init(
+    of_bsn_tlv_ipv4_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_ipv4_src_t *
+    of_bsn_tlv_ipv4_src_new(of_version_t version);
+extern void of_bsn_tlv_ipv4_src_init(
+    of_bsn_tlv_ipv4_src_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_mac_t *
     of_bsn_tlv_mac_new(of_version_t version);
@@ -2978,6 +3033,21 @@ extern of_bsn_tlv_rx_packets_t *
 extern void of_bsn_tlv_rx_packets_init(
     of_bsn_tlv_rx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_sampling_rate_t *
+    of_bsn_tlv_sampling_rate_new(of_version_t version);
+extern void of_bsn_tlv_sampling_rate_init(
+    of_bsn_tlv_sampling_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_sub_agent_id_t *
+    of_bsn_tlv_sub_agent_id_new(of_version_t version);
+extern void of_bsn_tlv_sub_agent_id_init(
+    of_bsn_tlv_sub_agent_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_tx_bytes_t *
+    of_bsn_tlv_tx_bytes_new(of_version_t version);
+extern void of_bsn_tlv_tx_bytes_init(
+    of_bsn_tlv_tx_bytes_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_tx_packets_t *
     of_bsn_tlv_tx_packets_new(of_version_t version);
 extern void of_bsn_tlv_tx_packets_init(
@@ -3002,6 +3072,16 @@ extern of_bsn_tlv_udf_offset_t *
     of_bsn_tlv_udf_offset_new(of_version_t version);
 extern void of_bsn_tlv_udf_offset_init(
     of_bsn_tlv_udf_offset_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_udp_dst_t *
+    of_bsn_tlv_udp_dst_new(of_version_t version);
+extern void of_bsn_tlv_udp_dst_init(
+    of_bsn_tlv_udp_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_udp_src_t *
+    of_bsn_tlv_udp_src_new(of_version_t version);
+extern void of_bsn_tlv_udp_src_init(
+    of_bsn_tlv_udp_src_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_unicast_query_timeout_t *
     of_bsn_tlv_unicast_query_timeout_new(of_version_t version);
@@ -7189,6 +7269,28 @@ of_bsn_tlv_crc_enabled_delete(of_bsn_tlv_crc_enabled_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_eth_dst_t
+ * @param obj An instance of type of_bsn_tlv_eth_dst_t
+ *
+ * \ingroup of_bsn_tlv_eth_dst
+ */
+static inline void
+of_bsn_tlv_eth_dst_delete(of_bsn_tlv_eth_dst_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_eth_src_t
+ * @param obj An instance of type of_bsn_tlv_eth_src_t
+ *
+ * \ingroup of_bsn_tlv_eth_src
+ */
+static inline void
+of_bsn_tlv_eth_src_delete(of_bsn_tlv_eth_src_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_external_gateway_ip_t
  * @param obj An instance of type of_bsn_tlv_external_gateway_ip_t
  *
@@ -7255,6 +7357,17 @@ of_bsn_tlv_header_delete(of_bsn_tlv_header_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_header_size_t
+ * @param obj An instance of type of_bsn_tlv_header_size_t
+ *
+ * \ingroup of_bsn_tlv_header_size
+ */
+static inline void
+of_bsn_tlv_header_size_delete(of_bsn_tlv_header_size_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_idle_notification_t
  * @param obj An instance of type of_bsn_tlv_idle_notification_t
  *
@@ -7317,6 +7430,28 @@ of_bsn_tlv_internal_mac_delete(of_bsn_tlv_internal_mac_t *obj) {
  */
 static inline void
 of_bsn_tlv_ipv4_delete(of_bsn_tlv_ipv4_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ipv4_dst_t
+ * @param obj An instance of type of_bsn_tlv_ipv4_dst_t
+ *
+ * \ingroup of_bsn_tlv_ipv4_dst
+ */
+static inline void
+of_bsn_tlv_ipv4_dst_delete(of_bsn_tlv_ipv4_dst_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ipv4_src_t
+ * @param obj An instance of type of_bsn_tlv_ipv4_src_t
+ *
+ * \ingroup of_bsn_tlv_ipv4_src
+ */
+static inline void
+of_bsn_tlv_ipv4_src_delete(of_bsn_tlv_ipv4_src_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -7409,6 +7544,39 @@ of_bsn_tlv_rx_packets_delete(of_bsn_tlv_rx_packets_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_sampling_rate_t
+ * @param obj An instance of type of_bsn_tlv_sampling_rate_t
+ *
+ * \ingroup of_bsn_tlv_sampling_rate
+ */
+static inline void
+of_bsn_tlv_sampling_rate_delete(of_bsn_tlv_sampling_rate_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_sub_agent_id_t
+ * @param obj An instance of type of_bsn_tlv_sub_agent_id_t
+ *
+ * \ingroup of_bsn_tlv_sub_agent_id
+ */
+static inline void
+of_bsn_tlv_sub_agent_id_delete(of_bsn_tlv_sub_agent_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_tx_bytes_t
+ * @param obj An instance of type of_bsn_tlv_tx_bytes_t
+ *
+ * \ingroup of_bsn_tlv_tx_bytes
+ */
+static inline void
+of_bsn_tlv_tx_bytes_delete(of_bsn_tlv_tx_bytes_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_tx_packets_t
  * @param obj An instance of type of_bsn_tlv_tx_packets_t
  *
@@ -7460,6 +7628,28 @@ of_bsn_tlv_udf_length_delete(of_bsn_tlv_udf_length_t *obj) {
  */
 static inline void
 of_bsn_tlv_udf_offset_delete(of_bsn_tlv_udf_offset_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_udp_dst_t
+ * @param obj An instance of type of_bsn_tlv_udp_dst_t
+ *
+ * \ingroup of_bsn_tlv_udp_dst
+ */
+static inline void
+of_bsn_tlv_udp_dst_delete(of_bsn_tlv_udp_dst_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_udp_src_t
+ * @param obj An instance of type of_bsn_tlv_udp_src_t
+ *
+ * \ingroup of_bsn_tlv_udp_src
+ */
+static inline void
+of_bsn_tlv_udp_src_delete(of_bsn_tlv_udp_src_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17527,6 +17717,24 @@ extern void of_bsn_tlv_crc_enabled_value_get(
     of_bsn_tlv_crc_enabled_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_eth_dst */
+
+extern void of_bsn_tlv_eth_dst_value_set(
+    of_bsn_tlv_eth_dst_t *obj,
+    of_mac_addr_t value);
+extern void of_bsn_tlv_eth_dst_value_get(
+    of_bsn_tlv_eth_dst_t *obj,
+    of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_eth_src */
+
+extern void of_bsn_tlv_eth_src_value_set(
+    of_bsn_tlv_eth_src_t *obj,
+    of_mac_addr_t value);
+extern void of_bsn_tlv_eth_src_value_get(
+    of_bsn_tlv_eth_src_t *obj,
+    of_mac_addr_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_external_gateway_ip */
 
 extern void of_bsn_tlv_external_gateway_ip_value_set(
@@ -17574,6 +17782,15 @@ extern void of_bsn_tlv_external_netmask_value_get(
 
 /* Unified accessor functions for of_bsn_tlv_header */
 
+/* Unified accessor functions for of_bsn_tlv_header_size */
+
+extern void of_bsn_tlv_header_size_value_set(
+    of_bsn_tlv_header_size_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_header_size_value_get(
+    of_bsn_tlv_header_size_t *obj,
+    uint32_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_idle_notification */
 
 /* Unified accessor functions for of_bsn_tlv_idle_time */
@@ -17619,6 +17836,24 @@ extern void of_bsn_tlv_ipv4_value_set(
     of_ipv4_t value);
 extern void of_bsn_tlv_ipv4_value_get(
     of_bsn_tlv_ipv4_t *obj,
+    of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ipv4_dst */
+
+extern void of_bsn_tlv_ipv4_dst_value_set(
+    of_bsn_tlv_ipv4_dst_t *obj,
+    of_ipv4_t value);
+extern void of_bsn_tlv_ipv4_dst_value_get(
+    of_bsn_tlv_ipv4_dst_t *obj,
+    of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ipv4_src */
+
+extern void of_bsn_tlv_ipv4_src_value_set(
+    of_bsn_tlv_ipv4_src_t *obj,
+    of_ipv4_t value);
+extern void of_bsn_tlv_ipv4_src_value_get(
+    of_bsn_tlv_ipv4_src_t *obj,
     of_ipv4_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_mac */
@@ -17693,6 +17928,33 @@ extern void of_bsn_tlv_rx_packets_value_get(
     of_bsn_tlv_rx_packets_t *obj,
     uint64_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_sampling_rate */
+
+extern void of_bsn_tlv_sampling_rate_value_set(
+    of_bsn_tlv_sampling_rate_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_sampling_rate_value_get(
+    of_bsn_tlv_sampling_rate_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_sub_agent_id */
+
+extern void of_bsn_tlv_sub_agent_id_value_set(
+    of_bsn_tlv_sub_agent_id_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_sub_agent_id_value_get(
+    of_bsn_tlv_sub_agent_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_tx_bytes */
+
+extern void of_bsn_tlv_tx_bytes_value_set(
+    of_bsn_tlv_tx_bytes_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_tx_bytes_value_get(
+    of_bsn_tlv_tx_bytes_t *obj,
+    uint64_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_tx_packets */
 
 extern void of_bsn_tlv_tx_packets_value_set(
@@ -17736,6 +17998,24 @@ extern void of_bsn_tlv_udf_offset_value_set(
     uint16_t value);
 extern void of_bsn_tlv_udf_offset_value_get(
     of_bsn_tlv_udf_offset_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_udp_dst */
+
+extern void of_bsn_tlv_udp_dst_value_set(
+    of_bsn_tlv_udp_dst_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_udp_dst_value_get(
+    of_bsn_tlv_udp_dst_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_udp_src */
+
+extern void of_bsn_tlv_udp_src_value_set(
+    of_bsn_tlv_udp_src_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_udp_src_value_get(
+    of_bsn_tlv_udp_src_t *obj,
     uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_unicast_query_timeout */
@@ -22300,17 +22580,22 @@ union of_bsn_tlv_u {
     of_bsn_tlv_broadcast_query_timeout_t broadcast_query_timeout;
     of_bsn_tlv_circuit_id_t circuit_id;
     of_bsn_tlv_crc_enabled_t crc_enabled;
+    of_bsn_tlv_eth_dst_t eth_dst;
+    of_bsn_tlv_eth_src_t eth_src;
     of_bsn_tlv_external_gateway_ip_t external_gateway_ip;
     of_bsn_tlv_external_gateway_mac_t external_gateway_mac;
     of_bsn_tlv_external_ip_t external_ip;
     of_bsn_tlv_external_mac_t external_mac;
     of_bsn_tlv_external_netmask_t external_netmask;
+    of_bsn_tlv_header_size_t header_size;
     of_bsn_tlv_idle_notification_t idle_notification;
     of_bsn_tlv_idle_time_t idle_time;
     of_bsn_tlv_idle_timeout_t idle_timeout;
     of_bsn_tlv_internal_gateway_mac_t internal_gateway_mac;
     of_bsn_tlv_internal_mac_t internal_mac;
     of_bsn_tlv_ipv4_t ipv4;
+    of_bsn_tlv_ipv4_dst_t ipv4_dst;
+    of_bsn_tlv_ipv4_src_t ipv4_src;
     of_bsn_tlv_mac_t mac;
     of_bsn_tlv_miss_packets_t miss_packets;
     of_bsn_tlv_port_t port;
@@ -22319,11 +22604,16 @@ union of_bsn_tlv_u {
     of_bsn_tlv_reply_packets_t reply_packets;
     of_bsn_tlv_request_packets_t request_packets;
     of_bsn_tlv_rx_packets_t rx_packets;
+    of_bsn_tlv_sampling_rate_t sampling_rate;
+    of_bsn_tlv_sub_agent_id_t sub_agent_id;
+    of_bsn_tlv_tx_bytes_t tx_bytes;
     of_bsn_tlv_tx_packets_t tx_packets;
     of_bsn_tlv_udf_anchor_t udf_anchor;
     of_bsn_tlv_udf_id_t udf_id;
     of_bsn_tlv_udf_length_t udf_length;
     of_bsn_tlv_udf_offset_t udf_offset;
+    of_bsn_tlv_udp_dst_t udp_dst;
+    of_bsn_tlv_udp_src_t udp_src;
     of_bsn_tlv_unicast_query_timeout_t unicast_query_timeout;
     of_bsn_tlv_vlan_vid_t vlan_vid;
     of_bsn_tlv_vrf_t vrf;

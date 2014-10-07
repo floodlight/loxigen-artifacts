@@ -52,6 +52,20 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.0");
     }
 
+    public OFBsnTlvEthDst.Builder buildEthDst() {
+        throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.0");
+    }
+    public OFBsnTlvEthDst ethDst(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.0");
+    }
+
+    public OFBsnTlvEthSrc.Builder buildEthSrc() {
+        throw new UnsupportedOperationException("OFBsnTlvEthSrc not supported in version 1.0");
+    }
+    public OFBsnTlvEthSrc ethSrc(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvEthSrc not supported in version 1.0");
+    }
+
     public OFBsnTlvExternalGatewayIp.Builder buildExternalGatewayIp() {
         throw new UnsupportedOperationException("OFBsnTlvExternalGatewayIp not supported in version 1.0");
     }
@@ -85,6 +99,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
         throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.0");
+    }
+
+    public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
+        throw new UnsupportedOperationException("OFBsnTlvHeaderSize not supported in version 1.0");
+    }
+    public OFBsnTlvHeaderSize headerSize(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvHeaderSize not supported in version 1.0");
     }
 
     public OFBsnTlvIdleNotification idleNotification() {
@@ -124,6 +145,20 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvIpv4 ipv4(IPv4Address value) {
         throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.0");
+    }
+
+    public OFBsnTlvIpv4Dst.Builder buildIpv4Dst() {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4Dst not supported in version 1.0");
+    }
+    public OFBsnTlvIpv4Dst ipv4Dst(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4Dst not supported in version 1.0");
+    }
+
+    public OFBsnTlvIpv4Src.Builder buildIpv4Src() {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.0");
+    }
+    public OFBsnTlvIpv4Src ipv4Src(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.0");
     }
 
     public OFBsnTlvMac.Builder buildMac() {
@@ -182,6 +217,27 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.0");
     }
 
+    public OFBsnTlvSamplingRate.Builder buildSamplingRate() {
+        throw new UnsupportedOperationException("OFBsnTlvSamplingRate not supported in version 1.0");
+    }
+    public OFBsnTlvSamplingRate samplingRate(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvSamplingRate not supported in version 1.0");
+    }
+
+    public OFBsnTlvSubAgentId.Builder buildSubAgentId() {
+        throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.0");
+    }
+    public OFBsnTlvSubAgentId subAgentId(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.0");
+    }
+
+    public OFBsnTlvTxBytes.Builder buildTxBytes() {
+        throw new UnsupportedOperationException("OFBsnTlvTxBytes not supported in version 1.0");
+    }
+    public OFBsnTlvTxBytes txBytes(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvTxBytes not supported in version 1.0");
+    }
+
     public OFBsnTlvTxPackets.Builder buildTxPackets() {
         throw new UnsupportedOperationException("OFBsnTlvTxPackets not supported in version 1.0");
     }
@@ -215,6 +271,20 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvUdfOffset udfOffset(int value) {
         throw new UnsupportedOperationException("OFBsnTlvUdfOffset not supported in version 1.0");
+    }
+
+    public OFBsnTlvUdpDst.Builder buildUdpDst() {
+        throw new UnsupportedOperationException("OFBsnTlvUdpDst not supported in version 1.0");
+    }
+    public OFBsnTlvUdpDst udpDst(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdpDst not supported in version 1.0");
+    }
+
+    public OFBsnTlvUdpSrc.Builder buildUdpSrc() {
+        throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.0");
+    }
+    public OFBsnTlvUdpSrc udpSrc(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvUdpSrc not supported in version 1.0");
     }
 
     public OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() {
