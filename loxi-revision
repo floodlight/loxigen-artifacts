@@ -1,1 +1,1 @@
-7c85d69af77c5b3f18ea33b7e54f97e0537bf340 Merge into master from pull request #318: openflow_input: add TLVs for SFLOW gentables (https://github.com/floodlight/loxigen/pull/318)
+f2cc055aa7e8e8f946dc1216318c0c9d8b8f4f39 Merge into master from pull request #316: pyloxi: reduce boilerplate code required for each module (https://github.com/floodlight/loxigen/pull/316)
