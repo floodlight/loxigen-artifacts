@@ -1057,6 +1057,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmMplsBos.Builder buildMplsBos() {
+        return new OFOxmMplsBosVer13.Builder();
+    }
+    public OFOxmMplsBos mplsBos(OFBooleanValue value) {
+        return new OFOxmMplsBosVer13(
+                value
+                    );
+    }
+
+    public OFOxmMplsBosMasked.Builder buildMplsBosMasked() {
+        return new OFOxmMplsBosMaskedVer13.Builder();
+    }
+    public OFOxmMplsBosMasked mplsBosMasked(OFBooleanValue value, OFBooleanValue mask) {
+        return new OFOxmMplsBosMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmTunnelId.Builder buildTunnelId() {
         return new OFOxmTunnelIdVer13.Builder();
     }
@@ -1191,6 +1210,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
             default:
@@ -1309,6 +1330,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
             default:
@@ -1427,6 +1450,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
             default:

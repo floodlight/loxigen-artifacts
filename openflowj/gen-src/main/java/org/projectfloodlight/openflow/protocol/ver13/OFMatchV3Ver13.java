@@ -149,6 +149,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case IP_ECN:
             case IP_PROTO:
             case METADATA:
+            case MPLS_BOS:
             case MPLS_LABEL:
             case MPLS_TC:
             case SCTP_DST:

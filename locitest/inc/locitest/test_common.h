@@ -8852,6 +8852,24 @@ extern int of_oxm_metadata_masked_OF_VERSION_1_3_populate_scalars(
 extern int of_oxm_metadata_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_metadata_masked_t *obj, int value);
 
+extern int of_oxm_mpls_bos_OF_VERSION_1_3_populate(
+    of_oxm_mpls_bos_t *obj, int value);
+extern int of_oxm_mpls_bos_OF_VERSION_1_3_check(
+    of_oxm_mpls_bos_t *obj, int value);
+extern int of_oxm_mpls_bos_OF_VERSION_1_3_populate_scalars(
+    of_oxm_mpls_bos_t *obj, int value);
+extern int of_oxm_mpls_bos_OF_VERSION_1_3_check_scalars(
+    of_oxm_mpls_bos_t *obj, int value);
+
+extern int of_oxm_mpls_bos_masked_OF_VERSION_1_3_populate(
+    of_oxm_mpls_bos_masked_t *obj, int value);
+extern int of_oxm_mpls_bos_masked_OF_VERSION_1_3_check(
+    of_oxm_mpls_bos_masked_t *obj, int value);
+extern int of_oxm_mpls_bos_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_mpls_bos_masked_t *obj, int value);
+extern int of_oxm_mpls_bos_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_mpls_bos_masked_t *obj, int value);
+
 extern int of_oxm_mpls_label_OF_VERSION_1_3_populate(
     of_oxm_mpls_label_t *obj, int value);
 extern int of_oxm_mpls_label_OF_VERSION_1_3_check(

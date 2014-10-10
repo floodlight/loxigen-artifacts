@@ -1057,6 +1057,20 @@ public class OFOxmsVer12 implements OFOxms {
                     );
     }
 
+    public OFOxmMplsBos.Builder buildMplsBos() {
+        throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.2");
+    }
+    public OFOxmMplsBos mplsBos(OFBooleanValue value) {
+        throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.2");
+    }
+
+    public OFOxmMplsBosMasked.Builder buildMplsBosMasked() {
+        throw new UnsupportedOperationException("OFOxmMplsBosMasked not supported in version 1.2");
+    }
+    public OFOxmMplsBosMasked mplsBosMasked(OFBooleanValue value, OFBooleanValue mask) {
+        throw new UnsupportedOperationException("OFOxmMplsBosMasked not supported in version 1.2");
+    }
+
     public OFOxmTunnelId.Builder buildTunnelId() {
         throw new UnsupportedOperationException("OFOxmTunnelId not supported in version 1.2");
     }
@@ -1186,6 +1200,8 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
             default:
@@ -1304,6 +1320,8 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
             default:
@@ -1422,6 +1440,8 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case MPLS_BOS:
+                return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
             default:

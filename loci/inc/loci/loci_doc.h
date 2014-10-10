@@ -8340,6 +8340,32 @@ typedef struct of_oxm_metadata_s of_oxm_metadata_t;
 typedef struct of_oxm_metadata_masked_s of_oxm_metadata_masked_t;
 
 /**
+ * Structure for of_oxm_mpls_bos object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_oxm_mpls_bos_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_mpls_bos_s of_oxm_mpls_bos_t;
+
+/**
+ * Structure for of_oxm_mpls_bos_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_oxm_mpls_bos_masked_uint8_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_3).
+ *   Accessors for value_mask, a variable of type uint8.  Functions
+ *   are of type of_oxm_mpls_bos_masked_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_mpls_bos_masked_s of_oxm_mpls_bos_masked_t;
+
+/**
  * Structure for of_oxm_mpls_label object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

@@ -1018,6 +1018,8 @@ int of_oxm_ipv6_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_o
 int of_oxm_ipv6_src_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_masked_t *obj);
 int of_oxm_metadata_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_metadata_t *obj);
 int of_oxm_metadata_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_metadata_masked_t *obj);
+int of_oxm_mpls_bos_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_mpls_bos_t *obj);
+int of_oxm_mpls_bos_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_mpls_bos_masked_t *obj);
 int of_oxm_mpls_label_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_mpls_label_t *obj);
 int of_oxm_mpls_label_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_mpls_label_masked_t *obj);
 int of_oxm_mpls_tc_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_t *obj);

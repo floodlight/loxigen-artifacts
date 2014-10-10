@@ -468,6 +468,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_ipv6_src_masked",
     "of_oxm_metadata",
     "of_oxm_metadata_masked",
+    "of_oxm_mpls_bos",
+    "of_oxm_mpls_bos_masked",
     "of_oxm_mpls_label",
     "of_oxm_mpls_label_masked",
     "of_oxm_mpls_tc",

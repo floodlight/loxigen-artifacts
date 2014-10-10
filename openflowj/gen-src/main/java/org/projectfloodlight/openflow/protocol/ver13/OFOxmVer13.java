@@ -366,6 +366,12 @@ abstract class OFOxmVer13 {
                case (int) 0x80000d04:
                    // discriminator value 0x80000d04L=0x80000d04L for class OFOxmVlanVidMaskedVer13
                    return OFOxmVlanVidMaskedVer13.READER.readFrom(bb);
+               case (int) 0x80004801:
+                   // discriminator value 0x80004801L=0x80004801L for class OFOxmMplsBosVer13
+                   return OFOxmMplsBosVer13.READER.readFrom(bb);
+               case (int) 0x80004902:
+                   // discriminator value 0x80004902L=0x80004902L for class OFOxmMplsBosMaskedVer13
+                   return OFOxmMplsBosMaskedVer13.READER.readFrom(bb);
                case (int) 0x80004c08:
                    // discriminator value 0x80004c08L=0x80004c08L for class OFOxmTunnelIdVer13
                    return OFOxmTunnelIdVer13.READER.readFrom(bb);

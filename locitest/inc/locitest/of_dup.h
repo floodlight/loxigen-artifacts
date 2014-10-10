@@ -1850,6 +1850,14 @@ extern of_oxm_metadata_masked_t *
     of_oxm_metadata_masked_dup(
         of_oxm_metadata_masked_t *src);
 
+extern of_oxm_mpls_bos_t *
+    of_oxm_mpls_bos_dup(
+        of_oxm_mpls_bos_t *src);
+
+extern of_oxm_mpls_bos_masked_t *
+    of_oxm_mpls_bos_masked_dup(
+        of_oxm_mpls_bos_masked_t *src);
+
 extern of_oxm_mpls_label_t *
     of_oxm_mpls_label_dup(
         of_oxm_mpls_label_t *src);
@@ -6221,6 +6229,14 @@ extern of_oxm_metadata_t *
 extern of_oxm_metadata_masked_t *
     of_oxm_metadata_masked_OF_VERSION_1_3_dup(
         of_oxm_metadata_masked_t *src);
+
+extern of_oxm_mpls_bos_t *
+    of_oxm_mpls_bos_OF_VERSION_1_3_dup(
+        of_oxm_mpls_bos_t *src);
+
+extern of_oxm_mpls_bos_masked_t *
+    of_oxm_mpls_bos_masked_OF_VERSION_1_3_dup(
+        of_oxm_mpls_bos_masked_t *src);
 
 extern of_oxm_mpls_label_t *
     of_oxm_mpls_label_OF_VERSION_1_3_dup(

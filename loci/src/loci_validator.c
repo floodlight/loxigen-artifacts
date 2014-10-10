@@ -931,6 +931,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_ipv6_src_OF_VERSION_1_3(
 static int __attribute__((unused)) loci_validate_of_oxm_ipv6_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_metadata_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_metadata_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_mpls_bos_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_mpls_bos_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_label_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_mpls_tc_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -15802,6 +15804,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_metadata_OF_VERSION_1_3(data, len, out_len);
     case 0x80000510:
         return loci_validate_of_oxm_metadata_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x80004801:
+        return loci_validate_of_oxm_mpls_bos_OF_VERSION_1_3(data, len, out_len);
+    case 0x80004902:
+        return loci_validate_of_oxm_mpls_bos_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x80004404:
         return loci_validate_of_oxm_mpls_label_OF_VERSION_1_3(data, len, out_len);
     case 0x80004508:
@@ -23945,6 +23951,38 @@ loci_validate_of_oxm_metadata_masked_OF_VERSION_1_3(uint8_t *data, int len, int 
     }
 
     len = 20;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_mpls_bos_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 5) {
+        return -1;
+    }
+
+    len = 5;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_mpls_bos_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
 
 
 

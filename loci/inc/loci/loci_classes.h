@@ -953,6 +953,10 @@ void of_meter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_meter_stats_reply_push_wire_types(of_object_t *obj);
 void of_meter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_meter_stats_request_push_wire_types(of_object_t *obj);
+void of_oxm_mpls_bos_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_mpls_bos_push_wire_types(of_object_t *obj);
+void of_oxm_mpls_bos_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_mpls_bos_masked_push_wire_types(of_object_t *obj);
 void of_oxm_tunnel_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_tunnel_id_push_wire_types(of_object_t *obj);
 void of_oxm_tunnel_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1475,6 +1479,8 @@ typedef of_object_t of_oxm_ipv6_src_t;
 typedef of_object_t of_oxm_ipv6_src_masked_t;
 typedef of_object_t of_oxm_metadata_t;
 typedef of_object_t of_oxm_metadata_masked_t;
+typedef of_object_t of_oxm_mpls_bos_t;
+typedef of_object_t of_oxm_mpls_bos_masked_t;
 typedef of_object_t of_oxm_mpls_label_t;
 typedef of_object_t of_oxm_mpls_label_masked_t;
 typedef of_object_t of_oxm_mpls_tc_t;
@@ -3887,6 +3893,16 @@ extern of_oxm_metadata_masked_t *
     of_oxm_metadata_masked_new(of_version_t version);
 extern void of_oxm_metadata_masked_init(
     of_oxm_metadata_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_mpls_bos_t *
+    of_oxm_mpls_bos_new(of_version_t version);
+extern void of_oxm_mpls_bos_init(
+    of_oxm_mpls_bos_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_oxm_mpls_bos_masked_t *
+    of_oxm_mpls_bos_masked_new(of_version_t version);
+extern void of_oxm_mpls_bos_masked_init(
+    of_oxm_mpls_bos_masked_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_oxm_mpls_label_t *
     of_oxm_mpls_label_new(of_version_t version);
@@ -9421,6 +9437,28 @@ of_oxm_metadata_delete(of_oxm_metadata_t *obj) {
  */
 static inline void
 of_oxm_metadata_masked_delete(of_oxm_metadata_masked_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_mpls_bos_t
+ * @param obj An instance of type of_oxm_mpls_bos_t
+ *
+ * \ingroup of_oxm_mpls_bos
+ */
+static inline void
+of_oxm_mpls_bos_delete(of_oxm_mpls_bos_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_oxm_mpls_bos_masked_t
+ * @param obj An instance of type of_oxm_mpls_bos_masked_t
+ *
+ * \ingroup of_oxm_mpls_bos_masked
+ */
+static inline void
+of_oxm_mpls_bos_masked_delete(of_oxm_mpls_bos_masked_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -20482,6 +20520,31 @@ extern void of_oxm_metadata_masked_value_mask_get(
     of_oxm_metadata_masked_t *obj,
     uint64_t *value_mask);
 
+/* Unified accessor functions for of_oxm_mpls_bos */
+
+extern void of_oxm_mpls_bos_value_set(
+    of_oxm_mpls_bos_t *obj,
+    uint8_t value);
+extern void of_oxm_mpls_bos_value_get(
+    of_oxm_mpls_bos_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_oxm_mpls_bos_masked */
+
+extern void of_oxm_mpls_bos_masked_value_set(
+    of_oxm_mpls_bos_masked_t *obj,
+    uint8_t value);
+extern void of_oxm_mpls_bos_masked_value_get(
+    of_oxm_mpls_bos_masked_t *obj,
+    uint8_t *value);
+
+extern void of_oxm_mpls_bos_masked_value_mask_set(
+    of_oxm_mpls_bos_masked_t *obj,
+    uint8_t value_mask);
+extern void of_oxm_mpls_bos_masked_value_mask_get(
+    of_oxm_mpls_bos_masked_t *obj,
+    uint8_t *value_mask);
+
 /* Unified accessor functions for of_oxm_mpls_label */
 
 extern void of_oxm_mpls_label_value_set(
@@ -22798,6 +22861,8 @@ union of_oxm_u {
     of_oxm_ipv6_src_masked_t ipv6_src_masked;
     of_oxm_metadata_t metadata;
     of_oxm_metadata_masked_t metadata_masked;
+    of_oxm_mpls_bos_t mpls_bos;
+    of_oxm_mpls_bos_masked_t mpls_bos_masked;
     of_oxm_mpls_label_t mpls_label;
     of_oxm_mpls_label_masked_t mpls_label_masked;
     of_oxm_mpls_tc_t mpls_tc;

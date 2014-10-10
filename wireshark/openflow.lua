@@ -6824,6 +6824,11 @@ fields['of13.oxm_metadata.value'] = ProtoField.uint64("of13.oxm_metadata.value",
 fields['of13.oxm_metadata_masked.type_len'] = ProtoField.uint32("of13.oxm_metadata_masked.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_metadata_masked.value'] = ProtoField.uint64("of13.oxm_metadata_masked.value", "value", base.DEC, nil)
 fields['of13.oxm_metadata_masked.value_mask'] = ProtoField.uint64("of13.oxm_metadata_masked.value_mask", "value_mask", base.DEC, nil)
+fields['of13.oxm_mpls_bos.type_len'] = ProtoField.uint32("of13.oxm_mpls_bos.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_mpls_bos.value'] = ProtoField.uint8("of13.oxm_mpls_bos.value", "value", base.DEC, nil)
+fields['of13.oxm_mpls_bos_masked.type_len'] = ProtoField.uint32("of13.oxm_mpls_bos_masked.type_len", "type_len", base.DEC, nil)
+fields['of13.oxm_mpls_bos_masked.value'] = ProtoField.uint8("of13.oxm_mpls_bos_masked.value", "value", base.DEC, nil)
+fields['of13.oxm_mpls_bos_masked.value_mask'] = ProtoField.uint8("of13.oxm_mpls_bos_masked.value_mask", "value_mask", base.DEC, nil)
 fields['of13.oxm_mpls_label.type_len'] = ProtoField.uint32("of13.oxm_mpls_label.type_len", "type_len", base.DEC, nil)
 fields['of13.oxm_mpls_label.value'] = ProtoField.uint32("of13.oxm_mpls_label.value", "value", base.DEC, nil)
 fields['of13.oxm_mpls_label_masked.type_len'] = ProtoField.uint32("of13.oxm_mpls_label_masked.type_len", "type_len", base.DEC, nil)
@@ -12154,6 +12159,11 @@ p_of.fields = {
     fields['of13.oxm_metadata_masked.type_len'],
     fields['of13.oxm_metadata_masked.value'],
     fields['of13.oxm_metadata_masked.value_mask'],
+    fields['of13.oxm_mpls_bos.type_len'],
+    fields['of13.oxm_mpls_bos.value'],
+    fields['of13.oxm_mpls_bos_masked.type_len'],
+    fields['of13.oxm_mpls_bos_masked.value'],
+    fields['of13.oxm_mpls_bos_masked.value_mask'],
     fields['of13.oxm_mpls_label.type_len'],
     fields['of13.oxm_mpls_label.value'],
     fields['of13.oxm_mpls_label_masked.type_len'],
@@ -24252,6 +24262,25 @@ function dissect_of_oxm_metadata_masked_v4(reader, subtree)
     return 'of_oxm_metadata_masked'
 end
 of_oxm_v4_dissectors[2147484944] = dissect_of_oxm_metadata_masked_v4
+
+-- child class of_oxm_mpls_bos
+-- Child of of_oxm
+function dissect_of_oxm_mpls_bos_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_mpls_bos.type_len')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_mpls_bos.value')
+    return 'of_oxm_mpls_bos'
+end
+of_oxm_v4_dissectors[2147502081] = dissect_of_oxm_mpls_bos_v4
+
+-- child class of_oxm_mpls_bos_masked
+-- Child of of_oxm
+function dissect_of_oxm_mpls_bos_masked_v4(reader, subtree)
+    read_uint32_t(reader, 4, subtree, 'of13.oxm_mpls_bos_masked.type_len')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_mpls_bos_masked.value')
+    read_uint8_t(reader, 4, subtree, 'of13.oxm_mpls_bos_masked.value_mask')
+    return 'of_oxm_mpls_bos_masked'
+end
+of_oxm_v4_dissectors[2147502338] = dissect_of_oxm_mpls_bos_masked_v4
 
 -- child class of_oxm_mpls_label
 -- Child of of_oxm

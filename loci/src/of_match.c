@@ -107,6 +107,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_UDP_SRC_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -393,6 +397,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_ICMPV6_CODE_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1463,6 +1471,27 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_mpls_tc_value_set(elt, src->fields.mpls_tc);
         }
     }
+    if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_MPLS_BOS_EXACT_TEST(src)) {
+            of_oxm_mpls_bos_masked_t *elt;
+            elt = &oxm_entry.mpls_bos_masked;
+
+            of_oxm_mpls_bos_masked_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_mpls_bos_masked_value_set(elt,
+                   src->fields.mpls_bos);
+            of_oxm_mpls_bos_masked_value_mask_set(elt,
+                   src->masks.mpls_bos);
+        } else {  /* Active, but not masked */
+            of_oxm_mpls_bos_t *elt;
+            elt = &oxm_entry.mpls_bos;
+            of_oxm_mpls_bos_init(elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &oxm_entry);
+            of_oxm_mpls_bos_value_set(elt, src->fields.mpls_bos);
+        }
+    }
     if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_TUNNEL_ID_EXACT_TEST(src)) {
             of_oxm_tunnel_id_masked_t *elt;
@@ -2287,6 +2316,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_icmpv6_code_value_get(
                 &oxm_entry.icmpv6_code,
                 &dst->fields.icmpv6_code);
+            break;
+
+        case OF_OXM_MPLS_BOS_MASKED:
+            of_oxm_mpls_bos_masked_value_mask_get(
+                &oxm_entry.mpls_bos_masked,
+                &dst->masks.mpls_bos);
+            of_oxm_mpls_bos_masked_value_get(
+                &oxm_entry.mpls_bos,
+                &dst->fields.mpls_bos);
+            of_memmask(&dst->fields.mpls_bos, &dst->masks.mpls_bos, sizeof(&dst->fields.mpls_bos));
+            break;
+        case OF_OXM_MPLS_BOS:
+            OF_MATCH_MASK_MPLS_BOS_EXACT_SET(dst);
+            of_oxm_mpls_bos_value_get(
+                &oxm_entry.mpls_bos,
+                &dst->fields.mpls_bos);
             break;
 
         case OF_OXM_ETH_DST_MASKED:

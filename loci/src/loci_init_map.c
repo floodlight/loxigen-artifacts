@@ -471,6 +471,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_oxm_ipv6_src_masked_init,
     (of_object_init_f)of_oxm_metadata_init,
     (of_object_init_f)of_oxm_metadata_masked_init,
+    (of_object_init_f)of_oxm_mpls_bos_init,
+    (of_object_init_f)of_oxm_mpls_bos_masked_init,
     (of_object_init_f)of_oxm_mpls_label_init,
     (of_object_init_f)of_oxm_mpls_label_masked_init,
     (of_object_init_f)of_oxm_mpls_tc_init,
