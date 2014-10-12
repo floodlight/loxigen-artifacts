@@ -763,6 +763,8 @@ void of_bsn_tlv_broadcast_query_timeout_wire_object_id_get(of_object_t *obj, of_
 void of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_circuit_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_convergence_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_convergence_status_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -803,6 +805,12 @@ void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_port_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_port_key_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_port_num_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_port_num_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_port_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_port_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_queue_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_weight_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -817,6 +825,10 @@ void of_bsn_tlv_sampling_rate_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_sampling_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_sub_agent_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_sub_agent_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_system_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_system_mac_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_system_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_system_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1288,6 +1300,7 @@ typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
+typedef of_object_t of_bsn_tlv_convergence_status_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
 typedef of_object_t of_bsn_tlv_eth_dst_t;
 typedef of_object_t of_bsn_tlv_eth_src_t;
@@ -1309,6 +1322,9 @@ typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_port_t;
+typedef of_object_t of_bsn_tlv_port_key_t;
+typedef of_object_t of_bsn_tlv_port_num_t;
+typedef of_object_t of_bsn_tlv_port_priority_t;
 typedef of_object_t of_bsn_tlv_queue_id_t;
 typedef of_object_t of_bsn_tlv_queue_weight_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
@@ -1316,6 +1332,8 @@ typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
 typedef of_object_t of_bsn_tlv_sub_agent_id_t;
+typedef of_object_t of_bsn_tlv_system_mac_t;
+typedef of_object_t of_bsn_tlv_system_priority_t;
 typedef of_object_t of_bsn_tlv_tx_bytes_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
 typedef of_object_t of_bsn_tlv_udf_anchor_t;
@@ -2909,6 +2927,11 @@ extern of_bsn_tlv_circuit_id_t *
 extern void of_bsn_tlv_circuit_id_init(
     of_bsn_tlv_circuit_id_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_convergence_status_t *
+    of_bsn_tlv_convergence_status_new(of_version_t version);
+extern void of_bsn_tlv_convergence_status_init(
+    of_bsn_tlv_convergence_status_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_crc_enabled_t *
     of_bsn_tlv_crc_enabled_new(of_version_t version);
 extern void of_bsn_tlv_crc_enabled_init(
@@ -3014,6 +3037,21 @@ extern of_bsn_tlv_port_t *
 extern void of_bsn_tlv_port_init(
     of_bsn_tlv_port_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_port_key_t *
+    of_bsn_tlv_port_key_new(of_version_t version);
+extern void of_bsn_tlv_port_key_init(
+    of_bsn_tlv_port_key_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_port_num_t *
+    of_bsn_tlv_port_num_new(of_version_t version);
+extern void of_bsn_tlv_port_num_init(
+    of_bsn_tlv_port_num_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_port_priority_t *
+    of_bsn_tlv_port_priority_new(of_version_t version);
+extern void of_bsn_tlv_port_priority_init(
+    of_bsn_tlv_port_priority_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_queue_id_t *
     of_bsn_tlv_queue_id_new(of_version_t version);
 extern void of_bsn_tlv_queue_id_init(
@@ -3048,6 +3086,16 @@ extern of_bsn_tlv_sub_agent_id_t *
     of_bsn_tlv_sub_agent_id_new(of_version_t version);
 extern void of_bsn_tlv_sub_agent_id_init(
     of_bsn_tlv_sub_agent_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_system_mac_t *
+    of_bsn_tlv_system_mac_new(of_version_t version);
+extern void of_bsn_tlv_system_mac_init(
+    of_bsn_tlv_system_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_system_priority_t *
+    of_bsn_tlv_system_priority_new(of_version_t version);
+extern void of_bsn_tlv_system_priority_init(
+    of_bsn_tlv_system_priority_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_tx_bytes_t *
     of_bsn_tlv_tx_bytes_new(of_version_t version);
@@ -7274,6 +7322,17 @@ of_bsn_tlv_circuit_id_delete(of_bsn_tlv_circuit_id_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_convergence_status_t
+ * @param obj An instance of type of_bsn_tlv_convergence_status_t
+ *
+ * \ingroup of_bsn_tlv_convergence_status
+ */
+static inline void
+of_bsn_tlv_convergence_status_delete(of_bsn_tlv_convergence_status_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_crc_enabled_t
  * @param obj An instance of type of_bsn_tlv_crc_enabled_t
  *
@@ -7505,6 +7564,39 @@ of_bsn_tlv_port_delete(of_bsn_tlv_port_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_port_key_t
+ * @param obj An instance of type of_bsn_tlv_port_key_t
+ *
+ * \ingroup of_bsn_tlv_port_key
+ */
+static inline void
+of_bsn_tlv_port_key_delete(of_bsn_tlv_port_key_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_port_num_t
+ * @param obj An instance of type of_bsn_tlv_port_num_t
+ *
+ * \ingroup of_bsn_tlv_port_num
+ */
+static inline void
+of_bsn_tlv_port_num_delete(of_bsn_tlv_port_num_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_port_priority_t
+ * @param obj An instance of type of_bsn_tlv_port_priority_t
+ *
+ * \ingroup of_bsn_tlv_port_priority
+ */
+static inline void
+of_bsn_tlv_port_priority_delete(of_bsn_tlv_port_priority_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_queue_id_t
  * @param obj An instance of type of_bsn_tlv_queue_id_t
  *
@@ -7578,6 +7670,28 @@ of_bsn_tlv_sampling_rate_delete(of_bsn_tlv_sampling_rate_t *obj) {
  */
 static inline void
 of_bsn_tlv_sub_agent_id_delete(of_bsn_tlv_sub_agent_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_system_mac_t
+ * @param obj An instance of type of_bsn_tlv_system_mac_t
+ *
+ * \ingroup of_bsn_tlv_system_mac
+ */
+static inline void
+of_bsn_tlv_system_mac_delete(of_bsn_tlv_system_mac_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_system_priority_t
+ * @param obj An instance of type of_bsn_tlv_system_priority_t
+ *
+ * \ingroup of_bsn_tlv_system_priority
+ */
+static inline void
+of_bsn_tlv_system_priority_delete(of_bsn_tlv_system_priority_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17746,6 +17860,15 @@ extern void of_bsn_tlv_circuit_id_value_get(
     of_bsn_tlv_circuit_id_t *obj,
     of_octets_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_convergence_status */
+
+extern void of_bsn_tlv_convergence_status_value_set(
+    of_bsn_tlv_convergence_status_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_convergence_status_value_get(
+    of_bsn_tlv_convergence_status_t *obj,
+    uint8_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_crc_enabled */
 
 extern void of_bsn_tlv_crc_enabled_value_set(
@@ -17921,6 +18044,33 @@ extern void of_bsn_tlv_port_value_get(
     of_bsn_tlv_port_t *obj,
     of_port_no_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_port_key */
+
+extern void of_bsn_tlv_port_key_value_set(
+    of_bsn_tlv_port_key_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_port_key_value_get(
+    of_bsn_tlv_port_key_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_port_num */
+
+extern void of_bsn_tlv_port_num_value_set(
+    of_bsn_tlv_port_num_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_port_num_value_get(
+    of_bsn_tlv_port_num_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_port_priority */
+
+extern void of_bsn_tlv_port_priority_value_set(
+    of_bsn_tlv_port_priority_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_port_priority_value_get(
+    of_bsn_tlv_port_priority_t *obj,
+    uint16_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_queue_id */
 
 extern void of_bsn_tlv_queue_id_value_set(
@@ -17983,6 +18133,24 @@ extern void of_bsn_tlv_sub_agent_id_value_set(
 extern void of_bsn_tlv_sub_agent_id_value_get(
     of_bsn_tlv_sub_agent_id_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_system_mac */
+
+extern void of_bsn_tlv_system_mac_value_set(
+    of_bsn_tlv_system_mac_t *obj,
+    of_mac_addr_t value);
+extern void of_bsn_tlv_system_mac_value_get(
+    of_bsn_tlv_system_mac_t *obj,
+    of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_system_priority */
+
+extern void of_bsn_tlv_system_priority_value_set(
+    of_bsn_tlv_system_priority_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_system_priority_value_get(
+    of_bsn_tlv_system_priority_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_tx_bytes */
 
@@ -22642,6 +22810,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_header_t header; /* Generic instance */
     of_bsn_tlv_broadcast_query_timeout_t broadcast_query_timeout;
     of_bsn_tlv_circuit_id_t circuit_id;
+    of_bsn_tlv_convergence_status_t convergence_status;
     of_bsn_tlv_crc_enabled_t crc_enabled;
     of_bsn_tlv_eth_dst_t eth_dst;
     of_bsn_tlv_eth_src_t eth_src;
@@ -22662,6 +22831,9 @@ union of_bsn_tlv_u {
     of_bsn_tlv_mac_t mac;
     of_bsn_tlv_miss_packets_t miss_packets;
     of_bsn_tlv_port_t port;
+    of_bsn_tlv_port_key_t port_key;
+    of_bsn_tlv_port_num_t port_num;
+    of_bsn_tlv_port_priority_t port_priority;
     of_bsn_tlv_queue_id_t queue_id;
     of_bsn_tlv_queue_weight_t queue_weight;
     of_bsn_tlv_reply_packets_t reply_packets;
@@ -22669,6 +22841,8 @@ union of_bsn_tlv_u {
     of_bsn_tlv_rx_packets_t rx_packets;
     of_bsn_tlv_sampling_rate_t sampling_rate;
     of_bsn_tlv_sub_agent_id_t sub_agent_id;
+    of_bsn_tlv_system_mac_t system_mac;
+    of_bsn_tlv_system_priority_t system_priority;
     of_bsn_tlv_tx_bytes_t tx_bytes;
     of_bsn_tlv_tx_packets_t tx_packets;
     of_bsn_tlv_udf_anchor_t udf_anchor;

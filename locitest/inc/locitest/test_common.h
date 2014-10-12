@@ -7151,6 +7151,15 @@ extern int of_bsn_tlv_circuit_id_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_circuit_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_circuit_id_t *obj, int value);
 
+extern int of_bsn_tlv_convergence_status_OF_VERSION_1_3_populate(
+    of_bsn_tlv_convergence_status_t *obj, int value);
+extern int of_bsn_tlv_convergence_status_OF_VERSION_1_3_check(
+    of_bsn_tlv_convergence_status_t *obj, int value);
+extern int of_bsn_tlv_convergence_status_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_convergence_status_t *obj, int value);
+extern int of_bsn_tlv_convergence_status_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_convergence_status_t *obj, int value);
+
 extern int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_populate(
     of_bsn_tlv_crc_enabled_t *obj, int value);
 extern int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_check(
@@ -7340,6 +7349,33 @@ extern int of_bsn_tlv_port_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_port_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_port_t *obj, int value);
 
+extern int of_bsn_tlv_port_key_OF_VERSION_1_3_populate(
+    of_bsn_tlv_port_key_t *obj, int value);
+extern int of_bsn_tlv_port_key_OF_VERSION_1_3_check(
+    of_bsn_tlv_port_key_t *obj, int value);
+extern int of_bsn_tlv_port_key_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_port_key_t *obj, int value);
+extern int of_bsn_tlv_port_key_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_port_key_t *obj, int value);
+
+extern int of_bsn_tlv_port_num_OF_VERSION_1_3_populate(
+    of_bsn_tlv_port_num_t *obj, int value);
+extern int of_bsn_tlv_port_num_OF_VERSION_1_3_check(
+    of_bsn_tlv_port_num_t *obj, int value);
+extern int of_bsn_tlv_port_num_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_port_num_t *obj, int value);
+extern int of_bsn_tlv_port_num_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_port_num_t *obj, int value);
+
+extern int of_bsn_tlv_port_priority_OF_VERSION_1_3_populate(
+    of_bsn_tlv_port_priority_t *obj, int value);
+extern int of_bsn_tlv_port_priority_OF_VERSION_1_3_check(
+    of_bsn_tlv_port_priority_t *obj, int value);
+extern int of_bsn_tlv_port_priority_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_port_priority_t *obj, int value);
+extern int of_bsn_tlv_port_priority_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_port_priority_t *obj, int value);
+
 extern int of_bsn_tlv_queue_id_OF_VERSION_1_3_populate(
     of_bsn_tlv_queue_id_t *obj, int value);
 extern int of_bsn_tlv_queue_id_OF_VERSION_1_3_check(
@@ -7402,6 +7438,24 @@ extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_sub_agent_id_t *obj, int value);
 extern int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_sub_agent_id_t *obj, int value);
+
+extern int of_bsn_tlv_system_mac_OF_VERSION_1_3_populate(
+    of_bsn_tlv_system_mac_t *obj, int value);
+extern int of_bsn_tlv_system_mac_OF_VERSION_1_3_check(
+    of_bsn_tlv_system_mac_t *obj, int value);
+extern int of_bsn_tlv_system_mac_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_system_mac_t *obj, int value);
+extern int of_bsn_tlv_system_mac_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_system_mac_t *obj, int value);
+
+extern int of_bsn_tlv_system_priority_OF_VERSION_1_3_populate(
+    of_bsn_tlv_system_priority_t *obj, int value);
+extern int of_bsn_tlv_system_priority_OF_VERSION_1_3_check(
+    of_bsn_tlv_system_priority_t *obj, int value);
+extern int of_bsn_tlv_system_priority_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_system_priority_t *obj, int value);
+extern int of_bsn_tlv_system_priority_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_system_priority_t *obj, int value);
 
 extern int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_populate(
     of_bsn_tlv_tx_bytes_t *obj, int value);

@@ -49,6 +49,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() {
+        return new OFBsnTlvConvergenceStatusVer13.Builder();
+    }
+    public OFBsnTlvConvergenceStatus convergenceStatus(short value) {
+        return new OFBsnTlvConvergenceStatusVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
         return new OFBsnTlvCrcEnabledVer13.Builder();
     }
@@ -224,6 +233,33 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPortKey.Builder buildPortKey() {
+        return new OFBsnTlvPortKeyVer13.Builder();
+    }
+    public OFBsnTlvPortKey portKey(int value) {
+        return new OFBsnTlvPortKeyVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPortNum.Builder buildPortNum() {
+        return new OFBsnTlvPortNumVer13.Builder();
+    }
+    public OFBsnTlvPortNum portNum(int value) {
+        return new OFBsnTlvPortNumVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPortPriority.Builder buildPortPriority() {
+        return new OFBsnTlvPortPriorityVer13.Builder();
+    }
+    public OFBsnTlvPortPriority portPriority(int value) {
+        return new OFBsnTlvPortPriorityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvQueueId.Builder buildQueueId() {
         return new OFBsnTlvQueueIdVer13.Builder();
     }
@@ -283,6 +319,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         return new OFBsnTlvSubAgentIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvSystemMac.Builder buildSystemMac() {
+        return new OFBsnTlvSystemMacVer13.Builder();
+    }
+    public OFBsnTlvSystemMac systemMac(MacAddress value) {
+        return new OFBsnTlvSystemMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvSystemPriority.Builder buildSystemPriority() {
+        return new OFBsnTlvSystemPriorityVer13.Builder();
+    }
+    public OFBsnTlvSystemPriority systemPriority(int value) {
+        return new OFBsnTlvSystemPriorityVer13(
                 value
                     );
     }

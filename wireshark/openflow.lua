@@ -5820,6 +5820,9 @@ fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.b
 fields['of13.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit_id.value", "value")
+fields['of13.bsn_tlv_convergence_status.type'] = ProtoField.uint16("of13.bsn_tlv_convergence_status.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_convergence_status.length'] = ProtoField.uint16("of13.bsn_tlv_convergence_status.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_convergence_status.value'] = ProtoField.uint8("of13.bsn_tlv_convergence_status.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
@@ -5879,6 +5882,15 @@ fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_key.type'] = ProtoField.uint16("of13.bsn_tlv_port_key.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_key.length'] = ProtoField.uint16("of13.bsn_tlv_port_key.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_key.value'] = ProtoField.uint16("of13.bsn_tlv_port_key.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_num.type'] = ProtoField.uint16("of13.bsn_tlv_port_num.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_num.length'] = ProtoField.uint16("of13.bsn_tlv_port_num.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_num.value'] = ProtoField.uint16("of13.bsn_tlv_port_num.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_priority.type'] = ProtoField.uint16("of13.bsn_tlv_port_priority.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_priority.length'] = ProtoField.uint16("of13.bsn_tlv_port_priority.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_priority.value'] = ProtoField.uint16("of13.bsn_tlv_port_priority.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.type'] = ProtoField.uint16("of13.bsn_tlv_queue_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.length'] = ProtoField.uint16("of13.bsn_tlv_queue_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.value'] = ProtoField.uint32("of13.bsn_tlv_queue_id.value", "value", base.DEC, nil)
@@ -5900,6 +5912,12 @@ fields['of13.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of13.bsn_tlv_sam
 fields['of13.bsn_tlv_sub_agent_id.type'] = ProtoField.uint16("of13.bsn_tlv_sub_agent_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_sub_agent_id.length'] = ProtoField.uint16("of13.bsn_tlv_sub_agent_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of13.bsn_tlv_sub_agent_id.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_system_mac.type'] = ProtoField.uint16("of13.bsn_tlv_system_mac.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_system_mac.length'] = ProtoField.uint16("of13.bsn_tlv_system_mac.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_system_mac.value'] = ProtoField.ether("of13.bsn_tlv_system_mac.value", "value")
+fields['of13.bsn_tlv_system_priority.type'] = ProtoField.uint16("of13.bsn_tlv_system_priority.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_system_priority.length'] = ProtoField.uint16("of13.bsn_tlv_system_priority.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_system_priority.value'] = ProtoField.uint16("of13.bsn_tlv_system_priority.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_tx_bytes.type'] = ProtoField.uint16("of13.bsn_tlv_tx_bytes.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_tx_bytes.length'] = ProtoField.uint16("of13.bsn_tlv_tx_bytes.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_tx_bytes.value'] = ProtoField.uint64("of13.bsn_tlv_tx_bytes.value", "value", base.DEC, nil)
@@ -11155,6 +11173,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_circuit_id.type'],
     fields['of13.bsn_tlv_circuit_id.length'],
     fields['of13.bsn_tlv_circuit_id.value'],
+    fields['of13.bsn_tlv_convergence_status.type'],
+    fields['of13.bsn_tlv_convergence_status.length'],
+    fields['of13.bsn_tlv_convergence_status.value'],
     fields['of13.bsn_tlv_crc_enabled.type'],
     fields['of13.bsn_tlv_crc_enabled.length'],
     fields['of13.bsn_tlv_crc_enabled.value'],
@@ -11214,6 +11235,15 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_port_key.type'],
+    fields['of13.bsn_tlv_port_key.length'],
+    fields['of13.bsn_tlv_port_key.value'],
+    fields['of13.bsn_tlv_port_num.type'],
+    fields['of13.bsn_tlv_port_num.length'],
+    fields['of13.bsn_tlv_port_num.value'],
+    fields['of13.bsn_tlv_port_priority.type'],
+    fields['of13.bsn_tlv_port_priority.length'],
+    fields['of13.bsn_tlv_port_priority.value'],
     fields['of13.bsn_tlv_queue_id.type'],
     fields['of13.bsn_tlv_queue_id.length'],
     fields['of13.bsn_tlv_queue_id.value'],
@@ -11235,6 +11265,12 @@ p_of.fields = {
     fields['of13.bsn_tlv_sub_agent_id.type'],
     fields['of13.bsn_tlv_sub_agent_id.length'],
     fields['of13.bsn_tlv_sub_agent_id.value'],
+    fields['of13.bsn_tlv_system_mac.type'],
+    fields['of13.bsn_tlv_system_mac.length'],
+    fields['of13.bsn_tlv_system_mac.value'],
+    fields['of13.bsn_tlv_system_priority.type'],
+    fields['of13.bsn_tlv_system_priority.length'],
+    fields['of13.bsn_tlv_system_priority.value'],
     fields['of13.bsn_tlv_tx_bytes.type'],
     fields['of13.bsn_tlv_tx_bytes.length'],
     fields['of13.bsn_tlv_tx_bytes.value'],
@@ -21521,6 +21557,16 @@ function dissect_of_bsn_tlv_circuit_id_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[14] = dissect_of_bsn_tlv_circuit_id_v4
 
+-- child class of_bsn_tlv_convergence_status
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_convergence_status_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_convergence_status.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_convergence_status.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_convergence_status.value')
+    return 'of_bsn_tlv_convergence_status'
+end
+of_bsn_tlv_v4_dissectors[45] = dissect_of_bsn_tlv_convergence_status_v4
+
 -- child class of_bsn_tlv_crc_enabled
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_crc_enabled_v4(reader, subtree)
@@ -21720,6 +21766,36 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
 
+-- child class of_bsn_tlv_port_key
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_key_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_key.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_key.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_key.value')
+    return 'of_bsn_tlv_port_key'
+end
+of_bsn_tlv_v4_dissectors[44] = dissect_of_bsn_tlv_port_key_v4
+
+-- child class of_bsn_tlv_port_num
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_num_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_num.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_num.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_num.value')
+    return 'of_bsn_tlv_port_num'
+end
+of_bsn_tlv_v4_dissectors[43] = dissect_of_bsn_tlv_port_num_v4
+
+-- child class of_bsn_tlv_port_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_priority_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_priority.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_priority.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_priority.value')
+    return 'of_bsn_tlv_port_priority'
+end
+of_bsn_tlv_v4_dissectors[42] = dissect_of_bsn_tlv_port_priority_v4
+
 -- child class of_bsn_tlv_queue_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_queue_id_v4(reader, subtree)
@@ -21789,6 +21865,26 @@ function dissect_of_bsn_tlv_sub_agent_id_v4(reader, subtree)
     return 'of_bsn_tlv_sub_agent_id'
 end
 of_bsn_tlv_v4_dissectors[38] = dissect_of_bsn_tlv_sub_agent_id_v4
+
+-- child class of_bsn_tlv_system_mac
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_system_mac_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_system_mac.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_system_mac.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_system_mac.value')
+    return 'of_bsn_tlv_system_mac'
+end
+of_bsn_tlv_v4_dissectors[41] = dissect_of_bsn_tlv_system_mac_v4
+
+-- child class of_bsn_tlv_system_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_system_priority_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_system_priority.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_system_priority.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_system_priority.value')
+    return 'of_bsn_tlv_system_priority'
+end
+of_bsn_tlv_v4_dissectors[40] = dissect_of_bsn_tlv_system_priority_v4
 
 -- child class of_bsn_tlv_tx_bytes
 -- Child of of_bsn_tlv

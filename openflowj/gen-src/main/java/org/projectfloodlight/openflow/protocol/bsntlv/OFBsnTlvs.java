@@ -31,6 +31,8 @@ public interface OFBsnTlvs {
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
+    OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() throws UnsupportedOperationException;
+    OFBsnTlvConvergenceStatus convergenceStatus(short value);
     OFBsnTlvCrcEnabled.Builder buildCrcEnabled() throws UnsupportedOperationException;
     OFBsnTlvCrcEnabled crcEnabled(short value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
@@ -70,6 +72,12 @@ public interface OFBsnTlvs {
     OFBsnTlvMissPackets missPackets(U64 value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvPortKey.Builder buildPortKey() throws UnsupportedOperationException;
+    OFBsnTlvPortKey portKey(int value);
+    OFBsnTlvPortNum.Builder buildPortNum() throws UnsupportedOperationException;
+    OFBsnTlvPortNum portNum(int value);
+    OFBsnTlvPortPriority.Builder buildPortPriority() throws UnsupportedOperationException;
+    OFBsnTlvPortPriority portPriority(int value);
     OFBsnTlvQueueId.Builder buildQueueId() throws UnsupportedOperationException;
     OFBsnTlvQueueId queueId(long value);
     OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;
@@ -84,6 +92,10 @@ public interface OFBsnTlvs {
     OFBsnTlvSamplingRate samplingRate(long value);
     OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
     OFBsnTlvSubAgentId subAgentId(long value);
+    OFBsnTlvSystemMac.Builder buildSystemMac() throws UnsupportedOperationException;
+    OFBsnTlvSystemMac systemMac(MacAddress value);
+    OFBsnTlvSystemPriority.Builder buildSystemPriority() throws UnsupportedOperationException;
+    OFBsnTlvSystemPriority systemPriority(int value);
     OFBsnTlvTxBytes.Builder buildTxBytes() throws UnsupportedOperationException;
     OFBsnTlvTxBytes txBytes(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;

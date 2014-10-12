@@ -5609,6 +5609,17 @@ typedef struct of_bsn_tlv_broadcast_query_timeout_s of_bsn_tlv_broadcast_query_t
 typedef struct of_bsn_tlv_circuit_id_s of_bsn_tlv_circuit_id_t;
 
 /**
+ * Structure for of_bsn_tlv_convergence_status object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_convergence_status_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_convergence_status_s of_bsn_tlv_convergence_status_t;
+
+/**
  * Structure for of_bsn_tlv_crc_enabled object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5832,6 +5843,39 @@ typedef struct of_bsn_tlv_miss_packets_s of_bsn_tlv_miss_packets_t;
 typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
 
 /**
+ * Structure for of_bsn_tlv_port_key object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_port_key_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_port_key_s of_bsn_tlv_port_key_t;
+
+/**
+ * Structure for of_bsn_tlv_port_num object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_port_num_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_port_num_s of_bsn_tlv_port_num_t;
+
+/**
+ * Structure for of_bsn_tlv_port_priority object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_port_priority_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_port_priority_s of_bsn_tlv_port_priority_t;
+
+/**
  * Structure for of_bsn_tlv_queue_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5907,6 +5951,28 @@ typedef struct of_bsn_tlv_sampling_rate_s of_bsn_tlv_sampling_rate_t;
  *
  */
 typedef struct of_bsn_tlv_sub_agent_id_s of_bsn_tlv_sub_agent_id_t;
+
+/**
+ * Structure for of_bsn_tlv_system_mac object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_system_mac_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_system_mac_s of_bsn_tlv_system_mac_t;
+
+/**
+ * Structure for of_bsn_tlv_system_priority object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_system_priority_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_system_priority_s of_bsn_tlv_system_priority_t;
 
 /**
  * Structure for of_bsn_tlv_tx_bytes object.  Get/set

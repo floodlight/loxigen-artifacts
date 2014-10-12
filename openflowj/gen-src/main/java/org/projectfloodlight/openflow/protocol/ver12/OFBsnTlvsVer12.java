@@ -45,6 +45,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.2");
     }
 
+    public OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() {
+        throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.2");
+    }
+    public OFBsnTlvConvergenceStatus convergenceStatus(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvConvergenceStatus not supported in version 1.2");
+    }
+
     public OFBsnTlvCrcEnabled.Builder buildCrcEnabled() {
         throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.2");
     }
@@ -182,6 +189,27 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.2");
     }
 
+    public OFBsnTlvPortKey.Builder buildPortKey() {
+        throw new UnsupportedOperationException("OFBsnTlvPortKey not supported in version 1.2");
+    }
+    public OFBsnTlvPortKey portKey(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortKey not supported in version 1.2");
+    }
+
+    public OFBsnTlvPortNum.Builder buildPortNum() {
+        throw new UnsupportedOperationException("OFBsnTlvPortNum not supported in version 1.2");
+    }
+    public OFBsnTlvPortNum portNum(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortNum not supported in version 1.2");
+    }
+
+    public OFBsnTlvPortPriority.Builder buildPortPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvPortPriority not supported in version 1.2");
+    }
+    public OFBsnTlvPortPriority portPriority(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortPriority not supported in version 1.2");
+    }
+
     public OFBsnTlvQueueId.Builder buildQueueId() {
         throw new UnsupportedOperationException("OFBsnTlvQueueId not supported in version 1.2");
     }
@@ -229,6 +257,20 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.2");
+    }
+
+    public OFBsnTlvSystemMac.Builder buildSystemMac() {
+        throw new UnsupportedOperationException("OFBsnTlvSystemMac not supported in version 1.2");
+    }
+    public OFBsnTlvSystemMac systemMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvSystemMac not supported in version 1.2");
+    }
+
+    public OFBsnTlvSystemPriority.Builder buildSystemPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvSystemPriority not supported in version 1.2");
+    }
+    public OFBsnTlvSystemPriority systemPriority(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvSystemPriority not supported in version 1.2");
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {

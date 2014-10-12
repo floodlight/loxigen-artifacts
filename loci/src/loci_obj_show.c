@@ -21479,6 +21479,20 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
+of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_convergence_status_t *obj)
+{
+    int out = 0;
+    uint8_t val8;
+
+    of_bsn_tlv_convergence_status_value_get(obj, &val8);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u8_value(writer, cookie, val8);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_crc_enabled_t *obj)
 {
     int out = 0;
@@ -21761,6 +21775,48 @@ of_bsn_tlv_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_t
 }
 
 int
+of_bsn_tlv_port_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_key_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_port_key_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_num_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_port_num_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_priority_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_port_priority_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_queue_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_id_t *obj)
 {
     int out = 0;
@@ -21853,6 +21909,34 @@ of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
     of_bsn_tlv_sub_agent_id_value_get(obj, &val32);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_u32_value(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_system_mac_t *obj)
+{
+    int out = 0;
+    of_mac_addr_t mac_addr;
+
+    of_bsn_tlv_system_mac_value_get(obj, &mac_addr);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_mac_value(writer, cookie, mac_addr);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_system_priority_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_system_priority_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16_value(writer, cookie, val16);
     out += writer(cookie, " ");
 
     return out;
@@ -26999,6 +27083,12 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_header_OF_VERSION_1_0_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
@@ -27513,6 +27603,12 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -28123,6 +28219,12 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_header_OF_VERSION_1_2_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
@@ -28644,6 +28746,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show,
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_show,
+    of_bsn_tlv_convergence_status_OF_VERSION_1_3_show,
     of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show,
     of_bsn_tlv_eth_dst_OF_VERSION_1_3_show,
     of_bsn_tlv_eth_src_OF_VERSION_1_3_show,
@@ -28665,6 +28768,9 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mac_OF_VERSION_1_3_show,
     of_bsn_tlv_miss_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_port_OF_VERSION_1_3_show,
+    of_bsn_tlv_port_key_OF_VERSION_1_3_show,
+    of_bsn_tlv_port_num_OF_VERSION_1_3_show,
+    of_bsn_tlv_port_priority_OF_VERSION_1_3_show,
     of_bsn_tlv_queue_id_OF_VERSION_1_3_show,
     of_bsn_tlv_queue_weight_OF_VERSION_1_3_show,
     of_bsn_tlv_reply_packets_OF_VERSION_1_3_show,
@@ -28672,6 +28778,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show,
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show,
+    of_bsn_tlv_system_mac_OF_VERSION_1_3_show,
+    of_bsn_tlv_system_priority_OF_VERSION_1_3_show,
     of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show,
     of_bsn_tlv_tx_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_udf_anchor_OF_VERSION_1_3_show,

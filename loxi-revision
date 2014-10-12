@@ -1,1 +1,1 @@
-016c040f5b865eca96028148322d24cdd01fab05 Merge into master from pull request #319: Adding an oxm for mpls BoS indicator bit (https://github.com/floodlight/loxigen/pull/319)
+c0481f420fe97f2ea6f2796680163486b232c3ac Merge into master from pull request #323: openflow_input: add TLVs for LACP gentable (https://github.com/floodlight/loxigen/pull/323)

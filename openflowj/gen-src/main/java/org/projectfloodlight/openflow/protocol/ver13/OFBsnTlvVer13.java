@@ -48,6 +48,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0xe:
                    // discriminator value 0xe=0xe for class OFBsnTlvCircuitIdVer13
                    return OFBsnTlvCircuitIdVer13.READER.readFrom(bb);
+               case (short) 0x2d:
+                   // discriminator value 0x2d=0x2d for class OFBsnTlvConvergenceStatusVer13
+                   return OFBsnTlvConvergenceStatusVer13.READER.readFrom(bb);
                case (short) 0x16:
                    // discriminator value 0x16=0x16 for class OFBsnTlvCrcEnabledVer13
                    return OFBsnTlvCrcEnabledVer13.READER.readFrom(bb);
@@ -108,6 +111,15 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x0:
                    // discriminator value 0x0=0x0 for class OFBsnTlvPortVer13
                    return OFBsnTlvPortVer13.READER.readFrom(bb);
+               case (short) 0x2c:
+                   // discriminator value 0x2c=0x2c for class OFBsnTlvPortKeyVer13
+                   return OFBsnTlvPortKeyVer13.READER.readFrom(bb);
+               case (short) 0x2b:
+                   // discriminator value 0x2b=0x2b for class OFBsnTlvPortNumVer13
+                   return OFBsnTlvPortNumVer13.READER.readFrom(bb);
+               case (short) 0x2a:
+                   // discriminator value 0x2a=0x2a for class OFBsnTlvPortPriorityVer13
+                   return OFBsnTlvPortPriorityVer13.READER.readFrom(bb);
                case (short) 0x14:
                    // discriminator value 0x14=0x14 for class OFBsnTlvQueueIdVer13
                    return OFBsnTlvQueueIdVer13.READER.readFrom(bb);
@@ -129,6 +141,12 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x26:
                    // discriminator value 0x26=0x26 for class OFBsnTlvSubAgentIdVer13
                    return OFBsnTlvSubAgentIdVer13.READER.readFrom(bb);
+               case (short) 0x29:
+                   // discriminator value 0x29=0x29 for class OFBsnTlvSystemMacVer13
+                   return OFBsnTlvSystemMacVer13.READER.readFrom(bb);
+               case (short) 0x28:
+                   // discriminator value 0x28=0x28 for class OFBsnTlvSystemPriorityVer13
+                   return OFBsnTlvSystemPriorityVer13.READER.readFrom(bb);
                case (short) 0x27:
                    // discriminator value 0x27=0x27 for class OFBsnTlvTxBytesVer13
                    return OFBsnTlvTxBytesVer13.READER.readFrom(bb);
