@@ -31,6 +31,51 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvActorKey.Builder buildActorKey() {
+        return new OFBsnTlvActorKeyVer13.Builder();
+    }
+    public OFBsnTlvActorKey actorKey(int value) {
+        return new OFBsnTlvActorKeyVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvActorPortNum.Builder buildActorPortNum() {
+        return new OFBsnTlvActorPortNumVer13.Builder();
+    }
+    public OFBsnTlvActorPortNum actorPortNum(int value) {
+        return new OFBsnTlvActorPortNumVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvActorPortPriority.Builder buildActorPortPriority() {
+        return new OFBsnTlvActorPortPriorityVer13.Builder();
+    }
+    public OFBsnTlvActorPortPriority actorPortPriority(int value) {
+        return new OFBsnTlvActorPortPriorityVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvActorSystemMac.Builder buildActorSystemMac() {
+        return new OFBsnTlvActorSystemMacVer13.Builder();
+    }
+    public OFBsnTlvActorSystemMac actorSystemMac(MacAddress value) {
+        return new OFBsnTlvActorSystemMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() {
+        return new OFBsnTlvActorSystemPriorityVer13.Builder();
+    }
+    public OFBsnTlvActorSystemPriority actorSystemPriority(int value) {
+        return new OFBsnTlvActorSystemPriorityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer13.Builder();
     }
@@ -224,38 +269,56 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
+        return new OFBsnTlvPartnerKeyVer13.Builder();
+    }
+    public OFBsnTlvPartnerKey partnerKey(int value) {
+        return new OFBsnTlvPartnerKeyVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() {
+        return new OFBsnTlvPartnerPortNumVer13.Builder();
+    }
+    public OFBsnTlvPartnerPortNum partnerPortNum(int value) {
+        return new OFBsnTlvPartnerPortNumVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPartnerPortPriority.Builder buildPartnerPortPriority() {
+        return new OFBsnTlvPartnerPortPriorityVer13.Builder();
+    }
+    public OFBsnTlvPartnerPortPriority partnerPortPriority(int value) {
+        return new OFBsnTlvPartnerPortPriorityVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPartnerSystemMac.Builder buildPartnerSystemMac() {
+        return new OFBsnTlvPartnerSystemMacVer13.Builder();
+    }
+    public OFBsnTlvPartnerSystemMac partnerSystemMac(MacAddress value) {
+        return new OFBsnTlvPartnerSystemMacVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPartnerSystemPriority.Builder buildPartnerSystemPriority() {
+        return new OFBsnTlvPartnerSystemPriorityVer13.Builder();
+    }
+    public OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value) {
+        return new OFBsnTlvPartnerSystemPriorityVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         return new OFBsnTlvPortVer13.Builder();
     }
     public OFBsnTlvPort port(OFPort value) {
         return new OFBsnTlvPortVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPortKey.Builder buildPortKey() {
-        return new OFBsnTlvPortKeyVer13.Builder();
-    }
-    public OFBsnTlvPortKey portKey(int value) {
-        return new OFBsnTlvPortKeyVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPortNum.Builder buildPortNum() {
-        return new OFBsnTlvPortNumVer13.Builder();
-    }
-    public OFBsnTlvPortNum portNum(int value) {
-        return new OFBsnTlvPortNumVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvPortPriority.Builder buildPortPriority() {
-        return new OFBsnTlvPortPriorityVer13.Builder();
-    }
-    public OFBsnTlvPortPriority portPriority(int value) {
-        return new OFBsnTlvPortPriorityVer13(
                 value
                     );
     }
@@ -319,24 +382,6 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         return new OFBsnTlvSubAgentIdVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvSystemMac.Builder buildSystemMac() {
-        return new OFBsnTlvSystemMacVer13.Builder();
-    }
-    public OFBsnTlvSystemMac systemMac(MacAddress value) {
-        return new OFBsnTlvSystemMacVer13(
-                value
-                    );
-    }
-
-    public OFBsnTlvSystemPriority.Builder buildSystemPriority() {
-        return new OFBsnTlvSystemPriorityVer13.Builder();
-    }
-    public OFBsnTlvSystemPriority systemPriority(int value) {
-        return new OFBsnTlvSystemPriorityVer13(
                 value
                     );
     }

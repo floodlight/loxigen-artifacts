@@ -27,6 +27,16 @@ import org.projectfloodlight.openflow.exceptions.*;
 public interface OFBsnTlvs {
     // Subfactories
 
+    OFBsnTlvActorKey.Builder buildActorKey() throws UnsupportedOperationException;
+    OFBsnTlvActorKey actorKey(int value);
+    OFBsnTlvActorPortNum.Builder buildActorPortNum() throws UnsupportedOperationException;
+    OFBsnTlvActorPortNum actorPortNum(int value);
+    OFBsnTlvActorPortPriority.Builder buildActorPortPriority() throws UnsupportedOperationException;
+    OFBsnTlvActorPortPriority actorPortPriority(int value);
+    OFBsnTlvActorSystemMac.Builder buildActorSystemMac() throws UnsupportedOperationException;
+    OFBsnTlvActorSystemMac actorSystemMac(MacAddress value);
+    OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() throws UnsupportedOperationException;
+    OFBsnTlvActorSystemPriority actorSystemPriority(int value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
@@ -70,14 +80,18 @@ public interface OFBsnTlvs {
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
+    OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;
+    OFBsnTlvPartnerKey partnerKey(int value);
+    OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() throws UnsupportedOperationException;
+    OFBsnTlvPartnerPortNum partnerPortNum(int value);
+    OFBsnTlvPartnerPortPriority.Builder buildPartnerPortPriority() throws UnsupportedOperationException;
+    OFBsnTlvPartnerPortPriority partnerPortPriority(int value);
+    OFBsnTlvPartnerSystemMac.Builder buildPartnerSystemMac() throws UnsupportedOperationException;
+    OFBsnTlvPartnerSystemMac partnerSystemMac(MacAddress value);
+    OFBsnTlvPartnerSystemPriority.Builder buildPartnerSystemPriority() throws UnsupportedOperationException;
+    OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
-    OFBsnTlvPortKey.Builder buildPortKey() throws UnsupportedOperationException;
-    OFBsnTlvPortKey portKey(int value);
-    OFBsnTlvPortNum.Builder buildPortNum() throws UnsupportedOperationException;
-    OFBsnTlvPortNum portNum(int value);
-    OFBsnTlvPortPriority.Builder buildPortPriority() throws UnsupportedOperationException;
-    OFBsnTlvPortPriority portPriority(int value);
     OFBsnTlvQueueId.Builder buildQueueId() throws UnsupportedOperationException;
     OFBsnTlvQueueId queueId(long value);
     OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;
@@ -92,10 +106,6 @@ public interface OFBsnTlvs {
     OFBsnTlvSamplingRate samplingRate(long value);
     OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
     OFBsnTlvSubAgentId subAgentId(long value);
-    OFBsnTlvSystemMac.Builder buildSystemMac() throws UnsupportedOperationException;
-    OFBsnTlvSystemMac systemMac(MacAddress value);
-    OFBsnTlvSystemPriority.Builder buildSystemPriority() throws UnsupportedOperationException;
-    OFBsnTlvSystemPriority systemPriority(int value);
     OFBsnTlvTxBytes.Builder buildTxBytes() throws UnsupportedOperationException;
     OFBsnTlvTxBytes txBytes(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;

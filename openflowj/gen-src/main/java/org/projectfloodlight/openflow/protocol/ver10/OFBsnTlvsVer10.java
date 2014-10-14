@@ -31,6 +31,41 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
 
 
 
+    public OFBsnTlvActorKey.Builder buildActorKey() {
+        throw new UnsupportedOperationException("OFBsnTlvActorKey not supported in version 1.0");
+    }
+    public OFBsnTlvActorKey actorKey(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvActorKey not supported in version 1.0");
+    }
+
+    public OFBsnTlvActorPortNum.Builder buildActorPortNum() {
+        throw new UnsupportedOperationException("OFBsnTlvActorPortNum not supported in version 1.0");
+    }
+    public OFBsnTlvActorPortNum actorPortNum(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvActorPortNum not supported in version 1.0");
+    }
+
+    public OFBsnTlvActorPortPriority.Builder buildActorPortPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvActorPortPriority not supported in version 1.0");
+    }
+    public OFBsnTlvActorPortPriority actorPortPriority(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvActorPortPriority not supported in version 1.0");
+    }
+
+    public OFBsnTlvActorSystemMac.Builder buildActorSystemMac() {
+        throw new UnsupportedOperationException("OFBsnTlvActorSystemMac not supported in version 1.0");
+    }
+    public OFBsnTlvActorSystemMac actorSystemMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvActorSystemMac not supported in version 1.0");
+    }
+
+    public OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvActorSystemPriority not supported in version 1.0");
+    }
+    public OFBsnTlvActorSystemPriority actorSystemPriority(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvActorSystemPriority not supported in version 1.0");
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.0");
     }
@@ -182,32 +217,46 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.0");
     }
 
+    public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerKey not supported in version 1.0");
+    }
+    public OFBsnTlvPartnerKey partnerKey(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerKey not supported in version 1.0");
+    }
+
+    public OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerPortNum not supported in version 1.0");
+    }
+    public OFBsnTlvPartnerPortNum partnerPortNum(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerPortNum not supported in version 1.0");
+    }
+
+    public OFBsnTlvPartnerPortPriority.Builder buildPartnerPortPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerPortPriority not supported in version 1.0");
+    }
+    public OFBsnTlvPartnerPortPriority partnerPortPriority(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerPortPriority not supported in version 1.0");
+    }
+
+    public OFBsnTlvPartnerSystemMac.Builder buildPartnerSystemMac() {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemMac not supported in version 1.0");
+    }
+    public OFBsnTlvPartnerSystemMac partnerSystemMac(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemMac not supported in version 1.0");
+    }
+
+    public OFBsnTlvPartnerSystemPriority.Builder buildPartnerSystemPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.0");
+    }
+    public OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerSystemPriority not supported in version 1.0");
+    }
+
     public OFBsnTlvPort.Builder buildPort() {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.0");
     }
     public OFBsnTlvPort port(OFPort value) {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.0");
-    }
-
-    public OFBsnTlvPortKey.Builder buildPortKey() {
-        throw new UnsupportedOperationException("OFBsnTlvPortKey not supported in version 1.0");
-    }
-    public OFBsnTlvPortKey portKey(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortKey not supported in version 1.0");
-    }
-
-    public OFBsnTlvPortNum.Builder buildPortNum() {
-        throw new UnsupportedOperationException("OFBsnTlvPortNum not supported in version 1.0");
-    }
-    public OFBsnTlvPortNum portNum(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortNum not supported in version 1.0");
-    }
-
-    public OFBsnTlvPortPriority.Builder buildPortPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvPortPriority not supported in version 1.0");
-    }
-    public OFBsnTlvPortPriority portPriority(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvPortPriority not supported in version 1.0");
     }
 
     public OFBsnTlvQueueId.Builder buildQueueId() {
@@ -257,20 +306,6 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.0");
-    }
-
-    public OFBsnTlvSystemMac.Builder buildSystemMac() {
-        throw new UnsupportedOperationException("OFBsnTlvSystemMac not supported in version 1.0");
-    }
-    public OFBsnTlvSystemMac systemMac(MacAddress value) {
-        throw new UnsupportedOperationException("OFBsnTlvSystemMac not supported in version 1.0");
-    }
-
-    public OFBsnTlvSystemPriority.Builder buildSystemPriority() {
-        throw new UnsupportedOperationException("OFBsnTlvSystemPriority not supported in version 1.0");
-    }
-    public OFBsnTlvSystemPriority systemPriority(int value) {
-        throw new UnsupportedOperationException("OFBsnTlvSystemPriority not supported in version 1.0");
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {

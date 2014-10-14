@@ -827,6 +827,11 @@ int of_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 int of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_entry_t *obj);
 int of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_switch_pipeline_stats_entry_t *obj);
 int of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_entry_t *obj);
+int of_bsn_tlv_actor_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_key_t *obj);
+int of_bsn_tlv_actor_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_port_num_t *obj);
+int of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_port_priority_t *obj);
+int of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_system_mac_t *obj);
+int of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_system_priority_t *obj);
 int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_broadcast_query_timeout_t *obj);
 int of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_circuit_id_t *obj);
 int of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_convergence_status_t *obj);
@@ -850,10 +855,12 @@ int of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 int of_bsn_tlv_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_ipv4_src_t *obj);
 int of_bsn_tlv_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_mac_t *obj);
 int of_bsn_tlv_miss_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_miss_packets_t *obj);
+int of_bsn_tlv_partner_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_key_t *obj);
+int of_bsn_tlv_partner_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_port_num_t *obj);
+int of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_port_priority_t *obj);
+int of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_system_mac_t *obj);
+int of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_system_priority_t *obj);
 int of_bsn_tlv_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_t *obj);
-int of_bsn_tlv_port_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_key_t *obj);
-int of_bsn_tlv_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_num_t *obj);
-int of_bsn_tlv_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_priority_t *obj);
 int of_bsn_tlv_queue_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_id_t *obj);
 int of_bsn_tlv_queue_weight_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_weight_t *obj);
 int of_bsn_tlv_reply_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_reply_packets_t *obj);
@@ -861,8 +868,6 @@ int of_bsn_tlv_request_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 int of_bsn_tlv_rx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_rx_packets_t *obj);
 int of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_sampling_rate_t *obj);
 int of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_sub_agent_id_t *obj);
-int of_bsn_tlv_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_system_mac_t *obj);
-int of_bsn_tlv_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_system_priority_t *obj);
 int of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_tx_bytes_t *obj);
 int of_bsn_tlv_tx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_tx_packets_t *obj);
 int of_bsn_tlv_udf_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_anchor_t *obj);

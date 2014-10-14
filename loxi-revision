@@ -1,1 +1,1 @@
-c0481f420fe97f2ea6f2796680163486b232c3ac Merge into master from pull request #323: openflow_input: add TLVs for LACP gentable (https://github.com/floodlight/loxigen/pull/323)
+ad82995f07bd6170f294430140011134e9ad21d9 Merge into master from pull request #328: openflow_input: rename actor tlvs and add partner tlvs (https://github.com/floodlight/loxigen/pull/328)

@@ -13637,22 +13637,37 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_BSN_TLV_TX_BYTES;
             break;
         case 0x28:
-            *id = OF_BSN_TLV_SYSTEM_PRIORITY;
+            *id = OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY;
             break;
         case 0x29:
-            *id = OF_BSN_TLV_SYSTEM_MAC;
+            *id = OF_BSN_TLV_ACTOR_SYSTEM_MAC;
             break;
         case 0x2a:
-            *id = OF_BSN_TLV_PORT_PRIORITY;
+            *id = OF_BSN_TLV_ACTOR_PORT_PRIORITY;
             break;
         case 0x2b:
-            *id = OF_BSN_TLV_PORT_NUM;
+            *id = OF_BSN_TLV_ACTOR_PORT_NUM;
             break;
         case 0x2c:
-            *id = OF_BSN_TLV_PORT_KEY;
+            *id = OF_BSN_TLV_ACTOR_KEY;
             break;
         case 0x2d:
             *id = OF_BSN_TLV_CONVERGENCE_STATUS;
+            break;
+        case 0x2f:
+            *id = OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY;
+            break;
+        case 0x30:
+            *id = OF_BSN_TLV_PARTNER_SYSTEM_MAC;
+            break;
+        case 0x31:
+            *id = OF_BSN_TLV_PARTNER_PORT_PRIORITY;
+            break;
+        case 0x32:
+            *id = OF_BSN_TLV_PARTNER_PORT_NUM;
+            break;
+        case 0x33:
+            *id = OF_BSN_TLV_PARTNER_KEY;
             break;
         default:
             *id = OF_BSN_TLV;
@@ -13744,6 +13759,1101 @@ of_bsn_tlv_init(of_bsn_tlv_t *obj_p,
     }
 }
 
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
+of_bsn_tlv_actor_key_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x2c); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_actor_key of_bsn_tlv_actor_key
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bsn_tlv_actor_key_push_wire_values(of_bsn_tlv_actor_key_t *obj)
+{
+
+    of_bsn_tlv_actor_key_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_bsn_tlv_actor_key object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_actor_key
+ */
+
+of_bsn_tlv_actor_key_t *
+of_bsn_tlv_actor_key_new(of_version_t version)
+{
+    of_bsn_tlv_actor_key_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_KEY] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_KEY];
+
+    if ((obj = (of_bsn_tlv_actor_key_t *)of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_actor_key_init(obj, version, bytes, 0);
+
+    if (of_bsn_tlv_actor_key_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_actor_key.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_actor_key_init(of_bsn_tlv_actor_key_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ACTOR_KEY] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_KEY] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_KEY];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_ACTOR_KEY;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Get value from an object of type of_bsn_tlv_actor_key.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_key.
+ * @param value Pointer to the child object of type
+ * uint16_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_actor_key_value_get(
+    of_bsn_tlv_actor_key_t *obj,
+    uint16_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_KEY);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_actor_key.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_key.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_actor_key_value_set(
+    of_bsn_tlv_actor_key_t *obj,
+    uint16_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_KEY);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
+of_bsn_tlv_actor_port_num_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x2b); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_actor_port_num of_bsn_tlv_actor_port_num
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bsn_tlv_actor_port_num_push_wire_values(of_bsn_tlv_actor_port_num_t *obj)
+{
+
+    of_bsn_tlv_actor_port_num_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_bsn_tlv_actor_port_num object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_actor_port_num
+ */
+
+of_bsn_tlv_actor_port_num_t *
+of_bsn_tlv_actor_port_num_new(of_version_t version)
+{
+    of_bsn_tlv_actor_port_num_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_PORT_NUM] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_PORT_NUM];
+
+    if ((obj = (of_bsn_tlv_actor_port_num_t *)of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_actor_port_num_init(obj, version, bytes, 0);
+
+    if (of_bsn_tlv_actor_port_num_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_actor_port_num.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_actor_port_num_init(of_bsn_tlv_actor_port_num_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ACTOR_PORT_NUM] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_PORT_NUM] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_PORT_NUM];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_ACTOR_PORT_NUM;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Get value from an object of type of_bsn_tlv_actor_port_num.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_port_num.
+ * @param value Pointer to the child object of type
+ * uint16_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_actor_port_num_value_get(
+    of_bsn_tlv_actor_port_num_t *obj,
+    uint16_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_PORT_NUM);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_actor_port_num.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_port_num.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_actor_port_num_value_set(
+    of_bsn_tlv_actor_port_num_t *obj,
+    uint16_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_PORT_NUM);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
+of_bsn_tlv_actor_port_priority_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x2a); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_actor_port_priority of_bsn_tlv_actor_port_priority
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bsn_tlv_actor_port_priority_push_wire_values(of_bsn_tlv_actor_port_priority_t *obj)
+{
+
+    of_bsn_tlv_actor_port_priority_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_bsn_tlv_actor_port_priority object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_actor_port_priority
+ */
+
+of_bsn_tlv_actor_port_priority_t *
+of_bsn_tlv_actor_port_priority_new(of_version_t version)
+{
+    of_bsn_tlv_actor_port_priority_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_PORT_PRIORITY] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_PORT_PRIORITY];
+
+    if ((obj = (of_bsn_tlv_actor_port_priority_t *)of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_actor_port_priority_init(obj, version, bytes, 0);
+
+    if (of_bsn_tlv_actor_port_priority_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_actor_port_priority.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_actor_port_priority_init(of_bsn_tlv_actor_port_priority_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ACTOR_PORT_PRIORITY] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_PORT_PRIORITY] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_PORT_PRIORITY];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_ACTOR_PORT_PRIORITY;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Get value from an object of type of_bsn_tlv_actor_port_priority.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_port_priority.
+ * @param value Pointer to the child object of type
+ * uint16_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_actor_port_priority_value_get(
+    of_bsn_tlv_actor_port_priority_t *obj,
+    uint16_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_actor_port_priority.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_port_priority.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_actor_port_priority_value_set(
+    of_bsn_tlv_actor_port_priority_t *obj,
+    uint16_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
+of_bsn_tlv_actor_system_mac_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x29); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_actor_system_mac of_bsn_tlv_actor_system_mac
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bsn_tlv_actor_system_mac_push_wire_values(of_bsn_tlv_actor_system_mac_t *obj)
+{
+
+    of_bsn_tlv_actor_system_mac_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_bsn_tlv_actor_system_mac object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_actor_system_mac
+ */
+
+of_bsn_tlv_actor_system_mac_t *
+of_bsn_tlv_actor_system_mac_new(of_version_t version)
+{
+    of_bsn_tlv_actor_system_mac_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_SYSTEM_MAC] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_SYSTEM_MAC];
+
+    if ((obj = (of_bsn_tlv_actor_system_mac_t *)of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_actor_system_mac_init(obj, version, bytes, 0);
+
+    if (of_bsn_tlv_actor_system_mac_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_actor_system_mac.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_actor_system_mac_init(of_bsn_tlv_actor_system_mac_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ACTOR_SYSTEM_MAC] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_SYSTEM_MAC] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_SYSTEM_MAC];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_ACTOR_SYSTEM_MAC;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Get value from an object of type of_bsn_tlv_actor_system_mac.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_system_mac.
+ * @param value Pointer to the child object of type
+ * of_mac_addr_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_actor_system_mac_value_get(
+    of_bsn_tlv_actor_system_mac_t *obj,
+    of_mac_addr_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_mac_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_actor_system_mac.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_system_mac.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_actor_system_mac_value_set(
+    of_bsn_tlv_actor_system_mac_t *obj,
+    of_mac_addr_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_mac_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
+of_bsn_tlv_actor_system_priority_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_3:
+        *(uint16_t *)(buf + 0) = U16_HTON(0x28); /* type */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_bsn_tlv_actor_system_priority of_bsn_tlv_actor_system_priority
+ */
+
+/**
+ * Helper function to push values into the wire buffer
+ */
+static inline int
+of_bsn_tlv_actor_system_priority_push_wire_values(of_bsn_tlv_actor_system_priority_t *obj)
+{
+
+    of_bsn_tlv_actor_system_priority_push_wire_types(obj);
+
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
+    return OF_ERROR_NONE;
+}
+
+/**
+ * Create a new of_bsn_tlv_actor_system_priority object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_bsn_tlv_actor_system_priority
+ */
+
+of_bsn_tlv_actor_system_priority_t *
+of_bsn_tlv_actor_system_priority_new(of_version_t version)
+{
+    of_bsn_tlv_actor_system_priority_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY];
+
+    if ((obj = (of_bsn_tlv_actor_system_priority_t *)of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_actor_system_priority_init(obj, version, bytes, 0);
+
+    if (of_bsn_tlv_actor_system_priority_push_wire_values(obj) < 0) {
+        FREE(obj);
+        return NULL;
+    }
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_bsn_tlv_actor_system_priority.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_bsn_tlv_actor_system_priority_init(of_bsn_tlv_actor_system_priority_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY] + of_object_extra_len[version][OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+
+/**
+ * Get value from an object of type of_bsn_tlv_actor_system_priority.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_system_priority.
+ * @param value Pointer to the child object of type
+ * uint16_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_actor_system_priority_value_get(
+    of_bsn_tlv_actor_system_priority_t *obj,
+    uint16_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_actor_system_priority.
+ * @param obj Pointer to an object of type of_bsn_tlv_actor_system_priority.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_actor_system_priority_value_set(
+    of_bsn_tlv_actor_system_priority_t *obj,
+    uint16_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -14199,1099 +15309,4 @@ of_bsn_tlv_circuit_id_value_set(
     OF_LENGTH_CHECK_ASSERT(obj);
 
     return OF_ERROR_NONE;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_convergence_status_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x2d); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_convergence_status of_bsn_tlv_convergence_status
- */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_tlv_convergence_status_push_wire_values(of_bsn_tlv_convergence_status_t *obj)
-{
-
-    of_bsn_tlv_convergence_status_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * Create a new of_bsn_tlv_convergence_status object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_convergence_status
- */
-
-of_bsn_tlv_convergence_status_t *
-of_bsn_tlv_convergence_status_new(of_version_t version)
-{
-    of_bsn_tlv_convergence_status_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_CONVERGENCE_STATUS] + of_object_extra_len[version][OF_BSN_TLV_CONVERGENCE_STATUS];
-
-    if ((obj = (of_bsn_tlv_convergence_status_t *)of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_convergence_status_init(obj, version, bytes, 0);
-
-    if (of_bsn_tlv_convergence_status_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_convergence_status.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_convergence_status_init(of_bsn_tlv_convergence_status_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_CONVERGENCE_STATUS] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_CONVERGENCE_STATUS] + of_object_extra_len[version][OF_BSN_TLV_CONVERGENCE_STATUS];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_CONVERGENCE_STATUS;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-
-/**
- * Get value from an object of type of_bsn_tlv_convergence_status.
- * @param obj Pointer to an object of type of_bsn_tlv_convergence_status.
- * @param value Pointer to the child object of type
- * uint8_t to be filled out.
- *
- */
-void
-of_bsn_tlv_convergence_status_value_get(
-    of_bsn_tlv_convergence_status_t *obj,
-    uint8_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_CONVERGENCE_STATUS);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u8_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_convergence_status.
- * @param obj Pointer to an object of type of_bsn_tlv_convergence_status.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_convergence_status_value_set(
-    of_bsn_tlv_convergence_status_t *obj,
-    uint8_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_CONVERGENCE_STATUS);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u8_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x16); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_crc_enabled of_bsn_tlv_crc_enabled
- */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_tlv_crc_enabled_push_wire_values(of_bsn_tlv_crc_enabled_t *obj)
-{
-
-    of_bsn_tlv_crc_enabled_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * Create a new of_bsn_tlv_crc_enabled object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_crc_enabled
- */
-
-of_bsn_tlv_crc_enabled_t *
-of_bsn_tlv_crc_enabled_new(of_version_t version)
-{
-    of_bsn_tlv_crc_enabled_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_CRC_ENABLED] + of_object_extra_len[version][OF_BSN_TLV_CRC_ENABLED];
-
-    if ((obj = (of_bsn_tlv_crc_enabled_t *)of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_crc_enabled_init(obj, version, bytes, 0);
-
-    if (of_bsn_tlv_crc_enabled_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_crc_enabled.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_crc_enabled_init(of_bsn_tlv_crc_enabled_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_CRC_ENABLED] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_CRC_ENABLED] + of_object_extra_len[version][OF_BSN_TLV_CRC_ENABLED];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_CRC_ENABLED;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-
-/**
- * Get value from an object of type of_bsn_tlv_crc_enabled.
- * @param obj Pointer to an object of type of_bsn_tlv_crc_enabled.
- * @param value Pointer to the child object of type
- * uint8_t to be filled out.
- *
- */
-void
-of_bsn_tlv_crc_enabled_value_get(
-    of_bsn_tlv_crc_enabled_t *obj,
-    uint8_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_CRC_ENABLED);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u8_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_crc_enabled.
- * @param obj Pointer to an object of type of_bsn_tlv_crc_enabled.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_crc_enabled_value_set(
-    of_bsn_tlv_crc_enabled_t *obj,
-    uint8_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_CRC_ENABLED);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u8_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x21); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_eth_dst of_bsn_tlv_eth_dst
- */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_tlv_eth_dst_push_wire_values(of_bsn_tlv_eth_dst_t *obj)
-{
-
-    of_bsn_tlv_eth_dst_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * Create a new of_bsn_tlv_eth_dst object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_eth_dst
- */
-
-of_bsn_tlv_eth_dst_t *
-of_bsn_tlv_eth_dst_new(of_version_t version)
-{
-    of_bsn_tlv_eth_dst_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_ETH_DST] + of_object_extra_len[version][OF_BSN_TLV_ETH_DST];
-
-    if ((obj = (of_bsn_tlv_eth_dst_t *)of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_eth_dst_init(obj, version, bytes, 0);
-
-    if (of_bsn_tlv_eth_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_eth_dst.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_eth_dst_init(of_bsn_tlv_eth_dst_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ETH_DST] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_ETH_DST] + of_object_extra_len[version][OF_BSN_TLV_ETH_DST];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_ETH_DST;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-
-/**
- * Get value from an object of type of_bsn_tlv_eth_dst.
- * @param obj Pointer to an object of type of_bsn_tlv_eth_dst.
- * @param value Pointer to the child object of type
- * of_mac_addr_t to be filled out.
- *
- */
-void
-of_bsn_tlv_eth_dst_value_get(
-    of_bsn_tlv_eth_dst_t *obj,
-    of_mac_addr_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ETH_DST);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_eth_dst.
- * @param obj Pointer to an object of type of_bsn_tlv_eth_dst.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_eth_dst_value_set(
-    of_bsn_tlv_eth_dst_t *obj,
-    of_mac_addr_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ETH_DST);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_eth_src_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x20); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_eth_src of_bsn_tlv_eth_src
- */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_tlv_eth_src_push_wire_values(of_bsn_tlv_eth_src_t *obj)
-{
-
-    of_bsn_tlv_eth_src_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * Create a new of_bsn_tlv_eth_src object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_eth_src
- */
-
-of_bsn_tlv_eth_src_t *
-of_bsn_tlv_eth_src_new(of_version_t version)
-{
-    of_bsn_tlv_eth_src_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_ETH_SRC] + of_object_extra_len[version][OF_BSN_TLV_ETH_SRC];
-
-    if ((obj = (of_bsn_tlv_eth_src_t *)of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_eth_src_init(obj, version, bytes, 0);
-
-    if (of_bsn_tlv_eth_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_eth_src.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_eth_src_init(of_bsn_tlv_eth_src_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ETH_SRC] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_ETH_SRC] + of_object_extra_len[version][OF_BSN_TLV_ETH_SRC];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_ETH_SRC;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-
-/**
- * Get value from an object of type of_bsn_tlv_eth_src.
- * @param obj Pointer to an object of type of_bsn_tlv_eth_src.
- * @param value Pointer to the child object of type
- * of_mac_addr_t to be filled out.
- *
- */
-void
-of_bsn_tlv_eth_src_value_get(
-    of_bsn_tlv_eth_src_t *obj,
-    of_mac_addr_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ETH_SRC);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_eth_src.
- * @param obj Pointer to an object of type of_bsn_tlv_eth_src.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_eth_src_value_set(
-    of_bsn_tlv_eth_src_t *obj,
-    of_mac_addr_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ETH_SRC);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_mac_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_bsn_tlv_external_gateway_ip_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x1a); /* type */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_bsn_tlv_external_gateway_ip of_bsn_tlv_external_gateway_ip
- */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_tlv_external_gateway_ip_push_wire_values(of_bsn_tlv_external_gateway_ip_t *obj)
-{
-
-    of_bsn_tlv_external_gateway_ip_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
- * Create a new of_bsn_tlv_external_gateway_ip object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_bsn_tlv_external_gateway_ip
- */
-
-of_bsn_tlv_external_gateway_ip_t *
-of_bsn_tlv_external_gateway_ip_new(of_version_t version)
-{
-    of_bsn_tlv_external_gateway_ip_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_IP] + of_object_extra_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_IP];
-
-    if ((obj = (of_bsn_tlv_external_gateway_ip_t *)of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_bsn_tlv_external_gateway_ip_init(obj, version, bytes, 0);
-
-    if (of_bsn_tlv_external_gateway_ip_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_bsn_tlv_external_gateway_ip.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_bsn_tlv_external_gateway_ip_init(of_bsn_tlv_external_gateway_ip_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_IP] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_IP] + of_object_extra_len[version][OF_BSN_TLV_EXTERNAL_GATEWAY_IP];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_EXTERNAL_GATEWAY_IP;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-
-/**
- * Get value from an object of type of_bsn_tlv_external_gateway_ip.
- * @param obj Pointer to an object of type of_bsn_tlv_external_gateway_ip.
- * @param value Pointer to the child object of type
- * of_ipv4_t to be filled out.
- *
- */
-void
-of_bsn_tlv_external_gateway_ip_value_get(
-    of_bsn_tlv_external_gateway_ip_t *obj,
-    of_ipv4_t *value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_ipv4_get(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set value in an object of type of_bsn_tlv_external_gateway_ip.
- * @param obj Pointer to an object of type of_bsn_tlv_external_gateway_ip.
- * @param value The value to write into the object
- */
-void
-of_bsn_tlv_external_gateway_ip_value_set(
-    of_bsn_tlv_external_gateway_ip_t *obj,
-    of_ipv4_t value)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_ipv4_set(wbuf, abs_offset, value);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
 }

@@ -1054,6 +1054,26 @@ extern of_bsn_tlv_t *
     of_bsn_tlv_dup(
         of_bsn_tlv_t *src);
 
+extern of_bsn_tlv_actor_key_t *
+    of_bsn_tlv_actor_key_dup(
+        of_bsn_tlv_actor_key_t *src);
+
+extern of_bsn_tlv_actor_port_num_t *
+    of_bsn_tlv_actor_port_num_dup(
+        of_bsn_tlv_actor_port_num_t *src);
+
+extern of_bsn_tlv_actor_port_priority_t *
+    of_bsn_tlv_actor_port_priority_dup(
+        of_bsn_tlv_actor_port_priority_t *src);
+
+extern of_bsn_tlv_actor_system_mac_t *
+    of_bsn_tlv_actor_system_mac_dup(
+        of_bsn_tlv_actor_system_mac_t *src);
+
+extern of_bsn_tlv_actor_system_priority_t *
+    of_bsn_tlv_actor_system_priority_dup(
+        of_bsn_tlv_actor_system_priority_t *src);
+
 extern of_bsn_tlv_broadcast_query_timeout_t *
     of_bsn_tlv_broadcast_query_timeout_dup(
         of_bsn_tlv_broadcast_query_timeout_t *src);
@@ -1146,21 +1166,29 @@ extern of_bsn_tlv_miss_packets_t *
     of_bsn_tlv_miss_packets_dup(
         of_bsn_tlv_miss_packets_t *src);
 
+extern of_bsn_tlv_partner_key_t *
+    of_bsn_tlv_partner_key_dup(
+        of_bsn_tlv_partner_key_t *src);
+
+extern of_bsn_tlv_partner_port_num_t *
+    of_bsn_tlv_partner_port_num_dup(
+        of_bsn_tlv_partner_port_num_t *src);
+
+extern of_bsn_tlv_partner_port_priority_t *
+    of_bsn_tlv_partner_port_priority_dup(
+        of_bsn_tlv_partner_port_priority_t *src);
+
+extern of_bsn_tlv_partner_system_mac_t *
+    of_bsn_tlv_partner_system_mac_dup(
+        of_bsn_tlv_partner_system_mac_t *src);
+
+extern of_bsn_tlv_partner_system_priority_t *
+    of_bsn_tlv_partner_system_priority_dup(
+        of_bsn_tlv_partner_system_priority_t *src);
+
 extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_dup(
         of_bsn_tlv_port_t *src);
-
-extern of_bsn_tlv_port_key_t *
-    of_bsn_tlv_port_key_dup(
-        of_bsn_tlv_port_key_t *src);
-
-extern of_bsn_tlv_port_num_t *
-    of_bsn_tlv_port_num_dup(
-        of_bsn_tlv_port_num_t *src);
-
-extern of_bsn_tlv_port_priority_t *
-    of_bsn_tlv_port_priority_dup(
-        of_bsn_tlv_port_priority_t *src);
 
 extern of_bsn_tlv_queue_id_t *
     of_bsn_tlv_queue_id_dup(
@@ -1189,14 +1217,6 @@ extern of_bsn_tlv_sampling_rate_t *
 extern of_bsn_tlv_sub_agent_id_t *
     of_bsn_tlv_sub_agent_id_dup(
         of_bsn_tlv_sub_agent_id_t *src);
-
-extern of_bsn_tlv_system_mac_t *
-    of_bsn_tlv_system_mac_dup(
-        of_bsn_tlv_system_mac_t *src);
-
-extern of_bsn_tlv_system_priority_t *
-    of_bsn_tlv_system_priority_dup(
-        of_bsn_tlv_system_priority_t *src);
 
 extern of_bsn_tlv_tx_bytes_t *
     of_bsn_tlv_tx_bytes_dup(
@@ -5466,6 +5486,26 @@ extern of_bsn_tlv_t *
     of_bsn_tlv_OF_VERSION_1_3_dup(
         of_bsn_tlv_t *src);
 
+extern of_bsn_tlv_actor_key_t *
+    of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(
+        of_bsn_tlv_actor_key_t *src);
+
+extern of_bsn_tlv_actor_port_num_t *
+    of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(
+        of_bsn_tlv_actor_port_num_t *src);
+
+extern of_bsn_tlv_actor_port_priority_t *
+    of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(
+        of_bsn_tlv_actor_port_priority_t *src);
+
+extern of_bsn_tlv_actor_system_mac_t *
+    of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_actor_system_mac_t *src);
+
+extern of_bsn_tlv_actor_system_priority_t *
+    of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dup(
+        of_bsn_tlv_actor_system_priority_t *src);
+
 extern of_bsn_tlv_broadcast_query_timeout_t *
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
         of_bsn_tlv_broadcast_query_timeout_t *src);
@@ -5558,21 +5598,29 @@ extern of_bsn_tlv_miss_packets_t *
     of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
         of_bsn_tlv_miss_packets_t *src);
 
+extern of_bsn_tlv_partner_key_t *
+    of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(
+        of_bsn_tlv_partner_key_t *src);
+
+extern of_bsn_tlv_partner_port_num_t *
+    of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(
+        of_bsn_tlv_partner_port_num_t *src);
+
+extern of_bsn_tlv_partner_port_priority_t *
+    of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(
+        of_bsn_tlv_partner_port_priority_t *src);
+
+extern of_bsn_tlv_partner_system_mac_t *
+    of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(
+        of_bsn_tlv_partner_system_mac_t *src);
+
+extern of_bsn_tlv_partner_system_priority_t *
+    of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(
+        of_bsn_tlv_partner_system_priority_t *src);
+
 extern of_bsn_tlv_port_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
         of_bsn_tlv_port_t *src);
-
-extern of_bsn_tlv_port_key_t *
-    of_bsn_tlv_port_key_OF_VERSION_1_3_dup(
-        of_bsn_tlv_port_key_t *src);
-
-extern of_bsn_tlv_port_num_t *
-    of_bsn_tlv_port_num_OF_VERSION_1_3_dup(
-        of_bsn_tlv_port_num_t *src);
-
-extern of_bsn_tlv_port_priority_t *
-    of_bsn_tlv_port_priority_OF_VERSION_1_3_dup(
-        of_bsn_tlv_port_priority_t *src);
 
 extern of_bsn_tlv_queue_id_t *
     of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(
@@ -5601,14 +5649,6 @@ extern of_bsn_tlv_sampling_rate_t *
 extern of_bsn_tlv_sub_agent_id_t *
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(
         of_bsn_tlv_sub_agent_id_t *src);
-
-extern of_bsn_tlv_system_mac_t *
-    of_bsn_tlv_system_mac_OF_VERSION_1_3_dup(
-        of_bsn_tlv_system_mac_t *src);
-
-extern of_bsn_tlv_system_priority_t *
-    of_bsn_tlv_system_priority_OF_VERSION_1_3_dup(
-        of_bsn_tlv_system_priority_t *src);
 
 extern of_bsn_tlv_tx_bytes_t *
     of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(
