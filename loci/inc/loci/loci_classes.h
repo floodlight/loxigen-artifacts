@@ -1039,10 +1039,10 @@ void of_uint8_push_wire_types(of_object_t *obj);
 
 /* LOCI inheritance parent typedefs */
 typedef union of_queue_prop_u of_queue_prop_t;
-typedef union of_hello_elem_u of_hello_elem_t;
+typedef union of_action_u of_action_t;
 typedef union of_bsn_vport_u of_bsn_vport_t;
 typedef union of_table_feature_prop_u of_table_feature_prop_t;
-typedef union of_action_u of_action_t;
+typedef union of_hello_elem_u of_hello_elem_t;
 typedef union of_instruction_u of_instruction_t;
 typedef union of_bsn_tlv_u of_bsn_tlv_t;
 typedef union of_instruction_id_u of_instruction_id_t;
@@ -22804,61 +22804,6 @@ union of_queue_prop_u {
 };
 
 /**
- * Inheritance super class for of_hello_elem
- *
- * This class is the union of of_hello_elem classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_hello_elem_u {
-    of_hello_elem_header_t header; /* Generic instance */
-    of_hello_elem_versionbitmap_t versionbitmap;
-};
-
-/**
- * Inheritance super class for of_bsn_vport
- *
- * This class is the union of of_bsn_vport classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_bsn_vport_u {
-    of_bsn_vport_header_t header; /* Generic instance */
-    of_bsn_vport_l2gre_t l2gre;
-    of_bsn_vport_q_in_q_t q_in_q;
-};
-
-/**
- * Inheritance super class for of_table_feature_prop
- *
- * This class is the union of of_table_feature_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_table_feature_prop_u {
-    of_table_feature_prop_header_t header; /* Generic instance */
-    of_table_feature_prop_apply_actions_t apply_actions;
-    of_table_feature_prop_apply_actions_miss_t apply_actions_miss;
-    of_table_feature_prop_apply_setfield_t apply_setfield;
-    of_table_feature_prop_apply_setfield_miss_t apply_setfield_miss;
-    of_table_feature_prop_experimenter_t experimenter;
-    of_table_feature_prop_experimenter_miss_t experimenter_miss;
-    of_table_feature_prop_instructions_t instructions;
-    of_table_feature_prop_instructions_miss_t instructions_miss;
-    of_table_feature_prop_match_t match;
-    of_table_feature_prop_next_tables_t next_tables;
-    of_table_feature_prop_next_tables_miss_t next_tables_miss;
-    of_table_feature_prop_wildcards_t wildcards;
-    of_table_feature_prop_write_actions_t write_actions;
-    of_table_feature_prop_write_actions_miss_t write_actions_miss;
-    of_table_feature_prop_write_setfield_t write_setfield;
-    of_table_feature_prop_write_setfield_miss_t write_setfield_miss;
-};
-
-/**
  * Inheritance super class for of_action
  *
  * This class is the union of of_action classes.  You can refer
@@ -22905,6 +22850,61 @@ union of_action_u {
     of_action_set_vlan_pcp_t set_vlan_pcp;
     of_action_set_vlan_vid_t set_vlan_vid;
     of_action_strip_vlan_t strip_vlan;
+};
+
+/**
+ * Inheritance super class for of_bsn_vport
+ *
+ * This class is the union of of_bsn_vport classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_bsn_vport_u {
+    of_bsn_vport_header_t header; /* Generic instance */
+    of_bsn_vport_l2gre_t l2gre;
+    of_bsn_vport_q_in_q_t q_in_q;
+};
+
+/**
+ * Inheritance super class for of_table_feature_prop
+ *
+ * This class is the union of of_table_feature_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_table_feature_prop_u {
+    of_table_feature_prop_header_t header; /* Generic instance */
+    of_table_feature_prop_apply_actions_t apply_actions;
+    of_table_feature_prop_apply_actions_miss_t apply_actions_miss;
+    of_table_feature_prop_apply_setfield_t apply_setfield;
+    of_table_feature_prop_apply_setfield_miss_t apply_setfield_miss;
+    of_table_feature_prop_experimenter_t experimenter;
+    of_table_feature_prop_experimenter_miss_t experimenter_miss;
+    of_table_feature_prop_instructions_t instructions;
+    of_table_feature_prop_instructions_miss_t instructions_miss;
+    of_table_feature_prop_match_t match;
+    of_table_feature_prop_next_tables_t next_tables;
+    of_table_feature_prop_next_tables_miss_t next_tables_miss;
+    of_table_feature_prop_wildcards_t wildcards;
+    of_table_feature_prop_write_actions_t write_actions;
+    of_table_feature_prop_write_actions_miss_t write_actions_miss;
+    of_table_feature_prop_write_setfield_t write_setfield;
+    of_table_feature_prop_write_setfield_miss_t write_setfield_miss;
+};
+
+/**
+ * Inheritance super class for of_hello_elem
+ *
+ * This class is the union of of_hello_elem classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_hello_elem_u {
+    of_hello_elem_header_t header; /* Generic instance */
+    of_hello_elem_versionbitmap_t versionbitmap;
 };
 
 /**

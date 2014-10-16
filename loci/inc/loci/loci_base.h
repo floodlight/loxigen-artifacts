@@ -888,69 +888,6 @@ extern const char *const of_object_id_str[];
 
 #define OF_MESSAGE_OBJECT_COUNT 182
 
-/*
- * Macros to check if an object ID is within an inheritance class range
- */
-
-#define OF_QUEUE_PROP_FIRST_ID      (OF_QUEUE_PROP + 1)
-#define OF_QUEUE_PROP_LAST_ID       OF_QUEUE_PROP_MIN_RATE
-#define OF_QUEUE_PROP_VALID_ID(id) \
-    ((id) >= OF_QUEUE_PROP_FIRST_ID && \
-     (id) <= OF_QUEUE_PROP_LAST_ID)
-
-#define OF_ACTION_FIRST_ID      (OF_ACTION + 1)
-#define OF_ACTION_LAST_ID       OF_ACTION_STRIP_VLAN
-#define OF_ACTION_VALID_ID(id) \
-    ((id) >= OF_ACTION_FIRST_ID && \
-     (id) <= OF_ACTION_LAST_ID)
-
-#define OF_INSTRUCTION_FIRST_ID      (OF_INSTRUCTION + 1)
-#define OF_INSTRUCTION_LAST_ID       OF_INSTRUCTION_WRITE_METADATA
-#define OF_INSTRUCTION_VALID_ID(id) \
-    ((id) >= OF_INSTRUCTION_FIRST_ID && \
-     (id) <= OF_INSTRUCTION_LAST_ID)
-
-#define OF_TABLE_FEATURE_PROP_FIRST_ID      (OF_TABLE_FEATURE_PROP + 1)
-#define OF_TABLE_FEATURE_PROP_LAST_ID       OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS
-#define OF_TABLE_FEATURE_PROP_VALID_ID(id) \
-    ((id) >= OF_TABLE_FEATURE_PROP_FIRST_ID && \
-     (id) <= OF_TABLE_FEATURE_PROP_LAST_ID)
-
-#define OF_OXM_FIRST_ID      (OF_OXM + 1)
-#define OF_OXM_LAST_ID       OF_OXM_VLAN_VID_MASKED
-#define OF_OXM_VALID_ID(id) \
-    ((id) >= OF_OXM_FIRST_ID && \
-     (id) <= OF_OXM_LAST_ID)
-
-/**
- * Function to check a wire ID
- * @param object_id The ID to check
- * @param base_object_id The inheritance parent, if applicable
- * @returns boolean: If base_object_id is an inheritance class, check if
- * object_id is valid as a subclass.  Otherwise return 1.
- *
- * Note: Could check that object_id == base_object_id in the
- * second case.
- */
-static inline int
-of_wire_id_valid(int object_id, int base_object_id) {
-    switch (base_object_id) {
-    case OF_ACTION:
-        return OF_ACTION_VALID_ID(object_id);
-    case OF_OXM:
-        return OF_OXM_VALID_ID(object_id);
-    case OF_QUEUE_PROP:
-        return OF_QUEUE_PROP_VALID_ID(object_id);
-    case OF_TABLE_FEATURE_PROP:
-        return OF_TABLE_FEATURE_PROP_VALID_ID(object_id);
-    case OF_INSTRUCTION:
-        return OF_INSTRUCTION_VALID_ID(object_id);
-    default:
-        break;
-    }
-    return 1;
-}
-
 /****************************************************************
  *
  * Experimenter IDs

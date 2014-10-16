@@ -6916,6 +6916,8 @@ static inline int
 of_meter_config_push_wire_values(of_meter_config_t *obj)
 {
 
+    of_object_wire_length_set((of_object_t *)obj, obj->length);
+
     return OF_ERROR_NONE;
 }
 

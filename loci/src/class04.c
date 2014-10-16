@@ -10823,6 +10823,9 @@ of_match_v2_push_wire_values(of_match_v2_t *obj)
 
     of_match_v2_push_wire_types(obj);
 
+    /* TLV obj; set length */
+    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
+
     return OF_ERROR_NONE;
 }
 
