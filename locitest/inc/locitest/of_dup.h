@@ -1166,6 +1166,10 @@ extern of_bsn_tlv_miss_packets_t *
     of_bsn_tlv_miss_packets_dup(
         of_bsn_tlv_miss_packets_t *src);
 
+extern of_bsn_tlv_name_t *
+    of_bsn_tlv_name_dup(
+        of_bsn_tlv_name_t *src);
+
 extern of_bsn_tlv_partner_key_t *
     of_bsn_tlv_partner_key_dup(
         of_bsn_tlv_partner_key_t *src);
@@ -5597,6 +5601,10 @@ extern of_bsn_tlv_mac_t *
 extern of_bsn_tlv_miss_packets_t *
     of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
         of_bsn_tlv_miss_packets_t *src);
+
+extern of_bsn_tlv_name_t *
+    of_bsn_tlv_name_OF_VERSION_1_3_dup(
+        of_bsn_tlv_name_t *src);
 
 extern of_bsn_tlv_partner_key_t *
     of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(

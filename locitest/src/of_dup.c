@@ -29084,8 +29084,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
             (of_object_t *)src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDP_SRC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(
+    if (src->header.object_id == OF_BSN_TLV_NAME) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_name_OF_VERSION_1_3_dup(
             (of_object_t *)src);
     }
 
@@ -29186,6 +29186,11 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->header.object_id == OF_BSN_TLV_CRC_ENABLED) {
         return (of_bsn_tlv_t *)of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
+            (of_object_t *)src);
+    }
+
+    if (src->header.object_id == OF_BSN_TLV_UDP_SRC) {
+        return (of_bsn_tlv_t *)of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(
             (of_object_t *)src);
     }
 
@@ -29960,6 +29965,31 @@ of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_miss_packets_value_get(src, &val64);
     of_bsn_tlv_miss_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_name
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_name.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_name_t *
+of_bsn_tlv_name_OF_VERSION_1_3_dup(
+    of_bsn_tlv_name_t *src)
+{
+    of_bsn_tlv_name_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_name_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_name_value_get(src, &octets);
+    of_bsn_tlv_name_value_set(dst, &octets);
 
     return dst;
 }
@@ -43920,6 +43950,19 @@ of_bsn_tlv_miss_packets_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_bsn_tlv_name_t *
+of_bsn_tlv_name_dup(
+    of_bsn_tlv_name_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_name_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

@@ -5887,6 +5887,17 @@ typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
 typedef struct of_bsn_tlv_miss_packets_s of_bsn_tlv_miss_packets_t;
 
 /**
+ * Structure for of_bsn_tlv_name object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_name_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
+
+/**
  * Structure for of_bsn_tlv_partner_key object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

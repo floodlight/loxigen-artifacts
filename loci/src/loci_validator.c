@@ -720,6 +720,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_key_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_port_num_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_partner_port_priority_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -18905,6 +18906,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_mac_OF_VERSION_1_3(data, len, out_len);
     case 0xd:
         return loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(data, len, out_len);
+    case 0x34:
+        return loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(data, len, out_len);
     case 0x33:
         return loci_validate_of_bsn_tlv_partner_key_OF_VERSION_1_3(data, len, out_len);
     case 0x32:
@@ -19547,6 +19550,29 @@ loci_validate_of_bsn_tlv_miss_packets_OF_VERSION_1_3(uint8_t *data, int len, int
     if (wire_len > len || wire_len < 12) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_name_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+    len = wire_len;
 
 
 

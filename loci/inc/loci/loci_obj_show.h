@@ -855,6 +855,7 @@ int of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 int of_bsn_tlv_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_ipv4_src_t *obj);
 int of_bsn_tlv_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_mac_t *obj);
 int of_bsn_tlv_miss_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_miss_packets_t *obj);
+int of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_name_t *obj);
 int of_bsn_tlv_partner_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_key_t *obj);
 int of_bsn_tlv_partner_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_port_num_t *obj);
 int of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_port_priority_t *obj);

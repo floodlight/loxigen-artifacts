@@ -297,6 +297,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_ipv4_src",
     "of_bsn_tlv_mac",
     "of_bsn_tlv_miss_packets",
+    "of_bsn_tlv_name",
     "of_bsn_tlv_partner_key",
     "of_bsn_tlv_partner_port_num",
     "of_bsn_tlv_partner_port_priority",

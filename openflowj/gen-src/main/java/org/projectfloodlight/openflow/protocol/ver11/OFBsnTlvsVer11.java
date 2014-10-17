@@ -217,6 +217,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.1");
     }
 
+    public OFBsnTlvName.Builder buildName() {
+        throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.1");
+    }
+    public OFBsnTlvName name(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.1");
+    }
+
     public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
         throw new UnsupportedOperationException("OFBsnTlvPartnerKey not supported in version 1.1");
     }

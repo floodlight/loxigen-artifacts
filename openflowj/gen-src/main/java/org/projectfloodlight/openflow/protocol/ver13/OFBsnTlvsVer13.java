@@ -269,6 +269,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvName.Builder buildName() {
+        return new OFBsnTlvNameVer13.Builder();
+    }
+    public OFBsnTlvName name(byte[] value) {
+        return new OFBsnTlvNameVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvPartnerKey.Builder buildPartnerKey() {
         return new OFBsnTlvPartnerKeyVer13.Builder();
     }

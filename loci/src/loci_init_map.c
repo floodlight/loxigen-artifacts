@@ -300,6 +300,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_ipv4_src_init,
     (of_object_init_f)of_bsn_tlv_mac_init,
     (of_object_init_f)of_bsn_tlv_miss_packets_init,
+    (of_object_init_f)of_bsn_tlv_name_init,
     (of_object_init_f)of_bsn_tlv_partner_key_init,
     (of_object_init_f)of_bsn_tlv_partner_port_num_init,
     (of_object_init_f)of_bsn_tlv_partner_port_priority_init,

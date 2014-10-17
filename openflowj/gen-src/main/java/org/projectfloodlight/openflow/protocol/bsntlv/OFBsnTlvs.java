@@ -80,6 +80,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
+    OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
+    OFBsnTlvName name(byte[] value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;
     OFBsnTlvPartnerKey partnerKey(int value);
     OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() throws UnsupportedOperationException;

@@ -813,6 +813,8 @@ void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_name_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_partner_key_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_port_num_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1336,6 +1338,7 @@ typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
+typedef of_object_t of_bsn_tlv_name_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
 typedef of_object_t of_bsn_tlv_partner_port_num_t;
 typedef of_object_t of_bsn_tlv_partner_port_priority_t;
@@ -3071,6 +3074,11 @@ extern of_bsn_tlv_miss_packets_t *
     of_bsn_tlv_miss_packets_new(of_version_t version);
 extern void of_bsn_tlv_miss_packets_init(
     of_bsn_tlv_miss_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_name_t *
+    of_bsn_tlv_name_new(of_version_t version);
+extern void of_bsn_tlv_name_init(
+    of_bsn_tlv_name_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_partner_key_t *
     of_bsn_tlv_partner_key_new(of_version_t version);
@@ -7644,6 +7652,17 @@ of_bsn_tlv_mac_delete(of_bsn_tlv_mac_t *obj) {
  */
 static inline void
 of_bsn_tlv_miss_packets_delete(of_bsn_tlv_miss_packets_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_name_t
+ * @param obj An instance of type of_bsn_tlv_name_t
+ *
+ * \ingroup of_bsn_tlv_name
+ */
+static inline void
+of_bsn_tlv_name_delete(of_bsn_tlv_name_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -18175,6 +18194,15 @@ extern void of_bsn_tlv_miss_packets_value_get(
     of_bsn_tlv_miss_packets_t *obj,
     uint64_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_name */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_name_value_set(
+    of_bsn_tlv_name_t *obj,
+    of_octets_t *value);
+extern void of_bsn_tlv_name_value_get(
+    of_bsn_tlv_name_t *obj,
+    of_octets_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_partner_key */
 
 extern void of_bsn_tlv_partner_key_value_set(
@@ -22975,6 +23003,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_ipv4_src_t ipv4_src;
     of_bsn_tlv_mac_t mac;
     of_bsn_tlv_miss_packets_t miss_packets;
+    of_bsn_tlv_name_t name;
     of_bsn_tlv_partner_key_t partner_key;
     of_bsn_tlv_partner_port_num_t partner_port_num;
     of_bsn_tlv_partner_port_priority_t partner_port_priority;

@@ -5894,6 +5894,9 @@ fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "v
 fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
 fields['of13.bsn_tlv_partner_key.type'] = ProtoField.uint16("of13.bsn_tlv_partner_key.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_partner_key.length'] = ProtoField.uint16("of13.bsn_tlv_partner_key.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_partner_key.value'] = ProtoField.uint16("of13.bsn_tlv_partner_key.value", "value", base.DEC, nil)
@@ -11262,6 +11265,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_miss_packets.type'],
     fields['of13.bsn_tlv_miss_packets.length'],
     fields['of13.bsn_tlv_miss_packets.value'],
+    fields['of13.bsn_tlv_name.type'],
+    fields['of13.bsn_tlv_name.length'],
+    fields['of13.bsn_tlv_name.value'],
     fields['of13.bsn_tlv_partner_key.type'],
     fields['of13.bsn_tlv_partner_key.length'],
     fields['of13.bsn_tlv_partner_key.value'],
@@ -21835,6 +21841,19 @@ function dissect_of_bsn_tlv_miss_packets_v4(reader, subtree)
     return 'of_bsn_tlv_miss_packets'
 end
 of_bsn_tlv_v4_dissectors[13] = dissect_of_bsn_tlv_miss_packets_v4
+
+-- child class of_bsn_tlv_name
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_name_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_name.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_name.length')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_tlv_name.value')
+    return 'of_bsn_tlv_name'
+end
+of_bsn_tlv_v4_dissectors[52] = dissect_of_bsn_tlv_name_v4
 
 -- child class of_bsn_tlv_partner_key
 -- Child of of_bsn_tlv
