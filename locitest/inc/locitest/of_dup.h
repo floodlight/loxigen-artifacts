@@ -750,6 +750,10 @@ extern of_action_bsn_checksum_t *
     of_action_bsn_checksum_dup(
         of_action_bsn_checksum_t *src);
 
+extern of_action_bsn_gentable_t *
+    of_action_bsn_gentable_dup(
+        of_action_bsn_gentable_t *src);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_dup(
         of_action_bsn_mirror_t *src);
@@ -801,6 +805,10 @@ extern of_action_id_bsn_t *
 extern of_action_id_bsn_checksum_t *
     of_action_id_bsn_checksum_dup(
         of_action_id_bsn_checksum_t *src);
+
+extern of_action_id_bsn_gentable_t *
+    of_action_id_bsn_gentable_dup(
+        of_action_id_bsn_gentable_t *src);
 
 extern of_action_id_bsn_mirror_t *
     of_action_id_bsn_mirror_dup(
@@ -5242,6 +5250,10 @@ extern of_action_bsn_checksum_t *
     of_action_bsn_checksum_OF_VERSION_1_3_dup(
         of_action_bsn_checksum_t *src);
 
+extern of_action_bsn_gentable_t *
+    of_action_bsn_gentable_OF_VERSION_1_3_dup(
+        of_action_bsn_gentable_t *src);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_OF_VERSION_1_3_dup(
         of_action_bsn_mirror_t *src);
@@ -5289,6 +5301,10 @@ extern of_action_id_bsn_t *
 extern of_action_id_bsn_checksum_t *
     of_action_id_bsn_checksum_OF_VERSION_1_3_dup(
         of_action_id_bsn_checksum_t *src);
+
+extern of_action_id_bsn_gentable_t *
+    of_action_id_bsn_gentable_OF_VERSION_1_3_dup(
+        of_action_id_bsn_gentable_t *src);
 
 extern of_action_id_bsn_mirror_t *
     of_action_id_bsn_mirror_OF_VERSION_1_3_dup(

@@ -36,6 +36,10 @@ public class OFActionIdsVer13 implements OFActionIds {
         return OFActionIdBsnChecksumVer13.INSTANCE;
     }
 
+    public OFActionIdBsnGentable bsnGentable() {
+        return OFActionIdBsnGentableVer13.INSTANCE;
+    }
+
     public OFActionIdBsnMirror bsnMirror() {
         return OFActionIdBsnMirrorVer13.INSTANCE;
     }

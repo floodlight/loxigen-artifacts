@@ -27154,6 +27154,11 @@ of_action_OF_VERSION_1_3_dup(
             (of_object_t *)src);
     }
 
+    if (src->header.object_id == OF_ACTION_BSN_GENTABLE) {
+        return (of_action_t *)of_action_bsn_gentable_OF_VERSION_1_3_dup(
+            (of_object_t *)src);
+    }
+
     if (src->header.object_id == OF_ACTION_BSN_MIRROR) {
         return (of_action_t *)of_action_bsn_mirror_OF_VERSION_1_3_dup(
             (of_object_t *)src);
@@ -27253,6 +27258,50 @@ of_action_bsn_checksum_OF_VERSION_1_3_dup(
 
     of_action_bsn_checksum_checksum_get(src, &checksum_128);
     of_action_bsn_checksum_checksum_set(dst, checksum_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_bsn_gentable
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_bsn_gentable.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_bsn_gentable_t *
+of_action_bsn_gentable_OF_VERSION_1_3_dup(
+    of_action_bsn_gentable_t *src)
+{
+    of_action_bsn_gentable_t *dst;
+    uint32_t val32;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_action_bsn_gentable_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_bsn_gentable_experimenter_get(src, &val32);
+    of_action_bsn_gentable_experimenter_set(dst, val32);
+
+    of_action_bsn_gentable_subtype_get(src, &val32);
+    of_action_bsn_gentable_subtype_set(dst, val32);
+
+    of_action_bsn_gentable_table_id_get(src, &val32);
+    of_action_bsn_gentable_table_id_set(dst, val32);
+
+    of_action_bsn_gentable_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_action_bsn_gentable_delete(dst);
+        return NULL;
+    }
+    of_action_bsn_gentable_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
 
     return dst;
 }
@@ -27577,6 +27626,11 @@ of_action_id_OF_VERSION_1_3_dup(
             (of_object_t *)src);
     }
 
+    if (src->header.object_id == OF_ACTION_ID_BSN_GENTABLE) {
+        return (of_action_id_t *)of_action_id_bsn_gentable_OF_VERSION_1_3_dup(
+            (of_object_t *)src);
+    }
+
     if (src->header.object_id == OF_ACTION_ID_NICIRA) {
         return (of_action_id_t *)of_action_id_nicira_OF_VERSION_1_3_dup(
             (of_object_t *)src);
@@ -27667,6 +27721,34 @@ of_action_id_bsn_checksum_OF_VERSION_1_3_dup(
 
     of_action_id_bsn_checksum_subtype_get(src, &val32);
     of_action_id_bsn_checksum_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_action_id_bsn_gentable
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_action_id_bsn_gentable.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_action_id_bsn_gentable_t *
+of_action_id_bsn_gentable_OF_VERSION_1_3_dup(
+    of_action_id_bsn_gentable_t *src)
+{
+    of_action_id_bsn_gentable_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_action_id_bsn_gentable_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_action_id_bsn_gentable_experimenter_get(src, &val32);
+    of_action_id_bsn_gentable_experimenter_set(dst, val32);
+
+    of_action_id_bsn_gentable_subtype_get(src, &val32);
+    of_action_id_bsn_gentable_subtype_set(dst, val32);
 
     return dst;
 }
@@ -42372,6 +42454,19 @@ of_action_bsn_checksum_dup(
     return NULL;
 }
 
+of_action_bsn_gentable_t *
+of_action_bsn_gentable_dup(
+    of_action_bsn_gentable_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_bsn_gentable_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
 of_action_bsn_mirror_t *
 of_action_bsn_mirror_dup(
     of_action_bsn_mirror_t *src)
@@ -42623,6 +42718,19 @@ of_action_id_bsn_checksum_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_action_id_bsn_checksum_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_action_id_bsn_gentable_t *
+of_action_id_bsn_gentable_dup(
+    of_action_id_bsn_gentable_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_action_id_bsn_gentable_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

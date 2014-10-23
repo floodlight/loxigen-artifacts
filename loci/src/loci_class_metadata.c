@@ -1761,6 +1761,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_action_id_wire_object_id_get,
         .wire_type_set=of_action_id_bsn_checksum_push_wire_types,
     },
+    [OF_ACTION_BSN_GENTABLE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_wire_object_id_get,
+        .wire_type_set=of_action_bsn_gentable_push_wire_types,
+    },
+    [OF_ACTION_ID_BSN_GENTABLE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_action_id_wire_object_id_get,
+        .wire_type_set=of_action_id_bsn_gentable_push_wire_types,
+    },
     [OF_ACTION_ID_BSN_MIRROR] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

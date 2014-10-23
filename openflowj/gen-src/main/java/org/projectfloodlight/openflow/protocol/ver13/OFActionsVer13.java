@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 
 
 public class OFActionsVer13 implements OFActions {
@@ -252,6 +253,16 @@ public class OFActionsVer13 implements OFActions {
     public OFActionSetField setField(OFOxm<?> field) {
         return new OFActionSetFieldVer13(
                 field
+                    );
+    }
+
+    public OFActionBsnGentable.Builder buildBsnGentable() {
+        return new OFActionBsnGentableVer13.Builder();
+    }
+    public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
+        return new OFActionBsnGentableVer13(
+                tableId,
+                      key
                     );
     }
 

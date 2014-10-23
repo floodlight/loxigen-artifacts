@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 
 public interface OFActions {
     // Subfactories
@@ -84,6 +85,8 @@ public interface OFActions {
     OFActionSetQueue setQueue(long queueId);
     OFActionSetField.Builder buildSetField() throws UnsupportedOperationException;
     OFActionSetField setField(OFOxm<?> field);
+    OFActionBsnGentable.Builder buildBsnGentable() throws UnsupportedOperationException;
+    OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key);
     OFActionPopPbb popPbb();
     OFActionPushPbb.Builder buildPushPbb() throws UnsupportedOperationException;
     OFActionPushPbb pushPbb(EthType ethertype);

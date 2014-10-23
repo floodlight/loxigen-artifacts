@@ -545,6 +545,8 @@ static int __attribute__((unused)) loci_validate_of_action_id_experimenter_OF_VE
 static int __attribute__((unused)) loci_validate_of_action_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_bsn_gentable_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_action_id_bsn_gentable_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_mirror_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_id_bsn_mirror_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_action_bsn_set_tunnel_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -13986,6 +13988,21 @@ loci_validate_of_table_stats_request_OF_VERSION_1_2(uint8_t *data, int len, int 
 
 
 static int __attribute__((unused))
+loci_validate_of_list_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_bsn_tlv_OF_VERSION_1_3(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_bsn_controller_connection_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -14066,21 +14083,6 @@ loci_validate_of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(uint8_t *data
     while (len > 0) {
         int cur_len = 0xffff;
         if (loci_validate_of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3(data, len, &cur_len) < 0) {
-            return -1;
-        }
-        len -= cur_len;
-        data += cur_len;
-    }
-
-    return 0;
-}
-
-static int __attribute__((unused))
-loci_validate_of_list_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
-{
-    while (len > 0) {
-        int cur_len = 0xffff;
-        if (loci_validate_of_bsn_tlv_OF_VERSION_1_3(data, len, &cur_len) < 0) {
             return -1;
         }
         len -= cur_len;
@@ -14791,6 +14793,8 @@ loci_validate_of_action_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     switch (wire_type) {
     case 0x4:
         return loci_validate_of_action_bsn_checksum_OF_VERSION_1_3(data, len, out_len);
+    case 0x5:
+        return loci_validate_of_action_bsn_gentable_OF_VERSION_1_3(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_bsn_mirror_OF_VERSION_1_3(data, len, out_len);
     case 0x2:
@@ -14855,6 +14859,8 @@ loci_validate_of_action_id_bsn_OF_VERSION_1_3(uint8_t *data, int len, int *out_l
     switch (wire_type) {
     case 0x4:
         return loci_validate_of_action_id_bsn_checksum_OF_VERSION_1_3(data, len, out_len);
+    case 0x5:
+        return loci_validate_of_action_id_bsn_gentable_OF_VERSION_1_3(data, len, out_len);
     case 0x1:
         return loci_validate_of_action_id_bsn_mirror_OF_VERSION_1_3(data, len, out_len);
     case 0x2:
@@ -14890,6 +14896,56 @@ loci_validate_of_action_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int 
 
 static int
 loci_validate_of_action_id_bsn_checksum_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_bsn_gentable_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_key = len - 16;
+    if (loci_validate_of_list_bsn_tlv_OF_VERSION_1_3(data + 16, wire_len_key, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_action_id_bsn_gentable_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 12) {
         return -1;

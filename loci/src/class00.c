@@ -835,6 +835,9 @@ of_action_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x4:
             *id = OF_ACTION_BSN_CHECKSUM;
             break;
+        case 0x5:
+            *id = OF_ACTION_BSN_GENTABLE;
+            break;
         default:
             *id = OF_ACTION_BSN;
             break;

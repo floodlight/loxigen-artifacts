@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 
 
 public class OFActionsVer11 implements OFActions {
@@ -275,6 +276,13 @@ public class OFActionsVer11 implements OFActions {
     }
     public OFActionSetField setField(OFOxm<?> field) {
         throw new UnsupportedOperationException("OFActionSetField not supported in version 1.1");
+    }
+
+    public OFActionBsnGentable.Builder buildBsnGentable() {
+        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.1");
+    }
+    public OFActionBsnGentable bsnGentable(long tableId, List<OFBsnTlv> key) {
+        throw new UnsupportedOperationException("OFActionBsnGentable not supported in version 1.1");
     }
 
     public OFActionPopPbb popPbb() {

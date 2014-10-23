@@ -6593,6 +6593,15 @@ extern int of_action_bsn_checksum_OF_VERSION_1_3_populate_scalars(
 extern int of_action_bsn_checksum_OF_VERSION_1_3_check_scalars(
     of_action_bsn_checksum_t *obj, int value);
 
+extern int of_action_bsn_gentable_OF_VERSION_1_3_populate(
+    of_action_bsn_gentable_t *obj, int value);
+extern int of_action_bsn_gentable_OF_VERSION_1_3_check(
+    of_action_bsn_gentable_t *obj, int value);
+extern int of_action_bsn_gentable_OF_VERSION_1_3_populate_scalars(
+    of_action_bsn_gentable_t *obj, int value);
+extern int of_action_bsn_gentable_OF_VERSION_1_3_check_scalars(
+    of_action_bsn_gentable_t *obj, int value);
+
 extern int of_action_bsn_mirror_OF_VERSION_1_3_populate(
     of_action_bsn_mirror_t *obj, int value);
 extern int of_action_bsn_mirror_OF_VERSION_1_3_check(
@@ -6691,6 +6700,15 @@ extern int of_action_id_bsn_checksum_OF_VERSION_1_3_populate_scalars(
     of_action_id_bsn_checksum_t *obj, int value);
 extern int of_action_id_bsn_checksum_OF_VERSION_1_3_check_scalars(
     of_action_id_bsn_checksum_t *obj, int value);
+
+extern int of_action_id_bsn_gentable_OF_VERSION_1_3_populate(
+    of_action_id_bsn_gentable_t *obj, int value);
+extern int of_action_id_bsn_gentable_OF_VERSION_1_3_check(
+    of_action_id_bsn_gentable_t *obj, int value);
+extern int of_action_id_bsn_gentable_OF_VERSION_1_3_populate_scalars(
+    of_action_id_bsn_gentable_t *obj, int value);
+extern int of_action_id_bsn_gentable_OF_VERSION_1_3_check_scalars(
+    of_action_id_bsn_gentable_t *obj, int value);
 
 extern int of_action_id_bsn_mirror_OF_VERSION_1_3_populate(
     of_action_id_bsn_mirror_t *obj, int value);

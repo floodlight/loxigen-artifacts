@@ -4671,6 +4671,29 @@ typedef struct of_action_bsn_s of_action_bsn_t;
 typedef struct of_action_bsn_checksum_s of_action_bsn_checksum_t;
 
 /**
+ * Structure for of_action_bsn_gentable object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_bsn_gentable_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_action_bsn_gentable_uint32_get_f and _set_f.
+ *
+ * @param table_id_get/set ( OF_1_3).
+ *   Accessors for table_id, a variable of type uint32.  Functions
+ *   are of type of_action_bsn_gentable_uint32_get_f and _set_f.
+ *
+ * @param key_get/set ( OF_1_3).
+ *   Accessors for key, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_action_bsn_gentable_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_action_bsn_gentable_s of_action_bsn_gentable_t;
+
+/**
  * Structure for of_action_bsn_mirror object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -4828,6 +4851,21 @@ typedef struct of_action_id_bsn_s of_action_id_bsn_t;
  *
  */
 typedef struct of_action_id_bsn_checksum_s of_action_id_bsn_checksum_t;
+
+/**
+ * Structure for of_action_id_bsn_gentable object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_action_id_bsn_gentable_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_action_id_bsn_gentable_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_action_id_bsn_gentable_s of_action_id_bsn_gentable_t;
 
 /**
  * Structure for of_action_id_bsn_mirror object.  Get/set

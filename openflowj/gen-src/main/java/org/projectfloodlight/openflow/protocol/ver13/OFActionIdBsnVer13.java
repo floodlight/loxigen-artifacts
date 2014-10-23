@@ -57,6 +57,9 @@ abstract class OFActionIdBsnVer13 {
                case 0x4:
                    // discriminator value 0x4L=0x4L for class OFActionIdBsnChecksumVer13
                    return OFActionIdBsnChecksumVer13.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFActionIdBsnGentableVer13
+                   return OFActionIdBsnGentableVer13.READER.readFrom(bb);
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFActionIdBsnMirrorVer13
                    return OFActionIdBsnMirrorVer13.READER.readFrom(bb);

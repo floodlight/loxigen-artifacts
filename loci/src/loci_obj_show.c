@@ -20484,6 +20484,41 @@ of_action_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
+of_action_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_gentable_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_list_bsn_tlv_t list;
+    of_bsn_tlv_t elt;
+    int rv;
+
+    of_action_bsn_gentable_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_gentable_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_bsn_gentable_table_id_get(obj, &val32);
+    out += writer(cookie, "table_id=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_tlv_t={ ");
+    of_action_bsn_gentable_key_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
 of_action_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
 {
     int out = 0;
@@ -20647,6 +20682,25 @@ of_action_id_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
     out += writer(cookie, " ");
 
     of_action_id_bsn_checksum_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_action_id_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_gentable_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    of_action_id_bsn_gentable_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_action_id_bsn_gentable_subtype_get(obj, &val32);
     out += writer(cookie, "subtype=");
     out += LOCI_SHOW_u32(writer, cookie, val32);
     out += writer(cookie, " ");
@@ -27048,6 +27102,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_bsn_OF_VERSION_1_0_show,
     of_action_bsn_checksum_OF_VERSION_1_0_show,
+    unknown_show,
     of_action_bsn_mirror_OF_VERSION_1_0_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_show,
     unknown_show,
@@ -27058,6 +27113,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_0_show,
     unknown_show,
     of_action_header_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -27622,6 +27678,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_bsn_OF_VERSION_1_1_show,
     of_action_bsn_checksum_OF_VERSION_1_1_show,
+    unknown_show,
     of_action_bsn_mirror_OF_VERSION_1_1_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_show,
     of_action_copy_ttl_in_OF_VERSION_1_1_show,
@@ -27632,6 +27689,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_1_show,
     of_action_group_OF_VERSION_1_1_show,
     of_action_header_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -28196,6 +28254,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_bsn_OF_VERSION_1_2_show,
     of_action_bsn_checksum_OF_VERSION_1_2_show,
+    unknown_show,
     of_action_bsn_mirror_OF_VERSION_1_2_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_show,
     of_action_copy_ttl_in_OF_VERSION_1_2_show,
@@ -28206,6 +28265,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_action_experimenter_OF_VERSION_1_2_show,
     of_action_group_OF_VERSION_1_2_show,
     of_action_header_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -28770,6 +28830,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_bsn_OF_VERSION_1_3_show,
     of_action_bsn_checksum_OF_VERSION_1_3_show,
+    of_action_bsn_gentable_OF_VERSION_1_3_show,
     of_action_bsn_mirror_OF_VERSION_1_3_show,
     of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_show,
     of_action_copy_ttl_in_OF_VERSION_1_3_show,
@@ -28783,6 +28844,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_id_bsn_OF_VERSION_1_3_show,
     of_action_id_bsn_checksum_OF_VERSION_1_3_show,
+    of_action_id_bsn_gentable_OF_VERSION_1_3_show,
     of_action_id_bsn_mirror_OF_VERSION_1_3_show,
     of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_show,
     of_action_id_copy_ttl_in_OF_VERSION_1_3_show,

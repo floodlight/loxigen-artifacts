@@ -4904,6 +4904,16 @@ fields['of13.action_id_bsn_checksum.type'] = ProtoField.uint16("of13.action_id_b
 fields['of13.action_id_bsn_checksum.len'] = ProtoField.uint16("of13.action_id_bsn_checksum.len", "len", base.DEC, nil)
 fields['of13.action_id_bsn_checksum.experimenter'] = ProtoField.uint32("of13.action_id_bsn_checksum.experimenter", "experimenter", base.DEC, nil)
 fields['of13.action_id_bsn_checksum.subtype'] = ProtoField.uint32("of13.action_id_bsn_checksum.subtype", "subtype", base.DEC, nil)
+fields['of13.action_bsn_gentable.type'] = ProtoField.uint16("of13.action_bsn_gentable.type", "type", base.DEC, nil)
+fields['of13.action_bsn_gentable.len'] = ProtoField.uint16("of13.action_bsn_gentable.len", "len", base.DEC, nil)
+fields['of13.action_bsn_gentable.experimenter'] = ProtoField.uint32("of13.action_bsn_gentable.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_bsn_gentable.subtype'] = ProtoField.uint32("of13.action_bsn_gentable.subtype", "subtype", base.DEC, nil)
+fields['of13.action_bsn_gentable.table_id'] = ProtoField.uint32("of13.action_bsn_gentable.table_id", "table_id", base.DEC, nil)
+fields['of13.action_bsn_gentable.key'] = ProtoField.bytes("of13.action_bsn_gentable.key", "key")
+fields['of13.action_id_bsn_gentable.type'] = ProtoField.uint16("of13.action_id_bsn_gentable.type", "type", base.DEC, nil)
+fields['of13.action_id_bsn_gentable.len'] = ProtoField.uint16("of13.action_id_bsn_gentable.len", "len", base.DEC, nil)
+fields['of13.action_id_bsn_gentable.experimenter'] = ProtoField.uint32("of13.action_id_bsn_gentable.experimenter", "experimenter", base.DEC, nil)
+fields['of13.action_id_bsn_gentable.subtype'] = ProtoField.uint32("of13.action_id_bsn_gentable.subtype", "subtype", base.DEC, nil)
 fields['of13.action_bsn_mirror.type'] = ProtoField.uint16("of13.action_bsn_mirror.type", "type", base.DEC, nil)
 fields['of13.action_bsn_mirror.len'] = ProtoField.uint16("of13.action_bsn_mirror.len", "len", base.DEC, nil)
 fields['of13.action_bsn_mirror.experimenter'] = ProtoField.uint32("of13.action_bsn_mirror.experimenter", "experimenter", base.DEC, nil)
@@ -10275,6 +10285,16 @@ p_of.fields = {
     fields['of13.action_id_bsn_checksum.len'],
     fields['of13.action_id_bsn_checksum.experimenter'],
     fields['of13.action_id_bsn_checksum.subtype'],
+    fields['of13.action_bsn_gentable.type'],
+    fields['of13.action_bsn_gentable.len'],
+    fields['of13.action_bsn_gentable.experimenter'],
+    fields['of13.action_bsn_gentable.subtype'],
+    fields['of13.action_bsn_gentable.table_id'],
+    fields['of13.action_bsn_gentable.key'],
+    fields['of13.action_id_bsn_gentable.type'],
+    fields['of13.action_id_bsn_gentable.len'],
+    fields['of13.action_id_bsn_gentable.experimenter'],
+    fields['of13.action_id_bsn_gentable.subtype'],
     fields['of13.action_bsn_mirror.type'],
     fields['of13.action_bsn_mirror.len'],
     fields['of13.action_bsn_mirror.experimenter'],
@@ -19575,6 +19595,33 @@ function dissect_of_action_id_bsn_checksum_v4(reader, subtree)
     return 'of_action_id_bsn_checksum'
 end
 of_action_id_bsn_v4_dissectors[4] = dissect_of_action_id_bsn_checksum_v4
+
+-- child class of_action_bsn_gentable
+-- Child of of_action_bsn
+function dissect_of_action_bsn_gentable_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.action_bsn_gentable.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_bsn_gentable.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_bsn_gentable.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.action_bsn_gentable.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.action_bsn_gentable.table_id')
+    read_list(reader, dissect_of_bsn_tlv_v4, subtree, 'of_bsn_tlv')
+    return 'of_action_bsn_gentable'
+end
+of_action_bsn_v4_dissectors[5] = dissect_of_action_bsn_gentable_v4
+
+-- child class of_action_id_bsn_gentable
+-- Child of of_action_id_bsn
+function dissect_of_action_id_bsn_gentable_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn_gentable.type')
+    read_uint16_t(reader, 4, subtree, 'of13.action_id_bsn_gentable.len')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn_gentable.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.action_id_bsn_gentable.subtype')
+    return 'of_action_id_bsn_gentable'
+end
+of_action_id_bsn_v4_dissectors[5] = dissect_of_action_id_bsn_gentable_v4
 
 -- child class of_action_bsn_mirror
 -- Child of of_action_bsn

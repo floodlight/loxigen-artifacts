@@ -24496,6 +24496,43 @@ test_of_action_bsn_checksum_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_action_bsn_gentable_OF_VERSION_1_3_scalar(void)
+{
+    of_action_bsn_gentable_t *obj;
+
+    obj = of_action_bsn_gentable_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_BSN_GENTABLE);
+
+    {
+        of_object_id_t object_id;
+        of_action_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_ACTION_BSN_GENTABLE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_action_bsn_gentable_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_bsn_gentable_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_action_bsn_gentable_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_action_bsn_mirror_OF_VERSION_1_3_scalar(void)
 {
     of_action_bsn_mirror_t *obj;
@@ -24840,6 +24877,43 @@ test_of_action_id_bsn_checksum_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_action_id_bsn_checksum_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_action_id_bsn_checksum_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_action_id_bsn_gentable_OF_VERSION_1_3_scalar(void)
+{
+    of_action_id_bsn_gentable_t *obj;
+
+    obj = of_action_id_bsn_gentable_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ACTION_ID_BSN_GENTABLE);
+
+    {
+        of_object_id_t object_id;
+        of_action_id_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_ACTION_ID_BSN_GENTABLE);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_action_id_bsn_gentable_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_action_id_bsn_gentable_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_action_id_bsn_gentable_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -37099,6 +37173,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_table_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_bsn_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_bsn_checksum_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_action_bsn_gentable_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_bsn_mirror_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_copy_ttl_in_OF_VERSION_1_3_scalar);
@@ -37110,6 +37185,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_action_header_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_id_bsn_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_id_bsn_checksum_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_action_id_bsn_gentable_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_id_bsn_mirror_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_scalar);
     RUN_TEST(of_action_id_copy_ttl_in_OF_VERSION_1_3_scalar);

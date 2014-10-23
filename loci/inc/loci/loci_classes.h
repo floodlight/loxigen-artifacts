@@ -575,6 +575,10 @@ void of_action_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_bsn_push_wire_types(of_object_t *obj);
 void of_action_id_bsn_checksum_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_bsn_checksum_push_wire_types(of_object_t *obj);
+void of_action_bsn_gentable_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_bsn_gentable_push_wire_types(of_object_t *obj);
+void of_action_id_bsn_gentable_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_action_id_bsn_gentable_push_wire_types(of_object_t *obj);
 void of_action_id_bsn_mirror_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_action_id_bsn_mirror_push_wire_types(of_object_t *obj);
 void of_action_id_bsn_set_tunnel_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1236,6 +1240,7 @@ typedef of_object_t of_table_stats_reply_t;
 typedef of_object_t of_table_stats_request_t;
 typedef of_object_t of_action_bsn_t;
 typedef of_object_t of_action_bsn_checksum_t;
+typedef of_object_t of_action_bsn_gentable_t;
 typedef of_object_t of_action_bsn_mirror_t;
 typedef of_object_t of_action_bsn_set_tunnel_dst_t;
 typedef of_object_t of_action_copy_ttl_in_t;
@@ -1248,6 +1253,7 @@ typedef of_object_t of_action_group_t;
 typedef of_object_t of_action_header_t;
 typedef of_object_t of_action_id_bsn_t;
 typedef of_object_t of_action_id_bsn_checksum_t;
+typedef of_object_t of_action_id_bsn_gentable_t;
 typedef of_object_t of_action_id_bsn_mirror_t;
 typedef of_object_t of_action_id_bsn_set_tunnel_dst_t;
 typedef of_object_t of_action_id_copy_ttl_in_t;
@@ -2555,6 +2561,11 @@ extern of_action_bsn_checksum_t *
 extern void of_action_bsn_checksum_init(
     of_action_bsn_checksum_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_action_bsn_gentable_t *
+    of_action_bsn_gentable_new(of_version_t version);
+extern void of_action_bsn_gentable_init(
+    of_action_bsn_gentable_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_action_bsn_mirror_t *
     of_action_bsn_mirror_new(of_version_t version);
 extern void of_action_bsn_mirror_init(
@@ -2619,6 +2630,11 @@ extern of_action_id_bsn_checksum_t *
     of_action_id_bsn_checksum_new(of_version_t version);
 extern void of_action_id_bsn_checksum_init(
     of_action_id_bsn_checksum_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_action_id_bsn_gentable_t *
+    of_action_id_bsn_gentable_new(of_version_t version);
+extern void of_action_id_bsn_gentable_init(
+    of_action_id_bsn_gentable_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_action_id_bsn_mirror_t *
     of_action_id_bsn_mirror_new(of_version_t version);
@@ -6512,6 +6528,17 @@ of_action_bsn_checksum_delete(of_action_bsn_checksum_t *obj) {
 }
 
 /**
+ * Delete an object of type of_action_bsn_gentable_t
+ * @param obj An instance of type of_action_bsn_gentable_t
+ *
+ * \ingroup of_action_bsn_gentable
+ */
+static inline void
+of_action_bsn_gentable_delete(of_action_bsn_gentable_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_action_bsn_mirror_t
  * @param obj An instance of type of_action_bsn_mirror_t
  *
@@ -6651,6 +6678,17 @@ of_action_id_bsn_delete(of_action_id_bsn_t *obj) {
  */
 static inline void
 of_action_id_bsn_checksum_delete(of_action_id_bsn_checksum_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_action_id_bsn_gentable_t
+ * @param obj An instance of type of_action_id_bsn_gentable_t
+ *
+ * \ingroup of_action_id_bsn_gentable
+ */
+static inline void
+of_action_id_bsn_gentable_delete(of_action_id_bsn_gentable_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -17124,6 +17162,38 @@ extern void of_action_bsn_checksum_checksum_get(
     of_action_bsn_checksum_t *obj,
     of_checksum_128_t *checksum);
 
+/* Unified accessor functions for of_action_bsn_gentable */
+
+extern void of_action_bsn_gentable_experimenter_set(
+    of_action_bsn_gentable_t *obj,
+    uint32_t experimenter);
+extern void of_action_bsn_gentable_experimenter_get(
+    of_action_bsn_gentable_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_bsn_gentable_subtype_set(
+    of_action_bsn_gentable_t *obj,
+    uint32_t subtype);
+extern void of_action_bsn_gentable_subtype_get(
+    of_action_bsn_gentable_t *obj,
+    uint32_t *subtype);
+
+extern void of_action_bsn_gentable_table_id_set(
+    of_action_bsn_gentable_t *obj,
+    uint32_t table_id);
+extern void of_action_bsn_gentable_table_id_get(
+    of_action_bsn_gentable_t *obj,
+    uint32_t *table_id);
+
+extern int WARN_UNUSED_RESULT of_action_bsn_gentable_key_set(
+    of_action_bsn_gentable_t *obj,
+    of_list_bsn_tlv_t *key);
+extern void of_action_bsn_gentable_key_bind(
+    of_action_bsn_gentable_t *obj,
+    of_list_bsn_tlv_t *key);
+extern of_list_bsn_tlv_t *of_action_bsn_gentable_key_get(
+    of_action_bsn_gentable_t *obj);
+
 /* Unified accessor functions for of_action_bsn_mirror */
 
 extern void of_action_bsn_mirror_experimenter_set(
@@ -17265,6 +17335,22 @@ extern void of_action_id_bsn_checksum_subtype_set(
     uint32_t subtype);
 extern void of_action_id_bsn_checksum_subtype_get(
     of_action_id_bsn_checksum_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_action_id_bsn_gentable */
+
+extern void of_action_id_bsn_gentable_experimenter_set(
+    of_action_id_bsn_gentable_t *obj,
+    uint32_t experimenter);
+extern void of_action_id_bsn_gentable_experimenter_get(
+    of_action_id_bsn_gentable_t *obj,
+    uint32_t *experimenter);
+
+extern void of_action_id_bsn_gentable_subtype_set(
+    of_action_id_bsn_gentable_t *obj,
+    uint32_t subtype);
+extern void of_action_id_bsn_gentable_subtype_get(
+    of_action_id_bsn_gentable_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_action_id_bsn_mirror */
@@ -22843,6 +22929,7 @@ union of_action_u {
     of_action_header_t header; /* Generic instance */
     of_action_bsn_t bsn;
     of_action_bsn_checksum_t bsn_checksum;
+    of_action_bsn_gentable_t bsn_gentable;
     of_action_bsn_mirror_t bsn_mirror;
     of_action_bsn_set_tunnel_dst_t bsn_set_tunnel_dst;
     of_action_copy_ttl_in_t copy_ttl_in;
@@ -23088,6 +23175,7 @@ union of_action_id_u {
     of_action_id_header_t header; /* Generic instance */
     of_action_id_bsn_t bsn;
     of_action_id_bsn_checksum_t bsn_checksum;
+    of_action_id_bsn_gentable_t bsn_gentable;
     of_action_id_bsn_mirror_t bsn_mirror;
     of_action_id_bsn_set_tunnel_dst_t bsn_set_tunnel_dst;
     of_action_id_copy_ttl_in_t copy_ttl_in;

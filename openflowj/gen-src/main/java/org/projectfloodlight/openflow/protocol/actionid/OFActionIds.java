@@ -29,6 +29,7 @@ public interface OFActionIds {
     // Subfactories
 
     OFActionIdBsnChecksum bsnChecksum();
+    OFActionIdBsnGentable bsnGentable();
     OFActionIdBsnMirror bsnMirror();
     OFActionIdBsnSetTunnelDst bsnSetTunnelDst();
     OFActionIdCopyTtlIn copyTtlIn();
