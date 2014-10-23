@@ -301,7 +301,7 @@
 #define OF_VLAN_UNTAGGED_GENERIC 20
 
 /****************************************************************
- * Identifiers from of_bsn_lacp_convergence_status_t
+ * Identifiers from of_bsn_lacp_convergence_status
  *****************************************************************/
 
 /*
@@ -335,7 +335,7 @@
 #define LACP_TIMEDOUT_GENERIC 23
 
 /****************************************************************
- * Identifiers from of_bsn_pdu_slot_num_t
+ * Identifiers from of_bsn_pdu_slot_num
  *****************************************************************/
 
 /*
@@ -348,7 +348,7 @@
 #define BSN_PDU_SLOT_NUM_ANY_GENERIC 24
 
 /****************************************************************
- * Identifiers from of_bsn_vlan_counter_t
+ * Identifiers from of_bsn_vlan_counter
  *****************************************************************/
 
 /*
@@ -392,7 +392,7 @@
 #define OFP_BSN_VLAN_COUNTER_TX_PACKETS_GENERIC 28
 
 /****************************************************************
- * Identifiers from of_bsn_vrf_counter_t
+ * Identifiers from of_bsn_vrf_counter
  *****************************************************************/
 
 /*

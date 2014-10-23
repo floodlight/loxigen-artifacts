@@ -23,16 +23,15 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.projectfloodlight.openflow.protocol.OFBsnVrfCounterT;
+import org.projectfloodlight.openflow.protocol.OFBsnPduSlotNum;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 
-public class OFBsnVrfCounterTSerializerVer13 {
+public class OFBsnPduSlotNumSerializerVer13 {
 
-    public final static byte BSN_VRF_COUNTER_BYTES_VAL = (byte) 0x0;
-    public final static byte BSN_VRF_COUNTER_PACKETS_VAL = (byte) 0x1;
+    public final static byte PDU_SLOT_NUM_ANY_VAL = (byte) 0xff;
 
-    public static OFBsnVrfCounterT readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnPduSlotNum readFrom(ChannelBuffer bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -40,34 +39,30 @@ public class OFBsnVrfCounterTSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnVrfCounterT e) {
+    public static void writeTo(ChannelBuffer bb, OFBsnPduSlotNum e) {
         bb.writeByte(toWireValue(e));
     }
 
-    public static void putTo(OFBsnVrfCounterT e, PrimitiveSink sink) {
+    public static void putTo(OFBsnPduSlotNum e, PrimitiveSink sink) {
         sink.putByte(toWireValue(e));
     }
 
-    public static OFBsnVrfCounterT ofWireValue(byte val) {
+    public static OFBsnPduSlotNum ofWireValue(byte val) {
         switch(val) {
-            case BSN_VRF_COUNTER_BYTES_VAL:
-                return OFBsnVrfCounterT.BSN_VRF_COUNTER_BYTES;
-            case BSN_VRF_COUNTER_PACKETS_VAL:
-                return OFBsnVrfCounterT.BSN_VRF_COUNTER_PACKETS;
+            case PDU_SLOT_NUM_ANY_VAL:
+                return OFBsnPduSlotNum.PDU_SLOT_NUM_ANY;
             default:
-                throw new IllegalArgumentException("Illegal wire value for type OFBsnVrfCounterT in version 1.3: " + val);
+                throw new IllegalArgumentException("Illegal wire value for type OFBsnPduSlotNum in version 1.3: " + val);
         }
     }
 
 
-    public static byte toWireValue(OFBsnVrfCounterT e) {
+    public static byte toWireValue(OFBsnPduSlotNum e) {
         switch(e) {
-            case BSN_VRF_COUNTER_BYTES:
-                return BSN_VRF_COUNTER_BYTES_VAL;
-            case BSN_VRF_COUNTER_PACKETS:
-                return BSN_VRF_COUNTER_PACKETS_VAL;
+            case PDU_SLOT_NUM_ANY:
+                return PDU_SLOT_NUM_ANY_VAL;
             default:
-                throw new IllegalArgumentException("Illegal enum value for type OFBsnVrfCounterT in version 1.3: " + e);
+                throw new IllegalArgumentException("Illegal enum value for type OFBsnPduSlotNum in version 1.3: " + e);
         }
     }
 

@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
-public enum OFBsnPduSlotNumT {
-     PDU_SLOT_NUM_ANY;
+public enum OFBsnVrfCounter {
+     BSN_VRF_COUNTER_BYTES,
+     BSN_VRF_COUNTER_PACKETS;
 }

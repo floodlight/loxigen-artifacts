@@ -23,15 +23,17 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.projectfloodlight.openflow.protocol.OFBsnPduSlotNumT;
+import org.projectfloodlight.openflow.protocol.OFBsnLacpConvergenceStatus;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 
-public class OFBsnPduSlotNumTSerializerVer13 {
+public class OFBsnLacpConvergenceStatusSerializerVer13 {
 
-    public final static byte PDU_SLOT_NUM_ANY_VAL = (byte) 0xff;
+    public final static byte SUCCESS_VAL = (byte) 0x0;
+    public final static byte TIMEDOUT_VAL = (byte) 0x1;
+    public final static byte OUT_OF_SYNC_VAL = (byte) 0x2;
 
-    public static OFBsnPduSlotNumT readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnLacpConvergenceStatus readFrom(ChannelBuffer bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -39,30 +41,38 @@ public class OFBsnPduSlotNumTSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnPduSlotNumT e) {
+    public static void writeTo(ChannelBuffer bb, OFBsnLacpConvergenceStatus e) {
         bb.writeByte(toWireValue(e));
     }
 
-    public static void putTo(OFBsnPduSlotNumT e, PrimitiveSink sink) {
+    public static void putTo(OFBsnLacpConvergenceStatus e, PrimitiveSink sink) {
         sink.putByte(toWireValue(e));
     }
 
-    public static OFBsnPduSlotNumT ofWireValue(byte val) {
+    public static OFBsnLacpConvergenceStatus ofWireValue(byte val) {
         switch(val) {
-            case PDU_SLOT_NUM_ANY_VAL:
-                return OFBsnPduSlotNumT.PDU_SLOT_NUM_ANY;
+            case SUCCESS_VAL:
+                return OFBsnLacpConvergenceStatus.SUCCESS;
+            case TIMEDOUT_VAL:
+                return OFBsnLacpConvergenceStatus.TIMEDOUT;
+            case OUT_OF_SYNC_VAL:
+                return OFBsnLacpConvergenceStatus.OUT_OF_SYNC;
             default:
-                throw new IllegalArgumentException("Illegal wire value for type OFBsnPduSlotNumT in version 1.3: " + val);
+                throw new IllegalArgumentException("Illegal wire value for type OFBsnLacpConvergenceStatus in version 1.3: " + val);
         }
     }
 
 
-    public static byte toWireValue(OFBsnPduSlotNumT e) {
+    public static byte toWireValue(OFBsnLacpConvergenceStatus e) {
         switch(e) {
-            case PDU_SLOT_NUM_ANY:
-                return PDU_SLOT_NUM_ANY_VAL;
+            case SUCCESS:
+                return SUCCESS_VAL;
+            case TIMEDOUT:
+                return TIMEDOUT_VAL;
+            case OUT_OF_SYNC:
+                return OUT_OF_SYNC_VAL;
             default:
-                throw new IllegalArgumentException("Illegal enum value for type OFBsnPduSlotNumT in version 1.3: " + e);
+                throw new IllegalArgumentException("Illegal enum value for type OFBsnLacpConvergenceStatus in version 1.3: " + e);
         }
     }
 

@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
-public enum OFBsnVlanCounterT {
+public enum OFBsnVlanCounter {
      BSN_VLAN_COUNTER_RX_BYTES,
      BSN_VLAN_COUNTER_RX_PACKETS,
      BSN_VLAN_COUNTER_TX_BYTES,

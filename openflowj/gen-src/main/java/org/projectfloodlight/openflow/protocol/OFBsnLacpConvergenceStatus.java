@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
-public enum OFBsnLacpConvergenceStatusT {
+public enum OFBsnLacpConvergenceStatus {
      SUCCESS,
      TIMEDOUT,
      OUT_OF_SYNC;

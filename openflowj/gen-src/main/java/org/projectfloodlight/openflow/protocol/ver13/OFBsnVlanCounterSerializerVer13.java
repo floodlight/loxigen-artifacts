@@ -23,18 +23,18 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.projectfloodlight.openflow.protocol.OFBsnVlanCounterT;
+import org.projectfloodlight.openflow.protocol.OFBsnVlanCounter;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 
-public class OFBsnVlanCounterTSerializerVer13 {
+public class OFBsnVlanCounterSerializerVer13 {
 
     public final static byte BSN_VLAN_COUNTER_RX_BYTES_VAL = (byte) 0x0;
     public final static byte BSN_VLAN_COUNTER_RX_PACKETS_VAL = (byte) 0x1;
     public final static byte BSN_VLAN_COUNTER_TX_BYTES_VAL = (byte) 0x2;
     public final static byte BSN_VLAN_COUNTER_TX_PACKETS_VAL = (byte) 0x3;
 
-    public static OFBsnVlanCounterT readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnVlanCounter readFrom(ChannelBuffer bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -42,31 +42,31 @@ public class OFBsnVlanCounterTSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnVlanCounterT e) {
+    public static void writeTo(ChannelBuffer bb, OFBsnVlanCounter e) {
         bb.writeByte(toWireValue(e));
     }
 
-    public static void putTo(OFBsnVlanCounterT e, PrimitiveSink sink) {
+    public static void putTo(OFBsnVlanCounter e, PrimitiveSink sink) {
         sink.putByte(toWireValue(e));
     }
 
-    public static OFBsnVlanCounterT ofWireValue(byte val) {
+    public static OFBsnVlanCounter ofWireValue(byte val) {
         switch(val) {
             case BSN_VLAN_COUNTER_RX_BYTES_VAL:
-                return OFBsnVlanCounterT.BSN_VLAN_COUNTER_RX_BYTES;
+                return OFBsnVlanCounter.BSN_VLAN_COUNTER_RX_BYTES;
             case BSN_VLAN_COUNTER_RX_PACKETS_VAL:
-                return OFBsnVlanCounterT.BSN_VLAN_COUNTER_RX_PACKETS;
+                return OFBsnVlanCounter.BSN_VLAN_COUNTER_RX_PACKETS;
             case BSN_VLAN_COUNTER_TX_BYTES_VAL:
-                return OFBsnVlanCounterT.BSN_VLAN_COUNTER_TX_BYTES;
+                return OFBsnVlanCounter.BSN_VLAN_COUNTER_TX_BYTES;
             case BSN_VLAN_COUNTER_TX_PACKETS_VAL:
-                return OFBsnVlanCounterT.BSN_VLAN_COUNTER_TX_PACKETS;
+                return OFBsnVlanCounter.BSN_VLAN_COUNTER_TX_PACKETS;
             default:
-                throw new IllegalArgumentException("Illegal wire value for type OFBsnVlanCounterT in version 1.3: " + val);
+                throw new IllegalArgumentException("Illegal wire value for type OFBsnVlanCounter in version 1.3: " + val);
         }
     }
 
 
-    public static byte toWireValue(OFBsnVlanCounterT e) {
+    public static byte toWireValue(OFBsnVlanCounter e) {
         switch(e) {
             case BSN_VLAN_COUNTER_RX_BYTES:
                 return BSN_VLAN_COUNTER_RX_BYTES_VAL;
@@ -77,7 +77,7 @@ public class OFBsnVlanCounterTSerializerVer13 {
             case BSN_VLAN_COUNTER_TX_PACKETS:
                 return BSN_VLAN_COUNTER_TX_PACKETS_VAL;
             default:
-                throw new IllegalArgumentException("Illegal enum value for type OFBsnVlanCounterT in version 1.3: " + e);
+                throw new IllegalArgumentException("Illegal enum value for type OFBsnVlanCounter in version 1.3: " + e);
         }
     }
 
