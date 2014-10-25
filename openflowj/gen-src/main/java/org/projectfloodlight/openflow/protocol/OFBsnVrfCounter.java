@@ -25,6 +25,16 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnVrfCounter {
-     BSN_VRF_COUNTER_BYTES,
-     BSN_VRF_COUNTER_PACKETS;
+     BSN_VRF_COUNTER_BYTES((byte) 0x0),
+     BSN_VRF_COUNTER_PACKETS((byte) 0x1);
+
+     private final byte stableValue;
+
+     private OFBsnVrfCounter(byte stableValue) {
+        this.stableValue = stableValue;
+     }
+
+     public byte getStableValue() {
+         return stableValue;
+     }
 }

@@ -1,1 +1,1 @@
-89478fa269858287f25c2cac60ca531e52e68d51 Merge into master from pull request #335: openflow_input: add of_action_bsn_gentable (https://github.com/floodlight/loxigen/pull/335)
+f8fac1365627949e8f2bc791fc644e6db1ed73ef Merge into master from pull request #336: java_gen: generate getStableValue() for 'stable' enums (https://github.com/floodlight/loxigen/pull/336)

@@ -25,8 +25,18 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 
 public enum OFBsnVlanCounter {
-     BSN_VLAN_COUNTER_RX_BYTES,
-     BSN_VLAN_COUNTER_RX_PACKETS,
-     BSN_VLAN_COUNTER_TX_BYTES,
-     BSN_VLAN_COUNTER_TX_PACKETS;
+     BSN_VLAN_COUNTER_RX_BYTES((byte) 0x0),
+     BSN_VLAN_COUNTER_RX_PACKETS((byte) 0x1),
+     BSN_VLAN_COUNTER_TX_BYTES((byte) 0x2),
+     BSN_VLAN_COUNTER_TX_PACKETS((byte) 0x3);
+
+     private final byte stableValue;
+
+     private OFBsnVlanCounter(byte stableValue) {
+        this.stableValue = stableValue;
+     }
+
+     public byte getStableValue() {
+         return stableValue;
+     }
 }
