@@ -1,1 +1,1 @@
-f8fac1365627949e8f2bc791fc644e6db1ed73ef Merge into master from pull request #336: java_gen: generate getStableValue() for 'stable' enums (https://github.com/floodlight/loxigen/pull/336)
+65630e2e2b19efc8bb882bd57284c6ecc908d947 Merge into master from pull request #339: add lacp actor/partnet state tlvs (https://github.com/floodlight/loxigen/pull/339)

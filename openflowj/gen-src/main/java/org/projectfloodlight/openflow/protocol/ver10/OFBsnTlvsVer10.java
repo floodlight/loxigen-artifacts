@@ -23,6 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.Set;
 
 
 public class OFBsnTlvsVer10 implements OFBsnTlvs {
@@ -50,6 +51,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvActorPortPriority actorPortPriority(int value) {
         throw new UnsupportedOperationException("OFBsnTlvActorPortPriority not supported in version 1.0");
+    }
+
+    public OFBsnTlvActorState.Builder buildActorState() {
+        throw new UnsupportedOperationException("OFBsnTlvActorState not supported in version 1.0");
+    }
+    public OFBsnTlvActorState actorState(Set<OFBsnLacpState> value) {
+        throw new UnsupportedOperationException("OFBsnTlvActorState not supported in version 1.0");
     }
 
     public OFBsnTlvActorSystemMac.Builder buildActorSystemMac() {
@@ -243,6 +251,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvPartnerPortPriority partnerPortPriority(int value) {
         throw new UnsupportedOperationException("OFBsnTlvPartnerPortPriority not supported in version 1.0");
+    }
+
+    public OFBsnTlvPartnerState.Builder buildPartnerState() {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerState not supported in version 1.0");
+    }
+    public OFBsnTlvPartnerState partnerState(Set<OFBsnLacpState> value) {
+        throw new UnsupportedOperationException("OFBsnTlvPartnerState not supported in version 1.0");
     }
 
     public OFBsnTlvPartnerSystemMac.Builder buildPartnerSystemMac() {

@@ -1422,12 +1422,9 @@ enum_v4_ofp_bsn_tcp_flag = {
     [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
-enum_v4_ofp_bsn_vport_l2gre_flags = {
-    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
-    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
-    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
-    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
-    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
+enum_v4_ofp_table = {
+    [254] = "OFPTT_MAX",
+    [255] = "OFPTT_ALL",
 }
 
 enum_v4_ofp_switch_config_failed_code = {
@@ -1467,9 +1464,12 @@ enum_v4_ofp_queue_properties = {
     [65535] = "OFPQT_EXPERIMENTER",
 }
 
-enum_v4_ofp_table = {
-    [254] = "OFPTT_MAX",
-    [255] = "OFPTT_ALL",
+enum_v4_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 enum_v4_ofp_meter_mod_failed_code = {
@@ -1800,6 +1800,17 @@ enum_v4_ofp_packet_in_reason = {
     [140] = "OFPR_BSN_DHCP",
     [141] = "OFPR_BSN_DEBUG",
     [142] = "OFPR_BSN_PACKET_OF_DEATH",
+}
+
+enum_v4_ofp_bsn_lacp_state = {
+    [1] = "OFP_BSN_LACP_STATE_ACTIVITY",
+    [2] = "OFP_BSN_LACP_STATE_TIMEOUT",
+    [4] = "OFP_BSN_LACP_STATE_AGGREGATION",
+    [8] = "OFP_BSN_LACP_STATE_SYNCHRONIZATION",
+    [16] = "OFP_BSN_LACP_STATE_COLLECTING",
+    [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
+    [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
+    [128] = "OFP_BSN_LACP_STATE_EXPIRED",
 }
 
 enum_v4_ofp_bsn_vport_q_in_q_untagged = {
@@ -5833,6 +5844,9 @@ fields['of13.bsn_tlv_actor_port_num.value'] = ProtoField.uint16("of13.bsn_tlv_ac
 fields['of13.bsn_tlv_actor_port_priority.type'] = ProtoField.uint16("of13.bsn_tlv_actor_port_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_actor_port_priority.length'] = ProtoField.uint16("of13.bsn_tlv_actor_port_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_actor_port_priority.value'] = ProtoField.uint16("of13.bsn_tlv_actor_port_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_actor_state.type'] = ProtoField.uint16("of13.bsn_tlv_actor_state.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_actor_state.length'] = ProtoField.uint16("of13.bsn_tlv_actor_state.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_actor_state.value'] = ProtoField.uint32("of13.bsn_tlv_actor_state.value", "value", base.HEX, enum_v4_ofp_bsn_lacp_state)
 fields['of13.bsn_tlv_actor_system_mac.type'] = ProtoField.uint16("of13.bsn_tlv_actor_system_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_actor_system_mac.length'] = ProtoField.uint16("of13.bsn_tlv_actor_system_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of13.bsn_tlv_actor_system_mac.value", "value")
@@ -5916,6 +5930,9 @@ fields['of13.bsn_tlv_partner_port_num.value'] = ProtoField.uint16("of13.bsn_tlv_
 fields['of13.bsn_tlv_partner_port_priority.type'] = ProtoField.uint16("of13.bsn_tlv_partner_port_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_partner_port_priority.length'] = ProtoField.uint16("of13.bsn_tlv_partner_port_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_partner_port_priority.value'] = ProtoField.uint16("of13.bsn_tlv_partner_port_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_partner_state.type'] = ProtoField.uint16("of13.bsn_tlv_partner_state.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_partner_state.length'] = ProtoField.uint16("of13.bsn_tlv_partner_state.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_partner_state.value'] = ProtoField.uint32("of13.bsn_tlv_partner_state.value", "value", base.HEX, enum_v4_ofp_bsn_lacp_state)
 fields['of13.bsn_tlv_partner_system_mac.type'] = ProtoField.uint16("of13.bsn_tlv_partner_system_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_partner_system_mac.length'] = ProtoField.uint16("of13.bsn_tlv_partner_system_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_partner_system_mac.value'] = ProtoField.ether("of13.bsn_tlv_partner_system_mac.value", "value")
@@ -11214,6 +11231,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_actor_port_priority.type'],
     fields['of13.bsn_tlv_actor_port_priority.length'],
     fields['of13.bsn_tlv_actor_port_priority.value'],
+    fields['of13.bsn_tlv_actor_state.type'],
+    fields['of13.bsn_tlv_actor_state.length'],
+    fields['of13.bsn_tlv_actor_state.value'],
     fields['of13.bsn_tlv_actor_system_mac.type'],
     fields['of13.bsn_tlv_actor_system_mac.length'],
     fields['of13.bsn_tlv_actor_system_mac.value'],
@@ -11297,6 +11317,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_partner_port_priority.type'],
     fields['of13.bsn_tlv_partner_port_priority.length'],
     fields['of13.bsn_tlv_partner_port_priority.value'],
+    fields['of13.bsn_tlv_partner_state.type'],
+    fields['of13.bsn_tlv_partner_state.length'],
+    fields['of13.bsn_tlv_partner_state.value'],
     fields['of13.bsn_tlv_partner_system_mac.type'],
     fields['of13.bsn_tlv_partner_system_mac.length'],
     fields['of13.bsn_tlv_partner_system_mac.value'],
@@ -21647,6 +21670,16 @@ function dissect_of_bsn_tlv_actor_port_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[42] = dissect_of_bsn_tlv_actor_port_priority_v4
 
+-- child class of_bsn_tlv_actor_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_actor_state_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_actor_state.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_actor_state.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_actor_state.value')
+    return 'of_bsn_tlv_actor_state'
+end
+of_bsn_tlv_v4_dissectors[53] = dissect_of_bsn_tlv_actor_state_v4
+
 -- child class of_bsn_tlv_actor_system_mac
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_actor_system_mac_v4(reader, subtree)
@@ -21931,6 +21964,16 @@ function dissect_of_bsn_tlv_partner_port_priority_v4(reader, subtree)
     return 'of_bsn_tlv_partner_port_priority'
 end
 of_bsn_tlv_v4_dissectors[49] = dissect_of_bsn_tlv_partner_port_priority_v4
+
+-- child class of_bsn_tlv_partner_state
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_partner_state_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_partner_state.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_partner_state.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_partner_state.value')
+    return 'of_bsn_tlv_partner_state'
+end
+of_bsn_tlv_v4_dissectors[54] = dissect_of_bsn_tlv_partner_state_v4
 
 -- child class of_bsn_tlv_partner_system_mac
 -- Child of of_bsn_tlv

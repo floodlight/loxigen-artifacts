@@ -23,6 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.Set;
 
 
 public class OFBsnTlvsVer13 implements OFBsnTlvs {
@@ -54,6 +55,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvActorPortPriority actorPortPriority(int value) {
         return new OFBsnTlvActorPortPriorityVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvActorState.Builder buildActorState() {
+        return new OFBsnTlvActorStateVer13.Builder();
+    }
+    public OFBsnTlvActorState actorState(Set<OFBsnLacpState> value) {
+        return new OFBsnTlvActorStateVer13(
                 value
                     );
     }
@@ -301,6 +311,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvPartnerPortPriority partnerPortPriority(int value) {
         return new OFBsnTlvPartnerPortPriorityVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvPartnerState.Builder buildPartnerState() {
+        return new OFBsnTlvPartnerStateVer13.Builder();
+    }
+    public OFBsnTlvPartnerState partnerState(Set<OFBsnLacpState> value) {
+        return new OFBsnTlvPartnerStateVer13(
                 value
                     );
     }

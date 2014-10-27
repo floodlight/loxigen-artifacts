@@ -7178,6 +7178,15 @@ extern int of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_actor_port_priority_t *obj, int value);
 
+extern int of_bsn_tlv_actor_state_OF_VERSION_1_3_populate(
+    of_bsn_tlv_actor_state_t *obj, int value);
+extern int of_bsn_tlv_actor_state_OF_VERSION_1_3_check(
+    of_bsn_tlv_actor_state_t *obj, int value);
+extern int of_bsn_tlv_actor_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_actor_state_t *obj, int value);
+extern int of_bsn_tlv_actor_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_actor_state_t *obj, int value);
+
 extern int of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_populate(
     of_bsn_tlv_actor_system_mac_t *obj, int value);
 extern int of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_check(
@@ -7438,6 +7447,15 @@ extern int of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_partner_port_priority_t *obj, int value);
 extern int of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_partner_port_priority_t *obj, int value);
+
+extern int of_bsn_tlv_partner_state_OF_VERSION_1_3_populate(
+    of_bsn_tlv_partner_state_t *obj, int value);
+extern int of_bsn_tlv_partner_state_OF_VERSION_1_3_check(
+    of_bsn_tlv_partner_state_t *obj, int value);
+extern int of_bsn_tlv_partner_state_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_partner_state_t *obj, int value);
+extern int of_bsn_tlv_partner_state_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_partner_state_t *obj, int value);
 
 extern int of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_populate(
     of_bsn_tlv_partner_system_mac_t *obj, int value);

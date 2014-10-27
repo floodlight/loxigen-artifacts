@@ -23,6 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.Set;
 
 public interface OFBsnTlvs {
     // Subfactories
@@ -33,6 +34,8 @@ public interface OFBsnTlvs {
     OFBsnTlvActorPortNum actorPortNum(int value);
     OFBsnTlvActorPortPriority.Builder buildActorPortPriority() throws UnsupportedOperationException;
     OFBsnTlvActorPortPriority actorPortPriority(int value);
+    OFBsnTlvActorState.Builder buildActorState() throws UnsupportedOperationException;
+    OFBsnTlvActorState actorState(Set<OFBsnLacpState> value);
     OFBsnTlvActorSystemMac.Builder buildActorSystemMac() throws UnsupportedOperationException;
     OFBsnTlvActorSystemMac actorSystemMac(MacAddress value);
     OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() throws UnsupportedOperationException;
@@ -88,6 +91,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPartnerPortNum partnerPortNum(int value);
     OFBsnTlvPartnerPortPriority.Builder buildPartnerPortPriority() throws UnsupportedOperationException;
     OFBsnTlvPartnerPortPriority partnerPortPriority(int value);
+    OFBsnTlvPartnerState.Builder buildPartnerState() throws UnsupportedOperationException;
+    OFBsnTlvPartnerState partnerState(Set<OFBsnLacpState> value);
     OFBsnTlvPartnerSystemMac.Builder buildPartnerSystemMac() throws UnsupportedOperationException;
     OFBsnTlvPartnerSystemMac partnerSystemMac(MacAddress value);
     OFBsnTlvPartnerSystemPriority.Builder buildPartnerSystemPriority() throws UnsupportedOperationException;

@@ -769,6 +769,8 @@ void of_bsn_tlv_actor_port_num_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_actor_port_num_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_port_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_actor_port_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_actor_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_actor_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_system_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_actor_system_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_actor_system_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -825,6 +827,8 @@ void of_bsn_tlv_partner_port_num_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_partner_port_num_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_port_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_partner_port_priority_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_partner_state_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_partner_state_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_system_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_partner_system_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_system_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1319,6 +1323,7 @@ typedef of_object_t of_bsn_table_checksum_stats_entry_t;
 typedef of_object_t of_bsn_tlv_actor_key_t;
 typedef of_object_t of_bsn_tlv_actor_port_num_t;
 typedef of_object_t of_bsn_tlv_actor_port_priority_t;
+typedef of_object_t of_bsn_tlv_actor_state_t;
 typedef of_object_t of_bsn_tlv_actor_system_mac_t;
 typedef of_object_t of_bsn_tlv_actor_system_priority_t;
 typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
@@ -1348,6 +1353,7 @@ typedef of_object_t of_bsn_tlv_name_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
 typedef of_object_t of_bsn_tlv_partner_port_num_t;
 typedef of_object_t of_bsn_tlv_partner_port_priority_t;
+typedef of_object_t of_bsn_tlv_partner_state_t;
 typedef of_object_t of_bsn_tlv_partner_system_mac_t;
 typedef of_object_t of_bsn_tlv_partner_system_priority_t;
 typedef of_object_t of_bsn_tlv_port_t;
@@ -2966,6 +2972,11 @@ extern of_bsn_tlv_actor_port_priority_t *
 extern void of_bsn_tlv_actor_port_priority_init(
     of_bsn_tlv_actor_port_priority_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bsn_tlv_actor_state_t *
+    of_bsn_tlv_actor_state_new(of_version_t version);
+extern void of_bsn_tlv_actor_state_init(
+    of_bsn_tlv_actor_state_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_bsn_tlv_actor_system_mac_t *
     of_bsn_tlv_actor_system_mac_new(of_version_t version);
 extern void of_bsn_tlv_actor_system_mac_init(
@@ -3110,6 +3121,11 @@ extern of_bsn_tlv_partner_port_priority_t *
     of_bsn_tlv_partner_port_priority_new(of_version_t version);
 extern void of_bsn_tlv_partner_port_priority_init(
     of_bsn_tlv_partner_port_priority_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bsn_tlv_partner_state_t *
+    of_bsn_tlv_partner_state_new(of_version_t version);
+extern void of_bsn_tlv_partner_state_init(
+    of_bsn_tlv_partner_state_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_tlv_partner_system_mac_t *
     of_bsn_tlv_partner_system_mac_new(of_version_t version);
@@ -7419,6 +7435,17 @@ of_bsn_tlv_actor_port_priority_delete(of_bsn_tlv_actor_port_priority_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_actor_state_t
+ * @param obj An instance of type of_bsn_tlv_actor_state_t
+ *
+ * \ingroup of_bsn_tlv_actor_state
+ */
+static inline void
+of_bsn_tlv_actor_state_delete(of_bsn_tlv_actor_state_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_bsn_tlv_actor_system_mac_t
  * @param obj An instance of type of_bsn_tlv_actor_system_mac_t
  *
@@ -7734,6 +7761,17 @@ of_bsn_tlv_partner_port_num_delete(of_bsn_tlv_partner_port_num_t *obj) {
  */
 static inline void
 of_bsn_tlv_partner_port_priority_delete(of_bsn_tlv_partner_port_priority_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_partner_state_t
+ * @param obj An instance of type of_bsn_tlv_partner_state_t
+ *
+ * \ingroup of_bsn_tlv_partner_state
+ */
+static inline void
+of_bsn_tlv_partner_state_delete(of_bsn_tlv_partner_state_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -18069,6 +18107,15 @@ extern void of_bsn_tlv_actor_port_priority_value_get(
     of_bsn_tlv_actor_port_priority_t *obj,
     uint16_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_actor_state */
+
+extern void of_bsn_tlv_actor_state_value_set(
+    of_bsn_tlv_actor_state_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_actor_state_value_get(
+    of_bsn_tlv_actor_state_t *obj,
+    uint8_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_actor_system_mac */
 
 extern void of_bsn_tlv_actor_system_mac_value_set(
@@ -18315,6 +18362,15 @@ extern void of_bsn_tlv_partner_port_priority_value_set(
 extern void of_bsn_tlv_partner_port_priority_value_get(
     of_bsn_tlv_partner_port_priority_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_partner_state */
+
+extern void of_bsn_tlv_partner_state_value_set(
+    of_bsn_tlv_partner_state_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_partner_state_value_get(
+    of_bsn_tlv_partner_state_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_partner_system_mac */
 
@@ -23066,6 +23122,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_actor_key_t actor_key;
     of_bsn_tlv_actor_port_num_t actor_port_num;
     of_bsn_tlv_actor_port_priority_t actor_port_priority;
+    of_bsn_tlv_actor_state_t actor_state;
     of_bsn_tlv_actor_system_mac_t actor_system_mac;
     of_bsn_tlv_actor_system_priority_t actor_system_priority;
     of_bsn_tlv_broadcast_query_timeout_t broadcast_query_timeout;
@@ -23094,6 +23151,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_partner_key_t partner_key;
     of_bsn_tlv_partner_port_num_t partner_port_num;
     of_bsn_tlv_partner_port_priority_t partner_port_priority;
+    of_bsn_tlv_partner_state_t partner_state;
     of_bsn_tlv_partner_system_mac_t partner_system_mac;
     of_bsn_tlv_partner_system_priority_t partner_system_priority;
     of_bsn_tlv_port_t port;
