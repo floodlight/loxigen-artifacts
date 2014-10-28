@@ -33,7 +33,8 @@ public interface OFMeterMod extends OFObject, OFMessage {
     int getCommand();
     int getFlags();
     long getMeterId();
-    List<OFMeterBand> getMeters();
+    List<OFMeterBand> getMeters() throws UnsupportedOperationException;
+    List<OFMeterBand> getBands() throws UnsupportedOperationException;
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -50,7 +51,9 @@ public interface OFMeterMod extends OFObject, OFMessage {
         Builder setFlags(int flags);
         long getMeterId();
         Builder setMeterId(long meterId);
-        List<OFMeterBand> getMeters();
-        Builder setMeters(List<OFMeterBand> meters);
+        List<OFMeterBand> getMeters() throws UnsupportedOperationException;
+        Builder setMeters(List<OFMeterBand> meters) throws UnsupportedOperationException;
+        List<OFMeterBand> getBands() throws UnsupportedOperationException;
+        Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException;
     }
 }

@@ -40,5 +40,6 @@ public enum OFTableFeaturePropType {
      APPLY_SETFIELD,
      APPLY_SETFIELD_MISS,
      EXPERIMENTER,
-     EXPERIMENTER_MISS;
+     EXPERIMENTER_MISS,
+     TABLE_SYNC_FROM;
 }

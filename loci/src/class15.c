@@ -35,6 +35,7 @@ of_meter_config_stats_reply_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xa); /* stats_type */
@@ -49,25 +50,6 @@ of_meter_config_stats_reply_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_config_stats_reply of_meter_config_stats_reply
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_config_stats_reply_push_wire_values(of_meter_config_stats_reply_t *obj)
-{
-
-    of_meter_config_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_config_stats_reply object
@@ -87,18 +69,15 @@ of_meter_config_stats_reply_new(of_version_t version)
     of_meter_config_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REPLY] + of_object_extra_len[version][OF_METER_CONFIG_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REPLY];
 
     if ((obj = (of_meter_config_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_meter_config_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_meter_config_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_config_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -130,7 +109,7 @@ of_meter_config_stats_reply_init(of_meter_config_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REPLY] + of_object_extra_len[version][OF_METER_CONFIG_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -171,6 +150,7 @@ of_meter_config_stats_reply_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -209,6 +189,7 @@ of_meter_config_stats_reply_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -249,6 +230,7 @@ of_meter_config_stats_reply_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -287,6 +269,7 @@ of_meter_config_stats_reply_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -333,6 +316,7 @@ of_meter_config_stats_reply_entries_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -403,6 +387,7 @@ of_meter_config_stats_reply_entries_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -480,6 +465,7 @@ of_meter_config_stats_request_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xa); /* stats_type */
@@ -494,25 +480,6 @@ of_meter_config_stats_request_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_config_stats_request of_meter_config_stats_request
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_config_stats_request_push_wire_values(of_meter_config_stats_request_t *obj)
-{
-
-    of_meter_config_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_config_stats_request object
@@ -532,18 +499,15 @@ of_meter_config_stats_request_new(of_version_t version)
     of_meter_config_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REQUEST] + of_object_extra_len[version][OF_METER_CONFIG_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REQUEST];
 
     if ((obj = (of_meter_config_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_meter_config_stats_request_init(obj, version, bytes, 0);
-
-    if (of_meter_config_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_config_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -575,7 +539,7 @@ of_meter_config_stats_request_init(of_meter_config_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REQUEST] + of_object_extra_len[version][OF_METER_CONFIG_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -616,6 +580,7 @@ of_meter_config_stats_request_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -654,6 +619,7 @@ of_meter_config_stats_request_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -694,6 +660,7 @@ of_meter_config_stats_request_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -732,6 +699,7 @@ of_meter_config_stats_request_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -772,6 +740,7 @@ of_meter_config_stats_request_meter_id_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -810,6 +779,7 @@ of_meter_config_stats_request_meter_id_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -862,16 +832,6 @@ of_meter_config_stats_request_meter_id_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_features_push_wire_values(of_meter_features_t *obj)
-{
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_meter_features object
  *
  * @param version The wire version to use for the object
@@ -889,18 +849,13 @@ of_meter_features_new(of_version_t version)
     of_meter_features_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_FEATURES] + of_object_extra_len[version][OF_METER_FEATURES];
+    bytes = of_object_fixed_len[version][OF_METER_FEATURES];
 
     if ((obj = (of_meter_features_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_meter_features_init(obj, version, bytes, 0);
-
-    if (of_meter_features_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
 
     return obj;
 }
@@ -932,7 +887,7 @@ of_meter_features_init(of_meter_features_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_FEATURES] + of_object_extra_len[version][OF_METER_FEATURES];
+        bytes = of_object_fixed_len[version][OF_METER_FEATURES];
     }
     obj->version = version;
     obj->length = bytes;
@@ -973,6 +928,7 @@ of_meter_features_max_meter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 0;
         break;
     default:
@@ -1011,6 +967,7 @@ of_meter_features_max_meter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 0;
         break;
     default:
@@ -1051,6 +1008,7 @@ of_meter_features_band_types_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1089,6 +1047,7 @@ of_meter_features_band_types_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1129,6 +1088,7 @@ of_meter_features_capabilities_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1167,6 +1127,7 @@ of_meter_features_capabilities_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1207,6 +1168,7 @@ of_meter_features_max_bands_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -1245,6 +1207,7 @@ of_meter_features_max_bands_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -1285,6 +1248,7 @@ of_meter_features_max_color_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 13;
         break;
     default:
@@ -1323,6 +1287,7 @@ of_meter_features_max_color_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 13;
         break;
     default:
@@ -1374,6 +1339,7 @@ of_meter_features_stats_reply_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xb); /* stats_type */
@@ -1388,25 +1354,6 @@ of_meter_features_stats_reply_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_features_stats_reply of_meter_features_stats_reply
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_features_stats_reply_push_wire_values(of_meter_features_stats_reply_t *obj)
-{
-
-    of_meter_features_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_features_stats_reply object
@@ -1426,18 +1373,15 @@ of_meter_features_stats_reply_new(of_version_t version)
     of_meter_features_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REPLY] + of_object_extra_len[version][OF_METER_FEATURES_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REPLY];
 
     if ((obj = (of_meter_features_stats_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_meter_features_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_meter_features_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_features_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -1469,7 +1413,7 @@ of_meter_features_stats_reply_init(of_meter_features_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REPLY] + of_object_extra_len[version][OF_METER_FEATURES_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1510,6 +1454,7 @@ of_meter_features_stats_reply_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1548,6 +1493,7 @@ of_meter_features_stats_reply_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1588,6 +1534,7 @@ of_meter_features_stats_reply_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -1626,6 +1573,7 @@ of_meter_features_stats_reply_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -1672,6 +1620,7 @@ of_meter_features_stats_reply_features_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = 16;
         break;
@@ -1742,6 +1691,7 @@ of_meter_features_stats_reply_features_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = 16;
         break;
@@ -1819,6 +1769,7 @@ of_meter_features_stats_request_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xb); /* stats_type */
@@ -1833,25 +1784,6 @@ of_meter_features_stats_request_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_features_stats_request of_meter_features_stats_request
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_features_stats_request_push_wire_values(of_meter_features_stats_request_t *obj)
-{
-
-    of_meter_features_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_features_stats_request object
@@ -1871,18 +1803,15 @@ of_meter_features_stats_request_new(of_version_t version)
     of_meter_features_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REQUEST] + of_object_extra_len[version][OF_METER_FEATURES_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REQUEST];
 
     if ((obj = (of_meter_features_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_meter_features_stats_request_init(obj, version, bytes, 0);
-
-    if (of_meter_features_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_features_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -1914,7 +1843,7 @@ of_meter_features_stats_request_init(of_meter_features_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REQUEST] + of_object_extra_len[version][OF_METER_FEATURES_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1955,6 +1884,7 @@ of_meter_features_stats_request_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1993,6 +1923,7 @@ of_meter_features_stats_request_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2033,6 +1964,7 @@ of_meter_features_stats_request_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2071,6 +2003,7 @@ of_meter_features_stats_request_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2122,6 +2055,7 @@ of_meter_mod_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1d; /* type */
         break;
@@ -2135,25 +2069,6 @@ of_meter_mod_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_mod of_meter_mod
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_mod_push_wire_values(of_meter_mod_t *obj)
-{
-
-    of_meter_mod_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_mod object
@@ -2173,18 +2088,15 @@ of_meter_mod_new(of_version_t version)
     of_meter_mod_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_MOD] + of_object_extra_len[version][OF_METER_MOD];
+    bytes = of_object_fixed_len[version][OF_METER_MOD];
 
     if ((obj = (of_meter_mod_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_meter_mod_init(obj, version, bytes, 0);
-
-    if (of_meter_mod_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_mod_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -2216,7 +2128,7 @@ of_meter_mod_init(of_meter_mod_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_MOD] + of_object_extra_len[version][OF_METER_MOD];
+        bytes = of_object_fixed_len[version][OF_METER_MOD];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2257,6 +2169,7 @@ of_meter_mod_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2295,6 +2208,7 @@ of_meter_mod_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2335,6 +2249,7 @@ of_meter_mod_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2373,6 +2288,7 @@ of_meter_mod_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2413,6 +2329,7 @@ of_meter_mod_meter_id_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -2451,6 +2368,7 @@ of_meter_mod_meter_id_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -2464,6 +2382,148 @@ of_meter_mod_meter_id_set(
     OF_LENGTH_CHECK_ASSERT(obj);
 
     return ;
+}
+
+/**
+ * Bind an object of type of_list_meter_band_t to the parent of type of_meter_mod for
+ * member bands
+ * @param obj Pointer to an object of type of_meter_mod.
+ * @param bands Pointer to the child object of type
+ * of_list_meter_band_t to be filled out.
+ * \ingroup of_meter_mod
+ *
+ * The parameter bands is filled out to point to the same underlying
+ * wire buffer as its parent.
+ *
+ */
+void
+of_meter_mod_bands_bind(
+    of_meter_mod_t *obj,
+    of_list_meter_band_t *bands)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 16;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+
+    /* Initialize child */
+    of_list_meter_band_init(bands, obj->version, 0, 1);
+    /* Attach to parent */
+    of_object_attach(obj, bands, offset, cur_len);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Create a copy of bands into a new variable of type of_list_meter_band_t from
+ * a of_meter_mod instance.
+ *
+ * @param obj Pointer to the source of type of_meter_mod_t
+ * @returns A pointer to a new instance of type of_list_meter_band_t whose contents
+ * match that of bands from source
+ * @returns NULL if an error occurs
+ */
+of_list_meter_band_t *
+of_meter_mod_bands_get(of_meter_mod_t *obj) {
+    of_list_meter_band_t _bands;
+    of_list_meter_band_t *_bands_ptr;
+
+    of_meter_mod_bands_bind(obj, &_bands);
+    _bands_ptr = (of_list_meter_band_t *)of_object_dup(&_bands);
+    return _bands_ptr;
+}
+
+/**
+ * Set bands in an object of type of_meter_mod.
+ * @param obj Pointer to an object of type of_meter_mod.
+ * @param bands Pointer to the child of type of_list_meter_band_t.
+ *
+ * If the child's wire buffer is the same as the parent's, then
+ * nothing is done as the changes have already been registered in the
+ * parent.  Otherwise, the data in the child's wire buffer is inserted
+ * into the parent's and the appropriate lengths are updated.
+ */
+int WARN_UNUSED_RESULT
+of_meter_mod_bands_set(
+    of_meter_mod_t *obj,
+    of_list_meter_band_t *bands)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+    int cur_len = 0; /* Current length of object data */
+    int new_len, delta; /* For set, need new length and delta */
+
+    LOCI_ASSERT(obj->object_id == OF_METER_MOD);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_4:
+        offset = 16;
+        cur_len = _END_LEN(obj, offset);
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
+
+    /* LOCI object type */
+    new_len = bands->length;
+    /* If underlying buffer already shared; nothing to do */
+    if (obj->wbuf == bands->wbuf) {
+        of_wire_buffer_grow(wbuf, abs_offset + new_len);
+        /* Verify that the offsets are correct */
+        LOCI_ASSERT(abs_offset == OF_OBJECT_ABSOLUTE_OFFSET(bands, 0));
+        /* LOCI_ASSERT(new_len == cur_len); */ /* fixme: may fail for OXM lists */
+        return OF_ERROR_NONE;
+    }
+
+    /* Otherwise, replace existing object in data buffer */
+    of_wire_buffer_replace_data(wbuf, abs_offset, cur_len,
+        OF_OBJECT_BUFFER_INDEX(bands, 0), new_len);
+
+    /* @fixme Shouldn't this precede copying value's data to buffer? */
+    of_object_wire_length_set((of_object_t *)bands, bands->length);
+
+    /* Not scalar, update lengths if needed */
+    delta = new_len - cur_len;
+    if (delta != 0) {
+        /* Update parent(s) */
+        of_object_parent_length_update((of_object_t *)obj, delta);
+    }
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return OF_ERROR_NONE;
 }
 
 /**
@@ -2644,6 +2704,7 @@ of_meter_mod_failed_error_msg_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xc); /* err_type */
@@ -2658,25 +2719,6 @@ of_meter_mod_failed_error_msg_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_mod_failed_error_msg of_meter_mod_failed_error_msg
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_mod_failed_error_msg_push_wire_values(of_meter_mod_failed_error_msg_t *obj)
-{
-
-    of_meter_mod_failed_error_msg_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_mod_failed_error_msg object
@@ -2696,18 +2738,15 @@ of_meter_mod_failed_error_msg_new(of_version_t version)
     of_meter_mod_failed_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_METER_MOD_FAILED_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_METER_MOD_FAILED_ERROR_MSG];
 
     if ((obj = (of_meter_mod_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_meter_mod_failed_error_msg_init(obj, version, bytes, 0);
-
-    if (of_meter_mod_failed_error_msg_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_mod_failed_error_msg_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -2739,7 +2778,7 @@ of_meter_mod_failed_error_msg_init(of_meter_mod_failed_error_msg_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_MOD_FAILED_ERROR_MSG] + of_object_extra_len[version][OF_METER_MOD_FAILED_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_METER_MOD_FAILED_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2780,6 +2819,7 @@ of_meter_mod_failed_error_msg_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2818,6 +2858,7 @@ of_meter_mod_failed_error_msg_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2858,6 +2899,7 @@ of_meter_mod_failed_error_msg_code_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2896,6 +2938,7 @@ of_meter_mod_failed_error_msg_code_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -2937,6 +2980,7 @@ of_meter_mod_failed_error_msg_data_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -2981,6 +3025,7 @@ of_meter_mod_failed_error_msg_data_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3044,18 +3089,6 @@ of_meter_mod_failed_error_msg_data_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_stats_push_wire_values(of_meter_stats_t *obj)
-{
-
-    of_meter_stats_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_meter_stats object
  *
  * @param version The wire version to use for the object
@@ -3073,18 +3106,14 @@ of_meter_stats_new(of_version_t version)
     of_meter_stats_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_STATS] + of_object_extra_len[version][OF_METER_STATS];
+    bytes = of_object_fixed_len[version][OF_METER_STATS];
 
     if ((obj = (of_meter_stats_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_meter_stats_init(obj, version, bytes, 0);
-
-    if (of_meter_stats_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_stats_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3116,7 +3145,7 @@ of_meter_stats_init(of_meter_stats_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_STATS] + of_object_extra_len[version][OF_METER_STATS];
+        bytes = of_object_fixed_len[version][OF_METER_STATS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3157,6 +3186,7 @@ of_meter_stats_meter_id_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 0;
         break;
     default:
@@ -3195,6 +3225,7 @@ of_meter_stats_meter_id_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 0;
         break;
     default:
@@ -3235,6 +3266,7 @@ of_meter_stats_flow_count_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -3273,6 +3305,7 @@ of_meter_stats_flow_count_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -3313,6 +3346,7 @@ of_meter_stats_packet_in_count_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -3351,6 +3385,7 @@ of_meter_stats_packet_in_count_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -3391,6 +3426,7 @@ of_meter_stats_byte_in_count_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -3429,6 +3465,7 @@ of_meter_stats_byte_in_count_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -3469,6 +3506,7 @@ of_meter_stats_duration_sec_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -3507,6 +3545,7 @@ of_meter_stats_duration_sec_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -3547,6 +3586,7 @@ of_meter_stats_duration_nsec_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 36;
         break;
     default:
@@ -3585,6 +3625,7 @@ of_meter_stats_duration_nsec_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 36;
         break;
     default:
@@ -3631,6 +3672,7 @@ of_meter_stats_band_stats_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 40;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3701,6 +3743,7 @@ of_meter_stats_band_stats_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 40;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3778,6 +3821,7 @@ of_meter_stats_reply_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x9); /* stats_type */
@@ -3792,25 +3836,6 @@ of_meter_stats_reply_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_stats_reply of_meter_stats_reply
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_stats_reply_push_wire_values(of_meter_stats_reply_t *obj)
-{
-
-    of_meter_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_stats_reply object
@@ -3830,18 +3855,15 @@ of_meter_stats_reply_new(of_version_t version)
     of_meter_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_STATS_REPLY] + of_object_extra_len[version][OF_METER_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_METER_STATS_REPLY];
 
     if ((obj = (of_meter_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_meter_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_meter_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3873,7 +3895,7 @@ of_meter_stats_reply_init(of_meter_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_STATS_REPLY] + of_object_extra_len[version][OF_METER_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_METER_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3914,6 +3936,7 @@ of_meter_stats_reply_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3952,6 +3975,7 @@ of_meter_stats_reply_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3992,6 +4016,7 @@ of_meter_stats_reply_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4030,6 +4055,7 @@ of_meter_stats_reply_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4076,6 +4102,7 @@ of_meter_stats_reply_entries_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4146,6 +4173,7 @@ of_meter_stats_reply_entries_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4223,6 +4251,7 @@ of_meter_stats_request_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x9); /* stats_type */
@@ -4237,25 +4266,6 @@ of_meter_stats_request_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_meter_stats_request of_meter_stats_request
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_meter_stats_request_push_wire_values(of_meter_stats_request_t *obj)
-{
-
-    of_meter_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_meter_stats_request object
@@ -4275,18 +4285,15 @@ of_meter_stats_request_new(of_version_t version)
     of_meter_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_METER_STATS_REQUEST] + of_object_extra_len[version][OF_METER_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_METER_STATS_REQUEST];
 
     if ((obj = (of_meter_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_meter_stats_request_init(obj, version, bytes, 0);
-
-    if (of_meter_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_meter_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4318,7 +4325,7 @@ of_meter_stats_request_init(of_meter_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_METER_STATS_REQUEST] + of_object_extra_len[version][OF_METER_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_METER_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4359,6 +4366,7 @@ of_meter_stats_request_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4397,6 +4405,7 @@ of_meter_stats_request_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4437,6 +4446,7 @@ of_meter_stats_request_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4475,6 +4485,7 @@ of_meter_stats_request_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4515,6 +4526,7 @@ of_meter_stats_request_meter_id_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -4553,6 +4565,7 @@ of_meter_stats_request_meter_id_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -4604,6 +4617,7 @@ of_oxm_mpls_bos_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80004801); /* type_len */
         break;
     default:
@@ -4616,18 +4630,6 @@ of_oxm_mpls_bos_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_mpls_bos of_oxm_mpls_bos
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_mpls_bos_push_wire_values(of_oxm_mpls_bos_t *obj)
-{
-
-    of_oxm_mpls_bos_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_mpls_bos object
@@ -4647,18 +4649,14 @@ of_oxm_mpls_bos_new(of_version_t version)
     of_oxm_mpls_bos_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS] + of_object_extra_len[version][OF_OXM_MPLS_BOS];
+    bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS];
 
     if ((obj = (of_oxm_mpls_bos_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_mpls_bos_init(obj, version, bytes, 0);
-
-    if (of_oxm_mpls_bos_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_mpls_bos_push_wire_types(obj);
 
     return obj;
 }
@@ -4690,7 +4688,7 @@ of_oxm_mpls_bos_init(of_oxm_mpls_bos_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS] + of_object_extra_len[version][OF_OXM_MPLS_BOS];
+        bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4731,6 +4729,7 @@ of_oxm_mpls_bos_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4769,6 +4768,7 @@ of_oxm_mpls_bos_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4820,6 +4820,7 @@ of_oxm_mpls_bos_masked_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80004902); /* type_len */
         break;
     default:
@@ -4832,18 +4833,6 @@ of_oxm_mpls_bos_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_mpls_bos_masked of_oxm_mpls_bos_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_mpls_bos_masked_push_wire_values(of_oxm_mpls_bos_masked_t *obj)
-{
-
-    of_oxm_mpls_bos_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_mpls_bos_masked object
@@ -4863,18 +4852,14 @@ of_oxm_mpls_bos_masked_new(of_version_t version)
     of_oxm_mpls_bos_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS_MASKED] + of_object_extra_len[version][OF_OXM_MPLS_BOS_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS_MASKED];
 
     if ((obj = (of_oxm_mpls_bos_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_mpls_bos_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_mpls_bos_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_mpls_bos_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -4906,7 +4891,7 @@ of_oxm_mpls_bos_masked_init(of_oxm_mpls_bos_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS_MASKED] + of_object_extra_len[version][OF_OXM_MPLS_BOS_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4947,6 +4932,7 @@ of_oxm_mpls_bos_masked_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4985,6 +4971,7 @@ of_oxm_mpls_bos_masked_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5025,6 +5012,7 @@ of_oxm_mpls_bos_masked_value_mask_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -5063,6 +5051,7 @@ of_oxm_mpls_bos_masked_value_mask_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -5114,6 +5103,7 @@ of_oxm_tunnel_id_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80004c08); /* type_len */
         break;
     default:
@@ -5126,18 +5116,6 @@ of_oxm_tunnel_id_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_tunnel_id of_oxm_tunnel_id
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_tunnel_id_push_wire_values(of_oxm_tunnel_id_t *obj)
-{
-
-    of_oxm_tunnel_id_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_tunnel_id object
@@ -5157,18 +5135,14 @@ of_oxm_tunnel_id_new(of_version_t version)
     of_oxm_tunnel_id_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID] + of_object_extra_len[version][OF_OXM_TUNNEL_ID];
+    bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID];
 
     if ((obj = (of_oxm_tunnel_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_tunnel_id_init(obj, version, bytes, 0);
-
-    if (of_oxm_tunnel_id_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_tunnel_id_push_wire_types(obj);
 
     return obj;
 }
@@ -5200,7 +5174,7 @@ of_oxm_tunnel_id_init(of_oxm_tunnel_id_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID] + of_object_extra_len[version][OF_OXM_TUNNEL_ID];
+        bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5241,6 +5215,7 @@ of_oxm_tunnel_id_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5279,6 +5254,7 @@ of_oxm_tunnel_id_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5330,6 +5306,7 @@ of_oxm_tunnel_id_masked_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80004d10); /* type_len */
         break;
     default:
@@ -5342,18 +5319,6 @@ of_oxm_tunnel_id_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_tunnel_id_masked of_oxm_tunnel_id_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_tunnel_id_masked_push_wire_values(of_oxm_tunnel_id_masked_t *obj)
-{
-
-    of_oxm_tunnel_id_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_tunnel_id_masked object
@@ -5373,18 +5338,14 @@ of_oxm_tunnel_id_masked_new(of_version_t version)
     of_oxm_tunnel_id_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID_MASKED] + of_object_extra_len[version][OF_OXM_TUNNEL_ID_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID_MASKED];
 
     if ((obj = (of_oxm_tunnel_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_tunnel_id_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_tunnel_id_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_tunnel_id_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -5416,7 +5377,7 @@ of_oxm_tunnel_id_masked_init(of_oxm_tunnel_id_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID_MASKED] + of_object_extra_len[version][OF_OXM_TUNNEL_ID_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5457,6 +5418,7 @@ of_oxm_tunnel_id_masked_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5495,6 +5457,7 @@ of_oxm_tunnel_id_masked_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5535,6 +5498,7 @@ of_oxm_tunnel_id_masked_value_mask_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -5573,6 +5537,7 @@ of_oxm_tunnel_id_masked_value_mask_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -5624,6 +5589,7 @@ of_port_desc_stats_reply_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xd); /* stats_type */
@@ -5638,25 +5604,6 @@ of_port_desc_stats_reply_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_port_desc_stats_reply of_port_desc_stats_reply
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_port_desc_stats_reply_push_wire_values(of_port_desc_stats_reply_t *obj)
-{
-
-    of_port_desc_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_port_desc_stats_reply object
@@ -5676,18 +5623,15 @@ of_port_desc_stats_reply_new(of_version_t version)
     of_port_desc_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REPLY] + of_object_extra_len[version][OF_PORT_DESC_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REPLY];
 
     if ((obj = (of_port_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_port_desc_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_port_desc_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_port_desc_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5719,7 +5663,7 @@ of_port_desc_stats_reply_init(of_port_desc_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REPLY] + of_object_extra_len[version][OF_PORT_DESC_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5760,6 +5704,7 @@ of_port_desc_stats_reply_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5798,6 +5743,7 @@ of_port_desc_stats_reply_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5838,6 +5784,7 @@ of_port_desc_stats_reply_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -5876,6 +5823,7 @@ of_port_desc_stats_reply_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -5922,6 +5870,7 @@ of_port_desc_stats_reply_entries_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5992,6 +5941,7 @@ of_port_desc_stats_reply_entries_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -6069,6 +6019,7 @@ of_port_desc_stats_request_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xd); /* stats_type */
@@ -6083,25 +6034,6 @@ of_port_desc_stats_request_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_port_desc_stats_request of_port_desc_stats_request
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_port_desc_stats_request_push_wire_values(of_port_desc_stats_request_t *obj)
-{
-
-    of_port_desc_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_port_desc_stats_request object
@@ -6121,18 +6053,15 @@ of_port_desc_stats_request_new(of_version_t version)
     of_port_desc_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_PORT_DESC_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REQUEST];
 
     if ((obj = (of_port_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_port_desc_stats_request_init(obj, version, bytes, 0);
-
-    if (of_port_desc_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_port_desc_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -6164,7 +6093,7 @@ of_port_desc_stats_request_init(of_port_desc_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_PORT_DESC_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6205,6 +6134,7 @@ of_port_desc_stats_request_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6243,6 +6173,7 @@ of_port_desc_stats_request_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6283,6 +6214,7 @@ of_port_desc_stats_request_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6321,6 +6253,7 @@ of_port_desc_stats_request_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6418,10 +6351,70 @@ of_table_feature_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             *id = OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS;
             break;
         case 0xfffe:
-            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER;
+            of_table_feature_prop_experimenter_wire_object_id_get(obj, id);
             break;
         case 0xffff:
-            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS;
+            of_table_feature_prop_experimenter_miss_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_TABLE_FEATURE_PROP;
+            break;
+        }
+        break;
+    }
+    case OF_VERSION_1_4: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_TABLE_FEATURE_PROP_INSTRUCTIONS;
+            break;
+        case 0x1:
+            *id = OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS;
+            break;
+        case 0x2:
+            *id = OF_TABLE_FEATURE_PROP_NEXT_TABLES;
+            break;
+        case 0x3:
+            *id = OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS;
+            break;
+        case 0x4:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_ACTIONS;
+            break;
+        case 0x5:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS;
+            break;
+        case 0x6:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_ACTIONS;
+            break;
+        case 0x7:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS;
+            break;
+        case 0x8:
+            *id = OF_TABLE_FEATURE_PROP_MATCH;
+            break;
+        case 0xa:
+            *id = OF_TABLE_FEATURE_PROP_WILDCARDS;
+            break;
+        case 0xc:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_SETFIELD;
+            break;
+        case 0xd:
+            *id = OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS;
+            break;
+        case 0xe:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_SETFIELD;
+            break;
+        case 0xf:
+            *id = OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS;
+            break;
+        case 0x10:
+            *id = OF_TABLE_FEATURE_PROP_TABLE_SYNC_FROM;
+            break;
+        case 0xfffe:
+            of_table_feature_prop_experimenter_wire_object_id_get(obj, id);
+            break;
+        case 0xffff:
+            of_table_feature_prop_experimenter_miss_wire_object_id_get(obj, id);
             break;
         default:
             *id = OF_TABLE_FEATURE_PROP;
@@ -6457,7 +6450,7 @@ of_table_feature_prop_new(of_version_t version)
     of_table_feature_prop_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP];
 
     if ((obj = (of_table_feature_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -6498,7 +6491,7 @@ of_table_feature_prop_init(of_table_feature_prop_t *obj_p,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6550,6 +6543,7 @@ of_table_feature_prop_apply_actions_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x6); /* type */
         break;
     default:
@@ -6562,21 +6556,6 @@ of_table_feature_prop_apply_actions_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_apply_actions of_table_feature_prop_apply_actions
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_apply_actions_push_wire_values(of_table_feature_prop_apply_actions_t *obj)
-{
-
-    of_table_feature_prop_apply_actions_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_apply_actions object
@@ -6596,18 +6575,15 @@ of_table_feature_prop_apply_actions_new(of_version_t version)
     of_table_feature_prop_apply_actions_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS];
 
     if ((obj = (of_table_feature_prop_apply_actions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_apply_actions_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_apply_actions_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_apply_actions_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -6639,7 +6615,7 @@ of_table_feature_prop_apply_actions_init(of_table_feature_prop_apply_actions_t *
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6686,6 +6662,7 @@ of_table_feature_prop_apply_actions_action_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -6756,6 +6733,7 @@ of_table_feature_prop_apply_actions_action_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -6833,6 +6811,7 @@ of_table_feature_prop_apply_actions_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x7); /* type */
         break;
     default:
@@ -6845,21 +6824,6 @@ of_table_feature_prop_apply_actions_miss_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_apply_actions_miss of_table_feature_prop_apply_actions_miss
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_apply_actions_miss_push_wire_values(of_table_feature_prop_apply_actions_miss_t *obj)
-{
-
-    of_table_feature_prop_apply_actions_miss_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_apply_actions_miss object
@@ -6879,18 +6843,15 @@ of_table_feature_prop_apply_actions_miss_new(of_version_t version)
     of_table_feature_prop_apply_actions_miss_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS];
 
     if ((obj = (of_table_feature_prop_apply_actions_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_apply_actions_miss_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_apply_actions_miss_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_apply_actions_miss_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -6922,7 +6883,7 @@ of_table_feature_prop_apply_actions_miss_init(of_table_feature_prop_apply_action
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6969,6 +6930,7 @@ of_table_feature_prop_apply_actions_miss_action_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7039,6 +7001,7 @@ of_table_feature_prop_apply_actions_miss_action_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7116,6 +7079,7 @@ of_table_feature_prop_apply_setfield_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xe); /* type */
         break;
     default:
@@ -7128,21 +7092,6 @@ of_table_feature_prop_apply_setfield_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_apply_setfield of_table_feature_prop_apply_setfield
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_apply_setfield_push_wire_values(of_table_feature_prop_apply_setfield_t *obj)
-{
-
-    of_table_feature_prop_apply_setfield_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_apply_setfield object
@@ -7162,18 +7111,15 @@ of_table_feature_prop_apply_setfield_new(of_version_t version)
     of_table_feature_prop_apply_setfield_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD];
 
     if ((obj = (of_table_feature_prop_apply_setfield_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_apply_setfield_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_apply_setfield_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_apply_setfield_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -7205,7 +7151,7 @@ of_table_feature_prop_apply_setfield_init(of_table_feature_prop_apply_setfield_t
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7252,6 +7198,7 @@ of_table_feature_prop_apply_setfield_oxm_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7322,6 +7269,7 @@ of_table_feature_prop_apply_setfield_oxm_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7399,6 +7347,7 @@ of_table_feature_prop_apply_setfield_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xf); /* type */
         break;
     default:
@@ -7411,21 +7360,6 @@ of_table_feature_prop_apply_setfield_miss_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_apply_setfield_miss of_table_feature_prop_apply_setfield_miss
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_apply_setfield_miss_push_wire_values(of_table_feature_prop_apply_setfield_miss_t *obj)
-{
-
-    of_table_feature_prop_apply_setfield_miss_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_apply_setfield_miss object
@@ -7445,18 +7379,15 @@ of_table_feature_prop_apply_setfield_miss_new(of_version_t version)
     of_table_feature_prop_apply_setfield_miss_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS];
 
     if ((obj = (of_table_feature_prop_apply_setfield_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_apply_setfield_miss_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_apply_setfield_miss_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_apply_setfield_miss_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -7488,7 +7419,7 @@ of_table_feature_prop_apply_setfield_miss_init(of_table_feature_prop_apply_setfi
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7535,6 +7466,7 @@ of_table_feature_prop_apply_setfield_miss_oxm_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7605,6 +7537,7 @@ of_table_feature_prop_apply_setfield_miss_oxm_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -7676,39 +7609,39 @@ of_table_feature_prop_apply_setfield_miss_oxm_ids_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
+
 void
-of_table_feature_prop_experimenter_push_wire_types(of_object_t *obj)
+of_table_feature_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0xfffe); /* type */
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER;
+            break;
+        }
         break;
+    }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
     default:
-        UNREACHABLE();
+        LOCI_ASSERT(0);
     }
 }
-
 
 
 /**
  * \defgroup of_table_feature_prop_experimenter of_table_feature_prop_experimenter
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_experimenter_push_wire_values(of_table_feature_prop_experimenter_t *obj)
-{
-
-    of_table_feature_prop_experimenter_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_experimenter object
@@ -7728,18 +7661,13 @@ of_table_feature_prop_experimenter_new(of_version_t version)
     of_table_feature_prop_experimenter_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER];
 
     if ((obj = (of_table_feature_prop_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_experimenter_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_experimenter_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
 
     return obj;
 }
@@ -7771,7 +7699,7 @@ of_table_feature_prop_experimenter_init(of_table_feature_prop_experimenter_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7812,6 +7740,7 @@ of_table_feature_prop_experimenter_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7850,6 +7779,7 @@ of_table_feature_prop_experimenter_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7890,6 +7820,7 @@ of_table_feature_prop_experimenter_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7928,6 +7859,7 @@ of_table_feature_prop_experimenter_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7969,6 +7901,7 @@ of_table_feature_prop_experimenter_experimenter_data_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8013,6 +7946,7 @@ of_table_feature_prop_experimenter_experimenter_data_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8069,39 +8003,39 @@ of_table_feature_prop_experimenter_experimenter_data_set(
 #include "loci_log.h"
 #include "loci_int.h"
 
+
 void
-of_table_feature_prop_experimenter_miss_push_wire_types(of_object_t *obj)
+of_table_feature_prop_experimenter_miss_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
-    case OF_VERSION_1_3:
-        *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
+    case OF_VERSION_1_3: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS;
+            break;
+        }
         break;
+    }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        default:
+            *id = OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS;
+            break;
+        }
+        break;
+    }
     default:
-        UNREACHABLE();
+        LOCI_ASSERT(0);
     }
 }
-
 
 
 /**
  * \defgroup of_table_feature_prop_experimenter_miss of_table_feature_prop_experimenter_miss
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_experimenter_miss_push_wire_values(of_table_feature_prop_experimenter_miss_t *obj)
-{
-
-    of_table_feature_prop_experimenter_miss_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_experimenter_miss object
@@ -8121,18 +8055,13 @@ of_table_feature_prop_experimenter_miss_new(of_version_t version)
     of_table_feature_prop_experimenter_miss_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS];
 
     if ((obj = (of_table_feature_prop_experimenter_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_experimenter_miss_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_experimenter_miss_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
 
     return obj;
 }
@@ -8164,7 +8093,7 @@ of_table_feature_prop_experimenter_miss_init(of_table_feature_prop_experimenter_
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8205,6 +8134,7 @@ of_table_feature_prop_experimenter_miss_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8243,6 +8173,7 @@ of_table_feature_prop_experimenter_miss_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8283,6 +8214,7 @@ of_table_feature_prop_experimenter_miss_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -8321,6 +8253,7 @@ of_table_feature_prop_experimenter_miss_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -8362,6 +8295,7 @@ of_table_feature_prop_experimenter_miss_experimenter_data_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8406,6 +8340,7 @@ of_table_feature_prop_experimenter_miss_experimenter_data_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8468,6 +8403,7 @@ of_table_feature_prop_instructions_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x0); /* type */
         break;
     default:
@@ -8480,21 +8416,6 @@ of_table_feature_prop_instructions_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_instructions of_table_feature_prop_instructions
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_instructions_push_wire_values(of_table_feature_prop_instructions_t *obj)
-{
-
-    of_table_feature_prop_instructions_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_instructions object
@@ -8514,18 +8435,15 @@ of_table_feature_prop_instructions_new(of_version_t version)
     of_table_feature_prop_instructions_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS];
 
     if ((obj = (of_table_feature_prop_instructions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_instructions_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_instructions_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_instructions_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -8557,7 +8475,7 @@ of_table_feature_prop_instructions_init(of_table_feature_prop_instructions_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8604,6 +8522,7 @@ of_table_feature_prop_instructions_instruction_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8674,6 +8593,7 @@ of_table_feature_prop_instructions_instruction_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8751,6 +8671,7 @@ of_table_feature_prop_instructions_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1); /* type */
         break;
     default:
@@ -8763,21 +8684,6 @@ of_table_feature_prop_instructions_miss_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_instructions_miss of_table_feature_prop_instructions_miss
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_instructions_miss_push_wire_values(of_table_feature_prop_instructions_miss_t *obj)
-{
-
-    of_table_feature_prop_instructions_miss_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_instructions_miss object
@@ -8797,18 +8703,15 @@ of_table_feature_prop_instructions_miss_new(of_version_t version)
     of_table_feature_prop_instructions_miss_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS];
 
     if ((obj = (of_table_feature_prop_instructions_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_instructions_miss_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_instructions_miss_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_instructions_miss_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -8840,7 +8743,7 @@ of_table_feature_prop_instructions_miss_init(of_table_feature_prop_instructions_
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8887,6 +8790,7 @@ of_table_feature_prop_instructions_miss_instruction_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8957,6 +8861,7 @@ of_table_feature_prop_instructions_miss_instruction_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9034,6 +8939,7 @@ of_table_feature_prop_match_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x8); /* type */
         break;
     default:
@@ -9046,21 +8952,6 @@ of_table_feature_prop_match_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_match of_table_feature_prop_match
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_match_push_wire_values(of_table_feature_prop_match_t *obj)
-{
-
-    of_table_feature_prop_match_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_match object
@@ -9080,18 +8971,15 @@ of_table_feature_prop_match_new(of_version_t version)
     of_table_feature_prop_match_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_MATCH] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_MATCH];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_MATCH];
 
     if ((obj = (of_table_feature_prop_match_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_match_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_match_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_match_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9123,7 +9011,7 @@ of_table_feature_prop_match_init(of_table_feature_prop_match_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_MATCH] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_MATCH];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_MATCH];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9170,6 +9058,7 @@ of_table_feature_prop_match_oxm_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9240,6 +9129,7 @@ of_table_feature_prop_match_oxm_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9317,6 +9207,7 @@ of_table_feature_prop_next_tables_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x2); /* type */
         break;
     default:
@@ -9329,21 +9220,6 @@ of_table_feature_prop_next_tables_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_next_tables of_table_feature_prop_next_tables
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_next_tables_push_wire_values(of_table_feature_prop_next_tables_t *obj)
-{
-
-    of_table_feature_prop_next_tables_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_next_tables object
@@ -9363,18 +9239,15 @@ of_table_feature_prop_next_tables_new(of_version_t version)
     of_table_feature_prop_next_tables_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES];
 
     if ((obj = (of_table_feature_prop_next_tables_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_next_tables_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_next_tables_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_next_tables_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9406,7 +9279,7 @@ of_table_feature_prop_next_tables_init(of_table_feature_prop_next_tables_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9453,6 +9326,7 @@ of_table_feature_prop_next_tables_next_table_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9523,6 +9397,7 @@ of_table_feature_prop_next_tables_next_table_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9600,6 +9475,7 @@ of_table_feature_prop_next_tables_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x3); /* type */
         break;
     default:
@@ -9612,21 +9488,6 @@ of_table_feature_prop_next_tables_miss_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_next_tables_miss of_table_feature_prop_next_tables_miss
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_next_tables_miss_push_wire_values(of_table_feature_prop_next_tables_miss_t *obj)
-{
-
-    of_table_feature_prop_next_tables_miss_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_next_tables_miss object
@@ -9646,18 +9507,15 @@ of_table_feature_prop_next_tables_miss_new(of_version_t version)
     of_table_feature_prop_next_tables_miss_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS];
 
     if ((obj = (of_table_feature_prop_next_tables_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_next_tables_miss_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_next_tables_miss_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_next_tables_miss_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9689,7 +9547,7 @@ of_table_feature_prop_next_tables_miss_init(of_table_feature_prop_next_tables_mi
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9736,6 +9594,7 @@ of_table_feature_prop_next_tables_miss_next_table_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9806,6 +9665,7 @@ of_table_feature_prop_next_tables_miss_next_table_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9883,6 +9743,7 @@ of_table_feature_prop_wildcards_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xa); /* type */
         break;
     default:
@@ -9895,21 +9756,6 @@ of_table_feature_prop_wildcards_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_wildcards of_table_feature_prop_wildcards
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_wildcards_push_wire_values(of_table_feature_prop_wildcards_t *obj)
-{
-
-    of_table_feature_prop_wildcards_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_wildcards object
@@ -9929,18 +9775,15 @@ of_table_feature_prop_wildcards_new(of_version_t version)
     of_table_feature_prop_wildcards_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS];
 
     if ((obj = (of_table_feature_prop_wildcards_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_wildcards_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_wildcards_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_wildcards_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9972,7 +9815,7 @@ of_table_feature_prop_wildcards_init(of_table_feature_prop_wildcards_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10019,6 +9862,7 @@ of_table_feature_prop_wildcards_oxm_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10089,6 +9933,7 @@ of_table_feature_prop_wildcards_oxm_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10166,6 +10011,7 @@ of_table_feature_prop_write_actions_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x4); /* type */
         break;
     default:
@@ -10178,21 +10024,6 @@ of_table_feature_prop_write_actions_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_write_actions of_table_feature_prop_write_actions
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_write_actions_push_wire_values(of_table_feature_prop_write_actions_t *obj)
-{
-
-    of_table_feature_prop_write_actions_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_write_actions object
@@ -10212,18 +10043,15 @@ of_table_feature_prop_write_actions_new(of_version_t version)
     of_table_feature_prop_write_actions_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS];
 
     if ((obj = (of_table_feature_prop_write_actions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_write_actions_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_write_actions_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_write_actions_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10255,7 +10083,7 @@ of_table_feature_prop_write_actions_init(of_table_feature_prop_write_actions_t *
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10302,6 +10130,7 @@ of_table_feature_prop_write_actions_action_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10372,6 +10201,7 @@ of_table_feature_prop_write_actions_action_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10449,6 +10279,7 @@ of_table_feature_prop_write_actions_miss_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
         break;
     default:
@@ -10461,21 +10292,6 @@ of_table_feature_prop_write_actions_miss_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_write_actions_miss of_table_feature_prop_write_actions_miss
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_write_actions_miss_push_wire_values(of_table_feature_prop_write_actions_miss_t *obj)
-{
-
-    of_table_feature_prop_write_actions_miss_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_write_actions_miss object
@@ -10495,18 +10311,15 @@ of_table_feature_prop_write_actions_miss_new(of_version_t version)
     of_table_feature_prop_write_actions_miss_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS];
 
     if ((obj = (of_table_feature_prop_write_actions_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_write_actions_miss_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_write_actions_miss_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_write_actions_miss_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10538,7 +10351,7 @@ of_table_feature_prop_write_actions_miss_init(of_table_feature_prop_write_action
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10585,6 +10398,7 @@ of_table_feature_prop_write_actions_miss_action_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10655,6 +10469,7 @@ of_table_feature_prop_write_actions_miss_action_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10732,6 +10547,7 @@ of_table_feature_prop_write_setfield_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xc); /* type */
         break;
     default:
@@ -10744,21 +10560,6 @@ of_table_feature_prop_write_setfield_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_table_feature_prop_write_setfield of_table_feature_prop_write_setfield
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_table_feature_prop_write_setfield_push_wire_values(of_table_feature_prop_write_setfield_t *obj)
-{
-
-    of_table_feature_prop_write_setfield_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_table_feature_prop_write_setfield object
@@ -10778,18 +10579,15 @@ of_table_feature_prop_write_setfield_new(of_version_t version)
     of_table_feature_prop_write_setfield_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD];
+    bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD];
 
     if ((obj = (of_table_feature_prop_write_setfield_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_table_feature_prop_write_setfield_init(obj, version, bytes, 0);
-
-    if (of_table_feature_prop_write_setfield_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_table_feature_prop_write_setfield_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10821,7 +10619,7 @@ of_table_feature_prop_write_setfield_init(of_table_feature_prop_write_setfield_t
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD] + of_object_extra_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD];
+        bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10868,6 +10666,7 @@ of_table_feature_prop_write_setfield_oxm_ids_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10938,6 +10737,7 @@ of_table_feature_prop_write_setfield_oxm_ids_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;

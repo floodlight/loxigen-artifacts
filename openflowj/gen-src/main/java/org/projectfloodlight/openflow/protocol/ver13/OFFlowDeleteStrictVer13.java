@@ -183,6 +183,11 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         }
         return Collections.emptyList();
     }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
 
 
     public OFFlowDeleteStrict.Builder createBuilder() {
@@ -403,6 +408,15 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         this.instructions = Collections.singletonList((OFInstruction)builder.build());
         this.instructionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
 
 
@@ -668,6 +682,15 @@ class OFFlowDeleteStrictVer13 implements OFFlowDeleteStrict {
         this.instructions = Collections.singletonList((OFInstruction)builder.build());
         this.instructionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
+    @Override
+    public OFFlowDeleteStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
 //
         @Override

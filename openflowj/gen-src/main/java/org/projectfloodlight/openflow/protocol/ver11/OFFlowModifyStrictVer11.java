@@ -176,6 +176,11 @@ class OFFlowModifyStrictVer11 implements OFFlowModifyStrict {
         throw new UnsupportedOperationException("Property actions not supported in version 1.1");
     }
 
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
 
 
     public OFFlowModifyStrict.Builder createBuilder() {
@@ -383,6 +388,15 @@ class OFFlowModifyStrictVer11 implements OFFlowModifyStrict {
     @Override
     public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
 
 
@@ -635,6 +649,15 @@ class OFFlowModifyStrictVer11 implements OFFlowModifyStrict {
     @Override
     public OFFlowModifyStrict.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property actions not supported in version 1.1");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
 //
         @Override

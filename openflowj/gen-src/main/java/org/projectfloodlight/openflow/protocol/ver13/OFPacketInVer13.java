@@ -35,7 +35,7 @@ class OFPacketInVer13 implements OFPacketIn {
     private static final Logger logger = LoggerFactory.getLogger(OFPacketInVer13.class);
     // version: 1.3
     final static byte WIRE_VERSION = 4;
-    final static int MINIMUM_LENGTH = 30;
+    final static int MINIMUM_LENGTH = 34;
 
         private final static long DEFAULT_XID = 0x0L;
         private final static OFBufferId DEFAULT_BUFFER_ID = OFBufferId.NO_BUFFER;

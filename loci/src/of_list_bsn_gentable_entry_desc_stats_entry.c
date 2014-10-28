@@ -134,7 +134,7 @@ of_list_bsn_gentable_entry_desc_stats_entry_new(of_version_t version)
     of_list_bsn_gentable_entry_desc_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
 
     if ((obj = (of_list_bsn_gentable_entry_desc_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -172,7 +172,7 @@ of_list_bsn_gentable_entry_desc_stats_entry_init(of_list_bsn_gentable_entry_desc
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_LIST_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;

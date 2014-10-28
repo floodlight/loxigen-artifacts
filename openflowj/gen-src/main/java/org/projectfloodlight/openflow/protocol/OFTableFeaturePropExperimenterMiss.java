@@ -39,7 +39,6 @@ public interface OFTableFeaturePropExperimenterMiss extends OFObject, OFTableFea
         OFTableFeaturePropExperimenterMiss build();
         int getType();
         long getExperimenter();
-        Builder setExperimenter(long experimenter);
         long getSubtype();
         Builder setSubtype(long subtype);
         byte[] getExperimenterData();

@@ -39,5 +39,8 @@ public enum OFStatsType {
      METER_CONFIG,
      METER_FEATURES,
      TABLE_FEATURES,
-     PORT_DESC;
+     PORT_DESC,
+     TABLE_DESC,
+     QUEUE_DESC,
+     FLOW_MONITOR;
 }

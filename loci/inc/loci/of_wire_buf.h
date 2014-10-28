@@ -445,14 +445,10 @@ of_wire_buffer_port_no_get(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u16_get(wbuf, offset, &v16);
         *value = v16;
         break;
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
+    default:
         of_wire_buffer_u32_get(wbuf, offset, &v32);
         *value = v32;
         break;
-    default:
-        LOCI_ASSERT(0);
     }
 }
 
@@ -474,13 +470,9 @@ of_wire_buffer_port_no_set(int version, of_wire_buffer_t *wbuf, int offset,
     case OF_VERSION_1_0:
         of_wire_buffer_u16_set(wbuf, offset, (uint16_t)value);
         break;
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
+    default:
         of_wire_buffer_u32_set(wbuf, offset, (uint32_t)value);
         break;
-    default:
-        LOCI_ASSERT(0);
     }
 }
 
@@ -503,14 +495,10 @@ of_wire_buffer_fm_cmd_get(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u16_get(wbuf, offset, &v16);
         *value = v16;
         break;
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
+    default:
         of_wire_buffer_u8_get(wbuf, offset, &v8);
         *value = v8;
         break;
-    default:
-        LOCI_ASSERT(0);
     }
 }
 
@@ -529,13 +517,9 @@ of_wire_buffer_fm_cmd_set(int version, of_wire_buffer_t *wbuf, int offset,
     case OF_VERSION_1_0:
         of_wire_buffer_u16_set(wbuf, offset, (uint16_t)value);
         break;
-    case OF_VERSION_1_1:
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
+    default:
         of_wire_buffer_u8_set(wbuf, offset, (uint8_t)value);
         break;
-    default:
-        LOCI_ASSERT(0);
     }
 }
 
@@ -559,13 +543,10 @@ of_wire_buffer_wc_bmap_get(int version, of_wire_buffer_t *wbuf, int offset,
         of_wire_buffer_u32_get(wbuf, offset, &v32);
         *value = v32;
         break;
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
+    default:
         of_wire_buffer_u64_get(wbuf, offset, &v64);
         *value = v64;
         break;
-    default:
-        LOCI_ASSERT(0);
     }
 }
 
@@ -585,12 +566,9 @@ of_wire_buffer_wc_bmap_set(int version, of_wire_buffer_t *wbuf, int offset,
     case OF_VERSION_1_1:
         of_wire_buffer_u32_set(wbuf, offset, (uint32_t)value);
         break;
-    case OF_VERSION_1_2:
-    case OF_VERSION_1_3:
+    default:
         of_wire_buffer_u64_set(wbuf, offset, (uint64_t)value);
         break;
-    default:
-        LOCI_ASSERT(0);
     }
 }
 

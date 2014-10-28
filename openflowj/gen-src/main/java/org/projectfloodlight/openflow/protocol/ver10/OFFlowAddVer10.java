@@ -167,6 +167,11 @@ class OFFlowAddVer10 implements OFFlowAdd {
         return actions;
     }
 
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
 
 
     public OFFlowAdd.Builder createBuilder() {
@@ -362,6 +367,15 @@ class OFFlowAddVer10 implements OFFlowAdd {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowAdd.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
 
@@ -590,6 +604,15 @@ class OFFlowAddVer10 implements OFFlowAdd {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowAdd.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 //
         @Override

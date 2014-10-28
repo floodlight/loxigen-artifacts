@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
@@ -167,6 +168,11 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
     @Override
     public long getDurationNsec() {
         return durationNsec;
+    }
+
+    @Override
+    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
     @Override
@@ -383,6 +389,15 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
         this.durationNsec = durationNsec;
         this.durationNsecSet = true;
         return this;
+    }
+    @Override
+    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {
@@ -654,6 +669,15 @@ class OFPortStatsEntryVer13 implements OFPortStatsEntry {
         this.durationNsec = durationNsec;
         this.durationNsecSet = true;
         return this;
+    }
+    @Override
+    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
     @Override
     public OFVersion getVersion() {

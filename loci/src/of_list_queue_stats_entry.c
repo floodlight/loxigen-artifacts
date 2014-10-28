@@ -52,6 +52,7 @@ of_list_queue_stats_entry_first(of_list_queue_stats_entry_t *list, of_queue_stat
     }
 
 
+    of_queue_stats_entry_wire_length_get(obj, &obj->length);
 
     return rv;
 }
@@ -75,6 +76,7 @@ of_list_queue_stats_entry_next(of_list_queue_stats_entry_t *list, of_queue_stats
     }
 
 
+    of_queue_stats_entry_wire_length_get(obj, &obj->length);
 
     return rv;
 }
@@ -132,7 +134,7 @@ of_list_queue_stats_entry_new(of_version_t version)
     of_list_queue_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_LIST_QUEUE_STATS_ENTRY] + of_object_extra_len[version][OF_LIST_QUEUE_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_LIST_QUEUE_STATS_ENTRY];
 
     if ((obj = (of_list_queue_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -170,7 +172,7 @@ of_list_queue_stats_entry_init(of_list_queue_stats_entry_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_LIST_QUEUE_STATS_ENTRY] + of_object_extra_len[version][OF_LIST_QUEUE_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_LIST_QUEUE_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;

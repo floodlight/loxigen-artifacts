@@ -284,6 +284,66 @@ of_action_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 0)); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_ACTION_OUTPUT;
+            break;
+        case 0xb:
+            *id = OF_ACTION_COPY_TTL_OUT;
+            break;
+        case 0xc:
+            *id = OF_ACTION_COPY_TTL_IN;
+            break;
+        case 0xf:
+            *id = OF_ACTION_SET_MPLS_TTL;
+            break;
+        case 0x10:
+            *id = OF_ACTION_DEC_MPLS_TTL;
+            break;
+        case 0x11:
+            *id = OF_ACTION_PUSH_VLAN;
+            break;
+        case 0x12:
+            *id = OF_ACTION_POP_VLAN;
+            break;
+        case 0x13:
+            *id = OF_ACTION_PUSH_MPLS;
+            break;
+        case 0x14:
+            *id = OF_ACTION_POP_MPLS;
+            break;
+        case 0x15:
+            *id = OF_ACTION_SET_QUEUE;
+            break;
+        case 0x16:
+            *id = OF_ACTION_GROUP;
+            break;
+        case 0x17:
+            *id = OF_ACTION_SET_NW_TTL;
+            break;
+        case 0x18:
+            *id = OF_ACTION_DEC_NW_TTL;
+            break;
+        case 0x19:
+            *id = OF_ACTION_SET_FIELD;
+            break;
+        case 0x1a:
+            *id = OF_ACTION_PUSH_PBB;
+            break;
+        case 0x1b:
+            *id = OF_ACTION_POP_PBB;
+            break;
+        case 0xffff:
+            of_action_experimenter_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -312,7 +372,7 @@ of_action_new(of_version_t version)
     of_action_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION] + of_object_extra_len[version][OF_ACTION];
+    bytes = of_object_fixed_len[version][OF_ACTION];
 
     if ((obj = (of_action_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -353,7 +413,7 @@ of_action_init(of_action_t *obj_p,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION] + of_object_extra_len[version][OF_ACTION];
+        bytes = of_object_fixed_len[version][OF_ACTION];
     }
     obj->version = version;
     obj->length = bytes;
@@ -465,6 +525,21 @@ of_action_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_action_nicira_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_action_bsn_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_ACTION_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -493,7 +568,7 @@ of_action_experimenter_new(of_version_t version)
     of_action_experimenter_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_EXPERIMENTER] + of_object_extra_len[version][OF_ACTION_EXPERIMENTER];
+    bytes = of_object_fixed_len[version][OF_ACTION_EXPERIMENTER];
 
     if ((obj = (of_action_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -531,7 +606,7 @@ of_action_experimenter_init(of_action_experimenter_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_EXPERIMENTER] + of_object_extra_len[version][OF_ACTION_EXPERIMENTER];
+        bytes = of_object_fixed_len[version][OF_ACTION_EXPERIMENTER];
     }
     obj->version = version;
     obj->length = bytes;
@@ -575,6 +650,7 @@ of_action_experimenter_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -616,6 +692,7 @@ of_action_experimenter_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -660,6 +737,7 @@ of_action_experimenter_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -707,6 +785,7 @@ of_action_experimenter_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -844,6 +923,24 @@ of_action_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x1:
+            *id = OF_ACTION_BSN_MIRROR;
+            break;
+        case 0x2:
+            *id = OF_ACTION_BSN_SET_TUNNEL_DST;
+            break;
+        case 0x4:
+            *id = OF_ACTION_BSN_CHECKSUM;
+            break;
+        default:
+            *id = OF_ACTION_BSN;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -872,7 +969,7 @@ of_action_bsn_new(of_version_t version)
     of_action_bsn_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_BSN] + of_object_extra_len[version][OF_ACTION_BSN];
+    bytes = of_object_fixed_len[version][OF_ACTION_BSN];
 
     if ((obj = (of_action_bsn_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -910,7 +1007,7 @@ of_action_bsn_init(of_action_bsn_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_BSN] + of_object_extra_len[version][OF_ACTION_BSN];
+        bytes = of_object_fixed_len[version][OF_ACTION_BSN];
     }
     obj->version = version;
     obj->length = bytes;
@@ -954,6 +1051,7 @@ of_action_bsn_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -995,6 +1093,7 @@ of_action_bsn_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1038,6 +1137,7 @@ of_action_bsn_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1079,6 +1179,7 @@ of_action_bsn_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1133,6 +1234,7 @@ of_action_bsn_checksum_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x4); /* subtype */
@@ -1147,21 +1249,6 @@ of_action_bsn_checksum_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_action_bsn_checksum of_action_bsn_checksum
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_bsn_checksum_push_wire_values(of_action_bsn_checksum_t *obj)
-{
-
-    of_action_bsn_checksum_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_action_bsn_checksum object
@@ -1181,18 +1268,15 @@ of_action_bsn_checksum_new(of_version_t version)
     of_action_bsn_checksum_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_BSN_CHECKSUM] + of_object_extra_len[version][OF_ACTION_BSN_CHECKSUM];
+    bytes = of_object_fixed_len[version][OF_ACTION_BSN_CHECKSUM];
 
     if ((obj = (of_action_bsn_checksum_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_bsn_checksum_init(obj, version, bytes, 0);
-
-    if (of_action_bsn_checksum_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_bsn_checksum_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -1224,7 +1308,7 @@ of_action_bsn_checksum_init(of_action_bsn_checksum_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_BSN_CHECKSUM] + of_object_extra_len[version][OF_ACTION_BSN_CHECKSUM];
+        bytes = of_object_fixed_len[version][OF_ACTION_BSN_CHECKSUM];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1268,6 +1352,7 @@ of_action_bsn_checksum_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1309,6 +1394,7 @@ of_action_bsn_checksum_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1352,6 +1438,7 @@ of_action_bsn_checksum_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1393,6 +1480,7 @@ of_action_bsn_checksum_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1436,6 +1524,7 @@ of_action_bsn_checksum_checksum_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -1477,6 +1566,7 @@ of_action_bsn_checksum_checksum_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -1531,6 +1621,7 @@ of_action_bsn_mirror_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x1); /* subtype */
@@ -1545,21 +1636,6 @@ of_action_bsn_mirror_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_action_bsn_mirror of_action_bsn_mirror
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_bsn_mirror_push_wire_values(of_action_bsn_mirror_t *obj)
-{
-
-    of_action_bsn_mirror_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_action_bsn_mirror object
@@ -1579,18 +1655,15 @@ of_action_bsn_mirror_new(of_version_t version)
     of_action_bsn_mirror_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_BSN_MIRROR] + of_object_extra_len[version][OF_ACTION_BSN_MIRROR];
+    bytes = of_object_fixed_len[version][OF_ACTION_BSN_MIRROR];
 
     if ((obj = (of_action_bsn_mirror_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_bsn_mirror_init(obj, version, bytes, 0);
-
-    if (of_action_bsn_mirror_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_bsn_mirror_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -1622,7 +1695,7 @@ of_action_bsn_mirror_init(of_action_bsn_mirror_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_BSN_MIRROR] + of_object_extra_len[version][OF_ACTION_BSN_MIRROR];
+        bytes = of_object_fixed_len[version][OF_ACTION_BSN_MIRROR];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1666,6 +1739,7 @@ of_action_bsn_mirror_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1707,6 +1781,7 @@ of_action_bsn_mirror_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1750,6 +1825,7 @@ of_action_bsn_mirror_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1791,6 +1867,7 @@ of_action_bsn_mirror_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1834,6 +1911,7 @@ of_action_bsn_mirror_dest_port_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -1875,6 +1953,7 @@ of_action_bsn_mirror_dest_port_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -1918,6 +1997,7 @@ of_action_bsn_mirror_vlan_tag_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -1959,6 +2039,7 @@ of_action_bsn_mirror_vlan_tag_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -2002,6 +2083,7 @@ of_action_bsn_mirror_copy_stage_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -2043,6 +2125,7 @@ of_action_bsn_mirror_copy_stage_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -2097,6 +2180,7 @@ of_action_bsn_set_tunnel_dst_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x2); /* subtype */
@@ -2111,21 +2195,6 @@ of_action_bsn_set_tunnel_dst_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_action_bsn_set_tunnel_dst of_action_bsn_set_tunnel_dst
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_bsn_set_tunnel_dst_push_wire_values(of_action_bsn_set_tunnel_dst_t *obj)
-{
-
-    of_action_bsn_set_tunnel_dst_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_action_bsn_set_tunnel_dst object
@@ -2145,18 +2214,15 @@ of_action_bsn_set_tunnel_dst_new(of_version_t version)
     of_action_bsn_set_tunnel_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_BSN_SET_TUNNEL_DST] + of_object_extra_len[version][OF_ACTION_BSN_SET_TUNNEL_DST];
+    bytes = of_object_fixed_len[version][OF_ACTION_BSN_SET_TUNNEL_DST];
 
     if ((obj = (of_action_bsn_set_tunnel_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_bsn_set_tunnel_dst_init(obj, version, bytes, 0);
-
-    if (of_action_bsn_set_tunnel_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_bsn_set_tunnel_dst_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -2188,7 +2254,7 @@ of_action_bsn_set_tunnel_dst_init(of_action_bsn_set_tunnel_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_BSN_SET_TUNNEL_DST] + of_object_extra_len[version][OF_ACTION_BSN_SET_TUNNEL_DST];
+        bytes = of_object_fixed_len[version][OF_ACTION_BSN_SET_TUNNEL_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2232,6 +2298,7 @@ of_action_bsn_set_tunnel_dst_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2273,6 +2340,7 @@ of_action_bsn_set_tunnel_dst_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2316,6 +2384,7 @@ of_action_bsn_set_tunnel_dst_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2357,6 +2426,7 @@ of_action_bsn_set_tunnel_dst_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2400,6 +2470,7 @@ of_action_bsn_set_tunnel_dst_dst_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -2441,6 +2512,7 @@ of_action_bsn_set_tunnel_dst_dst_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -2506,21 +2578,6 @@ of_action_enqueue_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_enqueue_push_wire_values(of_action_enqueue_t *obj)
-{
-
-    of_action_enqueue_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_enqueue object
  *
  * @param version The wire version to use for the object
@@ -2538,18 +2595,15 @@ of_action_enqueue_new(of_version_t version)
     of_action_enqueue_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_ENQUEUE] + of_object_extra_len[version][OF_ACTION_ENQUEUE];
+    bytes = of_object_fixed_len[version][OF_ACTION_ENQUEUE];
 
     if ((obj = (of_action_enqueue_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_enqueue_init(obj, version, bytes, 0);
-
-    if (of_action_enqueue_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_enqueue_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -2581,7 +2635,7 @@ of_action_enqueue_init(of_action_enqueue_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_ENQUEUE] + of_object_extra_len[version][OF_ACTION_ENQUEUE];
+        bytes = of_object_fixed_len[version][OF_ACTION_ENQUEUE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2838,6 +2892,18 @@ of_action_nicira_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x12:
+            *id = OF_ACTION_NICIRA_DEC_TTL;
+            break;
+        default:
+            *id = OF_ACTION_NICIRA;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -2866,7 +2932,7 @@ of_action_nicira_new(of_version_t version)
     of_action_nicira_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_NICIRA] + of_object_extra_len[version][OF_ACTION_NICIRA];
+    bytes = of_object_fixed_len[version][OF_ACTION_NICIRA];
 
     if ((obj = (of_action_nicira_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -2904,7 +2970,7 @@ of_action_nicira_init(of_action_nicira_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_NICIRA] + of_object_extra_len[version][OF_ACTION_NICIRA];
+        bytes = of_object_fixed_len[version][OF_ACTION_NICIRA];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2948,6 +3014,7 @@ of_action_nicira_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2989,6 +3056,7 @@ of_action_nicira_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3032,6 +3100,7 @@ of_action_nicira_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3073,6 +3142,7 @@ of_action_nicira_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3127,6 +3197,7 @@ of_action_nicira_dec_ttl_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x2320); /* experimenter */
         *(uint16_t *)(buf + 8) = U16_HTON(0x12); /* subtype */
@@ -3141,21 +3212,6 @@ of_action_nicira_dec_ttl_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_action_nicira_dec_ttl of_action_nicira_dec_ttl
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_nicira_dec_ttl_push_wire_values(of_action_nicira_dec_ttl_t *obj)
-{
-
-    of_action_nicira_dec_ttl_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_action_nicira_dec_ttl object
@@ -3175,18 +3231,15 @@ of_action_nicira_dec_ttl_new(of_version_t version)
     of_action_nicira_dec_ttl_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_NICIRA_DEC_TTL] + of_object_extra_len[version][OF_ACTION_NICIRA_DEC_TTL];
+    bytes = of_object_fixed_len[version][OF_ACTION_NICIRA_DEC_TTL];
 
     if ((obj = (of_action_nicira_dec_ttl_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_nicira_dec_ttl_init(obj, version, bytes, 0);
-
-    if (of_action_nicira_dec_ttl_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_nicira_dec_ttl_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3218,7 +3271,7 @@ of_action_nicira_dec_ttl_init(of_action_nicira_dec_ttl_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_NICIRA_DEC_TTL] + of_object_extra_len[version][OF_ACTION_NICIRA_DEC_TTL];
+        bytes = of_object_fixed_len[version][OF_ACTION_NICIRA_DEC_TTL];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3262,6 +3315,7 @@ of_action_nicira_dec_ttl_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3303,6 +3357,7 @@ of_action_nicira_dec_ttl_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3346,6 +3401,7 @@ of_action_nicira_dec_ttl_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3387,6 +3443,7 @@ of_action_nicira_dec_ttl_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3441,6 +3498,7 @@ of_action_output_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x0); /* type */
         break;
     default:
@@ -3453,21 +3511,6 @@ of_action_output_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_action_output of_action_output
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_output_push_wire_values(of_action_output_t *obj)
-{
-
-    of_action_output_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_action_output object
@@ -3487,18 +3530,15 @@ of_action_output_new(of_version_t version)
     of_action_output_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_OUTPUT] + of_object_extra_len[version][OF_ACTION_OUTPUT];
+    bytes = of_object_fixed_len[version][OF_ACTION_OUTPUT];
 
     if ((obj = (of_action_output_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_action_output_init(obj, version, bytes, 0);
-
-    if (of_action_output_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_output_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3530,7 +3570,7 @@ of_action_output_init(of_action_output_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_OUTPUT] + of_object_extra_len[version][OF_ACTION_OUTPUT];
+        bytes = of_object_fixed_len[version][OF_ACTION_OUTPUT];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3576,6 +3616,7 @@ of_action_output_port_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3620,6 +3661,7 @@ of_action_output_port_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3665,6 +3707,7 @@ of_action_output_max_len_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3708,6 +3751,7 @@ of_action_output_max_len_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3776,21 +3820,6 @@ of_action_set_dl_dst_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_dl_dst_push_wire_values(of_action_set_dl_dst_t *obj)
-{
-
-    of_action_set_dl_dst_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_dl_dst object
  *
  * @param version The wire version to use for the object
@@ -3808,18 +3837,15 @@ of_action_set_dl_dst_new(of_version_t version)
     of_action_set_dl_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_DST] + of_object_extra_len[version][OF_ACTION_SET_DL_DST];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_DST];
 
     if ((obj = (of_action_set_dl_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_dl_dst_init(obj, version, bytes, 0);
-
-    if (of_action_set_dl_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_dl_dst_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3851,7 +3877,7 @@ of_action_set_dl_dst_init(of_action_set_dl_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_DST] + of_object_extra_len[version][OF_ACTION_SET_DL_DST];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4000,21 +4026,6 @@ of_action_set_dl_src_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_dl_src_push_wire_values(of_action_set_dl_src_t *obj)
-{
-
-    of_action_set_dl_src_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_dl_src object
  *
  * @param version The wire version to use for the object
@@ -4032,18 +4043,15 @@ of_action_set_dl_src_new(of_version_t version)
     of_action_set_dl_src_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_SRC] + of_object_extra_len[version][OF_ACTION_SET_DL_SRC];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_SRC];
 
     if ((obj = (of_action_set_dl_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_dl_src_init(obj, version, bytes, 0);
-
-    if (of_action_set_dl_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_dl_src_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4075,7 +4083,7 @@ of_action_set_dl_src_init(of_action_set_dl_src_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_SRC] + of_object_extra_len[version][OF_ACTION_SET_DL_SRC];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_DL_SRC];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4224,21 +4232,6 @@ of_action_set_nw_dst_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_nw_dst_push_wire_values(of_action_set_nw_dst_t *obj)
-{
-
-    of_action_set_nw_dst_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_nw_dst object
  *
  * @param version The wire version to use for the object
@@ -4256,18 +4249,15 @@ of_action_set_nw_dst_new(of_version_t version)
     of_action_set_nw_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_DST] + of_object_extra_len[version][OF_ACTION_SET_NW_DST];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_DST];
 
     if ((obj = (of_action_set_nw_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_nw_dst_init(obj, version, bytes, 0);
-
-    if (of_action_set_nw_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_nw_dst_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4299,7 +4289,7 @@ of_action_set_nw_dst_init(of_action_set_nw_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_DST] + of_object_extra_len[version][OF_ACTION_SET_NW_DST];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4448,21 +4438,6 @@ of_action_set_nw_src_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_nw_src_push_wire_values(of_action_set_nw_src_t *obj)
-{
-
-    of_action_set_nw_src_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_nw_src object
  *
  * @param version The wire version to use for the object
@@ -4480,18 +4455,15 @@ of_action_set_nw_src_new(of_version_t version)
     of_action_set_nw_src_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_SRC] + of_object_extra_len[version][OF_ACTION_SET_NW_SRC];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_SRC];
 
     if ((obj = (of_action_set_nw_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_nw_src_init(obj, version, bytes, 0);
-
-    if (of_action_set_nw_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_nw_src_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4523,7 +4495,7 @@ of_action_set_nw_src_init(of_action_set_nw_src_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_SRC] + of_object_extra_len[version][OF_ACTION_SET_NW_SRC];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_SRC];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4672,21 +4644,6 @@ of_action_set_nw_tos_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_nw_tos_push_wire_values(of_action_set_nw_tos_t *obj)
-{
-
-    of_action_set_nw_tos_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_nw_tos object
  *
  * @param version The wire version to use for the object
@@ -4704,18 +4661,15 @@ of_action_set_nw_tos_new(of_version_t version)
     of_action_set_nw_tos_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TOS] + of_object_extra_len[version][OF_ACTION_SET_NW_TOS];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TOS];
 
     if ((obj = (of_action_set_nw_tos_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_nw_tos_init(obj, version, bytes, 0);
-
-    if (of_action_set_nw_tos_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_nw_tos_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4747,7 +4701,7 @@ of_action_set_nw_tos_init(of_action_set_nw_tos_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TOS] + of_object_extra_len[version][OF_ACTION_SET_NW_TOS];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_NW_TOS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4894,21 +4848,6 @@ of_action_set_tp_dst_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_tp_dst_push_wire_values(of_action_set_tp_dst_t *obj)
-{
-
-    of_action_set_tp_dst_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_tp_dst object
  *
  * @param version The wire version to use for the object
@@ -4926,18 +4865,15 @@ of_action_set_tp_dst_new(of_version_t version)
     of_action_set_tp_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_DST] + of_object_extra_len[version][OF_ACTION_SET_TP_DST];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_DST];
 
     if ((obj = (of_action_set_tp_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_tp_dst_init(obj, version, bytes, 0);
-
-    if (of_action_set_tp_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_tp_dst_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4969,7 +4905,7 @@ of_action_set_tp_dst_init(of_action_set_tp_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_DST] + of_object_extra_len[version][OF_ACTION_SET_TP_DST];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5116,21 +5052,6 @@ of_action_set_tp_src_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_tp_src_push_wire_values(of_action_set_tp_src_t *obj)
-{
-
-    of_action_set_tp_src_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_tp_src object
  *
  * @param version The wire version to use for the object
@@ -5148,18 +5069,15 @@ of_action_set_tp_src_new(of_version_t version)
     of_action_set_tp_src_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_SRC] + of_object_extra_len[version][OF_ACTION_SET_TP_SRC];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_SRC];
 
     if ((obj = (of_action_set_tp_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_tp_src_init(obj, version, bytes, 0);
-
-    if (of_action_set_tp_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_tp_src_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5191,7 +5109,7 @@ of_action_set_tp_src_init(of_action_set_tp_src_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_SRC] + of_object_extra_len[version][OF_ACTION_SET_TP_SRC];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_TP_SRC];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5338,21 +5256,6 @@ of_action_set_vlan_pcp_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_vlan_pcp_push_wire_values(of_action_set_vlan_pcp_t *obj)
-{
-
-    of_action_set_vlan_pcp_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_vlan_pcp object
  *
  * @param version The wire version to use for the object
@@ -5370,18 +5273,15 @@ of_action_set_vlan_pcp_new(of_version_t version)
     of_action_set_vlan_pcp_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_PCP] + of_object_extra_len[version][OF_ACTION_SET_VLAN_PCP];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_PCP];
 
     if ((obj = (of_action_set_vlan_pcp_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_vlan_pcp_init(obj, version, bytes, 0);
-
-    if (of_action_set_vlan_pcp_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_vlan_pcp_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5413,7 +5313,7 @@ of_action_set_vlan_pcp_init(of_action_set_vlan_pcp_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_PCP] + of_object_extra_len[version][OF_ACTION_SET_VLAN_PCP];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_PCP];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5560,21 +5460,6 @@ of_action_set_vlan_vid_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_set_vlan_vid_push_wire_values(of_action_set_vlan_vid_t *obj)
-{
-
-    of_action_set_vlan_vid_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_set_vlan_vid object
  *
  * @param version The wire version to use for the object
@@ -5592,18 +5477,15 @@ of_action_set_vlan_vid_new(of_version_t version)
     of_action_set_vlan_vid_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_VID] + of_object_extra_len[version][OF_ACTION_SET_VLAN_VID];
+    bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_VID];
 
     if ((obj = (of_action_set_vlan_vid_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_set_vlan_vid_init(obj, version, bytes, 0);
-
-    if (of_action_set_vlan_vid_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_set_vlan_vid_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5635,7 +5517,7 @@ of_action_set_vlan_vid_init(of_action_set_vlan_vid_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_VID] + of_object_extra_len[version][OF_ACTION_SET_VLAN_VID];
+        bytes = of_object_fixed_len[version][OF_ACTION_SET_VLAN_VID];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5781,21 +5663,6 @@ of_action_strip_vlan_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_action_strip_vlan_push_wire_values(of_action_strip_vlan_t *obj)
-{
-
-    of_action_strip_vlan_push_wire_types(obj);
-
-    /* TLV obj; set length */
-    of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_action_strip_vlan object
  *
  * @param version The wire version to use for the object
@@ -5813,18 +5680,15 @@ of_action_strip_vlan_new(of_version_t version)
     of_action_strip_vlan_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_STRIP_VLAN] + of_object_extra_len[version][OF_ACTION_STRIP_VLAN];
+    bytes = of_object_fixed_len[version][OF_ACTION_STRIP_VLAN];
 
     if ((obj = (of_action_strip_vlan_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_action_strip_vlan_init(obj, version, bytes, 0);
-
-    if (of_action_strip_vlan_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_action_strip_vlan_push_wire_types(obj);
+    of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5856,7 +5720,7 @@ of_action_strip_vlan_init(of_action_strip_vlan_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_STRIP_VLAN] + of_object_extra_len[version][OF_ACTION_STRIP_VLAN];
+        bytes = of_object_fixed_len[version][OF_ACTION_STRIP_VLAN];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6253,6 +6117,114 @@ of_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint8_t value = *(uint8_t *)(buf + 1); /* type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO;
+            break;
+        case 0x1:
+            of_error_msg_wire_object_id_get(obj, id);
+            break;
+        case 0x2:
+            *id = OF_ECHO_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_ECHO_REPLY;
+            break;
+        case 0x4:
+            of_experimenter_wire_object_id_get(obj, id);
+            break;
+        case 0x5:
+            *id = OF_FEATURES_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_FEATURES_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GET_CONFIG_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GET_CONFIG_REPLY;
+            break;
+        case 0x9:
+            *id = OF_SET_CONFIG;
+            break;
+        case 0xa:
+            *id = OF_PACKET_IN;
+            break;
+        case 0xb:
+            *id = OF_FLOW_REMOVED;
+            break;
+        case 0xc:
+            *id = OF_PORT_STATUS;
+            break;
+        case 0xd:
+            *id = OF_PACKET_OUT;
+            break;
+        case 0xe:
+            of_flow_mod_wire_object_id_get(obj, id);
+            break;
+        case 0xf:
+            of_group_mod_wire_object_id_get(obj, id);
+            break;
+        case 0x10:
+            *id = OF_PORT_MOD;
+            break;
+        case 0x11:
+            *id = OF_TABLE_MOD;
+            break;
+        case 0x12:
+            of_stats_request_wire_object_id_get(obj, id);
+            break;
+        case 0x13:
+            of_stats_reply_wire_object_id_get(obj, id);
+            break;
+        case 0x14:
+            *id = OF_BARRIER_REQUEST;
+            break;
+        case 0x15:
+            *id = OF_BARRIER_REPLY;
+            break;
+        case 0x18:
+            *id = OF_ROLE_REQUEST;
+            break;
+        case 0x19:
+            *id = OF_ROLE_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_ASYNC_GET_REQUEST;
+            break;
+        case 0x1b:
+            *id = OF_ASYNC_GET_REPLY;
+            break;
+        case 0x1c:
+            *id = OF_ASYNC_SET;
+            break;
+        case 0x1d:
+            *id = OF_METER_MOD;
+            break;
+        case 0x1e:
+            *id = OF_ROLE_STATUS;
+            break;
+        case 0x1f:
+            *id = OF_TABLE_STATUS;
+            break;
+        case 0x20:
+            *id = OF_REQUESTFORWARD;
+            break;
+        case 0x21:
+            *id = OF_BUNDLE_CTRL_MSG;
+            break;
+        case 0x22:
+            *id = OF_BUNDLE_ADD_MSG;
+            break;
+        default:
+            *id = OF_HEADER;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -6281,7 +6253,7 @@ of_header_new(of_version_t version)
     of_header_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_HEADER] + of_object_extra_len[version][OF_HEADER];
+    bytes = of_object_fixed_len[version][OF_HEADER];
 
     if ((obj = (of_header_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -6319,7 +6291,7 @@ of_header_init(of_header_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_HEADER] + of_object_extra_len[version][OF_HEADER];
+        bytes = of_object_fixed_len[version][OF_HEADER];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6363,6 +6335,7 @@ of_header_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6404,6 +6377,7 @@ of_header_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6614,6 +6588,66 @@ of_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REPLY;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REPLY;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REPLY;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REPLY;
+            break;
+        case 0x8:
+            *id = OF_GROUP_FEATURES_STATS_REPLY;
+            break;
+        case 0x9:
+            *id = OF_METER_STATS_REPLY;
+            break;
+        case 0xa:
+            *id = OF_METER_CONFIG_STATS_REPLY;
+            break;
+        case 0xb:
+            *id = OF_METER_FEATURES_STATS_REPLY;
+            break;
+        case 0xc:
+            *id = OF_TABLE_FEATURES_STATS_REPLY;
+            break;
+        case 0xd:
+            *id = OF_PORT_DESC_STATS_REPLY;
+            break;
+        case 0xe:
+            *id = OF_TABLE_DESC_STATS_REPLY;
+            break;
+        case 0xf:
+            *id = OF_QUEUE_DESC_STATS_REPLY;
+            break;
+        case 0xffff:
+            of_experimenter_stats_reply_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REPLY;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -6642,7 +6676,7 @@ of_stats_reply_new(of_version_t version)
     of_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_STATS_REPLY] + of_object_extra_len[version][OF_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_STATS_REPLY];
 
     if ((obj = (of_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -6680,7 +6714,7 @@ of_stats_reply_init(of_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_STATS_REPLY] + of_object_extra_len[version][OF_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6724,6 +6758,7 @@ of_stats_reply_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6765,6 +6800,7 @@ of_stats_reply_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6808,6 +6844,7 @@ of_stats_reply_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6849,6 +6886,7 @@ of_stats_reply_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6907,6 +6945,7 @@ of_aggregate_stats_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x2); /* stats_type */
@@ -6921,25 +6960,6 @@ of_aggregate_stats_reply_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_aggregate_stats_reply of_aggregate_stats_reply
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_aggregate_stats_reply_push_wire_values(of_aggregate_stats_reply_t *obj)
-{
-
-    of_aggregate_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_aggregate_stats_reply object
@@ -6959,18 +6979,15 @@ of_aggregate_stats_reply_new(of_version_t version)
     of_aggregate_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REPLY] + of_object_extra_len[version][OF_AGGREGATE_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REPLY];
 
     if ((obj = (of_aggregate_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_aggregate_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_aggregate_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_aggregate_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -7002,7 +7019,7 @@ of_aggregate_stats_reply_init(of_aggregate_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REPLY] + of_object_extra_len[version][OF_AGGREGATE_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7046,6 +7063,7 @@ of_aggregate_stats_reply_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7087,6 +7105,7 @@ of_aggregate_stats_reply_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7130,6 +7149,7 @@ of_aggregate_stats_reply_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -7171,6 +7191,7 @@ of_aggregate_stats_reply_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -7216,6 +7237,7 @@ of_aggregate_stats_reply_packet_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -7259,6 +7281,7 @@ of_aggregate_stats_reply_packet_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -7304,6 +7327,7 @@ of_aggregate_stats_reply_byte_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -7347,6 +7371,7 @@ of_aggregate_stats_reply_byte_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -7392,6 +7417,7 @@ of_aggregate_stats_reply_flow_count_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -7435,6 +7461,7 @@ of_aggregate_stats_reply_flow_count_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -7645,6 +7672,66 @@ of_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* stats_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_DESC_STATS_REQUEST;
+            break;
+        case 0x1:
+            *id = OF_FLOW_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_AGGREGATE_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_TABLE_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_PORT_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_QUEUE_STATS_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_GROUP_STATS_REQUEST;
+            break;
+        case 0x7:
+            *id = OF_GROUP_DESC_STATS_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_GROUP_FEATURES_STATS_REQUEST;
+            break;
+        case 0x9:
+            *id = OF_METER_STATS_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_METER_CONFIG_STATS_REQUEST;
+            break;
+        case 0xb:
+            *id = OF_METER_FEATURES_STATS_REQUEST;
+            break;
+        case 0xc:
+            *id = OF_TABLE_FEATURES_STATS_REQUEST;
+            break;
+        case 0xd:
+            *id = OF_PORT_DESC_STATS_REQUEST;
+            break;
+        case 0xe:
+            *id = OF_TABLE_DESC_STATS_REQUEST;
+            break;
+        case 0xf:
+            *id = OF_QUEUE_DESC_STATS_REQUEST;
+            break;
+        case 0xffff:
+            of_experimenter_stats_request_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_STATS_REQUEST;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -7673,7 +7760,7 @@ of_stats_request_new(of_version_t version)
     of_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_STATS_REQUEST] + of_object_extra_len[version][OF_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_STATS_REQUEST];
 
     if ((obj = (of_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -7711,7 +7798,7 @@ of_stats_request_init(of_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_STATS_REQUEST] + of_object_extra_len[version][OF_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7755,6 +7842,7 @@ of_stats_request_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7796,6 +7884,7 @@ of_stats_request_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7839,6 +7928,7 @@ of_stats_request_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -7880,6 +7970,7 @@ of_stats_request_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -7938,6 +8029,7 @@ of_aggregate_stats_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x2); /* stats_type */
@@ -7952,25 +8044,6 @@ of_aggregate_stats_request_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_aggregate_stats_request of_aggregate_stats_request
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_aggregate_stats_request_push_wire_values(of_aggregate_stats_request_t *obj)
-{
-
-    of_aggregate_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_aggregate_stats_request object
@@ -7990,22 +8063,18 @@ of_aggregate_stats_request_new(of_version_t version)
     of_aggregate_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REQUEST] + of_object_extra_len[version][OF_AGGREGATE_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REQUEST];
 
     if ((obj = (of_aggregate_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_aggregate_stats_request_init(obj, version, bytes, 0);
-
-    if (of_aggregate_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_aggregate_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     /* Initialize match TLV for 1.2 */
-    /* FIXME: Check 1.3 below */
-    if ((version == OF_VERSION_1_2) || (version == OF_VERSION_1_3)) {
+    if ((version >= OF_VERSION_1_2)) {
         of_object_u16_set((of_object_t *)obj, 48 + 2, 4);
     }
 
@@ -8039,7 +8108,7 @@ of_aggregate_stats_request_init(of_aggregate_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REQUEST] + of_object_extra_len[version][OF_AGGREGATE_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_AGGREGATE_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8083,6 +8152,7 @@ of_aggregate_stats_request_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8124,6 +8194,7 @@ of_aggregate_stats_request_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8167,6 +8238,7 @@ of_aggregate_stats_request_flags_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -8208,6 +8280,7 @@ of_aggregate_stats_request_flags_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -8253,6 +8326,7 @@ of_aggregate_stats_request_table_id_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -8296,6 +8370,7 @@ of_aggregate_stats_request_table_id_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -8341,6 +8416,7 @@ of_aggregate_stats_request_out_port_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -8385,6 +8461,7 @@ of_aggregate_stats_request_out_port_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -8427,6 +8504,7 @@ of_aggregate_stats_request_out_group_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -8467,6 +8545,7 @@ of_aggregate_stats_request_out_group_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -8509,6 +8588,7 @@ of_aggregate_stats_request_cookie_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -8549,6 +8629,7 @@ of_aggregate_stats_request_cookie_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 32;
         break;
     default:
@@ -8591,6 +8672,7 @@ of_aggregate_stats_request_cookie_mask_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 40;
         break;
     default:
@@ -8631,6 +8713,7 @@ of_aggregate_stats_request_cookie_mask_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 40;
         break;
     default:
@@ -8681,6 +8764,7 @@ of_aggregate_stats_request_match_get(
         break;
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 48;
         cur_len = _WIRE_MATCH_PADDED_LEN(obj, offset);
         break;
@@ -8739,6 +8823,7 @@ of_aggregate_stats_request_match_set(
         break;
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 48;
         cur_len = _WIRE_MATCH_PADDED_LEN(obj, offset);
         break;
@@ -8980,6 +9065,60 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint16_t value = U16_NTOH(*(uint16_t *)(buf + 8)); /* err_type */
+        switch (value) {
+        case 0x0:
+            *id = OF_HELLO_FAILED_ERROR_MSG;
+            break;
+        case 0x1:
+            *id = OF_BAD_REQUEST_ERROR_MSG;
+            break;
+        case 0x2:
+            *id = OF_BAD_ACTION_ERROR_MSG;
+            break;
+        case 0x3:
+            *id = OF_BAD_INSTRUCTION_ERROR_MSG;
+            break;
+        case 0x4:
+            *id = OF_BAD_MATCH_ERROR_MSG;
+            break;
+        case 0x5:
+            *id = OF_FLOW_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x6:
+            *id = OF_GROUP_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x7:
+            *id = OF_PORT_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x8:
+            *id = OF_TABLE_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0x9:
+            *id = OF_QUEUE_OP_FAILED_ERROR_MSG;
+            break;
+        case 0xa:
+            *id = OF_SWITCH_CONFIG_FAILED_ERROR_MSG;
+            break;
+        case 0xb:
+            *id = OF_ROLE_REQUEST_FAILED_ERROR_MSG;
+            break;
+        case 0xc:
+            *id = OF_METER_MOD_FAILED_ERROR_MSG;
+            break;
+        case 0xd:
+            *id = OF_TABLE_FEATURES_FAILED_ERROR_MSG;
+            break;
+        case 0xffff:
+            *id = OF_EXPERIMENTER_ERROR_MSG;
+            break;
+        default:
+            *id = OF_ERROR_MSG;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -9008,7 +9147,7 @@ of_error_msg_new(of_version_t version)
     of_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ERROR_MSG] + of_object_extra_len[version][OF_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_ERROR_MSG];
 
     if ((obj = (of_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -9046,7 +9185,7 @@ of_error_msg_init(of_error_msg_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ERROR_MSG] + of_object_extra_len[version][OF_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9090,6 +9229,7 @@ of_error_msg_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9131,6 +9271,7 @@ of_error_msg_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9185,6 +9326,7 @@ of_bad_action_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x2); /* err_type */
@@ -9199,25 +9341,6 @@ of_bad_action_error_msg_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_bad_action_error_msg of_bad_action_error_msg
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bad_action_error_msg_push_wire_values(of_bad_action_error_msg_t *obj)
-{
-
-    of_bad_action_error_msg_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_bad_action_error_msg object
@@ -9237,18 +9360,15 @@ of_bad_action_error_msg_new(of_version_t version)
     of_bad_action_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BAD_ACTION_ERROR_MSG] + of_object_extra_len[version][OF_BAD_ACTION_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_BAD_ACTION_ERROR_MSG];
 
     if ((obj = (of_bad_action_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bad_action_error_msg_init(obj, version, bytes, 0);
-
-    if (of_bad_action_error_msg_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bad_action_error_msg_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9280,7 +9400,7 @@ of_bad_action_error_msg_init(of_bad_action_error_msg_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BAD_ACTION_ERROR_MSG] + of_object_extra_len[version][OF_BAD_ACTION_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_BAD_ACTION_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9324,6 +9444,7 @@ of_bad_action_error_msg_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9365,6 +9486,7 @@ of_bad_action_error_msg_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9408,6 +9530,7 @@ of_bad_action_error_msg_code_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -9449,6 +9572,7 @@ of_bad_action_error_msg_code_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -9493,6 +9617,7 @@ of_bad_action_error_msg_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9540,6 +9665,7 @@ of_bad_action_error_msg_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9605,6 +9731,7 @@ of_bad_request_error_msg_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x1; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0x1); /* err_type */
@@ -9619,25 +9746,6 @@ of_bad_request_error_msg_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_bad_request_error_msg of_bad_request_error_msg
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bad_request_error_msg_push_wire_values(of_bad_request_error_msg_t *obj)
-{
-
-    of_bad_request_error_msg_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_bad_request_error_msg object
@@ -9657,18 +9765,15 @@ of_bad_request_error_msg_new(of_version_t version)
     of_bad_request_error_msg_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BAD_REQUEST_ERROR_MSG] + of_object_extra_len[version][OF_BAD_REQUEST_ERROR_MSG];
+    bytes = of_object_fixed_len[version][OF_BAD_REQUEST_ERROR_MSG];
 
     if ((obj = (of_bad_request_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bad_request_error_msg_init(obj, version, bytes, 0);
-
-    if (of_bad_request_error_msg_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bad_request_error_msg_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9700,7 +9805,7 @@ of_bad_request_error_msg_init(of_bad_request_error_msg_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BAD_REQUEST_ERROR_MSG] + of_object_extra_len[version][OF_BAD_REQUEST_ERROR_MSG];
+        bytes = of_object_fixed_len[version][OF_BAD_REQUEST_ERROR_MSG];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9744,6 +9849,7 @@ of_bad_request_error_msg_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9785,6 +9891,7 @@ of_bad_request_error_msg_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -9828,6 +9935,7 @@ of_bad_request_error_msg_code_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -9869,6 +9977,7 @@ of_bad_request_error_msg_code_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -9913,6 +10022,7 @@ of_bad_request_error_msg_data_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -9960,6 +10070,7 @@ of_bad_request_error_msg_data_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10028,6 +10139,7 @@ of_barrier_reply_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x15; /* type */
         break;
@@ -10041,25 +10153,6 @@ of_barrier_reply_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_barrier_reply of_barrier_reply
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_barrier_reply_push_wire_values(of_barrier_reply_t *obj)
-{
-
-    of_barrier_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_barrier_reply object
@@ -10079,18 +10172,15 @@ of_barrier_reply_new(of_version_t version)
     of_barrier_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BARRIER_REPLY] + of_object_extra_len[version][OF_BARRIER_REPLY];
+    bytes = of_object_fixed_len[version][OF_BARRIER_REPLY];
 
     if ((obj = (of_barrier_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_barrier_reply_init(obj, version, bytes, 0);
-
-    if (of_barrier_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_barrier_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10122,7 +10212,7 @@ of_barrier_reply_init(of_barrier_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BARRIER_REPLY] + of_object_extra_len[version][OF_BARRIER_REPLY];
+        bytes = of_object_fixed_len[version][OF_BARRIER_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10166,6 +10256,7 @@ of_barrier_reply_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -10207,6 +10298,7 @@ of_barrier_reply_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -10264,6 +10356,7 @@ of_barrier_request_push_wire_types(of_object_t *obj)
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x14; /* type */
         break;
@@ -10277,25 +10370,6 @@ of_barrier_request_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_barrier_request of_barrier_request
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_barrier_request_push_wire_values(of_barrier_request_t *obj)
-{
-
-    of_barrier_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_barrier_request object
@@ -10315,18 +10389,15 @@ of_barrier_request_new(of_version_t version)
     of_barrier_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BARRIER_REQUEST] + of_object_extra_len[version][OF_BARRIER_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BARRIER_REQUEST];
 
     if ((obj = (of_barrier_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_barrier_request_init(obj, version, bytes, 0);
-
-    if (of_barrier_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_barrier_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10358,7 +10429,7 @@ of_barrier_request_init(of_barrier_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BARRIER_REQUEST] + of_object_extra_len[version][OF_BARRIER_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BARRIER_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10402,6 +10473,7 @@ of_barrier_request_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -10443,6 +10515,7 @@ of_barrier_request_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -10554,6 +10627,21 @@ of_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* experimenter */
+        switch (value) {
+        case 0x2320:
+            of_nicira_header_wire_object_id_get(obj, id);
+            break;
+        case 0x5c16c7:
+            of_bsn_header_wire_object_id_get(obj, id);
+            break;
+        default:
+            *id = OF_EXPERIMENTER;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -10582,7 +10670,7 @@ of_experimenter_new(of_version_t version)
     of_experimenter_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_EXPERIMENTER] + of_object_extra_len[version][OF_EXPERIMENTER];
+    bytes = of_object_fixed_len[version][OF_EXPERIMENTER];
 
     if ((obj = (of_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -10620,7 +10708,7 @@ of_experimenter_init(of_experimenter_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_EXPERIMENTER] + of_object_extra_len[version][OF_EXPERIMENTER];
+        bytes = of_object_fixed_len[version][OF_EXPERIMENTER];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10664,6 +10752,7 @@ of_experimenter_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -10705,6 +10794,7 @@ of_experimenter_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -10748,6 +10838,7 @@ of_experimenter_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -10789,6 +10880,7 @@ of_experimenter_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -10830,6 +10922,7 @@ of_experimenter_subtype_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -10869,6 +10962,7 @@ of_experimenter_subtype_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -10916,6 +11010,7 @@ of_experimenter_data_get(
         break;
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -10966,6 +11061,7 @@ of_experimenter_data_set(
         break;
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -11445,6 +11541,81 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 12)); /* subtype */
+        switch (value) {
+        case 0x3:
+            *id = OF_BSN_SET_MIRRORING;
+            break;
+        case 0x4:
+            *id = OF_BSN_GET_MIRRORING_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GET_MIRRORING_REPLY;
+            break;
+        case 0x9:
+            *id = OF_BSN_GET_INTERFACES_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_GET_INTERFACES_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REQUEST;
+            break;
+        case 0xf:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REQUEST;
+            break;
+        case 0x10:
+            *id = OF_BSN_VIRTUAL_PORT_CREATE_REPLY;
+            break;
+        case 0x11:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REQUEST;
+            break;
+        case 0x12:
+            *id = OF_BSN_BW_ENABLE_SET_REQUEST;
+            break;
+        case 0x13:
+            *id = OF_BSN_BW_ENABLE_GET_REQUEST;
+            break;
+        case 0x14:
+            *id = OF_BSN_BW_ENABLE_GET_REPLY;
+            break;
+        case 0x15:
+            *id = OF_BSN_BW_CLEAR_DATA_REQUEST;
+            break;
+        case 0x16:
+            *id = OF_BSN_BW_CLEAR_DATA_REPLY;
+            break;
+        case 0x17:
+            *id = OF_BSN_BW_ENABLE_SET_REPLY;
+            break;
+        case 0x19:
+            *id = OF_BSN_SET_PKTIN_SUPPRESSION_REPLY;
+            break;
+        case 0x1a:
+            *id = OF_BSN_VIRTUAL_PORT_REMOVE_REPLY;
+            break;
+        case 0x1f:
+            *id = OF_BSN_PDU_TX_REQUEST;
+            break;
+        case 0x20:
+            *id = OF_BSN_PDU_TX_REPLY;
+            break;
+        case 0x21:
+            *id = OF_BSN_PDU_RX_REQUEST;
+            break;
+        case 0x22:
+            *id = OF_BSN_PDU_RX_REPLY;
+            break;
+        case 0x23:
+            *id = OF_BSN_PDU_RX_TIMEOUT;
+            break;
+        default:
+            *id = OF_BSN_HEADER;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -11473,7 +11644,7 @@ of_bsn_header_new(of_version_t version)
     of_bsn_header_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_HEADER] + of_object_extra_len[version][OF_BSN_HEADER];
+    bytes = of_object_fixed_len[version][OF_BSN_HEADER];
 
     if ((obj = (of_bsn_header_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -11511,7 +11682,7 @@ of_bsn_header_init(of_bsn_header_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_HEADER] + of_object_extra_len[version][OF_BSN_HEADER];
+        bytes = of_object_fixed_len[version][OF_BSN_HEADER];
     }
     obj->version = version;
     obj->length = bytes;
@@ -11555,6 +11726,7 @@ of_bsn_header_xid_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -11596,6 +11768,7 @@ of_bsn_header_xid_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -11639,6 +11812,7 @@ of_bsn_header_experimenter_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -11680,6 +11854,7 @@ of_bsn_header_experimenter_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -11723,6 +11898,7 @@ of_bsn_header_subtype_get(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -11764,6 +11940,7 @@ of_bsn_header_subtype_set(
     case OF_VERSION_1_1:
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:

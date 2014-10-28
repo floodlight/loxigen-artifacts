@@ -3131,6 +3131,25 @@ of_match_serialize(of_version_t version, of_match_t *match, of_octets_t *octets)
         }
         break;
 
+    case OF_VERSION_1_4:
+        {
+            of_match_v5_t *wire_match;
+            wire_match = of_match_v5_new(version);
+            if (wire_match == NULL) {
+                return OF_ERROR_RESOURCE;
+            }
+            if ((rv = of_match_to_wire_match_v5(match, wire_match)) < 0) {
+                of_match_v5_delete(wire_match);
+                return rv;
+            }
+            of_wire_buffer_grow(wire_match->wbuf, OF_MATCH_BYTES(wire_match->length));
+            octets->bytes = wire_match->wbuf->current_bytes;
+            of_object_wire_buffer_steal((of_object_t *)wire_match,
+                                        &octets->data);
+            of_match_v5_delete(wire_match);
+        }
+        break;
+
     default:
         return OF_ERROR_COMPAT;
     }
@@ -3177,6 +3196,12 @@ of_match_deserialize(of_version_t version, of_match_t *match,
         of_match_v4_init(&obj, OF_VERSION_1_3, length, 1);
         of_object_attach(parent, &obj, offset, length);
         OF_TRY(of_match_v4_to_match(&obj, match));
+        break;
+
+    case OF_VERSION_1_4:
+        of_match_v5_init(&obj, OF_VERSION_1_4, length, 1);
+        of_object_attach(parent, &obj, offset, length);
+        OF_TRY(of_match_v5_to_match(&obj, match));
         break;
 
     default:

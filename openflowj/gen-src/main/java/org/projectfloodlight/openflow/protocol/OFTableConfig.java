@@ -29,5 +29,7 @@ public enum OFTableConfig {
      TABLE_MISS_CONTINUE,
      TABLE_MISS_DROP,
      TABLE_MISS_MASK,
-     DEPRECATED_MASK;
+     DEPRECATED_MASK,
+     EVICTION,
+     VACANCY_EVENTS;
 }

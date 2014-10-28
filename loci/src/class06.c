@@ -50,18 +50,6 @@ of_oxm_bsn_tcp_flags_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_tcp_flags_push_wire_values(of_oxm_bsn_tcp_flags_t *obj)
-{
-
-    of_oxm_bsn_tcp_flags_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_tcp_flags object
  *
  * @param version The wire version to use for the object
@@ -79,18 +67,14 @@ of_oxm_bsn_tcp_flags_new(of_version_t version)
     of_oxm_bsn_tcp_flags_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS] + of_object_extra_len[version][OF_OXM_BSN_TCP_FLAGS];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS];
 
     if ((obj = (of_oxm_bsn_tcp_flags_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_tcp_flags_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_tcp_flags_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_tcp_flags_push_wire_types(obj);
 
     return obj;
 }
@@ -122,7 +106,7 @@ of_oxm_bsn_tcp_flags_init(of_oxm_bsn_tcp_flags_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS] + of_object_extra_len[version][OF_OXM_BSN_TCP_FLAGS];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS];
     }
     obj->version = version;
     obj->length = bytes;
@@ -269,18 +253,6 @@ of_oxm_bsn_tcp_flags_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_tcp_flags_masked_push_wire_values(of_oxm_bsn_tcp_flags_masked_t *obj)
-{
-
-    of_oxm_bsn_tcp_flags_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_tcp_flags_masked object
  *
  * @param version The wire version to use for the object
@@ -298,18 +270,14 @@ of_oxm_bsn_tcp_flags_masked_new(of_version_t version)
     of_oxm_bsn_tcp_flags_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS_MASKED] + of_object_extra_len[version][OF_OXM_BSN_TCP_FLAGS_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS_MASKED];
 
     if ((obj = (of_oxm_bsn_tcp_flags_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_tcp_flags_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_tcp_flags_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_tcp_flags_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -341,7 +309,7 @@ of_oxm_bsn_tcp_flags_masked_init(of_oxm_bsn_tcp_flags_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS_MASKED] + of_object_extra_len[version][OF_OXM_BSN_TCP_FLAGS_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_TCP_FLAGS_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -568,18 +536,6 @@ of_oxm_bsn_udf0_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf0_push_wire_values(of_oxm_bsn_udf0_t *obj)
-{
-
-    of_oxm_bsn_udf0_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf0 object
  *
  * @param version The wire version to use for the object
@@ -597,18 +553,14 @@ of_oxm_bsn_udf0_new(of_version_t version)
     of_oxm_bsn_udf0_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0];
 
     if ((obj = (of_oxm_bsn_udf0_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf0_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf0_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf0_push_wire_types(obj);
 
     return obj;
 }
@@ -640,7 +592,7 @@ of_oxm_bsn_udf0_init(of_oxm_bsn_udf0_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0] + of_object_extra_len[version][OF_OXM_BSN_UDF0];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0];
     }
     obj->version = version;
     obj->length = bytes;
@@ -787,18 +739,6 @@ of_oxm_bsn_udf0_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf0_masked_push_wire_values(of_oxm_bsn_udf0_masked_t *obj)
-{
-
-    of_oxm_bsn_udf0_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf0_masked object
  *
  * @param version The wire version to use for the object
@@ -816,18 +756,14 @@ of_oxm_bsn_udf0_masked_new(of_version_t version)
     of_oxm_bsn_udf0_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF0_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED];
 
     if ((obj = (of_oxm_bsn_udf0_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf0_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf0_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf0_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -859,7 +795,7 @@ of_oxm_bsn_udf0_masked_init(of_oxm_bsn_udf0_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF0_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF0_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1086,18 +1022,6 @@ of_oxm_bsn_udf1_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf1_push_wire_values(of_oxm_bsn_udf1_t *obj)
-{
-
-    of_oxm_bsn_udf1_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf1 object
  *
  * @param version The wire version to use for the object
@@ -1115,18 +1039,14 @@ of_oxm_bsn_udf1_new(of_version_t version)
     of_oxm_bsn_udf1_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1] + of_object_extra_len[version][OF_OXM_BSN_UDF1];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1];
 
     if ((obj = (of_oxm_bsn_udf1_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf1_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf1_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf1_push_wire_types(obj);
 
     return obj;
 }
@@ -1158,7 +1078,7 @@ of_oxm_bsn_udf1_init(of_oxm_bsn_udf1_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1] + of_object_extra_len[version][OF_OXM_BSN_UDF1];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1305,18 +1225,6 @@ of_oxm_bsn_udf1_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf1_masked_push_wire_values(of_oxm_bsn_udf1_masked_t *obj)
-{
-
-    of_oxm_bsn_udf1_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf1_masked object
  *
  * @param version The wire version to use for the object
@@ -1334,18 +1242,14 @@ of_oxm_bsn_udf1_masked_new(of_version_t version)
     of_oxm_bsn_udf1_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF1_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1_MASKED];
 
     if ((obj = (of_oxm_bsn_udf1_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf1_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf1_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf1_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -1377,7 +1281,7 @@ of_oxm_bsn_udf1_masked_init(of_oxm_bsn_udf1_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF1_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF1_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1604,18 +1508,6 @@ of_oxm_bsn_udf2_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf2_push_wire_values(of_oxm_bsn_udf2_t *obj)
-{
-
-    of_oxm_bsn_udf2_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf2 object
  *
  * @param version The wire version to use for the object
@@ -1633,18 +1525,14 @@ of_oxm_bsn_udf2_new(of_version_t version)
     of_oxm_bsn_udf2_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2] + of_object_extra_len[version][OF_OXM_BSN_UDF2];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2];
 
     if ((obj = (of_oxm_bsn_udf2_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf2_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf2_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf2_push_wire_types(obj);
 
     return obj;
 }
@@ -1676,7 +1564,7 @@ of_oxm_bsn_udf2_init(of_oxm_bsn_udf2_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2] + of_object_extra_len[version][OF_OXM_BSN_UDF2];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1823,18 +1711,6 @@ of_oxm_bsn_udf2_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf2_masked_push_wire_values(of_oxm_bsn_udf2_masked_t *obj)
-{
-
-    of_oxm_bsn_udf2_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf2_masked object
  *
  * @param version The wire version to use for the object
@@ -1852,18 +1728,14 @@ of_oxm_bsn_udf2_masked_new(of_version_t version)
     of_oxm_bsn_udf2_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF2_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2_MASKED];
 
     if ((obj = (of_oxm_bsn_udf2_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf2_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf2_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf2_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -1895,7 +1767,7 @@ of_oxm_bsn_udf2_masked_init(of_oxm_bsn_udf2_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF2_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF2_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2122,18 +1994,6 @@ of_oxm_bsn_udf3_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf3_push_wire_values(of_oxm_bsn_udf3_t *obj)
-{
-
-    of_oxm_bsn_udf3_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf3 object
  *
  * @param version The wire version to use for the object
@@ -2151,18 +2011,14 @@ of_oxm_bsn_udf3_new(of_version_t version)
     of_oxm_bsn_udf3_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3] + of_object_extra_len[version][OF_OXM_BSN_UDF3];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3];
 
     if ((obj = (of_oxm_bsn_udf3_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf3_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf3_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf3_push_wire_types(obj);
 
     return obj;
 }
@@ -2194,7 +2050,7 @@ of_oxm_bsn_udf3_init(of_oxm_bsn_udf3_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3] + of_object_extra_len[version][OF_OXM_BSN_UDF3];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2341,18 +2197,6 @@ of_oxm_bsn_udf3_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf3_masked_push_wire_values(of_oxm_bsn_udf3_masked_t *obj)
-{
-
-    of_oxm_bsn_udf3_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf3_masked object
  *
  * @param version The wire version to use for the object
@@ -2370,18 +2214,14 @@ of_oxm_bsn_udf3_masked_new(of_version_t version)
     of_oxm_bsn_udf3_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF3_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3_MASKED];
 
     if ((obj = (of_oxm_bsn_udf3_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf3_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf3_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf3_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -2413,7 +2253,7 @@ of_oxm_bsn_udf3_masked_init(of_oxm_bsn_udf3_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF3_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF3_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2640,18 +2480,6 @@ of_oxm_bsn_udf4_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf4_push_wire_values(of_oxm_bsn_udf4_t *obj)
-{
-
-    of_oxm_bsn_udf4_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf4 object
  *
  * @param version The wire version to use for the object
@@ -2669,18 +2497,14 @@ of_oxm_bsn_udf4_new(of_version_t version)
     of_oxm_bsn_udf4_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4] + of_object_extra_len[version][OF_OXM_BSN_UDF4];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4];
 
     if ((obj = (of_oxm_bsn_udf4_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf4_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf4_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf4_push_wire_types(obj);
 
     return obj;
 }
@@ -2712,7 +2536,7 @@ of_oxm_bsn_udf4_init(of_oxm_bsn_udf4_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4] + of_object_extra_len[version][OF_OXM_BSN_UDF4];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2859,18 +2683,6 @@ of_oxm_bsn_udf4_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf4_masked_push_wire_values(of_oxm_bsn_udf4_masked_t *obj)
-{
-
-    of_oxm_bsn_udf4_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf4_masked object
  *
  * @param version The wire version to use for the object
@@ -2888,18 +2700,14 @@ of_oxm_bsn_udf4_masked_new(of_version_t version)
     of_oxm_bsn_udf4_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF4_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4_MASKED];
 
     if ((obj = (of_oxm_bsn_udf4_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf4_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf4_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf4_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -2931,7 +2739,7 @@ of_oxm_bsn_udf4_masked_init(of_oxm_bsn_udf4_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF4_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF4_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3158,18 +2966,6 @@ of_oxm_bsn_udf5_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf5_push_wire_values(of_oxm_bsn_udf5_t *obj)
-{
-
-    of_oxm_bsn_udf5_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf5 object
  *
  * @param version The wire version to use for the object
@@ -3187,18 +2983,14 @@ of_oxm_bsn_udf5_new(of_version_t version)
     of_oxm_bsn_udf5_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5] + of_object_extra_len[version][OF_OXM_BSN_UDF5];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5];
 
     if ((obj = (of_oxm_bsn_udf5_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf5_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf5_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf5_push_wire_types(obj);
 
     return obj;
 }
@@ -3230,7 +3022,7 @@ of_oxm_bsn_udf5_init(of_oxm_bsn_udf5_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5] + of_object_extra_len[version][OF_OXM_BSN_UDF5];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3377,18 +3169,6 @@ of_oxm_bsn_udf5_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf5_masked_push_wire_values(of_oxm_bsn_udf5_masked_t *obj)
-{
-
-    of_oxm_bsn_udf5_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf5_masked object
  *
  * @param version The wire version to use for the object
@@ -3406,18 +3186,14 @@ of_oxm_bsn_udf5_masked_new(of_version_t version)
     of_oxm_bsn_udf5_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF5_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5_MASKED];
 
     if ((obj = (of_oxm_bsn_udf5_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf5_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf5_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf5_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -3449,7 +3225,7 @@ of_oxm_bsn_udf5_masked_init(of_oxm_bsn_udf5_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF5_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF5_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3676,18 +3452,6 @@ of_oxm_bsn_udf6_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf6_push_wire_values(of_oxm_bsn_udf6_t *obj)
-{
-
-    of_oxm_bsn_udf6_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf6 object
  *
  * @param version The wire version to use for the object
@@ -3705,18 +3469,14 @@ of_oxm_bsn_udf6_new(of_version_t version)
     of_oxm_bsn_udf6_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6] + of_object_extra_len[version][OF_OXM_BSN_UDF6];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6];
 
     if ((obj = (of_oxm_bsn_udf6_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf6_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf6_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf6_push_wire_types(obj);
 
     return obj;
 }
@@ -3748,7 +3508,7 @@ of_oxm_bsn_udf6_init(of_oxm_bsn_udf6_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6] + of_object_extra_len[version][OF_OXM_BSN_UDF6];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3895,18 +3655,6 @@ of_oxm_bsn_udf6_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf6_masked_push_wire_values(of_oxm_bsn_udf6_masked_t *obj)
-{
-
-    of_oxm_bsn_udf6_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf6_masked object
  *
  * @param version The wire version to use for the object
@@ -3924,18 +3672,14 @@ of_oxm_bsn_udf6_masked_new(of_version_t version)
     of_oxm_bsn_udf6_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF6_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6_MASKED];
 
     if ((obj = (of_oxm_bsn_udf6_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf6_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf6_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf6_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -3967,7 +3711,7 @@ of_oxm_bsn_udf6_masked_init(of_oxm_bsn_udf6_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF6_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF6_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4194,18 +3938,6 @@ of_oxm_bsn_udf7_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf7_push_wire_values(of_oxm_bsn_udf7_t *obj)
-{
-
-    of_oxm_bsn_udf7_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf7 object
  *
  * @param version The wire version to use for the object
@@ -4223,18 +3955,14 @@ of_oxm_bsn_udf7_new(of_version_t version)
     of_oxm_bsn_udf7_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7] + of_object_extra_len[version][OF_OXM_BSN_UDF7];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7];
 
     if ((obj = (of_oxm_bsn_udf7_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf7_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf7_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf7_push_wire_types(obj);
 
     return obj;
 }
@@ -4266,7 +3994,7 @@ of_oxm_bsn_udf7_init(of_oxm_bsn_udf7_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7] + of_object_extra_len[version][OF_OXM_BSN_UDF7];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4413,18 +4141,6 @@ of_oxm_bsn_udf7_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_udf7_masked_push_wire_values(of_oxm_bsn_udf7_masked_t *obj)
-{
-
-    of_oxm_bsn_udf7_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_udf7_masked object
  *
  * @param version The wire version to use for the object
@@ -4442,18 +4158,14 @@ of_oxm_bsn_udf7_masked_new(of_version_t version)
     of_oxm_bsn_udf7_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF7_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7_MASKED];
 
     if ((obj = (of_oxm_bsn_udf7_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_udf7_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_udf7_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_udf7_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -4485,7 +4197,7 @@ of_oxm_bsn_udf7_masked_init(of_oxm_bsn_udf7_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7_MASKED] + of_object_extra_len[version][OF_OXM_BSN_UDF7_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_UDF7_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4712,18 +4424,6 @@ of_oxm_bsn_vlan_xlate_port_group_id_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_vlan_xlate_port_group_id_push_wire_values(of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
-{
-
-    of_oxm_bsn_vlan_xlate_port_group_id_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_vlan_xlate_port_group_id object
  *
  * @param version The wire version to use for the object
@@ -4741,18 +4441,14 @@ of_oxm_bsn_vlan_xlate_port_group_id_new(of_version_t version)
     of_oxm_bsn_vlan_xlate_port_group_id_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID] + of_object_extra_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID];
 
     if ((obj = (of_oxm_bsn_vlan_xlate_port_group_id_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_vlan_xlate_port_group_id_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_vlan_xlate_port_group_id_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_vlan_xlate_port_group_id_push_wire_types(obj);
 
     return obj;
 }
@@ -4784,7 +4480,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_init(of_oxm_bsn_vlan_xlate_port_group_id_t *
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID] + of_object_extra_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4931,18 +4627,6 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_values(of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
-{
-
-    of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_vlan_xlate_port_group_id_masked object
  *
  * @param version The wire version to use for the object
@@ -4960,18 +4644,14 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_new(of_version_t version)
     of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED];
 
     if ((obj = (of_oxm_bsn_vlan_xlate_port_group_id_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_vlan_xlate_port_group_id_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -5003,7 +4683,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_init(of_oxm_bsn_vlan_xlate_port_group
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED] + of_object_extra_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5230,18 +4910,6 @@ of_oxm_bsn_vrf_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_vrf_push_wire_values(of_oxm_bsn_vrf_t *obj)
-{
-
-    of_oxm_bsn_vrf_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_vrf object
  *
  * @param version The wire version to use for the object
@@ -5259,18 +4927,14 @@ of_oxm_bsn_vrf_new(of_version_t version)
     of_oxm_bsn_vrf_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF] + of_object_extra_len[version][OF_OXM_BSN_VRF];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF];
 
     if ((obj = (of_oxm_bsn_vrf_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_vrf_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_vrf_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_vrf_push_wire_types(obj);
 
     return obj;
 }
@@ -5302,7 +4966,7 @@ of_oxm_bsn_vrf_init(of_oxm_bsn_vrf_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF] + of_object_extra_len[version][OF_OXM_BSN_VRF];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5449,18 +5113,6 @@ of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_bsn_vrf_masked_push_wire_values(of_oxm_bsn_vrf_masked_t *obj)
-{
-
-    of_oxm_bsn_vrf_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_oxm_bsn_vrf_masked object
  *
  * @param version The wire version to use for the object
@@ -5478,18 +5130,14 @@ of_oxm_bsn_vrf_masked_new(of_version_t version)
     of_oxm_bsn_vrf_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED] + of_object_extra_len[version][OF_OXM_BSN_VRF_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED];
 
     if ((obj = (of_oxm_bsn_vrf_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_bsn_vrf_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_bsn_vrf_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_bsn_vrf_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -5521,7 +5169,7 @@ of_oxm_bsn_vrf_masked_init(of_oxm_bsn_vrf_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED] + of_object_extra_len[version][OF_OXM_BSN_VRF_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_BSN_VRF_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5734,6 +5382,7 @@ of_oxm_eth_dst_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000606); /* type_len */
         break;
     default:
@@ -5746,18 +5395,6 @@ of_oxm_eth_dst_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_eth_dst of_oxm_eth_dst
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_eth_dst_push_wire_values(of_oxm_eth_dst_t *obj)
-{
-
-    of_oxm_eth_dst_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_eth_dst object
@@ -5777,18 +5414,14 @@ of_oxm_eth_dst_new(of_version_t version)
     of_oxm_eth_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_DST] + of_object_extra_len[version][OF_OXM_ETH_DST];
+    bytes = of_object_fixed_len[version][OF_OXM_ETH_DST];
 
     if ((obj = (of_oxm_eth_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_eth_dst_init(obj, version, bytes, 0);
-
-    if (of_oxm_eth_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_eth_dst_push_wire_types(obj);
 
     return obj;
 }
@@ -5820,7 +5453,7 @@ of_oxm_eth_dst_init(of_oxm_eth_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_DST] + of_object_extra_len[version][OF_OXM_ETH_DST];
+        bytes = of_object_fixed_len[version][OF_OXM_ETH_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5862,6 +5495,7 @@ of_oxm_eth_dst_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5901,6 +5535,7 @@ of_oxm_eth_dst_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5953,6 +5588,7 @@ of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x8000070c); /* type_len */
         break;
     default:
@@ -5965,18 +5601,6 @@ of_oxm_eth_dst_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_eth_dst_masked of_oxm_eth_dst_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_eth_dst_masked_push_wire_values(of_oxm_eth_dst_masked_t *obj)
-{
-
-    of_oxm_eth_dst_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_eth_dst_masked object
@@ -5996,18 +5620,14 @@ of_oxm_eth_dst_masked_new(of_version_t version)
     of_oxm_eth_dst_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED] + of_object_extra_len[version][OF_OXM_ETH_DST_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED];
 
     if ((obj = (of_oxm_eth_dst_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_eth_dst_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_eth_dst_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_eth_dst_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -6039,7 +5659,7 @@ of_oxm_eth_dst_masked_init(of_oxm_eth_dst_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED] + of_object_extra_len[version][OF_OXM_ETH_DST_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ETH_DST_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6081,6 +5701,7 @@ of_oxm_eth_dst_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6120,6 +5741,7 @@ of_oxm_eth_dst_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6161,6 +5783,7 @@ of_oxm_eth_dst_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6200,6 +5823,7 @@ of_oxm_eth_dst_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6252,6 +5876,7 @@ of_oxm_eth_src_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000806); /* type_len */
         break;
     default:
@@ -6264,18 +5889,6 @@ of_oxm_eth_src_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_eth_src of_oxm_eth_src
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_eth_src_push_wire_values(of_oxm_eth_src_t *obj)
-{
-
-    of_oxm_eth_src_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_eth_src object
@@ -6295,18 +5908,14 @@ of_oxm_eth_src_new(of_version_t version)
     of_oxm_eth_src_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC] + of_object_extra_len[version][OF_OXM_ETH_SRC];
+    bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC];
 
     if ((obj = (of_oxm_eth_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_eth_src_init(obj, version, bytes, 0);
-
-    if (of_oxm_eth_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_eth_src_push_wire_types(obj);
 
     return obj;
 }
@@ -6338,7 +5947,7 @@ of_oxm_eth_src_init(of_oxm_eth_src_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC] + of_object_extra_len[version][OF_OXM_ETH_SRC];
+        bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6380,6 +5989,7 @@ of_oxm_eth_src_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6419,6 +6029,7 @@ of_oxm_eth_src_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6471,6 +6082,7 @@ of_oxm_eth_src_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x8000090c); /* type_len */
         break;
     default:
@@ -6483,18 +6095,6 @@ of_oxm_eth_src_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_eth_src_masked of_oxm_eth_src_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_eth_src_masked_push_wire_values(of_oxm_eth_src_masked_t *obj)
-{
-
-    of_oxm_eth_src_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_eth_src_masked object
@@ -6514,18 +6114,14 @@ of_oxm_eth_src_masked_new(of_version_t version)
     of_oxm_eth_src_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC_MASKED] + of_object_extra_len[version][OF_OXM_ETH_SRC_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC_MASKED];
 
     if ((obj = (of_oxm_eth_src_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_eth_src_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_eth_src_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_eth_src_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -6557,7 +6153,7 @@ of_oxm_eth_src_masked_init(of_oxm_eth_src_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC_MASKED] + of_object_extra_len[version][OF_OXM_ETH_SRC_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ETH_SRC_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6599,6 +6195,7 @@ of_oxm_eth_src_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6638,6 +6235,7 @@ of_oxm_eth_src_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6679,6 +6277,7 @@ of_oxm_eth_src_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6718,6 +6317,7 @@ of_oxm_eth_src_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6770,6 +6370,7 @@ of_oxm_eth_type_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000a02); /* type_len */
         break;
     default:
@@ -6782,18 +6383,6 @@ of_oxm_eth_type_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_eth_type of_oxm_eth_type
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_eth_type_push_wire_values(of_oxm_eth_type_t *obj)
-{
-
-    of_oxm_eth_type_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_eth_type object
@@ -6813,18 +6402,14 @@ of_oxm_eth_type_new(of_version_t version)
     of_oxm_eth_type_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE] + of_object_extra_len[version][OF_OXM_ETH_TYPE];
+    bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE];
 
     if ((obj = (of_oxm_eth_type_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_eth_type_init(obj, version, bytes, 0);
-
-    if (of_oxm_eth_type_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_eth_type_push_wire_types(obj);
 
     return obj;
 }
@@ -6856,7 +6441,7 @@ of_oxm_eth_type_init(of_oxm_eth_type_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE] + of_object_extra_len[version][OF_OXM_ETH_TYPE];
+        bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6898,6 +6483,7 @@ of_oxm_eth_type_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6937,6 +6523,7 @@ of_oxm_eth_type_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6989,6 +6576,7 @@ of_oxm_eth_type_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000b04); /* type_len */
         break;
     default:
@@ -7001,18 +6589,6 @@ of_oxm_eth_type_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_eth_type_masked of_oxm_eth_type_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_eth_type_masked_push_wire_values(of_oxm_eth_type_masked_t *obj)
-{
-
-    of_oxm_eth_type_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_eth_type_masked object
@@ -7032,18 +6608,14 @@ of_oxm_eth_type_masked_new(of_version_t version)
     of_oxm_eth_type_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE_MASKED] + of_object_extra_len[version][OF_OXM_ETH_TYPE_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE_MASKED];
 
     if ((obj = (of_oxm_eth_type_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_eth_type_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_eth_type_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_eth_type_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -7075,7 +6647,7 @@ of_oxm_eth_type_masked_init(of_oxm_eth_type_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE_MASKED] + of_object_extra_len[version][OF_OXM_ETH_TYPE_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ETH_TYPE_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7117,6 +6689,7 @@ of_oxm_eth_type_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7156,6 +6729,7 @@ of_oxm_eth_type_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7197,6 +6771,7 @@ of_oxm_eth_type_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 6;
         break;
     default:
@@ -7236,6 +6811,7 @@ of_oxm_eth_type_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 6;
         break;
     default:
@@ -7288,6 +6864,7 @@ of_oxm_icmpv4_code_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80002801); /* type_len */
         break;
     default:
@@ -7300,18 +6877,6 @@ of_oxm_icmpv4_code_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv4_code of_oxm_icmpv4_code
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv4_code_push_wire_values(of_oxm_icmpv4_code_t *obj)
-{
-
-    of_oxm_icmpv4_code_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv4_code object
@@ -7331,18 +6896,14 @@ of_oxm_icmpv4_code_new(of_version_t version)
     of_oxm_icmpv4_code_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE] + of_object_extra_len[version][OF_OXM_ICMPV4_CODE];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE];
 
     if ((obj = (of_oxm_icmpv4_code_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv4_code_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv4_code_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv4_code_push_wire_types(obj);
 
     return obj;
 }
@@ -7374,7 +6935,7 @@ of_oxm_icmpv4_code_init(of_oxm_icmpv4_code_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE] + of_object_extra_len[version][OF_OXM_ICMPV4_CODE];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7416,6 +6977,7 @@ of_oxm_icmpv4_code_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7455,6 +7017,7 @@ of_oxm_icmpv4_code_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7507,6 +7070,7 @@ of_oxm_icmpv4_code_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80002902); /* type_len */
         break;
     default:
@@ -7519,18 +7083,6 @@ of_oxm_icmpv4_code_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv4_code_masked of_oxm_icmpv4_code_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv4_code_masked_push_wire_values(of_oxm_icmpv4_code_masked_t *obj)
-{
-
-    of_oxm_icmpv4_code_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv4_code_masked object
@@ -7550,18 +7102,14 @@ of_oxm_icmpv4_code_masked_new(of_version_t version)
     of_oxm_icmpv4_code_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV4_CODE_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE_MASKED];
 
     if ((obj = (of_oxm_icmpv4_code_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv4_code_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv4_code_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv4_code_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -7593,7 +7141,7 @@ of_oxm_icmpv4_code_masked_init(of_oxm_icmpv4_code_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV4_CODE_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_CODE_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7635,6 +7183,7 @@ of_oxm_icmpv4_code_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7674,6 +7223,7 @@ of_oxm_icmpv4_code_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7715,6 +7265,7 @@ of_oxm_icmpv4_code_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -7754,6 +7305,7 @@ of_oxm_icmpv4_code_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -7806,6 +7358,7 @@ of_oxm_icmpv4_type_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80002601); /* type_len */
         break;
     default:
@@ -7818,18 +7371,6 @@ of_oxm_icmpv4_type_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv4_type of_oxm_icmpv4_type
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv4_type_push_wire_values(of_oxm_icmpv4_type_t *obj)
-{
-
-    of_oxm_icmpv4_type_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv4_type object
@@ -7849,18 +7390,14 @@ of_oxm_icmpv4_type_new(of_version_t version)
     of_oxm_icmpv4_type_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE] + of_object_extra_len[version][OF_OXM_ICMPV4_TYPE];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE];
 
     if ((obj = (of_oxm_icmpv4_type_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv4_type_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv4_type_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv4_type_push_wire_types(obj);
 
     return obj;
 }
@@ -7892,7 +7429,7 @@ of_oxm_icmpv4_type_init(of_oxm_icmpv4_type_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE] + of_object_extra_len[version][OF_OXM_ICMPV4_TYPE];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7934,6 +7471,7 @@ of_oxm_icmpv4_type_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7973,6 +7511,7 @@ of_oxm_icmpv4_type_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8025,6 +7564,7 @@ of_oxm_icmpv4_type_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80002702); /* type_len */
         break;
     default:
@@ -8037,18 +7577,6 @@ of_oxm_icmpv4_type_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv4_type_masked of_oxm_icmpv4_type_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv4_type_masked_push_wire_values(of_oxm_icmpv4_type_masked_t *obj)
-{
-
-    of_oxm_icmpv4_type_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv4_type_masked object
@@ -8068,18 +7596,14 @@ of_oxm_icmpv4_type_masked_new(of_version_t version)
     of_oxm_icmpv4_type_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV4_TYPE_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE_MASKED];
 
     if ((obj = (of_oxm_icmpv4_type_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv4_type_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv4_type_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv4_type_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -8111,7 +7635,7 @@ of_oxm_icmpv4_type_masked_init(of_oxm_icmpv4_type_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV4_TYPE_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV4_TYPE_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8153,6 +7677,7 @@ of_oxm_icmpv4_type_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8192,6 +7717,7 @@ of_oxm_icmpv4_type_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8233,6 +7759,7 @@ of_oxm_icmpv4_type_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -8272,6 +7799,7 @@ of_oxm_icmpv4_type_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:

@@ -52,6 +52,7 @@ of_list_port_desc_first(of_list_port_desc_t *list, of_port_desc_t *_obj)
     }
 
 
+    of_port_desc_wire_length_get(obj, &obj->length);
 
     return rv;
 }
@@ -75,6 +76,7 @@ of_list_port_desc_next(of_list_port_desc_t *list, of_port_desc_t *_obj)
     }
 
 
+    of_port_desc_wire_length_get(obj, &obj->length);
 
     return rv;
 }
@@ -132,7 +134,7 @@ of_list_port_desc_new(of_version_t version)
     of_list_port_desc_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_LIST_PORT_DESC] + of_object_extra_len[version][OF_LIST_PORT_DESC];
+    bytes = of_object_fixed_len[version][OF_LIST_PORT_DESC];
 
     if ((obj = (of_list_port_desc_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -170,7 +172,7 @@ of_list_port_desc_init(of_list_port_desc_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_LIST_PORT_DESC] + of_object_extra_len[version][OF_LIST_PORT_DESC];
+        bytes = of_object_fixed_len[version][OF_LIST_PORT_DESC];
     }
     obj->version = version;
     obj->length = bytes;

@@ -34,5 +34,6 @@ public enum OFBadInstructionCode {
      BAD_EXPERIMENTER,
      BAD_EXPERIMENTER_TYPE,
      BAD_LEN,
-     EPERM;
+     EPERM,
+     DUP_INST;
 }

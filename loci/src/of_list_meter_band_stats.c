@@ -132,7 +132,7 @@ of_list_meter_band_stats_new(of_version_t version)
     of_list_meter_band_stats_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_LIST_METER_BAND_STATS] + of_object_extra_len[version][OF_LIST_METER_BAND_STATS];
+    bytes = of_object_fixed_len[version][OF_LIST_METER_BAND_STATS];
 
     if ((obj = (of_list_meter_band_stats_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -170,7 +170,7 @@ of_list_meter_band_stats_init(of_list_meter_band_stats_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_LIST_METER_BAND_STATS] + of_object_extra_len[version][OF_LIST_METER_BAND_STATS];
+        bytes = of_object_fixed_len[version][OF_LIST_METER_BAND_STATS];
     }
     obj->version = version;
     obj->length = bytes;

@@ -101,6 +101,11 @@ class OFMeterModVer13 implements OFMeterMod {
         return meters;
     }
 
+    @Override
+    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    }
+
 
 
     public OFMeterMod.Builder createBuilder() {
@@ -190,6 +195,15 @@ class OFMeterModVer13 implements OFMeterMod {
         this.meters = meters;
         this.metersSet = true;
         return this;
+    }
+    @Override
+    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    }
+
+    @Override
+    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
 
 
@@ -292,6 +306,15 @@ class OFMeterModVer13 implements OFMeterMod {
         this.meters = meters;
         this.metersSet = true;
         return this;
+    }
+    @Override
+    public List<OFMeterBand> getBands()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property bands not supported in version 1.3");
+    }
+
+    @Override
+    public OFMeterMod.Builder setBands(List<OFMeterBand> bands) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property bands not supported in version 1.3");
     }
 //
         @Override

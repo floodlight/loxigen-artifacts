@@ -167,6 +167,11 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         return actions;
     }
 
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
 
 
     public OFFlowModifyStrict.Builder createBuilder() {
@@ -362,6 +367,15 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 
 
@@ -590,6 +604,15 @@ class OFFlowModifyStrictVer10 implements OFFlowModifyStrict {
         this.actions = actions;
         this.actionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.0");
+    }
+
+    @Override
+    public OFFlowModifyStrict.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.0");
     }
 //
         @Override

@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
@@ -97,6 +98,11 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     @Override
     public long getDurationNsec()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
+    }
+
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
 
     @Override
@@ -201,6 +207,15 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     @Override
     public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -322,6 +337,15 @@ class OFQueueStatsEntryVer10 implements OFQueueStatsEntry {
     @Override
     public OFQueueStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.0");
+    }
+    @Override
+    public List<OFQueueStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+
+    @Override
+    public OFQueueStatsEntry.Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {

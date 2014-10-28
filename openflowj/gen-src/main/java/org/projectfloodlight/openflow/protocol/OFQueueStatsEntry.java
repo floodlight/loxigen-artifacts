@@ -23,6 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFQueueStatsEntry extends OFObject {
@@ -33,6 +34,7 @@ public interface OFQueueStatsEntry extends OFObject {
     U64 getTxErrors();
     long getDurationSec() throws UnsupportedOperationException;
     long getDurationNsec() throws UnsupportedOperationException;
+    List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -54,6 +56,8 @@ public interface OFQueueStatsEntry extends OFObject {
         Builder setDurationSec(long durationSec) throws UnsupportedOperationException;
         long getDurationNsec() throws UnsupportedOperationException;
         Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException;
+        List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFQueueStatsProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

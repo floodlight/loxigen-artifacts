@@ -39,6 +39,8 @@ public final class OFFactories {
                 return org.projectfloodlight.openflow.protocol.ver12.OFFactoryVer12.INSTANCE;
             case OF_13:
                 return org.projectfloodlight.openflow.protocol.ver13.OFFactoryVer13.INSTANCE;
+            case OF_14:
+                return org.projectfloodlight.openflow.protocol.ver14.OFFactoryVer14.INSTANCE;
             default:
                 throw new IllegalArgumentException("Unknown version: "+version);
             }
@@ -60,6 +62,9 @@ public final class OFFactories {
                 break;
             case 4:
                 factory = org.projectfloodlight.openflow.protocol.ver13.OFFactoryVer13.INSTANCE;
+                break;
+            case 5:
+                factory = org.projectfloodlight.openflow.protocol.ver14.OFFactoryVer14.INSTANCE;
                 break;
             default:
                 throw new IllegalArgumentException("Unknown wire version: " + wireVersion);

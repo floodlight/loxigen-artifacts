@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
@@ -161,6 +162,11 @@ class OFPortStatsEntryVer12 implements OFPortStatsEntry {
     @Override
     public long getDurationNsec()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property durationNsec not supported in version 1.2");
+    }
+
+    @Override
+    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 
     @Override
@@ -369,6 +375,15 @@ class OFPortStatsEntryVer12 implements OFPortStatsEntry {
     @Override
     public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.2");
+    }
+    @Override
+    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {
@@ -628,6 +643,15 @@ class OFPortStatsEntryVer12 implements OFPortStatsEntry {
     @Override
     public OFPortStatsEntry.Builder setDurationNsec(long durationNsec) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property durationNsec not supported in version 1.2");
+    }
+    @Override
+    public List<OFPortStatsProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFPortStatsEntry.Builder setProperties(List<OFPortStatsProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {

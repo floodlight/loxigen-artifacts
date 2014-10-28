@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFPortDesc extends OFObject {
@@ -32,12 +33,13 @@ public interface OFPortDesc extends OFObject {
     String getName();
     Set<OFPortConfig> getConfig();
     Set<OFPortState> getState();
-    Set<OFPortFeatures> getCurr();
-    Set<OFPortFeatures> getAdvertised();
-    Set<OFPortFeatures> getSupported();
-    Set<OFPortFeatures> getPeer();
+    Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
+    Set<OFPortFeatures> getAdvertised() throws UnsupportedOperationException;
+    Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
+    Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
     long getCurrSpeed() throws UnsupportedOperationException;
     long getMaxSpeed() throws UnsupportedOperationException;
+    List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -55,18 +57,20 @@ public interface OFPortDesc extends OFObject {
         Builder setConfig(Set<OFPortConfig> config);
         Set<OFPortState> getState();
         Builder setState(Set<OFPortState> state);
-        Set<OFPortFeatures> getCurr();
-        Builder setCurr(Set<OFPortFeatures> curr);
-        Set<OFPortFeatures> getAdvertised();
-        Builder setAdvertised(Set<OFPortFeatures> advertised);
-        Set<OFPortFeatures> getSupported();
-        Builder setSupported(Set<OFPortFeatures> supported);
-        Set<OFPortFeatures> getPeer();
-        Builder setPeer(Set<OFPortFeatures> peer);
+        Set<OFPortFeatures> getCurr() throws UnsupportedOperationException;
+        Builder setCurr(Set<OFPortFeatures> curr) throws UnsupportedOperationException;
+        Set<OFPortFeatures> getAdvertised() throws UnsupportedOperationException;
+        Builder setAdvertised(Set<OFPortFeatures> advertised) throws UnsupportedOperationException;
+        Set<OFPortFeatures> getSupported() throws UnsupportedOperationException;
+        Builder setSupported(Set<OFPortFeatures> supported) throws UnsupportedOperationException;
+        Set<OFPortFeatures> getPeer() throws UnsupportedOperationException;
+        Builder setPeer(Set<OFPortFeatures> peer) throws UnsupportedOperationException;
         long getCurrSpeed() throws UnsupportedOperationException;
         Builder setCurrSpeed(long currSpeed) throws UnsupportedOperationException;
         long getMaxSpeed() throws UnsupportedOperationException;
         Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException;
+        List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

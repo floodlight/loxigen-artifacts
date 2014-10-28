@@ -150,6 +150,11 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     }
 
     @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
     public OFVersion getVersion() {
         return OFVersion.OF_11;
     }
@@ -329,6 +334,15 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {
@@ -544,6 +558,15 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
     @Override
     public OFFlowStatsEntry.Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property flags not supported in version 1.1");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.1");
+    }
+
+    @Override
+    public OFFlowStatsEntry.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.1");
     }
     @Override
     public OFVersion getVersion() {

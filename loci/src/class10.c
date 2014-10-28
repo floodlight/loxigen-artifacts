@@ -53,25 +53,6 @@ of_bsn_debug_counter_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_debug_counter_stats_reply_push_wire_values(of_bsn_debug_counter_stats_reply_t *obj)
-{
-
-    of_bsn_debug_counter_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_debug_counter_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -89,18 +70,15 @@ of_bsn_debug_counter_stats_reply_new(of_version_t version)
     of_bsn_debug_counter_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY] + of_object_extra_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY];
 
     if ((obj = (of_bsn_debug_counter_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_debug_counter_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_debug_counter_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_debug_counter_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -132,7 +110,7 @@ of_bsn_debug_counter_stats_reply_init(of_bsn_debug_counter_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY] + of_object_extra_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -656,25 +634,6 @@ of_bsn_debug_counter_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_debug_counter_stats_request_push_wire_values(of_bsn_debug_counter_stats_request_t *obj)
-{
-
-    of_bsn_debug_counter_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_debug_counter_stats_request object
  *
  * @param version The wire version to use for the object
@@ -692,18 +651,15 @@ of_bsn_debug_counter_stats_request_new(of_version_t version)
     of_bsn_debug_counter_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST];
 
     if ((obj = (of_bsn_debug_counter_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_debug_counter_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_debug_counter_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_debug_counter_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -735,7 +691,7 @@ of_bsn_debug_counter_stats_request_init(of_bsn_debug_counter_stats_request_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1100,16 +1056,6 @@ of_bsn_debug_counter_stats_request_subtype_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_checksum_bucket_stats_entry_push_wire_values(of_bsn_flow_checksum_bucket_stats_entry_t *obj)
-{
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_checksum_bucket_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -1127,18 +1073,13 @@ of_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version)
     of_bsn_flow_checksum_bucket_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY];
 
     if ((obj = (of_bsn_flow_checksum_bucket_stats_entry_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_checksum_bucket_stats_entry_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_checksum_bucket_stats_entry_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
 
     return obj;
 }
@@ -1170,7 +1111,7 @@ of_bsn_flow_checksum_bucket_stats_entry_init(of_bsn_flow_checksum_bucket_stats_e
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1318,25 +1259,6 @@ of_bsn_flow_checksum_bucket_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_checksum_bucket_stats_reply_push_wire_values(of_bsn_flow_checksum_bucket_stats_reply_t *obj)
-{
-
-    of_bsn_flow_checksum_bucket_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_checksum_bucket_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -1354,18 +1276,15 @@ of_bsn_flow_checksum_bucket_stats_reply_new(of_version_t version)
     of_bsn_flow_checksum_bucket_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY] + of_object_extra_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY];
 
     if ((obj = (of_bsn_flow_checksum_bucket_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_checksum_bucket_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_checksum_bucket_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_checksum_bucket_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -1397,7 +1316,7 @@ of_bsn_flow_checksum_bucket_stats_reply_init(of_bsn_flow_checksum_bucket_stats_r
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY] + of_object_extra_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1921,25 +1840,6 @@ of_bsn_flow_checksum_bucket_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_checksum_bucket_stats_request_push_wire_values(of_bsn_flow_checksum_bucket_stats_request_t *obj)
-{
-
-    of_bsn_flow_checksum_bucket_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_checksum_bucket_stats_request object
  *
  * @param version The wire version to use for the object
@@ -1957,18 +1857,15 @@ of_bsn_flow_checksum_bucket_stats_request_new(of_version_t version)
     of_bsn_flow_checksum_bucket_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST];
 
     if ((obj = (of_bsn_flow_checksum_bucket_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_checksum_bucket_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_checksum_bucket_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_checksum_bucket_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -2000,7 +1897,7 @@ of_bsn_flow_checksum_bucket_stats_request_init(of_bsn_flow_checksum_bucket_stats
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2459,25 +2356,6 @@ of_bsn_flow_idle_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_idle_push_wire_values(of_bsn_flow_idle_t *obj)
-{
-
-    of_bsn_flow_idle_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_idle object
  *
  * @param version The wire version to use for the object
@@ -2495,18 +2373,15 @@ of_bsn_flow_idle_new(of_version_t version)
     of_bsn_flow_idle_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE] + of_object_extra_len[version][OF_BSN_FLOW_IDLE];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE];
 
     if ((obj = (of_bsn_flow_idle_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_idle_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_idle_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_idle_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -2538,7 +2413,7 @@ of_bsn_flow_idle_init(of_bsn_flow_idle_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE] + of_object_extra_len[version][OF_BSN_FLOW_IDLE];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3184,25 +3059,6 @@ of_bsn_flow_idle_enable_get_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_idle_enable_get_reply_push_wire_values(of_bsn_flow_idle_enable_get_reply_t *obj)
-{
-
-    of_bsn_flow_idle_enable_get_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_idle_enable_get_reply object
  *
  * @param version The wire version to use for the object
@@ -3220,18 +3076,15 @@ of_bsn_flow_idle_enable_get_reply_new(of_version_t version)
     of_bsn_flow_idle_enable_get_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY];
 
     if ((obj = (of_bsn_flow_idle_enable_get_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_idle_enable_get_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_idle_enable_get_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_idle_enable_get_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3263,7 +3116,7 @@ of_bsn_flow_idle_enable_get_reply_init(of_bsn_flow_idle_enable_get_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3644,25 +3497,6 @@ of_bsn_flow_idle_enable_get_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_idle_enable_get_request_push_wire_values(of_bsn_flow_idle_enable_get_request_t *obj)
-{
-
-    of_bsn_flow_idle_enable_get_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_idle_enable_get_request object
  *
  * @param version The wire version to use for the object
@@ -3680,18 +3514,15 @@ of_bsn_flow_idle_enable_get_request_new(of_version_t version)
     of_bsn_flow_idle_enable_get_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST];
 
     if ((obj = (of_bsn_flow_idle_enable_get_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_idle_enable_get_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_idle_enable_get_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_idle_enable_get_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -3723,7 +3554,7 @@ of_bsn_flow_idle_enable_get_request_init(of_bsn_flow_idle_enable_get_request_t *
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4026,25 +3857,6 @@ of_bsn_flow_idle_enable_set_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_idle_enable_set_reply_push_wire_values(of_bsn_flow_idle_enable_set_reply_t *obj)
-{
-
-    of_bsn_flow_idle_enable_set_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_idle_enable_set_reply object
  *
  * @param version The wire version to use for the object
@@ -4062,18 +3874,15 @@ of_bsn_flow_idle_enable_set_reply_new(of_version_t version)
     of_bsn_flow_idle_enable_set_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY];
 
     if ((obj = (of_bsn_flow_idle_enable_set_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_idle_enable_set_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_idle_enable_set_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_idle_enable_set_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4105,7 +3914,7 @@ of_bsn_flow_idle_enable_set_reply_init(of_bsn_flow_idle_enable_set_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4564,25 +4373,6 @@ of_bsn_flow_idle_enable_set_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_flow_idle_enable_set_request_push_wire_values(of_bsn_flow_idle_enable_set_request_t *obj)
-{
-
-    of_bsn_flow_idle_enable_set_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_flow_idle_enable_set_request object
  *
  * @param version The wire version to use for the object
@@ -4600,18 +4390,15 @@ of_bsn_flow_idle_enable_set_request_new(of_version_t version)
     of_bsn_flow_idle_enable_set_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST];
 
     if ((obj = (of_bsn_flow_idle_enable_set_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_flow_idle_enable_set_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_flow_idle_enable_set_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_flow_idle_enable_set_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -4643,7 +4430,7 @@ of_bsn_flow_idle_enable_set_request_init(of_bsn_flow_idle_enable_set_request_t *
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST] + of_object_extra_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5008,16 +4795,6 @@ of_bsn_flow_idle_enable_set_request_enable_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_bucket_stats_entry_push_wire_values(of_bsn_gentable_bucket_stats_entry_t *obj)
-{
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_bucket_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -5035,18 +4812,13 @@ of_bsn_gentable_bucket_stats_entry_new(of_version_t version)
     of_bsn_gentable_bucket_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY];
 
     if ((obj = (of_bsn_gentable_bucket_stats_entry_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_bucket_stats_entry_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_bucket_stats_entry_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
 
     return obj;
 }
@@ -5078,7 +4850,7 @@ of_bsn_gentable_bucket_stats_entry_init(of_bsn_gentable_bucket_stats_entry_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5226,25 +4998,6 @@ of_bsn_gentable_bucket_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_bucket_stats_reply_push_wire_values(of_bsn_gentable_bucket_stats_reply_t *obj)
-{
-
-    of_bsn_gentable_bucket_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_bucket_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -5262,18 +5015,15 @@ of_bsn_gentable_bucket_stats_reply_new(of_version_t version)
     of_bsn_gentable_bucket_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY];
 
     if ((obj = (of_bsn_gentable_bucket_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_bucket_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_bucket_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_bucket_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5305,7 +5055,7 @@ of_bsn_gentable_bucket_stats_reply_init(of_bsn_gentable_bucket_stats_reply_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5829,25 +5579,6 @@ of_bsn_gentable_bucket_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_bucket_stats_request_push_wire_values(of_bsn_gentable_bucket_stats_request_t *obj)
-{
-
-    of_bsn_gentable_bucket_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_bucket_stats_request object
  *
  * @param version The wire version to use for the object
@@ -5865,18 +5596,15 @@ of_bsn_gentable_bucket_stats_request_new(of_version_t version)
     of_bsn_gentable_bucket_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST];
 
     if ((obj = (of_bsn_gentable_bucket_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_bucket_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_bucket_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_bucket_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -5908,7 +5636,7 @@ of_bsn_gentable_bucket_stats_request_init(of_bsn_gentable_bucket_stats_request_t
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6367,25 +6095,6 @@ of_bsn_gentable_clear_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_clear_reply_push_wire_values(of_bsn_gentable_clear_reply_t *obj)
-{
-
-    of_bsn_gentable_clear_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_clear_reply object
  *
  * @param version The wire version to use for the object
@@ -6403,18 +6112,15 @@ of_bsn_gentable_clear_reply_new(of_version_t version)
     of_bsn_gentable_clear_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_CLEAR_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REPLY];
 
     if ((obj = (of_bsn_gentable_clear_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_clear_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_clear_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_clear_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -6446,7 +6152,7 @@ of_bsn_gentable_clear_reply_init(of_bsn_gentable_clear_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_CLEAR_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6983,25 +6689,6 @@ of_bsn_gentable_clear_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_clear_request_push_wire_values(of_bsn_gentable_clear_request_t *obj)
-{
-
-    of_bsn_gentable_clear_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_clear_request object
  *
  * @param version The wire version to use for the object
@@ -7019,18 +6706,15 @@ of_bsn_gentable_clear_request_new(of_version_t version)
     of_bsn_gentable_clear_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST];
 
     if ((obj = (of_bsn_gentable_clear_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_clear_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_clear_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_clear_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -7062,7 +6746,7 @@ of_bsn_gentable_clear_request_init(of_bsn_gentable_clear_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7583,18 +7267,6 @@ of_bsn_gentable_clear_request_checksum_mask_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_desc_stats_entry_push_wire_values(of_bsn_gentable_desc_stats_entry_t *obj)
-{
-
-    of_object_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_desc_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -7612,18 +7284,14 @@ of_bsn_gentable_desc_stats_entry_new(of_version_t version)
     of_bsn_gentable_desc_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY];
 
     if ((obj = (of_bsn_gentable_desc_stats_entry_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_desc_stats_entry_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_desc_stats_entry_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_u16_len_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -7655,7 +7323,7 @@ of_bsn_gentable_desc_stats_entry_init(of_bsn_gentable_desc_stats_entry_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8037,25 +7705,6 @@ of_bsn_gentable_desc_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_desc_stats_reply_push_wire_values(of_bsn_gentable_desc_stats_reply_t *obj)
-{
-
-    of_bsn_gentable_desc_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_desc_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -8073,18 +7722,15 @@ of_bsn_gentable_desc_stats_reply_new(of_version_t version)
     of_bsn_gentable_desc_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY];
 
     if ((obj = (of_bsn_gentable_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_desc_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_desc_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_desc_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -8116,7 +7762,7 @@ of_bsn_gentable_desc_stats_reply_init(of_bsn_gentable_desc_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8640,25 +8286,6 @@ of_bsn_gentable_desc_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_desc_stats_request_push_wire_values(of_bsn_gentable_desc_stats_request_t *obj)
-{
-
-    of_bsn_gentable_desc_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_desc_stats_request object
  *
  * @param version The wire version to use for the object
@@ -8676,18 +8303,15 @@ of_bsn_gentable_desc_stats_request_new(of_version_t version)
     of_bsn_gentable_desc_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST];
 
     if ((obj = (of_bsn_gentable_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_desc_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_desc_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_desc_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -8719,7 +8343,7 @@ of_bsn_gentable_desc_stats_request_init(of_bsn_gentable_desc_stats_request_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9100,25 +8724,6 @@ of_bsn_gentable_entry_add_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_add_push_wire_values(of_bsn_gentable_entry_add_t *obj)
-{
-
-    of_bsn_gentable_entry_add_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_add object
  *
  * @param version The wire version to use for the object
@@ -9136,18 +8741,15 @@ of_bsn_gentable_entry_add_new(of_version_t version)
     of_bsn_gentable_entry_add_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_ADD] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_ADD];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_ADD];
 
     if ((obj = (of_bsn_gentable_entry_add_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_add_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_add_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_entry_add_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -9179,7 +8781,7 @@ of_bsn_gentable_entry_add_init(of_bsn_gentable_entry_add_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_ADD] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_ADD];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_ADD];
     }
     obj->version = version;
     obj->length = bytes;
@@ -9922,25 +9524,6 @@ of_bsn_gentable_entry_delete_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_delete_push_wire_values(of_bsn_gentable_entry_delete_t *obj)
-{
-
-    of_bsn_gentable_entry_delete_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_delete object
  *
  * @param version The wire version to use for the object
@@ -9958,18 +9541,15 @@ of_bsn_gentable_entry_delete_new(of_version_t version)
     of_bsn_gentable_entry_delete_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DELETE] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DELETE];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DELETE];
 
     if ((obj = (of_bsn_gentable_entry_delete_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_delete_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_delete_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_entry_delete_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10001,7 +9581,7 @@ of_bsn_gentable_entry_delete_init(of_bsn_gentable_entry_delete_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DELETE] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DELETE];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DELETE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -10508,18 +10088,6 @@ of_bsn_gentable_entry_delete_key_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_desc_stats_entry_push_wire_values(of_bsn_gentable_entry_desc_stats_entry_t *obj)
-{
-
-    of_object_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_desc_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -10537,18 +10105,14 @@ of_bsn_gentable_entry_desc_stats_entry_new(of_version_t version)
     of_bsn_gentable_entry_desc_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
 
     if ((obj = (of_bsn_gentable_entry_desc_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_desc_stats_entry_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_desc_stats_entry_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_u16_len_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -10580,7 +10144,7 @@ of_bsn_gentable_entry_desc_stats_entry_init(of_bsn_gentable_entry_desc_stats_ent
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -11012,25 +10576,6 @@ of_bsn_gentable_entry_desc_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_desc_stats_reply_push_wire_values(of_bsn_gentable_entry_desc_stats_reply_t *obj)
-{
-
-    of_bsn_gentable_entry_desc_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_desc_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -11048,18 +10593,15 @@ of_bsn_gentable_entry_desc_stats_reply_new(of_version_t version)
     of_bsn_gentable_entry_desc_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY];
 
     if ((obj = (of_bsn_gentable_entry_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_desc_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_desc_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_entry_desc_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -11091,7 +10633,7 @@ of_bsn_gentable_entry_desc_stats_reply_init(of_bsn_gentable_entry_desc_stats_rep
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -11615,25 +11157,6 @@ of_bsn_gentable_entry_desc_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_desc_stats_request_push_wire_values(of_bsn_gentable_entry_desc_stats_request_t *obj)
-{
-
-    of_bsn_gentable_entry_desc_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_desc_stats_request object
  *
  * @param version The wire version to use for the object
@@ -11651,18 +11174,15 @@ of_bsn_gentable_entry_desc_stats_request_new(of_version_t version)
     of_bsn_gentable_entry_desc_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST];
 
     if ((obj = (of_bsn_gentable_entry_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_desc_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_desc_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_entry_desc_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -11694,7 +11214,7 @@ of_bsn_gentable_entry_desc_stats_request_init(of_bsn_gentable_entry_desc_stats_r
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -12293,18 +11813,6 @@ of_bsn_gentable_entry_desc_stats_request_checksum_mask_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_stats_entry_push_wire_values(of_bsn_gentable_entry_stats_entry_t *obj)
-{
-
-    of_object_wire_length_set((of_object_t *)obj, obj->length);
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -12322,18 +11830,14 @@ of_bsn_gentable_entry_stats_entry_new(of_version_t version)
     of_bsn_gentable_entry_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY];
 
     if ((obj = (of_bsn_gentable_entry_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_stats_entry_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_stats_entry_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_u16_len_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -12365,7 +11869,7 @@ of_bsn_gentable_entry_stats_entry_init(of_bsn_gentable_entry_stats_entry_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -12719,25 +12223,6 @@ of_bsn_gentable_entry_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_stats_reply_push_wire_values(of_bsn_gentable_entry_stats_reply_t *obj)
-{
-
-    of_bsn_gentable_entry_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -12755,18 +12240,15 @@ of_bsn_gentable_entry_stats_reply_new(of_version_t version)
     of_bsn_gentable_entry_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY];
 
     if ((obj = (of_bsn_gentable_entry_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_entry_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -12798,7 +12280,7 @@ of_bsn_gentable_entry_stats_reply_init(of_bsn_gentable_entry_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -13322,25 +12804,6 @@ of_bsn_gentable_entry_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_entry_stats_request_push_wire_values(of_bsn_gentable_entry_stats_request_t *obj)
-{
-
-    of_bsn_gentable_entry_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_entry_stats_request object
  *
  * @param version The wire version to use for the object
@@ -13358,18 +12821,15 @@ of_bsn_gentable_entry_stats_request_new(of_version_t version)
     of_bsn_gentable_entry_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST];
 
     if ((obj = (of_bsn_gentable_entry_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_entry_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_entry_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_entry_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -13401,7 +12861,7 @@ of_bsn_gentable_entry_stats_request_init(of_bsn_gentable_entry_stats_request_t *
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -14016,25 +13476,6 @@ of_bsn_gentable_set_buckets_size_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_set_buckets_size_push_wire_values(of_bsn_gentable_set_buckets_size_t *obj)
-{
-
-    of_bsn_gentable_set_buckets_size_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_set_buckets_size object
  *
  * @param version The wire version to use for the object
@@ -14052,18 +13493,15 @@ of_bsn_gentable_set_buckets_size_new(of_version_t version)
     of_bsn_gentable_set_buckets_size_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE] + of_object_extra_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE];
 
     if ((obj = (of_bsn_gentable_set_buckets_size_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_set_buckets_size_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_set_buckets_size_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_set_buckets_size_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -14095,7 +13533,7 @@ of_bsn_gentable_set_buckets_size_init(of_bsn_gentable_set_buckets_size_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE] + of_object_extra_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -14538,16 +13976,6 @@ of_bsn_gentable_set_buckets_size_buckets_size_set(
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_stats_entry_push_wire_values(of_bsn_gentable_stats_entry_t *obj)
-{
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_stats_entry object
  *
  * @param version The wire version to use for the object
@@ -14565,18 +13993,13 @@ of_bsn_gentable_stats_entry_new(of_version_t version)
     of_bsn_gentable_stats_entry_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_STATS_ENTRY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_ENTRY];
 
     if ((obj = (of_bsn_gentable_stats_entry_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_stats_entry_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_stats_entry_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
 
     return obj;
 }
@@ -14608,7 +14031,7 @@ of_bsn_gentable_stats_entry_init(of_bsn_gentable_stats_entry_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_ENTRY] + of_object_extra_len[version][OF_BSN_GENTABLE_STATS_ENTRY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_ENTRY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -14912,25 +14335,6 @@ of_bsn_gentable_stats_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_stats_reply_push_wire_values(of_bsn_gentable_stats_reply_t *obj)
-{
-
-    of_bsn_gentable_stats_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_stats_reply object
  *
  * @param version The wire version to use for the object
@@ -14948,18 +14352,15 @@ of_bsn_gentable_stats_reply_new(of_version_t version)
     of_bsn_gentable_stats_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_STATS_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REPLY];
 
     if ((obj = (of_bsn_gentable_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_stats_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_stats_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_stats_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -14991,7 +14392,7 @@ of_bsn_gentable_stats_reply_init(of_bsn_gentable_stats_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REPLY] + of_object_extra_len[version][OF_BSN_GENTABLE_STATS_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -15515,25 +14916,6 @@ of_bsn_gentable_stats_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_gentable_stats_request_push_wire_values(of_bsn_gentable_stats_request_t *obj)
-{
-
-    of_bsn_gentable_stats_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_gentable_stats_request object
  *
  * @param version The wire version to use for the object
@@ -15551,18 +14933,15 @@ of_bsn_gentable_stats_request_new(of_version_t version)
     of_bsn_gentable_stats_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_STATS_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REQUEST];
 
     if ((obj = (of_bsn_gentable_stats_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_gentable_stats_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_gentable_stats_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_gentable_stats_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -15594,7 +14973,7 @@ of_bsn_gentable_stats_request_init(of_bsn_gentable_stats_request_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REQUEST] + of_object_extra_len[version][OF_BSN_GENTABLE_STATS_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -15975,25 +15354,6 @@ of_bsn_get_switch_pipeline_reply_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_get_switch_pipeline_reply_push_wire_values(of_bsn_get_switch_pipeline_reply_t *obj)
-{
-
-    of_bsn_get_switch_pipeline_reply_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_get_switch_pipeline_reply object
  *
  * @param version The wire version to use for the object
@@ -16011,18 +15371,15 @@ of_bsn_get_switch_pipeline_reply_new(of_version_t version)
     of_bsn_get_switch_pipeline_reply_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY] + of_object_extra_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY];
+    bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY];
 
     if ((obj = (of_bsn_get_switch_pipeline_reply_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_get_switch_pipeline_reply_init(obj, version, bytes, 0);
-
-    if (of_bsn_get_switch_pipeline_reply_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_get_switch_pipeline_reply_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -16054,7 +15411,7 @@ of_bsn_get_switch_pipeline_reply_init(of_bsn_get_switch_pipeline_reply_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY] + of_object_extra_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY];
+        bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY];
     }
     obj->version = version;
     obj->length = bytes;
@@ -16435,25 +15792,6 @@ of_bsn_get_switch_pipeline_request_push_wire_types(of_object_t *obj)
  */
 
 /**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_bsn_get_switch_pipeline_request_push_wire_values(of_bsn_get_switch_pipeline_request_t *obj)
-{
-
-    of_bsn_get_switch_pipeline_request_push_wire_types(obj);
-
-    /* Message obj; set length */
-    of_message_t msg;
-
-    if ((msg = OF_OBJECT_TO_MESSAGE(obj)) != NULL) {
-        of_message_length_set(msg, obj->length);
-    }
-
-    return OF_ERROR_NONE;
-}
-
-/**
  * Create a new of_bsn_get_switch_pipeline_request object
  *
  * @param version The wire version to use for the object
@@ -16471,18 +15809,15 @@ of_bsn_get_switch_pipeline_request_new(of_version_t version)
     of_bsn_get_switch_pipeline_request_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST] + of_object_extra_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST];
+    bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST];
 
     if ((obj = (of_bsn_get_switch_pipeline_request_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_bsn_get_switch_pipeline_request_init(obj, version, bytes, 0);
-
-    if (of_bsn_get_switch_pipeline_request_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_bsn_get_switch_pipeline_request_push_wire_types(obj);
+    of_object_message_wire_length_set(obj, obj->length);
 
     return obj;
 }
@@ -16514,7 +15849,7 @@ of_bsn_get_switch_pipeline_request_init(of_bsn_get_switch_pipeline_request_t *ob
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST] + of_object_extra_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST];
+        bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST];
     }
     obj->version = version;
     obj->length = bytes;

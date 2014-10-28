@@ -23,6 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFTableMod extends OFObject, OFMessage {
@@ -31,6 +32,7 @@ public interface OFTableMod extends OFObject, OFMessage {
     long getXid();
     TableId getTableId();
     long getConfig();
+    List<OFTableModProp> getProperties() throws UnsupportedOperationException;
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -45,5 +47,7 @@ public interface OFTableMod extends OFObject, OFMessage {
         Builder setTableId(TableId tableId);
         long getConfig();
         Builder setConfig(long config);
+        List<OFTableModProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException;
     }
 }

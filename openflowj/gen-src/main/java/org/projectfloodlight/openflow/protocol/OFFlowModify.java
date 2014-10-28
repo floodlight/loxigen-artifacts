@@ -45,6 +45,7 @@ public interface OFFlowModify extends OFObject, OFFlowMod {
     Match getMatch();
     List<OFInstruction> getInstructions() throws UnsupportedOperationException;
     List<OFAction> getActions() throws UnsupportedOperationException;
+    int getImportance() throws UnsupportedOperationException;
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -82,5 +83,7 @@ public interface OFFlowModify extends OFObject, OFFlowMod {
         Builder setInstructions(List<OFInstruction> instructions) throws UnsupportedOperationException;
         List<OFAction> getActions() throws UnsupportedOperationException;
         Builder setActions(List<OFAction> actions) throws UnsupportedOperationException;
+        int getImportance() throws UnsupportedOperationException;
+        Builder setImportance(int importance) throws UnsupportedOperationException;
     }
 }

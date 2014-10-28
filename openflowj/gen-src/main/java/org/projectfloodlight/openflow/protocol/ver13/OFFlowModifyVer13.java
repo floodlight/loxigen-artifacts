@@ -183,6 +183,11 @@ class OFFlowModifyVer13 implements OFFlowModify {
         }
         return Collections.emptyList();
     }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
 
 
     public OFFlowModify.Builder createBuilder() {
@@ -403,6 +408,15 @@ class OFFlowModifyVer13 implements OFFlowModify {
         this.instructions = Collections.singletonList((OFInstruction)builder.build());
         this.instructionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
+    @Override
+    public OFFlowModify.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
 
 
@@ -668,6 +682,15 @@ class OFFlowModifyVer13 implements OFFlowModify {
         this.instructions = Collections.singletonList((OFInstruction)builder.build());
         this.instructionsSet = true;
         return this;
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.3");
+    }
+
+    @Override
+    public OFFlowModify.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.3");
     }
 //
         @Override

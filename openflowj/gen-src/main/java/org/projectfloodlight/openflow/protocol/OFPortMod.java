@@ -23,6 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 
 public interface OFPortMod extends OFObject, OFMessage {
@@ -33,7 +34,8 @@ public interface OFPortMod extends OFObject, OFMessage {
     MacAddress getHwAddr();
     long getConfig();
     long getMask();
-    long getAdvertise();
+    long getAdvertise() throws UnsupportedOperationException;
+    List<OFPortModProp> getProperties() throws UnsupportedOperationException;
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -52,7 +54,9 @@ public interface OFPortMod extends OFObject, OFMessage {
         Builder setConfig(long config);
         long getMask();
         Builder setMask(long mask);
-        long getAdvertise();
-        Builder setAdvertise(long advertise);
+        long getAdvertise() throws UnsupportedOperationException;
+        Builder setAdvertise(long advertise) throws UnsupportedOperationException;
+        List<OFPortModProp> getProperties() throws UnsupportedOperationException;
+        Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException;
     }
 }

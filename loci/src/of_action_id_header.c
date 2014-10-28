@@ -53,7 +53,7 @@ of_action_id_header_new(of_version_t version)
     of_action_id_header_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_ACTION_ID_HEADER] + of_object_extra_len[version][OF_ACTION_ID_HEADER];
+    bytes = of_object_fixed_len[version][OF_ACTION_ID_HEADER];
 
     if ((obj = (of_action_id_header_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -91,7 +91,7 @@ of_action_id_header_init(of_action_id_header_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_ID_HEADER] + of_object_extra_len[version][OF_ACTION_ID_HEADER];
+        bytes = of_object_fixed_len[version][OF_ACTION_ID_HEADER];
     }
     obj->version = version;
     obj->length = bytes;

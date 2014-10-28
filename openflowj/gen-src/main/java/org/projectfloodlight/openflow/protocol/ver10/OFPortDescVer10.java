@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -130,6 +131,11 @@ class OFPortDescVer10 implements OFPortDesc {
     @Override
     public long getMaxSpeed()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.0");
+    }
+
+    @Override
+    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
 
     @Override
@@ -286,6 +292,15 @@ class OFPortDescVer10 implements OFPortDesc {
     @Override
     public OFPortDesc.Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.0");
+    }
+    @Override
+    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+
+    @Override
+    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {
@@ -477,6 +492,15 @@ class OFPortDescVer10 implements OFPortDesc {
     @Override
     public OFPortDesc.Builder setMaxSpeed(long maxSpeed) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property maxSpeed not supported in version 1.0");
+    }
+    @Override
+    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.0");
+    }
+
+    @Override
+    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.0");
     }
     @Override
     public OFVersion getVersion() {

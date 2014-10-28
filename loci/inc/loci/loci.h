@@ -115,7 +115,6 @@ extern int of_wire_buffer_of_match_set(of_object_t *obj, int offset,
 int of_object_wire_init(of_object_t *obj, of_object_id_t base_object_id, int max_len);
 
 extern const int *const of_object_fixed_len[OF_VERSION_ARRAY_MAX];
-extern const int *const of_object_extra_len[OF_VERSION_ARRAY_MAX];
 
 /****************************************************************
  * Wire type/length functions.
@@ -144,6 +143,18 @@ extern void of_list_meter_band_stats_wire_length_get(of_object_t *obj,
                                                     int *bytes);
 extern void of_meter_stats_wire_length_get(of_object_t *obj, int *bytes);
 extern void of_meter_stats_wire_length_set(of_object_t *obj, int bytes);
+
+extern void of_port_desc_wire_length_get(of_object_t *obj, int *bytes);
+extern void of_port_desc_wire_length_set(of_object_t *obj, int bytes);
+
+extern void of_port_stats_entry_wire_length_get(of_object_t *obj, int *bytes);
+extern void of_port_stats_entry_wire_length_set(of_object_t *obj, int bytes);
+
+extern void of_queue_stats_entry_wire_length_get(of_object_t *obj, int *bytes);
+extern void of_queue_stats_entry_wire_length_set(of_object_t *obj, int bytes);
+
+extern void of_queue_desc_wire_length_get(of_object_t *obj, int *bytes);
+extern void of_queue_desc_wire_length_set(of_object_t *obj, int bytes);
 
 
 /*

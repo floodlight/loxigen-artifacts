@@ -3088,6 +3088,8 @@ class table_feature_prop_apply_setfield_miss(table_feature_prop):
 table_feature_prop.subtypes[15] = table_feature_prop_apply_setfield_miss
 
 class table_feature_prop_experimenter(table_feature_prop):
+    subtypes = {}
+
     type = 65534
 
     def __init__(self, experimenter=None, subtype=None, experimenter_data=None):
@@ -3118,6 +3120,11 @@ class table_feature_prop_experimenter(table_feature_prop):
 
     @staticmethod
     def unpack(reader):
+        subtype, = reader.peek('!L', 4)
+        subclass = table_feature_prop_experimenter.subtypes.get(subtype)
+        if subclass:
+            return subclass.unpack(reader)
+
         obj = table_feature_prop_experimenter()
         _type = reader.read("!H")[0]
         assert(_type == 65534)
@@ -3141,9 +3148,6 @@ class table_feature_prop_experimenter(table_feature_prop):
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("experimenter = ");
-                q.text("%#x" % self.experimenter)
-                q.text(","); q.breakable()
                 q.text("subtype = ");
                 q.text("%#x" % self.subtype)
                 q.text(","); q.breakable()
@@ -3155,6 +3159,8 @@ class table_feature_prop_experimenter(table_feature_prop):
 table_feature_prop.subtypes[65534] = table_feature_prop_experimenter
 
 class table_feature_prop_experimenter_miss(table_feature_prop):
+    subtypes = {}
+
     type = 65535
 
     def __init__(self, experimenter=None, subtype=None, experimenter_data=None):
@@ -3185,6 +3191,11 @@ class table_feature_prop_experimenter_miss(table_feature_prop):
 
     @staticmethod
     def unpack(reader):
+        subtype, = reader.peek('!L', 4)
+        subclass = table_feature_prop_experimenter_miss.subtypes.get(subtype)
+        if subclass:
+            return subclass.unpack(reader)
+
         obj = table_feature_prop_experimenter_miss()
         _type = reader.read("!H")[0]
         assert(_type == 65535)
@@ -3208,9 +3219,6 @@ class table_feature_prop_experimenter_miss(table_feature_prop):
         with q.group():
             with q.indent(2):
                 q.breakable()
-                q.text("experimenter = ");
-                q.text("%#x" % self.experimenter)
-                q.text(","); q.breakable()
                 q.text("subtype = ");
                 q.text("%#x" % self.subtype)
                 q.text(","); q.breakable()

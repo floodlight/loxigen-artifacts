@@ -132,7 +132,7 @@ of_list_uint32_new(of_version_t version)
     of_list_uint32_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_LIST_UINT32] + of_object_extra_len[version][OF_LIST_UINT32];
+    bytes = of_object_fixed_len[version][OF_LIST_UINT32];
 
     if ((obj = (of_list_uint32_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
@@ -170,7 +170,7 @@ of_list_uint32_init(of_list_uint32_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_LIST_UINT32] + of_object_extra_len[version][OF_LIST_UINT32];
+        bytes = of_object_fixed_len[version][OF_LIST_UINT32];
     }
     obj->version = version;
     obj->length = bytes;

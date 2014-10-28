@@ -22,23 +22,23 @@
  * Structure for of_aggregate_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_aggregate_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_aggregate_stats_reply_uint16_get_f and _set_f.
  *
- * @param packet_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param packet_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for packet_count, a variable of type uint64.  Functions
  *   are of type of_aggregate_stats_reply_uint64_get_f and _set_f.
  *
- * @param byte_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param byte_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for byte_count, a variable of type uint64.  Functions
  *   are of type of_aggregate_stats_reply_uint64_get_f and _set_f.
  *
- * @param flow_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flow_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flow_count, a variable of type uint32.  Functions
  *   are of type of_aggregate_stats_reply_uint32_get_f and _set_f.
  *
@@ -49,35 +49,35 @@ typedef struct of_aggregate_stats_reply_s of_aggregate_stats_reply_t;
  * Structure for of_aggregate_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_aggregate_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_aggregate_stats_request_uint16_get_f and _set_f.
  *
- * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_aggregate_stats_request_uint8_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_aggregate_stats_request_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_aggregate_stats_request_uint32_get_f and _set_f.
  *
- * @param cookie_get/set 
+ * @param cookie_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_aggregate_stats_request_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_aggregate_stats_request_uint64_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_aggregate_stats_request_of_match_get_f and _set_f.
  *
@@ -88,9 +88,13 @@ typedef struct of_aggregate_stats_request_s of_aggregate_stats_request_t;
  * Structure for of_async_get_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_async_get_reply_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_async_config_prop.  Functions
+ *   are of type of_async_get_reply_of_list_async_config_prop_get_f and _set_f.
  *
  * @param packet_in_mask_equal_master_get/set ( OF_1_3).
  *   Accessors for packet_in_mask_equal_master, a variable of type uint32.  Functions
@@ -123,9 +127,13 @@ typedef struct of_async_get_reply_s of_async_get_reply_t;
  * Structure for of_async_get_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_async_get_request_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_async_config_prop.  Functions
+ *   are of type of_async_get_request_of_list_async_config_prop_get_f and _set_f.
  *
  * @param packet_in_mask_equal_master_get/set ( OF_1_3).
  *   Accessors for packet_in_mask_equal_master, a variable of type uint32.  Functions
@@ -158,9 +166,13 @@ typedef struct of_async_get_request_s of_async_get_request_t;
  * Structure for of_async_set object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_async_set_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_async_config_prop.  Functions
+ *   are of type of_async_set_of_list_async_config_prop_get_f and _set_f.
  *
  * @param packet_in_mask_equal_master_get/set ( OF_1_3).
  *   Accessors for packet_in_mask_equal_master, a variable of type uint32.  Functions
@@ -193,15 +205,15 @@ typedef struct of_async_set_s of_async_set_t;
  * Structure for of_bad_action_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bad_action_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_bad_action_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_bad_action_error_msg_of_octets_get_f and _set_f.
  *
@@ -212,15 +224,15 @@ typedef struct of_bad_action_error_msg_s of_bad_action_error_msg_t;
  * Structure for of_bad_instruction_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bad_instruction_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set 
+ * @param code_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_bad_instruction_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set 
+ * @param data_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_bad_instruction_error_msg_of_octets_get_f and _set_f.
  *
@@ -231,15 +243,15 @@ typedef struct of_bad_instruction_error_msg_s of_bad_instruction_error_msg_t;
  * Structure for of_bad_match_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bad_match_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set 
+ * @param code_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_bad_match_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set 
+ * @param data_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_bad_match_error_msg_of_octets_get_f and _set_f.
  *
@@ -250,15 +262,15 @@ typedef struct of_bad_match_error_msg_s of_bad_match_error_msg_t;
  * Structure for of_bad_request_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bad_request_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_bad_request_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_bad_request_error_msg_of_octets_get_f and _set_f.
  *
@@ -269,7 +281,7 @@ typedef struct of_bad_request_error_msg_s of_bad_request_error_msg_t;
  * Structure for of_barrier_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_barrier_reply_uint32_get_f and _set_f.
  *
@@ -280,7 +292,7 @@ typedef struct of_barrier_reply_s of_barrier_reply_t;
  * Structure for of_barrier_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_barrier_request_uint32_get_f and _set_f.
  *
@@ -318,19 +330,19 @@ typedef struct of_bsn_arp_idle_s of_bsn_arp_idle_t;
  * Structure for of_bsn_bw_clear_data_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_reply_uint32_get_f and _set_f.
  *
@@ -341,15 +353,15 @@ typedef struct of_bsn_bw_clear_data_reply_s of_bsn_bw_clear_data_reply_t;
  * Structure for of_bsn_bw_clear_data_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_clear_data_request_uint32_get_f and _set_f.
  *
@@ -360,19 +372,19 @@ typedef struct of_bsn_bw_clear_data_request_s of_bsn_bw_clear_data_request_t;
  * Structure for of_bsn_bw_enable_get_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_reply_uint32_get_f and _set_f.
  *
- * @param enabled_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param enabled_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for enabled, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_reply_uint32_get_f and _set_f.
  *
@@ -383,15 +395,15 @@ typedef struct of_bsn_bw_enable_get_reply_s of_bsn_bw_enable_get_reply_t;
  * Structure for of_bsn_bw_enable_get_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_get_request_uint32_get_f and _set_f.
  *
@@ -402,23 +414,23 @@ typedef struct of_bsn_bw_enable_get_request_s of_bsn_bw_enable_get_request_t;
  * Structure for of_bsn_bw_enable_set_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_reply_uint32_get_f and _set_f.
  *
- * @param enable_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param enable_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for enable, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_reply_uint32_get_f and _set_f.
  *
@@ -429,19 +441,19 @@ typedef struct of_bsn_bw_enable_set_reply_s of_bsn_bw_enable_set_reply_t;
  * Structure for of_bsn_bw_enable_set_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_request_uint32_get_f and _set_f.
  *
- * @param enable_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param enable_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for enable, a variable of type uint32.  Functions
  *   are of type of_bsn_bw_enable_set_request_uint32_get_f and _set_f.
  *
@@ -1204,19 +1216,19 @@ typedef struct of_bsn_gentable_stats_request_s of_bsn_gentable_stats_request_t;
  * Structure for of_bsn_get_interfaces_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_get_interfaces_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_get_interfaces_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_get_interfaces_reply_uint32_get_f and _set_f.
  *
- * @param interfaces_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param interfaces_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for interfaces, a variable of type of_list_bsn_interface.  Functions
  *   are of type of_bsn_get_interfaces_reply_of_list_bsn_interface_get_f and _set_f.
  *
@@ -1227,15 +1239,15 @@ typedef struct of_bsn_get_interfaces_reply_s of_bsn_get_interfaces_reply_t;
  * Structure for of_bsn_get_interfaces_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_get_interfaces_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_get_interfaces_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_get_interfaces_request_uint32_get_f and _set_f.
  *
@@ -1342,19 +1354,19 @@ typedef struct of_bsn_get_l2_table_request_s of_bsn_get_l2_table_request_t;
  * Structure for of_bsn_get_mirroring_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_get_mirroring_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_get_mirroring_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_get_mirroring_reply_uint32_get_f and _set_f.
  *
- * @param report_mirror_ports_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param report_mirror_ports_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for report_mirror_ports, a variable of type uint8.  Functions
  *   are of type of_bsn_get_mirroring_reply_uint8_get_f and _set_f.
  *
@@ -1365,19 +1377,19 @@ typedef struct of_bsn_get_mirroring_reply_s of_bsn_get_mirroring_reply_t;
  * Structure for of_bsn_get_mirroring_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_get_mirroring_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_get_mirroring_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_get_mirroring_request_uint32_get_f and _set_f.
  *
- * @param report_mirror_ports_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param report_mirror_ports_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for report_mirror_ports, a variable of type uint8.  Functions
  *   are of type of_bsn_get_mirroring_request_uint8_get_f and _set_f.
  *
@@ -1430,15 +1442,15 @@ typedef struct of_bsn_get_switch_pipeline_request_s of_bsn_get_switch_pipeline_r
  * Structure for of_bsn_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_header_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_header_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_header_uint32_get_f and _set_f.
  *
@@ -1693,27 +1705,27 @@ typedef struct of_bsn_log_s of_bsn_log_t;
  * Structure for of_bsn_pdu_rx_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_reply_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_pdu_rx_reply_of_port_no_get_f and _set_f.
  *
- * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for slot_num, a variable of type uint8.  Functions
  *   are of type of_bsn_pdu_rx_reply_uint8_get_f and _set_f.
  *
@@ -1724,31 +1736,31 @@ typedef struct of_bsn_pdu_rx_reply_s of_bsn_pdu_rx_reply_t;
  * Structure for of_bsn_pdu_rx_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_request_uint32_get_f and _set_f.
  *
- * @param timeout_ms_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param timeout_ms_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for timeout_ms, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_request_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_pdu_rx_request_of_port_no_get_f and _set_f.
  *
- * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for slot_num, a variable of type uint8.  Functions
  *   are of type of_bsn_pdu_rx_request_uint8_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_bsn_pdu_rx_request_of_octets_get_f and _set_f.
  *
@@ -1759,23 +1771,23 @@ typedef struct of_bsn_pdu_rx_request_s of_bsn_pdu_rx_request_t;
  * Structure for of_bsn_pdu_rx_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_timeout_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_timeout_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_rx_timeout_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_pdu_rx_timeout_of_port_no_get_f and _set_f.
  *
- * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for slot_num, a variable of type uint8.  Functions
  *   are of type of_bsn_pdu_rx_timeout_uint8_get_f and _set_f.
  *
@@ -1786,27 +1798,27 @@ typedef struct of_bsn_pdu_rx_timeout_s of_bsn_pdu_rx_timeout_t;
  * Structure for of_bsn_pdu_tx_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_reply_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_pdu_tx_reply_of_port_no_get_f and _set_f.
  *
- * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for slot_num, a variable of type uint8.  Functions
  *   are of type of_bsn_pdu_tx_reply_uint8_get_f and _set_f.
  *
@@ -1817,31 +1829,31 @@ typedef struct of_bsn_pdu_tx_reply_s of_bsn_pdu_tx_reply_t;
  * Structure for of_bsn_pdu_tx_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_request_uint32_get_f and _set_f.
  *
- * @param tx_interval_ms_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_interval_ms_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_interval_ms, a variable of type uint32.  Functions
  *   are of type of_bsn_pdu_tx_request_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_pdu_tx_request_of_port_no_get_f and _set_f.
  *
- * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param slot_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for slot_num, a variable of type uint8.  Functions
  *   are of type of_bsn_pdu_tx_request_uint8_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_bsn_pdu_tx_request_of_octets_get_f and _set_f.
  *
@@ -2146,19 +2158,19 @@ typedef struct of_bsn_set_lacp_request_s of_bsn_set_lacp_request_t;
  * Structure for of_bsn_set_mirroring object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_set_mirroring_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_set_mirroring_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_set_mirroring_uint32_get_f and _set_f.
  *
- * @param report_mirror_ports_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param report_mirror_ports_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for report_mirror_ports, a variable of type uint8.  Functions
  *   are of type of_bsn_set_mirroring_uint8_get_f and _set_f.
  *
@@ -2169,19 +2181,19 @@ typedef struct of_bsn_set_mirroring_s of_bsn_set_mirroring_t;
  * Structure for of_bsn_set_pktin_suppression_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_reply_uint32_get_f and _set_f.
  *
@@ -2192,35 +2204,35 @@ typedef struct of_bsn_set_pktin_suppression_reply_s of_bsn_set_pktin_suppression
  * Structure for of_bsn_set_pktin_suppression_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint32_get_f and _set_f.
  *
- * @param enabled_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param enabled_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for enabled, a variable of type uint8.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint16_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_bsn_set_pktin_suppression_request_uint64_get_f and _set_f.
  *
@@ -2350,19 +2362,19 @@ typedef struct of_bsn_shell_status_s of_bsn_shell_status_t;
  * Structure for of_bsn_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_bsn_stats_reply_uint16_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_stats_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_stats_reply_uint32_get_f and _set_f.
  *
@@ -2373,19 +2385,19 @@ typedef struct of_bsn_stats_reply_s of_bsn_stats_reply_t;
  * Structure for of_bsn_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_bsn_stats_request_uint16_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_stats_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_stats_request_uint32_get_f and _set_f.
  *
@@ -2565,23 +2577,23 @@ typedef struct of_bsn_time_request_s of_bsn_time_request_t;
  * Structure for of_bsn_virtual_port_create_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_reply_uint32_get_f and _set_f.
  *
- * @param vport_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param vport_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for vport_no, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_reply_uint32_get_f and _set_f.
  *
@@ -2592,19 +2604,19 @@ typedef struct of_bsn_virtual_port_create_reply_s of_bsn_virtual_port_create_rep
  * Structure for of_bsn_virtual_port_create_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_create_request_uint32_get_f and _set_f.
  *
- * @param vport_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param vport_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for vport, a variable of type of_bsn_vport_header.  Functions
  *   are of type of_bsn_virtual_port_create_request_of_bsn_vport_header_get_f and _set_f.
  *
@@ -2615,19 +2627,19 @@ typedef struct of_bsn_virtual_port_create_request_s of_bsn_virtual_port_create_r
  * Structure for of_bsn_virtual_port_remove_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_reply_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_reply_uint32_get_f and _set_f.
  *
- * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param status_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for status, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_reply_uint32_get_f and _set_f.
  *
@@ -2638,19 +2650,19 @@ typedef struct of_bsn_virtual_port_remove_reply_s of_bsn_virtual_port_remove_rep
  * Structure for of_bsn_virtual_port_remove_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_request_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_request_uint32_get_f and _set_f.
  *
- * @param vport_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param vport_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for vport_no, a variable of type uint32.  Functions
  *   are of type of_bsn_virtual_port_remove_request_uint32_get_f and _set_f.
  *
@@ -2766,34 +2778,84 @@ typedef struct of_bsn_vrf_counter_stats_reply_s of_bsn_vrf_counter_stats_reply_t
 typedef struct of_bsn_vrf_counter_stats_request_s of_bsn_vrf_counter_stats_request_t;
 
 /**
+ * Structure for of_bundle_add_msg object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bundle_add_msg_uint32_get_f and _set_f.
+ *
+ * @param bundle_id_get/set ( OF_1_4).
+ *   Accessors for bundle_id, a variable of type uint32.  Functions
+ *   are of type of_bundle_add_msg_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bundle_add_msg_uint16_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bundle_add_msg_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bundle_add_msg_s of_bundle_add_msg_t;
+
+/**
+ * Structure for of_bundle_ctrl_msg object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bundle_ctrl_msg_uint32_get_f and _set_f.
+ *
+ * @param bundle_id_get/set ( OF_1_4).
+ *   Accessors for bundle_id, a variable of type uint32.  Functions
+ *   are of type of_bundle_ctrl_msg_uint32_get_f and _set_f.
+ *
+ * @param bundle_ctrl_type_get/set ( OF_1_4).
+ *   Accessors for bundle_ctrl_type, a variable of type uint16.  Functions
+ *   are of type of_bundle_ctrl_msg_uint16_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bundle_ctrl_msg_uint16_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_bundle_prop.  Functions
+ *   are of type of_bundle_ctrl_msg_of_list_bundle_prop_get_f and _set_f.
+ *
+ */
+typedef struct of_bundle_ctrl_msg_s of_bundle_ctrl_msg_t;
+
+/**
  * Structure for of_desc_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_desc_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_desc_stats_reply_uint16_get_f and _set_f.
  *
- * @param mfr_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param mfr_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for mfr_desc, a variable of type of_desc_str.  Functions
  *   are of type of_desc_stats_reply_of_desc_str_get_f and _set_f.
  *
- * @param hw_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hw_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hw_desc, a variable of type of_desc_str.  Functions
  *   are of type of_desc_stats_reply_of_desc_str_get_f and _set_f.
  *
- * @param sw_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param sw_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for sw_desc, a variable of type of_desc_str.  Functions
  *   are of type of_desc_stats_reply_of_desc_str_get_f and _set_f.
  *
- * @param serial_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param serial_num_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for serial_num, a variable of type of_serial_num.  Functions
  *   are of type of_desc_stats_reply_of_serial_num_get_f and _set_f.
  *
- * @param dp_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param dp_desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for dp_desc, a variable of type of_desc_str.  Functions
  *   are of type of_desc_stats_reply_of_desc_str_get_f and _set_f.
  *
@@ -2804,11 +2866,11 @@ typedef struct of_desc_stats_reply_s of_desc_stats_reply_t;
  * Structure for of_desc_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_desc_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_desc_stats_request_uint16_get_f and _set_f.
  *
@@ -2819,11 +2881,11 @@ typedef struct of_desc_stats_request_s of_desc_stats_request_t;
  * Structure for of_echo_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_echo_reply_uint32_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_echo_reply_of_octets_get_f and _set_f.
  *
@@ -2834,11 +2896,11 @@ typedef struct of_echo_reply_s of_echo_reply_t;
  * Structure for of_echo_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_echo_request_uint32_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_echo_request_of_octets_get_f and _set_f.
  *
@@ -2849,7 +2911,7 @@ typedef struct of_echo_request_s of_echo_request_t;
  * Structure for of_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_error_msg_uint32_get_f and _set_f.
  *
@@ -2860,19 +2922,19 @@ typedef struct of_error_msg_s of_error_msg_t;
  * Structure for of_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_experimenter_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_experimenter_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_2 OF_1_3).
+ * @param subtype_get/set 
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_experimenter_uint32_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_experimenter_of_octets_get_f and _set_f.
  *
@@ -2883,19 +2945,19 @@ typedef struct of_experimenter_s of_experimenter_t;
  * Structure for of_experimenter_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_2 OF_1_3).
+ * @param xid_get/set 
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_experimenter_error_msg_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_2 OF_1_3).
+ * @param subtype_get/set 
  *   Accessors for subtype, a variable of type uint16.  Functions
  *   are of type of_experimenter_error_msg_uint16_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_2 OF_1_3).
+ * @param experimenter_get/set 
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_experimenter_error_msg_uint32_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_2 OF_1_3).
+ * @param data_get/set 
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_experimenter_error_msg_of_octets_get_f and _set_f.
  *
@@ -2906,19 +2968,19 @@ typedef struct of_experimenter_error_msg_s of_experimenter_error_msg_t;
  * Structure for of_experimenter_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_experimenter_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_experimenter_stats_reply_uint16_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_experimenter_stats_reply_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_2 OF_1_3).
+ * @param subtype_get/set 
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_experimenter_stats_reply_uint32_get_f and _set_f.
  *
@@ -2933,19 +2995,19 @@ typedef struct of_experimenter_stats_reply_s of_experimenter_stats_reply_t;
  * Structure for of_experimenter_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_experimenter_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_experimenter_stats_request_uint16_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_experimenter_stats_request_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_2 OF_1_3).
+ * @param subtype_get/set 
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_experimenter_stats_request_uint32_get_f and _set_f.
  *
@@ -2960,31 +3022,31 @@ typedef struct of_experimenter_stats_request_s of_experimenter_stats_request_t;
  * Structure for of_features_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_features_reply_uint32_get_f and _set_f.
  *
- * @param datapath_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param datapath_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for datapath_id, a variable of type uint64.  Functions
  *   are of type of_features_reply_uint64_get_f and _set_f.
  *
- * @param n_buffers_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param n_buffers_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for n_buffers, a variable of type uint32.  Functions
  *   are of type of_features_reply_uint32_get_f and _set_f.
  *
- * @param n_tables_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param n_tables_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for n_tables, a variable of type uint8.  Functions
  *   are of type of_features_reply_uint8_get_f and _set_f.
  *
- * @param auxiliary_id_get/set ( OF_1_3).
+ * @param auxiliary_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for auxiliary_id, a variable of type uint8.  Functions
  *   are of type of_features_reply_uint8_get_f and _set_f.
  *
- * @param capabilities_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param capabilities_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for capabilities, a variable of type uint32.  Functions
  *   are of type of_features_reply_uint32_get_f and _set_f.
  *
- * @param reserved_get/set 
+ * @param reserved_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for reserved, a variable of type uint32.  Functions
  *   are of type of_features_reply_uint32_get_f and _set_f.
  *
@@ -3003,7 +3065,7 @@ typedef struct of_features_reply_s of_features_reply_t;
  * Structure for of_features_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_features_request_uint32_get_f and _set_f.
  *
@@ -3014,55 +3076,59 @@ typedef struct of_features_request_s of_features_request_t;
  * Structure for of_flow_add object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_add_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_add_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_add_uint64_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_add_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_add_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_add_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_add_uint16_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_flow_add_uint32_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_add_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_add_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_add_uint16_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param importance_get/set ( OF_1_4).
+ *   Accessors for importance, a variable of type uint16.  Functions
+ *   are of type of_flow_add_uint16_get_f and _set_f.
+ *
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_add_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_add_of_list_instruction_get_f and _set_f.
  *
@@ -3077,55 +3143,59 @@ typedef struct of_flow_add_s of_flow_add_t;
  * Structure for of_flow_delete object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_delete_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_delete_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_delete_uint64_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_delete_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_delete_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_delete_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_delete_uint16_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_flow_delete_uint32_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_delete_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_delete_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_delete_uint16_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param importance_get/set ( OF_1_4).
+ *   Accessors for importance, a variable of type uint16.  Functions
+ *   are of type of_flow_delete_uint16_get_f and _set_f.
+ *
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_delete_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_delete_of_list_instruction_get_f and _set_f.
  *
@@ -3140,55 +3210,59 @@ typedef struct of_flow_delete_s of_flow_delete_t;
  * Structure for of_flow_delete_strict object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_delete_strict_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_delete_strict_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_delete_strict_uint64_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_delete_strict_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_delete_strict_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_delete_strict_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_delete_strict_uint16_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_flow_delete_strict_uint32_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_delete_strict_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_delete_strict_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_delete_strict_uint16_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param importance_get/set ( OF_1_4).
+ *   Accessors for importance, a variable of type uint16.  Functions
+ *   are of type of_flow_delete_strict_uint16_get_f and _set_f.
+ *
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_delete_strict_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_delete_strict_of_list_instruction_get_f and _set_f.
  *
@@ -3203,55 +3277,55 @@ typedef struct of_flow_delete_strict_s of_flow_delete_strict_t;
  * Structure for of_flow_mod object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_mod_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_mod_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_mod_uint64_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_mod_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_mod_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_mod_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_mod_uint16_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_flow_mod_uint32_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_mod_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_mod_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_mod_uint16_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_mod_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_mod_of_list_instruction_get_f and _set_f.
  *
@@ -3266,15 +3340,15 @@ typedef struct of_flow_mod_s of_flow_mod_t;
  * Structure for of_flow_mod_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_mod_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_flow_mod_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_flow_mod_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -3285,55 +3359,59 @@ typedef struct of_flow_mod_failed_error_msg_s of_flow_mod_failed_error_msg_t;
  * Structure for of_flow_modify object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_modify_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_modify_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_modify_uint64_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_modify_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_modify_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_modify_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_modify_uint16_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_flow_modify_uint32_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_modify_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_modify_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_modify_uint16_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param importance_get/set ( OF_1_4).
+ *   Accessors for importance, a variable of type uint16.  Functions
+ *   are of type of_flow_modify_uint16_get_f and _set_f.
+ *
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_modify_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_modify_of_list_instruction_get_f and _set_f.
  *
@@ -3348,55 +3426,59 @@ typedef struct of_flow_modify_s of_flow_modify_t;
  * Structure for of_flow_modify_strict object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_modify_strict_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_modify_strict_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_modify_strict_uint64_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_modify_strict_uint8_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_modify_strict_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_modify_strict_uint16_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_modify_strict_uint16_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_flow_modify_strict_uint32_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_modify_strict_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_modify_strict_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_modify_strict_uint16_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param importance_get/set ( OF_1_4).
+ *   Accessors for importance, a variable of type uint16.  Functions
+ *   are of type of_flow_modify_strict_uint16_get_f and _set_f.
+ *
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_modify_strict_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_modify_strict_of_list_instruction_get_f and _set_f.
  *
@@ -3411,51 +3493,51 @@ typedef struct of_flow_modify_strict_s of_flow_modify_strict_t;
  * Structure for of_flow_removed object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_removed_uint32_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_removed_uint64_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_removed_uint16_get_f and _set_f.
  *
- * @param reason_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param reason_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for reason, a variable of type uint8.  Functions
  *   are of type of_flow_removed_uint8_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_removed_uint8_get_f and _set_f.
  *
- * @param duration_sec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param duration_sec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for duration_sec, a variable of type uint32.  Functions
  *   are of type of_flow_removed_uint32_get_f and _set_f.
  *
- * @param duration_nsec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param duration_nsec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for duration_nsec, a variable of type uint32.  Functions
  *   are of type of_flow_removed_uint32_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_removed_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set 
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_removed_uint16_get_f and _set_f.
  *
- * @param packet_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param packet_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for packet_count, a variable of type uint64.  Functions
  *   are of type of_flow_removed_uint64_get_f and _set_f.
  *
- * @param byte_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param byte_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for byte_count, a variable of type uint64.  Functions
  *   are of type of_flow_removed_uint64_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_removed_of_match_get_f and _set_f.
  *
@@ -3466,15 +3548,15 @@ typedef struct of_flow_removed_s of_flow_removed_t;
  * Structure for of_flow_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_flow_stats_entry.  Functions
  *   are of type of_flow_stats_reply_of_list_flow_stats_entry_get_f and _set_f.
  *
@@ -3485,35 +3567,35 @@ typedef struct of_flow_stats_reply_s of_flow_stats_reply_t;
  * Structure for of_flow_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_flow_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_stats_request_uint16_get_f and _set_f.
  *
- * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_stats_request_uint8_get_f and _set_f.
  *
- * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param out_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_port, a variable of type of_port_no.  Functions
  *   are of type of_flow_stats_request_of_port_no_get_f and _set_f.
  *
- * @param out_group_get/set 
+ * @param out_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for out_group, a variable of type uint32.  Functions
  *   are of type of_flow_stats_request_uint32_get_f and _set_f.
  *
- * @param cookie_get/set 
+ * @param cookie_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_stats_request_uint64_get_f and _set_f.
  *
- * @param cookie_mask_get/set 
+ * @param cookie_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie_mask, a variable of type uint64.  Functions
  *   are of type of_flow_stats_request_uint64_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_stats_request_of_match_get_f and _set_f.
  *
@@ -3524,15 +3606,15 @@ typedef struct of_flow_stats_request_s of_flow_stats_request_t;
  * Structure for of_get_config_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_get_config_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_get_config_reply_uint16_get_f and _set_f.
  *
- * @param miss_send_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param miss_send_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for miss_send_len, a variable of type uint16.  Functions
  *   are of type of_get_config_reply_uint16_get_f and _set_f.
  *
@@ -3543,7 +3625,7 @@ typedef struct of_get_config_reply_s of_get_config_reply_t;
  * Structure for of_get_config_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_get_config_request_uint32_get_f and _set_f.
  *
@@ -3554,19 +3636,19 @@ typedef struct of_get_config_request_s of_get_config_request_t;
  * Structure for of_group_add object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_add_uint32_get_f and _set_f.
  *
- * @param group_type_get/set 
+ * @param group_type_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_type, a variable of type uint8.  Functions
  *   are of type of_group_add_uint8_get_f and _set_f.
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_add_uint32_get_f and _set_f.
  *
- * @param buckets_get/set 
+ * @param buckets_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buckets, a variable of type of_list_bucket.  Functions
  *   are of type of_group_add_of_list_bucket_get_f and _set_f.
  *
@@ -3577,19 +3659,19 @@ typedef struct of_group_add_s of_group_add_t;
  * Structure for of_group_delete object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_delete_uint32_get_f and _set_f.
  *
- * @param group_type_get/set 
+ * @param group_type_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_type, a variable of type uint8.  Functions
  *   are of type of_group_delete_uint8_get_f and _set_f.
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_delete_uint32_get_f and _set_f.
  *
- * @param buckets_get/set 
+ * @param buckets_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buckets, a variable of type of_list_bucket.  Functions
  *   are of type of_group_delete_of_list_bucket_get_f and _set_f.
  *
@@ -3600,15 +3682,15 @@ typedef struct of_group_delete_s of_group_delete_t;
  * Structure for of_group_desc_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_desc_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set 
+ * @param flags_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_group_desc_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set 
+ * @param entries_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_group_desc_stats_entry.  Functions
  *   are of type of_group_desc_stats_reply_of_list_group_desc_stats_entry_get_f and _set_f.
  *
@@ -3619,11 +3701,11 @@ typedef struct of_group_desc_stats_reply_s of_group_desc_stats_reply_t;
  * Structure for of_group_desc_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_desc_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set 
+ * @param flags_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_group_desc_stats_request_uint16_get_f and _set_f.
  *
@@ -3634,51 +3716,51 @@ typedef struct of_group_desc_stats_request_s of_group_desc_stats_request_t;
  * Structure for of_group_features_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_2 OF_1_3).
+ * @param xid_get/set 
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_2 OF_1_3).
+ * @param flags_get/set 
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_group_features_stats_reply_uint16_get_f and _set_f.
  *
- * @param types_get/set ( OF_1_2 OF_1_3).
+ * @param types_get/set 
  *   Accessors for types, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param capabilities_get/set ( OF_1_2 OF_1_3).
+ * @param capabilities_get/set 
  *   Accessors for capabilities, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param max_groups_all_get/set ( OF_1_2 OF_1_3).
+ * @param max_groups_all_get/set 
  *   Accessors for max_groups_all, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param max_groups_select_get/set ( OF_1_2 OF_1_3).
+ * @param max_groups_select_get/set 
  *   Accessors for max_groups_select, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param max_groups_indirect_get/set ( OF_1_2 OF_1_3).
+ * @param max_groups_indirect_get/set 
  *   Accessors for max_groups_indirect, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param max_groups_ff_get/set ( OF_1_2 OF_1_3).
+ * @param max_groups_ff_get/set 
  *   Accessors for max_groups_ff, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param actions_all_get/set ( OF_1_2 OF_1_3).
+ * @param actions_all_get/set 
  *   Accessors for actions_all, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param actions_select_get/set ( OF_1_2 OF_1_3).
+ * @param actions_select_get/set 
  *   Accessors for actions_select, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param actions_indirect_get/set ( OF_1_2 OF_1_3).
+ * @param actions_indirect_get/set 
  *   Accessors for actions_indirect, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param actions_ff_get/set ( OF_1_2 OF_1_3).
+ * @param actions_ff_get/set 
  *   Accessors for actions_ff, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_reply_uint32_get_f and _set_f.
  *
@@ -3689,11 +3771,11 @@ typedef struct of_group_features_stats_reply_s of_group_features_stats_reply_t;
  * Structure for of_group_features_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_2 OF_1_3).
+ * @param xid_get/set 
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_features_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_2 OF_1_3).
+ * @param flags_get/set 
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_group_features_stats_request_uint16_get_f and _set_f.
  *
@@ -3704,19 +3786,19 @@ typedef struct of_group_features_stats_request_s of_group_features_stats_request
  * Structure for of_group_mod object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_mod_uint32_get_f and _set_f.
  *
- * @param group_type_get/set 
+ * @param group_type_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_type, a variable of type uint8.  Functions
  *   are of type of_group_mod_uint8_get_f and _set_f.
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_mod_uint32_get_f and _set_f.
  *
- * @param buckets_get/set 
+ * @param buckets_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buckets, a variable of type of_list_bucket.  Functions
  *   are of type of_group_mod_of_list_bucket_get_f and _set_f.
  *
@@ -3727,15 +3809,15 @@ typedef struct of_group_mod_s of_group_mod_t;
  * Structure for of_group_mod_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_mod_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set 
+ * @param code_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_group_mod_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set 
+ * @param data_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_group_mod_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -3746,19 +3828,19 @@ typedef struct of_group_mod_failed_error_msg_s of_group_mod_failed_error_msg_t;
  * Structure for of_group_modify object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_modify_uint32_get_f and _set_f.
  *
- * @param group_type_get/set 
+ * @param group_type_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_type, a variable of type uint8.  Functions
  *   are of type of_group_modify_uint8_get_f and _set_f.
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_modify_uint32_get_f and _set_f.
  *
- * @param buckets_get/set 
+ * @param buckets_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buckets, a variable of type of_list_bucket.  Functions
  *   are of type of_group_modify_of_list_bucket_get_f and _set_f.
  *
@@ -3769,15 +3851,15 @@ typedef struct of_group_modify_s of_group_modify_t;
  * Structure for of_group_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set 
+ * @param flags_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_group_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set 
+ * @param entries_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_group_stats_entry.  Functions
  *   are of type of_group_stats_reply_of_list_group_stats_entry_get_f and _set_f.
  *
@@ -3788,15 +3870,15 @@ typedef struct of_group_stats_reply_s of_group_stats_reply_t;
  * Structure for of_group_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_group_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set 
+ * @param flags_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_group_stats_request_uint16_get_f and _set_f.
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_stats_request_uint32_get_f and _set_f.
  *
@@ -3807,7 +3889,7 @@ typedef struct of_group_stats_request_s of_group_stats_request_t;
  * Structure for of_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_header_uint32_get_f and _set_f.
  *
@@ -3818,11 +3900,11 @@ typedef struct of_header_s of_header_t;
  * Structure for of_hello object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_hello_uint32_get_f and _set_f.
  *
- * @param elements_get/set ( OF_1_3).
+ * @param elements_get/set ( OF_1_3 OF_1_4).
  *   Accessors for elements, a variable of type of_list_hello_elem.  Functions
  *   are of type of_hello_of_list_hello_elem_get_f and _set_f.
  *
@@ -3833,15 +3915,15 @@ typedef struct of_hello_s of_hello_t;
  * Structure for of_hello_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_hello_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_hello_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_hello_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -3852,15 +3934,15 @@ typedef struct of_hello_failed_error_msg_s of_hello_failed_error_msg_t;
  * Structure for of_meter_config_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_config_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_config_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_3).
+ * @param entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_meter_band.  Functions
  *   are of type of_meter_config_stats_reply_of_list_meter_band_get_f and _set_f.
  *
@@ -3871,15 +3953,15 @@ typedef struct of_meter_config_stats_reply_s of_meter_config_stats_reply_t;
  * Structure for of_meter_config_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_config_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_config_stats_request_uint16_get_f and _set_f.
  *
- * @param meter_id_get/set ( OF_1_3).
+ * @param meter_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for meter_id, a variable of type uint32.  Functions
  *   are of type of_meter_config_stats_request_uint32_get_f and _set_f.
  *
@@ -3890,15 +3972,15 @@ typedef struct of_meter_config_stats_request_s of_meter_config_stats_request_t;
  * Structure for of_meter_features_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_features_stats_reply_uint16_get_f and _set_f.
  *
- * @param features_get/set ( OF_1_3).
+ * @param features_get/set ( OF_1_3 OF_1_4).
  *   Accessors for features, a variable of type of_meter_features.  Functions
  *   are of type of_meter_features_stats_reply_of_meter_features_get_f and _set_f.
  *
@@ -3909,11 +3991,11 @@ typedef struct of_meter_features_stats_reply_s of_meter_features_stats_reply_t;
  * Structure for of_meter_features_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_features_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_features_stats_request_uint16_get_f and _set_f.
  *
@@ -3924,17 +4006,21 @@ typedef struct of_meter_features_stats_request_s of_meter_features_stats_request
  * Structure for of_meter_mod object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_mod_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_mod_uint16_get_f and _set_f.
  *
- * @param meter_id_get/set ( OF_1_3).
+ * @param meter_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for meter_id, a variable of type uint32.  Functions
  *   are of type of_meter_mod_uint32_get_f and _set_f.
+ *
+ * @param bands_get/set ( OF_1_4).
+ *   Accessors for bands, a variable of type of_list_meter_band.  Functions
+ *   are of type of_meter_mod_of_list_meter_band_get_f and _set_f.
  *
  * @param meters_get/set ( OF_1_3).
  *   Accessors for meters, a variable of type of_list_meter_band.  Functions
@@ -3947,15 +4033,15 @@ typedef struct of_meter_mod_s of_meter_mod_t;
  * Structure for of_meter_mod_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_mod_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_3).
+ * @param code_get/set ( OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_meter_mod_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_3).
+ * @param data_get/set ( OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_meter_mod_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -3966,15 +4052,15 @@ typedef struct of_meter_mod_failed_error_msg_s of_meter_mod_failed_error_msg_t;
  * Structure for of_meter_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_3).
+ * @param entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_meter_stats.  Functions
  *   are of type of_meter_stats_reply_of_list_meter_stats_get_f and _set_f.
  *
@@ -3985,15 +4071,15 @@ typedef struct of_meter_stats_reply_s of_meter_stats_reply_t;
  * Structure for of_meter_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_meter_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_stats_request_uint16_get_f and _set_f.
  *
- * @param meter_id_get/set ( OF_1_3).
+ * @param meter_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for meter_id, a variable of type uint32.  Functions
  *   are of type of_meter_stats_request_uint32_get_f and _set_f.
  *
@@ -4050,15 +4136,15 @@ typedef struct of_nicira_controller_role_request_s of_nicira_controller_role_req
  * Structure for of_nicira_header object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_nicira_header_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_nicira_header_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_nicira_header_uint32_get_f and _set_f.
  *
@@ -4069,35 +4155,35 @@ typedef struct of_nicira_header_s of_nicira_header_t;
  * Structure for of_packet_in object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_packet_in_uint32_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_packet_in_uint32_get_f and _set_f.
  *
- * @param total_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param total_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for total_len, a variable of type uint16.  Functions
  *   are of type of_packet_in_uint16_get_f and _set_f.
  *
- * @param reason_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param reason_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for reason, a variable of type uint8.  Functions
  *   are of type of_packet_in_uint8_get_f and _set_f.
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_packet_in_uint8_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_3).
+ * @param cookie_get/set ( OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_packet_in_uint64_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_2 OF_1_3).
+ * @param match_get/set 
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_packet_in_of_match_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_packet_in_of_octets_get_f and _set_f.
  *
@@ -4116,23 +4202,23 @@ typedef struct of_packet_in_s of_packet_in_t;
  * Structure for of_packet_out object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_packet_out_uint32_get_f and _set_f.
  *
- * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param buffer_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buffer_id, a variable of type uint32.  Functions
  *   are of type of_packet_out_uint32_get_f and _set_f.
  *
- * @param in_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param in_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for in_port, a variable of type of_port_no.  Functions
  *   are of type of_packet_out_of_port_no_get_f and _set_f.
  *
- * @param actions_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param actions_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for actions, a variable of type of_list_action.  Functions
  *   are of type of_packet_out_of_list_action_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_packet_out_of_octets_get_f and _set_f.
  *
@@ -4143,15 +4229,15 @@ typedef struct of_packet_out_s of_packet_out_t;
  * Structure for of_port_desc_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_desc_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_port_desc_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_3).
+ * @param entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_port_desc.  Functions
  *   are of type of_port_desc_stats_reply_of_list_port_desc_get_f and _set_f.
  *
@@ -4162,11 +4248,11 @@ typedef struct of_port_desc_stats_reply_s of_port_desc_stats_reply_t;
  * Structure for of_port_desc_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_desc_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_port_desc_stats_request_uint16_get_f and _set_f.
  *
@@ -4177,25 +4263,29 @@ typedef struct of_port_desc_stats_request_s of_port_desc_stats_request_t;
  * Structure for of_port_mod object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_mod_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_port_mod_of_port_no_get_f and _set_f.
  *
- * @param hw_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hw_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hw_addr, a variable of type of_mac_addr.  Functions
  *   are of type of_port_mod_of_mac_addr_get_f and _set_f.
  *
- * @param config_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param config_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for config, a variable of type uint32.  Functions
  *   are of type of_port_mod_uint32_get_f and _set_f.
  *
- * @param mask_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param mask_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for mask, a variable of type uint32.  Functions
  *   are of type of_port_mod_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_port_mod_prop.  Functions
+ *   are of type of_port_mod_of_list_port_mod_prop_get_f and _set_f.
  *
  * @param advertise_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
  *   Accessors for advertise, a variable of type uint32.  Functions
@@ -4208,15 +4298,15 @@ typedef struct of_port_mod_s of_port_mod_t;
  * Structure for of_port_mod_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_mod_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_port_mod_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_port_mod_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -4227,15 +4317,15 @@ typedef struct of_port_mod_failed_error_msg_s of_port_mod_failed_error_msg_t;
  * Structure for of_port_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_port_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_port_stats_entry.  Functions
  *   are of type of_port_stats_reply_of_list_port_stats_entry_get_f and _set_f.
  *
@@ -4246,15 +4336,15 @@ typedef struct of_port_stats_reply_s of_port_stats_reply_t;
  * Structure for of_port_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_port_stats_request_uint16_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_port_stats_request_of_port_no_get_f and _set_f.
  *
@@ -4265,20 +4355,54 @@ typedef struct of_port_stats_request_s of_port_stats_request_t;
  * Structure for of_port_status object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_port_status_uint32_get_f and _set_f.
  *
- * @param reason_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param reason_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for reason, a variable of type uint8.  Functions
  *   are of type of_port_status_uint8_get_f and _set_f.
  *
- * @param desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param desc_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for desc, a variable of type of_port_desc.  Functions
  *   are of type of_port_status_of_port_desc_get_f and _set_f.
  *
  */
 typedef struct of_port_status_s of_port_status_t;
+
+/**
+ * Structure for of_queue_desc_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_queue_desc_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_4).
+ *   Accessors for entries, a variable of type of_list_queue_desc.  Functions
+ *   are of type of_queue_desc_stats_reply_of_list_queue_desc_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_stats_reply_s of_queue_desc_stats_reply_t;
+
+/**
+ * Structure for of_queue_desc_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_queue_desc_stats_request_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_stats_request_s of_queue_desc_stats_request_t;
 
 /**
  * Structure for of_queue_get_config_reply object.  Get/set
@@ -4318,15 +4442,15 @@ typedef struct of_queue_get_config_request_s of_queue_get_config_request_t;
  * Structure for of_queue_op_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_queue_op_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param code_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_queue_op_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_queue_op_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -4337,15 +4461,15 @@ typedef struct of_queue_op_failed_error_msg_s of_queue_op_failed_error_msg_t;
  * Structure for of_queue_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_queue_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_queue_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_queue_stats_entry.  Functions
  *   are of type of_queue_stats_reply_of_list_queue_stats_entry_get_f and _set_f.
  *
@@ -4356,19 +4480,19 @@ typedef struct of_queue_stats_reply_s of_queue_stats_reply_t;
  * Structure for of_queue_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_queue_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_queue_stats_request_uint16_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_queue_stats_request_of_port_no_get_f and _set_f.
  *
- * @param queue_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param queue_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for queue_id, a variable of type uint32.  Functions
  *   are of type of_queue_stats_request_uint32_get_f and _set_f.
  *
@@ -4376,18 +4500,37 @@ typedef struct of_queue_stats_reply_s of_queue_stats_reply_t;
 typedef struct of_queue_stats_request_s of_queue_stats_request_t;
 
 /**
+ * Structure for of_requestforward object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_requestforward_uint32_get_f and _set_f.
+ *
+ * @param role_get/set ( OF_1_4).
+ *   Accessors for role, a variable of type uint32.  Functions
+ *   are of type of_requestforward_uint32_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_requestforward_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_requestforward_s of_requestforward_t;
+
+/**
  * Structure for of_role_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_2 OF_1_3).
+ * @param xid_get/set 
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_role_reply_uint32_get_f and _set_f.
  *
- * @param role_get/set ( OF_1_2 OF_1_3).
+ * @param role_get/set 
  *   Accessors for role, a variable of type uint32.  Functions
  *   are of type of_role_reply_uint32_get_f and _set_f.
  *
- * @param generation_id_get/set ( OF_1_2 OF_1_3).
+ * @param generation_id_get/set 
  *   Accessors for generation_id, a variable of type uint64.  Functions
  *   are of type of_role_reply_uint64_get_f and _set_f.
  *
@@ -4398,15 +4541,15 @@ typedef struct of_role_reply_s of_role_reply_t;
  * Structure for of_role_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_2 OF_1_3).
+ * @param xid_get/set 
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_role_request_uint32_get_f and _set_f.
  *
- * @param role_get/set ( OF_1_2 OF_1_3).
+ * @param role_get/set 
  *   Accessors for role, a variable of type uint32.  Functions
  *   are of type of_role_request_uint32_get_f and _set_f.
  *
- * @param generation_id_get/set ( OF_1_2 OF_1_3).
+ * @param generation_id_get/set 
  *   Accessors for generation_id, a variable of type uint64.  Functions
  *   are of type of_role_request_uint64_get_f and _set_f.
  *
@@ -4417,15 +4560,15 @@ typedef struct of_role_request_s of_role_request_t;
  * Structure for of_role_request_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_2 OF_1_3).
+ * @param xid_get/set 
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_role_request_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_2 OF_1_3).
+ * @param code_get/set 
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_role_request_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_2 OF_1_3).
+ * @param data_get/set 
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_role_request_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -4433,18 +4576,45 @@ typedef struct of_role_request_s of_role_request_t;
 typedef struct of_role_request_failed_error_msg_s of_role_request_failed_error_msg_t;
 
 /**
+ * Structure for of_role_status object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_role_status_uint32_get_f and _set_f.
+ *
+ * @param role_get/set ( OF_1_4).
+ *   Accessors for role, a variable of type uint32.  Functions
+ *   are of type of_role_status_uint32_get_f and _set_f.
+ *
+ * @param reason_get/set ( OF_1_4).
+ *   Accessors for reason, a variable of type uint8.  Functions
+ *   are of type of_role_status_uint8_get_f and _set_f.
+ *
+ * @param generation_id_get/set ( OF_1_4).
+ *   Accessors for generation_id, a variable of type uint64.  Functions
+ *   are of type of_role_status_uint64_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_role_prop.  Functions
+ *   are of type of_role_status_of_list_role_prop_get_f and _set_f.
+ *
+ */
+typedef struct of_role_status_s of_role_status_t;
+
+/**
  * Structure for of_set_config object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_set_config_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_set_config_uint16_get_f and _set_f.
  *
- * @param miss_send_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param miss_send_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for miss_send_len, a variable of type uint16.  Functions
  *   are of type of_set_config_uint16_get_f and _set_f.
  *
@@ -4455,11 +4625,11 @@ typedef struct of_set_config_s of_set_config_t;
  * Structure for of_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_stats_reply_uint16_get_f and _set_f.
  *
@@ -4470,11 +4640,11 @@ typedef struct of_stats_reply_s of_stats_reply_t;
  * Structure for of_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_stats_request_uint16_get_f and _set_f.
  *
@@ -4485,15 +4655,15 @@ typedef struct of_stats_request_s of_stats_request_t;
  * Structure for of_switch_config_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_switch_config_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set 
+ * @param code_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_switch_config_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set 
+ * @param data_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_switch_config_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -4501,18 +4671,52 @@ typedef struct of_stats_request_s of_stats_request_t;
 typedef struct of_switch_config_failed_error_msg_s of_switch_config_failed_error_msg_t;
 
 /**
+ * Structure for of_table_desc_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_table_desc_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_table_desc_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_4).
+ *   Accessors for entries, a variable of type of_list_table_desc.  Functions
+ *   are of type of_table_desc_stats_reply_of_list_table_desc_get_f and _set_f.
+ *
+ */
+typedef struct of_table_desc_stats_reply_s of_table_desc_stats_reply_t;
+
+/**
+ * Structure for of_table_desc_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_table_desc_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_table_desc_stats_request_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_table_desc_stats_request_s of_table_desc_stats_request_t;
+
+/**
  * Structure for of_table_features_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_features_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set ( OF_1_3).
+ * @param code_get/set ( OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_table_features_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_3).
+ * @param data_get/set ( OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_table_features_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -4523,15 +4727,15 @@ typedef struct of_table_features_failed_error_msg_s of_table_features_failed_err
  * Structure for of_table_features_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_features_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_table_features_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_3).
+ * @param entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_table_features.  Functions
  *   are of type of_table_features_stats_reply_of_list_table_features_get_f and _set_f.
  *
@@ -4542,15 +4746,15 @@ typedef struct of_table_features_stats_reply_s of_table_features_stats_reply_t;
  * Structure for of_table_features_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_3).
+ * @param xid_get/set ( OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_features_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_table_features_stats_request_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_3).
+ * @param entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_table_features.  Functions
  *   are of type of_table_features_stats_request_of_list_table_features_get_f and _set_f.
  *
@@ -4561,17 +4765,21 @@ typedef struct of_table_features_stats_request_s of_table_features_stats_request
  * Structure for of_table_mod object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_mod_uint32_get_f and _set_f.
  *
- * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_table_mod_uint8_get_f and _set_f.
  *
- * @param config_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param config_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for config, a variable of type uint32.  Functions
  *   are of type of_table_mod_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_table_mod_prop.  Functions
+ *   are of type of_table_mod_of_list_table_mod_prop_get_f and _set_f.
  *
  */
 typedef struct of_table_mod_s of_table_mod_t;
@@ -4580,15 +4788,15 @@ typedef struct of_table_mod_s of_table_mod_t;
  * Structure for of_table_mod_failed_error_msg object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set 
+ * @param xid_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_mod_failed_error_msg_uint32_get_f and _set_f.
  *
- * @param code_get/set 
+ * @param code_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for code, a variable of type uint16.  Functions
  *   are of type of_table_mod_failed_error_msg_uint16_get_f and _set_f.
  *
- * @param data_get/set 
+ * @param data_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_table_mod_failed_error_msg_of_octets_get_f and _set_f.
  *
@@ -4599,15 +4807,15 @@ typedef struct of_table_mod_failed_error_msg_s of_table_mod_failed_error_msg_t;
  * Structure for of_table_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_stats_reply_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_table_stats_reply_uint16_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param entries_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_table_stats_entry.  Functions
  *   are of type of_table_stats_reply_of_list_table_stats_entry_get_f and _set_f.
  *
@@ -4618,16 +4826,39 @@ typedef struct of_table_stats_reply_s of_table_stats_reply_t;
  * Structure for of_table_stats_request object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param xid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for xid, a variable of type uint32.  Functions
  *   are of type of_table_stats_request_uint32_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_table_stats_request_uint16_get_f and _set_f.
  *
  */
 typedef struct of_table_stats_request_s of_table_stats_request_t;
+
+/**
+ * Structure for of_table_status object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_table_status_uint32_get_f and _set_f.
+ *
+ * @param role_get/set ( OF_1_4).
+ *   Accessors for role, a variable of type uint32.  Functions
+ *   are of type of_table_status_uint32_get_f and _set_f.
+ *
+ * @param reason_get/set ( OF_1_4).
+ *   Accessors for reason, a variable of type uint8.  Functions
+ *   are of type of_table_status_uint8_get_f and _set_f.
+ *
+ * @param table_get/set ( OF_1_4).
+ *   Accessors for table, a variable of type of_table_desc.  Functions
+ *   are of type of_table_status_of_table_desc_get_f and _set_f.
+ *
+ */
+typedef struct of_table_status_s of_table_status_t;
 
 /**
  * Structure for of_action object.  Get/set
@@ -4640,11 +4871,11 @@ typedef struct of_action_s of_action_t;
  * Structure for of_action_bsn object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_bsn_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_bsn_uint32_get_f and _set_f.
  *
@@ -4655,15 +4886,15 @@ typedef struct of_action_bsn_s of_action_bsn_t;
  * Structure for of_action_bsn_checksum object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_bsn_checksum_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_bsn_checksum_uint32_get_f and _set_f.
  *
- * @param checksum_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param checksum_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for checksum, a variable of type of_checksum_128.  Functions
  *   are of type of_action_bsn_checksum_of_checksum_128_get_f and _set_f.
  *
@@ -4697,23 +4928,23 @@ typedef struct of_action_bsn_gentable_s of_action_bsn_gentable_t;
  * Structure for of_action_bsn_mirror object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_bsn_mirror_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_bsn_mirror_uint32_get_f and _set_f.
  *
- * @param dest_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param dest_port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for dest_port, a variable of type uint32.  Functions
  *   are of type of_action_bsn_mirror_uint32_get_f and _set_f.
  *
- * @param vlan_tag_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param vlan_tag_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for vlan_tag, a variable of type uint32.  Functions
  *   are of type of_action_bsn_mirror_uint32_get_f and _set_f.
  *
- * @param copy_stage_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param copy_stage_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for copy_stage, a variable of type uint8.  Functions
  *   are of type of_action_bsn_mirror_uint8_get_f and _set_f.
  *
@@ -4724,15 +4955,15 @@ typedef struct of_action_bsn_mirror_s of_action_bsn_mirror_t;
  * Structure for of_action_bsn_set_tunnel_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_bsn_set_tunnel_dst_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_bsn_set_tunnel_dst_uint32_get_f and _set_f.
  *
- * @param dst_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param dst_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for dst, a variable of type uint32.  Functions
  *   are of type of_action_bsn_set_tunnel_dst_uint32_get_f and _set_f.
  *
@@ -4786,11 +5017,11 @@ typedef struct of_action_enqueue_s of_action_enqueue_t;
  * Structure for of_action_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_experimenter_uint32_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param data_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_action_experimenter_of_octets_get_f and _set_f.
  *
@@ -4801,7 +5032,7 @@ typedef struct of_action_experimenter_s of_action_experimenter_t;
  * Structure for of_action_group object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_action_group_uint32_get_f and _set_f.
  *
@@ -4826,11 +5057,11 @@ typedef struct of_action_id_s of_action_id_t;
  * Structure for of_action_id_bsn object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_uint32_get_f and _set_f.
  *
@@ -4841,11 +5072,11 @@ typedef struct of_action_id_bsn_s of_action_id_bsn_t;
  * Structure for of_action_id_bsn_checksum object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_checksum_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_checksum_uint32_get_f and _set_f.
  *
@@ -4871,11 +5102,11 @@ typedef struct of_action_id_bsn_gentable_s of_action_id_bsn_gentable_t;
  * Structure for of_action_id_bsn_mirror object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_mirror_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_mirror_uint32_get_f and _set_f.
  *
@@ -4886,11 +5117,11 @@ typedef struct of_action_id_bsn_mirror_s of_action_id_bsn_mirror_t;
  * Structure for of_action_id_bsn_set_tunnel_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_set_tunnel_dst_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_action_id_bsn_set_tunnel_dst_uint32_get_f and _set_f.
  *
@@ -4929,7 +5160,7 @@ typedef struct of_action_id_dec_nw_ttl_s of_action_id_dec_nw_ttl_t;
  * Structure for of_action_id_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_experimenter_uint32_get_f and _set_f.
  *
@@ -4954,11 +5185,11 @@ typedef struct of_action_id_header_s of_action_id_header_t;
  * Structure for of_action_id_nicira object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_nicira_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint16.  Functions
  *   are of type of_action_id_nicira_uint16_get_f and _set_f.
  *
@@ -4969,11 +5200,11 @@ typedef struct of_action_id_nicira_s of_action_id_nicira_t;
  * Structure for of_action_id_nicira_dec_ttl object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_id_nicira_dec_ttl_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint16.  Functions
  *   are of type of_action_id_nicira_dec_ttl_uint16_get_f and _set_f.
  *
@@ -5061,11 +5292,11 @@ typedef struct of_action_id_set_queue_s of_action_id_set_queue_t;
  * Structure for of_action_nicira object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_nicira_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint16.  Functions
  *   are of type of_action_nicira_uint16_get_f and _set_f.
  *
@@ -5076,11 +5307,11 @@ typedef struct of_action_nicira_s of_action_nicira_t;
  * Structure for of_action_nicira_dec_ttl object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param experimenter_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_action_nicira_dec_ttl_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param subtype_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint16.  Functions
  *   are of type of_action_nicira_dec_ttl_uint16_get_f and _set_f.
  *
@@ -5091,11 +5322,11 @@ typedef struct of_action_nicira_dec_ttl_s of_action_nicira_dec_ttl_t;
  * Structure for of_action_output object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port, a variable of type of_port_no.  Functions
  *   are of type of_action_output_of_port_no_get_f and _set_f.
  *
- * @param max_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param max_len_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for max_len, a variable of type uint16.  Functions
  *   are of type of_action_output_uint16_get_f and _set_f.
  *
@@ -5106,7 +5337,7 @@ typedef struct of_action_output_s of_action_output_t;
  * Structure for of_action_pop_mpls object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param ethertype_get/set 
+ * @param ethertype_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ethertype, a variable of type uint16.  Functions
  *   are of type of_action_pop_mpls_uint16_get_f and _set_f.
  *
@@ -5131,7 +5362,7 @@ typedef struct of_action_pop_vlan_s of_action_pop_vlan_t;
  * Structure for of_action_push_mpls object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param ethertype_get/set 
+ * @param ethertype_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ethertype, a variable of type uint16.  Functions
  *   are of type of_action_push_mpls_uint16_get_f and _set_f.
  *
@@ -5142,7 +5373,7 @@ typedef struct of_action_push_mpls_s of_action_push_mpls_t;
  * Structure for of_action_push_pbb object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param ethertype_get/set ( OF_1_3).
+ * @param ethertype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for ethertype, a variable of type uint16.  Functions
  *   are of type of_action_push_pbb_uint16_get_f and _set_f.
  *
@@ -5153,7 +5384,7 @@ typedef struct of_action_push_pbb_s of_action_push_pbb_t;
  * Structure for of_action_push_vlan object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param ethertype_get/set 
+ * @param ethertype_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ethertype, a variable of type uint16.  Functions
  *   are of type of_action_push_vlan_uint16_get_f and _set_f.
  *
@@ -5186,7 +5417,7 @@ typedef struct of_action_set_dl_src_s of_action_set_dl_src_t;
  * Structure for of_action_set_field object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param field_get/set ( OF_1_2 OF_1_3).
+ * @param field_get/set 
  *   Accessors for field, a variable of type of_oxm_header.  Functions
  *   are of type of_action_set_field_of_oxm_header_get_f and _set_f.
  *
@@ -5219,7 +5450,7 @@ typedef struct of_action_set_mpls_tc_s of_action_set_mpls_tc_t;
  * Structure for of_action_set_mpls_ttl object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param mpls_ttl_get/set 
+ * @param mpls_ttl_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for mpls_ttl, a variable of type uint8.  Functions
  *   are of type of_action_set_mpls_ttl_uint8_get_f and _set_f.
  *
@@ -5274,7 +5505,7 @@ typedef struct of_action_set_nw_tos_s of_action_set_nw_tos_t;
  * Structure for of_action_set_nw_ttl object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param nw_ttl_get/set 
+ * @param nw_ttl_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for nw_ttl, a variable of type uint8.  Functions
  *   are of type of_action_set_nw_ttl_uint8_get_f and _set_f.
  *
@@ -5285,7 +5516,7 @@ typedef struct of_action_set_nw_ttl_s of_action_set_nw_ttl_t;
  * Structure for of_action_set_queue object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param queue_id_get/set 
+ * @param queue_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for queue_id, a variable of type uint32.  Functions
  *   are of type of_action_set_queue_uint32_get_f and _set_f.
  *
@@ -5342,6 +5573,166 @@ typedef struct of_action_set_vlan_vid_s of_action_set_vlan_vid_t;
  *
  */
 typedef struct of_action_strip_vlan_s of_action_strip_vlan_t;
+
+/**
+ * Structure for of_async_config_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_async_config_prop_s of_async_config_prop_t;
+
+/**
+ * Structure for of_async_config_prop_experimenter_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_async_config_prop_experimenter_master_s of_async_config_prop_experimenter_master_t;
+
+/**
+ * Structure for of_async_config_prop_experimenter_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_async_config_prop_experimenter_slave_s of_async_config_prop_experimenter_slave_t;
+
+/**
+ * Structure for of_async_config_prop_flow_removed_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_flow_removed_master_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_flow_removed_master_s of_async_config_prop_flow_removed_master_t;
+
+/**
+ * Structure for of_async_config_prop_flow_removed_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_flow_removed_slave_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_flow_removed_slave_s of_async_config_prop_flow_removed_slave_t;
+
+/**
+ * Structure for of_async_config_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_async_config_prop_header_s of_async_config_prop_header_t;
+
+/**
+ * Structure for of_async_config_prop_packet_in_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_packet_in_master_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_packet_in_master_s of_async_config_prop_packet_in_master_t;
+
+/**
+ * Structure for of_async_config_prop_packet_in_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_packet_in_slave_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_packet_in_slave_s of_async_config_prop_packet_in_slave_t;
+
+/**
+ * Structure for of_async_config_prop_port_status_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_port_status_master_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_port_status_master_s of_async_config_prop_port_status_master_t;
+
+/**
+ * Structure for of_async_config_prop_port_status_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_port_status_slave_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_port_status_slave_s of_async_config_prop_port_status_slave_t;
+
+/**
+ * Structure for of_async_config_prop_requestforward_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_requestforward_master_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_requestforward_master_s of_async_config_prop_requestforward_master_t;
+
+/**
+ * Structure for of_async_config_prop_requestforward_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_requestforward_slave_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_requestforward_slave_s of_async_config_prop_requestforward_slave_t;
+
+/**
+ * Structure for of_async_config_prop_role_status_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_role_status_master_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_role_status_master_s of_async_config_prop_role_status_master_t;
+
+/**
+ * Structure for of_async_config_prop_role_status_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_role_status_slave_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_role_status_slave_s of_async_config_prop_role_status_slave_t;
+
+/**
+ * Structure for of_async_config_prop_table_status_master object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_table_status_master_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_table_status_master_s of_async_config_prop_table_status_master_t;
+
+/**
+ * Structure for of_async_config_prop_table_status_slave object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param mask_get/set ( OF_1_4).
+ *   Accessors for mask, a variable of type uint32.  Functions
+ *   are of type of_async_config_prop_table_status_slave_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_async_config_prop_table_status_slave_s of_async_config_prop_table_status_slave_t;
 
 /**
  * Structure for of_bsn_controller_connection object.  Get/set
@@ -5502,19 +5893,19 @@ typedef struct of_bsn_gentable_stats_entry_s of_bsn_gentable_stats_entry_t;
  * Structure for of_bsn_interface object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param hw_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hw_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hw_addr, a variable of type of_mac_addr.  Functions
  *   are of type of_bsn_interface_of_mac_addr_get_f and _set_f.
  *
- * @param name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for name, a variable of type of_port_name.  Functions
  *   are of type of_bsn_interface_of_port_name_get_f and _set_f.
  *
- * @param ipv4_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param ipv4_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ipv4_addr, a variable of type of_ipv4.  Functions
  *   are of type of_bsn_interface_of_ipv4_get_f and _set_f.
  *
- * @param ipv4_netmask_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param ipv4_netmask_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ipv4_netmask, a variable of type of_ipv4.  Functions
  *   are of type of_bsn_interface_of_ipv4_get_f and _set_f.
  *
@@ -6254,51 +6645,51 @@ typedef struct of_bsn_vport_header_s of_bsn_vport_header_t;
  * Structure for of_bsn_vport_l2gre object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param flags_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint32.  Functions
  *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_vport_l2gre_of_port_no_get_f and _set_f.
  *
- * @param loopback_port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param loopback_port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for loopback_port_no, a variable of type of_port_no.  Functions
  *   are of type of_bsn_vport_l2gre_of_port_no_get_f and _set_f.
  *
- * @param local_mac_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param local_mac_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for local_mac, a variable of type of_mac_addr.  Functions
  *   are of type of_bsn_vport_l2gre_of_mac_addr_get_f and _set_f.
  *
- * @param nh_mac_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param nh_mac_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for nh_mac, a variable of type of_mac_addr.  Functions
  *   are of type of_bsn_vport_l2gre_of_mac_addr_get_f and _set_f.
  *
- * @param src_ip_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param src_ip_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for src_ip, a variable of type of_ipv4.  Functions
  *   are of type of_bsn_vport_l2gre_of_ipv4_get_f and _set_f.
  *
- * @param dst_ip_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param dst_ip_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for dst_ip, a variable of type of_ipv4.  Functions
  *   are of type of_bsn_vport_l2gre_of_ipv4_get_f and _set_f.
  *
- * @param dscp_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param dscp_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for dscp, a variable of type uint8.  Functions
  *   are of type of_bsn_vport_l2gre_uint8_get_f and _set_f.
  *
- * @param ttl_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param ttl_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ttl, a variable of type uint8.  Functions
  *   are of type of_bsn_vport_l2gre_uint8_get_f and _set_f.
  *
- * @param vpn_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param vpn_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for vpn, a variable of type uint32.  Functions
  *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
  *
- * @param rate_limit_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param rate_limit_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for rate_limit, a variable of type uint32.  Functions
  *   are of type of_bsn_vport_l2gre_uint32_get_f and _set_f.
  *
- * @param if_name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param if_name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for if_name, a variable of type of_port_name.  Functions
  *   are of type of_bsn_vport_l2gre_of_port_name_get_f and _set_f.
  *
@@ -6309,27 +6700,27 @@ typedef struct of_bsn_vport_l2gre_s of_bsn_vport_l2gre_t;
  * Structure for of_bsn_vport_q_in_q object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type uint32.  Functions
  *   are of type of_bsn_vport_q_in_q_uint32_get_f and _set_f.
  *
- * @param ingress_tpid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param ingress_tpid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ingress_tpid, a variable of type uint16.  Functions
  *   are of type of_bsn_vport_q_in_q_uint16_get_f and _set_f.
  *
- * @param ingress_vlan_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param ingress_vlan_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ingress_vlan_id, a variable of type uint16.  Functions
  *   are of type of_bsn_vport_q_in_q_uint16_get_f and _set_f.
  *
- * @param egress_tpid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param egress_tpid_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for egress_tpid, a variable of type uint16.  Functions
  *   are of type of_bsn_vport_q_in_q_uint16_get_f and _set_f.
  *
- * @param egress_vlan_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param egress_vlan_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for egress_vlan_id, a variable of type uint16.  Functions
  *   are of type of_bsn_vport_q_in_q_uint16_get_f and _set_f.
  *
- * @param if_name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param if_name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for if_name, a variable of type of_port_name.  Functions
  *   are of type of_bsn_vport_q_in_q_of_port_name_get_f and _set_f.
  *
@@ -6355,19 +6746,19 @@ typedef struct of_bsn_vrf_counter_stats_entry_s of_bsn_vrf_counter_stats_entry_t
  * Structure for of_bucket object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param weight_get/set 
+ * @param weight_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for weight, a variable of type uint16.  Functions
  *   are of type of_bucket_uint16_get_f and _set_f.
  *
- * @param watch_port_get/set 
+ * @param watch_port_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for watch_port, a variable of type of_port_no.  Functions
  *   are of type of_bucket_of_port_no_get_f and _set_f.
  *
- * @param watch_group_get/set 
+ * @param watch_group_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for watch_group, a variable of type uint32.  Functions
  *   are of type of_bucket_uint32_get_f and _set_f.
  *
- * @param actions_get/set 
+ * @param actions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for actions, a variable of type of_list_action.  Functions
  *   are of type of_bucket_of_list_action_get_f and _set_f.
  *
@@ -6378,11 +6769,11 @@ typedef struct of_bucket_s of_bucket_t;
  * Structure for of_bucket_counter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param packet_count_get/set 
+ * @param packet_count_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for packet_count, a variable of type uint64.  Functions
  *   are of type of_bucket_counter_uint64_get_f and _set_f.
  *
- * @param byte_count_get/set 
+ * @param byte_count_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for byte_count, a variable of type uint64.  Functions
  *   are of type of_bucket_counter_uint64_get_f and _set_f.
  *
@@ -6390,54 +6781,87 @@ typedef struct of_bucket_s of_bucket_t;
 typedef struct of_bucket_counter_s of_bucket_counter_t;
 
 /**
+ * Structure for of_bundle_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bundle_prop_s of_bundle_prop_t;
+
+/**
+ * Structure for of_bundle_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bundle_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_bundle_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bundle_prop_experimenter_s of_bundle_prop_experimenter_t;
+
+/**
+ * Structure for of_bundle_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bundle_prop_header_s of_bundle_prop_header_t;
+
+/**
  * Structure for of_flow_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_flow_stats_entry_uint8_get_f and _set_f.
  *
- * @param duration_sec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param duration_sec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for duration_sec, a variable of type uint32.  Functions
  *   are of type of_flow_stats_entry_uint32_get_f and _set_f.
  *
- * @param duration_nsec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param duration_nsec_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for duration_nsec, a variable of type uint32.  Functions
  *   are of type of_flow_stats_entry_uint32_get_f and _set_f.
  *
- * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param priority_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for priority, a variable of type uint16.  Functions
  *   are of type of_flow_stats_entry_uint16_get_f and _set_f.
  *
- * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param idle_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for idle_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_stats_entry_uint16_get_f and _set_f.
  *
- * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hard_timeout_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hard_timeout, a variable of type uint16.  Functions
  *   are of type of_flow_stats_entry_uint16_get_f and _set_f.
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_flow_stats_entry_uint16_get_f and _set_f.
  *
- * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param importance_get/set ( OF_1_4).
+ *   Accessors for importance, a variable of type uint16.  Functions
+ *   are of type of_flow_stats_entry_uint16_get_f and _set_f.
+ *
+ * @param cookie_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for cookie, a variable of type uint64.  Functions
  *   are of type of_flow_stats_entry_uint64_get_f and _set_f.
  *
- * @param packet_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param packet_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for packet_count, a variable of type uint64.  Functions
  *   are of type of_flow_stats_entry_uint64_get_f and _set_f.
  *
- * @param byte_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param byte_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for byte_count, a variable of type uint64.  Functions
  *   are of type of_flow_stats_entry_uint64_get_f and _set_f.
  *
- * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param match_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for match, a variable of type of_match.  Functions
  *   are of type of_flow_stats_entry_of_match_get_f and _set_f.
  *
- * @param instructions_get/set 
+ * @param instructions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for instructions, a variable of type of_list_instruction.  Functions
  *   are of type of_flow_stats_entry_of_list_instruction_get_f and _set_f.
  *
@@ -6452,15 +6876,15 @@ typedef struct of_flow_stats_entry_s of_flow_stats_entry_t;
  * Structure for of_group_desc_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param group_type_get/set 
+ * @param group_type_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_type, a variable of type uint8.  Functions
  *   are of type of_group_desc_stats_entry_uint8_get_f and _set_f.
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_desc_stats_entry_uint32_get_f and _set_f.
  *
- * @param buckets_get/set 
+ * @param buckets_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for buckets, a variable of type of_list_bucket.  Functions
  *   are of type of_group_desc_stats_entry_of_list_bucket_get_f and _set_f.
  *
@@ -6471,31 +6895,31 @@ typedef struct of_group_desc_stats_entry_s of_group_desc_stats_entry_t;
  * Structure for of_group_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param group_id_get/set 
+ * @param group_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for group_id, a variable of type uint32.  Functions
  *   are of type of_group_stats_entry_uint32_get_f and _set_f.
  *
- * @param ref_count_get/set 
+ * @param ref_count_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for ref_count, a variable of type uint32.  Functions
  *   are of type of_group_stats_entry_uint32_get_f and _set_f.
  *
- * @param packet_count_get/set 
+ * @param packet_count_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for packet_count, a variable of type uint64.  Functions
  *   are of type of_group_stats_entry_uint64_get_f and _set_f.
  *
- * @param byte_count_get/set 
+ * @param byte_count_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for byte_count, a variable of type uint64.  Functions
  *   are of type of_group_stats_entry_uint64_get_f and _set_f.
  *
- * @param duration_sec_get/set ( OF_1_3).
+ * @param duration_sec_get/set ( OF_1_3 OF_1_4).
  *   Accessors for duration_sec, a variable of type uint32.  Functions
  *   are of type of_group_stats_entry_uint32_get_f and _set_f.
  *
- * @param duration_nsec_get/set ( OF_1_3).
+ * @param duration_nsec_get/set ( OF_1_3 OF_1_4).
  *   Accessors for duration_nsec, a variable of type uint32.  Functions
  *   are of type of_group_stats_entry_uint32_get_f and _set_f.
  *
- * @param bucket_stats_get/set 
+ * @param bucket_stats_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for bucket_stats, a variable of type of_list_bucket_counter.  Functions
  *   are of type of_group_stats_entry_of_list_bucket_counter_get_f and _set_f.
  *
@@ -6520,7 +6944,7 @@ typedef struct of_hello_elem_header_s of_hello_elem_header_t;
  * Structure for of_hello_elem_versionbitmap object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param bitmaps_get/set ( OF_1_3).
+ * @param bitmaps_get/set ( OF_1_3 OF_1_4).
  *   Accessors for bitmaps, a variable of type of_list_uint32.  Functions
  *   are of type of_hello_elem_versionbitmap_of_list_uint32_get_f and _set_f.
  *
@@ -6538,7 +6962,7 @@ typedef struct of_instruction_s of_instruction_t;
  * Structure for of_instruction_apply_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param actions_get/set 
+ * @param actions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for actions, a variable of type of_list_action.  Functions
  *   are of type of_instruction_apply_actions_of_list_action_get_f and _set_f.
  *
@@ -6736,11 +7160,11 @@ typedef struct of_instruction_clear_actions_s of_instruction_clear_actions_t;
  * Structure for of_instruction_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set 
+ * @param experimenter_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_instruction_experimenter_uint32_get_f and _set_f.
  *
- * @param data_get/set 
+ * @param data_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_instruction_experimenter_of_octets_get_f and _set_f.
  *
@@ -6751,7 +7175,7 @@ typedef struct of_instruction_experimenter_s of_instruction_experimenter_t;
  * Structure for of_instruction_goto_table object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param table_id_get/set 
+ * @param table_id_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_instruction_goto_table_uint8_get_f and _set_f.
  *
@@ -6970,7 +7394,7 @@ typedef struct of_instruction_id_clear_actions_s of_instruction_id_clear_actions
  * Structure for of_instruction_id_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_instruction_id_experimenter_uint32_get_f and _set_f.
  *
@@ -7016,7 +7440,7 @@ typedef struct of_instruction_id_write_metadata_s of_instruction_id_write_metada
  * Structure for of_instruction_meter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param meter_id_get/set ( OF_1_3).
+ * @param meter_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for meter_id, a variable of type uint32.  Functions
  *   are of type of_instruction_meter_uint32_get_f and _set_f.
  *
@@ -7027,7 +7451,7 @@ typedef struct of_instruction_meter_s of_instruction_meter_t;
  * Structure for of_instruction_write_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param actions_get/set 
+ * @param actions_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for actions, a variable of type of_list_action.  Functions
  *   are of type of_instruction_write_actions_of_list_action_get_f and _set_f.
  *
@@ -7038,11 +7462,11 @@ typedef struct of_instruction_write_actions_s of_instruction_write_actions_t;
  * Structure for of_instruction_write_metadata object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param metadata_get/set 
+ * @param metadata_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for metadata, a variable of type uint64.  Functions
  *   are of type of_instruction_write_metadata_uint64_get_f and _set_f.
  *
- * @param metadata_mask_get/set 
+ * @param metadata_mask_get/set ( OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for metadata_mask, a variable of type uint64.  Functions
  *   are of type of_instruction_write_metadata_uint64_get_f and _set_f.
  *
@@ -7203,7 +7627,7 @@ typedef struct of_match_v2_s of_match_v2_t;
  * Structure for of_match_v3 object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_list_get/set ( OF_1_2 OF_1_3).
+ * @param oxm_list_get/set 
  *   Accessors for oxm_list, a variable of type of_list_oxm.  Functions
  *   are of type of_match_v3_of_list_oxm_get_f and _set_f.
  *
@@ -7221,11 +7645,11 @@ typedef struct of_meter_band_s of_meter_band_t;
  * Structure for of_meter_band_drop object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param rate_get/set ( OF_1_3).
+ * @param rate_get/set ( OF_1_3 OF_1_4).
  *   Accessors for rate, a variable of type uint32.  Functions
  *   are of type of_meter_band_drop_uint32_get_f and _set_f.
  *
- * @param burst_size_get/set ( OF_1_3).
+ * @param burst_size_get/set ( OF_1_3 OF_1_4).
  *   Accessors for burst_size, a variable of type uint32.  Functions
  *   are of type of_meter_band_drop_uint32_get_f and _set_f.
  *
@@ -7236,15 +7660,15 @@ typedef struct of_meter_band_drop_s of_meter_band_drop_t;
  * Structure for of_meter_band_dscp_remark object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param rate_get/set ( OF_1_3).
+ * @param rate_get/set ( OF_1_3 OF_1_4).
  *   Accessors for rate, a variable of type uint32.  Functions
  *   are of type of_meter_band_dscp_remark_uint32_get_f and _set_f.
  *
- * @param burst_size_get/set ( OF_1_3).
+ * @param burst_size_get/set ( OF_1_3 OF_1_4).
  *   Accessors for burst_size, a variable of type uint32.  Functions
  *   are of type of_meter_band_dscp_remark_uint32_get_f and _set_f.
  *
- * @param prec_level_get/set ( OF_1_3).
+ * @param prec_level_get/set ( OF_1_3 OF_1_4).
  *   Accessors for prec_level, a variable of type uint8.  Functions
  *   are of type of_meter_band_dscp_remark_uint8_get_f and _set_f.
  *
@@ -7255,15 +7679,15 @@ typedef struct of_meter_band_dscp_remark_s of_meter_band_dscp_remark_t;
  * Structure for of_meter_band_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param rate_get/set ( OF_1_3).
+ * @param rate_get/set ( OF_1_3 OF_1_4).
  *   Accessors for rate, a variable of type uint32.  Functions
  *   are of type of_meter_band_experimenter_uint32_get_f and _set_f.
  *
- * @param burst_size_get/set ( OF_1_3).
+ * @param burst_size_get/set ( OF_1_3 OF_1_4).
  *   Accessors for burst_size, a variable of type uint32.  Functions
  *   are of type of_meter_band_experimenter_uint32_get_f and _set_f.
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_meter_band_experimenter_uint32_get_f and _set_f.
  *
@@ -7281,11 +7705,11 @@ typedef struct of_meter_band_header_s of_meter_band_header_t;
  * Structure for of_meter_band_stats object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param packet_band_count_get/set ( OF_1_3).
+ * @param packet_band_count_get/set ( OF_1_3 OF_1_4).
  *   Accessors for packet_band_count, a variable of type uint64.  Functions
  *   are of type of_meter_band_stats_uint64_get_f and _set_f.
  *
- * @param byte_band_count_get/set ( OF_1_3).
+ * @param byte_band_count_get/set ( OF_1_3 OF_1_4).
  *   Accessors for byte_band_count, a variable of type uint64.  Functions
  *   are of type of_meter_band_stats_uint64_get_f and _set_f.
  *
@@ -7296,15 +7720,15 @@ typedef struct of_meter_band_stats_s of_meter_band_stats_t;
  * Structure for of_meter_config object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param flags_get/set ( OF_1_3).
+ * @param flags_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flags, a variable of type uint16.  Functions
  *   are of type of_meter_config_uint16_get_f and _set_f.
  *
- * @param meter_id_get/set ( OF_1_3).
+ * @param meter_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for meter_id, a variable of type uint32.  Functions
  *   are of type of_meter_config_uint32_get_f and _set_f.
  *
- * @param entries_get/set ( OF_1_3).
+ * @param entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for entries, a variable of type of_list_meter_band.  Functions
  *   are of type of_meter_config_of_list_meter_band_get_f and _set_f.
  *
@@ -7315,23 +7739,23 @@ typedef struct of_meter_config_s of_meter_config_t;
  * Structure for of_meter_features object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param max_meter_get/set ( OF_1_3).
+ * @param max_meter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for max_meter, a variable of type uint32.  Functions
  *   are of type of_meter_features_uint32_get_f and _set_f.
  *
- * @param band_types_get/set ( OF_1_3).
+ * @param band_types_get/set ( OF_1_3 OF_1_4).
  *   Accessors for band_types, a variable of type uint32.  Functions
  *   are of type of_meter_features_uint32_get_f and _set_f.
  *
- * @param capabilities_get/set ( OF_1_3).
+ * @param capabilities_get/set ( OF_1_3 OF_1_4).
  *   Accessors for capabilities, a variable of type uint32.  Functions
  *   are of type of_meter_features_uint32_get_f and _set_f.
  *
- * @param max_bands_get/set ( OF_1_3).
+ * @param max_bands_get/set ( OF_1_3 OF_1_4).
  *   Accessors for max_bands, a variable of type uint8.  Functions
  *   are of type of_meter_features_uint8_get_f and _set_f.
  *
- * @param max_color_get/set ( OF_1_3).
+ * @param max_color_get/set ( OF_1_3 OF_1_4).
  *   Accessors for max_color, a variable of type uint8.  Functions
  *   are of type of_meter_features_uint8_get_f and _set_f.
  *
@@ -7342,31 +7766,31 @@ typedef struct of_meter_features_s of_meter_features_t;
  * Structure for of_meter_stats object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param meter_id_get/set ( OF_1_3).
+ * @param meter_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for meter_id, a variable of type uint32.  Functions
  *   are of type of_meter_stats_uint32_get_f and _set_f.
  *
- * @param flow_count_get/set ( OF_1_3).
+ * @param flow_count_get/set ( OF_1_3 OF_1_4).
  *   Accessors for flow_count, a variable of type uint32.  Functions
  *   are of type of_meter_stats_uint32_get_f and _set_f.
  *
- * @param packet_in_count_get/set ( OF_1_3).
+ * @param packet_in_count_get/set ( OF_1_3 OF_1_4).
  *   Accessors for packet_in_count, a variable of type uint64.  Functions
  *   are of type of_meter_stats_uint64_get_f and _set_f.
  *
- * @param byte_in_count_get/set ( OF_1_3).
+ * @param byte_in_count_get/set ( OF_1_3 OF_1_4).
  *   Accessors for byte_in_count, a variable of type uint64.  Functions
  *   are of type of_meter_stats_uint64_get_f and _set_f.
  *
- * @param duration_sec_get/set ( OF_1_3).
+ * @param duration_sec_get/set ( OF_1_3 OF_1_4).
  *   Accessors for duration_sec, a variable of type uint32.  Functions
  *   are of type of_meter_stats_uint32_get_f and _set_f.
  *
- * @param duration_nsec_get/set ( OF_1_3).
+ * @param duration_nsec_get/set ( OF_1_3 OF_1_4).
  *   Accessors for duration_nsec, a variable of type uint32.  Functions
  *   are of type of_meter_stats_uint32_get_f and _set_f.
  *
- * @param band_stats_get/set ( OF_1_3).
+ * @param band_stats_get/set ( OF_1_3 OF_1_4).
  *   Accessors for band_stats, a variable of type of_list_meter_band_stats.  Functions
  *   are of type of_meter_stats_of_list_meter_band_stats_get_f and _set_f.
  *
@@ -7384,7 +7808,7 @@ typedef struct of_oxm_s of_oxm_t;
  * Structure for of_oxm_arp_op object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_arp_op_uint16_get_f and _set_f.
  *
@@ -7395,11 +7819,11 @@ typedef struct of_oxm_arp_op_s of_oxm_arp_op_t;
  * Structure for of_oxm_arp_op_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_arp_op_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_arp_op_masked_uint16_get_f and _set_f.
  *
@@ -7410,7 +7834,7 @@ typedef struct of_oxm_arp_op_masked_s of_oxm_arp_op_masked_t;
  * Structure for of_oxm_arp_sha object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_arp_sha_of_mac_addr_get_f and _set_f.
  *
@@ -7421,11 +7845,11 @@ typedef struct of_oxm_arp_sha_s of_oxm_arp_sha_t;
  * Structure for of_oxm_arp_sha_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_arp_sha_masked_of_mac_addr_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_arp_sha_masked_of_mac_addr_get_f and _set_f.
  *
@@ -7436,7 +7860,7 @@ typedef struct of_oxm_arp_sha_masked_s of_oxm_arp_sha_masked_t;
  * Structure for of_oxm_arp_spa object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_arp_spa_uint32_get_f and _set_f.
  *
@@ -7447,11 +7871,11 @@ typedef struct of_oxm_arp_spa_s of_oxm_arp_spa_t;
  * Structure for of_oxm_arp_spa_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_arp_spa_masked_uint32_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint32.  Functions
  *   are of type of_oxm_arp_spa_masked_uint32_get_f and _set_f.
  *
@@ -7462,7 +7886,7 @@ typedef struct of_oxm_arp_spa_masked_s of_oxm_arp_spa_masked_t;
  * Structure for of_oxm_arp_tha object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_arp_tha_of_mac_addr_get_f and _set_f.
  *
@@ -7473,11 +7897,11 @@ typedef struct of_oxm_arp_tha_s of_oxm_arp_tha_t;
  * Structure for of_oxm_arp_tha_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_arp_tha_masked_of_mac_addr_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_arp_tha_masked_of_mac_addr_get_f and _set_f.
  *
@@ -7488,7 +7912,7 @@ typedef struct of_oxm_arp_tha_masked_s of_oxm_arp_tha_masked_t;
  * Structure for of_oxm_arp_tpa object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_arp_tpa_uint32_get_f and _set_f.
  *
@@ -7499,11 +7923,11 @@ typedef struct of_oxm_arp_tpa_s of_oxm_arp_tpa_t;
  * Structure for of_oxm_arp_tpa_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_arp_tpa_masked_uint32_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint32.  Functions
  *   are of type of_oxm_arp_tpa_masked_uint32_get_f and _set_f.
  *
@@ -7982,7 +8406,7 @@ typedef struct of_oxm_bsn_vrf_masked_s of_oxm_bsn_vrf_masked_t;
  * Structure for of_oxm_eth_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_eth_dst_of_mac_addr_get_f and _set_f.
  *
@@ -7993,11 +8417,11 @@ typedef struct of_oxm_eth_dst_s of_oxm_eth_dst_t;
  * Structure for of_oxm_eth_dst_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_eth_dst_masked_of_mac_addr_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_eth_dst_masked_of_mac_addr_get_f and _set_f.
  *
@@ -8008,7 +8432,7 @@ typedef struct of_oxm_eth_dst_masked_s of_oxm_eth_dst_masked_t;
  * Structure for of_oxm_eth_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_eth_src_of_mac_addr_get_f and _set_f.
  *
@@ -8019,11 +8443,11 @@ typedef struct of_oxm_eth_src_s of_oxm_eth_src_t;
  * Structure for of_oxm_eth_src_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_eth_src_masked_of_mac_addr_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_eth_src_masked_of_mac_addr_get_f and _set_f.
  *
@@ -8034,7 +8458,7 @@ typedef struct of_oxm_eth_src_masked_s of_oxm_eth_src_masked_t;
  * Structure for of_oxm_eth_type object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_eth_type_uint16_get_f and _set_f.
  *
@@ -8045,11 +8469,11 @@ typedef struct of_oxm_eth_type_s of_oxm_eth_type_t;
  * Structure for of_oxm_eth_type_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_eth_type_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_eth_type_masked_uint16_get_f and _set_f.
  *
@@ -8067,7 +8491,7 @@ typedef struct of_oxm_header_s of_oxm_header_t;
  * Structure for of_oxm_icmpv4_code object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv4_code_uint8_get_f and _set_f.
  *
@@ -8078,11 +8502,11 @@ typedef struct of_oxm_icmpv4_code_s of_oxm_icmpv4_code_t;
  * Structure for of_oxm_icmpv4_code_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv4_code_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv4_code_masked_uint8_get_f and _set_f.
  *
@@ -8093,7 +8517,7 @@ typedef struct of_oxm_icmpv4_code_masked_s of_oxm_icmpv4_code_masked_t;
  * Structure for of_oxm_icmpv4_type object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv4_type_uint8_get_f and _set_f.
  *
@@ -8104,11 +8528,11 @@ typedef struct of_oxm_icmpv4_type_s of_oxm_icmpv4_type_t;
  * Structure for of_oxm_icmpv4_type_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv4_type_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv4_type_masked_uint8_get_f and _set_f.
  *
@@ -8119,7 +8543,7 @@ typedef struct of_oxm_icmpv4_type_masked_s of_oxm_icmpv4_type_masked_t;
  * Structure for of_oxm_icmpv6_code object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv6_code_uint8_get_f and _set_f.
  *
@@ -8130,11 +8554,11 @@ typedef struct of_oxm_icmpv6_code_s of_oxm_icmpv6_code_t;
  * Structure for of_oxm_icmpv6_code_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv6_code_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv6_code_masked_uint8_get_f and _set_f.
  *
@@ -8145,7 +8569,7 @@ typedef struct of_oxm_icmpv6_code_masked_s of_oxm_icmpv6_code_masked_t;
  * Structure for of_oxm_icmpv6_type object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv6_type_uint8_get_f and _set_f.
  *
@@ -8156,11 +8580,11 @@ typedef struct of_oxm_icmpv6_type_s of_oxm_icmpv6_type_t;
  * Structure for of_oxm_icmpv6_type_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv6_type_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_icmpv6_type_masked_uint8_get_f and _set_f.
  *
@@ -8171,7 +8595,7 @@ typedef struct of_oxm_icmpv6_type_masked_s of_oxm_icmpv6_type_masked_t;
  * Structure for of_oxm_in_phy_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_port_no.  Functions
  *   are of type of_oxm_in_phy_port_of_port_no_get_f and _set_f.
  *
@@ -8182,11 +8606,11 @@ typedef struct of_oxm_in_phy_port_s of_oxm_in_phy_port_t;
  * Structure for of_oxm_in_phy_port_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_port_no.  Functions
  *   are of type of_oxm_in_phy_port_masked_of_port_no_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_port_no.  Functions
  *   are of type of_oxm_in_phy_port_masked_of_port_no_get_f and _set_f.
  *
@@ -8197,7 +8621,7 @@ typedef struct of_oxm_in_phy_port_masked_s of_oxm_in_phy_port_masked_t;
  * Structure for of_oxm_in_port object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_port_no.  Functions
  *   are of type of_oxm_in_port_of_port_no_get_f and _set_f.
  *
@@ -8208,11 +8632,11 @@ typedef struct of_oxm_in_port_s of_oxm_in_port_t;
  * Structure for of_oxm_in_port_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_port_no.  Functions
  *   are of type of_oxm_in_port_masked_of_port_no_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_port_no.  Functions
  *   are of type of_oxm_in_port_masked_of_port_no_get_f and _set_f.
  *
@@ -8223,7 +8647,7 @@ typedef struct of_oxm_in_port_masked_s of_oxm_in_port_masked_t;
  * Structure for of_oxm_ip_dscp object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_dscp_uint8_get_f and _set_f.
  *
@@ -8234,11 +8658,11 @@ typedef struct of_oxm_ip_dscp_s of_oxm_ip_dscp_t;
  * Structure for of_oxm_ip_dscp_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_dscp_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_dscp_masked_uint8_get_f and _set_f.
  *
@@ -8249,7 +8673,7 @@ typedef struct of_oxm_ip_dscp_masked_s of_oxm_ip_dscp_masked_t;
  * Structure for of_oxm_ip_ecn object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_ecn_uint8_get_f and _set_f.
  *
@@ -8260,11 +8684,11 @@ typedef struct of_oxm_ip_ecn_s of_oxm_ip_ecn_t;
  * Structure for of_oxm_ip_ecn_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_ecn_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_ecn_masked_uint8_get_f and _set_f.
  *
@@ -8275,7 +8699,7 @@ typedef struct of_oxm_ip_ecn_masked_s of_oxm_ip_ecn_masked_t;
  * Structure for of_oxm_ip_proto object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_proto_uint8_get_f and _set_f.
  *
@@ -8286,11 +8710,11 @@ typedef struct of_oxm_ip_proto_s of_oxm_ip_proto_t;
  * Structure for of_oxm_ip_proto_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_proto_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_ip_proto_masked_uint8_get_f and _set_f.
  *
@@ -8301,7 +8725,7 @@ typedef struct of_oxm_ip_proto_masked_s of_oxm_ip_proto_masked_t;
  * Structure for of_oxm_ipv4_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv4.  Functions
  *   are of type of_oxm_ipv4_dst_of_ipv4_get_f and _set_f.
  *
@@ -8312,11 +8736,11 @@ typedef struct of_oxm_ipv4_dst_s of_oxm_ipv4_dst_t;
  * Structure for of_oxm_ipv4_dst_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv4.  Functions
  *   are of type of_oxm_ipv4_dst_masked_of_ipv4_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_ipv4.  Functions
  *   are of type of_oxm_ipv4_dst_masked_of_ipv4_get_f and _set_f.
  *
@@ -8327,7 +8751,7 @@ typedef struct of_oxm_ipv4_dst_masked_s of_oxm_ipv4_dst_masked_t;
  * Structure for of_oxm_ipv4_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv4.  Functions
  *   are of type of_oxm_ipv4_src_of_ipv4_get_f and _set_f.
  *
@@ -8338,11 +8762,11 @@ typedef struct of_oxm_ipv4_src_s of_oxm_ipv4_src_t;
  * Structure for of_oxm_ipv4_src_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv4.  Functions
  *   are of type of_oxm_ipv4_src_masked_of_ipv4_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_ipv4.  Functions
  *   are of type of_oxm_ipv4_src_masked_of_ipv4_get_f and _set_f.
  *
@@ -8353,7 +8777,7 @@ typedef struct of_oxm_ipv4_src_masked_s of_oxm_ipv4_src_masked_t;
  * Structure for of_oxm_ipv6_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_dst_of_ipv6_get_f and _set_f.
  *
@@ -8364,11 +8788,11 @@ typedef struct of_oxm_ipv6_dst_s of_oxm_ipv6_dst_t;
  * Structure for of_oxm_ipv6_dst_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_dst_masked_of_ipv6_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_dst_masked_of_ipv6_get_f and _set_f.
  *
@@ -8379,7 +8803,7 @@ typedef struct of_oxm_ipv6_dst_masked_s of_oxm_ipv6_dst_masked_t;
  * Structure for of_oxm_ipv6_flabel object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_ipv6_flabel_uint32_get_f and _set_f.
  *
@@ -8390,11 +8814,11 @@ typedef struct of_oxm_ipv6_flabel_s of_oxm_ipv6_flabel_t;
  * Structure for of_oxm_ipv6_flabel_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_ipv6_flabel_masked_uint32_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint32.  Functions
  *   are of type of_oxm_ipv6_flabel_masked_uint32_get_f and _set_f.
  *
@@ -8405,7 +8829,7 @@ typedef struct of_oxm_ipv6_flabel_masked_s of_oxm_ipv6_flabel_masked_t;
  * Structure for of_oxm_ipv6_nd_sll object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_ipv6_nd_sll_of_mac_addr_get_f and _set_f.
  *
@@ -8416,11 +8840,11 @@ typedef struct of_oxm_ipv6_nd_sll_s of_oxm_ipv6_nd_sll_t;
  * Structure for of_oxm_ipv6_nd_sll_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_ipv6_nd_sll_masked_of_mac_addr_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_ipv6_nd_sll_masked_of_mac_addr_get_f and _set_f.
  *
@@ -8431,7 +8855,7 @@ typedef struct of_oxm_ipv6_nd_sll_masked_s of_oxm_ipv6_nd_sll_masked_t;
  * Structure for of_oxm_ipv6_nd_target object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_nd_target_of_ipv6_get_f and _set_f.
  *
@@ -8442,11 +8866,11 @@ typedef struct of_oxm_ipv6_nd_target_s of_oxm_ipv6_nd_target_t;
  * Structure for of_oxm_ipv6_nd_target_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_nd_target_masked_of_ipv6_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_nd_target_masked_of_ipv6_get_f and _set_f.
  *
@@ -8457,7 +8881,7 @@ typedef struct of_oxm_ipv6_nd_target_masked_s of_oxm_ipv6_nd_target_masked_t;
  * Structure for of_oxm_ipv6_nd_tll object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_ipv6_nd_tll_of_mac_addr_get_f and _set_f.
  *
@@ -8468,11 +8892,11 @@ typedef struct of_oxm_ipv6_nd_tll_s of_oxm_ipv6_nd_tll_t;
  * Structure for of_oxm_ipv6_nd_tll_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_ipv6_nd_tll_masked_of_mac_addr_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
  *   are of type of_oxm_ipv6_nd_tll_masked_of_mac_addr_get_f and _set_f.
  *
@@ -8483,7 +8907,7 @@ typedef struct of_oxm_ipv6_nd_tll_masked_s of_oxm_ipv6_nd_tll_masked_t;
  * Structure for of_oxm_ipv6_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_src_of_ipv6_get_f and _set_f.
  *
@@ -8494,11 +8918,11 @@ typedef struct of_oxm_ipv6_src_s of_oxm_ipv6_src_t;
  * Structure for of_oxm_ipv6_src_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_src_masked_of_ipv6_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type of_ipv6.  Functions
  *   are of type of_oxm_ipv6_src_masked_of_ipv6_get_f and _set_f.
  *
@@ -8509,7 +8933,7 @@ typedef struct of_oxm_ipv6_src_masked_s of_oxm_ipv6_src_masked_t;
  * Structure for of_oxm_metadata object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint64.  Functions
  *   are of type of_oxm_metadata_uint64_get_f and _set_f.
  *
@@ -8520,11 +8944,11 @@ typedef struct of_oxm_metadata_s of_oxm_metadata_t;
  * Structure for of_oxm_metadata_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint64.  Functions
  *   are of type of_oxm_metadata_masked_uint64_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint64.  Functions
  *   are of type of_oxm_metadata_masked_uint64_get_f and _set_f.
  *
@@ -8535,7 +8959,7 @@ typedef struct of_oxm_metadata_masked_s of_oxm_metadata_masked_t;
  * Structure for of_oxm_mpls_bos object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_mpls_bos_uint8_get_f and _set_f.
  *
@@ -8546,11 +8970,11 @@ typedef struct of_oxm_mpls_bos_s of_oxm_mpls_bos_t;
  * Structure for of_oxm_mpls_bos_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_mpls_bos_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_3).
+ * @param value_mask_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_mpls_bos_masked_uint8_get_f and _set_f.
  *
@@ -8561,7 +8985,7 @@ typedef struct of_oxm_mpls_bos_masked_s of_oxm_mpls_bos_masked_t;
  * Structure for of_oxm_mpls_label object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_mpls_label_uint32_get_f and _set_f.
  *
@@ -8572,11 +8996,11 @@ typedef struct of_oxm_mpls_label_s of_oxm_mpls_label_t;
  * Structure for of_oxm_mpls_label_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_oxm_mpls_label_masked_uint32_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint32.  Functions
  *   are of type of_oxm_mpls_label_masked_uint32_get_f and _set_f.
  *
@@ -8587,7 +9011,7 @@ typedef struct of_oxm_mpls_label_masked_s of_oxm_mpls_label_masked_t;
  * Structure for of_oxm_mpls_tc object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_mpls_tc_uint8_get_f and _set_f.
  *
@@ -8598,11 +9022,11 @@ typedef struct of_oxm_mpls_tc_s of_oxm_mpls_tc_t;
  * Structure for of_oxm_mpls_tc_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_mpls_tc_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_mpls_tc_masked_uint8_get_f and _set_f.
  *
@@ -8613,7 +9037,7 @@ typedef struct of_oxm_mpls_tc_masked_s of_oxm_mpls_tc_masked_t;
  * Structure for of_oxm_sctp_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_sctp_dst_uint16_get_f and _set_f.
  *
@@ -8624,11 +9048,11 @@ typedef struct of_oxm_sctp_dst_s of_oxm_sctp_dst_t;
  * Structure for of_oxm_sctp_dst_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_sctp_dst_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_sctp_dst_masked_uint16_get_f and _set_f.
  *
@@ -8639,7 +9063,7 @@ typedef struct of_oxm_sctp_dst_masked_s of_oxm_sctp_dst_masked_t;
  * Structure for of_oxm_sctp_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_sctp_src_uint16_get_f and _set_f.
  *
@@ -8650,11 +9074,11 @@ typedef struct of_oxm_sctp_src_s of_oxm_sctp_src_t;
  * Structure for of_oxm_sctp_src_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_sctp_src_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_sctp_src_masked_uint16_get_f and _set_f.
  *
@@ -8665,7 +9089,7 @@ typedef struct of_oxm_sctp_src_masked_s of_oxm_sctp_src_masked_t;
  * Structure for of_oxm_tcp_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_tcp_dst_uint16_get_f and _set_f.
  *
@@ -8676,11 +9100,11 @@ typedef struct of_oxm_tcp_dst_s of_oxm_tcp_dst_t;
  * Structure for of_oxm_tcp_dst_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_tcp_dst_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_tcp_dst_masked_uint16_get_f and _set_f.
  *
@@ -8691,7 +9115,7 @@ typedef struct of_oxm_tcp_dst_masked_s of_oxm_tcp_dst_masked_t;
  * Structure for of_oxm_tcp_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_tcp_src_uint16_get_f and _set_f.
  *
@@ -8702,11 +9126,11 @@ typedef struct of_oxm_tcp_src_s of_oxm_tcp_src_t;
  * Structure for of_oxm_tcp_src_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_tcp_src_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_tcp_src_masked_uint16_get_f and _set_f.
  *
@@ -8717,7 +9141,7 @@ typedef struct of_oxm_tcp_src_masked_s of_oxm_tcp_src_masked_t;
  * Structure for of_oxm_tunnel_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint64.  Functions
  *   are of type of_oxm_tunnel_id_uint64_get_f and _set_f.
  *
@@ -8728,11 +9152,11 @@ typedef struct of_oxm_tunnel_id_s of_oxm_tunnel_id_t;
  * Structure for of_oxm_tunnel_id_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint64.  Functions
  *   are of type of_oxm_tunnel_id_masked_uint64_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_3).
+ * @param value_mask_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value_mask, a variable of type uint64.  Functions
  *   are of type of_oxm_tunnel_id_masked_uint64_get_f and _set_f.
  *
@@ -8743,7 +9167,7 @@ typedef struct of_oxm_tunnel_id_masked_s of_oxm_tunnel_id_masked_t;
  * Structure for of_oxm_udp_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_udp_dst_uint16_get_f and _set_f.
  *
@@ -8754,11 +9178,11 @@ typedef struct of_oxm_udp_dst_s of_oxm_udp_dst_t;
  * Structure for of_oxm_udp_dst_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_udp_dst_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_udp_dst_masked_uint16_get_f and _set_f.
  *
@@ -8769,7 +9193,7 @@ typedef struct of_oxm_udp_dst_masked_s of_oxm_udp_dst_masked_t;
  * Structure for of_oxm_udp_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_udp_src_uint16_get_f and _set_f.
  *
@@ -8780,11 +9204,11 @@ typedef struct of_oxm_udp_src_s of_oxm_udp_src_t;
  * Structure for of_oxm_udp_src_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_udp_src_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_udp_src_masked_uint16_get_f and _set_f.
  *
@@ -8795,7 +9219,7 @@ typedef struct of_oxm_udp_src_masked_s of_oxm_udp_src_masked_t;
  * Structure for of_oxm_vlan_pcp object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_vlan_pcp_uint8_get_f and _set_f.
  *
@@ -8806,11 +9230,11 @@ typedef struct of_oxm_vlan_pcp_s of_oxm_vlan_pcp_t;
  * Structure for of_oxm_vlan_pcp_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_oxm_vlan_pcp_masked_uint8_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint8.  Functions
  *   are of type of_oxm_vlan_pcp_masked_uint8_get_f and _set_f.
  *
@@ -8821,7 +9245,7 @@ typedef struct of_oxm_vlan_pcp_masked_s of_oxm_vlan_pcp_masked_t;
  * Structure for of_oxm_vlan_vid object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_vlan_vid_uint16_get_f and _set_f.
  *
@@ -8832,11 +9256,11 @@ typedef struct of_oxm_vlan_vid_s of_oxm_vlan_vid_t;
  * Structure for of_oxm_vlan_vid_masked object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_2 OF_1_3).
+ * @param value_get/set 
  *   Accessors for value, a variable of type uint16.  Functions
  *   are of type of_oxm_vlan_vid_masked_uint16_get_f and _set_f.
  *
- * @param value_mask_get/set ( OF_1_2 OF_1_3).
+ * @param value_mask_get/set 
  *   Accessors for value_mask, a variable of type uint16.  Functions
  *   are of type of_oxm_vlan_vid_masked_uint16_get_f and _set_f.
  *
@@ -8847,15 +9271,15 @@ typedef struct of_oxm_vlan_vid_masked_s of_oxm_vlan_vid_masked_t;
  * Structure for of_packet_queue object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param queue_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param queue_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for queue_id, a variable of type uint32.  Functions
  *   are of type of_packet_queue_uint32_get_f and _set_f.
  *
- * @param port_get/set ( OF_1_2 OF_1_3).
+ * @param port_get/set 
  *   Accessors for port, a variable of type of_port_no.  Functions
  *   are of type of_packet_queue_of_port_no_get_f and _set_f.
  *
- * @param properties_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param properties_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for properties, a variable of type of_list_queue_prop.  Functions
  *   are of type of_packet_queue_of_list_queue_prop_get_f and _set_f.
  *
@@ -8866,25 +9290,29 @@ typedef struct of_packet_queue_s of_packet_queue_t;
  * Structure for of_port_desc object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_port_desc_of_port_no_get_f and _set_f.
  *
- * @param hw_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param hw_addr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for hw_addr, a variable of type of_mac_addr.  Functions
  *   are of type of_port_desc_of_mac_addr_get_f and _set_f.
  *
- * @param name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param name_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for name, a variable of type of_port_name.  Functions
  *   are of type of_port_desc_of_port_name_get_f and _set_f.
  *
- * @param config_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param config_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for config, a variable of type uint32.  Functions
  *   are of type of_port_desc_uint32_get_f and _set_f.
  *
- * @param state_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param state_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for state, a variable of type uint32.  Functions
  *   are of type of_port_desc_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_port_desc_prop.  Functions
+ *   are of type of_port_desc_of_list_port_desc_prop_get_f and _set_f.
  *
  * @param curr_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
  *   Accessors for curr, a variable of type uint32.  Functions
@@ -8914,44 +9342,226 @@ typedef struct of_packet_queue_s of_packet_queue_t;
 typedef struct of_port_desc_s of_port_desc_t;
 
 /**
+ * Structure for of_port_desc_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_port_desc_prop_s of_port_desc_prop_t;
+
+/**
+ * Structure for of_port_desc_prop_ethernet object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param curr_get/set ( OF_1_4).
+ *   Accessors for curr, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_ethernet_uint32_get_f and _set_f.
+ *
+ * @param advertised_get/set ( OF_1_4).
+ *   Accessors for advertised, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_ethernet_uint32_get_f and _set_f.
+ *
+ * @param supported_get/set ( OF_1_4).
+ *   Accessors for supported, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_ethernet_uint32_get_f and _set_f.
+ *
+ * @param peer_get/set ( OF_1_4).
+ *   Accessors for peer, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_ethernet_uint32_get_f and _set_f.
+ *
+ * @param curr_speed_get/set ( OF_1_4).
+ *   Accessors for curr_speed, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_ethernet_uint32_get_f and _set_f.
+ *
+ * @param max_speed_get/set ( OF_1_4).
+ *   Accessors for max_speed, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_ethernet_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_ethernet_s of_port_desc_prop_ethernet_t;
+
+/**
+ * Structure for of_port_desc_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_experimenter_s of_port_desc_prop_experimenter_t;
+
+/**
+ * Structure for of_port_desc_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_port_desc_prop_header_s of_port_desc_prop_header_t;
+
+/**
+ * Structure for of_port_desc_prop_optical object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param supported_get/set ( OF_1_4).
+ *   Accessors for supported, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_min_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for tx_min_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_max_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for tx_max_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_grid_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for tx_grid_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param rx_min_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for rx_min_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param rx_max_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for rx_max_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param rx_grid_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for rx_grid_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_pwr_min_get/set ( OF_1_4).
+ *   Accessors for tx_pwr_min, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_pwr_max_get/set ( OF_1_4).
+ *   Accessors for tx_pwr_max, a variable of type uint32.  Functions
+ *   are of type of_port_desc_prop_optical_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_desc_prop_optical_s of_port_desc_prop_optical_t;
+
+/**
+ * Structure for of_port_mod_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_port_mod_prop_s of_port_mod_prop_t;
+
+/**
+ * Structure for of_port_mod_prop_ethernet object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param advertise_get/set ( OF_1_4).
+ *   Accessors for advertise, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_ethernet_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_mod_prop_ethernet_s of_port_mod_prop_ethernet_t;
+
+/**
+ * Structure for of_port_mod_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_mod_prop_experimenter_s of_port_mod_prop_experimenter_t;
+
+/**
+ * Structure for of_port_mod_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_port_mod_prop_header_s of_port_mod_prop_header_t;
+
+/**
+ * Structure for of_port_mod_prop_optical object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param configure_get/set ( OF_1_4).
+ *   Accessors for configure, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param freq_ldma_get/set ( OF_1_4).
+ *   Accessors for freq_ldma, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param fl_offset_get/set ( OF_1_4).
+ *   Accessors for fl_offset, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param grid_span_get/set ( OF_1_4).
+ *   Accessors for grid_span, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_pwr_get/set ( OF_1_4).
+ *   Accessors for tx_pwr, a variable of type uint32.  Functions
+ *   are of type of_port_mod_prop_optical_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_port_mod_prop_optical_s of_port_mod_prop_optical_t;
+
+/**
  * Structure for of_port_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_port_stats_entry_of_port_no_get_f and _set_f.
  *
- * @param rx_packets_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param duration_sec_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for duration_sec, a variable of type uint32.  Functions
+ *   are of type of_port_stats_entry_uint32_get_f and _set_f.
+ *
+ * @param duration_nsec_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for duration_nsec, a variable of type uint32.  Functions
+ *   are of type of_port_stats_entry_uint32_get_f and _set_f.
+ *
+ * @param rx_packets_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for rx_packets, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param tx_packets_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_packets_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_packets, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param rx_bytes_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param rx_bytes_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for rx_bytes, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param tx_bytes_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_bytes_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_bytes, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param rx_dropped_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param rx_dropped_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for rx_dropped, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param tx_dropped_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_dropped_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_dropped, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param rx_errors_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param rx_errors_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for rx_errors, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param tx_errors_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_errors_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_errors, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_port_stats_prop.  Functions
+ *   are of type of_port_stats_entry_of_list_port_stats_prop_get_f and _set_f.
  *
  * @param rx_frame_err_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
  *   Accessors for rx_frame_err, a variable of type uint64.  Functions
@@ -8969,16 +9579,185 @@ typedef struct of_port_desc_s of_port_desc_t;
  *   Accessors for collisions, a variable of type uint64.  Functions
  *   are of type of_port_stats_entry_uint64_get_f and _set_f.
  *
- * @param duration_sec_get/set ( OF_1_3).
- *   Accessors for duration_sec, a variable of type uint32.  Functions
- *   are of type of_port_stats_entry_uint32_get_f and _set_f.
- *
- * @param duration_nsec_get/set ( OF_1_3).
- *   Accessors for duration_nsec, a variable of type uint32.  Functions
- *   are of type of_port_stats_entry_uint32_get_f and _set_f.
- *
  */
 typedef struct of_port_stats_entry_s of_port_stats_entry_t;
+
+/**
+ * Structure for of_port_stats_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_port_stats_prop_s of_port_stats_prop_t;
+
+/**
+ * Structure for of_port_stats_prop_ethernet object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param rx_frame_err_get/set ( OF_1_4).
+ *   Accessors for rx_frame_err, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_ethernet_uint64_get_f and _set_f.
+ *
+ * @param rx_over_err_get/set ( OF_1_4).
+ *   Accessors for rx_over_err, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_ethernet_uint64_get_f and _set_f.
+ *
+ * @param rx_crc_err_get/set ( OF_1_4).
+ *   Accessors for rx_crc_err, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_ethernet_uint64_get_f and _set_f.
+ *
+ * @param collisions_get/set ( OF_1_4).
+ *   Accessors for collisions, a variable of type uint64.  Functions
+ *   are of type of_port_stats_prop_ethernet_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_port_stats_prop_ethernet_s of_port_stats_prop_ethernet_t;
+
+/**
+ * Structure for of_port_stats_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param experimenter_data_get/set ( OF_1_4).
+ *   Accessors for experimenter_data, a variable of type of_octets.  Functions
+ *   are of type of_port_stats_prop_experimenter_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_port_stats_prop_experimenter_s of_port_stats_prop_experimenter_t;
+
+/**
+ * Structure for of_port_stats_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_port_stats_prop_header_s of_port_stats_prop_header_t;
+
+/**
+ * Structure for of_port_stats_prop_optical object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for tx_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_offset_get/set ( OF_1_4).
+ *   Accessors for tx_offset, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_grid_span_get/set ( OF_1_4).
+ *   Accessors for tx_grid_span, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param rx_freq_lmda_get/set ( OF_1_4).
+ *   Accessors for rx_freq_lmda, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param rx_offset_get/set ( OF_1_4).
+ *   Accessors for rx_offset, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param rx_grid_span_get/set ( OF_1_4).
+ *   Accessors for rx_grid_span, a variable of type uint32.  Functions
+ *   are of type of_port_stats_prop_optical_uint32_get_f and _set_f.
+ *
+ * @param tx_pwr_get/set ( OF_1_4).
+ *   Accessors for tx_pwr, a variable of type uint16.  Functions
+ *   are of type of_port_stats_prop_optical_uint16_get_f and _set_f.
+ *
+ * @param rx_pwr_get/set ( OF_1_4).
+ *   Accessors for rx_pwr, a variable of type uint16.  Functions
+ *   are of type of_port_stats_prop_optical_uint16_get_f and _set_f.
+ *
+ * @param bias_current_get/set ( OF_1_4).
+ *   Accessors for bias_current, a variable of type uint16.  Functions
+ *   are of type of_port_stats_prop_optical_uint16_get_f and _set_f.
+ *
+ * @param temperature_get/set ( OF_1_4).
+ *   Accessors for temperature, a variable of type uint16.  Functions
+ *   are of type of_port_stats_prop_optical_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_port_stats_prop_optical_s of_port_stats_prop_optical_t;
+
+/**
+ * Structure for of_queue_desc object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param port_no_get/set ( OF_1_4).
+ *   Accessors for port_no, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_uint32_get_f and _set_f.
+ *
+ * @param queue_id_get/set ( OF_1_4).
+ *   Accessors for queue_id, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_uint32_get_f and _set_f.
+ *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_queue_desc_prop.  Functions
+ *   are of type of_queue_desc_of_list_queue_desc_prop_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_s of_queue_desc_t;
+
+/**
+ * Structure for of_queue_desc_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_queue_desc_prop_s of_queue_desc_prop_t;
+
+/**
+ * Structure for of_queue_desc_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_queue_desc_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_prop_experimenter_s of_queue_desc_prop_experimenter_t;
+
+/**
+ * Structure for of_queue_desc_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_queue_desc_prop_header_s of_queue_desc_prop_header_t;
+
+/**
+ * Structure for of_queue_desc_prop_max_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param rate_get/set ( OF_1_4).
+ *   Accessors for rate, a variable of type uint16.  Functions
+ *   are of type of_queue_desc_prop_max_rate_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_prop_max_rate_s of_queue_desc_prop_max_rate_t;
+
+/**
+ * Structure for of_queue_desc_prop_min_rate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param rate_get/set ( OF_1_4).
+ *   Accessors for rate, a variable of type uint16.  Functions
+ *   are of type of_queue_desc_prop_min_rate_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_desc_prop_min_rate_s of_queue_desc_prop_min_rate_t;
 
 /**
  * Structure for of_queue_prop object.  Get/set
@@ -8991,11 +9770,11 @@ typedef struct of_queue_prop_s of_queue_prop_t;
  * Structure for of_queue_prop_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_2 OF_1_3).
+ * @param experimenter_get/set 
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_queue_prop_experimenter_uint32_get_f and _set_f.
  *
- * @param data_get/set ( OF_1_2 OF_1_3).
+ * @param data_get/set 
  *   Accessors for data, a variable of type of_octets.  Functions
  *   are of type of_queue_prop_experimenter_of_octets_get_f and _set_f.
  *
@@ -9013,7 +9792,7 @@ typedef struct of_queue_prop_header_s of_queue_prop_header_t;
  * Structure for of_queue_prop_max_rate object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param rate_get/set ( OF_1_2 OF_1_3).
+ * @param rate_get/set 
  *   Accessors for rate, a variable of type uint16.  Functions
  *   are of type of_queue_prop_max_rate_uint16_get_f and _set_f.
  *
@@ -9024,7 +9803,7 @@ typedef struct of_queue_prop_max_rate_s of_queue_prop_max_rate_t;
  * Structure for of_queue_prop_min_rate object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param rate_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param rate_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for rate, a variable of type uint16.  Functions
  *   are of type of_queue_prop_min_rate_uint16_get_f and _set_f.
  *
@@ -9035,36 +9814,113 @@ typedef struct of_queue_prop_min_rate_s of_queue_prop_min_rate_t;
  * Structure for of_queue_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param port_no_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for port_no, a variable of type of_port_no.  Functions
  *   are of type of_queue_stats_entry_of_port_no_get_f and _set_f.
  *
- * @param queue_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param queue_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for queue_id, a variable of type uint32.  Functions
  *   are of type of_queue_stats_entry_uint32_get_f and _set_f.
  *
- * @param tx_bytes_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_bytes_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_bytes, a variable of type uint64.  Functions
  *   are of type of_queue_stats_entry_uint64_get_f and _set_f.
  *
- * @param tx_packets_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_packets_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_packets, a variable of type uint64.  Functions
  *   are of type of_queue_stats_entry_uint64_get_f and _set_f.
  *
- * @param tx_errors_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param tx_errors_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for tx_errors, a variable of type uint64.  Functions
  *   are of type of_queue_stats_entry_uint64_get_f and _set_f.
  *
- * @param duration_sec_get/set ( OF_1_3).
+ * @param duration_sec_get/set ( OF_1_3 OF_1_4).
  *   Accessors for duration_sec, a variable of type uint32.  Functions
  *   are of type of_queue_stats_entry_uint32_get_f and _set_f.
  *
- * @param duration_nsec_get/set ( OF_1_3).
+ * @param duration_nsec_get/set ( OF_1_3 OF_1_4).
  *   Accessors for duration_nsec, a variable of type uint32.  Functions
  *   are of type of_queue_stats_entry_uint32_get_f and _set_f.
  *
+ * @param properties_get/set ( OF_1_4).
+ *   Accessors for properties, a variable of type of_list_queue_stats_prop.  Functions
+ *   are of type of_queue_stats_entry_of_list_queue_stats_prop_get_f and _set_f.
+ *
  */
 typedef struct of_queue_stats_entry_s of_queue_stats_entry_t;
+
+/**
+ * Structure for of_queue_stats_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_queue_stats_prop_s of_queue_stats_prop_t;
+
+/**
+ * Structure for of_queue_stats_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_queue_stats_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_queue_stats_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_queue_stats_prop_experimenter_s of_queue_stats_prop_experimenter_t;
+
+/**
+ * Structure for of_queue_stats_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_queue_stats_prop_header_s of_queue_stats_prop_header_t;
+
+/**
+ * Structure for of_role_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_role_prop_s of_role_prop_t;
+
+/**
+ * Structure for of_role_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_role_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_role_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_role_prop_experimenter_s of_role_prop_experimenter_t;
+
+/**
+ * Structure for of_role_prop_header object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_role_prop_header_s of_role_prop_header_t;
+
+/**
+ * Structure for of_table_desc object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param table_id_get/set ( OF_1_4).
+ *   Accessors for table_id, a variable of type uint8.  Functions
+ *   are of type of_table_desc_uint8_get_f and _set_f.
+ *
+ * @param config_get/set ( OF_1_4).
+ *   Accessors for config, a variable of type uint32.  Functions
+ *   are of type of_table_desc_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_table_desc_s of_table_desc_t;
 
 /**
  * Structure for of_table_feature_prop object.  Get/set
@@ -9077,7 +9933,7 @@ typedef struct of_table_feature_prop_s of_table_feature_prop_t;
  * Structure for of_table_feature_prop_apply_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param action_ids_get/set ( OF_1_3).
+ * @param action_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for action_ids, a variable of type of_list_action_id.  Functions
  *   are of type of_table_feature_prop_apply_actions_of_list_action_id_get_f and _set_f.
  *
@@ -9088,7 +9944,7 @@ typedef struct of_table_feature_prop_apply_actions_s of_table_feature_prop_apply
  * Structure for of_table_feature_prop_apply_actions_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param action_ids_get/set ( OF_1_3).
+ * @param action_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for action_ids, a variable of type of_list_action_id.  Functions
  *   are of type of_table_feature_prop_apply_actions_miss_of_list_action_id_get_f and _set_f.
  *
@@ -9099,7 +9955,7 @@ typedef struct of_table_feature_prop_apply_actions_miss_s of_table_feature_prop_
  * Structure for of_table_feature_prop_apply_setfield object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_ids_get/set ( OF_1_3).
+ * @param oxm_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for oxm_ids, a variable of type of_list_uint32.  Functions
  *   are of type of_table_feature_prop_apply_setfield_of_list_uint32_get_f and _set_f.
  *
@@ -9110,7 +9966,7 @@ typedef struct of_table_feature_prop_apply_setfield_s of_table_feature_prop_appl
  * Structure for of_table_feature_prop_apply_setfield_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_ids_get/set ( OF_1_3).
+ * @param oxm_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for oxm_ids, a variable of type of_list_uint32.  Functions
  *   are of type of_table_feature_prop_apply_setfield_miss_of_list_uint32_get_f and _set_f.
  *
@@ -9121,15 +9977,15 @@ typedef struct of_table_feature_prop_apply_setfield_miss_s of_table_feature_prop
  * Structure for of_table_feature_prop_experimenter object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_table_feature_prop_experimenter_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_table_feature_prop_experimenter_uint32_get_f and _set_f.
  *
- * @param experimenter_data_get/set ( OF_1_3).
+ * @param experimenter_data_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter_data, a variable of type of_octets.  Functions
  *   are of type of_table_feature_prop_experimenter_of_octets_get_f and _set_f.
  *
@@ -9140,15 +9996,15 @@ typedef struct of_table_feature_prop_experimenter_s of_table_feature_prop_experi
  * Structure for of_table_feature_prop_experimenter_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param experimenter_get/set ( OF_1_3).
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter, a variable of type uint32.  Functions
  *   are of type of_table_feature_prop_experimenter_miss_uint32_get_f and _set_f.
  *
- * @param subtype_get/set ( OF_1_3).
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
  *   Accessors for subtype, a variable of type uint32.  Functions
  *   are of type of_table_feature_prop_experimenter_miss_uint32_get_f and _set_f.
  *
- * @param experimenter_data_get/set ( OF_1_3).
+ * @param experimenter_data_get/set ( OF_1_3 OF_1_4).
  *   Accessors for experimenter_data, a variable of type of_octets.  Functions
  *   are of type of_table_feature_prop_experimenter_miss_of_octets_get_f and _set_f.
  *
@@ -9166,7 +10022,7 @@ typedef struct of_table_feature_prop_header_s of_table_feature_prop_header_t;
  * Structure for of_table_feature_prop_instructions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param instruction_ids_get/set ( OF_1_3).
+ * @param instruction_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for instruction_ids, a variable of type of_list_instruction_id.  Functions
  *   are of type of_table_feature_prop_instructions_of_list_instruction_id_get_f and _set_f.
  *
@@ -9177,7 +10033,7 @@ typedef struct of_table_feature_prop_instructions_s of_table_feature_prop_instru
  * Structure for of_table_feature_prop_instructions_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param instruction_ids_get/set ( OF_1_3).
+ * @param instruction_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for instruction_ids, a variable of type of_list_instruction_id.  Functions
  *   are of type of_table_feature_prop_instructions_miss_of_list_instruction_id_get_f and _set_f.
  *
@@ -9188,7 +10044,7 @@ typedef struct of_table_feature_prop_instructions_miss_s of_table_feature_prop_i
  * Structure for of_table_feature_prop_match object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_ids_get/set ( OF_1_3).
+ * @param oxm_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for oxm_ids, a variable of type of_list_uint32.  Functions
  *   are of type of_table_feature_prop_match_of_list_uint32_get_f and _set_f.
  *
@@ -9199,7 +10055,7 @@ typedef struct of_table_feature_prop_match_s of_table_feature_prop_match_t;
  * Structure for of_table_feature_prop_next_tables object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param next_table_ids_get/set ( OF_1_3).
+ * @param next_table_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for next_table_ids, a variable of type of_list_uint8.  Functions
  *   are of type of_table_feature_prop_next_tables_of_list_uint8_get_f and _set_f.
  *
@@ -9210,7 +10066,7 @@ typedef struct of_table_feature_prop_next_tables_s of_table_feature_prop_next_ta
  * Structure for of_table_feature_prop_next_tables_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param next_table_ids_get/set ( OF_1_3).
+ * @param next_table_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for next_table_ids, a variable of type of_list_uint8.  Functions
  *   are of type of_table_feature_prop_next_tables_miss_of_list_uint8_get_f and _set_f.
  *
@@ -9218,10 +10074,21 @@ typedef struct of_table_feature_prop_next_tables_s of_table_feature_prop_next_ta
 typedef struct of_table_feature_prop_next_tables_miss_s of_table_feature_prop_next_tables_miss_t;
 
 /**
+ * Structure for of_table_feature_prop_table_sync_from object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param table_ids_get/set ( OF_1_4).
+ *   Accessors for table_ids, a variable of type of_list_uint8.  Functions
+ *   are of type of_table_feature_prop_table_sync_from_of_list_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_table_feature_prop_table_sync_from_s of_table_feature_prop_table_sync_from_t;
+
+/**
  * Structure for of_table_feature_prop_wildcards object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_ids_get/set ( OF_1_3).
+ * @param oxm_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for oxm_ids, a variable of type of_list_uint32.  Functions
  *   are of type of_table_feature_prop_wildcards_of_list_uint32_get_f and _set_f.
  *
@@ -9232,7 +10099,7 @@ typedef struct of_table_feature_prop_wildcards_s of_table_feature_prop_wildcards
  * Structure for of_table_feature_prop_write_actions object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param action_ids_get/set ( OF_1_3).
+ * @param action_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for action_ids, a variable of type of_list_action_id.  Functions
  *   are of type of_table_feature_prop_write_actions_of_list_action_id_get_f and _set_f.
  *
@@ -9243,7 +10110,7 @@ typedef struct of_table_feature_prop_write_actions_s of_table_feature_prop_write
  * Structure for of_table_feature_prop_write_actions_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param action_ids_get/set ( OF_1_3).
+ * @param action_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for action_ids, a variable of type of_list_action_id.  Functions
  *   are of type of_table_feature_prop_write_actions_miss_of_list_action_id_get_f and _set_f.
  *
@@ -9254,7 +10121,7 @@ typedef struct of_table_feature_prop_write_actions_miss_s of_table_feature_prop_
  * Structure for of_table_feature_prop_write_setfield object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_ids_get/set ( OF_1_3).
+ * @param oxm_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for oxm_ids, a variable of type of_list_uint32.  Functions
  *   are of type of_table_feature_prop_write_setfield_of_list_uint32_get_f and _set_f.
  *
@@ -9265,7 +10132,7 @@ typedef struct of_table_feature_prop_write_setfield_s of_table_feature_prop_writ
  * Structure for of_table_feature_prop_write_setfield_miss object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param oxm_ids_get/set ( OF_1_3).
+ * @param oxm_ids_get/set ( OF_1_3 OF_1_4).
  *   Accessors for oxm_ids, a variable of type of_list_uint32.  Functions
  *   are of type of_table_feature_prop_write_setfield_miss_of_list_uint32_get_f and _set_f.
  *
@@ -9276,31 +10143,31 @@ typedef struct of_table_feature_prop_write_setfield_miss_s of_table_feature_prop
  * Structure for of_table_features object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param table_id_get/set ( OF_1_3).
+ * @param table_id_get/set ( OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_table_features_uint8_get_f and _set_f.
  *
- * @param name_get/set ( OF_1_3).
+ * @param name_get/set ( OF_1_3 OF_1_4).
  *   Accessors for name, a variable of type of_table_name.  Functions
  *   are of type of_table_features_of_table_name_get_f and _set_f.
  *
- * @param metadata_match_get/set ( OF_1_3).
+ * @param metadata_match_get/set ( OF_1_3 OF_1_4).
  *   Accessors for metadata_match, a variable of type uint64.  Functions
  *   are of type of_table_features_uint64_get_f and _set_f.
  *
- * @param metadata_write_get/set ( OF_1_3).
+ * @param metadata_write_get/set ( OF_1_3 OF_1_4).
  *   Accessors for metadata_write, a variable of type uint64.  Functions
  *   are of type of_table_features_uint64_get_f and _set_f.
  *
- * @param config_get/set ( OF_1_3).
+ * @param config_get/set ( OF_1_3 OF_1_4).
  *   Accessors for config, a variable of type uint32.  Functions
  *   are of type of_table_features_uint32_get_f and _set_f.
  *
- * @param max_entries_get/set ( OF_1_3).
+ * @param max_entries_get/set ( OF_1_3 OF_1_4).
  *   Accessors for max_entries, a variable of type uint32.  Functions
  *   are of type of_table_features_uint32_get_f and _set_f.
  *
- * @param properties_get/set ( OF_1_3).
+ * @param properties_get/set ( OF_1_3 OF_1_4).
  *   Accessors for properties, a variable of type of_list_table_feature_prop.  Functions
  *   are of type of_table_features_of_list_table_feature_prop_get_f and _set_f.
  *
@@ -9308,22 +10175,74 @@ typedef struct of_table_feature_prop_write_setfield_miss_s of_table_feature_prop
 typedef struct of_table_features_s of_table_features_t;
 
 /**
+ * Structure for of_table_mod_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_table_mod_prop_s of_table_mod_prop_t;
+
+/**
+ * Structure for of_table_mod_prop_eviction object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param flags_get/set ( OF_1_4).
+ *   Accessors for flags, a variable of type uint32.  Functions
+ *   are of type of_table_mod_prop_eviction_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_table_mod_prop_eviction_s of_table_mod_prop_eviction_t;
+
+/**
+ * Structure for of_table_mod_prop_experimenter object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_table_mod_prop_experimenter_uint32_get_f and _set_f.
+ *
+ * @param exp_type_get/set ( OF_1_4).
+ *   Accessors for exp_type, a variable of type uint32.  Functions
+ *   are of type of_table_mod_prop_experimenter_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_table_mod_prop_experimenter_s of_table_mod_prop_experimenter_t;
+
+/**
+ * Structure for of_table_mod_prop_vacancy object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param vacancy_down_get/set ( OF_1_4).
+ *   Accessors for vacancy_down, a variable of type uint8.  Functions
+ *   are of type of_table_mod_prop_vacancy_uint8_get_f and _set_f.
+ *
+ * @param vacancy_up_get/set ( OF_1_4).
+ *   Accessors for vacancy_up, a variable of type uint8.  Functions
+ *   are of type of_table_mod_prop_vacancy_uint8_get_f and _set_f.
+ *
+ * @param vacancy_get/set ( OF_1_4).
+ *   Accessors for vacancy, a variable of type uint8.  Functions
+ *   are of type of_table_mod_prop_vacancy_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_table_mod_prop_vacancy_s of_table_mod_prop_vacancy_t;
+
+/**
  * Structure for of_table_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param table_id_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for table_id, a variable of type uint8.  Functions
  *   are of type of_table_stats_entry_uint8_get_f and _set_f.
  *
- * @param active_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param active_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for active_count, a variable of type uint32.  Functions
  *   are of type of_table_stats_entry_uint32_get_f and _set_f.
  *
- * @param lookup_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param lookup_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for lookup_count, a variable of type uint64.  Functions
  *   are of type of_table_stats_entry_uint64_get_f and _set_f.
  *
- * @param matched_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3).
+ * @param matched_count_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
  *   Accessors for matched_count, a variable of type uint64.  Functions
  *   are of type of_table_stats_entry_uint64_get_f and _set_f.
  *
@@ -9382,7 +10301,7 @@ typedef struct of_table_stats_entry_s of_table_stats_entry_t;
  * Structure for of_uint32 object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint32.  Functions
  *   are of type of_uint32_uint32_get_f and _set_f.
  *
@@ -9393,7 +10312,7 @@ typedef struct of_uint32_s of_uint32_t;
  * Structure for of_uint64 object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint64.  Functions
  *   are of type of_uint64_uint64_get_f and _set_f.
  *
@@ -9404,7 +10323,7 @@ typedef struct of_uint64_s of_uint64_t;
  * Structure for of_uint8 object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
- * @param value_get/set ( OF_1_3).
+ * @param value_get/set ( OF_1_3 OF_1_4).
  *   Accessors for value, a variable of type uint8.  Functions
  *   are of type of_uint8_uint8_get_f and _set_f.
  *
@@ -9440,6 +10359,21 @@ typedef struct of_list_action_s of_list_action_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_action_id_s of_list_action_id_t;
+
+/**
+ * Structure for of_list_async_config_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_async_config_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_async_config_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_async_config_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_async_config_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_async_config_prop_s of_list_async_config_prop_t;
 
 /**
  * Structure for of_list_bsn_controller_connection object.  Get/set
@@ -9727,6 +10661,21 @@ typedef struct of_list_bucket_s of_list_bucket_t;
 typedef struct of_list_bucket_counter_s of_list_bucket_counter_t;
 
 /**
+ * Structure for of_list_bundle_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bundle_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bundle_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bundle_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bundle_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bundle_prop_s of_list_bundle_prop_t;
+
+/**
  * Structure for of_list_flow_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -9907,6 +10856,36 @@ typedef struct of_list_packet_queue_s of_list_packet_queue_t;
 typedef struct of_list_port_desc_s of_list_port_desc_t;
 
 /**
+ * Structure for of_list_port_desc_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_port_desc_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_port_desc_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_port_desc_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_port_desc_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_port_desc_prop_s of_list_port_desc_prop_t;
+
+/**
+ * Structure for of_list_port_mod_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_port_mod_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_port_mod_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_port_mod_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_port_mod_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_port_mod_prop_s of_list_port_mod_prop_t;
+
+/**
  * Structure for of_list_port_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -9920,6 +10899,51 @@ typedef struct of_list_port_desc_s of_list_port_desc_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_port_stats_entry_s of_list_port_stats_entry_t;
+
+/**
+ * Structure for of_list_port_stats_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_port_stats_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_port_stats_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_port_stats_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_port_stats_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_port_stats_prop_s of_list_port_stats_prop_t;
+
+/**
+ * Structure for of_list_queue_desc object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_queue_desc_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_queue_desc_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_queue_desc_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_queue_desc_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_queue_desc_s of_list_queue_desc_t;
+
+/**
+ * Structure for of_list_queue_desc_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_queue_desc_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_queue_desc_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_queue_desc_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_queue_desc_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_queue_desc_prop_s of_list_queue_desc_prop_t;
 
 /**
  * Structure for of_list_queue_prop object.  Get/set
@@ -9952,6 +10976,51 @@ typedef struct of_list_queue_prop_s of_list_queue_prop_t;
 typedef struct of_list_queue_stats_entry_s of_list_queue_stats_entry_t;
 
 /**
+ * Structure for of_list_queue_stats_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_queue_stats_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_queue_stats_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_queue_stats_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_queue_stats_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_queue_stats_prop_s of_list_queue_stats_prop_t;
+
+/**
+ * Structure for of_list_role_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_role_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_role_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_role_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_role_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_role_prop_s of_list_role_prop_t;
+
+/**
+ * Structure for of_list_table_desc object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_table_desc_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_table_desc_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_table_desc_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_table_desc_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_table_desc_s of_list_table_desc_t;
+
+/**
  * Structure for of_list_table_feature_prop object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -9980,6 +11049,21 @@ typedef struct of_list_table_feature_prop_s of_list_table_feature_prop_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_table_features_s of_list_table_features_t;
+
+/**
+ * Structure for of_list_table_mod_prop object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_table_mod_prop_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_table_mod_prop_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_table_mod_prop_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_table_mod_prop_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_table_mod_prop_s of_list_table_mod_prop_t;
 
 /**
  * Structure for of_list_table_stats_entry object.  Get/set

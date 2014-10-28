@@ -26,6 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -113,6 +114,11 @@ class OFAsyncSetVer13 implements OFAsyncSet {
     @Override
     public long getFlowRemovedMaskSlave() {
         return flowRemovedMaskSlave;
+    }
+
+    @Override
+    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
 
@@ -230,6 +236,15 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         this.flowRemovedMaskSlave = flowRemovedMaskSlave;
         this.flowRemovedMaskSlaveSet = true;
         return this;
+    }
+    @Override
+    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFAsyncSet.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
 
@@ -360,6 +375,15 @@ class OFAsyncSetVer13 implements OFAsyncSet {
         this.flowRemovedMaskSlave = flowRemovedMaskSlave;
         this.flowRemovedMaskSlaveSet = true;
         return this;
+    }
+    @Override
+    public List<OFAsyncConfigProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFAsyncSet.Builder setProperties(List<OFAsyncConfigProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 //
         @Override

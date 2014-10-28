@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
@@ -105,6 +106,11 @@ class OFPortModVer13 implements OFPortMod {
     @Override
     public long getAdvertise() {
         return advertise;
+    }
+
+    @Override
+    public List<OFPortModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
 
@@ -209,6 +215,15 @@ class OFPortModVer13 implements OFPortMod {
         this.advertise = advertise;
         this.advertiseSet = true;
         return this;
+    }
+    @Override
+    public List<OFPortModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFPortMod.Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 
 
@@ -328,6 +343,15 @@ class OFPortModVer13 implements OFPortMod {
         this.advertise = advertise;
         this.advertiseSet = true;
         return this;
+    }
+    @Override
+    public List<OFPortModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.3");
+    }
+
+    @Override
+    public OFPortMod.Builder setProperties(List<OFPortModProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.3");
     }
 //
         @Override

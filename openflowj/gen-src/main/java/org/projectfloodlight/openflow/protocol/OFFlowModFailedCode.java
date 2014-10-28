@@ -35,5 +35,7 @@ public enum OFFlowModFailedCode {
      TABLE_FULL,
      BAD_TABLE_ID,
      BAD_TIMEOUT,
-     BAD_FLAGS;
+     BAD_FLAGS,
+     CANT_SYNC,
+     BAD_PRIORITY;
 }

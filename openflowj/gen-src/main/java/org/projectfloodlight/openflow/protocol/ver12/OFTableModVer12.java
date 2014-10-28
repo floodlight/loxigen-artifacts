@@ -25,6 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.List;
 import java.util.Set;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
@@ -81,6 +82,11 @@ class OFTableModVer12 implements OFTableMod {
     @Override
     public long getConfig() {
         return config;
+    }
+
+    @Override
+    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 
 
@@ -146,6 +152,15 @@ class OFTableModVer12 implements OFTableMod {
         this.config = config;
         this.configSet = true;
         return this;
+    }
+    @Override
+    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFTableMod.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 
 
@@ -218,6 +233,15 @@ class OFTableModVer12 implements OFTableMod {
         this.config = config;
         this.configSet = true;
         return this;
+    }
+    @Override
+    public List<OFTableModProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFTableMod.Builder setProperties(List<OFTableModProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 //
         @Override

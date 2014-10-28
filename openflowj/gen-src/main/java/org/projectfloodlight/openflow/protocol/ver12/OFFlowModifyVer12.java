@@ -176,6 +176,11 @@ class OFFlowModifyVer12 implements OFFlowModify {
         throw new UnsupportedOperationException("Property actions not supported in version 1.2");
     }
 
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    }
+
 
 
     public OFFlowModify.Builder createBuilder() {
@@ -383,6 +388,15 @@ class OFFlowModifyVer12 implements OFFlowModify {
     @Override
     public OFFlowModify.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    }
+
+    @Override
+    public OFFlowModify.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
 
 
@@ -635,6 +649,15 @@ class OFFlowModifyVer12 implements OFFlowModify {
     @Override
     public OFFlowModify.Builder setActions(List<OFAction> actions) throws UnsupportedOperationException {
             throw new UnsupportedOperationException("Property actions not supported in version 1.2");
+    }
+    @Override
+    public int getImportance()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property importance not supported in version 1.2");
+    }
+
+    @Override
+    public OFFlowModify.Builder setImportance(int importance) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property importance not supported in version 1.2");
     }
 //
         @Override

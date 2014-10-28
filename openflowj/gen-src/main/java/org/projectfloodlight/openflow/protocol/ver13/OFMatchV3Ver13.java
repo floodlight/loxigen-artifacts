@@ -299,7 +299,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
     }
 
     private <F extends OFValueType<F>> OFOxm<F> getOxm(MatchField<F> field) {
-        return this.oxmListSet ? this.oxmList.get(field) : parentMessage.oxmList.get(field);
+        return this.oxmListSet ? this.oxmList.get(field) : null;
     }
 
     @Override
@@ -386,7 +386,6 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         updateOxmList();
         return this;
     }
-
 
     }
 
@@ -530,7 +529,6 @@ class OFMatchV3Ver13 implements OFMatchV3 {
         updateOxmList();
         return this;
     }
-
 
     }
 

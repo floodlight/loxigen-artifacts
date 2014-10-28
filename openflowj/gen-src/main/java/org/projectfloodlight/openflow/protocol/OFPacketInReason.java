@@ -41,5 +41,8 @@ public enum OFPacketInReason {
      BSN_ARP,
      BSN_DHCP,
      BSN_DEBUG,
-     BSN_PACKET_OF_DEATH;
+     BSN_PACKET_OF_DEATH,
+     ACTION_SET,
+     GROUP,
+     PACKET_OUT;
 }

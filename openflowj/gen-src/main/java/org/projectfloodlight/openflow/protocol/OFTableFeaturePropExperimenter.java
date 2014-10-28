@@ -39,7 +39,6 @@ public interface OFTableFeaturePropExperimenter extends OFObject, OFTableFeature
         OFTableFeaturePropExperimenter build();
         int getType();
         long getExperimenter();
-        Builder setExperimenter(long experimenter);
         long getSubtype();
         Builder setSubtype(long subtype);
         byte[] getExperimenterData();

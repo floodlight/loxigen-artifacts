@@ -41,6 +41,7 @@ public interface OFFlowStatsEntry extends OFObject {
     List<OFInstruction> getInstructions() throws UnsupportedOperationException;
     List<OFAction> getActions() throws UnsupportedOperationException;
     Set<OFFlowModFlags> getFlags() throws UnsupportedOperationException;
+    int getImportance() throws UnsupportedOperationException;
     OFVersion getVersion();
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -74,6 +75,8 @@ public interface OFFlowStatsEntry extends OFObject {
         Builder setActions(List<OFAction> actions) throws UnsupportedOperationException;
         Set<OFFlowModFlags> getFlags() throws UnsupportedOperationException;
         Builder setFlags(Set<OFFlowModFlags> flags) throws UnsupportedOperationException;
+        int getImportance() throws UnsupportedOperationException;
+        Builder setImportance(int importance) throws UnsupportedOperationException;
         OFVersion getVersion();
     }
 }

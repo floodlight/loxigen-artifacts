@@ -27,6 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
+import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -136,6 +137,11 @@ class OFPortDescVer12 implements OFPortDesc {
     @Override
     public long getMaxSpeed() {
         return maxSpeed;
+    }
+
+    @Override
+    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
 
     @Override
@@ -300,6 +306,15 @@ class OFPortDescVer12 implements OFPortDesc {
         this.maxSpeed = maxSpeed;
         this.maxSpeedSet = true;
         return this;
+    }
+    @Override
+    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {
@@ -503,6 +518,15 @@ class OFPortDescVer12 implements OFPortDesc {
         this.maxSpeed = maxSpeed;
         this.maxSpeedSet = true;
         return this;
+    }
+    @Override
+    public List<OFPortDescProp> getProperties()throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Property properties not supported in version 1.2");
+    }
+
+    @Override
+    public OFPortDesc.Builder setProperties(List<OFPortDescProp> properties) throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Property properties not supported in version 1.2");
     }
     @Override
     public OFVersion getVersion() {

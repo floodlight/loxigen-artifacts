@@ -36,6 +36,7 @@ of_oxm_icmpv6_code_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003c01); /* type_len */
         break;
     default:
@@ -48,18 +49,6 @@ of_oxm_icmpv6_code_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv6_code of_oxm_icmpv6_code
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv6_code_push_wire_values(of_oxm_icmpv6_code_t *obj)
-{
-
-    of_oxm_icmpv6_code_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv6_code object
@@ -79,18 +68,14 @@ of_oxm_icmpv6_code_new(of_version_t version)
     of_oxm_icmpv6_code_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE] + of_object_extra_len[version][OF_OXM_ICMPV6_CODE];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE];
 
     if ((obj = (of_oxm_icmpv6_code_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv6_code_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv6_code_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv6_code_push_wire_types(obj);
 
     return obj;
 }
@@ -122,7 +107,7 @@ of_oxm_icmpv6_code_init(of_oxm_icmpv6_code_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE] + of_object_extra_len[version][OF_OXM_ICMPV6_CODE];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -164,6 +149,7 @@ of_oxm_icmpv6_code_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -203,6 +189,7 @@ of_oxm_icmpv6_code_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -255,6 +242,7 @@ of_oxm_icmpv6_code_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003d02); /* type_len */
         break;
     default:
@@ -267,18 +255,6 @@ of_oxm_icmpv6_code_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv6_code_masked of_oxm_icmpv6_code_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv6_code_masked_push_wire_values(of_oxm_icmpv6_code_masked_t *obj)
-{
-
-    of_oxm_icmpv6_code_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv6_code_masked object
@@ -298,18 +274,14 @@ of_oxm_icmpv6_code_masked_new(of_version_t version)
     of_oxm_icmpv6_code_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV6_CODE_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE_MASKED];
 
     if ((obj = (of_oxm_icmpv6_code_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv6_code_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv6_code_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv6_code_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -341,7 +313,7 @@ of_oxm_icmpv6_code_masked_init(of_oxm_icmpv6_code_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV6_CODE_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -383,6 +355,7 @@ of_oxm_icmpv6_code_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -422,6 +395,7 @@ of_oxm_icmpv6_code_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -463,6 +437,7 @@ of_oxm_icmpv6_code_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -502,6 +477,7 @@ of_oxm_icmpv6_code_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -554,6 +530,7 @@ of_oxm_icmpv6_type_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003a01); /* type_len */
         break;
     default:
@@ -566,18 +543,6 @@ of_oxm_icmpv6_type_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv6_type of_oxm_icmpv6_type
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv6_type_push_wire_values(of_oxm_icmpv6_type_t *obj)
-{
-
-    of_oxm_icmpv6_type_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv6_type object
@@ -597,18 +562,14 @@ of_oxm_icmpv6_type_new(of_version_t version)
     of_oxm_icmpv6_type_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE] + of_object_extra_len[version][OF_OXM_ICMPV6_TYPE];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE];
 
     if ((obj = (of_oxm_icmpv6_type_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv6_type_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv6_type_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv6_type_push_wire_types(obj);
 
     return obj;
 }
@@ -640,7 +601,7 @@ of_oxm_icmpv6_type_init(of_oxm_icmpv6_type_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE] + of_object_extra_len[version][OF_OXM_ICMPV6_TYPE];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE];
     }
     obj->version = version;
     obj->length = bytes;
@@ -682,6 +643,7 @@ of_oxm_icmpv6_type_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -721,6 +683,7 @@ of_oxm_icmpv6_type_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -773,6 +736,7 @@ of_oxm_icmpv6_type_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003b02); /* type_len */
         break;
     default:
@@ -785,18 +749,6 @@ of_oxm_icmpv6_type_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_icmpv6_type_masked of_oxm_icmpv6_type_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_icmpv6_type_masked_push_wire_values(of_oxm_icmpv6_type_masked_t *obj)
-{
-
-    of_oxm_icmpv6_type_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_icmpv6_type_masked object
@@ -816,18 +768,14 @@ of_oxm_icmpv6_type_masked_new(of_version_t version)
     of_oxm_icmpv6_type_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV6_TYPE_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE_MASKED];
 
     if ((obj = (of_oxm_icmpv6_type_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_icmpv6_type_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_icmpv6_type_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_icmpv6_type_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -859,7 +807,7 @@ of_oxm_icmpv6_type_masked_init(of_oxm_icmpv6_type_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE_MASKED] + of_object_extra_len[version][OF_OXM_ICMPV6_TYPE_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -901,6 +849,7 @@ of_oxm_icmpv6_type_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -940,6 +889,7 @@ of_oxm_icmpv6_type_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -981,6 +931,7 @@ of_oxm_icmpv6_type_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -1020,6 +971,7 @@ of_oxm_icmpv6_type_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -1072,6 +1024,7 @@ of_oxm_in_phy_port_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000204); /* type_len */
         break;
     default:
@@ -1084,18 +1037,6 @@ of_oxm_in_phy_port_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_in_phy_port of_oxm_in_phy_port
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_in_phy_port_push_wire_values(of_oxm_in_phy_port_t *obj)
-{
-
-    of_oxm_in_phy_port_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_in_phy_port object
@@ -1115,18 +1056,14 @@ of_oxm_in_phy_port_new(of_version_t version)
     of_oxm_in_phy_port_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT] + of_object_extra_len[version][OF_OXM_IN_PHY_PORT];
+    bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT];
 
     if ((obj = (of_oxm_in_phy_port_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_in_phy_port_init(obj, version, bytes, 0);
-
-    if (of_oxm_in_phy_port_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_in_phy_port_push_wire_types(obj);
 
     return obj;
 }
@@ -1158,7 +1095,7 @@ of_oxm_in_phy_port_init(of_oxm_in_phy_port_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT] + of_object_extra_len[version][OF_OXM_IN_PHY_PORT];
+        bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1200,6 +1137,7 @@ of_oxm_in_phy_port_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1240,6 +1178,7 @@ of_oxm_in_phy_port_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1292,6 +1231,7 @@ of_oxm_in_phy_port_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000308); /* type_len */
         break;
     default:
@@ -1304,18 +1244,6 @@ of_oxm_in_phy_port_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_in_phy_port_masked of_oxm_in_phy_port_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_in_phy_port_masked_push_wire_values(of_oxm_in_phy_port_masked_t *obj)
-{
-
-    of_oxm_in_phy_port_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_in_phy_port_masked object
@@ -1335,18 +1263,14 @@ of_oxm_in_phy_port_masked_new(of_version_t version)
     of_oxm_in_phy_port_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT_MASKED] + of_object_extra_len[version][OF_OXM_IN_PHY_PORT_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT_MASKED];
 
     if ((obj = (of_oxm_in_phy_port_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_in_phy_port_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_in_phy_port_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_in_phy_port_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -1378,7 +1302,7 @@ of_oxm_in_phy_port_masked_init(of_oxm_in_phy_port_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT_MASKED] + of_object_extra_len[version][OF_OXM_IN_PHY_PORT_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1420,6 +1344,7 @@ of_oxm_in_phy_port_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1460,6 +1385,7 @@ of_oxm_in_phy_port_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1501,6 +1427,7 @@ of_oxm_in_phy_port_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1541,6 +1468,7 @@ of_oxm_in_phy_port_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1593,6 +1521,7 @@ of_oxm_in_port_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000004); /* type_len */
         break;
     default:
@@ -1605,18 +1534,6 @@ of_oxm_in_port_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_in_port of_oxm_in_port
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_in_port_push_wire_values(of_oxm_in_port_t *obj)
-{
-
-    of_oxm_in_port_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_in_port object
@@ -1636,18 +1553,14 @@ of_oxm_in_port_new(of_version_t version)
     of_oxm_in_port_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IN_PORT] + of_object_extra_len[version][OF_OXM_IN_PORT];
+    bytes = of_object_fixed_len[version][OF_OXM_IN_PORT];
 
     if ((obj = (of_oxm_in_port_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_in_port_init(obj, version, bytes, 0);
-
-    if (of_oxm_in_port_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_in_port_push_wire_types(obj);
 
     return obj;
 }
@@ -1679,7 +1592,7 @@ of_oxm_in_port_init(of_oxm_in_port_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IN_PORT] + of_object_extra_len[version][OF_OXM_IN_PORT];
+        bytes = of_object_fixed_len[version][OF_OXM_IN_PORT];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1721,6 +1634,7 @@ of_oxm_in_port_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1761,6 +1675,7 @@ of_oxm_in_port_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1813,6 +1728,7 @@ of_oxm_in_port_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000108); /* type_len */
         break;
     default:
@@ -1825,18 +1741,6 @@ of_oxm_in_port_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_in_port_masked of_oxm_in_port_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_in_port_masked_push_wire_values(of_oxm_in_port_masked_t *obj)
-{
-
-    of_oxm_in_port_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_in_port_masked object
@@ -1856,18 +1760,14 @@ of_oxm_in_port_masked_new(of_version_t version)
     of_oxm_in_port_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED] + of_object_extra_len[version][OF_OXM_IN_PORT_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED];
 
     if ((obj = (of_oxm_in_port_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_in_port_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_in_port_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_in_port_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -1899,7 +1799,7 @@ of_oxm_in_port_masked_init(of_oxm_in_port_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED] + of_object_extra_len[version][OF_OXM_IN_PORT_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -1941,6 +1841,7 @@ of_oxm_in_port_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1981,6 +1882,7 @@ of_oxm_in_port_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2022,6 +1924,7 @@ of_oxm_in_port_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2062,6 +1965,7 @@ of_oxm_in_port_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2114,6 +2018,7 @@ of_oxm_ip_dscp_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001001); /* type_len */
         break;
     default:
@@ -2126,18 +2031,6 @@ of_oxm_ip_dscp_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ip_dscp of_oxm_ip_dscp
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ip_dscp_push_wire_values(of_oxm_ip_dscp_t *obj)
-{
-
-    of_oxm_ip_dscp_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ip_dscp object
@@ -2157,18 +2050,14 @@ of_oxm_ip_dscp_new(of_version_t version)
     of_oxm_ip_dscp_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP] + of_object_extra_len[version][OF_OXM_IP_DSCP];
+    bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP];
 
     if ((obj = (of_oxm_ip_dscp_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ip_dscp_init(obj, version, bytes, 0);
-
-    if (of_oxm_ip_dscp_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ip_dscp_push_wire_types(obj);
 
     return obj;
 }
@@ -2200,7 +2089,7 @@ of_oxm_ip_dscp_init(of_oxm_ip_dscp_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP] + of_object_extra_len[version][OF_OXM_IP_DSCP];
+        bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2242,6 +2131,7 @@ of_oxm_ip_dscp_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2281,6 +2171,7 @@ of_oxm_ip_dscp_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2333,6 +2224,7 @@ of_oxm_ip_dscp_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001102); /* type_len */
         break;
     default:
@@ -2345,18 +2237,6 @@ of_oxm_ip_dscp_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ip_dscp_masked of_oxm_ip_dscp_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ip_dscp_masked_push_wire_values(of_oxm_ip_dscp_masked_t *obj)
-{
-
-    of_oxm_ip_dscp_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ip_dscp_masked object
@@ -2376,18 +2256,14 @@ of_oxm_ip_dscp_masked_new(of_version_t version)
     of_oxm_ip_dscp_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED] + of_object_extra_len[version][OF_OXM_IP_DSCP_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED];
 
     if ((obj = (of_oxm_ip_dscp_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ip_dscp_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ip_dscp_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ip_dscp_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -2419,7 +2295,7 @@ of_oxm_ip_dscp_masked_init(of_oxm_ip_dscp_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED] + of_object_extra_len[version][OF_OXM_IP_DSCP_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2461,6 +2337,7 @@ of_oxm_ip_dscp_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2500,6 +2377,7 @@ of_oxm_ip_dscp_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2541,6 +2419,7 @@ of_oxm_ip_dscp_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -2580,6 +2459,7 @@ of_oxm_ip_dscp_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -2632,6 +2512,7 @@ of_oxm_ip_ecn_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001201); /* type_len */
         break;
     default:
@@ -2644,18 +2525,6 @@ of_oxm_ip_ecn_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ip_ecn of_oxm_ip_ecn
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ip_ecn_push_wire_values(of_oxm_ip_ecn_t *obj)
-{
-
-    of_oxm_ip_ecn_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ip_ecn object
@@ -2675,18 +2544,14 @@ of_oxm_ip_ecn_new(of_version_t version)
     of_oxm_ip_ecn_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IP_ECN] + of_object_extra_len[version][OF_OXM_IP_ECN];
+    bytes = of_object_fixed_len[version][OF_OXM_IP_ECN];
 
     if ((obj = (of_oxm_ip_ecn_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ip_ecn_init(obj, version, bytes, 0);
-
-    if (of_oxm_ip_ecn_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ip_ecn_push_wire_types(obj);
 
     return obj;
 }
@@ -2718,7 +2583,7 @@ of_oxm_ip_ecn_init(of_oxm_ip_ecn_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IP_ECN] + of_object_extra_len[version][OF_OXM_IP_ECN];
+        bytes = of_object_fixed_len[version][OF_OXM_IP_ECN];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2760,6 +2625,7 @@ of_oxm_ip_ecn_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2799,6 +2665,7 @@ of_oxm_ip_ecn_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2851,6 +2718,7 @@ of_oxm_ip_ecn_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001302); /* type_len */
         break;
     default:
@@ -2863,18 +2731,6 @@ of_oxm_ip_ecn_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ip_ecn_masked of_oxm_ip_ecn_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ip_ecn_masked_push_wire_values(of_oxm_ip_ecn_masked_t *obj)
-{
-
-    of_oxm_ip_ecn_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ip_ecn_masked object
@@ -2894,18 +2750,14 @@ of_oxm_ip_ecn_masked_new(of_version_t version)
     of_oxm_ip_ecn_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED] + of_object_extra_len[version][OF_OXM_IP_ECN_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED];
 
     if ((obj = (of_oxm_ip_ecn_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ip_ecn_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ip_ecn_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ip_ecn_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -2937,7 +2789,7 @@ of_oxm_ip_ecn_masked_init(of_oxm_ip_ecn_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED] + of_object_extra_len[version][OF_OXM_IP_ECN_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -2979,6 +2831,7 @@ of_oxm_ip_ecn_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3018,6 +2871,7 @@ of_oxm_ip_ecn_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3059,6 +2913,7 @@ of_oxm_ip_ecn_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -3098,6 +2953,7 @@ of_oxm_ip_ecn_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -3150,6 +3006,7 @@ of_oxm_ip_proto_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001401); /* type_len */
         break;
     default:
@@ -3162,18 +3019,6 @@ of_oxm_ip_proto_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ip_proto of_oxm_ip_proto
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ip_proto_push_wire_values(of_oxm_ip_proto_t *obj)
-{
-
-    of_oxm_ip_proto_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ip_proto object
@@ -3193,18 +3038,14 @@ of_oxm_ip_proto_new(of_version_t version)
     of_oxm_ip_proto_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO] + of_object_extra_len[version][OF_OXM_IP_PROTO];
+    bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO];
 
     if ((obj = (of_oxm_ip_proto_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ip_proto_init(obj, version, bytes, 0);
-
-    if (of_oxm_ip_proto_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ip_proto_push_wire_types(obj);
 
     return obj;
 }
@@ -3236,7 +3077,7 @@ of_oxm_ip_proto_init(of_oxm_ip_proto_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO] + of_object_extra_len[version][OF_OXM_IP_PROTO];
+        bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3278,6 +3119,7 @@ of_oxm_ip_proto_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3317,6 +3159,7 @@ of_oxm_ip_proto_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3369,6 +3212,7 @@ of_oxm_ip_proto_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001502); /* type_len */
         break;
     default:
@@ -3381,18 +3225,6 @@ of_oxm_ip_proto_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ip_proto_masked of_oxm_ip_proto_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ip_proto_masked_push_wire_values(of_oxm_ip_proto_masked_t *obj)
-{
-
-    of_oxm_ip_proto_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ip_proto_masked object
@@ -3412,18 +3244,14 @@ of_oxm_ip_proto_masked_new(of_version_t version)
     of_oxm_ip_proto_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED] + of_object_extra_len[version][OF_OXM_IP_PROTO_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED];
 
     if ((obj = (of_oxm_ip_proto_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ip_proto_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ip_proto_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ip_proto_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -3455,7 +3283,7 @@ of_oxm_ip_proto_masked_init(of_oxm_ip_proto_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED] + of_object_extra_len[version][OF_OXM_IP_PROTO_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3497,6 +3325,7 @@ of_oxm_ip_proto_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3536,6 +3365,7 @@ of_oxm_ip_proto_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3577,6 +3407,7 @@ of_oxm_ip_proto_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -3616,6 +3447,7 @@ of_oxm_ip_proto_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 5;
         break;
     default:
@@ -3668,6 +3500,7 @@ of_oxm_ipv4_dst_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001804); /* type_len */
         break;
     default:
@@ -3680,18 +3513,6 @@ of_oxm_ipv4_dst_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv4_dst of_oxm_ipv4_dst
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv4_dst_push_wire_values(of_oxm_ipv4_dst_t *obj)
-{
-
-    of_oxm_ipv4_dst_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv4_dst object
@@ -3711,18 +3532,14 @@ of_oxm_ipv4_dst_new(of_version_t version)
     of_oxm_ipv4_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST] + of_object_extra_len[version][OF_OXM_IPV4_DST];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST];
 
     if ((obj = (of_oxm_ipv4_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv4_dst_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv4_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv4_dst_push_wire_types(obj);
 
     return obj;
 }
@@ -3754,7 +3571,7 @@ of_oxm_ipv4_dst_init(of_oxm_ipv4_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST] + of_object_extra_len[version][OF_OXM_IPV4_DST];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -3796,6 +3613,7 @@ of_oxm_ipv4_dst_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3835,6 +3653,7 @@ of_oxm_ipv4_dst_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3887,6 +3706,7 @@ of_oxm_ipv4_dst_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001908); /* type_len */
         break;
     default:
@@ -3899,18 +3719,6 @@ of_oxm_ipv4_dst_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv4_dst_masked of_oxm_ipv4_dst_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv4_dst_masked_push_wire_values(of_oxm_ipv4_dst_masked_t *obj)
-{
-
-    of_oxm_ipv4_dst_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv4_dst_masked object
@@ -3930,18 +3738,14 @@ of_oxm_ipv4_dst_masked_new(of_version_t version)
     of_oxm_ipv4_dst_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED] + of_object_extra_len[version][OF_OXM_IPV4_DST_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED];
 
     if ((obj = (of_oxm_ipv4_dst_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv4_dst_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv4_dst_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv4_dst_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -3973,7 +3777,7 @@ of_oxm_ipv4_dst_masked_init(of_oxm_ipv4_dst_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED] + of_object_extra_len[version][OF_OXM_IPV4_DST_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4015,6 +3819,7 @@ of_oxm_ipv4_dst_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4054,6 +3859,7 @@ of_oxm_ipv4_dst_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4095,6 +3901,7 @@ of_oxm_ipv4_dst_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4134,6 +3941,7 @@ of_oxm_ipv4_dst_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4186,6 +3994,7 @@ of_oxm_ipv4_src_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001604); /* type_len */
         break;
     default:
@@ -4198,18 +4007,6 @@ of_oxm_ipv4_src_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv4_src of_oxm_ipv4_src
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv4_src_push_wire_values(of_oxm_ipv4_src_t *obj)
-{
-
-    of_oxm_ipv4_src_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv4_src object
@@ -4229,18 +4026,14 @@ of_oxm_ipv4_src_new(of_version_t version)
     of_oxm_ipv4_src_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC] + of_object_extra_len[version][OF_OXM_IPV4_SRC];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC];
 
     if ((obj = (of_oxm_ipv4_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv4_src_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv4_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv4_src_push_wire_types(obj);
 
     return obj;
 }
@@ -4272,7 +4065,7 @@ of_oxm_ipv4_src_init(of_oxm_ipv4_src_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC] + of_object_extra_len[version][OF_OXM_IPV4_SRC];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4314,6 +4107,7 @@ of_oxm_ipv4_src_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4353,6 +4147,7 @@ of_oxm_ipv4_src_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4405,6 +4200,7 @@ of_oxm_ipv4_src_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80001708); /* type_len */
         break;
     default:
@@ -4417,18 +4213,6 @@ of_oxm_ipv4_src_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv4_src_masked of_oxm_ipv4_src_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv4_src_masked_push_wire_values(of_oxm_ipv4_src_masked_t *obj)
-{
-
-    of_oxm_ipv4_src_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv4_src_masked object
@@ -4448,18 +4232,14 @@ of_oxm_ipv4_src_masked_new(of_version_t version)
     of_oxm_ipv4_src_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED] + of_object_extra_len[version][OF_OXM_IPV4_SRC_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED];
 
     if ((obj = (of_oxm_ipv4_src_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv4_src_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv4_src_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv4_src_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -4491,7 +4271,7 @@ of_oxm_ipv4_src_masked_init(of_oxm_ipv4_src_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED] + of_object_extra_len[version][OF_OXM_IPV4_SRC_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4533,6 +4313,7 @@ of_oxm_ipv4_src_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4572,6 +4353,7 @@ of_oxm_ipv4_src_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4613,6 +4395,7 @@ of_oxm_ipv4_src_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4652,6 +4435,7 @@ of_oxm_ipv4_src_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4704,6 +4488,7 @@ of_oxm_ipv6_dst_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003610); /* type_len */
         break;
     default:
@@ -4716,18 +4501,6 @@ of_oxm_ipv6_dst_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_dst of_oxm_ipv6_dst
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_dst_push_wire_values(of_oxm_ipv6_dst_t *obj)
-{
-
-    of_oxm_ipv6_dst_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_dst object
@@ -4747,18 +4520,14 @@ of_oxm_ipv6_dst_new(of_version_t version)
     of_oxm_ipv6_dst_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST] + of_object_extra_len[version][OF_OXM_IPV6_DST];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST];
 
     if ((obj = (of_oxm_ipv6_dst_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_dst_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_dst_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_dst_push_wire_types(obj);
 
     return obj;
 }
@@ -4790,7 +4559,7 @@ of_oxm_ipv6_dst_init(of_oxm_ipv6_dst_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST] + of_object_extra_len[version][OF_OXM_IPV6_DST];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST];
     }
     obj->version = version;
     obj->length = bytes;
@@ -4832,6 +4601,7 @@ of_oxm_ipv6_dst_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4871,6 +4641,7 @@ of_oxm_ipv6_dst_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4923,6 +4694,7 @@ of_oxm_ipv6_dst_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003720); /* type_len */
         break;
     default:
@@ -4935,18 +4707,6 @@ of_oxm_ipv6_dst_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_dst_masked of_oxm_ipv6_dst_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_dst_masked_push_wire_values(of_oxm_ipv6_dst_masked_t *obj)
-{
-
-    of_oxm_ipv6_dst_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_dst_masked object
@@ -4966,18 +4726,14 @@ of_oxm_ipv6_dst_masked_new(of_version_t version)
     of_oxm_ipv6_dst_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_DST_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED];
 
     if ((obj = (of_oxm_ipv6_dst_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_dst_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_dst_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_dst_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -5009,7 +4765,7 @@ of_oxm_ipv6_dst_masked_init(of_oxm_ipv6_dst_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_DST_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5051,6 +4807,7 @@ of_oxm_ipv6_dst_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5090,6 +4847,7 @@ of_oxm_ipv6_dst_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5131,6 +4889,7 @@ of_oxm_ipv6_dst_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -5170,6 +4929,7 @@ of_oxm_ipv6_dst_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -5222,6 +4982,7 @@ of_oxm_ipv6_flabel_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003804); /* type_len */
         break;
     default:
@@ -5234,18 +4995,6 @@ of_oxm_ipv6_flabel_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_flabel of_oxm_ipv6_flabel
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_flabel_push_wire_values(of_oxm_ipv6_flabel_t *obj)
-{
-
-    of_oxm_ipv6_flabel_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_flabel object
@@ -5265,18 +5014,14 @@ of_oxm_ipv6_flabel_new(of_version_t version)
     of_oxm_ipv6_flabel_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL] + of_object_extra_len[version][OF_OXM_IPV6_FLABEL];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL];
 
     if ((obj = (of_oxm_ipv6_flabel_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_flabel_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_flabel_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_flabel_push_wire_types(obj);
 
     return obj;
 }
@@ -5308,7 +5053,7 @@ of_oxm_ipv6_flabel_init(of_oxm_ipv6_flabel_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL] + of_object_extra_len[version][OF_OXM_IPV6_FLABEL];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5350,6 +5095,7 @@ of_oxm_ipv6_flabel_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5389,6 +5135,7 @@ of_oxm_ipv6_flabel_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5441,6 +5188,7 @@ of_oxm_ipv6_flabel_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003908); /* type_len */
         break;
     default:
@@ -5453,18 +5201,6 @@ of_oxm_ipv6_flabel_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_flabel_masked of_oxm_ipv6_flabel_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_flabel_masked_push_wire_values(of_oxm_ipv6_flabel_masked_t *obj)
-{
-
-    of_oxm_ipv6_flabel_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_flabel_masked object
@@ -5484,18 +5220,14 @@ of_oxm_ipv6_flabel_masked_new(of_version_t version)
     of_oxm_ipv6_flabel_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_FLABEL_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED];
 
     if ((obj = (of_oxm_ipv6_flabel_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_flabel_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_flabel_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_flabel_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -5527,7 +5259,7 @@ of_oxm_ipv6_flabel_masked_init(of_oxm_ipv6_flabel_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_FLABEL_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5569,6 +5301,7 @@ of_oxm_ipv6_flabel_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5608,6 +5341,7 @@ of_oxm_ipv6_flabel_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5649,6 +5383,7 @@ of_oxm_ipv6_flabel_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5688,6 +5423,7 @@ of_oxm_ipv6_flabel_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5740,6 +5476,7 @@ of_oxm_ipv6_nd_sll_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80004006); /* type_len */
         break;
     default:
@@ -5752,18 +5489,6 @@ of_oxm_ipv6_nd_sll_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_nd_sll of_oxm_ipv6_nd_sll
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_nd_sll_push_wire_values(of_oxm_ipv6_nd_sll_t *obj)
-{
-
-    of_oxm_ipv6_nd_sll_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_nd_sll object
@@ -5783,18 +5508,14 @@ of_oxm_ipv6_nd_sll_new(of_version_t version)
     of_oxm_ipv6_nd_sll_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL] + of_object_extra_len[version][OF_OXM_IPV6_ND_SLL];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL];
 
     if ((obj = (of_oxm_ipv6_nd_sll_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_nd_sll_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_nd_sll_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_nd_sll_push_wire_types(obj);
 
     return obj;
 }
@@ -5826,7 +5547,7 @@ of_oxm_ipv6_nd_sll_init(of_oxm_ipv6_nd_sll_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL] + of_object_extra_len[version][OF_OXM_IPV6_ND_SLL];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL];
     }
     obj->version = version;
     obj->length = bytes;
@@ -5868,6 +5589,7 @@ of_oxm_ipv6_nd_sll_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5907,6 +5629,7 @@ of_oxm_ipv6_nd_sll_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5959,6 +5682,7 @@ of_oxm_ipv6_nd_sll_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x8000410c); /* type_len */
         break;
     default:
@@ -5971,18 +5695,6 @@ of_oxm_ipv6_nd_sll_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_nd_sll_masked of_oxm_ipv6_nd_sll_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_nd_sll_masked_push_wire_values(of_oxm_ipv6_nd_sll_masked_t *obj)
-{
-
-    of_oxm_ipv6_nd_sll_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_nd_sll_masked object
@@ -6002,18 +5714,14 @@ of_oxm_ipv6_nd_sll_masked_new(of_version_t version)
     of_oxm_ipv6_nd_sll_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_SLL_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED];
 
     if ((obj = (of_oxm_ipv6_nd_sll_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_nd_sll_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_nd_sll_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_nd_sll_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -6045,7 +5753,7 @@ of_oxm_ipv6_nd_sll_masked_init(of_oxm_ipv6_nd_sll_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_SLL_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6087,6 +5795,7 @@ of_oxm_ipv6_nd_sll_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6126,6 +5835,7 @@ of_oxm_ipv6_nd_sll_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6167,6 +5877,7 @@ of_oxm_ipv6_nd_sll_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6206,6 +5917,7 @@ of_oxm_ipv6_nd_sll_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6258,6 +5970,7 @@ of_oxm_ipv6_nd_target_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003e10); /* type_len */
         break;
     default:
@@ -6270,18 +5983,6 @@ of_oxm_ipv6_nd_target_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_nd_target of_oxm_ipv6_nd_target
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_nd_target_push_wire_values(of_oxm_ipv6_nd_target_t *obj)
-{
-
-    of_oxm_ipv6_nd_target_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_nd_target object
@@ -6301,18 +6002,14 @@ of_oxm_ipv6_nd_target_new(of_version_t version)
     of_oxm_ipv6_nd_target_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET] + of_object_extra_len[version][OF_OXM_IPV6_ND_TARGET];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET];
 
     if ((obj = (of_oxm_ipv6_nd_target_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_nd_target_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_nd_target_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_nd_target_push_wire_types(obj);
 
     return obj;
 }
@@ -6344,7 +6041,7 @@ of_oxm_ipv6_nd_target_init(of_oxm_ipv6_nd_target_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET] + of_object_extra_len[version][OF_OXM_IPV6_ND_TARGET];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6386,6 +6083,7 @@ of_oxm_ipv6_nd_target_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6425,6 +6123,7 @@ of_oxm_ipv6_nd_target_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6477,6 +6176,7 @@ of_oxm_ipv6_nd_target_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003f20); /* type_len */
         break;
     default:
@@ -6489,18 +6189,6 @@ of_oxm_ipv6_nd_target_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_nd_target_masked of_oxm_ipv6_nd_target_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_nd_target_masked_push_wire_values(of_oxm_ipv6_nd_target_masked_t *obj)
-{
-
-    of_oxm_ipv6_nd_target_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_nd_target_masked object
@@ -6520,18 +6208,14 @@ of_oxm_ipv6_nd_target_masked_new(of_version_t version)
     of_oxm_ipv6_nd_target_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_TARGET_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED];
 
     if ((obj = (of_oxm_ipv6_nd_target_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_nd_target_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_nd_target_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_nd_target_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -6563,7 +6247,7 @@ of_oxm_ipv6_nd_target_masked_init(of_oxm_ipv6_nd_target_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_TARGET_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6605,6 +6289,7 @@ of_oxm_ipv6_nd_target_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6644,6 +6329,7 @@ of_oxm_ipv6_nd_target_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6685,6 +6371,7 @@ of_oxm_ipv6_nd_target_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -6724,6 +6411,7 @@ of_oxm_ipv6_nd_target_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -6776,6 +6464,7 @@ of_oxm_ipv6_nd_tll_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80004206); /* type_len */
         break;
     default:
@@ -6788,18 +6477,6 @@ of_oxm_ipv6_nd_tll_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_nd_tll of_oxm_ipv6_nd_tll
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_nd_tll_push_wire_values(of_oxm_ipv6_nd_tll_t *obj)
-{
-
-    of_oxm_ipv6_nd_tll_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_nd_tll object
@@ -6819,18 +6496,14 @@ of_oxm_ipv6_nd_tll_new(of_version_t version)
     of_oxm_ipv6_nd_tll_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL] + of_object_extra_len[version][OF_OXM_IPV6_ND_TLL];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL];
 
     if ((obj = (of_oxm_ipv6_nd_tll_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_nd_tll_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_nd_tll_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_nd_tll_push_wire_types(obj);
 
     return obj;
 }
@@ -6862,7 +6535,7 @@ of_oxm_ipv6_nd_tll_init(of_oxm_ipv6_nd_tll_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL] + of_object_extra_len[version][OF_OXM_IPV6_ND_TLL];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL];
     }
     obj->version = version;
     obj->length = bytes;
@@ -6904,6 +6577,7 @@ of_oxm_ipv6_nd_tll_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6943,6 +6617,7 @@ of_oxm_ipv6_nd_tll_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6995,6 +6670,7 @@ of_oxm_ipv6_nd_tll_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x8000430c); /* type_len */
         break;
     default:
@@ -7007,18 +6683,6 @@ of_oxm_ipv6_nd_tll_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_nd_tll_masked of_oxm_ipv6_nd_tll_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_nd_tll_masked_push_wire_values(of_oxm_ipv6_nd_tll_masked_t *obj)
-{
-
-    of_oxm_ipv6_nd_tll_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_nd_tll_masked object
@@ -7038,18 +6702,14 @@ of_oxm_ipv6_nd_tll_masked_new(of_version_t version)
     of_oxm_ipv6_nd_tll_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_TLL_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED];
 
     if ((obj = (of_oxm_ipv6_nd_tll_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_nd_tll_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_nd_tll_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_nd_tll_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -7081,7 +6741,7 @@ of_oxm_ipv6_nd_tll_masked_init(of_oxm_ipv6_nd_tll_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_ND_TLL_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7123,6 +6783,7 @@ of_oxm_ipv6_nd_tll_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7162,6 +6823,7 @@ of_oxm_ipv6_nd_tll_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7203,6 +6865,7 @@ of_oxm_ipv6_nd_tll_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -7242,6 +6905,7 @@ of_oxm_ipv6_nd_tll_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -7294,6 +6958,7 @@ of_oxm_ipv6_src_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003410); /* type_len */
         break;
     default:
@@ -7306,18 +6971,6 @@ of_oxm_ipv6_src_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_src of_oxm_ipv6_src
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_src_push_wire_values(of_oxm_ipv6_src_t *obj)
-{
-
-    of_oxm_ipv6_src_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_src object
@@ -7337,18 +6990,14 @@ of_oxm_ipv6_src_new(of_version_t version)
     of_oxm_ipv6_src_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC] + of_object_extra_len[version][OF_OXM_IPV6_SRC];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC];
 
     if ((obj = (of_oxm_ipv6_src_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_src_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_src_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_src_push_wire_types(obj);
 
     return obj;
 }
@@ -7380,7 +7029,7 @@ of_oxm_ipv6_src_init(of_oxm_ipv6_src_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC] + of_object_extra_len[version][OF_OXM_IPV6_SRC];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7422,6 +7071,7 @@ of_oxm_ipv6_src_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7461,6 +7111,7 @@ of_oxm_ipv6_src_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7513,6 +7164,7 @@ of_oxm_ipv6_src_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80003520); /* type_len */
         break;
     default:
@@ -7525,18 +7177,6 @@ of_oxm_ipv6_src_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_ipv6_src_masked of_oxm_ipv6_src_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_ipv6_src_masked_push_wire_values(of_oxm_ipv6_src_masked_t *obj)
-{
-
-    of_oxm_ipv6_src_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_ipv6_src_masked object
@@ -7556,18 +7196,14 @@ of_oxm_ipv6_src_masked_new(of_version_t version)
     of_oxm_ipv6_src_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_SRC_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED];
 
     if ((obj = (of_oxm_ipv6_src_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_ipv6_src_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_ipv6_src_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_ipv6_src_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -7599,7 +7235,7 @@ of_oxm_ipv6_src_masked_init(of_oxm_ipv6_src_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED] + of_object_extra_len[version][OF_OXM_IPV6_SRC_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7641,6 +7277,7 @@ of_oxm_ipv6_src_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7680,6 +7317,7 @@ of_oxm_ipv6_src_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7721,6 +7359,7 @@ of_oxm_ipv6_src_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -7760,6 +7399,7 @@ of_oxm_ipv6_src_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -7812,6 +7452,7 @@ of_oxm_metadata_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000408); /* type_len */
         break;
     default:
@@ -7824,18 +7465,6 @@ of_oxm_metadata_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_metadata of_oxm_metadata
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_metadata_push_wire_values(of_oxm_metadata_t *obj)
-{
-
-    of_oxm_metadata_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_metadata object
@@ -7855,18 +7484,14 @@ of_oxm_metadata_new(of_version_t version)
     of_oxm_metadata_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_METADATA] + of_object_extra_len[version][OF_OXM_METADATA];
+    bytes = of_object_fixed_len[version][OF_OXM_METADATA];
 
     if ((obj = (of_oxm_metadata_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_metadata_init(obj, version, bytes, 0);
-
-    if (of_oxm_metadata_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_metadata_push_wire_types(obj);
 
     return obj;
 }
@@ -7898,7 +7523,7 @@ of_oxm_metadata_init(of_oxm_metadata_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_METADATA] + of_object_extra_len[version][OF_OXM_METADATA];
+        bytes = of_object_fixed_len[version][OF_OXM_METADATA];
     }
     obj->version = version;
     obj->length = bytes;
@@ -7940,6 +7565,7 @@ of_oxm_metadata_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7979,6 +7605,7 @@ of_oxm_metadata_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8031,6 +7658,7 @@ of_oxm_metadata_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x80000510); /* type_len */
         break;
     default:
@@ -8043,18 +7671,6 @@ of_oxm_metadata_masked_push_wire_types(of_object_t *obj)
 /**
  * \defgroup of_oxm_metadata_masked of_oxm_metadata_masked
  */
-
-/**
- * Helper function to push values into the wire buffer
- */
-static inline int
-of_oxm_metadata_masked_push_wire_values(of_oxm_metadata_masked_t *obj)
-{
-
-    of_oxm_metadata_masked_push_wire_types(obj);
-
-    return OF_ERROR_NONE;
-}
 
 /**
  * Create a new of_oxm_metadata_masked object
@@ -8074,18 +7690,14 @@ of_oxm_metadata_masked_new(of_version_t version)
     of_oxm_metadata_masked_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED] + of_object_extra_len[version][OF_OXM_METADATA_MASKED];
+    bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED];
 
     if ((obj = (of_oxm_metadata_masked_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
     of_oxm_metadata_masked_init(obj, version, bytes, 0);
-
-    if (of_oxm_metadata_masked_push_wire_values(obj) < 0) {
-        FREE(obj);
-        return NULL;
-    }
+    of_oxm_metadata_masked_push_wire_types(obj);
 
     return obj;
 }
@@ -8117,7 +7729,7 @@ of_oxm_metadata_masked_init(of_oxm_metadata_masked_t *obj,
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED] + of_object_extra_len[version][OF_OXM_METADATA_MASKED];
+        bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED];
     }
     obj->version = version;
     obj->length = bytes;
@@ -8159,6 +7771,7 @@ of_oxm_metadata_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8198,6 +7811,7 @@ of_oxm_metadata_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8239,6 +7853,7 @@ of_oxm_metadata_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -8278,6 +7893,7 @@ of_oxm_metadata_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:

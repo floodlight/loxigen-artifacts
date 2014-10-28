@@ -1045,19 +1045,133 @@ void of_uint64_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_uint64_push_wire_types(of_object_t *obj);
 void of_uint8_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_uint8_push_wire_types(of_object_t *obj);
+void of_async_config_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_push_wire_types(of_object_t *obj);
+void of_async_config_prop_experimenter_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_experimenter_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_experimenter_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_experimenter_slave_push_wire_types(of_object_t *obj);
+void of_async_config_prop_flow_removed_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_flow_removed_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_flow_removed_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_flow_removed_slave_push_wire_types(of_object_t *obj);
+void of_async_config_prop_packet_in_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_packet_in_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_packet_in_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_packet_in_slave_push_wire_types(of_object_t *obj);
+void of_async_config_prop_port_status_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_port_status_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_port_status_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_port_status_slave_push_wire_types(of_object_t *obj);
+void of_async_config_prop_requestforward_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_requestforward_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_requestforward_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_requestforward_slave_push_wire_types(of_object_t *obj);
+void of_async_config_prop_role_status_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_role_status_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_role_status_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_role_status_slave_push_wire_types(of_object_t *obj);
+void of_async_config_prop_table_status_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_table_status_master_push_wire_types(of_object_t *obj);
+void of_async_config_prop_table_status_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_prop_table_status_slave_push_wire_types(of_object_t *obj);
+void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bundle_add_msg_push_wire_types(of_object_t *obj);
+void of_bundle_ctrl_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bundle_ctrl_msg_push_wire_types(of_object_t *obj);
+void of_bundle_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bundle_prop_push_wire_types(of_object_t *obj);
+void of_bundle_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bundle_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_ethernet_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_optical_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_optical_push_wire_types(of_object_t *obj);
+void of_port_mod_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_mod_prop_push_wire_types(of_object_t *obj);
+void of_port_mod_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_mod_prop_ethernet_push_wire_types(of_object_t *obj);
+void of_port_mod_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_mod_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_port_mod_prop_optical_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_mod_prop_optical_push_wire_types(of_object_t *obj);
+void of_port_stats_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_stats_prop_push_wire_types(of_object_t *obj);
+void of_port_stats_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_stats_prop_ethernet_push_wire_types(of_object_t *obj);
+void of_port_stats_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_stats_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_port_stats_prop_optical_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_stats_prop_optical_push_wire_types(of_object_t *obj);
+void of_queue_desc_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_push_wire_types(of_object_t *obj);
+void of_queue_desc_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_prop_push_wire_types(of_object_t *obj);
+void of_queue_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_queue_desc_prop_max_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_prop_max_rate_push_wire_types(of_object_t *obj);
+void of_queue_desc_prop_min_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_prop_min_rate_push_wire_types(of_object_t *obj);
+void of_queue_desc_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_stats_reply_push_wire_types(of_object_t *obj);
+void of_queue_desc_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_desc_stats_request_push_wire_types(of_object_t *obj);
+void of_queue_stats_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_stats_prop_push_wire_types(of_object_t *obj);
+void of_queue_stats_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_queue_stats_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_requestforward_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_requestforward_push_wire_types(of_object_t *obj);
+void of_role_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_role_prop_push_wire_types(of_object_t *obj);
+void of_role_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_role_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_role_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_role_status_push_wire_types(of_object_t *obj);
+void of_table_desc_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_desc_push_wire_types(of_object_t *obj);
+void of_table_desc_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_desc_stats_reply_push_wire_types(of_object_t *obj);
+void of_table_desc_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_desc_stats_request_push_wire_types(of_object_t *obj);
+void of_table_feature_prop_table_sync_from_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_feature_prop_table_sync_from_push_wire_types(of_object_t *obj);
+void of_table_mod_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_mod_prop_push_wire_types(of_object_t *obj);
+void of_table_mod_prop_eviction_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_mod_prop_eviction_push_wire_types(of_object_t *obj);
+void of_table_mod_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_mod_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_table_mod_prop_vacancy_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_mod_prop_vacancy_push_wire_types(of_object_t *obj);
+void of_table_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_table_status_push_wire_types(of_object_t *obj);
 
 
 /* LOCI inheritance parent typedefs */
 typedef union of_queue_prop_u of_queue_prop_t;
 typedef union of_action_u of_action_t;
+typedef union of_queue_stats_prop_u of_queue_stats_prop_t;
 typedef union of_bsn_vport_u of_bsn_vport_t;
 typedef union of_table_feature_prop_u of_table_feature_prop_t;
 typedef union of_hello_elem_u of_hello_elem_t;
+typedef union of_queue_desc_prop_u of_queue_desc_prop_t;
+typedef union of_port_desc_prop_u of_port_desc_prop_t;
+typedef union of_port_stats_prop_u of_port_stats_prop_t;
 typedef union of_instruction_u of_instruction_t;
+typedef union of_port_mod_prop_u of_port_mod_prop_t;
 typedef union of_bsn_tlv_u of_bsn_tlv_t;
 typedef union of_instruction_id_u of_instruction_id_t;
 typedef union of_meter_band_u of_meter_band_t;
+typedef union of_async_config_prop_u of_async_config_prop_t;
+typedef union of_bundle_prop_u of_bundle_prop_t;
 typedef union of_action_id_u of_action_id_t;
+typedef union of_role_prop_u of_role_prop_t;
 typedef union of_oxm_u of_oxm_t;
 
 /* LOCI object typedefs */
@@ -1166,6 +1280,8 @@ typedef of_object_t of_bsn_vlan_counter_stats_reply_t;
 typedef of_object_t of_bsn_vlan_counter_stats_request_t;
 typedef of_object_t of_bsn_vrf_counter_stats_reply_t;
 typedef of_object_t of_bsn_vrf_counter_stats_request_t;
+typedef of_object_t of_bundle_add_msg_t;
+typedef of_object_t of_bundle_ctrl_msg_t;
 typedef of_object_t of_desc_stats_reply_t;
 typedef of_object_t of_desc_stats_request_t;
 typedef of_object_t of_echo_reply_t;
@@ -1223,18 +1339,24 @@ typedef of_object_t of_port_mod_failed_error_msg_t;
 typedef of_object_t of_port_stats_reply_t;
 typedef of_object_t of_port_stats_request_t;
 typedef of_object_t of_port_status_t;
+typedef of_object_t of_queue_desc_stats_reply_t;
+typedef of_object_t of_queue_desc_stats_request_t;
 typedef of_object_t of_queue_get_config_reply_t;
 typedef of_object_t of_queue_get_config_request_t;
 typedef of_object_t of_queue_op_failed_error_msg_t;
 typedef of_object_t of_queue_stats_reply_t;
 typedef of_object_t of_queue_stats_request_t;
+typedef of_object_t of_requestforward_t;
 typedef of_object_t of_role_reply_t;
 typedef of_object_t of_role_request_t;
 typedef of_object_t of_role_request_failed_error_msg_t;
+typedef of_object_t of_role_status_t;
 typedef of_object_t of_set_config_t;
 typedef of_object_t of_stats_reply_t;
 typedef of_object_t of_stats_request_t;
 typedef of_object_t of_switch_config_failed_error_msg_t;
+typedef of_object_t of_table_desc_stats_reply_t;
+typedef of_object_t of_table_desc_stats_request_t;
 typedef of_object_t of_table_features_failed_error_msg_t;
 typedef of_object_t of_table_features_stats_reply_t;
 typedef of_object_t of_table_features_stats_request_t;
@@ -1242,6 +1364,7 @@ typedef of_object_t of_table_mod_t;
 typedef of_object_t of_table_mod_failed_error_msg_t;
 typedef of_object_t of_table_stats_reply_t;
 typedef of_object_t of_table_stats_request_t;
+typedef of_object_t of_table_status_t;
 typedef of_object_t of_action_bsn_t;
 typedef of_object_t of_action_bsn_checksum_t;
 typedef of_object_t of_action_bsn_gentable_t;
@@ -1306,6 +1429,21 @@ typedef of_object_t of_action_set_tp_src_t;
 typedef of_object_t of_action_set_vlan_pcp_t;
 typedef of_object_t of_action_set_vlan_vid_t;
 typedef of_object_t of_action_strip_vlan_t;
+typedef of_object_t of_async_config_prop_experimenter_master_t;
+typedef of_object_t of_async_config_prop_experimenter_slave_t;
+typedef of_object_t of_async_config_prop_flow_removed_master_t;
+typedef of_object_t of_async_config_prop_flow_removed_slave_t;
+typedef of_object_t of_async_config_prop_header_t;
+typedef of_object_t of_async_config_prop_packet_in_master_t;
+typedef of_object_t of_async_config_prop_packet_in_slave_t;
+typedef of_object_t of_async_config_prop_port_status_master_t;
+typedef of_object_t of_async_config_prop_port_status_slave_t;
+typedef of_object_t of_async_config_prop_requestforward_master_t;
+typedef of_object_t of_async_config_prop_requestforward_slave_t;
+typedef of_object_t of_async_config_prop_role_status_master_t;
+typedef of_object_t of_async_config_prop_role_status_slave_t;
+typedef of_object_t of_async_config_prop_table_status_master_t;
+typedef of_object_t of_async_config_prop_table_status_slave_t;
 typedef of_object_t of_bsn_controller_connection_t;
 typedef of_object_t of_bsn_debug_counter_desc_stats_entry_t;
 typedef of_object_t of_bsn_debug_counter_stats_entry_t;
@@ -1382,6 +1520,8 @@ typedef of_object_t of_bsn_vport_q_in_q_t;
 typedef of_object_t of_bsn_vrf_counter_stats_entry_t;
 typedef of_object_t of_bucket_t;
 typedef of_object_t of_bucket_counter_t;
+typedef of_object_t of_bundle_prop_experimenter_t;
+typedef of_object_t of_bundle_prop_header_t;
 typedef of_object_t of_flow_stats_entry_t;
 typedef of_object_t of_group_desc_stats_entry_t;
 typedef of_object_t of_group_stats_entry_t;
@@ -1553,12 +1693,34 @@ typedef of_object_t of_oxm_vlan_vid_t;
 typedef of_object_t of_oxm_vlan_vid_masked_t;
 typedef of_object_t of_packet_queue_t;
 typedef of_object_t of_port_desc_t;
+typedef of_object_t of_port_desc_prop_ethernet_t;
+typedef of_object_t of_port_desc_prop_experimenter_t;
+typedef of_object_t of_port_desc_prop_header_t;
+typedef of_object_t of_port_desc_prop_optical_t;
+typedef of_object_t of_port_mod_prop_ethernet_t;
+typedef of_object_t of_port_mod_prop_experimenter_t;
+typedef of_object_t of_port_mod_prop_header_t;
+typedef of_object_t of_port_mod_prop_optical_t;
 typedef of_object_t of_port_stats_entry_t;
+typedef of_object_t of_port_stats_prop_ethernet_t;
+typedef of_object_t of_port_stats_prop_experimenter_t;
+typedef of_object_t of_port_stats_prop_header_t;
+typedef of_object_t of_port_stats_prop_optical_t;
+typedef of_object_t of_queue_desc_t;
+typedef of_object_t of_queue_desc_prop_experimenter_t;
+typedef of_object_t of_queue_desc_prop_header_t;
+typedef of_object_t of_queue_desc_prop_max_rate_t;
+typedef of_object_t of_queue_desc_prop_min_rate_t;
 typedef of_object_t of_queue_prop_experimenter_t;
 typedef of_object_t of_queue_prop_header_t;
 typedef of_object_t of_queue_prop_max_rate_t;
 typedef of_object_t of_queue_prop_min_rate_t;
 typedef of_object_t of_queue_stats_entry_t;
+typedef of_object_t of_queue_stats_prop_experimenter_t;
+typedef of_object_t of_queue_stats_prop_header_t;
+typedef of_object_t of_role_prop_experimenter_t;
+typedef of_object_t of_role_prop_header_t;
+typedef of_object_t of_table_desc_t;
 typedef of_object_t of_table_feature_prop_apply_actions_t;
 typedef of_object_t of_table_feature_prop_apply_actions_miss_t;
 typedef of_object_t of_table_feature_prop_apply_setfield_t;
@@ -1571,18 +1733,24 @@ typedef of_object_t of_table_feature_prop_instructions_miss_t;
 typedef of_object_t of_table_feature_prop_match_t;
 typedef of_object_t of_table_feature_prop_next_tables_t;
 typedef of_object_t of_table_feature_prop_next_tables_miss_t;
+typedef of_object_t of_table_feature_prop_table_sync_from_t;
 typedef of_object_t of_table_feature_prop_wildcards_t;
 typedef of_object_t of_table_feature_prop_write_actions_t;
 typedef of_object_t of_table_feature_prop_write_actions_miss_t;
 typedef of_object_t of_table_feature_prop_write_setfield_t;
 typedef of_object_t of_table_feature_prop_write_setfield_miss_t;
 typedef of_object_t of_table_features_t;
+typedef of_object_t of_table_mod_prop_t;
+typedef of_object_t of_table_mod_prop_eviction_t;
+typedef of_object_t of_table_mod_prop_experimenter_t;
+typedef of_object_t of_table_mod_prop_vacancy_t;
 typedef of_object_t of_table_stats_entry_t;
 typedef of_object_t of_uint32_t;
 typedef of_object_t of_uint64_t;
 typedef of_object_t of_uint8_t;
 typedef of_object_t of_list_action_t;
 typedef of_object_t of_list_action_id_t;
+typedef of_object_t of_list_async_config_prop_t;
 typedef of_object_t of_list_bsn_controller_connection_t;
 typedef of_object_t of_list_bsn_debug_counter_desc_stats_entry_t;
 typedef of_object_t of_list_bsn_debug_counter_stats_entry_t;
@@ -1602,6 +1770,7 @@ typedef of_object_t of_list_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_list_bsn_vrf_counter_stats_entry_t;
 typedef of_object_t of_list_bucket_t;
 typedef of_object_t of_list_bucket_counter_t;
+typedef of_object_t of_list_bundle_prop_t;
 typedef of_object_t of_list_flow_stats_entry_t;
 typedef of_object_t of_list_group_desc_stats_entry_t;
 typedef of_object_t of_list_group_stats_entry_t;
@@ -1614,11 +1783,20 @@ typedef of_object_t of_list_meter_stats_t;
 typedef of_object_t of_list_oxm_t;
 typedef of_object_t of_list_packet_queue_t;
 typedef of_object_t of_list_port_desc_t;
+typedef of_object_t of_list_port_desc_prop_t;
+typedef of_object_t of_list_port_mod_prop_t;
 typedef of_object_t of_list_port_stats_entry_t;
+typedef of_object_t of_list_port_stats_prop_t;
+typedef of_object_t of_list_queue_desc_t;
+typedef of_object_t of_list_queue_desc_prop_t;
 typedef of_object_t of_list_queue_prop_t;
 typedef of_object_t of_list_queue_stats_entry_t;
+typedef of_object_t of_list_queue_stats_prop_t;
+typedef of_object_t of_list_role_prop_t;
+typedef of_object_t of_list_table_desc_t;
 typedef of_object_t of_list_table_feature_prop_t;
 typedef of_object_t of_list_table_features_t;
+typedef of_object_t of_list_table_mod_prop_t;
 typedef of_object_t of_list_table_stats_entry_t;
 typedef of_object_t of_list_uint32_t;
 typedef of_object_t of_list_uint64_t;
@@ -2172,6 +2350,16 @@ extern of_bsn_vrf_counter_stats_request_t *
 extern void of_bsn_vrf_counter_stats_request_init(
     of_bsn_vrf_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_bundle_add_msg_t *
+    of_bundle_add_msg_new(of_version_t version);
+extern void of_bundle_add_msg_init(
+    of_bundle_add_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bundle_ctrl_msg_t *
+    of_bundle_ctrl_msg_new(of_version_t version);
+extern void of_bundle_ctrl_msg_init(
+    of_bundle_ctrl_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_desc_stats_reply_t *
     of_desc_stats_reply_new(of_version_t version);
 extern void of_desc_stats_reply_init(
@@ -2457,6 +2645,16 @@ extern of_port_status_t *
 extern void of_port_status_init(
     of_port_status_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_queue_desc_stats_reply_t *
+    of_queue_desc_stats_reply_new(of_version_t version);
+extern void of_queue_desc_stats_reply_init(
+    of_queue_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_stats_request_t *
+    of_queue_desc_stats_request_new(of_version_t version);
+extern void of_queue_desc_stats_request_init(
+    of_queue_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_queue_get_config_reply_t *
     of_queue_get_config_reply_new(of_version_t version);
 extern void of_queue_get_config_reply_init(
@@ -2482,6 +2680,11 @@ extern of_queue_stats_request_t *
 extern void of_queue_stats_request_init(
     of_queue_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_requestforward_t *
+    of_requestforward_new(of_version_t version);
+extern void of_requestforward_init(
+    of_requestforward_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_role_reply_t *
     of_role_reply_new(of_version_t version);
 extern void of_role_reply_init(
@@ -2496,6 +2699,11 @@ extern of_role_request_failed_error_msg_t *
     of_role_request_failed_error_msg_new(of_version_t version);
 extern void of_role_request_failed_error_msg_init(
     of_role_request_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_role_status_t *
+    of_role_status_new(of_version_t version);
+extern void of_role_status_init(
+    of_role_status_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_set_config_t *
     of_set_config_new(of_version_t version);
@@ -2516,6 +2724,16 @@ extern of_switch_config_failed_error_msg_t *
     of_switch_config_failed_error_msg_new(of_version_t version);
 extern void of_switch_config_failed_error_msg_init(
     of_switch_config_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_desc_stats_reply_t *
+    of_table_desc_stats_reply_new(of_version_t version);
+extern void of_table_desc_stats_reply_init(
+    of_table_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_desc_stats_request_t *
+    of_table_desc_stats_request_new(of_version_t version);
+extern void of_table_desc_stats_request_init(
+    of_table_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_features_failed_error_msg_t *
     of_table_features_failed_error_msg_new(of_version_t version);
@@ -2551,6 +2769,11 @@ extern of_table_stats_request_t *
     of_table_stats_request_new(of_version_t version);
 extern void of_table_stats_request_init(
     of_table_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_status_t *
+    of_table_status_new(of_version_t version);
+extern void of_table_status_init(
+    of_table_status_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_action_t *
     of_action_new(of_version_t version);
@@ -2881,6 +3104,86 @@ extern of_action_strip_vlan_t *
     of_action_strip_vlan_new(of_version_t version);
 extern void of_action_strip_vlan_init(
     of_action_strip_vlan_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_t *
+    of_async_config_prop_new(of_version_t version);
+extern void of_async_config_prop_init(
+    of_async_config_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_experimenter_master_t *
+    of_async_config_prop_experimenter_master_new(of_version_t version);
+extern void of_async_config_prop_experimenter_master_init(
+    of_async_config_prop_experimenter_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_experimenter_slave_t *
+    of_async_config_prop_experimenter_slave_new(of_version_t version);
+extern void of_async_config_prop_experimenter_slave_init(
+    of_async_config_prop_experimenter_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_flow_removed_master_t *
+    of_async_config_prop_flow_removed_master_new(of_version_t version);
+extern void of_async_config_prop_flow_removed_master_init(
+    of_async_config_prop_flow_removed_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_flow_removed_slave_t *
+    of_async_config_prop_flow_removed_slave_new(of_version_t version);
+extern void of_async_config_prop_flow_removed_slave_init(
+    of_async_config_prop_flow_removed_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_header_t *
+    of_async_config_prop_header_new(of_version_t version);
+extern void of_async_config_prop_header_init(
+    of_async_config_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_packet_in_master_t *
+    of_async_config_prop_packet_in_master_new(of_version_t version);
+extern void of_async_config_prop_packet_in_master_init(
+    of_async_config_prop_packet_in_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_packet_in_slave_t *
+    of_async_config_prop_packet_in_slave_new(of_version_t version);
+extern void of_async_config_prop_packet_in_slave_init(
+    of_async_config_prop_packet_in_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_port_status_master_t *
+    of_async_config_prop_port_status_master_new(of_version_t version);
+extern void of_async_config_prop_port_status_master_init(
+    of_async_config_prop_port_status_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_port_status_slave_t *
+    of_async_config_prop_port_status_slave_new(of_version_t version);
+extern void of_async_config_prop_port_status_slave_init(
+    of_async_config_prop_port_status_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_requestforward_master_t *
+    of_async_config_prop_requestforward_master_new(of_version_t version);
+extern void of_async_config_prop_requestforward_master_init(
+    of_async_config_prop_requestforward_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_requestforward_slave_t *
+    of_async_config_prop_requestforward_slave_new(of_version_t version);
+extern void of_async_config_prop_requestforward_slave_init(
+    of_async_config_prop_requestforward_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_role_status_master_t *
+    of_async_config_prop_role_status_master_new(of_version_t version);
+extern void of_async_config_prop_role_status_master_init(
+    of_async_config_prop_role_status_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_role_status_slave_t *
+    of_async_config_prop_role_status_slave_new(of_version_t version);
+extern void of_async_config_prop_role_status_slave_init(
+    of_async_config_prop_role_status_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_table_status_master_t *
+    of_async_config_prop_table_status_master_new(of_version_t version);
+extern void of_async_config_prop_table_status_master_init(
+    of_async_config_prop_table_status_master_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_async_config_prop_table_status_slave_t *
+    of_async_config_prop_table_status_slave_new(of_version_t version);
+extern void of_async_config_prop_table_status_slave_init(
+    of_async_config_prop_table_status_slave_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_bsn_controller_connection_t *
     of_bsn_controller_connection_new(of_version_t version);
@@ -3271,6 +3574,21 @@ extern of_bucket_counter_t *
     of_bucket_counter_new(of_version_t version);
 extern void of_bucket_counter_init(
     of_bucket_counter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bundle_prop_t *
+    of_bundle_prop_new(of_version_t version);
+extern void of_bundle_prop_init(
+    of_bundle_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bundle_prop_experimenter_t *
+    of_bundle_prop_experimenter_new(of_version_t version);
+extern void of_bundle_prop_experimenter_init(
+    of_bundle_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_bundle_prop_header_t *
+    of_bundle_prop_header_new(of_version_t version);
+extern void of_bundle_prop_header_init(
+    of_bundle_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_flow_stats_entry_t *
     of_flow_stats_entry_new(of_version_t version);
@@ -4152,10 +4470,115 @@ extern of_port_desc_t *
 extern void of_port_desc_init(
     of_port_desc_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_port_desc_prop_t *
+    of_port_desc_prop_new(of_version_t version);
+extern void of_port_desc_prop_init(
+    of_port_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_desc_prop_ethernet_t *
+    of_port_desc_prop_ethernet_new(of_version_t version);
+extern void of_port_desc_prop_ethernet_init(
+    of_port_desc_prop_ethernet_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_desc_prop_experimenter_t *
+    of_port_desc_prop_experimenter_new(of_version_t version);
+extern void of_port_desc_prop_experimenter_init(
+    of_port_desc_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_desc_prop_header_t *
+    of_port_desc_prop_header_new(of_version_t version);
+extern void of_port_desc_prop_header_init(
+    of_port_desc_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_desc_prop_optical_t *
+    of_port_desc_prop_optical_new(of_version_t version);
+extern void of_port_desc_prop_optical_init(
+    of_port_desc_prop_optical_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_mod_prop_t *
+    of_port_mod_prop_new(of_version_t version);
+extern void of_port_mod_prop_init(
+    of_port_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_mod_prop_ethernet_t *
+    of_port_mod_prop_ethernet_new(of_version_t version);
+extern void of_port_mod_prop_ethernet_init(
+    of_port_mod_prop_ethernet_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_mod_prop_experimenter_t *
+    of_port_mod_prop_experimenter_new(of_version_t version);
+extern void of_port_mod_prop_experimenter_init(
+    of_port_mod_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_mod_prop_header_t *
+    of_port_mod_prop_header_new(of_version_t version);
+extern void of_port_mod_prop_header_init(
+    of_port_mod_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_mod_prop_optical_t *
+    of_port_mod_prop_optical_new(of_version_t version);
+extern void of_port_mod_prop_optical_init(
+    of_port_mod_prop_optical_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_port_stats_entry_t *
     of_port_stats_entry_new(of_version_t version);
 extern void of_port_stats_entry_init(
     of_port_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_stats_prop_t *
+    of_port_stats_prop_new(of_version_t version);
+extern void of_port_stats_prop_init(
+    of_port_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_stats_prop_ethernet_t *
+    of_port_stats_prop_ethernet_new(of_version_t version);
+extern void of_port_stats_prop_ethernet_init(
+    of_port_stats_prop_ethernet_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_stats_prop_experimenter_t *
+    of_port_stats_prop_experimenter_new(of_version_t version);
+extern void of_port_stats_prop_experimenter_init(
+    of_port_stats_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_stats_prop_header_t *
+    of_port_stats_prop_header_new(of_version_t version);
+extern void of_port_stats_prop_header_init(
+    of_port_stats_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_port_stats_prop_optical_t *
+    of_port_stats_prop_optical_new(of_version_t version);
+extern void of_port_stats_prop_optical_init(
+    of_port_stats_prop_optical_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_t *
+    of_queue_desc_new(of_version_t version);
+extern void of_queue_desc_init(
+    of_queue_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_prop_t *
+    of_queue_desc_prop_new(of_version_t version);
+extern void of_queue_desc_prop_init(
+    of_queue_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_prop_experimenter_t *
+    of_queue_desc_prop_experimenter_new(of_version_t version);
+extern void of_queue_desc_prop_experimenter_init(
+    of_queue_desc_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_prop_header_t *
+    of_queue_desc_prop_header_new(of_version_t version);
+extern void of_queue_desc_prop_header_init(
+    of_queue_desc_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_prop_max_rate_t *
+    of_queue_desc_prop_max_rate_new(of_version_t version);
+extern void of_queue_desc_prop_max_rate_init(
+    of_queue_desc_prop_max_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_desc_prop_min_rate_t *
+    of_queue_desc_prop_min_rate_new(of_version_t version);
+extern void of_queue_desc_prop_min_rate_init(
+    of_queue_desc_prop_min_rate_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_queue_prop_t *
     of_queue_prop_new(of_version_t version);
@@ -4186,6 +4609,41 @@ extern of_queue_stats_entry_t *
     of_queue_stats_entry_new(of_version_t version);
 extern void of_queue_stats_entry_init(
     of_queue_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_stats_prop_t *
+    of_queue_stats_prop_new(of_version_t version);
+extern void of_queue_stats_prop_init(
+    of_queue_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_stats_prop_experimenter_t *
+    of_queue_stats_prop_experimenter_new(of_version_t version);
+extern void of_queue_stats_prop_experimenter_init(
+    of_queue_stats_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_queue_stats_prop_header_t *
+    of_queue_stats_prop_header_new(of_version_t version);
+extern void of_queue_stats_prop_header_init(
+    of_queue_stats_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_role_prop_t *
+    of_role_prop_new(of_version_t version);
+extern void of_role_prop_init(
+    of_role_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_role_prop_experimenter_t *
+    of_role_prop_experimenter_new(of_version_t version);
+extern void of_role_prop_experimenter_init(
+    of_role_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_role_prop_header_t *
+    of_role_prop_header_new(of_version_t version);
+extern void of_role_prop_header_init(
+    of_role_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_desc_t *
+    of_table_desc_new(of_version_t version);
+extern void of_table_desc_init(
+    of_table_desc_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_table_feature_prop_t *
     of_table_feature_prop_new(of_version_t version);
@@ -4252,6 +4710,11 @@ extern of_table_feature_prop_next_tables_miss_t *
 extern void of_table_feature_prop_next_tables_miss_init(
     of_table_feature_prop_next_tables_miss_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_table_feature_prop_table_sync_from_t *
+    of_table_feature_prop_table_sync_from_new(of_version_t version);
+extern void of_table_feature_prop_table_sync_from_init(
+    of_table_feature_prop_table_sync_from_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_table_feature_prop_wildcards_t *
     of_table_feature_prop_wildcards_new(of_version_t version);
 extern void of_table_feature_prop_wildcards_init(
@@ -4282,6 +4745,26 @@ extern of_table_features_t *
 extern void of_table_features_init(
     of_table_features_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_table_mod_prop_t *
+    of_table_mod_prop_new(of_version_t version);
+extern void of_table_mod_prop_init(
+    of_table_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_mod_prop_eviction_t *
+    of_table_mod_prop_eviction_new(of_version_t version);
+extern void of_table_mod_prop_eviction_init(
+    of_table_mod_prop_eviction_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_mod_prop_experimenter_t *
+    of_table_mod_prop_experimenter_new(of_version_t version);
+extern void of_table_mod_prop_experimenter_init(
+    of_table_mod_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_table_mod_prop_vacancy_t *
+    of_table_mod_prop_vacancy_new(of_version_t version);
+extern void of_table_mod_prop_vacancy_init(
+    of_table_mod_prop_vacancy_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_table_stats_entry_t *
     of_table_stats_entry_new(of_version_t version);
 extern void of_table_stats_entry_init(
@@ -4311,6 +4794,11 @@ extern of_list_action_id_t *
     of_list_action_id_new(of_version_t version);
 extern void of_list_action_id_init(
     of_list_action_id_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_async_config_prop_t *
+    of_list_async_config_prop_new(of_version_t version);
+extern void of_list_async_config_prop_init(
+    of_list_async_config_prop_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_bsn_controller_connection_t *
     of_list_bsn_controller_connection_new(of_version_t version);
@@ -4407,6 +4895,11 @@ extern of_list_bucket_counter_t *
 extern void of_list_bucket_counter_init(
     of_list_bucket_counter_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_list_bundle_prop_t *
+    of_list_bundle_prop_new(of_version_t version);
+extern void of_list_bundle_prop_init(
+    of_list_bundle_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_list_flow_stats_entry_t *
     of_list_flow_stats_entry_new(of_version_t version);
 extern void of_list_flow_stats_entry_init(
@@ -4467,10 +4960,35 @@ extern of_list_port_desc_t *
 extern void of_list_port_desc_init(
     of_list_port_desc_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_list_port_desc_prop_t *
+    of_list_port_desc_prop_new(of_version_t version);
+extern void of_list_port_desc_prop_init(
+    of_list_port_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_port_mod_prop_t *
+    of_list_port_mod_prop_new(of_version_t version);
+extern void of_list_port_mod_prop_init(
+    of_list_port_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_list_port_stats_entry_t *
     of_list_port_stats_entry_new(of_version_t version);
 extern void of_list_port_stats_entry_init(
     of_list_port_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_port_stats_prop_t *
+    of_list_port_stats_prop_new(of_version_t version);
+extern void of_list_port_stats_prop_init(
+    of_list_port_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_queue_desc_t *
+    of_list_queue_desc_new(of_version_t version);
+extern void of_list_queue_desc_init(
+    of_list_queue_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_queue_desc_prop_t *
+    of_list_queue_desc_prop_new(of_version_t version);
+extern void of_list_queue_desc_prop_init(
+    of_list_queue_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_queue_prop_t *
     of_list_queue_prop_new(of_version_t version);
@@ -4482,6 +5000,21 @@ extern of_list_queue_stats_entry_t *
 extern void of_list_queue_stats_entry_init(
     of_list_queue_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_list_queue_stats_prop_t *
+    of_list_queue_stats_prop_new(of_version_t version);
+extern void of_list_queue_stats_prop_init(
+    of_list_queue_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_role_prop_t *
+    of_list_role_prop_new(of_version_t version);
+extern void of_list_role_prop_init(
+    of_list_role_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_table_desc_t *
+    of_list_table_desc_new(of_version_t version);
+extern void of_list_table_desc_init(
+    of_list_table_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_list_table_feature_prop_t *
     of_list_table_feature_prop_new(of_version_t version);
 extern void of_list_table_feature_prop_init(
@@ -4491,6 +5024,11 @@ extern of_list_table_features_t *
     of_list_table_features_new(of_version_t version);
 extern void of_list_table_features_init(
     of_list_table_features_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_list_table_mod_prop_t *
+    of_list_table_mod_prop_new(of_version_t version);
+extern void of_list_table_mod_prop_init(
+    of_list_table_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_list_table_stats_entry_t *
     of_list_table_stats_entry_new(of_version_t version);
@@ -5675,6 +6213,28 @@ of_bsn_vrf_counter_stats_request_delete(of_bsn_vrf_counter_stats_request_t *obj)
 }
 
 /**
+ * Delete an object of type of_bundle_add_msg_t
+ * @param obj An instance of type of_bundle_add_msg_t
+ *
+ * \ingroup of_bundle_add_msg
+ */
+static inline void
+of_bundle_add_msg_delete(of_bundle_add_msg_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bundle_ctrl_msg_t
+ * @param obj An instance of type of_bundle_ctrl_msg_t
+ *
+ * \ingroup of_bundle_ctrl_msg
+ */
+static inline void
+of_bundle_ctrl_msg_delete(of_bundle_ctrl_msg_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_desc_stats_reply_t
  * @param obj An instance of type of_desc_stats_reply_t
  *
@@ -6302,6 +6862,28 @@ of_port_status_delete(of_port_status_t *obj) {
 }
 
 /**
+ * Delete an object of type of_queue_desc_stats_reply_t
+ * @param obj An instance of type of_queue_desc_stats_reply_t
+ *
+ * \ingroup of_queue_desc_stats_reply
+ */
+static inline void
+of_queue_desc_stats_reply_delete(of_queue_desc_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_stats_request_t
+ * @param obj An instance of type of_queue_desc_stats_request_t
+ *
+ * \ingroup of_queue_desc_stats_request
+ */
+static inline void
+of_queue_desc_stats_request_delete(of_queue_desc_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_queue_get_config_reply_t
  * @param obj An instance of type of_queue_get_config_reply_t
  *
@@ -6357,6 +6939,17 @@ of_queue_stats_request_delete(of_queue_stats_request_t *obj) {
 }
 
 /**
+ * Delete an object of type of_requestforward_t
+ * @param obj An instance of type of_requestforward_t
+ *
+ * \ingroup of_requestforward
+ */
+static inline void
+of_requestforward_delete(of_requestforward_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_role_reply_t
  * @param obj An instance of type of_role_reply_t
  *
@@ -6386,6 +6979,17 @@ of_role_request_delete(of_role_request_t *obj) {
  */
 static inline void
 of_role_request_failed_error_msg_delete(of_role_request_failed_error_msg_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_role_status_t
+ * @param obj An instance of type of_role_status_t
+ *
+ * \ingroup of_role_status
+ */
+static inline void
+of_role_status_delete(of_role_status_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -6430,6 +7034,28 @@ of_stats_request_delete(of_stats_request_t *obj) {
  */
 static inline void
 of_switch_config_failed_error_msg_delete(of_switch_config_failed_error_msg_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_desc_stats_reply_t
+ * @param obj An instance of type of_table_desc_stats_reply_t
+ *
+ * \ingroup of_table_desc_stats_reply
+ */
+static inline void
+of_table_desc_stats_reply_delete(of_table_desc_stats_reply_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_desc_stats_request_t
+ * @param obj An instance of type of_table_desc_stats_request_t
+ *
+ * \ingroup of_table_desc_stats_request
+ */
+static inline void
+of_table_desc_stats_request_delete(of_table_desc_stats_request_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -6507,6 +7133,17 @@ of_table_stats_reply_delete(of_table_stats_reply_t *obj) {
  */
 static inline void
 of_table_stats_request_delete(of_table_stats_request_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_status_t
+ * @param obj An instance of type of_table_status_t
+ *
+ * \ingroup of_table_status
+ */
+static inline void
+of_table_status_delete(of_table_status_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -7233,6 +7870,182 @@ of_action_set_vlan_vid_delete(of_action_set_vlan_vid_t *obj) {
  */
 static inline void
 of_action_strip_vlan_delete(of_action_strip_vlan_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_t
+ * @param obj An instance of type of_async_config_prop_t
+ *
+ * \ingroup of_async_config_prop
+ */
+static inline void
+of_async_config_prop_delete(of_async_config_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_experimenter_master_t
+ * @param obj An instance of type of_async_config_prop_experimenter_master_t
+ *
+ * \ingroup of_async_config_prop_experimenter_master
+ */
+static inline void
+of_async_config_prop_experimenter_master_delete(of_async_config_prop_experimenter_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_experimenter_slave_t
+ * @param obj An instance of type of_async_config_prop_experimenter_slave_t
+ *
+ * \ingroup of_async_config_prop_experimenter_slave
+ */
+static inline void
+of_async_config_prop_experimenter_slave_delete(of_async_config_prop_experimenter_slave_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_flow_removed_master_t
+ * @param obj An instance of type of_async_config_prop_flow_removed_master_t
+ *
+ * \ingroup of_async_config_prop_flow_removed_master
+ */
+static inline void
+of_async_config_prop_flow_removed_master_delete(of_async_config_prop_flow_removed_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_flow_removed_slave_t
+ * @param obj An instance of type of_async_config_prop_flow_removed_slave_t
+ *
+ * \ingroup of_async_config_prop_flow_removed_slave
+ */
+static inline void
+of_async_config_prop_flow_removed_slave_delete(of_async_config_prop_flow_removed_slave_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_header_t
+ * @param obj An instance of type of_async_config_prop_header_t
+ *
+ * \ingroup of_async_config_prop_header
+ */
+static inline void
+of_async_config_prop_header_delete(of_async_config_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_packet_in_master_t
+ * @param obj An instance of type of_async_config_prop_packet_in_master_t
+ *
+ * \ingroup of_async_config_prop_packet_in_master
+ */
+static inline void
+of_async_config_prop_packet_in_master_delete(of_async_config_prop_packet_in_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_packet_in_slave_t
+ * @param obj An instance of type of_async_config_prop_packet_in_slave_t
+ *
+ * \ingroup of_async_config_prop_packet_in_slave
+ */
+static inline void
+of_async_config_prop_packet_in_slave_delete(of_async_config_prop_packet_in_slave_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_port_status_master_t
+ * @param obj An instance of type of_async_config_prop_port_status_master_t
+ *
+ * \ingroup of_async_config_prop_port_status_master
+ */
+static inline void
+of_async_config_prop_port_status_master_delete(of_async_config_prop_port_status_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_port_status_slave_t
+ * @param obj An instance of type of_async_config_prop_port_status_slave_t
+ *
+ * \ingroup of_async_config_prop_port_status_slave
+ */
+static inline void
+of_async_config_prop_port_status_slave_delete(of_async_config_prop_port_status_slave_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_requestforward_master_t
+ * @param obj An instance of type of_async_config_prop_requestforward_master_t
+ *
+ * \ingroup of_async_config_prop_requestforward_master
+ */
+static inline void
+of_async_config_prop_requestforward_master_delete(of_async_config_prop_requestforward_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_requestforward_slave_t
+ * @param obj An instance of type of_async_config_prop_requestforward_slave_t
+ *
+ * \ingroup of_async_config_prop_requestforward_slave
+ */
+static inline void
+of_async_config_prop_requestforward_slave_delete(of_async_config_prop_requestforward_slave_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_role_status_master_t
+ * @param obj An instance of type of_async_config_prop_role_status_master_t
+ *
+ * \ingroup of_async_config_prop_role_status_master
+ */
+static inline void
+of_async_config_prop_role_status_master_delete(of_async_config_prop_role_status_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_role_status_slave_t
+ * @param obj An instance of type of_async_config_prop_role_status_slave_t
+ *
+ * \ingroup of_async_config_prop_role_status_slave
+ */
+static inline void
+of_async_config_prop_role_status_slave_delete(of_async_config_prop_role_status_slave_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_table_status_master_t
+ * @param obj An instance of type of_async_config_prop_table_status_master_t
+ *
+ * \ingroup of_async_config_prop_table_status_master
+ */
+static inline void
+of_async_config_prop_table_status_master_delete(of_async_config_prop_table_status_master_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_async_config_prop_table_status_slave_t
+ * @param obj An instance of type of_async_config_prop_table_status_slave_t
+ *
+ * \ingroup of_async_config_prop_table_status_slave
+ */
+static inline void
+of_async_config_prop_table_status_slave_delete(of_async_config_prop_table_status_slave_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -8091,6 +8904,39 @@ of_bucket_delete(of_bucket_t *obj) {
  */
 static inline void
 of_bucket_counter_delete(of_bucket_counter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bundle_prop_t
+ * @param obj An instance of type of_bundle_prop_t
+ *
+ * \ingroup of_bundle_prop
+ */
+static inline void
+of_bundle_prop_delete(of_bundle_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bundle_prop_experimenter_t
+ * @param obj An instance of type of_bundle_prop_experimenter_t
+ *
+ * \ingroup of_bundle_prop_experimenter
+ */
+static inline void
+of_bundle_prop_experimenter_delete(of_bundle_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_bundle_prop_header_t
+ * @param obj An instance of type of_bundle_prop_header_t
+ *
+ * \ingroup of_bundle_prop_header
+ */
+static inline void
+of_bundle_prop_header_delete(of_bundle_prop_header_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10031,6 +10877,116 @@ of_port_desc_delete(of_port_desc_t *obj) {
 }
 
 /**
+ * Delete an object of type of_port_desc_prop_t
+ * @param obj An instance of type of_port_desc_prop_t
+ *
+ * \ingroup of_port_desc_prop
+ */
+static inline void
+of_port_desc_prop_delete(of_port_desc_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_ethernet_t
+ * @param obj An instance of type of_port_desc_prop_ethernet_t
+ *
+ * \ingroup of_port_desc_prop_ethernet
+ */
+static inline void
+of_port_desc_prop_ethernet_delete(of_port_desc_prop_ethernet_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_experimenter_t
+ * @param obj An instance of type of_port_desc_prop_experimenter_t
+ *
+ * \ingroup of_port_desc_prop_experimenter
+ */
+static inline void
+of_port_desc_prop_experimenter_delete(of_port_desc_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_header_t
+ * @param obj An instance of type of_port_desc_prop_header_t
+ *
+ * \ingroup of_port_desc_prop_header
+ */
+static inline void
+of_port_desc_prop_header_delete(of_port_desc_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_optical_t
+ * @param obj An instance of type of_port_desc_prop_optical_t
+ *
+ * \ingroup of_port_desc_prop_optical
+ */
+static inline void
+of_port_desc_prop_optical_delete(of_port_desc_prop_optical_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_mod_prop_t
+ * @param obj An instance of type of_port_mod_prop_t
+ *
+ * \ingroup of_port_mod_prop
+ */
+static inline void
+of_port_mod_prop_delete(of_port_mod_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_mod_prop_ethernet_t
+ * @param obj An instance of type of_port_mod_prop_ethernet_t
+ *
+ * \ingroup of_port_mod_prop_ethernet
+ */
+static inline void
+of_port_mod_prop_ethernet_delete(of_port_mod_prop_ethernet_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_mod_prop_experimenter_t
+ * @param obj An instance of type of_port_mod_prop_experimenter_t
+ *
+ * \ingroup of_port_mod_prop_experimenter
+ */
+static inline void
+of_port_mod_prop_experimenter_delete(of_port_mod_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_mod_prop_header_t
+ * @param obj An instance of type of_port_mod_prop_header_t
+ *
+ * \ingroup of_port_mod_prop_header
+ */
+static inline void
+of_port_mod_prop_header_delete(of_port_mod_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_mod_prop_optical_t
+ * @param obj An instance of type of_port_mod_prop_optical_t
+ *
+ * \ingroup of_port_mod_prop_optical
+ */
+static inline void
+of_port_mod_prop_optical_delete(of_port_mod_prop_optical_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_port_stats_entry_t
  * @param obj An instance of type of_port_stats_entry_t
  *
@@ -10038,6 +10994,127 @@ of_port_desc_delete(of_port_desc_t *obj) {
  */
 static inline void
 of_port_stats_entry_delete(of_port_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_stats_prop_t
+ * @param obj An instance of type of_port_stats_prop_t
+ *
+ * \ingroup of_port_stats_prop
+ */
+static inline void
+of_port_stats_prop_delete(of_port_stats_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_stats_prop_ethernet_t
+ * @param obj An instance of type of_port_stats_prop_ethernet_t
+ *
+ * \ingroup of_port_stats_prop_ethernet
+ */
+static inline void
+of_port_stats_prop_ethernet_delete(of_port_stats_prop_ethernet_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_stats_prop_experimenter_t
+ * @param obj An instance of type of_port_stats_prop_experimenter_t
+ *
+ * \ingroup of_port_stats_prop_experimenter
+ */
+static inline void
+of_port_stats_prop_experimenter_delete(of_port_stats_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_stats_prop_header_t
+ * @param obj An instance of type of_port_stats_prop_header_t
+ *
+ * \ingroup of_port_stats_prop_header
+ */
+static inline void
+of_port_stats_prop_header_delete(of_port_stats_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_port_stats_prop_optical_t
+ * @param obj An instance of type of_port_stats_prop_optical_t
+ *
+ * \ingroup of_port_stats_prop_optical
+ */
+static inline void
+of_port_stats_prop_optical_delete(of_port_stats_prop_optical_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_t
+ * @param obj An instance of type of_queue_desc_t
+ *
+ * \ingroup of_queue_desc
+ */
+static inline void
+of_queue_desc_delete(of_queue_desc_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_prop_t
+ * @param obj An instance of type of_queue_desc_prop_t
+ *
+ * \ingroup of_queue_desc_prop
+ */
+static inline void
+of_queue_desc_prop_delete(of_queue_desc_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_prop_experimenter_t
+ * @param obj An instance of type of_queue_desc_prop_experimenter_t
+ *
+ * \ingroup of_queue_desc_prop_experimenter
+ */
+static inline void
+of_queue_desc_prop_experimenter_delete(of_queue_desc_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_prop_header_t
+ * @param obj An instance of type of_queue_desc_prop_header_t
+ *
+ * \ingroup of_queue_desc_prop_header
+ */
+static inline void
+of_queue_desc_prop_header_delete(of_queue_desc_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_prop_max_rate_t
+ * @param obj An instance of type of_queue_desc_prop_max_rate_t
+ *
+ * \ingroup of_queue_desc_prop_max_rate
+ */
+static inline void
+of_queue_desc_prop_max_rate_delete(of_queue_desc_prop_max_rate_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_desc_prop_min_rate_t
+ * @param obj An instance of type of_queue_desc_prop_min_rate_t
+ *
+ * \ingroup of_queue_desc_prop_min_rate
+ */
+static inline void
+of_queue_desc_prop_min_rate_delete(of_queue_desc_prop_min_rate_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10104,6 +11181,83 @@ of_queue_prop_min_rate_delete(of_queue_prop_min_rate_t *obj) {
  */
 static inline void
 of_queue_stats_entry_delete(of_queue_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_stats_prop_t
+ * @param obj An instance of type of_queue_stats_prop_t
+ *
+ * \ingroup of_queue_stats_prop
+ */
+static inline void
+of_queue_stats_prop_delete(of_queue_stats_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_stats_prop_experimenter_t
+ * @param obj An instance of type of_queue_stats_prop_experimenter_t
+ *
+ * \ingroup of_queue_stats_prop_experimenter
+ */
+static inline void
+of_queue_stats_prop_experimenter_delete(of_queue_stats_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_queue_stats_prop_header_t
+ * @param obj An instance of type of_queue_stats_prop_header_t
+ *
+ * \ingroup of_queue_stats_prop_header
+ */
+static inline void
+of_queue_stats_prop_header_delete(of_queue_stats_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_role_prop_t
+ * @param obj An instance of type of_role_prop_t
+ *
+ * \ingroup of_role_prop
+ */
+static inline void
+of_role_prop_delete(of_role_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_role_prop_experimenter_t
+ * @param obj An instance of type of_role_prop_experimenter_t
+ *
+ * \ingroup of_role_prop_experimenter
+ */
+static inline void
+of_role_prop_experimenter_delete(of_role_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_role_prop_header_t
+ * @param obj An instance of type of_role_prop_header_t
+ *
+ * \ingroup of_role_prop_header
+ */
+static inline void
+of_role_prop_header_delete(of_role_prop_header_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_desc_t
+ * @param obj An instance of type of_table_desc_t
+ *
+ * \ingroup of_table_desc
+ */
+static inline void
+of_table_desc_delete(of_table_desc_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10251,6 +11405,17 @@ of_table_feature_prop_next_tables_miss_delete(of_table_feature_prop_next_tables_
 }
 
 /**
+ * Delete an object of type of_table_feature_prop_table_sync_from_t
+ * @param obj An instance of type of_table_feature_prop_table_sync_from_t
+ *
+ * \ingroup of_table_feature_prop_table_sync_from
+ */
+static inline void
+of_table_feature_prop_table_sync_from_delete(of_table_feature_prop_table_sync_from_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_table_feature_prop_wildcards_t
  * @param obj An instance of type of_table_feature_prop_wildcards_t
  *
@@ -10317,6 +11482,50 @@ of_table_features_delete(of_table_features_t *obj) {
 }
 
 /**
+ * Delete an object of type of_table_mod_prop_t
+ * @param obj An instance of type of_table_mod_prop_t
+ *
+ * \ingroup of_table_mod_prop
+ */
+static inline void
+of_table_mod_prop_delete(of_table_mod_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_mod_prop_eviction_t
+ * @param obj An instance of type of_table_mod_prop_eviction_t
+ *
+ * \ingroup of_table_mod_prop_eviction
+ */
+static inline void
+of_table_mod_prop_eviction_delete(of_table_mod_prop_eviction_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_mod_prop_experimenter_t
+ * @param obj An instance of type of_table_mod_prop_experimenter_t
+ *
+ * \ingroup of_table_mod_prop_experimenter
+ */
+static inline void
+of_table_mod_prop_experimenter_delete(of_table_mod_prop_experimenter_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_table_mod_prop_vacancy_t
+ * @param obj An instance of type of_table_mod_prop_vacancy_t
+ *
+ * \ingroup of_table_mod_prop_vacancy
+ */
+static inline void
+of_table_mod_prop_vacancy_delete(of_table_mod_prop_vacancy_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_table_stats_entry_t
  * @param obj An instance of type of_table_stats_entry_t
  *
@@ -10379,6 +11588,17 @@ of_list_action_delete(of_list_action_t *obj) {
  */
 static inline void
 of_list_action_id_delete(of_list_action_id_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_async_config_prop_t
+ * @param obj An instance of type of_list_async_config_prop_t
+ *
+ * \ingroup of_list_async_config_prop
+ */
+static inline void
+of_list_async_config_prop_delete(of_list_async_config_prop_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10592,6 +11812,17 @@ of_list_bucket_counter_delete(of_list_bucket_counter_t *obj) {
 }
 
 /**
+ * Delete an object of type of_list_bundle_prop_t
+ * @param obj An instance of type of_list_bundle_prop_t
+ *
+ * \ingroup of_list_bundle_prop
+ */
+static inline void
+of_list_bundle_prop_delete(of_list_bundle_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_list_flow_stats_entry_t
  * @param obj An instance of type of_list_flow_stats_entry_t
  *
@@ -10724,6 +11955,28 @@ of_list_port_desc_delete(of_list_port_desc_t *obj) {
 }
 
 /**
+ * Delete an object of type of_list_port_desc_prop_t
+ * @param obj An instance of type of_list_port_desc_prop_t
+ *
+ * \ingroup of_list_port_desc_prop
+ */
+static inline void
+of_list_port_desc_prop_delete(of_list_port_desc_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_port_mod_prop_t
+ * @param obj An instance of type of_list_port_mod_prop_t
+ *
+ * \ingroup of_list_port_mod_prop
+ */
+static inline void
+of_list_port_mod_prop_delete(of_list_port_mod_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_list_port_stats_entry_t
  * @param obj An instance of type of_list_port_stats_entry_t
  *
@@ -10731,6 +11984,39 @@ of_list_port_desc_delete(of_list_port_desc_t *obj) {
  */
 static inline void
 of_list_port_stats_entry_delete(of_list_port_stats_entry_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_port_stats_prop_t
+ * @param obj An instance of type of_list_port_stats_prop_t
+ *
+ * \ingroup of_list_port_stats_prop
+ */
+static inline void
+of_list_port_stats_prop_delete(of_list_port_stats_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_queue_desc_t
+ * @param obj An instance of type of_list_queue_desc_t
+ *
+ * \ingroup of_list_queue_desc
+ */
+static inline void
+of_list_queue_desc_delete(of_list_queue_desc_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_queue_desc_prop_t
+ * @param obj An instance of type of_list_queue_desc_prop_t
+ *
+ * \ingroup of_list_queue_desc_prop
+ */
+static inline void
+of_list_queue_desc_prop_delete(of_list_queue_desc_prop_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10757,6 +12043,39 @@ of_list_queue_stats_entry_delete(of_list_queue_stats_entry_t *obj) {
 }
 
 /**
+ * Delete an object of type of_list_queue_stats_prop_t
+ * @param obj An instance of type of_list_queue_stats_prop_t
+ *
+ * \ingroup of_list_queue_stats_prop
+ */
+static inline void
+of_list_queue_stats_prop_delete(of_list_queue_stats_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_role_prop_t
+ * @param obj An instance of type of_list_role_prop_t
+ *
+ * \ingroup of_list_role_prop
+ */
+static inline void
+of_list_role_prop_delete(of_list_role_prop_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_table_desc_t
+ * @param obj An instance of type of_list_table_desc_t
+ *
+ * \ingroup of_list_table_desc
+ */
+static inline void
+of_list_table_desc_delete(of_list_table_desc_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_list_table_feature_prop_t
  * @param obj An instance of type of_list_table_feature_prop_t
  *
@@ -10775,6 +12094,17 @@ of_list_table_feature_prop_delete(of_list_table_feature_prop_t *obj) {
  */
 static inline void
 of_list_table_features_delete(of_list_table_features_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_list_table_mod_prop_t
+ * @param obj An instance of type of_list_table_mod_prop_t
+ *
+ * \ingroup of_list_table_mod_prop
+ */
+static inline void
+of_list_table_mod_prop_delete(of_list_table_mod_prop_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -10943,6 +12273,15 @@ extern void of_async_get_reply_xid_get(
     of_async_get_reply_t *obj,
     uint32_t *xid);
 
+extern int WARN_UNUSED_RESULT of_async_get_reply_properties_set(
+    of_async_get_reply_t *obj,
+    of_list_async_config_prop_t *properties);
+extern void of_async_get_reply_properties_bind(
+    of_async_get_reply_t *obj,
+    of_list_async_config_prop_t *properties);
+extern of_list_async_config_prop_t *of_async_get_reply_properties_get(
+    of_async_get_reply_t *obj);
+
 extern void of_async_get_reply_packet_in_mask_equal_master_set(
     of_async_get_reply_t *obj,
     uint32_t packet_in_mask_equal_master);
@@ -10994,6 +12333,15 @@ extern void of_async_get_request_xid_get(
     of_async_get_request_t *obj,
     uint32_t *xid);
 
+extern int WARN_UNUSED_RESULT of_async_get_request_properties_set(
+    of_async_get_request_t *obj,
+    of_list_async_config_prop_t *properties);
+extern void of_async_get_request_properties_bind(
+    of_async_get_request_t *obj,
+    of_list_async_config_prop_t *properties);
+extern of_list_async_config_prop_t *of_async_get_request_properties_get(
+    of_async_get_request_t *obj);
+
 extern void of_async_get_request_packet_in_mask_equal_master_set(
     of_async_get_request_t *obj,
     uint32_t packet_in_mask_equal_master);
@@ -11044,6 +12392,15 @@ extern void of_async_set_xid_set(
 extern void of_async_set_xid_get(
     of_async_set_t *obj,
     uint32_t *xid);
+
+extern int WARN_UNUSED_RESULT of_async_set_properties_set(
+    of_async_set_t *obj,
+    of_list_async_config_prop_t *properties);
+extern void of_async_set_properties_bind(
+    of_async_set_t *obj,
+    of_list_async_config_prop_t *properties);
+extern of_list_async_config_prop_t *of_async_set_properties_get(
+    of_async_set_t *obj);
 
 extern void of_async_set_packet_in_mask_equal_master_set(
     of_async_set_t *obj,
@@ -14389,7 +15746,7 @@ extern void of_bsn_virtual_port_create_request_subtype_get(
     of_bsn_virtual_port_create_request_t *obj,
     uint32_t *subtype);
 
-extern void of_bsn_virtual_port_create_request_vport_set(
+extern int WARN_UNUSED_RESULT of_bsn_virtual_port_create_request_vport_set(
     of_bsn_virtual_port_create_request_t *obj,
     of_bsn_vport_header_t *vport);
 extern void of_bsn_virtual_port_create_request_vport_bind(
@@ -14609,6 +15966,75 @@ extern void of_bsn_vrf_counter_stats_request_vrf_set(
 extern void of_bsn_vrf_counter_stats_request_vrf_get(
     of_bsn_vrf_counter_stats_request_t *obj,
     uint32_t *vrf);
+
+/* Unified accessor functions for of_bundle_add_msg */
+
+extern void of_bundle_add_msg_xid_set(
+    of_bundle_add_msg_t *obj,
+    uint32_t xid);
+extern void of_bundle_add_msg_xid_get(
+    of_bundle_add_msg_t *obj,
+    uint32_t *xid);
+
+extern void of_bundle_add_msg_bundle_id_set(
+    of_bundle_add_msg_t *obj,
+    uint32_t bundle_id);
+extern void of_bundle_add_msg_bundle_id_get(
+    of_bundle_add_msg_t *obj,
+    uint32_t *bundle_id);
+
+extern void of_bundle_add_msg_flags_set(
+    of_bundle_add_msg_t *obj,
+    uint16_t flags);
+extern void of_bundle_add_msg_flags_get(
+    of_bundle_add_msg_t *obj,
+    uint16_t *flags);
+
+extern int WARN_UNUSED_RESULT of_bundle_add_msg_data_set(
+    of_bundle_add_msg_t *obj,
+    of_octets_t *data);
+extern void of_bundle_add_msg_data_get(
+    of_bundle_add_msg_t *obj,
+    of_octets_t *data);
+
+/* Unified accessor functions for of_bundle_ctrl_msg */
+
+extern void of_bundle_ctrl_msg_xid_set(
+    of_bundle_ctrl_msg_t *obj,
+    uint32_t xid);
+extern void of_bundle_ctrl_msg_xid_get(
+    of_bundle_ctrl_msg_t *obj,
+    uint32_t *xid);
+
+extern void of_bundle_ctrl_msg_bundle_id_set(
+    of_bundle_ctrl_msg_t *obj,
+    uint32_t bundle_id);
+extern void of_bundle_ctrl_msg_bundle_id_get(
+    of_bundle_ctrl_msg_t *obj,
+    uint32_t *bundle_id);
+
+extern void of_bundle_ctrl_msg_bundle_ctrl_type_set(
+    of_bundle_ctrl_msg_t *obj,
+    uint16_t bundle_ctrl_type);
+extern void of_bundle_ctrl_msg_bundle_ctrl_type_get(
+    of_bundle_ctrl_msg_t *obj,
+    uint16_t *bundle_ctrl_type);
+
+extern void of_bundle_ctrl_msg_flags_set(
+    of_bundle_ctrl_msg_t *obj,
+    uint16_t flags);
+extern void of_bundle_ctrl_msg_flags_get(
+    of_bundle_ctrl_msg_t *obj,
+    uint16_t *flags);
+
+extern int WARN_UNUSED_RESULT of_bundle_ctrl_msg_properties_set(
+    of_bundle_ctrl_msg_t *obj,
+    of_list_bundle_prop_t *properties);
+extern void of_bundle_ctrl_msg_properties_bind(
+    of_bundle_ctrl_msg_t *obj,
+    of_list_bundle_prop_t *properties);
+extern of_list_bundle_prop_t *of_bundle_ctrl_msg_properties_get(
+    of_bundle_ctrl_msg_t *obj);
 
 /* Unified accessor functions for of_desc_stats_reply */
 
@@ -15007,6 +16433,13 @@ extern void of_flow_add_flags_get(
     of_flow_add_t *obj,
     uint16_t *flags);
 
+extern void of_flow_add_importance_set(
+    of_flow_add_t *obj,
+    uint16_t importance);
+extern void of_flow_add_importance_get(
+    of_flow_add_t *obj,
+    uint16_t *importance);
+
 extern int WARN_UNUSED_RESULT of_flow_add_match_set(
     of_flow_add_t *obj,
     of_match_t *match);
@@ -15111,6 +16544,13 @@ extern void of_flow_delete_flags_get(
     of_flow_delete_t *obj,
     uint16_t *flags);
 
+extern void of_flow_delete_importance_set(
+    of_flow_delete_t *obj,
+    uint16_t importance);
+extern void of_flow_delete_importance_get(
+    of_flow_delete_t *obj,
+    uint16_t *importance);
+
 extern int WARN_UNUSED_RESULT of_flow_delete_match_set(
     of_flow_delete_t *obj,
     of_match_t *match);
@@ -15214,6 +16654,13 @@ extern void of_flow_delete_strict_flags_set(
 extern void of_flow_delete_strict_flags_get(
     of_flow_delete_strict_t *obj,
     uint16_t *flags);
+
+extern void of_flow_delete_strict_importance_set(
+    of_flow_delete_strict_t *obj,
+    uint16_t importance);
+extern void of_flow_delete_strict_importance_get(
+    of_flow_delete_strict_t *obj,
+    uint16_t *importance);
 
 extern int WARN_UNUSED_RESULT of_flow_delete_strict_match_set(
     of_flow_delete_strict_t *obj,
@@ -15446,6 +16893,13 @@ extern void of_flow_modify_flags_get(
     of_flow_modify_t *obj,
     uint16_t *flags);
 
+extern void of_flow_modify_importance_set(
+    of_flow_modify_t *obj,
+    uint16_t importance);
+extern void of_flow_modify_importance_get(
+    of_flow_modify_t *obj,
+    uint16_t *importance);
+
 extern int WARN_UNUSED_RESULT of_flow_modify_match_set(
     of_flow_modify_t *obj,
     of_match_t *match);
@@ -15549,6 +17003,13 @@ extern void of_flow_modify_strict_flags_set(
 extern void of_flow_modify_strict_flags_get(
     of_flow_modify_strict_t *obj,
     uint16_t *flags);
+
+extern void of_flow_modify_strict_importance_set(
+    of_flow_modify_strict_t *obj,
+    uint16_t importance);
+extern void of_flow_modify_strict_importance_get(
+    of_flow_modify_strict_t *obj,
+    uint16_t *importance);
 
 extern int WARN_UNUSED_RESULT of_flow_modify_strict_match_set(
     of_flow_modify_strict_t *obj,
@@ -16280,6 +17741,15 @@ extern void of_meter_mod_meter_id_get(
     of_meter_mod_t *obj,
     uint32_t *meter_id);
 
+extern int WARN_UNUSED_RESULT of_meter_mod_bands_set(
+    of_meter_mod_t *obj,
+    of_list_meter_band_t *bands);
+extern void of_meter_mod_bands_bind(
+    of_meter_mod_t *obj,
+    of_list_meter_band_t *bands);
+extern of_list_meter_band_t *of_meter_mod_bands_get(
+    of_meter_mod_t *obj);
+
 extern int WARN_UNUSED_RESULT of_meter_mod_meters_set(
     of_meter_mod_t *obj,
     of_list_meter_band_t *meters);
@@ -16632,6 +18102,15 @@ extern void of_port_mod_mask_get(
     of_port_mod_t *obj,
     uint32_t *mask);
 
+extern int WARN_UNUSED_RESULT of_port_mod_properties_set(
+    of_port_mod_t *obj,
+    of_list_port_mod_prop_t *properties);
+extern void of_port_mod_properties_bind(
+    of_port_mod_t *obj,
+    of_list_port_mod_prop_t *properties);
+extern of_list_port_mod_prop_t *of_port_mod_properties_get(
+    of_port_mod_t *obj);
+
 extern void of_port_mod_advertise_set(
     of_port_mod_t *obj,
     uint32_t advertise);
@@ -16726,7 +18205,7 @@ extern void of_port_status_reason_get(
     of_port_status_t *obj,
     uint8_t *reason);
 
-extern void of_port_status_desc_set(
+extern int WARN_UNUSED_RESULT of_port_status_desc_set(
     of_port_status_t *obj,
     of_port_desc_t *desc);
 extern void of_port_status_desc_bind(
@@ -16734,6 +18213,47 @@ extern void of_port_status_desc_bind(
     of_port_desc_t *desc);
 extern of_port_desc_t *of_port_status_desc_get(
     of_port_status_t *obj);
+
+/* Unified accessor functions for of_queue_desc_stats_reply */
+
+extern void of_queue_desc_stats_reply_xid_set(
+    of_queue_desc_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_queue_desc_stats_reply_xid_get(
+    of_queue_desc_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_queue_desc_stats_reply_flags_set(
+    of_queue_desc_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_queue_desc_stats_reply_flags_get(
+    of_queue_desc_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern int WARN_UNUSED_RESULT of_queue_desc_stats_reply_entries_set(
+    of_queue_desc_stats_reply_t *obj,
+    of_list_queue_desc_t *entries);
+extern void of_queue_desc_stats_reply_entries_bind(
+    of_queue_desc_stats_reply_t *obj,
+    of_list_queue_desc_t *entries);
+extern of_list_queue_desc_t *of_queue_desc_stats_reply_entries_get(
+    of_queue_desc_stats_reply_t *obj);
+
+/* Unified accessor functions for of_queue_desc_stats_request */
+
+extern void of_queue_desc_stats_request_xid_set(
+    of_queue_desc_stats_request_t *obj,
+    uint32_t xid);
+extern void of_queue_desc_stats_request_xid_get(
+    of_queue_desc_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_queue_desc_stats_request_flags_set(
+    of_queue_desc_stats_request_t *obj,
+    uint16_t flags);
+extern void of_queue_desc_stats_request_flags_get(
+    of_queue_desc_stats_request_t *obj,
+    uint16_t *flags);
 
 /* Unified accessor functions for of_queue_get_config_reply */
 
@@ -16854,6 +18374,29 @@ extern void of_queue_stats_request_queue_id_get(
     of_queue_stats_request_t *obj,
     uint32_t *queue_id);
 
+/* Unified accessor functions for of_requestforward */
+
+extern void of_requestforward_xid_set(
+    of_requestforward_t *obj,
+    uint32_t xid);
+extern void of_requestforward_xid_get(
+    of_requestforward_t *obj,
+    uint32_t *xid);
+
+extern void of_requestforward_role_set(
+    of_requestforward_t *obj,
+    uint32_t role);
+extern void of_requestforward_role_get(
+    of_requestforward_t *obj,
+    uint32_t *role);
+
+extern int WARN_UNUSED_RESULT of_requestforward_data_set(
+    of_requestforward_t *obj,
+    of_octets_t *data);
+extern void of_requestforward_data_get(
+    of_requestforward_t *obj,
+    of_octets_t *data);
+
 /* Unified accessor functions for of_role_reply */
 
 extern void of_role_reply_xid_set(
@@ -16922,6 +18465,45 @@ extern int WARN_UNUSED_RESULT of_role_request_failed_error_msg_data_set(
 extern void of_role_request_failed_error_msg_data_get(
     of_role_request_failed_error_msg_t *obj,
     of_octets_t *data);
+
+/* Unified accessor functions for of_role_status */
+
+extern void of_role_status_xid_set(
+    of_role_status_t *obj,
+    uint32_t xid);
+extern void of_role_status_xid_get(
+    of_role_status_t *obj,
+    uint32_t *xid);
+
+extern void of_role_status_role_set(
+    of_role_status_t *obj,
+    uint32_t role);
+extern void of_role_status_role_get(
+    of_role_status_t *obj,
+    uint32_t *role);
+
+extern void of_role_status_reason_set(
+    of_role_status_t *obj,
+    uint8_t reason);
+extern void of_role_status_reason_get(
+    of_role_status_t *obj,
+    uint8_t *reason);
+
+extern void of_role_status_generation_id_set(
+    of_role_status_t *obj,
+    uint64_t generation_id);
+extern void of_role_status_generation_id_get(
+    of_role_status_t *obj,
+    uint64_t *generation_id);
+
+extern int WARN_UNUSED_RESULT of_role_status_properties_set(
+    of_role_status_t *obj,
+    of_list_role_prop_t *properties);
+extern void of_role_status_properties_bind(
+    of_role_status_t *obj,
+    of_list_role_prop_t *properties);
+extern of_list_role_prop_t *of_role_status_properties_get(
+    of_role_status_t *obj);
 
 /* Unified accessor functions for of_set_config */
 
@@ -17000,6 +18582,47 @@ extern int WARN_UNUSED_RESULT of_switch_config_failed_error_msg_data_set(
 extern void of_switch_config_failed_error_msg_data_get(
     of_switch_config_failed_error_msg_t *obj,
     of_octets_t *data);
+
+/* Unified accessor functions for of_table_desc_stats_reply */
+
+extern void of_table_desc_stats_reply_xid_set(
+    of_table_desc_stats_reply_t *obj,
+    uint32_t xid);
+extern void of_table_desc_stats_reply_xid_get(
+    of_table_desc_stats_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_table_desc_stats_reply_flags_set(
+    of_table_desc_stats_reply_t *obj,
+    uint16_t flags);
+extern void of_table_desc_stats_reply_flags_get(
+    of_table_desc_stats_reply_t *obj,
+    uint16_t *flags);
+
+extern int WARN_UNUSED_RESULT of_table_desc_stats_reply_entries_set(
+    of_table_desc_stats_reply_t *obj,
+    of_list_table_desc_t *entries);
+extern void of_table_desc_stats_reply_entries_bind(
+    of_table_desc_stats_reply_t *obj,
+    of_list_table_desc_t *entries);
+extern of_list_table_desc_t *of_table_desc_stats_reply_entries_get(
+    of_table_desc_stats_reply_t *obj);
+
+/* Unified accessor functions for of_table_desc_stats_request */
+
+extern void of_table_desc_stats_request_xid_set(
+    of_table_desc_stats_request_t *obj,
+    uint32_t xid);
+extern void of_table_desc_stats_request_xid_get(
+    of_table_desc_stats_request_t *obj,
+    uint32_t *xid);
+
+extern void of_table_desc_stats_request_flags_set(
+    of_table_desc_stats_request_t *obj,
+    uint16_t flags);
+extern void of_table_desc_stats_request_flags_get(
+    of_table_desc_stats_request_t *obj,
+    uint16_t *flags);
 
 /* Unified accessor functions for of_table_features_failed_error_msg */
 
@@ -17097,6 +18720,15 @@ extern void of_table_mod_config_get(
     of_table_mod_t *obj,
     uint32_t *config);
 
+extern int WARN_UNUSED_RESULT of_table_mod_properties_set(
+    of_table_mod_t *obj,
+    of_list_table_mod_prop_t *properties);
+extern void of_table_mod_properties_bind(
+    of_table_mod_t *obj,
+    of_list_table_mod_prop_t *properties);
+extern of_list_table_mod_prop_t *of_table_mod_properties_get(
+    of_table_mod_t *obj);
+
 /* Unified accessor functions for of_table_mod_failed_error_msg */
 
 extern void of_table_mod_failed_error_msg_xid_set(
@@ -17160,6 +18792,38 @@ extern void of_table_stats_request_flags_set(
 extern void of_table_stats_request_flags_get(
     of_table_stats_request_t *obj,
     uint16_t *flags);
+
+/* Unified accessor functions for of_table_status */
+
+extern void of_table_status_xid_set(
+    of_table_status_t *obj,
+    uint32_t xid);
+extern void of_table_status_xid_get(
+    of_table_status_t *obj,
+    uint32_t *xid);
+
+extern void of_table_status_role_set(
+    of_table_status_t *obj,
+    uint32_t role);
+extern void of_table_status_role_get(
+    of_table_status_t *obj,
+    uint32_t *role);
+
+extern void of_table_status_reason_set(
+    of_table_status_t *obj,
+    uint8_t reason);
+extern void of_table_status_reason_get(
+    of_table_status_t *obj,
+    uint8_t *reason);
+
+extern int WARN_UNUSED_RESULT of_table_status_table_set(
+    of_table_status_t *obj,
+    of_table_desc_t *table);
+extern void of_table_status_table_bind(
+    of_table_status_t *obj,
+    of_table_desc_t *table);
+extern of_table_desc_t *of_table_status_table_get(
+    of_table_status_t *obj);
 
 /* Unified accessor functions for of_action_bsn */
 
@@ -17733,6 +19397,120 @@ extern void of_action_set_vlan_vid_vlan_vid_get(
     uint16_t *vlan_vid);
 
 /* Unified accessor functions for of_action_strip_vlan */
+
+/* Unified accessor functions for of_async_config_prop_experimenter_master */
+
+/* Unified accessor functions for of_async_config_prop_experimenter_slave */
+
+/* Unified accessor functions for of_async_config_prop_flow_removed_master */
+
+extern void of_async_config_prop_flow_removed_master_mask_set(
+    of_async_config_prop_flow_removed_master_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_flow_removed_master_mask_get(
+    of_async_config_prop_flow_removed_master_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_flow_removed_slave */
+
+extern void of_async_config_prop_flow_removed_slave_mask_set(
+    of_async_config_prop_flow_removed_slave_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_flow_removed_slave_mask_get(
+    of_async_config_prop_flow_removed_slave_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_header */
+
+/* Unified accessor functions for of_async_config_prop_packet_in_master */
+
+extern void of_async_config_prop_packet_in_master_mask_set(
+    of_async_config_prop_packet_in_master_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_packet_in_master_mask_get(
+    of_async_config_prop_packet_in_master_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_packet_in_slave */
+
+extern void of_async_config_prop_packet_in_slave_mask_set(
+    of_async_config_prop_packet_in_slave_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_packet_in_slave_mask_get(
+    of_async_config_prop_packet_in_slave_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_port_status_master */
+
+extern void of_async_config_prop_port_status_master_mask_set(
+    of_async_config_prop_port_status_master_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_port_status_master_mask_get(
+    of_async_config_prop_port_status_master_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_port_status_slave */
+
+extern void of_async_config_prop_port_status_slave_mask_set(
+    of_async_config_prop_port_status_slave_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_port_status_slave_mask_get(
+    of_async_config_prop_port_status_slave_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_requestforward_master */
+
+extern void of_async_config_prop_requestforward_master_mask_set(
+    of_async_config_prop_requestforward_master_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_requestforward_master_mask_get(
+    of_async_config_prop_requestforward_master_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_requestforward_slave */
+
+extern void of_async_config_prop_requestforward_slave_mask_set(
+    of_async_config_prop_requestforward_slave_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_requestforward_slave_mask_get(
+    of_async_config_prop_requestforward_slave_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_role_status_master */
+
+extern void of_async_config_prop_role_status_master_mask_set(
+    of_async_config_prop_role_status_master_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_role_status_master_mask_get(
+    of_async_config_prop_role_status_master_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_role_status_slave */
+
+extern void of_async_config_prop_role_status_slave_mask_set(
+    of_async_config_prop_role_status_slave_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_role_status_slave_mask_get(
+    of_async_config_prop_role_status_slave_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_table_status_master */
+
+extern void of_async_config_prop_table_status_master_mask_set(
+    of_async_config_prop_table_status_master_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_table_status_master_mask_get(
+    of_async_config_prop_table_status_master_t *obj,
+    uint32_t *mask);
+
+/* Unified accessor functions for of_async_config_prop_table_status_slave */
+
+extern void of_async_config_prop_table_status_slave_mask_set(
+    of_async_config_prop_table_status_slave_t *obj,
+    uint32_t mask);
+extern void of_async_config_prop_table_status_slave_mask_get(
+    of_async_config_prop_table_status_slave_t *obj,
+    uint32_t *mask);
 
 /* Unified accessor functions for of_bsn_controller_connection */
 
@@ -18777,6 +20555,24 @@ extern void of_bucket_counter_byte_count_get(
     of_bucket_counter_t *obj,
     uint64_t *byte_count);
 
+/* Unified accessor functions for of_bundle_prop_experimenter */
+
+extern void of_bundle_prop_experimenter_experimenter_set(
+    of_bundle_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_bundle_prop_experimenter_experimenter_get(
+    of_bundle_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bundle_prop_experimenter_exp_type_set(
+    of_bundle_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_bundle_prop_experimenter_exp_type_get(
+    of_bundle_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_bundle_prop_header */
+
 /* Unified accessor functions for of_flow_stats_entry */
 
 extern void of_flow_stats_entry_table_id_set(
@@ -18827,6 +20623,13 @@ extern void of_flow_stats_entry_flags_set(
 extern void of_flow_stats_entry_flags_get(
     of_flow_stats_entry_t *obj,
     uint16_t *flags);
+
+extern void of_flow_stats_entry_importance_set(
+    of_flow_stats_entry_t *obj,
+    uint16_t importance);
+extern void of_flow_stats_entry_importance_get(
+    of_flow_stats_entry_t *obj,
+    uint16_t *importance);
 
 extern void of_flow_stats_entry_cookie_set(
     of_flow_stats_entry_t *obj,
@@ -21360,6 +23163,15 @@ extern void of_port_desc_state_get(
     of_port_desc_t *obj,
     uint32_t *state);
 
+extern int WARN_UNUSED_RESULT of_port_desc_properties_set(
+    of_port_desc_t *obj,
+    of_list_port_desc_prop_t *properties);
+extern void of_port_desc_properties_bind(
+    of_port_desc_t *obj,
+    of_list_port_desc_prop_t *properties);
+extern of_list_port_desc_prop_t *of_port_desc_properties_get(
+    of_port_desc_t *obj);
+
 extern void of_port_desc_curr_set(
     of_port_desc_t *obj,
     uint32_t curr);
@@ -21402,6 +23214,197 @@ extern void of_port_desc_max_speed_get(
     of_port_desc_t *obj,
     uint32_t *max_speed);
 
+/* Unified accessor functions for of_port_desc_prop_ethernet */
+
+extern void of_port_desc_prop_ethernet_curr_set(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t curr);
+extern void of_port_desc_prop_ethernet_curr_get(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t *curr);
+
+extern void of_port_desc_prop_ethernet_advertised_set(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t advertised);
+extern void of_port_desc_prop_ethernet_advertised_get(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t *advertised);
+
+extern void of_port_desc_prop_ethernet_supported_set(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t supported);
+extern void of_port_desc_prop_ethernet_supported_get(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t *supported);
+
+extern void of_port_desc_prop_ethernet_peer_set(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t peer);
+extern void of_port_desc_prop_ethernet_peer_get(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t *peer);
+
+extern void of_port_desc_prop_ethernet_curr_speed_set(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t curr_speed);
+extern void of_port_desc_prop_ethernet_curr_speed_get(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t *curr_speed);
+
+extern void of_port_desc_prop_ethernet_max_speed_set(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t max_speed);
+extern void of_port_desc_prop_ethernet_max_speed_get(
+    of_port_desc_prop_ethernet_t *obj,
+    uint32_t *max_speed);
+
+/* Unified accessor functions for of_port_desc_prop_experimenter */
+
+extern void of_port_desc_prop_experimenter_experimenter_set(
+    of_port_desc_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_experimenter_experimenter_get(
+    of_port_desc_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_experimenter_exp_type_set(
+    of_port_desc_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_experimenter_exp_type_get(
+    of_port_desc_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_port_desc_prop_header */
+
+/* Unified accessor functions for of_port_desc_prop_optical */
+
+extern void of_port_desc_prop_optical_supported_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t supported);
+extern void of_port_desc_prop_optical_supported_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *supported);
+
+extern void of_port_desc_prop_optical_tx_min_freq_lmda_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t tx_min_freq_lmda);
+extern void of_port_desc_prop_optical_tx_min_freq_lmda_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *tx_min_freq_lmda);
+
+extern void of_port_desc_prop_optical_tx_max_freq_lmda_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t tx_max_freq_lmda);
+extern void of_port_desc_prop_optical_tx_max_freq_lmda_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *tx_max_freq_lmda);
+
+extern void of_port_desc_prop_optical_tx_grid_freq_lmda_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t tx_grid_freq_lmda);
+extern void of_port_desc_prop_optical_tx_grid_freq_lmda_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *tx_grid_freq_lmda);
+
+extern void of_port_desc_prop_optical_rx_min_freq_lmda_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t rx_min_freq_lmda);
+extern void of_port_desc_prop_optical_rx_min_freq_lmda_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *rx_min_freq_lmda);
+
+extern void of_port_desc_prop_optical_rx_max_freq_lmda_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t rx_max_freq_lmda);
+extern void of_port_desc_prop_optical_rx_max_freq_lmda_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *rx_max_freq_lmda);
+
+extern void of_port_desc_prop_optical_rx_grid_freq_lmda_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t rx_grid_freq_lmda);
+extern void of_port_desc_prop_optical_rx_grid_freq_lmda_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *rx_grid_freq_lmda);
+
+extern void of_port_desc_prop_optical_tx_pwr_min_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t tx_pwr_min);
+extern void of_port_desc_prop_optical_tx_pwr_min_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *tx_pwr_min);
+
+extern void of_port_desc_prop_optical_tx_pwr_max_set(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t tx_pwr_max);
+extern void of_port_desc_prop_optical_tx_pwr_max_get(
+    of_port_desc_prop_optical_t *obj,
+    uint32_t *tx_pwr_max);
+
+/* Unified accessor functions for of_port_mod_prop_ethernet */
+
+extern void of_port_mod_prop_ethernet_advertise_set(
+    of_port_mod_prop_ethernet_t *obj,
+    uint32_t advertise);
+extern void of_port_mod_prop_ethernet_advertise_get(
+    of_port_mod_prop_ethernet_t *obj,
+    uint32_t *advertise);
+
+/* Unified accessor functions for of_port_mod_prop_experimenter */
+
+extern void of_port_mod_prop_experimenter_experimenter_set(
+    of_port_mod_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_port_mod_prop_experimenter_experimenter_get(
+    of_port_mod_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_mod_prop_experimenter_exp_type_set(
+    of_port_mod_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_port_mod_prop_experimenter_exp_type_get(
+    of_port_mod_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_port_mod_prop_header */
+
+/* Unified accessor functions for of_port_mod_prop_optical */
+
+extern void of_port_mod_prop_optical_configure_set(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t configure);
+extern void of_port_mod_prop_optical_configure_get(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t *configure);
+
+extern void of_port_mod_prop_optical_freq_ldma_set(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t freq_ldma);
+extern void of_port_mod_prop_optical_freq_ldma_get(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t *freq_ldma);
+
+extern void of_port_mod_prop_optical_fl_offset_set(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t fl_offset);
+extern void of_port_mod_prop_optical_fl_offset_get(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t *fl_offset);
+
+extern void of_port_mod_prop_optical_grid_span_set(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t grid_span);
+extern void of_port_mod_prop_optical_grid_span_get(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t *grid_span);
+
+extern void of_port_mod_prop_optical_tx_pwr_set(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t tx_pwr);
+extern void of_port_mod_prop_optical_tx_pwr_get(
+    of_port_mod_prop_optical_t *obj,
+    uint32_t *tx_pwr);
+
 /* Unified accessor functions for of_port_stats_entry */
 
 extern void of_port_stats_entry_port_no_set(
@@ -21410,6 +23413,20 @@ extern void of_port_stats_entry_port_no_set(
 extern void of_port_stats_entry_port_no_get(
     of_port_stats_entry_t *obj,
     of_port_no_t *port_no);
+
+extern void of_port_stats_entry_duration_sec_set(
+    of_port_stats_entry_t *obj,
+    uint32_t duration_sec);
+extern void of_port_stats_entry_duration_sec_get(
+    of_port_stats_entry_t *obj,
+    uint32_t *duration_sec);
+
+extern void of_port_stats_entry_duration_nsec_set(
+    of_port_stats_entry_t *obj,
+    uint32_t duration_nsec);
+extern void of_port_stats_entry_duration_nsec_get(
+    of_port_stats_entry_t *obj,
+    uint32_t *duration_nsec);
 
 extern void of_port_stats_entry_rx_packets_set(
     of_port_stats_entry_t *obj,
@@ -21467,6 +23484,15 @@ extern void of_port_stats_entry_tx_errors_get(
     of_port_stats_entry_t *obj,
     uint64_t *tx_errors);
 
+extern int WARN_UNUSED_RESULT of_port_stats_entry_properties_set(
+    of_port_stats_entry_t *obj,
+    of_list_port_stats_prop_t *properties);
+extern void of_port_stats_entry_properties_bind(
+    of_port_stats_entry_t *obj,
+    of_list_port_stats_prop_t *properties);
+extern of_list_port_stats_prop_t *of_port_stats_entry_properties_get(
+    of_port_stats_entry_t *obj);
+
 extern void of_port_stats_entry_rx_frame_err_set(
     of_port_stats_entry_t *obj,
     uint64_t rx_frame_err);
@@ -21495,19 +23521,200 @@ extern void of_port_stats_entry_collisions_get(
     of_port_stats_entry_t *obj,
     uint64_t *collisions);
 
-extern void of_port_stats_entry_duration_sec_set(
-    of_port_stats_entry_t *obj,
-    uint32_t duration_sec);
-extern void of_port_stats_entry_duration_sec_get(
-    of_port_stats_entry_t *obj,
-    uint32_t *duration_sec);
+/* Unified accessor functions for of_port_stats_prop_ethernet */
 
-extern void of_port_stats_entry_duration_nsec_set(
-    of_port_stats_entry_t *obj,
-    uint32_t duration_nsec);
-extern void of_port_stats_entry_duration_nsec_get(
-    of_port_stats_entry_t *obj,
-    uint32_t *duration_nsec);
+extern void of_port_stats_prop_ethernet_rx_frame_err_set(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t rx_frame_err);
+extern void of_port_stats_prop_ethernet_rx_frame_err_get(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t *rx_frame_err);
+
+extern void of_port_stats_prop_ethernet_rx_over_err_set(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t rx_over_err);
+extern void of_port_stats_prop_ethernet_rx_over_err_get(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t *rx_over_err);
+
+extern void of_port_stats_prop_ethernet_rx_crc_err_set(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t rx_crc_err);
+extern void of_port_stats_prop_ethernet_rx_crc_err_get(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t *rx_crc_err);
+
+extern void of_port_stats_prop_ethernet_collisions_set(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t collisions);
+extern void of_port_stats_prop_ethernet_collisions_get(
+    of_port_stats_prop_ethernet_t *obj,
+    uint64_t *collisions);
+
+/* Unified accessor functions for of_port_stats_prop_experimenter */
+
+extern void of_port_stats_prop_experimenter_experimenter_set(
+    of_port_stats_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_port_stats_prop_experimenter_experimenter_get(
+    of_port_stats_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_stats_prop_experimenter_exp_type_set(
+    of_port_stats_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_port_stats_prop_experimenter_exp_type_get(
+    of_port_stats_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+extern int WARN_UNUSED_RESULT of_port_stats_prop_experimenter_experimenter_data_set(
+    of_port_stats_prop_experimenter_t *obj,
+    of_octets_t *experimenter_data);
+extern void of_port_stats_prop_experimenter_experimenter_data_get(
+    of_port_stats_prop_experimenter_t *obj,
+    of_octets_t *experimenter_data);
+
+/* Unified accessor functions for of_port_stats_prop_header */
+
+/* Unified accessor functions for of_port_stats_prop_optical */
+
+extern void of_port_stats_prop_optical_flags_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t flags);
+extern void of_port_stats_prop_optical_flags_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *flags);
+
+extern void of_port_stats_prop_optical_tx_freq_lmda_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t tx_freq_lmda);
+extern void of_port_stats_prop_optical_tx_freq_lmda_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *tx_freq_lmda);
+
+extern void of_port_stats_prop_optical_tx_offset_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t tx_offset);
+extern void of_port_stats_prop_optical_tx_offset_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *tx_offset);
+
+extern void of_port_stats_prop_optical_tx_grid_span_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t tx_grid_span);
+extern void of_port_stats_prop_optical_tx_grid_span_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *tx_grid_span);
+
+extern void of_port_stats_prop_optical_rx_freq_lmda_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t rx_freq_lmda);
+extern void of_port_stats_prop_optical_rx_freq_lmda_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *rx_freq_lmda);
+
+extern void of_port_stats_prop_optical_rx_offset_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t rx_offset);
+extern void of_port_stats_prop_optical_rx_offset_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *rx_offset);
+
+extern void of_port_stats_prop_optical_rx_grid_span_set(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t rx_grid_span);
+extern void of_port_stats_prop_optical_rx_grid_span_get(
+    of_port_stats_prop_optical_t *obj,
+    uint32_t *rx_grid_span);
+
+extern void of_port_stats_prop_optical_tx_pwr_set(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t tx_pwr);
+extern void of_port_stats_prop_optical_tx_pwr_get(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t *tx_pwr);
+
+extern void of_port_stats_prop_optical_rx_pwr_set(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t rx_pwr);
+extern void of_port_stats_prop_optical_rx_pwr_get(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t *rx_pwr);
+
+extern void of_port_stats_prop_optical_bias_current_set(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t bias_current);
+extern void of_port_stats_prop_optical_bias_current_get(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t *bias_current);
+
+extern void of_port_stats_prop_optical_temperature_set(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t temperature);
+extern void of_port_stats_prop_optical_temperature_get(
+    of_port_stats_prop_optical_t *obj,
+    uint16_t *temperature);
+
+/* Unified accessor functions for of_queue_desc */
+
+extern void of_queue_desc_port_no_set(
+    of_queue_desc_t *obj,
+    uint32_t port_no);
+extern void of_queue_desc_port_no_get(
+    of_queue_desc_t *obj,
+    uint32_t *port_no);
+
+extern void of_queue_desc_queue_id_set(
+    of_queue_desc_t *obj,
+    uint32_t queue_id);
+extern void of_queue_desc_queue_id_get(
+    of_queue_desc_t *obj,
+    uint32_t *queue_id);
+
+extern int WARN_UNUSED_RESULT of_queue_desc_properties_set(
+    of_queue_desc_t *obj,
+    of_list_queue_desc_prop_t *properties);
+extern void of_queue_desc_properties_bind(
+    of_queue_desc_t *obj,
+    of_list_queue_desc_prop_t *properties);
+extern of_list_queue_desc_prop_t *of_queue_desc_properties_get(
+    of_queue_desc_t *obj);
+
+/* Unified accessor functions for of_queue_desc_prop_experimenter */
+
+extern void of_queue_desc_prop_experimenter_experimenter_set(
+    of_queue_desc_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_queue_desc_prop_experimenter_experimenter_get(
+    of_queue_desc_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_queue_desc_prop_experimenter_exp_type_set(
+    of_queue_desc_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_queue_desc_prop_experimenter_exp_type_get(
+    of_queue_desc_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_queue_desc_prop_header */
+
+/* Unified accessor functions for of_queue_desc_prop_max_rate */
+
+extern void of_queue_desc_prop_max_rate_rate_set(
+    of_queue_desc_prop_max_rate_t *obj,
+    uint16_t rate);
+extern void of_queue_desc_prop_max_rate_rate_get(
+    of_queue_desc_prop_max_rate_t *obj,
+    uint16_t *rate);
+
+/* Unified accessor functions for of_queue_desc_prop_min_rate */
+
+extern void of_queue_desc_prop_min_rate_rate_set(
+    of_queue_desc_prop_min_rate_t *obj,
+    uint16_t rate);
+extern void of_queue_desc_prop_min_rate_rate_get(
+    of_queue_desc_prop_min_rate_t *obj,
+    uint16_t *rate);
 
 /* Unified accessor functions for of_queue_prop_experimenter */
 
@@ -21595,6 +23802,67 @@ extern void of_queue_stats_entry_duration_nsec_set(
 extern void of_queue_stats_entry_duration_nsec_get(
     of_queue_stats_entry_t *obj,
     uint32_t *duration_nsec);
+
+extern int WARN_UNUSED_RESULT of_queue_stats_entry_properties_set(
+    of_queue_stats_entry_t *obj,
+    of_list_queue_stats_prop_t *properties);
+extern void of_queue_stats_entry_properties_bind(
+    of_queue_stats_entry_t *obj,
+    of_list_queue_stats_prop_t *properties);
+extern of_list_queue_stats_prop_t *of_queue_stats_entry_properties_get(
+    of_queue_stats_entry_t *obj);
+
+/* Unified accessor functions for of_queue_stats_prop_experimenter */
+
+extern void of_queue_stats_prop_experimenter_experimenter_set(
+    of_queue_stats_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_queue_stats_prop_experimenter_experimenter_get(
+    of_queue_stats_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_queue_stats_prop_experimenter_exp_type_set(
+    of_queue_stats_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_queue_stats_prop_experimenter_exp_type_get(
+    of_queue_stats_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_queue_stats_prop_header */
+
+/* Unified accessor functions for of_role_prop_experimenter */
+
+extern void of_role_prop_experimenter_experimenter_set(
+    of_role_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_role_prop_experimenter_experimenter_get(
+    of_role_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_role_prop_experimenter_exp_type_set(
+    of_role_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_role_prop_experimenter_exp_type_get(
+    of_role_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_role_prop_header */
+
+/* Unified accessor functions for of_table_desc */
+
+extern void of_table_desc_table_id_set(
+    of_table_desc_t *obj,
+    uint8_t table_id);
+extern void of_table_desc_table_id_get(
+    of_table_desc_t *obj,
+    uint8_t *table_id);
+
+extern void of_table_desc_config_set(
+    of_table_desc_t *obj,
+    uint32_t config);
+extern void of_table_desc_config_get(
+    of_table_desc_t *obj,
+    uint32_t *config);
 
 /* Unified accessor functions for of_table_feature_prop_apply_actions */
 
@@ -21743,6 +24011,17 @@ extern void of_table_feature_prop_next_tables_miss_next_table_ids_bind(
 extern of_list_uint8_t *of_table_feature_prop_next_tables_miss_next_table_ids_get(
     of_table_feature_prop_next_tables_miss_t *obj);
 
+/* Unified accessor functions for of_table_feature_prop_table_sync_from */
+
+extern int WARN_UNUSED_RESULT of_table_feature_prop_table_sync_from_table_ids_set(
+    of_table_feature_prop_table_sync_from_t *obj,
+    of_list_uint8_t *table_ids);
+extern void of_table_feature_prop_table_sync_from_table_ids_bind(
+    of_table_feature_prop_table_sync_from_t *obj,
+    of_list_uint8_t *table_ids);
+extern of_list_uint8_t *of_table_feature_prop_table_sync_from_table_ids_get(
+    of_table_feature_prop_table_sync_from_t *obj);
+
 /* Unified accessor functions for of_table_feature_prop_wildcards */
 
 extern int WARN_UNUSED_RESULT of_table_feature_prop_wildcards_oxm_ids_set(
@@ -21850,6 +24129,56 @@ extern void of_table_features_properties_bind(
     of_list_table_feature_prop_t *properties);
 extern of_list_table_feature_prop_t *of_table_features_properties_get(
     of_table_features_t *obj);
+
+/* Unified accessor functions for of_table_mod_prop */
+
+/* Unified accessor functions for of_table_mod_prop_eviction */
+
+extern void of_table_mod_prop_eviction_flags_set(
+    of_table_mod_prop_eviction_t *obj,
+    uint32_t flags);
+extern void of_table_mod_prop_eviction_flags_get(
+    of_table_mod_prop_eviction_t *obj,
+    uint32_t *flags);
+
+/* Unified accessor functions for of_table_mod_prop_experimenter */
+
+extern void of_table_mod_prop_experimenter_experimenter_set(
+    of_table_mod_prop_experimenter_t *obj,
+    uint32_t experimenter);
+extern void of_table_mod_prop_experimenter_experimenter_get(
+    of_table_mod_prop_experimenter_t *obj,
+    uint32_t *experimenter);
+
+extern void of_table_mod_prop_experimenter_exp_type_set(
+    of_table_mod_prop_experimenter_t *obj,
+    uint32_t exp_type);
+extern void of_table_mod_prop_experimenter_exp_type_get(
+    of_table_mod_prop_experimenter_t *obj,
+    uint32_t *exp_type);
+
+/* Unified accessor functions for of_table_mod_prop_vacancy */
+
+extern void of_table_mod_prop_vacancy_vacancy_down_set(
+    of_table_mod_prop_vacancy_t *obj,
+    uint8_t vacancy_down);
+extern void of_table_mod_prop_vacancy_vacancy_down_get(
+    of_table_mod_prop_vacancy_t *obj,
+    uint8_t *vacancy_down);
+
+extern void of_table_mod_prop_vacancy_vacancy_up_set(
+    of_table_mod_prop_vacancy_t *obj,
+    uint8_t vacancy_up);
+extern void of_table_mod_prop_vacancy_vacancy_up_get(
+    of_table_mod_prop_vacancy_t *obj,
+    uint8_t *vacancy_up);
+
+extern void of_table_mod_prop_vacancy_vacancy_set(
+    of_table_mod_prop_vacancy_t *obj,
+    uint8_t vacancy);
+extern void of_table_mod_prop_vacancy_vacancy_get(
+    of_table_mod_prop_vacancy_t *obj,
+    uint8_t *vacancy);
 
 /* Unified accessor functions for of_table_stats_entry */
 
@@ -22037,6 +24366,29 @@ extern int of_list_action_id_append(
     for ((rv) = of_list_action_id_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_action_id_next((list), (elt)))
+
+/* Unified accessor functions for of_list_async_config_prop */
+
+extern int of_list_async_config_prop_first(
+    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+extern int of_list_async_config_prop_next(
+    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+extern int of_list_async_config_prop_append_bind(
+    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+extern int of_list_async_config_prop_append(
+    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_async_config_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_async_config_prop
+ * @param elt Pointer to an element of type of_async_config_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_ASYNC_CONFIG_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_async_config_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_async_config_prop_next((list), (elt)))
 
 /* Unified accessor functions for of_list_bsn_controller_connection */
 
@@ -22475,6 +24827,29 @@ extern int of_list_bucket_counter_append(
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_bucket_counter_next((list), (elt)))
 
+/* Unified accessor functions for of_list_bundle_prop */
+
+extern int of_list_bundle_prop_first(
+    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+extern int of_list_bundle_prop_next(
+    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+extern int of_list_bundle_prop_append_bind(
+    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+extern int of_list_bundle_prop_append(
+    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_bundle_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_bundle_prop
+ * @param elt Pointer to an element of type of_bundle_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_BUNDLE_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_bundle_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_bundle_prop_next((list), (elt)))
+
 /* Unified accessor functions for of_list_flow_stats_entry */
 
 extern int of_list_flow_stats_entry_first(
@@ -22751,6 +25126,52 @@ extern int of_list_port_desc_append(
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_port_desc_next((list), (elt)))
 
+/* Unified accessor functions for of_list_port_desc_prop */
+
+extern int of_list_port_desc_prop_first(
+    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+extern int of_list_port_desc_prop_next(
+    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+extern int of_list_port_desc_prop_append_bind(
+    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+extern int of_list_port_desc_prop_append(
+    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_port_desc_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_port_desc_prop
+ * @param elt Pointer to an element of type of_port_desc_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_PORT_DESC_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_port_desc_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_port_desc_prop_next((list), (elt)))
+
+/* Unified accessor functions for of_list_port_mod_prop */
+
+extern int of_list_port_mod_prop_first(
+    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+extern int of_list_port_mod_prop_next(
+    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+extern int of_list_port_mod_prop_append_bind(
+    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+extern int of_list_port_mod_prop_append(
+    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_port_mod_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_port_mod_prop
+ * @param elt Pointer to an element of type of_port_mod_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_PORT_MOD_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_port_mod_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_port_mod_prop_next((list), (elt)))
+
 /* Unified accessor functions for of_list_port_stats_entry */
 
 extern int of_list_port_stats_entry_first(
@@ -22773,6 +25194,75 @@ extern int of_list_port_stats_entry_append(
     for ((rv) = of_list_port_stats_entry_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_port_stats_entry_next((list), (elt)))
+
+/* Unified accessor functions for of_list_port_stats_prop */
+
+extern int of_list_port_stats_prop_first(
+    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+extern int of_list_port_stats_prop_next(
+    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+extern int of_list_port_stats_prop_append_bind(
+    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+extern int of_list_port_stats_prop_append(
+    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_port_stats_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_port_stats_prop
+ * @param elt Pointer to an element of type of_port_stats_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_PORT_STATS_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_port_stats_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_port_stats_prop_next((list), (elt)))
+
+/* Unified accessor functions for of_list_queue_desc */
+
+extern int of_list_queue_desc_first(
+    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+extern int of_list_queue_desc_next(
+    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+extern int of_list_queue_desc_append_bind(
+    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+extern int of_list_queue_desc_append(
+    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_queue_desc
+ * @param list Pointer to the list being iterated over of
+ * type of_list_queue_desc
+ * @param elt Pointer to an element of type of_queue_desc
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_QUEUE_DESC_ITER(list, elt, rv)  \
+    for ((rv) = of_list_queue_desc_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_queue_desc_next((list), (elt)))
+
+/* Unified accessor functions for of_list_queue_desc_prop */
+
+extern int of_list_queue_desc_prop_first(
+    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+extern int of_list_queue_desc_prop_next(
+    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+extern int of_list_queue_desc_prop_append_bind(
+    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+extern int of_list_queue_desc_prop_append(
+    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_queue_desc_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_queue_desc_prop
+ * @param elt Pointer to an element of type of_queue_desc_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_QUEUE_DESC_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_queue_desc_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_queue_desc_prop_next((list), (elt)))
 
 /* Unified accessor functions for of_list_queue_prop */
 
@@ -22820,6 +25310,75 @@ extern int of_list_queue_stats_entry_append(
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_queue_stats_entry_next((list), (elt)))
 
+/* Unified accessor functions for of_list_queue_stats_prop */
+
+extern int of_list_queue_stats_prop_first(
+    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+extern int of_list_queue_stats_prop_next(
+    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+extern int of_list_queue_stats_prop_append_bind(
+    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+extern int of_list_queue_stats_prop_append(
+    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_queue_stats_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_queue_stats_prop
+ * @param elt Pointer to an element of type of_queue_stats_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_QUEUE_STATS_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_queue_stats_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_queue_stats_prop_next((list), (elt)))
+
+/* Unified accessor functions for of_list_role_prop */
+
+extern int of_list_role_prop_first(
+    of_list_role_prop_t *list, of_role_prop_t *obj);
+extern int of_list_role_prop_next(
+    of_list_role_prop_t *list, of_role_prop_t *obj);
+extern int of_list_role_prop_append_bind(
+    of_list_role_prop_t *list, of_role_prop_t *obj);
+extern int of_list_role_prop_append(
+    of_list_role_prop_t *list, of_role_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_role_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_role_prop
+ * @param elt Pointer to an element of type of_role_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_ROLE_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_role_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_role_prop_next((list), (elt)))
+
+/* Unified accessor functions for of_list_table_desc */
+
+extern int of_list_table_desc_first(
+    of_list_table_desc_t *list, of_table_desc_t *obj);
+extern int of_list_table_desc_next(
+    of_list_table_desc_t *list, of_table_desc_t *obj);
+extern int of_list_table_desc_append_bind(
+    of_list_table_desc_t *list, of_table_desc_t *obj);
+extern int of_list_table_desc_append(
+    of_list_table_desc_t *list, of_table_desc_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_table_desc
+ * @param list Pointer to the list being iterated over of
+ * type of_list_table_desc
+ * @param elt Pointer to an element of type of_table_desc
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_TABLE_DESC_ITER(list, elt, rv)  \
+    for ((rv) = of_list_table_desc_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_table_desc_next((list), (elt)))
+
 /* Unified accessor functions for of_list_table_feature_prop */
 
 extern int of_list_table_feature_prop_first(
@@ -22865,6 +25424,29 @@ extern int of_list_table_features_append(
     for ((rv) = of_list_table_features_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_table_features_next((list), (elt)))
+
+/* Unified accessor functions for of_list_table_mod_prop */
+
+extern int of_list_table_mod_prop_first(
+    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+extern int of_list_table_mod_prop_next(
+    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+extern int of_list_table_mod_prop_append_bind(
+    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+extern int of_list_table_mod_prop_append(
+    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+
+/**
+ * Iteration macro for list of type of_list_table_mod_prop
+ * @param list Pointer to the list being iterated over of
+ * type of_list_table_mod_prop
+ * @param elt Pointer to an element of type of_table_mod_prop
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_TABLE_MOD_PROP_ITER(list, elt, rv)  \
+    for ((rv) = of_list_table_mod_prop_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_table_mod_prop_next((list), (elt)))
 
 /* Unified accessor functions for of_list_table_stats_entry */
 
@@ -23024,6 +25606,19 @@ union of_action_u {
 };
 
 /**
+ * Inheritance super class for of_queue_stats_prop
+ *
+ * This class is the union of of_queue_stats_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_queue_stats_prop_u {
+    of_queue_stats_prop_header_t header; /* Generic instance */
+    of_queue_stats_prop_experimenter_t experimenter;
+};
+
+/**
  * Inheritance super class for of_bsn_vport
  *
  * This class is the union of of_bsn_vport classes.  You can refer
@@ -23058,6 +25653,7 @@ union of_table_feature_prop_u {
     of_table_feature_prop_match_t match;
     of_table_feature_prop_next_tables_t next_tables;
     of_table_feature_prop_next_tables_miss_t next_tables_miss;
+    of_table_feature_prop_table_sync_from_t table_sync_from;
     of_table_feature_prop_wildcards_t wildcards;
     of_table_feature_prop_write_actions_t write_actions;
     of_table_feature_prop_write_actions_miss_t write_actions_miss;
@@ -23076,6 +25672,51 @@ union of_table_feature_prop_u {
 union of_hello_elem_u {
     of_hello_elem_header_t header; /* Generic instance */
     of_hello_elem_versionbitmap_t versionbitmap;
+};
+
+/**
+ * Inheritance super class for of_queue_desc_prop
+ *
+ * This class is the union of of_queue_desc_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_queue_desc_prop_u {
+    of_queue_desc_prop_header_t header; /* Generic instance */
+    of_queue_desc_prop_experimenter_t experimenter;
+    of_queue_desc_prop_max_rate_t max_rate;
+    of_queue_desc_prop_min_rate_t min_rate;
+};
+
+/**
+ * Inheritance super class for of_port_desc_prop
+ *
+ * This class is the union of of_port_desc_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_port_desc_prop_u {
+    of_port_desc_prop_header_t header; /* Generic instance */
+    of_port_desc_prop_ethernet_t ethernet;
+    of_port_desc_prop_experimenter_t experimenter;
+    of_port_desc_prop_optical_t optical;
+};
+
+/**
+ * Inheritance super class for of_port_stats_prop
+ *
+ * This class is the union of of_port_stats_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_port_stats_prop_u {
+    of_port_stats_prop_header_t header; /* Generic instance */
+    of_port_stats_prop_ethernet_t ethernet;
+    of_port_stats_prop_experimenter_t experimenter;
+    of_port_stats_prop_optical_t optical;
 };
 
 /**
@@ -23107,6 +25748,21 @@ union of_instruction_u {
     of_instruction_meter_t meter;
     of_instruction_write_actions_t write_actions;
     of_instruction_write_metadata_t write_metadata;
+};
+
+/**
+ * Inheritance super class for of_port_mod_prop
+ *
+ * This class is the union of of_port_mod_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_port_mod_prop_u {
+    of_port_mod_prop_header_t header; /* Generic instance */
+    of_port_mod_prop_ethernet_t ethernet;
+    of_port_mod_prop_experimenter_t experimenter;
+    of_port_mod_prop_optical_t optical;
 };
 
 /**
@@ -23222,6 +25878,45 @@ union of_meter_band_u {
 };
 
 /**
+ * Inheritance super class for of_async_config_prop
+ *
+ * This class is the union of of_async_config_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_async_config_prop_u {
+    of_async_config_prop_header_t header; /* Generic instance */
+    of_async_config_prop_experimenter_master_t experimenter_master;
+    of_async_config_prop_experimenter_slave_t experimenter_slave;
+    of_async_config_prop_flow_removed_master_t flow_removed_master;
+    of_async_config_prop_flow_removed_slave_t flow_removed_slave;
+    of_async_config_prop_packet_in_master_t packet_in_master;
+    of_async_config_prop_packet_in_slave_t packet_in_slave;
+    of_async_config_prop_port_status_master_t port_status_master;
+    of_async_config_prop_port_status_slave_t port_status_slave;
+    of_async_config_prop_requestforward_master_t requestforward_master;
+    of_async_config_prop_requestforward_slave_t requestforward_slave;
+    of_async_config_prop_role_status_master_t role_status_master;
+    of_async_config_prop_role_status_slave_t role_status_slave;
+    of_async_config_prop_table_status_master_t table_status_master;
+    of_async_config_prop_table_status_slave_t table_status_slave;
+};
+
+/**
+ * Inheritance super class for of_bundle_prop
+ *
+ * This class is the union of of_bundle_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_bundle_prop_u {
+    of_bundle_prop_header_t header; /* Generic instance */
+    of_bundle_prop_experimenter_t experimenter;
+};
+
+/**
  * Inheritance super class for of_action_id
  *
  * This class is the union of of_action_id classes.  You can refer
@@ -23255,6 +25950,19 @@ union of_action_id_u {
     of_action_id_set_mpls_ttl_t set_mpls_ttl;
     of_action_id_set_nw_ttl_t set_nw_ttl;
     of_action_id_set_queue_t set_queue;
+};
+
+/**
+ * Inheritance super class for of_role_prop
+ *
+ * This class is the union of of_role_prop classes.  You can refer
+ * to it untyped by refering to the member 'header' whose structure
+ * is common across all sub-classes.
+ */
+
+union of_role_prop_u {
+    of_role_prop_header_t header; /* Generic instance */
+    of_role_prop_experimenter_t experimenter;
 };
 
 /**

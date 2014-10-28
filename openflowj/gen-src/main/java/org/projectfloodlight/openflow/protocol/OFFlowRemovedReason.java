@@ -28,5 +28,7 @@ public enum OFFlowRemovedReason {
      IDLE_TIMEOUT,
      HARD_TIMEOUT,
      DELETE,
-     GROUP_DELETE;
+     GROUP_DELETE,
+     METER_DELETE,
+     EVICTION;
 }
