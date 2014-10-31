@@ -40,12 +40,12 @@
  */
 
 int
-of_list_bsn_tlv_first(of_list_bsn_tlv_t *list, of_bsn_tlv_t *_obj)
+of_list_bsn_tlv_first(of_list_bsn_tlv_t *list, of_list_iter_t iter)
 {
     int rv;
-    of_object_t *obj = (of_object_t *)_obj;
+    of_object_t *obj = iter.obj;
 
-    of_bsn_tlv_init(_obj, list->version, -1, 1);
+    of_bsn_tlv_init(obj, list->version, -1, 1);
 
     if ((rv = of_list_first(list, obj)) < 0) {
         return rv;
@@ -67,10 +67,10 @@ of_list_bsn_tlv_first(of_list_bsn_tlv_t *list, of_bsn_tlv_t *_obj)
  */
 
 int
-of_list_bsn_tlv_next(of_list_bsn_tlv_t *list, of_bsn_tlv_t *_obj)
+of_list_bsn_tlv_next(of_list_bsn_tlv_t *list, of_list_iter_t iter)
 {
     int rv;
-    of_object_t *obj = (of_object_t *)_obj;
+    of_object_t *obj = iter.obj;
 
     if ((rv = of_list_next(list, obj)) < 0) {
         return rv;
@@ -95,9 +95,9 @@ of_list_bsn_tlv_next(of_list_bsn_tlv_t *list, of_bsn_tlv_t *_obj)
  */
 
 int
-of_list_bsn_tlv_append_bind(of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj)
+of_list_bsn_tlv_append_bind(of_list_bsn_tlv_t *list, of_list_iter_t iter)
 {
-    return of_list_append_bind(list, (of_object_t *)obj);
+    return of_list_append_bind(list, iter.obj);
 }
 
 /**
@@ -109,9 +109,9 @@ of_list_bsn_tlv_append_bind(of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj)
  */
 
 int
-of_list_bsn_tlv_append(of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj)
+of_list_bsn_tlv_append(of_list_bsn_tlv_t *list, of_list_iter_t iter)
 {
-    return of_list_append(list, (of_object_t *)obj);
+    return of_list_append(list, iter.obj);
 }
 
 /**
@@ -130,15 +130,15 @@ of_list_bsn_tlv_append(of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj)
  * \ingroup of_list_bsn_tlv
  */
 
-of_list_bsn_tlv_t *
+of_object_t *
 of_list_bsn_tlv_new(of_version_t version)
 {
-    of_list_bsn_tlv_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_LIST_BSN_TLV];
 
-    if ((obj = (of_list_bsn_tlv_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -165,10 +165,9 @@ of_list_bsn_tlv_new(of_version_t version)
  */
 
 void
-of_list_bsn_tlv_init(of_list_bsn_tlv_t *obj,
+of_list_bsn_tlv_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_LIST_BSN_TLV] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -188,4 +187,3 @@ of_list_bsn_tlv_init(of_list_bsn_tlv_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-

@@ -62,15 +62,15 @@ of_instruction_bsn_deny_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_deny
  */
 
-of_instruction_bsn_deny_t *
+of_object_t *
 of_instruction_bsn_deny_new(of_version_t version)
 {
-    of_instruction_bsn_deny_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DENY];
 
-    if ((obj = (of_instruction_bsn_deny_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -99,10 +99,9 @@ of_instruction_bsn_deny_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_deny_init(of_instruction_bsn_deny_t *obj,
+of_instruction_bsn_deny_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_DENY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -122,7 +121,6 @@ of_instruction_bsn_deny_init(of_instruction_bsn_deny_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_deny.
@@ -343,15 +341,15 @@ of_instruction_id_bsn_deny_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_deny
  */
 
-of_instruction_id_bsn_deny_t *
+of_object_t *
 of_instruction_id_bsn_deny_new(of_version_t version)
 {
-    of_instruction_id_bsn_deny_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DENY];
 
-    if ((obj = (of_instruction_id_bsn_deny_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -380,10 +378,9 @@ of_instruction_id_bsn_deny_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_deny_init(of_instruction_id_bsn_deny_t *obj,
+of_instruction_id_bsn_deny_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DENY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -403,7 +400,6 @@ of_instruction_id_bsn_deny_init(of_instruction_id_bsn_deny_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_deny.
@@ -624,15 +620,15 @@ of_instruction_bsn_dhcp_offload_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_dhcp_offload
  */
 
-of_instruction_bsn_dhcp_offload_t *
+of_object_t *
 of_instruction_bsn_dhcp_offload_new(of_version_t version)
 {
-    of_instruction_bsn_dhcp_offload_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DHCP_OFFLOAD];
 
-    if ((obj = (of_instruction_bsn_dhcp_offload_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -661,10 +657,9 @@ of_instruction_bsn_dhcp_offload_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_dhcp_offload_init(of_instruction_bsn_dhcp_offload_t *obj,
+of_instruction_bsn_dhcp_offload_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_DHCP_OFFLOAD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -684,7 +679,6 @@ of_instruction_bsn_dhcp_offload_init(of_instruction_bsn_dhcp_offload_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_dhcp_offload.
@@ -905,15 +899,15 @@ of_instruction_id_bsn_dhcp_offload_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_dhcp_offload
  */
 
-of_instruction_id_bsn_dhcp_offload_t *
+of_object_t *
 of_instruction_id_bsn_dhcp_offload_new(of_version_t version)
 {
-    of_instruction_id_bsn_dhcp_offload_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD];
 
-    if ((obj = (of_instruction_id_bsn_dhcp_offload_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -942,10 +936,9 @@ of_instruction_id_bsn_dhcp_offload_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_dhcp_offload_init(of_instruction_id_bsn_dhcp_offload_t *obj,
+of_instruction_id_bsn_dhcp_offload_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -965,7 +958,6 @@ of_instruction_id_bsn_dhcp_offload_init(of_instruction_id_bsn_dhcp_offload_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_dhcp_offload.
@@ -1186,15 +1178,15 @@ of_instruction_bsn_disable_split_horizon_check_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_disable_split_horizon_check
  */
 
-of_instruction_bsn_disable_split_horizon_check_t *
+of_object_t *
 of_instruction_bsn_disable_split_horizon_check_new(of_version_t version)
 {
-    of_instruction_bsn_disable_split_horizon_check_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK];
 
-    if ((obj = (of_instruction_bsn_disable_split_horizon_check_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1223,10 +1215,9 @@ of_instruction_bsn_disable_split_horizon_check_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_disable_split_horizon_check_init(of_instruction_bsn_disable_split_horizon_check_t *obj,
+of_instruction_bsn_disable_split_horizon_check_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1246,7 +1237,6 @@ of_instruction_bsn_disable_split_horizon_check_init(of_instruction_bsn_disable_s
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_disable_split_horizon_check.
@@ -1467,15 +1457,15 @@ of_instruction_id_bsn_disable_split_horizon_check_push_wire_types(of_object_t *o
  * \ingroup of_instruction_id_bsn_disable_split_horizon_check
  */
 
-of_instruction_id_bsn_disable_split_horizon_check_t *
+of_object_t *
 of_instruction_id_bsn_disable_split_horizon_check_new(of_version_t version)
 {
-    of_instruction_id_bsn_disable_split_horizon_check_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK];
 
-    if ((obj = (of_instruction_id_bsn_disable_split_horizon_check_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1504,10 +1494,9 @@ of_instruction_id_bsn_disable_split_horizon_check_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_disable_split_horizon_check_init(of_instruction_id_bsn_disable_split_horizon_check_t *obj,
+of_instruction_id_bsn_disable_split_horizon_check_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1527,7 +1516,6 @@ of_instruction_id_bsn_disable_split_horizon_check_init(of_instruction_id_bsn_dis
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_disable_split_horizon_check.
@@ -1748,15 +1736,15 @@ of_instruction_bsn_disable_src_mac_check_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_disable_src_mac_check
  */
 
-of_instruction_bsn_disable_src_mac_check_t *
+of_object_t *
 of_instruction_bsn_disable_src_mac_check_new(of_version_t version)
 {
-    of_instruction_bsn_disable_src_mac_check_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK];
 
-    if ((obj = (of_instruction_bsn_disable_src_mac_check_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1785,10 +1773,9 @@ of_instruction_bsn_disable_src_mac_check_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_disable_src_mac_check_init(of_instruction_bsn_disable_src_mac_check_t *obj,
+of_instruction_bsn_disable_src_mac_check_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1808,7 +1795,6 @@ of_instruction_bsn_disable_src_mac_check_init(of_instruction_bsn_disable_src_mac
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_disable_src_mac_check.
@@ -2029,15 +2015,15 @@ of_instruction_id_bsn_disable_src_mac_check_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_disable_src_mac_check
  */
 
-of_instruction_id_bsn_disable_src_mac_check_t *
+of_object_t *
 of_instruction_id_bsn_disable_src_mac_check_new(of_version_t version)
 {
-    of_instruction_id_bsn_disable_src_mac_check_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK];
 
-    if ((obj = (of_instruction_id_bsn_disable_src_mac_check_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2066,10 +2052,9 @@ of_instruction_id_bsn_disable_src_mac_check_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_disable_src_mac_check_init(of_instruction_id_bsn_disable_src_mac_check_t *obj,
+of_instruction_id_bsn_disable_src_mac_check_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2089,7 +2074,6 @@ of_instruction_id_bsn_disable_src_mac_check_init(of_instruction_id_bsn_disable_s
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_disable_src_mac_check.
@@ -2310,15 +2294,15 @@ of_instruction_bsn_disable_vlan_counters_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_disable_vlan_counters
  */
 
-of_instruction_bsn_disable_vlan_counters_t *
+of_object_t *
 of_instruction_bsn_disable_vlan_counters_new(of_version_t version)
 {
-    of_instruction_bsn_disable_vlan_counters_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS];
 
-    if ((obj = (of_instruction_bsn_disable_vlan_counters_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2347,10 +2331,9 @@ of_instruction_bsn_disable_vlan_counters_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_disable_vlan_counters_init(of_instruction_bsn_disable_vlan_counters_t *obj,
+of_instruction_bsn_disable_vlan_counters_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2370,7 +2353,6 @@ of_instruction_bsn_disable_vlan_counters_init(of_instruction_bsn_disable_vlan_co
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_disable_vlan_counters.
@@ -2591,15 +2573,15 @@ of_instruction_id_bsn_disable_vlan_counters_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_disable_vlan_counters
  */
 
-of_instruction_id_bsn_disable_vlan_counters_t *
+of_object_t *
 of_instruction_id_bsn_disable_vlan_counters_new(of_version_t version)
 {
-    of_instruction_id_bsn_disable_vlan_counters_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS];
 
-    if ((obj = (of_instruction_id_bsn_disable_vlan_counters_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2628,10 +2610,9 @@ of_instruction_id_bsn_disable_vlan_counters_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_disable_vlan_counters_init(of_instruction_id_bsn_disable_vlan_counters_t *obj,
+of_instruction_id_bsn_disable_vlan_counters_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2651,7 +2632,6 @@ of_instruction_id_bsn_disable_vlan_counters_init(of_instruction_id_bsn_disable_v
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_disable_vlan_counters.
@@ -2872,15 +2852,15 @@ of_instruction_bsn_packet_of_death_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_packet_of_death
  */
 
-of_instruction_bsn_packet_of_death_t *
+of_object_t *
 of_instruction_bsn_packet_of_death_new(of_version_t version)
 {
-    of_instruction_bsn_packet_of_death_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_PACKET_OF_DEATH];
 
-    if ((obj = (of_instruction_bsn_packet_of_death_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2909,10 +2889,9 @@ of_instruction_bsn_packet_of_death_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_packet_of_death_init(of_instruction_bsn_packet_of_death_t *obj,
+of_instruction_bsn_packet_of_death_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_PACKET_OF_DEATH] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2932,7 +2911,6 @@ of_instruction_bsn_packet_of_death_init(of_instruction_bsn_packet_of_death_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_packet_of_death.
@@ -3153,15 +3131,15 @@ of_instruction_id_bsn_packet_of_death_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_packet_of_death
  */
 
-of_instruction_id_bsn_packet_of_death_t *
+of_object_t *
 of_instruction_id_bsn_packet_of_death_new(of_version_t version)
 {
-    of_instruction_id_bsn_packet_of_death_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH];
 
-    if ((obj = (of_instruction_id_bsn_packet_of_death_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3190,10 +3168,9 @@ of_instruction_id_bsn_packet_of_death_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_packet_of_death_init(of_instruction_id_bsn_packet_of_death_t *obj,
+of_instruction_id_bsn_packet_of_death_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3213,7 +3190,6 @@ of_instruction_id_bsn_packet_of_death_init(of_instruction_id_bsn_packet_of_death
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_packet_of_death.
@@ -3434,15 +3410,15 @@ of_instruction_bsn_permit_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_permit
  */
 
-of_instruction_bsn_permit_t *
+of_object_t *
 of_instruction_bsn_permit_new(of_version_t version)
 {
-    of_instruction_bsn_permit_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_PERMIT];
 
-    if ((obj = (of_instruction_bsn_permit_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3471,10 +3447,9 @@ of_instruction_bsn_permit_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_permit_init(of_instruction_bsn_permit_t *obj,
+of_instruction_bsn_permit_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_PERMIT] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3494,7 +3469,6 @@ of_instruction_bsn_permit_init(of_instruction_bsn_permit_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_permit.
@@ -3715,15 +3689,15 @@ of_instruction_id_bsn_permit_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_permit
  */
 
-of_instruction_id_bsn_permit_t *
+of_object_t *
 of_instruction_id_bsn_permit_new(of_version_t version)
 {
-    of_instruction_id_bsn_permit_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PERMIT];
 
-    if ((obj = (of_instruction_id_bsn_permit_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3752,10 +3726,9 @@ of_instruction_id_bsn_permit_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_permit_init(of_instruction_id_bsn_permit_t *obj,
+of_instruction_id_bsn_permit_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PERMIT] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3775,7 +3748,6 @@ of_instruction_id_bsn_permit_init(of_instruction_id_bsn_permit_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_permit.
@@ -3996,15 +3968,15 @@ of_instruction_bsn_prioritize_pdus_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_prioritize_pdus
  */
 
-of_instruction_bsn_prioritize_pdus_t *
+of_object_t *
 of_instruction_bsn_prioritize_pdus_new(of_version_t version)
 {
-    of_instruction_bsn_prioritize_pdus_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS];
 
-    if ((obj = (of_instruction_bsn_prioritize_pdus_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4033,10 +4005,9 @@ of_instruction_bsn_prioritize_pdus_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_prioritize_pdus_init(of_instruction_bsn_prioritize_pdus_t *obj,
+of_instruction_bsn_prioritize_pdus_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_PRIORITIZE_PDUS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4056,7 +4027,6 @@ of_instruction_bsn_prioritize_pdus_init(of_instruction_bsn_prioritize_pdus_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_prioritize_pdus.
@@ -4277,15 +4247,15 @@ of_instruction_id_bsn_prioritize_pdus_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_prioritize_pdus
  */
 
-of_instruction_id_bsn_prioritize_pdus_t *
+of_object_t *
 of_instruction_id_bsn_prioritize_pdus_new(of_version_t version)
 {
-    of_instruction_id_bsn_prioritize_pdus_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS];
 
-    if ((obj = (of_instruction_id_bsn_prioritize_pdus_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4314,10 +4284,9 @@ of_instruction_id_bsn_prioritize_pdus_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_prioritize_pdus_init(of_instruction_id_bsn_prioritize_pdus_t *obj,
+of_instruction_id_bsn_prioritize_pdus_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4337,7 +4306,6 @@ of_instruction_id_bsn_prioritize_pdus_init(of_instruction_id_bsn_prioritize_pdus
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_prioritize_pdus.
@@ -4558,15 +4526,15 @@ of_instruction_bsn_require_vlan_xlate_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_require_vlan_xlate
  */
 
-of_instruction_bsn_require_vlan_xlate_t *
+of_object_t *
 of_instruction_bsn_require_vlan_xlate_new(of_version_t version)
 {
-    of_instruction_bsn_require_vlan_xlate_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE];
 
-    if ((obj = (of_instruction_bsn_require_vlan_xlate_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4595,10 +4563,9 @@ of_instruction_bsn_require_vlan_xlate_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_require_vlan_xlate_init(of_instruction_bsn_require_vlan_xlate_t *obj,
+of_instruction_bsn_require_vlan_xlate_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4618,7 +4585,6 @@ of_instruction_bsn_require_vlan_xlate_init(of_instruction_bsn_require_vlan_xlate
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_require_vlan_xlate.
@@ -4839,15 +4805,15 @@ of_instruction_id_bsn_require_vlan_xlate_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_require_vlan_xlate
  */
 
-of_instruction_id_bsn_require_vlan_xlate_t *
+of_object_t *
 of_instruction_id_bsn_require_vlan_xlate_new(of_version_t version)
 {
-    of_instruction_id_bsn_require_vlan_xlate_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE];
 
-    if ((obj = (of_instruction_id_bsn_require_vlan_xlate_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4876,10 +4842,9 @@ of_instruction_id_bsn_require_vlan_xlate_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_require_vlan_xlate_init(of_instruction_id_bsn_require_vlan_xlate_t *obj,
+of_instruction_id_bsn_require_vlan_xlate_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4899,7 +4864,6 @@ of_instruction_id_bsn_require_vlan_xlate_init(of_instruction_id_bsn_require_vlan
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_require_vlan_xlate.
@@ -5120,15 +5084,15 @@ of_instruction_bsn_span_destination_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_bsn_span_destination
  */
 
-of_instruction_bsn_span_destination_t *
+of_object_t *
 of_instruction_bsn_span_destination_new(of_version_t version)
 {
-    of_instruction_bsn_span_destination_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_SPAN_DESTINATION];
 
-    if ((obj = (of_instruction_bsn_span_destination_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5157,10 +5121,9 @@ of_instruction_bsn_span_destination_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_span_destination_init(of_instruction_bsn_span_destination_t *obj,
+of_instruction_bsn_span_destination_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_SPAN_DESTINATION] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5180,7 +5143,6 @@ of_instruction_bsn_span_destination_init(of_instruction_bsn_span_destination_t *
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_bsn_span_destination.
@@ -5401,15 +5363,15 @@ of_instruction_id_bsn_span_destination_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_bsn_span_destination
  */
 
-of_instruction_id_bsn_span_destination_t *
+of_object_t *
 of_instruction_id_bsn_span_destination_new(of_version_t version)
 {
-    of_instruction_id_bsn_span_destination_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION];
 
-    if ((obj = (of_instruction_id_bsn_span_destination_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5438,10 +5400,9 @@ of_instruction_id_bsn_span_destination_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_span_destination_init(of_instruction_id_bsn_span_destination_t *obj,
+of_instruction_id_bsn_span_destination_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5461,7 +5422,6 @@ of_instruction_id_bsn_span_destination_init(of_instruction_id_bsn_span_destinati
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_instruction_id_bsn_span_destination.
@@ -5681,15 +5641,15 @@ of_instruction_id_clear_actions_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_clear_actions
  */
 
-of_instruction_id_clear_actions_t *
+of_object_t *
 of_instruction_id_clear_actions_new(of_version_t version)
 {
-    of_instruction_id_clear_actions_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS];
 
-    if ((obj = (of_instruction_id_clear_actions_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5718,10 +5678,9 @@ of_instruction_id_clear_actions_new(of_version_t version)
  */
 
 void
-of_instruction_id_clear_actions_init(of_instruction_id_clear_actions_t *obj,
+of_instruction_id_clear_actions_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_CLEAR_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5741,7 +5700,6 @@ of_instruction_id_clear_actions_init(of_instruction_id_clear_actions_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -5805,15 +5763,15 @@ of_instruction_id_goto_table_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_goto_table
  */
 
-of_instruction_id_goto_table_t *
+of_object_t *
 of_instruction_id_goto_table_new(of_version_t version)
 {
-    of_instruction_id_goto_table_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_GOTO_TABLE];
 
-    if ((obj = (of_instruction_id_goto_table_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5842,10 +5800,9 @@ of_instruction_id_goto_table_new(of_version_t version)
  */
 
 void
-of_instruction_id_goto_table_init(of_instruction_id_goto_table_t *obj,
+of_instruction_id_goto_table_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_GOTO_TABLE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5865,7 +5822,6 @@ of_instruction_id_goto_table_init(of_instruction_id_goto_table_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -5929,15 +5885,15 @@ of_instruction_meter_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_meter
  */
 
-of_instruction_meter_t *
+of_object_t *
 of_instruction_meter_new(of_version_t version)
 {
-    of_instruction_meter_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_METER];
 
-    if ((obj = (of_instruction_meter_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5966,10 +5922,9 @@ of_instruction_meter_new(of_version_t version)
  */
 
 void
-of_instruction_meter_init(of_instruction_meter_t *obj,
+of_instruction_meter_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_METER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5989,7 +5944,6 @@ of_instruction_meter_init(of_instruction_meter_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get meter_id from an object of type of_instruction_meter.
@@ -6133,15 +6087,15 @@ of_instruction_id_meter_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_meter
  */
 
-of_instruction_id_meter_t *
+of_object_t *
 of_instruction_id_meter_new(of_version_t version)
 {
-    of_instruction_id_meter_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_METER];
 
-    if ((obj = (of_instruction_id_meter_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6170,10 +6124,9 @@ of_instruction_id_meter_new(of_version_t version)
  */
 
 void
-of_instruction_id_meter_init(of_instruction_id_meter_t *obj,
+of_instruction_id_meter_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_METER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6193,7 +6146,6 @@ of_instruction_id_meter_init(of_instruction_id_meter_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -6257,15 +6209,15 @@ of_instruction_id_write_actions_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_write_actions
  */
 
-of_instruction_id_write_actions_t *
+of_object_t *
 of_instruction_id_write_actions_new(of_version_t version)
 {
-    of_instruction_id_write_actions_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_WRITE_ACTIONS];
 
-    if ((obj = (of_instruction_id_write_actions_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6294,10 +6246,9 @@ of_instruction_id_write_actions_new(of_version_t version)
  */
 
 void
-of_instruction_id_write_actions_init(of_instruction_id_write_actions_t *obj,
+of_instruction_id_write_actions_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_WRITE_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6317,7 +6268,6 @@ of_instruction_id_write_actions_init(of_instruction_id_write_actions_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -6381,15 +6331,15 @@ of_instruction_id_write_metadata_push_wire_types(of_object_t *obj)
  * \ingroup of_instruction_id_write_metadata
  */
 
-of_instruction_id_write_metadata_t *
+of_object_t *
 of_instruction_id_write_metadata_new(of_version_t version)
 {
-    of_instruction_id_write_metadata_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_WRITE_METADATA];
 
-    if ((obj = (of_instruction_id_write_metadata_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6418,10 +6368,9 @@ of_instruction_id_write_metadata_new(of_version_t version)
  */
 
 void
-of_instruction_id_write_metadata_init(of_instruction_id_write_metadata_t *obj,
+of_instruction_id_write_metadata_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_WRITE_METADATA] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6441,7 +6390,6 @@ of_instruction_id_write_metadata_init(of_instruction_id_write_metadata_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -6537,15 +6485,15 @@ of_meter_band_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * \ingroup of_meter_band
  */
 
-of_meter_band_t *
+of_object_t *
 of_meter_band_new(of_version_t version)
 {
-    of_meter_band_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_BAND];
 
-    if ((obj = (of_meter_band_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6572,13 +6520,9 @@ of_meter_band_new(of_version_t version)
  */
 
 void
-of_meter_band_init(of_meter_band_t *obj_p,
+of_meter_band_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    of_meter_band_header_t *obj;
-
-    obj = &obj_p->header;  /* Need instantiable subclass */
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_BAND] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6598,7 +6542,6 @@ of_meter_band_init(of_meter_band_t *obj_p,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -6662,15 +6605,15 @@ of_meter_band_drop_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_band_drop
  */
 
-of_meter_band_drop_t *
+of_object_t *
 of_meter_band_drop_new(of_version_t version)
 {
-    of_meter_band_drop_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_BAND_DROP];
 
-    if ((obj = (of_meter_band_drop_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6699,10 +6642,9 @@ of_meter_band_drop_new(of_version_t version)
  */
 
 void
-of_meter_band_drop_init(of_meter_band_drop_t *obj,
+of_meter_band_drop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_BAND_DROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6722,7 +6664,6 @@ of_meter_band_drop_init(of_meter_band_drop_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get rate from an object of type of_meter_band_drop.
@@ -6946,15 +6887,15 @@ of_meter_band_dscp_remark_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_band_dscp_remark
  */
 
-of_meter_band_dscp_remark_t *
+of_object_t *
 of_meter_band_dscp_remark_new(of_version_t version)
 {
-    of_meter_band_dscp_remark_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_BAND_DSCP_REMARK];
 
-    if ((obj = (of_meter_band_dscp_remark_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6983,10 +6924,9 @@ of_meter_band_dscp_remark_new(of_version_t version)
  */
 
 void
-of_meter_band_dscp_remark_init(of_meter_band_dscp_remark_t *obj,
+of_meter_band_dscp_remark_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_BAND_DSCP_REMARK] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7006,7 +6946,6 @@ of_meter_band_dscp_remark_init(of_meter_band_dscp_remark_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get rate from an object of type of_meter_band_dscp_remark.
@@ -7310,15 +7249,15 @@ of_meter_band_experimenter_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_band_experimenter
  */
 
-of_meter_band_experimenter_t *
+of_object_t *
 of_meter_band_experimenter_new(of_version_t version)
 {
-    of_meter_band_experimenter_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_BAND_EXPERIMENTER];
 
-    if ((obj = (of_meter_band_experimenter_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7347,10 +7286,9 @@ of_meter_band_experimenter_new(of_version_t version)
  */
 
 void
-of_meter_band_experimenter_init(of_meter_band_experimenter_t *obj,
+of_meter_band_experimenter_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_BAND_EXPERIMENTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7370,7 +7308,6 @@ of_meter_band_experimenter_init(of_meter_band_experimenter_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get rate from an object of type of_meter_band_experimenter.
@@ -7660,15 +7597,15 @@ of_meter_band_experimenter_experimenter_set(
  * \ingroup of_meter_band_stats
  */
 
-of_meter_band_stats_t *
+of_object_t *
 of_meter_band_stats_new(of_version_t version)
 {
-    of_meter_band_stats_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_BAND_STATS];
 
-    if ((obj = (of_meter_band_stats_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7695,10 +7632,9 @@ of_meter_band_stats_new(of_version_t version)
  */
 
 void
-of_meter_band_stats_init(of_meter_band_stats_t *obj,
+of_meter_band_stats_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_BAND_STATS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7718,7 +7654,6 @@ of_meter_band_stats_init(of_meter_band_stats_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get packet_band_count from an object of type of_meter_band_stats.
@@ -7928,15 +7863,15 @@ of_meter_band_stats_byte_band_count_set(
  * \ingroup of_meter_config
  */
 
-of_meter_config_t *
+of_object_t *
 of_meter_config_new(of_version_t version)
 {
-    of_meter_config_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_CONFIG];
 
-    if ((obj = (of_meter_config_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7964,10 +7899,9 @@ of_meter_config_new(of_version_t version)
  */
 
 void
-of_meter_config_init(of_meter_config_t *obj,
+of_meter_config_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_CONFIG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7987,7 +7921,6 @@ of_meter_config_init(of_meter_config_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get flags from an object of type of_meter_config.

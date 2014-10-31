@@ -712,1183 +712,903 @@ of_match_to_wire_match_v2(of_match_t *src, of_match_v2_t *dst)
 static int
 populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
 {
-    of_oxm_t oxm_entry;
+    of_object_t elt;
 
     /* For each active member, add an OXM entry to the list */
     if (OF_MATCH_MASK_IN_PORT_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IN_PORT_EXACT_TEST(src)) {
-            of_oxm_in_port_masked_t *elt;
-            elt = &oxm_entry.in_port_masked;
-
-            of_oxm_in_port_masked_init(elt,
+            of_oxm_in_port_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_in_port_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_in_port_masked_value_set(&elt,
                    src->fields.in_port);
-            of_oxm_in_port_masked_value_mask_set(elt,
+            of_oxm_in_port_masked_value_mask_set(&elt,
                    src->masks.in_port);
         } else {  /* Active, but not masked */
-            of_oxm_in_port_t *elt;
-            elt = &oxm_entry.in_port;
-            of_oxm_in_port_init(elt,
+            of_oxm_in_port_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_in_port_value_set(elt, src->fields.in_port);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_in_port_value_set(&elt, src->fields.in_port);
         }
     }
     if (OF_MATCH_MASK_IN_PHY_PORT_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IN_PHY_PORT_EXACT_TEST(src)) {
-            of_oxm_in_phy_port_masked_t *elt;
-            elt = &oxm_entry.in_phy_port_masked;
-
-            of_oxm_in_phy_port_masked_init(elt,
+            of_oxm_in_phy_port_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_in_phy_port_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_in_phy_port_masked_value_set(&elt,
                    src->fields.in_phy_port);
-            of_oxm_in_phy_port_masked_value_mask_set(elt,
+            of_oxm_in_phy_port_masked_value_mask_set(&elt,
                    src->masks.in_phy_port);
         } else {  /* Active, but not masked */
-            of_oxm_in_phy_port_t *elt;
-            elt = &oxm_entry.in_phy_port;
-            of_oxm_in_phy_port_init(elt,
+            of_oxm_in_phy_port_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_in_phy_port_value_set(elt, src->fields.in_phy_port);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_in_phy_port_value_set(&elt, src->fields.in_phy_port);
         }
     }
     if (OF_MATCH_MASK_METADATA_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_METADATA_EXACT_TEST(src)) {
-            of_oxm_metadata_masked_t *elt;
-            elt = &oxm_entry.metadata_masked;
-
-            of_oxm_metadata_masked_init(elt,
+            of_oxm_metadata_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_metadata_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_metadata_masked_value_set(&elt,
                    src->fields.metadata);
-            of_oxm_metadata_masked_value_mask_set(elt,
+            of_oxm_metadata_masked_value_mask_set(&elt,
                    src->masks.metadata);
         } else {  /* Active, but not masked */
-            of_oxm_metadata_t *elt;
-            elt = &oxm_entry.metadata;
-            of_oxm_metadata_init(elt,
+            of_oxm_metadata_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_metadata_value_set(elt, src->fields.metadata);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_metadata_value_set(&elt, src->fields.metadata);
         }
     }
     if (OF_MATCH_MASK_ETH_DST_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ETH_DST_EXACT_TEST(src)) {
-            of_oxm_eth_dst_masked_t *elt;
-            elt = &oxm_entry.eth_dst_masked;
-
-            of_oxm_eth_dst_masked_init(elt,
+            of_oxm_eth_dst_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_eth_dst_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_eth_dst_masked_value_set(&elt,
                    src->fields.eth_dst);
-            of_oxm_eth_dst_masked_value_mask_set(elt,
+            of_oxm_eth_dst_masked_value_mask_set(&elt,
                    src->masks.eth_dst);
         } else {  /* Active, but not masked */
-            of_oxm_eth_dst_t *elt;
-            elt = &oxm_entry.eth_dst;
-            of_oxm_eth_dst_init(elt,
+            of_oxm_eth_dst_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_eth_dst_value_set(elt, src->fields.eth_dst);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_eth_dst_value_set(&elt, src->fields.eth_dst);
         }
     }
     if (OF_MATCH_MASK_ETH_SRC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ETH_SRC_EXACT_TEST(src)) {
-            of_oxm_eth_src_masked_t *elt;
-            elt = &oxm_entry.eth_src_masked;
-
-            of_oxm_eth_src_masked_init(elt,
+            of_oxm_eth_src_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_eth_src_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_eth_src_masked_value_set(&elt,
                    src->fields.eth_src);
-            of_oxm_eth_src_masked_value_mask_set(elt,
+            of_oxm_eth_src_masked_value_mask_set(&elt,
                    src->masks.eth_src);
         } else {  /* Active, but not masked */
-            of_oxm_eth_src_t *elt;
-            elt = &oxm_entry.eth_src;
-            of_oxm_eth_src_init(elt,
+            of_oxm_eth_src_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_eth_src_value_set(elt, src->fields.eth_src);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_eth_src_value_set(&elt, src->fields.eth_src);
         }
     }
     if (OF_MATCH_MASK_ETH_TYPE_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ETH_TYPE_EXACT_TEST(src)) {
-            of_oxm_eth_type_masked_t *elt;
-            elt = &oxm_entry.eth_type_masked;
-
-            of_oxm_eth_type_masked_init(elt,
+            of_oxm_eth_type_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_eth_type_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_eth_type_masked_value_set(&elt,
                    src->fields.eth_type);
-            of_oxm_eth_type_masked_value_mask_set(elt,
+            of_oxm_eth_type_masked_value_mask_set(&elt,
                    src->masks.eth_type);
         } else {  /* Active, but not masked */
-            of_oxm_eth_type_t *elt;
-            elt = &oxm_entry.eth_type;
-            of_oxm_eth_type_init(elt,
+            of_oxm_eth_type_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_eth_type_value_set(elt, src->fields.eth_type);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_eth_type_value_set(&elt, src->fields.eth_type);
         }
     }
     if (OF_MATCH_MASK_VLAN_VID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_VLAN_VID_EXACT_TEST(src)) {
-            of_oxm_vlan_vid_masked_t *elt;
-            elt = &oxm_entry.vlan_vid_masked;
-
-            of_oxm_vlan_vid_masked_init(elt,
+            of_oxm_vlan_vid_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_vlan_vid_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_vlan_vid_masked_value_set(&elt,
                    src->fields.vlan_vid);
-            of_oxm_vlan_vid_masked_value_mask_set(elt,
+            of_oxm_vlan_vid_masked_value_mask_set(&elt,
                    src->masks.vlan_vid);
         } else {  /* Active, but not masked */
-            of_oxm_vlan_vid_t *elt;
-            elt = &oxm_entry.vlan_vid;
-            of_oxm_vlan_vid_init(elt,
+            of_oxm_vlan_vid_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_vlan_vid_value_set(elt, src->fields.vlan_vid);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_vlan_vid_value_set(&elt, src->fields.vlan_vid);
         }
     }
     if (OF_MATCH_MASK_VLAN_PCP_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_VLAN_PCP_EXACT_TEST(src)) {
-            of_oxm_vlan_pcp_masked_t *elt;
-            elt = &oxm_entry.vlan_pcp_masked;
-
-            of_oxm_vlan_pcp_masked_init(elt,
+            of_oxm_vlan_pcp_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_vlan_pcp_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_vlan_pcp_masked_value_set(&elt,
                    src->fields.vlan_pcp);
-            of_oxm_vlan_pcp_masked_value_mask_set(elt,
+            of_oxm_vlan_pcp_masked_value_mask_set(&elt,
                    src->masks.vlan_pcp);
         } else {  /* Active, but not masked */
-            of_oxm_vlan_pcp_t *elt;
-            elt = &oxm_entry.vlan_pcp;
-            of_oxm_vlan_pcp_init(elt,
+            of_oxm_vlan_pcp_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_vlan_pcp_value_set(elt, src->fields.vlan_pcp);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_vlan_pcp_value_set(&elt, src->fields.vlan_pcp);
         }
     }
     if (OF_MATCH_MASK_IP_DSCP_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IP_DSCP_EXACT_TEST(src)) {
-            of_oxm_ip_dscp_masked_t *elt;
-            elt = &oxm_entry.ip_dscp_masked;
-
-            of_oxm_ip_dscp_masked_init(elt,
+            of_oxm_ip_dscp_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ip_dscp_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ip_dscp_masked_value_set(&elt,
                    src->fields.ip_dscp);
-            of_oxm_ip_dscp_masked_value_mask_set(elt,
+            of_oxm_ip_dscp_masked_value_mask_set(&elt,
                    src->masks.ip_dscp);
         } else {  /* Active, but not masked */
-            of_oxm_ip_dscp_t *elt;
-            elt = &oxm_entry.ip_dscp;
-            of_oxm_ip_dscp_init(elt,
+            of_oxm_ip_dscp_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ip_dscp_value_set(elt, src->fields.ip_dscp);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ip_dscp_value_set(&elt, src->fields.ip_dscp);
         }
     }
     if (OF_MATCH_MASK_IP_ECN_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IP_ECN_EXACT_TEST(src)) {
-            of_oxm_ip_ecn_masked_t *elt;
-            elt = &oxm_entry.ip_ecn_masked;
-
-            of_oxm_ip_ecn_masked_init(elt,
+            of_oxm_ip_ecn_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ip_ecn_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ip_ecn_masked_value_set(&elt,
                    src->fields.ip_ecn);
-            of_oxm_ip_ecn_masked_value_mask_set(elt,
+            of_oxm_ip_ecn_masked_value_mask_set(&elt,
                    src->masks.ip_ecn);
         } else {  /* Active, but not masked */
-            of_oxm_ip_ecn_t *elt;
-            elt = &oxm_entry.ip_ecn;
-            of_oxm_ip_ecn_init(elt,
+            of_oxm_ip_ecn_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ip_ecn_value_set(elt, src->fields.ip_ecn);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ip_ecn_value_set(&elt, src->fields.ip_ecn);
         }
     }
     if (OF_MATCH_MASK_IP_PROTO_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IP_PROTO_EXACT_TEST(src)) {
-            of_oxm_ip_proto_masked_t *elt;
-            elt = &oxm_entry.ip_proto_masked;
-
-            of_oxm_ip_proto_masked_init(elt,
+            of_oxm_ip_proto_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ip_proto_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ip_proto_masked_value_set(&elt,
                    src->fields.ip_proto);
-            of_oxm_ip_proto_masked_value_mask_set(elt,
+            of_oxm_ip_proto_masked_value_mask_set(&elt,
                    src->masks.ip_proto);
         } else {  /* Active, but not masked */
-            of_oxm_ip_proto_t *elt;
-            elt = &oxm_entry.ip_proto;
-            of_oxm_ip_proto_init(elt,
+            of_oxm_ip_proto_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ip_proto_value_set(elt, src->fields.ip_proto);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ip_proto_value_set(&elt, src->fields.ip_proto);
         }
     }
     if (OF_MATCH_MASK_IPV4_SRC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV4_SRC_EXACT_TEST(src)) {
-            of_oxm_ipv4_src_masked_t *elt;
-            elt = &oxm_entry.ipv4_src_masked;
-
-            of_oxm_ipv4_src_masked_init(elt,
+            of_oxm_ipv4_src_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv4_src_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv4_src_masked_value_set(&elt,
                    src->fields.ipv4_src);
-            of_oxm_ipv4_src_masked_value_mask_set(elt,
+            of_oxm_ipv4_src_masked_value_mask_set(&elt,
                    src->masks.ipv4_src);
         } else {  /* Active, but not masked */
-            of_oxm_ipv4_src_t *elt;
-            elt = &oxm_entry.ipv4_src;
-            of_oxm_ipv4_src_init(elt,
+            of_oxm_ipv4_src_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv4_src_value_set(elt, src->fields.ipv4_src);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv4_src_value_set(&elt, src->fields.ipv4_src);
         }
     }
     if (OF_MATCH_MASK_IPV4_DST_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV4_DST_EXACT_TEST(src)) {
-            of_oxm_ipv4_dst_masked_t *elt;
-            elt = &oxm_entry.ipv4_dst_masked;
-
-            of_oxm_ipv4_dst_masked_init(elt,
+            of_oxm_ipv4_dst_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv4_dst_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv4_dst_masked_value_set(&elt,
                    src->fields.ipv4_dst);
-            of_oxm_ipv4_dst_masked_value_mask_set(elt,
+            of_oxm_ipv4_dst_masked_value_mask_set(&elt,
                    src->masks.ipv4_dst);
         } else {  /* Active, but not masked */
-            of_oxm_ipv4_dst_t *elt;
-            elt = &oxm_entry.ipv4_dst;
-            of_oxm_ipv4_dst_init(elt,
+            of_oxm_ipv4_dst_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv4_dst_value_set(elt, src->fields.ipv4_dst);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv4_dst_value_set(&elt, src->fields.ipv4_dst);
         }
     }
     if (OF_MATCH_MASK_TCP_SRC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_TCP_SRC_EXACT_TEST(src)) {
-            of_oxm_tcp_src_masked_t *elt;
-            elt = &oxm_entry.tcp_src_masked;
-
-            of_oxm_tcp_src_masked_init(elt,
+            of_oxm_tcp_src_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_tcp_src_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tcp_src_masked_value_set(&elt,
                    src->fields.tcp_src);
-            of_oxm_tcp_src_masked_value_mask_set(elt,
+            of_oxm_tcp_src_masked_value_mask_set(&elt,
                    src->masks.tcp_src);
         } else {  /* Active, but not masked */
-            of_oxm_tcp_src_t *elt;
-            elt = &oxm_entry.tcp_src;
-            of_oxm_tcp_src_init(elt,
+            of_oxm_tcp_src_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_tcp_src_value_set(elt, src->fields.tcp_src);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tcp_src_value_set(&elt, src->fields.tcp_src);
         }
     }
     if (OF_MATCH_MASK_TCP_DST_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_TCP_DST_EXACT_TEST(src)) {
-            of_oxm_tcp_dst_masked_t *elt;
-            elt = &oxm_entry.tcp_dst_masked;
-
-            of_oxm_tcp_dst_masked_init(elt,
+            of_oxm_tcp_dst_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_tcp_dst_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tcp_dst_masked_value_set(&elt,
                    src->fields.tcp_dst);
-            of_oxm_tcp_dst_masked_value_mask_set(elt,
+            of_oxm_tcp_dst_masked_value_mask_set(&elt,
                    src->masks.tcp_dst);
         } else {  /* Active, but not masked */
-            of_oxm_tcp_dst_t *elt;
-            elt = &oxm_entry.tcp_dst;
-            of_oxm_tcp_dst_init(elt,
+            of_oxm_tcp_dst_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_tcp_dst_value_set(elt, src->fields.tcp_dst);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tcp_dst_value_set(&elt, src->fields.tcp_dst);
         }
     }
     if (OF_MATCH_MASK_UDP_SRC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_UDP_SRC_EXACT_TEST(src)) {
-            of_oxm_udp_src_masked_t *elt;
-            elt = &oxm_entry.udp_src_masked;
-
-            of_oxm_udp_src_masked_init(elt,
+            of_oxm_udp_src_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_udp_src_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_udp_src_masked_value_set(&elt,
                    src->fields.udp_src);
-            of_oxm_udp_src_masked_value_mask_set(elt,
+            of_oxm_udp_src_masked_value_mask_set(&elt,
                    src->masks.udp_src);
         } else {  /* Active, but not masked */
-            of_oxm_udp_src_t *elt;
-            elt = &oxm_entry.udp_src;
-            of_oxm_udp_src_init(elt,
+            of_oxm_udp_src_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_udp_src_value_set(elt, src->fields.udp_src);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_udp_src_value_set(&elt, src->fields.udp_src);
         }
     }
     if (OF_MATCH_MASK_UDP_DST_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_UDP_DST_EXACT_TEST(src)) {
-            of_oxm_udp_dst_masked_t *elt;
-            elt = &oxm_entry.udp_dst_masked;
-
-            of_oxm_udp_dst_masked_init(elt,
+            of_oxm_udp_dst_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_udp_dst_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_udp_dst_masked_value_set(&elt,
                    src->fields.udp_dst);
-            of_oxm_udp_dst_masked_value_mask_set(elt,
+            of_oxm_udp_dst_masked_value_mask_set(&elt,
                    src->masks.udp_dst);
         } else {  /* Active, but not masked */
-            of_oxm_udp_dst_t *elt;
-            elt = &oxm_entry.udp_dst;
-            of_oxm_udp_dst_init(elt,
+            of_oxm_udp_dst_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_udp_dst_value_set(elt, src->fields.udp_dst);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_udp_dst_value_set(&elt, src->fields.udp_dst);
         }
     }
     if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_SCTP_SRC_EXACT_TEST(src)) {
-            of_oxm_sctp_src_masked_t *elt;
-            elt = &oxm_entry.sctp_src_masked;
-
-            of_oxm_sctp_src_masked_init(elt,
+            of_oxm_sctp_src_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_sctp_src_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_sctp_src_masked_value_set(&elt,
                    src->fields.sctp_src);
-            of_oxm_sctp_src_masked_value_mask_set(elt,
+            of_oxm_sctp_src_masked_value_mask_set(&elt,
                    src->masks.sctp_src);
         } else {  /* Active, but not masked */
-            of_oxm_sctp_src_t *elt;
-            elt = &oxm_entry.sctp_src;
-            of_oxm_sctp_src_init(elt,
+            of_oxm_sctp_src_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_sctp_src_value_set(elt, src->fields.sctp_src);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_sctp_src_value_set(&elt, src->fields.sctp_src);
         }
     }
     if (OF_MATCH_MASK_SCTP_DST_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_SCTP_DST_EXACT_TEST(src)) {
-            of_oxm_sctp_dst_masked_t *elt;
-            elt = &oxm_entry.sctp_dst_masked;
-
-            of_oxm_sctp_dst_masked_init(elt,
+            of_oxm_sctp_dst_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_sctp_dst_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_sctp_dst_masked_value_set(&elt,
                    src->fields.sctp_dst);
-            of_oxm_sctp_dst_masked_value_mask_set(elt,
+            of_oxm_sctp_dst_masked_value_mask_set(&elt,
                    src->masks.sctp_dst);
         } else {  /* Active, but not masked */
-            of_oxm_sctp_dst_t *elt;
-            elt = &oxm_entry.sctp_dst;
-            of_oxm_sctp_dst_init(elt,
+            of_oxm_sctp_dst_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_sctp_dst_value_set(elt, src->fields.sctp_dst);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_sctp_dst_value_set(&elt, src->fields.sctp_dst);
         }
     }
     if (OF_MATCH_MASK_ICMPV4_TYPE_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ICMPV4_TYPE_EXACT_TEST(src)) {
-            of_oxm_icmpv4_type_masked_t *elt;
-            elt = &oxm_entry.icmpv4_type_masked;
-
-            of_oxm_icmpv4_type_masked_init(elt,
+            of_oxm_icmpv4_type_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv4_type_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv4_type_masked_value_set(&elt,
                    src->fields.icmpv4_type);
-            of_oxm_icmpv4_type_masked_value_mask_set(elt,
+            of_oxm_icmpv4_type_masked_value_mask_set(&elt,
                    src->masks.icmpv4_type);
         } else {  /* Active, but not masked */
-            of_oxm_icmpv4_type_t *elt;
-            elt = &oxm_entry.icmpv4_type;
-            of_oxm_icmpv4_type_init(elt,
+            of_oxm_icmpv4_type_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv4_type_value_set(elt, src->fields.icmpv4_type);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv4_type_value_set(&elt, src->fields.icmpv4_type);
         }
     }
     if (OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ICMPV4_CODE_EXACT_TEST(src)) {
-            of_oxm_icmpv4_code_masked_t *elt;
-            elt = &oxm_entry.icmpv4_code_masked;
-
-            of_oxm_icmpv4_code_masked_init(elt,
+            of_oxm_icmpv4_code_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv4_code_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv4_code_masked_value_set(&elt,
                    src->fields.icmpv4_code);
-            of_oxm_icmpv4_code_masked_value_mask_set(elt,
+            of_oxm_icmpv4_code_masked_value_mask_set(&elt,
                    src->masks.icmpv4_code);
         } else {  /* Active, but not masked */
-            of_oxm_icmpv4_code_t *elt;
-            elt = &oxm_entry.icmpv4_code;
-            of_oxm_icmpv4_code_init(elt,
+            of_oxm_icmpv4_code_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv4_code_value_set(elt, src->fields.icmpv4_code);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv4_code_value_set(&elt, src->fields.icmpv4_code);
         }
     }
     if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ARP_OP_EXACT_TEST(src)) {
-            of_oxm_arp_op_masked_t *elt;
-            elt = &oxm_entry.arp_op_masked;
-
-            of_oxm_arp_op_masked_init(elt,
+            of_oxm_arp_op_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_op_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_op_masked_value_set(&elt,
                    src->fields.arp_op);
-            of_oxm_arp_op_masked_value_mask_set(elt,
+            of_oxm_arp_op_masked_value_mask_set(&elt,
                    src->masks.arp_op);
         } else {  /* Active, but not masked */
-            of_oxm_arp_op_t *elt;
-            elt = &oxm_entry.arp_op;
-            of_oxm_arp_op_init(elt,
+            of_oxm_arp_op_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_op_value_set(elt, src->fields.arp_op);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_op_value_set(&elt, src->fields.arp_op);
         }
     }
     if (OF_MATCH_MASK_ARP_SPA_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ARP_SPA_EXACT_TEST(src)) {
-            of_oxm_arp_spa_masked_t *elt;
-            elt = &oxm_entry.arp_spa_masked;
-
-            of_oxm_arp_spa_masked_init(elt,
+            of_oxm_arp_spa_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_spa_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_spa_masked_value_set(&elt,
                    src->fields.arp_spa);
-            of_oxm_arp_spa_masked_value_mask_set(elt,
+            of_oxm_arp_spa_masked_value_mask_set(&elt,
                    src->masks.arp_spa);
         } else {  /* Active, but not masked */
-            of_oxm_arp_spa_t *elt;
-            elt = &oxm_entry.arp_spa;
-            of_oxm_arp_spa_init(elt,
+            of_oxm_arp_spa_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_spa_value_set(elt, src->fields.arp_spa);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_spa_value_set(&elt, src->fields.arp_spa);
         }
     }
     if (OF_MATCH_MASK_ARP_TPA_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ARP_TPA_EXACT_TEST(src)) {
-            of_oxm_arp_tpa_masked_t *elt;
-            elt = &oxm_entry.arp_tpa_masked;
-
-            of_oxm_arp_tpa_masked_init(elt,
+            of_oxm_arp_tpa_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_tpa_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_tpa_masked_value_set(&elt,
                    src->fields.arp_tpa);
-            of_oxm_arp_tpa_masked_value_mask_set(elt,
+            of_oxm_arp_tpa_masked_value_mask_set(&elt,
                    src->masks.arp_tpa);
         } else {  /* Active, but not masked */
-            of_oxm_arp_tpa_t *elt;
-            elt = &oxm_entry.arp_tpa;
-            of_oxm_arp_tpa_init(elt,
+            of_oxm_arp_tpa_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_tpa_value_set(elt, src->fields.arp_tpa);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_tpa_value_set(&elt, src->fields.arp_tpa);
         }
     }
     if (OF_MATCH_MASK_ARP_SHA_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ARP_SHA_EXACT_TEST(src)) {
-            of_oxm_arp_sha_masked_t *elt;
-            elt = &oxm_entry.arp_sha_masked;
-
-            of_oxm_arp_sha_masked_init(elt,
+            of_oxm_arp_sha_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_sha_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_sha_masked_value_set(&elt,
                    src->fields.arp_sha);
-            of_oxm_arp_sha_masked_value_mask_set(elt,
+            of_oxm_arp_sha_masked_value_mask_set(&elt,
                    src->masks.arp_sha);
         } else {  /* Active, but not masked */
-            of_oxm_arp_sha_t *elt;
-            elt = &oxm_entry.arp_sha;
-            of_oxm_arp_sha_init(elt,
+            of_oxm_arp_sha_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_sha_value_set(elt, src->fields.arp_sha);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_sha_value_set(&elt, src->fields.arp_sha);
         }
     }
     if (OF_MATCH_MASK_ARP_THA_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ARP_THA_EXACT_TEST(src)) {
-            of_oxm_arp_tha_masked_t *elt;
-            elt = &oxm_entry.arp_tha_masked;
-
-            of_oxm_arp_tha_masked_init(elt,
+            of_oxm_arp_tha_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_tha_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_tha_masked_value_set(&elt,
                    src->fields.arp_tha);
-            of_oxm_arp_tha_masked_value_mask_set(elt,
+            of_oxm_arp_tha_masked_value_mask_set(&elt,
                    src->masks.arp_tha);
         } else {  /* Active, but not masked */
-            of_oxm_arp_tha_t *elt;
-            elt = &oxm_entry.arp_tha;
-            of_oxm_arp_tha_init(elt,
+            of_oxm_arp_tha_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_arp_tha_value_set(elt, src->fields.arp_tha);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_arp_tha_value_set(&elt, src->fields.arp_tha);
         }
     }
     if (OF_MATCH_MASK_IPV6_SRC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV6_SRC_EXACT_TEST(src)) {
-            of_oxm_ipv6_src_masked_t *elt;
-            elt = &oxm_entry.ipv6_src_masked;
-
-            of_oxm_ipv6_src_masked_init(elt,
+            of_oxm_ipv6_src_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_src_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_src_masked_value_set(&elt,
                    src->fields.ipv6_src);
-            of_oxm_ipv6_src_masked_value_mask_set(elt,
+            of_oxm_ipv6_src_masked_value_mask_set(&elt,
                    src->masks.ipv6_src);
         } else {  /* Active, but not masked */
-            of_oxm_ipv6_src_t *elt;
-            elt = &oxm_entry.ipv6_src;
-            of_oxm_ipv6_src_init(elt,
+            of_oxm_ipv6_src_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_src_value_set(elt, src->fields.ipv6_src);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_src_value_set(&elt, src->fields.ipv6_src);
         }
     }
     if (OF_MATCH_MASK_IPV6_DST_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV6_DST_EXACT_TEST(src)) {
-            of_oxm_ipv6_dst_masked_t *elt;
-            elt = &oxm_entry.ipv6_dst_masked;
-
-            of_oxm_ipv6_dst_masked_init(elt,
+            of_oxm_ipv6_dst_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_dst_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_dst_masked_value_set(&elt,
                    src->fields.ipv6_dst);
-            of_oxm_ipv6_dst_masked_value_mask_set(elt,
+            of_oxm_ipv6_dst_masked_value_mask_set(&elt,
                    src->masks.ipv6_dst);
         } else {  /* Active, but not masked */
-            of_oxm_ipv6_dst_t *elt;
-            elt = &oxm_entry.ipv6_dst;
-            of_oxm_ipv6_dst_init(elt,
+            of_oxm_ipv6_dst_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_dst_value_set(elt, src->fields.ipv6_dst);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_dst_value_set(&elt, src->fields.ipv6_dst);
         }
     }
     if (OF_MATCH_MASK_IPV6_FLABEL_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV6_FLABEL_EXACT_TEST(src)) {
-            of_oxm_ipv6_flabel_masked_t *elt;
-            elt = &oxm_entry.ipv6_flabel_masked;
-
-            of_oxm_ipv6_flabel_masked_init(elt,
+            of_oxm_ipv6_flabel_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_flabel_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_flabel_masked_value_set(&elt,
                    src->fields.ipv6_flabel);
-            of_oxm_ipv6_flabel_masked_value_mask_set(elt,
+            of_oxm_ipv6_flabel_masked_value_mask_set(&elt,
                    src->masks.ipv6_flabel);
         } else {  /* Active, but not masked */
-            of_oxm_ipv6_flabel_t *elt;
-            elt = &oxm_entry.ipv6_flabel;
-            of_oxm_ipv6_flabel_init(elt,
+            of_oxm_ipv6_flabel_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_flabel_value_set(elt, src->fields.ipv6_flabel);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_flabel_value_set(&elt, src->fields.ipv6_flabel);
         }
     }
     if (OF_MATCH_MASK_ICMPV6_TYPE_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ICMPV6_TYPE_EXACT_TEST(src)) {
-            of_oxm_icmpv6_type_masked_t *elt;
-            elt = &oxm_entry.icmpv6_type_masked;
-
-            of_oxm_icmpv6_type_masked_init(elt,
+            of_oxm_icmpv6_type_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv6_type_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv6_type_masked_value_set(&elt,
                    src->fields.icmpv6_type);
-            of_oxm_icmpv6_type_masked_value_mask_set(elt,
+            of_oxm_icmpv6_type_masked_value_mask_set(&elt,
                    src->masks.icmpv6_type);
         } else {  /* Active, but not masked */
-            of_oxm_icmpv6_type_t *elt;
-            elt = &oxm_entry.icmpv6_type;
-            of_oxm_icmpv6_type_init(elt,
+            of_oxm_icmpv6_type_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv6_type_value_set(elt, src->fields.icmpv6_type);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv6_type_value_set(&elt, src->fields.icmpv6_type);
         }
     }
     if (OF_MATCH_MASK_ICMPV6_CODE_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_ICMPV6_CODE_EXACT_TEST(src)) {
-            of_oxm_icmpv6_code_masked_t *elt;
-            elt = &oxm_entry.icmpv6_code_masked;
-
-            of_oxm_icmpv6_code_masked_init(elt,
+            of_oxm_icmpv6_code_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv6_code_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv6_code_masked_value_set(&elt,
                    src->fields.icmpv6_code);
-            of_oxm_icmpv6_code_masked_value_mask_set(elt,
+            of_oxm_icmpv6_code_masked_value_mask_set(&elt,
                    src->masks.icmpv6_code);
         } else {  /* Active, but not masked */
-            of_oxm_icmpv6_code_t *elt;
-            elt = &oxm_entry.icmpv6_code;
-            of_oxm_icmpv6_code_init(elt,
+            of_oxm_icmpv6_code_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_icmpv6_code_value_set(elt, src->fields.icmpv6_code);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_icmpv6_code_value_set(&elt, src->fields.icmpv6_code);
         }
     }
     if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_TEST(src)) {
-            of_oxm_ipv6_nd_target_masked_t *elt;
-            elt = &oxm_entry.ipv6_nd_target_masked;
-
-            of_oxm_ipv6_nd_target_masked_init(elt,
+            of_oxm_ipv6_nd_target_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_nd_target_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_nd_target_masked_value_set(&elt,
                    src->fields.ipv6_nd_target);
-            of_oxm_ipv6_nd_target_masked_value_mask_set(elt,
+            of_oxm_ipv6_nd_target_masked_value_mask_set(&elt,
                    src->masks.ipv6_nd_target);
         } else {  /* Active, but not masked */
-            of_oxm_ipv6_nd_target_t *elt;
-            elt = &oxm_entry.ipv6_nd_target;
-            of_oxm_ipv6_nd_target_init(elt,
+            of_oxm_ipv6_nd_target_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_nd_target_value_set(elt, src->fields.ipv6_nd_target);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_nd_target_value_set(&elt, src->fields.ipv6_nd_target);
         }
     }
     if (OF_MATCH_MASK_IPV6_ND_SLL_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV6_ND_SLL_EXACT_TEST(src)) {
-            of_oxm_ipv6_nd_sll_masked_t *elt;
-            elt = &oxm_entry.ipv6_nd_sll_masked;
-
-            of_oxm_ipv6_nd_sll_masked_init(elt,
+            of_oxm_ipv6_nd_sll_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_nd_sll_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_nd_sll_masked_value_set(&elt,
                    src->fields.ipv6_nd_sll);
-            of_oxm_ipv6_nd_sll_masked_value_mask_set(elt,
+            of_oxm_ipv6_nd_sll_masked_value_mask_set(&elt,
                    src->masks.ipv6_nd_sll);
         } else {  /* Active, but not masked */
-            of_oxm_ipv6_nd_sll_t *elt;
-            elt = &oxm_entry.ipv6_nd_sll;
-            of_oxm_ipv6_nd_sll_init(elt,
+            of_oxm_ipv6_nd_sll_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_nd_sll_value_set(elt, src->fields.ipv6_nd_sll);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_nd_sll_value_set(&elt, src->fields.ipv6_nd_sll);
         }
     }
     if (OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_IPV6_ND_TLL_EXACT_TEST(src)) {
-            of_oxm_ipv6_nd_tll_masked_t *elt;
-            elt = &oxm_entry.ipv6_nd_tll_masked;
-
-            of_oxm_ipv6_nd_tll_masked_init(elt,
+            of_oxm_ipv6_nd_tll_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_nd_tll_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_nd_tll_masked_value_set(&elt,
                    src->fields.ipv6_nd_tll);
-            of_oxm_ipv6_nd_tll_masked_value_mask_set(elt,
+            of_oxm_ipv6_nd_tll_masked_value_mask_set(&elt,
                    src->masks.ipv6_nd_tll);
         } else {  /* Active, but not masked */
-            of_oxm_ipv6_nd_tll_t *elt;
-            elt = &oxm_entry.ipv6_nd_tll;
-            of_oxm_ipv6_nd_tll_init(elt,
+            of_oxm_ipv6_nd_tll_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_ipv6_nd_tll_value_set(elt, src->fields.ipv6_nd_tll);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_ipv6_nd_tll_value_set(&elt, src->fields.ipv6_nd_tll);
         }
     }
     if (OF_MATCH_MASK_MPLS_LABEL_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_MPLS_LABEL_EXACT_TEST(src)) {
-            of_oxm_mpls_label_masked_t *elt;
-            elt = &oxm_entry.mpls_label_masked;
-
-            of_oxm_mpls_label_masked_init(elt,
+            of_oxm_mpls_label_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_mpls_label_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_mpls_label_masked_value_set(&elt,
                    src->fields.mpls_label);
-            of_oxm_mpls_label_masked_value_mask_set(elt,
+            of_oxm_mpls_label_masked_value_mask_set(&elt,
                    src->masks.mpls_label);
         } else {  /* Active, but not masked */
-            of_oxm_mpls_label_t *elt;
-            elt = &oxm_entry.mpls_label;
-            of_oxm_mpls_label_init(elt,
+            of_oxm_mpls_label_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_mpls_label_value_set(elt, src->fields.mpls_label);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_mpls_label_value_set(&elt, src->fields.mpls_label);
         }
     }
     if (OF_MATCH_MASK_MPLS_TC_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_MPLS_TC_EXACT_TEST(src)) {
-            of_oxm_mpls_tc_masked_t *elt;
-            elt = &oxm_entry.mpls_tc_masked;
-
-            of_oxm_mpls_tc_masked_init(elt,
+            of_oxm_mpls_tc_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_mpls_tc_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_mpls_tc_masked_value_set(&elt,
                    src->fields.mpls_tc);
-            of_oxm_mpls_tc_masked_value_mask_set(elt,
+            of_oxm_mpls_tc_masked_value_mask_set(&elt,
                    src->masks.mpls_tc);
         } else {  /* Active, but not masked */
-            of_oxm_mpls_tc_t *elt;
-            elt = &oxm_entry.mpls_tc;
-            of_oxm_mpls_tc_init(elt,
+            of_oxm_mpls_tc_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_mpls_tc_value_set(elt, src->fields.mpls_tc);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_mpls_tc_value_set(&elt, src->fields.mpls_tc);
         }
     }
     if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_MPLS_BOS_EXACT_TEST(src)) {
-            of_oxm_mpls_bos_masked_t *elt;
-            elt = &oxm_entry.mpls_bos_masked;
-
-            of_oxm_mpls_bos_masked_init(elt,
+            of_oxm_mpls_bos_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_mpls_bos_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_mpls_bos_masked_value_set(&elt,
                    src->fields.mpls_bos);
-            of_oxm_mpls_bos_masked_value_mask_set(elt,
+            of_oxm_mpls_bos_masked_value_mask_set(&elt,
                    src->masks.mpls_bos);
         } else {  /* Active, but not masked */
-            of_oxm_mpls_bos_t *elt;
-            elt = &oxm_entry.mpls_bos;
-            of_oxm_mpls_bos_init(elt,
+            of_oxm_mpls_bos_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_mpls_bos_value_set(elt, src->fields.mpls_bos);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_mpls_bos_value_set(&elt, src->fields.mpls_bos);
         }
     }
     if (OF_MATCH_MASK_TUNNEL_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_TUNNEL_ID_EXACT_TEST(src)) {
-            of_oxm_tunnel_id_masked_t *elt;
-            elt = &oxm_entry.tunnel_id_masked;
-
-            of_oxm_tunnel_id_masked_init(elt,
+            of_oxm_tunnel_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_tunnel_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_id_masked_value_set(&elt,
                    src->fields.tunnel_id);
-            of_oxm_tunnel_id_masked_value_mask_set(elt,
+            of_oxm_tunnel_id_masked_value_mask_set(&elt,
                    src->masks.tunnel_id);
         } else {  /* Active, but not masked */
-            of_oxm_tunnel_id_t *elt;
-            elt = &oxm_entry.tunnel_id;
-            of_oxm_tunnel_id_init(elt,
+            of_oxm_tunnel_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_tunnel_id_value_set(elt, src->fields.tunnel_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_id_value_set(&elt, src->fields.tunnel_id);
         }
     }
     if (OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_TEST(src)) {
-            of_oxm_bsn_in_ports_128_masked_t *elt;
-            elt = &oxm_entry.bsn_in_ports_128_masked;
-
-            of_oxm_bsn_in_ports_128_masked_init(elt,
+            of_oxm_bsn_in_ports_128_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_in_ports_128_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_in_ports_128_masked_value_set(&elt,
                    src->fields.bsn_in_ports_128);
-            of_oxm_bsn_in_ports_128_masked_value_mask_set(elt,
+            of_oxm_bsn_in_ports_128_masked_value_mask_set(&elt,
                    src->masks.bsn_in_ports_128);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_in_ports_128_t *elt;
-            elt = &oxm_entry.bsn_in_ports_128;
-            of_oxm_bsn_in_ports_128_init(elt,
+            of_oxm_bsn_in_ports_128_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_in_ports_128_value_set(elt, src->fields.bsn_in_ports_128);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_in_ports_128_value_set(&elt, src->fields.bsn_in_ports_128);
         }
     }
     if (OF_MATCH_MASK_BSN_LAG_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_LAG_ID_EXACT_TEST(src)) {
-            of_oxm_bsn_lag_id_masked_t *elt;
-            elt = &oxm_entry.bsn_lag_id_masked;
-
-            of_oxm_bsn_lag_id_masked_init(elt,
+            of_oxm_bsn_lag_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_lag_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_lag_id_masked_value_set(&elt,
                    src->fields.bsn_lag_id);
-            of_oxm_bsn_lag_id_masked_value_mask_set(elt,
+            of_oxm_bsn_lag_id_masked_value_mask_set(&elt,
                    src->masks.bsn_lag_id);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_lag_id_t *elt;
-            elt = &oxm_entry.bsn_lag_id;
-            of_oxm_bsn_lag_id_init(elt,
+            of_oxm_bsn_lag_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_lag_id_value_set(elt, src->fields.bsn_lag_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_lag_id_value_set(&elt, src->fields.bsn_lag_id);
         }
     }
     if (OF_MATCH_MASK_BSN_VRF_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_VRF_EXACT_TEST(src)) {
-            of_oxm_bsn_vrf_masked_t *elt;
-            elt = &oxm_entry.bsn_vrf_masked;
-
-            of_oxm_bsn_vrf_masked_init(elt,
+            of_oxm_bsn_vrf_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_vrf_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_vrf_masked_value_set(&elt,
                    src->fields.bsn_vrf);
-            of_oxm_bsn_vrf_masked_value_mask_set(elt,
+            of_oxm_bsn_vrf_masked_value_mask_set(&elt,
                    src->masks.bsn_vrf);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_vrf_t *elt;
-            elt = &oxm_entry.bsn_vrf;
-            of_oxm_bsn_vrf_init(elt,
+            of_oxm_bsn_vrf_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_vrf_value_set(elt, src->fields.bsn_vrf);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_vrf_value_set(&elt, src->fields.bsn_vrf);
         }
     }
     if (OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_EXACT_TEST(src)) {
-            of_oxm_bsn_global_vrf_allowed_masked_t *elt;
-            elt = &oxm_entry.bsn_global_vrf_allowed_masked;
-
-            of_oxm_bsn_global_vrf_allowed_masked_init(elt,
+            of_oxm_bsn_global_vrf_allowed_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_global_vrf_allowed_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_global_vrf_allowed_masked_value_set(&elt,
                    src->fields.bsn_global_vrf_allowed);
-            of_oxm_bsn_global_vrf_allowed_masked_value_mask_set(elt,
+            of_oxm_bsn_global_vrf_allowed_masked_value_mask_set(&elt,
                    src->masks.bsn_global_vrf_allowed);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_global_vrf_allowed_t *elt;
-            elt = &oxm_entry.bsn_global_vrf_allowed;
-            of_oxm_bsn_global_vrf_allowed_init(elt,
+            of_oxm_bsn_global_vrf_allowed_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_global_vrf_allowed_value_set(elt, src->fields.bsn_global_vrf_allowed);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_global_vrf_allowed_value_set(&elt, src->fields.bsn_global_vrf_allowed);
         }
     }
     if (OF_MATCH_MASK_BSN_L3_INTERFACE_CLASS_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_L3_INTERFACE_CLASS_ID_EXACT_TEST(src)) {
-            of_oxm_bsn_l3_interface_class_id_masked_t *elt;
-            elt = &oxm_entry.bsn_l3_interface_class_id_masked;
-
-            of_oxm_bsn_l3_interface_class_id_masked_init(elt,
+            of_oxm_bsn_l3_interface_class_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_l3_interface_class_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l3_interface_class_id_masked_value_set(&elt,
                    src->fields.bsn_l3_interface_class_id);
-            of_oxm_bsn_l3_interface_class_id_masked_value_mask_set(elt,
+            of_oxm_bsn_l3_interface_class_id_masked_value_mask_set(&elt,
                    src->masks.bsn_l3_interface_class_id);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_l3_interface_class_id_t *elt;
-            elt = &oxm_entry.bsn_l3_interface_class_id;
-            of_oxm_bsn_l3_interface_class_id_init(elt,
+            of_oxm_bsn_l3_interface_class_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_l3_interface_class_id_value_set(elt, src->fields.bsn_l3_interface_class_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l3_interface_class_id_value_set(&elt, src->fields.bsn_l3_interface_class_id);
         }
     }
     if (OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_EXACT_TEST(src)) {
-            of_oxm_bsn_l3_src_class_id_masked_t *elt;
-            elt = &oxm_entry.bsn_l3_src_class_id_masked;
-
-            of_oxm_bsn_l3_src_class_id_masked_init(elt,
+            of_oxm_bsn_l3_src_class_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_l3_src_class_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l3_src_class_id_masked_value_set(&elt,
                    src->fields.bsn_l3_src_class_id);
-            of_oxm_bsn_l3_src_class_id_masked_value_mask_set(elt,
+            of_oxm_bsn_l3_src_class_id_masked_value_mask_set(&elt,
                    src->masks.bsn_l3_src_class_id);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_l3_src_class_id_t *elt;
-            elt = &oxm_entry.bsn_l3_src_class_id;
-            of_oxm_bsn_l3_src_class_id_init(elt,
+            of_oxm_bsn_l3_src_class_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_l3_src_class_id_value_set(elt, src->fields.bsn_l3_src_class_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l3_src_class_id_value_set(&elt, src->fields.bsn_l3_src_class_id);
         }
     }
     if (OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_EXACT_TEST(src)) {
-            of_oxm_bsn_l3_dst_class_id_masked_t *elt;
-            elt = &oxm_entry.bsn_l3_dst_class_id_masked;
-
-            of_oxm_bsn_l3_dst_class_id_masked_init(elt,
+            of_oxm_bsn_l3_dst_class_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_l3_dst_class_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l3_dst_class_id_masked_value_set(&elt,
                    src->fields.bsn_l3_dst_class_id);
-            of_oxm_bsn_l3_dst_class_id_masked_value_mask_set(elt,
+            of_oxm_bsn_l3_dst_class_id_masked_value_mask_set(&elt,
                    src->masks.bsn_l3_dst_class_id);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_l3_dst_class_id_t *elt;
-            elt = &oxm_entry.bsn_l3_dst_class_id;
-            of_oxm_bsn_l3_dst_class_id_init(elt,
+            of_oxm_bsn_l3_dst_class_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_l3_dst_class_id_value_set(elt, src->fields.bsn_l3_dst_class_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l3_dst_class_id_value_set(&elt, src->fields.bsn_l3_dst_class_id);
         }
     }
     if (OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_EXACT_TEST(src)) {
-            of_oxm_bsn_egr_port_group_id_masked_t *elt;
-            elt = &oxm_entry.bsn_egr_port_group_id_masked;
-
-            of_oxm_bsn_egr_port_group_id_masked_init(elt,
+            of_oxm_bsn_egr_port_group_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_egr_port_group_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_egr_port_group_id_masked_value_set(&elt,
                    src->fields.bsn_egr_port_group_id);
-            of_oxm_bsn_egr_port_group_id_masked_value_mask_set(elt,
+            of_oxm_bsn_egr_port_group_id_masked_value_mask_set(&elt,
                    src->masks.bsn_egr_port_group_id);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_egr_port_group_id_t *elt;
-            elt = &oxm_entry.bsn_egr_port_group_id;
-            of_oxm_bsn_egr_port_group_id_init(elt,
+            of_oxm_bsn_egr_port_group_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_egr_port_group_id_value_set(elt, src->fields.bsn_egr_port_group_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_egr_port_group_id_value_set(&elt, src->fields.bsn_egr_port_group_id);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF0_EXACT_TEST(src)) {
-            of_oxm_bsn_udf0_masked_t *elt;
-            elt = &oxm_entry.bsn_udf0_masked;
-
-            of_oxm_bsn_udf0_masked_init(elt,
+            of_oxm_bsn_udf0_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf0_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf0_masked_value_set(&elt,
                    src->fields.bsn_udf0);
-            of_oxm_bsn_udf0_masked_value_mask_set(elt,
+            of_oxm_bsn_udf0_masked_value_mask_set(&elt,
                    src->masks.bsn_udf0);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf0_t *elt;
-            elt = &oxm_entry.bsn_udf0;
-            of_oxm_bsn_udf0_init(elt,
+            of_oxm_bsn_udf0_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf0_value_set(elt, src->fields.bsn_udf0);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf0_value_set(&elt, src->fields.bsn_udf0);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF1_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF1_EXACT_TEST(src)) {
-            of_oxm_bsn_udf1_masked_t *elt;
-            elt = &oxm_entry.bsn_udf1_masked;
-
-            of_oxm_bsn_udf1_masked_init(elt,
+            of_oxm_bsn_udf1_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf1_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf1_masked_value_set(&elt,
                    src->fields.bsn_udf1);
-            of_oxm_bsn_udf1_masked_value_mask_set(elt,
+            of_oxm_bsn_udf1_masked_value_mask_set(&elt,
                    src->masks.bsn_udf1);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf1_t *elt;
-            elt = &oxm_entry.bsn_udf1;
-            of_oxm_bsn_udf1_init(elt,
+            of_oxm_bsn_udf1_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf1_value_set(elt, src->fields.bsn_udf1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf1_value_set(&elt, src->fields.bsn_udf1);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF2_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF2_EXACT_TEST(src)) {
-            of_oxm_bsn_udf2_masked_t *elt;
-            elt = &oxm_entry.bsn_udf2_masked;
-
-            of_oxm_bsn_udf2_masked_init(elt,
+            of_oxm_bsn_udf2_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf2_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf2_masked_value_set(&elt,
                    src->fields.bsn_udf2);
-            of_oxm_bsn_udf2_masked_value_mask_set(elt,
+            of_oxm_bsn_udf2_masked_value_mask_set(&elt,
                    src->masks.bsn_udf2);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf2_t *elt;
-            elt = &oxm_entry.bsn_udf2;
-            of_oxm_bsn_udf2_init(elt,
+            of_oxm_bsn_udf2_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf2_value_set(elt, src->fields.bsn_udf2);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf2_value_set(&elt, src->fields.bsn_udf2);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF3_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF3_EXACT_TEST(src)) {
-            of_oxm_bsn_udf3_masked_t *elt;
-            elt = &oxm_entry.bsn_udf3_masked;
-
-            of_oxm_bsn_udf3_masked_init(elt,
+            of_oxm_bsn_udf3_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf3_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf3_masked_value_set(&elt,
                    src->fields.bsn_udf3);
-            of_oxm_bsn_udf3_masked_value_mask_set(elt,
+            of_oxm_bsn_udf3_masked_value_mask_set(&elt,
                    src->masks.bsn_udf3);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf3_t *elt;
-            elt = &oxm_entry.bsn_udf3;
-            of_oxm_bsn_udf3_init(elt,
+            of_oxm_bsn_udf3_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf3_value_set(elt, src->fields.bsn_udf3);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf3_value_set(&elt, src->fields.bsn_udf3);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF4_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF4_EXACT_TEST(src)) {
-            of_oxm_bsn_udf4_masked_t *elt;
-            elt = &oxm_entry.bsn_udf4_masked;
-
-            of_oxm_bsn_udf4_masked_init(elt,
+            of_oxm_bsn_udf4_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf4_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf4_masked_value_set(&elt,
                    src->fields.bsn_udf4);
-            of_oxm_bsn_udf4_masked_value_mask_set(elt,
+            of_oxm_bsn_udf4_masked_value_mask_set(&elt,
                    src->masks.bsn_udf4);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf4_t *elt;
-            elt = &oxm_entry.bsn_udf4;
-            of_oxm_bsn_udf4_init(elt,
+            of_oxm_bsn_udf4_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf4_value_set(elt, src->fields.bsn_udf4);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf4_value_set(&elt, src->fields.bsn_udf4);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF5_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF5_EXACT_TEST(src)) {
-            of_oxm_bsn_udf5_masked_t *elt;
-            elt = &oxm_entry.bsn_udf5_masked;
-
-            of_oxm_bsn_udf5_masked_init(elt,
+            of_oxm_bsn_udf5_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf5_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf5_masked_value_set(&elt,
                    src->fields.bsn_udf5);
-            of_oxm_bsn_udf5_masked_value_mask_set(elt,
+            of_oxm_bsn_udf5_masked_value_mask_set(&elt,
                    src->masks.bsn_udf5);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf5_t *elt;
-            elt = &oxm_entry.bsn_udf5;
-            of_oxm_bsn_udf5_init(elt,
+            of_oxm_bsn_udf5_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf5_value_set(elt, src->fields.bsn_udf5);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf5_value_set(&elt, src->fields.bsn_udf5);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF6_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF6_EXACT_TEST(src)) {
-            of_oxm_bsn_udf6_masked_t *elt;
-            elt = &oxm_entry.bsn_udf6_masked;
-
-            of_oxm_bsn_udf6_masked_init(elt,
+            of_oxm_bsn_udf6_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf6_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf6_masked_value_set(&elt,
                    src->fields.bsn_udf6);
-            of_oxm_bsn_udf6_masked_value_mask_set(elt,
+            of_oxm_bsn_udf6_masked_value_mask_set(&elt,
                    src->masks.bsn_udf6);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf6_t *elt;
-            elt = &oxm_entry.bsn_udf6;
-            of_oxm_bsn_udf6_init(elt,
+            of_oxm_bsn_udf6_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf6_value_set(elt, src->fields.bsn_udf6);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf6_value_set(&elt, src->fields.bsn_udf6);
         }
     }
     if (OF_MATCH_MASK_BSN_UDF7_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_UDF7_EXACT_TEST(src)) {
-            of_oxm_bsn_udf7_masked_t *elt;
-            elt = &oxm_entry.bsn_udf7_masked;
-
-            of_oxm_bsn_udf7_masked_init(elt,
+            of_oxm_bsn_udf7_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf7_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf7_masked_value_set(&elt,
                    src->fields.bsn_udf7);
-            of_oxm_bsn_udf7_masked_value_mask_set(elt,
+            of_oxm_bsn_udf7_masked_value_mask_set(&elt,
                    src->masks.bsn_udf7);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_udf7_t *elt;
-            elt = &oxm_entry.bsn_udf7;
-            of_oxm_bsn_udf7_init(elt,
+            of_oxm_bsn_udf7_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_udf7_value_set(elt, src->fields.bsn_udf7);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_udf7_value_set(&elt, src->fields.bsn_udf7);
         }
     }
     if (OF_MATCH_MASK_BSN_TCP_FLAGS_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_TEST(src)) {
-            of_oxm_bsn_tcp_flags_masked_t *elt;
-            elt = &oxm_entry.bsn_tcp_flags_masked;
-
-            of_oxm_bsn_tcp_flags_masked_init(elt,
+            of_oxm_bsn_tcp_flags_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_tcp_flags_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_tcp_flags_masked_value_set(&elt,
                    src->fields.bsn_tcp_flags);
-            of_oxm_bsn_tcp_flags_masked_value_mask_set(elt,
+            of_oxm_bsn_tcp_flags_masked_value_mask_set(&elt,
                    src->masks.bsn_tcp_flags);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_tcp_flags_t *elt;
-            elt = &oxm_entry.bsn_tcp_flags;
-            of_oxm_bsn_tcp_flags_init(elt,
+            of_oxm_bsn_tcp_flags_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_tcp_flags_value_set(elt, src->fields.bsn_tcp_flags);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_tcp_flags_value_set(&elt, src->fields.bsn_tcp_flags);
         }
     }
     if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(src)) {
         if (!OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_TEST(src)) {
-            of_oxm_bsn_vlan_xlate_port_group_id_masked_t *elt;
-            elt = &oxm_entry.bsn_vlan_xlate_port_group_id_masked;
-
-            of_oxm_bsn_vlan_xlate_port_group_id_masked_init(elt,
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_set(elt,
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_set(&elt,
                    src->fields.bsn_vlan_xlate_port_group_id);
-            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_set(elt,
+            of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_set(&elt,
                    src->masks.bsn_vlan_xlate_port_group_id);
         } else {  /* Active, but not masked */
-            of_oxm_bsn_vlan_xlate_port_group_id_t *elt;
-            elt = &oxm_entry.bsn_vlan_xlate_port_group_id;
-            of_oxm_bsn_vlan_xlate_port_group_id_init(elt,
+            of_oxm_bsn_vlan_xlate_port_group_id_init(&elt,
                 oxm_list->version, -1, 1);
-            of_list_oxm_append_bind(oxm_list, &oxm_entry);
-            of_oxm_bsn_vlan_xlate_port_group_id_value_set(elt, src->fields.bsn_vlan_xlate_port_group_id);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_vlan_xlate_port_group_id_value_set(&elt, src->fields.bsn_vlan_xlate_port_group_id);
         }
     }
 
@@ -2115,7 +1835,7 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
 {
     int rv;
     of_list_oxm_t oxm_list;
-    of_oxm_t oxm_entry;
+    of_object_t oxm_entry;
 
     MEMSET(dst, 0, sizeof(*dst));
     dst->version = src->version;
@@ -2124,901 +1844,901 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
     rv = of_list_oxm_first(&oxm_list, &oxm_entry);
 
     while (rv == OF_ERROR_NONE) {
-        switch (oxm_entry.header.object_id) { /* What kind of entry is this */
+        switch (oxm_entry.object_id) { /* What kind of entry is this */
 
         case OF_OXM_IPV6_FLABEL_MASKED:
             of_oxm_ipv6_flabel_masked_value_mask_get(
-                &oxm_entry.ipv6_flabel_masked,
+                &oxm_entry,
                 &dst->masks.ipv6_flabel);
             of_oxm_ipv6_flabel_masked_value_get(
-                &oxm_entry.ipv6_flabel,
+                &oxm_entry,
                 &dst->fields.ipv6_flabel);
             of_memmask(&dst->fields.ipv6_flabel, &dst->masks.ipv6_flabel, sizeof(&dst->fields.ipv6_flabel));
             break;
         case OF_OXM_IPV6_FLABEL:
             OF_MATCH_MASK_IPV6_FLABEL_EXACT_SET(dst);
             of_oxm_ipv6_flabel_value_get(
-                &oxm_entry.ipv6_flabel,
+                &oxm_entry,
                 &dst->fields.ipv6_flabel);
             break;
 
         case OF_OXM_BSN_LAG_ID_MASKED:
             of_oxm_bsn_lag_id_masked_value_mask_get(
-                &oxm_entry.bsn_lag_id_masked,
+                &oxm_entry,
                 &dst->masks.bsn_lag_id);
             of_oxm_bsn_lag_id_masked_value_get(
-                &oxm_entry.bsn_lag_id,
+                &oxm_entry,
                 &dst->fields.bsn_lag_id);
             of_memmask(&dst->fields.bsn_lag_id, &dst->masks.bsn_lag_id, sizeof(&dst->fields.bsn_lag_id));
             break;
         case OF_OXM_BSN_LAG_ID:
             OF_MATCH_MASK_BSN_LAG_ID_EXACT_SET(dst);
             of_oxm_bsn_lag_id_value_get(
-                &oxm_entry.bsn_lag_id,
+                &oxm_entry,
                 &dst->fields.bsn_lag_id);
             break;
 
         case OF_OXM_VLAN_PCP_MASKED:
             of_oxm_vlan_pcp_masked_value_mask_get(
-                &oxm_entry.vlan_pcp_masked,
+                &oxm_entry,
                 &dst->masks.vlan_pcp);
             of_oxm_vlan_pcp_masked_value_get(
-                &oxm_entry.vlan_pcp,
+                &oxm_entry,
                 &dst->fields.vlan_pcp);
             of_memmask(&dst->fields.vlan_pcp, &dst->masks.vlan_pcp, sizeof(&dst->fields.vlan_pcp));
             break;
         case OF_OXM_VLAN_PCP:
             OF_MATCH_MASK_VLAN_PCP_EXACT_SET(dst);
             of_oxm_vlan_pcp_value_get(
-                &oxm_entry.vlan_pcp,
+                &oxm_entry,
                 &dst->fields.vlan_pcp);
             break;
 
         case OF_OXM_IPV4_SRC_MASKED:
             of_oxm_ipv4_src_masked_value_mask_get(
-                &oxm_entry.ipv4_src_masked,
+                &oxm_entry,
                 &dst->masks.ipv4_src);
             of_oxm_ipv4_src_masked_value_get(
-                &oxm_entry.ipv4_src,
+                &oxm_entry,
                 &dst->fields.ipv4_src);
             of_memmask(&dst->fields.ipv4_src, &dst->masks.ipv4_src, sizeof(&dst->fields.ipv4_src));
             break;
         case OF_OXM_IPV4_SRC:
             OF_MATCH_MASK_IPV4_SRC_EXACT_SET(dst);
             of_oxm_ipv4_src_value_get(
-                &oxm_entry.ipv4_src,
+                &oxm_entry,
                 &dst->fields.ipv4_src);
             break;
 
         case OF_OXM_IPV6_DST_MASKED:
             of_oxm_ipv6_dst_masked_value_mask_get(
-                &oxm_entry.ipv6_dst_masked,
+                &oxm_entry,
                 &dst->masks.ipv6_dst);
             of_oxm_ipv6_dst_masked_value_get(
-                &oxm_entry.ipv6_dst,
+                &oxm_entry,
                 &dst->fields.ipv6_dst);
             of_memmask(&dst->fields.ipv6_dst, &dst->masks.ipv6_dst, sizeof(&dst->fields.ipv6_dst));
             break;
         case OF_OXM_IPV6_DST:
             OF_MATCH_MASK_IPV6_DST_EXACT_SET(dst);
             of_oxm_ipv6_dst_value_get(
-                &oxm_entry.ipv6_dst,
+                &oxm_entry,
                 &dst->fields.ipv6_dst);
             break;
 
         case OF_OXM_ARP_TPA_MASKED:
             of_oxm_arp_tpa_masked_value_mask_get(
-                &oxm_entry.arp_tpa_masked,
+                &oxm_entry,
                 &dst->masks.arp_tpa);
             of_oxm_arp_tpa_masked_value_get(
-                &oxm_entry.arp_tpa,
+                &oxm_entry,
                 &dst->fields.arp_tpa);
             of_memmask(&dst->fields.arp_tpa, &dst->masks.arp_tpa, sizeof(&dst->fields.arp_tpa));
             break;
         case OF_OXM_ARP_TPA:
             OF_MATCH_MASK_ARP_TPA_EXACT_SET(dst);
             of_oxm_arp_tpa_value_get(
-                &oxm_entry.arp_tpa,
+                &oxm_entry,
                 &dst->fields.arp_tpa);
             break;
 
         case OF_OXM_ICMPV6_TYPE_MASKED:
             of_oxm_icmpv6_type_masked_value_mask_get(
-                &oxm_entry.icmpv6_type_masked,
+                &oxm_entry,
                 &dst->masks.icmpv6_type);
             of_oxm_icmpv6_type_masked_value_get(
-                &oxm_entry.icmpv6_type,
+                &oxm_entry,
                 &dst->fields.icmpv6_type);
             of_memmask(&dst->fields.icmpv6_type, &dst->masks.icmpv6_type, sizeof(&dst->fields.icmpv6_type));
             break;
         case OF_OXM_ICMPV6_TYPE:
             OF_MATCH_MASK_ICMPV6_TYPE_EXACT_SET(dst);
             of_oxm_icmpv6_type_value_get(
-                &oxm_entry.icmpv6_type,
+                &oxm_entry,
                 &dst->fields.icmpv6_type);
             break;
 
         case OF_OXM_BSN_IN_PORTS_128_MASKED:
             of_oxm_bsn_in_ports_128_masked_value_mask_get(
-                &oxm_entry.bsn_in_ports_128_masked,
+                &oxm_entry,
                 &dst->masks.bsn_in_ports_128);
             of_oxm_bsn_in_ports_128_masked_value_get(
-                &oxm_entry.bsn_in_ports_128,
+                &oxm_entry,
                 &dst->fields.bsn_in_ports_128);
             of_memmask(&dst->fields.bsn_in_ports_128, &dst->masks.bsn_in_ports_128, sizeof(&dst->fields.bsn_in_ports_128));
             break;
         case OF_OXM_BSN_IN_PORTS_128:
             OF_MATCH_MASK_BSN_IN_PORTS_128_EXACT_SET(dst);
             of_oxm_bsn_in_ports_128_value_get(
-                &oxm_entry.bsn_in_ports_128,
+                &oxm_entry,
                 &dst->fields.bsn_in_ports_128);
             break;
 
         case OF_OXM_ARP_SHA_MASKED:
             of_oxm_arp_sha_masked_value_mask_get(
-                &oxm_entry.arp_sha_masked,
+                &oxm_entry,
                 &dst->masks.arp_sha);
             of_oxm_arp_sha_masked_value_get(
-                &oxm_entry.arp_sha,
+                &oxm_entry,
                 &dst->fields.arp_sha);
             of_memmask(&dst->fields.arp_sha, &dst->masks.arp_sha, sizeof(&dst->fields.arp_sha));
             break;
         case OF_OXM_ARP_SHA:
             OF_MATCH_MASK_ARP_SHA_EXACT_SET(dst);
             of_oxm_arp_sha_value_get(
-                &oxm_entry.arp_sha,
+                &oxm_entry,
                 &dst->fields.arp_sha);
             break;
 
         case OF_OXM_IPV6_SRC_MASKED:
             of_oxm_ipv6_src_masked_value_mask_get(
-                &oxm_entry.ipv6_src_masked,
+                &oxm_entry,
                 &dst->masks.ipv6_src);
             of_oxm_ipv6_src_masked_value_get(
-                &oxm_entry.ipv6_src,
+                &oxm_entry,
                 &dst->fields.ipv6_src);
             of_memmask(&dst->fields.ipv6_src, &dst->masks.ipv6_src, sizeof(&dst->fields.ipv6_src));
             break;
         case OF_OXM_IPV6_SRC:
             OF_MATCH_MASK_IPV6_SRC_EXACT_SET(dst);
             of_oxm_ipv6_src_value_get(
-                &oxm_entry.ipv6_src,
+                &oxm_entry,
                 &dst->fields.ipv6_src);
             break;
 
         case OF_OXM_ETH_SRC_MASKED:
             of_oxm_eth_src_masked_value_mask_get(
-                &oxm_entry.eth_src_masked,
+                &oxm_entry,
                 &dst->masks.eth_src);
             of_oxm_eth_src_masked_value_get(
-                &oxm_entry.eth_src,
+                &oxm_entry,
                 &dst->fields.eth_src);
             of_memmask(&dst->fields.eth_src, &dst->masks.eth_src, sizeof(&dst->fields.eth_src));
             break;
         case OF_OXM_ETH_SRC:
             OF_MATCH_MASK_ETH_SRC_EXACT_SET(dst);
             of_oxm_eth_src_value_get(
-                &oxm_entry.eth_src,
+                &oxm_entry,
                 &dst->fields.eth_src);
             break;
 
         case OF_OXM_ICMPV6_CODE_MASKED:
             of_oxm_icmpv6_code_masked_value_mask_get(
-                &oxm_entry.icmpv6_code_masked,
+                &oxm_entry,
                 &dst->masks.icmpv6_code);
             of_oxm_icmpv6_code_masked_value_get(
-                &oxm_entry.icmpv6_code,
+                &oxm_entry,
                 &dst->fields.icmpv6_code);
             of_memmask(&dst->fields.icmpv6_code, &dst->masks.icmpv6_code, sizeof(&dst->fields.icmpv6_code));
             break;
         case OF_OXM_ICMPV6_CODE:
             OF_MATCH_MASK_ICMPV6_CODE_EXACT_SET(dst);
             of_oxm_icmpv6_code_value_get(
-                &oxm_entry.icmpv6_code,
+                &oxm_entry,
                 &dst->fields.icmpv6_code);
             break;
 
         case OF_OXM_MPLS_BOS_MASKED:
             of_oxm_mpls_bos_masked_value_mask_get(
-                &oxm_entry.mpls_bos_masked,
+                &oxm_entry,
                 &dst->masks.mpls_bos);
             of_oxm_mpls_bos_masked_value_get(
-                &oxm_entry.mpls_bos,
+                &oxm_entry,
                 &dst->fields.mpls_bos);
             of_memmask(&dst->fields.mpls_bos, &dst->masks.mpls_bos, sizeof(&dst->fields.mpls_bos));
             break;
         case OF_OXM_MPLS_BOS:
             OF_MATCH_MASK_MPLS_BOS_EXACT_SET(dst);
             of_oxm_mpls_bos_value_get(
-                &oxm_entry.mpls_bos,
+                &oxm_entry,
                 &dst->fields.mpls_bos);
             break;
 
         case OF_OXM_ETH_DST_MASKED:
             of_oxm_eth_dst_masked_value_mask_get(
-                &oxm_entry.eth_dst_masked,
+                &oxm_entry,
                 &dst->masks.eth_dst);
             of_oxm_eth_dst_masked_value_get(
-                &oxm_entry.eth_dst,
+                &oxm_entry,
                 &dst->fields.eth_dst);
             of_memmask(&dst->fields.eth_dst, &dst->masks.eth_dst, sizeof(&dst->fields.eth_dst));
             break;
         case OF_OXM_ETH_DST:
             OF_MATCH_MASK_ETH_DST_EXACT_SET(dst);
             of_oxm_eth_dst_value_get(
-                &oxm_entry.eth_dst,
+                &oxm_entry,
                 &dst->fields.eth_dst);
             break;
 
         case OF_OXM_UDP_SRC_MASKED:
             of_oxm_udp_src_masked_value_mask_get(
-                &oxm_entry.udp_src_masked,
+                &oxm_entry,
                 &dst->masks.udp_src);
             of_oxm_udp_src_masked_value_get(
-                &oxm_entry.udp_src,
+                &oxm_entry,
                 &dst->fields.udp_src);
             of_memmask(&dst->fields.udp_src, &dst->masks.udp_src, sizeof(&dst->fields.udp_src));
             break;
         case OF_OXM_UDP_SRC:
             OF_MATCH_MASK_UDP_SRC_EXACT_SET(dst);
             of_oxm_udp_src_value_get(
-                &oxm_entry.udp_src,
+                &oxm_entry,
                 &dst->fields.udp_src);
             break;
 
         case OF_OXM_IPV4_DST_MASKED:
             of_oxm_ipv4_dst_masked_value_mask_get(
-                &oxm_entry.ipv4_dst_masked,
+                &oxm_entry,
                 &dst->masks.ipv4_dst);
             of_oxm_ipv4_dst_masked_value_get(
-                &oxm_entry.ipv4_dst,
+                &oxm_entry,
                 &dst->fields.ipv4_dst);
             of_memmask(&dst->fields.ipv4_dst, &dst->masks.ipv4_dst, sizeof(&dst->fields.ipv4_dst));
             break;
         case OF_OXM_IPV4_DST:
             OF_MATCH_MASK_IPV4_DST_EXACT_SET(dst);
             of_oxm_ipv4_dst_value_get(
-                &oxm_entry.ipv4_dst,
+                &oxm_entry,
                 &dst->fields.ipv4_dst);
             break;
 
         case OF_OXM_ARP_OP_MASKED:
             of_oxm_arp_op_masked_value_mask_get(
-                &oxm_entry.arp_op_masked,
+                &oxm_entry,
                 &dst->masks.arp_op);
             of_oxm_arp_op_masked_value_get(
-                &oxm_entry.arp_op,
+                &oxm_entry,
                 &dst->fields.arp_op);
             of_memmask(&dst->fields.arp_op, &dst->masks.arp_op, sizeof(&dst->fields.arp_op));
             break;
         case OF_OXM_ARP_OP:
             OF_MATCH_MASK_ARP_OP_EXACT_SET(dst);
             of_oxm_arp_op_value_get(
-                &oxm_entry.arp_op,
+                &oxm_entry,
                 &dst->fields.arp_op);
             break;
 
         case OF_OXM_IPV6_ND_TLL_MASKED:
             of_oxm_ipv6_nd_tll_masked_value_mask_get(
-                &oxm_entry.ipv6_nd_tll_masked,
+                &oxm_entry,
                 &dst->masks.ipv6_nd_tll);
             of_oxm_ipv6_nd_tll_masked_value_get(
-                &oxm_entry.ipv6_nd_tll,
+                &oxm_entry,
                 &dst->fields.ipv6_nd_tll);
             of_memmask(&dst->fields.ipv6_nd_tll, &dst->masks.ipv6_nd_tll, sizeof(&dst->fields.ipv6_nd_tll));
             break;
         case OF_OXM_IPV6_ND_TLL:
             OF_MATCH_MASK_IPV6_ND_TLL_EXACT_SET(dst);
             of_oxm_ipv6_nd_tll_value_get(
-                &oxm_entry.ipv6_nd_tll,
+                &oxm_entry,
                 &dst->fields.ipv6_nd_tll);
             break;
 
         case OF_OXM_TUNNEL_ID_MASKED:
             of_oxm_tunnel_id_masked_value_mask_get(
-                &oxm_entry.tunnel_id_masked,
+                &oxm_entry,
                 &dst->masks.tunnel_id);
             of_oxm_tunnel_id_masked_value_get(
-                &oxm_entry.tunnel_id,
+                &oxm_entry,
                 &dst->fields.tunnel_id);
             of_memmask(&dst->fields.tunnel_id, &dst->masks.tunnel_id, sizeof(&dst->fields.tunnel_id));
             break;
         case OF_OXM_TUNNEL_ID:
             OF_MATCH_MASK_TUNNEL_ID_EXACT_SET(dst);
             of_oxm_tunnel_id_value_get(
-                &oxm_entry.tunnel_id,
+                &oxm_entry,
                 &dst->fields.tunnel_id);
             break;
 
         case OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED:
             of_oxm_bsn_egr_port_group_id_masked_value_mask_get(
-                &oxm_entry.bsn_egr_port_group_id_masked,
+                &oxm_entry,
                 &dst->masks.bsn_egr_port_group_id);
             of_oxm_bsn_egr_port_group_id_masked_value_get(
-                &oxm_entry.bsn_egr_port_group_id,
+                &oxm_entry,
                 &dst->fields.bsn_egr_port_group_id);
             of_memmask(&dst->fields.bsn_egr_port_group_id, &dst->masks.bsn_egr_port_group_id, sizeof(&dst->fields.bsn_egr_port_group_id));
             break;
         case OF_OXM_BSN_EGR_PORT_GROUP_ID:
             OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_EXACT_SET(dst);
             of_oxm_bsn_egr_port_group_id_value_get(
-                &oxm_entry.bsn_egr_port_group_id,
+                &oxm_entry,
                 &dst->fields.bsn_egr_port_group_id);
             break;
 
         case OF_OXM_ICMPV4_TYPE_MASKED:
             of_oxm_icmpv4_type_masked_value_mask_get(
-                &oxm_entry.icmpv4_type_masked,
+                &oxm_entry,
                 &dst->masks.icmpv4_type);
             of_oxm_icmpv4_type_masked_value_get(
-                &oxm_entry.icmpv4_type,
+                &oxm_entry,
                 &dst->fields.icmpv4_type);
             of_memmask(&dst->fields.icmpv4_type, &dst->masks.icmpv4_type, sizeof(&dst->fields.icmpv4_type));
             break;
         case OF_OXM_ICMPV4_TYPE:
             OF_MATCH_MASK_ICMPV4_TYPE_EXACT_SET(dst);
             of_oxm_icmpv4_type_value_get(
-                &oxm_entry.icmpv4_type,
+                &oxm_entry,
                 &dst->fields.icmpv4_type);
             break;
 
         case OF_OXM_ETH_TYPE_MASKED:
             of_oxm_eth_type_masked_value_mask_get(
-                &oxm_entry.eth_type_masked,
+                &oxm_entry,
                 &dst->masks.eth_type);
             of_oxm_eth_type_masked_value_get(
-                &oxm_entry.eth_type,
+                &oxm_entry,
                 &dst->fields.eth_type);
             of_memmask(&dst->fields.eth_type, &dst->masks.eth_type, sizeof(&dst->fields.eth_type));
             break;
         case OF_OXM_ETH_TYPE:
             OF_MATCH_MASK_ETH_TYPE_EXACT_SET(dst);
             of_oxm_eth_type_value_get(
-                &oxm_entry.eth_type,
+                &oxm_entry,
                 &dst->fields.eth_type);
             break;
 
         case OF_OXM_IPV6_ND_TARGET_MASKED:
             of_oxm_ipv6_nd_target_masked_value_mask_get(
-                &oxm_entry.ipv6_nd_target_masked,
+                &oxm_entry,
                 &dst->masks.ipv6_nd_target);
             of_oxm_ipv6_nd_target_masked_value_get(
-                &oxm_entry.ipv6_nd_target,
+                &oxm_entry,
                 &dst->fields.ipv6_nd_target);
             of_memmask(&dst->fields.ipv6_nd_target, &dst->masks.ipv6_nd_target, sizeof(&dst->fields.ipv6_nd_target));
             break;
         case OF_OXM_IPV6_ND_TARGET:
             OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_SET(dst);
             of_oxm_ipv6_nd_target_value_get(
-                &oxm_entry.ipv6_nd_target,
+                &oxm_entry,
                 &dst->fields.ipv6_nd_target);
             break;
 
         case OF_OXM_MPLS_LABEL_MASKED:
             of_oxm_mpls_label_masked_value_mask_get(
-                &oxm_entry.mpls_label_masked,
+                &oxm_entry,
                 &dst->masks.mpls_label);
             of_oxm_mpls_label_masked_value_get(
-                &oxm_entry.mpls_label,
+                &oxm_entry,
                 &dst->fields.mpls_label);
             of_memmask(&dst->fields.mpls_label, &dst->masks.mpls_label, sizeof(&dst->fields.mpls_label));
             break;
         case OF_OXM_MPLS_LABEL:
             OF_MATCH_MASK_MPLS_LABEL_EXACT_SET(dst);
             of_oxm_mpls_label_value_get(
-                &oxm_entry.mpls_label,
+                &oxm_entry,
                 &dst->fields.mpls_label);
             break;
 
         case OF_OXM_ARP_THA_MASKED:
             of_oxm_arp_tha_masked_value_mask_get(
-                &oxm_entry.arp_tha_masked,
+                &oxm_entry,
                 &dst->masks.arp_tha);
             of_oxm_arp_tha_masked_value_get(
-                &oxm_entry.arp_tha,
+                &oxm_entry,
                 &dst->fields.arp_tha);
             of_memmask(&dst->fields.arp_tha, &dst->masks.arp_tha, sizeof(&dst->fields.arp_tha));
             break;
         case OF_OXM_ARP_THA:
             OF_MATCH_MASK_ARP_THA_EXACT_SET(dst);
             of_oxm_arp_tha_value_get(
-                &oxm_entry.arp_tha,
+                &oxm_entry,
                 &dst->fields.arp_tha);
             break;
 
         case OF_OXM_IN_PORT_MASKED:
             of_oxm_in_port_masked_value_mask_get(
-                &oxm_entry.in_port_masked,
+                &oxm_entry,
                 &dst->masks.in_port);
             of_oxm_in_port_masked_value_get(
-                &oxm_entry.in_port,
+                &oxm_entry,
                 &dst->fields.in_port);
             of_memmask(&dst->fields.in_port, &dst->masks.in_port, sizeof(&dst->fields.in_port));
             break;
         case OF_OXM_IN_PORT:
             OF_MATCH_MASK_IN_PORT_EXACT_SET(dst);
             of_oxm_in_port_value_get(
-                &oxm_entry.in_port,
+                &oxm_entry,
                 &dst->fields.in_port);
             break;
 
         case OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED:
             of_oxm_bsn_l3_interface_class_id_masked_value_mask_get(
-                &oxm_entry.bsn_l3_interface_class_id_masked,
+                &oxm_entry,
                 &dst->masks.bsn_l3_interface_class_id);
             of_oxm_bsn_l3_interface_class_id_masked_value_get(
-                &oxm_entry.bsn_l3_interface_class_id,
+                &oxm_entry,
                 &dst->fields.bsn_l3_interface_class_id);
             of_memmask(&dst->fields.bsn_l3_interface_class_id, &dst->masks.bsn_l3_interface_class_id, sizeof(&dst->fields.bsn_l3_interface_class_id));
             break;
         case OF_OXM_BSN_L3_INTERFACE_CLASS_ID:
             OF_MATCH_MASK_BSN_L3_INTERFACE_CLASS_ID_EXACT_SET(dst);
             of_oxm_bsn_l3_interface_class_id_value_get(
-                &oxm_entry.bsn_l3_interface_class_id,
+                &oxm_entry,
                 &dst->fields.bsn_l3_interface_class_id);
             break;
 
         case OF_OXM_TCP_DST_MASKED:
             of_oxm_tcp_dst_masked_value_mask_get(
-                &oxm_entry.tcp_dst_masked,
+                &oxm_entry,
                 &dst->masks.tcp_dst);
             of_oxm_tcp_dst_masked_value_get(
-                &oxm_entry.tcp_dst,
+                &oxm_entry,
                 &dst->fields.tcp_dst);
             of_memmask(&dst->fields.tcp_dst, &dst->masks.tcp_dst, sizeof(&dst->fields.tcp_dst));
             break;
         case OF_OXM_TCP_DST:
             OF_MATCH_MASK_TCP_DST_EXACT_SET(dst);
             of_oxm_tcp_dst_value_get(
-                &oxm_entry.tcp_dst,
+                &oxm_entry,
                 &dst->fields.tcp_dst);
             break;
 
         case OF_OXM_TCP_SRC_MASKED:
             of_oxm_tcp_src_masked_value_mask_get(
-                &oxm_entry.tcp_src_masked,
+                &oxm_entry,
                 &dst->masks.tcp_src);
             of_oxm_tcp_src_masked_value_get(
-                &oxm_entry.tcp_src,
+                &oxm_entry,
                 &dst->fields.tcp_src);
             of_memmask(&dst->fields.tcp_src, &dst->masks.tcp_src, sizeof(&dst->fields.tcp_src));
             break;
         case OF_OXM_TCP_SRC:
             OF_MATCH_MASK_TCP_SRC_EXACT_SET(dst);
             of_oxm_tcp_src_value_get(
-                &oxm_entry.tcp_src,
+                &oxm_entry,
                 &dst->fields.tcp_src);
             break;
 
         case OF_OXM_ICMPV4_CODE_MASKED:
             of_oxm_icmpv4_code_masked_value_mask_get(
-                &oxm_entry.icmpv4_code_masked,
+                &oxm_entry,
                 &dst->masks.icmpv4_code);
             of_oxm_icmpv4_code_masked_value_get(
-                &oxm_entry.icmpv4_code,
+                &oxm_entry,
                 &dst->fields.icmpv4_code);
             of_memmask(&dst->fields.icmpv4_code, &dst->masks.icmpv4_code, sizeof(&dst->fields.icmpv4_code));
             break;
         case OF_OXM_ICMPV4_CODE:
             OF_MATCH_MASK_ICMPV4_CODE_EXACT_SET(dst);
             of_oxm_icmpv4_code_value_get(
-                &oxm_entry.icmpv4_code,
+                &oxm_entry,
                 &dst->fields.icmpv4_code);
             break;
 
         case OF_OXM_SCTP_DST_MASKED:
             of_oxm_sctp_dst_masked_value_mask_get(
-                &oxm_entry.sctp_dst_masked,
+                &oxm_entry,
                 &dst->masks.sctp_dst);
             of_oxm_sctp_dst_masked_value_get(
-                &oxm_entry.sctp_dst,
+                &oxm_entry,
                 &dst->fields.sctp_dst);
             of_memmask(&dst->fields.sctp_dst, &dst->masks.sctp_dst, sizeof(&dst->fields.sctp_dst));
             break;
         case OF_OXM_SCTP_DST:
             OF_MATCH_MASK_SCTP_DST_EXACT_SET(dst);
             of_oxm_sctp_dst_value_get(
-                &oxm_entry.sctp_dst,
+                &oxm_entry,
                 &dst->fields.sctp_dst);
             break;
 
         case OF_OXM_VLAN_VID_MASKED:
             of_oxm_vlan_vid_masked_value_mask_get(
-                &oxm_entry.vlan_vid_masked,
+                &oxm_entry,
                 &dst->masks.vlan_vid);
             of_oxm_vlan_vid_masked_value_get(
-                &oxm_entry.vlan_vid,
+                &oxm_entry,
                 &dst->fields.vlan_vid);
             of_memmask(&dst->fields.vlan_vid, &dst->masks.vlan_vid, sizeof(&dst->fields.vlan_vid));
             break;
         case OF_OXM_VLAN_VID:
             OF_MATCH_MASK_VLAN_VID_EXACT_SET(dst);
             of_oxm_vlan_vid_value_get(
-                &oxm_entry.vlan_vid,
+                &oxm_entry,
                 &dst->fields.vlan_vid);
             break;
 
         case OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED:
             of_oxm_bsn_l3_src_class_id_masked_value_mask_get(
-                &oxm_entry.bsn_l3_src_class_id_masked,
+                &oxm_entry,
                 &dst->masks.bsn_l3_src_class_id);
             of_oxm_bsn_l3_src_class_id_masked_value_get(
-                &oxm_entry.bsn_l3_src_class_id,
+                &oxm_entry,
                 &dst->fields.bsn_l3_src_class_id);
             of_memmask(&dst->fields.bsn_l3_src_class_id, &dst->masks.bsn_l3_src_class_id, sizeof(&dst->fields.bsn_l3_src_class_id));
             break;
         case OF_OXM_BSN_L3_SRC_CLASS_ID:
             OF_MATCH_MASK_BSN_L3_SRC_CLASS_ID_EXACT_SET(dst);
             of_oxm_bsn_l3_src_class_id_value_get(
-                &oxm_entry.bsn_l3_src_class_id,
+                &oxm_entry,
                 &dst->fields.bsn_l3_src_class_id);
             break;
 
         case OF_OXM_BSN_VRF_MASKED:
             of_oxm_bsn_vrf_masked_value_mask_get(
-                &oxm_entry.bsn_vrf_masked,
+                &oxm_entry,
                 &dst->masks.bsn_vrf);
             of_oxm_bsn_vrf_masked_value_get(
-                &oxm_entry.bsn_vrf,
+                &oxm_entry,
                 &dst->fields.bsn_vrf);
             of_memmask(&dst->fields.bsn_vrf, &dst->masks.bsn_vrf, sizeof(&dst->fields.bsn_vrf));
             break;
         case OF_OXM_BSN_VRF:
             OF_MATCH_MASK_BSN_VRF_EXACT_SET(dst);
             of_oxm_bsn_vrf_value_get(
-                &oxm_entry.bsn_vrf,
+                &oxm_entry,
                 &dst->fields.bsn_vrf);
             break;
 
         case OF_OXM_ARP_SPA_MASKED:
             of_oxm_arp_spa_masked_value_mask_get(
-                &oxm_entry.arp_spa_masked,
+                &oxm_entry,
                 &dst->masks.arp_spa);
             of_oxm_arp_spa_masked_value_get(
-                &oxm_entry.arp_spa,
+                &oxm_entry,
                 &dst->fields.arp_spa);
             of_memmask(&dst->fields.arp_spa, &dst->masks.arp_spa, sizeof(&dst->fields.arp_spa));
             break;
         case OF_OXM_ARP_SPA:
             OF_MATCH_MASK_ARP_SPA_EXACT_SET(dst);
             of_oxm_arp_spa_value_get(
-                &oxm_entry.arp_spa,
+                &oxm_entry,
                 &dst->fields.arp_spa);
             break;
 
         case OF_OXM_IP_PROTO_MASKED:
             of_oxm_ip_proto_masked_value_mask_get(
-                &oxm_entry.ip_proto_masked,
+                &oxm_entry,
                 &dst->masks.ip_proto);
             of_oxm_ip_proto_masked_value_get(
-                &oxm_entry.ip_proto,
+                &oxm_entry,
                 &dst->fields.ip_proto);
             of_memmask(&dst->fields.ip_proto, &dst->masks.ip_proto, sizeof(&dst->fields.ip_proto));
             break;
         case OF_OXM_IP_PROTO:
             OF_MATCH_MASK_IP_PROTO_EXACT_SET(dst);
             of_oxm_ip_proto_value_get(
-                &oxm_entry.ip_proto,
+                &oxm_entry,
                 &dst->fields.ip_proto);
             break;
 
         case OF_OXM_IP_ECN_MASKED:
             of_oxm_ip_ecn_masked_value_mask_get(
-                &oxm_entry.ip_ecn_masked,
+                &oxm_entry,
                 &dst->masks.ip_ecn);
             of_oxm_ip_ecn_masked_value_get(
-                &oxm_entry.ip_ecn,
+                &oxm_entry,
                 &dst->fields.ip_ecn);
             of_memmask(&dst->fields.ip_ecn, &dst->masks.ip_ecn, sizeof(&dst->fields.ip_ecn));
             break;
         case OF_OXM_IP_ECN:
             OF_MATCH_MASK_IP_ECN_EXACT_SET(dst);
             of_oxm_ip_ecn_value_get(
-                &oxm_entry.ip_ecn,
+                &oxm_entry,
                 &dst->fields.ip_ecn);
             break;
 
         case OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED:
             of_oxm_bsn_global_vrf_allowed_masked_value_mask_get(
-                &oxm_entry.bsn_global_vrf_allowed_masked,
+                &oxm_entry,
                 &dst->masks.bsn_global_vrf_allowed);
             of_oxm_bsn_global_vrf_allowed_masked_value_get(
-                &oxm_entry.bsn_global_vrf_allowed,
+                &oxm_entry,
                 &dst->fields.bsn_global_vrf_allowed);
             of_memmask(&dst->fields.bsn_global_vrf_allowed, &dst->masks.bsn_global_vrf_allowed, sizeof(&dst->fields.bsn_global_vrf_allowed));
             break;
         case OF_OXM_BSN_GLOBAL_VRF_ALLOWED:
             OF_MATCH_MASK_BSN_GLOBAL_VRF_ALLOWED_EXACT_SET(dst);
             of_oxm_bsn_global_vrf_allowed_value_get(
-                &oxm_entry.bsn_global_vrf_allowed,
+                &oxm_entry,
                 &dst->fields.bsn_global_vrf_allowed);
             break;
 
         case OF_OXM_UDP_DST_MASKED:
             of_oxm_udp_dst_masked_value_mask_get(
-                &oxm_entry.udp_dst_masked,
+                &oxm_entry,
                 &dst->masks.udp_dst);
             of_oxm_udp_dst_masked_value_get(
-                &oxm_entry.udp_dst,
+                &oxm_entry,
                 &dst->fields.udp_dst);
             of_memmask(&dst->fields.udp_dst, &dst->masks.udp_dst, sizeof(&dst->fields.udp_dst));
             break;
         case OF_OXM_UDP_DST:
             OF_MATCH_MASK_UDP_DST_EXACT_SET(dst);
             of_oxm_udp_dst_value_get(
-                &oxm_entry.udp_dst,
+                &oxm_entry,
                 &dst->fields.udp_dst);
             break;
 
         case OF_OXM_BSN_UDF0_MASKED:
             of_oxm_bsn_udf0_masked_value_mask_get(
-                &oxm_entry.bsn_udf0_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf0);
             of_oxm_bsn_udf0_masked_value_get(
-                &oxm_entry.bsn_udf0,
+                &oxm_entry,
                 &dst->fields.bsn_udf0);
             of_memmask(&dst->fields.bsn_udf0, &dst->masks.bsn_udf0, sizeof(&dst->fields.bsn_udf0));
             break;
         case OF_OXM_BSN_UDF0:
             OF_MATCH_MASK_BSN_UDF0_EXACT_SET(dst);
             of_oxm_bsn_udf0_value_get(
-                &oxm_entry.bsn_udf0,
+                &oxm_entry,
                 &dst->fields.bsn_udf0);
             break;
 
         case OF_OXM_SCTP_SRC_MASKED:
             of_oxm_sctp_src_masked_value_mask_get(
-                &oxm_entry.sctp_src_masked,
+                &oxm_entry,
                 &dst->masks.sctp_src);
             of_oxm_sctp_src_masked_value_get(
-                &oxm_entry.sctp_src,
+                &oxm_entry,
                 &dst->fields.sctp_src);
             of_memmask(&dst->fields.sctp_src, &dst->masks.sctp_src, sizeof(&dst->fields.sctp_src));
             break;
         case OF_OXM_SCTP_SRC:
             OF_MATCH_MASK_SCTP_SRC_EXACT_SET(dst);
             of_oxm_sctp_src_value_get(
-                &oxm_entry.sctp_src,
+                &oxm_entry,
                 &dst->fields.sctp_src);
             break;
 
         case OF_OXM_IN_PHY_PORT_MASKED:
             of_oxm_in_phy_port_masked_value_mask_get(
-                &oxm_entry.in_phy_port_masked,
+                &oxm_entry,
                 &dst->masks.in_phy_port);
             of_oxm_in_phy_port_masked_value_get(
-                &oxm_entry.in_phy_port,
+                &oxm_entry,
                 &dst->fields.in_phy_port);
             of_memmask(&dst->fields.in_phy_port, &dst->masks.in_phy_port, sizeof(&dst->fields.in_phy_port));
             break;
         case OF_OXM_IN_PHY_PORT:
             OF_MATCH_MASK_IN_PHY_PORT_EXACT_SET(dst);
             of_oxm_in_phy_port_value_get(
-                &oxm_entry.in_phy_port,
+                &oxm_entry,
                 &dst->fields.in_phy_port);
             break;
 
         case OF_OXM_IPV6_ND_SLL_MASKED:
             of_oxm_ipv6_nd_sll_masked_value_mask_get(
-                &oxm_entry.ipv6_nd_sll_masked,
+                &oxm_entry,
                 &dst->masks.ipv6_nd_sll);
             of_oxm_ipv6_nd_sll_masked_value_get(
-                &oxm_entry.ipv6_nd_sll,
+                &oxm_entry,
                 &dst->fields.ipv6_nd_sll);
             of_memmask(&dst->fields.ipv6_nd_sll, &dst->masks.ipv6_nd_sll, sizeof(&dst->fields.ipv6_nd_sll));
             break;
         case OF_OXM_IPV6_ND_SLL:
             OF_MATCH_MASK_IPV6_ND_SLL_EXACT_SET(dst);
             of_oxm_ipv6_nd_sll_value_get(
-                &oxm_entry.ipv6_nd_sll,
+                &oxm_entry,
                 &dst->fields.ipv6_nd_sll);
             break;
 
         case OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED:
             of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(
-                &oxm_entry.bsn_vlan_xlate_port_group_id_masked,
+                &oxm_entry,
                 &dst->masks.bsn_vlan_xlate_port_group_id);
             of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(
-                &oxm_entry.bsn_vlan_xlate_port_group_id,
+                &oxm_entry,
                 &dst->fields.bsn_vlan_xlate_port_group_id);
             of_memmask(&dst->fields.bsn_vlan_xlate_port_group_id, &dst->masks.bsn_vlan_xlate_port_group_id, sizeof(&dst->fields.bsn_vlan_xlate_port_group_id));
             break;
         case OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID:
             OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_EXACT_SET(dst);
             of_oxm_bsn_vlan_xlate_port_group_id_value_get(
-                &oxm_entry.bsn_vlan_xlate_port_group_id,
+                &oxm_entry,
                 &dst->fields.bsn_vlan_xlate_port_group_id);
             break;
 
         case OF_OXM_MPLS_TC_MASKED:
             of_oxm_mpls_tc_masked_value_mask_get(
-                &oxm_entry.mpls_tc_masked,
+                &oxm_entry,
                 &dst->masks.mpls_tc);
             of_oxm_mpls_tc_masked_value_get(
-                &oxm_entry.mpls_tc,
+                &oxm_entry,
                 &dst->fields.mpls_tc);
             of_memmask(&dst->fields.mpls_tc, &dst->masks.mpls_tc, sizeof(&dst->fields.mpls_tc));
             break;
         case OF_OXM_MPLS_TC:
             OF_MATCH_MASK_MPLS_TC_EXACT_SET(dst);
             of_oxm_mpls_tc_value_get(
-                &oxm_entry.mpls_tc,
+                &oxm_entry,
                 &dst->fields.mpls_tc);
             break;
 
         case OF_OXM_METADATA_MASKED:
             of_oxm_metadata_masked_value_mask_get(
-                &oxm_entry.metadata_masked,
+                &oxm_entry,
                 &dst->masks.metadata);
             of_oxm_metadata_masked_value_get(
-                &oxm_entry.metadata,
+                &oxm_entry,
                 &dst->fields.metadata);
             of_memmask(&dst->fields.metadata, &dst->masks.metadata, sizeof(&dst->fields.metadata));
             break;
         case OF_OXM_METADATA:
             OF_MATCH_MASK_METADATA_EXACT_SET(dst);
             of_oxm_metadata_value_get(
-                &oxm_entry.metadata,
+                &oxm_entry,
                 &dst->fields.metadata);
             break;
 
         case OF_OXM_BSN_UDF1_MASKED:
             of_oxm_bsn_udf1_masked_value_mask_get(
-                &oxm_entry.bsn_udf1_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf1);
             of_oxm_bsn_udf1_masked_value_get(
-                &oxm_entry.bsn_udf1,
+                &oxm_entry,
                 &dst->fields.bsn_udf1);
             of_memmask(&dst->fields.bsn_udf1, &dst->masks.bsn_udf1, sizeof(&dst->fields.bsn_udf1));
             break;
         case OF_OXM_BSN_UDF1:
             OF_MATCH_MASK_BSN_UDF1_EXACT_SET(dst);
             of_oxm_bsn_udf1_value_get(
-                &oxm_entry.bsn_udf1,
+                &oxm_entry,
                 &dst->fields.bsn_udf1);
             break;
 
         case OF_OXM_BSN_L3_DST_CLASS_ID_MASKED:
             of_oxm_bsn_l3_dst_class_id_masked_value_mask_get(
-                &oxm_entry.bsn_l3_dst_class_id_masked,
+                &oxm_entry,
                 &dst->masks.bsn_l3_dst_class_id);
             of_oxm_bsn_l3_dst_class_id_masked_value_get(
-                &oxm_entry.bsn_l3_dst_class_id,
+                &oxm_entry,
                 &dst->fields.bsn_l3_dst_class_id);
             of_memmask(&dst->fields.bsn_l3_dst_class_id, &dst->masks.bsn_l3_dst_class_id, sizeof(&dst->fields.bsn_l3_dst_class_id));
             break;
         case OF_OXM_BSN_L3_DST_CLASS_ID:
             OF_MATCH_MASK_BSN_L3_DST_CLASS_ID_EXACT_SET(dst);
             of_oxm_bsn_l3_dst_class_id_value_get(
-                &oxm_entry.bsn_l3_dst_class_id,
+                &oxm_entry,
                 &dst->fields.bsn_l3_dst_class_id);
             break;
 
         case OF_OXM_BSN_UDF3_MASKED:
             of_oxm_bsn_udf3_masked_value_mask_get(
-                &oxm_entry.bsn_udf3_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf3);
             of_oxm_bsn_udf3_masked_value_get(
-                &oxm_entry.bsn_udf3,
+                &oxm_entry,
                 &dst->fields.bsn_udf3);
             of_memmask(&dst->fields.bsn_udf3, &dst->masks.bsn_udf3, sizeof(&dst->fields.bsn_udf3));
             break;
         case OF_OXM_BSN_UDF3:
             OF_MATCH_MASK_BSN_UDF3_EXACT_SET(dst);
             of_oxm_bsn_udf3_value_get(
-                &oxm_entry.bsn_udf3,
+                &oxm_entry,
                 &dst->fields.bsn_udf3);
             break;
 
         case OF_OXM_BSN_UDF2_MASKED:
             of_oxm_bsn_udf2_masked_value_mask_get(
-                &oxm_entry.bsn_udf2_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf2);
             of_oxm_bsn_udf2_masked_value_get(
-                &oxm_entry.bsn_udf2,
+                &oxm_entry,
                 &dst->fields.bsn_udf2);
             of_memmask(&dst->fields.bsn_udf2, &dst->masks.bsn_udf2, sizeof(&dst->fields.bsn_udf2));
             break;
         case OF_OXM_BSN_UDF2:
             OF_MATCH_MASK_BSN_UDF2_EXACT_SET(dst);
             of_oxm_bsn_udf2_value_get(
-                &oxm_entry.bsn_udf2,
+                &oxm_entry,
                 &dst->fields.bsn_udf2);
             break;
 
         case OF_OXM_BSN_UDF5_MASKED:
             of_oxm_bsn_udf5_masked_value_mask_get(
-                &oxm_entry.bsn_udf5_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf5);
             of_oxm_bsn_udf5_masked_value_get(
-                &oxm_entry.bsn_udf5,
+                &oxm_entry,
                 &dst->fields.bsn_udf5);
             of_memmask(&dst->fields.bsn_udf5, &dst->masks.bsn_udf5, sizeof(&dst->fields.bsn_udf5));
             break;
         case OF_OXM_BSN_UDF5:
             OF_MATCH_MASK_BSN_UDF5_EXACT_SET(dst);
             of_oxm_bsn_udf5_value_get(
-                &oxm_entry.bsn_udf5,
+                &oxm_entry,
                 &dst->fields.bsn_udf5);
             break;
 
         case OF_OXM_BSN_UDF4_MASKED:
             of_oxm_bsn_udf4_masked_value_mask_get(
-                &oxm_entry.bsn_udf4_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf4);
             of_oxm_bsn_udf4_masked_value_get(
-                &oxm_entry.bsn_udf4,
+                &oxm_entry,
                 &dst->fields.bsn_udf4);
             of_memmask(&dst->fields.bsn_udf4, &dst->masks.bsn_udf4, sizeof(&dst->fields.bsn_udf4));
             break;
         case OF_OXM_BSN_UDF4:
             OF_MATCH_MASK_BSN_UDF4_EXACT_SET(dst);
             of_oxm_bsn_udf4_value_get(
-                &oxm_entry.bsn_udf4,
+                &oxm_entry,
                 &dst->fields.bsn_udf4);
             break;
 
         case OF_OXM_BSN_UDF7_MASKED:
             of_oxm_bsn_udf7_masked_value_mask_get(
-                &oxm_entry.bsn_udf7_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf7);
             of_oxm_bsn_udf7_masked_value_get(
-                &oxm_entry.bsn_udf7,
+                &oxm_entry,
                 &dst->fields.bsn_udf7);
             of_memmask(&dst->fields.bsn_udf7, &dst->masks.bsn_udf7, sizeof(&dst->fields.bsn_udf7));
             break;
         case OF_OXM_BSN_UDF7:
             OF_MATCH_MASK_BSN_UDF7_EXACT_SET(dst);
             of_oxm_bsn_udf7_value_get(
-                &oxm_entry.bsn_udf7,
+                &oxm_entry,
                 &dst->fields.bsn_udf7);
             break;
 
         case OF_OXM_BSN_UDF6_MASKED:
             of_oxm_bsn_udf6_masked_value_mask_get(
-                &oxm_entry.bsn_udf6_masked,
+                &oxm_entry,
                 &dst->masks.bsn_udf6);
             of_oxm_bsn_udf6_masked_value_get(
-                &oxm_entry.bsn_udf6,
+                &oxm_entry,
                 &dst->fields.bsn_udf6);
             of_memmask(&dst->fields.bsn_udf6, &dst->masks.bsn_udf6, sizeof(&dst->fields.bsn_udf6));
             break;
         case OF_OXM_BSN_UDF6:
             OF_MATCH_MASK_BSN_UDF6_EXACT_SET(dst);
             of_oxm_bsn_udf6_value_get(
-                &oxm_entry.bsn_udf6,
+                &oxm_entry,
                 &dst->fields.bsn_udf6);
             break;
 
         case OF_OXM_BSN_TCP_FLAGS_MASKED:
             of_oxm_bsn_tcp_flags_masked_value_mask_get(
-                &oxm_entry.bsn_tcp_flags_masked,
+                &oxm_entry,
                 &dst->masks.bsn_tcp_flags);
             of_oxm_bsn_tcp_flags_masked_value_get(
-                &oxm_entry.bsn_tcp_flags,
+                &oxm_entry,
                 &dst->fields.bsn_tcp_flags);
             of_memmask(&dst->fields.bsn_tcp_flags, &dst->masks.bsn_tcp_flags, sizeof(&dst->fields.bsn_tcp_flags));
             break;
         case OF_OXM_BSN_TCP_FLAGS:
             OF_MATCH_MASK_BSN_TCP_FLAGS_EXACT_SET(dst);
             of_oxm_bsn_tcp_flags_value_get(
-                &oxm_entry.bsn_tcp_flags,
+                &oxm_entry,
                 &dst->fields.bsn_tcp_flags);
             break;
 
         case OF_OXM_IP_DSCP_MASKED:
             of_oxm_ip_dscp_masked_value_mask_get(
-                &oxm_entry.ip_dscp_masked,
+                &oxm_entry,
                 &dst->masks.ip_dscp);
             of_oxm_ip_dscp_masked_value_get(
-                &oxm_entry.ip_dscp,
+                &oxm_entry,
                 &dst->fields.ip_dscp);
             of_memmask(&dst->fields.ip_dscp, &dst->masks.ip_dscp, sizeof(&dst->fields.ip_dscp));
             break;
         case OF_OXM_IP_DSCP:
             OF_MATCH_MASK_IP_DSCP_EXACT_SET(dst);
             of_oxm_ip_dscp_value_get(
-                &oxm_entry.ip_dscp,
+                &oxm_entry,
                 &dst->fields.ip_dscp);
             break;
 

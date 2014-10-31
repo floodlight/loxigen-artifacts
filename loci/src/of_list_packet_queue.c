@@ -40,12 +40,12 @@
  */
 
 int
-of_list_packet_queue_first(of_list_packet_queue_t *list, of_packet_queue_t *_obj)
+of_list_packet_queue_first(of_list_packet_queue_t *list, of_list_iter_t iter)
 {
     int rv;
-    of_object_t *obj = (of_object_t *)_obj;
+    of_object_t *obj = iter.obj;
 
-    of_packet_queue_init(_obj, list->version, -1, 1);
+    of_packet_queue_init(obj, list->version, -1, 1);
 
     if ((rv = of_list_first(list, obj)) < 0) {
         return rv;
@@ -66,10 +66,10 @@ of_list_packet_queue_first(of_list_packet_queue_t *list, of_packet_queue_t *_obj
  */
 
 int
-of_list_packet_queue_next(of_list_packet_queue_t *list, of_packet_queue_t *_obj)
+of_list_packet_queue_next(of_list_packet_queue_t *list, of_list_iter_t iter)
 {
     int rv;
-    of_object_t *obj = (of_object_t *)_obj;
+    of_object_t *obj = iter.obj;
 
     if ((rv = of_list_next(list, obj)) < 0) {
         return rv;
@@ -93,9 +93,9 @@ of_list_packet_queue_next(of_list_packet_queue_t *list, of_packet_queue_t *_obj)
  */
 
 int
-of_list_packet_queue_append_bind(of_list_packet_queue_t *list, of_packet_queue_t *obj)
+of_list_packet_queue_append_bind(of_list_packet_queue_t *list, of_list_iter_t iter)
 {
-    return of_list_append_bind(list, (of_object_t *)obj);
+    return of_list_append_bind(list, iter.obj);
 }
 
 /**
@@ -107,9 +107,9 @@ of_list_packet_queue_append_bind(of_list_packet_queue_t *list, of_packet_queue_t
  */
 
 int
-of_list_packet_queue_append(of_list_packet_queue_t *list, of_packet_queue_t *obj)
+of_list_packet_queue_append(of_list_packet_queue_t *list, of_list_iter_t iter)
 {
-    return of_list_append(list, (of_object_t *)obj);
+    return of_list_append(list, iter.obj);
 }
 
 /**
@@ -128,15 +128,15 @@ of_list_packet_queue_append(of_list_packet_queue_t *list, of_packet_queue_t *obj
  * \ingroup of_list_packet_queue
  */
 
-of_list_packet_queue_t *
+of_object_t *
 of_list_packet_queue_new(of_version_t version)
 {
-    of_list_packet_queue_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_LIST_PACKET_QUEUE];
 
-    if ((obj = (of_list_packet_queue_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -163,10 +163,9 @@ of_list_packet_queue_new(of_version_t version)
  */
 
 void
-of_list_packet_queue_init(of_list_packet_queue_t *obj,
+of_list_packet_queue_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_LIST_PACKET_QUEUE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -186,4 +185,3 @@ of_list_packet_queue_init(of_list_packet_queue_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-

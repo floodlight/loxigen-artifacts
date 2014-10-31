@@ -64,15 +64,15 @@ of_bsn_debug_counter_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_debug_counter_stats_reply
  */
 
-of_bsn_debug_counter_stats_reply_t *
+of_object_t *
 of_bsn_debug_counter_stats_reply_new(of_version_t version)
 {
-    of_bsn_debug_counter_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY];
 
-    if ((obj = (of_bsn_debug_counter_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -101,10 +101,9 @@ of_bsn_debug_counter_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_debug_counter_stats_reply_init(of_bsn_debug_counter_stats_reply_t *obj,
+of_bsn_debug_counter_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -124,7 +123,6 @@ of_bsn_debug_counter_stats_reply_init(of_bsn_debug_counter_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_debug_counter_stats_reply.
@@ -645,15 +643,15 @@ of_bsn_debug_counter_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_debug_counter_stats_request
  */
 
-of_bsn_debug_counter_stats_request_t *
+of_object_t *
 of_bsn_debug_counter_stats_request_new(of_version_t version)
 {
-    of_bsn_debug_counter_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST];
 
-    if ((obj = (of_bsn_debug_counter_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -682,10 +680,9 @@ of_bsn_debug_counter_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_debug_counter_stats_request_init(of_bsn_debug_counter_stats_request_t *obj,
+of_bsn_debug_counter_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_DEBUG_COUNTER_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -705,7 +702,6 @@ of_bsn_debug_counter_stats_request_init(of_bsn_debug_counter_stats_request_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_debug_counter_stats_request.
@@ -1067,15 +1063,15 @@ of_bsn_debug_counter_stats_request_subtype_set(
  * \ingroup of_bsn_flow_checksum_bucket_stats_entry
  */
 
-of_bsn_flow_checksum_bucket_stats_entry_t *
+of_object_t *
 of_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version)
 {
-    of_bsn_flow_checksum_bucket_stats_entry_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY];
 
-    if ((obj = (of_bsn_flow_checksum_bucket_stats_entry_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1102,10 +1098,9 @@ of_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version)
  */
 
 void
-of_bsn_flow_checksum_bucket_stats_entry_init(of_bsn_flow_checksum_bucket_stats_entry_t *obj,
+of_bsn_flow_checksum_bucket_stats_entry_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1125,7 +1120,6 @@ of_bsn_flow_checksum_bucket_stats_entry_init(of_bsn_flow_checksum_bucket_stats_e
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get checksum from an object of type of_bsn_flow_checksum_bucket_stats_entry.
@@ -1270,15 +1264,15 @@ of_bsn_flow_checksum_bucket_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_checksum_bucket_stats_reply
  */
 
-of_bsn_flow_checksum_bucket_stats_reply_t *
+of_object_t *
 of_bsn_flow_checksum_bucket_stats_reply_new(of_version_t version)
 {
-    of_bsn_flow_checksum_bucket_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY];
 
-    if ((obj = (of_bsn_flow_checksum_bucket_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -1307,10 +1301,9 @@ of_bsn_flow_checksum_bucket_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_flow_checksum_bucket_stats_reply_init(of_bsn_flow_checksum_bucket_stats_reply_t *obj,
+of_bsn_flow_checksum_bucket_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1330,7 +1323,6 @@ of_bsn_flow_checksum_bucket_stats_reply_init(of_bsn_flow_checksum_bucket_stats_r
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_checksum_bucket_stats_reply.
@@ -1851,15 +1843,15 @@ of_bsn_flow_checksum_bucket_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_checksum_bucket_stats_request
  */
 
-of_bsn_flow_checksum_bucket_stats_request_t *
+of_object_t *
 of_bsn_flow_checksum_bucket_stats_request_new(of_version_t version)
 {
-    of_bsn_flow_checksum_bucket_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST];
 
-    if ((obj = (of_bsn_flow_checksum_bucket_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1888,10 +1880,9 @@ of_bsn_flow_checksum_bucket_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_flow_checksum_bucket_stats_request_init(of_bsn_flow_checksum_bucket_stats_request_t *obj,
+of_bsn_flow_checksum_bucket_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1911,7 +1902,6 @@ of_bsn_flow_checksum_bucket_stats_request_init(of_bsn_flow_checksum_bucket_stats
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_checksum_bucket_stats_request.
@@ -2367,15 +2357,15 @@ of_bsn_flow_idle_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_idle
  */
 
-of_bsn_flow_idle_t *
+of_object_t *
 of_bsn_flow_idle_new(of_version_t version)
 {
-    of_bsn_flow_idle_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE];
 
-    if ((obj = (of_bsn_flow_idle_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -2404,10 +2394,9 @@ of_bsn_flow_idle_new(of_version_t version)
  */
 
 void
-of_bsn_flow_idle_init(of_bsn_flow_idle_t *obj,
+of_bsn_flow_idle_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_IDLE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2427,7 +2416,6 @@ of_bsn_flow_idle_init(of_bsn_flow_idle_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_idle.
@@ -3070,15 +3058,15 @@ of_bsn_flow_idle_enable_get_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_idle_enable_get_reply
  */
 
-of_bsn_flow_idle_enable_get_reply_t *
+of_object_t *
 of_bsn_flow_idle_enable_get_reply_new(of_version_t version)
 {
-    of_bsn_flow_idle_enable_get_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY];
 
-    if ((obj = (of_bsn_flow_idle_enable_get_reply_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3107,10 +3095,9 @@ of_bsn_flow_idle_enable_get_reply_new(of_version_t version)
  */
 
 void
-of_bsn_flow_idle_enable_get_reply_init(of_bsn_flow_idle_enable_get_reply_t *obj,
+of_bsn_flow_idle_enable_get_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3130,7 +3117,6 @@ of_bsn_flow_idle_enable_get_reply_init(of_bsn_flow_idle_enable_get_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_get_reply.
@@ -3508,15 +3494,15 @@ of_bsn_flow_idle_enable_get_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_idle_enable_get_request
  */
 
-of_bsn_flow_idle_enable_get_request_t *
+of_object_t *
 of_bsn_flow_idle_enable_get_request_new(of_version_t version)
 {
-    of_bsn_flow_idle_enable_get_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST];
 
-    if ((obj = (of_bsn_flow_idle_enable_get_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3545,10 +3531,9 @@ of_bsn_flow_idle_enable_get_request_new(of_version_t version)
  */
 
 void
-of_bsn_flow_idle_enable_get_request_init(of_bsn_flow_idle_enable_get_request_t *obj,
+of_bsn_flow_idle_enable_get_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3568,7 +3553,6 @@ of_bsn_flow_idle_enable_get_request_init(of_bsn_flow_idle_enable_get_request_t *
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_get_request.
@@ -3868,15 +3852,15 @@ of_bsn_flow_idle_enable_set_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_idle_enable_set_reply
  */
 
-of_bsn_flow_idle_enable_set_reply_t *
+of_object_t *
 of_bsn_flow_idle_enable_set_reply_new(of_version_t version)
 {
-    of_bsn_flow_idle_enable_set_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY];
 
-    if ((obj = (of_bsn_flow_idle_enable_set_reply_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3905,10 +3889,9 @@ of_bsn_flow_idle_enable_set_reply_new(of_version_t version)
  */
 
 void
-of_bsn_flow_idle_enable_set_reply_init(of_bsn_flow_idle_enable_set_reply_t *obj,
+of_bsn_flow_idle_enable_set_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3928,7 +3911,6 @@ of_bsn_flow_idle_enable_set_reply_init(of_bsn_flow_idle_enable_set_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_set_reply.
@@ -4384,15 +4366,15 @@ of_bsn_flow_idle_enable_set_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_flow_idle_enable_set_request
  */
 
-of_bsn_flow_idle_enable_set_request_t *
+of_object_t *
 of_bsn_flow_idle_enable_set_request_new(of_version_t version)
 {
-    of_bsn_flow_idle_enable_set_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST];
 
-    if ((obj = (of_bsn_flow_idle_enable_set_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4421,10 +4403,9 @@ of_bsn_flow_idle_enable_set_request_new(of_version_t version)
  */
 
 void
-of_bsn_flow_idle_enable_set_request_init(of_bsn_flow_idle_enable_set_request_t *obj,
+of_bsn_flow_idle_enable_set_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4444,7 +4425,6 @@ of_bsn_flow_idle_enable_set_request_init(of_bsn_flow_idle_enable_set_request_t *
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_flow_idle_enable_set_request.
@@ -4806,15 +4786,15 @@ of_bsn_flow_idle_enable_set_request_enable_set(
  * \ingroup of_bsn_gentable_bucket_stats_entry
  */
 
-of_bsn_gentable_bucket_stats_entry_t *
+of_object_t *
 of_bsn_gentable_bucket_stats_entry_new(of_version_t version)
 {
-    of_bsn_gentable_bucket_stats_entry_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY];
 
-    if ((obj = (of_bsn_gentable_bucket_stats_entry_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4841,10 +4821,9 @@ of_bsn_gentable_bucket_stats_entry_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_bucket_stats_entry_init(of_bsn_gentable_bucket_stats_entry_t *obj,
+of_bsn_gentable_bucket_stats_entry_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4864,7 +4843,6 @@ of_bsn_gentable_bucket_stats_entry_init(of_bsn_gentable_bucket_stats_entry_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get checksum from an object of type of_bsn_gentable_bucket_stats_entry.
@@ -5009,15 +4987,15 @@ of_bsn_gentable_bucket_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_bucket_stats_reply
  */
 
-of_bsn_gentable_bucket_stats_reply_t *
+of_object_t *
 of_bsn_gentable_bucket_stats_reply_new(of_version_t version)
 {
-    of_bsn_gentable_bucket_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY];
 
-    if ((obj = (of_bsn_gentable_bucket_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -5046,10 +5024,9 @@ of_bsn_gentable_bucket_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_bucket_stats_reply_init(of_bsn_gentable_bucket_stats_reply_t *obj,
+of_bsn_gentable_bucket_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5069,7 +5046,6 @@ of_bsn_gentable_bucket_stats_reply_init(of_bsn_gentable_bucket_stats_reply_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_bucket_stats_reply.
@@ -5590,15 +5566,15 @@ of_bsn_gentable_bucket_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_bucket_stats_request
  */
 
-of_bsn_gentable_bucket_stats_request_t *
+of_object_t *
 of_bsn_gentable_bucket_stats_request_new(of_version_t version)
 {
-    of_bsn_gentable_bucket_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST];
 
-    if ((obj = (of_bsn_gentable_bucket_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5627,10 +5603,9 @@ of_bsn_gentable_bucket_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_bucket_stats_request_init(of_bsn_gentable_bucket_stats_request_t *obj,
+of_bsn_gentable_bucket_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_BUCKET_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5650,7 +5625,6 @@ of_bsn_gentable_bucket_stats_request_init(of_bsn_gentable_bucket_stats_request_t
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_bucket_stats_request.
@@ -6106,15 +6080,15 @@ of_bsn_gentable_clear_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_clear_reply
  */
 
-of_bsn_gentable_clear_reply_t *
+of_object_t *
 of_bsn_gentable_clear_reply_new(of_version_t version)
 {
-    of_bsn_gentable_clear_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REPLY];
 
-    if ((obj = (of_bsn_gentable_clear_reply_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6143,10 +6117,9 @@ of_bsn_gentable_clear_reply_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_clear_reply_init(of_bsn_gentable_clear_reply_t *obj,
+of_bsn_gentable_clear_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6166,7 +6139,6 @@ of_bsn_gentable_clear_reply_init(of_bsn_gentable_clear_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_clear_reply.
@@ -6700,15 +6672,15 @@ of_bsn_gentable_clear_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_clear_request
  */
 
-of_bsn_gentable_clear_request_t *
+of_object_t *
 of_bsn_gentable_clear_request_new(of_version_t version)
 {
-    of_bsn_gentable_clear_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST];
 
-    if ((obj = (of_bsn_gentable_clear_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6737,10 +6709,9 @@ of_bsn_gentable_clear_request_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_clear_request_init(of_bsn_gentable_clear_request_t *obj,
+of_bsn_gentable_clear_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_CLEAR_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6760,7 +6731,6 @@ of_bsn_gentable_clear_request_init(of_bsn_gentable_clear_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_clear_request.
@@ -7278,15 +7248,15 @@ of_bsn_gentable_clear_request_checksum_mask_set(
  * \ingroup of_bsn_gentable_desc_stats_entry
  */
 
-of_bsn_gentable_desc_stats_entry_t *
+of_object_t *
 of_bsn_gentable_desc_stats_entry_new(of_version_t version)
 {
-    of_bsn_gentable_desc_stats_entry_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY];
 
-    if ((obj = (of_bsn_gentable_desc_stats_entry_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7314,10 +7284,9 @@ of_bsn_gentable_desc_stats_entry_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_desc_stats_entry_init(of_bsn_gentable_desc_stats_entry_t *obj,
+of_bsn_gentable_desc_stats_entry_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7337,7 +7306,6 @@ of_bsn_gentable_desc_stats_entry_init(of_bsn_gentable_desc_stats_entry_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get table_id from an object of type of_bsn_gentable_desc_stats_entry.
@@ -7716,15 +7684,15 @@ of_bsn_gentable_desc_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_desc_stats_reply
  */
 
-of_bsn_gentable_desc_stats_reply_t *
+of_object_t *
 of_bsn_gentable_desc_stats_reply_new(of_version_t version)
 {
-    of_bsn_gentable_desc_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY];
 
-    if ((obj = (of_bsn_gentable_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7753,10 +7721,9 @@ of_bsn_gentable_desc_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_desc_stats_reply_init(of_bsn_gentable_desc_stats_reply_t *obj,
+of_bsn_gentable_desc_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7776,7 +7743,6 @@ of_bsn_gentable_desc_stats_reply_init(of_bsn_gentable_desc_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_desc_stats_reply.
@@ -8297,15 +8263,15 @@ of_bsn_gentable_desc_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_desc_stats_request
  */
 
-of_bsn_gentable_desc_stats_request_t *
+of_object_t *
 of_bsn_gentable_desc_stats_request_new(of_version_t version)
 {
-    of_bsn_gentable_desc_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST];
 
-    if ((obj = (of_bsn_gentable_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8334,10 +8300,9 @@ of_bsn_gentable_desc_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_desc_stats_request_init(of_bsn_gentable_desc_stats_request_t *obj,
+of_bsn_gentable_desc_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_DESC_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -8357,7 +8322,6 @@ of_bsn_gentable_desc_stats_request_init(of_bsn_gentable_desc_stats_request_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_desc_stats_request.
@@ -8735,15 +8699,15 @@ of_bsn_gentable_entry_add_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_entry_add
  */
 
-of_bsn_gentable_entry_add_t *
+of_object_t *
 of_bsn_gentable_entry_add_new(of_version_t version)
 {
-    of_bsn_gentable_entry_add_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_ADD];
 
-    if ((obj = (of_bsn_gentable_entry_add_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -8772,10 +8736,9 @@ of_bsn_gentable_entry_add_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_add_init(of_bsn_gentable_entry_add_t *obj,
+of_bsn_gentable_entry_add_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_ADD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -8795,7 +8758,6 @@ of_bsn_gentable_entry_add_init(of_bsn_gentable_entry_add_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_add.
@@ -9535,15 +9497,15 @@ of_bsn_gentable_entry_delete_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_entry_delete
  */
 
-of_bsn_gentable_entry_delete_t *
+of_object_t *
 of_bsn_gentable_entry_delete_new(of_version_t version)
 {
-    of_bsn_gentable_entry_delete_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DELETE];
 
-    if ((obj = (of_bsn_gentable_entry_delete_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9572,10 +9534,9 @@ of_bsn_gentable_entry_delete_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_delete_init(of_bsn_gentable_entry_delete_t *obj,
+of_bsn_gentable_entry_delete_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DELETE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -9595,7 +9556,6 @@ of_bsn_gentable_entry_delete_init(of_bsn_gentable_entry_delete_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_delete.
@@ -10099,15 +10059,15 @@ of_bsn_gentable_entry_delete_key_set(
  * \ingroup of_bsn_gentable_entry_desc_stats_entry
  */
 
-of_bsn_gentable_entry_desc_stats_entry_t *
+of_object_t *
 of_bsn_gentable_entry_desc_stats_entry_new(of_version_t version)
 {
-    of_bsn_gentable_entry_desc_stats_entry_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY];
 
-    if ((obj = (of_bsn_gentable_entry_desc_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -10135,10 +10095,9 @@ of_bsn_gentable_entry_desc_stats_entry_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_desc_stats_entry_init(of_bsn_gentable_entry_desc_stats_entry_t *obj,
+of_bsn_gentable_entry_desc_stats_entry_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -10158,7 +10117,6 @@ of_bsn_gentable_entry_desc_stats_entry_init(of_bsn_gentable_entry_desc_stats_ent
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get checksum from an object of type of_bsn_gentable_entry_desc_stats_entry.
@@ -10587,15 +10545,15 @@ of_bsn_gentable_entry_desc_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_entry_desc_stats_reply
  */
 
-of_bsn_gentable_entry_desc_stats_reply_t *
+of_object_t *
 of_bsn_gentable_entry_desc_stats_reply_new(of_version_t version)
 {
-    of_bsn_gentable_entry_desc_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY];
 
-    if ((obj = (of_bsn_gentable_entry_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -10624,10 +10582,9 @@ of_bsn_gentable_entry_desc_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_desc_stats_reply_init(of_bsn_gentable_entry_desc_stats_reply_t *obj,
+of_bsn_gentable_entry_desc_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -10647,7 +10604,6 @@ of_bsn_gentable_entry_desc_stats_reply_init(of_bsn_gentable_entry_desc_stats_rep
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_desc_stats_reply.
@@ -11168,15 +11124,15 @@ of_bsn_gentable_entry_desc_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_entry_desc_stats_request
  */
 
-of_bsn_gentable_entry_desc_stats_request_t *
+of_object_t *
 of_bsn_gentable_entry_desc_stats_request_new(of_version_t version)
 {
-    of_bsn_gentable_entry_desc_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST];
 
-    if ((obj = (of_bsn_gentable_entry_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -11205,10 +11161,9 @@ of_bsn_gentable_entry_desc_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_desc_stats_request_init(of_bsn_gentable_entry_desc_stats_request_t *obj,
+of_bsn_gentable_entry_desc_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -11228,7 +11183,6 @@ of_bsn_gentable_entry_desc_stats_request_init(of_bsn_gentable_entry_desc_stats_r
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_desc_stats_request.
@@ -11824,15 +11778,15 @@ of_bsn_gentable_entry_desc_stats_request_checksum_mask_set(
  * \ingroup of_bsn_gentable_entry_stats_entry
  */
 
-of_bsn_gentable_entry_stats_entry_t *
+of_object_t *
 of_bsn_gentable_entry_stats_entry_new(of_version_t version)
 {
-    of_bsn_gentable_entry_stats_entry_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY];
 
-    if ((obj = (of_bsn_gentable_entry_stats_entry_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -11860,10 +11814,9 @@ of_bsn_gentable_entry_stats_entry_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_stats_entry_init(of_bsn_gentable_entry_stats_entry_t *obj,
+of_bsn_gentable_entry_stats_entry_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -11883,7 +11836,6 @@ of_bsn_gentable_entry_stats_entry_init(of_bsn_gentable_entry_stats_entry_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_bsn_tlv_t to the parent of type of_bsn_gentable_entry_stats_entry for
@@ -12234,15 +12186,15 @@ of_bsn_gentable_entry_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_entry_stats_reply
  */
 
-of_bsn_gentable_entry_stats_reply_t *
+of_object_t *
 of_bsn_gentable_entry_stats_reply_new(of_version_t version)
 {
-    of_bsn_gentable_entry_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY];
 
-    if ((obj = (of_bsn_gentable_entry_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -12271,10 +12223,9 @@ of_bsn_gentable_entry_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_stats_reply_init(of_bsn_gentable_entry_stats_reply_t *obj,
+of_bsn_gentable_entry_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -12294,7 +12245,6 @@ of_bsn_gentable_entry_stats_reply_init(of_bsn_gentable_entry_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_stats_reply.
@@ -12815,15 +12765,15 @@ of_bsn_gentable_entry_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_entry_stats_request
  */
 
-of_bsn_gentable_entry_stats_request_t *
+of_object_t *
 of_bsn_gentable_entry_stats_request_new(of_version_t version)
 {
-    of_bsn_gentable_entry_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST];
 
-    if ((obj = (of_bsn_gentable_entry_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -12852,10 +12802,9 @@ of_bsn_gentable_entry_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_entry_stats_request_init(of_bsn_gentable_entry_stats_request_t *obj,
+of_bsn_gentable_entry_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_ENTRY_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -12875,7 +12824,6 @@ of_bsn_gentable_entry_stats_request_init(of_bsn_gentable_entry_stats_request_t *
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_entry_stats_request.
@@ -13487,15 +13435,15 @@ of_bsn_gentable_set_buckets_size_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_set_buckets_size
  */
 
-of_bsn_gentable_set_buckets_size_t *
+of_object_t *
 of_bsn_gentable_set_buckets_size_new(of_version_t version)
 {
-    of_bsn_gentable_set_buckets_size_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE];
 
-    if ((obj = (of_bsn_gentable_set_buckets_size_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -13524,10 +13472,9 @@ of_bsn_gentable_set_buckets_size_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_set_buckets_size_init(of_bsn_gentable_set_buckets_size_t *obj,
+of_bsn_gentable_set_buckets_size_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_SET_BUCKETS_SIZE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -13547,7 +13494,6 @@ of_bsn_gentable_set_buckets_size_init(of_bsn_gentable_set_buckets_size_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_set_buckets_size.
@@ -13987,15 +13933,15 @@ of_bsn_gentable_set_buckets_size_buckets_size_set(
  * \ingroup of_bsn_gentable_stats_entry
  */
 
-of_bsn_gentable_stats_entry_t *
+of_object_t *
 of_bsn_gentable_stats_entry_new(of_version_t version)
 {
-    of_bsn_gentable_stats_entry_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_ENTRY];
 
-    if ((obj = (of_bsn_gentable_stats_entry_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -14022,10 +13968,9 @@ of_bsn_gentable_stats_entry_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_stats_entry_init(of_bsn_gentable_stats_entry_t *obj,
+of_bsn_gentable_stats_entry_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_ENTRY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -14045,7 +13990,6 @@ of_bsn_gentable_stats_entry_init(of_bsn_gentable_stats_entry_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get table_id from an object of type of_bsn_gentable_stats_entry.
@@ -14346,15 +14290,15 @@ of_bsn_gentable_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_stats_reply
  */
 
-of_bsn_gentable_stats_reply_t *
+of_object_t *
 of_bsn_gentable_stats_reply_new(of_version_t version)
 {
-    of_bsn_gentable_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REPLY];
 
-    if ((obj = (of_bsn_gentable_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -14383,10 +14327,9 @@ of_bsn_gentable_stats_reply_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_stats_reply_init(of_bsn_gentable_stats_reply_t *obj,
+of_bsn_gentable_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -14406,7 +14349,6 @@ of_bsn_gentable_stats_reply_init(of_bsn_gentable_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_stats_reply.
@@ -14927,15 +14869,15 @@ of_bsn_gentable_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_gentable_stats_request
  */
 
-of_bsn_gentable_stats_request_t *
+of_object_t *
 of_bsn_gentable_stats_request_new(of_version_t version)
 {
-    of_bsn_gentable_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REQUEST];
 
-    if ((obj = (of_bsn_gentable_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -14964,10 +14906,9 @@ of_bsn_gentable_stats_request_new(of_version_t version)
  */
 
 void
-of_bsn_gentable_stats_request_init(of_bsn_gentable_stats_request_t *obj,
+of_bsn_gentable_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GENTABLE_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -14987,7 +14928,6 @@ of_bsn_gentable_stats_request_init(of_bsn_gentable_stats_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_gentable_stats_request.
@@ -15365,15 +15305,15 @@ of_bsn_get_switch_pipeline_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_get_switch_pipeline_reply
  */
 
-of_bsn_get_switch_pipeline_reply_t *
+of_object_t *
 of_bsn_get_switch_pipeline_reply_new(of_version_t version)
 {
-    of_bsn_get_switch_pipeline_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY];
 
-    if ((obj = (of_bsn_get_switch_pipeline_reply_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15402,10 +15342,9 @@ of_bsn_get_switch_pipeline_reply_new(of_version_t version)
  */
 
 void
-of_bsn_get_switch_pipeline_reply_init(of_bsn_get_switch_pipeline_reply_t *obj,
+of_bsn_get_switch_pipeline_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -15425,7 +15364,6 @@ of_bsn_get_switch_pipeline_reply_init(of_bsn_get_switch_pipeline_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_get_switch_pipeline_reply.
@@ -15803,15 +15741,15 @@ of_bsn_get_switch_pipeline_request_push_wire_types(of_object_t *obj)
  * \ingroup of_bsn_get_switch_pipeline_request
  */
 
-of_bsn_get_switch_pipeline_request_t *
+of_object_t *
 of_bsn_get_switch_pipeline_request_new(of_version_t version)
 {
-    of_bsn_get_switch_pipeline_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST];
 
-    if ((obj = (of_bsn_get_switch_pipeline_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -15840,10 +15778,9 @@ of_bsn_get_switch_pipeline_request_new(of_version_t version)
  */
 
 void
-of_bsn_get_switch_pipeline_request_init(of_bsn_get_switch_pipeline_request_t *obj,
+of_bsn_get_switch_pipeline_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_GET_SWITCH_PIPELINE_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -15863,7 +15800,6 @@ of_bsn_get_switch_pipeline_request_init(of_bsn_get_switch_pipeline_request_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bsn_get_switch_pipeline_request.

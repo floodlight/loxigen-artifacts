@@ -63,15 +63,15 @@ of_meter_config_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_config_stats_reply
  */
 
-of_meter_config_stats_reply_t *
+of_object_t *
 of_meter_config_stats_reply_new(of_version_t version)
 {
-    of_meter_config_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REPLY];
 
-    if ((obj = (of_meter_config_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -100,10 +100,9 @@ of_meter_config_stats_reply_new(of_version_t version)
  */
 
 void
-of_meter_config_stats_reply_init(of_meter_config_stats_reply_t *obj,
+of_meter_config_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_CONFIG_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -123,7 +122,6 @@ of_meter_config_stats_reply_init(of_meter_config_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_config_stats_reply.
@@ -493,15 +491,15 @@ of_meter_config_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_config_stats_request
  */
 
-of_meter_config_stats_request_t *
+of_object_t *
 of_meter_config_stats_request_new(of_version_t version)
 {
-    of_meter_config_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_CONFIG_STATS_REQUEST];
 
-    if ((obj = (of_meter_config_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -530,10 +528,9 @@ of_meter_config_stats_request_new(of_version_t version)
  */
 
 void
-of_meter_config_stats_request_init(of_meter_config_stats_request_t *obj,
+of_meter_config_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_CONFIG_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -553,7 +550,6 @@ of_meter_config_stats_request_init(of_meter_config_stats_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_config_stats_request.
@@ -843,15 +839,15 @@ of_meter_config_stats_request_meter_id_set(
  * \ingroup of_meter_features
  */
 
-of_meter_features_t *
+of_object_t *
 of_meter_features_new(of_version_t version)
 {
-    of_meter_features_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_FEATURES];
 
-    if ((obj = (of_meter_features_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -878,10 +874,9 @@ of_meter_features_new(of_version_t version)
  */
 
 void
-of_meter_features_init(of_meter_features_t *obj,
+of_meter_features_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_FEATURES] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -901,7 +896,6 @@ of_meter_features_init(of_meter_features_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get max_meter from an object of type of_meter_features.
@@ -1367,15 +1361,15 @@ of_meter_features_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_features_stats_reply
  */
 
-of_meter_features_stats_reply_t *
+of_object_t *
 of_meter_features_stats_reply_new(of_version_t version)
 {
-    of_meter_features_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REPLY];
 
-    if ((obj = (of_meter_features_stats_reply_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1404,10 +1398,9 @@ of_meter_features_stats_reply_new(of_version_t version)
  */
 
 void
-of_meter_features_stats_reply_init(of_meter_features_stats_reply_t *obj,
+of_meter_features_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_FEATURES_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1427,7 +1420,6 @@ of_meter_features_stats_reply_init(of_meter_features_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_features_stats_reply.
@@ -1797,15 +1789,15 @@ of_meter_features_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_features_stats_request
  */
 
-of_meter_features_stats_request_t *
+of_object_t *
 of_meter_features_stats_request_new(of_version_t version)
 {
-    of_meter_features_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_FEATURES_STATS_REQUEST];
 
-    if ((obj = (of_meter_features_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1834,10 +1826,9 @@ of_meter_features_stats_request_new(of_version_t version)
  */
 
 void
-of_meter_features_stats_request_init(of_meter_features_stats_request_t *obj,
+of_meter_features_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_FEATURES_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1857,7 +1848,6 @@ of_meter_features_stats_request_init(of_meter_features_stats_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_features_stats_request.
@@ -2082,15 +2072,15 @@ of_meter_mod_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_mod
  */
 
-of_meter_mod_t *
+of_object_t *
 of_meter_mod_new(of_version_t version)
 {
-    of_meter_mod_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_MOD];
 
-    if ((obj = (of_meter_mod_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -2119,10 +2109,9 @@ of_meter_mod_new(of_version_t version)
  */
 
 void
-of_meter_mod_init(of_meter_mod_t *obj,
+of_meter_mod_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_MOD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2142,7 +2131,6 @@ of_meter_mod_init(of_meter_mod_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_mod.
@@ -2732,15 +2720,15 @@ of_meter_mod_failed_error_msg_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_mod_failed_error_msg
  */
 
-of_meter_mod_failed_error_msg_t *
+of_object_t *
 of_meter_mod_failed_error_msg_new(of_version_t version)
 {
-    of_meter_mod_failed_error_msg_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_MOD_FAILED_ERROR_MSG];
 
-    if ((obj = (of_meter_mod_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -2769,10 +2757,9 @@ of_meter_mod_failed_error_msg_new(of_version_t version)
  */
 
 void
-of_meter_mod_failed_error_msg_init(of_meter_mod_failed_error_msg_t *obj,
+of_meter_mod_failed_error_msg_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_MOD_FAILED_ERROR_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2792,7 +2779,6 @@ of_meter_mod_failed_error_msg_init(of_meter_mod_failed_error_msg_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_mod_failed_error_msg.
@@ -3100,15 +3086,15 @@ of_meter_mod_failed_error_msg_data_set(
  * \ingroup of_meter_stats
  */
 
-of_meter_stats_t *
+of_object_t *
 of_meter_stats_new(of_version_t version)
 {
-    of_meter_stats_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_STATS];
 
-    if ((obj = (of_meter_stats_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -3136,10 +3122,9 @@ of_meter_stats_new(of_version_t version)
  */
 
 void
-of_meter_stats_init(of_meter_stats_t *obj,
+of_meter_stats_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_STATS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3159,7 +3144,6 @@ of_meter_stats_init(of_meter_stats_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get meter_id from an object of type of_meter_stats.
@@ -3849,15 +3833,15 @@ of_meter_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_stats_reply
  */
 
-of_meter_stats_reply_t *
+of_object_t *
 of_meter_stats_reply_new(of_version_t version)
 {
-    of_meter_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_STATS_REPLY];
 
-    if ((obj = (of_meter_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -3886,10 +3870,9 @@ of_meter_stats_reply_new(of_version_t version)
  */
 
 void
-of_meter_stats_reply_init(of_meter_stats_reply_t *obj,
+of_meter_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3909,7 +3892,6 @@ of_meter_stats_reply_init(of_meter_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_stats_reply.
@@ -4279,15 +4261,15 @@ of_meter_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_meter_stats_request
  */
 
-of_meter_stats_request_t *
+of_object_t *
 of_meter_stats_request_new(of_version_t version)
 {
-    of_meter_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_METER_STATS_REQUEST];
 
-    if ((obj = (of_meter_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4316,10 +4298,9 @@ of_meter_stats_request_new(of_version_t version)
  */
 
 void
-of_meter_stats_request_init(of_meter_stats_request_t *obj,
+of_meter_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_METER_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4339,7 +4320,6 @@ of_meter_stats_request_init(of_meter_stats_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_meter_stats_request.
@@ -4643,15 +4623,15 @@ of_oxm_mpls_bos_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_mpls_bos
  */
 
-of_oxm_mpls_bos_t *
+of_object_t *
 of_oxm_mpls_bos_new(of_version_t version)
 {
-    of_oxm_mpls_bos_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS];
 
-    if ((obj = (of_oxm_mpls_bos_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4679,10 +4659,9 @@ of_oxm_mpls_bos_new(of_version_t version)
  */
 
 void
-of_oxm_mpls_bos_init(of_oxm_mpls_bos_t *obj,
+of_oxm_mpls_bos_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_MPLS_BOS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4702,7 +4681,6 @@ of_oxm_mpls_bos_init(of_oxm_mpls_bos_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_mpls_bos.
@@ -4846,15 +4824,15 @@ of_oxm_mpls_bos_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_mpls_bos_masked
  */
 
-of_oxm_mpls_bos_masked_t *
+of_object_t *
 of_oxm_mpls_bos_masked_new(of_version_t version)
 {
-    of_oxm_mpls_bos_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_MPLS_BOS_MASKED];
 
-    if ((obj = (of_oxm_mpls_bos_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4882,10 +4860,9 @@ of_oxm_mpls_bos_masked_new(of_version_t version)
  */
 
 void
-of_oxm_mpls_bos_masked_init(of_oxm_mpls_bos_masked_t *obj,
+of_oxm_mpls_bos_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_MPLS_BOS_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4905,7 +4882,6 @@ of_oxm_mpls_bos_masked_init(of_oxm_mpls_bos_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_mpls_bos_masked.
@@ -5129,15 +5105,15 @@ of_oxm_tunnel_id_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_tunnel_id
  */
 
-of_oxm_tunnel_id_t *
+of_object_t *
 of_oxm_tunnel_id_new(of_version_t version)
 {
-    of_oxm_tunnel_id_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID];
 
-    if ((obj = (of_oxm_tunnel_id_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5165,10 +5141,9 @@ of_oxm_tunnel_id_new(of_version_t version)
  */
 
 void
-of_oxm_tunnel_id_init(of_oxm_tunnel_id_t *obj,
+of_oxm_tunnel_id_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_TUNNEL_ID] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5188,7 +5163,6 @@ of_oxm_tunnel_id_init(of_oxm_tunnel_id_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_tunnel_id.
@@ -5332,15 +5306,15 @@ of_oxm_tunnel_id_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_tunnel_id_masked
  */
 
-of_oxm_tunnel_id_masked_t *
+of_object_t *
 of_oxm_tunnel_id_masked_new(of_version_t version)
 {
-    of_oxm_tunnel_id_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_TUNNEL_ID_MASKED];
 
-    if ((obj = (of_oxm_tunnel_id_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5368,10 +5342,9 @@ of_oxm_tunnel_id_masked_new(of_version_t version)
  */
 
 void
-of_oxm_tunnel_id_masked_init(of_oxm_tunnel_id_masked_t *obj,
+of_oxm_tunnel_id_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_TUNNEL_ID_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5391,7 +5364,6 @@ of_oxm_tunnel_id_masked_init(of_oxm_tunnel_id_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_tunnel_id_masked.
@@ -5617,15 +5589,15 @@ of_port_desc_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_port_desc_stats_reply
  */
 
-of_port_desc_stats_reply_t *
+of_object_t *
 of_port_desc_stats_reply_new(of_version_t version)
 {
-    of_port_desc_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REPLY];
 
-    if ((obj = (of_port_desc_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -5654,10 +5626,9 @@ of_port_desc_stats_reply_new(of_version_t version)
  */
 
 void
-of_port_desc_stats_reply_init(of_port_desc_stats_reply_t *obj,
+of_port_desc_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_DESC_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5677,7 +5648,6 @@ of_port_desc_stats_reply_init(of_port_desc_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_port_desc_stats_reply.
@@ -6047,15 +6017,15 @@ of_port_desc_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_port_desc_stats_request
  */
 
-of_port_desc_stats_request_t *
+of_object_t *
 of_port_desc_stats_request_new(of_version_t version)
 {
-    of_port_desc_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC_STATS_REQUEST];
 
-    if ((obj = (of_port_desc_stats_request_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6084,10 +6054,9 @@ of_port_desc_stats_request_new(of_version_t version)
  */
 
 void
-of_port_desc_stats_request_init(of_port_desc_stats_request_t *obj,
+of_port_desc_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_DESC_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6107,7 +6076,6 @@ of_port_desc_stats_request_init(of_port_desc_stats_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_port_desc_stats_request.
@@ -6444,15 +6412,15 @@ of_table_feature_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * \ingroup of_table_feature_prop
  */
 
-of_table_feature_prop_t *
+of_object_t *
 of_table_feature_prop_new(of_version_t version)
 {
-    of_table_feature_prop_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP];
 
-    if ((obj = (of_table_feature_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6479,13 +6447,9 @@ of_table_feature_prop_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_init(of_table_feature_prop_t *obj_p,
+of_table_feature_prop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    of_table_feature_prop_header_t *obj;
-
-    obj = &obj_p->header;  /* Need instantiable subclass */
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6505,7 +6469,6 @@ of_table_feature_prop_init(of_table_feature_prop_t *obj_p,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -6569,15 +6532,15 @@ of_table_feature_prop_apply_actions_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_apply_actions
  */
 
-of_table_feature_prop_apply_actions_t *
+of_object_t *
 of_table_feature_prop_apply_actions_new(of_version_t version)
 {
-    of_table_feature_prop_apply_actions_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS];
 
-    if ((obj = (of_table_feature_prop_apply_actions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6606,10 +6569,9 @@ of_table_feature_prop_apply_actions_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_apply_actions_init(of_table_feature_prop_apply_actions_t *obj,
+of_table_feature_prop_apply_actions_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6629,7 +6591,6 @@ of_table_feature_prop_apply_actions_init(of_table_feature_prop_apply_actions_t *
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_action_id_t to the parent of type of_table_feature_prop_apply_actions for
@@ -6837,15 +6798,15 @@ of_table_feature_prop_apply_actions_miss_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_apply_actions_miss
  */
 
-of_table_feature_prop_apply_actions_miss_t *
+of_object_t *
 of_table_feature_prop_apply_actions_miss_new(of_version_t version)
 {
-    of_table_feature_prop_apply_actions_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS];
 
-    if ((obj = (of_table_feature_prop_apply_actions_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6874,10 +6835,9 @@ of_table_feature_prop_apply_actions_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_apply_actions_miss_init(of_table_feature_prop_apply_actions_miss_t *obj,
+of_table_feature_prop_apply_actions_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6897,7 +6857,6 @@ of_table_feature_prop_apply_actions_miss_init(of_table_feature_prop_apply_action
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_action_id_t to the parent of type of_table_feature_prop_apply_actions_miss for
@@ -7105,15 +7064,15 @@ of_table_feature_prop_apply_setfield_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_apply_setfield
  */
 
-of_table_feature_prop_apply_setfield_t *
+of_object_t *
 of_table_feature_prop_apply_setfield_new(of_version_t version)
 {
-    of_table_feature_prop_apply_setfield_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD];
 
-    if ((obj = (of_table_feature_prop_apply_setfield_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7142,10 +7101,9 @@ of_table_feature_prop_apply_setfield_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_apply_setfield_init(of_table_feature_prop_apply_setfield_t *obj,
+of_table_feature_prop_apply_setfield_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7165,7 +7123,6 @@ of_table_feature_prop_apply_setfield_init(of_table_feature_prop_apply_setfield_t
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint32_t to the parent of type of_table_feature_prop_apply_setfield for
@@ -7373,15 +7330,15 @@ of_table_feature_prop_apply_setfield_miss_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_apply_setfield_miss
  */
 
-of_table_feature_prop_apply_setfield_miss_t *
+of_object_t *
 of_table_feature_prop_apply_setfield_miss_new(of_version_t version)
 {
-    of_table_feature_prop_apply_setfield_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS];
 
-    if ((obj = (of_table_feature_prop_apply_setfield_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7410,10 +7367,9 @@ of_table_feature_prop_apply_setfield_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_apply_setfield_miss_init(of_table_feature_prop_apply_setfield_miss_t *obj,
+of_table_feature_prop_apply_setfield_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7433,7 +7389,6 @@ of_table_feature_prop_apply_setfield_miss_init(of_table_feature_prop_apply_setfi
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint32_t to the parent of type of_table_feature_prop_apply_setfield_miss for
@@ -7655,15 +7610,15 @@ of_table_feature_prop_experimenter_wire_object_id_get(of_object_t *obj, of_objec
  * \ingroup of_table_feature_prop_experimenter
  */
 
-of_table_feature_prop_experimenter_t *
+of_object_t *
 of_table_feature_prop_experimenter_new(of_version_t version)
 {
-    of_table_feature_prop_experimenter_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER];
 
-    if ((obj = (of_table_feature_prop_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7690,10 +7645,9 @@ of_table_feature_prop_experimenter_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_experimenter_init(of_table_feature_prop_experimenter_t *obj,
+of_table_feature_prop_experimenter_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7713,7 +7667,6 @@ of_table_feature_prop_experimenter_init(of_table_feature_prop_experimenter_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_table_feature_prop_experimenter.
@@ -8049,15 +8002,15 @@ of_table_feature_prop_experimenter_miss_wire_object_id_get(of_object_t *obj, of_
  * \ingroup of_table_feature_prop_experimenter_miss
  */
 
-of_table_feature_prop_experimenter_miss_t *
+of_object_t *
 of_table_feature_prop_experimenter_miss_new(of_version_t version)
 {
-    of_table_feature_prop_experimenter_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS];
 
-    if ((obj = (of_table_feature_prop_experimenter_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -8084,10 +8037,9 @@ of_table_feature_prop_experimenter_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_experimenter_miss_init(of_table_feature_prop_experimenter_miss_t *obj,
+of_table_feature_prop_experimenter_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -8107,7 +8059,6 @@ of_table_feature_prop_experimenter_miss_init(of_table_feature_prop_experimenter_
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_table_feature_prop_experimenter_miss.
@@ -8429,15 +8380,15 @@ of_table_feature_prop_instructions_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_instructions
  */
 
-of_table_feature_prop_instructions_t *
+of_object_t *
 of_table_feature_prop_instructions_new(of_version_t version)
 {
-    of_table_feature_prop_instructions_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS];
 
-    if ((obj = (of_table_feature_prop_instructions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -8466,10 +8417,9 @@ of_table_feature_prop_instructions_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_instructions_init(of_table_feature_prop_instructions_t *obj,
+of_table_feature_prop_instructions_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -8489,7 +8439,6 @@ of_table_feature_prop_instructions_init(of_table_feature_prop_instructions_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_instruction_id_t to the parent of type of_table_feature_prop_instructions for
@@ -8697,15 +8646,15 @@ of_table_feature_prop_instructions_miss_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_instructions_miss
  */
 
-of_table_feature_prop_instructions_miss_t *
+of_object_t *
 of_table_feature_prop_instructions_miss_new(of_version_t version)
 {
-    of_table_feature_prop_instructions_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS];
 
-    if ((obj = (of_table_feature_prop_instructions_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -8734,10 +8683,9 @@ of_table_feature_prop_instructions_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_instructions_miss_init(of_table_feature_prop_instructions_miss_t *obj,
+of_table_feature_prop_instructions_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -8757,7 +8705,6 @@ of_table_feature_prop_instructions_miss_init(of_table_feature_prop_instructions_
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_instruction_id_t to the parent of type of_table_feature_prop_instructions_miss for
@@ -8965,15 +8912,15 @@ of_table_feature_prop_match_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_match
  */
 
-of_table_feature_prop_match_t *
+of_object_t *
 of_table_feature_prop_match_new(of_version_t version)
 {
-    of_table_feature_prop_match_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_MATCH];
 
-    if ((obj = (of_table_feature_prop_match_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9002,10 +8949,9 @@ of_table_feature_prop_match_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_match_init(of_table_feature_prop_match_t *obj,
+of_table_feature_prop_match_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_MATCH] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -9025,7 +8971,6 @@ of_table_feature_prop_match_init(of_table_feature_prop_match_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint32_t to the parent of type of_table_feature_prop_match for
@@ -9233,15 +9178,15 @@ of_table_feature_prop_next_tables_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_next_tables
  */
 
-of_table_feature_prop_next_tables_t *
+of_object_t *
 of_table_feature_prop_next_tables_new(of_version_t version)
 {
-    of_table_feature_prop_next_tables_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES];
 
-    if ((obj = (of_table_feature_prop_next_tables_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9270,10 +9215,9 @@ of_table_feature_prop_next_tables_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_next_tables_init(of_table_feature_prop_next_tables_t *obj,
+of_table_feature_prop_next_tables_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -9293,7 +9237,6 @@ of_table_feature_prop_next_tables_init(of_table_feature_prop_next_tables_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint8_t to the parent of type of_table_feature_prop_next_tables for
@@ -9501,15 +9444,15 @@ of_table_feature_prop_next_tables_miss_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_next_tables_miss
  */
 
-of_table_feature_prop_next_tables_miss_t *
+of_object_t *
 of_table_feature_prop_next_tables_miss_new(of_version_t version)
 {
-    of_table_feature_prop_next_tables_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS];
 
-    if ((obj = (of_table_feature_prop_next_tables_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9538,10 +9481,9 @@ of_table_feature_prop_next_tables_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_next_tables_miss_init(of_table_feature_prop_next_tables_miss_t *obj,
+of_table_feature_prop_next_tables_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -9561,7 +9503,6 @@ of_table_feature_prop_next_tables_miss_init(of_table_feature_prop_next_tables_mi
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint8_t to the parent of type of_table_feature_prop_next_tables_miss for
@@ -9769,15 +9710,15 @@ of_table_feature_prop_wildcards_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_wildcards
  */
 
-of_table_feature_prop_wildcards_t *
+of_object_t *
 of_table_feature_prop_wildcards_new(of_version_t version)
 {
-    of_table_feature_prop_wildcards_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS];
 
-    if ((obj = (of_table_feature_prop_wildcards_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9806,10 +9747,9 @@ of_table_feature_prop_wildcards_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_wildcards_init(of_table_feature_prop_wildcards_t *obj,
+of_table_feature_prop_wildcards_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WILDCARDS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -9829,7 +9769,6 @@ of_table_feature_prop_wildcards_init(of_table_feature_prop_wildcards_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint32_t to the parent of type of_table_feature_prop_wildcards for
@@ -10037,15 +9976,15 @@ of_table_feature_prop_write_actions_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_write_actions
  */
 
-of_table_feature_prop_write_actions_t *
+of_object_t *
 of_table_feature_prop_write_actions_new(of_version_t version)
 {
-    of_table_feature_prop_write_actions_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS];
 
-    if ((obj = (of_table_feature_prop_write_actions_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -10074,10 +10013,9 @@ of_table_feature_prop_write_actions_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_write_actions_init(of_table_feature_prop_write_actions_t *obj,
+of_table_feature_prop_write_actions_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -10097,7 +10035,6 @@ of_table_feature_prop_write_actions_init(of_table_feature_prop_write_actions_t *
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_action_id_t to the parent of type of_table_feature_prop_write_actions for
@@ -10305,15 +10242,15 @@ of_table_feature_prop_write_actions_miss_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_write_actions_miss
  */
 
-of_table_feature_prop_write_actions_miss_t *
+of_object_t *
 of_table_feature_prop_write_actions_miss_new(of_version_t version)
 {
-    of_table_feature_prop_write_actions_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS];
 
-    if ((obj = (of_table_feature_prop_write_actions_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -10342,10 +10279,9 @@ of_table_feature_prop_write_actions_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_write_actions_miss_init(of_table_feature_prop_write_actions_miss_t *obj,
+of_table_feature_prop_write_actions_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -10365,7 +10301,6 @@ of_table_feature_prop_write_actions_miss_init(of_table_feature_prop_write_action
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_action_id_t to the parent of type of_table_feature_prop_write_actions_miss for
@@ -10573,15 +10508,15 @@ of_table_feature_prop_write_setfield_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_write_setfield
  */
 
-of_table_feature_prop_write_setfield_t *
+of_object_t *
 of_table_feature_prop_write_setfield_new(of_version_t version)
 {
-    of_table_feature_prop_write_setfield_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD];
 
-    if ((obj = (of_table_feature_prop_write_setfield_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -10610,10 +10545,9 @@ of_table_feature_prop_write_setfield_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_write_setfield_init(of_table_feature_prop_write_setfield_t *obj,
+of_table_feature_prop_write_setfield_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -10633,7 +10567,6 @@ of_table_feature_prop_write_setfield_init(of_table_feature_prop_write_setfield_t
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint32_t to the parent of type of_table_feature_prop_write_setfield for

@@ -61,15 +61,15 @@ of_table_feature_prop_write_setfield_miss_push_wire_types(of_object_t *obj)
  * \ingroup of_table_feature_prop_write_setfield_miss
  */
 
-of_table_feature_prop_write_setfield_miss_t *
+of_object_t *
 of_table_feature_prop_write_setfield_miss_new(of_version_t version)
 {
-    of_table_feature_prop_write_setfield_miss_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS];
 
-    if ((obj = (of_table_feature_prop_write_setfield_miss_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -98,10 +98,9 @@ of_table_feature_prop_write_setfield_miss_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_write_setfield_miss_init(of_table_feature_prop_write_setfield_miss_t *obj,
+of_table_feature_prop_write_setfield_miss_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -121,7 +120,6 @@ of_table_feature_prop_write_setfield_miss_init(of_table_feature_prop_write_setfi
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Bind an object of type of_list_uint32_t to the parent of type of_table_feature_prop_write_setfield_miss for
@@ -315,15 +313,15 @@ of_table_feature_prop_write_setfield_miss_oxm_ids_set(
  * \ingroup of_table_features
  */
 
-of_table_features_t *
+of_object_t *
 of_table_features_new(of_version_t version)
 {
-    of_table_features_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURES];
 
-    if ((obj = (of_table_features_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -351,10 +349,9 @@ of_table_features_new(of_version_t version)
  */
 
 void
-of_table_features_init(of_table_features_t *obj,
+of_table_features_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURES] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -374,7 +371,6 @@ of_table_features_init(of_table_features_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get table_id from an object of type of_table_features.
@@ -1064,15 +1060,15 @@ of_table_features_failed_error_msg_push_wire_types(of_object_t *obj)
  * \ingroup of_table_features_failed_error_msg
  */
 
-of_table_features_failed_error_msg_t *
+of_object_t *
 of_table_features_failed_error_msg_new(of_version_t version)
 {
-    of_table_features_failed_error_msg_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURES_FAILED_ERROR_MSG];
 
-    if ((obj = (of_table_features_failed_error_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -1101,10 +1097,9 @@ of_table_features_failed_error_msg_new(of_version_t version)
  */
 
 void
-of_table_features_failed_error_msg_init(of_table_features_failed_error_msg_t *obj,
+of_table_features_failed_error_msg_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURES_FAILED_ERROR_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1124,7 +1119,6 @@ of_table_features_failed_error_msg_init(of_table_features_failed_error_msg_t *ob
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_table_features_failed_error_msg.
@@ -1448,15 +1442,15 @@ of_table_features_stats_reply_push_wire_types(of_object_t *obj)
  * \ingroup of_table_features_stats_reply
  */
 
-of_table_features_stats_reply_t *
+of_object_t *
 of_table_features_stats_reply_new(of_version_t version)
 {
-    of_table_features_stats_reply_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURES_STATS_REPLY];
 
-    if ((obj = (of_table_features_stats_reply_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -1485,10 +1479,9 @@ of_table_features_stats_reply_new(of_version_t version)
  */
 
 void
-of_table_features_stats_reply_init(of_table_features_stats_reply_t *obj,
+of_table_features_stats_reply_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURES_STATS_REPLY] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1508,7 +1501,6 @@ of_table_features_stats_reply_init(of_table_features_stats_reply_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_table_features_stats_reply.
@@ -1878,15 +1870,15 @@ of_table_features_stats_request_push_wire_types(of_object_t *obj)
  * \ingroup of_table_features_stats_request
  */
 
-of_table_features_stats_request_t *
+of_object_t *
 of_table_features_stats_request_new(of_version_t version)
 {
-    of_table_features_stats_request_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURES_STATS_REQUEST];
 
-    if ((obj = (of_table_features_stats_request_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -1915,10 +1907,9 @@ of_table_features_stats_request_new(of_version_t version)
  */
 
 void
-of_table_features_stats_request_init(of_table_features_stats_request_t *obj,
+of_table_features_stats_request_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURES_STATS_REQUEST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1938,7 +1929,6 @@ of_table_features_stats_request_init(of_table_features_stats_request_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_table_features_stats_request.
@@ -2292,15 +2282,15 @@ of_table_features_stats_request_entries_set(
  * \ingroup of_uint32
  */
 
-of_uint32_t *
+of_object_t *
 of_uint32_new(of_version_t version)
 {
-    of_uint32_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_UINT32];
 
-    if ((obj = (of_uint32_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2327,10 +2317,9 @@ of_uint32_new(of_version_t version)
  */
 
 void
-of_uint32_init(of_uint32_t *obj,
+of_uint32_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_UINT32] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2350,7 +2339,6 @@ of_uint32_init(of_uint32_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_uint32.
@@ -2480,15 +2468,15 @@ of_uint32_value_set(
  * \ingroup of_uint64
  */
 
-of_uint64_t *
+of_object_t *
 of_uint64_new(of_version_t version)
 {
-    of_uint64_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_UINT64];
 
-    if ((obj = (of_uint64_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2515,10 +2503,9 @@ of_uint64_new(of_version_t version)
  */
 
 void
-of_uint64_init(of_uint64_t *obj,
+of_uint64_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_UINT64] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2538,7 +2525,6 @@ of_uint64_init(of_uint64_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_uint64.
@@ -2668,15 +2654,15 @@ of_uint64_value_set(
  * \ingroup of_uint8
  */
 
-of_uint8_t *
+of_object_t *
 of_uint8_new(of_version_t version)
 {
-    of_uint8_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_UINT8];
 
-    if ((obj = (of_uint8_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2703,10 +2689,9 @@ of_uint8_new(of_version_t version)
  */
 
 void
-of_uint8_init(of_uint8_t *obj,
+of_uint8_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_UINT8] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2726,7 +2711,6 @@ of_uint8_init(of_uint8_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_uint8.
@@ -2917,15 +2901,15 @@ of_async_config_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * \ingroup of_async_config_prop
  */
 
-of_async_config_prop_t *
+of_object_t *
 of_async_config_prop_new(of_version_t version)
 {
-    of_async_config_prop_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP];
 
-    if ((obj = (of_async_config_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -2952,13 +2936,9 @@ of_async_config_prop_new(of_version_t version)
  */
 
 void
-of_async_config_prop_init(of_async_config_prop_t *obj_p,
+of_async_config_prop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    of_async_config_prop_header_t *obj;
-
-    obj = &obj_p->header;  /* Need instantiable subclass */
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2978,7 +2958,6 @@ of_async_config_prop_init(of_async_config_prop_t *obj_p,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -3041,15 +3020,15 @@ of_async_config_prop_experimenter_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_experimenter_master
  */
 
-of_async_config_prop_experimenter_master_t *
+of_object_t *
 of_async_config_prop_experimenter_master_new(of_version_t version)
 {
-    of_async_config_prop_experimenter_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER];
 
-    if ((obj = (of_async_config_prop_experimenter_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3078,10 +3057,9 @@ of_async_config_prop_experimenter_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_experimenter_master_init(of_async_config_prop_experimenter_master_t *obj,
+of_async_config_prop_experimenter_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3101,7 +3079,6 @@ of_async_config_prop_experimenter_master_init(of_async_config_prop_experimenter_
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -3164,15 +3141,15 @@ of_async_config_prop_experimenter_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_experimenter_slave
  */
 
-of_async_config_prop_experimenter_slave_t *
+of_object_t *
 of_async_config_prop_experimenter_slave_new(of_version_t version)
 {
-    of_async_config_prop_experimenter_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_EXPERIMENTER_SLAVE];
 
-    if ((obj = (of_async_config_prop_experimenter_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3201,10 +3178,9 @@ of_async_config_prop_experimenter_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_experimenter_slave_init(of_async_config_prop_experimenter_slave_t *obj,
+of_async_config_prop_experimenter_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_EXPERIMENTER_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3224,7 +3200,6 @@ of_async_config_prop_experimenter_slave_init(of_async_config_prop_experimenter_s
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -3287,15 +3262,15 @@ of_async_config_prop_flow_removed_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_flow_removed_master
  */
 
-of_async_config_prop_flow_removed_master_t *
+of_object_t *
 of_async_config_prop_flow_removed_master_new(of_version_t version)
 {
-    of_async_config_prop_flow_removed_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_MASTER];
 
-    if ((obj = (of_async_config_prop_flow_removed_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3324,10 +3299,9 @@ of_async_config_prop_flow_removed_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_flow_removed_master_init(of_async_config_prop_flow_removed_master_t *obj,
+of_async_config_prop_flow_removed_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3347,7 +3321,6 @@ of_async_config_prop_flow_removed_master_init(of_async_config_prop_flow_removed_
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_flow_removed_master.
@@ -3488,15 +3461,15 @@ of_async_config_prop_flow_removed_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_flow_removed_slave
  */
 
-of_async_config_prop_flow_removed_slave_t *
+of_object_t *
 of_async_config_prop_flow_removed_slave_new(of_version_t version)
 {
-    of_async_config_prop_flow_removed_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_SLAVE];
 
-    if ((obj = (of_async_config_prop_flow_removed_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3525,10 +3498,9 @@ of_async_config_prop_flow_removed_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_flow_removed_slave_init(of_async_config_prop_flow_removed_slave_t *obj,
+of_async_config_prop_flow_removed_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3548,7 +3520,6 @@ of_async_config_prop_flow_removed_slave_init(of_async_config_prop_flow_removed_s
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_flow_removed_slave.
@@ -3689,15 +3660,15 @@ of_async_config_prop_packet_in_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_packet_in_master
  */
 
-of_async_config_prop_packet_in_master_t *
+of_object_t *
 of_async_config_prop_packet_in_master_new(of_version_t version)
 {
-    of_async_config_prop_packet_in_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PACKET_IN_MASTER];
 
-    if ((obj = (of_async_config_prop_packet_in_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3726,10 +3697,9 @@ of_async_config_prop_packet_in_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_packet_in_master_init(of_async_config_prop_packet_in_master_t *obj,
+of_async_config_prop_packet_in_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PACKET_IN_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3749,7 +3719,6 @@ of_async_config_prop_packet_in_master_init(of_async_config_prop_packet_in_master
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_packet_in_master.
@@ -3890,15 +3859,15 @@ of_async_config_prop_packet_in_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_packet_in_slave
  */
 
-of_async_config_prop_packet_in_slave_t *
+of_object_t *
 of_async_config_prop_packet_in_slave_new(of_version_t version)
 {
-    of_async_config_prop_packet_in_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PACKET_IN_SLAVE];
 
-    if ((obj = (of_async_config_prop_packet_in_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3927,10 +3896,9 @@ of_async_config_prop_packet_in_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_packet_in_slave_init(of_async_config_prop_packet_in_slave_t *obj,
+of_async_config_prop_packet_in_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PACKET_IN_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3950,7 +3918,6 @@ of_async_config_prop_packet_in_slave_init(of_async_config_prop_packet_in_slave_t
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_packet_in_slave.
@@ -4091,15 +4058,15 @@ of_async_config_prop_port_status_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_port_status_master
  */
 
-of_async_config_prop_port_status_master_t *
+of_object_t *
 of_async_config_prop_port_status_master_new(of_version_t version)
 {
-    of_async_config_prop_port_status_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PORT_STATUS_MASTER];
 
-    if ((obj = (of_async_config_prop_port_status_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4128,10 +4095,9 @@ of_async_config_prop_port_status_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_port_status_master_init(of_async_config_prop_port_status_master_t *obj,
+of_async_config_prop_port_status_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PORT_STATUS_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4151,7 +4117,6 @@ of_async_config_prop_port_status_master_init(of_async_config_prop_port_status_ma
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_port_status_master.
@@ -4292,15 +4257,15 @@ of_async_config_prop_port_status_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_port_status_slave
  */
 
-of_async_config_prop_port_status_slave_t *
+of_object_t *
 of_async_config_prop_port_status_slave_new(of_version_t version)
 {
-    of_async_config_prop_port_status_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PORT_STATUS_SLAVE];
 
-    if ((obj = (of_async_config_prop_port_status_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4329,10 +4294,9 @@ of_async_config_prop_port_status_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_port_status_slave_init(of_async_config_prop_port_status_slave_t *obj,
+of_async_config_prop_port_status_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_PORT_STATUS_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4352,7 +4316,6 @@ of_async_config_prop_port_status_slave_init(of_async_config_prop_port_status_sla
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_port_status_slave.
@@ -4493,15 +4456,15 @@ of_async_config_prop_requestforward_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_requestforward_master
  */
 
-of_async_config_prop_requestforward_master_t *
+of_object_t *
 of_async_config_prop_requestforward_master_new(of_version_t version)
 {
-    of_async_config_prop_requestforward_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_MASTER];
 
-    if ((obj = (of_async_config_prop_requestforward_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4530,10 +4493,9 @@ of_async_config_prop_requestforward_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_requestforward_master_init(of_async_config_prop_requestforward_master_t *obj,
+of_async_config_prop_requestforward_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4553,7 +4515,6 @@ of_async_config_prop_requestforward_master_init(of_async_config_prop_requestforw
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_requestforward_master.
@@ -4694,15 +4655,15 @@ of_async_config_prop_requestforward_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_requestforward_slave
  */
 
-of_async_config_prop_requestforward_slave_t *
+of_object_t *
 of_async_config_prop_requestforward_slave_new(of_version_t version)
 {
-    of_async_config_prop_requestforward_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_SLAVE];
 
-    if ((obj = (of_async_config_prop_requestforward_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4731,10 +4692,9 @@ of_async_config_prop_requestforward_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_requestforward_slave_init(of_async_config_prop_requestforward_slave_t *obj,
+of_async_config_prop_requestforward_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4754,7 +4714,6 @@ of_async_config_prop_requestforward_slave_init(of_async_config_prop_requestforwa
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_requestforward_slave.
@@ -4895,15 +4854,15 @@ of_async_config_prop_role_status_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_role_status_master
  */
 
-of_async_config_prop_role_status_master_t *
+of_object_t *
 of_async_config_prop_role_status_master_new(of_version_t version)
 {
-    of_async_config_prop_role_status_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_ROLE_STATUS_MASTER];
 
-    if ((obj = (of_async_config_prop_role_status_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4932,10 +4891,9 @@ of_async_config_prop_role_status_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_role_status_master_init(of_async_config_prop_role_status_master_t *obj,
+of_async_config_prop_role_status_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_ROLE_STATUS_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4955,7 +4913,6 @@ of_async_config_prop_role_status_master_init(of_async_config_prop_role_status_ma
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_role_status_master.
@@ -5096,15 +5053,15 @@ of_async_config_prop_role_status_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_role_status_slave
  */
 
-of_async_config_prop_role_status_slave_t *
+of_object_t *
 of_async_config_prop_role_status_slave_new(of_version_t version)
 {
-    of_async_config_prop_role_status_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_ROLE_STATUS_SLAVE];
 
-    if ((obj = (of_async_config_prop_role_status_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5133,10 +5090,9 @@ of_async_config_prop_role_status_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_role_status_slave_init(of_async_config_prop_role_status_slave_t *obj,
+of_async_config_prop_role_status_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_ROLE_STATUS_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5156,7 +5112,6 @@ of_async_config_prop_role_status_slave_init(of_async_config_prop_role_status_sla
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_role_status_slave.
@@ -5297,15 +5252,15 @@ of_async_config_prop_table_status_master_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_table_status_master
  */
 
-of_async_config_prop_table_status_master_t *
+of_object_t *
 of_async_config_prop_table_status_master_new(of_version_t version)
 {
-    of_async_config_prop_table_status_master_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_TABLE_STATUS_MASTER];
 
-    if ((obj = (of_async_config_prop_table_status_master_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5334,10 +5289,9 @@ of_async_config_prop_table_status_master_new(of_version_t version)
  */
 
 void
-of_async_config_prop_table_status_master_init(of_async_config_prop_table_status_master_t *obj,
+of_async_config_prop_table_status_master_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_TABLE_STATUS_MASTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5357,7 +5311,6 @@ of_async_config_prop_table_status_master_init(of_async_config_prop_table_status_
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_table_status_master.
@@ -5498,15 +5451,15 @@ of_async_config_prop_table_status_slave_push_wire_types(of_object_t *obj)
  * \ingroup of_async_config_prop_table_status_slave
  */
 
-of_async_config_prop_table_status_slave_t *
+of_object_t *
 of_async_config_prop_table_status_slave_new(of_version_t version)
 {
-    of_async_config_prop_table_status_slave_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_TABLE_STATUS_SLAVE];
 
-    if ((obj = (of_async_config_prop_table_status_slave_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5535,10 +5488,9 @@ of_async_config_prop_table_status_slave_new(of_version_t version)
  */
 
 void
-of_async_config_prop_table_status_slave_init(of_async_config_prop_table_status_slave_t *obj,
+of_async_config_prop_table_status_slave_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_ASYNC_CONFIG_PROP_TABLE_STATUS_SLAVE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5558,7 +5510,6 @@ of_async_config_prop_table_status_slave_init(of_async_config_prop_table_status_s
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get mask from an object of type of_async_config_prop_table_status_slave.
@@ -5700,15 +5651,15 @@ of_bundle_add_msg_push_wire_types(of_object_t *obj)
  * \ingroup of_bundle_add_msg
  */
 
-of_bundle_add_msg_t *
+of_object_t *
 of_bundle_add_msg_new(of_version_t version)
 {
-    of_bundle_add_msg_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BUNDLE_ADD_MSG];
 
-    if ((obj = (of_bundle_add_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -5737,10 +5688,9 @@ of_bundle_add_msg_new(of_version_t version)
  */
 
 void
-of_bundle_add_msg_init(of_bundle_add_msg_t *obj,
+of_bundle_add_msg_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BUNDLE_ADD_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5760,7 +5710,6 @@ of_bundle_add_msg_init(of_bundle_add_msg_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bundle_add_msg.
@@ -6154,15 +6103,15 @@ of_bundle_ctrl_msg_push_wire_types(of_object_t *obj)
  * \ingroup of_bundle_ctrl_msg
  */
 
-of_bundle_ctrl_msg_t *
+of_object_t *
 of_bundle_ctrl_msg_new(of_version_t version)
 {
-    of_bundle_ctrl_msg_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BUNDLE_CTRL_MSG];
 
-    if ((obj = (of_bundle_ctrl_msg_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6191,10 +6140,9 @@ of_bundle_ctrl_msg_new(of_version_t version)
  */
 
 void
-of_bundle_ctrl_msg_init(of_bundle_ctrl_msg_t *obj,
+of_bundle_ctrl_msg_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BUNDLE_CTRL_MSG] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6214,7 +6162,6 @@ of_bundle_ctrl_msg_init(of_bundle_ctrl_msg_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get xid from an object of type of_bundle_ctrl_msg.
@@ -6740,15 +6687,15 @@ of_bundle_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * \ingroup of_bundle_prop
  */
 
-of_bundle_prop_t *
+of_object_t *
 of_bundle_prop_new(of_version_t version)
 {
-    of_bundle_prop_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BUNDLE_PROP];
 
-    if ((obj = (of_bundle_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6775,13 +6722,9 @@ of_bundle_prop_new(of_version_t version)
  */
 
 void
-of_bundle_prop_init(of_bundle_prop_t *obj_p,
+of_bundle_prop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    of_bundle_prop_header_t *obj;
-
-    obj = &obj_p->header;  /* Need instantiable subclass */
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BUNDLE_PROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6801,7 +6744,6 @@ of_bundle_prop_init(of_bundle_prop_t *obj_p,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -6870,15 +6812,15 @@ of_bundle_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t 
  * \ingroup of_bundle_prop_experimenter
  */
 
-of_bundle_prop_experimenter_t *
+of_object_t *
 of_bundle_prop_experimenter_new(of_version_t version)
 {
-    of_bundle_prop_experimenter_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_BUNDLE_PROP_EXPERIMENTER];
 
-    if ((obj = (of_bundle_prop_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -6905,10 +6847,9 @@ of_bundle_prop_experimenter_new(of_version_t version)
  */
 
 void
-of_bundle_prop_experimenter_init(of_bundle_prop_experimenter_t *obj,
+of_bundle_prop_experimenter_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_BUNDLE_PROP_EXPERIMENTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6928,7 +6869,6 @@ of_bundle_prop_experimenter_init(of_bundle_prop_experimenter_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_bundle_prop_experimenter.
@@ -7162,15 +7102,15 @@ of_port_desc_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * \ingroup of_port_desc_prop
  */
 
-of_port_desc_prop_t *
+of_object_t *
 of_port_desc_prop_new(of_version_t version)
 {
-    of_port_desc_prop_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC_PROP];
 
-    if ((obj = (of_port_desc_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7197,13 +7137,9 @@ of_port_desc_prop_new(of_version_t version)
  */
 
 void
-of_port_desc_prop_init(of_port_desc_prop_t *obj_p,
+of_port_desc_prop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    of_port_desc_prop_header_t *obj;
-
-    obj = &obj_p->header;  /* Need instantiable subclass */
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_DESC_PROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7223,7 +7159,6 @@ of_port_desc_prop_init(of_port_desc_prop_t *obj_p,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
 /* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
@@ -7286,15 +7221,15 @@ of_port_desc_prop_ethernet_push_wire_types(of_object_t *obj)
  * \ingroup of_port_desc_prop_ethernet
  */
 
-of_port_desc_prop_ethernet_t *
+of_object_t *
 of_port_desc_prop_ethernet_new(of_version_t version)
 {
-    of_port_desc_prop_ethernet_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC_PROP_ETHERNET];
 
-    if ((obj = (of_port_desc_prop_ethernet_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7323,10 +7258,9 @@ of_port_desc_prop_ethernet_new(of_version_t version)
  */
 
 void
-of_port_desc_prop_ethernet_init(of_port_desc_prop_ethernet_t *obj,
+of_port_desc_prop_ethernet_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_DESC_PROP_ETHERNET] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7346,7 +7280,6 @@ of_port_desc_prop_ethernet_init(of_port_desc_prop_ethernet_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get curr from an object of type of_port_desc_prop_ethernet.
@@ -7883,15 +7816,15 @@ of_port_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id
  * \ingroup of_port_desc_prop_experimenter
  */
 
-of_port_desc_prop_experimenter_t *
+of_object_t *
 of_port_desc_prop_experimenter_new(of_version_t version)
 {
-    of_port_desc_prop_experimenter_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC_PROP_EXPERIMENTER];
 
-    if ((obj = (of_port_desc_prop_experimenter_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -7918,10 +7851,9 @@ of_port_desc_prop_experimenter_new(of_version_t version)
  */
 
 void
-of_port_desc_prop_experimenter_init(of_port_desc_prop_experimenter_t *obj,
+of_port_desc_prop_experimenter_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_DESC_PROP_EXPERIMENTER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7941,7 +7873,6 @@ of_port_desc_prop_experimenter_init(of_port_desc_prop_experimenter_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get experimenter from an object of type of_port_desc_prop_experimenter.
@@ -8160,15 +8091,15 @@ of_port_desc_prop_optical_push_wire_types(of_object_t *obj)
  * \ingroup of_port_desc_prop_optical
  */
 
-of_port_desc_prop_optical_t *
+of_object_t *
 of_port_desc_prop_optical_new(of_version_t version)
 {
-    of_port_desc_prop_optical_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_DESC_PROP_OPTICAL];
 
-    if ((obj = (of_port_desc_prop_optical_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -8197,10 +8128,9 @@ of_port_desc_prop_optical_new(of_version_t version)
  */
 
 void
-of_port_desc_prop_optical_init(of_port_desc_prop_optical_t *obj,
+of_port_desc_prop_optical_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_DESC_PROP_OPTICAL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -8220,7 +8150,6 @@ of_port_desc_prop_optical_init(of_port_desc_prop_optical_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get supported from an object of type of_port_desc_prop_optical.
@@ -9000,15 +8929,15 @@ of_port_mod_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
  * \ingroup of_port_mod_prop
  */
 
-of_port_mod_prop_t *
+of_object_t *
 of_port_mod_prop_new(of_version_t version)
 {
-    of_port_mod_prop_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_PORT_MOD_PROP];
 
-    if ((obj = (of_port_mod_prop_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -9035,13 +8964,9 @@ of_port_mod_prop_new(of_version_t version)
  */
 
 void
-of_port_mod_prop_init(of_port_mod_prop_t *obj_p,
+of_port_mod_prop_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    of_port_mod_prop_header_t *obj;
-
-    obj = &obj_p->header;  /* Need instantiable subclass */
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_PORT_MOD_PROP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -9061,4 +8986,3 @@ of_port_mod_prop_init(of_port_mod_prop_t *obj_p,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-

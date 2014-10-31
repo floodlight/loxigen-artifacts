@@ -3406,104 +3406,85 @@ of_table_stats_request_OF_VERSION_1_0_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_t *
+of_object_t *
 of_action_OF_VERSION_1_0_dup(
-    of_action_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return (of_action_t *)of_action_nicira_dec_ttl_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_DL_SRC) {
-        return (of_action_t *)of_action_set_dl_src_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_DL_SRC) {
+        return of_action_set_dl_src_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_VLAN_VID) {
-        return (of_action_t *)of_action_set_vlan_vid_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_VLAN_VID) {
+        return of_action_set_vlan_vid_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_VLAN_PCP) {
-        return (of_action_t *)of_action_set_vlan_pcp_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
+        return of_action_set_vlan_pcp_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_OUTPUT) {
-        return (of_action_t *)of_action_output_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_EXPERIMENTER) {
-        return (of_action_t *)of_action_experimenter_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_EXPERIMENTER) {
+        return of_action_experimenter_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_DL_DST) {
-        return (of_action_t *)of_action_set_dl_dst_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_DL_DST) {
+        return of_action_set_dl_dst_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return (of_action_t *)of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN) {
-        return (of_action_t *)of_action_bsn_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN) {
+        return of_action_bsn_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ENQUEUE) {
-        return (of_action_t *)of_action_enqueue_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ENQUEUE) {
+        return of_action_enqueue_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_TOS) {
-        return (of_action_t *)of_action_set_nw_tos_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_TOS) {
+        return of_action_set_nw_tos_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_MIRROR) {
-        return (of_action_t *)of_action_bsn_mirror_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_TP_SRC) {
-        return (of_action_t *)of_action_set_tp_src_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_TP_SRC) {
+        return of_action_set_tp_src_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_DST) {
-        return (of_action_t *)of_action_set_nw_dst_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_DST) {
+        return of_action_set_nw_dst_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_CHECKSUM) {
-        return (of_action_t *)of_action_bsn_checksum_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_TP_DST) {
-        return (of_action_t *)of_action_set_tp_dst_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_TP_DST) {
+        return of_action_set_tp_dst_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_NICIRA) {
-        return (of_action_t *)of_action_nicira_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA) {
+        return of_action_nicira_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_STRIP_VLAN) {
-        return (of_action_t *)of_action_strip_vlan_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_STRIP_VLAN) {
+        return of_action_strip_vlan_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_SRC) {
-        return (of_action_t *)of_action_set_nw_src_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_SRC) {
+        return of_action_set_nw_src_OF_VERSION_1_0_dup(src);
     }
 
     return NULL;
@@ -4093,19 +4074,17 @@ of_bsn_interface_OF_VERSION_1_0_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_vport_t *
+of_object_t *
 of_bsn_vport_OF_VERSION_1_0_dup(
-    of_bsn_vport_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return (of_bsn_vport_t *)of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
-        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_L2GRE) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_0_dup(src);
     }
 
     return NULL;
@@ -4531,14 +4510,13 @@ of_port_stats_entry_OF_VERSION_1_0_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_prop_t *
+of_object_t *
 of_queue_prop_OF_VERSION_1_0_dup(
-    of_queue_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_PROP_MIN_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_min_rate_OF_VERSION_1_0_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MIN_RATE) {
+        return of_queue_prop_min_rate_OF_VERSION_1_0_dup(src);
     }
 
     return NULL;
@@ -4688,8 +4666,8 @@ of_list_action_t *
 of_list_action_OF_VERSION_1_0_dup(
     of_list_action_t *src)
 {
-    of_action_t src_elt;
-    of_action_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_t *dst;
 
@@ -4722,8 +4700,8 @@ of_list_bsn_interface_t *
 of_list_bsn_interface_OF_VERSION_1_0_dup(
     of_list_bsn_interface_t *src)
 {
-    of_bsn_interface_t src_elt;
-    of_bsn_interface_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_interface_t *dst;
 
@@ -4756,8 +4734,8 @@ of_list_flow_stats_entry_t *
 of_list_flow_stats_entry_OF_VERSION_1_0_dup(
     of_list_flow_stats_entry_t *src)
 {
-    of_flow_stats_entry_t src_elt;
-    of_flow_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_flow_stats_entry_t *dst;
 
@@ -4790,8 +4768,8 @@ of_list_packet_queue_t *
 of_list_packet_queue_OF_VERSION_1_0_dup(
     of_list_packet_queue_t *src)
 {
-    of_packet_queue_t src_elt;
-    of_packet_queue_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_packet_queue_t *dst;
 
@@ -4824,8 +4802,8 @@ of_list_port_desc_t *
 of_list_port_desc_OF_VERSION_1_0_dup(
     of_list_port_desc_t *src)
 {
-    of_port_desc_t src_elt;
-    of_port_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_desc_t *dst;
 
@@ -4858,8 +4836,8 @@ of_list_port_stats_entry_t *
 of_list_port_stats_entry_OF_VERSION_1_0_dup(
     of_list_port_stats_entry_t *src)
 {
-    of_port_stats_entry_t src_elt;
-    of_port_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_stats_entry_t *dst;
 
@@ -4892,8 +4870,8 @@ of_list_queue_prop_t *
 of_list_queue_prop_OF_VERSION_1_0_dup(
     of_list_queue_prop_t *src)
 {
-    of_queue_prop_t src_elt;
-    of_queue_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_prop_t *dst;
 
@@ -4926,8 +4904,8 @@ of_list_queue_stats_entry_t *
 of_list_queue_stats_entry_OF_VERSION_1_0_dup(
     of_list_queue_stats_entry_t *src)
 {
-    of_queue_stats_entry_t src_elt;
-    of_queue_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_stats_entry_t *dst;
 
@@ -4960,8 +4938,8 @@ of_list_table_stats_entry_t *
 of_list_table_stats_entry_OF_VERSION_1_0_dup(
     of_list_table_stats_entry_t *src)
 {
-    of_table_stats_entry_t src_elt;
-    of_table_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_stats_entry_t *dst;
 
@@ -8434,169 +8412,137 @@ of_table_stats_request_OF_VERSION_1_1_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_t *
+of_object_t *
 of_action_OF_VERSION_1_1_dup(
-    of_action_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_SET_MPLS_LABEL) {
-        return (of_action_t *)of_action_set_mpls_label_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_MPLS_LABEL) {
+        return of_action_set_mpls_label_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return (of_action_t *)of_action_nicira_dec_ttl_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_DL_SRC) {
-        return (of_action_t *)of_action_set_dl_src_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_DL_SRC) {
+        return of_action_set_dl_src_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_VLAN_VID) {
-        return (of_action_t *)of_action_set_vlan_vid_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_VLAN_VID) {
+        return of_action_set_vlan_vid_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_MPLS) {
-        return (of_action_t *)of_action_pop_mpls_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_IN) {
-        return (of_action_t *)of_action_copy_ttl_in_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_IN) {
+        return of_action_copy_ttl_in_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_VLAN_PCP) {
-        return (of_action_t *)of_action_set_vlan_pcp_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_VLAN_PCP) {
+        return of_action_set_vlan_pcp_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_OUTPUT) {
-        return (of_action_t *)of_action_output_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_EXPERIMENTER) {
-        return (of_action_t *)of_action_experimenter_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_EXPERIMENTER) {
+        return of_action_experimenter_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_DL_DST) {
-        return (of_action_t *)of_action_set_dl_dst_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_DL_DST) {
+        return of_action_set_dl_dst_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_QUEUE) {
-        return (of_action_t *)of_action_set_queue_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_NW_TTL) {
-        return (of_action_t *)of_action_dec_nw_ttl_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_NW_TTL) {
+        return of_action_dec_nw_ttl_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_VLAN) {
-        return (of_action_t *)of_action_pop_vlan_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_MPLS_TC) {
-        return (of_action_t *)of_action_set_mpls_tc_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TC) {
+        return of_action_set_mpls_tc_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_VLAN) {
-        return (of_action_t *)of_action_push_vlan_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_MPLS_TTL) {
-        return (of_action_t *)of_action_dec_mpls_ttl_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
+        return of_action_dec_mpls_ttl_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return (of_action_t *)of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN) {
-        return (of_action_t *)of_action_bsn_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN) {
+        return of_action_bsn_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_TTL) {
-        return (of_action_t *)of_action_set_nw_ttl_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_TOS) {
-        return (of_action_t *)of_action_set_nw_tos_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_TOS) {
+        return of_action_set_nw_tos_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_MIRROR) {
-        return (of_action_t *)of_action_bsn_mirror_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_GROUP) {
-        return (of_action_t *)of_action_group_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_MPLS) {
-        return (of_action_t *)of_action_push_mpls_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_TP_SRC) {
-        return (of_action_t *)of_action_set_tp_src_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_TP_SRC) {
+        return of_action_set_tp_src_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_DST) {
-        return (of_action_t *)of_action_set_nw_dst_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_DST) {
+        return of_action_set_nw_dst_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_OUT) {
-        return (of_action_t *)of_action_copy_ttl_out_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_CHECKSUM) {
-        return (of_action_t *)of_action_bsn_checksum_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_TP_DST) {
-        return (of_action_t *)of_action_set_tp_dst_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_TP_DST) {
+        return of_action_set_tp_dst_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_ECN) {
-        return (of_action_t *)of_action_set_nw_ecn_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_ECN) {
+        return of_action_set_nw_ecn_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_NICIRA) {
-        return (of_action_t *)of_action_nicira_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA) {
+        return of_action_nicira_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_MPLS_TTL) {
-        return (of_action_t *)of_action_set_mpls_ttl_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_SRC) {
-        return (of_action_t *)of_action_set_nw_src_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_SRC) {
+        return of_action_set_nw_src_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -9491,19 +9437,17 @@ of_bsn_interface_OF_VERSION_1_1_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_vport_t *
+of_object_t *
 of_bsn_vport_OF_VERSION_1_1_dup(
-    of_bsn_vport_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return (of_bsn_vport_t *)of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
-        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_L2GRE) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -9875,39 +9819,33 @@ of_group_stats_entry_OF_VERSION_1_1_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_instruction_t *
+of_object_t *
 of_instruction_OF_VERSION_1_1_dup(
-    of_instruction_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return (of_instruction_t *)of_instruction_apply_actions_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return (of_instruction_t *)of_instruction_clear_actions_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return (of_instruction_t *)of_instruction_goto_table_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_EXPERIMENTER) {
-        return (of_instruction_t *)of_instruction_experimenter_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_EXPERIMENTER) {
+        return of_instruction_experimenter_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return (of_instruction_t *)of_instruction_write_metadata_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return (of_instruction_t *)of_instruction_write_actions_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -10362,14 +10300,13 @@ of_port_stats_entry_OF_VERSION_1_1_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_prop_t *
+of_object_t *
 of_queue_prop_OF_VERSION_1_1_dup(
-    of_queue_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_PROP_MIN_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_min_rate_OF_VERSION_1_1_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MIN_RATE) {
+        return of_queue_prop_min_rate_OF_VERSION_1_1_dup(src);
     }
 
     return NULL;
@@ -10535,8 +10472,8 @@ of_list_action_t *
 of_list_action_OF_VERSION_1_1_dup(
     of_list_action_t *src)
 {
-    of_action_t src_elt;
-    of_action_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_t *dst;
 
@@ -10569,8 +10506,8 @@ of_list_bsn_interface_t *
 of_list_bsn_interface_OF_VERSION_1_1_dup(
     of_list_bsn_interface_t *src)
 {
-    of_bsn_interface_t src_elt;
-    of_bsn_interface_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_interface_t *dst;
 
@@ -10603,8 +10540,8 @@ of_list_bucket_t *
 of_list_bucket_OF_VERSION_1_1_dup(
     of_list_bucket_t *src)
 {
-    of_bucket_t src_elt;
-    of_bucket_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_t *dst;
 
@@ -10637,8 +10574,8 @@ of_list_bucket_counter_t *
 of_list_bucket_counter_OF_VERSION_1_1_dup(
     of_list_bucket_counter_t *src)
 {
-    of_bucket_counter_t src_elt;
-    of_bucket_counter_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_counter_t *dst;
 
@@ -10671,8 +10608,8 @@ of_list_flow_stats_entry_t *
 of_list_flow_stats_entry_OF_VERSION_1_1_dup(
     of_list_flow_stats_entry_t *src)
 {
-    of_flow_stats_entry_t src_elt;
-    of_flow_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_flow_stats_entry_t *dst;
 
@@ -10705,8 +10642,8 @@ of_list_group_desc_stats_entry_t *
 of_list_group_desc_stats_entry_OF_VERSION_1_1_dup(
     of_list_group_desc_stats_entry_t *src)
 {
-    of_group_desc_stats_entry_t src_elt;
-    of_group_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_desc_stats_entry_t *dst;
 
@@ -10739,8 +10676,8 @@ of_list_group_stats_entry_t *
 of_list_group_stats_entry_OF_VERSION_1_1_dup(
     of_list_group_stats_entry_t *src)
 {
-    of_group_stats_entry_t src_elt;
-    of_group_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_stats_entry_t *dst;
 
@@ -10773,8 +10710,8 @@ of_list_instruction_t *
 of_list_instruction_OF_VERSION_1_1_dup(
     of_list_instruction_t *src)
 {
-    of_instruction_t src_elt;
-    of_instruction_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_instruction_t *dst;
 
@@ -10807,8 +10744,8 @@ of_list_packet_queue_t *
 of_list_packet_queue_OF_VERSION_1_1_dup(
     of_list_packet_queue_t *src)
 {
-    of_packet_queue_t src_elt;
-    of_packet_queue_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_packet_queue_t *dst;
 
@@ -10841,8 +10778,8 @@ of_list_port_desc_t *
 of_list_port_desc_OF_VERSION_1_1_dup(
     of_list_port_desc_t *src)
 {
-    of_port_desc_t src_elt;
-    of_port_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_desc_t *dst;
 
@@ -10875,8 +10812,8 @@ of_list_port_stats_entry_t *
 of_list_port_stats_entry_OF_VERSION_1_1_dup(
     of_list_port_stats_entry_t *src)
 {
-    of_port_stats_entry_t src_elt;
-    of_port_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_stats_entry_t *dst;
 
@@ -10909,8 +10846,8 @@ of_list_queue_prop_t *
 of_list_queue_prop_OF_VERSION_1_1_dup(
     of_list_queue_prop_t *src)
 {
-    of_queue_prop_t src_elt;
-    of_queue_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_prop_t *dst;
 
@@ -10943,8 +10880,8 @@ of_list_queue_stats_entry_t *
 of_list_queue_stats_entry_OF_VERSION_1_1_dup(
     of_list_queue_stats_entry_t *src)
 {
-    of_queue_stats_entry_t src_elt;
-    of_queue_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_stats_entry_t *dst;
 
@@ -10977,8 +10914,8 @@ of_list_table_stats_entry_t *
 of_list_table_stats_entry_OF_VERSION_1_1_dup(
     of_list_table_stats_entry_t *src)
 {
-    of_table_stats_entry_t src_elt;
-    of_table_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_stats_entry_t *dst;
 
@@ -14681,114 +14618,93 @@ of_table_stats_request_OF_VERSION_1_2_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_t *
+of_object_t *
 of_action_OF_VERSION_1_2_dup(
-    of_action_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return (of_action_t *)of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_MPLS) {
-        return (of_action_t *)of_action_pop_mpls_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_IN) {
-        return (of_action_t *)of_action_copy_ttl_in_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_IN) {
+        return of_action_copy_ttl_in_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_OUTPUT) {
-        return (of_action_t *)of_action_output_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_EXPERIMENTER) {
-        return (of_action_t *)of_action_experimenter_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_EXPERIMENTER) {
+        return of_action_experimenter_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_FIELD) {
-        return (of_action_t *)of_action_set_field_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_FIELD) {
+        return of_action_set_field_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_QUEUE) {
-        return (of_action_t *)of_action_set_queue_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_NW_TTL) {
-        return (of_action_t *)of_action_dec_nw_ttl_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_NW_TTL) {
+        return of_action_dec_nw_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_VLAN) {
-        return (of_action_t *)of_action_pop_vlan_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_VLAN) {
-        return (of_action_t *)of_action_push_vlan_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_MPLS_TTL) {
-        return (of_action_t *)of_action_dec_mpls_ttl_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
+        return of_action_dec_mpls_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return (of_action_t *)of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN) {
-        return (of_action_t *)of_action_bsn_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN) {
+        return of_action_bsn_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_TTL) {
-        return (of_action_t *)of_action_set_nw_ttl_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_MIRROR) {
-        return (of_action_t *)of_action_bsn_mirror_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_GROUP) {
-        return (of_action_t *)of_action_group_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_MPLS) {
-        return (of_action_t *)of_action_push_mpls_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_OUT) {
-        return (of_action_t *)of_action_copy_ttl_out_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_CHECKSUM) {
-        return (of_action_t *)of_action_bsn_checksum_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_NICIRA) {
-        return (of_action_t *)of_action_nicira_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA) {
+        return of_action_nicira_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_MPLS_TTL) {
-        return (of_action_t *)of_action_set_mpls_ttl_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -15417,19 +15333,17 @@ of_bsn_interface_OF_VERSION_1_2_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_vport_t *
+of_object_t *
 of_bsn_vport_OF_VERSION_1_2_dup(
-    of_bsn_vport_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return (of_bsn_vport_t *)of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
-        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_L2GRE) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -15801,39 +15715,33 @@ of_group_stats_entry_OF_VERSION_1_2_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_instruction_t *
+of_object_t *
 of_instruction_OF_VERSION_1_2_dup(
-    of_instruction_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return (of_instruction_t *)of_instruction_apply_actions_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return (of_instruction_t *)of_instruction_clear_actions_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return (of_instruction_t *)of_instruction_goto_table_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_EXPERIMENTER) {
-        return (of_instruction_t *)of_instruction_experimenter_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_EXPERIMENTER) {
+        return of_instruction_experimenter_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return (of_instruction_t *)of_instruction_write_metadata_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return (of_instruction_t *)of_instruction_write_actions_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -16072,549 +15980,441 @@ of_match_v3_OF_VERSION_1_2_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_oxm_t *
+of_object_t *
 of_oxm_OF_VERSION_1_2_dup(
-    of_oxm_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_OXM_IN_PORT_MASKED) {
-        return (of_oxm_t *)of_oxm_in_port_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
+        return of_oxm_in_port_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TARGET) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_target_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
+        return of_oxm_ipv6_nd_target_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_CODE) {
-        return (of_oxm_t *)of_oxm_icmpv4_code_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PHY_PORT) {
-        return (of_oxm_t *)of_oxm_in_phy_port_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT) {
+        return of_oxm_in_phy_port_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_sctp_dst_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
+        return of_oxm_sctp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
-        return (of_oxm_t *)of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
+        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_CODE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv6_code_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
+        return of_oxm_icmpv6_code_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PHY_PORT_MASKED) {
-        return (of_oxm_t *)of_oxm_in_phy_port_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
+        return of_oxm_in_phy_port_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_LAG_ID) {
-        return (of_oxm_t *)of_oxm_bsn_lag_id_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_LAG_ID) {
+        return of_oxm_bsn_lag_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF2_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
+        return of_oxm_bsn_udf2_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF4_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
+        return of_oxm_bsn_udf4_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_FLABEL) {
-        return (of_oxm_t *)of_oxm_ipv6_flabel_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_FLABEL) {
+        return of_oxm_ipv6_flabel_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_DST) {
-        return (of_oxm_t *)of_oxm_udp_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_SLL) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_TYPE) {
-        return (of_oxm_t *)of_oxm_eth_type_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_TYPE) {
+        return of_oxm_eth_type_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_DST) {
-        return (of_oxm_t *)of_oxm_eth_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_DST) {
+        return of_oxm_eth_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_PCP) {
-        return (of_oxm_t *)of_oxm_vlan_pcp_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_PCP) {
+        return of_oxm_vlan_pcp_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TLL) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_tll_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
+        return of_oxm_ipv6_nd_tll_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
+        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_OP) {
-        return (of_oxm_t *)of_oxm_arp_op_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_OP) {
+        return of_oxm_arp_op_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_TYPE) {
-        return (of_oxm_t *)of_oxm_icmpv4_type_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
+        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_TYPE) {
-        return (of_oxm_t *)of_oxm_icmpv6_type_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
+        return of_oxm_icmpv6_type_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_THA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_tha_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
+        return of_oxm_arp_tha_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_dst_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
+        return of_oxm_eth_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_PCP_MASKED) {
-        return (of_oxm_t *)of_oxm_vlan_pcp_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
+        return of_oxm_vlan_pcp_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SHA) {
-        return (of_oxm_t *)of_oxm_arp_sha_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_type_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_DST) {
-        return (of_oxm_t *)of_oxm_tcp_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_DST) {
+        return of_oxm_tcp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_PROTO_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_ECN_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_ecn_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
+        return of_oxm_ip_ecn_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_METADATA_MASKED) {
-        return (of_oxm_t *)of_oxm_metadata_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_METADATA_MASKED) {
+        return of_oxm_metadata_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
+        return of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
-        return (of_oxm_t *)of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
+        return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_SRC) {
-        return (of_oxm_t *)of_oxm_sctp_src_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_SRC) {
+        return of_oxm_sctp_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_SRC) {
-        return (of_oxm_t *)of_oxm_udp_src_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_SRC) {
+        return of_oxm_udp_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
-        return (of_oxm_t *)of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
+        return of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
-        return (of_oxm_t *)of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
+        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SPA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_TCP_FLAGS) {
-        return (of_oxm_t *)of_oxm_bsn_tcp_flags_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
+        return of_oxm_bsn_tcp_flags_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SHA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_sha_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
+        return of_oxm_arp_sha_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_IN_PORTS_128) {
-        return (of_oxm_t *)of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
+        return of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_DST) {
-        return (of_oxm_t *)of_oxm_sctp_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_DST) {
+        return of_oxm_sctp_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF5_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
+        return of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv4_type_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
+        return of_oxm_icmpv4_type_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
+        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_CODE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
+        return of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
+        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv4_src_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
+        return of_oxm_ipv4_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_SRC) {
-        return (of_oxm_t *)of_oxm_ipv4_src_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_SRC) {
+        return of_oxm_ipv4_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF5) {
-        return (of_oxm_t *)of_oxm_bsn_udf5_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF5) {
+        return of_oxm_bsn_udf5_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF4) {
-        return (of_oxm_t *)of_oxm_bsn_udf4_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF4) {
+        return of_oxm_bsn_udf4_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF7) {
-        return (of_oxm_t *)of_oxm_bsn_udf7_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF7) {
+        return of_oxm_bsn_udf7_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
+        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF1) {
-        return (of_oxm_t *)of_oxm_bsn_udf1_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF1) {
+        return of_oxm_bsn_udf1_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF0) {
-        return (of_oxm_t *)of_oxm_bsn_udf0_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF0) {
+        return of_oxm_bsn_udf0_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF3) {
-        return (of_oxm_t *)of_oxm_bsn_udf3_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF3) {
+        return of_oxm_bsn_udf3_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF2) {
-        return (of_oxm_t *)of_oxm_bsn_udf2_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF2) {
+        return of_oxm_bsn_udf2_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_CODE) {
-        return (of_oxm_t *)of_oxm_icmpv6_code_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_CODE) {
+        return of_oxm_icmpv6_code_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_DSCP_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_dscp_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
+        return of_oxm_ip_dscp_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_LABEL) {
-        return (of_oxm_t *)of_oxm_mpls_label_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_LABEL) {
+        return of_oxm_mpls_label_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF6) {
-        return (of_oxm_t *)of_oxm_bsn_udf6_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PORT) {
-        return (of_oxm_t *)of_oxm_in_port_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF7_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
+        return of_oxm_bsn_udf7_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF1_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
+        return of_oxm_bsn_udf1_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VRF_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
+        return of_oxm_bsn_vrf_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_SRC) {
-        return (of_oxm_t *)of_oxm_tcp_src_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_SRC) {
+        return of_oxm_tcp_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_udp_src_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
+        return of_oxm_udp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_ECN) {
-        return (of_oxm_t *)of_oxm_ip_ecn_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_ECN) {
+        return of_oxm_ip_ecn_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_SRC) {
-        return (of_oxm_t *)of_oxm_eth_src_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_SRC) {
+        return of_oxm_eth_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_DST) {
-        return (of_oxm_t *)of_oxm_ipv6_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_DST) {
+        return of_oxm_ipv6_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv4_dst_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
+        return of_oxm_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VRF) {
-        return (of_oxm_t *)of_oxm_bsn_vrf_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VRF) {
+        return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_DST) {
-        return (of_oxm_t *)of_oxm_ipv4_dst_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return (of_oxm_t *)of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_DSCP) {
-        return (of_oxm_t *)of_oxm_ip_dscp_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_DSCP) {
+        return of_oxm_ip_dscp_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_VID_MASKED) {
-        return (of_oxm_t *)of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_FLABEL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
+        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_TC_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
+        return of_oxm_mpls_tc_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_tcp_dst_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
+        return of_oxm_tcp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF6_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF6_MASKED) {
+        return of_oxm_bsn_udf6_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_sctp_src_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
+        return of_oxm_sctp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_LAG_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
+        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_PROTO) {
-        return (of_oxm_t *)of_oxm_ip_proto_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_PROTO) {
+        return of_oxm_ip_proto_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_SRC) {
-        return (of_oxm_t *)of_oxm_ipv6_src_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_SRC) {
+        return of_oxm_ipv6_src_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_udp_dst_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
+        return of_oxm_udp_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SPA) {
-        return (of_oxm_t *)of_oxm_arp_spa_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SPA) {
+        return of_oxm_arp_spa_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_OP_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_op_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
+        return of_oxm_arp_op_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_VID) {
-        return (of_oxm_t *)of_oxm_vlan_vid_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_VID) {
+        return of_oxm_vlan_vid_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_tcp_src_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
+        return of_oxm_tcp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_METADATA) {
-        return (of_oxm_t *)of_oxm_metadata_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_METADATA) {
+        return of_oxm_metadata_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_src_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF0_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
+        return of_oxm_bsn_udf0_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_TPA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_tpa_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
+        return of_oxm_arp_tpa_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
-        return (of_oxm_t *)of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_THA) {
-        return (of_oxm_t *)of_oxm_arp_tha_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_THA) {
+        return of_oxm_arp_tha_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_TC) {
-        return (of_oxm_t *)of_oxm_mpls_tc_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_TC) {
+        return of_oxm_mpls_tc_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_TPA) {
-        return (of_oxm_t *)of_oxm_arp_tpa_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_TPA) {
+        return of_oxm_arp_tpa_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_LABEL_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_label_masked_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
+        return of_oxm_mpls_label_masked_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -19672,24 +19472,21 @@ of_port_stats_entry_OF_VERSION_1_2_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_prop_t *
+of_object_t *
 of_queue_prop_OF_VERSION_1_2_dup(
-    of_queue_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_PROP_EXPERIMENTER) {
-        return (of_queue_prop_t *)of_queue_prop_experimenter_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_EXPERIMENTER) {
+        return of_queue_prop_experimenter_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_PROP_MAX_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_max_rate_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MAX_RATE) {
+        return of_queue_prop_max_rate_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_PROP_MIN_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_min_rate_OF_VERSION_1_2_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MIN_RATE) {
+        return of_queue_prop_min_rate_OF_VERSION_1_2_dup(src);
     }
 
     return NULL;
@@ -19921,8 +19718,8 @@ of_list_action_t *
 of_list_action_OF_VERSION_1_2_dup(
     of_list_action_t *src)
 {
-    of_action_t src_elt;
-    of_action_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_t *dst;
 
@@ -19955,8 +19752,8 @@ of_list_bsn_interface_t *
 of_list_bsn_interface_OF_VERSION_1_2_dup(
     of_list_bsn_interface_t *src)
 {
-    of_bsn_interface_t src_elt;
-    of_bsn_interface_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_interface_t *dst;
 
@@ -19989,8 +19786,8 @@ of_list_bucket_t *
 of_list_bucket_OF_VERSION_1_2_dup(
     of_list_bucket_t *src)
 {
-    of_bucket_t src_elt;
-    of_bucket_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_t *dst;
 
@@ -20023,8 +19820,8 @@ of_list_bucket_counter_t *
 of_list_bucket_counter_OF_VERSION_1_2_dup(
     of_list_bucket_counter_t *src)
 {
-    of_bucket_counter_t src_elt;
-    of_bucket_counter_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_counter_t *dst;
 
@@ -20057,8 +19854,8 @@ of_list_flow_stats_entry_t *
 of_list_flow_stats_entry_OF_VERSION_1_2_dup(
     of_list_flow_stats_entry_t *src)
 {
-    of_flow_stats_entry_t src_elt;
-    of_flow_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_flow_stats_entry_t *dst;
 
@@ -20091,8 +19888,8 @@ of_list_group_desc_stats_entry_t *
 of_list_group_desc_stats_entry_OF_VERSION_1_2_dup(
     of_list_group_desc_stats_entry_t *src)
 {
-    of_group_desc_stats_entry_t src_elt;
-    of_group_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_desc_stats_entry_t *dst;
 
@@ -20125,8 +19922,8 @@ of_list_group_stats_entry_t *
 of_list_group_stats_entry_OF_VERSION_1_2_dup(
     of_list_group_stats_entry_t *src)
 {
-    of_group_stats_entry_t src_elt;
-    of_group_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_stats_entry_t *dst;
 
@@ -20159,8 +19956,8 @@ of_list_instruction_t *
 of_list_instruction_OF_VERSION_1_2_dup(
     of_list_instruction_t *src)
 {
-    of_instruction_t src_elt;
-    of_instruction_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_instruction_t *dst;
 
@@ -20193,8 +19990,8 @@ of_list_oxm_t *
 of_list_oxm_OF_VERSION_1_2_dup(
     of_list_oxm_t *src)
 {
-    of_oxm_t src_elt;
-    of_oxm_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_oxm_t *dst;
 
@@ -20227,8 +20024,8 @@ of_list_packet_queue_t *
 of_list_packet_queue_OF_VERSION_1_2_dup(
     of_list_packet_queue_t *src)
 {
-    of_packet_queue_t src_elt;
-    of_packet_queue_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_packet_queue_t *dst;
 
@@ -20261,8 +20058,8 @@ of_list_port_desc_t *
 of_list_port_desc_OF_VERSION_1_2_dup(
     of_list_port_desc_t *src)
 {
-    of_port_desc_t src_elt;
-    of_port_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_desc_t *dst;
 
@@ -20295,8 +20092,8 @@ of_list_port_stats_entry_t *
 of_list_port_stats_entry_OF_VERSION_1_2_dup(
     of_list_port_stats_entry_t *src)
 {
-    of_port_stats_entry_t src_elt;
-    of_port_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_stats_entry_t *dst;
 
@@ -20329,8 +20126,8 @@ of_list_queue_prop_t *
 of_list_queue_prop_OF_VERSION_1_2_dup(
     of_list_queue_prop_t *src)
 {
-    of_queue_prop_t src_elt;
-    of_queue_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_prop_t *dst;
 
@@ -20363,8 +20160,8 @@ of_list_queue_stats_entry_t *
 of_list_queue_stats_entry_OF_VERSION_1_2_dup(
     of_list_queue_stats_entry_t *src)
 {
-    of_queue_stats_entry_t src_elt;
-    of_queue_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_stats_entry_t *dst;
 
@@ -20397,8 +20194,8 @@ of_list_table_stats_entry_t *
 of_list_table_stats_entry_OF_VERSION_1_2_dup(
     of_list_table_stats_entry_t *src)
 {
-    of_table_stats_entry_t src_elt;
-    of_table_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_stats_entry_t *dst;
 
@@ -27074,129 +26871,105 @@ of_table_stats_request_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_t *
+of_object_t *
 of_action_OF_VERSION_1_3_dup(
-    of_action_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return (of_action_t *)of_action_nicira_dec_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_PBB) {
-        return (of_action_t *)of_action_pop_pbb_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_PBB) {
+        return of_action_pop_pbb_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_MPLS) {
-        return (of_action_t *)of_action_pop_mpls_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_IN) {
-        return (of_action_t *)of_action_copy_ttl_in_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_IN) {
+        return of_action_copy_ttl_in_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_OUTPUT) {
-        return (of_action_t *)of_action_output_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_EXPERIMENTER) {
-        return (of_action_t *)of_action_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_EXPERIMENTER) {
+        return of_action_experimenter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_FIELD) {
-        return (of_action_t *)of_action_set_field_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_FIELD) {
+        return of_action_set_field_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_QUEUE) {
-        return (of_action_t *)of_action_set_queue_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_NW_TTL) {
-        return (of_action_t *)of_action_dec_nw_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_NW_TTL) {
+        return of_action_dec_nw_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_VLAN) {
-        return (of_action_t *)of_action_pop_vlan_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_VLAN) {
-        return (of_action_t *)of_action_push_vlan_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_MPLS_TTL) {
-        return (of_action_t *)of_action_dec_mpls_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
+        return of_action_dec_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return (of_action_t *)of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN) {
-        return (of_action_t *)of_action_bsn_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN) {
+        return of_action_bsn_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_TTL) {
-        return (of_action_t *)of_action_set_nw_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_GENTABLE) {
-        return (of_action_t *)of_action_bsn_gentable_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_GENTABLE) {
+        return of_action_bsn_gentable_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_MIRROR) {
-        return (of_action_t *)of_action_bsn_mirror_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_GROUP) {
-        return (of_action_t *)of_action_group_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_MPLS) {
-        return (of_action_t *)of_action_push_mpls_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_OUT) {
-        return (of_action_t *)of_action_copy_ttl_out_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_CHECKSUM) {
-        return (of_action_t *)of_action_bsn_checksum_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_NICIRA) {
-        return (of_action_t *)of_action_nicira_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA) {
+        return of_action_nicira_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_PBB) {
-        return (of_action_t *)of_action_push_pbb_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_PBB) {
+        return of_action_push_pbb_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_MPLS_TTL) {
-        return (of_action_t *)of_action_set_mpls_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -27541,129 +27314,105 @@ of_action_header_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_id_t *
+of_object_t *
 of_action_id_OF_VERSION_1_3_dup(
-    of_action_id_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
-        return (of_action_id_t *)of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
+        return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_CHECKSUM) {
-        return (of_action_id_t *)of_action_id_bsn_checksum_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_CHECKSUM) {
+        return of_action_id_bsn_checksum_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_GROUP) {
-        return (of_action_id_t *)of_action_id_group_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_GROUP) {
+        return of_action_id_group_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_PUSH_VLAN) {
-        return (of_action_id_t *)of_action_id_push_vlan_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_PUSH_VLAN) {
+        return of_action_id_push_vlan_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_POP_PBB) {
-        return (of_action_id_t *)of_action_id_pop_pbb_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_POP_PBB) {
+        return of_action_id_pop_pbb_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_MIRROR) {
-        return (of_action_id_t *)of_action_id_bsn_mirror_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_MIRROR) {
+        return of_action_id_bsn_mirror_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_EXPERIMENTER) {
-        return (of_action_id_t *)of_action_id_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_EXPERIMENTER) {
+        return of_action_id_experimenter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_PUSH_MPLS) {
-        return (of_action_id_t *)of_action_id_push_mpls_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_PUSH_MPLS) {
+        return of_action_id_push_mpls_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
-        return (of_action_id_t *)of_action_id_dec_mpls_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
+        return of_action_id_dec_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_FIELD) {
-        return (of_action_id_t *)of_action_id_set_field_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_FIELD) {
+        return of_action_id_set_field_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_OUTPUT) {
-        return (of_action_id_t *)of_action_id_output_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_OUTPUT) {
+        return of_action_id_output_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
-        return (of_action_id_t *)of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
+        return of_action_id_nicira_dec_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN) {
-        return (of_action_id_t *)of_action_id_bsn_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN) {
+        return of_action_id_bsn_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_COPY_TTL_OUT) {
-        return (of_action_id_t *)of_action_id_copy_ttl_out_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
+        return of_action_id_copy_ttl_out_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_QUEUE) {
-        return (of_action_id_t *)of_action_id_set_queue_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_QUEUE) {
+        return of_action_id_set_queue_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_COPY_TTL_IN) {
-        return (of_action_id_t *)of_action_id_copy_ttl_in_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
+        return of_action_id_copy_ttl_in_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_GENTABLE) {
-        return (of_action_id_t *)of_action_id_bsn_gentable_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_GENTABLE) {
+        return of_action_id_bsn_gentable_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_NICIRA) {
-        return (of_action_id_t *)of_action_id_nicira_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_NICIRA) {
+        return of_action_id_nicira_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_POP_MPLS) {
-        return (of_action_id_t *)of_action_id_pop_mpls_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_POP_MPLS) {
+        return of_action_id_pop_mpls_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_PUSH_PBB) {
-        return (of_action_id_t *)of_action_id_push_pbb_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_PUSH_PBB) {
+        return of_action_id_push_pbb_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_POP_VLAN) {
-        return (of_action_id_t *)of_action_id_pop_vlan_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_POP_VLAN) {
+        return of_action_id_pop_vlan_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_MPLS_TTL) {
-        return (of_action_id_t *)of_action_id_set_mpls_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
+        return of_action_id_set_mpls_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_DEC_NW_TTL) {
-        return (of_action_id_t *)of_action_id_dec_nw_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
+        return of_action_id_dec_nw_ttl_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_NW_TTL) {
-        return (of_action_id_t *)of_action_id_set_nw_ttl_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_NW_TTL) {
+        return of_action_id_set_nw_ttl_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -29091,279 +28840,225 @@ of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_tlv_t *
+of_object_t *
 of_bsn_tlv_OF_VERSION_1_3_dup(
-    of_bsn_tlv_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BSN_TLV_ACTOR_STATE) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
+        return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_MAC) {
+        return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
+        return of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_SAMPLING_RATE) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
+        return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_TX_BYTES) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_TX_BYTES) {
+        return of_bsn_tlv_tx_bytes_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_QUEUE_WEIGHT) {
+        return of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IPV4_DST) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_IPV4_DST) {
+        return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_CIRCUIT_ID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
+        return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDF_ANCHOR) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
+        return of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDF_OFFSET) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
+        return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_TX_PACKETS) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PARTNER_STATE) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
+        return of_bsn_tlv_partner_state_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_RX_PACKETS) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
+        return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
+        return of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_REQUEST_PACKETS) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_REQUEST_PACKETS) {
+        return of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_BROADCAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_NAME) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_name_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_NAME) {
+        return of_bsn_tlv_name_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_MISS_PACKETS) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_MISS_PACKETS) {
+        return of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IPV4_SRC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_IPV4_SRC) {
+        return of_bsn_tlv_ipv4_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_NUM) {
+        return of_bsn_tlv_partner_port_num_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IDLE_TIME) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_IDLE_TIME) {
+        return of_bsn_tlv_idle_time_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_IP) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_IP) {
+        return of_bsn_tlv_external_ip_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_IDLE_NOTIFICATION) {
+        return of_bsn_tlv_idle_notification_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDF_LENGTH) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UDF_LENGTH) {
+        return of_bsn_tlv_udf_length_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_PORT_PRIORITY) {
+        return of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PARTNER_KEY) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_KEY) {
+        return of_bsn_tlv_partner_key_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_MAC) {
+        return of_bsn_tlv_external_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDP_DST) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udp_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UDP_DST) {
+        return of_bsn_tlv_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_QUEUE_ID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_QUEUE_ID) {
+        return of_bsn_tlv_queue_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
+        return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_VRF) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_VRF) {
+        return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_VLAN_VID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
+        return of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_IDLE_TIMEOUT) {
+        return of_bsn_tlv_idle_timeout_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_CRC_ENABLED) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_CRC_ENABLED) {
+        return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDP_SRC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UDP_SRC) {
+        return of_bsn_tlv_udp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ACTOR_KEY) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_KEY) {
+        return of_bsn_tlv_actor_key_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_INTERNAL_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_INTERNAL_MAC) {
+        return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_HEADER_SIZE) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_header_size_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
+        return of_bsn_tlv_header_size_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_PRIORITY) {
+        return of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_IPV4) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_IPV4) {
+        return of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UDF_ID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UDF_ID) {
+        return of_bsn_tlv_udf_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ETH_SRC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ETH_SRC) {
+        return of_bsn_tlv_eth_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ACTOR_PORT_NUM) {
+        return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
+        return of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_INTERNAL_GATEWAY_MAC) {
+        return of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PARTNER_SYSTEM_MAC) {
+        return of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_UNICAST_QUERY_TIMEOUT) {
+        return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_ETH_DST) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_ETH_DST) {
+        return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_REPLY_PACKETS) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_REPLY_PACKETS) {
+        return of_bsn_tlv_reply_packets_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_TLV_PORT) {
-        return (of_bsn_tlv_t *)of_bsn_tlv_port_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_TLV_PORT) {
+        return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -30781,19 +30476,17 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_vport_t *
+of_object_t *
 of_bsn_vport_OF_VERSION_1_3_dup(
-    of_bsn_vport_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return (of_bsn_vport_t *)of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
-        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_L2GRE) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -31212,14 +30905,13 @@ of_group_stats_entry_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_hello_elem_t *
+of_object_t *
 of_hello_elem_OF_VERSION_1_3_dup(
-    of_hello_elem_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_HELLO_ELEM_VERSIONBITMAP) {
-        return (of_hello_elem_t *)of_hello_elem_versionbitmap_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_HELLO_ELEM_VERSIONBITMAP) {
+        return of_hello_elem_versionbitmap_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -31287,104 +30979,85 @@ of_hello_elem_versionbitmap_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_instruction_t *
+of_object_t *
 of_instruction_OF_VERSION_1_3_dup(
-    of_instruction_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_DENY) {
-        return (of_instruction_t *)of_instruction_bsn_deny_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
+        return of_instruction_bsn_deny_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE) {
-        return (of_instruction_t *)of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE) {
+        return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return (of_instruction_t *)of_instruction_apply_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN) {
-        return (of_instruction_t *)of_instruction_bsn_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN) {
+        return of_instruction_bsn_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
-        return (of_instruction_t *)of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
+        return of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
-        return (of_instruction_t *)of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return (of_instruction_t *)of_instruction_clear_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
-        return (of_instruction_t *)of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
+        return of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
-        return (of_instruction_t *)of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
+        return of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return (of_instruction_t *)of_instruction_goto_table_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_EXPERIMENTER) {
-        return (of_instruction_t *)of_instruction_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_EXPERIMENTER) {
+        return of_instruction_experimenter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return (of_instruction_t *)of_instruction_write_metadata_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
-        return (of_instruction_t *)of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_METER) {
-        return (of_instruction_t *)of_instruction_meter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_METER) {
+        return of_instruction_meter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
-        return (of_instruction_t *)of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
+        return of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_PERMIT) {
-        return (of_instruction_t *)of_instruction_bsn_permit_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
+        return of_instruction_bsn_permit_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
-        return (of_instruction_t *)of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
+        return of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return (of_instruction_t *)of_instruction_write_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
-        return (of_instruction_t *)of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
+        return of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -31863,104 +31536,85 @@ of_instruction_header_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_instruction_id_t *
+of_object_t *
 of_instruction_id_OF_VERSION_1_3_dup(
-    of_instruction_id_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
-        return (of_instruction_id_t *)of_instruction_id_apply_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
+        return of_instruction_id_apply_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
+        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN) {
+        return of_instruction_id_bsn_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
-        return (of_instruction_id_t *)of_instruction_id_clear_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
+        return of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_METER) {
-        return (of_instruction_id_t *)of_instruction_id_meter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_METER) {
+        return of_instruction_id_meter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD) {
+        return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DENY) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
+        return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return (of_instruction_id_t *)of_instruction_id_write_metadata_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
+        return of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PERMIT) {
+        return of_instruction_id_bsn_permit_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
-        return (of_instruction_id_t *)of_instruction_id_goto_table_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
+        return of_instruction_id_goto_table_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
+        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
+        return of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_EXPERIMENTER) {
-        return (of_instruction_id_t *)of_instruction_id_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_EXPERIMENTER) {
+        return of_instruction_id_experimenter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
-        return (of_instruction_id_t *)of_instruction_id_write_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
+        return of_instruction_id_write_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
-        return (of_instruction_id_t *)of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
+        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -32602,24 +32256,21 @@ of_match_v3_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_meter_band_t *
+of_object_t *
 of_meter_band_OF_VERSION_1_3_dup(
-    of_meter_band_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_METER_BAND_DROP) {
-        return (of_meter_band_t *)of_meter_band_drop_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_METER_BAND_DROP) {
+        return of_meter_band_drop_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_METER_BAND_DSCP_REMARK) {
-        return (of_meter_band_t *)of_meter_band_dscp_remark_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_METER_BAND_DSCP_REMARK) {
+        return of_meter_band_dscp_remark_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_METER_BAND_EXPERIMENTER) {
-        return (of_meter_band_t *)of_meter_band_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_METER_BAND_EXPERIMENTER) {
+        return of_meter_band_experimenter_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -32906,569 +32557,457 @@ of_meter_stats_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_oxm_t *
+of_object_t *
 of_oxm_OF_VERSION_1_3_dup(
-    of_oxm_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_OXM_IN_PORT_MASKED) {
-        return (of_oxm_t *)of_oxm_in_port_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
+        return of_oxm_in_port_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TARGET) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_target_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
+        return of_oxm_ipv6_nd_target_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_CODE) {
-        return (of_oxm_t *)of_oxm_icmpv4_code_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_BOS_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_bos_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
+        return of_oxm_mpls_bos_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PHY_PORT) {
-        return (of_oxm_t *)of_oxm_in_phy_port_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT) {
+        return of_oxm_in_phy_port_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_sctp_dst_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
+        return of_oxm_sctp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
-        return (of_oxm_t *)of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID) {
+        return of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_CODE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv6_code_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
+        return of_oxm_icmpv6_code_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PHY_PORT_MASKED) {
-        return (of_oxm_t *)of_oxm_in_phy_port_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
+        return of_oxm_in_phy_port_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_LAG_ID) {
-        return (of_oxm_t *)of_oxm_bsn_lag_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_LAG_ID) {
+        return of_oxm_bsn_lag_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF2_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF2_MASKED) {
+        return of_oxm_bsn_udf2_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF4_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF4_MASKED) {
+        return of_oxm_bsn_udf4_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_FLABEL) {
-        return (of_oxm_t *)of_oxm_ipv6_flabel_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_FLABEL) {
+        return of_oxm_ipv6_flabel_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_DST) {
-        return (of_oxm_t *)of_oxm_udp_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_SLL) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_TYPE) {
-        return (of_oxm_t *)of_oxm_eth_type_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_TYPE) {
+        return of_oxm_eth_type_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_DST) {
-        return (of_oxm_t *)of_oxm_eth_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_DST) {
+        return of_oxm_eth_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_PCP) {
-        return (of_oxm_t *)of_oxm_vlan_pcp_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_PCP) {
+        return of_oxm_vlan_pcp_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TLL) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_tll_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
+        return of_oxm_ipv6_nd_tll_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
+        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_OP) {
-        return (of_oxm_t *)of_oxm_arp_op_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_OP) {
+        return of_oxm_arp_op_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_TYPE) {
-        return (of_oxm_t *)of_oxm_icmpv4_type_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
+        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_TYPE) {
-        return (of_oxm_t *)of_oxm_icmpv6_type_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
+        return of_oxm_icmpv6_type_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_THA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_tha_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
+        return of_oxm_arp_tha_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_dst_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
+        return of_oxm_eth_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_PCP_MASKED) {
-        return (of_oxm_t *)of_oxm_vlan_pcp_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
+        return of_oxm_vlan_pcp_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SHA) {
-        return (of_oxm_t *)of_oxm_arp_sha_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_type_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_DST) {
-        return (of_oxm_t *)of_oxm_tcp_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_DST) {
+        return of_oxm_tcp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_PROTO_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_ECN_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_ecn_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
+        return of_oxm_ip_ecn_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_METADATA_MASKED) {
-        return (of_oxm_t *)of_oxm_metadata_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_METADATA_MASKED) {
+        return of_oxm_metadata_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED) {
+        return of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
-        return (of_oxm_t *)of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_GLOBAL_VRF_ALLOWED) {
+        return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_SRC) {
-        return (of_oxm_t *)of_oxm_sctp_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_SRC) {
+        return of_oxm_sctp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_SRC) {
-        return (of_oxm_t *)of_oxm_udp_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_SRC) {
+        return of_oxm_udp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
-        return (of_oxm_t *)of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_DST_CLASS_ID) {
+        return of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
-        return (of_oxm_t *)of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
+        return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SPA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_TCP_FLAGS) {
-        return (of_oxm_t *)of_oxm_bsn_tcp_flags_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
+        return of_oxm_bsn_tcp_flags_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SHA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_sha_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
+        return of_oxm_arp_sha_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_IN_PORTS_128) {
-        return (of_oxm_t *)of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128) {
+        return of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID_MASKED) {
+        return of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_DST) {
-        return (of_oxm_t *)of_oxm_sctp_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_DST) {
+        return of_oxm_sctp_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF5_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
+        return of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv4_type_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
+        return of_oxm_icmpv4_type_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
+        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_CODE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
+        return of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
+        return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv4_src_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
+        return of_oxm_ipv4_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TUNNEL_ID) {
-        return (of_oxm_t *)of_oxm_tunnel_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TUNNEL_ID) {
+        return of_oxm_tunnel_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_SRC) {
-        return (of_oxm_t *)of_oxm_ipv4_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_SRC) {
+        return of_oxm_ipv4_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF5) {
-        return (of_oxm_t *)of_oxm_bsn_udf5_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF5) {
+        return of_oxm_bsn_udf5_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF4) {
-        return (of_oxm_t *)of_oxm_bsn_udf4_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF4) {
+        return of_oxm_bsn_udf4_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF7) {
-        return (of_oxm_t *)of_oxm_bsn_udf7_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF7) {
+        return of_oxm_bsn_udf7_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_TCP_FLAGS_MASKED) {
+        return of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF1) {
-        return (of_oxm_t *)of_oxm_bsn_udf1_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF1) {
+        return of_oxm_bsn_udf1_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF0) {
-        return (of_oxm_t *)of_oxm_bsn_udf0_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF0) {
+        return of_oxm_bsn_udf0_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF3) {
-        return (of_oxm_t *)of_oxm_bsn_udf3_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF3) {
+        return of_oxm_bsn_udf3_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF2) {
-        return (of_oxm_t *)of_oxm_bsn_udf2_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF2) {
+        return of_oxm_bsn_udf2_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_CODE) {
-        return (of_oxm_t *)of_oxm_icmpv6_code_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_CODE) {
+        return of_oxm_icmpv6_code_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_DSCP_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_dscp_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
+        return of_oxm_ip_dscp_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_LABEL) {
-        return (of_oxm_t *)of_oxm_mpls_label_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_LABEL) {
+        return of_oxm_mpls_label_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF6) {
-        return (of_oxm_t *)of_oxm_bsn_udf6_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF6) {
+        return of_oxm_bsn_udf6_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PORT) {
-        return (of_oxm_t *)of_oxm_in_port_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF7_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF7_MASKED) {
+        return of_oxm_bsn_udf7_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF1_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF1_MASKED) {
+        return of_oxm_bsn_udf1_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VRF_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VRF_MASKED) {
+        return of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_SRC) {
-        return (of_oxm_t *)of_oxm_tcp_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_SRC) {
+        return of_oxm_tcp_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_udp_src_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
+        return of_oxm_udp_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_ECN) {
-        return (of_oxm_t *)of_oxm_ip_ecn_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_ECN) {
+        return of_oxm_ip_ecn_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_SRC) {
-        return (of_oxm_t *)of_oxm_eth_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_SRC) {
+        return of_oxm_eth_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_DST) {
-        return (of_oxm_t *)of_oxm_ipv6_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_DST) {
+        return of_oxm_ipv6_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv4_dst_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
+        return of_oxm_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VRF) {
-        return (of_oxm_t *)of_oxm_bsn_vrf_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VRF) {
+        return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_DST) {
-        return (of_oxm_t *)of_oxm_ipv4_dst_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
-        return (of_oxm_t *)of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_L3_SRC_CLASS_ID) {
+        return of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_DSCP) {
-        return (of_oxm_t *)of_oxm_ip_dscp_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_DSCP) {
+        return of_oxm_ip_dscp_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_VID_MASKED) {
-        return (of_oxm_t *)of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_FLABEL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
+        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_TC_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
+        return of_oxm_mpls_tc_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_tcp_dst_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
+        return of_oxm_tcp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF6_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF6_MASKED) {
+        return of_oxm_bsn_udf6_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_sctp_src_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
+        return of_oxm_sctp_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_LAG_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_LAG_ID_MASKED) {
+        return of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_PROTO) {
-        return (of_oxm_t *)of_oxm_ip_proto_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_PROTO) {
+        return of_oxm_ip_proto_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_SRC) {
-        return (of_oxm_t *)of_oxm_ipv6_src_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_SRC) {
+        return of_oxm_ipv6_src_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_udp_dst_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
+        return of_oxm_udp_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SPA) {
-        return (of_oxm_t *)of_oxm_arp_spa_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SPA) {
+        return of_oxm_arp_spa_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_OP_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_op_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
+        return of_oxm_arp_op_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TUNNEL_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TUNNEL_ID_MASKED) {
+        return of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_VID) {
-        return (of_oxm_t *)of_oxm_vlan_vid_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_VID) {
+        return of_oxm_vlan_vid_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_tcp_src_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
+        return of_oxm_tcp_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_BOS) {
-        return (of_oxm_t *)of_oxm_mpls_bos_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_METADATA) {
-        return (of_oxm_t *)of_oxm_metadata_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_METADATA) {
+        return of_oxm_metadata_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_src_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_UDF0_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
+        return of_oxm_bsn_udf0_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_TPA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_tpa_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
+        return of_oxm_arp_tpa_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
-        return (of_oxm_t *)of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_BSN_VLAN_XLATE_PORT_GROUP_ID_MASKED) {
+        return of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_THA) {
-        return (of_oxm_t *)of_oxm_arp_tha_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_THA) {
+        return of_oxm_arp_tha_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_TC) {
-        return (of_oxm_t *)of_oxm_mpls_tc_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_TC) {
+        return of_oxm_mpls_tc_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_TPA) {
-        return (of_oxm_t *)of_oxm_arp_tpa_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_TPA) {
+        return of_oxm_arp_tpa_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_LABEL_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_label_masked_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
+        return of_oxm_mpls_label_masked_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -36639,24 +36178,21 @@ of_port_stats_entry_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_prop_t *
+of_object_t *
 of_queue_prop_OF_VERSION_1_3_dup(
-    of_queue_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_PROP_EXPERIMENTER) {
-        return (of_queue_prop_t *)of_queue_prop_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_EXPERIMENTER) {
+        return of_queue_prop_experimenter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_PROP_MAX_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_max_rate_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MAX_RATE) {
+        return of_queue_prop_max_rate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_PROP_MIN_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_min_rate_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MIN_RATE) {
+        return of_queue_prop_min_rate_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -36814,89 +36350,73 @@ of_queue_stats_entry_OF_VERSION_1_3_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_table_feature_prop_t *
+of_object_t *
 of_table_feature_prop_OF_VERSION_1_3_dup(
-    of_table_feature_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
+        return of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS) {
+        return of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
+        return of_table_feature_prop_apply_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_next_tables_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
+        return of_table_feature_prop_next_tables_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
+        return of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_actions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
+        return of_table_feature_prop_write_actions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
+        return of_table_feature_prop_instructions_miss_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_wildcards_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
+        return of_table_feature_prop_wildcards_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_instructions_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
+        return of_table_feature_prop_instructions_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_experimenter_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER) {
+        return of_table_feature_prop_experimenter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_setfield_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD) {
+        return of_table_feature_prop_write_setfield_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_setfield_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD) {
+        return of_table_feature_prop_apply_setfield_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS) {
+        return of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_MATCH) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_match_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_MATCH) {
+        return of_table_feature_prop_match_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
+        return of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
+        return of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -37642,8 +37162,8 @@ of_list_action_t *
 of_list_action_OF_VERSION_1_3_dup(
     of_list_action_t *src)
 {
-    of_action_t src_elt;
-    of_action_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_t *dst;
 
@@ -37676,8 +37196,8 @@ of_list_action_id_t *
 of_list_action_id_OF_VERSION_1_3_dup(
     of_list_action_id_t *src)
 {
-    of_action_id_t src_elt;
-    of_action_id_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_id_t *dst;
 
@@ -37710,8 +37230,8 @@ of_list_bsn_controller_connection_t *
 of_list_bsn_controller_connection_OF_VERSION_1_3_dup(
     of_list_bsn_controller_connection_t *src)
 {
-    of_bsn_controller_connection_t src_elt;
-    of_bsn_controller_connection_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_controller_connection_t *dst;
 
@@ -37744,8 +37264,8 @@ of_list_bsn_debug_counter_desc_stats_entry_t *
 of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_debug_counter_desc_stats_entry_t *src)
 {
-    of_bsn_debug_counter_desc_stats_entry_t src_elt;
-    of_bsn_debug_counter_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_debug_counter_desc_stats_entry_t *dst;
 
@@ -37778,8 +37298,8 @@ of_list_bsn_debug_counter_stats_entry_t *
 of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_debug_counter_stats_entry_t *src)
 {
-    of_bsn_debug_counter_stats_entry_t src_elt;
-    of_bsn_debug_counter_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_debug_counter_stats_entry_t *dst;
 
@@ -37812,8 +37332,8 @@ of_list_bsn_flow_checksum_bucket_stats_entry_t *
 of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_flow_checksum_bucket_stats_entry_t *src)
 {
-    of_bsn_flow_checksum_bucket_stats_entry_t src_elt;
-    of_bsn_flow_checksum_bucket_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_flow_checksum_bucket_stats_entry_t *dst;
 
@@ -37846,8 +37366,8 @@ of_list_bsn_gentable_bucket_stats_entry_t *
 of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_gentable_bucket_stats_entry_t *src)
 {
-    of_bsn_gentable_bucket_stats_entry_t src_elt;
-    of_bsn_gentable_bucket_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_gentable_bucket_stats_entry_t *dst;
 
@@ -37880,8 +37400,8 @@ of_list_bsn_gentable_desc_stats_entry_t *
 of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_gentable_desc_stats_entry_t *src)
 {
-    of_bsn_gentable_desc_stats_entry_t src_elt;
-    of_bsn_gentable_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_gentable_desc_stats_entry_t *dst;
 
@@ -37914,8 +37434,8 @@ of_list_bsn_gentable_entry_desc_stats_entry_t *
 of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_gentable_entry_desc_stats_entry_t *src)
 {
-    of_bsn_gentable_entry_desc_stats_entry_t src_elt;
-    of_bsn_gentable_entry_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_gentable_entry_desc_stats_entry_t *dst;
 
@@ -37948,8 +37468,8 @@ of_list_bsn_gentable_entry_stats_entry_t *
 of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_gentable_entry_stats_entry_t *src)
 {
-    of_bsn_gentable_entry_stats_entry_t src_elt;
-    of_bsn_gentable_entry_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_gentable_entry_stats_entry_t *dst;
 
@@ -37982,8 +37502,8 @@ of_list_bsn_gentable_stats_entry_t *
 of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_gentable_stats_entry_t *src)
 {
-    of_bsn_gentable_stats_entry_t src_elt;
-    of_bsn_gentable_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_gentable_stats_entry_t *dst;
 
@@ -38016,8 +37536,8 @@ of_list_bsn_interface_t *
 of_list_bsn_interface_OF_VERSION_1_3_dup(
     of_list_bsn_interface_t *src)
 {
-    of_bsn_interface_t src_elt;
-    of_bsn_interface_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_interface_t *dst;
 
@@ -38050,8 +37570,8 @@ of_list_bsn_lacp_stats_entry_t *
 of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_lacp_stats_entry_t *src)
 {
-    of_bsn_lacp_stats_entry_t src_elt;
-    of_bsn_lacp_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_lacp_stats_entry_t *dst;
 
@@ -38084,8 +37604,8 @@ of_list_bsn_port_counter_stats_entry_t *
 of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_port_counter_stats_entry_t *src)
 {
-    of_bsn_port_counter_stats_entry_t src_elt;
-    of_bsn_port_counter_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_port_counter_stats_entry_t *dst;
 
@@ -38118,8 +37638,8 @@ of_list_bsn_switch_pipeline_stats_entry_t *
 of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_switch_pipeline_stats_entry_t *src)
 {
-    of_bsn_switch_pipeline_stats_entry_t src_elt;
-    of_bsn_switch_pipeline_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_switch_pipeline_stats_entry_t *dst;
 
@@ -38152,8 +37672,8 @@ of_list_bsn_table_checksum_stats_entry_t *
 of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_table_checksum_stats_entry_t *src)
 {
-    of_bsn_table_checksum_stats_entry_t src_elt;
-    of_bsn_table_checksum_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_table_checksum_stats_entry_t *dst;
 
@@ -38186,8 +37706,8 @@ of_list_bsn_tlv_t *
 of_list_bsn_tlv_OF_VERSION_1_3_dup(
     of_list_bsn_tlv_t *src)
 {
-    of_bsn_tlv_t src_elt;
-    of_bsn_tlv_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_tlv_t *dst;
 
@@ -38220,8 +37740,8 @@ of_list_bsn_vlan_counter_stats_entry_t *
 of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_vlan_counter_stats_entry_t *src)
 {
-    of_bsn_vlan_counter_stats_entry_t src_elt;
-    of_bsn_vlan_counter_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_vlan_counter_stats_entry_t *dst;
 
@@ -38254,8 +37774,8 @@ of_list_bsn_vrf_counter_stats_entry_t *
 of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_dup(
     of_list_bsn_vrf_counter_stats_entry_t *src)
 {
-    of_bsn_vrf_counter_stats_entry_t src_elt;
-    of_bsn_vrf_counter_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_vrf_counter_stats_entry_t *dst;
 
@@ -38288,8 +37808,8 @@ of_list_bucket_t *
 of_list_bucket_OF_VERSION_1_3_dup(
     of_list_bucket_t *src)
 {
-    of_bucket_t src_elt;
-    of_bucket_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_t *dst;
 
@@ -38322,8 +37842,8 @@ of_list_bucket_counter_t *
 of_list_bucket_counter_OF_VERSION_1_3_dup(
     of_list_bucket_counter_t *src)
 {
-    of_bucket_counter_t src_elt;
-    of_bucket_counter_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_counter_t *dst;
 
@@ -38356,8 +37876,8 @@ of_list_flow_stats_entry_t *
 of_list_flow_stats_entry_OF_VERSION_1_3_dup(
     of_list_flow_stats_entry_t *src)
 {
-    of_flow_stats_entry_t src_elt;
-    of_flow_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_flow_stats_entry_t *dst;
 
@@ -38390,8 +37910,8 @@ of_list_group_desc_stats_entry_t *
 of_list_group_desc_stats_entry_OF_VERSION_1_3_dup(
     of_list_group_desc_stats_entry_t *src)
 {
-    of_group_desc_stats_entry_t src_elt;
-    of_group_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_desc_stats_entry_t *dst;
 
@@ -38424,8 +37944,8 @@ of_list_group_stats_entry_t *
 of_list_group_stats_entry_OF_VERSION_1_3_dup(
     of_list_group_stats_entry_t *src)
 {
-    of_group_stats_entry_t src_elt;
-    of_group_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_stats_entry_t *dst;
 
@@ -38458,8 +37978,8 @@ of_list_hello_elem_t *
 of_list_hello_elem_OF_VERSION_1_3_dup(
     of_list_hello_elem_t *src)
 {
-    of_hello_elem_t src_elt;
-    of_hello_elem_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_hello_elem_t *dst;
 
@@ -38492,8 +38012,8 @@ of_list_instruction_t *
 of_list_instruction_OF_VERSION_1_3_dup(
     of_list_instruction_t *src)
 {
-    of_instruction_t src_elt;
-    of_instruction_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_instruction_t *dst;
 
@@ -38526,8 +38046,8 @@ of_list_instruction_id_t *
 of_list_instruction_id_OF_VERSION_1_3_dup(
     of_list_instruction_id_t *src)
 {
-    of_instruction_id_t src_elt;
-    of_instruction_id_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_instruction_id_t *dst;
 
@@ -38560,8 +38080,8 @@ of_list_meter_band_t *
 of_list_meter_band_OF_VERSION_1_3_dup(
     of_list_meter_band_t *src)
 {
-    of_meter_band_t src_elt;
-    of_meter_band_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_meter_band_t *dst;
 
@@ -38594,8 +38114,8 @@ of_list_meter_band_stats_t *
 of_list_meter_band_stats_OF_VERSION_1_3_dup(
     of_list_meter_band_stats_t *src)
 {
-    of_meter_band_stats_t src_elt;
-    of_meter_band_stats_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_meter_band_stats_t *dst;
 
@@ -38628,8 +38148,8 @@ of_list_meter_stats_t *
 of_list_meter_stats_OF_VERSION_1_3_dup(
     of_list_meter_stats_t *src)
 {
-    of_meter_stats_t src_elt;
-    of_meter_stats_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_meter_stats_t *dst;
 
@@ -38662,8 +38182,8 @@ of_list_oxm_t *
 of_list_oxm_OF_VERSION_1_3_dup(
     of_list_oxm_t *src)
 {
-    of_oxm_t src_elt;
-    of_oxm_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_oxm_t *dst;
 
@@ -38696,8 +38216,8 @@ of_list_packet_queue_t *
 of_list_packet_queue_OF_VERSION_1_3_dup(
     of_list_packet_queue_t *src)
 {
-    of_packet_queue_t src_elt;
-    of_packet_queue_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_packet_queue_t *dst;
 
@@ -38730,8 +38250,8 @@ of_list_port_desc_t *
 of_list_port_desc_OF_VERSION_1_3_dup(
     of_list_port_desc_t *src)
 {
-    of_port_desc_t src_elt;
-    of_port_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_desc_t *dst;
 
@@ -38764,8 +38284,8 @@ of_list_port_stats_entry_t *
 of_list_port_stats_entry_OF_VERSION_1_3_dup(
     of_list_port_stats_entry_t *src)
 {
-    of_port_stats_entry_t src_elt;
-    of_port_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_stats_entry_t *dst;
 
@@ -38798,8 +38318,8 @@ of_list_queue_prop_t *
 of_list_queue_prop_OF_VERSION_1_3_dup(
     of_list_queue_prop_t *src)
 {
-    of_queue_prop_t src_elt;
-    of_queue_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_prop_t *dst;
 
@@ -38832,8 +38352,8 @@ of_list_queue_stats_entry_t *
 of_list_queue_stats_entry_OF_VERSION_1_3_dup(
     of_list_queue_stats_entry_t *src)
 {
-    of_queue_stats_entry_t src_elt;
-    of_queue_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_stats_entry_t *dst;
 
@@ -38866,8 +38386,8 @@ of_list_table_feature_prop_t *
 of_list_table_feature_prop_OF_VERSION_1_3_dup(
     of_list_table_feature_prop_t *src)
 {
-    of_table_feature_prop_t src_elt;
-    of_table_feature_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_feature_prop_t *dst;
 
@@ -38900,8 +38420,8 @@ of_list_table_features_t *
 of_list_table_features_OF_VERSION_1_3_dup(
     of_list_table_features_t *src)
 {
-    of_table_features_t src_elt;
-    of_table_features_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_features_t *dst;
 
@@ -38934,8 +38454,8 @@ of_list_table_stats_entry_t *
 of_list_table_stats_entry_OF_VERSION_1_3_dup(
     of_list_table_stats_entry_t *src)
 {
-    of_table_stats_entry_t src_elt;
-    of_table_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_stats_entry_t *dst;
 
@@ -38968,8 +38488,8 @@ of_list_uint32_t *
 of_list_uint32_OF_VERSION_1_3_dup(
     of_list_uint32_t *src)
 {
-    of_uint32_t src_elt;
-    of_uint32_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_uint32_t *dst;
 
@@ -39002,8 +38522,8 @@ of_list_uint64_t *
 of_list_uint64_OF_VERSION_1_3_dup(
     of_list_uint64_t *src)
 {
-    of_uint64_t src_elt;
-    of_uint64_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_uint64_t *dst;
 
@@ -39036,8 +38556,8 @@ of_list_uint8_t *
 of_list_uint8_OF_VERSION_1_3_dup(
     of_list_uint8_t *src)
 {
-    of_uint8_t src_elt;
-    of_uint8_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_uint8_t *dst;
 
@@ -43657,124 +43177,101 @@ of_table_status_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_t *
+of_object_t *
 of_action_OF_VERSION_1_4_dup(
-    of_action_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_NICIRA_DEC_TTL) {
-        return (of_action_t *)of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA_DEC_TTL) {
+        return of_action_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_PBB) {
-        return (of_action_t *)of_action_pop_pbb_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_PBB) {
+        return of_action_pop_pbb_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_MPLS) {
-        return (of_action_t *)of_action_pop_mpls_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_MPLS) {
+        return of_action_pop_mpls_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_IN) {
-        return (of_action_t *)of_action_copy_ttl_in_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_IN) {
+        return of_action_copy_ttl_in_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_OUTPUT) {
-        return (of_action_t *)of_action_output_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_OUTPUT) {
+        return of_action_output_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_EXPERIMENTER) {
-        return (of_action_t *)of_action_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_EXPERIMENTER) {
+        return of_action_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_FIELD) {
-        return (of_action_t *)of_action_set_field_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_FIELD) {
+        return of_action_set_field_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_QUEUE) {
-        return (of_action_t *)of_action_set_queue_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_QUEUE) {
+        return of_action_set_queue_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_NW_TTL) {
-        return (of_action_t *)of_action_dec_nw_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_NW_TTL) {
+        return of_action_dec_nw_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_POP_VLAN) {
-        return (of_action_t *)of_action_pop_vlan_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_POP_VLAN) {
+        return of_action_pop_vlan_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_VLAN) {
-        return (of_action_t *)of_action_push_vlan_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_VLAN) {
+        return of_action_push_vlan_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_DEC_MPLS_TTL) {
-        return (of_action_t *)of_action_dec_mpls_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_DEC_MPLS_TTL) {
+        return of_action_dec_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
-        return (of_action_t *)of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_SET_TUNNEL_DST) {
+        return of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN) {
-        return (of_action_t *)of_action_bsn_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN) {
+        return of_action_bsn_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_NW_TTL) {
-        return (of_action_t *)of_action_set_nw_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_NW_TTL) {
+        return of_action_set_nw_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_MIRROR) {
-        return (of_action_t *)of_action_bsn_mirror_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_MIRROR) {
+        return of_action_bsn_mirror_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_GROUP) {
-        return (of_action_t *)of_action_group_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_GROUP) {
+        return of_action_group_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_MPLS) {
-        return (of_action_t *)of_action_push_mpls_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_MPLS) {
+        return of_action_push_mpls_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_COPY_TTL_OUT) {
-        return (of_action_t *)of_action_copy_ttl_out_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_COPY_TTL_OUT) {
+        return of_action_copy_ttl_out_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_BSN_CHECKSUM) {
-        return (of_action_t *)of_action_bsn_checksum_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_BSN_CHECKSUM) {
+        return of_action_bsn_checksum_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_NICIRA) {
-        return (of_action_t *)of_action_nicira_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_NICIRA) {
+        return of_action_nicira_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_PUSH_PBB) {
-        return (of_action_t *)of_action_push_pbb_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_PUSH_PBB) {
+        return of_action_push_pbb_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_SET_MPLS_TTL) {
-        return (of_action_t *)of_action_set_mpls_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_SET_MPLS_TTL) {
+        return of_action_set_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -44075,124 +43572,101 @@ of_action_header_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_action_id_t *
+of_object_t *
 of_action_id_OF_VERSION_1_4_dup(
-    of_action_id_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
-        return (of_action_id_t *)of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_SET_TUNNEL_DST) {
+        return of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_CHECKSUM) {
-        return (of_action_id_t *)of_action_id_bsn_checksum_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_CHECKSUM) {
+        return of_action_id_bsn_checksum_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_GROUP) {
-        return (of_action_id_t *)of_action_id_group_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_GROUP) {
+        return of_action_id_group_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_PUSH_VLAN) {
-        return (of_action_id_t *)of_action_id_push_vlan_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_PUSH_VLAN) {
+        return of_action_id_push_vlan_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_POP_PBB) {
-        return (of_action_id_t *)of_action_id_pop_pbb_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_POP_PBB) {
+        return of_action_id_pop_pbb_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN_MIRROR) {
-        return (of_action_id_t *)of_action_id_bsn_mirror_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN_MIRROR) {
+        return of_action_id_bsn_mirror_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_EXPERIMENTER) {
-        return (of_action_id_t *)of_action_id_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_EXPERIMENTER) {
+        return of_action_id_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_PUSH_MPLS) {
-        return (of_action_id_t *)of_action_id_push_mpls_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_PUSH_MPLS) {
+        return of_action_id_push_mpls_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
-        return (of_action_id_t *)of_action_id_dec_mpls_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_DEC_MPLS_TTL) {
+        return of_action_id_dec_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_FIELD) {
-        return (of_action_id_t *)of_action_id_set_field_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_FIELD) {
+        return of_action_id_set_field_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_OUTPUT) {
-        return (of_action_id_t *)of_action_id_output_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_OUTPUT) {
+        return of_action_id_output_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
-        return (of_action_id_t *)of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_NICIRA_DEC_TTL) {
+        return of_action_id_nicira_dec_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_BSN) {
-        return (of_action_id_t *)of_action_id_bsn_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_BSN) {
+        return of_action_id_bsn_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_COPY_TTL_OUT) {
-        return (of_action_id_t *)of_action_id_copy_ttl_out_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_OUT) {
+        return of_action_id_copy_ttl_out_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_QUEUE) {
-        return (of_action_id_t *)of_action_id_set_queue_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_QUEUE) {
+        return of_action_id_set_queue_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_COPY_TTL_IN) {
-        return (of_action_id_t *)of_action_id_copy_ttl_in_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_COPY_TTL_IN) {
+        return of_action_id_copy_ttl_in_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_NICIRA) {
-        return (of_action_id_t *)of_action_id_nicira_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_NICIRA) {
+        return of_action_id_nicira_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_POP_MPLS) {
-        return (of_action_id_t *)of_action_id_pop_mpls_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_POP_MPLS) {
+        return of_action_id_pop_mpls_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_PUSH_PBB) {
-        return (of_action_id_t *)of_action_id_push_pbb_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_PUSH_PBB) {
+        return of_action_id_push_pbb_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_POP_VLAN) {
-        return (of_action_id_t *)of_action_id_pop_vlan_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_POP_VLAN) {
+        return of_action_id_pop_vlan_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_MPLS_TTL) {
-        return (of_action_id_t *)of_action_id_set_mpls_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_MPLS_TTL) {
+        return of_action_id_set_mpls_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_DEC_NW_TTL) {
-        return (of_action_id_t *)of_action_id_dec_nw_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_DEC_NW_TTL) {
+        return of_action_id_dec_nw_ttl_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ACTION_ID_SET_NW_TTL) {
-        return (of_action_id_t *)of_action_id_set_nw_ttl_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ACTION_ID_SET_NW_TTL) {
+        return of_action_id_set_nw_ttl_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -45095,79 +44569,65 @@ of_action_set_queue_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_async_config_prop_t *
+of_object_t *
 of_async_config_prop_OF_VERSION_1_4_dup(
-    of_async_config_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_role_status_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_SLAVE) {
+        return of_async_config_prop_role_status_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_packet_in_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_SLAVE) {
+        return of_async_config_prop_packet_in_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_requestforward_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_SLAVE) {
+        return of_async_config_prop_requestforward_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_packet_in_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PACKET_IN_MASTER) {
+        return of_async_config_prop_packet_in_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_flow_removed_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_MASTER) {
+        return of_async_config_prop_flow_removed_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_experimenter_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_SLAVE) {
+        return of_async_config_prop_experimenter_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_experimenter_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER) {
+        return of_async_config_prop_experimenter_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_table_status_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_SLAVE) {
+        return of_async_config_prop_table_status_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_PORT_STATUS_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_port_status_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PORT_STATUS_MASTER) {
+        return of_async_config_prop_port_status_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_role_status_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_ROLE_STATUS_MASTER) {
+        return of_async_config_prop_role_status_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_PORT_STATUS_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_port_status_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_PORT_STATUS_SLAVE) {
+        return of_async_config_prop_port_status_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_table_status_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_TABLE_STATUS_MASTER) {
+        return of_async_config_prop_table_status_master_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_SLAVE) {
-        return (of_async_config_prop_t *)of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_FLOW_REMOVED_SLAVE) {
+        return of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_MASTER) {
-        return (of_async_config_prop_t *)of_async_config_prop_requestforward_master_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ASYNC_CONFIG_PROP_REQUESTFORWARD_MASTER) {
+        return of_async_config_prop_requestforward_master_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -45579,19 +45039,17 @@ of_bsn_interface_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bsn_vport_t *
+of_object_t *
 of_bsn_vport_OF_VERSION_1_4_dup(
-    of_bsn_vport_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BSN_VPORT_Q_IN_Q) {
-        return (of_bsn_vport_t *)of_bsn_vport_q_in_q_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_Q_IN_Q) {
+        return of_bsn_vport_q_in_q_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_BSN_VPORT_L2GRE) {
-        return (of_bsn_vport_t *)of_bsn_vport_l2gre_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BSN_VPORT_L2GRE) {
+        return of_bsn_vport_l2gre_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -45804,14 +45262,13 @@ of_bucket_counter_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_bundle_prop_t *
+of_object_t *
 of_bundle_prop_OF_VERSION_1_4_dup(
-    of_bundle_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_BUNDLE_PROP_EXPERIMENTER) {
-        return (of_bundle_prop_t *)of_bundle_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_BUNDLE_PROP_EXPERIMENTER) {
+        return of_bundle_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -46044,14 +45501,13 @@ of_group_stats_entry_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_hello_elem_t *
+of_object_t *
 of_hello_elem_OF_VERSION_1_4_dup(
-    of_hello_elem_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_HELLO_ELEM_VERSIONBITMAP) {
-        return (of_hello_elem_t *)of_hello_elem_versionbitmap_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_HELLO_ELEM_VERSIONBITMAP) {
+        return of_hello_elem_versionbitmap_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -46119,44 +45575,37 @@ of_hello_elem_versionbitmap_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_instruction_t *
+of_object_t *
 of_instruction_OF_VERSION_1_4_dup(
-    of_instruction_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return (of_instruction_t *)of_instruction_apply_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return (of_instruction_t *)of_instruction_clear_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return (of_instruction_t *)of_instruction_goto_table_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_EXPERIMENTER) {
-        return (of_instruction_t *)of_instruction_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_EXPERIMENTER) {
+        return of_instruction_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return (of_instruction_t *)of_instruction_write_metadata_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_METER) {
-        return (of_instruction_t *)of_instruction_meter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_METER) {
+        return of_instruction_meter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
-        return (of_instruction_t *)of_instruction_write_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_WRITE_ACTIONS) {
+        return of_instruction_write_actions_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -46299,44 +45748,37 @@ of_instruction_header_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_instruction_id_t *
+of_object_t *
 of_instruction_id_OF_VERSION_1_4_dup(
-    of_instruction_id_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
-        return (of_instruction_id_t *)of_instruction_id_apply_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
+        return of_instruction_id_apply_actions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
-        return (of_instruction_id_t *)of_instruction_id_clear_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_METER) {
-        return (of_instruction_id_t *)of_instruction_id_meter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_METER) {
+        return of_instruction_id_meter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return (of_instruction_id_t *)of_instruction_id_write_metadata_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
-        return (of_instruction_id_t *)of_instruction_id_goto_table_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
+        return of_instruction_id_goto_table_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_EXPERIMENTER) {
-        return (of_instruction_id_t *)of_instruction_id_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_EXPERIMENTER) {
+        return of_instruction_id_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
-        return (of_instruction_id_t *)of_instruction_id_write_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
+        return of_instruction_id_write_actions_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -46642,24 +46084,21 @@ of_match_v3_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_meter_band_t *
+of_object_t *
 of_meter_band_OF_VERSION_1_4_dup(
-    of_meter_band_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_METER_BAND_DROP) {
-        return (of_meter_band_t *)of_meter_band_drop_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_METER_BAND_DROP) {
+        return of_meter_band_drop_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_METER_BAND_DSCP_REMARK) {
-        return (of_meter_band_t *)of_meter_band_dscp_remark_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_METER_BAND_DSCP_REMARK) {
+        return of_meter_band_dscp_remark_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_METER_BAND_EXPERIMENTER) {
-        return (of_meter_band_t *)of_meter_band_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_METER_BAND_EXPERIMENTER) {
+        return of_meter_band_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -46946,389 +46385,313 @@ of_meter_stats_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_oxm_t *
+of_object_t *
 of_oxm_OF_VERSION_1_4_dup(
-    of_oxm_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_OXM_IN_PORT_MASKED) {
-        return (of_oxm_t *)of_oxm_in_port_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PORT_MASKED) {
+        return of_oxm_in_port_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TARGET) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_target_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET) {
+        return of_oxm_ipv6_nd_target_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_CODE) {
-        return (of_oxm_t *)of_oxm_icmpv4_code_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE) {
+        return of_oxm_icmpv4_code_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_BOS_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_bos_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_BOS_MASKED) {
+        return of_oxm_mpls_bos_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PHY_PORT) {
-        return (of_oxm_t *)of_oxm_in_phy_port_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT) {
+        return of_oxm_in_phy_port_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_sctp_dst_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_DST_MASKED) {
+        return of_oxm_sctp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_CODE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv6_code_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_CODE_MASKED) {
+        return of_oxm_icmpv6_code_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PHY_PORT_MASKED) {
-        return (of_oxm_t *)of_oxm_in_phy_port_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PHY_PORT_MASKED) {
+        return of_oxm_in_phy_port_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_FLABEL) {
-        return (of_oxm_t *)of_oxm_ipv6_flabel_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_FLABEL) {
+        return of_oxm_ipv6_flabel_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_DST) {
-        return (of_oxm_t *)of_oxm_udp_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_DST) {
+        return of_oxm_udp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_SLL) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL) {
+        return of_oxm_ipv6_nd_sll_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_TYPE) {
-        return (of_oxm_t *)of_oxm_eth_type_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_TYPE) {
+        return of_oxm_eth_type_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_DST) {
-        return (of_oxm_t *)of_oxm_eth_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_DST) {
+        return of_oxm_eth_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_PCP) {
-        return (of_oxm_t *)of_oxm_vlan_pcp_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_PCP) {
+        return of_oxm_vlan_pcp_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TLL) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_tll_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL) {
+        return of_oxm_ipv6_nd_tll_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TARGET_MASKED) {
+        return of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_OP) {
-        return (of_oxm_t *)of_oxm_arp_op_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_OP) {
+        return of_oxm_arp_op_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_TYPE) {
-        return (of_oxm_t *)of_oxm_icmpv4_type_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE) {
+        return of_oxm_icmpv4_type_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_SLL_MASKED) {
+        return of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_TYPE) {
-        return (of_oxm_t *)of_oxm_icmpv6_type_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE) {
+        return of_oxm_icmpv6_type_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_THA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_tha_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_THA_MASKED) {
+        return of_oxm_arp_tha_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_dst_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_DST_MASKED) {
+        return of_oxm_eth_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_PCP_MASKED) {
-        return (of_oxm_t *)of_oxm_vlan_pcp_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_PCP_MASKED) {
+        return of_oxm_vlan_pcp_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SHA) {
-        return (of_oxm_t *)of_oxm_arp_sha_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SHA) {
+        return of_oxm_arp_sha_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_type_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_TYPE_MASKED) {
+        return of_oxm_eth_type_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_DST) {
-        return (of_oxm_t *)of_oxm_tcp_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_DST) {
+        return of_oxm_tcp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_PROTO_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_PROTO_MASKED) {
+        return of_oxm_ip_proto_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_ECN_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_ecn_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_ECN_MASKED) {
+        return of_oxm_ip_ecn_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_METADATA_MASKED) {
-        return (of_oxm_t *)of_oxm_metadata_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_METADATA_MASKED) {
+        return of_oxm_metadata_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_SRC) {
-        return (of_oxm_t *)of_oxm_sctp_src_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_SRC) {
+        return of_oxm_sctp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_SRC) {
-        return (of_oxm_t *)of_oxm_udp_src_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_SRC) {
+        return of_oxm_udp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SPA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SHA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_sha_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SHA_MASKED) {
+        return of_oxm_arp_sha_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_DST) {
-        return (of_oxm_t *)of_oxm_sctp_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_DST) {
+        return of_oxm_sctp_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv4_type_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_TYPE_MASKED) {
+        return of_oxm_icmpv4_type_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_ND_TLL_MASKED) {
+        return of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV4_CODE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV4_CODE_MASKED) {
+        return of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv4_src_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
+        return of_oxm_ipv4_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TUNNEL_ID) {
-        return (of_oxm_t *)of_oxm_tunnel_id_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TUNNEL_ID) {
+        return of_oxm_tunnel_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_SRC) {
-        return (of_oxm_t *)of_oxm_ipv4_src_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_SRC) {
+        return of_oxm_ipv4_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_CODE) {
-        return (of_oxm_t *)of_oxm_icmpv6_code_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_CODE) {
+        return of_oxm_icmpv6_code_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_DSCP_MASKED) {
-        return (of_oxm_t *)of_oxm_ip_dscp_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_DSCP_MASKED) {
+        return of_oxm_ip_dscp_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_LABEL) {
-        return (of_oxm_t *)of_oxm_mpls_label_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_LABEL) {
+        return of_oxm_mpls_label_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IN_PORT) {
-        return (of_oxm_t *)of_oxm_in_port_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IN_PORT) {
+        return of_oxm_in_port_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_SRC) {
-        return (of_oxm_t *)of_oxm_tcp_src_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_SRC) {
+        return of_oxm_tcp_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_udp_src_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_SRC_MASKED) {
+        return of_oxm_udp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_ECN) {
-        return (of_oxm_t *)of_oxm_ip_ecn_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_ECN) {
+        return of_oxm_ip_ecn_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_SRC) {
-        return (of_oxm_t *)of_oxm_eth_src_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_SRC) {
+        return of_oxm_eth_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_DST) {
-        return (of_oxm_t *)of_oxm_ipv6_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_DST) {
+        return of_oxm_ipv6_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv4_dst_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
+        return of_oxm_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV4_DST) {
-        return (of_oxm_t *)of_oxm_ipv4_dst_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
+        return of_oxm_ipv6_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_DSCP) {
-        return (of_oxm_t *)of_oxm_ip_dscp_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_DSCP) {
+        return of_oxm_ip_dscp_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_VID_MASKED) {
-        return (of_oxm_t *)of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_VID_MASKED) {
+        return of_oxm_vlan_vid_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_FLABEL_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_FLABEL_MASKED) {
+        return of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_TC_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_TC_MASKED) {
+        return of_oxm_mpls_tc_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_tcp_dst_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_DST_MASKED) {
+        return of_oxm_tcp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_SCTP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_sctp_src_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_SCTP_SRC_MASKED) {
+        return of_oxm_sctp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IP_PROTO) {
-        return (of_oxm_t *)of_oxm_ip_proto_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IP_PROTO) {
+        return of_oxm_ip_proto_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_SRC) {
-        return (of_oxm_t *)of_oxm_ipv6_src_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_SRC) {
+        return of_oxm_ipv6_src_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_UDP_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_udp_dst_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_UDP_DST_MASKED) {
+        return of_oxm_udp_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_SPA) {
-        return (of_oxm_t *)of_oxm_arp_spa_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_SPA) {
+        return of_oxm_arp_spa_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_OP_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_op_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_OP_MASKED) {
+        return of_oxm_arp_op_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TUNNEL_ID_MASKED) {
-        return (of_oxm_t *)of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TUNNEL_ID_MASKED) {
+        return of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_VLAN_VID) {
-        return (of_oxm_t *)of_oxm_vlan_vid_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_VLAN_VID) {
+        return of_oxm_vlan_vid_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
-        return (of_oxm_t *)of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ICMPV6_TYPE_MASKED) {
+        return of_oxm_icmpv6_type_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_TCP_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_tcp_src_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_TCP_SRC_MASKED) {
+        return of_oxm_tcp_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_BOS) {
-        return (of_oxm_t *)of_oxm_mpls_bos_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_BOS) {
+        return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_IPV6_DST_MASKED) {
-        return (of_oxm_t *)of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_METADATA) {
-        return (of_oxm_t *)of_oxm_metadata_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_METADATA) {
+        return of_oxm_metadata_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ETH_SRC_MASKED) {
-        return (of_oxm_t *)of_oxm_eth_src_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_TPA_MASKED) {
-        return (of_oxm_t *)of_oxm_arp_tpa_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_TPA_MASKED) {
+        return of_oxm_arp_tpa_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_THA) {
-        return (of_oxm_t *)of_oxm_arp_tha_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_THA) {
+        return of_oxm_arp_tha_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_TC) {
-        return (of_oxm_t *)of_oxm_mpls_tc_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_TC) {
+        return of_oxm_mpls_tc_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_ARP_TPA) {
-        return (of_oxm_t *)of_oxm_arp_tpa_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_ARP_TPA) {
+        return of_oxm_arp_tpa_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_OXM_MPLS_LABEL_MASKED) {
-        return (of_oxm_t *)of_oxm_mpls_label_masked_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
+        return of_oxm_mpls_label_masked_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -49471,24 +48834,21 @@ of_port_desc_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_port_desc_prop_t *
+of_object_t *
 of_port_desc_prop_OF_VERSION_1_4_dup(
-    of_port_desc_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_PORT_DESC_PROP_EXPERIMENTER) {
-        return (of_port_desc_prop_t *)of_port_desc_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_DESC_PROP_EXPERIMENTER) {
+        return of_port_desc_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_PORT_DESC_PROP_ETHERNET) {
-        return (of_port_desc_prop_t *)of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_DESC_PROP_ETHERNET) {
+        return of_port_desc_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_PORT_DESC_PROP_OPTICAL) {
-        return (of_port_desc_prop_t *)of_port_desc_prop_optical_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_DESC_PROP_OPTICAL) {
+        return of_port_desc_prop_optical_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -49639,24 +48999,21 @@ of_port_desc_prop_optical_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_port_mod_prop_t *
+of_object_t *
 of_port_mod_prop_OF_VERSION_1_4_dup(
-    of_port_mod_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_PORT_MOD_PROP_ETHERNET) {
-        return (of_port_mod_prop_t *)of_port_mod_prop_ethernet_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_MOD_PROP_ETHERNET) {
+        return of_port_mod_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_PORT_MOD_PROP_OPTICAL) {
-        return (of_port_mod_prop_t *)of_port_mod_prop_optical_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_MOD_PROP_OPTICAL) {
+        return of_port_mod_prop_optical_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_PORT_MOD_PROP_EXPERIMENTER) {
-        return (of_port_mod_prop_t *)of_port_mod_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_MOD_PROP_EXPERIMENTER) {
+        return of_port_mod_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -49850,24 +49207,21 @@ of_port_stats_entry_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_port_stats_prop_t *
+of_object_t *
 of_port_stats_prop_OF_VERSION_1_4_dup(
-    of_port_stats_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_PORT_STATS_PROP_ETHERNET) {
-        return (of_port_stats_prop_t *)of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_STATS_PROP_ETHERNET) {
+        return of_port_stats_prop_ethernet_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_PORT_STATS_PROP_OPTICAL) {
-        return (of_port_stats_prop_t *)of_port_stats_prop_optical_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_STATS_PROP_OPTICAL) {
+        return of_port_stats_prop_optical_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_PORT_STATS_PROP_EXPERIMENTER) {
-        return (of_port_stats_prop_t *)of_port_stats_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_PORT_STATS_PROP_EXPERIMENTER) {
+        return of_port_stats_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -50064,24 +49418,21 @@ of_queue_desc_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_desc_prop_t *
+of_object_t *
 of_queue_desc_prop_OF_VERSION_1_4_dup(
-    of_queue_desc_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_DESC_PROP_MIN_RATE) {
-        return (of_queue_desc_prop_t *)of_queue_desc_prop_min_rate_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_DESC_PROP_MIN_RATE) {
+        return of_queue_desc_prop_min_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_DESC_PROP_MAX_RATE) {
-        return (of_queue_desc_prop_t *)of_queue_desc_prop_max_rate_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_DESC_PROP_MAX_RATE) {
+        return of_queue_desc_prop_max_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_DESC_PROP_EXPERIMENTER) {
-        return (of_queue_desc_prop_t *)of_queue_desc_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_DESC_PROP_EXPERIMENTER) {
+        return of_queue_desc_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -50193,24 +49544,21 @@ of_queue_desc_prop_min_rate_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_prop_t *
+of_object_t *
 of_queue_prop_OF_VERSION_1_4_dup(
-    of_queue_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_PROP_EXPERIMENTER) {
-        return (of_queue_prop_t *)of_queue_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_EXPERIMENTER) {
+        return of_queue_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_PROP_MAX_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_max_rate_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MAX_RATE) {
+        return of_queue_prop_max_rate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_QUEUE_PROP_MIN_RATE) {
-        return (of_queue_prop_t *)of_queue_prop_min_rate_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_PROP_MIN_RATE) {
+        return of_queue_prop_min_rate_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -50381,14 +49729,13 @@ of_queue_stats_entry_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_queue_stats_prop_t *
+of_object_t *
 of_queue_stats_prop_OF_VERSION_1_4_dup(
-    of_queue_stats_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_QUEUE_STATS_PROP_EXPERIMENTER) {
-        return (of_queue_stats_prop_t *)of_queue_stats_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_QUEUE_STATS_PROP_EXPERIMENTER) {
+        return of_queue_stats_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -50450,14 +49797,13 @@ of_queue_stats_prop_header_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_role_prop_t *
+of_object_t *
 of_role_prop_OF_VERSION_1_4_dup(
-    of_role_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_ROLE_PROP_EXPERIMENTER) {
-        return (of_role_prop_t *)of_role_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_ROLE_PROP_EXPERIMENTER) {
+        return of_role_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -50548,94 +49894,77 @@ of_table_desc_OF_VERSION_1_4_dup(
  *
  * The caller is responsible for deleting the returned value
  */
-of_table_feature_prop_t *
+of_object_t *
 of_table_feature_prop_OF_VERSION_1_4_dup(
-    of_table_feature_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD_MISS) {
+        return of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_experimenter_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER_MISS) {
+        return of_table_feature_prop_experimenter_miss_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS) {
+        return of_table_feature_prop_apply_actions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_next_tables_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES) {
+        return of_table_feature_prop_next_tables_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD_MISS) {
+        return of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_actions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS) {
+        return of_table_feature_prop_write_actions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_instructions_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS_MISS) {
+        return of_table_feature_prop_instructions_miss_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_wildcards_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WILDCARDS) {
+        return of_table_feature_prop_wildcards_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_TABLE_SYNC_FROM) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_table_sync_from_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_TABLE_SYNC_FROM) {
+        return of_table_feature_prop_table_sync_from_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_instructions_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_INSTRUCTIONS) {
+        return of_table_feature_prop_instructions_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_experimenter_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_EXPERIMENTER) {
+        return of_table_feature_prop_experimenter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_setfield_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_SETFIELD) {
+        return of_table_feature_prop_write_setfield_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_setfield_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_SETFIELD) {
+        return of_table_feature_prop_apply_setfield_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_apply_actions_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_APPLY_ACTIONS_MISS) {
+        return of_table_feature_prop_apply_actions_miss_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_MATCH) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_match_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_MATCH) {
+        return of_table_feature_prop_match_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_NEXT_TABLES_MISS) {
+        return of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->header.object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
-        return (of_table_feature_prop_t *)of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_dup(
-            (of_object_t *)src);
+    if (src->object_id == OF_TABLE_FEATURE_PROP_WRITE_ACTIONS_MISS) {
+        return of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -51520,8 +50849,8 @@ of_list_action_t *
 of_list_action_OF_VERSION_1_4_dup(
     of_list_action_t *src)
 {
-    of_action_t src_elt;
-    of_action_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_t *dst;
 
@@ -51554,8 +50883,8 @@ of_list_action_id_t *
 of_list_action_id_OF_VERSION_1_4_dup(
     of_list_action_id_t *src)
 {
-    of_action_id_t src_elt;
-    of_action_id_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_action_id_t *dst;
 
@@ -51588,8 +50917,8 @@ of_list_async_config_prop_t *
 of_list_async_config_prop_OF_VERSION_1_4_dup(
     of_list_async_config_prop_t *src)
 {
-    of_async_config_prop_t src_elt;
-    of_async_config_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_async_config_prop_t *dst;
 
@@ -51622,8 +50951,8 @@ of_list_bsn_interface_t *
 of_list_bsn_interface_OF_VERSION_1_4_dup(
     of_list_bsn_interface_t *src)
 {
-    of_bsn_interface_t src_elt;
-    of_bsn_interface_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bsn_interface_t *dst;
 
@@ -51656,8 +50985,8 @@ of_list_bucket_t *
 of_list_bucket_OF_VERSION_1_4_dup(
     of_list_bucket_t *src)
 {
-    of_bucket_t src_elt;
-    of_bucket_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_t *dst;
 
@@ -51690,8 +51019,8 @@ of_list_bucket_counter_t *
 of_list_bucket_counter_OF_VERSION_1_4_dup(
     of_list_bucket_counter_t *src)
 {
-    of_bucket_counter_t src_elt;
-    of_bucket_counter_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bucket_counter_t *dst;
 
@@ -51724,8 +51053,8 @@ of_list_bundle_prop_t *
 of_list_bundle_prop_OF_VERSION_1_4_dup(
     of_list_bundle_prop_t *src)
 {
-    of_bundle_prop_t src_elt;
-    of_bundle_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_bundle_prop_t *dst;
 
@@ -51758,8 +51087,8 @@ of_list_flow_stats_entry_t *
 of_list_flow_stats_entry_OF_VERSION_1_4_dup(
     of_list_flow_stats_entry_t *src)
 {
-    of_flow_stats_entry_t src_elt;
-    of_flow_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_flow_stats_entry_t *dst;
 
@@ -51792,8 +51121,8 @@ of_list_group_desc_stats_entry_t *
 of_list_group_desc_stats_entry_OF_VERSION_1_4_dup(
     of_list_group_desc_stats_entry_t *src)
 {
-    of_group_desc_stats_entry_t src_elt;
-    of_group_desc_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_desc_stats_entry_t *dst;
 
@@ -51826,8 +51155,8 @@ of_list_group_stats_entry_t *
 of_list_group_stats_entry_OF_VERSION_1_4_dup(
     of_list_group_stats_entry_t *src)
 {
-    of_group_stats_entry_t src_elt;
-    of_group_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_group_stats_entry_t *dst;
 
@@ -51860,8 +51189,8 @@ of_list_hello_elem_t *
 of_list_hello_elem_OF_VERSION_1_4_dup(
     of_list_hello_elem_t *src)
 {
-    of_hello_elem_t src_elt;
-    of_hello_elem_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_hello_elem_t *dst;
 
@@ -51894,8 +51223,8 @@ of_list_instruction_t *
 of_list_instruction_OF_VERSION_1_4_dup(
     of_list_instruction_t *src)
 {
-    of_instruction_t src_elt;
-    of_instruction_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_instruction_t *dst;
 
@@ -51928,8 +51257,8 @@ of_list_instruction_id_t *
 of_list_instruction_id_OF_VERSION_1_4_dup(
     of_list_instruction_id_t *src)
 {
-    of_instruction_id_t src_elt;
-    of_instruction_id_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_instruction_id_t *dst;
 
@@ -51962,8 +51291,8 @@ of_list_meter_band_t *
 of_list_meter_band_OF_VERSION_1_4_dup(
     of_list_meter_band_t *src)
 {
-    of_meter_band_t src_elt;
-    of_meter_band_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_meter_band_t *dst;
 
@@ -51996,8 +51325,8 @@ of_list_meter_band_stats_t *
 of_list_meter_band_stats_OF_VERSION_1_4_dup(
     of_list_meter_band_stats_t *src)
 {
-    of_meter_band_stats_t src_elt;
-    of_meter_band_stats_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_meter_band_stats_t *dst;
 
@@ -52030,8 +51359,8 @@ of_list_meter_stats_t *
 of_list_meter_stats_OF_VERSION_1_4_dup(
     of_list_meter_stats_t *src)
 {
-    of_meter_stats_t src_elt;
-    of_meter_stats_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_meter_stats_t *dst;
 
@@ -52064,8 +51393,8 @@ of_list_oxm_t *
 of_list_oxm_OF_VERSION_1_4_dup(
     of_list_oxm_t *src)
 {
-    of_oxm_t src_elt;
-    of_oxm_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_oxm_t *dst;
 
@@ -52098,8 +51427,8 @@ of_list_port_desc_t *
 of_list_port_desc_OF_VERSION_1_4_dup(
     of_list_port_desc_t *src)
 {
-    of_port_desc_t src_elt;
-    of_port_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_desc_t *dst;
 
@@ -52132,8 +51461,8 @@ of_list_port_desc_prop_t *
 of_list_port_desc_prop_OF_VERSION_1_4_dup(
     of_list_port_desc_prop_t *src)
 {
-    of_port_desc_prop_t src_elt;
-    of_port_desc_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_desc_prop_t *dst;
 
@@ -52166,8 +51495,8 @@ of_list_port_mod_prop_t *
 of_list_port_mod_prop_OF_VERSION_1_4_dup(
     of_list_port_mod_prop_t *src)
 {
-    of_port_mod_prop_t src_elt;
-    of_port_mod_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_mod_prop_t *dst;
 
@@ -52200,8 +51529,8 @@ of_list_port_stats_entry_t *
 of_list_port_stats_entry_OF_VERSION_1_4_dup(
     of_list_port_stats_entry_t *src)
 {
-    of_port_stats_entry_t src_elt;
-    of_port_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_stats_entry_t *dst;
 
@@ -52234,8 +51563,8 @@ of_list_port_stats_prop_t *
 of_list_port_stats_prop_OF_VERSION_1_4_dup(
     of_list_port_stats_prop_t *src)
 {
-    of_port_stats_prop_t src_elt;
-    of_port_stats_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_port_stats_prop_t *dst;
 
@@ -52268,8 +51597,8 @@ of_list_queue_desc_t *
 of_list_queue_desc_OF_VERSION_1_4_dup(
     of_list_queue_desc_t *src)
 {
-    of_queue_desc_t src_elt;
-    of_queue_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_desc_t *dst;
 
@@ -52302,8 +51631,8 @@ of_list_queue_desc_prop_t *
 of_list_queue_desc_prop_OF_VERSION_1_4_dup(
     of_list_queue_desc_prop_t *src)
 {
-    of_queue_desc_prop_t src_elt;
-    of_queue_desc_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_desc_prop_t *dst;
 
@@ -52336,8 +51665,8 @@ of_list_queue_prop_t *
 of_list_queue_prop_OF_VERSION_1_4_dup(
     of_list_queue_prop_t *src)
 {
-    of_queue_prop_t src_elt;
-    of_queue_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_prop_t *dst;
 
@@ -52370,8 +51699,8 @@ of_list_queue_stats_entry_t *
 of_list_queue_stats_entry_OF_VERSION_1_4_dup(
     of_list_queue_stats_entry_t *src)
 {
-    of_queue_stats_entry_t src_elt;
-    of_queue_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_stats_entry_t *dst;
 
@@ -52404,8 +51733,8 @@ of_list_queue_stats_prop_t *
 of_list_queue_stats_prop_OF_VERSION_1_4_dup(
     of_list_queue_stats_prop_t *src)
 {
-    of_queue_stats_prop_t src_elt;
-    of_queue_stats_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_queue_stats_prop_t *dst;
 
@@ -52438,8 +51767,8 @@ of_list_role_prop_t *
 of_list_role_prop_OF_VERSION_1_4_dup(
     of_list_role_prop_t *src)
 {
-    of_role_prop_t src_elt;
-    of_role_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_role_prop_t *dst;
 
@@ -52472,8 +51801,8 @@ of_list_table_desc_t *
 of_list_table_desc_OF_VERSION_1_4_dup(
     of_list_table_desc_t *src)
 {
-    of_table_desc_t src_elt;
-    of_table_desc_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_desc_t *dst;
 
@@ -52506,8 +51835,8 @@ of_list_table_feature_prop_t *
 of_list_table_feature_prop_OF_VERSION_1_4_dup(
     of_list_table_feature_prop_t *src)
 {
-    of_table_feature_prop_t src_elt;
-    of_table_feature_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_feature_prop_t *dst;
 
@@ -52540,8 +51869,8 @@ of_list_table_features_t *
 of_list_table_features_OF_VERSION_1_4_dup(
     of_list_table_features_t *src)
 {
-    of_table_features_t src_elt;
-    of_table_features_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_features_t *dst;
 
@@ -52574,8 +51903,8 @@ of_list_table_mod_prop_t *
 of_list_table_mod_prop_OF_VERSION_1_4_dup(
     of_list_table_mod_prop_t *src)
 {
-    of_table_mod_prop_t src_elt;
-    of_table_mod_prop_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_mod_prop_t *dst;
 
@@ -52608,8 +51937,8 @@ of_list_table_stats_entry_t *
 of_list_table_stats_entry_OF_VERSION_1_4_dup(
     of_list_table_stats_entry_t *src)
 {
-    of_table_stats_entry_t src_elt;
-    of_table_stats_entry_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_table_stats_entry_t *dst;
 
@@ -52642,8 +51971,8 @@ of_list_uint32_t *
 of_list_uint32_OF_VERSION_1_4_dup(
     of_list_uint32_t *src)
 {
-    of_uint32_t src_elt;
-    of_uint32_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_uint32_t *dst;
 
@@ -52676,8 +52005,8 @@ of_list_uint8_t *
 of_list_uint8_OF_VERSION_1_4_dup(
     of_list_uint8_t *src)
 {
-    of_uint8_t src_elt;
-    of_uint8_t *dst_elt;
+    of_object_t src_elt;
+    of_object_t *dst_elt;
     int rv;
     of_list_uint8_t *dst;
 
@@ -52698,9 +52027,9 @@ of_list_uint8_OF_VERSION_1_4_dup(
     return dst;
 }
 
-of_aggregate_stats_reply_t *
+of_object_t *
 of_aggregate_stats_reply_dup(
-    of_aggregate_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -52727,9 +52056,9 @@ of_aggregate_stats_reply_dup(
     return NULL;
 }
 
-of_aggregate_stats_request_t *
+of_object_t *
 of_aggregate_stats_request_dup(
-    of_aggregate_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -52756,9 +52085,9 @@ of_aggregate_stats_request_dup(
     return NULL;
 }
 
-of_async_get_reply_t *
+of_object_t *
 of_async_get_reply_dup(
-    of_async_get_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -52773,9 +52102,9 @@ of_async_get_reply_dup(
     return NULL;
 }
 
-of_async_get_request_t *
+of_object_t *
 of_async_get_request_dup(
-    of_async_get_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -52790,9 +52119,9 @@ of_async_get_request_dup(
     return NULL;
 }
 
-of_async_set_t *
+of_object_t *
 of_async_set_dup(
-    of_async_set_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -52807,9 +52136,9 @@ of_async_set_dup(
     return NULL;
 }
 
-of_bad_action_error_msg_t *
+of_object_t *
 of_bad_action_error_msg_dup(
-    of_bad_action_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -52836,9 +52165,9 @@ of_bad_action_error_msg_dup(
     return NULL;
 }
 
-of_bad_instruction_error_msg_t *
+of_object_t *
 of_bad_instruction_error_msg_dup(
-    of_bad_instruction_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -52861,9 +52190,9 @@ of_bad_instruction_error_msg_dup(
     return NULL;
 }
 
-of_bad_match_error_msg_t *
+of_object_t *
 of_bad_match_error_msg_dup(
-    of_bad_match_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -52886,9 +52215,9 @@ of_bad_match_error_msg_dup(
     return NULL;
 }
 
-of_bad_request_error_msg_t *
+of_object_t *
 of_bad_request_error_msg_dup(
-    of_bad_request_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -52915,9 +52244,9 @@ of_bad_request_error_msg_dup(
     return NULL;
 }
 
-of_barrier_reply_t *
+of_object_t *
 of_barrier_reply_dup(
-    of_barrier_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -52944,9 +52273,9 @@ of_barrier_reply_dup(
     return NULL;
 }
 
-of_barrier_request_t *
+of_object_t *
 of_barrier_request_dup(
-    of_barrier_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -52973,9 +52302,9 @@ of_barrier_request_dup(
     return NULL;
 }
 
-of_bsn_arp_idle_t *
+of_object_t *
 of_bsn_arp_idle_dup(
-    of_bsn_arp_idle_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -52986,9 +52315,9 @@ of_bsn_arp_idle_dup(
     return NULL;
 }
 
-of_bsn_bw_clear_data_reply_t *
+of_object_t *
 of_bsn_bw_clear_data_reply_dup(
-    of_bsn_bw_clear_data_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53015,9 +52344,9 @@ of_bsn_bw_clear_data_reply_dup(
     return NULL;
 }
 
-of_bsn_bw_clear_data_request_t *
+of_object_t *
 of_bsn_bw_clear_data_request_dup(
-    of_bsn_bw_clear_data_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53044,9 +52373,9 @@ of_bsn_bw_clear_data_request_dup(
     return NULL;
 }
 
-of_bsn_bw_enable_get_reply_t *
+of_object_t *
 of_bsn_bw_enable_get_reply_dup(
-    of_bsn_bw_enable_get_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53073,9 +52402,9 @@ of_bsn_bw_enable_get_reply_dup(
     return NULL;
 }
 
-of_bsn_bw_enable_get_request_t *
+of_object_t *
 of_bsn_bw_enable_get_request_dup(
-    of_bsn_bw_enable_get_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53102,9 +52431,9 @@ of_bsn_bw_enable_get_request_dup(
     return NULL;
 }
 
-of_bsn_bw_enable_set_reply_t *
+of_object_t *
 of_bsn_bw_enable_set_reply_dup(
-    of_bsn_bw_enable_set_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53131,9 +52460,9 @@ of_bsn_bw_enable_set_reply_dup(
     return NULL;
 }
 
-of_bsn_bw_enable_set_request_t *
+of_object_t *
 of_bsn_bw_enable_set_request_dup(
-    of_bsn_bw_enable_set_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53160,9 +52489,9 @@ of_bsn_bw_enable_set_request_dup(
     return NULL;
 }
 
-of_bsn_controller_connections_reply_t *
+of_object_t *
 of_bsn_controller_connections_reply_dup(
-    of_bsn_controller_connections_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53173,9 +52502,9 @@ of_bsn_controller_connections_reply_dup(
     return NULL;
 }
 
-of_bsn_controller_connections_request_t *
+of_object_t *
 of_bsn_controller_connections_request_dup(
-    of_bsn_controller_connections_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53186,9 +52515,9 @@ of_bsn_controller_connections_request_dup(
     return NULL;
 }
 
-of_bsn_debug_counter_desc_stats_reply_t *
+of_object_t *
 of_bsn_debug_counter_desc_stats_reply_dup(
-    of_bsn_debug_counter_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53199,9 +52528,9 @@ of_bsn_debug_counter_desc_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_debug_counter_desc_stats_request_t *
+of_object_t *
 of_bsn_debug_counter_desc_stats_request_dup(
-    of_bsn_debug_counter_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53212,9 +52541,9 @@ of_bsn_debug_counter_desc_stats_request_dup(
     return NULL;
 }
 
-of_bsn_debug_counter_stats_reply_t *
+of_object_t *
 of_bsn_debug_counter_stats_reply_dup(
-    of_bsn_debug_counter_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53225,9 +52554,9 @@ of_bsn_debug_counter_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_debug_counter_stats_request_t *
+of_object_t *
 of_bsn_debug_counter_stats_request_dup(
-    of_bsn_debug_counter_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53238,9 +52567,9 @@ of_bsn_debug_counter_stats_request_dup(
     return NULL;
 }
 
-of_bsn_flow_checksum_bucket_stats_reply_t *
+of_object_t *
 of_bsn_flow_checksum_bucket_stats_reply_dup(
-    of_bsn_flow_checksum_bucket_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53251,9 +52580,9 @@ of_bsn_flow_checksum_bucket_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_flow_checksum_bucket_stats_request_t *
+of_object_t *
 of_bsn_flow_checksum_bucket_stats_request_dup(
-    of_bsn_flow_checksum_bucket_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53264,9 +52593,9 @@ of_bsn_flow_checksum_bucket_stats_request_dup(
     return NULL;
 }
 
-of_bsn_flow_idle_t *
+of_object_t *
 of_bsn_flow_idle_dup(
-    of_bsn_flow_idle_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53277,9 +52606,9 @@ of_bsn_flow_idle_dup(
     return NULL;
 }
 
-of_bsn_flow_idle_enable_get_reply_t *
+of_object_t *
 of_bsn_flow_idle_enable_get_reply_dup(
-    of_bsn_flow_idle_enable_get_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53290,9 +52619,9 @@ of_bsn_flow_idle_enable_get_reply_dup(
     return NULL;
 }
 
-of_bsn_flow_idle_enable_get_request_t *
+of_object_t *
 of_bsn_flow_idle_enable_get_request_dup(
-    of_bsn_flow_idle_enable_get_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53303,9 +52632,9 @@ of_bsn_flow_idle_enable_get_request_dup(
     return NULL;
 }
 
-of_bsn_flow_idle_enable_set_reply_t *
+of_object_t *
 of_bsn_flow_idle_enable_set_reply_dup(
-    of_bsn_flow_idle_enable_set_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53316,9 +52645,9 @@ of_bsn_flow_idle_enable_set_reply_dup(
     return NULL;
 }
 
-of_bsn_flow_idle_enable_set_request_t *
+of_object_t *
 of_bsn_flow_idle_enable_set_request_dup(
-    of_bsn_flow_idle_enable_set_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53329,9 +52658,9 @@ of_bsn_flow_idle_enable_set_request_dup(
     return NULL;
 }
 
-of_bsn_gentable_bucket_stats_reply_t *
+of_object_t *
 of_bsn_gentable_bucket_stats_reply_dup(
-    of_bsn_gentable_bucket_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53342,9 +52671,9 @@ of_bsn_gentable_bucket_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_gentable_bucket_stats_request_t *
+of_object_t *
 of_bsn_gentable_bucket_stats_request_dup(
-    of_bsn_gentable_bucket_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53355,9 +52684,9 @@ of_bsn_gentable_bucket_stats_request_dup(
     return NULL;
 }
 
-of_bsn_gentable_clear_reply_t *
+of_object_t *
 of_bsn_gentable_clear_reply_dup(
-    of_bsn_gentable_clear_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53368,9 +52697,9 @@ of_bsn_gentable_clear_reply_dup(
     return NULL;
 }
 
-of_bsn_gentable_clear_request_t *
+of_object_t *
 of_bsn_gentable_clear_request_dup(
-    of_bsn_gentable_clear_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53381,9 +52710,9 @@ of_bsn_gentable_clear_request_dup(
     return NULL;
 }
 
-of_bsn_gentable_desc_stats_reply_t *
+of_object_t *
 of_bsn_gentable_desc_stats_reply_dup(
-    of_bsn_gentable_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53394,9 +52723,9 @@ of_bsn_gentable_desc_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_gentable_desc_stats_request_t *
+of_object_t *
 of_bsn_gentable_desc_stats_request_dup(
-    of_bsn_gentable_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53407,9 +52736,9 @@ of_bsn_gentable_desc_stats_request_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_add_t *
+of_object_t *
 of_bsn_gentable_entry_add_dup(
-    of_bsn_gentable_entry_add_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53420,9 +52749,9 @@ of_bsn_gentable_entry_add_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_delete_t *
+of_object_t *
 of_bsn_gentable_entry_delete_dup(
-    of_bsn_gentable_entry_delete_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53433,9 +52762,9 @@ of_bsn_gentable_entry_delete_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_desc_stats_reply_t *
+of_object_t *
 of_bsn_gentable_entry_desc_stats_reply_dup(
-    of_bsn_gentable_entry_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53446,9 +52775,9 @@ of_bsn_gentable_entry_desc_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_desc_stats_request_t *
+of_object_t *
 of_bsn_gentable_entry_desc_stats_request_dup(
-    of_bsn_gentable_entry_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53459,9 +52788,9 @@ of_bsn_gentable_entry_desc_stats_request_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_stats_reply_t *
+of_object_t *
 of_bsn_gentable_entry_stats_reply_dup(
-    of_bsn_gentable_entry_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53472,9 +52801,9 @@ of_bsn_gentable_entry_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_stats_request_t *
+of_object_t *
 of_bsn_gentable_entry_stats_request_dup(
-    of_bsn_gentable_entry_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53485,9 +52814,9 @@ of_bsn_gentable_entry_stats_request_dup(
     return NULL;
 }
 
-of_bsn_gentable_set_buckets_size_t *
+of_object_t *
 of_bsn_gentable_set_buckets_size_dup(
-    of_bsn_gentable_set_buckets_size_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53498,9 +52827,9 @@ of_bsn_gentable_set_buckets_size_dup(
     return NULL;
 }
 
-of_bsn_gentable_stats_reply_t *
+of_object_t *
 of_bsn_gentable_stats_reply_dup(
-    of_bsn_gentable_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53511,9 +52840,9 @@ of_bsn_gentable_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_gentable_stats_request_t *
+of_object_t *
 of_bsn_gentable_stats_request_dup(
-    of_bsn_gentable_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53524,9 +52853,9 @@ of_bsn_gentable_stats_request_dup(
     return NULL;
 }
 
-of_bsn_get_interfaces_reply_t *
+of_object_t *
 of_bsn_get_interfaces_reply_dup(
-    of_bsn_get_interfaces_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53553,9 +52882,9 @@ of_bsn_get_interfaces_reply_dup(
     return NULL;
 }
 
-of_bsn_get_interfaces_request_t *
+of_object_t *
 of_bsn_get_interfaces_request_dup(
-    of_bsn_get_interfaces_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53582,9 +52911,9 @@ of_bsn_get_interfaces_request_dup(
     return NULL;
 }
 
-of_bsn_get_ip_mask_reply_t *
+of_object_t *
 of_bsn_get_ip_mask_reply_dup(
-    of_bsn_get_ip_mask_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53595,9 +52924,9 @@ of_bsn_get_ip_mask_reply_dup(
     return NULL;
 }
 
-of_bsn_get_ip_mask_request_t *
+of_object_t *
 of_bsn_get_ip_mask_request_dup(
-    of_bsn_get_ip_mask_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53608,9 +52937,9 @@ of_bsn_get_ip_mask_request_dup(
     return NULL;
 }
 
-of_bsn_get_l2_table_reply_t *
+of_object_t *
 of_bsn_get_l2_table_reply_dup(
-    of_bsn_get_l2_table_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53621,9 +52950,9 @@ of_bsn_get_l2_table_reply_dup(
     return NULL;
 }
 
-of_bsn_get_l2_table_request_t *
+of_object_t *
 of_bsn_get_l2_table_request_dup(
-    of_bsn_get_l2_table_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53634,9 +52963,9 @@ of_bsn_get_l2_table_request_dup(
     return NULL;
 }
 
-of_bsn_get_mirroring_reply_t *
+of_object_t *
 of_bsn_get_mirroring_reply_dup(
-    of_bsn_get_mirroring_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53663,9 +52992,9 @@ of_bsn_get_mirroring_reply_dup(
     return NULL;
 }
 
-of_bsn_get_mirroring_request_t *
+of_object_t *
 of_bsn_get_mirroring_request_dup(
-    of_bsn_get_mirroring_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53692,9 +53021,9 @@ of_bsn_get_mirroring_request_dup(
     return NULL;
 }
 
-of_bsn_get_switch_pipeline_reply_t *
+of_object_t *
 of_bsn_get_switch_pipeline_reply_dup(
-    of_bsn_get_switch_pipeline_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53705,9 +53034,9 @@ of_bsn_get_switch_pipeline_reply_dup(
     return NULL;
 }
 
-of_bsn_get_switch_pipeline_request_t *
+of_object_t *
 of_bsn_get_switch_pipeline_request_dup(
-    of_bsn_get_switch_pipeline_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53718,9 +53047,9 @@ of_bsn_get_switch_pipeline_request_dup(
     return NULL;
 }
 
-of_bsn_header_t *
+of_object_t *
 of_bsn_header_dup(
-    of_bsn_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53747,9 +53076,9 @@ of_bsn_header_dup(
     return NULL;
 }
 
-of_bsn_hybrid_get_reply_t *
+of_object_t *
 of_bsn_hybrid_get_reply_dup(
-    of_bsn_hybrid_get_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53760,9 +53089,9 @@ of_bsn_hybrid_get_reply_dup(
     return NULL;
 }
 
-of_bsn_hybrid_get_request_t *
+of_object_t *
 of_bsn_hybrid_get_request_dup(
-    of_bsn_hybrid_get_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53773,9 +53102,9 @@ of_bsn_hybrid_get_request_dup(
     return NULL;
 }
 
-of_bsn_image_desc_stats_reply_t *
+of_object_t *
 of_bsn_image_desc_stats_reply_dup(
-    of_bsn_image_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53786,9 +53115,9 @@ of_bsn_image_desc_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_image_desc_stats_request_t *
+of_object_t *
 of_bsn_image_desc_stats_request_dup(
-    of_bsn_image_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53799,9 +53128,9 @@ of_bsn_image_desc_stats_request_dup(
     return NULL;
 }
 
-of_bsn_lacp_convergence_notif_t *
+of_object_t *
 of_bsn_lacp_convergence_notif_dup(
-    of_bsn_lacp_convergence_notif_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53812,9 +53141,9 @@ of_bsn_lacp_convergence_notif_dup(
     return NULL;
 }
 
-of_bsn_lacp_stats_reply_t *
+of_object_t *
 of_bsn_lacp_stats_reply_dup(
-    of_bsn_lacp_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53825,9 +53154,9 @@ of_bsn_lacp_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_lacp_stats_request_t *
+of_object_t *
 of_bsn_lacp_stats_request_dup(
-    of_bsn_lacp_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53838,9 +53167,9 @@ of_bsn_lacp_stats_request_dup(
     return NULL;
 }
 
-of_bsn_log_t *
+of_object_t *
 of_bsn_log_dup(
-    of_bsn_log_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -53851,9 +53180,9 @@ of_bsn_log_dup(
     return NULL;
 }
 
-of_bsn_pdu_rx_reply_t *
+of_object_t *
 of_bsn_pdu_rx_reply_dup(
-    of_bsn_pdu_rx_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53880,9 +53209,9 @@ of_bsn_pdu_rx_reply_dup(
     return NULL;
 }
 
-of_bsn_pdu_rx_request_t *
+of_object_t *
 of_bsn_pdu_rx_request_dup(
-    of_bsn_pdu_rx_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53909,9 +53238,9 @@ of_bsn_pdu_rx_request_dup(
     return NULL;
 }
 
-of_bsn_pdu_rx_timeout_t *
+of_object_t *
 of_bsn_pdu_rx_timeout_dup(
-    of_bsn_pdu_rx_timeout_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53938,9 +53267,9 @@ of_bsn_pdu_rx_timeout_dup(
     return NULL;
 }
 
-of_bsn_pdu_tx_reply_t *
+of_object_t *
 of_bsn_pdu_tx_reply_dup(
-    of_bsn_pdu_tx_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53967,9 +53296,9 @@ of_bsn_pdu_tx_reply_dup(
     return NULL;
 }
 
-of_bsn_pdu_tx_request_t *
+of_object_t *
 of_bsn_pdu_tx_request_dup(
-    of_bsn_pdu_tx_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -53996,9 +53325,9 @@ of_bsn_pdu_tx_request_dup(
     return NULL;
 }
 
-of_bsn_port_counter_stats_reply_t *
+of_object_t *
 of_bsn_port_counter_stats_reply_dup(
-    of_bsn_port_counter_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54009,9 +53338,9 @@ of_bsn_port_counter_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_port_counter_stats_request_t *
+of_object_t *
 of_bsn_port_counter_stats_request_dup(
-    of_bsn_port_counter_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54022,9 +53351,9 @@ of_bsn_port_counter_stats_request_dup(
     return NULL;
 }
 
-of_bsn_role_status_t *
+of_object_t *
 of_bsn_role_status_dup(
-    of_bsn_role_status_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54035,9 +53364,9 @@ of_bsn_role_status_dup(
     return NULL;
 }
 
-of_bsn_set_aux_cxns_reply_t *
+of_object_t *
 of_bsn_set_aux_cxns_reply_dup(
-    of_bsn_set_aux_cxns_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54048,9 +53377,9 @@ of_bsn_set_aux_cxns_reply_dup(
     return NULL;
 }
 
-of_bsn_set_aux_cxns_request_t *
+of_object_t *
 of_bsn_set_aux_cxns_request_dup(
-    of_bsn_set_aux_cxns_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54061,9 +53390,9 @@ of_bsn_set_aux_cxns_request_dup(
     return NULL;
 }
 
-of_bsn_set_ip_mask_t *
+of_object_t *
 of_bsn_set_ip_mask_dup(
-    of_bsn_set_ip_mask_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54074,9 +53403,9 @@ of_bsn_set_ip_mask_dup(
     return NULL;
 }
 
-of_bsn_set_l2_table_reply_t *
+of_object_t *
 of_bsn_set_l2_table_reply_dup(
-    of_bsn_set_l2_table_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54087,9 +53416,9 @@ of_bsn_set_l2_table_reply_dup(
     return NULL;
 }
 
-of_bsn_set_l2_table_request_t *
+of_object_t *
 of_bsn_set_l2_table_request_dup(
-    of_bsn_set_l2_table_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54100,9 +53429,9 @@ of_bsn_set_l2_table_request_dup(
     return NULL;
 }
 
-of_bsn_set_lacp_reply_t *
+of_object_t *
 of_bsn_set_lacp_reply_dup(
-    of_bsn_set_lacp_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54113,9 +53442,9 @@ of_bsn_set_lacp_reply_dup(
     return NULL;
 }
 
-of_bsn_set_lacp_request_t *
+of_object_t *
 of_bsn_set_lacp_request_dup(
-    of_bsn_set_lacp_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54126,9 +53455,9 @@ of_bsn_set_lacp_request_dup(
     return NULL;
 }
 
-of_bsn_set_mirroring_t *
+of_object_t *
 of_bsn_set_mirroring_dup(
-    of_bsn_set_mirroring_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54155,9 +53484,9 @@ of_bsn_set_mirroring_dup(
     return NULL;
 }
 
-of_bsn_set_pktin_suppression_reply_t *
+of_object_t *
 of_bsn_set_pktin_suppression_reply_dup(
-    of_bsn_set_pktin_suppression_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54184,9 +53513,9 @@ of_bsn_set_pktin_suppression_reply_dup(
     return NULL;
 }
 
-of_bsn_set_pktin_suppression_request_t *
+of_object_t *
 of_bsn_set_pktin_suppression_request_dup(
-    of_bsn_set_pktin_suppression_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54213,9 +53542,9 @@ of_bsn_set_pktin_suppression_request_dup(
     return NULL;
 }
 
-of_bsn_set_switch_pipeline_reply_t *
+of_object_t *
 of_bsn_set_switch_pipeline_reply_dup(
-    of_bsn_set_switch_pipeline_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54226,9 +53555,9 @@ of_bsn_set_switch_pipeline_reply_dup(
     return NULL;
 }
 
-of_bsn_set_switch_pipeline_request_t *
+of_object_t *
 of_bsn_set_switch_pipeline_request_dup(
-    of_bsn_set_switch_pipeline_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54239,9 +53568,9 @@ of_bsn_set_switch_pipeline_request_dup(
     return NULL;
 }
 
-of_bsn_shell_command_t *
+of_object_t *
 of_bsn_shell_command_dup(
-    of_bsn_shell_command_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54252,9 +53581,9 @@ of_bsn_shell_command_dup(
     return NULL;
 }
 
-of_bsn_shell_output_t *
+of_object_t *
 of_bsn_shell_output_dup(
-    of_bsn_shell_output_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54265,9 +53594,9 @@ of_bsn_shell_output_dup(
     return NULL;
 }
 
-of_bsn_shell_status_t *
+of_object_t *
 of_bsn_shell_status_dup(
-    of_bsn_shell_status_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54278,9 +53607,9 @@ of_bsn_shell_status_dup(
     return NULL;
 }
 
-of_bsn_stats_reply_t *
+of_object_t *
 of_bsn_stats_reply_dup(
-    of_bsn_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54307,9 +53636,9 @@ of_bsn_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_stats_request_t *
+of_object_t *
 of_bsn_stats_request_dup(
-    of_bsn_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54336,9 +53665,9 @@ of_bsn_stats_request_dup(
     return NULL;
 }
 
-of_bsn_switch_pipeline_stats_reply_t *
+of_object_t *
 of_bsn_switch_pipeline_stats_reply_dup(
-    of_bsn_switch_pipeline_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54349,9 +53678,9 @@ of_bsn_switch_pipeline_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_switch_pipeline_stats_request_t *
+of_object_t *
 of_bsn_switch_pipeline_stats_request_dup(
-    of_bsn_switch_pipeline_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54362,9 +53691,9 @@ of_bsn_switch_pipeline_stats_request_dup(
     return NULL;
 }
 
-of_bsn_table_checksum_stats_reply_t *
+of_object_t *
 of_bsn_table_checksum_stats_reply_dup(
-    of_bsn_table_checksum_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54375,9 +53704,9 @@ of_bsn_table_checksum_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_table_checksum_stats_request_t *
+of_object_t *
 of_bsn_table_checksum_stats_request_dup(
-    of_bsn_table_checksum_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54388,9 +53717,9 @@ of_bsn_table_checksum_stats_request_dup(
     return NULL;
 }
 
-of_bsn_table_set_buckets_size_t *
+of_object_t *
 of_bsn_table_set_buckets_size_dup(
-    of_bsn_table_set_buckets_size_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54401,9 +53730,9 @@ of_bsn_table_set_buckets_size_dup(
     return NULL;
 }
 
-of_bsn_time_reply_t *
+of_object_t *
 of_bsn_time_reply_dup(
-    of_bsn_time_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54414,9 +53743,9 @@ of_bsn_time_reply_dup(
     return NULL;
 }
 
-of_bsn_time_request_t *
+of_object_t *
 of_bsn_time_request_dup(
-    of_bsn_time_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54427,9 +53756,9 @@ of_bsn_time_request_dup(
     return NULL;
 }
 
-of_bsn_virtual_port_create_reply_t *
+of_object_t *
 of_bsn_virtual_port_create_reply_dup(
-    of_bsn_virtual_port_create_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54456,9 +53785,9 @@ of_bsn_virtual_port_create_reply_dup(
     return NULL;
 }
 
-of_bsn_virtual_port_create_request_t *
+of_object_t *
 of_bsn_virtual_port_create_request_dup(
-    of_bsn_virtual_port_create_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54485,9 +53814,9 @@ of_bsn_virtual_port_create_request_dup(
     return NULL;
 }
 
-of_bsn_virtual_port_remove_reply_t *
+of_object_t *
 of_bsn_virtual_port_remove_reply_dup(
-    of_bsn_virtual_port_remove_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54514,9 +53843,9 @@ of_bsn_virtual_port_remove_reply_dup(
     return NULL;
 }
 
-of_bsn_virtual_port_remove_request_t *
+of_object_t *
 of_bsn_virtual_port_remove_request_dup(
-    of_bsn_virtual_port_remove_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54543,9 +53872,9 @@ of_bsn_virtual_port_remove_request_dup(
     return NULL;
 }
 
-of_bsn_vlan_counter_stats_reply_t *
+of_object_t *
 of_bsn_vlan_counter_stats_reply_dup(
-    of_bsn_vlan_counter_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54556,9 +53885,9 @@ of_bsn_vlan_counter_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_vlan_counter_stats_request_t *
+of_object_t *
 of_bsn_vlan_counter_stats_request_dup(
-    of_bsn_vlan_counter_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54569,9 +53898,9 @@ of_bsn_vlan_counter_stats_request_dup(
     return NULL;
 }
 
-of_bsn_vrf_counter_stats_reply_t *
+of_object_t *
 of_bsn_vrf_counter_stats_reply_dup(
-    of_bsn_vrf_counter_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54582,9 +53911,9 @@ of_bsn_vrf_counter_stats_reply_dup(
     return NULL;
 }
 
-of_bsn_vrf_counter_stats_request_t *
+of_object_t *
 of_bsn_vrf_counter_stats_request_dup(
-    of_bsn_vrf_counter_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -54595,9 +53924,9 @@ of_bsn_vrf_counter_stats_request_dup(
     return NULL;
 }
 
-of_bundle_add_msg_t *
+of_object_t *
 of_bundle_add_msg_dup(
-    of_bundle_add_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -54608,9 +53937,9 @@ of_bundle_add_msg_dup(
     return NULL;
 }
 
-of_bundle_ctrl_msg_t *
+of_object_t *
 of_bundle_ctrl_msg_dup(
-    of_bundle_ctrl_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -54621,9 +53950,9 @@ of_bundle_ctrl_msg_dup(
     return NULL;
 }
 
-of_desc_stats_reply_t *
+of_object_t *
 of_desc_stats_reply_dup(
-    of_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54650,9 +53979,9 @@ of_desc_stats_reply_dup(
     return NULL;
 }
 
-of_desc_stats_request_t *
+of_object_t *
 of_desc_stats_request_dup(
-    of_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54679,9 +54008,9 @@ of_desc_stats_request_dup(
     return NULL;
 }
 
-of_echo_reply_t *
+of_object_t *
 of_echo_reply_dup(
-    of_echo_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54708,9 +54037,9 @@ of_echo_reply_dup(
     return NULL;
 }
 
-of_echo_request_t *
+of_object_t *
 of_echo_request_dup(
-    of_echo_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54737,9 +54066,9 @@ of_echo_request_dup(
     return NULL;
 }
 
-of_error_msg_t *
+of_object_t *
 of_error_msg_dup(
-    of_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54766,9 +54095,9 @@ of_error_msg_dup(
     return NULL;
 }
 
-of_experimenter_t *
+of_object_t *
 of_experimenter_dup(
-    of_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54795,9 +54124,9 @@ of_experimenter_dup(
     return NULL;
 }
 
-of_experimenter_error_msg_t *
+of_object_t *
 of_experimenter_error_msg_dup(
-    of_experimenter_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -54816,9 +54145,9 @@ of_experimenter_error_msg_dup(
     return NULL;
 }
 
-of_experimenter_stats_reply_t *
+of_object_t *
 of_experimenter_stats_reply_dup(
-    of_experimenter_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54845,9 +54174,9 @@ of_experimenter_stats_reply_dup(
     return NULL;
 }
 
-of_experimenter_stats_request_t *
+of_object_t *
 of_experimenter_stats_request_dup(
-    of_experimenter_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54874,9 +54203,9 @@ of_experimenter_stats_request_dup(
     return NULL;
 }
 
-of_features_reply_t *
+of_object_t *
 of_features_reply_dup(
-    of_features_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54903,9 +54232,9 @@ of_features_reply_dup(
     return NULL;
 }
 
-of_features_request_t *
+of_object_t *
 of_features_request_dup(
-    of_features_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54932,9 +54261,9 @@ of_features_request_dup(
     return NULL;
 }
 
-of_flow_add_t *
+of_object_t *
 of_flow_add_dup(
-    of_flow_add_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54961,9 +54290,9 @@ of_flow_add_dup(
     return NULL;
 }
 
-of_flow_delete_t *
+of_object_t *
 of_flow_delete_dup(
-    of_flow_delete_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -54990,9 +54319,9 @@ of_flow_delete_dup(
     return NULL;
 }
 
-of_flow_delete_strict_t *
+of_object_t *
 of_flow_delete_strict_dup(
-    of_flow_delete_strict_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55019,9 +54348,9 @@ of_flow_delete_strict_dup(
     return NULL;
 }
 
-of_flow_mod_t *
+of_object_t *
 of_flow_mod_dup(
-    of_flow_mod_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55048,9 +54377,9 @@ of_flow_mod_dup(
     return NULL;
 }
 
-of_flow_mod_failed_error_msg_t *
+of_object_t *
 of_flow_mod_failed_error_msg_dup(
-    of_flow_mod_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55077,9 +54406,9 @@ of_flow_mod_failed_error_msg_dup(
     return NULL;
 }
 
-of_flow_modify_t *
+of_object_t *
 of_flow_modify_dup(
-    of_flow_modify_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55106,9 +54435,9 @@ of_flow_modify_dup(
     return NULL;
 }
 
-of_flow_modify_strict_t *
+of_object_t *
 of_flow_modify_strict_dup(
-    of_flow_modify_strict_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55135,9 +54464,9 @@ of_flow_modify_strict_dup(
     return NULL;
 }
 
-of_flow_removed_t *
+of_object_t *
 of_flow_removed_dup(
-    of_flow_removed_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55164,9 +54493,9 @@ of_flow_removed_dup(
     return NULL;
 }
 
-of_flow_stats_reply_t *
+of_object_t *
 of_flow_stats_reply_dup(
-    of_flow_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55193,9 +54522,9 @@ of_flow_stats_reply_dup(
     return NULL;
 }
 
-of_flow_stats_request_t *
+of_object_t *
 of_flow_stats_request_dup(
-    of_flow_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55222,9 +54551,9 @@ of_flow_stats_request_dup(
     return NULL;
 }
 
-of_get_config_reply_t *
+of_object_t *
 of_get_config_reply_dup(
-    of_get_config_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55251,9 +54580,9 @@ of_get_config_reply_dup(
     return NULL;
 }
 
-of_get_config_request_t *
+of_object_t *
 of_get_config_request_dup(
-    of_get_config_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55280,9 +54609,9 @@ of_get_config_request_dup(
     return NULL;
 }
 
-of_group_add_t *
+of_object_t *
 of_group_add_dup(
-    of_group_add_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55305,9 +54634,9 @@ of_group_add_dup(
     return NULL;
 }
 
-of_group_delete_t *
+of_object_t *
 of_group_delete_dup(
-    of_group_delete_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55330,9 +54659,9 @@ of_group_delete_dup(
     return NULL;
 }
 
-of_group_desc_stats_reply_t *
+of_object_t *
 of_group_desc_stats_reply_dup(
-    of_group_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55355,9 +54684,9 @@ of_group_desc_stats_reply_dup(
     return NULL;
 }
 
-of_group_desc_stats_request_t *
+of_object_t *
 of_group_desc_stats_request_dup(
-    of_group_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55380,9 +54709,9 @@ of_group_desc_stats_request_dup(
     return NULL;
 }
 
-of_group_features_stats_reply_t *
+of_object_t *
 of_group_features_stats_reply_dup(
-    of_group_features_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -55401,9 +54730,9 @@ of_group_features_stats_reply_dup(
     return NULL;
 }
 
-of_group_features_stats_request_t *
+of_object_t *
 of_group_features_stats_request_dup(
-    of_group_features_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -55422,9 +54751,9 @@ of_group_features_stats_request_dup(
     return NULL;
 }
 
-of_group_mod_t *
+of_object_t *
 of_group_mod_dup(
-    of_group_mod_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55447,9 +54776,9 @@ of_group_mod_dup(
     return NULL;
 }
 
-of_group_mod_failed_error_msg_t *
+of_object_t *
 of_group_mod_failed_error_msg_dup(
-    of_group_mod_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55472,9 +54801,9 @@ of_group_mod_failed_error_msg_dup(
     return NULL;
 }
 
-of_group_modify_t *
+of_object_t *
 of_group_modify_dup(
-    of_group_modify_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55497,9 +54826,9 @@ of_group_modify_dup(
     return NULL;
 }
 
-of_group_stats_reply_t *
+of_object_t *
 of_group_stats_reply_dup(
-    of_group_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55522,9 +54851,9 @@ of_group_stats_reply_dup(
     return NULL;
 }
 
-of_group_stats_request_t *
+of_object_t *
 of_group_stats_request_dup(
-    of_group_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -55547,9 +54876,9 @@ of_group_stats_request_dup(
     return NULL;
 }
 
-of_header_t *
+of_object_t *
 of_header_dup(
-    of_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55576,9 +54905,9 @@ of_header_dup(
     return NULL;
 }
 
-of_hello_t *
+of_object_t *
 of_hello_dup(
-    of_hello_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55605,9 +54934,9 @@ of_hello_dup(
     return NULL;
 }
 
-of_hello_failed_error_msg_t *
+of_object_t *
 of_hello_failed_error_msg_dup(
-    of_hello_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55634,9 +54963,9 @@ of_hello_failed_error_msg_dup(
     return NULL;
 }
 
-of_meter_config_stats_reply_t *
+of_object_t *
 of_meter_config_stats_reply_dup(
-    of_meter_config_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55651,9 +54980,9 @@ of_meter_config_stats_reply_dup(
     return NULL;
 }
 
-of_meter_config_stats_request_t *
+of_object_t *
 of_meter_config_stats_request_dup(
-    of_meter_config_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55668,9 +54997,9 @@ of_meter_config_stats_request_dup(
     return NULL;
 }
 
-of_meter_features_stats_reply_t *
+of_object_t *
 of_meter_features_stats_reply_dup(
-    of_meter_features_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55685,9 +55014,9 @@ of_meter_features_stats_reply_dup(
     return NULL;
 }
 
-of_meter_features_stats_request_t *
+of_object_t *
 of_meter_features_stats_request_dup(
-    of_meter_features_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55702,9 +55031,9 @@ of_meter_features_stats_request_dup(
     return NULL;
 }
 
-of_meter_mod_t *
+of_object_t *
 of_meter_mod_dup(
-    of_meter_mod_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55719,9 +55048,9 @@ of_meter_mod_dup(
     return NULL;
 }
 
-of_meter_mod_failed_error_msg_t *
+of_object_t *
 of_meter_mod_failed_error_msg_dup(
-    of_meter_mod_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55736,9 +55065,9 @@ of_meter_mod_failed_error_msg_dup(
     return NULL;
 }
 
-of_meter_stats_reply_t *
+of_object_t *
 of_meter_stats_reply_dup(
-    of_meter_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55753,9 +55082,9 @@ of_meter_stats_reply_dup(
     return NULL;
 }
 
-of_meter_stats_request_t *
+of_object_t *
 of_meter_stats_request_dup(
-    of_meter_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55770,9 +55099,9 @@ of_meter_stats_request_dup(
     return NULL;
 }
 
-of_nicira_controller_role_reply_t *
+of_object_t *
 of_nicira_controller_role_reply_dup(
-    of_nicira_controller_role_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55783,9 +55112,9 @@ of_nicira_controller_role_reply_dup(
     return NULL;
 }
 
-of_nicira_controller_role_request_t *
+of_object_t *
 of_nicira_controller_role_request_dup(
-    of_nicira_controller_role_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55796,9 +55125,9 @@ of_nicira_controller_role_request_dup(
     return NULL;
 }
 
-of_nicira_header_t *
+of_object_t *
 of_nicira_header_dup(
-    of_nicira_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55825,9 +55154,9 @@ of_nicira_header_dup(
     return NULL;
 }
 
-of_packet_in_t *
+of_object_t *
 of_packet_in_dup(
-    of_packet_in_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55854,9 +55183,9 @@ of_packet_in_dup(
     return NULL;
 }
 
-of_packet_out_t *
+of_object_t *
 of_packet_out_dup(
-    of_packet_out_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55883,9 +55212,9 @@ of_packet_out_dup(
     return NULL;
 }
 
-of_port_desc_stats_reply_t *
+of_object_t *
 of_port_desc_stats_reply_dup(
-    of_port_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55900,9 +55229,9 @@ of_port_desc_stats_reply_dup(
     return NULL;
 }
 
-of_port_desc_stats_request_t *
+of_object_t *
 of_port_desc_stats_request_dup(
-    of_port_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -55917,9 +55246,9 @@ of_port_desc_stats_request_dup(
     return NULL;
 }
 
-of_port_mod_t *
+of_object_t *
 of_port_mod_dup(
-    of_port_mod_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55946,9 +55275,9 @@ of_port_mod_dup(
     return NULL;
 }
 
-of_port_mod_failed_error_msg_t *
+of_object_t *
 of_port_mod_failed_error_msg_dup(
-    of_port_mod_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -55975,9 +55304,9 @@ of_port_mod_failed_error_msg_dup(
     return NULL;
 }
 
-of_port_stats_reply_t *
+of_object_t *
 of_port_stats_reply_dup(
-    of_port_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56004,9 +55333,9 @@ of_port_stats_reply_dup(
     return NULL;
 }
 
-of_port_stats_request_t *
+of_object_t *
 of_port_stats_request_dup(
-    of_port_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56033,9 +55362,9 @@ of_port_stats_request_dup(
     return NULL;
 }
 
-of_port_status_t *
+of_object_t *
 of_port_status_dup(
-    of_port_status_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56062,9 +55391,9 @@ of_port_status_dup(
     return NULL;
 }
 
-of_queue_desc_stats_reply_t *
+of_object_t *
 of_queue_desc_stats_reply_dup(
-    of_queue_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56075,9 +55404,9 @@ of_queue_desc_stats_reply_dup(
     return NULL;
 }
 
-of_queue_desc_stats_request_t *
+of_object_t *
 of_queue_desc_stats_request_dup(
-    of_queue_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56088,9 +55417,9 @@ of_queue_desc_stats_request_dup(
     return NULL;
 }
 
-of_queue_get_config_reply_t *
+of_object_t *
 of_queue_get_config_reply_dup(
-    of_queue_get_config_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56113,9 +55442,9 @@ of_queue_get_config_reply_dup(
     return NULL;
 }
 
-of_queue_get_config_request_t *
+of_object_t *
 of_queue_get_config_request_dup(
-    of_queue_get_config_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56138,9 +55467,9 @@ of_queue_get_config_request_dup(
     return NULL;
 }
 
-of_queue_op_failed_error_msg_t *
+of_object_t *
 of_queue_op_failed_error_msg_dup(
-    of_queue_op_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56167,9 +55496,9 @@ of_queue_op_failed_error_msg_dup(
     return NULL;
 }
 
-of_queue_stats_reply_t *
+of_object_t *
 of_queue_stats_reply_dup(
-    of_queue_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56196,9 +55525,9 @@ of_queue_stats_reply_dup(
     return NULL;
 }
 
-of_queue_stats_request_t *
+of_object_t *
 of_queue_stats_request_dup(
-    of_queue_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56225,9 +55554,9 @@ of_queue_stats_request_dup(
     return NULL;
 }
 
-of_requestforward_t *
+of_object_t *
 of_requestforward_dup(
-    of_requestforward_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56238,9 +55567,9 @@ of_requestforward_dup(
     return NULL;
 }
 
-of_role_reply_t *
+of_object_t *
 of_role_reply_dup(
-    of_role_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -56259,9 +55588,9 @@ of_role_reply_dup(
     return NULL;
 }
 
-of_role_request_t *
+of_object_t *
 of_role_request_dup(
-    of_role_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -56280,9 +55609,9 @@ of_role_request_dup(
     return NULL;
 }
 
-of_role_request_failed_error_msg_t *
+of_object_t *
 of_role_request_failed_error_msg_dup(
-    of_role_request_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -56301,9 +55630,9 @@ of_role_request_failed_error_msg_dup(
     return NULL;
 }
 
-of_role_status_t *
+of_object_t *
 of_role_status_dup(
-    of_role_status_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56314,9 +55643,9 @@ of_role_status_dup(
     return NULL;
 }
 
-of_set_config_t *
+of_object_t *
 of_set_config_dup(
-    of_set_config_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56343,9 +55672,9 @@ of_set_config_dup(
     return NULL;
 }
 
-of_stats_reply_t *
+of_object_t *
 of_stats_reply_dup(
-    of_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56372,9 +55701,9 @@ of_stats_reply_dup(
     return NULL;
 }
 
-of_stats_request_t *
+of_object_t *
 of_stats_request_dup(
-    of_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56401,9 +55730,9 @@ of_stats_request_dup(
     return NULL;
 }
 
-of_switch_config_failed_error_msg_t *
+of_object_t *
 of_switch_config_failed_error_msg_dup(
-    of_switch_config_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56426,9 +55755,9 @@ of_switch_config_failed_error_msg_dup(
     return NULL;
 }
 
-of_table_desc_stats_reply_t *
+of_object_t *
 of_table_desc_stats_reply_dup(
-    of_table_desc_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56439,9 +55768,9 @@ of_table_desc_stats_reply_dup(
     return NULL;
 }
 
-of_table_desc_stats_request_t *
+of_object_t *
 of_table_desc_stats_request_dup(
-    of_table_desc_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56452,9 +55781,9 @@ of_table_desc_stats_request_dup(
     return NULL;
 }
 
-of_table_features_failed_error_msg_t *
+of_object_t *
 of_table_features_failed_error_msg_dup(
-    of_table_features_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -56469,9 +55798,9 @@ of_table_features_failed_error_msg_dup(
     return NULL;
 }
 
-of_table_features_stats_reply_t *
+of_object_t *
 of_table_features_stats_reply_dup(
-    of_table_features_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -56486,9 +55815,9 @@ of_table_features_stats_reply_dup(
     return NULL;
 }
 
-of_table_features_stats_request_t *
+of_object_t *
 of_table_features_stats_request_dup(
-    of_table_features_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -56503,9 +55832,9 @@ of_table_features_stats_request_dup(
     return NULL;
 }
 
-of_table_mod_t *
+of_object_t *
 of_table_mod_dup(
-    of_table_mod_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56532,9 +55861,9 @@ of_table_mod_dup(
     return NULL;
 }
 
-of_table_mod_failed_error_msg_t *
+of_object_t *
 of_table_mod_failed_error_msg_dup(
-    of_table_mod_failed_error_msg_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56557,9 +55886,9 @@ of_table_mod_failed_error_msg_dup(
     return NULL;
 }
 
-of_table_stats_reply_t *
+of_object_t *
 of_table_stats_reply_dup(
-    of_table_stats_reply_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56586,9 +55915,9 @@ of_table_stats_reply_dup(
     return NULL;
 }
 
-of_table_stats_request_t *
+of_object_t *
 of_table_stats_request_dup(
-    of_table_stats_request_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56615,9 +55944,9 @@ of_table_stats_request_dup(
     return NULL;
 }
 
-of_table_status_t *
+of_object_t *
 of_table_status_dup(
-    of_table_status_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -56628,28 +55957,28 @@ of_table_status_dup(
     return NULL;
 }
 
-of_action_t *
+of_object_t *
 of_action_dup(
-    of_action_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_0) {
+    if (src->version == OF_VERSION_1_0) {
         return of_action_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_1) {
+    if (src->version == OF_VERSION_1_1) {
         return of_action_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_2) {
+    if (src->version == OF_VERSION_1_2) {
         return of_action_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_action_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_action_OF_VERSION_1_4_dup(src);
     }
 
@@ -56657,9 +55986,9 @@ of_action_dup(
     return NULL;
 }
 
-of_action_bsn_t *
+of_object_t *
 of_action_bsn_dup(
-    of_action_bsn_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56686,9 +56015,9 @@ of_action_bsn_dup(
     return NULL;
 }
 
-of_action_bsn_checksum_t *
+of_object_t *
 of_action_bsn_checksum_dup(
-    of_action_bsn_checksum_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56715,9 +56044,9 @@ of_action_bsn_checksum_dup(
     return NULL;
 }
 
-of_action_bsn_gentable_t *
+of_object_t *
 of_action_bsn_gentable_dup(
-    of_action_bsn_gentable_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -56728,9 +56057,9 @@ of_action_bsn_gentable_dup(
     return NULL;
 }
 
-of_action_bsn_mirror_t *
+of_object_t *
 of_action_bsn_mirror_dup(
-    of_action_bsn_mirror_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56757,9 +56086,9 @@ of_action_bsn_mirror_dup(
     return NULL;
 }
 
-of_action_bsn_set_tunnel_dst_t *
+of_object_t *
 of_action_bsn_set_tunnel_dst_dup(
-    of_action_bsn_set_tunnel_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56786,9 +56115,9 @@ of_action_bsn_set_tunnel_dst_dup(
     return NULL;
 }
 
-of_action_copy_ttl_in_t *
+of_object_t *
 of_action_copy_ttl_in_dup(
-    of_action_copy_ttl_in_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56811,9 +56140,9 @@ of_action_copy_ttl_in_dup(
     return NULL;
 }
 
-of_action_copy_ttl_out_t *
+of_object_t *
 of_action_copy_ttl_out_dup(
-    of_action_copy_ttl_out_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56836,9 +56165,9 @@ of_action_copy_ttl_out_dup(
     return NULL;
 }
 
-of_action_dec_mpls_ttl_t *
+of_object_t *
 of_action_dec_mpls_ttl_dup(
-    of_action_dec_mpls_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56861,9 +56190,9 @@ of_action_dec_mpls_ttl_dup(
     return NULL;
 }
 
-of_action_dec_nw_ttl_t *
+of_object_t *
 of_action_dec_nw_ttl_dup(
-    of_action_dec_nw_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56886,9 +56215,9 @@ of_action_dec_nw_ttl_dup(
     return NULL;
 }
 
-of_action_enqueue_t *
+of_object_t *
 of_action_enqueue_dup(
-    of_action_enqueue_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56899,9 +56228,9 @@ of_action_enqueue_dup(
     return NULL;
 }
 
-of_action_experimenter_t *
+of_object_t *
 of_action_experimenter_dup(
-    of_action_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56928,9 +56257,9 @@ of_action_experimenter_dup(
     return NULL;
 }
 
-of_action_group_t *
+of_object_t *
 of_action_group_dup(
-    of_action_group_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -56953,9 +56282,9 @@ of_action_group_dup(
     return NULL;
 }
 
-of_action_header_t *
+of_object_t *
 of_action_header_dup(
-    of_action_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -56982,16 +56311,16 @@ of_action_header_dup(
     return NULL;
 }
 
-of_action_id_t *
+of_object_t *
 of_action_id_dup(
-    of_action_id_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_action_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_action_id_OF_VERSION_1_4_dup(src);
     }
 
@@ -56999,9 +56328,9 @@ of_action_id_dup(
     return NULL;
 }
 
-of_action_id_bsn_t *
+of_object_t *
 of_action_id_bsn_dup(
-    of_action_id_bsn_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57016,9 +56345,9 @@ of_action_id_bsn_dup(
     return NULL;
 }
 
-of_action_id_bsn_checksum_t *
+of_object_t *
 of_action_id_bsn_checksum_dup(
-    of_action_id_bsn_checksum_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57033,9 +56362,9 @@ of_action_id_bsn_checksum_dup(
     return NULL;
 }
 
-of_action_id_bsn_gentable_t *
+of_object_t *
 of_action_id_bsn_gentable_dup(
-    of_action_id_bsn_gentable_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57046,9 +56375,9 @@ of_action_id_bsn_gentable_dup(
     return NULL;
 }
 
-of_action_id_bsn_mirror_t *
+of_object_t *
 of_action_id_bsn_mirror_dup(
-    of_action_id_bsn_mirror_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57063,9 +56392,9 @@ of_action_id_bsn_mirror_dup(
     return NULL;
 }
 
-of_action_id_bsn_set_tunnel_dst_t *
+of_object_t *
 of_action_id_bsn_set_tunnel_dst_dup(
-    of_action_id_bsn_set_tunnel_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57080,9 +56409,9 @@ of_action_id_bsn_set_tunnel_dst_dup(
     return NULL;
 }
 
-of_action_id_copy_ttl_in_t *
+of_object_t *
 of_action_id_copy_ttl_in_dup(
-    of_action_id_copy_ttl_in_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57097,9 +56426,9 @@ of_action_id_copy_ttl_in_dup(
     return NULL;
 }
 
-of_action_id_copy_ttl_out_t *
+of_object_t *
 of_action_id_copy_ttl_out_dup(
-    of_action_id_copy_ttl_out_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57114,9 +56443,9 @@ of_action_id_copy_ttl_out_dup(
     return NULL;
 }
 
-of_action_id_dec_mpls_ttl_t *
+of_object_t *
 of_action_id_dec_mpls_ttl_dup(
-    of_action_id_dec_mpls_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57131,9 +56460,9 @@ of_action_id_dec_mpls_ttl_dup(
     return NULL;
 }
 
-of_action_id_dec_nw_ttl_t *
+of_object_t *
 of_action_id_dec_nw_ttl_dup(
-    of_action_id_dec_nw_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57148,9 +56477,9 @@ of_action_id_dec_nw_ttl_dup(
     return NULL;
 }
 
-of_action_id_experimenter_t *
+of_object_t *
 of_action_id_experimenter_dup(
-    of_action_id_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57165,9 +56494,9 @@ of_action_id_experimenter_dup(
     return NULL;
 }
 
-of_action_id_group_t *
+of_object_t *
 of_action_id_group_dup(
-    of_action_id_group_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57182,9 +56511,9 @@ of_action_id_group_dup(
     return NULL;
 }
 
-of_action_id_header_t *
+of_object_t *
 of_action_id_header_dup(
-    of_action_id_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57199,9 +56528,9 @@ of_action_id_header_dup(
     return NULL;
 }
 
-of_action_id_nicira_t *
+of_object_t *
 of_action_id_nicira_dup(
-    of_action_id_nicira_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57216,9 +56545,9 @@ of_action_id_nicira_dup(
     return NULL;
 }
 
-of_action_id_nicira_dec_ttl_t *
+of_object_t *
 of_action_id_nicira_dec_ttl_dup(
-    of_action_id_nicira_dec_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57233,9 +56562,9 @@ of_action_id_nicira_dec_ttl_dup(
     return NULL;
 }
 
-of_action_id_output_t *
+of_object_t *
 of_action_id_output_dup(
-    of_action_id_output_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57250,9 +56579,9 @@ of_action_id_output_dup(
     return NULL;
 }
 
-of_action_id_pop_mpls_t *
+of_object_t *
 of_action_id_pop_mpls_dup(
-    of_action_id_pop_mpls_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57267,9 +56596,9 @@ of_action_id_pop_mpls_dup(
     return NULL;
 }
 
-of_action_id_pop_pbb_t *
+of_object_t *
 of_action_id_pop_pbb_dup(
-    of_action_id_pop_pbb_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57284,9 +56613,9 @@ of_action_id_pop_pbb_dup(
     return NULL;
 }
 
-of_action_id_pop_vlan_t *
+of_object_t *
 of_action_id_pop_vlan_dup(
-    of_action_id_pop_vlan_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57301,9 +56630,9 @@ of_action_id_pop_vlan_dup(
     return NULL;
 }
 
-of_action_id_push_mpls_t *
+of_object_t *
 of_action_id_push_mpls_dup(
-    of_action_id_push_mpls_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57318,9 +56647,9 @@ of_action_id_push_mpls_dup(
     return NULL;
 }
 
-of_action_id_push_pbb_t *
+of_object_t *
 of_action_id_push_pbb_dup(
-    of_action_id_push_pbb_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57335,9 +56664,9 @@ of_action_id_push_pbb_dup(
     return NULL;
 }
 
-of_action_id_push_vlan_t *
+of_object_t *
 of_action_id_push_vlan_dup(
-    of_action_id_push_vlan_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57352,9 +56681,9 @@ of_action_id_push_vlan_dup(
     return NULL;
 }
 
-of_action_id_set_field_t *
+of_object_t *
 of_action_id_set_field_dup(
-    of_action_id_set_field_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57369,9 +56698,9 @@ of_action_id_set_field_dup(
     return NULL;
 }
 
-of_action_id_set_mpls_ttl_t *
+of_object_t *
 of_action_id_set_mpls_ttl_dup(
-    of_action_id_set_mpls_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57386,9 +56715,9 @@ of_action_id_set_mpls_ttl_dup(
     return NULL;
 }
 
-of_action_id_set_nw_ttl_t *
+of_object_t *
 of_action_id_set_nw_ttl_dup(
-    of_action_id_set_nw_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57403,9 +56732,9 @@ of_action_id_set_nw_ttl_dup(
     return NULL;
 }
 
-of_action_id_set_queue_t *
+of_object_t *
 of_action_id_set_queue_dup(
-    of_action_id_set_queue_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57420,9 +56749,9 @@ of_action_id_set_queue_dup(
     return NULL;
 }
 
-of_action_nicira_t *
+of_object_t *
 of_action_nicira_dup(
-    of_action_nicira_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57449,9 +56778,9 @@ of_action_nicira_dup(
     return NULL;
 }
 
-of_action_nicira_dec_ttl_t *
+of_object_t *
 of_action_nicira_dec_ttl_dup(
-    of_action_nicira_dec_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57478,9 +56807,9 @@ of_action_nicira_dec_ttl_dup(
     return NULL;
 }
 
-of_action_output_t *
+of_object_t *
 of_action_output_dup(
-    of_action_output_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57507,9 +56836,9 @@ of_action_output_dup(
     return NULL;
 }
 
-of_action_pop_mpls_t *
+of_object_t *
 of_action_pop_mpls_dup(
-    of_action_pop_mpls_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57532,9 +56861,9 @@ of_action_pop_mpls_dup(
     return NULL;
 }
 
-of_action_pop_pbb_t *
+of_object_t *
 of_action_pop_pbb_dup(
-    of_action_pop_pbb_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57549,9 +56878,9 @@ of_action_pop_pbb_dup(
     return NULL;
 }
 
-of_action_pop_vlan_t *
+of_object_t *
 of_action_pop_vlan_dup(
-    of_action_pop_vlan_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57574,9 +56903,9 @@ of_action_pop_vlan_dup(
     return NULL;
 }
 
-of_action_push_mpls_t *
+of_object_t *
 of_action_push_mpls_dup(
-    of_action_push_mpls_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57599,9 +56928,9 @@ of_action_push_mpls_dup(
     return NULL;
 }
 
-of_action_push_pbb_t *
+of_object_t *
 of_action_push_pbb_dup(
-    of_action_push_pbb_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -57616,9 +56945,9 @@ of_action_push_pbb_dup(
     return NULL;
 }
 
-of_action_push_vlan_t *
+of_object_t *
 of_action_push_vlan_dup(
-    of_action_push_vlan_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57641,9 +56970,9 @@ of_action_push_vlan_dup(
     return NULL;
 }
 
-of_action_set_dl_dst_t *
+of_object_t *
 of_action_set_dl_dst_dup(
-    of_action_set_dl_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57658,9 +56987,9 @@ of_action_set_dl_dst_dup(
     return NULL;
 }
 
-of_action_set_dl_src_t *
+of_object_t *
 of_action_set_dl_src_dup(
-    of_action_set_dl_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57675,9 +57004,9 @@ of_action_set_dl_src_dup(
     return NULL;
 }
 
-of_action_set_field_t *
+of_object_t *
 of_action_set_field_dup(
-    of_action_set_field_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -57696,9 +57025,9 @@ of_action_set_field_dup(
     return NULL;
 }
 
-of_action_set_mpls_label_t *
+of_object_t *
 of_action_set_mpls_label_dup(
-    of_action_set_mpls_label_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57709,9 +57038,9 @@ of_action_set_mpls_label_dup(
     return NULL;
 }
 
-of_action_set_mpls_tc_t *
+of_object_t *
 of_action_set_mpls_tc_dup(
-    of_action_set_mpls_tc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57722,9 +57051,9 @@ of_action_set_mpls_tc_dup(
     return NULL;
 }
 
-of_action_set_mpls_ttl_t *
+of_object_t *
 of_action_set_mpls_ttl_dup(
-    of_action_set_mpls_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57747,9 +57076,9 @@ of_action_set_mpls_ttl_dup(
     return NULL;
 }
 
-of_action_set_nw_dst_t *
+of_object_t *
 of_action_set_nw_dst_dup(
-    of_action_set_nw_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57764,9 +57093,9 @@ of_action_set_nw_dst_dup(
     return NULL;
 }
 
-of_action_set_nw_ecn_t *
+of_object_t *
 of_action_set_nw_ecn_dup(
-    of_action_set_nw_ecn_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57777,9 +57106,9 @@ of_action_set_nw_ecn_dup(
     return NULL;
 }
 
-of_action_set_nw_src_t *
+of_object_t *
 of_action_set_nw_src_dup(
-    of_action_set_nw_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57794,9 +57123,9 @@ of_action_set_nw_src_dup(
     return NULL;
 }
 
-of_action_set_nw_tos_t *
+of_object_t *
 of_action_set_nw_tos_dup(
-    of_action_set_nw_tos_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57811,9 +57140,9 @@ of_action_set_nw_tos_dup(
     return NULL;
 }
 
-of_action_set_nw_ttl_t *
+of_object_t *
 of_action_set_nw_ttl_dup(
-    of_action_set_nw_ttl_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57836,9 +57165,9 @@ of_action_set_nw_ttl_dup(
     return NULL;
 }
 
-of_action_set_queue_t *
+of_object_t *
 of_action_set_queue_dup(
-    of_action_set_queue_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -57861,9 +57190,9 @@ of_action_set_queue_dup(
     return NULL;
 }
 
-of_action_set_tp_dst_t *
+of_object_t *
 of_action_set_tp_dst_dup(
-    of_action_set_tp_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57878,9 +57207,9 @@ of_action_set_tp_dst_dup(
     return NULL;
 }
 
-of_action_set_tp_src_t *
+of_object_t *
 of_action_set_tp_src_dup(
-    of_action_set_tp_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57895,9 +57224,9 @@ of_action_set_tp_src_dup(
     return NULL;
 }
 
-of_action_set_vlan_pcp_t *
+of_object_t *
 of_action_set_vlan_pcp_dup(
-    of_action_set_vlan_pcp_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57912,9 +57241,9 @@ of_action_set_vlan_pcp_dup(
     return NULL;
 }
 
-of_action_set_vlan_vid_t *
+of_object_t *
 of_action_set_vlan_vid_dup(
-    of_action_set_vlan_vid_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57929,9 +57258,9 @@ of_action_set_vlan_vid_dup(
     return NULL;
 }
 
-of_action_strip_vlan_t *
+of_object_t *
 of_action_strip_vlan_dup(
-    of_action_strip_vlan_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -57942,12 +57271,12 @@ of_action_strip_vlan_dup(
     return NULL;
 }
 
-of_async_config_prop_t *
+of_object_t *
 of_async_config_prop_dup(
-    of_async_config_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_async_config_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -57955,9 +57284,9 @@ of_async_config_prop_dup(
     return NULL;
 }
 
-of_async_config_prop_experimenter_master_t *
+of_object_t *
 of_async_config_prop_experimenter_master_dup(
-    of_async_config_prop_experimenter_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -57968,9 +57297,9 @@ of_async_config_prop_experimenter_master_dup(
     return NULL;
 }
 
-of_async_config_prop_experimenter_slave_t *
+of_object_t *
 of_async_config_prop_experimenter_slave_dup(
-    of_async_config_prop_experimenter_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -57981,9 +57310,9 @@ of_async_config_prop_experimenter_slave_dup(
     return NULL;
 }
 
-of_async_config_prop_flow_removed_master_t *
+of_object_t *
 of_async_config_prop_flow_removed_master_dup(
-    of_async_config_prop_flow_removed_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -57994,9 +57323,9 @@ of_async_config_prop_flow_removed_master_dup(
     return NULL;
 }
 
-of_async_config_prop_flow_removed_slave_t *
+of_object_t *
 of_async_config_prop_flow_removed_slave_dup(
-    of_async_config_prop_flow_removed_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58007,9 +57336,9 @@ of_async_config_prop_flow_removed_slave_dup(
     return NULL;
 }
 
-of_async_config_prop_header_t *
+of_object_t *
 of_async_config_prop_header_dup(
-    of_async_config_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58020,9 +57349,9 @@ of_async_config_prop_header_dup(
     return NULL;
 }
 
-of_async_config_prop_packet_in_master_t *
+of_object_t *
 of_async_config_prop_packet_in_master_dup(
-    of_async_config_prop_packet_in_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58033,9 +57362,9 @@ of_async_config_prop_packet_in_master_dup(
     return NULL;
 }
 
-of_async_config_prop_packet_in_slave_t *
+of_object_t *
 of_async_config_prop_packet_in_slave_dup(
-    of_async_config_prop_packet_in_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58046,9 +57375,9 @@ of_async_config_prop_packet_in_slave_dup(
     return NULL;
 }
 
-of_async_config_prop_port_status_master_t *
+of_object_t *
 of_async_config_prop_port_status_master_dup(
-    of_async_config_prop_port_status_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58059,9 +57388,9 @@ of_async_config_prop_port_status_master_dup(
     return NULL;
 }
 
-of_async_config_prop_port_status_slave_t *
+of_object_t *
 of_async_config_prop_port_status_slave_dup(
-    of_async_config_prop_port_status_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58072,9 +57401,9 @@ of_async_config_prop_port_status_slave_dup(
     return NULL;
 }
 
-of_async_config_prop_requestforward_master_t *
+of_object_t *
 of_async_config_prop_requestforward_master_dup(
-    of_async_config_prop_requestforward_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58085,9 +57414,9 @@ of_async_config_prop_requestforward_master_dup(
     return NULL;
 }
 
-of_async_config_prop_requestforward_slave_t *
+of_object_t *
 of_async_config_prop_requestforward_slave_dup(
-    of_async_config_prop_requestforward_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58098,9 +57427,9 @@ of_async_config_prop_requestforward_slave_dup(
     return NULL;
 }
 
-of_async_config_prop_role_status_master_t *
+of_object_t *
 of_async_config_prop_role_status_master_dup(
-    of_async_config_prop_role_status_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58111,9 +57440,9 @@ of_async_config_prop_role_status_master_dup(
     return NULL;
 }
 
-of_async_config_prop_role_status_slave_t *
+of_object_t *
 of_async_config_prop_role_status_slave_dup(
-    of_async_config_prop_role_status_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58124,9 +57453,9 @@ of_async_config_prop_role_status_slave_dup(
     return NULL;
 }
 
-of_async_config_prop_table_status_master_t *
+of_object_t *
 of_async_config_prop_table_status_master_dup(
-    of_async_config_prop_table_status_master_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58137,9 +57466,9 @@ of_async_config_prop_table_status_master_dup(
     return NULL;
 }
 
-of_async_config_prop_table_status_slave_t *
+of_object_t *
 of_async_config_prop_table_status_slave_dup(
-    of_async_config_prop_table_status_slave_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -58150,9 +57479,9 @@ of_async_config_prop_table_status_slave_dup(
     return NULL;
 }
 
-of_bsn_controller_connection_t *
+of_object_t *
 of_bsn_controller_connection_dup(
-    of_bsn_controller_connection_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58163,9 +57492,9 @@ of_bsn_controller_connection_dup(
     return NULL;
 }
 
-of_bsn_debug_counter_desc_stats_entry_t *
+of_object_t *
 of_bsn_debug_counter_desc_stats_entry_dup(
-    of_bsn_debug_counter_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58176,9 +57505,9 @@ of_bsn_debug_counter_desc_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_debug_counter_stats_entry_t *
+of_object_t *
 of_bsn_debug_counter_stats_entry_dup(
-    of_bsn_debug_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58189,9 +57518,9 @@ of_bsn_debug_counter_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_flow_checksum_bucket_stats_entry_t *
+of_object_t *
 of_bsn_flow_checksum_bucket_stats_entry_dup(
-    of_bsn_flow_checksum_bucket_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58202,9 +57531,9 @@ of_bsn_flow_checksum_bucket_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_gentable_bucket_stats_entry_t *
+of_object_t *
 of_bsn_gentable_bucket_stats_entry_dup(
-    of_bsn_gentable_bucket_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58215,9 +57544,9 @@ of_bsn_gentable_bucket_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_gentable_desc_stats_entry_t *
+of_object_t *
 of_bsn_gentable_desc_stats_entry_dup(
-    of_bsn_gentable_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58228,9 +57557,9 @@ of_bsn_gentable_desc_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_desc_stats_entry_t *
+of_object_t *
 of_bsn_gentable_entry_desc_stats_entry_dup(
-    of_bsn_gentable_entry_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58241,9 +57570,9 @@ of_bsn_gentable_entry_desc_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_gentable_entry_stats_entry_t *
+of_object_t *
 of_bsn_gentable_entry_stats_entry_dup(
-    of_bsn_gentable_entry_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58254,9 +57583,9 @@ of_bsn_gentable_entry_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_gentable_stats_entry_t *
+of_object_t *
 of_bsn_gentable_stats_entry_dup(
-    of_bsn_gentable_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58267,9 +57596,9 @@ of_bsn_gentable_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_interface_t *
+of_object_t *
 of_bsn_interface_dup(
-    of_bsn_interface_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -58296,9 +57625,9 @@ of_bsn_interface_dup(
     return NULL;
 }
 
-of_bsn_lacp_stats_entry_t *
+of_object_t *
 of_bsn_lacp_stats_entry_dup(
-    of_bsn_lacp_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58309,9 +57638,9 @@ of_bsn_lacp_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_port_counter_stats_entry_t *
+of_object_t *
 of_bsn_port_counter_stats_entry_dup(
-    of_bsn_port_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58322,9 +57651,9 @@ of_bsn_port_counter_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_switch_pipeline_stats_entry_t *
+of_object_t *
 of_bsn_switch_pipeline_stats_entry_dup(
-    of_bsn_switch_pipeline_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58335,9 +57664,9 @@ of_bsn_switch_pipeline_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_table_checksum_stats_entry_t *
+of_object_t *
 of_bsn_table_checksum_stats_entry_dup(
-    of_bsn_table_checksum_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58348,12 +57677,12 @@ of_bsn_table_checksum_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_tlv_t *
+of_object_t *
 of_bsn_tlv_dup(
-    of_bsn_tlv_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_OF_VERSION_1_3_dup(src);
     }
 
@@ -58361,9 +57690,9 @@ of_bsn_tlv_dup(
     return NULL;
 }
 
-of_bsn_tlv_actor_key_t *
+of_object_t *
 of_bsn_tlv_actor_key_dup(
-    of_bsn_tlv_actor_key_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58374,9 +57703,9 @@ of_bsn_tlv_actor_key_dup(
     return NULL;
 }
 
-of_bsn_tlv_actor_port_num_t *
+of_object_t *
 of_bsn_tlv_actor_port_num_dup(
-    of_bsn_tlv_actor_port_num_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58387,9 +57716,9 @@ of_bsn_tlv_actor_port_num_dup(
     return NULL;
 }
 
-of_bsn_tlv_actor_port_priority_t *
+of_object_t *
 of_bsn_tlv_actor_port_priority_dup(
-    of_bsn_tlv_actor_port_priority_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58400,9 +57729,9 @@ of_bsn_tlv_actor_port_priority_dup(
     return NULL;
 }
 
-of_bsn_tlv_actor_state_t *
+of_object_t *
 of_bsn_tlv_actor_state_dup(
-    of_bsn_tlv_actor_state_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58413,9 +57742,9 @@ of_bsn_tlv_actor_state_dup(
     return NULL;
 }
 
-of_bsn_tlv_actor_system_mac_t *
+of_object_t *
 of_bsn_tlv_actor_system_mac_dup(
-    of_bsn_tlv_actor_system_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58426,9 +57755,9 @@ of_bsn_tlv_actor_system_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_actor_system_priority_t *
+of_object_t *
 of_bsn_tlv_actor_system_priority_dup(
-    of_bsn_tlv_actor_system_priority_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58439,9 +57768,9 @@ of_bsn_tlv_actor_system_priority_dup(
     return NULL;
 }
 
-of_bsn_tlv_broadcast_query_timeout_t *
+of_object_t *
 of_bsn_tlv_broadcast_query_timeout_dup(
-    of_bsn_tlv_broadcast_query_timeout_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58452,9 +57781,9 @@ of_bsn_tlv_broadcast_query_timeout_dup(
     return NULL;
 }
 
-of_bsn_tlv_circuit_id_t *
+of_object_t *
 of_bsn_tlv_circuit_id_dup(
-    of_bsn_tlv_circuit_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58465,9 +57794,9 @@ of_bsn_tlv_circuit_id_dup(
     return NULL;
 }
 
-of_bsn_tlv_convergence_status_t *
+of_object_t *
 of_bsn_tlv_convergence_status_dup(
-    of_bsn_tlv_convergence_status_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58478,9 +57807,9 @@ of_bsn_tlv_convergence_status_dup(
     return NULL;
 }
 
-of_bsn_tlv_crc_enabled_t *
+of_object_t *
 of_bsn_tlv_crc_enabled_dup(
-    of_bsn_tlv_crc_enabled_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58491,9 +57820,9 @@ of_bsn_tlv_crc_enabled_dup(
     return NULL;
 }
 
-of_bsn_tlv_eth_dst_t *
+of_object_t *
 of_bsn_tlv_eth_dst_dup(
-    of_bsn_tlv_eth_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58504,9 +57833,9 @@ of_bsn_tlv_eth_dst_dup(
     return NULL;
 }
 
-of_bsn_tlv_eth_src_t *
+of_object_t *
 of_bsn_tlv_eth_src_dup(
-    of_bsn_tlv_eth_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58517,9 +57846,9 @@ of_bsn_tlv_eth_src_dup(
     return NULL;
 }
 
-of_bsn_tlv_external_gateway_ip_t *
+of_object_t *
 of_bsn_tlv_external_gateway_ip_dup(
-    of_bsn_tlv_external_gateway_ip_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58530,9 +57859,9 @@ of_bsn_tlv_external_gateway_ip_dup(
     return NULL;
 }
 
-of_bsn_tlv_external_gateway_mac_t *
+of_object_t *
 of_bsn_tlv_external_gateway_mac_dup(
-    of_bsn_tlv_external_gateway_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58543,9 +57872,9 @@ of_bsn_tlv_external_gateway_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_external_ip_t *
+of_object_t *
 of_bsn_tlv_external_ip_dup(
-    of_bsn_tlv_external_ip_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58556,9 +57885,9 @@ of_bsn_tlv_external_ip_dup(
     return NULL;
 }
 
-of_bsn_tlv_external_mac_t *
+of_object_t *
 of_bsn_tlv_external_mac_dup(
-    of_bsn_tlv_external_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58569,9 +57898,9 @@ of_bsn_tlv_external_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_external_netmask_t *
+of_object_t *
 of_bsn_tlv_external_netmask_dup(
-    of_bsn_tlv_external_netmask_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58582,9 +57911,9 @@ of_bsn_tlv_external_netmask_dup(
     return NULL;
 }
 
-of_bsn_tlv_header_t *
+of_object_t *
 of_bsn_tlv_header_dup(
-    of_bsn_tlv_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58595,9 +57924,9 @@ of_bsn_tlv_header_dup(
     return NULL;
 }
 
-of_bsn_tlv_header_size_t *
+of_object_t *
 of_bsn_tlv_header_size_dup(
-    of_bsn_tlv_header_size_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58608,9 +57937,9 @@ of_bsn_tlv_header_size_dup(
     return NULL;
 }
 
-of_bsn_tlv_idle_notification_t *
+of_object_t *
 of_bsn_tlv_idle_notification_dup(
-    of_bsn_tlv_idle_notification_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58621,9 +57950,9 @@ of_bsn_tlv_idle_notification_dup(
     return NULL;
 }
 
-of_bsn_tlv_idle_time_t *
+of_object_t *
 of_bsn_tlv_idle_time_dup(
-    of_bsn_tlv_idle_time_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58634,9 +57963,9 @@ of_bsn_tlv_idle_time_dup(
     return NULL;
 }
 
-of_bsn_tlv_idle_timeout_t *
+of_object_t *
 of_bsn_tlv_idle_timeout_dup(
-    of_bsn_tlv_idle_timeout_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58647,9 +57976,9 @@ of_bsn_tlv_idle_timeout_dup(
     return NULL;
 }
 
-of_bsn_tlv_internal_gateway_mac_t *
+of_object_t *
 of_bsn_tlv_internal_gateway_mac_dup(
-    of_bsn_tlv_internal_gateway_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58660,9 +57989,9 @@ of_bsn_tlv_internal_gateway_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_internal_mac_t *
+of_object_t *
 of_bsn_tlv_internal_mac_dup(
-    of_bsn_tlv_internal_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58673,9 +58002,9 @@ of_bsn_tlv_internal_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_ipv4_t *
+of_object_t *
 of_bsn_tlv_ipv4_dup(
-    of_bsn_tlv_ipv4_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58686,9 +58015,9 @@ of_bsn_tlv_ipv4_dup(
     return NULL;
 }
 
-of_bsn_tlv_ipv4_dst_t *
+of_object_t *
 of_bsn_tlv_ipv4_dst_dup(
-    of_bsn_tlv_ipv4_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58699,9 +58028,9 @@ of_bsn_tlv_ipv4_dst_dup(
     return NULL;
 }
 
-of_bsn_tlv_ipv4_src_t *
+of_object_t *
 of_bsn_tlv_ipv4_src_dup(
-    of_bsn_tlv_ipv4_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58712,9 +58041,9 @@ of_bsn_tlv_ipv4_src_dup(
     return NULL;
 }
 
-of_bsn_tlv_mac_t *
+of_object_t *
 of_bsn_tlv_mac_dup(
-    of_bsn_tlv_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58725,9 +58054,9 @@ of_bsn_tlv_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_miss_packets_t *
+of_object_t *
 of_bsn_tlv_miss_packets_dup(
-    of_bsn_tlv_miss_packets_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58738,9 +58067,9 @@ of_bsn_tlv_miss_packets_dup(
     return NULL;
 }
 
-of_bsn_tlv_name_t *
+of_object_t *
 of_bsn_tlv_name_dup(
-    of_bsn_tlv_name_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58751,9 +58080,9 @@ of_bsn_tlv_name_dup(
     return NULL;
 }
 
-of_bsn_tlv_partner_key_t *
+of_object_t *
 of_bsn_tlv_partner_key_dup(
-    of_bsn_tlv_partner_key_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58764,9 +58093,9 @@ of_bsn_tlv_partner_key_dup(
     return NULL;
 }
 
-of_bsn_tlv_partner_port_num_t *
+of_object_t *
 of_bsn_tlv_partner_port_num_dup(
-    of_bsn_tlv_partner_port_num_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58777,9 +58106,9 @@ of_bsn_tlv_partner_port_num_dup(
     return NULL;
 }
 
-of_bsn_tlv_partner_port_priority_t *
+of_object_t *
 of_bsn_tlv_partner_port_priority_dup(
-    of_bsn_tlv_partner_port_priority_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58790,9 +58119,9 @@ of_bsn_tlv_partner_port_priority_dup(
     return NULL;
 }
 
-of_bsn_tlv_partner_state_t *
+of_object_t *
 of_bsn_tlv_partner_state_dup(
-    of_bsn_tlv_partner_state_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58803,9 +58132,9 @@ of_bsn_tlv_partner_state_dup(
     return NULL;
 }
 
-of_bsn_tlv_partner_system_mac_t *
+of_object_t *
 of_bsn_tlv_partner_system_mac_dup(
-    of_bsn_tlv_partner_system_mac_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58816,9 +58145,9 @@ of_bsn_tlv_partner_system_mac_dup(
     return NULL;
 }
 
-of_bsn_tlv_partner_system_priority_t *
+of_object_t *
 of_bsn_tlv_partner_system_priority_dup(
-    of_bsn_tlv_partner_system_priority_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58829,9 +58158,9 @@ of_bsn_tlv_partner_system_priority_dup(
     return NULL;
 }
 
-of_bsn_tlv_port_t *
+of_object_t *
 of_bsn_tlv_port_dup(
-    of_bsn_tlv_port_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58842,9 +58171,9 @@ of_bsn_tlv_port_dup(
     return NULL;
 }
 
-of_bsn_tlv_queue_id_t *
+of_object_t *
 of_bsn_tlv_queue_id_dup(
-    of_bsn_tlv_queue_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58855,9 +58184,9 @@ of_bsn_tlv_queue_id_dup(
     return NULL;
 }
 
-of_bsn_tlv_queue_weight_t *
+of_object_t *
 of_bsn_tlv_queue_weight_dup(
-    of_bsn_tlv_queue_weight_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58868,9 +58197,9 @@ of_bsn_tlv_queue_weight_dup(
     return NULL;
 }
 
-of_bsn_tlv_reply_packets_t *
+of_object_t *
 of_bsn_tlv_reply_packets_dup(
-    of_bsn_tlv_reply_packets_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58881,9 +58210,9 @@ of_bsn_tlv_reply_packets_dup(
     return NULL;
 }
 
-of_bsn_tlv_request_packets_t *
+of_object_t *
 of_bsn_tlv_request_packets_dup(
-    of_bsn_tlv_request_packets_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58894,9 +58223,9 @@ of_bsn_tlv_request_packets_dup(
     return NULL;
 }
 
-of_bsn_tlv_rx_packets_t *
+of_object_t *
 of_bsn_tlv_rx_packets_dup(
-    of_bsn_tlv_rx_packets_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58907,9 +58236,9 @@ of_bsn_tlv_rx_packets_dup(
     return NULL;
 }
 
-of_bsn_tlv_sampling_rate_t *
+of_object_t *
 of_bsn_tlv_sampling_rate_dup(
-    of_bsn_tlv_sampling_rate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58920,9 +58249,9 @@ of_bsn_tlv_sampling_rate_dup(
     return NULL;
 }
 
-of_bsn_tlv_sub_agent_id_t *
+of_object_t *
 of_bsn_tlv_sub_agent_id_dup(
-    of_bsn_tlv_sub_agent_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58933,9 +58262,9 @@ of_bsn_tlv_sub_agent_id_dup(
     return NULL;
 }
 
-of_bsn_tlv_tx_bytes_t *
+of_object_t *
 of_bsn_tlv_tx_bytes_dup(
-    of_bsn_tlv_tx_bytes_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58946,9 +58275,9 @@ of_bsn_tlv_tx_bytes_dup(
     return NULL;
 }
 
-of_bsn_tlv_tx_packets_t *
+of_object_t *
 of_bsn_tlv_tx_packets_dup(
-    of_bsn_tlv_tx_packets_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58959,9 +58288,9 @@ of_bsn_tlv_tx_packets_dup(
     return NULL;
 }
 
-of_bsn_tlv_udf_anchor_t *
+of_object_t *
 of_bsn_tlv_udf_anchor_dup(
-    of_bsn_tlv_udf_anchor_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58972,9 +58301,9 @@ of_bsn_tlv_udf_anchor_dup(
     return NULL;
 }
 
-of_bsn_tlv_udf_id_t *
+of_object_t *
 of_bsn_tlv_udf_id_dup(
-    of_bsn_tlv_udf_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58985,9 +58314,9 @@ of_bsn_tlv_udf_id_dup(
     return NULL;
 }
 
-of_bsn_tlv_udf_length_t *
+of_object_t *
 of_bsn_tlv_udf_length_dup(
-    of_bsn_tlv_udf_length_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -58998,9 +58327,9 @@ of_bsn_tlv_udf_length_dup(
     return NULL;
 }
 
-of_bsn_tlv_udf_offset_t *
+of_object_t *
 of_bsn_tlv_udf_offset_dup(
-    of_bsn_tlv_udf_offset_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59011,9 +58340,9 @@ of_bsn_tlv_udf_offset_dup(
     return NULL;
 }
 
-of_bsn_tlv_udp_dst_t *
+of_object_t *
 of_bsn_tlv_udp_dst_dup(
-    of_bsn_tlv_udp_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59024,9 +58353,9 @@ of_bsn_tlv_udp_dst_dup(
     return NULL;
 }
 
-of_bsn_tlv_udp_src_t *
+of_object_t *
 of_bsn_tlv_udp_src_dup(
-    of_bsn_tlv_udp_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59037,9 +58366,9 @@ of_bsn_tlv_udp_src_dup(
     return NULL;
 }
 
-of_bsn_tlv_unicast_query_timeout_t *
+of_object_t *
 of_bsn_tlv_unicast_query_timeout_dup(
-    of_bsn_tlv_unicast_query_timeout_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59050,9 +58379,9 @@ of_bsn_tlv_unicast_query_timeout_dup(
     return NULL;
 }
 
-of_bsn_tlv_vlan_vid_t *
+of_object_t *
 of_bsn_tlv_vlan_vid_dup(
-    of_bsn_tlv_vlan_vid_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59063,9 +58392,9 @@ of_bsn_tlv_vlan_vid_dup(
     return NULL;
 }
 
-of_bsn_tlv_vrf_t *
+of_object_t *
 of_bsn_tlv_vrf_dup(
-    of_bsn_tlv_vrf_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59076,9 +58405,9 @@ of_bsn_tlv_vrf_dup(
     return NULL;
 }
 
-of_bsn_vlan_counter_stats_entry_t *
+of_object_t *
 of_bsn_vlan_counter_stats_entry_dup(
-    of_bsn_vlan_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59089,28 +58418,28 @@ of_bsn_vlan_counter_stats_entry_dup(
     return NULL;
 }
 
-of_bsn_vport_t *
+of_object_t *
 of_bsn_vport_dup(
-    of_bsn_vport_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_0) {
+    if (src->version == OF_VERSION_1_0) {
         return of_bsn_vport_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_1) {
+    if (src->version == OF_VERSION_1_1) {
         return of_bsn_vport_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_2) {
+    if (src->version == OF_VERSION_1_2) {
         return of_bsn_vport_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_bsn_vport_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_bsn_vport_OF_VERSION_1_4_dup(src);
     }
 
@@ -59118,9 +58447,9 @@ of_bsn_vport_dup(
     return NULL;
 }
 
-of_bsn_vport_header_t *
+of_object_t *
 of_bsn_vport_header_dup(
-    of_bsn_vport_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -59147,9 +58476,9 @@ of_bsn_vport_header_dup(
     return NULL;
 }
 
-of_bsn_vport_l2gre_t *
+of_object_t *
 of_bsn_vport_l2gre_dup(
-    of_bsn_vport_l2gre_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -59176,9 +58505,9 @@ of_bsn_vport_l2gre_dup(
     return NULL;
 }
 
-of_bsn_vport_q_in_q_t *
+of_object_t *
 of_bsn_vport_q_in_q_dup(
-    of_bsn_vport_q_in_q_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -59205,9 +58534,9 @@ of_bsn_vport_q_in_q_dup(
     return NULL;
 }
 
-of_bsn_vrf_counter_stats_entry_t *
+of_object_t *
 of_bsn_vrf_counter_stats_entry_dup(
-    of_bsn_vrf_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59218,9 +58547,9 @@ of_bsn_vrf_counter_stats_entry_dup(
     return NULL;
 }
 
-of_bucket_t *
+of_object_t *
 of_bucket_dup(
-    of_bucket_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59243,9 +58572,9 @@ of_bucket_dup(
     return NULL;
 }
 
-of_bucket_counter_t *
+of_object_t *
 of_bucket_counter_dup(
-    of_bucket_counter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59268,12 +58597,12 @@ of_bucket_counter_dup(
     return NULL;
 }
 
-of_bundle_prop_t *
+of_object_t *
 of_bundle_prop_dup(
-    of_bundle_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_bundle_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -59281,9 +58610,9 @@ of_bundle_prop_dup(
     return NULL;
 }
 
-of_bundle_prop_experimenter_t *
+of_object_t *
 of_bundle_prop_experimenter_dup(
-    of_bundle_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -59294,9 +58623,9 @@ of_bundle_prop_experimenter_dup(
     return NULL;
 }
 
-of_bundle_prop_header_t *
+of_object_t *
 of_bundle_prop_header_dup(
-    of_bundle_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -59307,9 +58636,9 @@ of_bundle_prop_header_dup(
     return NULL;
 }
 
-of_flow_stats_entry_t *
+of_object_t *
 of_flow_stats_entry_dup(
-    of_flow_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -59336,9 +58665,9 @@ of_flow_stats_entry_dup(
     return NULL;
 }
 
-of_group_desc_stats_entry_t *
+of_object_t *
 of_group_desc_stats_entry_dup(
-    of_group_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59361,9 +58690,9 @@ of_group_desc_stats_entry_dup(
     return NULL;
 }
 
-of_group_stats_entry_t *
+of_object_t *
 of_group_stats_entry_dup(
-    of_group_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59386,16 +58715,16 @@ of_group_stats_entry_dup(
     return NULL;
 }
 
-of_hello_elem_t *
+of_object_t *
 of_hello_elem_dup(
-    of_hello_elem_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_hello_elem_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_hello_elem_OF_VERSION_1_4_dup(src);
     }
 
@@ -59403,9 +58732,9 @@ of_hello_elem_dup(
     return NULL;
 }
 
-of_hello_elem_header_t *
+of_object_t *
 of_hello_elem_header_dup(
-    of_hello_elem_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59420,9 +58749,9 @@ of_hello_elem_header_dup(
     return NULL;
 }
 
-of_hello_elem_versionbitmap_t *
+of_object_t *
 of_hello_elem_versionbitmap_dup(
-    of_hello_elem_versionbitmap_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59437,24 +58766,24 @@ of_hello_elem_versionbitmap_dup(
     return NULL;
 }
 
-of_instruction_t *
+of_object_t *
 of_instruction_dup(
-    of_instruction_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_1) {
+    if (src->version == OF_VERSION_1_1) {
         return of_instruction_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_2) {
+    if (src->version == OF_VERSION_1_2) {
         return of_instruction_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_instruction_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_instruction_OF_VERSION_1_4_dup(src);
     }
 
@@ -59462,9 +58791,9 @@ of_instruction_dup(
     return NULL;
 }
 
-of_instruction_apply_actions_t *
+of_object_t *
 of_instruction_apply_actions_dup(
-    of_instruction_apply_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59487,9 +58816,9 @@ of_instruction_apply_actions_dup(
     return NULL;
 }
 
-of_instruction_bsn_t *
+of_object_t *
 of_instruction_bsn_dup(
-    of_instruction_bsn_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59500,9 +58829,9 @@ of_instruction_bsn_dup(
     return NULL;
 }
 
-of_instruction_bsn_arp_offload_t *
+of_object_t *
 of_instruction_bsn_arp_offload_dup(
-    of_instruction_bsn_arp_offload_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59513,9 +58842,9 @@ of_instruction_bsn_arp_offload_dup(
     return NULL;
 }
 
-of_instruction_bsn_deny_t *
+of_object_t *
 of_instruction_bsn_deny_dup(
-    of_instruction_bsn_deny_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59526,9 +58855,9 @@ of_instruction_bsn_deny_dup(
     return NULL;
 }
 
-of_instruction_bsn_dhcp_offload_t *
+of_object_t *
 of_instruction_bsn_dhcp_offload_dup(
-    of_instruction_bsn_dhcp_offload_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59539,9 +58868,9 @@ of_instruction_bsn_dhcp_offload_dup(
     return NULL;
 }
 
-of_instruction_bsn_disable_split_horizon_check_t *
+of_object_t *
 of_instruction_bsn_disable_split_horizon_check_dup(
-    of_instruction_bsn_disable_split_horizon_check_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59552,9 +58881,9 @@ of_instruction_bsn_disable_split_horizon_check_dup(
     return NULL;
 }
 
-of_instruction_bsn_disable_src_mac_check_t *
+of_object_t *
 of_instruction_bsn_disable_src_mac_check_dup(
-    of_instruction_bsn_disable_src_mac_check_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59565,9 +58894,9 @@ of_instruction_bsn_disable_src_mac_check_dup(
     return NULL;
 }
 
-of_instruction_bsn_disable_vlan_counters_t *
+of_object_t *
 of_instruction_bsn_disable_vlan_counters_dup(
-    of_instruction_bsn_disable_vlan_counters_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59578,9 +58907,9 @@ of_instruction_bsn_disable_vlan_counters_dup(
     return NULL;
 }
 
-of_instruction_bsn_packet_of_death_t *
+of_object_t *
 of_instruction_bsn_packet_of_death_dup(
-    of_instruction_bsn_packet_of_death_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59591,9 +58920,9 @@ of_instruction_bsn_packet_of_death_dup(
     return NULL;
 }
 
-of_instruction_bsn_permit_t *
+of_object_t *
 of_instruction_bsn_permit_dup(
-    of_instruction_bsn_permit_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59604,9 +58933,9 @@ of_instruction_bsn_permit_dup(
     return NULL;
 }
 
-of_instruction_bsn_prioritize_pdus_t *
+of_object_t *
 of_instruction_bsn_prioritize_pdus_dup(
-    of_instruction_bsn_prioritize_pdus_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59617,9 +58946,9 @@ of_instruction_bsn_prioritize_pdus_dup(
     return NULL;
 }
 
-of_instruction_bsn_require_vlan_xlate_t *
+of_object_t *
 of_instruction_bsn_require_vlan_xlate_dup(
-    of_instruction_bsn_require_vlan_xlate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59630,9 +58959,9 @@ of_instruction_bsn_require_vlan_xlate_dup(
     return NULL;
 }
 
-of_instruction_bsn_span_destination_t *
+of_object_t *
 of_instruction_bsn_span_destination_dup(
-    of_instruction_bsn_span_destination_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59643,9 +58972,9 @@ of_instruction_bsn_span_destination_dup(
     return NULL;
 }
 
-of_instruction_clear_actions_t *
+of_object_t *
 of_instruction_clear_actions_dup(
-    of_instruction_clear_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59668,9 +58997,9 @@ of_instruction_clear_actions_dup(
     return NULL;
 }
 
-of_instruction_experimenter_t *
+of_object_t *
 of_instruction_experimenter_dup(
-    of_instruction_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59693,9 +59022,9 @@ of_instruction_experimenter_dup(
     return NULL;
 }
 
-of_instruction_goto_table_t *
+of_object_t *
 of_instruction_goto_table_dup(
-    of_instruction_goto_table_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59718,9 +59047,9 @@ of_instruction_goto_table_dup(
     return NULL;
 }
 
-of_instruction_header_t *
+of_object_t *
 of_instruction_header_dup(
-    of_instruction_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -59743,16 +59072,16 @@ of_instruction_header_dup(
     return NULL;
 }
 
-of_instruction_id_t *
+of_object_t *
 of_instruction_id_dup(
-    of_instruction_id_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_instruction_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_instruction_id_OF_VERSION_1_4_dup(src);
     }
 
@@ -59760,9 +59089,9 @@ of_instruction_id_dup(
     return NULL;
 }
 
-of_instruction_id_apply_actions_t *
+of_object_t *
 of_instruction_id_apply_actions_dup(
-    of_instruction_id_apply_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59777,9 +59106,9 @@ of_instruction_id_apply_actions_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_t *
+of_object_t *
 of_instruction_id_bsn_dup(
-    of_instruction_id_bsn_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59790,9 +59119,9 @@ of_instruction_id_bsn_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_arp_offload_t *
+of_object_t *
 of_instruction_id_bsn_arp_offload_dup(
-    of_instruction_id_bsn_arp_offload_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59803,9 +59132,9 @@ of_instruction_id_bsn_arp_offload_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_deny_t *
+of_object_t *
 of_instruction_id_bsn_deny_dup(
-    of_instruction_id_bsn_deny_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59816,9 +59145,9 @@ of_instruction_id_bsn_deny_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_dhcp_offload_t *
+of_object_t *
 of_instruction_id_bsn_dhcp_offload_dup(
-    of_instruction_id_bsn_dhcp_offload_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59829,9 +59158,9 @@ of_instruction_id_bsn_dhcp_offload_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_disable_split_horizon_check_t *
+of_object_t *
 of_instruction_id_bsn_disable_split_horizon_check_dup(
-    of_instruction_id_bsn_disable_split_horizon_check_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59842,9 +59171,9 @@ of_instruction_id_bsn_disable_split_horizon_check_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_disable_src_mac_check_t *
+of_object_t *
 of_instruction_id_bsn_disable_src_mac_check_dup(
-    of_instruction_id_bsn_disable_src_mac_check_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59855,9 +59184,9 @@ of_instruction_id_bsn_disable_src_mac_check_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_disable_vlan_counters_t *
+of_object_t *
 of_instruction_id_bsn_disable_vlan_counters_dup(
-    of_instruction_id_bsn_disable_vlan_counters_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59868,9 +59197,9 @@ of_instruction_id_bsn_disable_vlan_counters_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_packet_of_death_t *
+of_object_t *
 of_instruction_id_bsn_packet_of_death_dup(
-    of_instruction_id_bsn_packet_of_death_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59881,9 +59210,9 @@ of_instruction_id_bsn_packet_of_death_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_permit_t *
+of_object_t *
 of_instruction_id_bsn_permit_dup(
-    of_instruction_id_bsn_permit_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59894,9 +59223,9 @@ of_instruction_id_bsn_permit_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_prioritize_pdus_t *
+of_object_t *
 of_instruction_id_bsn_prioritize_pdus_dup(
-    of_instruction_id_bsn_prioritize_pdus_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59907,9 +59236,9 @@ of_instruction_id_bsn_prioritize_pdus_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_require_vlan_xlate_t *
+of_object_t *
 of_instruction_id_bsn_require_vlan_xlate_dup(
-    of_instruction_id_bsn_require_vlan_xlate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59920,9 +59249,9 @@ of_instruction_id_bsn_require_vlan_xlate_dup(
     return NULL;
 }
 
-of_instruction_id_bsn_span_destination_t *
+of_object_t *
 of_instruction_id_bsn_span_destination_dup(
-    of_instruction_id_bsn_span_destination_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59933,9 +59262,9 @@ of_instruction_id_bsn_span_destination_dup(
     return NULL;
 }
 
-of_instruction_id_clear_actions_t *
+of_object_t *
 of_instruction_id_clear_actions_dup(
-    of_instruction_id_clear_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59950,9 +59279,9 @@ of_instruction_id_clear_actions_dup(
     return NULL;
 }
 
-of_instruction_id_experimenter_t *
+of_object_t *
 of_instruction_id_experimenter_dup(
-    of_instruction_id_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59967,9 +59296,9 @@ of_instruction_id_experimenter_dup(
     return NULL;
 }
 
-of_instruction_id_goto_table_t *
+of_object_t *
 of_instruction_id_goto_table_dup(
-    of_instruction_id_goto_table_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -59984,9 +59313,9 @@ of_instruction_id_goto_table_dup(
     return NULL;
 }
 
-of_instruction_id_header_t *
+of_object_t *
 of_instruction_id_header_dup(
-    of_instruction_id_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60001,9 +59330,9 @@ of_instruction_id_header_dup(
     return NULL;
 }
 
-of_instruction_id_meter_t *
+of_object_t *
 of_instruction_id_meter_dup(
-    of_instruction_id_meter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60018,9 +59347,9 @@ of_instruction_id_meter_dup(
     return NULL;
 }
 
-of_instruction_id_write_actions_t *
+of_object_t *
 of_instruction_id_write_actions_dup(
-    of_instruction_id_write_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60035,9 +59364,9 @@ of_instruction_id_write_actions_dup(
     return NULL;
 }
 
-of_instruction_id_write_metadata_t *
+of_object_t *
 of_instruction_id_write_metadata_dup(
-    of_instruction_id_write_metadata_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60052,9 +59381,9 @@ of_instruction_id_write_metadata_dup(
     return NULL;
 }
 
-of_instruction_meter_t *
+of_object_t *
 of_instruction_meter_dup(
-    of_instruction_meter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60069,9 +59398,9 @@ of_instruction_meter_dup(
     return NULL;
 }
 
-of_instruction_write_actions_t *
+of_object_t *
 of_instruction_write_actions_dup(
-    of_instruction_write_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -60094,9 +59423,9 @@ of_instruction_write_actions_dup(
     return NULL;
 }
 
-of_instruction_write_metadata_t *
+of_object_t *
 of_instruction_write_metadata_dup(
-    of_instruction_write_metadata_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -60119,9 +59448,9 @@ of_instruction_write_metadata_dup(
     return NULL;
 }
 
-of_match_v1_t *
+of_object_t *
 of_match_v1_dup(
-    of_match_v1_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -60132,9 +59461,9 @@ of_match_v1_dup(
     return NULL;
 }
 
-of_match_v2_t *
+of_object_t *
 of_match_v2_dup(
-    of_match_v2_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -60145,9 +59474,9 @@ of_match_v2_dup(
     return NULL;
 }
 
-of_match_v3_t *
+of_object_t *
 of_match_v3_dup(
-    of_match_v3_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60166,16 +59495,16 @@ of_match_v3_dup(
     return NULL;
 }
 
-of_meter_band_t *
+of_object_t *
 of_meter_band_dup(
-    of_meter_band_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_meter_band_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_meter_band_OF_VERSION_1_4_dup(src);
     }
 
@@ -60183,9 +59512,9 @@ of_meter_band_dup(
     return NULL;
 }
 
-of_meter_band_drop_t *
+of_object_t *
 of_meter_band_drop_dup(
-    of_meter_band_drop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60200,9 +59529,9 @@ of_meter_band_drop_dup(
     return NULL;
 }
 
-of_meter_band_dscp_remark_t *
+of_object_t *
 of_meter_band_dscp_remark_dup(
-    of_meter_band_dscp_remark_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60217,9 +59546,9 @@ of_meter_band_dscp_remark_dup(
     return NULL;
 }
 
-of_meter_band_experimenter_t *
+of_object_t *
 of_meter_band_experimenter_dup(
-    of_meter_band_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60234,9 +59563,9 @@ of_meter_band_experimenter_dup(
     return NULL;
 }
 
-of_meter_band_header_t *
+of_object_t *
 of_meter_band_header_dup(
-    of_meter_band_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60251,9 +59580,9 @@ of_meter_band_header_dup(
     return NULL;
 }
 
-of_meter_band_stats_t *
+of_object_t *
 of_meter_band_stats_dup(
-    of_meter_band_stats_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60268,9 +59597,9 @@ of_meter_band_stats_dup(
     return NULL;
 }
 
-of_meter_config_t *
+of_object_t *
 of_meter_config_dup(
-    of_meter_config_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60285,9 +59614,9 @@ of_meter_config_dup(
     return NULL;
 }
 
-of_meter_features_t *
+of_object_t *
 of_meter_features_dup(
-    of_meter_features_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60302,9 +59631,9 @@ of_meter_features_dup(
     return NULL;
 }
 
-of_meter_stats_t *
+of_object_t *
 of_meter_stats_dup(
-    of_meter_stats_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -60319,20 +59648,20 @@ of_meter_stats_dup(
     return NULL;
 }
 
-of_oxm_t *
+of_object_t *
 of_oxm_dup(
-    of_oxm_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_2) {
+    if (src->version == OF_VERSION_1_2) {
         return of_oxm_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_oxm_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_oxm_OF_VERSION_1_4_dup(src);
     }
 
@@ -60340,9 +59669,9 @@ of_oxm_dup(
     return NULL;
 }
 
-of_oxm_arp_op_t *
+of_object_t *
 of_oxm_arp_op_dup(
-    of_oxm_arp_op_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60361,9 +59690,9 @@ of_oxm_arp_op_dup(
     return NULL;
 }
 
-of_oxm_arp_op_masked_t *
+of_object_t *
 of_oxm_arp_op_masked_dup(
-    of_oxm_arp_op_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60382,9 +59711,9 @@ of_oxm_arp_op_masked_dup(
     return NULL;
 }
 
-of_oxm_arp_sha_t *
+of_object_t *
 of_oxm_arp_sha_dup(
-    of_oxm_arp_sha_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60403,9 +59732,9 @@ of_oxm_arp_sha_dup(
     return NULL;
 }
 
-of_oxm_arp_sha_masked_t *
+of_object_t *
 of_oxm_arp_sha_masked_dup(
-    of_oxm_arp_sha_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60424,9 +59753,9 @@ of_oxm_arp_sha_masked_dup(
     return NULL;
 }
 
-of_oxm_arp_spa_t *
+of_object_t *
 of_oxm_arp_spa_dup(
-    of_oxm_arp_spa_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60445,9 +59774,9 @@ of_oxm_arp_spa_dup(
     return NULL;
 }
 
-of_oxm_arp_spa_masked_t *
+of_object_t *
 of_oxm_arp_spa_masked_dup(
-    of_oxm_arp_spa_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60466,9 +59795,9 @@ of_oxm_arp_spa_masked_dup(
     return NULL;
 }
 
-of_oxm_arp_tha_t *
+of_object_t *
 of_oxm_arp_tha_dup(
-    of_oxm_arp_tha_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60487,9 +59816,9 @@ of_oxm_arp_tha_dup(
     return NULL;
 }
 
-of_oxm_arp_tha_masked_t *
+of_object_t *
 of_oxm_arp_tha_masked_dup(
-    of_oxm_arp_tha_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60508,9 +59837,9 @@ of_oxm_arp_tha_masked_dup(
     return NULL;
 }
 
-of_oxm_arp_tpa_t *
+of_object_t *
 of_oxm_arp_tpa_dup(
-    of_oxm_arp_tpa_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60529,9 +59858,9 @@ of_oxm_arp_tpa_dup(
     return NULL;
 }
 
-of_oxm_arp_tpa_masked_t *
+of_object_t *
 of_oxm_arp_tpa_masked_dup(
-    of_oxm_arp_tpa_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60550,9 +59879,9 @@ of_oxm_arp_tpa_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_egr_port_group_id_t *
+of_object_t *
 of_oxm_bsn_egr_port_group_id_dup(
-    of_oxm_bsn_egr_port_group_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60567,9 +59896,9 @@ of_oxm_bsn_egr_port_group_id_dup(
     return NULL;
 }
 
-of_oxm_bsn_egr_port_group_id_masked_t *
+of_object_t *
 of_oxm_bsn_egr_port_group_id_masked_dup(
-    of_oxm_bsn_egr_port_group_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60584,9 +59913,9 @@ of_oxm_bsn_egr_port_group_id_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_global_vrf_allowed_t *
+of_object_t *
 of_oxm_bsn_global_vrf_allowed_dup(
-    of_oxm_bsn_global_vrf_allowed_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60601,9 +59930,9 @@ of_oxm_bsn_global_vrf_allowed_dup(
     return NULL;
 }
 
-of_oxm_bsn_global_vrf_allowed_masked_t *
+of_object_t *
 of_oxm_bsn_global_vrf_allowed_masked_dup(
-    of_oxm_bsn_global_vrf_allowed_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60618,9 +59947,9 @@ of_oxm_bsn_global_vrf_allowed_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_in_ports_128_t *
+of_object_t *
 of_oxm_bsn_in_ports_128_dup(
-    of_oxm_bsn_in_ports_128_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60635,9 +59964,9 @@ of_oxm_bsn_in_ports_128_dup(
     return NULL;
 }
 
-of_oxm_bsn_in_ports_128_masked_t *
+of_object_t *
 of_oxm_bsn_in_ports_128_masked_dup(
-    of_oxm_bsn_in_ports_128_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60652,9 +59981,9 @@ of_oxm_bsn_in_ports_128_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_l3_dst_class_id_t *
+of_object_t *
 of_oxm_bsn_l3_dst_class_id_dup(
-    of_oxm_bsn_l3_dst_class_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60669,9 +59998,9 @@ of_oxm_bsn_l3_dst_class_id_dup(
     return NULL;
 }
 
-of_oxm_bsn_l3_dst_class_id_masked_t *
+of_object_t *
 of_oxm_bsn_l3_dst_class_id_masked_dup(
-    of_oxm_bsn_l3_dst_class_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60686,9 +60015,9 @@ of_oxm_bsn_l3_dst_class_id_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_l3_interface_class_id_t *
+of_object_t *
 of_oxm_bsn_l3_interface_class_id_dup(
-    of_oxm_bsn_l3_interface_class_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60703,9 +60032,9 @@ of_oxm_bsn_l3_interface_class_id_dup(
     return NULL;
 }
 
-of_oxm_bsn_l3_interface_class_id_masked_t *
+of_object_t *
 of_oxm_bsn_l3_interface_class_id_masked_dup(
-    of_oxm_bsn_l3_interface_class_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60720,9 +60049,9 @@ of_oxm_bsn_l3_interface_class_id_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_l3_src_class_id_t *
+of_object_t *
 of_oxm_bsn_l3_src_class_id_dup(
-    of_oxm_bsn_l3_src_class_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60737,9 +60066,9 @@ of_oxm_bsn_l3_src_class_id_dup(
     return NULL;
 }
 
-of_oxm_bsn_l3_src_class_id_masked_t *
+of_object_t *
 of_oxm_bsn_l3_src_class_id_masked_dup(
-    of_oxm_bsn_l3_src_class_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60754,9 +60083,9 @@ of_oxm_bsn_l3_src_class_id_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_lag_id_t *
+of_object_t *
 of_oxm_bsn_lag_id_dup(
-    of_oxm_bsn_lag_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60771,9 +60100,9 @@ of_oxm_bsn_lag_id_dup(
     return NULL;
 }
 
-of_oxm_bsn_lag_id_masked_t *
+of_object_t *
 of_oxm_bsn_lag_id_masked_dup(
-    of_oxm_bsn_lag_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60788,9 +60117,9 @@ of_oxm_bsn_lag_id_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_tcp_flags_t *
+of_object_t *
 of_oxm_bsn_tcp_flags_dup(
-    of_oxm_bsn_tcp_flags_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60805,9 +60134,9 @@ of_oxm_bsn_tcp_flags_dup(
     return NULL;
 }
 
-of_oxm_bsn_tcp_flags_masked_t *
+of_object_t *
 of_oxm_bsn_tcp_flags_masked_dup(
-    of_oxm_bsn_tcp_flags_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60822,9 +60151,9 @@ of_oxm_bsn_tcp_flags_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf0_t *
+of_object_t *
 of_oxm_bsn_udf0_dup(
-    of_oxm_bsn_udf0_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60839,9 +60168,9 @@ of_oxm_bsn_udf0_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf0_masked_t *
+of_object_t *
 of_oxm_bsn_udf0_masked_dup(
-    of_oxm_bsn_udf0_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60856,9 +60185,9 @@ of_oxm_bsn_udf0_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf1_t *
+of_object_t *
 of_oxm_bsn_udf1_dup(
-    of_oxm_bsn_udf1_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60873,9 +60202,9 @@ of_oxm_bsn_udf1_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf1_masked_t *
+of_object_t *
 of_oxm_bsn_udf1_masked_dup(
-    of_oxm_bsn_udf1_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60890,9 +60219,9 @@ of_oxm_bsn_udf1_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf2_t *
+of_object_t *
 of_oxm_bsn_udf2_dup(
-    of_oxm_bsn_udf2_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60907,9 +60236,9 @@ of_oxm_bsn_udf2_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf2_masked_t *
+of_object_t *
 of_oxm_bsn_udf2_masked_dup(
-    of_oxm_bsn_udf2_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60924,9 +60253,9 @@ of_oxm_bsn_udf2_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf3_t *
+of_object_t *
 of_oxm_bsn_udf3_dup(
-    of_oxm_bsn_udf3_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60941,9 +60270,9 @@ of_oxm_bsn_udf3_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf3_masked_t *
+of_object_t *
 of_oxm_bsn_udf3_masked_dup(
-    of_oxm_bsn_udf3_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60958,9 +60287,9 @@ of_oxm_bsn_udf3_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf4_t *
+of_object_t *
 of_oxm_bsn_udf4_dup(
-    of_oxm_bsn_udf4_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60975,9 +60304,9 @@ of_oxm_bsn_udf4_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf4_masked_t *
+of_object_t *
 of_oxm_bsn_udf4_masked_dup(
-    of_oxm_bsn_udf4_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -60992,9 +60321,9 @@ of_oxm_bsn_udf4_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf5_t *
+of_object_t *
 of_oxm_bsn_udf5_dup(
-    of_oxm_bsn_udf5_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61009,9 +60338,9 @@ of_oxm_bsn_udf5_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf5_masked_t *
+of_object_t *
 of_oxm_bsn_udf5_masked_dup(
-    of_oxm_bsn_udf5_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61026,9 +60355,9 @@ of_oxm_bsn_udf5_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf6_t *
+of_object_t *
 of_oxm_bsn_udf6_dup(
-    of_oxm_bsn_udf6_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61043,9 +60372,9 @@ of_oxm_bsn_udf6_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf6_masked_t *
+of_object_t *
 of_oxm_bsn_udf6_masked_dup(
-    of_oxm_bsn_udf6_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61060,9 +60389,9 @@ of_oxm_bsn_udf6_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf7_t *
+of_object_t *
 of_oxm_bsn_udf7_dup(
-    of_oxm_bsn_udf7_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61077,9 +60406,9 @@ of_oxm_bsn_udf7_dup(
     return NULL;
 }
 
-of_oxm_bsn_udf7_masked_t *
+of_object_t *
 of_oxm_bsn_udf7_masked_dup(
-    of_oxm_bsn_udf7_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61094,9 +60423,9 @@ of_oxm_bsn_udf7_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_vlan_xlate_port_group_id_t *
+of_object_t *
 of_oxm_bsn_vlan_xlate_port_group_id_dup(
-    of_oxm_bsn_vlan_xlate_port_group_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61111,9 +60440,9 @@ of_oxm_bsn_vlan_xlate_port_group_id_dup(
     return NULL;
 }
 
-of_oxm_bsn_vlan_xlate_port_group_id_masked_t *
+of_object_t *
 of_oxm_bsn_vlan_xlate_port_group_id_masked_dup(
-    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61128,9 +60457,9 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_dup(
     return NULL;
 }
 
-of_oxm_bsn_vrf_t *
+of_object_t *
 of_oxm_bsn_vrf_dup(
-    of_oxm_bsn_vrf_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61145,9 +60474,9 @@ of_oxm_bsn_vrf_dup(
     return NULL;
 }
 
-of_oxm_bsn_vrf_masked_t *
+of_object_t *
 of_oxm_bsn_vrf_masked_dup(
-    of_oxm_bsn_vrf_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61162,9 +60491,9 @@ of_oxm_bsn_vrf_masked_dup(
     return NULL;
 }
 
-of_oxm_eth_dst_t *
+of_object_t *
 of_oxm_eth_dst_dup(
-    of_oxm_eth_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61183,9 +60512,9 @@ of_oxm_eth_dst_dup(
     return NULL;
 }
 
-of_oxm_eth_dst_masked_t *
+of_object_t *
 of_oxm_eth_dst_masked_dup(
-    of_oxm_eth_dst_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61204,9 +60533,9 @@ of_oxm_eth_dst_masked_dup(
     return NULL;
 }
 
-of_oxm_eth_src_t *
+of_object_t *
 of_oxm_eth_src_dup(
-    of_oxm_eth_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61225,9 +60554,9 @@ of_oxm_eth_src_dup(
     return NULL;
 }
 
-of_oxm_eth_src_masked_t *
+of_object_t *
 of_oxm_eth_src_masked_dup(
-    of_oxm_eth_src_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61246,9 +60575,9 @@ of_oxm_eth_src_masked_dup(
     return NULL;
 }
 
-of_oxm_eth_type_t *
+of_object_t *
 of_oxm_eth_type_dup(
-    of_oxm_eth_type_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61267,9 +60596,9 @@ of_oxm_eth_type_dup(
     return NULL;
 }
 
-of_oxm_eth_type_masked_t *
+of_object_t *
 of_oxm_eth_type_masked_dup(
-    of_oxm_eth_type_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61288,9 +60617,9 @@ of_oxm_eth_type_masked_dup(
     return NULL;
 }
 
-of_oxm_header_t *
+of_object_t *
 of_oxm_header_dup(
-    of_oxm_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61309,9 +60638,9 @@ of_oxm_header_dup(
     return NULL;
 }
 
-of_oxm_icmpv4_code_t *
+of_object_t *
 of_oxm_icmpv4_code_dup(
-    of_oxm_icmpv4_code_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61330,9 +60659,9 @@ of_oxm_icmpv4_code_dup(
     return NULL;
 }
 
-of_oxm_icmpv4_code_masked_t *
+of_object_t *
 of_oxm_icmpv4_code_masked_dup(
-    of_oxm_icmpv4_code_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61351,9 +60680,9 @@ of_oxm_icmpv4_code_masked_dup(
     return NULL;
 }
 
-of_oxm_icmpv4_type_t *
+of_object_t *
 of_oxm_icmpv4_type_dup(
-    of_oxm_icmpv4_type_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61372,9 +60701,9 @@ of_oxm_icmpv4_type_dup(
     return NULL;
 }
 
-of_oxm_icmpv4_type_masked_t *
+of_object_t *
 of_oxm_icmpv4_type_masked_dup(
-    of_oxm_icmpv4_type_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61393,9 +60722,9 @@ of_oxm_icmpv4_type_masked_dup(
     return NULL;
 }
 
-of_oxm_icmpv6_code_t *
+of_object_t *
 of_oxm_icmpv6_code_dup(
-    of_oxm_icmpv6_code_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61414,9 +60743,9 @@ of_oxm_icmpv6_code_dup(
     return NULL;
 }
 
-of_oxm_icmpv6_code_masked_t *
+of_object_t *
 of_oxm_icmpv6_code_masked_dup(
-    of_oxm_icmpv6_code_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61435,9 +60764,9 @@ of_oxm_icmpv6_code_masked_dup(
     return NULL;
 }
 
-of_oxm_icmpv6_type_t *
+of_object_t *
 of_oxm_icmpv6_type_dup(
-    of_oxm_icmpv6_type_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61456,9 +60785,9 @@ of_oxm_icmpv6_type_dup(
     return NULL;
 }
 
-of_oxm_icmpv6_type_masked_t *
+of_object_t *
 of_oxm_icmpv6_type_masked_dup(
-    of_oxm_icmpv6_type_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61477,9 +60806,9 @@ of_oxm_icmpv6_type_masked_dup(
     return NULL;
 }
 
-of_oxm_in_phy_port_t *
+of_object_t *
 of_oxm_in_phy_port_dup(
-    of_oxm_in_phy_port_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61498,9 +60827,9 @@ of_oxm_in_phy_port_dup(
     return NULL;
 }
 
-of_oxm_in_phy_port_masked_t *
+of_object_t *
 of_oxm_in_phy_port_masked_dup(
-    of_oxm_in_phy_port_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61519,9 +60848,9 @@ of_oxm_in_phy_port_masked_dup(
     return NULL;
 }
 
-of_oxm_in_port_t *
+of_object_t *
 of_oxm_in_port_dup(
-    of_oxm_in_port_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61540,9 +60869,9 @@ of_oxm_in_port_dup(
     return NULL;
 }
 
-of_oxm_in_port_masked_t *
+of_object_t *
 of_oxm_in_port_masked_dup(
-    of_oxm_in_port_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61561,9 +60890,9 @@ of_oxm_in_port_masked_dup(
     return NULL;
 }
 
-of_oxm_ip_dscp_t *
+of_object_t *
 of_oxm_ip_dscp_dup(
-    of_oxm_ip_dscp_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61582,9 +60911,9 @@ of_oxm_ip_dscp_dup(
     return NULL;
 }
 
-of_oxm_ip_dscp_masked_t *
+of_object_t *
 of_oxm_ip_dscp_masked_dup(
-    of_oxm_ip_dscp_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61603,9 +60932,9 @@ of_oxm_ip_dscp_masked_dup(
     return NULL;
 }
 
-of_oxm_ip_ecn_t *
+of_object_t *
 of_oxm_ip_ecn_dup(
-    of_oxm_ip_ecn_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61624,9 +60953,9 @@ of_oxm_ip_ecn_dup(
     return NULL;
 }
 
-of_oxm_ip_ecn_masked_t *
+of_object_t *
 of_oxm_ip_ecn_masked_dup(
-    of_oxm_ip_ecn_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61645,9 +60974,9 @@ of_oxm_ip_ecn_masked_dup(
     return NULL;
 }
 
-of_oxm_ip_proto_t *
+of_object_t *
 of_oxm_ip_proto_dup(
-    of_oxm_ip_proto_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61666,9 +60995,9 @@ of_oxm_ip_proto_dup(
     return NULL;
 }
 
-of_oxm_ip_proto_masked_t *
+of_object_t *
 of_oxm_ip_proto_masked_dup(
-    of_oxm_ip_proto_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61687,9 +61016,9 @@ of_oxm_ip_proto_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv4_dst_t *
+of_object_t *
 of_oxm_ipv4_dst_dup(
-    of_oxm_ipv4_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61708,9 +61037,9 @@ of_oxm_ipv4_dst_dup(
     return NULL;
 }
 
-of_oxm_ipv4_dst_masked_t *
+of_object_t *
 of_oxm_ipv4_dst_masked_dup(
-    of_oxm_ipv4_dst_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61729,9 +61058,9 @@ of_oxm_ipv4_dst_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv4_src_t *
+of_object_t *
 of_oxm_ipv4_src_dup(
-    of_oxm_ipv4_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61750,9 +61079,9 @@ of_oxm_ipv4_src_dup(
     return NULL;
 }
 
-of_oxm_ipv4_src_masked_t *
+of_object_t *
 of_oxm_ipv4_src_masked_dup(
-    of_oxm_ipv4_src_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61771,9 +61100,9 @@ of_oxm_ipv4_src_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv6_dst_t *
+of_object_t *
 of_oxm_ipv6_dst_dup(
-    of_oxm_ipv6_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61792,9 +61121,9 @@ of_oxm_ipv6_dst_dup(
     return NULL;
 }
 
-of_oxm_ipv6_dst_masked_t *
+of_object_t *
 of_oxm_ipv6_dst_masked_dup(
-    of_oxm_ipv6_dst_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61813,9 +61142,9 @@ of_oxm_ipv6_dst_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv6_flabel_t *
+of_object_t *
 of_oxm_ipv6_flabel_dup(
-    of_oxm_ipv6_flabel_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61834,9 +61163,9 @@ of_oxm_ipv6_flabel_dup(
     return NULL;
 }
 
-of_oxm_ipv6_flabel_masked_t *
+of_object_t *
 of_oxm_ipv6_flabel_masked_dup(
-    of_oxm_ipv6_flabel_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61855,9 +61184,9 @@ of_oxm_ipv6_flabel_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv6_nd_sll_t *
+of_object_t *
 of_oxm_ipv6_nd_sll_dup(
-    of_oxm_ipv6_nd_sll_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61876,9 +61205,9 @@ of_oxm_ipv6_nd_sll_dup(
     return NULL;
 }
 
-of_oxm_ipv6_nd_sll_masked_t *
+of_object_t *
 of_oxm_ipv6_nd_sll_masked_dup(
-    of_oxm_ipv6_nd_sll_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61897,9 +61226,9 @@ of_oxm_ipv6_nd_sll_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv6_nd_target_t *
+of_object_t *
 of_oxm_ipv6_nd_target_dup(
-    of_oxm_ipv6_nd_target_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61918,9 +61247,9 @@ of_oxm_ipv6_nd_target_dup(
     return NULL;
 }
 
-of_oxm_ipv6_nd_target_masked_t *
+of_object_t *
 of_oxm_ipv6_nd_target_masked_dup(
-    of_oxm_ipv6_nd_target_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61939,9 +61268,9 @@ of_oxm_ipv6_nd_target_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv6_nd_tll_t *
+of_object_t *
 of_oxm_ipv6_nd_tll_dup(
-    of_oxm_ipv6_nd_tll_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61960,9 +61289,9 @@ of_oxm_ipv6_nd_tll_dup(
     return NULL;
 }
 
-of_oxm_ipv6_nd_tll_masked_t *
+of_object_t *
 of_oxm_ipv6_nd_tll_masked_dup(
-    of_oxm_ipv6_nd_tll_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -61981,9 +61310,9 @@ of_oxm_ipv6_nd_tll_masked_dup(
     return NULL;
 }
 
-of_oxm_ipv6_src_t *
+of_object_t *
 of_oxm_ipv6_src_dup(
-    of_oxm_ipv6_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62002,9 +61331,9 @@ of_oxm_ipv6_src_dup(
     return NULL;
 }
 
-of_oxm_ipv6_src_masked_t *
+of_object_t *
 of_oxm_ipv6_src_masked_dup(
-    of_oxm_ipv6_src_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62023,9 +61352,9 @@ of_oxm_ipv6_src_masked_dup(
     return NULL;
 }
 
-of_oxm_metadata_t *
+of_object_t *
 of_oxm_metadata_dup(
-    of_oxm_metadata_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62044,9 +61373,9 @@ of_oxm_metadata_dup(
     return NULL;
 }
 
-of_oxm_metadata_masked_t *
+of_object_t *
 of_oxm_metadata_masked_dup(
-    of_oxm_metadata_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62065,9 +61394,9 @@ of_oxm_metadata_masked_dup(
     return NULL;
 }
 
-of_oxm_mpls_bos_t *
+of_object_t *
 of_oxm_mpls_bos_dup(
-    of_oxm_mpls_bos_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -62082,9 +61411,9 @@ of_oxm_mpls_bos_dup(
     return NULL;
 }
 
-of_oxm_mpls_bos_masked_t *
+of_object_t *
 of_oxm_mpls_bos_masked_dup(
-    of_oxm_mpls_bos_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -62099,9 +61428,9 @@ of_oxm_mpls_bos_masked_dup(
     return NULL;
 }
 
-of_oxm_mpls_label_t *
+of_object_t *
 of_oxm_mpls_label_dup(
-    of_oxm_mpls_label_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62120,9 +61449,9 @@ of_oxm_mpls_label_dup(
     return NULL;
 }
 
-of_oxm_mpls_label_masked_t *
+of_object_t *
 of_oxm_mpls_label_masked_dup(
-    of_oxm_mpls_label_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62141,9 +61470,9 @@ of_oxm_mpls_label_masked_dup(
     return NULL;
 }
 
-of_oxm_mpls_tc_t *
+of_object_t *
 of_oxm_mpls_tc_dup(
-    of_oxm_mpls_tc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62162,9 +61491,9 @@ of_oxm_mpls_tc_dup(
     return NULL;
 }
 
-of_oxm_mpls_tc_masked_t *
+of_object_t *
 of_oxm_mpls_tc_masked_dup(
-    of_oxm_mpls_tc_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62183,9 +61512,9 @@ of_oxm_mpls_tc_masked_dup(
     return NULL;
 }
 
-of_oxm_sctp_dst_t *
+of_object_t *
 of_oxm_sctp_dst_dup(
-    of_oxm_sctp_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62204,9 +61533,9 @@ of_oxm_sctp_dst_dup(
     return NULL;
 }
 
-of_oxm_sctp_dst_masked_t *
+of_object_t *
 of_oxm_sctp_dst_masked_dup(
-    of_oxm_sctp_dst_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62225,9 +61554,9 @@ of_oxm_sctp_dst_masked_dup(
     return NULL;
 }
 
-of_oxm_sctp_src_t *
+of_object_t *
 of_oxm_sctp_src_dup(
-    of_oxm_sctp_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62246,9 +61575,9 @@ of_oxm_sctp_src_dup(
     return NULL;
 }
 
-of_oxm_sctp_src_masked_t *
+of_object_t *
 of_oxm_sctp_src_masked_dup(
-    of_oxm_sctp_src_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62267,9 +61596,9 @@ of_oxm_sctp_src_masked_dup(
     return NULL;
 }
 
-of_oxm_tcp_dst_t *
+of_object_t *
 of_oxm_tcp_dst_dup(
-    of_oxm_tcp_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62288,9 +61617,9 @@ of_oxm_tcp_dst_dup(
     return NULL;
 }
 
-of_oxm_tcp_dst_masked_t *
+of_object_t *
 of_oxm_tcp_dst_masked_dup(
-    of_oxm_tcp_dst_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62309,9 +61638,9 @@ of_oxm_tcp_dst_masked_dup(
     return NULL;
 }
 
-of_oxm_tcp_src_t *
+of_object_t *
 of_oxm_tcp_src_dup(
-    of_oxm_tcp_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62330,9 +61659,9 @@ of_oxm_tcp_src_dup(
     return NULL;
 }
 
-of_oxm_tcp_src_masked_t *
+of_object_t *
 of_oxm_tcp_src_masked_dup(
-    of_oxm_tcp_src_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62351,9 +61680,9 @@ of_oxm_tcp_src_masked_dup(
     return NULL;
 }
 
-of_oxm_tunnel_id_t *
+of_object_t *
 of_oxm_tunnel_id_dup(
-    of_oxm_tunnel_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -62368,9 +61697,9 @@ of_oxm_tunnel_id_dup(
     return NULL;
 }
 
-of_oxm_tunnel_id_masked_t *
+of_object_t *
 of_oxm_tunnel_id_masked_dup(
-    of_oxm_tunnel_id_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -62385,9 +61714,9 @@ of_oxm_tunnel_id_masked_dup(
     return NULL;
 }
 
-of_oxm_udp_dst_t *
+of_object_t *
 of_oxm_udp_dst_dup(
-    of_oxm_udp_dst_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62406,9 +61735,9 @@ of_oxm_udp_dst_dup(
     return NULL;
 }
 
-of_oxm_udp_dst_masked_t *
+of_object_t *
 of_oxm_udp_dst_masked_dup(
-    of_oxm_udp_dst_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62427,9 +61756,9 @@ of_oxm_udp_dst_masked_dup(
     return NULL;
 }
 
-of_oxm_udp_src_t *
+of_object_t *
 of_oxm_udp_src_dup(
-    of_oxm_udp_src_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62448,9 +61777,9 @@ of_oxm_udp_src_dup(
     return NULL;
 }
 
-of_oxm_udp_src_masked_t *
+of_object_t *
 of_oxm_udp_src_masked_dup(
-    of_oxm_udp_src_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62469,9 +61798,9 @@ of_oxm_udp_src_masked_dup(
     return NULL;
 }
 
-of_oxm_vlan_pcp_t *
+of_object_t *
 of_oxm_vlan_pcp_dup(
-    of_oxm_vlan_pcp_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62490,9 +61819,9 @@ of_oxm_vlan_pcp_dup(
     return NULL;
 }
 
-of_oxm_vlan_pcp_masked_t *
+of_object_t *
 of_oxm_vlan_pcp_masked_dup(
-    of_oxm_vlan_pcp_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62511,9 +61840,9 @@ of_oxm_vlan_pcp_masked_dup(
     return NULL;
 }
 
-of_oxm_vlan_vid_t *
+of_object_t *
 of_oxm_vlan_vid_dup(
-    of_oxm_vlan_vid_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62532,9 +61861,9 @@ of_oxm_vlan_vid_dup(
     return NULL;
 }
 
-of_oxm_vlan_vid_masked_t *
+of_object_t *
 of_oxm_vlan_vid_masked_dup(
-    of_oxm_vlan_vid_masked_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62553,9 +61882,9 @@ of_oxm_vlan_vid_masked_dup(
     return NULL;
 }
 
-of_packet_queue_t *
+of_object_t *
 of_packet_queue_dup(
-    of_packet_queue_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -62582,9 +61911,9 @@ of_packet_queue_dup(
     return NULL;
 }
 
-of_port_desc_t *
+of_object_t *
 of_port_desc_dup(
-    of_port_desc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -62611,12 +61940,12 @@ of_port_desc_dup(
     return NULL;
 }
 
-of_port_desc_prop_t *
+of_object_t *
 of_port_desc_prop_dup(
-    of_port_desc_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_port_desc_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -62624,9 +61953,9 @@ of_port_desc_prop_dup(
     return NULL;
 }
 
-of_port_desc_prop_ethernet_t *
+of_object_t *
 of_port_desc_prop_ethernet_dup(
-    of_port_desc_prop_ethernet_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62637,9 +61966,9 @@ of_port_desc_prop_ethernet_dup(
     return NULL;
 }
 
-of_port_desc_prop_experimenter_t *
+of_object_t *
 of_port_desc_prop_experimenter_dup(
-    of_port_desc_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62650,9 +61979,9 @@ of_port_desc_prop_experimenter_dup(
     return NULL;
 }
 
-of_port_desc_prop_header_t *
+of_object_t *
 of_port_desc_prop_header_dup(
-    of_port_desc_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62663,9 +61992,9 @@ of_port_desc_prop_header_dup(
     return NULL;
 }
 
-of_port_desc_prop_optical_t *
+of_object_t *
 of_port_desc_prop_optical_dup(
-    of_port_desc_prop_optical_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62676,12 +62005,12 @@ of_port_desc_prop_optical_dup(
     return NULL;
 }
 
-of_port_mod_prop_t *
+of_object_t *
 of_port_mod_prop_dup(
-    of_port_mod_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_port_mod_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -62689,9 +62018,9 @@ of_port_mod_prop_dup(
     return NULL;
 }
 
-of_port_mod_prop_ethernet_t *
+of_object_t *
 of_port_mod_prop_ethernet_dup(
-    of_port_mod_prop_ethernet_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62702,9 +62031,9 @@ of_port_mod_prop_ethernet_dup(
     return NULL;
 }
 
-of_port_mod_prop_experimenter_t *
+of_object_t *
 of_port_mod_prop_experimenter_dup(
-    of_port_mod_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62715,9 +62044,9 @@ of_port_mod_prop_experimenter_dup(
     return NULL;
 }
 
-of_port_mod_prop_header_t *
+of_object_t *
 of_port_mod_prop_header_dup(
-    of_port_mod_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62728,9 +62057,9 @@ of_port_mod_prop_header_dup(
     return NULL;
 }
 
-of_port_mod_prop_optical_t *
+of_object_t *
 of_port_mod_prop_optical_dup(
-    of_port_mod_prop_optical_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62741,9 +62070,9 @@ of_port_mod_prop_optical_dup(
     return NULL;
 }
 
-of_port_stats_entry_t *
+of_object_t *
 of_port_stats_entry_dup(
-    of_port_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -62770,12 +62099,12 @@ of_port_stats_entry_dup(
     return NULL;
 }
 
-of_port_stats_prop_t *
+of_object_t *
 of_port_stats_prop_dup(
-    of_port_stats_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_port_stats_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -62783,9 +62112,9 @@ of_port_stats_prop_dup(
     return NULL;
 }
 
-of_port_stats_prop_ethernet_t *
+of_object_t *
 of_port_stats_prop_ethernet_dup(
-    of_port_stats_prop_ethernet_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62796,9 +62125,9 @@ of_port_stats_prop_ethernet_dup(
     return NULL;
 }
 
-of_port_stats_prop_experimenter_t *
+of_object_t *
 of_port_stats_prop_experimenter_dup(
-    of_port_stats_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62809,9 +62138,9 @@ of_port_stats_prop_experimenter_dup(
     return NULL;
 }
 
-of_port_stats_prop_header_t *
+of_object_t *
 of_port_stats_prop_header_dup(
-    of_port_stats_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62822,9 +62151,9 @@ of_port_stats_prop_header_dup(
     return NULL;
 }
 
-of_port_stats_prop_optical_t *
+of_object_t *
 of_port_stats_prop_optical_dup(
-    of_port_stats_prop_optical_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62835,9 +62164,9 @@ of_port_stats_prop_optical_dup(
     return NULL;
 }
 
-of_queue_desc_t *
+of_object_t *
 of_queue_desc_dup(
-    of_queue_desc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62848,12 +62177,12 @@ of_queue_desc_dup(
     return NULL;
 }
 
-of_queue_desc_prop_t *
+of_object_t *
 of_queue_desc_prop_dup(
-    of_queue_desc_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_queue_desc_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -62861,9 +62190,9 @@ of_queue_desc_prop_dup(
     return NULL;
 }
 
-of_queue_desc_prop_experimenter_t *
+of_object_t *
 of_queue_desc_prop_experimenter_dup(
-    of_queue_desc_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62874,9 +62203,9 @@ of_queue_desc_prop_experimenter_dup(
     return NULL;
 }
 
-of_queue_desc_prop_header_t *
+of_object_t *
 of_queue_desc_prop_header_dup(
-    of_queue_desc_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62887,9 +62216,9 @@ of_queue_desc_prop_header_dup(
     return NULL;
 }
 
-of_queue_desc_prop_max_rate_t *
+of_object_t *
 of_queue_desc_prop_max_rate_dup(
-    of_queue_desc_prop_max_rate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62900,9 +62229,9 @@ of_queue_desc_prop_max_rate_dup(
     return NULL;
 }
 
-of_queue_desc_prop_min_rate_t *
+of_object_t *
 of_queue_desc_prop_min_rate_dup(
-    of_queue_desc_prop_min_rate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -62913,28 +62242,28 @@ of_queue_desc_prop_min_rate_dup(
     return NULL;
 }
 
-of_queue_prop_t *
+of_object_t *
 of_queue_prop_dup(
-    of_queue_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_0) {
+    if (src->version == OF_VERSION_1_0) {
         return of_queue_prop_OF_VERSION_1_0_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_1) {
+    if (src->version == OF_VERSION_1_1) {
         return of_queue_prop_OF_VERSION_1_1_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_2) {
+    if (src->version == OF_VERSION_1_2) {
         return of_queue_prop_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_queue_prop_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_queue_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -62942,9 +62271,9 @@ of_queue_prop_dup(
     return NULL;
 }
 
-of_queue_prop_experimenter_t *
+of_object_t *
 of_queue_prop_experimenter_dup(
-    of_queue_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -62963,9 +62292,9 @@ of_queue_prop_experimenter_dup(
     return NULL;
 }
 
-of_queue_prop_header_t *
+of_object_t *
 of_queue_prop_header_dup(
-    of_queue_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -62992,9 +62321,9 @@ of_queue_prop_header_dup(
     return NULL;
 }
 
-of_queue_prop_max_rate_t *
+of_object_t *
 of_queue_prop_max_rate_dup(
-    of_queue_prop_max_rate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -63013,9 +62342,9 @@ of_queue_prop_max_rate_dup(
     return NULL;
 }
 
-of_queue_prop_min_rate_t *
+of_object_t *
 of_queue_prop_min_rate_dup(
-    of_queue_prop_min_rate_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -63042,9 +62371,9 @@ of_queue_prop_min_rate_dup(
     return NULL;
 }
 
-of_queue_stats_entry_t *
+of_object_t *
 of_queue_stats_entry_dup(
-    of_queue_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -63071,12 +62400,12 @@ of_queue_stats_entry_dup(
     return NULL;
 }
 
-of_queue_stats_prop_t *
+of_object_t *
 of_queue_stats_prop_dup(
-    of_queue_stats_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_queue_stats_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -63084,9 +62413,9 @@ of_queue_stats_prop_dup(
     return NULL;
 }
 
-of_queue_stats_prop_experimenter_t *
+of_object_t *
 of_queue_stats_prop_experimenter_dup(
-    of_queue_stats_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63097,9 +62426,9 @@ of_queue_stats_prop_experimenter_dup(
     return NULL;
 }
 
-of_queue_stats_prop_header_t *
+of_object_t *
 of_queue_stats_prop_header_dup(
-    of_queue_stats_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63110,12 +62439,12 @@ of_queue_stats_prop_header_dup(
     return NULL;
 }
 
-of_role_prop_t *
+of_object_t *
 of_role_prop_dup(
-    of_role_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_role_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -63123,9 +62452,9 @@ of_role_prop_dup(
     return NULL;
 }
 
-of_role_prop_experimenter_t *
+of_object_t *
 of_role_prop_experimenter_dup(
-    of_role_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63136,9 +62465,9 @@ of_role_prop_experimenter_dup(
     return NULL;
 }
 
-of_role_prop_header_t *
+of_object_t *
 of_role_prop_header_dup(
-    of_role_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63149,9 +62478,9 @@ of_role_prop_header_dup(
     return NULL;
 }
 
-of_table_desc_t *
+of_object_t *
 of_table_desc_dup(
-    of_table_desc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63162,16 +62491,16 @@ of_table_desc_dup(
     return NULL;
 }
 
-of_table_feature_prop_t *
+of_object_t *
 of_table_feature_prop_dup(
-    of_table_feature_prop_t *src)
+    of_object_t *src)
 {
 
-    if (src->header.version == OF_VERSION_1_3) {
+    if (src->version == OF_VERSION_1_3) {
         return of_table_feature_prop_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->header.version == OF_VERSION_1_4) {
+    if (src->version == OF_VERSION_1_4) {
         return of_table_feature_prop_OF_VERSION_1_4_dup(src);
     }
 
@@ -63179,9 +62508,9 @@ of_table_feature_prop_dup(
     return NULL;
 }
 
-of_table_feature_prop_apply_actions_t *
+of_object_t *
 of_table_feature_prop_apply_actions_dup(
-    of_table_feature_prop_apply_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63196,9 +62525,9 @@ of_table_feature_prop_apply_actions_dup(
     return NULL;
 }
 
-of_table_feature_prop_apply_actions_miss_t *
+of_object_t *
 of_table_feature_prop_apply_actions_miss_dup(
-    of_table_feature_prop_apply_actions_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63213,9 +62542,9 @@ of_table_feature_prop_apply_actions_miss_dup(
     return NULL;
 }
 
-of_table_feature_prop_apply_setfield_t *
+of_object_t *
 of_table_feature_prop_apply_setfield_dup(
-    of_table_feature_prop_apply_setfield_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63230,9 +62559,9 @@ of_table_feature_prop_apply_setfield_dup(
     return NULL;
 }
 
-of_table_feature_prop_apply_setfield_miss_t *
+of_object_t *
 of_table_feature_prop_apply_setfield_miss_dup(
-    of_table_feature_prop_apply_setfield_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63247,9 +62576,9 @@ of_table_feature_prop_apply_setfield_miss_dup(
     return NULL;
 }
 
-of_table_feature_prop_experimenter_t *
+of_object_t *
 of_table_feature_prop_experimenter_dup(
-    of_table_feature_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63264,9 +62593,9 @@ of_table_feature_prop_experimenter_dup(
     return NULL;
 }
 
-of_table_feature_prop_experimenter_miss_t *
+of_object_t *
 of_table_feature_prop_experimenter_miss_dup(
-    of_table_feature_prop_experimenter_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63281,9 +62610,9 @@ of_table_feature_prop_experimenter_miss_dup(
     return NULL;
 }
 
-of_table_feature_prop_header_t *
+of_object_t *
 of_table_feature_prop_header_dup(
-    of_table_feature_prop_header_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63298,9 +62627,9 @@ of_table_feature_prop_header_dup(
     return NULL;
 }
 
-of_table_feature_prop_instructions_t *
+of_object_t *
 of_table_feature_prop_instructions_dup(
-    of_table_feature_prop_instructions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63315,9 +62644,9 @@ of_table_feature_prop_instructions_dup(
     return NULL;
 }
 
-of_table_feature_prop_instructions_miss_t *
+of_object_t *
 of_table_feature_prop_instructions_miss_dup(
-    of_table_feature_prop_instructions_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63332,9 +62661,9 @@ of_table_feature_prop_instructions_miss_dup(
     return NULL;
 }
 
-of_table_feature_prop_match_t *
+of_object_t *
 of_table_feature_prop_match_dup(
-    of_table_feature_prop_match_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63349,9 +62678,9 @@ of_table_feature_prop_match_dup(
     return NULL;
 }
 
-of_table_feature_prop_next_tables_t *
+of_object_t *
 of_table_feature_prop_next_tables_dup(
-    of_table_feature_prop_next_tables_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63366,9 +62695,9 @@ of_table_feature_prop_next_tables_dup(
     return NULL;
 }
 
-of_table_feature_prop_next_tables_miss_t *
+of_object_t *
 of_table_feature_prop_next_tables_miss_dup(
-    of_table_feature_prop_next_tables_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63383,9 +62712,9 @@ of_table_feature_prop_next_tables_miss_dup(
     return NULL;
 }
 
-of_table_feature_prop_table_sync_from_t *
+of_object_t *
 of_table_feature_prop_table_sync_from_dup(
-    of_table_feature_prop_table_sync_from_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63396,9 +62725,9 @@ of_table_feature_prop_table_sync_from_dup(
     return NULL;
 }
 
-of_table_feature_prop_wildcards_t *
+of_object_t *
 of_table_feature_prop_wildcards_dup(
-    of_table_feature_prop_wildcards_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63413,9 +62742,9 @@ of_table_feature_prop_wildcards_dup(
     return NULL;
 }
 
-of_table_feature_prop_write_actions_t *
+of_object_t *
 of_table_feature_prop_write_actions_dup(
-    of_table_feature_prop_write_actions_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63430,9 +62759,9 @@ of_table_feature_prop_write_actions_dup(
     return NULL;
 }
 
-of_table_feature_prop_write_actions_miss_t *
+of_object_t *
 of_table_feature_prop_write_actions_miss_dup(
-    of_table_feature_prop_write_actions_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63447,9 +62776,9 @@ of_table_feature_prop_write_actions_miss_dup(
     return NULL;
 }
 
-of_table_feature_prop_write_setfield_t *
+of_object_t *
 of_table_feature_prop_write_setfield_dup(
-    of_table_feature_prop_write_setfield_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63464,9 +62793,9 @@ of_table_feature_prop_write_setfield_dup(
     return NULL;
 }
 
-of_table_feature_prop_write_setfield_miss_t *
+of_object_t *
 of_table_feature_prop_write_setfield_miss_dup(
-    of_table_feature_prop_write_setfield_miss_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63481,9 +62810,9 @@ of_table_feature_prop_write_setfield_miss_dup(
     return NULL;
 }
 
-of_table_features_t *
+of_object_t *
 of_table_features_dup(
-    of_table_features_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63498,9 +62827,9 @@ of_table_features_dup(
     return NULL;
 }
 
-of_table_mod_prop_t *
+of_object_t *
 of_table_mod_prop_dup(
-    of_table_mod_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63511,9 +62840,9 @@ of_table_mod_prop_dup(
     return NULL;
 }
 
-of_table_mod_prop_eviction_t *
+of_object_t *
 of_table_mod_prop_eviction_dup(
-    of_table_mod_prop_eviction_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63524,9 +62853,9 @@ of_table_mod_prop_eviction_dup(
     return NULL;
 }
 
-of_table_mod_prop_experimenter_t *
+of_object_t *
 of_table_mod_prop_experimenter_dup(
-    of_table_mod_prop_experimenter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63537,9 +62866,9 @@ of_table_mod_prop_experimenter_dup(
     return NULL;
 }
 
-of_table_mod_prop_vacancy_t *
+of_object_t *
 of_table_mod_prop_vacancy_dup(
-    of_table_mod_prop_vacancy_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63550,9 +62879,9 @@ of_table_mod_prop_vacancy_dup(
     return NULL;
 }
 
-of_table_stats_entry_t *
+of_object_t *
 of_table_stats_entry_dup(
-    of_table_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -63579,9 +62908,9 @@ of_table_stats_entry_dup(
     return NULL;
 }
 
-of_uint32_t *
+of_object_t *
 of_uint32_dup(
-    of_uint32_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63596,9 +62925,9 @@ of_uint32_dup(
     return NULL;
 }
 
-of_uint64_t *
+of_object_t *
 of_uint64_dup(
-    of_uint64_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63613,9 +62942,9 @@ of_uint64_dup(
     return NULL;
 }
 
-of_uint8_t *
+of_object_t *
 of_uint8_dup(
-    of_uint8_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63630,9 +62959,9 @@ of_uint8_dup(
     return NULL;
 }
 
-of_list_action_t *
+of_object_t *
 of_list_action_dup(
-    of_list_action_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -63659,9 +62988,9 @@ of_list_action_dup(
     return NULL;
 }
 
-of_list_action_id_t *
+of_object_t *
 of_list_action_id_dup(
-    of_list_action_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63676,9 +63005,9 @@ of_list_action_id_dup(
     return NULL;
 }
 
-of_list_async_config_prop_t *
+of_object_t *
 of_list_async_config_prop_dup(
-    of_list_async_config_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63689,9 +63018,9 @@ of_list_async_config_prop_dup(
     return NULL;
 }
 
-of_list_bsn_controller_connection_t *
+of_object_t *
 of_list_bsn_controller_connection_dup(
-    of_list_bsn_controller_connection_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63702,9 +63031,9 @@ of_list_bsn_controller_connection_dup(
     return NULL;
 }
 
-of_list_bsn_debug_counter_desc_stats_entry_t *
+of_object_t *
 of_list_bsn_debug_counter_desc_stats_entry_dup(
-    of_list_bsn_debug_counter_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63715,9 +63044,9 @@ of_list_bsn_debug_counter_desc_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_debug_counter_stats_entry_t *
+of_object_t *
 of_list_bsn_debug_counter_stats_entry_dup(
-    of_list_bsn_debug_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63728,9 +63057,9 @@ of_list_bsn_debug_counter_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_flow_checksum_bucket_stats_entry_t *
+of_object_t *
 of_list_bsn_flow_checksum_bucket_stats_entry_dup(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63741,9 +63070,9 @@ of_list_bsn_flow_checksum_bucket_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_gentable_bucket_stats_entry_t *
+of_object_t *
 of_list_bsn_gentable_bucket_stats_entry_dup(
-    of_list_bsn_gentable_bucket_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63754,9 +63083,9 @@ of_list_bsn_gentable_bucket_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_gentable_desc_stats_entry_t *
+of_object_t *
 of_list_bsn_gentable_desc_stats_entry_dup(
-    of_list_bsn_gentable_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63767,9 +63096,9 @@ of_list_bsn_gentable_desc_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_gentable_entry_desc_stats_entry_t *
+of_object_t *
 of_list_bsn_gentable_entry_desc_stats_entry_dup(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63780,9 +63109,9 @@ of_list_bsn_gentable_entry_desc_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_gentable_entry_stats_entry_t *
+of_object_t *
 of_list_bsn_gentable_entry_stats_entry_dup(
-    of_list_bsn_gentable_entry_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63793,9 +63122,9 @@ of_list_bsn_gentable_entry_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_gentable_stats_entry_t *
+of_object_t *
 of_list_bsn_gentable_stats_entry_dup(
-    of_list_bsn_gentable_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63806,9 +63135,9 @@ of_list_bsn_gentable_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_interface_t *
+of_object_t *
 of_list_bsn_interface_dup(
-    of_list_bsn_interface_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -63835,9 +63164,9 @@ of_list_bsn_interface_dup(
     return NULL;
 }
 
-of_list_bsn_lacp_stats_entry_t *
+of_object_t *
 of_list_bsn_lacp_stats_entry_dup(
-    of_list_bsn_lacp_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63848,9 +63177,9 @@ of_list_bsn_lacp_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_port_counter_stats_entry_t *
+of_object_t *
 of_list_bsn_port_counter_stats_entry_dup(
-    of_list_bsn_port_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63861,9 +63190,9 @@ of_list_bsn_port_counter_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_switch_pipeline_stats_entry_t *
+of_object_t *
 of_list_bsn_switch_pipeline_stats_entry_dup(
-    of_list_bsn_switch_pipeline_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63874,9 +63203,9 @@ of_list_bsn_switch_pipeline_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_table_checksum_stats_entry_t *
+of_object_t *
 of_list_bsn_table_checksum_stats_entry_dup(
-    of_list_bsn_table_checksum_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63887,9 +63216,9 @@ of_list_bsn_table_checksum_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_tlv_t *
+of_object_t *
 of_list_bsn_tlv_dup(
-    of_list_bsn_tlv_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63900,9 +63229,9 @@ of_list_bsn_tlv_dup(
     return NULL;
 }
 
-of_list_bsn_vlan_counter_stats_entry_t *
+of_object_t *
 of_list_bsn_vlan_counter_stats_entry_dup(
-    of_list_bsn_vlan_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63913,9 +63242,9 @@ of_list_bsn_vlan_counter_stats_entry_dup(
     return NULL;
 }
 
-of_list_bsn_vrf_counter_stats_entry_t *
+of_object_t *
 of_list_bsn_vrf_counter_stats_entry_dup(
-    of_list_bsn_vrf_counter_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -63926,9 +63255,9 @@ of_list_bsn_vrf_counter_stats_entry_dup(
     return NULL;
 }
 
-of_list_bucket_t *
+of_object_t *
 of_list_bucket_dup(
-    of_list_bucket_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -63951,9 +63280,9 @@ of_list_bucket_dup(
     return NULL;
 }
 
-of_list_bucket_counter_t *
+of_object_t *
 of_list_bucket_counter_dup(
-    of_list_bucket_counter_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -63976,9 +63305,9 @@ of_list_bucket_counter_dup(
     return NULL;
 }
 
-of_list_bundle_prop_t *
+of_object_t *
 of_list_bundle_prop_dup(
-    of_list_bundle_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -63989,9 +63318,9 @@ of_list_bundle_prop_dup(
     return NULL;
 }
 
-of_list_flow_stats_entry_t *
+of_object_t *
 of_list_flow_stats_entry_dup(
-    of_list_flow_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64018,9 +63347,9 @@ of_list_flow_stats_entry_dup(
     return NULL;
 }
 
-of_list_group_desc_stats_entry_t *
+of_object_t *
 of_list_group_desc_stats_entry_dup(
-    of_list_group_desc_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -64043,9 +63372,9 @@ of_list_group_desc_stats_entry_dup(
     return NULL;
 }
 
-of_list_group_stats_entry_t *
+of_object_t *
 of_list_group_stats_entry_dup(
-    of_list_group_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -64068,9 +63397,9 @@ of_list_group_stats_entry_dup(
     return NULL;
 }
 
-of_list_hello_elem_t *
+of_object_t *
 of_list_hello_elem_dup(
-    of_list_hello_elem_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64085,9 +63414,9 @@ of_list_hello_elem_dup(
     return NULL;
 }
 
-of_list_instruction_t *
+of_object_t *
 of_list_instruction_dup(
-    of_list_instruction_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_1) {
@@ -64110,9 +63439,9 @@ of_list_instruction_dup(
     return NULL;
 }
 
-of_list_instruction_id_t *
+of_object_t *
 of_list_instruction_id_dup(
-    of_list_instruction_id_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64127,9 +63456,9 @@ of_list_instruction_id_dup(
     return NULL;
 }
 
-of_list_meter_band_t *
+of_object_t *
 of_list_meter_band_dup(
-    of_list_meter_band_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64144,9 +63473,9 @@ of_list_meter_band_dup(
     return NULL;
 }
 
-of_list_meter_band_stats_t *
+of_object_t *
 of_list_meter_band_stats_dup(
-    of_list_meter_band_stats_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64161,9 +63490,9 @@ of_list_meter_band_stats_dup(
     return NULL;
 }
 
-of_list_meter_stats_t *
+of_object_t *
 of_list_meter_stats_dup(
-    of_list_meter_stats_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64178,9 +63507,9 @@ of_list_meter_stats_dup(
     return NULL;
 }
 
-of_list_oxm_t *
+of_object_t *
 of_list_oxm_dup(
-    of_list_oxm_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_2) {
@@ -64199,9 +63528,9 @@ of_list_oxm_dup(
     return NULL;
 }
 
-of_list_packet_queue_t *
+of_object_t *
 of_list_packet_queue_dup(
-    of_list_packet_queue_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64224,9 +63553,9 @@ of_list_packet_queue_dup(
     return NULL;
 }
 
-of_list_port_desc_t *
+of_object_t *
 of_list_port_desc_dup(
-    of_list_port_desc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64253,9 +63582,9 @@ of_list_port_desc_dup(
     return NULL;
 }
 
-of_list_port_desc_prop_t *
+of_object_t *
 of_list_port_desc_prop_dup(
-    of_list_port_desc_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64266,9 +63595,9 @@ of_list_port_desc_prop_dup(
     return NULL;
 }
 
-of_list_port_mod_prop_t *
+of_object_t *
 of_list_port_mod_prop_dup(
-    of_list_port_mod_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64279,9 +63608,9 @@ of_list_port_mod_prop_dup(
     return NULL;
 }
 
-of_list_port_stats_entry_t *
+of_object_t *
 of_list_port_stats_entry_dup(
-    of_list_port_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64308,9 +63637,9 @@ of_list_port_stats_entry_dup(
     return NULL;
 }
 
-of_list_port_stats_prop_t *
+of_object_t *
 of_list_port_stats_prop_dup(
-    of_list_port_stats_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64321,9 +63650,9 @@ of_list_port_stats_prop_dup(
     return NULL;
 }
 
-of_list_queue_desc_t *
+of_object_t *
 of_list_queue_desc_dup(
-    of_list_queue_desc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64334,9 +63663,9 @@ of_list_queue_desc_dup(
     return NULL;
 }
 
-of_list_queue_desc_prop_t *
+of_object_t *
 of_list_queue_desc_prop_dup(
-    of_list_queue_desc_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64347,9 +63676,9 @@ of_list_queue_desc_prop_dup(
     return NULL;
 }
 
-of_list_queue_prop_t *
+of_object_t *
 of_list_queue_prop_dup(
-    of_list_queue_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64376,9 +63705,9 @@ of_list_queue_prop_dup(
     return NULL;
 }
 
-of_list_queue_stats_entry_t *
+of_object_t *
 of_list_queue_stats_entry_dup(
-    of_list_queue_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64405,9 +63734,9 @@ of_list_queue_stats_entry_dup(
     return NULL;
 }
 
-of_list_queue_stats_prop_t *
+of_object_t *
 of_list_queue_stats_prop_dup(
-    of_list_queue_stats_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64418,9 +63747,9 @@ of_list_queue_stats_prop_dup(
     return NULL;
 }
 
-of_list_role_prop_t *
+of_object_t *
 of_list_role_prop_dup(
-    of_list_role_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64431,9 +63760,9 @@ of_list_role_prop_dup(
     return NULL;
 }
 
-of_list_table_desc_t *
+of_object_t *
 of_list_table_desc_dup(
-    of_list_table_desc_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64444,9 +63773,9 @@ of_list_table_desc_dup(
     return NULL;
 }
 
-of_list_table_feature_prop_t *
+of_object_t *
 of_list_table_feature_prop_dup(
-    of_list_table_feature_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64461,9 +63790,9 @@ of_list_table_feature_prop_dup(
     return NULL;
 }
 
-of_list_table_features_t *
+of_object_t *
 of_list_table_features_dup(
-    of_list_table_features_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64478,9 +63807,9 @@ of_list_table_features_dup(
     return NULL;
 }
 
-of_list_table_mod_prop_t *
+of_object_t *
 of_list_table_mod_prop_dup(
-    of_list_table_mod_prop_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_4) {
@@ -64491,9 +63820,9 @@ of_list_table_mod_prop_dup(
     return NULL;
 }
 
-of_list_table_stats_entry_t *
+of_object_t *
 of_list_table_stats_entry_dup(
-    of_list_table_stats_entry_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_0) {
@@ -64520,9 +63849,9 @@ of_list_table_stats_entry_dup(
     return NULL;
 }
 
-of_list_uint32_t *
+of_object_t *
 of_list_uint32_dup(
-    of_list_uint32_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64537,9 +63866,9 @@ of_list_uint32_dup(
     return NULL;
 }
 
-of_list_uint64_t *
+of_object_t *
 of_list_uint64_dup(
-    of_list_uint64_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {
@@ -64550,9 +63879,9 @@ of_list_uint64_dup(
     return NULL;
 }
 
-of_list_uint8_t *
+of_object_t *
 of_list_uint8_dup(
-    of_list_uint8_t *src)
+    of_object_t *src)
 {
 
     if (src->version == OF_VERSION_1_3) {

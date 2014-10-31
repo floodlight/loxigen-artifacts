@@ -24,7 +24,7 @@ unknown_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 }
 
 int
-of_aggregate_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_aggregate_stats_reply_t *obj)
+of_aggregate_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -60,7 +60,7 @@ of_aggregate_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_aggregate_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_aggregate_stats_request_t *obj)
+of_aggregate_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -98,7 +98,7 @@ of_aggregate_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bad_action_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bad_action_error_msg_t *obj)
+of_bad_action_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -124,7 +124,7 @@ of_bad_action_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bad_request_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bad_request_error_msg_t *obj)
+of_bad_request_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -150,7 +150,7 @@ of_bad_request_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_barrier_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_barrier_reply_t *obj)
+of_barrier_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -164,7 +164,7 @@ of_barrier_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_barr
 }
 
 int
-of_barrier_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_barrier_request_t *obj)
+of_barrier_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -178,7 +178,7 @@ of_barrier_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_ba
 }
 
 int
-of_bsn_bw_clear_data_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj)
+of_bsn_bw_clear_data_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -207,7 +207,7 @@ of_bsn_bw_clear_data_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_clear_data_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_request_t *obj)
+of_bsn_bw_clear_data_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -231,7 +231,7 @@ of_bsn_bw_clear_data_request_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_get_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_reply_t *obj)
+of_bsn_bw_enable_get_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -260,7 +260,7 @@ of_bsn_bw_enable_get_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_get_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_request_t *obj)
+of_bsn_bw_enable_get_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -284,7 +284,7 @@ of_bsn_bw_enable_get_request_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_set_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_reply_t *obj)
+of_bsn_bw_enable_set_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -318,7 +318,7 @@ of_bsn_bw_enable_set_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_set_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_request_t *obj)
+of_bsn_bw_enable_set_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -347,13 +347,13 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_get_interfaces_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_reply_t *obj)
+of_bsn_get_interfaces_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_interface_t list;
-    of_bsn_interface_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_get_interfaces_reply_xid_get(obj, &val32);
@@ -382,7 +382,7 @@ of_bsn_get_interfaces_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_get_interfaces_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_request_t *obj)
+of_bsn_get_interfaces_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -406,7 +406,7 @@ of_bsn_get_interfaces_request_OF_VERSION_1_0_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_ip_mask_reply_t *obj)
+of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -441,7 +441,7 @@ of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_bsn_get_ip_mask_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_ip_mask_request_t *obj)
+of_bsn_get_ip_mask_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -471,7 +471,7 @@ of_bsn_get_ip_mask_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_get_l2_table_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_l2_table_reply_t *obj)
+of_bsn_get_l2_table_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -507,7 +507,7 @@ of_bsn_get_l2_table_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_get_l2_table_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_l2_table_request_t *obj)
+of_bsn_get_l2_table_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -531,7 +531,7 @@ of_bsn_get_l2_table_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_get_mirroring_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_reply_t *obj)
+of_bsn_get_mirroring_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -561,7 +561,7 @@ of_bsn_get_mirroring_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_get_mirroring_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_request_t *obj)
+of_bsn_get_mirroring_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -591,7 +591,7 @@ of_bsn_get_mirroring_request_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_header_t *obj)
+of_bsn_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -615,7 +615,7 @@ of_bsn_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_hea
 }
 
 int
-of_bsn_hybrid_get_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_hybrid_get_reply_t *obj)
+of_bsn_hybrid_get_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -651,7 +651,7 @@ of_bsn_hybrid_get_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_hybrid_get_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_hybrid_get_request_t *obj)
+of_bsn_hybrid_get_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -675,7 +675,7 @@ of_bsn_hybrid_get_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_pdu_rx_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj)
+of_bsn_pdu_rx_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -716,7 +716,7 @@ of_bsn_pdu_rx_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_rx_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_request_t *obj)
+of_bsn_pdu_rx_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -763,7 +763,7 @@ of_bsn_pdu_rx_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_rx_timeout_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_timeout_t *obj)
+of_bsn_pdu_rx_timeout_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -799,7 +799,7 @@ of_bsn_pdu_rx_timeout_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_tx_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_reply_t *obj)
+of_bsn_pdu_tx_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -840,7 +840,7 @@ of_bsn_pdu_tx_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_tx_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_request_t *obj)
+of_bsn_pdu_tx_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -887,7 +887,7 @@ of_bsn_pdu_tx_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_set_ip_mask_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_set_ip_mask_t *obj)
+of_bsn_set_ip_mask_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -922,7 +922,7 @@ of_bsn_set_ip_mask_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_set_l2_table_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_set_l2_table_reply_t *obj)
+of_bsn_set_l2_table_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -963,7 +963,7 @@ of_bsn_set_l2_table_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_set_l2_table_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_set_l2_table_request_t *obj)
+of_bsn_set_l2_table_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -999,7 +999,7 @@ of_bsn_set_l2_table_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_set_mirroring_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_set_mirroring_t *obj)
+of_bsn_set_mirroring_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1029,7 +1029,7 @@ of_bsn_set_mirroring_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_set_pktin_suppression_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_reply_t *obj)
+of_bsn_set_pktin_suppression_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1058,7 +1058,7 @@ of_bsn_set_pktin_suppression_reply_OF_VERSION_1_0_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_set_pktin_suppression_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_request_t *obj)
+of_bsn_set_pktin_suppression_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1110,7 +1110,7 @@ of_bsn_set_pktin_suppression_request_OF_VERSION_1_0_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_shell_command_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_shell_command_t *obj)
+of_bsn_shell_command_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1145,7 +1145,7 @@ of_bsn_shell_command_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_shell_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_shell_output_t *obj)
+of_bsn_shell_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1175,7 +1175,7 @@ of_bsn_shell_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_shell_status_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_shell_status_t *obj)
+of_bsn_shell_status_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1204,7 +1204,7 @@ of_bsn_shell_status_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_stats_reply_t *obj)
+of_bsn_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1234,7 +1234,7 @@ of_bsn_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_stats_request_t *obj)
+of_bsn_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1264,7 +1264,7 @@ of_bsn_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_virtual_port_create_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_reply_t *obj)
+of_bsn_virtual_port_create_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1298,7 +1298,7 @@ of_bsn_virtual_port_create_reply_OF_VERSION_1_0_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_create_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_request_t *obj)
+of_bsn_virtual_port_create_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1327,7 +1327,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_0_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_virtual_port_remove_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_reply_t *obj)
+of_bsn_virtual_port_remove_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1356,7 +1356,7 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_0_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_remove_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_request_t *obj)
+of_bsn_virtual_port_remove_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1385,7 +1385,7 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_0_show(loci_writer_f writer, voi
 }
 
 int
-of_desc_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj)
+of_desc_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1432,7 +1432,7 @@ of_desc_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_d
 }
 
 int
-of_desc_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_desc_stats_request_t *obj)
+of_desc_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1452,7 +1452,7 @@ of_desc_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_echo_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_echo_reply_t *obj)
+of_echo_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1472,7 +1472,7 @@ of_echo_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_echo_re
 }
 
 int
-of_echo_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_echo_request_t *obj)
+of_echo_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1492,7 +1492,7 @@ of_echo_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_echo_
 }
 
 int
-of_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_error_msg_t *obj)
+of_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1506,7 +1506,7 @@ of_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_error_ms
 }
 
 int
-of_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_experimenter_t *obj)
+of_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1531,7 +1531,7 @@ of_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_exper
 }
 
 int
-of_experimenter_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_experimenter_stats_reply_t *obj)
+of_experimenter_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1562,7 +1562,7 @@ of_experimenter_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cook
 }
 
 int
-of_experimenter_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_experimenter_stats_request_t *obj)
+of_experimenter_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1593,7 +1593,7 @@ of_experimenter_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* co
 }
 
 int
-of_features_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_features_reply_t *obj)
+of_features_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1601,7 +1601,7 @@ of_features_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_fea
     uint8_t val8;
 
     of_list_port_desc_t list;
-    of_port_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_features_reply_xid_get(obj, &val32);
@@ -1645,7 +1645,7 @@ of_features_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_fea
 }
 
 int
-of_features_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_features_request_t *obj)
+of_features_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1659,7 +1659,7 @@ of_features_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_add_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_add_t *obj)
+of_flow_add_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1669,7 +1669,7 @@ of_flow_add_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_add_
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_add_xid_get(obj, &val32);
@@ -1728,7 +1728,7 @@ of_flow_add_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_add_
 }
 
 int
-of_flow_delete_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_delete_t *obj)
+of_flow_delete_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1738,7 +1738,7 @@ of_flow_delete_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_d
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_xid_get(obj, &val32);
@@ -1797,7 +1797,7 @@ of_flow_delete_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_d
 }
 
 int
-of_flow_delete_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_delete_strict_t *obj)
+of_flow_delete_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1807,7 +1807,7 @@ of_flow_delete_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_strict_xid_get(obj, &val32);
@@ -1866,7 +1866,7 @@ of_flow_delete_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_mod_t *obj)
+of_flow_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1876,7 +1876,7 @@ of_flow_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_mod_
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_mod_xid_get(obj, &val32);
@@ -1935,7 +1935,7 @@ of_flow_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_mod_
 }
 
 int
-of_flow_mod_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_mod_failed_error_msg_t *obj)
+of_flow_mod_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1961,7 +1961,7 @@ of_flow_mod_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_flow_modify_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_modify_t *obj)
+of_flow_modify_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -1971,7 +1971,7 @@ of_flow_modify_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_m
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_xid_get(obj, &val32);
@@ -2030,7 +2030,7 @@ of_flow_modify_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_m
 }
 
 int
-of_flow_modify_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_modify_strict_t *obj)
+of_flow_modify_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2040,7 +2040,7 @@ of_flow_modify_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_strict_xid_get(obj, &val32);
@@ -2099,7 +2099,7 @@ of_flow_modify_strict_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_removed_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_removed_t *obj)
+of_flow_removed_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2162,14 +2162,14 @@ of_flow_removed_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_
 }
 
 int
-of_flow_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_stats_reply_t *obj)
+of_flow_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_flow_stats_entry_t list;
-    of_flow_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_reply_xid_get(obj, &val32);
@@ -2193,7 +2193,7 @@ of_flow_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_stats_request_t *obj)
+of_flow_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2231,7 +2231,7 @@ of_flow_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_get_config_reply_t *obj)
+of_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2256,7 +2256,7 @@ of_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_g
 }
 
 int
-of_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_get_config_request_t *obj)
+of_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2270,7 +2270,7 @@ of_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2284,7 +2284,7 @@ of_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_header_t *o
 }
 
 int
-of_hello_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
+of_hello_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2298,7 +2298,7 @@ of_hello_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_hello_t *obj
 }
 
 int
-of_hello_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj)
+of_hello_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2324,7 +2324,7 @@ of_hello_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_nicira_controller_role_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_nicira_controller_role_reply_t *obj)
+of_nicira_controller_role_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2353,7 +2353,7 @@ of_nicira_controller_role_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* 
 }
 
 int
-of_nicira_controller_role_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_nicira_controller_role_request_t *obj)
+of_nicira_controller_role_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2382,7 +2382,7 @@ of_nicira_controller_role_request_OF_VERSION_1_0_show(loci_writer_f writer, void
 }
 
 int
-of_nicira_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj)
+of_nicira_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2406,7 +2406,7 @@ of_nicira_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_nici
 }
 
 int
-of_packet_in_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packet_in_t *obj)
+of_packet_in_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2449,14 +2449,14 @@ of_packet_in_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packet_i
 }
 
 int
-of_packet_out_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packet_out_t *obj)
+of_packet_out_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
     of_octets_t octets;
 
@@ -2491,7 +2491,7 @@ of_packet_out_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packet_
 }
 
 int
-of_port_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_mod_t *obj)
+of_port_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2532,7 +2532,7 @@ of_port_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_mod_
 }
 
 int
-of_port_mod_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_mod_failed_error_msg_t *obj)
+of_port_mod_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2558,14 +2558,14 @@ of_port_mod_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_port_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_stats_reply_t *obj)
+of_port_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_stats_entry_t list;
-    of_port_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_stats_reply_xid_get(obj, &val32);
@@ -2589,7 +2589,7 @@ of_port_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_port_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_stats_request_t *obj)
+of_port_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2615,7 +2615,7 @@ of_port_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_port_status_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_status_t *obj)
+of_port_status_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2640,14 +2640,14 @@ of_port_status_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_s
 }
 
 int
-of_queue_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_get_config_reply_t *obj)
+of_queue_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_packet_queue_t list;
-    of_packet_queue_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_get_config_reply_xid_get(obj, &val32);
@@ -2671,7 +2671,7 @@ of_queue_get_config_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_queue_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_get_config_request_t *obj)
+of_queue_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2691,7 +2691,7 @@ of_queue_get_config_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_op_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_op_failed_error_msg_t *obj)
+of_queue_op_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2717,14 +2717,14 @@ of_queue_op_failed_error_msg_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_queue_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_stats_reply_t *obj)
+of_queue_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_queue_stats_entry_t list;
-    of_queue_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_stats_reply_xid_get(obj, &val32);
@@ -2748,7 +2748,7 @@ of_queue_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_stats_request_t *obj)
+of_queue_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2779,7 +2779,7 @@ of_queue_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_set_config_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_set_config_t *obj)
+of_set_config_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2804,7 +2804,7 @@ of_set_config_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_set_con
 }
 
 int
-of_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_stats_reply_t *obj)
+of_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2824,7 +2824,7 @@ of_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_stats_
 }
 
 int
-of_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_stats_request_t *obj)
+of_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2844,7 +2844,7 @@ of_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_stat
 }
 
 int
-of_table_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_table_mod_t *obj)
+of_table_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2869,14 +2869,14 @@ of_table_mod_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_table_mo
 }
 
 int
-of_table_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj)
+of_table_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_stats_entry_t list;
-    of_table_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_stats_reply_xid_get(obj, &val32);
@@ -2900,7 +2900,7 @@ of_table_stats_reply_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj)
+of_table_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2920,7 +2920,7 @@ of_table_stats_request_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_bsn_t *obj)
+of_action_bsn_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2939,7 +2939,7 @@ of_action_bsn_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
-of_action_bsn_checksum_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+of_action_bsn_checksum_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2964,7 +2964,7 @@ of_action_bsn_checksum_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_mirror_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
+of_action_bsn_mirror_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -2999,7 +2999,7 @@ of_action_bsn_mirror_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj)
+of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3023,7 +3023,7 @@ of_action_bsn_set_tunnel_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* coo
 }
 
 int
-of_action_enqueue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_enqueue_t *obj)
+of_action_enqueue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -3043,7 +3043,7 @@ of_action_enqueue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_act
 }
 
 int
-of_action_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_experimenter_t *obj)
+of_action_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3063,7 +3063,7 @@ of_action_experimenter_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_header_t *obj)
+of_action_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3071,7 +3071,7 @@ of_action_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_nicira_t *obj)
+of_action_nicira_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3091,7 +3091,7 @@ of_action_nicira_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_dec_ttl_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_nicira_dec_ttl_t *obj)
+of_action_nicira_dec_ttl_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3111,7 +3111,7 @@ of_action_nicira_dec_ttl_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_output_t *obj)
+of_action_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -3131,7 +3131,7 @@ of_action_output_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_set_dl_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_dl_dst_t *obj)
+of_action_set_dl_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -3145,7 +3145,7 @@ of_action_set_dl_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_dl_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_dl_src_t *obj)
+of_action_set_dl_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -3159,7 +3159,7 @@ of_action_set_dl_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_nw_dst_t *obj)
+of_action_set_nw_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3173,7 +3173,7 @@ of_action_set_nw_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_nw_src_t *obj)
+of_action_set_nw_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3187,7 +3187,7 @@ of_action_set_nw_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_tos_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_nw_tos_t *obj)
+of_action_set_nw_tos_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -3201,7 +3201,7 @@ of_action_set_nw_tos_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_tp_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_tp_dst_t *obj)
+of_action_set_tp_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -3215,7 +3215,7 @@ of_action_set_tp_dst_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_tp_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_tp_src_t *obj)
+of_action_set_tp_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -3229,7 +3229,7 @@ of_action_set_tp_src_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_vlan_pcp_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_vlan_pcp_t *obj)
+of_action_set_vlan_pcp_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -3243,7 +3243,7 @@ of_action_set_vlan_pcp_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_set_vlan_vid_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_set_vlan_vid_t *obj)
+of_action_set_vlan_vid_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -3257,7 +3257,7 @@ of_action_set_vlan_vid_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_strip_vlan_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_action_strip_vlan_t *obj)
+of_action_strip_vlan_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3265,7 +3265,7 @@ of_action_strip_vlan_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj)
+of_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -3296,7 +3296,7 @@ of_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_
 }
 
 int
-of_bsn_vport_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj)
+of_bsn_vport_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3304,7 +3304,7 @@ of_bsn_vport_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3378,7 +3378,7 @@ of_bsn_vport_l2gre_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_vport_q_in_q_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
+of_bsn_vport_q_in_q_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3419,7 +3419,7 @@ of_bsn_vport_q_in_q_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj)
+of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -3429,7 +3429,7 @@ of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_f
     uint64_t val64;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_entry_table_id_get(obj, &val8);
@@ -3493,7 +3493,7 @@ of_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_match_v1_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_match_v1_t *obj)
+of_match_v1_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_wc_bmap_t wc_bmap;
@@ -3572,13 +3572,13 @@ of_match_v1_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_match_v1_
 }
 
 int
-of_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packet_queue_t *obj)
+of_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_queue_prop_t list;
-    of_queue_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_packet_queue_queue_id_get(obj, &val32);
@@ -3597,7 +3597,7 @@ of_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_packe
 }
 
 int
-of_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_desc_t *obj)
+of_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -3654,7 +3654,7 @@ of_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_des
 }
 
 int
-of_port_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_port_stats_entry_t *obj)
+of_port_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -3729,7 +3729,7 @@ of_port_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_queue_prop_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_prop_header_t *obj)
+of_queue_prop_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3737,7 +3737,7 @@ of_queue_prop_header_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_prop_min_rate_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_prop_min_rate_t *obj)
+of_queue_prop_min_rate_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -3751,7 +3751,7 @@ of_queue_prop_min_rate_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_queue_stats_entry_t *obj)
+of_queue_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -3787,7 +3787,7 @@ of_queue_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_table_stats_entry_t *obj)
+of_table_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -3835,7 +3835,7 @@ of_table_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_action_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_action_t *obj)
+of_list_action_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3843,7 +3843,7 @@ of_list_action_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_a
 }
 
 int
-of_list_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_bsn_interface_t *obj)
+of_list_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3851,7 +3851,7 @@ of_list_bsn_interface_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_list_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_flow_stats_entry_t *obj)
+of_list_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3859,7 +3859,7 @@ of_list_flow_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_packet_queue_t *obj)
+of_list_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3867,7 +3867,7 @@ of_list_packet_queue_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_port_desc_t *obj)
+of_list_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3875,7 +3875,7 @@ of_list_port_desc_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_port_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_port_stats_entry_t *obj)
+of_list_port_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3883,7 +3883,7 @@ of_list_port_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_queue_prop_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_queue_prop_t *obj)
+of_list_queue_prop_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3891,7 +3891,7 @@ of_list_queue_prop_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_queue_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_queue_stats_entry_t *obj)
+of_list_queue_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3899,7 +3899,7 @@ of_list_queue_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_table_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_list_table_stats_entry_t *obj)
+of_list_table_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -3907,7 +3907,7 @@ of_list_table_stats_entry_OF_VERSION_1_0_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_aggregate_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_aggregate_stats_reply_t *obj)
+of_aggregate_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3943,7 +3943,7 @@ of_aggregate_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_aggregate_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_aggregate_stats_request_t *obj)
+of_aggregate_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -3997,7 +3997,7 @@ of_aggregate_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bad_action_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bad_action_error_msg_t *obj)
+of_bad_action_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4023,7 +4023,7 @@ of_bad_action_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bad_instruction_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bad_instruction_error_msg_t *obj)
+of_bad_instruction_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4049,7 +4049,7 @@ of_bad_instruction_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bad_match_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bad_match_error_msg_t *obj)
+of_bad_match_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4075,7 +4075,7 @@ of_bad_match_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bad_request_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bad_request_error_msg_t *obj)
+of_bad_request_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4101,7 +4101,7 @@ of_bad_request_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_barrier_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_barrier_reply_t *obj)
+of_barrier_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4115,7 +4115,7 @@ of_barrier_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_barr
 }
 
 int
-of_barrier_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_barrier_request_t *obj)
+of_barrier_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4129,7 +4129,7 @@ of_barrier_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_ba
 }
 
 int
-of_bsn_bw_clear_data_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj)
+of_bsn_bw_clear_data_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4158,7 +4158,7 @@ of_bsn_bw_clear_data_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_clear_data_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_request_t *obj)
+of_bsn_bw_clear_data_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4182,7 +4182,7 @@ of_bsn_bw_clear_data_request_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_get_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_reply_t *obj)
+of_bsn_bw_enable_get_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4211,7 +4211,7 @@ of_bsn_bw_enable_get_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_get_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_request_t *obj)
+of_bsn_bw_enable_get_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4235,7 +4235,7 @@ of_bsn_bw_enable_get_request_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_set_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_reply_t *obj)
+of_bsn_bw_enable_set_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4269,7 +4269,7 @@ of_bsn_bw_enable_set_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_set_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_request_t *obj)
+of_bsn_bw_enable_set_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4298,13 +4298,13 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_get_interfaces_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_reply_t *obj)
+of_bsn_get_interfaces_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_interface_t list;
-    of_bsn_interface_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_get_interfaces_reply_xid_get(obj, &val32);
@@ -4333,7 +4333,7 @@ of_bsn_get_interfaces_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_get_interfaces_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_request_t *obj)
+of_bsn_get_interfaces_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4357,7 +4357,7 @@ of_bsn_get_interfaces_request_OF_VERSION_1_1_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_get_mirroring_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_reply_t *obj)
+of_bsn_get_mirroring_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4387,7 +4387,7 @@ of_bsn_get_mirroring_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_get_mirroring_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_request_t *obj)
+of_bsn_get_mirroring_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4417,7 +4417,7 @@ of_bsn_get_mirroring_request_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_header_t *obj)
+of_bsn_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4441,7 +4441,7 @@ of_bsn_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_hea
 }
 
 int
-of_bsn_pdu_rx_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj)
+of_bsn_pdu_rx_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4482,7 +4482,7 @@ of_bsn_pdu_rx_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_rx_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_request_t *obj)
+of_bsn_pdu_rx_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4529,7 +4529,7 @@ of_bsn_pdu_rx_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_rx_timeout_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_timeout_t *obj)
+of_bsn_pdu_rx_timeout_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4565,7 +4565,7 @@ of_bsn_pdu_rx_timeout_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_tx_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_reply_t *obj)
+of_bsn_pdu_tx_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4606,7 +4606,7 @@ of_bsn_pdu_tx_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_tx_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_request_t *obj)
+of_bsn_pdu_tx_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4653,7 +4653,7 @@ of_bsn_pdu_tx_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_set_mirroring_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_set_mirroring_t *obj)
+of_bsn_set_mirroring_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4683,7 +4683,7 @@ of_bsn_set_mirroring_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_reply_t *obj)
+of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4712,7 +4712,7 @@ of_bsn_set_pktin_suppression_reply_OF_VERSION_1_1_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_set_pktin_suppression_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_request_t *obj)
+of_bsn_set_pktin_suppression_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4764,7 +4764,7 @@ of_bsn_set_pktin_suppression_request_OF_VERSION_1_1_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_stats_reply_t *obj)
+of_bsn_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4794,7 +4794,7 @@ of_bsn_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_stats_request_t *obj)
+of_bsn_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4824,7 +4824,7 @@ of_bsn_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_virtual_port_create_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_reply_t *obj)
+of_bsn_virtual_port_create_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4858,7 +4858,7 @@ of_bsn_virtual_port_create_reply_OF_VERSION_1_1_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_create_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_request_t *obj)
+of_bsn_virtual_port_create_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4887,7 +4887,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_1_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_reply_t *obj)
+of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4916,7 +4916,7 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_remove_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_request_t *obj)
+of_bsn_virtual_port_remove_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4945,7 +4945,7 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_1_show(loci_writer_f writer, voi
 }
 
 int
-of_desc_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj)
+of_desc_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -4992,7 +4992,7 @@ of_desc_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_d
 }
 
 int
-of_desc_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_desc_stats_request_t *obj)
+of_desc_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5012,7 +5012,7 @@ of_desc_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_echo_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_echo_reply_t *obj)
+of_echo_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5032,7 +5032,7 @@ of_echo_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_echo_re
 }
 
 int
-of_echo_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_echo_request_t *obj)
+of_echo_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5052,7 +5052,7 @@ of_echo_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_echo_
 }
 
 int
-of_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_error_msg_t *obj)
+of_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5066,7 +5066,7 @@ of_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_error_ms
 }
 
 int
-of_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_experimenter_t *obj)
+of_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5091,7 +5091,7 @@ of_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_exper
 }
 
 int
-of_experimenter_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_experimenter_stats_reply_t *obj)
+of_experimenter_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5122,7 +5122,7 @@ of_experimenter_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cook
 }
 
 int
-of_experimenter_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_experimenter_stats_request_t *obj)
+of_experimenter_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5153,7 +5153,7 @@ of_experimenter_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* co
 }
 
 int
-of_features_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_features_reply_t *obj)
+of_features_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5161,7 +5161,7 @@ of_features_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_fea
     uint8_t val8;
 
     of_list_port_desc_t list;
-    of_port_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_features_reply_xid_get(obj, &val32);
@@ -5205,7 +5205,7 @@ of_features_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_fea
 }
 
 int
-of_features_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_features_request_t *obj)
+of_features_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5219,7 +5219,7 @@ of_features_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_add_t *obj)
+of_flow_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5230,7 +5230,7 @@ of_flow_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_add_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_add_xid_get(obj, &val32);
@@ -5304,7 +5304,7 @@ of_flow_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_add_
 }
 
 int
-of_flow_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_delete_t *obj)
+of_flow_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5315,7 +5315,7 @@ of_flow_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_d
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_xid_get(obj, &val32);
@@ -5389,7 +5389,7 @@ of_flow_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_d
 }
 
 int
-of_flow_delete_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_delete_strict_t *obj)
+of_flow_delete_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5400,7 +5400,7 @@ of_flow_delete_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_strict_xid_get(obj, &val32);
@@ -5474,7 +5474,7 @@ of_flow_delete_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_mod_t *obj)
+of_flow_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5485,7 +5485,7 @@ of_flow_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_mod_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_mod_xid_get(obj, &val32);
@@ -5559,7 +5559,7 @@ of_flow_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_mod_
 }
 
 int
-of_flow_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_mod_failed_error_msg_t *obj)
+of_flow_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5585,7 +5585,7 @@ of_flow_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_flow_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_modify_t *obj)
+of_flow_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5596,7 +5596,7 @@ of_flow_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_m
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_xid_get(obj, &val32);
@@ -5670,7 +5670,7 @@ of_flow_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_m
 }
 
 int
-of_flow_modify_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_modify_strict_t *obj)
+of_flow_modify_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5681,7 +5681,7 @@ of_flow_modify_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_strict_xid_get(obj, &val32);
@@ -5755,7 +5755,7 @@ of_flow_modify_strict_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_removed_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_removed_t *obj)
+of_flow_removed_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5823,14 +5823,14 @@ of_flow_removed_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_
 }
 
 int
-of_flow_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_stats_reply_t *obj)
+of_flow_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_flow_stats_entry_t list;
-    of_flow_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_reply_xid_get(obj, &val32);
@@ -5854,7 +5854,7 @@ of_flow_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_stats_request_t *obj)
+of_flow_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5908,7 +5908,7 @@ of_flow_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_get_config_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_get_config_reply_t *obj)
+of_get_config_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5933,7 +5933,7 @@ of_get_config_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_g
 }
 
 int
-of_get_config_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_get_config_request_t *obj)
+of_get_config_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -5947,14 +5947,14 @@ of_get_config_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_group_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+of_group_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_add_xid_get(obj, &val32);
@@ -5983,14 +5983,14 @@ of_group_add_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_ad
 }
 
 int
-of_group_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+of_group_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_delete_xid_get(obj, &val32);
@@ -6019,14 +6019,14 @@ of_group_delete_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_desc_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
+of_group_desc_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_desc_stats_entry_t list;
-    of_group_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_reply_xid_get(obj, &val32);
@@ -6050,7 +6050,7 @@ of_group_desc_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_desc_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_desc_stats_request_t *obj)
+of_group_desc_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6070,14 +6070,14 @@ of_group_desc_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cook
 }
 
 int
-of_group_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_mod_t *obj)
+of_group_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_mod_xid_get(obj, &val32);
@@ -6106,7 +6106,7 @@ of_group_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_mo
 }
 
 int
-of_group_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_mod_failed_error_msg_t *obj)
+of_group_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6132,14 +6132,14 @@ of_group_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+of_group_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_modify_xid_get(obj, &val32);
@@ -6168,14 +6168,14 @@ of_group_modify_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj)
+of_group_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_stats_entry_t list;
-    of_group_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_reply_xid_get(obj, &val32);
@@ -6199,7 +6199,7 @@ of_group_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_group_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj)
+of_group_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6224,7 +6224,7 @@ of_group_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6238,7 +6238,7 @@ of_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_header_t *o
 }
 
 int
-of_hello_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
+of_hello_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6252,7 +6252,7 @@ of_hello_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_hello_t *obj
 }
 
 int
-of_hello_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj)
+of_hello_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6278,7 +6278,7 @@ of_hello_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_nicira_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj)
+of_nicira_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6302,7 +6302,7 @@ of_nicira_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_nici
 }
 
 int
-of_packet_in_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_packet_in_t *obj)
+of_packet_in_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6355,14 +6355,14 @@ of_packet_in_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_packet_i
 }
 
 int
-of_packet_out_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_packet_out_t *obj)
+of_packet_out_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
     of_octets_t octets;
 
@@ -6397,7 +6397,7 @@ of_packet_out_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_packet_
 }
 
 int
-of_port_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_mod_t *obj)
+of_port_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6438,7 +6438,7 @@ of_port_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_mod_
 }
 
 int
-of_port_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_mod_failed_error_msg_t *obj)
+of_port_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6464,14 +6464,14 @@ of_port_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_port_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_stats_reply_t *obj)
+of_port_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_stats_entry_t list;
-    of_port_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_stats_reply_xid_get(obj, &val32);
@@ -6495,7 +6495,7 @@ of_port_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_port_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_stats_request_t *obj)
+of_port_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6521,7 +6521,7 @@ of_port_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_port_status_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_status_t *obj)
+of_port_status_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6546,14 +6546,14 @@ of_port_status_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_s
 }
 
 int
-of_queue_get_config_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_get_config_reply_t *obj)
+of_queue_get_config_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_packet_queue_t list;
-    of_packet_queue_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_get_config_reply_xid_get(obj, &val32);
@@ -6577,7 +6577,7 @@ of_queue_get_config_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_queue_get_config_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_get_config_request_t *obj)
+of_queue_get_config_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6597,7 +6597,7 @@ of_queue_get_config_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_op_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_op_failed_error_msg_t *obj)
+of_queue_op_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6623,14 +6623,14 @@ of_queue_op_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_queue_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_stats_reply_t *obj)
+of_queue_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_queue_stats_entry_t list;
-    of_queue_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_stats_reply_xid_get(obj, &val32);
@@ -6654,7 +6654,7 @@ of_queue_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_stats_request_t *obj)
+of_queue_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6685,7 +6685,7 @@ of_queue_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_set_config_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_set_config_t *obj)
+of_set_config_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6710,7 +6710,7 @@ of_set_config_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_set_con
 }
 
 int
-of_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_stats_reply_t *obj)
+of_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6730,7 +6730,7 @@ of_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_stats_
 }
 
 int
-of_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_stats_request_t *obj)
+of_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6750,7 +6750,7 @@ of_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_stat
 }
 
 int
-of_switch_config_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_switch_config_failed_error_msg_t *obj)
+of_switch_config_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6776,7 +6776,7 @@ of_switch_config_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void
 }
 
 int
-of_table_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_table_mod_t *obj)
+of_table_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6801,7 +6801,7 @@ of_table_mod_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_table_mo
 }
 
 int
-of_table_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_table_mod_failed_error_msg_t *obj)
+of_table_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6827,14 +6827,14 @@ of_table_mod_failed_error_msg_OF_VERSION_1_1_show(loci_writer_f writer, void* co
 }
 
 int
-of_table_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj)
+of_table_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_stats_entry_t list;
-    of_table_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_stats_reply_xid_get(obj, &val32);
@@ -6858,7 +6858,7 @@ of_table_stats_reply_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj)
+of_table_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6878,7 +6878,7 @@ of_table_stats_request_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_bsn_t *obj)
+of_action_bsn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6897,7 +6897,7 @@ of_action_bsn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
-of_action_bsn_checksum_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+of_action_bsn_checksum_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6922,7 +6922,7 @@ of_action_bsn_checksum_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_mirror_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
+of_action_bsn_mirror_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6957,7 +6957,7 @@ of_action_bsn_mirror_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj)
+of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -6981,7 +6981,7 @@ of_action_bsn_set_tunnel_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_action_copy_ttl_in_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj)
+of_action_copy_ttl_in_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -6989,7 +6989,7 @@ of_action_copy_ttl_in_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_copy_ttl_out_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_out_t *obj)
+of_action_copy_ttl_out_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -6997,7 +6997,7 @@ of_action_copy_ttl_out_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_mpls_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_dec_mpls_ttl_t *obj)
+of_action_dec_mpls_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7005,7 +7005,7 @@ of_action_dec_mpls_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_nw_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_dec_nw_ttl_t *obj)
+of_action_dec_nw_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7013,7 +7013,7 @@ of_action_dec_nw_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_experimenter_t *obj)
+of_action_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7033,7 +7033,7 @@ of_action_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_group_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_group_t *obj)
+of_action_group_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7047,7 +7047,7 @@ of_action_group_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_actio
 }
 
 int
-of_action_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_header_t *obj)
+of_action_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7055,7 +7055,7 @@ of_action_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_nicira_t *obj)
+of_action_nicira_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7075,7 +7075,7 @@ of_action_nicira_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_dec_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_nicira_dec_ttl_t *obj)
+of_action_nicira_dec_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7095,7 +7095,7 @@ of_action_nicira_dec_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_output_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_output_t *obj)
+of_action_output_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -7115,7 +7115,7 @@ of_action_output_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_pop_mpls_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_pop_mpls_t *obj)
+of_action_pop_mpls_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7129,7 +7129,7 @@ of_action_pop_mpls_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_pop_vlan_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_pop_vlan_t *obj)
+of_action_pop_vlan_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7137,7 +7137,7 @@ of_action_pop_vlan_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_push_mpls_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_push_mpls_t *obj)
+of_action_push_mpls_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7151,7 +7151,7 @@ of_action_push_mpls_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_push_vlan_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_push_vlan_t *obj)
+of_action_push_vlan_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7165,7 +7165,7 @@ of_action_push_vlan_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_dl_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_dl_dst_t *obj)
+of_action_set_dl_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -7179,7 +7179,7 @@ of_action_set_dl_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_dl_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_dl_src_t *obj)
+of_action_set_dl_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -7193,7 +7193,7 @@ of_action_set_dl_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_mpls_label_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_mpls_label_t *obj)
+of_action_set_mpls_label_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7207,7 +7207,7 @@ of_action_set_mpls_label_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_set_mpls_tc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_mpls_tc_t *obj)
+of_action_set_mpls_tc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7221,7 +7221,7 @@ of_action_set_mpls_tc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_set_mpls_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_mpls_ttl_t *obj)
+of_action_set_mpls_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7235,7 +7235,7 @@ of_action_set_mpls_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_set_nw_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_nw_dst_t *obj)
+of_action_set_nw_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7249,7 +7249,7 @@ of_action_set_nw_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_ecn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_nw_ecn_t *obj)
+of_action_set_nw_ecn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7263,7 +7263,7 @@ of_action_set_nw_ecn_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_nw_src_t *obj)
+of_action_set_nw_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7277,7 +7277,7 @@ of_action_set_nw_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_tos_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_nw_tos_t *obj)
+of_action_set_nw_tos_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7291,7 +7291,7 @@ of_action_set_nw_tos_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_nw_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_nw_ttl_t *obj)
+of_action_set_nw_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7305,7 +7305,7 @@ of_action_set_nw_ttl_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_queue_t *obj)
+of_action_set_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7319,7 +7319,7 @@ of_action_set_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_tp_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_tp_dst_t *obj)
+of_action_set_tp_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7333,7 +7333,7 @@ of_action_set_tp_dst_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_tp_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_tp_src_t *obj)
+of_action_set_tp_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7347,7 +7347,7 @@ of_action_set_tp_src_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_vlan_pcp_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_vlan_pcp_t *obj)
+of_action_set_vlan_pcp_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7361,7 +7361,7 @@ of_action_set_vlan_pcp_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_set_vlan_vid_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_action_set_vlan_vid_t *obj)
+of_action_set_vlan_vid_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7375,7 +7375,7 @@ of_action_set_vlan_vid_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj)
+of_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -7406,7 +7406,7 @@ of_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_
 }
 
 int
-of_bsn_vport_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj)
+of_bsn_vport_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7414,7 +7414,7 @@ of_bsn_vport_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_vport_l2gre_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+of_bsn_vport_l2gre_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7488,7 +7488,7 @@ of_bsn_vport_l2gre_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_vport_q_in_q_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
+of_bsn_vport_q_in_q_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7529,7 +7529,7 @@ of_bsn_vport_q_in_q_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bucket_t *obj)
+of_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -7537,7 +7537,7 @@ of_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bucket_t *o
     uint32_t val32;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_bucket_weight_get(obj, &val16);
@@ -7566,7 +7566,7 @@ of_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bucket_t *o
 }
 
 int
-of_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj)
+of_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -7585,7 +7585,7 @@ of_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_buc
 }
 
 int
-of_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj)
+of_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7595,7 +7595,7 @@ of_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_f
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_entry_table_id_get(obj, &val8);
@@ -7659,14 +7659,14 @@ of_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj)
+of_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
     uint32_t val32;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_entry_group_type_get(obj, &val8);
@@ -7690,14 +7690,14 @@ of_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj)
+of_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint64_t val64;
 
     of_list_bucket_counter_t list;
-    of_bucket_counter_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_entry_group_id_get(obj, &val32);
@@ -7731,12 +7731,12 @@ of_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_instruction_apply_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj)
+of_instruction_apply_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -7750,7 +7750,7 @@ of_instruction_apply_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_clear_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
+of_instruction_clear_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7758,7 +7758,7 @@ of_instruction_clear_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj)
+of_instruction_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -7778,7 +7778,7 @@ of_instruction_experimenter_OF_VERSION_1_1_show(loci_writer_f writer, void* cook
 }
 
 int
-of_instruction_goto_table_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_goto_table_t *obj)
+of_instruction_goto_table_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -7792,7 +7792,7 @@ of_instruction_goto_table_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_instruction_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_header_t *obj)
+of_instruction_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -7800,12 +7800,12 @@ of_instruction_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_instruction_write_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_write_actions_t *obj)
+of_instruction_write_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -7819,7 +7819,7 @@ of_instruction_write_actions_OF_VERSION_1_1_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_write_metadata_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_instruction_write_metadata_t *obj)
+of_instruction_write_metadata_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -7838,7 +7838,7 @@ of_instruction_write_metadata_OF_VERSION_1_1_show(loci_writer_f writer, void* co
 }
 
 int
-of_match_v2_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_match_v2_t *obj)
+of_match_v2_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -7959,13 +7959,13 @@ of_match_v2_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_match_v2_
 }
 
 int
-of_packet_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_packet_queue_t *obj)
+of_packet_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_queue_prop_t list;
-    of_queue_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_packet_queue_queue_id_get(obj, &val32);
@@ -7984,7 +7984,7 @@ of_packet_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_packe
 }
 
 int
-of_port_desc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_desc_t *obj)
+of_port_desc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -8051,7 +8051,7 @@ of_port_desc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_des
 }
 
 int
-of_port_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_port_stats_entry_t *obj)
+of_port_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -8126,7 +8126,7 @@ of_port_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_queue_prop_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_prop_header_t *obj)
+of_queue_prop_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8134,7 +8134,7 @@ of_queue_prop_header_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_prop_min_rate_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_prop_min_rate_t *obj)
+of_queue_prop_min_rate_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -8148,7 +8148,7 @@ of_queue_prop_min_rate_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_queue_stats_entry_t *obj)
+of_queue_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -8184,7 +8184,7 @@ of_queue_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_table_stats_entry_t *obj)
+of_table_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -8258,7 +8258,7 @@ of_table_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_action_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_action_t *obj)
+of_list_action_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8266,7 +8266,7 @@ of_list_action_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_a
 }
 
 int
-of_list_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_bsn_interface_t *obj)
+of_list_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8274,7 +8274,7 @@ of_list_bsn_interface_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_list_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_bucket_t *obj)
+of_list_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8282,7 +8282,7 @@ of_list_bucket_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_b
 }
 
 int
-of_list_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_bucket_counter_t *obj)
+of_list_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8290,7 +8290,7 @@ of_list_bucket_counter_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_flow_stats_entry_t *obj)
+of_list_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8298,7 +8298,7 @@ of_list_flow_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_group_desc_stats_entry_t *obj)
+of_list_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8306,7 +8306,7 @@ of_list_group_desc_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* c
 }
 
 int
-of_list_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_group_stats_entry_t *obj)
+of_list_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8314,7 +8314,7 @@ of_list_group_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_instruction_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_instruction_t *obj)
+of_list_instruction_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8322,7 +8322,7 @@ of_list_instruction_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_packet_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_packet_queue_t *obj)
+of_list_packet_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8330,7 +8330,7 @@ of_list_packet_queue_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_port_desc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_port_desc_t *obj)
+of_list_port_desc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8338,7 +8338,7 @@ of_list_port_desc_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_port_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_port_stats_entry_t *obj)
+of_list_port_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8346,7 +8346,7 @@ of_list_port_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_queue_prop_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_queue_prop_t *obj)
+of_list_queue_prop_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8354,7 +8354,7 @@ of_list_queue_prop_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_queue_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_queue_stats_entry_t *obj)
+of_list_queue_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8362,7 +8362,7 @@ of_list_queue_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_table_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_list_table_stats_entry_t *obj)
+of_list_table_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -8370,7 +8370,7 @@ of_list_table_stats_entry_OF_VERSION_1_1_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_aggregate_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_aggregate_stats_reply_t *obj)
+of_aggregate_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8406,7 +8406,7 @@ of_aggregate_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_aggregate_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_aggregate_stats_request_t *obj)
+of_aggregate_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8460,7 +8460,7 @@ of_aggregate_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bad_action_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bad_action_error_msg_t *obj)
+of_bad_action_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8486,7 +8486,7 @@ of_bad_action_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bad_instruction_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bad_instruction_error_msg_t *obj)
+of_bad_instruction_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8512,7 +8512,7 @@ of_bad_instruction_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bad_match_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bad_match_error_msg_t *obj)
+of_bad_match_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8538,7 +8538,7 @@ of_bad_match_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bad_request_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bad_request_error_msg_t *obj)
+of_bad_request_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8564,7 +8564,7 @@ of_bad_request_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_barrier_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_barrier_reply_t *obj)
+of_barrier_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8578,7 +8578,7 @@ of_barrier_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_barr
 }
 
 int
-of_barrier_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_barrier_request_t *obj)
+of_barrier_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8592,7 +8592,7 @@ of_barrier_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ba
 }
 
 int
-of_bsn_bw_clear_data_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj)
+of_bsn_bw_clear_data_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8621,7 +8621,7 @@ of_bsn_bw_clear_data_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_clear_data_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_request_t *obj)
+of_bsn_bw_clear_data_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8645,7 +8645,7 @@ of_bsn_bw_clear_data_request_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_get_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_reply_t *obj)
+of_bsn_bw_enable_get_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8674,7 +8674,7 @@ of_bsn_bw_enable_get_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_get_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_request_t *obj)
+of_bsn_bw_enable_get_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8698,7 +8698,7 @@ of_bsn_bw_enable_get_request_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_set_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_reply_t *obj)
+of_bsn_bw_enable_set_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8732,7 +8732,7 @@ of_bsn_bw_enable_set_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_set_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_request_t *obj)
+of_bsn_bw_enable_set_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8761,13 +8761,13 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_get_interfaces_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_reply_t *obj)
+of_bsn_get_interfaces_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_interface_t list;
-    of_bsn_interface_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_get_interfaces_reply_xid_get(obj, &val32);
@@ -8796,7 +8796,7 @@ of_bsn_get_interfaces_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_get_interfaces_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_request_t *obj)
+of_bsn_get_interfaces_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8820,7 +8820,7 @@ of_bsn_get_interfaces_request_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_get_mirroring_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_reply_t *obj)
+of_bsn_get_mirroring_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8850,7 +8850,7 @@ of_bsn_get_mirroring_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_get_mirroring_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_request_t *obj)
+of_bsn_get_mirroring_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8880,7 +8880,7 @@ of_bsn_get_mirroring_request_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_header_t *obj)
+of_bsn_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8904,7 +8904,7 @@ of_bsn_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_hea
 }
 
 int
-of_bsn_pdu_rx_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj)
+of_bsn_pdu_rx_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8945,7 +8945,7 @@ of_bsn_pdu_rx_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_rx_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_request_t *obj)
+of_bsn_pdu_rx_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -8992,7 +8992,7 @@ of_bsn_pdu_rx_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_rx_timeout_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_timeout_t *obj)
+of_bsn_pdu_rx_timeout_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9028,7 +9028,7 @@ of_bsn_pdu_rx_timeout_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_tx_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_reply_t *obj)
+of_bsn_pdu_tx_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9069,7 +9069,7 @@ of_bsn_pdu_tx_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_tx_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_request_t *obj)
+of_bsn_pdu_tx_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9116,7 +9116,7 @@ of_bsn_pdu_tx_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_set_mirroring_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_set_mirroring_t *obj)
+of_bsn_set_mirroring_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9146,7 +9146,7 @@ of_bsn_set_mirroring_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_set_pktin_suppression_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_reply_t *obj)
+of_bsn_set_pktin_suppression_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9175,7 +9175,7 @@ of_bsn_set_pktin_suppression_reply_OF_VERSION_1_2_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_set_pktin_suppression_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_request_t *obj)
+of_bsn_set_pktin_suppression_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9227,7 +9227,7 @@ of_bsn_set_pktin_suppression_request_OF_VERSION_1_2_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_stats_reply_t *obj)
+of_bsn_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9257,7 +9257,7 @@ of_bsn_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_stats_request_t *obj)
+of_bsn_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9287,7 +9287,7 @@ of_bsn_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_virtual_port_create_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_reply_t *obj)
+of_bsn_virtual_port_create_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9321,7 +9321,7 @@ of_bsn_virtual_port_create_reply_OF_VERSION_1_2_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_create_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_request_t *obj)
+of_bsn_virtual_port_create_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9350,7 +9350,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_2_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_reply_t *obj)
+of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9379,7 +9379,7 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_2_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_remove_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_request_t *obj)
+of_bsn_virtual_port_remove_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9408,7 +9408,7 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_2_show(loci_writer_f writer, voi
 }
 
 int
-of_desc_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj)
+of_desc_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9455,7 +9455,7 @@ of_desc_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_d
 }
 
 int
-of_desc_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_desc_stats_request_t *obj)
+of_desc_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9475,7 +9475,7 @@ of_desc_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_echo_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_echo_reply_t *obj)
+of_echo_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9495,7 +9495,7 @@ of_echo_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_echo_re
 }
 
 int
-of_echo_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_echo_request_t *obj)
+of_echo_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9515,7 +9515,7 @@ of_echo_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_echo_
 }
 
 int
-of_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_error_msg_t *obj)
+of_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9529,7 +9529,7 @@ of_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_error_ms
 }
 
 int
-of_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_experimenter_t *obj)
+of_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9559,7 +9559,7 @@ of_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_exper
 }
 
 int
-of_experimenter_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_experimenter_error_msg_t *obj)
+of_experimenter_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9590,7 +9590,7 @@ of_experimenter_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_experimenter_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_experimenter_stats_reply_t *obj)
+of_experimenter_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9626,7 +9626,7 @@ of_experimenter_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cook
 }
 
 int
-of_experimenter_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_experimenter_stats_request_t *obj)
+of_experimenter_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9662,7 +9662,7 @@ of_experimenter_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_features_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_features_reply_t *obj)
+of_features_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9670,7 +9670,7 @@ of_features_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_fea
     uint8_t val8;
 
     of_list_port_desc_t list;
-    of_port_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_features_reply_xid_get(obj, &val32);
@@ -9714,7 +9714,7 @@ of_features_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_fea
 }
 
 int
-of_features_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_features_request_t *obj)
+of_features_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9728,7 +9728,7 @@ of_features_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_add_t *obj)
+of_flow_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9739,7 +9739,7 @@ of_flow_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_add_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_add_xid_get(obj, &val32);
@@ -9813,7 +9813,7 @@ of_flow_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_add_
 }
 
 int
-of_flow_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_delete_t *obj)
+of_flow_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9824,7 +9824,7 @@ of_flow_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_d
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_xid_get(obj, &val32);
@@ -9898,7 +9898,7 @@ of_flow_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_d
 }
 
 int
-of_flow_delete_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_delete_strict_t *obj)
+of_flow_delete_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9909,7 +9909,7 @@ of_flow_delete_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_strict_xid_get(obj, &val32);
@@ -9983,7 +9983,7 @@ of_flow_delete_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_mod_t *obj)
+of_flow_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -9994,7 +9994,7 @@ of_flow_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_mod_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_mod_xid_get(obj, &val32);
@@ -10068,7 +10068,7 @@ of_flow_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_mod_
 }
 
 int
-of_flow_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_mod_failed_error_msg_t *obj)
+of_flow_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10094,7 +10094,7 @@ of_flow_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_flow_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_modify_t *obj)
+of_flow_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10105,7 +10105,7 @@ of_flow_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_m
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_xid_get(obj, &val32);
@@ -10179,7 +10179,7 @@ of_flow_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_m
 }
 
 int
-of_flow_modify_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_modify_strict_t *obj)
+of_flow_modify_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10190,7 +10190,7 @@ of_flow_modify_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_strict_xid_get(obj, &val32);
@@ -10264,7 +10264,7 @@ of_flow_modify_strict_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_removed_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_removed_t *obj)
+of_flow_removed_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10337,14 +10337,14 @@ of_flow_removed_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_
 }
 
 int
-of_flow_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_stats_reply_t *obj)
+of_flow_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_flow_stats_entry_t list;
-    of_flow_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_reply_xid_get(obj, &val32);
@@ -10368,7 +10368,7 @@ of_flow_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_stats_request_t *obj)
+of_flow_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10422,7 +10422,7 @@ of_flow_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_get_config_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_get_config_reply_t *obj)
+of_get_config_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10447,7 +10447,7 @@ of_get_config_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_g
 }
 
 int
-of_get_config_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_get_config_request_t *obj)
+of_get_config_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10461,14 +10461,14 @@ of_get_config_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_group_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+of_group_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_add_xid_get(obj, &val32);
@@ -10497,14 +10497,14 @@ of_group_add_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_ad
 }
 
 int
-of_group_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+of_group_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_delete_xid_get(obj, &val32);
@@ -10533,14 +10533,14 @@ of_group_delete_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_desc_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
+of_group_desc_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_desc_stats_entry_t list;
-    of_group_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_reply_xid_get(obj, &val32);
@@ -10564,7 +10564,7 @@ of_group_desc_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_desc_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_desc_stats_request_t *obj)
+of_group_desc_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10584,7 +10584,7 @@ of_group_desc_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cook
 }
 
 int
-of_group_features_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_features_stats_reply_t *obj)
+of_group_features_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10654,7 +10654,7 @@ of_group_features_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_features_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_features_stats_request_t *obj)
+of_group_features_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10674,14 +10674,14 @@ of_group_features_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* 
 }
 
 int
-of_group_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_mod_t *obj)
+of_group_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_mod_xid_get(obj, &val32);
@@ -10710,7 +10710,7 @@ of_group_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_mo
 }
 
 int
-of_group_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_mod_failed_error_msg_t *obj)
+of_group_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10736,14 +10736,14 @@ of_group_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+of_group_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_modify_xid_get(obj, &val32);
@@ -10772,14 +10772,14 @@ of_group_modify_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj)
+of_group_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_stats_entry_t list;
-    of_group_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_reply_xid_get(obj, &val32);
@@ -10803,7 +10803,7 @@ of_group_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_group_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj)
+of_group_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10828,7 +10828,7 @@ of_group_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10842,7 +10842,7 @@ of_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_header_t *o
 }
 
 int
-of_hello_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
+of_hello_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10856,7 +10856,7 @@ of_hello_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_hello_t *obj
 }
 
 int
-of_hello_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj)
+of_hello_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10882,7 +10882,7 @@ of_hello_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_nicira_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj)
+of_nicira_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10906,7 +10906,7 @@ of_nicira_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_nici
 }
 
 int
-of_packet_in_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_packet_in_t *obj)
+of_packet_in_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -10954,14 +10954,14 @@ of_packet_in_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_packet_i
 }
 
 int
-of_packet_out_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_packet_out_t *obj)
+of_packet_out_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
     of_octets_t octets;
 
@@ -10996,7 +10996,7 @@ of_packet_out_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_packet_
 }
 
 int
-of_port_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_mod_t *obj)
+of_port_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11037,7 +11037,7 @@ of_port_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_mod_
 }
 
 int
-of_port_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_mod_failed_error_msg_t *obj)
+of_port_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11063,14 +11063,14 @@ of_port_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_port_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_stats_reply_t *obj)
+of_port_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_stats_entry_t list;
-    of_port_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_stats_reply_xid_get(obj, &val32);
@@ -11094,7 +11094,7 @@ of_port_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_port_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_stats_request_t *obj)
+of_port_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11120,7 +11120,7 @@ of_port_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_port_status_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_status_t *obj)
+of_port_status_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11145,14 +11145,14 @@ of_port_status_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_s
 }
 
 int
-of_queue_get_config_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_get_config_reply_t *obj)
+of_queue_get_config_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_packet_queue_t list;
-    of_packet_queue_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_get_config_reply_xid_get(obj, &val32);
@@ -11176,7 +11176,7 @@ of_queue_get_config_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_queue_get_config_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_get_config_request_t *obj)
+of_queue_get_config_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11196,7 +11196,7 @@ of_queue_get_config_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_op_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_op_failed_error_msg_t *obj)
+of_queue_op_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11222,14 +11222,14 @@ of_queue_op_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_queue_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_stats_reply_t *obj)
+of_queue_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_queue_stats_entry_t list;
-    of_queue_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_stats_reply_xid_get(obj, &val32);
@@ -11253,7 +11253,7 @@ of_queue_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_stats_request_t *obj)
+of_queue_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11284,7 +11284,7 @@ of_queue_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_role_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_role_reply_t *obj)
+of_role_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11309,7 +11309,7 @@ of_role_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_role_re
 }
 
 int
-of_role_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_role_request_t *obj)
+of_role_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11334,7 +11334,7 @@ of_role_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_role_
 }
 
 int
-of_role_request_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_role_request_failed_error_msg_t *obj)
+of_role_request_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11360,7 +11360,7 @@ of_role_request_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void*
 }
 
 int
-of_set_config_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_set_config_t *obj)
+of_set_config_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11385,7 +11385,7 @@ of_set_config_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_set_con
 }
 
 int
-of_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_stats_reply_t *obj)
+of_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11405,7 +11405,7 @@ of_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_stats_
 }
 
 int
-of_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_stats_request_t *obj)
+of_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11425,7 +11425,7 @@ of_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_stat
 }
 
 int
-of_switch_config_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_switch_config_failed_error_msg_t *obj)
+of_switch_config_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11451,7 +11451,7 @@ of_switch_config_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void
 }
 
 int
-of_table_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_table_mod_t *obj)
+of_table_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11476,7 +11476,7 @@ of_table_mod_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_table_mo
 }
 
 int
-of_table_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_table_mod_failed_error_msg_t *obj)
+of_table_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11502,14 +11502,14 @@ of_table_mod_failed_error_msg_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_table_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj)
+of_table_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_stats_entry_t list;
-    of_table_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_stats_reply_xid_get(obj, &val32);
@@ -11533,7 +11533,7 @@ of_table_stats_reply_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj)
+of_table_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11553,7 +11553,7 @@ of_table_stats_request_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_bsn_t *obj)
+of_action_bsn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11572,7 +11572,7 @@ of_action_bsn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
-of_action_bsn_checksum_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+of_action_bsn_checksum_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11597,7 +11597,7 @@ of_action_bsn_checksum_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_mirror_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
+of_action_bsn_mirror_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11632,7 +11632,7 @@ of_action_bsn_mirror_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj)
+of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11656,7 +11656,7 @@ of_action_bsn_set_tunnel_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_action_copy_ttl_in_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj)
+of_action_copy_ttl_in_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11664,7 +11664,7 @@ of_action_copy_ttl_in_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_copy_ttl_out_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_out_t *obj)
+of_action_copy_ttl_out_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11672,7 +11672,7 @@ of_action_copy_ttl_out_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_mpls_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_dec_mpls_ttl_t *obj)
+of_action_dec_mpls_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11680,7 +11680,7 @@ of_action_dec_mpls_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_dec_nw_ttl_t *obj)
+of_action_dec_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11688,7 +11688,7 @@ of_action_dec_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_experimenter_t *obj)
+of_action_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11708,7 +11708,7 @@ of_action_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_group_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_group_t *obj)
+of_action_group_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11722,7 +11722,7 @@ of_action_group_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_actio
 }
 
 int
-of_action_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_header_t *obj)
+of_action_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11730,7 +11730,7 @@ of_action_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_nicira_t *obj)
+of_action_nicira_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11750,7 +11750,7 @@ of_action_nicira_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_dec_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_nicira_dec_ttl_t *obj)
+of_action_nicira_dec_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11770,7 +11770,7 @@ of_action_nicira_dec_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_output_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_output_t *obj)
+of_action_output_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -11790,7 +11790,7 @@ of_action_output_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_pop_mpls_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_pop_mpls_t *obj)
+of_action_pop_mpls_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -11804,7 +11804,7 @@ of_action_pop_mpls_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_pop_vlan_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_pop_vlan_t *obj)
+of_action_pop_vlan_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11812,7 +11812,7 @@ of_action_pop_vlan_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_push_mpls_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_push_mpls_t *obj)
+of_action_push_mpls_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -11826,7 +11826,7 @@ of_action_push_mpls_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_push_vlan_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_push_vlan_t *obj)
+of_action_push_vlan_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -11840,7 +11840,7 @@ of_action_push_vlan_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_field_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
+of_action_set_field_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11853,7 +11853,7 @@ of_action_set_field_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_mpls_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_set_mpls_ttl_t *obj)
+of_action_set_mpls_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -11867,7 +11867,7 @@ of_action_set_mpls_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_set_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_set_nw_ttl_t *obj)
+of_action_set_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -11881,7 +11881,7 @@ of_action_set_nw_ttl_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_action_set_queue_t *obj)
+of_action_set_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -11895,7 +11895,7 @@ of_action_set_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj)
+of_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -11926,7 +11926,7 @@ of_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_
 }
 
 int
-of_bsn_vport_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj)
+of_bsn_vport_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -11934,7 +11934,7 @@ of_bsn_vport_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_vport_l2gre_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+of_bsn_vport_l2gre_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12008,7 +12008,7 @@ of_bsn_vport_l2gre_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_vport_q_in_q_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
+of_bsn_vport_q_in_q_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12049,7 +12049,7 @@ of_bsn_vport_q_in_q_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bucket_t *obj)
+of_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -12057,7 +12057,7 @@ of_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bucket_t *o
     uint32_t val32;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_bucket_weight_get(obj, &val16);
@@ -12086,7 +12086,7 @@ of_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bucket_t *o
 }
 
 int
-of_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj)
+of_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -12105,7 +12105,7 @@ of_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_buc
 }
 
 int
-of_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj)
+of_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -12115,7 +12115,7 @@ of_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_f
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_entry_table_id_get(obj, &val8);
@@ -12179,14 +12179,14 @@ of_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj)
+of_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
     uint32_t val32;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_entry_group_type_get(obj, &val8);
@@ -12210,14 +12210,14 @@ of_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj)
+of_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint64_t val64;
 
     of_list_bucket_counter_t list;
-    of_bucket_counter_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_entry_group_id_get(obj, &val32);
@@ -12251,12 +12251,12 @@ of_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_instruction_apply_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj)
+of_instruction_apply_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -12270,7 +12270,7 @@ of_instruction_apply_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_clear_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
+of_instruction_clear_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -12278,7 +12278,7 @@ of_instruction_clear_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj)
+of_instruction_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12298,7 +12298,7 @@ of_instruction_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cook
 }
 
 int
-of_instruction_goto_table_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_goto_table_t *obj)
+of_instruction_goto_table_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -12312,7 +12312,7 @@ of_instruction_goto_table_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_instruction_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_header_t *obj)
+of_instruction_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -12320,12 +12320,12 @@ of_instruction_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_instruction_write_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_write_actions_t *obj)
+of_instruction_write_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -12339,7 +12339,7 @@ of_instruction_write_actions_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_write_metadata_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_instruction_write_metadata_t *obj)
+of_instruction_write_metadata_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -12358,12 +12358,12 @@ of_instruction_write_metadata_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_match_v3_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_match_v3_t *obj)
+of_match_v3_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_oxm_t list;
-    of_oxm_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_oxm_t={ ");
@@ -12377,7 +12377,7 @@ of_match_v3_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_match_v3_
 }
 
 int
-of_oxm_arp_op_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_op_t *obj)
+of_oxm_arp_op_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -12391,7 +12391,7 @@ of_oxm_arp_op_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp
 }
 
 int
-of_oxm_arp_op_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_op_masked_t *obj)
+of_oxm_arp_op_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -12410,7 +12410,7 @@ of_oxm_arp_op_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_arp_sha_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_sha_t *obj)
+of_oxm_arp_sha_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -12424,7 +12424,7 @@ of_oxm_arp_sha_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_sha_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_sha_masked_t *obj)
+of_oxm_arp_sha_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -12443,7 +12443,7 @@ of_oxm_arp_sha_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_spa_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_spa_t *obj)
+of_oxm_arp_spa_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12457,7 +12457,7 @@ of_oxm_arp_spa_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_spa_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_spa_masked_t *obj)
+of_oxm_arp_spa_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12476,7 +12476,7 @@ of_oxm_arp_spa_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_tha_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_tha_t *obj)
+of_oxm_arp_tha_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -12490,7 +12490,7 @@ of_oxm_arp_tha_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_tha_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_tha_masked_t *obj)
+of_oxm_arp_tha_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -12509,7 +12509,7 @@ of_oxm_arp_tha_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_tpa_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_t *obj)
+of_oxm_arp_tpa_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12523,7 +12523,7 @@ of_oxm_arp_tpa_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_tpa_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_masked_t *obj)
+of_oxm_arp_tpa_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12542,7 +12542,7 @@ of_oxm_arp_tpa_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_t *obj)
+of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12556,7 +12556,7 @@ of_oxm_bsn_egr_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_masked_t *obj)
+of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12575,7 +12575,7 @@ of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, vo
 }
 
 int
-of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_t *obj)
+of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -12589,7 +12589,7 @@ of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_show(loci_writer_f writer, void* co
 }
 
 int
-of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_masked_t *obj)
+of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -12608,7 +12608,7 @@ of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_2_show(loci_writer_f writer, v
 }
 
 int
-of_oxm_bsn_in_ports_128_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_in_ports_128_t *obj)
+of_oxm_bsn_in_ports_128_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_bitmap_128_t bitmap_128;
@@ -12622,7 +12622,7 @@ of_oxm_bsn_in_ports_128_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_in_ports_128_masked_t *obj)
+of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_bitmap_128_t bitmap_128;
@@ -12641,7 +12641,7 @@ of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* c
 }
 
 int
-of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_dst_class_id_t *obj)
+of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12655,7 +12655,7 @@ of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_dst_class_id_masked_t *obj)
+of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12674,7 +12674,7 @@ of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void
 }
 
 int
-of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_interface_class_id_t *obj)
+of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12688,7 +12688,7 @@ of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void*
 }
 
 int
-of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_interface_class_id_masked_t *obj)
+of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12707,7 +12707,7 @@ of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer
 }
 
 int
-of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_src_class_id_t *obj)
+of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12721,7 +12721,7 @@ of_oxm_bsn_l3_src_class_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_src_class_id_masked_t *obj)
+of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12740,7 +12740,7 @@ of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void
 }
 
 int
-of_oxm_bsn_lag_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_t *obj)
+of_oxm_bsn_lag_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12754,7 +12754,7 @@ of_oxm_bsn_lag_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm
 }
 
 int
-of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_masked_t *obj)
+of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12773,7 +12773,7 @@ of_oxm_bsn_lag_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_oxm_bsn_tcp_flags_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_t *obj)
+of_oxm_bsn_tcp_flags_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -12787,7 +12787,7 @@ of_oxm_bsn_tcp_flags_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_masked_t *obj)
+of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -12806,7 +12806,7 @@ of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cook
 }
 
 int
-of_oxm_bsn_udf0_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj)
+of_oxm_bsn_udf0_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12820,7 +12820,7 @@ of_oxm_bsn_udf0_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf0_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_masked_t *obj)
+of_oxm_bsn_udf0_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12839,7 +12839,7 @@ of_oxm_bsn_udf0_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf1_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_t *obj)
+of_oxm_bsn_udf1_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12853,7 +12853,7 @@ of_oxm_bsn_udf1_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf1_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_masked_t *obj)
+of_oxm_bsn_udf1_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12872,7 +12872,7 @@ of_oxm_bsn_udf1_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf2_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_t *obj)
+of_oxm_bsn_udf2_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12886,7 +12886,7 @@ of_oxm_bsn_udf2_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf2_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_masked_t *obj)
+of_oxm_bsn_udf2_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12905,7 +12905,7 @@ of_oxm_bsn_udf2_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf3_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_t *obj)
+of_oxm_bsn_udf3_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12919,7 +12919,7 @@ of_oxm_bsn_udf3_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf3_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_masked_t *obj)
+of_oxm_bsn_udf3_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12938,7 +12938,7 @@ of_oxm_bsn_udf3_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf4_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_t *obj)
+of_oxm_bsn_udf4_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12952,7 +12952,7 @@ of_oxm_bsn_udf4_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf4_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_masked_t *obj)
+of_oxm_bsn_udf4_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12971,7 +12971,7 @@ of_oxm_bsn_udf4_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf5_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_t *obj)
+of_oxm_bsn_udf5_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -12985,7 +12985,7 @@ of_oxm_bsn_udf5_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf5_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_masked_t *obj)
+of_oxm_bsn_udf5_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13004,7 +13004,7 @@ of_oxm_bsn_udf5_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf6_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_t *obj)
+of_oxm_bsn_udf6_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13018,7 +13018,7 @@ of_oxm_bsn_udf6_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf6_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_masked_t *obj)
+of_oxm_bsn_udf6_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13037,7 +13037,7 @@ of_oxm_bsn_udf6_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf7_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_t *obj)
+of_oxm_bsn_udf7_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13051,7 +13051,7 @@ of_oxm_bsn_udf7_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf7_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_masked_t *obj)
+of_oxm_bsn_udf7_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13070,7 +13070,7 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
+of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13084,7 +13084,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_2_show(loci_writer_f writer, vo
 }
 
 int
-of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
+of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13103,7 +13103,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_2_show(loci_writer_f wri
 }
 
 int
-of_oxm_bsn_vrf_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_t *obj)
+of_oxm_bsn_vrf_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13117,7 +13117,7 @@ of_oxm_bsn_vrf_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bs
 }
 
 int
-of_oxm_bsn_vrf_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_masked_t *obj)
+of_oxm_bsn_vrf_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13136,7 +13136,7 @@ of_oxm_bsn_vrf_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_eth_dst_t *obj)
+of_oxm_eth_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13150,7 +13150,7 @@ of_oxm_eth_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_et
 }
 
 int
-of_oxm_eth_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_eth_dst_masked_t *obj)
+of_oxm_eth_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13169,7 +13169,7 @@ of_oxm_eth_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_eth_src_t *obj)
+of_oxm_eth_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13183,7 +13183,7 @@ of_oxm_eth_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_et
 }
 
 int
-of_oxm_eth_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_eth_src_masked_t *obj)
+of_oxm_eth_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13202,7 +13202,7 @@ of_oxm_eth_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_eth_type_t *obj)
+of_oxm_eth_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13216,7 +13216,7 @@ of_oxm_eth_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_e
 }
 
 int
-of_oxm_eth_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_eth_type_masked_t *obj)
+of_oxm_eth_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13235,7 +13235,7 @@ of_oxm_eth_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_header_t *obj)
+of_oxm_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -13243,7 +13243,7 @@ of_oxm_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_hea
 }
 
 int
-of_oxm_icmpv4_code_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_code_t *obj)
+of_oxm_icmpv4_code_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13257,7 +13257,7 @@ of_oxm_icmpv4_code_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv4_code_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_code_masked_t *obj)
+of_oxm_icmpv4_code_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13276,7 +13276,7 @@ of_oxm_icmpv4_code_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv4_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_type_t *obj)
+of_oxm_icmpv4_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13290,7 +13290,7 @@ of_oxm_icmpv4_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv4_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_type_masked_t *obj)
+of_oxm_icmpv4_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13309,7 +13309,7 @@ of_oxm_icmpv4_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv6_code_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_code_t *obj)
+of_oxm_icmpv6_code_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13323,7 +13323,7 @@ of_oxm_icmpv6_code_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv6_code_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_code_masked_t *obj)
+of_oxm_icmpv6_code_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13342,7 +13342,7 @@ of_oxm_icmpv6_code_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv6_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_type_t *obj)
+of_oxm_icmpv6_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13356,7 +13356,7 @@ of_oxm_icmpv6_type_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv6_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_type_masked_t *obj)
+of_oxm_icmpv6_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13375,7 +13375,7 @@ of_oxm_icmpv6_type_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_in_phy_port_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_in_phy_port_t *obj)
+of_oxm_in_phy_port_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -13389,7 +13389,7 @@ of_oxm_in_phy_port_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_in_phy_port_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_in_phy_port_masked_t *obj)
+of_oxm_in_phy_port_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -13408,7 +13408,7 @@ of_oxm_in_phy_port_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_in_port_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_in_port_t *obj)
+of_oxm_in_port_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -13422,7 +13422,7 @@ of_oxm_in_port_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_in
 }
 
 int
-of_oxm_in_port_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_in_port_masked_t *obj)
+of_oxm_in_port_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -13441,7 +13441,7 @@ of_oxm_in_port_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ip_dscp_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_dscp_t *obj)
+of_oxm_ip_dscp_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13455,7 +13455,7 @@ of_oxm_ip_dscp_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip
 }
 
 int
-of_oxm_ip_dscp_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_dscp_masked_t *obj)
+of_oxm_ip_dscp_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13474,7 +13474,7 @@ of_oxm_ip_dscp_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ip_ecn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_ecn_t *obj)
+of_oxm_ip_ecn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13488,7 +13488,7 @@ of_oxm_ip_ecn_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_
 }
 
 int
-of_oxm_ip_ecn_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_ecn_masked_t *obj)
+of_oxm_ip_ecn_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13507,7 +13507,7 @@ of_oxm_ip_ecn_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_ip_proto_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_proto_t *obj)
+of_oxm_ip_proto_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13521,7 +13521,7 @@ of_oxm_ip_proto_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ip_proto_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ip_proto_masked_t *obj)
+of_oxm_ip_proto_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13540,7 +13540,7 @@ of_oxm_ip_proto_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv4_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_dst_t *obj)
+of_oxm_ipv4_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -13554,7 +13554,7 @@ of_oxm_ipv4_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv4_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_dst_masked_t *obj)
+of_oxm_ipv4_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -13573,7 +13573,7 @@ of_oxm_ipv4_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv4_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_src_t *obj)
+of_oxm_ipv4_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -13587,7 +13587,7 @@ of_oxm_ipv4_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv4_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_src_masked_t *obj)
+of_oxm_ipv4_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -13606,7 +13606,7 @@ of_oxm_ipv4_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv6_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_dst_t *obj)
+of_oxm_ipv6_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -13620,7 +13620,7 @@ of_oxm_ipv6_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv6_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_dst_masked_t *obj)
+of_oxm_ipv6_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -13639,7 +13639,7 @@ of_oxm_ipv6_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv6_flabel_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_flabel_t *obj)
+of_oxm_ipv6_flabel_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13653,7 +13653,7 @@ of_oxm_ipv6_flabel_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_flabel_masked_t *obj)
+of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13672,7 +13672,7 @@ of_oxm_ipv6_flabel_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_nd_sll_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_sll_t *obj)
+of_oxm_ipv6_nd_sll_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13686,7 +13686,7 @@ of_oxm_ipv6_nd_sll_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_sll_masked_t *obj)
+of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13705,7 +13705,7 @@ of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_nd_target_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_target_t *obj)
+of_oxm_ipv6_nd_target_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -13719,7 +13719,7 @@ of_oxm_ipv6_nd_target_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_target_masked_t *obj)
+of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -13738,7 +13738,7 @@ of_oxm_ipv6_nd_target_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* coo
 }
 
 int
-of_oxm_ipv6_nd_tll_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_tll_t *obj)
+of_oxm_ipv6_nd_tll_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13752,7 +13752,7 @@ of_oxm_ipv6_nd_tll_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_tll_masked_t *obj)
+of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -13771,7 +13771,7 @@ of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_t *obj)
+of_oxm_ipv6_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -13785,7 +13785,7 @@ of_oxm_ipv6_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv6_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_masked_t *obj)
+of_oxm_ipv6_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -13804,7 +13804,7 @@ of_oxm_ipv6_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_metadata_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_metadata_t *obj)
+of_oxm_metadata_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -13818,7 +13818,7 @@ of_oxm_metadata_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_m
 }
 
 int
-of_oxm_metadata_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_metadata_masked_t *obj)
+of_oxm_metadata_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -13837,7 +13837,7 @@ of_oxm_metadata_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_mpls_label_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_mpls_label_t *obj)
+of_oxm_mpls_label_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13851,7 +13851,7 @@ of_oxm_mpls_label_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm
 }
 
 int
-of_oxm_mpls_label_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_mpls_label_masked_t *obj)
+of_oxm_mpls_label_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -13870,7 +13870,7 @@ of_oxm_mpls_label_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_oxm_mpls_tc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_t *obj)
+of_oxm_mpls_tc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13884,7 +13884,7 @@ of_oxm_mpls_tc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_mp
 }
 
 int
-of_oxm_mpls_tc_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_masked_t *obj)
+of_oxm_mpls_tc_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -13903,7 +13903,7 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_sctp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_sctp_dst_t *obj)
+of_oxm_sctp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13917,7 +13917,7 @@ of_oxm_sctp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_s
 }
 
 int
-of_oxm_sctp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_sctp_dst_masked_t *obj)
+of_oxm_sctp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13936,7 +13936,7 @@ of_oxm_sctp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_sctp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_sctp_src_t *obj)
+of_oxm_sctp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13950,7 +13950,7 @@ of_oxm_sctp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_s
 }
 
 int
-of_oxm_sctp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_sctp_src_masked_t *obj)
+of_oxm_sctp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13969,7 +13969,7 @@ of_oxm_sctp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_tcp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_t *obj)
+of_oxm_tcp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -13983,7 +13983,7 @@ of_oxm_tcp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_tc
 }
 
 int
-of_oxm_tcp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_masked_t *obj)
+of_oxm_tcp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14002,7 +14002,7 @@ of_oxm_tcp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_tcp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_tcp_src_t *obj)
+of_oxm_tcp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14016,7 +14016,7 @@ of_oxm_tcp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_tc
 }
 
 int
-of_oxm_tcp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_tcp_src_masked_t *obj)
+of_oxm_tcp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14035,7 +14035,7 @@ of_oxm_tcp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_udp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_udp_dst_t *obj)
+of_oxm_udp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14049,7 +14049,7 @@ of_oxm_udp_dst_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ud
 }
 
 int
-of_oxm_udp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_udp_dst_masked_t *obj)
+of_oxm_udp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14068,7 +14068,7 @@ of_oxm_udp_dst_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_udp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_udp_src_t *obj)
+of_oxm_udp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14082,7 +14082,7 @@ of_oxm_udp_src_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_ud
 }
 
 int
-of_oxm_udp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_udp_src_masked_t *obj)
+of_oxm_udp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14101,7 +14101,7 @@ of_oxm_udp_src_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_vlan_pcp_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_vlan_pcp_t *obj)
+of_oxm_vlan_pcp_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -14115,7 +14115,7 @@ of_oxm_vlan_pcp_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_v
 }
 
 int
-of_oxm_vlan_pcp_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_vlan_pcp_masked_t *obj)
+of_oxm_vlan_pcp_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -14134,7 +14134,7 @@ of_oxm_vlan_pcp_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_vlan_vid_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_vlan_vid_t *obj)
+of_oxm_vlan_vid_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14148,7 +14148,7 @@ of_oxm_vlan_vid_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_v
 }
 
 int
-of_oxm_vlan_vid_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_oxm_vlan_vid_masked_t *obj)
+of_oxm_vlan_vid_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14167,14 +14167,14 @@ of_oxm_vlan_vid_masked_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_packet_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_packet_queue_t *obj)
+of_packet_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_queue_prop_t list;
-    of_queue_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_packet_queue_queue_id_get(obj, &val32);
@@ -14198,7 +14198,7 @@ of_packet_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_packe
 }
 
 int
-of_port_desc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_desc_t *obj)
+of_port_desc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -14265,7 +14265,7 @@ of_port_desc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_des
 }
 
 int
-of_port_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_port_stats_entry_t *obj)
+of_port_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -14340,7 +14340,7 @@ of_port_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_queue_prop_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_prop_experimenter_t *obj)
+of_queue_prop_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14360,7 +14360,7 @@ of_queue_prop_experimenter_OF_VERSION_1_2_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_queue_prop_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_prop_header_t *obj)
+of_queue_prop_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14368,7 +14368,7 @@ of_queue_prop_header_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_prop_max_rate_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_prop_max_rate_t *obj)
+of_queue_prop_max_rate_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14382,7 +14382,7 @@ of_queue_prop_max_rate_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_prop_min_rate_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_prop_min_rate_t *obj)
+of_queue_prop_min_rate_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -14396,7 +14396,7 @@ of_queue_prop_min_rate_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_queue_stats_entry_t *obj)
+of_queue_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -14432,7 +14432,7 @@ of_queue_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_table_stats_entry_t *obj)
+of_table_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -14526,7 +14526,7 @@ of_table_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_action_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_action_t *obj)
+of_list_action_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14534,7 +14534,7 @@ of_list_action_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_a
 }
 
 int
-of_list_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_bsn_interface_t *obj)
+of_list_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14542,7 +14542,7 @@ of_list_bsn_interface_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_list_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_bucket_t *obj)
+of_list_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14550,7 +14550,7 @@ of_list_bucket_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_b
 }
 
 int
-of_list_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_bucket_counter_t *obj)
+of_list_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14558,7 +14558,7 @@ of_list_bucket_counter_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_flow_stats_entry_t *obj)
+of_list_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14566,7 +14566,7 @@ of_list_flow_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_group_desc_stats_entry_t *obj)
+of_list_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14574,7 +14574,7 @@ of_list_group_desc_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* c
 }
 
 int
-of_list_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_group_stats_entry_t *obj)
+of_list_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14582,7 +14582,7 @@ of_list_group_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_instruction_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_instruction_t *obj)
+of_list_instruction_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14590,7 +14590,7 @@ of_list_instruction_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_oxm_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_oxm_t *obj)
+of_list_oxm_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14598,7 +14598,7 @@ of_list_oxm_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_oxm_
 }
 
 int
-of_list_packet_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_packet_queue_t *obj)
+of_list_packet_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14606,7 +14606,7 @@ of_list_packet_queue_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_port_desc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_port_desc_t *obj)
+of_list_port_desc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14614,7 +14614,7 @@ of_list_port_desc_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_port_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_port_stats_entry_t *obj)
+of_list_port_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14622,7 +14622,7 @@ of_list_port_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_queue_prop_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_queue_prop_t *obj)
+of_list_queue_prop_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14630,7 +14630,7 @@ of_list_queue_prop_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_queue_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_queue_stats_entry_t *obj)
+of_list_queue_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14638,7 +14638,7 @@ of_list_queue_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_table_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_list_table_stats_entry_t *obj)
+of_list_table_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -14646,7 +14646,7 @@ of_list_table_stats_entry_OF_VERSION_1_2_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_aggregate_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_aggregate_stats_reply_t *obj)
+of_aggregate_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14682,7 +14682,7 @@ of_aggregate_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_aggregate_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_aggregate_stats_request_t *obj)
+of_aggregate_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14736,7 +14736,7 @@ of_aggregate_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_async_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_async_get_reply_t *obj)
+of_async_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14780,7 +14780,7 @@ of_async_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_as
 }
 
 int
-of_async_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_async_get_request_t *obj)
+of_async_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14824,7 +14824,7 @@ of_async_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_async_set_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_async_set_t *obj)
+of_async_set_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14868,7 +14868,7 @@ of_async_set_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_async_se
 }
 
 int
-of_bad_action_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bad_action_error_msg_t *obj)
+of_bad_action_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14894,7 +14894,7 @@ of_bad_action_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bad_instruction_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bad_instruction_error_msg_t *obj)
+of_bad_instruction_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14920,7 +14920,7 @@ of_bad_instruction_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bad_match_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bad_match_error_msg_t *obj)
+of_bad_match_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14946,7 +14946,7 @@ of_bad_match_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bad_request_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bad_request_error_msg_t *obj)
+of_bad_request_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14972,7 +14972,7 @@ of_bad_request_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_barrier_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_barrier_reply_t *obj)
+of_barrier_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -14986,7 +14986,7 @@ of_barrier_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_barr
 }
 
 int
-of_barrier_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_barrier_request_t *obj)
+of_barrier_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15000,7 +15000,7 @@ of_barrier_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ba
 }
 
 int
-of_bsn_arp_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_arp_idle_t *obj)
+of_bsn_arp_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15036,7 +15036,7 @@ of_bsn_arp_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_a
 }
 
 int
-of_bsn_bw_clear_data_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj)
+of_bsn_bw_clear_data_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15065,7 +15065,7 @@ of_bsn_bw_clear_data_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_clear_data_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_request_t *obj)
+of_bsn_bw_clear_data_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15089,7 +15089,7 @@ of_bsn_bw_clear_data_request_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_reply_t *obj)
+of_bsn_bw_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15118,7 +15118,7 @@ of_bsn_bw_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_request_t *obj)
+of_bsn_bw_enable_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15142,7 +15142,7 @@ of_bsn_bw_enable_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_reply_t *obj)
+of_bsn_bw_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15176,7 +15176,7 @@ of_bsn_bw_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_request_t *obj)
+of_bsn_bw_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15205,13 +15205,13 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_controller_connections_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connections_reply_t *obj)
+of_bsn_controller_connections_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_controller_connection_t list;
-    of_bsn_controller_connection_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_controller_connections_reply_xid_get(obj, &val32);
@@ -15240,7 +15240,7 @@ of_bsn_controller_connections_reply_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_bsn_controller_connections_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connections_request_t *obj)
+of_bsn_controller_connections_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15264,14 +15264,14 @@ of_bsn_controller_connections_request_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_desc_stats_reply_t *obj)
+of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_debug_counter_desc_stats_entry_t list;
-    of_bsn_debug_counter_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_debug_counter_desc_stats_reply_xid_get(obj, &val32);
@@ -15305,7 +15305,7 @@ of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_desc_stats_request_t *obj)
+of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15335,14 +15335,14 @@ of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_stats_reply_t *obj)
+of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_debug_counter_stats_entry_t list;
-    of_bsn_debug_counter_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_debug_counter_stats_reply_xid_get(obj, &val32);
@@ -15376,7 +15376,7 @@ of_bsn_debug_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_debug_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_stats_request_t *obj)
+of_bsn_debug_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15406,14 +15406,14 @@ of_bsn_debug_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_reply_t *obj)
+of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_flow_checksum_bucket_stats_entry_t list;
-    of_bsn_flow_checksum_bucket_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_flow_checksum_bucket_stats_reply_xid_get(obj, &val32);
@@ -15447,7 +15447,7 @@ of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_request_t *obj)
+of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15483,7 +15483,7 @@ of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writ
 }
 
 int
-of_bsn_flow_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_t *obj)
+of_bsn_flow_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15531,7 +15531,7 @@ of_bsn_flow_idle_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_
 }
 
 int
-of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_enable_get_reply_t *obj)
+of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15560,7 +15560,7 @@ of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_enable_get_request_t *obj)
+of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15584,7 +15584,7 @@ of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_enable_set_reply_t *obj)
+of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15618,7 +15618,7 @@ of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_idle_enable_set_request_t *obj)
+of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15647,14 +15647,14 @@ of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_bucket_stats_reply_t *obj)
+of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_gentable_bucket_stats_entry_t list;
-    of_bsn_gentable_bucket_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_bucket_stats_reply_xid_get(obj, &val32);
@@ -15688,7 +15688,7 @@ of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_bucket_stats_request_t *obj)
+of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15723,7 +15723,7 @@ of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_gentable_clear_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_clear_reply_t *obj)
+of_bsn_gentable_clear_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15763,7 +15763,7 @@ of_bsn_gentable_clear_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_gentable_clear_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_clear_request_t *obj)
+of_bsn_gentable_clear_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15804,14 +15804,14 @@ of_bsn_gentable_clear_request_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_desc_stats_reply_t *obj)
+of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_gentable_desc_stats_entry_t list;
-    of_bsn_gentable_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_desc_stats_reply_xid_get(obj, &val32);
@@ -15845,7 +15845,7 @@ of_bsn_gentable_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_desc_stats_request_t *obj)
+of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15875,7 +15875,7 @@ of_bsn_gentable_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_gentable_entry_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_add_t *obj)
+of_bsn_gentable_entry_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -15883,7 +15883,7 @@ of_bsn_gentable_entry_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
     of_checksum_128_t checksum_128;
 
     of_list_bsn_tlv_t list;
-    of_bsn_tlv_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_entry_add_xid_get(obj, &val32);
@@ -15929,14 +15929,14 @@ of_bsn_gentable_entry_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_gentable_entry_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_delete_t *obj)
+of_bsn_gentable_entry_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_tlv_t list;
-    of_bsn_tlv_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_entry_delete_xid_get(obj, &val32);
@@ -15970,14 +15970,14 @@ of_bsn_gentable_entry_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_desc_stats_reply_t *obj)
+of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_gentable_entry_desc_stats_entry_t list;
-    of_bsn_gentable_entry_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_entry_desc_stats_reply_xid_get(obj, &val32);
@@ -16011,7 +16011,7 @@ of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer,
 }
 
 int
-of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_desc_stats_request_t *obj)
+of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16057,14 +16057,14 @@ of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
-of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_stats_reply_t *obj)
+of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_gentable_entry_stats_entry_t list;
-    of_bsn_gentable_entry_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_entry_stats_reply_xid_get(obj, &val32);
@@ -16098,7 +16098,7 @@ of_bsn_gentable_entry_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_stats_request_t *obj)
+of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16144,7 +16144,7 @@ of_bsn_gentable_entry_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_set_buckets_size_t *obj)
+of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16179,14 +16179,14 @@ of_bsn_gentable_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_gentable_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_stats_reply_t *obj)
+of_bsn_gentable_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_gentable_stats_entry_t list;
-    of_bsn_gentable_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_stats_reply_xid_get(obj, &val32);
@@ -16220,7 +16220,7 @@ of_bsn_gentable_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_gentable_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_stats_request_t *obj)
+of_bsn_gentable_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16250,13 +16250,13 @@ of_bsn_gentable_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_get_interfaces_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_reply_t *obj)
+of_bsn_get_interfaces_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_interface_t list;
-    of_bsn_interface_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_get_interfaces_reply_xid_get(obj, &val32);
@@ -16285,7 +16285,7 @@ of_bsn_get_interfaces_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_get_interfaces_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_request_t *obj)
+of_bsn_get_interfaces_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16309,7 +16309,7 @@ of_bsn_get_interfaces_request_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_get_mirroring_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_reply_t *obj)
+of_bsn_get_mirroring_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16339,7 +16339,7 @@ of_bsn_get_mirroring_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_get_mirroring_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_request_t *obj)
+of_bsn_get_mirroring_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16369,7 +16369,7 @@ of_bsn_get_mirroring_request_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_get_switch_pipeline_reply_t *obj)
+of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16399,7 +16399,7 @@ of_bsn_get_switch_pipeline_reply_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_get_switch_pipeline_request_t *obj)
+of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16423,7 +16423,7 @@ of_bsn_get_switch_pipeline_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_header_t *obj)
+of_bsn_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16447,7 +16447,7 @@ of_bsn_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_hea
 }
 
 int
-of_bsn_image_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_image_desc_stats_reply_t *obj)
+of_bsn_image_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16488,7 +16488,7 @@ of_bsn_image_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_image_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_image_desc_stats_request_t *obj)
+of_bsn_image_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16518,7 +16518,7 @@ of_bsn_image_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_lacp_convergence_notif_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_convergence_notif_t *obj)
+of_bsn_lacp_convergence_notif_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16606,14 +16606,14 @@ of_bsn_lacp_convergence_notif_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_lacp_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_stats_reply_t *obj)
+of_bsn_lacp_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_lacp_stats_entry_t list;
-    of_bsn_lacp_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_lacp_stats_reply_xid_get(obj, &val32);
@@ -16647,7 +16647,7 @@ of_bsn_lacp_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_lacp_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_stats_request_t *obj)
+of_bsn_lacp_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16677,7 +16677,7 @@ of_bsn_lacp_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_log_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_log_t *obj)
+of_bsn_log_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16713,7 +16713,7 @@ of_bsn_log_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_log_t 
 }
 
 int
-of_bsn_pdu_rx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj)
+of_bsn_pdu_rx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16754,7 +16754,7 @@ of_bsn_pdu_rx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_rx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_request_t *obj)
+of_bsn_pdu_rx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16801,7 +16801,7 @@ of_bsn_pdu_rx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_rx_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_timeout_t *obj)
+of_bsn_pdu_rx_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16837,7 +16837,7 @@ of_bsn_pdu_rx_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_tx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_reply_t *obj)
+of_bsn_pdu_tx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16878,7 +16878,7 @@ of_bsn_pdu_tx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_tx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_request_t *obj)
+of_bsn_pdu_tx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -16925,14 +16925,14 @@ of_bsn_pdu_tx_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_port_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_reply_t *obj)
+of_bsn_port_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_port_counter_stats_entry_t list;
-    of_bsn_port_counter_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_port_counter_stats_reply_xid_get(obj, &val32);
@@ -16966,7 +16966,7 @@ of_bsn_port_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_port_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_request_t *obj)
+of_bsn_port_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17002,7 +17002,7 @@ of_bsn_port_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_role_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_role_status_t *obj)
+of_bsn_role_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17043,7 +17043,7 @@ of_bsn_role_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_aux_cxns_reply_t *obj)
+of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17077,7 +17077,7 @@ of_bsn_set_aux_cxns_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_set_aux_cxns_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_aux_cxns_request_t *obj)
+of_bsn_set_aux_cxns_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17106,7 +17106,7 @@ of_bsn_set_aux_cxns_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_set_lacp_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_lacp_reply_t *obj)
+of_bsn_set_lacp_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17141,7 +17141,7 @@ of_bsn_set_lacp_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_set_lacp_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_lacp_request_t *obj)
+of_bsn_set_lacp_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17204,7 +17204,7 @@ of_bsn_set_lacp_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_set_mirroring_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_mirroring_t *obj)
+of_bsn_set_mirroring_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17234,7 +17234,7 @@ of_bsn_set_mirroring_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_reply_t *obj)
+of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17263,7 +17263,7 @@ of_bsn_set_pktin_suppression_reply_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_request_t *obj)
+of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17315,7 +17315,7 @@ of_bsn_set_pktin_suppression_request_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_switch_pipeline_reply_t *obj)
+of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17344,7 +17344,7 @@ of_bsn_set_switch_pipeline_reply_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_set_switch_pipeline_request_t *obj)
+of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17374,7 +17374,7 @@ of_bsn_set_switch_pipeline_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_stats_reply_t *obj)
+of_bsn_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17404,7 +17404,7 @@ of_bsn_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_stats_request_t *obj)
+of_bsn_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17434,14 +17434,14 @@ of_bsn_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_switch_pipeline_stats_reply_t *obj)
+of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_switch_pipeline_stats_entry_t list;
-    of_bsn_switch_pipeline_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_switch_pipeline_stats_reply_xid_get(obj, &val32);
@@ -17475,7 +17475,7 @@ of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_switch_pipeline_stats_request_t *obj)
+of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17505,14 +17505,14 @@ of_bsn_switch_pipeline_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_reply_t *obj)
+of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_table_checksum_stats_entry_t list;
-    of_bsn_table_checksum_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_table_checksum_stats_reply_xid_get(obj, &val32);
@@ -17546,7 +17546,7 @@ of_bsn_table_checksum_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_request_t *obj)
+of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17576,7 +17576,7 @@ of_bsn_table_checksum_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_set_buckets_size_t *obj)
+of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17611,7 +17611,7 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_time_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_time_reply_t *obj)
+of_bsn_time_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17641,7 +17641,7 @@ of_bsn_time_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn
 }
 
 int
-of_bsn_time_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_time_request_t *obj)
+of_bsn_time_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17665,7 +17665,7 @@ of_bsn_time_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_virtual_port_create_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_reply_t *obj)
+of_bsn_virtual_port_create_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17699,7 +17699,7 @@ of_bsn_virtual_port_create_reply_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_create_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_request_t *obj)
+of_bsn_virtual_port_create_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17728,7 +17728,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_reply_t *obj)
+of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17757,7 +17757,7 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_request_t *obj)
+of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17786,14 +17786,14 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_reply_t *obj)
+of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_vlan_counter_stats_entry_t list;
-    of_bsn_vlan_counter_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_vlan_counter_stats_reply_xid_get(obj, &val32);
@@ -17827,7 +17827,7 @@ of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_request_t *obj)
+of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17862,14 +17862,14 @@ of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_reply_t *obj)
+of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bsn_vrf_counter_stats_entry_t list;
-    of_bsn_vrf_counter_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_vrf_counter_stats_reply_xid_get(obj, &val32);
@@ -17903,7 +17903,7 @@ of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_request_t *obj)
+of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17938,7 +17938,7 @@ of_bsn_vrf_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj)
+of_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -17985,7 +17985,7 @@ of_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_d
 }
 
 int
-of_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_desc_stats_request_t *obj)
+of_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18005,7 +18005,7 @@ of_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_echo_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_echo_reply_t *obj)
+of_echo_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18025,7 +18025,7 @@ of_echo_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_echo_re
 }
 
 int
-of_echo_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_echo_request_t *obj)
+of_echo_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18045,7 +18045,7 @@ of_echo_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_echo_
 }
 
 int
-of_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_error_msg_t *obj)
+of_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18059,7 +18059,7 @@ of_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_error_ms
 }
 
 int
-of_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_experimenter_t *obj)
+of_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18089,7 +18089,7 @@ of_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_exper
 }
 
 int
-of_experimenter_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_experimenter_error_msg_t *obj)
+of_experimenter_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18120,7 +18120,7 @@ of_experimenter_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_experimenter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_experimenter_stats_reply_t *obj)
+of_experimenter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18150,7 +18150,7 @@ of_experimenter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_experimenter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_experimenter_stats_request_t *obj)
+of_experimenter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18180,7 +18180,7 @@ of_experimenter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_features_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_features_reply_t *obj)
+of_features_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18226,7 +18226,7 @@ of_features_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_fea
 }
 
 int
-of_features_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_features_request_t *obj)
+of_features_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18240,7 +18240,7 @@ of_features_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_add_t *obj)
+of_flow_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18251,7 +18251,7 @@ of_flow_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_add_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_add_xid_get(obj, &val32);
@@ -18325,7 +18325,7 @@ of_flow_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_add_
 }
 
 int
-of_flow_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_delete_t *obj)
+of_flow_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18336,7 +18336,7 @@ of_flow_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_d
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_xid_get(obj, &val32);
@@ -18410,7 +18410,7 @@ of_flow_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_d
 }
 
 int
-of_flow_delete_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_delete_strict_t *obj)
+of_flow_delete_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18421,7 +18421,7 @@ of_flow_delete_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_strict_xid_get(obj, &val32);
@@ -18495,7 +18495,7 @@ of_flow_delete_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_mod_t *obj)
+of_flow_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18506,7 +18506,7 @@ of_flow_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_mod_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_mod_xid_get(obj, &val32);
@@ -18580,7 +18580,7 @@ of_flow_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_mod_
 }
 
 int
-of_flow_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_mod_failed_error_msg_t *obj)
+of_flow_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18606,7 +18606,7 @@ of_flow_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_flow_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_modify_t *obj)
+of_flow_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18617,7 +18617,7 @@ of_flow_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_m
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_xid_get(obj, &val32);
@@ -18691,7 +18691,7 @@ of_flow_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_m
 }
 
 int
-of_flow_modify_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_modify_strict_t *obj)
+of_flow_modify_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18702,7 +18702,7 @@ of_flow_modify_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_strict_xid_get(obj, &val32);
@@ -18776,7 +18776,7 @@ of_flow_modify_strict_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_removed_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_removed_t *obj)
+of_flow_removed_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18849,14 +18849,14 @@ of_flow_removed_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_
 }
 
 int
-of_flow_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_stats_reply_t *obj)
+of_flow_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_flow_stats_entry_t list;
-    of_flow_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_reply_xid_get(obj, &val32);
@@ -18880,7 +18880,7 @@ of_flow_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_stats_request_t *obj)
+of_flow_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18934,7 +18934,7 @@ of_flow_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_get_config_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_get_config_reply_t *obj)
+of_get_config_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18959,7 +18959,7 @@ of_get_config_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_g
 }
 
 int
-of_get_config_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_get_config_request_t *obj)
+of_get_config_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -18973,14 +18973,14 @@ of_get_config_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_group_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+of_group_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_add_xid_get(obj, &val32);
@@ -19009,14 +19009,14 @@ of_group_add_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_ad
 }
 
 int
-of_group_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+of_group_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_delete_xid_get(obj, &val32);
@@ -19045,14 +19045,14 @@ of_group_delete_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
+of_group_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_desc_stats_entry_t list;
-    of_group_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_reply_xid_get(obj, &val32);
@@ -19076,7 +19076,7 @@ of_group_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_desc_stats_request_t *obj)
+of_group_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19096,7 +19096,7 @@ of_group_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_group_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_features_stats_reply_t *obj)
+of_group_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19166,7 +19166,7 @@ of_group_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_features_stats_request_t *obj)
+of_group_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19186,14 +19186,14 @@ of_group_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_group_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_mod_t *obj)
+of_group_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_mod_xid_get(obj, &val32);
@@ -19222,7 +19222,7 @@ of_group_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_mo
 }
 
 int
-of_group_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_mod_failed_error_msg_t *obj)
+of_group_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19248,14 +19248,14 @@ of_group_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+of_group_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_modify_xid_get(obj, &val32);
@@ -19284,14 +19284,14 @@ of_group_modify_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj)
+of_group_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_stats_entry_t list;
-    of_group_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_reply_xid_get(obj, &val32);
@@ -19315,7 +19315,7 @@ of_group_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_group_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj)
+of_group_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19340,7 +19340,7 @@ of_group_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19354,13 +19354,13 @@ of_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_header_t *o
 }
 
 int
-of_hello_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
+of_hello_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_hello_elem_t list;
-    of_hello_elem_t elt;
+    of_object_t elt;
     int rv;
 
     of_hello_xid_get(obj, &val32);
@@ -19379,7 +19379,7 @@ of_hello_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_t *obj
 }
 
 int
-of_hello_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj)
+of_hello_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19405,14 +19405,14 @@ of_hello_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_meter_config_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_config_stats_reply_t *obj)
+of_meter_config_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_meter_band_t list;
-    of_meter_band_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_config_stats_reply_xid_get(obj, &val32);
@@ -19436,7 +19436,7 @@ of_meter_config_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_meter_config_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_config_stats_request_t *obj)
+of_meter_config_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19461,7 +19461,7 @@ of_meter_config_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_meter_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_features_stats_reply_t *obj)
+of_meter_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19486,7 +19486,7 @@ of_meter_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_meter_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_features_stats_request_t *obj)
+of_meter_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19506,14 +19506,14 @@ of_meter_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_meter_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_mod_t *obj)
+of_meter_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_meter_band_t list;
-    of_meter_band_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_mod_xid_get(obj, &val32);
@@ -19542,7 +19542,7 @@ of_meter_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_mo
 }
 
 int
-of_meter_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_mod_failed_error_msg_t *obj)
+of_meter_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19568,14 +19568,14 @@ of_meter_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_meter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_stats_reply_t *obj)
+of_meter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_meter_stats_t list;
-    of_meter_stats_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_stats_reply_xid_get(obj, &val32);
@@ -19599,7 +19599,7 @@ of_meter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_meter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_stats_request_t *obj)
+of_meter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19624,7 +19624,7 @@ of_meter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_nicira_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj)
+of_nicira_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19648,7 +19648,7 @@ of_nicira_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_nici
 }
 
 int
-of_packet_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_packet_in_t *obj)
+of_packet_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19702,14 +19702,14 @@ of_packet_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_packet_i
 }
 
 int
-of_packet_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_packet_out_t *obj)
+of_packet_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
     of_octets_t octets;
 
@@ -19744,14 +19744,14 @@ of_packet_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_packet_
 }
 
 int
-of_port_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_desc_stats_reply_t *obj)
+of_port_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_desc_t list;
-    of_port_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_desc_stats_reply_xid_get(obj, &val32);
@@ -19775,7 +19775,7 @@ of_port_desc_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_port_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_desc_stats_request_t *obj)
+of_port_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19795,7 +19795,7 @@ of_port_desc_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_port_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_mod_t *obj)
+of_port_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19836,7 +19836,7 @@ of_port_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_mod_
 }
 
 int
-of_port_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_mod_failed_error_msg_t *obj)
+of_port_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19862,14 +19862,14 @@ of_port_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_port_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_stats_reply_t *obj)
+of_port_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_stats_entry_t list;
-    of_port_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_stats_reply_xid_get(obj, &val32);
@@ -19893,7 +19893,7 @@ of_port_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_port_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_stats_request_t *obj)
+of_port_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19919,7 +19919,7 @@ of_port_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_port_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_status_t *obj)
+of_port_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19944,14 +19944,14 @@ of_port_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_s
 }
 
 int
-of_queue_get_config_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_get_config_reply_t *obj)
+of_queue_get_config_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_packet_queue_t list;
-    of_packet_queue_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_get_config_reply_xid_get(obj, &val32);
@@ -19975,7 +19975,7 @@ of_queue_get_config_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_queue_get_config_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_get_config_request_t *obj)
+of_queue_get_config_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -19995,7 +19995,7 @@ of_queue_get_config_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_op_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_op_failed_error_msg_t *obj)
+of_queue_op_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20021,14 +20021,14 @@ of_queue_op_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_queue_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_stats_reply_t *obj)
+of_queue_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_queue_stats_entry_t list;
-    of_queue_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_stats_reply_xid_get(obj, &val32);
@@ -20052,7 +20052,7 @@ of_queue_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_stats_request_t *obj)
+of_queue_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20083,7 +20083,7 @@ of_queue_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_role_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_role_reply_t *obj)
+of_role_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20108,7 +20108,7 @@ of_role_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_role_re
 }
 
 int
-of_role_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_role_request_t *obj)
+of_role_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20133,7 +20133,7 @@ of_role_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_role_
 }
 
 int
-of_role_request_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_role_request_failed_error_msg_t *obj)
+of_role_request_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20159,7 +20159,7 @@ of_role_request_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_set_config_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_set_config_t *obj)
+of_set_config_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20184,7 +20184,7 @@ of_set_config_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_set_con
 }
 
 int
-of_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_stats_reply_t *obj)
+of_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20204,7 +20204,7 @@ of_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_stats_
 }
 
 int
-of_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_stats_request_t *obj)
+of_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20224,7 +20224,7 @@ of_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_stat
 }
 
 int
-of_switch_config_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_switch_config_failed_error_msg_t *obj)
+of_switch_config_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20250,7 +20250,7 @@ of_switch_config_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_table_features_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_features_failed_error_msg_t *obj)
+of_table_features_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20276,14 +20276,14 @@ of_table_features_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_table_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_features_stats_reply_t *obj)
+of_table_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_features_t list;
-    of_table_features_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_features_stats_reply_xid_get(obj, &val32);
@@ -20307,14 +20307,14 @@ of_table_features_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_table_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_features_stats_request_t *obj)
+of_table_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_features_t list;
-    of_table_features_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_features_stats_request_xid_get(obj, &val32);
@@ -20338,7 +20338,7 @@ of_table_features_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_table_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_mod_t *obj)
+of_table_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20363,7 +20363,7 @@ of_table_mod_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_mo
 }
 
 int
-of_table_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_mod_failed_error_msg_t *obj)
+of_table_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20389,14 +20389,14 @@ of_table_mod_failed_error_msg_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_table_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj)
+of_table_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_stats_entry_t list;
-    of_table_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_stats_reply_xid_get(obj, &val32);
@@ -20420,7 +20420,7 @@ of_table_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj)
+of_table_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20440,7 +20440,7 @@ of_table_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_t *obj)
+of_action_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20459,7 +20459,7 @@ of_action_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
-of_action_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+of_action_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20484,13 +20484,13 @@ of_action_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_gentable_t *obj)
+of_action_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_tlv_t list;
-    of_bsn_tlv_t elt;
+    of_object_t elt;
     int rv;
 
     of_action_bsn_gentable_experimenter_get(obj, &val32);
@@ -20519,7 +20519,7 @@ of_action_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
+of_action_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20554,7 +20554,7 @@ of_action_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj)
+of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20578,7 +20578,7 @@ of_action_bsn_set_tunnel_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_action_copy_ttl_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj)
+of_action_copy_ttl_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20586,7 +20586,7 @@ of_action_copy_ttl_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_copy_ttl_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_out_t *obj)
+of_action_copy_ttl_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20594,7 +20594,7 @@ of_action_copy_ttl_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_dec_mpls_ttl_t *obj)
+of_action_dec_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20602,7 +20602,7 @@ of_action_dec_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_dec_nw_ttl_t *obj)
+of_action_dec_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20610,7 +20610,7 @@ of_action_dec_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_experimenter_t *obj)
+of_action_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20630,7 +20630,7 @@ of_action_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_group_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_group_t *obj)
+of_action_group_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20644,7 +20644,7 @@ of_action_group_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_actio
 }
 
 int
-of_action_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_header_t *obj)
+of_action_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20652,7 +20652,7 @@ of_action_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_t *obj)
+of_action_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20671,7 +20671,7 @@ of_action_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_id_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_checksum_t *obj)
+of_action_id_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20690,7 +20690,7 @@ of_action_id_bsn_checksum_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_gentable_t *obj)
+of_action_id_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20709,7 +20709,7 @@ of_action_id_bsn_gentable_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_mirror_t *obj)
+of_action_id_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20728,7 +20728,7 @@ of_action_id_bsn_mirror_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_bsn_set_tunnel_dst_t *obj)
+of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20747,7 +20747,7 @@ of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_action_id_copy_ttl_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_copy_ttl_in_t *obj)
+of_action_id_copy_ttl_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20755,7 +20755,7 @@ of_action_id_copy_ttl_in_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_id_copy_ttl_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_copy_ttl_out_t *obj)
+of_action_id_copy_ttl_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20763,7 +20763,7 @@ of_action_id_copy_ttl_out_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_dec_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_dec_mpls_ttl_t *obj)
+of_action_id_dec_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20771,7 +20771,7 @@ of_action_id_dec_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_dec_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_dec_nw_ttl_t *obj)
+of_action_id_dec_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20779,7 +20779,7 @@ of_action_id_dec_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_action_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_experimenter_t *obj)
+of_action_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20793,7 +20793,7 @@ of_action_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_group_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_group_t *obj)
+of_action_id_group_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20801,7 +20801,7 @@ of_action_id_group_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_id_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_header_t *obj)
+of_action_id_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20809,7 +20809,7 @@ of_action_id_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_id_nicira_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_nicira_t *obj)
+of_action_id_nicira_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20829,7 +20829,7 @@ of_action_id_nicira_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_id_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_nicira_dec_ttl_t *obj)
+of_action_id_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20849,7 +20849,7 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_action_id_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_output_t *obj)
+of_action_id_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20857,7 +20857,7 @@ of_action_id_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_id_pop_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_pop_mpls_t *obj)
+of_action_id_pop_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20865,7 +20865,7 @@ of_action_id_pop_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_id_pop_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_pop_pbb_t *obj)
+of_action_id_pop_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20873,7 +20873,7 @@ of_action_id_pop_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_id_pop_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_pop_vlan_t *obj)
+of_action_id_pop_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20881,7 +20881,7 @@ of_action_id_pop_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_id_push_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_push_mpls_t *obj)
+of_action_id_push_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20889,7 +20889,7 @@ of_action_id_push_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_id_push_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_push_pbb_t *obj)
+of_action_id_push_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20897,7 +20897,7 @@ of_action_id_push_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_id_push_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_push_vlan_t *obj)
+of_action_id_push_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20905,7 +20905,7 @@ of_action_id_push_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_id_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_set_field_t *obj)
+of_action_id_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20913,7 +20913,7 @@ of_action_id_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_id_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_set_mpls_ttl_t *obj)
+of_action_id_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20921,7 +20921,7 @@ of_action_id_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_set_nw_ttl_t *obj)
+of_action_id_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20929,7 +20929,7 @@ of_action_id_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_action_id_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_id_set_queue_t *obj)
+of_action_id_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -20937,7 +20937,7 @@ of_action_id_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_nicira_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_nicira_t *obj)
+of_action_nicira_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20957,7 +20957,7 @@ of_action_nicira_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_nicira_dec_ttl_t *obj)
+of_action_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -20977,7 +20977,7 @@ of_action_nicira_dec_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_output_t *obj)
+of_action_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -20997,7 +20997,7 @@ of_action_output_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_pop_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_pop_mpls_t *obj)
+of_action_pop_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21011,7 +21011,7 @@ of_action_pop_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_pop_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_pop_pbb_t *obj)
+of_action_pop_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -21019,7 +21019,7 @@ of_action_pop_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_act
 }
 
 int
-of_action_pop_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_pop_vlan_t *obj)
+of_action_pop_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -21027,7 +21027,7 @@ of_action_pop_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_push_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_push_mpls_t *obj)
+of_action_push_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21041,7 +21041,7 @@ of_action_push_mpls_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_push_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_push_pbb_t *obj)
+of_action_push_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21055,7 +21055,7 @@ of_action_push_pbb_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_push_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_push_vlan_t *obj)
+of_action_push_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21069,7 +21069,7 @@ of_action_push_vlan_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
+of_action_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -21082,7 +21082,7 @@ of_action_set_field_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_mpls_ttl_t *obj)
+of_action_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21096,7 +21096,7 @@ of_action_set_mpls_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_nw_ttl_t *obj)
+of_action_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21110,7 +21110,7 @@ of_action_set_nw_ttl_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_action_set_queue_t *obj)
+of_action_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -21124,7 +21124,7 @@ of_action_set_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_controller_connection_t *obj)
+of_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21155,7 +21155,7 @@ of_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_desc_stats_entry_t *obj)
+of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -21181,7 +21181,7 @@ of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_debug_counter_stats_entry_t *obj)
+of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -21200,7 +21200,7 @@ of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_flow_checksum_bucket_stats_entry_t *obj)
+of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -21214,7 +21214,7 @@ of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_bucket_stats_entry_t *obj)
+of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_checksum_128_t checksum_128;
@@ -21228,7 +21228,7 @@ of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_desc_stats_entry_t *obj)
+of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21259,13 +21259,13 @@ of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_desc_stats_entry_t *obj)
+of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_checksum_128_t checksum_128;
 
     of_list_bsn_tlv_t list;
-    of_bsn_tlv_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_gentable_entry_desc_stats_entry_checksum_get(obj, &checksum_128);
@@ -21291,12 +21291,12 @@ of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer,
 }
 
 int
-of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_entry_stats_entry_t *obj)
+of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_bsn_tlv_t list;
-    of_bsn_tlv_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_bsn_tlv_t={ ");
@@ -21317,7 +21317,7 @@ of_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_gentable_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_gentable_stats_entry_t *obj)
+of_bsn_gentable_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21343,7 +21343,7 @@ of_bsn_gentable_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj)
+of_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21374,7 +21374,7 @@ of_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_
 }
 
 int
-of_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_lacp_stats_entry_t *obj)
+of_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -21446,13 +21446,13 @@ of_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_port_counter_stats_entry_t *obj)
+of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
 
     of_list_uint64_t list;
-    of_uint64_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_port_counter_stats_entry_port_no_get(obj, &port_no);
@@ -21471,7 +21471,7 @@ of_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_switch_pipeline_stats_entry_t *obj)
+of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_desc_str_t desc_str;
@@ -21485,7 +21485,7 @@ of_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_table_checksum_stats_entry_t *obj)
+of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21505,7 +21505,7 @@ of_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_bsn_tlv_actor_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_key_t *obj)
+of_bsn_tlv_actor_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21519,7 +21519,7 @@ of_bsn_tlv_actor_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_tlv_actor_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_port_num_t *obj)
+of_bsn_tlv_actor_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21533,7 +21533,7 @@ of_bsn_tlv_actor_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_port_priority_t *obj)
+of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21547,7 +21547,7 @@ of_bsn_tlv_actor_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_bsn_tlv_actor_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_state_t *obj)
+of_bsn_tlv_actor_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21561,7 +21561,7 @@ of_bsn_tlv_actor_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_system_mac_t *obj)
+of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21575,7 +21575,7 @@ of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_actor_system_priority_t *obj)
+of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21589,7 +21589,7 @@ of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_broadcast_query_timeout_t *obj)
+of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -21603,7 +21603,7 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_circuit_id_t *obj)
+of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_octets_t octets;
@@ -21617,7 +21617,7 @@ of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_convergence_status_t *obj)
+of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21631,7 +21631,7 @@ of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_crc_enabled_t *obj)
+of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21645,7 +21645,7 @@ of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bsn_tlv_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_eth_dst_t *obj)
+of_bsn_tlv_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21659,7 +21659,7 @@ of_bsn_tlv_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_tlv_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_eth_src_t *obj)
+of_bsn_tlv_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21673,7 +21673,7 @@ of_bsn_tlv_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_external_gateway_ip_t *obj)
+of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -21687,7 +21687,7 @@ of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_external_gateway_mac_t *obj)
+of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21701,7 +21701,7 @@ of_bsn_tlv_external_gateway_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_tlv_external_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_external_ip_t *obj)
+of_bsn_tlv_external_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -21715,7 +21715,7 @@ of_bsn_tlv_external_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bsn_tlv_external_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_external_mac_t *obj)
+of_bsn_tlv_external_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21729,7 +21729,7 @@ of_bsn_tlv_external_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_tlv_external_netmask_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_external_netmask_t *obj)
+of_bsn_tlv_external_netmask_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -21743,7 +21743,7 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_tlv_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_header_t *obj)
+of_bsn_tlv_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -21751,7 +21751,7 @@ of_bsn_tlv_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn
 }
 
 int
-of_bsn_tlv_header_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_header_size_t *obj)
+of_bsn_tlv_header_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -21765,7 +21765,7 @@ of_bsn_tlv_header_size_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bsn_tlv_idle_notification_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_idle_notification_t *obj)
+of_bsn_tlv_idle_notification_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -21773,7 +21773,7 @@ of_bsn_tlv_idle_notification_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_tlv_idle_time_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_idle_time_t *obj)
+of_bsn_tlv_idle_time_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -21787,7 +21787,7 @@ of_bsn_tlv_idle_time_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_tlv_idle_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_idle_timeout_t *obj)
+of_bsn_tlv_idle_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -21801,7 +21801,7 @@ of_bsn_tlv_idle_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_internal_gateway_mac_t *obj)
+of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21815,7 +21815,7 @@ of_bsn_tlv_internal_gateway_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_tlv_internal_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_internal_mac_t *obj)
+of_bsn_tlv_internal_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21829,7 +21829,7 @@ of_bsn_tlv_internal_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_tlv_ipv4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_ipv4_t *obj)
+of_bsn_tlv_ipv4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -21843,7 +21843,7 @@ of_bsn_tlv_ipv4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_t
 }
 
 int
-of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_ipv4_dst_t *obj)
+of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -21857,7 +21857,7 @@ of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_tlv_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_ipv4_src_t *obj)
+of_bsn_tlv_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -21871,7 +21871,7 @@ of_bsn_tlv_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_tlv_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_mac_t *obj)
+of_bsn_tlv_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21885,7 +21885,7 @@ of_bsn_tlv_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tl
 }
 
 int
-of_bsn_tlv_miss_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_miss_packets_t *obj)
+of_bsn_tlv_miss_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -21899,7 +21899,7 @@ of_bsn_tlv_miss_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_name_t *obj)
+of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_octets_t octets;
@@ -21913,7 +21913,7 @@ of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_t
 }
 
 int
-of_bsn_tlv_partner_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_key_t *obj)
+of_bsn_tlv_partner_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21927,7 +21927,7 @@ of_bsn_tlv_partner_key_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bsn_tlv_partner_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_port_num_t *obj)
+of_bsn_tlv_partner_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21941,7 +21941,7 @@ of_bsn_tlv_partner_port_num_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_port_priority_t *obj)
+of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21955,7 +21955,7 @@ of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_tlv_partner_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_state_t *obj)
+of_bsn_tlv_partner_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -21969,7 +21969,7 @@ of_bsn_tlv_partner_state_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_system_mac_t *obj)
+of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -21983,7 +21983,7 @@ of_bsn_tlv_partner_system_mac_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_partner_system_priority_t *obj)
+of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -21997,7 +21997,7 @@ of_bsn_tlv_partner_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_tlv_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_port_t *obj)
+of_bsn_tlv_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -22011,7 +22011,7 @@ of_bsn_tlv_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_t
 }
 
 int
-of_bsn_tlv_queue_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_id_t *obj)
+of_bsn_tlv_queue_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22025,7 +22025,7 @@ of_bsn_tlv_queue_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_tlv_queue_weight_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_queue_weight_t *obj)
+of_bsn_tlv_queue_weight_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22039,7 +22039,7 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_tlv_reply_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_reply_packets_t *obj)
+of_bsn_tlv_reply_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -22053,7 +22053,7 @@ of_bsn_tlv_reply_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_bsn_tlv_request_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_request_packets_t *obj)
+of_bsn_tlv_request_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -22067,7 +22067,7 @@ of_bsn_tlv_request_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_tlv_rx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_rx_packets_t *obj)
+of_bsn_tlv_rx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -22081,7 +22081,7 @@ of_bsn_tlv_rx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_sampling_rate_t *obj)
+of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22095,7 +22095,7 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_sub_agent_id_t *obj)
+of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22109,7 +22109,7 @@ of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_tx_bytes_t *obj)
+of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -22123,7 +22123,7 @@ of_bsn_tlv_tx_bytes_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_tlv_tx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_tx_packets_t *obj)
+of_bsn_tlv_tx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -22137,7 +22137,7 @@ of_bsn_tlv_tx_packets_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_tlv_udf_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_anchor_t *obj)
+of_bsn_tlv_udf_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22151,7 +22151,7 @@ of_bsn_tlv_udf_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_tlv_udf_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_id_t *obj)
+of_bsn_tlv_udf_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22165,7 +22165,7 @@ of_bsn_tlv_udf_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn
 }
 
 int
-of_bsn_tlv_udf_length_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_length_t *obj)
+of_bsn_tlv_udf_length_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22179,7 +22179,7 @@ of_bsn_tlv_udf_length_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_tlv_udf_offset_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udf_offset_t *obj)
+of_bsn_tlv_udf_offset_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22193,7 +22193,7 @@ of_bsn_tlv_udf_offset_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_tlv_udp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udp_dst_t *obj)
+of_bsn_tlv_udp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22207,7 +22207,7 @@ of_bsn_tlv_udp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_tlv_udp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_udp_src_t *obj)
+of_bsn_tlv_udp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22221,7 +22221,7 @@ of_bsn_tlv_udp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_unicast_query_timeout_t *obj)
+of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22235,7 +22235,7 @@ of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_tlv_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_vlan_vid_t *obj)
+of_bsn_tlv_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22249,7 +22249,7 @@ of_bsn_tlv_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_tlv_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tlv_vrf_t *obj)
+of_bsn_tlv_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22263,13 +22263,13 @@ of_bsn_tlv_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_tl
 }
 
 int
-of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vlan_counter_stats_entry_t *obj)
+of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
 
     of_list_uint64_t list;
-    of_uint64_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_vlan_counter_stats_entry_vlan_vid_get(obj, &val16);
@@ -22288,7 +22288,7 @@ of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_bsn_vport_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj)
+of_bsn_vport_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -22296,7 +22296,7 @@ of_bsn_vport_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_vport_l2gre_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+of_bsn_vport_l2gre_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22370,7 +22370,7 @@ of_bsn_vport_l2gre_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_vport_q_in_q_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
+of_bsn_vport_q_in_q_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22411,13 +22411,13 @@ of_bsn_vport_q_in_q_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bsn_vrf_counter_stats_entry_t *obj)
+of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_uint64_t list;
-    of_uint64_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_vrf_counter_stats_entry_vrf_get(obj, &val32);
@@ -22436,7 +22436,7 @@ of_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_t *obj)
+of_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -22444,7 +22444,7 @@ of_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_t *o
     uint32_t val32;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_bucket_weight_get(obj, &val16);
@@ -22473,7 +22473,7 @@ of_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_t *o
 }
 
 int
-of_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj)
+of_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -22492,7 +22492,7 @@ of_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_buc
 }
 
 int
-of_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj)
+of_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -22502,7 +22502,7 @@ of_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_f
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_entry_table_id_get(obj, &val8);
@@ -22571,14 +22571,14 @@ of_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj)
+of_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
     uint32_t val32;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_entry_group_type_get(obj, &val8);
@@ -22602,14 +22602,14 @@ of_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj)
+of_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint64_t val64;
 
     of_list_bucket_counter_t list;
-    of_bucket_counter_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_entry_group_id_get(obj, &val32);
@@ -22653,7 +22653,7 @@ of_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_hello_elem_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_elem_header_t *obj)
+of_hello_elem_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -22661,12 +22661,12 @@ of_hello_elem_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_hello_elem_versionbitmap_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_hello_elem_versionbitmap_t *obj)
+of_hello_elem_versionbitmap_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -22680,12 +22680,12 @@ of_hello_elem_versionbitmap_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_instruction_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj)
+of_instruction_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -22699,7 +22699,7 @@ of_instruction_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_t *obj)
+of_instruction_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22718,7 +22718,7 @@ of_instruction_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_in
 }
 
 int
-of_instruction_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_arp_offload_t *obj)
+of_instruction_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22737,7 +22737,7 @@ of_instruction_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_instruction_bsn_deny_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_deny_t *obj)
+of_instruction_bsn_deny_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22756,7 +22756,7 @@ of_instruction_bsn_deny_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_dhcp_offload_t *obj)
+of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22775,7 +22775,7 @@ of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_disable_split_horizon_check_t *obj)
+of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22794,7 +22794,7 @@ of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f
 }
 
 int
-of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_disable_src_mac_check_t *obj)
+of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22813,7 +22813,7 @@ of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
-of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_disable_vlan_counters_t *obj)
+of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22832,7 +22832,7 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
-of_instruction_bsn_packet_of_death_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_packet_of_death_t *obj)
+of_instruction_bsn_packet_of_death_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22851,7 +22851,7 @@ of_instruction_bsn_packet_of_death_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_instruction_bsn_permit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_permit_t *obj)
+of_instruction_bsn_permit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22870,7 +22870,7 @@ of_instruction_bsn_permit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_prioritize_pdus_t *obj)
+of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22889,7 +22889,7 @@ of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_require_vlan_xlate_t *obj)
+of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22908,7 +22908,7 @@ of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_instruction_bsn_span_destination_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_bsn_span_destination_t *obj)
+of_instruction_bsn_span_destination_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22927,7 +22927,7 @@ of_instruction_bsn_span_destination_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_instruction_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
+of_instruction_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -22935,7 +22935,7 @@ of_instruction_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj)
+of_instruction_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -22955,7 +22955,7 @@ of_instruction_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_instruction_goto_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_goto_table_t *obj)
+of_instruction_goto_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -22969,7 +22969,7 @@ of_instruction_goto_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_instruction_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_header_t *obj)
+of_instruction_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -22977,7 +22977,7 @@ of_instruction_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_instruction_id_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_apply_actions_t *obj)
+of_instruction_id_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -22985,7 +22985,7 @@ of_instruction_id_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_t *obj)
+of_instruction_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23004,7 +23004,7 @@ of_instruction_id_bsn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_arp_offload_t *obj)
+of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23023,7 +23023,7 @@ of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_instruction_id_bsn_deny_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_deny_t *obj)
+of_instruction_id_bsn_deny_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23042,7 +23042,7 @@ of_instruction_id_bsn_deny_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_dhcp_offload_t *obj)
+of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23061,7 +23061,7 @@ of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_split_horizon_check_t *obj)
+of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23080,7 +23080,7 @@ of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_show(loci_write
 }
 
 int
-of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_src_mac_check_t *obj)
+of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23099,7 +23099,7 @@ of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_show(loci_writer_f wr
 }
 
 int
-of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_disable_vlan_counters_t *obj)
+of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23118,7 +23118,7 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_show(loci_writer_f wr
 }
 
 int
-of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_packet_of_death_t *obj)
+of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23137,7 +23137,7 @@ of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_instruction_id_bsn_permit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_permit_t *obj)
+of_instruction_id_bsn_permit_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23156,7 +23156,7 @@ of_instruction_id_bsn_permit_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_prioritize_pdus_t *obj)
+of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23175,7 +23175,7 @@ of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_require_vlan_xlate_t *obj)
+of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23194,7 +23194,7 @@ of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
-of_instruction_id_bsn_span_destination_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_bsn_span_destination_t *obj)
+of_instruction_id_bsn_span_destination_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23213,7 +23213,7 @@ of_instruction_id_bsn_span_destination_OF_VERSION_1_3_show(loci_writer_f writer,
 }
 
 int
-of_instruction_id_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_clear_actions_t *obj)
+of_instruction_id_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23221,7 +23221,7 @@ of_instruction_id_clear_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_experimenter_t *obj)
+of_instruction_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23235,7 +23235,7 @@ of_instruction_id_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_instruction_id_goto_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_goto_table_t *obj)
+of_instruction_id_goto_table_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23243,7 +23243,7 @@ of_instruction_id_goto_table_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_id_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_header_t *obj)
+of_instruction_id_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23251,7 +23251,7 @@ of_instruction_id_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_instruction_id_meter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_meter_t *obj)
+of_instruction_id_meter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23259,7 +23259,7 @@ of_instruction_id_meter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_instruction_id_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_write_actions_t *obj)
+of_instruction_id_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23267,7 +23267,7 @@ of_instruction_id_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_id_write_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_id_write_metadata_t *obj)
+of_instruction_id_write_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23275,7 +23275,7 @@ of_instruction_id_write_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_instruction_meter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_meter_t *obj)
+of_instruction_meter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23289,12 +23289,12 @@ of_instruction_meter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_instruction_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_write_actions_t *obj)
+of_instruction_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -23308,7 +23308,7 @@ of_instruction_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_write_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_instruction_write_metadata_t *obj)
+of_instruction_write_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -23327,12 +23327,12 @@ of_instruction_write_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_match_v3_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_match_v3_t *obj)
+of_match_v3_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_oxm_t list;
-    of_oxm_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_oxm_t={ ");
@@ -23346,7 +23346,7 @@ of_match_v3_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_match_v3_
 }
 
 int
-of_meter_band_drop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_band_drop_t *obj)
+of_meter_band_drop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23365,7 +23365,7 @@ of_meter_band_drop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_me
 }
 
 int
-of_meter_band_dscp_remark_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_band_dscp_remark_t *obj)
+of_meter_band_dscp_remark_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23390,7 +23390,7 @@ of_meter_band_dscp_remark_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_meter_band_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_band_experimenter_t *obj)
+of_meter_band_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23414,7 +23414,7 @@ of_meter_band_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_meter_band_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_band_header_t *obj)
+of_meter_band_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -23422,7 +23422,7 @@ of_meter_band_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_meter_band_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_band_stats_t *obj)
+of_meter_band_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -23441,14 +23441,14 @@ of_meter_band_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_m
 }
 
 int
-of_meter_config_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_config_t *obj)
+of_meter_config_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
     uint32_t val32;
 
     of_list_meter_band_t list;
-    of_meter_band_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_config_flags_get(obj, &val16);
@@ -23472,7 +23472,7 @@ of_meter_config_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter
 }
 
 int
-of_meter_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_features_t *obj)
+of_meter_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23507,14 +23507,14 @@ of_meter_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_met
 }
 
 int
-of_meter_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_stats_t *obj)
+of_meter_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint64_t val64;
 
     of_list_meter_band_stats_t list;
-    of_meter_band_stats_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_stats_meter_id_get(obj, &val32);
@@ -23558,7 +23558,7 @@ of_meter_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_meter_
 }
 
 int
-of_oxm_arp_op_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_op_t *obj)
+of_oxm_arp_op_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -23572,7 +23572,7 @@ of_oxm_arp_op_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp
 }
 
 int
-of_oxm_arp_op_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_op_masked_t *obj)
+of_oxm_arp_op_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -23591,7 +23591,7 @@ of_oxm_arp_op_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_arp_sha_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_sha_t *obj)
+of_oxm_arp_sha_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -23605,7 +23605,7 @@ of_oxm_arp_sha_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_sha_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_sha_masked_t *obj)
+of_oxm_arp_sha_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -23624,7 +23624,7 @@ of_oxm_arp_sha_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_spa_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_spa_t *obj)
+of_oxm_arp_spa_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23638,7 +23638,7 @@ of_oxm_arp_spa_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_spa_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_spa_masked_t *obj)
+of_oxm_arp_spa_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23657,7 +23657,7 @@ of_oxm_arp_spa_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_tha_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_tha_t *obj)
+of_oxm_arp_tha_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -23671,7 +23671,7 @@ of_oxm_arp_tha_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_tha_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_tha_masked_t *obj)
+of_oxm_arp_tha_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -23690,7 +23690,7 @@ of_oxm_arp_tha_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_tpa_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_t *obj)
+of_oxm_arp_tpa_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23704,7 +23704,7 @@ of_oxm_arp_tpa_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_tpa_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_masked_t *obj)
+of_oxm_arp_tpa_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23723,7 +23723,7 @@ of_oxm_arp_tpa_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_t *obj)
+of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23737,7 +23737,7 @@ of_oxm_bsn_egr_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_egr_port_group_id_masked_t *obj)
+of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23756,7 +23756,7 @@ of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_t *obj)
+of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -23770,7 +23770,7 @@ of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_show(loci_writer_f writer, void* co
 }
 
 int
-of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_global_vrf_allowed_masked_t *obj)
+of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -23789,7 +23789,7 @@ of_oxm_bsn_global_vrf_allowed_masked_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_oxm_bsn_in_ports_128_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_in_ports_128_t *obj)
+of_oxm_bsn_in_ports_128_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_bitmap_128_t bitmap_128;
@@ -23803,7 +23803,7 @@ of_oxm_bsn_in_ports_128_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_in_ports_128_masked_t *obj)
+of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_bitmap_128_t bitmap_128;
@@ -23822,7 +23822,7 @@ of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_dst_class_id_t *obj)
+of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23836,7 +23836,7 @@ of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_dst_class_id_masked_t *obj)
+of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23855,7 +23855,7 @@ of_oxm_bsn_l3_dst_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_interface_class_id_t *obj)
+of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23869,7 +23869,7 @@ of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_interface_class_id_masked_t *obj)
+of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23888,7 +23888,7 @@ of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_src_class_id_t *obj)
+of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23902,7 +23902,7 @@ of_oxm_bsn_l3_src_class_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_l3_src_class_id_masked_t *obj)
+of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23921,7 +23921,7 @@ of_oxm_bsn_l3_src_class_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_oxm_bsn_lag_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_t *obj)
+of_oxm_bsn_lag_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23935,7 +23935,7 @@ of_oxm_bsn_lag_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm
 }
 
 int
-of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_lag_id_masked_t *obj)
+of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -23954,7 +23954,7 @@ of_oxm_bsn_lag_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_oxm_bsn_tcp_flags_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_t *obj)
+of_oxm_bsn_tcp_flags_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -23968,7 +23968,7 @@ of_oxm_bsn_tcp_flags_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_tcp_flags_masked_t *obj)
+of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -23987,7 +23987,7 @@ of_oxm_bsn_tcp_flags_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_oxm_bsn_udf0_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_t *obj)
+of_oxm_bsn_udf0_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24001,7 +24001,7 @@ of_oxm_bsn_udf0_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf0_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf0_masked_t *obj)
+of_oxm_bsn_udf0_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24020,7 +24020,7 @@ of_oxm_bsn_udf0_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf1_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_t *obj)
+of_oxm_bsn_udf1_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24034,7 +24034,7 @@ of_oxm_bsn_udf1_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf1_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf1_masked_t *obj)
+of_oxm_bsn_udf1_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24053,7 +24053,7 @@ of_oxm_bsn_udf1_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf2_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_t *obj)
+of_oxm_bsn_udf2_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24067,7 +24067,7 @@ of_oxm_bsn_udf2_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf2_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf2_masked_t *obj)
+of_oxm_bsn_udf2_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24086,7 +24086,7 @@ of_oxm_bsn_udf2_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf3_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_t *obj)
+of_oxm_bsn_udf3_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24100,7 +24100,7 @@ of_oxm_bsn_udf3_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf3_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf3_masked_t *obj)
+of_oxm_bsn_udf3_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24119,7 +24119,7 @@ of_oxm_bsn_udf3_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_t *obj)
+of_oxm_bsn_udf4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24133,7 +24133,7 @@ of_oxm_bsn_udf4_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf4_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf4_masked_t *obj)
+of_oxm_bsn_udf4_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24152,7 +24152,7 @@ of_oxm_bsn_udf4_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf5_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_t *obj)
+of_oxm_bsn_udf5_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24166,7 +24166,7 @@ of_oxm_bsn_udf5_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf5_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf5_masked_t *obj)
+of_oxm_bsn_udf5_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24185,7 +24185,7 @@ of_oxm_bsn_udf5_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf6_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_t *obj)
+of_oxm_bsn_udf6_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24199,7 +24199,7 @@ of_oxm_bsn_udf6_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf6_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf6_masked_t *obj)
+of_oxm_bsn_udf6_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24218,7 +24218,7 @@ of_oxm_bsn_udf6_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_udf7_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_t *obj)
+of_oxm_bsn_udf7_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24232,7 +24232,7 @@ of_oxm_bsn_udf7_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_b
 }
 
 int
-of_oxm_bsn_udf7_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_udf7_masked_t *obj)
+of_oxm_bsn_udf7_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24251,7 +24251,7 @@ of_oxm_bsn_udf7_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_t *obj)
+of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24265,7 +24265,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj)
+of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24284,7 +24284,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3_show(loci_writer_f wri
 }
 
 int
-of_oxm_bsn_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_t *obj)
+of_oxm_bsn_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24298,7 +24298,7 @@ of_oxm_bsn_vrf_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bs
 }
 
 int
-of_oxm_bsn_vrf_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_bsn_vrf_masked_t *obj)
+of_oxm_bsn_vrf_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24317,7 +24317,7 @@ of_oxm_bsn_vrf_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_eth_dst_t *obj)
+of_oxm_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24331,7 +24331,7 @@ of_oxm_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_et
 }
 
 int
-of_oxm_eth_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_eth_dst_masked_t *obj)
+of_oxm_eth_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24350,7 +24350,7 @@ of_oxm_eth_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_eth_src_t *obj)
+of_oxm_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24364,7 +24364,7 @@ of_oxm_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_et
 }
 
 int
-of_oxm_eth_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_eth_src_masked_t *obj)
+of_oxm_eth_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24383,7 +24383,7 @@ of_oxm_eth_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_eth_type_t *obj)
+of_oxm_eth_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -24397,7 +24397,7 @@ of_oxm_eth_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_e
 }
 
 int
-of_oxm_eth_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_eth_type_masked_t *obj)
+of_oxm_eth_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -24416,7 +24416,7 @@ of_oxm_eth_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_header_t *obj)
+of_oxm_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -24424,7 +24424,7 @@ of_oxm_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_hea
 }
 
 int
-of_oxm_icmpv4_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_code_t *obj)
+of_oxm_icmpv4_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24438,7 +24438,7 @@ of_oxm_icmpv4_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv4_code_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_code_masked_t *obj)
+of_oxm_icmpv4_code_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24457,7 +24457,7 @@ of_oxm_icmpv4_code_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv4_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_type_t *obj)
+of_oxm_icmpv4_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24471,7 +24471,7 @@ of_oxm_icmpv4_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv4_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_type_masked_t *obj)
+of_oxm_icmpv4_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24490,7 +24490,7 @@ of_oxm_icmpv4_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv6_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_code_t *obj)
+of_oxm_icmpv6_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24504,7 +24504,7 @@ of_oxm_icmpv6_code_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv6_code_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_code_masked_t *obj)
+of_oxm_icmpv6_code_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24523,7 +24523,7 @@ of_oxm_icmpv6_code_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv6_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_type_t *obj)
+of_oxm_icmpv6_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24537,7 +24537,7 @@ of_oxm_icmpv6_type_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv6_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_type_masked_t *obj)
+of_oxm_icmpv6_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24556,7 +24556,7 @@ of_oxm_icmpv6_type_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_in_phy_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_in_phy_port_t *obj)
+of_oxm_in_phy_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -24570,7 +24570,7 @@ of_oxm_in_phy_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_in_phy_port_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_in_phy_port_masked_t *obj)
+of_oxm_in_phy_port_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -24589,7 +24589,7 @@ of_oxm_in_phy_port_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_in_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_in_port_t *obj)
+of_oxm_in_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -24603,7 +24603,7 @@ of_oxm_in_port_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_in
 }
 
 int
-of_oxm_in_port_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_in_port_masked_t *obj)
+of_oxm_in_port_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -24622,7 +24622,7 @@ of_oxm_in_port_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ip_dscp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_dscp_t *obj)
+of_oxm_ip_dscp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24636,7 +24636,7 @@ of_oxm_ip_dscp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip
 }
 
 int
-of_oxm_ip_dscp_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_dscp_masked_t *obj)
+of_oxm_ip_dscp_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24655,7 +24655,7 @@ of_oxm_ip_dscp_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ip_ecn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_ecn_t *obj)
+of_oxm_ip_ecn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24669,7 +24669,7 @@ of_oxm_ip_ecn_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_
 }
 
 int
-of_oxm_ip_ecn_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_ecn_masked_t *obj)
+of_oxm_ip_ecn_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24688,7 +24688,7 @@ of_oxm_ip_ecn_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_ip_proto_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_proto_t *obj)
+of_oxm_ip_proto_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24702,7 +24702,7 @@ of_oxm_ip_proto_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ip_proto_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ip_proto_masked_t *obj)
+of_oxm_ip_proto_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -24721,7 +24721,7 @@ of_oxm_ip_proto_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_dst_t *obj)
+of_oxm_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -24735,7 +24735,7 @@ of_oxm_ipv4_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv4_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_dst_masked_t *obj)
+of_oxm_ipv4_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -24754,7 +24754,7 @@ of_oxm_ipv4_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_src_t *obj)
+of_oxm_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -24768,7 +24768,7 @@ of_oxm_ipv4_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv4_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_src_masked_t *obj)
+of_oxm_ipv4_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -24787,7 +24787,7 @@ of_oxm_ipv4_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv6_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_dst_t *obj)
+of_oxm_ipv6_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -24801,7 +24801,7 @@ of_oxm_ipv6_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv6_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_dst_masked_t *obj)
+of_oxm_ipv6_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -24820,7 +24820,7 @@ of_oxm_ipv6_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv6_flabel_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_flabel_t *obj)
+of_oxm_ipv6_flabel_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24834,7 +24834,7 @@ of_oxm_ipv6_flabel_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_flabel_masked_t *obj)
+of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -24853,7 +24853,7 @@ of_oxm_ipv6_flabel_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_nd_sll_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_sll_t *obj)
+of_oxm_ipv6_nd_sll_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24867,7 +24867,7 @@ of_oxm_ipv6_nd_sll_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_sll_masked_t *obj)
+of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24886,7 +24886,7 @@ of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_nd_target_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_target_t *obj)
+of_oxm_ipv6_nd_target_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -24900,7 +24900,7 @@ of_oxm_ipv6_nd_target_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_target_masked_t *obj)
+of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -24919,7 +24919,7 @@ of_oxm_ipv6_nd_target_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_oxm_ipv6_nd_tll_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_tll_t *obj)
+of_oxm_ipv6_nd_tll_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24933,7 +24933,7 @@ of_oxm_ipv6_nd_tll_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_tll_masked_t *obj)
+of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -24952,7 +24952,7 @@ of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_t *obj)
+of_oxm_ipv6_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -24966,7 +24966,7 @@ of_oxm_ipv6_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv6_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_masked_t *obj)
+of_oxm_ipv6_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -24985,7 +24985,7 @@ of_oxm_ipv6_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_metadata_t *obj)
+of_oxm_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -24999,7 +24999,7 @@ of_oxm_metadata_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_m
 }
 
 int
-of_oxm_metadata_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_metadata_masked_t *obj)
+of_oxm_metadata_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -25018,7 +25018,7 @@ of_oxm_metadata_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_mpls_bos_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mpls_bos_t *obj)
+of_oxm_mpls_bos_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -25032,7 +25032,7 @@ of_oxm_mpls_bos_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_m
 }
 
 int
-of_oxm_mpls_bos_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mpls_bos_masked_t *obj)
+of_oxm_mpls_bos_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -25051,7 +25051,7 @@ of_oxm_mpls_bos_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_mpls_label_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mpls_label_t *obj)
+of_oxm_mpls_label_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -25065,7 +25065,7 @@ of_oxm_mpls_label_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm
 }
 
 int
-of_oxm_mpls_label_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mpls_label_masked_t *obj)
+of_oxm_mpls_label_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -25084,7 +25084,7 @@ of_oxm_mpls_label_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_oxm_mpls_tc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_t *obj)
+of_oxm_mpls_tc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -25098,7 +25098,7 @@ of_oxm_mpls_tc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mp
 }
 
 int
-of_oxm_mpls_tc_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_masked_t *obj)
+of_oxm_mpls_tc_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -25117,7 +25117,7 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_sctp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_sctp_dst_t *obj)
+of_oxm_sctp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25131,7 +25131,7 @@ of_oxm_sctp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_s
 }
 
 int
-of_oxm_sctp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_sctp_dst_masked_t *obj)
+of_oxm_sctp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25150,7 +25150,7 @@ of_oxm_sctp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_sctp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_sctp_src_t *obj)
+of_oxm_sctp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25164,7 +25164,7 @@ of_oxm_sctp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_s
 }
 
 int
-of_oxm_sctp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_sctp_src_masked_t *obj)
+of_oxm_sctp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25183,7 +25183,7 @@ of_oxm_sctp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_tcp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_t *obj)
+of_oxm_tcp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25197,7 +25197,7 @@ of_oxm_tcp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tc
 }
 
 int
-of_oxm_tcp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_masked_t *obj)
+of_oxm_tcp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25216,7 +25216,7 @@ of_oxm_tcp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_tcp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tcp_src_t *obj)
+of_oxm_tcp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25230,7 +25230,7 @@ of_oxm_tcp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tc
 }
 
 int
-of_oxm_tcp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tcp_src_masked_t *obj)
+of_oxm_tcp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25249,7 +25249,7 @@ of_oxm_tcp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_tunnel_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tunnel_id_t *obj)
+of_oxm_tunnel_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -25263,7 +25263,7 @@ of_oxm_tunnel_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_
 }
 
 int
-of_oxm_tunnel_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_tunnel_id_masked_t *obj)
+of_oxm_tunnel_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -25282,7 +25282,7 @@ of_oxm_tunnel_id_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_oxm_udp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_udp_dst_t *obj)
+of_oxm_udp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25296,7 +25296,7 @@ of_oxm_udp_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ud
 }
 
 int
-of_oxm_udp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_udp_dst_masked_t *obj)
+of_oxm_udp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25315,7 +25315,7 @@ of_oxm_udp_dst_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_udp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_udp_src_t *obj)
+of_oxm_udp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25329,7 +25329,7 @@ of_oxm_udp_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_ud
 }
 
 int
-of_oxm_udp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_udp_src_masked_t *obj)
+of_oxm_udp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25348,7 +25348,7 @@ of_oxm_udp_src_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_vlan_pcp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_vlan_pcp_t *obj)
+of_oxm_vlan_pcp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -25362,7 +25362,7 @@ of_oxm_vlan_pcp_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_v
 }
 
 int
-of_oxm_vlan_pcp_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_vlan_pcp_masked_t *obj)
+of_oxm_vlan_pcp_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -25381,7 +25381,7 @@ of_oxm_vlan_pcp_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_vlan_vid_t *obj)
+of_oxm_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25395,7 +25395,7 @@ of_oxm_vlan_vid_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_v
 }
 
 int
-of_oxm_vlan_vid_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_oxm_vlan_vid_masked_t *obj)
+of_oxm_vlan_vid_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25414,14 +25414,14 @@ of_oxm_vlan_vid_masked_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_packet_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_packet_queue_t *obj)
+of_packet_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_queue_prop_t list;
-    of_queue_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_packet_queue_queue_id_get(obj, &val32);
@@ -25445,7 +25445,7 @@ of_packet_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_packe
 }
 
 int
-of_port_desc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_desc_t *obj)
+of_port_desc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -25512,7 +25512,7 @@ of_port_desc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_des
 }
 
 int
-of_port_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_port_stats_entry_t *obj)
+of_port_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -25598,7 +25598,7 @@ of_port_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_queue_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_prop_experimenter_t *obj)
+of_queue_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -25618,7 +25618,7 @@ of_queue_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_queue_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_prop_header_t *obj)
+of_queue_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -25626,7 +25626,7 @@ of_queue_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_prop_max_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_prop_max_rate_t *obj)
+of_queue_prop_max_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25640,7 +25640,7 @@ of_queue_prop_max_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_prop_min_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_prop_min_rate_t *obj)
+of_queue_prop_min_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -25654,7 +25654,7 @@ of_queue_prop_min_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_queue_stats_entry_t *obj)
+of_queue_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -25700,12 +25700,12 @@ of_queue_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_feature_prop_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_actions_t *obj)
+of_table_feature_prop_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -25719,12 +25719,12 @@ of_table_feature_prop_apply_actions_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_actions_miss_t *obj)
+of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -25738,12 +25738,12 @@ of_table_feature_prop_apply_actions_miss_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
-of_table_feature_prop_apply_setfield_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_setfield_t *obj)
+of_table_feature_prop_apply_setfield_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -25757,12 +25757,12 @@ of_table_feature_prop_apply_setfield_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_setfield_miss_t *obj)
+of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -25776,7 +25776,7 @@ of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writ
 }
 
 int
-of_table_feature_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_t *obj)
+of_table_feature_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -25801,7 +25801,7 @@ of_table_feature_prop_experimenter_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_miss_t *obj)
+of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -25826,7 +25826,7 @@ of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_table_feature_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_header_t *obj)
+of_table_feature_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -25834,12 +25834,12 @@ of_table_feature_prop_header_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_table_feature_prop_instructions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_instructions_t *obj)
+of_table_feature_prop_instructions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_instruction_id_t list;
-    of_instruction_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_instruction_id_t={ ");
@@ -25853,12 +25853,12 @@ of_table_feature_prop_instructions_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
-of_table_feature_prop_instructions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_instructions_miss_t *obj)
+of_table_feature_prop_instructions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_instruction_id_t list;
-    of_instruction_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_instruction_id_t={ ");
@@ -25872,12 +25872,12 @@ of_table_feature_prop_instructions_miss_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_table_feature_prop_match_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_match_t *obj)
+of_table_feature_prop_match_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -25891,12 +25891,12 @@ of_table_feature_prop_match_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
 }
 
 int
-of_table_feature_prop_next_tables_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_next_tables_t *obj)
+of_table_feature_prop_next_tables_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint8_t list;
-    of_uint8_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint8_t={ ");
@@ -25910,12 +25910,12 @@ of_table_feature_prop_next_tables_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_next_tables_miss_t *obj)
+of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint8_t list;
-    of_uint8_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint8_t={ ");
@@ -25929,12 +25929,12 @@ of_table_feature_prop_next_tables_miss_OF_VERSION_1_3_show(loci_writer_f writer,
 }
 
 int
-of_table_feature_prop_wildcards_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_wildcards_t *obj)
+of_table_feature_prop_wildcards_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -25948,12 +25948,12 @@ of_table_feature_prop_wildcards_OF_VERSION_1_3_show(loci_writer_f writer, void* 
 }
 
 int
-of_table_feature_prop_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_actions_t *obj)
+of_table_feature_prop_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -25967,12 +25967,12 @@ of_table_feature_prop_write_actions_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_actions_miss_t *obj)
+of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -25986,12 +25986,12 @@ of_table_feature_prop_write_actions_miss_OF_VERSION_1_3_show(loci_writer_f write
 }
 
 int
-of_table_feature_prop_write_setfield_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_setfield_t *obj)
+of_table_feature_prop_write_setfield_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -26005,12 +26005,12 @@ of_table_feature_prop_write_setfield_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_setfield_miss_t *obj)
+of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -26024,7 +26024,7 @@ of_table_feature_prop_write_setfield_miss_OF_VERSION_1_3_show(loci_writer_f writ
 }
 
 int
-of_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_features_t *obj)
+of_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -26033,7 +26033,7 @@ of_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_tab
     uint32_t val32;
 
     of_list_table_feature_prop_t list;
-    of_table_feature_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_features_table_id_get(obj, &val8);
@@ -26077,7 +26077,7 @@ of_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_tab
 }
 
 int
-of_table_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_table_stats_entry_t *obj)
+of_table_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -26108,7 +26108,7 @@ of_table_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_uint32_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint32_t *obj)
+of_uint32_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26122,7 +26122,7 @@ of_uint32_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint32_t *o
 }
 
 int
-of_uint64_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint64_t *obj)
+of_uint64_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -26136,7 +26136,7 @@ of_uint64_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint64_t *o
 }
 
 int
-of_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint8_t *obj)
+of_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -26150,7 +26150,7 @@ of_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_uint8_t *obj
 }
 
 int
-of_list_action_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_action_t *obj)
+of_list_action_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26158,7 +26158,7 @@ of_list_action_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_a
 }
 
 int
-of_list_action_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_action_id_t *obj)
+of_list_action_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26166,7 +26166,7 @@ of_list_action_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_controller_connection_t *obj)
+of_list_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26174,7 +26174,7 @@ of_list_bsn_controller_connection_OF_VERSION_1_3_show(loci_writer_f writer, void
 }
 
 int
-of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_debug_counter_desc_stats_entry_t *obj)
+of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26182,7 +26182,7 @@ of_list_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f wri
 }
 
 int
-of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_debug_counter_stats_entry_t *obj)
+of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26190,7 +26190,7 @@ of_list_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_flow_checksum_bucket_stats_entry_t *obj)
+of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26198,7 +26198,7 @@ of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f w
 }
 
 int
-of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_bucket_stats_entry_t *obj)
+of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26206,7 +26206,7 @@ of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_desc_stats_entry_t *obj)
+of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26214,7 +26214,7 @@ of_list_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, 
 }
 
 int
-of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_entry_desc_stats_entry_t *obj)
+of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26222,7 +26222,7 @@ of_list_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f wr
 }
 
 int
-of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_entry_stats_entry_t *obj)
+of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26230,7 +26230,7 @@ of_list_bsn_gentable_entry_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer,
 }
 
 int
-of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_gentable_stats_entry_t *obj)
+of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26238,7 +26238,7 @@ of_list_bsn_gentable_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
-of_list_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_interface_t *obj)
+of_list_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26246,7 +26246,7 @@ of_list_bsn_interface_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_lacp_stats_entry_t *obj)
+of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26254,7 +26254,7 @@ of_list_bsn_lacp_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* coo
 }
 
 int
-of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_port_counter_stats_entry_t *obj)
+of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26262,7 +26262,7 @@ of_list_bsn_port_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_switch_pipeline_stats_entry_t *obj)
+of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26270,7 +26270,7 @@ of_list_bsn_switch_pipeline_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer
 }
 
 int
-of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_table_checksum_stats_entry_t *obj)
+of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26278,7 +26278,7 @@ of_list_bsn_table_checksum_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer,
 }
 
 int
-of_list_bsn_tlv_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_tlv_t *obj)
+of_list_bsn_tlv_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26286,7 +26286,7 @@ of_list_bsn_tlv_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_
 }
 
 int
-of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_vlan_counter_stats_entry_t *obj)
+of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26294,7 +26294,7 @@ of_list_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, v
 }
 
 int
-of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bsn_vrf_counter_stats_entry_t *obj)
+of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26302,7 +26302,7 @@ of_list_bsn_vrf_counter_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
-of_list_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bucket_t *obj)
+of_list_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26310,7 +26310,7 @@ of_list_bucket_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_b
 }
 
 int
-of_list_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_bucket_counter_t *obj)
+of_list_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26318,7 +26318,7 @@ of_list_bucket_counter_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_flow_stats_entry_t *obj)
+of_list_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26326,7 +26326,7 @@ of_list_flow_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_group_desc_stats_entry_t *obj)
+of_list_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26334,7 +26334,7 @@ of_list_group_desc_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* c
 }
 
 int
-of_list_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_group_stats_entry_t *obj)
+of_list_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26342,7 +26342,7 @@ of_list_group_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_hello_elem_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_hello_elem_t *obj)
+of_list_hello_elem_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26350,7 +26350,7 @@ of_list_hello_elem_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_instruction_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_instruction_t *obj)
+of_list_instruction_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26358,7 +26358,7 @@ of_list_instruction_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_instruction_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_instruction_id_t *obj)
+of_list_instruction_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26366,7 +26366,7 @@ of_list_instruction_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_meter_band_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_meter_band_t *obj)
+of_list_meter_band_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26374,7 +26374,7 @@ of_list_meter_band_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_meter_band_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_meter_band_stats_t *obj)
+of_list_meter_band_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26382,7 +26382,7 @@ of_list_meter_band_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_meter_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_meter_stats_t *obj)
+of_list_meter_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26390,7 +26390,7 @@ of_list_meter_stats_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_oxm_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_oxm_t *obj)
+of_list_oxm_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26398,7 +26398,7 @@ of_list_oxm_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_oxm_
 }
 
 int
-of_list_packet_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_packet_queue_t *obj)
+of_list_packet_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26406,7 +26406,7 @@ of_list_packet_queue_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_list_port_desc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_port_desc_t *obj)
+of_list_port_desc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26414,7 +26414,7 @@ of_list_port_desc_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_port_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_port_stats_entry_t *obj)
+of_list_port_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26422,7 +26422,7 @@ of_list_port_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_queue_prop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_queue_prop_t *obj)
+of_list_queue_prop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26430,7 +26430,7 @@ of_list_queue_prop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_queue_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_queue_stats_entry_t *obj)
+of_list_queue_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26438,7 +26438,7 @@ of_list_queue_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_table_feature_prop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_table_feature_prop_t *obj)
+of_list_table_feature_prop_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26446,7 +26446,7 @@ of_list_table_feature_prop_OF_VERSION_1_3_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_list_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_table_features_t *obj)
+of_list_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26454,7 +26454,7 @@ of_list_table_features_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_table_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_table_stats_entry_t *obj)
+of_list_table_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26462,7 +26462,7 @@ of_list_table_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_uint32_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_uint32_t *obj)
+of_list_uint32_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26470,7 +26470,7 @@ of_list_uint32_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_u
 }
 
 int
-of_list_uint64_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_uint64_t *obj)
+of_list_uint64_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26478,7 +26478,7 @@ of_list_uint64_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_u
 }
 
 int
-of_list_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_uint8_t *obj)
+of_list_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -26486,7 +26486,7 @@ of_list_uint8_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_list_ui
 }
 
 int
-of_aggregate_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_aggregate_stats_reply_t *obj)
+of_aggregate_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26522,7 +26522,7 @@ of_aggregate_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_aggregate_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_aggregate_stats_request_t *obj)
+of_aggregate_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26576,13 +26576,13 @@ of_aggregate_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_async_get_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_get_reply_t *obj)
+of_async_get_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_async_config_prop_t list;
-    of_async_config_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_async_get_reply_xid_get(obj, &val32);
@@ -26601,13 +26601,13 @@ of_async_get_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_as
 }
 
 int
-of_async_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_get_request_t *obj)
+of_async_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_async_config_prop_t list;
-    of_async_config_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_async_get_request_xid_get(obj, &val32);
@@ -26626,13 +26626,13 @@ of_async_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_async_set_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_set_t *obj)
+of_async_set_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_async_config_prop_t list;
-    of_async_config_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_async_set_xid_get(obj, &val32);
@@ -26651,7 +26651,7 @@ of_async_set_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_se
 }
 
 int
-of_bad_action_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bad_action_error_msg_t *obj)
+of_bad_action_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26677,7 +26677,7 @@ of_bad_action_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_bad_instruction_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bad_instruction_error_msg_t *obj)
+of_bad_instruction_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26703,7 +26703,7 @@ of_bad_instruction_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bad_match_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bad_match_error_msg_t *obj)
+of_bad_match_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26729,7 +26729,7 @@ of_bad_match_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_bad_request_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bad_request_error_msg_t *obj)
+of_bad_request_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26755,7 +26755,7 @@ of_bad_request_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_barrier_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_barrier_reply_t *obj)
+of_barrier_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26769,7 +26769,7 @@ of_barrier_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_barr
 }
 
 int
-of_barrier_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_barrier_request_t *obj)
+of_barrier_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26783,7 +26783,7 @@ of_barrier_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ba
 }
 
 int
-of_bsn_bw_clear_data_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_reply_t *obj)
+of_bsn_bw_clear_data_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26812,7 +26812,7 @@ of_bsn_bw_clear_data_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_clear_data_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_bw_clear_data_request_t *obj)
+of_bsn_bw_clear_data_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26836,7 +26836,7 @@ of_bsn_bw_clear_data_request_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_get_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_reply_t *obj)
+of_bsn_bw_enable_get_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26865,7 +26865,7 @@ of_bsn_bw_enable_get_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_get_request_t *obj)
+of_bsn_bw_enable_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26889,7 +26889,7 @@ of_bsn_bw_enable_get_request_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_bw_enable_set_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_reply_t *obj)
+of_bsn_bw_enable_set_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26923,7 +26923,7 @@ of_bsn_bw_enable_set_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_bw_enable_set_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_bw_enable_set_request_t *obj)
+of_bsn_bw_enable_set_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -26952,13 +26952,13 @@ of_bsn_bw_enable_set_request_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_get_interfaces_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_reply_t *obj)
+of_bsn_get_interfaces_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_bsn_interface_t list;
-    of_bsn_interface_t elt;
+    of_object_t elt;
     int rv;
 
     of_bsn_get_interfaces_reply_xid_get(obj, &val32);
@@ -26987,7 +26987,7 @@ of_bsn_get_interfaces_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bsn_get_interfaces_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_get_interfaces_request_t *obj)
+of_bsn_get_interfaces_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27011,7 +27011,7 @@ of_bsn_get_interfaces_request_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_bsn_get_mirroring_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_reply_t *obj)
+of_bsn_get_mirroring_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27041,7 +27041,7 @@ of_bsn_get_mirroring_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_bsn_get_mirroring_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_get_mirroring_request_t *obj)
+of_bsn_get_mirroring_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27071,7 +27071,7 @@ of_bsn_get_mirroring_request_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_bsn_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_header_t *obj)
+of_bsn_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27095,7 +27095,7 @@ of_bsn_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_hea
 }
 
 int
-of_bsn_pdu_rx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_reply_t *obj)
+of_bsn_pdu_rx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27136,7 +27136,7 @@ of_bsn_pdu_rx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_rx_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_request_t *obj)
+of_bsn_pdu_rx_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27183,7 +27183,7 @@ of_bsn_pdu_rx_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_rx_timeout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_pdu_rx_timeout_t *obj)
+of_bsn_pdu_rx_timeout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27219,7 +27219,7 @@ of_bsn_pdu_rx_timeout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_pdu_tx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_reply_t *obj)
+of_bsn_pdu_tx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27260,7 +27260,7 @@ of_bsn_pdu_tx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_pdu_tx_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_pdu_tx_request_t *obj)
+of_bsn_pdu_tx_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27307,7 +27307,7 @@ of_bsn_pdu_tx_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_bsn_set_mirroring_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_set_mirroring_t *obj)
+of_bsn_set_mirroring_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27337,7 +27337,7 @@ of_bsn_set_mirroring_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_set_pktin_suppression_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_reply_t *obj)
+of_bsn_set_pktin_suppression_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27366,7 +27366,7 @@ of_bsn_set_pktin_suppression_reply_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_set_pktin_suppression_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_set_pktin_suppression_request_t *obj)
+of_bsn_set_pktin_suppression_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27418,7 +27418,7 @@ of_bsn_set_pktin_suppression_request_OF_VERSION_1_4_show(loci_writer_f writer, v
 }
 
 int
-of_bsn_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_stats_reply_t *obj)
+of_bsn_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27448,7 +27448,7 @@ of_bsn_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_stats_request_t *obj)
+of_bsn_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27478,7 +27478,7 @@ of_bsn_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_bsn_virtual_port_create_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_reply_t *obj)
+of_bsn_virtual_port_create_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27512,7 +27512,7 @@ of_bsn_virtual_port_create_reply_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_create_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_create_request_t *obj)
+of_bsn_virtual_port_create_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27541,7 +27541,7 @@ of_bsn_virtual_port_create_request_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
-of_bsn_virtual_port_remove_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_reply_t *obj)
+of_bsn_virtual_port_remove_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27570,7 +27570,7 @@ of_bsn_virtual_port_remove_reply_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
-of_bsn_virtual_port_remove_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_virtual_port_remove_request_t *obj)
+of_bsn_virtual_port_remove_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27599,7 +27599,7 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
-of_bundle_add_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bundle_add_msg_t *obj)
+of_bundle_add_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27630,14 +27630,14 @@ of_bundle_add_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bun
 }
 
 int
-of_bundle_ctrl_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bundle_ctrl_msg_t *obj)
+of_bundle_ctrl_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_bundle_prop_t list;
-    of_bundle_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_bundle_ctrl_msg_xid_get(obj, &val32);
@@ -27671,7 +27671,7 @@ of_bundle_ctrl_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bu
 }
 
 int
-of_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_desc_stats_reply_t *obj)
+of_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27718,7 +27718,7 @@ of_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_d
 }
 
 int
-of_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_desc_stats_request_t *obj)
+of_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27738,7 +27738,7 @@ of_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_echo_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_echo_reply_t *obj)
+of_echo_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27758,7 +27758,7 @@ of_echo_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_echo_re
 }
 
 int
-of_echo_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_echo_request_t *obj)
+of_echo_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27778,7 +27778,7 @@ of_echo_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_echo_
 }
 
 int
-of_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_error_msg_t *obj)
+of_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27792,7 +27792,7 @@ of_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_error_ms
 }
 
 int
-of_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_experimenter_t *obj)
+of_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27822,7 +27822,7 @@ of_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_exper
 }
 
 int
-of_experimenter_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_experimenter_error_msg_t *obj)
+of_experimenter_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27853,7 +27853,7 @@ of_experimenter_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_experimenter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_experimenter_stats_reply_t *obj)
+of_experimenter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27883,7 +27883,7 @@ of_experimenter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_experimenter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_experimenter_stats_request_t *obj)
+of_experimenter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27913,7 +27913,7 @@ of_experimenter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_features_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_features_reply_t *obj)
+of_features_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27959,7 +27959,7 @@ of_features_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_fea
 }
 
 int
-of_features_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_features_request_t *obj)
+of_features_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27973,7 +27973,7 @@ of_features_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_add_t *obj)
+of_flow_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -27984,7 +27984,7 @@ of_flow_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_add_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_add_xid_get(obj, &val32);
@@ -28063,7 +28063,7 @@ of_flow_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_add_
 }
 
 int
-of_flow_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_delete_t *obj)
+of_flow_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28074,7 +28074,7 @@ of_flow_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_d
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_xid_get(obj, &val32);
@@ -28153,7 +28153,7 @@ of_flow_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_d
 }
 
 int
-of_flow_delete_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_delete_strict_t *obj)
+of_flow_delete_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28164,7 +28164,7 @@ of_flow_delete_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_delete_strict_xid_get(obj, &val32);
@@ -28243,7 +28243,7 @@ of_flow_delete_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_mod_t *obj)
+of_flow_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28254,7 +28254,7 @@ of_flow_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_mod_
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_mod_xid_get(obj, &val32);
@@ -28328,7 +28328,7 @@ of_flow_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_mod_
 }
 
 int
-of_flow_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_mod_failed_error_msg_t *obj)
+of_flow_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28354,7 +28354,7 @@ of_flow_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_flow_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_modify_t *obj)
+of_flow_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28365,7 +28365,7 @@ of_flow_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_m
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_xid_get(obj, &val32);
@@ -28444,7 +28444,7 @@ of_flow_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_m
 }
 
 int
-of_flow_modify_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_modify_strict_t *obj)
+of_flow_modify_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28455,7 +28455,7 @@ of_flow_modify_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_modify_strict_xid_get(obj, &val32);
@@ -28534,7 +28534,7 @@ of_flow_modify_strict_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_removed_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_removed_t *obj)
+of_flow_removed_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28607,14 +28607,14 @@ of_flow_removed_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_
 }
 
 int
-of_flow_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_stats_reply_t *obj)
+of_flow_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_flow_stats_entry_t list;
-    of_flow_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_reply_xid_get(obj, &val32);
@@ -28638,7 +28638,7 @@ of_flow_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_flow_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_stats_request_t *obj)
+of_flow_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28692,7 +28692,7 @@ of_flow_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_get_config_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_get_config_reply_t *obj)
+of_get_config_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28717,7 +28717,7 @@ of_get_config_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_g
 }
 
 int
-of_get_config_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_get_config_request_t *obj)
+of_get_config_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28731,14 +28731,14 @@ of_get_config_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_group_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_add_t *obj)
+of_group_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_add_xid_get(obj, &val32);
@@ -28767,14 +28767,14 @@ of_group_add_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_ad
 }
 
 int
-of_group_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_delete_t *obj)
+of_group_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_delete_xid_get(obj, &val32);
@@ -28803,14 +28803,14 @@ of_group_delete_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_desc_stats_reply_t *obj)
+of_group_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_desc_stats_entry_t list;
-    of_group_desc_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_reply_xid_get(obj, &val32);
@@ -28834,7 +28834,7 @@ of_group_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_desc_stats_request_t *obj)
+of_group_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28854,7 +28854,7 @@ of_group_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_group_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_features_stats_reply_t *obj)
+of_group_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28924,7 +28924,7 @@ of_group_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_features_stats_request_t *obj)
+of_group_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -28944,14 +28944,14 @@ of_group_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_group_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_mod_t *obj)
+of_group_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_mod_xid_get(obj, &val32);
@@ -28980,7 +28980,7 @@ of_group_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_mo
 }
 
 int
-of_group_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_mod_failed_error_msg_t *obj)
+of_group_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29006,14 +29006,14 @@ of_group_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_group_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_modify_t *obj)
+of_group_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_modify_xid_get(obj, &val32);
@@ -29042,14 +29042,14 @@ of_group_modify_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group
 }
 
 int
-of_group_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_stats_reply_t *obj)
+of_group_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_group_stats_entry_t list;
-    of_group_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_reply_xid_get(obj, &val32);
@@ -29073,7 +29073,7 @@ of_group_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_group_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_stats_request_t *obj)
+of_group_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29098,7 +29098,7 @@ of_group_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_header_t *obj)
+of_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29112,13 +29112,13 @@ of_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_header_t *o
 }
 
 int
-of_hello_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_hello_t *obj)
+of_hello_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_hello_elem_t list;
-    of_hello_elem_t elt;
+    of_object_t elt;
     int rv;
 
     of_hello_xid_get(obj, &val32);
@@ -29137,7 +29137,7 @@ of_hello_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_hello_t *obj
 }
 
 int
-of_hello_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_hello_failed_error_msg_t *obj)
+of_hello_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29163,14 +29163,14 @@ of_hello_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_meter_config_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_config_stats_reply_t *obj)
+of_meter_config_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_meter_band_t list;
-    of_meter_band_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_config_stats_reply_xid_get(obj, &val32);
@@ -29194,7 +29194,7 @@ of_meter_config_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_meter_config_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_config_stats_request_t *obj)
+of_meter_config_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29219,7 +29219,7 @@ of_meter_config_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_meter_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_features_stats_reply_t *obj)
+of_meter_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29244,7 +29244,7 @@ of_meter_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_meter_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_features_stats_request_t *obj)
+of_meter_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29264,14 +29264,14 @@ of_meter_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_meter_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_mod_t *obj)
+of_meter_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_meter_band_t list;
-    of_meter_band_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_mod_xid_get(obj, &val32);
@@ -29300,7 +29300,7 @@ of_meter_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_mo
 }
 
 int
-of_meter_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_mod_failed_error_msg_t *obj)
+of_meter_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29326,14 +29326,14 @@ of_meter_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_meter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_stats_reply_t *obj)
+of_meter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_meter_stats_t list;
-    of_meter_stats_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_stats_reply_xid_get(obj, &val32);
@@ -29357,7 +29357,7 @@ of_meter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_meter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_stats_request_t *obj)
+of_meter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29382,7 +29382,7 @@ of_meter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_nicira_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_nicira_header_t *obj)
+of_nicira_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29406,7 +29406,7 @@ of_nicira_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_nici
 }
 
 int
-of_packet_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_packet_in_t *obj)
+of_packet_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29460,14 +29460,14 @@ of_packet_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_packet_i
 }
 
 int
-of_packet_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_packet_out_t *obj)
+of_packet_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
     of_octets_t octets;
 
@@ -29502,14 +29502,14 @@ of_packet_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_packet_
 }
 
 int
-of_port_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_stats_reply_t *obj)
+of_port_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_desc_t list;
-    of_port_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_desc_stats_reply_xid_get(obj, &val32);
@@ -29533,7 +29533,7 @@ of_port_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_port_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_stats_request_t *obj)
+of_port_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29553,7 +29553,7 @@ of_port_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_port_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_t *obj)
+of_port_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29561,7 +29561,7 @@ of_port_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_
     of_mac_addr_t mac_addr;
 
     of_list_port_mod_prop_t list;
-    of_port_mod_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_mod_xid_get(obj, &val32);
@@ -29600,7 +29600,7 @@ of_port_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_
 }
 
 int
-of_port_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_failed_error_msg_t *obj)
+of_port_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29626,14 +29626,14 @@ of_port_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_port_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_reply_t *obj)
+of_port_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_port_stats_entry_t list;
-    of_port_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_stats_reply_xid_get(obj, &val32);
@@ -29657,7 +29657,7 @@ of_port_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_port_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_request_t *obj)
+of_port_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29683,7 +29683,7 @@ of_port_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_port_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_status_t *obj)
+of_port_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29708,14 +29708,14 @@ of_port_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_s
 }
 
 int
-of_queue_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_stats_reply_t *obj)
+of_queue_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_queue_desc_t list;
-    of_queue_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_desc_stats_reply_xid_get(obj, &val32);
@@ -29739,7 +29739,7 @@ of_queue_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_queue_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_stats_request_t *obj)
+of_queue_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29759,7 +29759,7 @@ of_queue_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_op_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_op_failed_error_msg_t *obj)
+of_queue_op_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29785,14 +29785,14 @@ of_queue_op_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_queue_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_stats_reply_t *obj)
+of_queue_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_queue_stats_entry_t list;
-    of_queue_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_stats_reply_xid_get(obj, &val32);
@@ -29816,7 +29816,7 @@ of_queue_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_stats_request_t *obj)
+of_queue_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29847,7 +29847,7 @@ of_queue_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_requestforward_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_requestforward_t *obj)
+of_requestforward_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29872,7 +29872,7 @@ of_requestforward_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_req
 }
 
 int
-of_role_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_reply_t *obj)
+of_role_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29897,7 +29897,7 @@ of_role_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_re
 }
 
 int
-of_role_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_request_t *obj)
+of_role_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29922,7 +29922,7 @@ of_role_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_
 }
 
 int
-of_role_request_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_request_failed_error_msg_t *obj)
+of_role_request_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29948,7 +29948,7 @@ of_role_request_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
-of_role_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_status_t *obj)
+of_role_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -29956,7 +29956,7 @@ of_role_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_s
     uint64_t val64;
 
     of_list_role_prop_t list;
-    of_role_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_role_status_xid_get(obj, &val32);
@@ -29990,7 +29990,7 @@ of_role_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_s
 }
 
 int
-of_set_config_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_set_config_t *obj)
+of_set_config_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30015,7 +30015,7 @@ of_set_config_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_set_con
 }
 
 int
-of_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_stats_reply_t *obj)
+of_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30035,7 +30035,7 @@ of_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_stats_
 }
 
 int
-of_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_stats_request_t *obj)
+of_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30055,7 +30055,7 @@ of_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_stat
 }
 
 int
-of_switch_config_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_switch_config_failed_error_msg_t *obj)
+of_switch_config_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30081,14 +30081,14 @@ of_switch_config_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void
 }
 
 int
-of_table_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_desc_stats_reply_t *obj)
+of_table_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_desc_t list;
-    of_table_desc_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_desc_stats_reply_xid_get(obj, &val32);
@@ -30112,7 +30112,7 @@ of_table_desc_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_table_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_desc_stats_request_t *obj)
+of_table_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30132,7 +30132,7 @@ of_table_desc_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_table_features_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_features_failed_error_msg_t *obj)
+of_table_features_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30158,14 +30158,14 @@ of_table_features_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
-of_table_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_features_stats_reply_t *obj)
+of_table_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_features_t list;
-    of_table_features_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_features_stats_reply_xid_get(obj, &val32);
@@ -30189,14 +30189,14 @@ of_table_features_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_table_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_features_stats_request_t *obj)
+of_table_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_features_t list;
-    of_table_features_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_features_stats_request_xid_get(obj, &val32);
@@ -30220,14 +30220,14 @@ of_table_features_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_table_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mod_t *obj)
+of_table_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint8_t val8;
 
     of_list_table_mod_prop_t list;
-    of_table_mod_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_mod_xid_get(obj, &val32);
@@ -30256,7 +30256,7 @@ of_table_mod_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mo
 }
 
 int
-of_table_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mod_failed_error_msg_t *obj)
+of_table_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30282,14 +30282,14 @@ of_table_mod_failed_error_msg_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_table_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_stats_reply_t *obj)
+of_table_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint16_t val16;
 
     of_list_table_stats_entry_t list;
-    of_table_stats_entry_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_stats_reply_xid_get(obj, &val32);
@@ -30313,7 +30313,7 @@ of_table_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_table_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_stats_request_t *obj)
+of_table_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30333,7 +30333,7 @@ of_table_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_table_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_status_t *obj)
+of_table_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30363,7 +30363,7 @@ of_table_status_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table
 }
 
 int
-of_action_bsn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_bsn_t *obj)
+of_action_bsn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30382,7 +30382,7 @@ of_action_bsn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_
 }
 
 int
-of_action_bsn_checksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_bsn_checksum_t *obj)
+of_action_bsn_checksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30407,7 +30407,7 @@ of_action_bsn_checksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_bsn_mirror_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_bsn_mirror_t *obj)
+of_action_bsn_mirror_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30442,7 +30442,7 @@ of_action_bsn_mirror_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_bsn_set_tunnel_dst_t *obj)
+of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30466,7 +30466,7 @@ of_action_bsn_set_tunnel_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_action_copy_ttl_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_in_t *obj)
+of_action_copy_ttl_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30474,7 +30474,7 @@ of_action_copy_ttl_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_copy_ttl_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_copy_ttl_out_t *obj)
+of_action_copy_ttl_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30482,7 +30482,7 @@ of_action_copy_ttl_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_dec_mpls_ttl_t *obj)
+of_action_dec_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30490,7 +30490,7 @@ of_action_dec_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_dec_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_dec_nw_ttl_t *obj)
+of_action_dec_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30498,7 +30498,7 @@ of_action_dec_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_experimenter_t *obj)
+of_action_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30518,7 +30518,7 @@ of_action_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_group_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_group_t *obj)
+of_action_group_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30532,7 +30532,7 @@ of_action_group_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_actio
 }
 
 int
-of_action_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_header_t *obj)
+of_action_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30540,7 +30540,7 @@ of_action_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_id_bsn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_bsn_t *obj)
+of_action_id_bsn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30559,7 +30559,7 @@ of_action_id_bsn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_id_bsn_checksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_bsn_checksum_t *obj)
+of_action_id_bsn_checksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30578,7 +30578,7 @@ of_action_id_bsn_checksum_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_bsn_mirror_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_bsn_mirror_t *obj)
+of_action_id_bsn_mirror_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30597,7 +30597,7 @@ of_action_id_bsn_mirror_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_bsn_set_tunnel_dst_t *obj)
+of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30616,7 +30616,7 @@ of_action_id_bsn_set_tunnel_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_action_id_copy_ttl_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_copy_ttl_in_t *obj)
+of_action_id_copy_ttl_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30624,7 +30624,7 @@ of_action_id_copy_ttl_in_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_id_copy_ttl_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_copy_ttl_out_t *obj)
+of_action_id_copy_ttl_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30632,7 +30632,7 @@ of_action_id_copy_ttl_out_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_dec_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_dec_mpls_ttl_t *obj)
+of_action_id_dec_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30640,7 +30640,7 @@ of_action_id_dec_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_dec_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_dec_nw_ttl_t *obj)
+of_action_id_dec_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30648,7 +30648,7 @@ of_action_id_dec_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_action_id_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_experimenter_t *obj)
+of_action_id_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30662,7 +30662,7 @@ of_action_id_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_group_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_group_t *obj)
+of_action_id_group_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30670,7 +30670,7 @@ of_action_id_group_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_id_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_header_t *obj)
+of_action_id_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30678,7 +30678,7 @@ of_action_id_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_id_nicira_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_nicira_t *obj)
+of_action_id_nicira_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30698,7 +30698,7 @@ of_action_id_nicira_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_id_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_nicira_dec_ttl_t *obj)
+of_action_id_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30718,7 +30718,7 @@ of_action_id_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_action_id_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_output_t *obj)
+of_action_id_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30726,7 +30726,7 @@ of_action_id_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_id_pop_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_pop_mpls_t *obj)
+of_action_id_pop_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30734,7 +30734,7 @@ of_action_id_pop_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_id_pop_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_pop_pbb_t *obj)
+of_action_id_pop_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30742,7 +30742,7 @@ of_action_id_pop_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_id_pop_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_pop_vlan_t *obj)
+of_action_id_pop_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30750,7 +30750,7 @@ of_action_id_pop_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_id_push_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_push_mpls_t *obj)
+of_action_id_push_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30758,7 +30758,7 @@ of_action_id_push_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_id_push_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_push_pbb_t *obj)
+of_action_id_push_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30766,7 +30766,7 @@ of_action_id_push_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_action_id_push_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_push_vlan_t *obj)
+of_action_id_push_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30774,7 +30774,7 @@ of_action_id_push_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_id_set_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_set_field_t *obj)
+of_action_id_set_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30782,7 +30782,7 @@ of_action_id_set_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_id_set_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_set_mpls_ttl_t *obj)
+of_action_id_set_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30790,7 +30790,7 @@ of_action_id_set_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_action_id_set_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_set_nw_ttl_t *obj)
+of_action_id_set_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30798,7 +30798,7 @@ of_action_id_set_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_action_id_set_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_id_set_queue_t *obj)
+of_action_id_set_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30806,7 +30806,7 @@ of_action_id_set_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_nicira_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_nicira_t *obj)
+of_action_nicira_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30826,7 +30826,7 @@ of_action_nicira_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_nicira_dec_ttl_t *obj)
+of_action_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30846,7 +30846,7 @@ of_action_nicira_dec_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_action_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_output_t *obj)
+of_action_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -30866,7 +30866,7 @@ of_action_output_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_acti
 }
 
 int
-of_action_pop_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_pop_mpls_t *obj)
+of_action_pop_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -30880,7 +30880,7 @@ of_action_pop_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_pop_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_pop_pbb_t *obj)
+of_action_pop_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30888,7 +30888,7 @@ of_action_pop_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_act
 }
 
 int
-of_action_pop_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_pop_vlan_t *obj)
+of_action_pop_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30896,7 +30896,7 @@ of_action_pop_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_push_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_push_mpls_t *obj)
+of_action_push_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -30910,7 +30910,7 @@ of_action_push_mpls_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_push_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_push_pbb_t *obj)
+of_action_push_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -30924,7 +30924,7 @@ of_action_push_pbb_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ac
 }
 
 int
-of_action_push_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_push_vlan_t *obj)
+of_action_push_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -30938,7 +30938,7 @@ of_action_push_vlan_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_set_field_t *obj)
+of_action_set_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -30951,7 +30951,7 @@ of_action_set_field_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_action_set_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_set_mpls_ttl_t *obj)
+of_action_set_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -30965,7 +30965,7 @@ of_action_set_mpls_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_action_set_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_set_nw_ttl_t *obj)
+of_action_set_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -30979,7 +30979,7 @@ of_action_set_nw_ttl_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_action_set_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_action_set_queue_t *obj)
+of_action_set_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -30993,7 +30993,7 @@ of_action_set_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_a
 }
 
 int
-of_async_config_prop_experimenter_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_experimenter_master_t *obj)
+of_async_config_prop_experimenter_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31001,7 +31001,7 @@ of_async_config_prop_experimenter_master_OF_VERSION_1_4_show(loci_writer_f write
 }
 
 int
-of_async_config_prop_experimenter_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_experimenter_slave_t *obj)
+of_async_config_prop_experimenter_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31009,7 +31009,7 @@ of_async_config_prop_experimenter_slave_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_async_config_prop_flow_removed_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_flow_removed_master_t *obj)
+of_async_config_prop_flow_removed_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31023,7 +31023,7 @@ of_async_config_prop_flow_removed_master_OF_VERSION_1_4_show(loci_writer_f write
 }
 
 int
-of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_flow_removed_slave_t *obj)
+of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31037,7 +31037,7 @@ of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_async_config_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_header_t *obj)
+of_async_config_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31045,7 +31045,7 @@ of_async_config_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_async_config_prop_packet_in_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_packet_in_master_t *obj)
+of_async_config_prop_packet_in_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31059,7 +31059,7 @@ of_async_config_prop_packet_in_master_OF_VERSION_1_4_show(loci_writer_f writer, 
 }
 
 int
-of_async_config_prop_packet_in_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_packet_in_slave_t *obj)
+of_async_config_prop_packet_in_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31073,7 +31073,7 @@ of_async_config_prop_packet_in_slave_OF_VERSION_1_4_show(loci_writer_f writer, v
 }
 
 int
-of_async_config_prop_port_status_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_port_status_master_t *obj)
+of_async_config_prop_port_status_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31087,7 +31087,7 @@ of_async_config_prop_port_status_master_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_async_config_prop_port_status_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_port_status_slave_t *obj)
+of_async_config_prop_port_status_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31101,7 +31101,7 @@ of_async_config_prop_port_status_slave_OF_VERSION_1_4_show(loci_writer_f writer,
 }
 
 int
-of_async_config_prop_requestforward_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_requestforward_master_t *obj)
+of_async_config_prop_requestforward_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31115,7 +31115,7 @@ of_async_config_prop_requestforward_master_OF_VERSION_1_4_show(loci_writer_f wri
 }
 
 int
-of_async_config_prop_requestforward_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_requestforward_slave_t *obj)
+of_async_config_prop_requestforward_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31129,7 +31129,7 @@ of_async_config_prop_requestforward_slave_OF_VERSION_1_4_show(loci_writer_f writ
 }
 
 int
-of_async_config_prop_role_status_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_role_status_master_t *obj)
+of_async_config_prop_role_status_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31143,7 +31143,7 @@ of_async_config_prop_role_status_master_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_async_config_prop_role_status_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_role_status_slave_t *obj)
+of_async_config_prop_role_status_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31157,7 +31157,7 @@ of_async_config_prop_role_status_slave_OF_VERSION_1_4_show(loci_writer_f writer,
 }
 
 int
-of_async_config_prop_table_status_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_table_status_master_t *obj)
+of_async_config_prop_table_status_master_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31171,7 +31171,7 @@ of_async_config_prop_table_status_master_OF_VERSION_1_4_show(loci_writer_f write
 }
 
 int
-of_async_config_prop_table_status_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_async_config_prop_table_status_slave_t *obj)
+of_async_config_prop_table_status_slave_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31185,7 +31185,7 @@ of_async_config_prop_table_status_slave_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_bsn_interface_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_interface_t *obj)
+of_bsn_interface_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -31216,7 +31216,7 @@ of_bsn_interface_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_
 }
 
 int
-of_bsn_vport_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_vport_header_t *obj)
+of_bsn_vport_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31224,7 +31224,7 @@ of_bsn_vport_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bsn_vport_l2gre_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_vport_l2gre_t *obj)
+of_bsn_vport_l2gre_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31298,7 +31298,7 @@ of_bsn_vport_l2gre_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bs
 }
 
 int
-of_bsn_vport_q_in_q_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bsn_vport_q_in_q_t *obj)
+of_bsn_vport_q_in_q_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31339,7 +31339,7 @@ of_bsn_vport_q_in_q_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_b
 }
 
 int
-of_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bucket_t *obj)
+of_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -31347,7 +31347,7 @@ of_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bucket_t *o
     uint32_t val32;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     of_bucket_weight_get(obj, &val16);
@@ -31376,7 +31376,7 @@ of_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bucket_t *o
 }
 
 int
-of_bucket_counter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bucket_counter_t *obj)
+of_bucket_counter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -31395,7 +31395,7 @@ of_bucket_counter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_buc
 }
 
 int
-of_bundle_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bundle_prop_experimenter_t *obj)
+of_bundle_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31414,7 +31414,7 @@ of_bundle_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_bundle_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_bundle_prop_header_t *obj)
+of_bundle_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31422,7 +31422,7 @@ of_bundle_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_flow_stats_entry_t *obj)
+of_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -31432,7 +31432,7 @@ of_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_f
     of_match_t match;
 
     of_list_instruction_t list;
-    of_instruction_t elt;
+    of_object_t elt;
     int rv;
 
     of_flow_stats_entry_table_id_get(obj, &val8);
@@ -31506,14 +31506,14 @@ of_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_f
 }
 
 int
-of_group_desc_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_desc_stats_entry_t *obj)
+of_group_desc_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
     uint32_t val32;
 
     of_list_bucket_t list;
-    of_bucket_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_desc_stats_entry_group_type_get(obj, &val8);
@@ -31537,14 +31537,14 @@ of_group_desc_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_group_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_group_stats_entry_t *obj)
+of_group_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint64_t val64;
 
     of_list_bucket_counter_t list;
-    of_bucket_counter_t elt;
+    of_object_t elt;
     int rv;
 
     of_group_stats_entry_group_id_get(obj, &val32);
@@ -31588,7 +31588,7 @@ of_group_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_hello_elem_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_hello_elem_header_t *obj)
+of_hello_elem_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31596,12 +31596,12 @@ of_hello_elem_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_hello_elem_versionbitmap_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_hello_elem_versionbitmap_t *obj)
+of_hello_elem_versionbitmap_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -31615,12 +31615,12 @@ of_hello_elem_versionbitmap_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_instruction_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_apply_actions_t *obj)
+of_instruction_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -31634,7 +31634,7 @@ of_instruction_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_clear_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_clear_actions_t *obj)
+of_instruction_clear_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31642,7 +31642,7 @@ of_instruction_clear_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_experimenter_t *obj)
+of_instruction_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31662,7 +31662,7 @@ of_instruction_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_instruction_goto_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_goto_table_t *obj)
+of_instruction_goto_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -31676,7 +31676,7 @@ of_instruction_goto_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_instruction_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_header_t *obj)
+of_instruction_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31684,7 +31684,7 @@ of_instruction_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_instruction_id_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_apply_actions_t *obj)
+of_instruction_id_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31692,7 +31692,7 @@ of_instruction_id_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_id_clear_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_clear_actions_t *obj)
+of_instruction_id_clear_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31700,7 +31700,7 @@ of_instruction_id_clear_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_id_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_experimenter_t *obj)
+of_instruction_id_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31714,7 +31714,7 @@ of_instruction_id_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* c
 }
 
 int
-of_instruction_id_goto_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_goto_table_t *obj)
+of_instruction_id_goto_table_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31722,7 +31722,7 @@ of_instruction_id_goto_table_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_id_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_header_t *obj)
+of_instruction_id_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31730,7 +31730,7 @@ of_instruction_id_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_instruction_id_meter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_meter_t *obj)
+of_instruction_id_meter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31738,7 +31738,7 @@ of_instruction_id_meter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_instruction_id_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_write_actions_t *obj)
+of_instruction_id_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31746,7 +31746,7 @@ of_instruction_id_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_instruction_id_write_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_id_write_metadata_t *obj)
+of_instruction_id_write_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31754,7 +31754,7 @@ of_instruction_id_write_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
-of_instruction_meter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_meter_t *obj)
+of_instruction_meter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31768,12 +31768,12 @@ of_instruction_meter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_instruction_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_write_actions_t *obj)
+of_instruction_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_t list;
-    of_action_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_t={ ");
@@ -31787,7 +31787,7 @@ of_instruction_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_instruction_write_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_instruction_write_metadata_t *obj)
+of_instruction_write_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -31806,12 +31806,12 @@ of_instruction_write_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_match_v3_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_match_v3_t *obj)
+of_match_v3_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_oxm_t list;
-    of_oxm_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_oxm_t={ ");
@@ -31825,7 +31825,7 @@ of_match_v3_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_match_v3_
 }
 
 int
-of_meter_band_drop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_band_drop_t *obj)
+of_meter_band_drop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31844,7 +31844,7 @@ of_meter_band_drop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_me
 }
 
 int
-of_meter_band_dscp_remark_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_band_dscp_remark_t *obj)
+of_meter_band_dscp_remark_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31869,7 +31869,7 @@ of_meter_band_dscp_remark_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_meter_band_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_band_experimenter_t *obj)
+of_meter_band_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31893,7 +31893,7 @@ of_meter_band_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_meter_band_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_band_header_t *obj)
+of_meter_band_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -31901,7 +31901,7 @@ of_meter_band_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_meter_band_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_band_stats_t *obj)
+of_meter_band_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -31920,14 +31920,14 @@ of_meter_band_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_m
 }
 
 int
-of_meter_config_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_config_t *obj)
+of_meter_config_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
     uint32_t val32;
 
     of_list_meter_band_t list;
-    of_meter_band_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_config_flags_get(obj, &val16);
@@ -31951,7 +31951,7 @@ of_meter_config_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter
 }
 
 int
-of_meter_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_features_t *obj)
+of_meter_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -31986,14 +31986,14 @@ of_meter_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_met
 }
 
 int
-of_meter_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_stats_t *obj)
+of_meter_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     uint64_t val64;
 
     of_list_meter_band_stats_t list;
-    of_meter_band_stats_t elt;
+    of_object_t elt;
     int rv;
 
     of_meter_stats_meter_id_get(obj, &val32);
@@ -32037,7 +32037,7 @@ of_meter_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_meter_
 }
 
 int
-of_oxm_arp_op_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_op_t *obj)
+of_oxm_arp_op_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -32051,7 +32051,7 @@ of_oxm_arp_op_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp
 }
 
 int
-of_oxm_arp_op_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_op_masked_t *obj)
+of_oxm_arp_op_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -32070,7 +32070,7 @@ of_oxm_arp_op_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_arp_sha_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_sha_t *obj)
+of_oxm_arp_sha_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32084,7 +32084,7 @@ of_oxm_arp_sha_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_sha_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_sha_masked_t *obj)
+of_oxm_arp_sha_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32103,7 +32103,7 @@ of_oxm_arp_sha_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_spa_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_spa_t *obj)
+of_oxm_arp_spa_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32117,7 +32117,7 @@ of_oxm_arp_spa_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_spa_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_spa_masked_t *obj)
+of_oxm_arp_spa_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32136,7 +32136,7 @@ of_oxm_arp_spa_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_tha_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_tha_t *obj)
+of_oxm_arp_tha_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32150,7 +32150,7 @@ of_oxm_arp_tha_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_tha_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_tha_masked_t *obj)
+of_oxm_arp_tha_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32169,7 +32169,7 @@ of_oxm_arp_tha_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_arp_tpa_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_t *obj)
+of_oxm_arp_tpa_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32183,7 +32183,7 @@ of_oxm_arp_tpa_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ar
 }
 
 int
-of_oxm_arp_tpa_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_arp_tpa_masked_t *obj)
+of_oxm_arp_tpa_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32202,7 +32202,7 @@ of_oxm_arp_tpa_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_eth_dst_t *obj)
+of_oxm_eth_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32216,7 +32216,7 @@ of_oxm_eth_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_et
 }
 
 int
-of_oxm_eth_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_eth_dst_masked_t *obj)
+of_oxm_eth_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32235,7 +32235,7 @@ of_oxm_eth_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_eth_src_t *obj)
+of_oxm_eth_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32249,7 +32249,7 @@ of_oxm_eth_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_et
 }
 
 int
-of_oxm_eth_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_eth_src_masked_t *obj)
+of_oxm_eth_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32268,7 +32268,7 @@ of_oxm_eth_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_eth_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_eth_type_t *obj)
+of_oxm_eth_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -32282,7 +32282,7 @@ of_oxm_eth_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_e
 }
 
 int
-of_oxm_eth_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_eth_type_masked_t *obj)
+of_oxm_eth_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -32301,7 +32301,7 @@ of_oxm_eth_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_header_t *obj)
+of_oxm_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -32309,7 +32309,7 @@ of_oxm_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_hea
 }
 
 int
-of_oxm_icmpv4_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_code_t *obj)
+of_oxm_icmpv4_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32323,7 +32323,7 @@ of_oxm_icmpv4_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv4_code_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_code_masked_t *obj)
+of_oxm_icmpv4_code_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32342,7 +32342,7 @@ of_oxm_icmpv4_code_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv4_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_type_t *obj)
+of_oxm_icmpv4_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32356,7 +32356,7 @@ of_oxm_icmpv4_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv4_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv4_type_masked_t *obj)
+of_oxm_icmpv4_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32375,7 +32375,7 @@ of_oxm_icmpv4_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv6_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_code_t *obj)
+of_oxm_icmpv6_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32389,7 +32389,7 @@ of_oxm_icmpv6_code_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv6_code_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_code_masked_t *obj)
+of_oxm_icmpv6_code_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32408,7 +32408,7 @@ of_oxm_icmpv6_code_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_icmpv6_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_type_t *obj)
+of_oxm_icmpv6_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32422,7 +32422,7 @@ of_oxm_icmpv6_type_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_icmpv6_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_icmpv6_type_masked_t *obj)
+of_oxm_icmpv6_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32441,7 +32441,7 @@ of_oxm_icmpv6_type_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_in_phy_port_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_in_phy_port_t *obj)
+of_oxm_in_phy_port_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -32455,7 +32455,7 @@ of_oxm_in_phy_port_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_in_phy_port_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_in_phy_port_masked_t *obj)
+of_oxm_in_phy_port_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -32474,7 +32474,7 @@ of_oxm_in_phy_port_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_in_port_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_in_port_t *obj)
+of_oxm_in_port_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -32488,7 +32488,7 @@ of_oxm_in_port_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_in
 }
 
 int
-of_oxm_in_port_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_in_port_masked_t *obj)
+of_oxm_in_port_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -32507,7 +32507,7 @@ of_oxm_in_port_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ip_dscp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_dscp_t *obj)
+of_oxm_ip_dscp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32521,7 +32521,7 @@ of_oxm_ip_dscp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip
 }
 
 int
-of_oxm_ip_dscp_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_dscp_masked_t *obj)
+of_oxm_ip_dscp_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32540,7 +32540,7 @@ of_oxm_ip_dscp_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ip_ecn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_ecn_t *obj)
+of_oxm_ip_ecn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32554,7 +32554,7 @@ of_oxm_ip_ecn_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_
 }
 
 int
-of_oxm_ip_ecn_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_ecn_masked_t *obj)
+of_oxm_ip_ecn_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32573,7 +32573,7 @@ of_oxm_ip_ecn_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_oxm_ip_proto_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_proto_t *obj)
+of_oxm_ip_proto_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32587,7 +32587,7 @@ of_oxm_ip_proto_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ip_proto_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ip_proto_masked_t *obj)
+of_oxm_ip_proto_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32606,7 +32606,7 @@ of_oxm_ip_proto_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv4_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_dst_t *obj)
+of_oxm_ipv4_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -32620,7 +32620,7 @@ of_oxm_ipv4_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv4_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_dst_masked_t *obj)
+of_oxm_ipv4_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -32639,7 +32639,7 @@ of_oxm_ipv4_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv4_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_src_t *obj)
+of_oxm_ipv4_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -32653,7 +32653,7 @@ of_oxm_ipv4_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv4_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv4_src_masked_t *obj)
+of_oxm_ipv4_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv4_t ipv4;
@@ -32672,7 +32672,7 @@ of_oxm_ipv4_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv6_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_dst_t *obj)
+of_oxm_ipv6_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -32686,7 +32686,7 @@ of_oxm_ipv6_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv6_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_dst_masked_t *obj)
+of_oxm_ipv6_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -32705,7 +32705,7 @@ of_oxm_ipv6_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_ipv6_flabel_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_flabel_t *obj)
+of_oxm_ipv6_flabel_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32719,7 +32719,7 @@ of_oxm_ipv6_flabel_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_flabel_masked_t *obj)
+of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32738,7 +32738,7 @@ of_oxm_ipv6_flabel_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_nd_sll_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_sll_t *obj)
+of_oxm_ipv6_nd_sll_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32752,7 +32752,7 @@ of_oxm_ipv6_nd_sll_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_sll_masked_t *obj)
+of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32771,7 +32771,7 @@ of_oxm_ipv6_nd_sll_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_nd_target_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_target_t *obj)
+of_oxm_ipv6_nd_target_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -32785,7 +32785,7 @@ of_oxm_ipv6_nd_target_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_target_masked_t *obj)
+of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -32804,7 +32804,7 @@ of_oxm_ipv6_nd_target_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_oxm_ipv6_nd_tll_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_tll_t *obj)
+of_oxm_ipv6_nd_tll_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32818,7 +32818,7 @@ of_oxm_ipv6_nd_tll_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_ox
 }
 
 int
-of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_nd_tll_masked_t *obj)
+of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_mac_addr_t mac_addr;
@@ -32837,7 +32837,7 @@ of_oxm_ipv6_nd_tll_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_oxm_ipv6_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_t *obj)
+of_oxm_ipv6_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -32851,7 +32851,7 @@ of_oxm_ipv6_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_i
 }
 
 int
-of_oxm_ipv6_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ipv6_src_masked_t *obj)
+of_oxm_ipv6_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_ipv6_t ipv6;
@@ -32870,7 +32870,7 @@ of_oxm_ipv6_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_metadata_t *obj)
+of_oxm_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -32884,7 +32884,7 @@ of_oxm_metadata_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_m
 }
 
 int
-of_oxm_metadata_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_metadata_masked_t *obj)
+of_oxm_metadata_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -32903,7 +32903,7 @@ of_oxm_metadata_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_mpls_bos_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mpls_bos_t *obj)
+of_oxm_mpls_bos_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32917,7 +32917,7 @@ of_oxm_mpls_bos_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_m
 }
 
 int
-of_oxm_mpls_bos_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mpls_bos_masked_t *obj)
+of_oxm_mpls_bos_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32936,7 +32936,7 @@ of_oxm_mpls_bos_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_mpls_label_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mpls_label_t *obj)
+of_oxm_mpls_label_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32950,7 +32950,7 @@ of_oxm_mpls_label_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm
 }
 
 int
-of_oxm_mpls_label_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mpls_label_masked_t *obj)
+of_oxm_mpls_label_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -32969,7 +32969,7 @@ of_oxm_mpls_label_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_oxm_mpls_tc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_t *obj)
+of_oxm_mpls_tc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -32983,7 +32983,7 @@ of_oxm_mpls_tc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mp
 }
 
 int
-of_oxm_mpls_tc_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_mpls_tc_masked_t *obj)
+of_oxm_mpls_tc_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -33002,7 +33002,7 @@ of_oxm_mpls_tc_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_sctp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_sctp_dst_t *obj)
+of_oxm_sctp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33016,7 +33016,7 @@ of_oxm_sctp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_s
 }
 
 int
-of_oxm_sctp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_sctp_dst_masked_t *obj)
+of_oxm_sctp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33035,7 +33035,7 @@ of_oxm_sctp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_sctp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_sctp_src_t *obj)
+of_oxm_sctp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33049,7 +33049,7 @@ of_oxm_sctp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_s
 }
 
 int
-of_oxm_sctp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_sctp_src_masked_t *obj)
+of_oxm_sctp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33068,7 +33068,7 @@ of_oxm_sctp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_tcp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_t *obj)
+of_oxm_tcp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33082,7 +33082,7 @@ of_oxm_tcp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tc
 }
 
 int
-of_oxm_tcp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tcp_dst_masked_t *obj)
+of_oxm_tcp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33101,7 +33101,7 @@ of_oxm_tcp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_tcp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tcp_src_t *obj)
+of_oxm_tcp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33115,7 +33115,7 @@ of_oxm_tcp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tc
 }
 
 int
-of_oxm_tcp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tcp_src_masked_t *obj)
+of_oxm_tcp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33134,7 +33134,7 @@ of_oxm_tcp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_tunnel_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tunnel_id_t *obj)
+of_oxm_tunnel_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -33148,7 +33148,7 @@ of_oxm_tunnel_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_
 }
 
 int
-of_oxm_tunnel_id_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_tunnel_id_masked_t *obj)
+of_oxm_tunnel_id_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -33167,7 +33167,7 @@ of_oxm_tunnel_id_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_oxm_udp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_udp_dst_t *obj)
+of_oxm_udp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33181,7 +33181,7 @@ of_oxm_udp_dst_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ud
 }
 
 int
-of_oxm_udp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_udp_dst_masked_t *obj)
+of_oxm_udp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33200,7 +33200,7 @@ of_oxm_udp_dst_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_udp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_udp_src_t *obj)
+of_oxm_udp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33214,7 +33214,7 @@ of_oxm_udp_src_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_ud
 }
 
 int
-of_oxm_udp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_udp_src_masked_t *obj)
+of_oxm_udp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33233,7 +33233,7 @@ of_oxm_udp_src_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_oxm_vlan_pcp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_vlan_pcp_t *obj)
+of_oxm_vlan_pcp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -33247,7 +33247,7 @@ of_oxm_vlan_pcp_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_v
 }
 
 int
-of_oxm_vlan_pcp_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_vlan_pcp_masked_t *obj)
+of_oxm_vlan_pcp_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -33266,7 +33266,7 @@ of_oxm_vlan_pcp_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_oxm_vlan_vid_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_vlan_vid_t *obj)
+of_oxm_vlan_vid_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33280,7 +33280,7 @@ of_oxm_vlan_vid_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_v
 }
 
 int
-of_oxm_vlan_vid_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_oxm_vlan_vid_masked_t *obj)
+of_oxm_vlan_vid_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33299,14 +33299,14 @@ of_oxm_vlan_vid_masked_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_packet_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_packet_queue_t *obj)
+of_packet_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
     of_port_no_t port_no;
 
     of_list_queue_prop_t list;
-    of_queue_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_packet_queue_queue_id_get(obj, &val32);
@@ -33330,7 +33330,7 @@ of_packet_queue_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_packe
 }
 
 int
-of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_t *obj)
+of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -33339,7 +33339,7 @@ of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_des
     uint32_t val32;
 
     of_list_port_desc_prop_t list;
-    of_port_desc_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_desc_port_no_get(obj, &port_no);
@@ -33378,7 +33378,7 @@ of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_des
 }
 
 int
-of_port_desc_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_prop_ethernet_t *obj)
+of_port_desc_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33417,7 +33417,7 @@ of_port_desc_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_port_desc_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_prop_experimenter_t *obj)
+of_port_desc_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33436,7 +33436,7 @@ of_port_desc_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* c
 }
 
 int
-of_port_desc_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_prop_header_t *obj)
+of_port_desc_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -33444,7 +33444,7 @@ of_port_desc_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_port_desc_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_desc_prop_optical_t *obj)
+of_port_desc_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33498,7 +33498,7 @@ of_port_desc_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_port_mod_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_prop_ethernet_t *obj)
+of_port_mod_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33512,7 +33512,7 @@ of_port_mod_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_port_mod_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_prop_experimenter_t *obj)
+of_port_mod_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33531,7 +33531,7 @@ of_port_mod_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* co
 }
 
 int
-of_port_mod_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_prop_header_t *obj)
+of_port_mod_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -33539,7 +33539,7 @@ of_port_mod_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_port_mod_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_mod_prop_optical_t *obj)
+of_port_mod_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33573,7 +33573,7 @@ of_port_mod_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_entry_t *obj)
+of_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -33581,7 +33581,7 @@ of_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_p
     uint64_t val64;
 
     of_list_port_stats_prop_t list;
-    of_port_stats_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_port_stats_entry_port_no_get(obj, &port_no);
@@ -33650,7 +33650,7 @@ of_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_p
 }
 
 int
-of_port_stats_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_prop_ethernet_t *obj)
+of_port_stats_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -33679,7 +33679,7 @@ of_port_stats_prop_ethernet_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_port_stats_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_prop_experimenter_t *obj)
+of_port_stats_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33704,7 +33704,7 @@ of_port_stats_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_port_stats_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_prop_header_t *obj)
+of_port_stats_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -33712,7 +33712,7 @@ of_port_stats_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_port_stats_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_port_stats_prop_optical_t *obj)
+of_port_stats_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33777,13 +33777,13 @@ of_port_stats_prop_optical_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_t *obj)
+of_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
 
     of_list_queue_desc_prop_t list;
-    of_queue_desc_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_desc_port_no_get(obj, &val32);
@@ -33807,7 +33807,7 @@ of_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_d
 }
 
 int
-of_queue_desc_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_prop_experimenter_t *obj)
+of_queue_desc_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33826,7 +33826,7 @@ of_queue_desc_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_queue_desc_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_prop_header_t *obj)
+of_queue_desc_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -33834,7 +33834,7 @@ of_queue_desc_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_queue_desc_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_prop_max_rate_t *obj)
+of_queue_desc_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33848,7 +33848,7 @@ of_queue_desc_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_desc_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_desc_prop_min_rate_t *obj)
+of_queue_desc_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33862,7 +33862,7 @@ of_queue_desc_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_queue_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_prop_experimenter_t *obj)
+of_queue_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33882,7 +33882,7 @@ of_queue_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_queue_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_prop_header_t *obj)
+of_queue_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -33890,7 +33890,7 @@ of_queue_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_prop_max_rate_t *obj)
+of_queue_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33904,7 +33904,7 @@ of_queue_prop_max_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_prop_min_rate_t *obj)
+of_queue_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint16_t val16;
@@ -33918,7 +33918,7 @@ of_queue_prop_min_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_stats_entry_t *obj)
+of_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     of_port_no_t port_no;
@@ -33926,7 +33926,7 @@ of_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
     uint64_t val64;
 
     of_list_queue_stats_prop_t list;
-    of_queue_stats_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_queue_stats_entry_port_no_get(obj, &port_no);
@@ -33975,7 +33975,7 @@ of_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_queue_stats_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_stats_prop_experimenter_t *obj)
+of_queue_stats_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -33994,7 +33994,7 @@ of_queue_stats_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
-of_queue_stats_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_queue_stats_prop_header_t *obj)
+of_queue_stats_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34002,7 +34002,7 @@ of_queue_stats_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_role_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_prop_experimenter_t *obj)
+of_role_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -34021,7 +34021,7 @@ of_role_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_role_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_role_prop_header_t *obj)
+of_role_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34029,7 +34029,7 @@ of_role_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_r
 }
 
 int
-of_table_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_desc_t *obj)
+of_table_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -34049,12 +34049,12 @@ of_table_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_d
 }
 
 int
-of_table_feature_prop_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_actions_t *obj)
+of_table_feature_prop_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -34068,12 +34068,12 @@ of_table_feature_prop_apply_actions_OF_VERSION_1_4_show(loci_writer_f writer, vo
 }
 
 int
-of_table_feature_prop_apply_actions_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_actions_miss_t *obj)
+of_table_feature_prop_apply_actions_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -34087,12 +34087,12 @@ of_table_feature_prop_apply_actions_miss_OF_VERSION_1_4_show(loci_writer_f write
 }
 
 int
-of_table_feature_prop_apply_setfield_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_setfield_t *obj)
+of_table_feature_prop_apply_setfield_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -34106,12 +34106,12 @@ of_table_feature_prop_apply_setfield_OF_VERSION_1_4_show(loci_writer_f writer, v
 }
 
 int
-of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_apply_setfield_miss_t *obj)
+of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -34125,7 +34125,7 @@ of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_show(loci_writer_f writ
 }
 
 int
-of_table_feature_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_t *obj)
+of_table_feature_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -34150,7 +34150,7 @@ of_table_feature_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
-of_table_feature_prop_experimenter_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_experimenter_miss_t *obj)
+of_table_feature_prop_experimenter_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -34175,7 +34175,7 @@ of_table_feature_prop_experimenter_miss_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_table_feature_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_header_t *obj)
+of_table_feature_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34183,12 +34183,12 @@ of_table_feature_prop_header_OF_VERSION_1_4_show(loci_writer_f writer, void* coo
 }
 
 int
-of_table_feature_prop_instructions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_instructions_t *obj)
+of_table_feature_prop_instructions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_instruction_id_t list;
-    of_instruction_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_instruction_id_t={ ");
@@ -34202,12 +34202,12 @@ of_table_feature_prop_instructions_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
-of_table_feature_prop_instructions_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_instructions_miss_t *obj)
+of_table_feature_prop_instructions_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_instruction_id_t list;
-    of_instruction_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_instruction_id_t={ ");
@@ -34221,12 +34221,12 @@ of_table_feature_prop_instructions_miss_OF_VERSION_1_4_show(loci_writer_f writer
 }
 
 int
-of_table_feature_prop_match_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_match_t *obj)
+of_table_feature_prop_match_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -34240,12 +34240,12 @@ of_table_feature_prop_match_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
 }
 
 int
-of_table_feature_prop_next_tables_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_next_tables_t *obj)
+of_table_feature_prop_next_tables_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint8_t list;
-    of_uint8_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint8_t={ ");
@@ -34259,12 +34259,12 @@ of_table_feature_prop_next_tables_OF_VERSION_1_4_show(loci_writer_f writer, void
 }
 
 int
-of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_next_tables_miss_t *obj)
+of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint8_t list;
-    of_uint8_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint8_t={ ");
@@ -34278,12 +34278,12 @@ of_table_feature_prop_next_tables_miss_OF_VERSION_1_4_show(loci_writer_f writer,
 }
 
 int
-of_table_feature_prop_table_sync_from_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_table_sync_from_t *obj)
+of_table_feature_prop_table_sync_from_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint8_t list;
-    of_uint8_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint8_t={ ");
@@ -34297,12 +34297,12 @@ of_table_feature_prop_table_sync_from_OF_VERSION_1_4_show(loci_writer_f writer, 
 }
 
 int
-of_table_feature_prop_wildcards_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_wildcards_t *obj)
+of_table_feature_prop_wildcards_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -34316,12 +34316,12 @@ of_table_feature_prop_wildcards_OF_VERSION_1_4_show(loci_writer_f writer, void* 
 }
 
 int
-of_table_feature_prop_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_actions_t *obj)
+of_table_feature_prop_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -34335,12 +34335,12 @@ of_table_feature_prop_write_actions_OF_VERSION_1_4_show(loci_writer_f writer, vo
 }
 
 int
-of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_actions_miss_t *obj)
+of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_action_id_t list;
-    of_action_id_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_action_id_t={ ");
@@ -34354,12 +34354,12 @@ of_table_feature_prop_write_actions_miss_OF_VERSION_1_4_show(loci_writer_f write
 }
 
 int
-of_table_feature_prop_write_setfield_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_setfield_t *obj)
+of_table_feature_prop_write_setfield_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -34373,12 +34373,12 @@ of_table_feature_prop_write_setfield_OF_VERSION_1_4_show(loci_writer_f writer, v
 }
 
 int
-of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_feature_prop_write_setfield_miss_t *obj)
+of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
     of_list_uint32_t list;
-    of_uint32_t elt;
+    of_object_t elt;
     int rv;
 
     out += writer(cookie, "of_uint32_t={ ");
@@ -34392,7 +34392,7 @@ of_table_feature_prop_write_setfield_miss_OF_VERSION_1_4_show(loci_writer_f writ
 }
 
 int
-of_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_features_t *obj)
+of_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -34401,7 +34401,7 @@ of_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_tab
     uint32_t val32;
 
     of_list_table_feature_prop_t list;
-    of_table_feature_prop_t elt;
+    of_object_t elt;
     int rv;
 
     of_table_features_table_id_get(obj, &val8);
@@ -34445,7 +34445,7 @@ of_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_tab
 }
 
 int
-of_table_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mod_prop_t *obj)
+of_table_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34453,7 +34453,7 @@ of_table_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_tab
 }
 
 int
-of_table_mod_prop_eviction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mod_prop_eviction_t *obj)
+of_table_mod_prop_eviction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -34467,7 +34467,7 @@ of_table_mod_prop_eviction_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_table_mod_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mod_prop_experimenter_t *obj)
+of_table_mod_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -34486,7 +34486,7 @@ of_table_mod_prop_experimenter_OF_VERSION_1_4_show(loci_writer_f writer, void* c
 }
 
 int
-of_table_mod_prop_vacancy_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_mod_prop_vacancy_t *obj)
+of_table_mod_prop_vacancy_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -34510,7 +34510,7 @@ of_table_mod_prop_vacancy_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_table_stats_entry_t *obj)
+of_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -34541,7 +34541,7 @@ of_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_
 }
 
 int
-of_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_uint32_t *obj)
+of_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint32_t val32;
@@ -34555,7 +34555,7 @@ of_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_uint32_t *o
 }
 
 int
-of_uint64_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_uint64_t *obj)
+of_uint64_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint64_t val64;
@@ -34569,7 +34569,7 @@ of_uint64_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_uint64_t *o
 }
 
 int
-of_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_uint8_t *obj)
+of_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
     uint8_t val8;
@@ -34583,7 +34583,7 @@ of_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_uint8_t *obj
 }
 
 int
-of_list_action_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_action_t *obj)
+of_list_action_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34591,7 +34591,7 @@ of_list_action_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_a
 }
 
 int
-of_list_action_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_action_id_t *obj)
+of_list_action_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34599,7 +34599,7 @@ of_list_action_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_async_config_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_async_config_prop_t *obj)
+of_list_async_config_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34607,7 +34607,7 @@ of_list_async_config_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_bsn_interface_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_bsn_interface_t *obj)
+of_list_bsn_interface_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34615,7 +34615,7 @@ of_list_bsn_interface_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_list_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_bucket_t *obj)
+of_list_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34623,7 +34623,7 @@ of_list_bucket_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_b
 }
 
 int
-of_list_bucket_counter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_bucket_counter_t *obj)
+of_list_bucket_counter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34631,7 +34631,7 @@ of_list_bucket_counter_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_bundle_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_bundle_prop_t *obj)
+of_list_bundle_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34639,7 +34639,7 @@ of_list_bundle_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_flow_stats_entry_t *obj)
+of_list_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34647,7 +34647,7 @@ of_list_flow_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_group_desc_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_group_desc_stats_entry_t *obj)
+of_list_group_desc_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34655,7 +34655,7 @@ of_list_group_desc_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* c
 }
 
 int
-of_list_group_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_group_stats_entry_t *obj)
+of_list_group_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34663,7 +34663,7 @@ of_list_group_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_hello_elem_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_hello_elem_t *obj)
+of_list_hello_elem_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34671,7 +34671,7 @@ of_list_hello_elem_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_instruction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_instruction_t *obj)
+of_list_instruction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34679,7 +34679,7 @@ of_list_instruction_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_instruction_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_instruction_id_t *obj)
+of_list_instruction_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34687,7 +34687,7 @@ of_list_instruction_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_meter_band_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_meter_band_t *obj)
+of_list_meter_band_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34695,7 +34695,7 @@ of_list_meter_band_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_meter_band_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_meter_band_stats_t *obj)
+of_list_meter_band_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34703,7 +34703,7 @@ of_list_meter_band_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_meter_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_meter_stats_t *obj)
+of_list_meter_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34711,7 +34711,7 @@ of_list_meter_stats_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_l
 }
 
 int
-of_list_oxm_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_oxm_t *obj)
+of_list_oxm_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34719,7 +34719,7 @@ of_list_oxm_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_oxm_
 }
 
 int
-of_list_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_port_desc_t *obj)
+of_list_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34727,7 +34727,7 @@ of_list_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_port_desc_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_port_desc_prop_t *obj)
+of_list_port_desc_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34735,7 +34735,7 @@ of_list_port_desc_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_port_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_port_mod_prop_t *obj)
+of_list_port_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34743,7 +34743,7 @@ of_list_port_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of
 }
 
 int
-of_list_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_port_stats_entry_t *obj)
+of_list_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34751,7 +34751,7 @@ of_list_port_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_port_stats_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_port_stats_prop_t *obj)
+of_list_port_stats_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34759,7 +34759,7 @@ of_list_port_stats_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_list_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_queue_desc_t *obj)
+of_list_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34767,7 +34767,7 @@ of_list_queue_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_queue_desc_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_queue_desc_prop_t *obj)
+of_list_queue_desc_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34775,7 +34775,7 @@ of_list_queue_desc_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, 
 }
 
 int
-of_list_queue_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_queue_prop_t *obj)
+of_list_queue_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34783,7 +34783,7 @@ of_list_queue_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_queue_stats_entry_t *obj)
+of_list_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34791,7 +34791,7 @@ of_list_queue_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_queue_stats_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_queue_stats_prop_t *obj)
+of_list_queue_stats_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34799,7 +34799,7 @@ of_list_queue_stats_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
-of_list_role_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_role_prop_t *obj)
+of_list_role_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34807,7 +34807,7 @@ of_list_role_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_lis
 }
 
 int
-of_list_table_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_table_desc_t *obj)
+of_list_table_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34815,7 +34815,7 @@ of_list_table_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_li
 }
 
 int
-of_list_table_feature_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_table_feature_prop_t *obj)
+of_list_table_feature_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34823,7 +34823,7 @@ of_list_table_feature_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cooki
 }
 
 int
-of_list_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_table_features_t *obj)
+of_list_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34831,7 +34831,7 @@ of_list_table_features_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_table_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_table_mod_prop_t *obj)
+of_list_table_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34839,7 +34839,7 @@ of_list_table_mod_prop_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, o
 }
 
 int
-of_list_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_table_stats_entry_t *obj)
+of_list_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34847,7 +34847,7 @@ of_list_table_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie
 }
 
 int
-of_list_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_uint32_t *obj)
+of_list_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 
@@ -34855,7 +34855,7 @@ of_list_uint32_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_u
 }
 
 int
-of_list_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_list_uint8_t *obj)
+of_list_uint8_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
 

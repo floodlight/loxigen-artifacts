@@ -62,15 +62,15 @@ of_oxm_icmpv6_code_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_icmpv6_code
  */
 
-of_oxm_icmpv6_code_t *
+of_object_t *
 of_oxm_icmpv6_code_new(of_version_t version)
 {
-    of_oxm_icmpv6_code_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE];
 
-    if ((obj = (of_oxm_icmpv6_code_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -98,10 +98,9 @@ of_oxm_icmpv6_code_new(of_version_t version)
  */
 
 void
-of_oxm_icmpv6_code_init(of_oxm_icmpv6_code_t *obj,
+of_oxm_icmpv6_code_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_ICMPV6_CODE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -121,7 +120,6 @@ of_oxm_icmpv6_code_init(of_oxm_icmpv6_code_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_icmpv6_code.
@@ -268,15 +266,15 @@ of_oxm_icmpv6_code_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_icmpv6_code_masked
  */
 
-of_oxm_icmpv6_code_masked_t *
+of_object_t *
 of_oxm_icmpv6_code_masked_new(of_version_t version)
 {
-    of_oxm_icmpv6_code_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_CODE_MASKED];
 
-    if ((obj = (of_oxm_icmpv6_code_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -304,10 +302,9 @@ of_oxm_icmpv6_code_masked_new(of_version_t version)
  */
 
 void
-of_oxm_icmpv6_code_masked_init(of_oxm_icmpv6_code_masked_t *obj,
+of_oxm_icmpv6_code_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_ICMPV6_CODE_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -327,7 +324,6 @@ of_oxm_icmpv6_code_masked_init(of_oxm_icmpv6_code_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_icmpv6_code_masked.
@@ -556,15 +552,15 @@ of_oxm_icmpv6_type_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_icmpv6_type
  */
 
-of_oxm_icmpv6_type_t *
+of_object_t *
 of_oxm_icmpv6_type_new(of_version_t version)
 {
-    of_oxm_icmpv6_type_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE];
 
-    if ((obj = (of_oxm_icmpv6_type_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -592,10 +588,9 @@ of_oxm_icmpv6_type_new(of_version_t version)
  */
 
 void
-of_oxm_icmpv6_type_init(of_oxm_icmpv6_type_t *obj,
+of_oxm_icmpv6_type_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -615,7 +610,6 @@ of_oxm_icmpv6_type_init(of_oxm_icmpv6_type_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_icmpv6_type.
@@ -762,15 +756,15 @@ of_oxm_icmpv6_type_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_icmpv6_type_masked
  */
 
-of_oxm_icmpv6_type_masked_t *
+of_object_t *
 of_oxm_icmpv6_type_masked_new(of_version_t version)
 {
-    of_oxm_icmpv6_type_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE_MASKED];
 
-    if ((obj = (of_oxm_icmpv6_type_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -798,10 +792,9 @@ of_oxm_icmpv6_type_masked_new(of_version_t version)
  */
 
 void
-of_oxm_icmpv6_type_masked_init(of_oxm_icmpv6_type_masked_t *obj,
+of_oxm_icmpv6_type_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_ICMPV6_TYPE_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -821,7 +814,6 @@ of_oxm_icmpv6_type_masked_init(of_oxm_icmpv6_type_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_icmpv6_type_masked.
@@ -1050,15 +1042,15 @@ of_oxm_in_phy_port_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_in_phy_port
  */
 
-of_oxm_in_phy_port_t *
+of_object_t *
 of_oxm_in_phy_port_new(of_version_t version)
 {
-    of_oxm_in_phy_port_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT];
 
-    if ((obj = (of_oxm_in_phy_port_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1086,10 +1078,9 @@ of_oxm_in_phy_port_new(of_version_t version)
  */
 
 void
-of_oxm_in_phy_port_init(of_oxm_in_phy_port_t *obj,
+of_oxm_in_phy_port_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IN_PHY_PORT] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1109,7 +1100,6 @@ of_oxm_in_phy_port_init(of_oxm_in_phy_port_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_in_phy_port.
@@ -1257,15 +1247,15 @@ of_oxm_in_phy_port_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_in_phy_port_masked
  */
 
-of_oxm_in_phy_port_masked_t *
+of_object_t *
 of_oxm_in_phy_port_masked_new(of_version_t version)
 {
-    of_oxm_in_phy_port_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IN_PHY_PORT_MASKED];
 
-    if ((obj = (of_oxm_in_phy_port_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1293,10 +1283,9 @@ of_oxm_in_phy_port_masked_new(of_version_t version)
  */
 
 void
-of_oxm_in_phy_port_masked_init(of_oxm_in_phy_port_masked_t *obj,
+of_oxm_in_phy_port_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IN_PHY_PORT_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1316,7 +1305,6 @@ of_oxm_in_phy_port_masked_init(of_oxm_in_phy_port_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_in_phy_port_masked.
@@ -1547,15 +1535,15 @@ of_oxm_in_port_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_in_port
  */
 
-of_oxm_in_port_t *
+of_object_t *
 of_oxm_in_port_new(of_version_t version)
 {
-    of_oxm_in_port_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IN_PORT];
 
-    if ((obj = (of_oxm_in_port_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1583,10 +1571,9 @@ of_oxm_in_port_new(of_version_t version)
  */
 
 void
-of_oxm_in_port_init(of_oxm_in_port_t *obj,
+of_oxm_in_port_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IN_PORT] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1606,7 +1593,6 @@ of_oxm_in_port_init(of_oxm_in_port_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_in_port.
@@ -1754,15 +1740,15 @@ of_oxm_in_port_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_in_port_masked
  */
 
-of_oxm_in_port_masked_t *
+of_object_t *
 of_oxm_in_port_masked_new(of_version_t version)
 {
-    of_oxm_in_port_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED];
 
-    if ((obj = (of_oxm_in_port_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -1790,10 +1776,9 @@ of_oxm_in_port_masked_new(of_version_t version)
  */
 
 void
-of_oxm_in_port_masked_init(of_oxm_in_port_masked_t *obj,
+of_oxm_in_port_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IN_PORT_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -1813,7 +1798,6 @@ of_oxm_in_port_masked_init(of_oxm_in_port_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_in_port_masked.
@@ -2044,15 +2028,15 @@ of_oxm_ip_dscp_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ip_dscp
  */
 
-of_oxm_ip_dscp_t *
+of_object_t *
 of_oxm_ip_dscp_new(of_version_t version)
 {
-    of_oxm_ip_dscp_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP];
 
-    if ((obj = (of_oxm_ip_dscp_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2080,10 +2064,9 @@ of_oxm_ip_dscp_new(of_version_t version)
  */
 
 void
-of_oxm_ip_dscp_init(of_oxm_ip_dscp_t *obj,
+of_oxm_ip_dscp_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IP_DSCP] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2103,7 +2086,6 @@ of_oxm_ip_dscp_init(of_oxm_ip_dscp_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ip_dscp.
@@ -2250,15 +2232,15 @@ of_oxm_ip_dscp_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ip_dscp_masked
  */
 
-of_oxm_ip_dscp_masked_t *
+of_object_t *
 of_oxm_ip_dscp_masked_new(of_version_t version)
 {
-    of_oxm_ip_dscp_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED];
 
-    if ((obj = (of_oxm_ip_dscp_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2286,10 +2268,9 @@ of_oxm_ip_dscp_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ip_dscp_masked_init(of_oxm_ip_dscp_masked_t *obj,
+of_oxm_ip_dscp_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IP_DSCP_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2309,7 +2290,6 @@ of_oxm_ip_dscp_masked_init(of_oxm_ip_dscp_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ip_dscp_masked.
@@ -2538,15 +2518,15 @@ of_oxm_ip_ecn_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ip_ecn
  */
 
-of_oxm_ip_ecn_t *
+of_object_t *
 of_oxm_ip_ecn_new(of_version_t version)
 {
-    of_oxm_ip_ecn_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_ECN];
 
-    if ((obj = (of_oxm_ip_ecn_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2574,10 +2554,9 @@ of_oxm_ip_ecn_new(of_version_t version)
  */
 
 void
-of_oxm_ip_ecn_init(of_oxm_ip_ecn_t *obj,
+of_oxm_ip_ecn_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IP_ECN] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2597,7 +2576,6 @@ of_oxm_ip_ecn_init(of_oxm_ip_ecn_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ip_ecn.
@@ -2744,15 +2722,15 @@ of_oxm_ip_ecn_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ip_ecn_masked
  */
 
-of_oxm_ip_ecn_masked_t *
+of_object_t *
 of_oxm_ip_ecn_masked_new(of_version_t version)
 {
-    of_oxm_ip_ecn_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED];
 
-    if ((obj = (of_oxm_ip_ecn_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -2780,10 +2758,9 @@ of_oxm_ip_ecn_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ip_ecn_masked_init(of_oxm_ip_ecn_masked_t *obj,
+of_oxm_ip_ecn_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IP_ECN_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -2803,7 +2780,6 @@ of_oxm_ip_ecn_masked_init(of_oxm_ip_ecn_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ip_ecn_masked.
@@ -3032,15 +3008,15 @@ of_oxm_ip_proto_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ip_proto
  */
 
-of_oxm_ip_proto_t *
+of_object_t *
 of_oxm_ip_proto_new(of_version_t version)
 {
-    of_oxm_ip_proto_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO];
 
-    if ((obj = (of_oxm_ip_proto_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3068,10 +3044,9 @@ of_oxm_ip_proto_new(of_version_t version)
  */
 
 void
-of_oxm_ip_proto_init(of_oxm_ip_proto_t *obj,
+of_oxm_ip_proto_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IP_PROTO] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3091,7 +3066,6 @@ of_oxm_ip_proto_init(of_oxm_ip_proto_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ip_proto.
@@ -3238,15 +3212,15 @@ of_oxm_ip_proto_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ip_proto_masked
  */
 
-of_oxm_ip_proto_masked_t *
+of_object_t *
 of_oxm_ip_proto_masked_new(of_version_t version)
 {
-    of_oxm_ip_proto_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED];
 
-    if ((obj = (of_oxm_ip_proto_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3274,10 +3248,9 @@ of_oxm_ip_proto_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ip_proto_masked_init(of_oxm_ip_proto_masked_t *obj,
+of_oxm_ip_proto_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IP_PROTO_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3297,7 +3270,6 @@ of_oxm_ip_proto_masked_init(of_oxm_ip_proto_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ip_proto_masked.
@@ -3526,15 +3498,15 @@ of_oxm_ipv4_dst_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv4_dst
  */
 
-of_oxm_ipv4_dst_t *
+of_object_t *
 of_oxm_ipv4_dst_new(of_version_t version)
 {
-    of_oxm_ipv4_dst_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST];
 
-    if ((obj = (of_oxm_ipv4_dst_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3562,10 +3534,9 @@ of_oxm_ipv4_dst_new(of_version_t version)
  */
 
 void
-of_oxm_ipv4_dst_init(of_oxm_ipv4_dst_t *obj,
+of_oxm_ipv4_dst_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV4_DST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3585,7 +3556,6 @@ of_oxm_ipv4_dst_init(of_oxm_ipv4_dst_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv4_dst.
@@ -3732,15 +3702,15 @@ of_oxm_ipv4_dst_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv4_dst_masked
  */
 
-of_oxm_ipv4_dst_masked_t *
+of_object_t *
 of_oxm_ipv4_dst_masked_new(of_version_t version)
 {
-    of_oxm_ipv4_dst_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED];
 
-    if ((obj = (of_oxm_ipv4_dst_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -3768,10 +3738,9 @@ of_oxm_ipv4_dst_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv4_dst_masked_init(of_oxm_ipv4_dst_masked_t *obj,
+of_oxm_ipv4_dst_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV4_DST_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -3791,7 +3760,6 @@ of_oxm_ipv4_dst_masked_init(of_oxm_ipv4_dst_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv4_dst_masked.
@@ -4020,15 +3988,15 @@ of_oxm_ipv4_src_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv4_src
  */
 
-of_oxm_ipv4_src_t *
+of_object_t *
 of_oxm_ipv4_src_new(of_version_t version)
 {
-    of_oxm_ipv4_src_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC];
 
-    if ((obj = (of_oxm_ipv4_src_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4056,10 +4024,9 @@ of_oxm_ipv4_src_new(of_version_t version)
  */
 
 void
-of_oxm_ipv4_src_init(of_oxm_ipv4_src_t *obj,
+of_oxm_ipv4_src_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV4_SRC] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4079,7 +4046,6 @@ of_oxm_ipv4_src_init(of_oxm_ipv4_src_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv4_src.
@@ -4226,15 +4192,15 @@ of_oxm_ipv4_src_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv4_src_masked
  */
 
-of_oxm_ipv4_src_masked_t *
+of_object_t *
 of_oxm_ipv4_src_masked_new(of_version_t version)
 {
-    of_oxm_ipv4_src_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED];
 
-    if ((obj = (of_oxm_ipv4_src_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4262,10 +4228,9 @@ of_oxm_ipv4_src_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv4_src_masked_init(of_oxm_ipv4_src_masked_t *obj,
+of_oxm_ipv4_src_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV4_SRC_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4285,7 +4250,6 @@ of_oxm_ipv4_src_masked_init(of_oxm_ipv4_src_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv4_src_masked.
@@ -4514,15 +4478,15 @@ of_oxm_ipv6_dst_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_dst
  */
 
-of_oxm_ipv6_dst_t *
+of_object_t *
 of_oxm_ipv6_dst_new(of_version_t version)
 {
-    of_oxm_ipv6_dst_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST];
 
-    if ((obj = (of_oxm_ipv6_dst_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4550,10 +4514,9 @@ of_oxm_ipv6_dst_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_dst_init(of_oxm_ipv6_dst_t *obj,
+of_oxm_ipv6_dst_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_DST] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4573,7 +4536,6 @@ of_oxm_ipv6_dst_init(of_oxm_ipv6_dst_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_dst.
@@ -4720,15 +4682,15 @@ of_oxm_ipv6_dst_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_dst_masked
  */
 
-of_oxm_ipv6_dst_masked_t *
+of_object_t *
 of_oxm_ipv6_dst_masked_new(of_version_t version)
 {
-    of_oxm_ipv6_dst_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED];
 
-    if ((obj = (of_oxm_ipv6_dst_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -4756,10 +4718,9 @@ of_oxm_ipv6_dst_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_dst_masked_init(of_oxm_ipv6_dst_masked_t *obj,
+of_oxm_ipv6_dst_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_DST_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -4779,7 +4740,6 @@ of_oxm_ipv6_dst_masked_init(of_oxm_ipv6_dst_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_dst_masked.
@@ -5008,15 +4968,15 @@ of_oxm_ipv6_flabel_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_flabel
  */
 
-of_oxm_ipv6_flabel_t *
+of_object_t *
 of_oxm_ipv6_flabel_new(of_version_t version)
 {
-    of_oxm_ipv6_flabel_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL];
 
-    if ((obj = (of_oxm_ipv6_flabel_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5044,10 +5004,9 @@ of_oxm_ipv6_flabel_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_flabel_init(of_oxm_ipv6_flabel_t *obj,
+of_oxm_ipv6_flabel_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_FLABEL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5067,7 +5026,6 @@ of_oxm_ipv6_flabel_init(of_oxm_ipv6_flabel_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_flabel.
@@ -5214,15 +5172,15 @@ of_oxm_ipv6_flabel_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_flabel_masked
  */
 
-of_oxm_ipv6_flabel_masked_t *
+of_object_t *
 of_oxm_ipv6_flabel_masked_new(of_version_t version)
 {
-    of_oxm_ipv6_flabel_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED];
 
-    if ((obj = (of_oxm_ipv6_flabel_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5250,10 +5208,9 @@ of_oxm_ipv6_flabel_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_flabel_masked_init(of_oxm_ipv6_flabel_masked_t *obj,
+of_oxm_ipv6_flabel_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_FLABEL_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5273,7 +5230,6 @@ of_oxm_ipv6_flabel_masked_init(of_oxm_ipv6_flabel_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_flabel_masked.
@@ -5502,15 +5458,15 @@ of_oxm_ipv6_nd_sll_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_nd_sll
  */
 
-of_oxm_ipv6_nd_sll_t *
+of_object_t *
 of_oxm_ipv6_nd_sll_new(of_version_t version)
 {
-    of_oxm_ipv6_nd_sll_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL];
 
-    if ((obj = (of_oxm_ipv6_nd_sll_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5538,10 +5494,9 @@ of_oxm_ipv6_nd_sll_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_nd_sll_init(of_oxm_ipv6_nd_sll_t *obj,
+of_oxm_ipv6_nd_sll_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5561,7 +5516,6 @@ of_oxm_ipv6_nd_sll_init(of_oxm_ipv6_nd_sll_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_nd_sll.
@@ -5708,15 +5662,15 @@ of_oxm_ipv6_nd_sll_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_nd_sll_masked
  */
 
-of_oxm_ipv6_nd_sll_masked_t *
+of_object_t *
 of_oxm_ipv6_nd_sll_masked_new(of_version_t version)
 {
-    of_oxm_ipv6_nd_sll_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED];
 
-    if ((obj = (of_oxm_ipv6_nd_sll_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -5744,10 +5698,9 @@ of_oxm_ipv6_nd_sll_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_nd_sll_masked_init(of_oxm_ipv6_nd_sll_masked_t *obj,
+of_oxm_ipv6_nd_sll_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_ND_SLL_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -5767,7 +5720,6 @@ of_oxm_ipv6_nd_sll_masked_init(of_oxm_ipv6_nd_sll_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_nd_sll_masked.
@@ -5996,15 +5948,15 @@ of_oxm_ipv6_nd_target_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_nd_target
  */
 
-of_oxm_ipv6_nd_target_t *
+of_object_t *
 of_oxm_ipv6_nd_target_new(of_version_t version)
 {
-    of_oxm_ipv6_nd_target_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET];
 
-    if ((obj = (of_oxm_ipv6_nd_target_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6032,10 +5984,9 @@ of_oxm_ipv6_nd_target_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_nd_target_init(of_oxm_ipv6_nd_target_t *obj,
+of_oxm_ipv6_nd_target_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6055,7 +6006,6 @@ of_oxm_ipv6_nd_target_init(of_oxm_ipv6_nd_target_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_nd_target.
@@ -6202,15 +6152,15 @@ of_oxm_ipv6_nd_target_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_nd_target_masked
  */
 
-of_oxm_ipv6_nd_target_masked_t *
+of_object_t *
 of_oxm_ipv6_nd_target_masked_new(of_version_t version)
 {
-    of_oxm_ipv6_nd_target_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED];
 
-    if ((obj = (of_oxm_ipv6_nd_target_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6238,10 +6188,9 @@ of_oxm_ipv6_nd_target_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_nd_target_masked_init(of_oxm_ipv6_nd_target_masked_t *obj,
+of_oxm_ipv6_nd_target_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_ND_TARGET_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6261,7 +6210,6 @@ of_oxm_ipv6_nd_target_masked_init(of_oxm_ipv6_nd_target_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_nd_target_masked.
@@ -6490,15 +6438,15 @@ of_oxm_ipv6_nd_tll_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_nd_tll
  */
 
-of_oxm_ipv6_nd_tll_t *
+of_object_t *
 of_oxm_ipv6_nd_tll_new(of_version_t version)
 {
-    of_oxm_ipv6_nd_tll_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL];
 
-    if ((obj = (of_oxm_ipv6_nd_tll_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6526,10 +6474,9 @@ of_oxm_ipv6_nd_tll_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_nd_tll_init(of_oxm_ipv6_nd_tll_t *obj,
+of_oxm_ipv6_nd_tll_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6549,7 +6496,6 @@ of_oxm_ipv6_nd_tll_init(of_oxm_ipv6_nd_tll_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_nd_tll.
@@ -6696,15 +6642,15 @@ of_oxm_ipv6_nd_tll_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_nd_tll_masked
  */
 
-of_oxm_ipv6_nd_tll_masked_t *
+of_object_t *
 of_oxm_ipv6_nd_tll_masked_new(of_version_t version)
 {
-    of_oxm_ipv6_nd_tll_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED];
 
-    if ((obj = (of_oxm_ipv6_nd_tll_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -6732,10 +6678,9 @@ of_oxm_ipv6_nd_tll_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_nd_tll_masked_init(of_oxm_ipv6_nd_tll_masked_t *obj,
+of_oxm_ipv6_nd_tll_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_ND_TLL_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -6755,7 +6700,6 @@ of_oxm_ipv6_nd_tll_masked_init(of_oxm_ipv6_nd_tll_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_nd_tll_masked.
@@ -6984,15 +6928,15 @@ of_oxm_ipv6_src_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_src
  */
 
-of_oxm_ipv6_src_t *
+of_object_t *
 of_oxm_ipv6_src_new(of_version_t version)
 {
-    of_oxm_ipv6_src_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC];
 
-    if ((obj = (of_oxm_ipv6_src_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7020,10 +6964,9 @@ of_oxm_ipv6_src_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_src_init(of_oxm_ipv6_src_t *obj,
+of_oxm_ipv6_src_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_SRC] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7043,7 +6986,6 @@ of_oxm_ipv6_src_init(of_oxm_ipv6_src_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_src.
@@ -7190,15 +7132,15 @@ of_oxm_ipv6_src_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_ipv6_src_masked
  */
 
-of_oxm_ipv6_src_masked_t *
+of_object_t *
 of_oxm_ipv6_src_masked_new(of_version_t version)
 {
-    of_oxm_ipv6_src_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED];
 
-    if ((obj = (of_oxm_ipv6_src_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7226,10 +7168,9 @@ of_oxm_ipv6_src_masked_new(of_version_t version)
  */
 
 void
-of_oxm_ipv6_src_masked_init(of_oxm_ipv6_src_masked_t *obj,
+of_oxm_ipv6_src_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_IPV6_SRC_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7249,7 +7190,6 @@ of_oxm_ipv6_src_masked_init(of_oxm_ipv6_src_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_ipv6_src_masked.
@@ -7478,15 +7418,15 @@ of_oxm_metadata_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_metadata
  */
 
-of_oxm_metadata_t *
+of_object_t *
 of_oxm_metadata_new(of_version_t version)
 {
-    of_oxm_metadata_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_METADATA];
 
-    if ((obj = (of_oxm_metadata_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7514,10 +7454,9 @@ of_oxm_metadata_new(of_version_t version)
  */
 
 void
-of_oxm_metadata_init(of_oxm_metadata_t *obj,
+of_oxm_metadata_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_METADATA] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7537,7 +7476,6 @@ of_oxm_metadata_init(of_oxm_metadata_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_metadata.
@@ -7684,15 +7622,15 @@ of_oxm_metadata_masked_push_wire_types(of_object_t *obj)
  * \ingroup of_oxm_metadata_masked
  */
 
-of_oxm_metadata_masked_t *
+of_object_t *
 of_oxm_metadata_masked_new(of_version_t version)
 {
-    of_oxm_metadata_masked_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED];
 
-    if ((obj = (of_oxm_metadata_masked_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
@@ -7720,10 +7658,9 @@ of_oxm_metadata_masked_new(of_version_t version)
  */
 
 void
-of_oxm_metadata_masked_init(of_oxm_metadata_masked_t *obj,
+of_oxm_metadata_masked_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_METADATA_MASKED] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -7743,7 +7680,6 @@ of_oxm_metadata_masked_init(of_oxm_metadata_masked_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-
 
 /**
  * Get value from an object of type of_oxm_metadata_masked.

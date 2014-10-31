@@ -47,15 +47,15 @@
  * \ingroup of_table_feature_prop_header
  */
 
-of_table_feature_prop_header_t *
+of_object_t *
 of_table_feature_prop_header_new(of_version_t version)
 {
-    of_table_feature_prop_header_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_HEADER];
 
-    if ((obj = (of_table_feature_prop_header_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -82,10 +82,9 @@ of_table_feature_prop_header_new(of_version_t version)
  */
 
 void
-of_table_feature_prop_header_init(of_table_feature_prop_header_t *obj,
+of_table_feature_prop_header_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_TABLE_FEATURE_PROP_HEADER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -105,4 +104,3 @@ of_table_feature_prop_header_init(of_table_feature_prop_header_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-

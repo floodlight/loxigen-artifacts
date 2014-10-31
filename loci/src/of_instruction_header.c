@@ -47,15 +47,15 @@
  * \ingroup of_instruction_header
  */
 
-of_instruction_header_t *
+of_object_t *
 of_instruction_header_new(of_version_t version)
 {
-    of_instruction_header_t *obj;
+    of_object_t *obj;
     int bytes;
 
     bytes = of_object_fixed_len[version][OF_INSTRUCTION_HEADER];
 
-    if ((obj = (of_instruction_header_t *)of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
+    if ((obj = of_object_new(OF_WIRE_BUFFER_MAX_LENGTH)) == NULL) {
         return NULL;
     }
 
@@ -82,10 +82,9 @@ of_instruction_header_new(of_version_t version)
  */
 
 void
-of_instruction_header_init(of_instruction_header_t *obj,
+of_instruction_header_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-
     LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_HEADER] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
@@ -105,4 +104,3 @@ of_instruction_header_init(of_instruction_header_t *obj,
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
 }
-

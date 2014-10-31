@@ -1152,6 +1152,39 @@ void of_table_mod_prop_vacancy_push_wire_types(of_object_t *obj);
 void of_table_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_table_status_push_wire_types(of_object_t *obj);
 
+/*
+ * Transparent union used for list iteration
+ *
+ * This will be removed when all callers are converted to of_object_t.
+ */
+union of_list_iter_u {
+    of_object_t *obj;
+    union of_action_u *of_action;
+    union of_header_u *of_header;
+    union of_bsn_vport_u *of_bsn_vport;
+    union of_queue_prop_u *of_queue_prop;
+    union of_instruction_u *of_instruction;
+    union of_oxm_u *of_oxm;
+    union of_action_id_u *of_action_id;
+    union of_bsn_tlv_u *of_bsn_tlv;
+    union of_hello_elem_u *of_hello_elem;
+    union of_instruction_id_u *of_instruction_id;
+    union of_meter_band_u *of_meter_band;
+    union of_table_feature_prop_u *of_table_feature_prop;
+    union of_async_config_prop_u *of_async_config_prop;
+    union of_bundle_prop_u *of_bundle_prop;
+    union of_port_desc_prop_u *of_port_desc_prop;
+    union of_port_mod_prop_u *of_port_mod_prop;
+    union of_port_stats_prop_u *of_port_stats_prop;
+    union of_queue_desc_prop_u *of_queue_desc_prop;
+    union of_queue_stats_prop_u *of_queue_stats_prop;
+    union of_role_prop_u *of_role_prop;
+    union of_table_mod_prop_u *of_table_mod_prop;
+    union of_table_mod_prop_experimenter_u *of_table_mod_prop_experimenter;
+} __attribute__ ((__transparent_union__));
+
+typedef union of_list_iter_u of_list_iter_t;
+
 
 /* LOCI inheritance parent typedefs */
 typedef union of_queue_prop_u of_queue_prop_t;
@@ -1825,3230 +1858,3230 @@ extern void of_object_delete(of_object_t *obj);
  *
  ****************************************************************/
 
-extern of_aggregate_stats_reply_t *
+extern of_object_t *
     of_aggregate_stats_reply_new(of_version_t version);
 extern void of_aggregate_stats_reply_init(
-    of_aggregate_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_aggregate_stats_request_t *
+extern of_object_t *
     of_aggregate_stats_request_new(of_version_t version);
 extern void of_aggregate_stats_request_init(
-    of_aggregate_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_get_reply_t *
+extern of_object_t *
     of_async_get_reply_new(of_version_t version);
 extern void of_async_get_reply_init(
-    of_async_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_get_request_t *
+extern of_object_t *
     of_async_get_request_new(of_version_t version);
 extern void of_async_get_request_init(
-    of_async_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_set_t *
+extern of_object_t *
     of_async_set_new(of_version_t version);
 extern void of_async_set_init(
-    of_async_set_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bad_action_error_msg_t *
+extern of_object_t *
     of_bad_action_error_msg_new(of_version_t version);
 extern void of_bad_action_error_msg_init(
-    of_bad_action_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bad_instruction_error_msg_t *
+extern of_object_t *
     of_bad_instruction_error_msg_new(of_version_t version);
 extern void of_bad_instruction_error_msg_init(
-    of_bad_instruction_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bad_match_error_msg_t *
+extern of_object_t *
     of_bad_match_error_msg_new(of_version_t version);
 extern void of_bad_match_error_msg_init(
-    of_bad_match_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bad_request_error_msg_t *
+extern of_object_t *
     of_bad_request_error_msg_new(of_version_t version);
 extern void of_bad_request_error_msg_init(
-    of_bad_request_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_barrier_reply_t *
+extern of_object_t *
     of_barrier_reply_new(of_version_t version);
 extern void of_barrier_reply_init(
-    of_barrier_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_barrier_request_t *
+extern of_object_t *
     of_barrier_request_new(of_version_t version);
 extern void of_barrier_request_init(
-    of_barrier_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_arp_idle_t *
+extern of_object_t *
     of_bsn_arp_idle_new(of_version_t version);
 extern void of_bsn_arp_idle_init(
-    of_bsn_arp_idle_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_bw_clear_data_reply_t *
+extern of_object_t *
     of_bsn_bw_clear_data_reply_new(of_version_t version);
 extern void of_bsn_bw_clear_data_reply_init(
-    of_bsn_bw_clear_data_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_bw_clear_data_request_t *
+extern of_object_t *
     of_bsn_bw_clear_data_request_new(of_version_t version);
 extern void of_bsn_bw_clear_data_request_init(
-    of_bsn_bw_clear_data_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_bw_enable_get_reply_t *
+extern of_object_t *
     of_bsn_bw_enable_get_reply_new(of_version_t version);
 extern void of_bsn_bw_enable_get_reply_init(
-    of_bsn_bw_enable_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_bw_enable_get_request_t *
+extern of_object_t *
     of_bsn_bw_enable_get_request_new(of_version_t version);
 extern void of_bsn_bw_enable_get_request_init(
-    of_bsn_bw_enable_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_bw_enable_set_reply_t *
+extern of_object_t *
     of_bsn_bw_enable_set_reply_new(of_version_t version);
 extern void of_bsn_bw_enable_set_reply_init(
-    of_bsn_bw_enable_set_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_bw_enable_set_request_t *
+extern of_object_t *
     of_bsn_bw_enable_set_request_new(of_version_t version);
 extern void of_bsn_bw_enable_set_request_init(
-    of_bsn_bw_enable_set_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_controller_connections_reply_t *
+extern of_object_t *
     of_bsn_controller_connections_reply_new(of_version_t version);
 extern void of_bsn_controller_connections_reply_init(
-    of_bsn_controller_connections_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_controller_connections_request_t *
+extern of_object_t *
     of_bsn_controller_connections_request_new(of_version_t version);
 extern void of_bsn_controller_connections_request_init(
-    of_bsn_controller_connections_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_debug_counter_desc_stats_reply_t *
+extern of_object_t *
     of_bsn_debug_counter_desc_stats_reply_new(of_version_t version);
 extern void of_bsn_debug_counter_desc_stats_reply_init(
-    of_bsn_debug_counter_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_debug_counter_desc_stats_request_t *
+extern of_object_t *
     of_bsn_debug_counter_desc_stats_request_new(of_version_t version);
 extern void of_bsn_debug_counter_desc_stats_request_init(
-    of_bsn_debug_counter_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_debug_counter_stats_reply_t *
+extern of_object_t *
     of_bsn_debug_counter_stats_reply_new(of_version_t version);
 extern void of_bsn_debug_counter_stats_reply_init(
-    of_bsn_debug_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_debug_counter_stats_request_t *
+extern of_object_t *
     of_bsn_debug_counter_stats_request_new(of_version_t version);
 extern void of_bsn_debug_counter_stats_request_init(
-    of_bsn_debug_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_checksum_bucket_stats_reply_t *
+extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_reply_new(of_version_t version);
 extern void of_bsn_flow_checksum_bucket_stats_reply_init(
-    of_bsn_flow_checksum_bucket_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_checksum_bucket_stats_request_t *
+extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_request_new(of_version_t version);
 extern void of_bsn_flow_checksum_bucket_stats_request_init(
-    of_bsn_flow_checksum_bucket_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_idle_t *
+extern of_object_t *
     of_bsn_flow_idle_new(of_version_t version);
 extern void of_bsn_flow_idle_init(
-    of_bsn_flow_idle_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_idle_enable_get_reply_t *
+extern of_object_t *
     of_bsn_flow_idle_enable_get_reply_new(of_version_t version);
 extern void of_bsn_flow_idle_enable_get_reply_init(
-    of_bsn_flow_idle_enable_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_idle_enable_get_request_t *
+extern of_object_t *
     of_bsn_flow_idle_enable_get_request_new(of_version_t version);
 extern void of_bsn_flow_idle_enable_get_request_init(
-    of_bsn_flow_idle_enable_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_idle_enable_set_reply_t *
+extern of_object_t *
     of_bsn_flow_idle_enable_set_reply_new(of_version_t version);
 extern void of_bsn_flow_idle_enable_set_reply_init(
-    of_bsn_flow_idle_enable_set_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_idle_enable_set_request_t *
+extern of_object_t *
     of_bsn_flow_idle_enable_set_request_new(of_version_t version);
 extern void of_bsn_flow_idle_enable_set_request_init(
-    of_bsn_flow_idle_enable_set_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_bucket_stats_reply_t *
+extern of_object_t *
     of_bsn_gentable_bucket_stats_reply_new(of_version_t version);
 extern void of_bsn_gentable_bucket_stats_reply_init(
-    of_bsn_gentable_bucket_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_bucket_stats_request_t *
+extern of_object_t *
     of_bsn_gentable_bucket_stats_request_new(of_version_t version);
 extern void of_bsn_gentable_bucket_stats_request_init(
-    of_bsn_gentable_bucket_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_clear_reply_t *
+extern of_object_t *
     of_bsn_gentable_clear_reply_new(of_version_t version);
 extern void of_bsn_gentable_clear_reply_init(
-    of_bsn_gentable_clear_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_clear_request_t *
+extern of_object_t *
     of_bsn_gentable_clear_request_new(of_version_t version);
 extern void of_bsn_gentable_clear_request_init(
-    of_bsn_gentable_clear_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_desc_stats_reply_t *
+extern of_object_t *
     of_bsn_gentable_desc_stats_reply_new(of_version_t version);
 extern void of_bsn_gentable_desc_stats_reply_init(
-    of_bsn_gentable_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_desc_stats_request_t *
+extern of_object_t *
     of_bsn_gentable_desc_stats_request_new(of_version_t version);
 extern void of_bsn_gentable_desc_stats_request_init(
-    of_bsn_gentable_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_add_t *
+extern of_object_t *
     of_bsn_gentable_entry_add_new(of_version_t version);
 extern void of_bsn_gentable_entry_add_init(
-    of_bsn_gentable_entry_add_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_delete_t *
+extern of_object_t *
     of_bsn_gentable_entry_delete_new(of_version_t version);
 extern void of_bsn_gentable_entry_delete_init(
-    of_bsn_gentable_entry_delete_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_desc_stats_reply_t *
+extern of_object_t *
     of_bsn_gentable_entry_desc_stats_reply_new(of_version_t version);
 extern void of_bsn_gentable_entry_desc_stats_reply_init(
-    of_bsn_gentable_entry_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_desc_stats_request_t *
+extern of_object_t *
     of_bsn_gentable_entry_desc_stats_request_new(of_version_t version);
 extern void of_bsn_gentable_entry_desc_stats_request_init(
-    of_bsn_gentable_entry_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_stats_reply_t *
+extern of_object_t *
     of_bsn_gentable_entry_stats_reply_new(of_version_t version);
 extern void of_bsn_gentable_entry_stats_reply_init(
-    of_bsn_gentable_entry_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_stats_request_t *
+extern of_object_t *
     of_bsn_gentable_entry_stats_request_new(of_version_t version);
 extern void of_bsn_gentable_entry_stats_request_init(
-    of_bsn_gentable_entry_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_set_buckets_size_t *
+extern of_object_t *
     of_bsn_gentable_set_buckets_size_new(of_version_t version);
 extern void of_bsn_gentable_set_buckets_size_init(
-    of_bsn_gentable_set_buckets_size_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_stats_reply_t *
+extern of_object_t *
     of_bsn_gentable_stats_reply_new(of_version_t version);
 extern void of_bsn_gentable_stats_reply_init(
-    of_bsn_gentable_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_stats_request_t *
+extern of_object_t *
     of_bsn_gentable_stats_request_new(of_version_t version);
 extern void of_bsn_gentable_stats_request_init(
-    of_bsn_gentable_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_interfaces_reply_t *
+extern of_object_t *
     of_bsn_get_interfaces_reply_new(of_version_t version);
 extern void of_bsn_get_interfaces_reply_init(
-    of_bsn_get_interfaces_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_interfaces_request_t *
+extern of_object_t *
     of_bsn_get_interfaces_request_new(of_version_t version);
 extern void of_bsn_get_interfaces_request_init(
-    of_bsn_get_interfaces_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_ip_mask_reply_t *
+extern of_object_t *
     of_bsn_get_ip_mask_reply_new(of_version_t version);
 extern void of_bsn_get_ip_mask_reply_init(
-    of_bsn_get_ip_mask_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_ip_mask_request_t *
+extern of_object_t *
     of_bsn_get_ip_mask_request_new(of_version_t version);
 extern void of_bsn_get_ip_mask_request_init(
-    of_bsn_get_ip_mask_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_l2_table_reply_t *
+extern of_object_t *
     of_bsn_get_l2_table_reply_new(of_version_t version);
 extern void of_bsn_get_l2_table_reply_init(
-    of_bsn_get_l2_table_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_l2_table_request_t *
+extern of_object_t *
     of_bsn_get_l2_table_request_new(of_version_t version);
 extern void of_bsn_get_l2_table_request_init(
-    of_bsn_get_l2_table_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_mirroring_reply_t *
+extern of_object_t *
     of_bsn_get_mirroring_reply_new(of_version_t version);
 extern void of_bsn_get_mirroring_reply_init(
-    of_bsn_get_mirroring_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_mirroring_request_t *
+extern of_object_t *
     of_bsn_get_mirroring_request_new(of_version_t version);
 extern void of_bsn_get_mirroring_request_init(
-    of_bsn_get_mirroring_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_switch_pipeline_reply_t *
+extern of_object_t *
     of_bsn_get_switch_pipeline_reply_new(of_version_t version);
 extern void of_bsn_get_switch_pipeline_reply_init(
-    of_bsn_get_switch_pipeline_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_get_switch_pipeline_request_t *
+extern of_object_t *
     of_bsn_get_switch_pipeline_request_new(of_version_t version);
 extern void of_bsn_get_switch_pipeline_request_init(
-    of_bsn_get_switch_pipeline_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_header_t *
+extern of_object_t *
     of_bsn_header_new(of_version_t version);
 extern void of_bsn_header_init(
-    of_bsn_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_hybrid_get_reply_t *
+extern of_object_t *
     of_bsn_hybrid_get_reply_new(of_version_t version);
 extern void of_bsn_hybrid_get_reply_init(
-    of_bsn_hybrid_get_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_hybrid_get_request_t *
+extern of_object_t *
     of_bsn_hybrid_get_request_new(of_version_t version);
 extern void of_bsn_hybrid_get_request_init(
-    of_bsn_hybrid_get_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_image_desc_stats_reply_t *
+extern of_object_t *
     of_bsn_image_desc_stats_reply_new(of_version_t version);
 extern void of_bsn_image_desc_stats_reply_init(
-    of_bsn_image_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_image_desc_stats_request_t *
+extern of_object_t *
     of_bsn_image_desc_stats_request_new(of_version_t version);
 extern void of_bsn_image_desc_stats_request_init(
-    of_bsn_image_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_lacp_convergence_notif_t *
+extern of_object_t *
     of_bsn_lacp_convergence_notif_new(of_version_t version);
 extern void of_bsn_lacp_convergence_notif_init(
-    of_bsn_lacp_convergence_notif_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_lacp_stats_reply_t *
+extern of_object_t *
     of_bsn_lacp_stats_reply_new(of_version_t version);
 extern void of_bsn_lacp_stats_reply_init(
-    of_bsn_lacp_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_lacp_stats_request_t *
+extern of_object_t *
     of_bsn_lacp_stats_request_new(of_version_t version);
 extern void of_bsn_lacp_stats_request_init(
-    of_bsn_lacp_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_log_t *
+extern of_object_t *
     of_bsn_log_new(of_version_t version);
 extern void of_bsn_log_init(
-    of_bsn_log_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_pdu_rx_reply_t *
+extern of_object_t *
     of_bsn_pdu_rx_reply_new(of_version_t version);
 extern void of_bsn_pdu_rx_reply_init(
-    of_bsn_pdu_rx_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_pdu_rx_request_t *
+extern of_object_t *
     of_bsn_pdu_rx_request_new(of_version_t version);
 extern void of_bsn_pdu_rx_request_init(
-    of_bsn_pdu_rx_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_pdu_rx_timeout_t *
+extern of_object_t *
     of_bsn_pdu_rx_timeout_new(of_version_t version);
 extern void of_bsn_pdu_rx_timeout_init(
-    of_bsn_pdu_rx_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_pdu_tx_reply_t *
+extern of_object_t *
     of_bsn_pdu_tx_reply_new(of_version_t version);
 extern void of_bsn_pdu_tx_reply_init(
-    of_bsn_pdu_tx_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_pdu_tx_request_t *
+extern of_object_t *
     of_bsn_pdu_tx_request_new(of_version_t version);
 extern void of_bsn_pdu_tx_request_init(
-    of_bsn_pdu_tx_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_port_counter_stats_reply_t *
+extern of_object_t *
     of_bsn_port_counter_stats_reply_new(of_version_t version);
 extern void of_bsn_port_counter_stats_reply_init(
-    of_bsn_port_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_port_counter_stats_request_t *
+extern of_object_t *
     of_bsn_port_counter_stats_request_new(of_version_t version);
 extern void of_bsn_port_counter_stats_request_init(
-    of_bsn_port_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_role_status_t *
+extern of_object_t *
     of_bsn_role_status_new(of_version_t version);
 extern void of_bsn_role_status_init(
-    of_bsn_role_status_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_aux_cxns_reply_t *
+extern of_object_t *
     of_bsn_set_aux_cxns_reply_new(of_version_t version);
 extern void of_bsn_set_aux_cxns_reply_init(
-    of_bsn_set_aux_cxns_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_aux_cxns_request_t *
+extern of_object_t *
     of_bsn_set_aux_cxns_request_new(of_version_t version);
 extern void of_bsn_set_aux_cxns_request_init(
-    of_bsn_set_aux_cxns_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_ip_mask_t *
+extern of_object_t *
     of_bsn_set_ip_mask_new(of_version_t version);
 extern void of_bsn_set_ip_mask_init(
-    of_bsn_set_ip_mask_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_l2_table_reply_t *
+extern of_object_t *
     of_bsn_set_l2_table_reply_new(of_version_t version);
 extern void of_bsn_set_l2_table_reply_init(
-    of_bsn_set_l2_table_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_l2_table_request_t *
+extern of_object_t *
     of_bsn_set_l2_table_request_new(of_version_t version);
 extern void of_bsn_set_l2_table_request_init(
-    of_bsn_set_l2_table_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_lacp_reply_t *
+extern of_object_t *
     of_bsn_set_lacp_reply_new(of_version_t version);
 extern void of_bsn_set_lacp_reply_init(
-    of_bsn_set_lacp_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_lacp_request_t *
+extern of_object_t *
     of_bsn_set_lacp_request_new(of_version_t version);
 extern void of_bsn_set_lacp_request_init(
-    of_bsn_set_lacp_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_mirroring_t *
+extern of_object_t *
     of_bsn_set_mirroring_new(of_version_t version);
 extern void of_bsn_set_mirroring_init(
-    of_bsn_set_mirroring_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_pktin_suppression_reply_t *
+extern of_object_t *
     of_bsn_set_pktin_suppression_reply_new(of_version_t version);
 extern void of_bsn_set_pktin_suppression_reply_init(
-    of_bsn_set_pktin_suppression_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_pktin_suppression_request_t *
+extern of_object_t *
     of_bsn_set_pktin_suppression_request_new(of_version_t version);
 extern void of_bsn_set_pktin_suppression_request_init(
-    of_bsn_set_pktin_suppression_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_switch_pipeline_reply_t *
+extern of_object_t *
     of_bsn_set_switch_pipeline_reply_new(of_version_t version);
 extern void of_bsn_set_switch_pipeline_reply_init(
-    of_bsn_set_switch_pipeline_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_set_switch_pipeline_request_t *
+extern of_object_t *
     of_bsn_set_switch_pipeline_request_new(of_version_t version);
 extern void of_bsn_set_switch_pipeline_request_init(
-    of_bsn_set_switch_pipeline_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_shell_command_t *
+extern of_object_t *
     of_bsn_shell_command_new(of_version_t version);
 extern void of_bsn_shell_command_init(
-    of_bsn_shell_command_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_shell_output_t *
+extern of_object_t *
     of_bsn_shell_output_new(of_version_t version);
 extern void of_bsn_shell_output_init(
-    of_bsn_shell_output_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_shell_status_t *
+extern of_object_t *
     of_bsn_shell_status_new(of_version_t version);
 extern void of_bsn_shell_status_init(
-    of_bsn_shell_status_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_stats_reply_t *
+extern of_object_t *
     of_bsn_stats_reply_new(of_version_t version);
 extern void of_bsn_stats_reply_init(
-    of_bsn_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_stats_request_t *
+extern of_object_t *
     of_bsn_stats_request_new(of_version_t version);
 extern void of_bsn_stats_request_init(
-    of_bsn_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_switch_pipeline_stats_reply_t *
+extern of_object_t *
     of_bsn_switch_pipeline_stats_reply_new(of_version_t version);
 extern void of_bsn_switch_pipeline_stats_reply_init(
-    of_bsn_switch_pipeline_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_switch_pipeline_stats_request_t *
+extern of_object_t *
     of_bsn_switch_pipeline_stats_request_new(of_version_t version);
 extern void of_bsn_switch_pipeline_stats_request_init(
-    of_bsn_switch_pipeline_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_table_checksum_stats_reply_t *
+extern of_object_t *
     of_bsn_table_checksum_stats_reply_new(of_version_t version);
 extern void of_bsn_table_checksum_stats_reply_init(
-    of_bsn_table_checksum_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_table_checksum_stats_request_t *
+extern of_object_t *
     of_bsn_table_checksum_stats_request_new(of_version_t version);
 extern void of_bsn_table_checksum_stats_request_init(
-    of_bsn_table_checksum_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_table_set_buckets_size_t *
+extern of_object_t *
     of_bsn_table_set_buckets_size_new(of_version_t version);
 extern void of_bsn_table_set_buckets_size_init(
-    of_bsn_table_set_buckets_size_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_time_reply_t *
+extern of_object_t *
     of_bsn_time_reply_new(of_version_t version);
 extern void of_bsn_time_reply_init(
-    of_bsn_time_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_time_request_t *
+extern of_object_t *
     of_bsn_time_request_new(of_version_t version);
 extern void of_bsn_time_request_init(
-    of_bsn_time_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_virtual_port_create_reply_t *
+extern of_object_t *
     of_bsn_virtual_port_create_reply_new(of_version_t version);
 extern void of_bsn_virtual_port_create_reply_init(
-    of_bsn_virtual_port_create_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_virtual_port_create_request_t *
+extern of_object_t *
     of_bsn_virtual_port_create_request_new(of_version_t version);
 extern void of_bsn_virtual_port_create_request_init(
-    of_bsn_virtual_port_create_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_virtual_port_remove_reply_t *
+extern of_object_t *
     of_bsn_virtual_port_remove_reply_new(of_version_t version);
 extern void of_bsn_virtual_port_remove_reply_init(
-    of_bsn_virtual_port_remove_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_virtual_port_remove_request_t *
+extern of_object_t *
     of_bsn_virtual_port_remove_request_new(of_version_t version);
 extern void of_bsn_virtual_port_remove_request_init(
-    of_bsn_virtual_port_remove_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vlan_counter_stats_reply_t *
+extern of_object_t *
     of_bsn_vlan_counter_stats_reply_new(of_version_t version);
 extern void of_bsn_vlan_counter_stats_reply_init(
-    of_bsn_vlan_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vlan_counter_stats_request_t *
+extern of_object_t *
     of_bsn_vlan_counter_stats_request_new(of_version_t version);
 extern void of_bsn_vlan_counter_stats_request_init(
-    of_bsn_vlan_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vrf_counter_stats_reply_t *
+extern of_object_t *
     of_bsn_vrf_counter_stats_reply_new(of_version_t version);
 extern void of_bsn_vrf_counter_stats_reply_init(
-    of_bsn_vrf_counter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vrf_counter_stats_request_t *
+extern of_object_t *
     of_bsn_vrf_counter_stats_request_new(of_version_t version);
 extern void of_bsn_vrf_counter_stats_request_init(
-    of_bsn_vrf_counter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bundle_add_msg_t *
+extern of_object_t *
     of_bundle_add_msg_new(of_version_t version);
 extern void of_bundle_add_msg_init(
-    of_bundle_add_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bundle_ctrl_msg_t *
+extern of_object_t *
     of_bundle_ctrl_msg_new(of_version_t version);
 extern void of_bundle_ctrl_msg_init(
-    of_bundle_ctrl_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_desc_stats_reply_t *
+extern of_object_t *
     of_desc_stats_reply_new(of_version_t version);
 extern void of_desc_stats_reply_init(
-    of_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_desc_stats_request_t *
+extern of_object_t *
     of_desc_stats_request_new(of_version_t version);
 extern void of_desc_stats_request_init(
-    of_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_echo_reply_t *
+extern of_object_t *
     of_echo_reply_new(of_version_t version);
 extern void of_echo_reply_init(
-    of_echo_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_echo_request_t *
+extern of_object_t *
     of_echo_request_new(of_version_t version);
 extern void of_echo_request_init(
-    of_echo_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_error_msg_t *
+extern of_object_t *
     of_error_msg_new(of_version_t version);
 extern void of_error_msg_init(
-    of_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_experimenter_t *
+extern of_object_t *
     of_experimenter_new(of_version_t version);
 extern void of_experimenter_init(
-    of_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_experimenter_error_msg_t *
+extern of_object_t *
     of_experimenter_error_msg_new(of_version_t version);
 extern void of_experimenter_error_msg_init(
-    of_experimenter_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_experimenter_stats_reply_t *
+extern of_object_t *
     of_experimenter_stats_reply_new(of_version_t version);
 extern void of_experimenter_stats_reply_init(
-    of_experimenter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_experimenter_stats_request_t *
+extern of_object_t *
     of_experimenter_stats_request_new(of_version_t version);
 extern void of_experimenter_stats_request_init(
-    of_experimenter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_features_reply_t *
+extern of_object_t *
     of_features_reply_new(of_version_t version);
 extern void of_features_reply_init(
-    of_features_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_features_request_t *
+extern of_object_t *
     of_features_request_new(of_version_t version);
 extern void of_features_request_init(
-    of_features_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_add_t *
+extern of_object_t *
     of_flow_add_new(of_version_t version);
 extern void of_flow_add_init(
-    of_flow_add_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_delete_t *
+extern of_object_t *
     of_flow_delete_new(of_version_t version);
 extern void of_flow_delete_init(
-    of_flow_delete_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_delete_strict_t *
+extern of_object_t *
     of_flow_delete_strict_new(of_version_t version);
 extern void of_flow_delete_strict_init(
-    of_flow_delete_strict_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_mod_t *
+extern of_object_t *
     of_flow_mod_new(of_version_t version);
 extern void of_flow_mod_init(
-    of_flow_mod_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_mod_failed_error_msg_t *
+extern of_object_t *
     of_flow_mod_failed_error_msg_new(of_version_t version);
 extern void of_flow_mod_failed_error_msg_init(
-    of_flow_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_modify_t *
+extern of_object_t *
     of_flow_modify_new(of_version_t version);
 extern void of_flow_modify_init(
-    of_flow_modify_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_modify_strict_t *
+extern of_object_t *
     of_flow_modify_strict_new(of_version_t version);
 extern void of_flow_modify_strict_init(
-    of_flow_modify_strict_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_removed_t *
+extern of_object_t *
     of_flow_removed_new(of_version_t version);
 extern void of_flow_removed_init(
-    of_flow_removed_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_stats_reply_t *
+extern of_object_t *
     of_flow_stats_reply_new(of_version_t version);
 extern void of_flow_stats_reply_init(
-    of_flow_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_stats_request_t *
+extern of_object_t *
     of_flow_stats_request_new(of_version_t version);
 extern void of_flow_stats_request_init(
-    of_flow_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_get_config_reply_t *
+extern of_object_t *
     of_get_config_reply_new(of_version_t version);
 extern void of_get_config_reply_init(
-    of_get_config_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_get_config_request_t *
+extern of_object_t *
     of_get_config_request_new(of_version_t version);
 extern void of_get_config_request_init(
-    of_get_config_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_add_t *
+extern of_object_t *
     of_group_add_new(of_version_t version);
 extern void of_group_add_init(
-    of_group_add_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_delete_t *
+extern of_object_t *
     of_group_delete_new(of_version_t version);
 extern void of_group_delete_init(
-    of_group_delete_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_desc_stats_reply_t *
+extern of_object_t *
     of_group_desc_stats_reply_new(of_version_t version);
 extern void of_group_desc_stats_reply_init(
-    of_group_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_desc_stats_request_t *
+extern of_object_t *
     of_group_desc_stats_request_new(of_version_t version);
 extern void of_group_desc_stats_request_init(
-    of_group_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_features_stats_reply_t *
+extern of_object_t *
     of_group_features_stats_reply_new(of_version_t version);
 extern void of_group_features_stats_reply_init(
-    of_group_features_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_features_stats_request_t *
+extern of_object_t *
     of_group_features_stats_request_new(of_version_t version);
 extern void of_group_features_stats_request_init(
-    of_group_features_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_mod_t *
+extern of_object_t *
     of_group_mod_new(of_version_t version);
 extern void of_group_mod_init(
-    of_group_mod_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_mod_failed_error_msg_t *
+extern of_object_t *
     of_group_mod_failed_error_msg_new(of_version_t version);
 extern void of_group_mod_failed_error_msg_init(
-    of_group_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_modify_t *
+extern of_object_t *
     of_group_modify_new(of_version_t version);
 extern void of_group_modify_init(
-    of_group_modify_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_stats_reply_t *
+extern of_object_t *
     of_group_stats_reply_new(of_version_t version);
 extern void of_group_stats_reply_init(
-    of_group_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_stats_request_t *
+extern of_object_t *
     of_group_stats_request_new(of_version_t version);
 extern void of_group_stats_request_init(
-    of_group_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_header_t *
+extern of_object_t *
     of_header_new(of_version_t version);
 extern void of_header_init(
-    of_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_hello_t *
+extern of_object_t *
     of_hello_new(of_version_t version);
 extern void of_hello_init(
-    of_hello_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_hello_failed_error_msg_t *
+extern of_object_t *
     of_hello_failed_error_msg_new(of_version_t version);
 extern void of_hello_failed_error_msg_init(
-    of_hello_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_config_stats_reply_t *
+extern of_object_t *
     of_meter_config_stats_reply_new(of_version_t version);
 extern void of_meter_config_stats_reply_init(
-    of_meter_config_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_config_stats_request_t *
+extern of_object_t *
     of_meter_config_stats_request_new(of_version_t version);
 extern void of_meter_config_stats_request_init(
-    of_meter_config_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_features_stats_reply_t *
+extern of_object_t *
     of_meter_features_stats_reply_new(of_version_t version);
 extern void of_meter_features_stats_reply_init(
-    of_meter_features_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_features_stats_request_t *
+extern of_object_t *
     of_meter_features_stats_request_new(of_version_t version);
 extern void of_meter_features_stats_request_init(
-    of_meter_features_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_mod_t *
+extern of_object_t *
     of_meter_mod_new(of_version_t version);
 extern void of_meter_mod_init(
-    of_meter_mod_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_mod_failed_error_msg_t *
+extern of_object_t *
     of_meter_mod_failed_error_msg_new(of_version_t version);
 extern void of_meter_mod_failed_error_msg_init(
-    of_meter_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_stats_reply_t *
+extern of_object_t *
     of_meter_stats_reply_new(of_version_t version);
 extern void of_meter_stats_reply_init(
-    of_meter_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_stats_request_t *
+extern of_object_t *
     of_meter_stats_request_new(of_version_t version);
 extern void of_meter_stats_request_init(
-    of_meter_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_nicira_controller_role_reply_t *
+extern of_object_t *
     of_nicira_controller_role_reply_new(of_version_t version);
 extern void of_nicira_controller_role_reply_init(
-    of_nicira_controller_role_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_nicira_controller_role_request_t *
+extern of_object_t *
     of_nicira_controller_role_request_new(of_version_t version);
 extern void of_nicira_controller_role_request_init(
-    of_nicira_controller_role_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_nicira_header_t *
+extern of_object_t *
     of_nicira_header_new(of_version_t version);
 extern void of_nicira_header_init(
-    of_nicira_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_packet_in_t *
+extern of_object_t *
     of_packet_in_new(of_version_t version);
 extern void of_packet_in_init(
-    of_packet_in_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_packet_out_t *
+extern of_object_t *
     of_packet_out_new(of_version_t version);
 extern void of_packet_out_init(
-    of_packet_out_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_stats_reply_t *
+extern of_object_t *
     of_port_desc_stats_reply_new(of_version_t version);
 extern void of_port_desc_stats_reply_init(
-    of_port_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_stats_request_t *
+extern of_object_t *
     of_port_desc_stats_request_new(of_version_t version);
 extern void of_port_desc_stats_request_init(
-    of_port_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_t *
+extern of_object_t *
     of_port_mod_new(of_version_t version);
 extern void of_port_mod_init(
-    of_port_mod_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_failed_error_msg_t *
+extern of_object_t *
     of_port_mod_failed_error_msg_new(of_version_t version);
 extern void of_port_mod_failed_error_msg_init(
-    of_port_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_reply_t *
+extern of_object_t *
     of_port_stats_reply_new(of_version_t version);
 extern void of_port_stats_reply_init(
-    of_port_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_request_t *
+extern of_object_t *
     of_port_stats_request_new(of_version_t version);
 extern void of_port_stats_request_init(
-    of_port_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_status_t *
+extern of_object_t *
     of_port_status_new(of_version_t version);
 extern void of_port_status_init(
-    of_port_status_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_stats_reply_t *
+extern of_object_t *
     of_queue_desc_stats_reply_new(of_version_t version);
 extern void of_queue_desc_stats_reply_init(
-    of_queue_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_stats_request_t *
+extern of_object_t *
     of_queue_desc_stats_request_new(of_version_t version);
 extern void of_queue_desc_stats_request_init(
-    of_queue_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_get_config_reply_t *
+extern of_object_t *
     of_queue_get_config_reply_new(of_version_t version);
 extern void of_queue_get_config_reply_init(
-    of_queue_get_config_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_get_config_request_t *
+extern of_object_t *
     of_queue_get_config_request_new(of_version_t version);
 extern void of_queue_get_config_request_init(
-    of_queue_get_config_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_op_failed_error_msg_t *
+extern of_object_t *
     of_queue_op_failed_error_msg_new(of_version_t version);
 extern void of_queue_op_failed_error_msg_init(
-    of_queue_op_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_stats_reply_t *
+extern of_object_t *
     of_queue_stats_reply_new(of_version_t version);
 extern void of_queue_stats_reply_init(
-    of_queue_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_stats_request_t *
+extern of_object_t *
     of_queue_stats_request_new(of_version_t version);
 extern void of_queue_stats_request_init(
-    of_queue_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_requestforward_t *
+extern of_object_t *
     of_requestforward_new(of_version_t version);
 extern void of_requestforward_init(
-    of_requestforward_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_reply_t *
+extern of_object_t *
     of_role_reply_new(of_version_t version);
 extern void of_role_reply_init(
-    of_role_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_request_t *
+extern of_object_t *
     of_role_request_new(of_version_t version);
 extern void of_role_request_init(
-    of_role_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_request_failed_error_msg_t *
+extern of_object_t *
     of_role_request_failed_error_msg_new(of_version_t version);
 extern void of_role_request_failed_error_msg_init(
-    of_role_request_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_status_t *
+extern of_object_t *
     of_role_status_new(of_version_t version);
 extern void of_role_status_init(
-    of_role_status_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_set_config_t *
+extern of_object_t *
     of_set_config_new(of_version_t version);
 extern void of_set_config_init(
-    of_set_config_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_stats_reply_t *
+extern of_object_t *
     of_stats_reply_new(of_version_t version);
 extern void of_stats_reply_init(
-    of_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_stats_request_t *
+extern of_object_t *
     of_stats_request_new(of_version_t version);
 extern void of_stats_request_init(
-    of_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_switch_config_failed_error_msg_t *
+extern of_object_t *
     of_switch_config_failed_error_msg_new(of_version_t version);
 extern void of_switch_config_failed_error_msg_init(
-    of_switch_config_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_desc_stats_reply_t *
+extern of_object_t *
     of_table_desc_stats_reply_new(of_version_t version);
 extern void of_table_desc_stats_reply_init(
-    of_table_desc_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_desc_stats_request_t *
+extern of_object_t *
     of_table_desc_stats_request_new(of_version_t version);
 extern void of_table_desc_stats_request_init(
-    of_table_desc_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_features_failed_error_msg_t *
+extern of_object_t *
     of_table_features_failed_error_msg_new(of_version_t version);
 extern void of_table_features_failed_error_msg_init(
-    of_table_features_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_features_stats_reply_t *
+extern of_object_t *
     of_table_features_stats_reply_new(of_version_t version);
 extern void of_table_features_stats_reply_init(
-    of_table_features_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_features_stats_request_t *
+extern of_object_t *
     of_table_features_stats_request_new(of_version_t version);
 extern void of_table_features_stats_request_init(
-    of_table_features_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_mod_t *
+extern of_object_t *
     of_table_mod_new(of_version_t version);
 extern void of_table_mod_init(
-    of_table_mod_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_mod_failed_error_msg_t *
+extern of_object_t *
     of_table_mod_failed_error_msg_new(of_version_t version);
 extern void of_table_mod_failed_error_msg_init(
-    of_table_mod_failed_error_msg_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_stats_reply_t *
+extern of_object_t *
     of_table_stats_reply_new(of_version_t version);
 extern void of_table_stats_reply_init(
-    of_table_stats_reply_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_stats_request_t *
+extern of_object_t *
     of_table_stats_request_new(of_version_t version);
 extern void of_table_stats_request_init(
-    of_table_stats_request_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_status_t *
+extern of_object_t *
     of_table_status_new(of_version_t version);
 extern void of_table_status_init(
-    of_table_status_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_t *
+extern of_object_t *
     of_action_new(of_version_t version);
 extern void of_action_init(
-    of_action_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_bsn_t *
+extern of_object_t *
     of_action_bsn_new(of_version_t version);
 extern void of_action_bsn_init(
-    of_action_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_bsn_checksum_t *
+extern of_object_t *
     of_action_bsn_checksum_new(of_version_t version);
 extern void of_action_bsn_checksum_init(
-    of_action_bsn_checksum_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_bsn_gentable_t *
+extern of_object_t *
     of_action_bsn_gentable_new(of_version_t version);
 extern void of_action_bsn_gentable_init(
-    of_action_bsn_gentable_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_bsn_mirror_t *
+extern of_object_t *
     of_action_bsn_mirror_new(of_version_t version);
 extern void of_action_bsn_mirror_init(
-    of_action_bsn_mirror_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_bsn_set_tunnel_dst_t *
+extern of_object_t *
     of_action_bsn_set_tunnel_dst_new(of_version_t version);
 extern void of_action_bsn_set_tunnel_dst_init(
-    of_action_bsn_set_tunnel_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_copy_ttl_in_t *
+extern of_object_t *
     of_action_copy_ttl_in_new(of_version_t version);
 extern void of_action_copy_ttl_in_init(
-    of_action_copy_ttl_in_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_copy_ttl_out_t *
+extern of_object_t *
     of_action_copy_ttl_out_new(of_version_t version);
 extern void of_action_copy_ttl_out_init(
-    of_action_copy_ttl_out_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_dec_mpls_ttl_t *
+extern of_object_t *
     of_action_dec_mpls_ttl_new(of_version_t version);
 extern void of_action_dec_mpls_ttl_init(
-    of_action_dec_mpls_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_dec_nw_ttl_t *
+extern of_object_t *
     of_action_dec_nw_ttl_new(of_version_t version);
 extern void of_action_dec_nw_ttl_init(
-    of_action_dec_nw_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_enqueue_t *
+extern of_object_t *
     of_action_enqueue_new(of_version_t version);
 extern void of_action_enqueue_init(
-    of_action_enqueue_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_experimenter_t *
+extern of_object_t *
     of_action_experimenter_new(of_version_t version);
 extern void of_action_experimenter_init(
-    of_action_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_group_t *
+extern of_object_t *
     of_action_group_new(of_version_t version);
 extern void of_action_group_init(
-    of_action_group_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_header_t *
+extern of_object_t *
     of_action_header_new(of_version_t version);
 extern void of_action_header_init(
-    of_action_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_t *
+extern of_object_t *
     of_action_id_new(of_version_t version);
 extern void of_action_id_init(
-    of_action_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_bsn_t *
+extern of_object_t *
     of_action_id_bsn_new(of_version_t version);
 extern void of_action_id_bsn_init(
-    of_action_id_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_bsn_checksum_t *
+extern of_object_t *
     of_action_id_bsn_checksum_new(of_version_t version);
 extern void of_action_id_bsn_checksum_init(
-    of_action_id_bsn_checksum_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_bsn_gentable_t *
+extern of_object_t *
     of_action_id_bsn_gentable_new(of_version_t version);
 extern void of_action_id_bsn_gentable_init(
-    of_action_id_bsn_gentable_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_bsn_mirror_t *
+extern of_object_t *
     of_action_id_bsn_mirror_new(of_version_t version);
 extern void of_action_id_bsn_mirror_init(
-    of_action_id_bsn_mirror_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_bsn_set_tunnel_dst_t *
+extern of_object_t *
     of_action_id_bsn_set_tunnel_dst_new(of_version_t version);
 extern void of_action_id_bsn_set_tunnel_dst_init(
-    of_action_id_bsn_set_tunnel_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_copy_ttl_in_t *
+extern of_object_t *
     of_action_id_copy_ttl_in_new(of_version_t version);
 extern void of_action_id_copy_ttl_in_init(
-    of_action_id_copy_ttl_in_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_copy_ttl_out_t *
+extern of_object_t *
     of_action_id_copy_ttl_out_new(of_version_t version);
 extern void of_action_id_copy_ttl_out_init(
-    of_action_id_copy_ttl_out_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_dec_mpls_ttl_t *
+extern of_object_t *
     of_action_id_dec_mpls_ttl_new(of_version_t version);
 extern void of_action_id_dec_mpls_ttl_init(
-    of_action_id_dec_mpls_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_dec_nw_ttl_t *
+extern of_object_t *
     of_action_id_dec_nw_ttl_new(of_version_t version);
 extern void of_action_id_dec_nw_ttl_init(
-    of_action_id_dec_nw_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_experimenter_t *
+extern of_object_t *
     of_action_id_experimenter_new(of_version_t version);
 extern void of_action_id_experimenter_init(
-    of_action_id_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_group_t *
+extern of_object_t *
     of_action_id_group_new(of_version_t version);
 extern void of_action_id_group_init(
-    of_action_id_group_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_header_t *
+extern of_object_t *
     of_action_id_header_new(of_version_t version);
 extern void of_action_id_header_init(
-    of_action_id_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_nicira_t *
+extern of_object_t *
     of_action_id_nicira_new(of_version_t version);
 extern void of_action_id_nicira_init(
-    of_action_id_nicira_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_nicira_dec_ttl_t *
+extern of_object_t *
     of_action_id_nicira_dec_ttl_new(of_version_t version);
 extern void of_action_id_nicira_dec_ttl_init(
-    of_action_id_nicira_dec_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_output_t *
+extern of_object_t *
     of_action_id_output_new(of_version_t version);
 extern void of_action_id_output_init(
-    of_action_id_output_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_pop_mpls_t *
+extern of_object_t *
     of_action_id_pop_mpls_new(of_version_t version);
 extern void of_action_id_pop_mpls_init(
-    of_action_id_pop_mpls_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_pop_pbb_t *
+extern of_object_t *
     of_action_id_pop_pbb_new(of_version_t version);
 extern void of_action_id_pop_pbb_init(
-    of_action_id_pop_pbb_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_pop_vlan_t *
+extern of_object_t *
     of_action_id_pop_vlan_new(of_version_t version);
 extern void of_action_id_pop_vlan_init(
-    of_action_id_pop_vlan_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_push_mpls_t *
+extern of_object_t *
     of_action_id_push_mpls_new(of_version_t version);
 extern void of_action_id_push_mpls_init(
-    of_action_id_push_mpls_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_push_pbb_t *
+extern of_object_t *
     of_action_id_push_pbb_new(of_version_t version);
 extern void of_action_id_push_pbb_init(
-    of_action_id_push_pbb_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_push_vlan_t *
+extern of_object_t *
     of_action_id_push_vlan_new(of_version_t version);
 extern void of_action_id_push_vlan_init(
-    of_action_id_push_vlan_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_set_field_t *
+extern of_object_t *
     of_action_id_set_field_new(of_version_t version);
 extern void of_action_id_set_field_init(
-    of_action_id_set_field_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_set_mpls_ttl_t *
+extern of_object_t *
     of_action_id_set_mpls_ttl_new(of_version_t version);
 extern void of_action_id_set_mpls_ttl_init(
-    of_action_id_set_mpls_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_set_nw_ttl_t *
+extern of_object_t *
     of_action_id_set_nw_ttl_new(of_version_t version);
 extern void of_action_id_set_nw_ttl_init(
-    of_action_id_set_nw_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_id_set_queue_t *
+extern of_object_t *
     of_action_id_set_queue_new(of_version_t version);
 extern void of_action_id_set_queue_init(
-    of_action_id_set_queue_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_nicira_t *
+extern of_object_t *
     of_action_nicira_new(of_version_t version);
 extern void of_action_nicira_init(
-    of_action_nicira_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_nicira_dec_ttl_t *
+extern of_object_t *
     of_action_nicira_dec_ttl_new(of_version_t version);
 extern void of_action_nicira_dec_ttl_init(
-    of_action_nicira_dec_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_output_t *
+extern of_object_t *
     of_action_output_new(of_version_t version);
 extern void of_action_output_init(
-    of_action_output_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_pop_mpls_t *
+extern of_object_t *
     of_action_pop_mpls_new(of_version_t version);
 extern void of_action_pop_mpls_init(
-    of_action_pop_mpls_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_pop_pbb_t *
+extern of_object_t *
     of_action_pop_pbb_new(of_version_t version);
 extern void of_action_pop_pbb_init(
-    of_action_pop_pbb_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_pop_vlan_t *
+extern of_object_t *
     of_action_pop_vlan_new(of_version_t version);
 extern void of_action_pop_vlan_init(
-    of_action_pop_vlan_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_push_mpls_t *
+extern of_object_t *
     of_action_push_mpls_new(of_version_t version);
 extern void of_action_push_mpls_init(
-    of_action_push_mpls_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_push_pbb_t *
+extern of_object_t *
     of_action_push_pbb_new(of_version_t version);
 extern void of_action_push_pbb_init(
-    of_action_push_pbb_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_push_vlan_t *
+extern of_object_t *
     of_action_push_vlan_new(of_version_t version);
 extern void of_action_push_vlan_init(
-    of_action_push_vlan_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_dl_dst_t *
+extern of_object_t *
     of_action_set_dl_dst_new(of_version_t version);
 extern void of_action_set_dl_dst_init(
-    of_action_set_dl_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_dl_src_t *
+extern of_object_t *
     of_action_set_dl_src_new(of_version_t version);
 extern void of_action_set_dl_src_init(
-    of_action_set_dl_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_field_t *
+extern of_object_t *
     of_action_set_field_new(of_version_t version);
 extern void of_action_set_field_init(
-    of_action_set_field_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_mpls_label_t *
+extern of_object_t *
     of_action_set_mpls_label_new(of_version_t version);
 extern void of_action_set_mpls_label_init(
-    of_action_set_mpls_label_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_mpls_tc_t *
+extern of_object_t *
     of_action_set_mpls_tc_new(of_version_t version);
 extern void of_action_set_mpls_tc_init(
-    of_action_set_mpls_tc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_mpls_ttl_t *
+extern of_object_t *
     of_action_set_mpls_ttl_new(of_version_t version);
 extern void of_action_set_mpls_ttl_init(
-    of_action_set_mpls_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_nw_dst_t *
+extern of_object_t *
     of_action_set_nw_dst_new(of_version_t version);
 extern void of_action_set_nw_dst_init(
-    of_action_set_nw_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_nw_ecn_t *
+extern of_object_t *
     of_action_set_nw_ecn_new(of_version_t version);
 extern void of_action_set_nw_ecn_init(
-    of_action_set_nw_ecn_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_nw_src_t *
+extern of_object_t *
     of_action_set_nw_src_new(of_version_t version);
 extern void of_action_set_nw_src_init(
-    of_action_set_nw_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_nw_tos_t *
+extern of_object_t *
     of_action_set_nw_tos_new(of_version_t version);
 extern void of_action_set_nw_tos_init(
-    of_action_set_nw_tos_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_nw_ttl_t *
+extern of_object_t *
     of_action_set_nw_ttl_new(of_version_t version);
 extern void of_action_set_nw_ttl_init(
-    of_action_set_nw_ttl_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_queue_t *
+extern of_object_t *
     of_action_set_queue_new(of_version_t version);
 extern void of_action_set_queue_init(
-    of_action_set_queue_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_tp_dst_t *
+extern of_object_t *
     of_action_set_tp_dst_new(of_version_t version);
 extern void of_action_set_tp_dst_init(
-    of_action_set_tp_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_tp_src_t *
+extern of_object_t *
     of_action_set_tp_src_new(of_version_t version);
 extern void of_action_set_tp_src_init(
-    of_action_set_tp_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_vlan_pcp_t *
+extern of_object_t *
     of_action_set_vlan_pcp_new(of_version_t version);
 extern void of_action_set_vlan_pcp_init(
-    of_action_set_vlan_pcp_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_set_vlan_vid_t *
+extern of_object_t *
     of_action_set_vlan_vid_new(of_version_t version);
 extern void of_action_set_vlan_vid_init(
-    of_action_set_vlan_vid_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_action_strip_vlan_t *
+extern of_object_t *
     of_action_strip_vlan_new(of_version_t version);
 extern void of_action_strip_vlan_init(
-    of_action_strip_vlan_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_t *
+extern of_object_t *
     of_async_config_prop_new(of_version_t version);
 extern void of_async_config_prop_init(
-    of_async_config_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_experimenter_master_t *
+extern of_object_t *
     of_async_config_prop_experimenter_master_new(of_version_t version);
 extern void of_async_config_prop_experimenter_master_init(
-    of_async_config_prop_experimenter_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_experimenter_slave_t *
+extern of_object_t *
     of_async_config_prop_experimenter_slave_new(of_version_t version);
 extern void of_async_config_prop_experimenter_slave_init(
-    of_async_config_prop_experimenter_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_flow_removed_master_t *
+extern of_object_t *
     of_async_config_prop_flow_removed_master_new(of_version_t version);
 extern void of_async_config_prop_flow_removed_master_init(
-    of_async_config_prop_flow_removed_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_flow_removed_slave_t *
+extern of_object_t *
     of_async_config_prop_flow_removed_slave_new(of_version_t version);
 extern void of_async_config_prop_flow_removed_slave_init(
-    of_async_config_prop_flow_removed_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_header_t *
+extern of_object_t *
     of_async_config_prop_header_new(of_version_t version);
 extern void of_async_config_prop_header_init(
-    of_async_config_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_packet_in_master_t *
+extern of_object_t *
     of_async_config_prop_packet_in_master_new(of_version_t version);
 extern void of_async_config_prop_packet_in_master_init(
-    of_async_config_prop_packet_in_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_packet_in_slave_t *
+extern of_object_t *
     of_async_config_prop_packet_in_slave_new(of_version_t version);
 extern void of_async_config_prop_packet_in_slave_init(
-    of_async_config_prop_packet_in_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_port_status_master_t *
+extern of_object_t *
     of_async_config_prop_port_status_master_new(of_version_t version);
 extern void of_async_config_prop_port_status_master_init(
-    of_async_config_prop_port_status_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_port_status_slave_t *
+extern of_object_t *
     of_async_config_prop_port_status_slave_new(of_version_t version);
 extern void of_async_config_prop_port_status_slave_init(
-    of_async_config_prop_port_status_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_requestforward_master_t *
+extern of_object_t *
     of_async_config_prop_requestforward_master_new(of_version_t version);
 extern void of_async_config_prop_requestforward_master_init(
-    of_async_config_prop_requestforward_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_requestforward_slave_t *
+extern of_object_t *
     of_async_config_prop_requestforward_slave_new(of_version_t version);
 extern void of_async_config_prop_requestforward_slave_init(
-    of_async_config_prop_requestforward_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_role_status_master_t *
+extern of_object_t *
     of_async_config_prop_role_status_master_new(of_version_t version);
 extern void of_async_config_prop_role_status_master_init(
-    of_async_config_prop_role_status_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_role_status_slave_t *
+extern of_object_t *
     of_async_config_prop_role_status_slave_new(of_version_t version);
 extern void of_async_config_prop_role_status_slave_init(
-    of_async_config_prop_role_status_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_table_status_master_t *
+extern of_object_t *
     of_async_config_prop_table_status_master_new(of_version_t version);
 extern void of_async_config_prop_table_status_master_init(
-    of_async_config_prop_table_status_master_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_async_config_prop_table_status_slave_t *
+extern of_object_t *
     of_async_config_prop_table_status_slave_new(of_version_t version);
 extern void of_async_config_prop_table_status_slave_init(
-    of_async_config_prop_table_status_slave_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_controller_connection_t *
+extern of_object_t *
     of_bsn_controller_connection_new(of_version_t version);
 extern void of_bsn_controller_connection_init(
-    of_bsn_controller_connection_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_debug_counter_desc_stats_entry_t *
+extern of_object_t *
     of_bsn_debug_counter_desc_stats_entry_new(of_version_t version);
 extern void of_bsn_debug_counter_desc_stats_entry_init(
-    of_bsn_debug_counter_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_debug_counter_stats_entry_t *
+extern of_object_t *
     of_bsn_debug_counter_stats_entry_new(of_version_t version);
 extern void of_bsn_debug_counter_stats_entry_init(
-    of_bsn_debug_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_flow_checksum_bucket_stats_entry_t *
+extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version);
 extern void of_bsn_flow_checksum_bucket_stats_entry_init(
-    of_bsn_flow_checksum_bucket_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_bucket_stats_entry_t *
+extern of_object_t *
     of_bsn_gentable_bucket_stats_entry_new(of_version_t version);
 extern void of_bsn_gentable_bucket_stats_entry_init(
-    of_bsn_gentable_bucket_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_desc_stats_entry_t *
+extern of_object_t *
     of_bsn_gentable_desc_stats_entry_new(of_version_t version);
 extern void of_bsn_gentable_desc_stats_entry_init(
-    of_bsn_gentable_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_desc_stats_entry_t *
+extern of_object_t *
     of_bsn_gentable_entry_desc_stats_entry_new(of_version_t version);
 extern void of_bsn_gentable_entry_desc_stats_entry_init(
-    of_bsn_gentable_entry_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_entry_stats_entry_t *
+extern of_object_t *
     of_bsn_gentable_entry_stats_entry_new(of_version_t version);
 extern void of_bsn_gentable_entry_stats_entry_init(
-    of_bsn_gentable_entry_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_gentable_stats_entry_t *
+extern of_object_t *
     of_bsn_gentable_stats_entry_new(of_version_t version);
 extern void of_bsn_gentable_stats_entry_init(
-    of_bsn_gentable_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_interface_t *
+extern of_object_t *
     of_bsn_interface_new(of_version_t version);
 extern void of_bsn_interface_init(
-    of_bsn_interface_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_lacp_stats_entry_t *
+extern of_object_t *
     of_bsn_lacp_stats_entry_new(of_version_t version);
 extern void of_bsn_lacp_stats_entry_init(
-    of_bsn_lacp_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_port_counter_stats_entry_t *
+extern of_object_t *
     of_bsn_port_counter_stats_entry_new(of_version_t version);
 extern void of_bsn_port_counter_stats_entry_init(
-    of_bsn_port_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_switch_pipeline_stats_entry_t *
+extern of_object_t *
     of_bsn_switch_pipeline_stats_entry_new(of_version_t version);
 extern void of_bsn_switch_pipeline_stats_entry_init(
-    of_bsn_switch_pipeline_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_table_checksum_stats_entry_t *
+extern of_object_t *
     of_bsn_table_checksum_stats_entry_new(of_version_t version);
 extern void of_bsn_table_checksum_stats_entry_init(
-    of_bsn_table_checksum_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_t *
+extern of_object_t *
     of_bsn_tlv_new(of_version_t version);
 extern void of_bsn_tlv_init(
-    of_bsn_tlv_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_actor_key_t *
+extern of_object_t *
     of_bsn_tlv_actor_key_new(of_version_t version);
 extern void of_bsn_tlv_actor_key_init(
-    of_bsn_tlv_actor_key_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_actor_port_num_t *
+extern of_object_t *
     of_bsn_tlv_actor_port_num_new(of_version_t version);
 extern void of_bsn_tlv_actor_port_num_init(
-    of_bsn_tlv_actor_port_num_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_actor_port_priority_t *
+extern of_object_t *
     of_bsn_tlv_actor_port_priority_new(of_version_t version);
 extern void of_bsn_tlv_actor_port_priority_init(
-    of_bsn_tlv_actor_port_priority_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_actor_state_t *
+extern of_object_t *
     of_bsn_tlv_actor_state_new(of_version_t version);
 extern void of_bsn_tlv_actor_state_init(
-    of_bsn_tlv_actor_state_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_actor_system_mac_t *
+extern of_object_t *
     of_bsn_tlv_actor_system_mac_new(of_version_t version);
 extern void of_bsn_tlv_actor_system_mac_init(
-    of_bsn_tlv_actor_system_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_actor_system_priority_t *
+extern of_object_t *
     of_bsn_tlv_actor_system_priority_new(of_version_t version);
 extern void of_bsn_tlv_actor_system_priority_init(
-    of_bsn_tlv_actor_system_priority_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_broadcast_query_timeout_t *
+extern of_object_t *
     of_bsn_tlv_broadcast_query_timeout_new(of_version_t version);
 extern void of_bsn_tlv_broadcast_query_timeout_init(
-    of_bsn_tlv_broadcast_query_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_circuit_id_t *
+extern of_object_t *
     of_bsn_tlv_circuit_id_new(of_version_t version);
 extern void of_bsn_tlv_circuit_id_init(
-    of_bsn_tlv_circuit_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_convergence_status_t *
+extern of_object_t *
     of_bsn_tlv_convergence_status_new(of_version_t version);
 extern void of_bsn_tlv_convergence_status_init(
-    of_bsn_tlv_convergence_status_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_crc_enabled_t *
+extern of_object_t *
     of_bsn_tlv_crc_enabled_new(of_version_t version);
 extern void of_bsn_tlv_crc_enabled_init(
-    of_bsn_tlv_crc_enabled_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_eth_dst_t *
+extern of_object_t *
     of_bsn_tlv_eth_dst_new(of_version_t version);
 extern void of_bsn_tlv_eth_dst_init(
-    of_bsn_tlv_eth_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_eth_src_t *
+extern of_object_t *
     of_bsn_tlv_eth_src_new(of_version_t version);
 extern void of_bsn_tlv_eth_src_init(
-    of_bsn_tlv_eth_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_external_gateway_ip_t *
+extern of_object_t *
     of_bsn_tlv_external_gateway_ip_new(of_version_t version);
 extern void of_bsn_tlv_external_gateway_ip_init(
-    of_bsn_tlv_external_gateway_ip_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_external_gateway_mac_t *
+extern of_object_t *
     of_bsn_tlv_external_gateway_mac_new(of_version_t version);
 extern void of_bsn_tlv_external_gateway_mac_init(
-    of_bsn_tlv_external_gateway_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_external_ip_t *
+extern of_object_t *
     of_bsn_tlv_external_ip_new(of_version_t version);
 extern void of_bsn_tlv_external_ip_init(
-    of_bsn_tlv_external_ip_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_external_mac_t *
+extern of_object_t *
     of_bsn_tlv_external_mac_new(of_version_t version);
 extern void of_bsn_tlv_external_mac_init(
-    of_bsn_tlv_external_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_external_netmask_t *
+extern of_object_t *
     of_bsn_tlv_external_netmask_new(of_version_t version);
 extern void of_bsn_tlv_external_netmask_init(
-    of_bsn_tlv_external_netmask_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_header_t *
+extern of_object_t *
     of_bsn_tlv_header_new(of_version_t version);
 extern void of_bsn_tlv_header_init(
-    of_bsn_tlv_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_header_size_t *
+extern of_object_t *
     of_bsn_tlv_header_size_new(of_version_t version);
 extern void of_bsn_tlv_header_size_init(
-    of_bsn_tlv_header_size_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_idle_notification_t *
+extern of_object_t *
     of_bsn_tlv_idle_notification_new(of_version_t version);
 extern void of_bsn_tlv_idle_notification_init(
-    of_bsn_tlv_idle_notification_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_idle_time_t *
+extern of_object_t *
     of_bsn_tlv_idle_time_new(of_version_t version);
 extern void of_bsn_tlv_idle_time_init(
-    of_bsn_tlv_idle_time_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_idle_timeout_t *
+extern of_object_t *
     of_bsn_tlv_idle_timeout_new(of_version_t version);
 extern void of_bsn_tlv_idle_timeout_init(
-    of_bsn_tlv_idle_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_internal_gateway_mac_t *
+extern of_object_t *
     of_bsn_tlv_internal_gateway_mac_new(of_version_t version);
 extern void of_bsn_tlv_internal_gateway_mac_init(
-    of_bsn_tlv_internal_gateway_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_internal_mac_t *
+extern of_object_t *
     of_bsn_tlv_internal_mac_new(of_version_t version);
 extern void of_bsn_tlv_internal_mac_init(
-    of_bsn_tlv_internal_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_ipv4_t *
+extern of_object_t *
     of_bsn_tlv_ipv4_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_init(
-    of_bsn_tlv_ipv4_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_ipv4_dst_t *
+extern of_object_t *
     of_bsn_tlv_ipv4_dst_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_dst_init(
-    of_bsn_tlv_ipv4_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_ipv4_src_t *
+extern of_object_t *
     of_bsn_tlv_ipv4_src_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_src_init(
-    of_bsn_tlv_ipv4_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_mac_t *
+extern of_object_t *
     of_bsn_tlv_mac_new(of_version_t version);
 extern void of_bsn_tlv_mac_init(
-    of_bsn_tlv_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_miss_packets_t *
+extern of_object_t *
     of_bsn_tlv_miss_packets_new(of_version_t version);
 extern void of_bsn_tlv_miss_packets_init(
-    of_bsn_tlv_miss_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_name_t *
+extern of_object_t *
     of_bsn_tlv_name_new(of_version_t version);
 extern void of_bsn_tlv_name_init(
-    of_bsn_tlv_name_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_partner_key_t *
+extern of_object_t *
     of_bsn_tlv_partner_key_new(of_version_t version);
 extern void of_bsn_tlv_partner_key_init(
-    of_bsn_tlv_partner_key_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_partner_port_num_t *
+extern of_object_t *
     of_bsn_tlv_partner_port_num_new(of_version_t version);
 extern void of_bsn_tlv_partner_port_num_init(
-    of_bsn_tlv_partner_port_num_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_partner_port_priority_t *
+extern of_object_t *
     of_bsn_tlv_partner_port_priority_new(of_version_t version);
 extern void of_bsn_tlv_partner_port_priority_init(
-    of_bsn_tlv_partner_port_priority_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_partner_state_t *
+extern of_object_t *
     of_bsn_tlv_partner_state_new(of_version_t version);
 extern void of_bsn_tlv_partner_state_init(
-    of_bsn_tlv_partner_state_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_partner_system_mac_t *
+extern of_object_t *
     of_bsn_tlv_partner_system_mac_new(of_version_t version);
 extern void of_bsn_tlv_partner_system_mac_init(
-    of_bsn_tlv_partner_system_mac_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_partner_system_priority_t *
+extern of_object_t *
     of_bsn_tlv_partner_system_priority_new(of_version_t version);
 extern void of_bsn_tlv_partner_system_priority_init(
-    of_bsn_tlv_partner_system_priority_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_port_t *
+extern of_object_t *
     of_bsn_tlv_port_new(of_version_t version);
 extern void of_bsn_tlv_port_init(
-    of_bsn_tlv_port_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_queue_id_t *
+extern of_object_t *
     of_bsn_tlv_queue_id_new(of_version_t version);
 extern void of_bsn_tlv_queue_id_init(
-    of_bsn_tlv_queue_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_queue_weight_t *
+extern of_object_t *
     of_bsn_tlv_queue_weight_new(of_version_t version);
 extern void of_bsn_tlv_queue_weight_init(
-    of_bsn_tlv_queue_weight_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_reply_packets_t *
+extern of_object_t *
     of_bsn_tlv_reply_packets_new(of_version_t version);
 extern void of_bsn_tlv_reply_packets_init(
-    of_bsn_tlv_reply_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_request_packets_t *
+extern of_object_t *
     of_bsn_tlv_request_packets_new(of_version_t version);
 extern void of_bsn_tlv_request_packets_init(
-    of_bsn_tlv_request_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_rx_packets_t *
+extern of_object_t *
     of_bsn_tlv_rx_packets_new(of_version_t version);
 extern void of_bsn_tlv_rx_packets_init(
-    of_bsn_tlv_rx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_sampling_rate_t *
+extern of_object_t *
     of_bsn_tlv_sampling_rate_new(of_version_t version);
 extern void of_bsn_tlv_sampling_rate_init(
-    of_bsn_tlv_sampling_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_sub_agent_id_t *
+extern of_object_t *
     of_bsn_tlv_sub_agent_id_new(of_version_t version);
 extern void of_bsn_tlv_sub_agent_id_init(
-    of_bsn_tlv_sub_agent_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_tx_bytes_t *
+extern of_object_t *
     of_bsn_tlv_tx_bytes_new(of_version_t version);
 extern void of_bsn_tlv_tx_bytes_init(
-    of_bsn_tlv_tx_bytes_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_tx_packets_t *
+extern of_object_t *
     of_bsn_tlv_tx_packets_new(of_version_t version);
 extern void of_bsn_tlv_tx_packets_init(
-    of_bsn_tlv_tx_packets_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_udf_anchor_t *
+extern of_object_t *
     of_bsn_tlv_udf_anchor_new(of_version_t version);
 extern void of_bsn_tlv_udf_anchor_init(
-    of_bsn_tlv_udf_anchor_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_udf_id_t *
+extern of_object_t *
     of_bsn_tlv_udf_id_new(of_version_t version);
 extern void of_bsn_tlv_udf_id_init(
-    of_bsn_tlv_udf_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_udf_length_t *
+extern of_object_t *
     of_bsn_tlv_udf_length_new(of_version_t version);
 extern void of_bsn_tlv_udf_length_init(
-    of_bsn_tlv_udf_length_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_udf_offset_t *
+extern of_object_t *
     of_bsn_tlv_udf_offset_new(of_version_t version);
 extern void of_bsn_tlv_udf_offset_init(
-    of_bsn_tlv_udf_offset_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_udp_dst_t *
+extern of_object_t *
     of_bsn_tlv_udp_dst_new(of_version_t version);
 extern void of_bsn_tlv_udp_dst_init(
-    of_bsn_tlv_udp_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_udp_src_t *
+extern of_object_t *
     of_bsn_tlv_udp_src_new(of_version_t version);
 extern void of_bsn_tlv_udp_src_init(
-    of_bsn_tlv_udp_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_unicast_query_timeout_t *
+extern of_object_t *
     of_bsn_tlv_unicast_query_timeout_new(of_version_t version);
 extern void of_bsn_tlv_unicast_query_timeout_init(
-    of_bsn_tlv_unicast_query_timeout_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_vlan_vid_t *
+extern of_object_t *
     of_bsn_tlv_vlan_vid_new(of_version_t version);
 extern void of_bsn_tlv_vlan_vid_init(
-    of_bsn_tlv_vlan_vid_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_tlv_vrf_t *
+extern of_object_t *
     of_bsn_tlv_vrf_new(of_version_t version);
 extern void of_bsn_tlv_vrf_init(
-    of_bsn_tlv_vrf_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vlan_counter_stats_entry_t *
+extern of_object_t *
     of_bsn_vlan_counter_stats_entry_new(of_version_t version);
 extern void of_bsn_vlan_counter_stats_entry_init(
-    of_bsn_vlan_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vport_t *
+extern of_object_t *
     of_bsn_vport_new(of_version_t version);
 extern void of_bsn_vport_init(
-    of_bsn_vport_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vport_header_t *
+extern of_object_t *
     of_bsn_vport_header_new(of_version_t version);
 extern void of_bsn_vport_header_init(
-    of_bsn_vport_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vport_l2gre_t *
+extern of_object_t *
     of_bsn_vport_l2gre_new(of_version_t version);
 extern void of_bsn_vport_l2gre_init(
-    of_bsn_vport_l2gre_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vport_q_in_q_t *
+extern of_object_t *
     of_bsn_vport_q_in_q_new(of_version_t version);
 extern void of_bsn_vport_q_in_q_init(
-    of_bsn_vport_q_in_q_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bsn_vrf_counter_stats_entry_t *
+extern of_object_t *
     of_bsn_vrf_counter_stats_entry_new(of_version_t version);
 extern void of_bsn_vrf_counter_stats_entry_init(
-    of_bsn_vrf_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bucket_t *
+extern of_object_t *
     of_bucket_new(of_version_t version);
 extern void of_bucket_init(
-    of_bucket_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bucket_counter_t *
+extern of_object_t *
     of_bucket_counter_new(of_version_t version);
 extern void of_bucket_counter_init(
-    of_bucket_counter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bundle_prop_t *
+extern of_object_t *
     of_bundle_prop_new(of_version_t version);
 extern void of_bundle_prop_init(
-    of_bundle_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bundle_prop_experimenter_t *
+extern of_object_t *
     of_bundle_prop_experimenter_new(of_version_t version);
 extern void of_bundle_prop_experimenter_init(
-    of_bundle_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_bundle_prop_header_t *
+extern of_object_t *
     of_bundle_prop_header_new(of_version_t version);
 extern void of_bundle_prop_header_init(
-    of_bundle_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_flow_stats_entry_t *
+extern of_object_t *
     of_flow_stats_entry_new(of_version_t version);
 extern void of_flow_stats_entry_init(
-    of_flow_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_desc_stats_entry_t *
+extern of_object_t *
     of_group_desc_stats_entry_new(of_version_t version);
 extern void of_group_desc_stats_entry_init(
-    of_group_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_group_stats_entry_t *
+extern of_object_t *
     of_group_stats_entry_new(of_version_t version);
 extern void of_group_stats_entry_init(
-    of_group_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_hello_elem_t *
+extern of_object_t *
     of_hello_elem_new(of_version_t version);
 extern void of_hello_elem_init(
-    of_hello_elem_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_hello_elem_header_t *
+extern of_object_t *
     of_hello_elem_header_new(of_version_t version);
 extern void of_hello_elem_header_init(
-    of_hello_elem_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_hello_elem_versionbitmap_t *
+extern of_object_t *
     of_hello_elem_versionbitmap_new(of_version_t version);
 extern void of_hello_elem_versionbitmap_init(
-    of_hello_elem_versionbitmap_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_t *
+extern of_object_t *
     of_instruction_new(of_version_t version);
 extern void of_instruction_init(
-    of_instruction_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_apply_actions_t *
+extern of_object_t *
     of_instruction_apply_actions_new(of_version_t version);
 extern void of_instruction_apply_actions_init(
-    of_instruction_apply_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_t *
+extern of_object_t *
     of_instruction_bsn_new(of_version_t version);
 extern void of_instruction_bsn_init(
-    of_instruction_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_arp_offload_t *
+extern of_object_t *
     of_instruction_bsn_arp_offload_new(of_version_t version);
 extern void of_instruction_bsn_arp_offload_init(
-    of_instruction_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_deny_t *
+extern of_object_t *
     of_instruction_bsn_deny_new(of_version_t version);
 extern void of_instruction_bsn_deny_init(
-    of_instruction_bsn_deny_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_dhcp_offload_t *
+extern of_object_t *
     of_instruction_bsn_dhcp_offload_new(of_version_t version);
 extern void of_instruction_bsn_dhcp_offload_init(
-    of_instruction_bsn_dhcp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_disable_split_horizon_check_t *
+extern of_object_t *
     of_instruction_bsn_disable_split_horizon_check_new(of_version_t version);
 extern void of_instruction_bsn_disable_split_horizon_check_init(
-    of_instruction_bsn_disable_split_horizon_check_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_disable_src_mac_check_t *
+extern of_object_t *
     of_instruction_bsn_disable_src_mac_check_new(of_version_t version);
 extern void of_instruction_bsn_disable_src_mac_check_init(
-    of_instruction_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_disable_vlan_counters_t *
+extern of_object_t *
     of_instruction_bsn_disable_vlan_counters_new(of_version_t version);
 extern void of_instruction_bsn_disable_vlan_counters_init(
-    of_instruction_bsn_disable_vlan_counters_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_packet_of_death_t *
+extern of_object_t *
     of_instruction_bsn_packet_of_death_new(of_version_t version);
 extern void of_instruction_bsn_packet_of_death_init(
-    of_instruction_bsn_packet_of_death_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_permit_t *
+extern of_object_t *
     of_instruction_bsn_permit_new(of_version_t version);
 extern void of_instruction_bsn_permit_init(
-    of_instruction_bsn_permit_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_prioritize_pdus_t *
+extern of_object_t *
     of_instruction_bsn_prioritize_pdus_new(of_version_t version);
 extern void of_instruction_bsn_prioritize_pdus_init(
-    of_instruction_bsn_prioritize_pdus_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_require_vlan_xlate_t *
+extern of_object_t *
     of_instruction_bsn_require_vlan_xlate_new(of_version_t version);
 extern void of_instruction_bsn_require_vlan_xlate_init(
-    of_instruction_bsn_require_vlan_xlate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_bsn_span_destination_t *
+extern of_object_t *
     of_instruction_bsn_span_destination_new(of_version_t version);
 extern void of_instruction_bsn_span_destination_init(
-    of_instruction_bsn_span_destination_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_clear_actions_t *
+extern of_object_t *
     of_instruction_clear_actions_new(of_version_t version);
 extern void of_instruction_clear_actions_init(
-    of_instruction_clear_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_experimenter_t *
+extern of_object_t *
     of_instruction_experimenter_new(of_version_t version);
 extern void of_instruction_experimenter_init(
-    of_instruction_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_goto_table_t *
+extern of_object_t *
     of_instruction_goto_table_new(of_version_t version);
 extern void of_instruction_goto_table_init(
-    of_instruction_goto_table_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_header_t *
+extern of_object_t *
     of_instruction_header_new(of_version_t version);
 extern void of_instruction_header_init(
-    of_instruction_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_t *
+extern of_object_t *
     of_instruction_id_new(of_version_t version);
 extern void of_instruction_id_init(
-    of_instruction_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_apply_actions_t *
+extern of_object_t *
     of_instruction_id_apply_actions_new(of_version_t version);
 extern void of_instruction_id_apply_actions_init(
-    of_instruction_id_apply_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_t *
+extern of_object_t *
     of_instruction_id_bsn_new(of_version_t version);
 extern void of_instruction_id_bsn_init(
-    of_instruction_id_bsn_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_arp_offload_t *
+extern of_object_t *
     of_instruction_id_bsn_arp_offload_new(of_version_t version);
 extern void of_instruction_id_bsn_arp_offload_init(
-    of_instruction_id_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_deny_t *
+extern of_object_t *
     of_instruction_id_bsn_deny_new(of_version_t version);
 extern void of_instruction_id_bsn_deny_init(
-    of_instruction_id_bsn_deny_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_dhcp_offload_t *
+extern of_object_t *
     of_instruction_id_bsn_dhcp_offload_new(of_version_t version);
 extern void of_instruction_id_bsn_dhcp_offload_init(
-    of_instruction_id_bsn_dhcp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_disable_split_horizon_check_t *
+extern of_object_t *
     of_instruction_id_bsn_disable_split_horizon_check_new(of_version_t version);
 extern void of_instruction_id_bsn_disable_split_horizon_check_init(
-    of_instruction_id_bsn_disable_split_horizon_check_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_disable_src_mac_check_t *
+extern of_object_t *
     of_instruction_id_bsn_disable_src_mac_check_new(of_version_t version);
 extern void of_instruction_id_bsn_disable_src_mac_check_init(
-    of_instruction_id_bsn_disable_src_mac_check_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_disable_vlan_counters_t *
+extern of_object_t *
     of_instruction_id_bsn_disable_vlan_counters_new(of_version_t version);
 extern void of_instruction_id_bsn_disable_vlan_counters_init(
-    of_instruction_id_bsn_disable_vlan_counters_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_packet_of_death_t *
+extern of_object_t *
     of_instruction_id_bsn_packet_of_death_new(of_version_t version);
 extern void of_instruction_id_bsn_packet_of_death_init(
-    of_instruction_id_bsn_packet_of_death_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_permit_t *
+extern of_object_t *
     of_instruction_id_bsn_permit_new(of_version_t version);
 extern void of_instruction_id_bsn_permit_init(
-    of_instruction_id_bsn_permit_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_prioritize_pdus_t *
+extern of_object_t *
     of_instruction_id_bsn_prioritize_pdus_new(of_version_t version);
 extern void of_instruction_id_bsn_prioritize_pdus_init(
-    of_instruction_id_bsn_prioritize_pdus_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_require_vlan_xlate_t *
+extern of_object_t *
     of_instruction_id_bsn_require_vlan_xlate_new(of_version_t version);
 extern void of_instruction_id_bsn_require_vlan_xlate_init(
-    of_instruction_id_bsn_require_vlan_xlate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_bsn_span_destination_t *
+extern of_object_t *
     of_instruction_id_bsn_span_destination_new(of_version_t version);
 extern void of_instruction_id_bsn_span_destination_init(
-    of_instruction_id_bsn_span_destination_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_clear_actions_t *
+extern of_object_t *
     of_instruction_id_clear_actions_new(of_version_t version);
 extern void of_instruction_id_clear_actions_init(
-    of_instruction_id_clear_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_experimenter_t *
+extern of_object_t *
     of_instruction_id_experimenter_new(of_version_t version);
 extern void of_instruction_id_experimenter_init(
-    of_instruction_id_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_goto_table_t *
+extern of_object_t *
     of_instruction_id_goto_table_new(of_version_t version);
 extern void of_instruction_id_goto_table_init(
-    of_instruction_id_goto_table_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_header_t *
+extern of_object_t *
     of_instruction_id_header_new(of_version_t version);
 extern void of_instruction_id_header_init(
-    of_instruction_id_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_meter_t *
+extern of_object_t *
     of_instruction_id_meter_new(of_version_t version);
 extern void of_instruction_id_meter_init(
-    of_instruction_id_meter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_write_actions_t *
+extern of_object_t *
     of_instruction_id_write_actions_new(of_version_t version);
 extern void of_instruction_id_write_actions_init(
-    of_instruction_id_write_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_id_write_metadata_t *
+extern of_object_t *
     of_instruction_id_write_metadata_new(of_version_t version);
 extern void of_instruction_id_write_metadata_init(
-    of_instruction_id_write_metadata_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_meter_t *
+extern of_object_t *
     of_instruction_meter_new(of_version_t version);
 extern void of_instruction_meter_init(
-    of_instruction_meter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_write_actions_t *
+extern of_object_t *
     of_instruction_write_actions_new(of_version_t version);
 extern void of_instruction_write_actions_init(
-    of_instruction_write_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_instruction_write_metadata_t *
+extern of_object_t *
     of_instruction_write_metadata_new(of_version_t version);
 extern void of_instruction_write_metadata_init(
-    of_instruction_write_metadata_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_match_v1_t *
+extern of_object_t *
     of_match_v1_new(of_version_t version);
 extern void of_match_v1_init(
-    of_match_v1_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_match_v2_t *
+extern of_object_t *
     of_match_v2_new(of_version_t version);
 extern void of_match_v2_init(
-    of_match_v2_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_match_v3_t *
+extern of_object_t *
     of_match_v3_new(of_version_t version);
 extern void of_match_v3_init(
-    of_match_v3_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_band_t *
+extern of_object_t *
     of_meter_band_new(of_version_t version);
 extern void of_meter_band_init(
-    of_meter_band_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_band_drop_t *
+extern of_object_t *
     of_meter_band_drop_new(of_version_t version);
 extern void of_meter_band_drop_init(
-    of_meter_band_drop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_band_dscp_remark_t *
+extern of_object_t *
     of_meter_band_dscp_remark_new(of_version_t version);
 extern void of_meter_band_dscp_remark_init(
-    of_meter_band_dscp_remark_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_band_experimenter_t *
+extern of_object_t *
     of_meter_band_experimenter_new(of_version_t version);
 extern void of_meter_band_experimenter_init(
-    of_meter_band_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_band_header_t *
+extern of_object_t *
     of_meter_band_header_new(of_version_t version);
 extern void of_meter_band_header_init(
-    of_meter_band_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_band_stats_t *
+extern of_object_t *
     of_meter_band_stats_new(of_version_t version);
 extern void of_meter_band_stats_init(
-    of_meter_band_stats_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_config_t *
+extern of_object_t *
     of_meter_config_new(of_version_t version);
 extern void of_meter_config_init(
-    of_meter_config_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_features_t *
+extern of_object_t *
     of_meter_features_new(of_version_t version);
 extern void of_meter_features_init(
-    of_meter_features_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_meter_stats_t *
+extern of_object_t *
     of_meter_stats_new(of_version_t version);
 extern void of_meter_stats_init(
-    of_meter_stats_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_t *
+extern of_object_t *
     of_oxm_new(of_version_t version);
 extern void of_oxm_init(
-    of_oxm_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_op_t *
+extern of_object_t *
     of_oxm_arp_op_new(of_version_t version);
 extern void of_oxm_arp_op_init(
-    of_oxm_arp_op_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_op_masked_t *
+extern of_object_t *
     of_oxm_arp_op_masked_new(of_version_t version);
 extern void of_oxm_arp_op_masked_init(
-    of_oxm_arp_op_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_sha_t *
+extern of_object_t *
     of_oxm_arp_sha_new(of_version_t version);
 extern void of_oxm_arp_sha_init(
-    of_oxm_arp_sha_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_sha_masked_t *
+extern of_object_t *
     of_oxm_arp_sha_masked_new(of_version_t version);
 extern void of_oxm_arp_sha_masked_init(
-    of_oxm_arp_sha_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_spa_t *
+extern of_object_t *
     of_oxm_arp_spa_new(of_version_t version);
 extern void of_oxm_arp_spa_init(
-    of_oxm_arp_spa_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_spa_masked_t *
+extern of_object_t *
     of_oxm_arp_spa_masked_new(of_version_t version);
 extern void of_oxm_arp_spa_masked_init(
-    of_oxm_arp_spa_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_tha_t *
+extern of_object_t *
     of_oxm_arp_tha_new(of_version_t version);
 extern void of_oxm_arp_tha_init(
-    of_oxm_arp_tha_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_tha_masked_t *
+extern of_object_t *
     of_oxm_arp_tha_masked_new(of_version_t version);
 extern void of_oxm_arp_tha_masked_init(
-    of_oxm_arp_tha_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_tpa_t *
+extern of_object_t *
     of_oxm_arp_tpa_new(of_version_t version);
 extern void of_oxm_arp_tpa_init(
-    of_oxm_arp_tpa_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_arp_tpa_masked_t *
+extern of_object_t *
     of_oxm_arp_tpa_masked_new(of_version_t version);
 extern void of_oxm_arp_tpa_masked_init(
-    of_oxm_arp_tpa_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_egr_port_group_id_t *
+extern of_object_t *
     of_oxm_bsn_egr_port_group_id_new(of_version_t version);
 extern void of_oxm_bsn_egr_port_group_id_init(
-    of_oxm_bsn_egr_port_group_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_egr_port_group_id_masked_t *
+extern of_object_t *
     of_oxm_bsn_egr_port_group_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_egr_port_group_id_masked_init(
-    of_oxm_bsn_egr_port_group_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_global_vrf_allowed_t *
+extern of_object_t *
     of_oxm_bsn_global_vrf_allowed_new(of_version_t version);
 extern void of_oxm_bsn_global_vrf_allowed_init(
-    of_oxm_bsn_global_vrf_allowed_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_global_vrf_allowed_masked_t *
+extern of_object_t *
     of_oxm_bsn_global_vrf_allowed_masked_new(of_version_t version);
 extern void of_oxm_bsn_global_vrf_allowed_masked_init(
-    of_oxm_bsn_global_vrf_allowed_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_in_ports_128_t *
+extern of_object_t *
     of_oxm_bsn_in_ports_128_new(of_version_t version);
 extern void of_oxm_bsn_in_ports_128_init(
-    of_oxm_bsn_in_ports_128_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_in_ports_128_masked_t *
+extern of_object_t *
     of_oxm_bsn_in_ports_128_masked_new(of_version_t version);
 extern void of_oxm_bsn_in_ports_128_masked_init(
-    of_oxm_bsn_in_ports_128_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_l3_dst_class_id_t *
+extern of_object_t *
     of_oxm_bsn_l3_dst_class_id_new(of_version_t version);
 extern void of_oxm_bsn_l3_dst_class_id_init(
-    of_oxm_bsn_l3_dst_class_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_l3_dst_class_id_masked_t *
+extern of_object_t *
     of_oxm_bsn_l3_dst_class_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_l3_dst_class_id_masked_init(
-    of_oxm_bsn_l3_dst_class_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_l3_interface_class_id_t *
+extern of_object_t *
     of_oxm_bsn_l3_interface_class_id_new(of_version_t version);
 extern void of_oxm_bsn_l3_interface_class_id_init(
-    of_oxm_bsn_l3_interface_class_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_l3_interface_class_id_masked_t *
+extern of_object_t *
     of_oxm_bsn_l3_interface_class_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_l3_interface_class_id_masked_init(
-    of_oxm_bsn_l3_interface_class_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_l3_src_class_id_t *
+extern of_object_t *
     of_oxm_bsn_l3_src_class_id_new(of_version_t version);
 extern void of_oxm_bsn_l3_src_class_id_init(
-    of_oxm_bsn_l3_src_class_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_l3_src_class_id_masked_t *
+extern of_object_t *
     of_oxm_bsn_l3_src_class_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_l3_src_class_id_masked_init(
-    of_oxm_bsn_l3_src_class_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_lag_id_t *
+extern of_object_t *
     of_oxm_bsn_lag_id_new(of_version_t version);
 extern void of_oxm_bsn_lag_id_init(
-    of_oxm_bsn_lag_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_lag_id_masked_t *
+extern of_object_t *
     of_oxm_bsn_lag_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_lag_id_masked_init(
-    of_oxm_bsn_lag_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_tcp_flags_t *
+extern of_object_t *
     of_oxm_bsn_tcp_flags_new(of_version_t version);
 extern void of_oxm_bsn_tcp_flags_init(
-    of_oxm_bsn_tcp_flags_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_tcp_flags_masked_t *
+extern of_object_t *
     of_oxm_bsn_tcp_flags_masked_new(of_version_t version);
 extern void of_oxm_bsn_tcp_flags_masked_init(
-    of_oxm_bsn_tcp_flags_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf0_t *
+extern of_object_t *
     of_oxm_bsn_udf0_new(of_version_t version);
 extern void of_oxm_bsn_udf0_init(
-    of_oxm_bsn_udf0_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf0_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf0_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf0_masked_init(
-    of_oxm_bsn_udf0_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf1_t *
+extern of_object_t *
     of_oxm_bsn_udf1_new(of_version_t version);
 extern void of_oxm_bsn_udf1_init(
-    of_oxm_bsn_udf1_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf1_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf1_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf1_masked_init(
-    of_oxm_bsn_udf1_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf2_t *
+extern of_object_t *
     of_oxm_bsn_udf2_new(of_version_t version);
 extern void of_oxm_bsn_udf2_init(
-    of_oxm_bsn_udf2_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf2_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf2_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf2_masked_init(
-    of_oxm_bsn_udf2_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf3_t *
+extern of_object_t *
     of_oxm_bsn_udf3_new(of_version_t version);
 extern void of_oxm_bsn_udf3_init(
-    of_oxm_bsn_udf3_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf3_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf3_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf3_masked_init(
-    of_oxm_bsn_udf3_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf4_t *
+extern of_object_t *
     of_oxm_bsn_udf4_new(of_version_t version);
 extern void of_oxm_bsn_udf4_init(
-    of_oxm_bsn_udf4_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf4_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf4_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf4_masked_init(
-    of_oxm_bsn_udf4_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf5_t *
+extern of_object_t *
     of_oxm_bsn_udf5_new(of_version_t version);
 extern void of_oxm_bsn_udf5_init(
-    of_oxm_bsn_udf5_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf5_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf5_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf5_masked_init(
-    of_oxm_bsn_udf5_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf6_t *
+extern of_object_t *
     of_oxm_bsn_udf6_new(of_version_t version);
 extern void of_oxm_bsn_udf6_init(
-    of_oxm_bsn_udf6_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf6_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf6_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf6_masked_init(
-    of_oxm_bsn_udf6_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf7_t *
+extern of_object_t *
     of_oxm_bsn_udf7_new(of_version_t version);
 extern void of_oxm_bsn_udf7_init(
-    of_oxm_bsn_udf7_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_udf7_masked_t *
+extern of_object_t *
     of_oxm_bsn_udf7_masked_new(of_version_t version);
 extern void of_oxm_bsn_udf7_masked_init(
-    of_oxm_bsn_udf7_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_vlan_xlate_port_group_id_t *
+extern of_object_t *
     of_oxm_bsn_vlan_xlate_port_group_id_new(of_version_t version);
 extern void of_oxm_bsn_vlan_xlate_port_group_id_init(
-    of_oxm_bsn_vlan_xlate_port_group_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_vlan_xlate_port_group_id_masked_t *
+extern of_object_t *
     of_oxm_bsn_vlan_xlate_port_group_id_masked_new(of_version_t version);
 extern void of_oxm_bsn_vlan_xlate_port_group_id_masked_init(
-    of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_vrf_t *
+extern of_object_t *
     of_oxm_bsn_vrf_new(of_version_t version);
 extern void of_oxm_bsn_vrf_init(
-    of_oxm_bsn_vrf_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_bsn_vrf_masked_t *
+extern of_object_t *
     of_oxm_bsn_vrf_masked_new(of_version_t version);
 extern void of_oxm_bsn_vrf_masked_init(
-    of_oxm_bsn_vrf_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_eth_dst_t *
+extern of_object_t *
     of_oxm_eth_dst_new(of_version_t version);
 extern void of_oxm_eth_dst_init(
-    of_oxm_eth_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_eth_dst_masked_t *
+extern of_object_t *
     of_oxm_eth_dst_masked_new(of_version_t version);
 extern void of_oxm_eth_dst_masked_init(
-    of_oxm_eth_dst_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_eth_src_t *
+extern of_object_t *
     of_oxm_eth_src_new(of_version_t version);
 extern void of_oxm_eth_src_init(
-    of_oxm_eth_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_eth_src_masked_t *
+extern of_object_t *
     of_oxm_eth_src_masked_new(of_version_t version);
 extern void of_oxm_eth_src_masked_init(
-    of_oxm_eth_src_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_eth_type_t *
+extern of_object_t *
     of_oxm_eth_type_new(of_version_t version);
 extern void of_oxm_eth_type_init(
-    of_oxm_eth_type_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_eth_type_masked_t *
+extern of_object_t *
     of_oxm_eth_type_masked_new(of_version_t version);
 extern void of_oxm_eth_type_masked_init(
-    of_oxm_eth_type_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_header_t *
+extern of_object_t *
     of_oxm_header_new(of_version_t version);
 extern void of_oxm_header_init(
-    of_oxm_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv4_code_t *
+extern of_object_t *
     of_oxm_icmpv4_code_new(of_version_t version);
 extern void of_oxm_icmpv4_code_init(
-    of_oxm_icmpv4_code_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv4_code_masked_t *
+extern of_object_t *
     of_oxm_icmpv4_code_masked_new(of_version_t version);
 extern void of_oxm_icmpv4_code_masked_init(
-    of_oxm_icmpv4_code_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv4_type_t *
+extern of_object_t *
     of_oxm_icmpv4_type_new(of_version_t version);
 extern void of_oxm_icmpv4_type_init(
-    of_oxm_icmpv4_type_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv4_type_masked_t *
+extern of_object_t *
     of_oxm_icmpv4_type_masked_new(of_version_t version);
 extern void of_oxm_icmpv4_type_masked_init(
-    of_oxm_icmpv4_type_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv6_code_t *
+extern of_object_t *
     of_oxm_icmpv6_code_new(of_version_t version);
 extern void of_oxm_icmpv6_code_init(
-    of_oxm_icmpv6_code_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv6_code_masked_t *
+extern of_object_t *
     of_oxm_icmpv6_code_masked_new(of_version_t version);
 extern void of_oxm_icmpv6_code_masked_init(
-    of_oxm_icmpv6_code_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv6_type_t *
+extern of_object_t *
     of_oxm_icmpv6_type_new(of_version_t version);
 extern void of_oxm_icmpv6_type_init(
-    of_oxm_icmpv6_type_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_icmpv6_type_masked_t *
+extern of_object_t *
     of_oxm_icmpv6_type_masked_new(of_version_t version);
 extern void of_oxm_icmpv6_type_masked_init(
-    of_oxm_icmpv6_type_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_in_phy_port_t *
+extern of_object_t *
     of_oxm_in_phy_port_new(of_version_t version);
 extern void of_oxm_in_phy_port_init(
-    of_oxm_in_phy_port_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_in_phy_port_masked_t *
+extern of_object_t *
     of_oxm_in_phy_port_masked_new(of_version_t version);
 extern void of_oxm_in_phy_port_masked_init(
-    of_oxm_in_phy_port_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_in_port_t *
+extern of_object_t *
     of_oxm_in_port_new(of_version_t version);
 extern void of_oxm_in_port_init(
-    of_oxm_in_port_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_in_port_masked_t *
+extern of_object_t *
     of_oxm_in_port_masked_new(of_version_t version);
 extern void of_oxm_in_port_masked_init(
-    of_oxm_in_port_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ip_dscp_t *
+extern of_object_t *
     of_oxm_ip_dscp_new(of_version_t version);
 extern void of_oxm_ip_dscp_init(
-    of_oxm_ip_dscp_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ip_dscp_masked_t *
+extern of_object_t *
     of_oxm_ip_dscp_masked_new(of_version_t version);
 extern void of_oxm_ip_dscp_masked_init(
-    of_oxm_ip_dscp_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ip_ecn_t *
+extern of_object_t *
     of_oxm_ip_ecn_new(of_version_t version);
 extern void of_oxm_ip_ecn_init(
-    of_oxm_ip_ecn_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ip_ecn_masked_t *
+extern of_object_t *
     of_oxm_ip_ecn_masked_new(of_version_t version);
 extern void of_oxm_ip_ecn_masked_init(
-    of_oxm_ip_ecn_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ip_proto_t *
+extern of_object_t *
     of_oxm_ip_proto_new(of_version_t version);
 extern void of_oxm_ip_proto_init(
-    of_oxm_ip_proto_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ip_proto_masked_t *
+extern of_object_t *
     of_oxm_ip_proto_masked_new(of_version_t version);
 extern void of_oxm_ip_proto_masked_init(
-    of_oxm_ip_proto_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv4_dst_t *
+extern of_object_t *
     of_oxm_ipv4_dst_new(of_version_t version);
 extern void of_oxm_ipv4_dst_init(
-    of_oxm_ipv4_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv4_dst_masked_t *
+extern of_object_t *
     of_oxm_ipv4_dst_masked_new(of_version_t version);
 extern void of_oxm_ipv4_dst_masked_init(
-    of_oxm_ipv4_dst_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv4_src_t *
+extern of_object_t *
     of_oxm_ipv4_src_new(of_version_t version);
 extern void of_oxm_ipv4_src_init(
-    of_oxm_ipv4_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv4_src_masked_t *
+extern of_object_t *
     of_oxm_ipv4_src_masked_new(of_version_t version);
 extern void of_oxm_ipv4_src_masked_init(
-    of_oxm_ipv4_src_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_dst_t *
+extern of_object_t *
     of_oxm_ipv6_dst_new(of_version_t version);
 extern void of_oxm_ipv6_dst_init(
-    of_oxm_ipv6_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_dst_masked_t *
+extern of_object_t *
     of_oxm_ipv6_dst_masked_new(of_version_t version);
 extern void of_oxm_ipv6_dst_masked_init(
-    of_oxm_ipv6_dst_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_flabel_t *
+extern of_object_t *
     of_oxm_ipv6_flabel_new(of_version_t version);
 extern void of_oxm_ipv6_flabel_init(
-    of_oxm_ipv6_flabel_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_flabel_masked_t *
+extern of_object_t *
     of_oxm_ipv6_flabel_masked_new(of_version_t version);
 extern void of_oxm_ipv6_flabel_masked_init(
-    of_oxm_ipv6_flabel_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_nd_sll_t *
+extern of_object_t *
     of_oxm_ipv6_nd_sll_new(of_version_t version);
 extern void of_oxm_ipv6_nd_sll_init(
-    of_oxm_ipv6_nd_sll_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_nd_sll_masked_t *
+extern of_object_t *
     of_oxm_ipv6_nd_sll_masked_new(of_version_t version);
 extern void of_oxm_ipv6_nd_sll_masked_init(
-    of_oxm_ipv6_nd_sll_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_nd_target_t *
+extern of_object_t *
     of_oxm_ipv6_nd_target_new(of_version_t version);
 extern void of_oxm_ipv6_nd_target_init(
-    of_oxm_ipv6_nd_target_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_nd_target_masked_t *
+extern of_object_t *
     of_oxm_ipv6_nd_target_masked_new(of_version_t version);
 extern void of_oxm_ipv6_nd_target_masked_init(
-    of_oxm_ipv6_nd_target_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_nd_tll_t *
+extern of_object_t *
     of_oxm_ipv6_nd_tll_new(of_version_t version);
 extern void of_oxm_ipv6_nd_tll_init(
-    of_oxm_ipv6_nd_tll_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_nd_tll_masked_t *
+extern of_object_t *
     of_oxm_ipv6_nd_tll_masked_new(of_version_t version);
 extern void of_oxm_ipv6_nd_tll_masked_init(
-    of_oxm_ipv6_nd_tll_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_src_t *
+extern of_object_t *
     of_oxm_ipv6_src_new(of_version_t version);
 extern void of_oxm_ipv6_src_init(
-    of_oxm_ipv6_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_ipv6_src_masked_t *
+extern of_object_t *
     of_oxm_ipv6_src_masked_new(of_version_t version);
 extern void of_oxm_ipv6_src_masked_init(
-    of_oxm_ipv6_src_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_metadata_t *
+extern of_object_t *
     of_oxm_metadata_new(of_version_t version);
 extern void of_oxm_metadata_init(
-    of_oxm_metadata_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_metadata_masked_t *
+extern of_object_t *
     of_oxm_metadata_masked_new(of_version_t version);
 extern void of_oxm_metadata_masked_init(
-    of_oxm_metadata_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_mpls_bos_t *
+extern of_object_t *
     of_oxm_mpls_bos_new(of_version_t version);
 extern void of_oxm_mpls_bos_init(
-    of_oxm_mpls_bos_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_mpls_bos_masked_t *
+extern of_object_t *
     of_oxm_mpls_bos_masked_new(of_version_t version);
 extern void of_oxm_mpls_bos_masked_init(
-    of_oxm_mpls_bos_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_mpls_label_t *
+extern of_object_t *
     of_oxm_mpls_label_new(of_version_t version);
 extern void of_oxm_mpls_label_init(
-    of_oxm_mpls_label_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_mpls_label_masked_t *
+extern of_object_t *
     of_oxm_mpls_label_masked_new(of_version_t version);
 extern void of_oxm_mpls_label_masked_init(
-    of_oxm_mpls_label_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_mpls_tc_t *
+extern of_object_t *
     of_oxm_mpls_tc_new(of_version_t version);
 extern void of_oxm_mpls_tc_init(
-    of_oxm_mpls_tc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_mpls_tc_masked_t *
+extern of_object_t *
     of_oxm_mpls_tc_masked_new(of_version_t version);
 extern void of_oxm_mpls_tc_masked_init(
-    of_oxm_mpls_tc_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_sctp_dst_t *
+extern of_object_t *
     of_oxm_sctp_dst_new(of_version_t version);
 extern void of_oxm_sctp_dst_init(
-    of_oxm_sctp_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_sctp_dst_masked_t *
+extern of_object_t *
     of_oxm_sctp_dst_masked_new(of_version_t version);
 extern void of_oxm_sctp_dst_masked_init(
-    of_oxm_sctp_dst_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_sctp_src_t *
+extern of_object_t *
     of_oxm_sctp_src_new(of_version_t version);
 extern void of_oxm_sctp_src_init(
-    of_oxm_sctp_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_sctp_src_masked_t *
+extern of_object_t *
     of_oxm_sctp_src_masked_new(of_version_t version);
 extern void of_oxm_sctp_src_masked_init(
-    of_oxm_sctp_src_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_tcp_dst_t *
+extern of_object_t *
     of_oxm_tcp_dst_new(of_version_t version);
 extern void of_oxm_tcp_dst_init(
-    of_oxm_tcp_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_tcp_dst_masked_t *
+extern of_object_t *
     of_oxm_tcp_dst_masked_new(of_version_t version);
 extern void of_oxm_tcp_dst_masked_init(
-    of_oxm_tcp_dst_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_tcp_src_t *
+extern of_object_t *
     of_oxm_tcp_src_new(of_version_t version);
 extern void of_oxm_tcp_src_init(
-    of_oxm_tcp_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_tcp_src_masked_t *
+extern of_object_t *
     of_oxm_tcp_src_masked_new(of_version_t version);
 extern void of_oxm_tcp_src_masked_init(
-    of_oxm_tcp_src_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_tunnel_id_t *
+extern of_object_t *
     of_oxm_tunnel_id_new(of_version_t version);
 extern void of_oxm_tunnel_id_init(
-    of_oxm_tunnel_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_tunnel_id_masked_t *
+extern of_object_t *
     of_oxm_tunnel_id_masked_new(of_version_t version);
 extern void of_oxm_tunnel_id_masked_init(
-    of_oxm_tunnel_id_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_udp_dst_t *
+extern of_object_t *
     of_oxm_udp_dst_new(of_version_t version);
 extern void of_oxm_udp_dst_init(
-    of_oxm_udp_dst_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_udp_dst_masked_t *
+extern of_object_t *
     of_oxm_udp_dst_masked_new(of_version_t version);
 extern void of_oxm_udp_dst_masked_init(
-    of_oxm_udp_dst_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_udp_src_t *
+extern of_object_t *
     of_oxm_udp_src_new(of_version_t version);
 extern void of_oxm_udp_src_init(
-    of_oxm_udp_src_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_udp_src_masked_t *
+extern of_object_t *
     of_oxm_udp_src_masked_new(of_version_t version);
 extern void of_oxm_udp_src_masked_init(
-    of_oxm_udp_src_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_vlan_pcp_t *
+extern of_object_t *
     of_oxm_vlan_pcp_new(of_version_t version);
 extern void of_oxm_vlan_pcp_init(
-    of_oxm_vlan_pcp_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_vlan_pcp_masked_t *
+extern of_object_t *
     of_oxm_vlan_pcp_masked_new(of_version_t version);
 extern void of_oxm_vlan_pcp_masked_init(
-    of_oxm_vlan_pcp_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_vlan_vid_t *
+extern of_object_t *
     of_oxm_vlan_vid_new(of_version_t version);
 extern void of_oxm_vlan_vid_init(
-    of_oxm_vlan_vid_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_oxm_vlan_vid_masked_t *
+extern of_object_t *
     of_oxm_vlan_vid_masked_new(of_version_t version);
 extern void of_oxm_vlan_vid_masked_init(
-    of_oxm_vlan_vid_masked_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_packet_queue_t *
+extern of_object_t *
     of_packet_queue_new(of_version_t version);
 extern void of_packet_queue_init(
-    of_packet_queue_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_t *
+extern of_object_t *
     of_port_desc_new(of_version_t version);
 extern void of_port_desc_init(
-    of_port_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_prop_t *
+extern of_object_t *
     of_port_desc_prop_new(of_version_t version);
 extern void of_port_desc_prop_init(
-    of_port_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_prop_ethernet_t *
+extern of_object_t *
     of_port_desc_prop_ethernet_new(of_version_t version);
 extern void of_port_desc_prop_ethernet_init(
-    of_port_desc_prop_ethernet_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_prop_experimenter_t *
+extern of_object_t *
     of_port_desc_prop_experimenter_new(of_version_t version);
 extern void of_port_desc_prop_experimenter_init(
-    of_port_desc_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_prop_header_t *
+extern of_object_t *
     of_port_desc_prop_header_new(of_version_t version);
 extern void of_port_desc_prop_header_init(
-    of_port_desc_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_desc_prop_optical_t *
+extern of_object_t *
     of_port_desc_prop_optical_new(of_version_t version);
 extern void of_port_desc_prop_optical_init(
-    of_port_desc_prop_optical_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_prop_t *
+extern of_object_t *
     of_port_mod_prop_new(of_version_t version);
 extern void of_port_mod_prop_init(
-    of_port_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_prop_ethernet_t *
+extern of_object_t *
     of_port_mod_prop_ethernet_new(of_version_t version);
 extern void of_port_mod_prop_ethernet_init(
-    of_port_mod_prop_ethernet_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_prop_experimenter_t *
+extern of_object_t *
     of_port_mod_prop_experimenter_new(of_version_t version);
 extern void of_port_mod_prop_experimenter_init(
-    of_port_mod_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_prop_header_t *
+extern of_object_t *
     of_port_mod_prop_header_new(of_version_t version);
 extern void of_port_mod_prop_header_init(
-    of_port_mod_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_mod_prop_optical_t *
+extern of_object_t *
     of_port_mod_prop_optical_new(of_version_t version);
 extern void of_port_mod_prop_optical_init(
-    of_port_mod_prop_optical_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_entry_t *
+extern of_object_t *
     of_port_stats_entry_new(of_version_t version);
 extern void of_port_stats_entry_init(
-    of_port_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_prop_t *
+extern of_object_t *
     of_port_stats_prop_new(of_version_t version);
 extern void of_port_stats_prop_init(
-    of_port_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_prop_ethernet_t *
+extern of_object_t *
     of_port_stats_prop_ethernet_new(of_version_t version);
 extern void of_port_stats_prop_ethernet_init(
-    of_port_stats_prop_ethernet_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_prop_experimenter_t *
+extern of_object_t *
     of_port_stats_prop_experimenter_new(of_version_t version);
 extern void of_port_stats_prop_experimenter_init(
-    of_port_stats_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_prop_header_t *
+extern of_object_t *
     of_port_stats_prop_header_new(of_version_t version);
 extern void of_port_stats_prop_header_init(
-    of_port_stats_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_port_stats_prop_optical_t *
+extern of_object_t *
     of_port_stats_prop_optical_new(of_version_t version);
 extern void of_port_stats_prop_optical_init(
-    of_port_stats_prop_optical_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_t *
+extern of_object_t *
     of_queue_desc_new(of_version_t version);
 extern void of_queue_desc_init(
-    of_queue_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_prop_t *
+extern of_object_t *
     of_queue_desc_prop_new(of_version_t version);
 extern void of_queue_desc_prop_init(
-    of_queue_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_prop_experimenter_t *
+extern of_object_t *
     of_queue_desc_prop_experimenter_new(of_version_t version);
 extern void of_queue_desc_prop_experimenter_init(
-    of_queue_desc_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_prop_header_t *
+extern of_object_t *
     of_queue_desc_prop_header_new(of_version_t version);
 extern void of_queue_desc_prop_header_init(
-    of_queue_desc_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_prop_max_rate_t *
+extern of_object_t *
     of_queue_desc_prop_max_rate_new(of_version_t version);
 extern void of_queue_desc_prop_max_rate_init(
-    of_queue_desc_prop_max_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_desc_prop_min_rate_t *
+extern of_object_t *
     of_queue_desc_prop_min_rate_new(of_version_t version);
 extern void of_queue_desc_prop_min_rate_init(
-    of_queue_desc_prop_min_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_prop_t *
+extern of_object_t *
     of_queue_prop_new(of_version_t version);
 extern void of_queue_prop_init(
-    of_queue_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_prop_experimenter_t *
+extern of_object_t *
     of_queue_prop_experimenter_new(of_version_t version);
 extern void of_queue_prop_experimenter_init(
-    of_queue_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_prop_header_t *
+extern of_object_t *
     of_queue_prop_header_new(of_version_t version);
 extern void of_queue_prop_header_init(
-    of_queue_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_prop_max_rate_t *
+extern of_object_t *
     of_queue_prop_max_rate_new(of_version_t version);
 extern void of_queue_prop_max_rate_init(
-    of_queue_prop_max_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_prop_min_rate_t *
+extern of_object_t *
     of_queue_prop_min_rate_new(of_version_t version);
 extern void of_queue_prop_min_rate_init(
-    of_queue_prop_min_rate_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_stats_entry_t *
+extern of_object_t *
     of_queue_stats_entry_new(of_version_t version);
 extern void of_queue_stats_entry_init(
-    of_queue_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_stats_prop_t *
+extern of_object_t *
     of_queue_stats_prop_new(of_version_t version);
 extern void of_queue_stats_prop_init(
-    of_queue_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_stats_prop_experimenter_t *
+extern of_object_t *
     of_queue_stats_prop_experimenter_new(of_version_t version);
 extern void of_queue_stats_prop_experimenter_init(
-    of_queue_stats_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_queue_stats_prop_header_t *
+extern of_object_t *
     of_queue_stats_prop_header_new(of_version_t version);
 extern void of_queue_stats_prop_header_init(
-    of_queue_stats_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_prop_t *
+extern of_object_t *
     of_role_prop_new(of_version_t version);
 extern void of_role_prop_init(
-    of_role_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_prop_experimenter_t *
+extern of_object_t *
     of_role_prop_experimenter_new(of_version_t version);
 extern void of_role_prop_experimenter_init(
-    of_role_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_role_prop_header_t *
+extern of_object_t *
     of_role_prop_header_new(of_version_t version);
 extern void of_role_prop_header_init(
-    of_role_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_desc_t *
+extern of_object_t *
     of_table_desc_new(of_version_t version);
 extern void of_table_desc_init(
-    of_table_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_t *
+extern of_object_t *
     of_table_feature_prop_new(of_version_t version);
 extern void of_table_feature_prop_init(
-    of_table_feature_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_apply_actions_t *
+extern of_object_t *
     of_table_feature_prop_apply_actions_new(of_version_t version);
 extern void of_table_feature_prop_apply_actions_init(
-    of_table_feature_prop_apply_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_apply_actions_miss_t *
+extern of_object_t *
     of_table_feature_prop_apply_actions_miss_new(of_version_t version);
 extern void of_table_feature_prop_apply_actions_miss_init(
-    of_table_feature_prop_apply_actions_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_apply_setfield_t *
+extern of_object_t *
     of_table_feature_prop_apply_setfield_new(of_version_t version);
 extern void of_table_feature_prop_apply_setfield_init(
-    of_table_feature_prop_apply_setfield_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_apply_setfield_miss_t *
+extern of_object_t *
     of_table_feature_prop_apply_setfield_miss_new(of_version_t version);
 extern void of_table_feature_prop_apply_setfield_miss_init(
-    of_table_feature_prop_apply_setfield_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_experimenter_t *
+extern of_object_t *
     of_table_feature_prop_experimenter_new(of_version_t version);
 extern void of_table_feature_prop_experimenter_init(
-    of_table_feature_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_experimenter_miss_t *
+extern of_object_t *
     of_table_feature_prop_experimenter_miss_new(of_version_t version);
 extern void of_table_feature_prop_experimenter_miss_init(
-    of_table_feature_prop_experimenter_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_header_t *
+extern of_object_t *
     of_table_feature_prop_header_new(of_version_t version);
 extern void of_table_feature_prop_header_init(
-    of_table_feature_prop_header_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_instructions_t *
+extern of_object_t *
     of_table_feature_prop_instructions_new(of_version_t version);
 extern void of_table_feature_prop_instructions_init(
-    of_table_feature_prop_instructions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_instructions_miss_t *
+extern of_object_t *
     of_table_feature_prop_instructions_miss_new(of_version_t version);
 extern void of_table_feature_prop_instructions_miss_init(
-    of_table_feature_prop_instructions_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_match_t *
+extern of_object_t *
     of_table_feature_prop_match_new(of_version_t version);
 extern void of_table_feature_prop_match_init(
-    of_table_feature_prop_match_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_next_tables_t *
+extern of_object_t *
     of_table_feature_prop_next_tables_new(of_version_t version);
 extern void of_table_feature_prop_next_tables_init(
-    of_table_feature_prop_next_tables_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_next_tables_miss_t *
+extern of_object_t *
     of_table_feature_prop_next_tables_miss_new(of_version_t version);
 extern void of_table_feature_prop_next_tables_miss_init(
-    of_table_feature_prop_next_tables_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_table_sync_from_t *
+extern of_object_t *
     of_table_feature_prop_table_sync_from_new(of_version_t version);
 extern void of_table_feature_prop_table_sync_from_init(
-    of_table_feature_prop_table_sync_from_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_wildcards_t *
+extern of_object_t *
     of_table_feature_prop_wildcards_new(of_version_t version);
 extern void of_table_feature_prop_wildcards_init(
-    of_table_feature_prop_wildcards_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_write_actions_t *
+extern of_object_t *
     of_table_feature_prop_write_actions_new(of_version_t version);
 extern void of_table_feature_prop_write_actions_init(
-    of_table_feature_prop_write_actions_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_write_actions_miss_t *
+extern of_object_t *
     of_table_feature_prop_write_actions_miss_new(of_version_t version);
 extern void of_table_feature_prop_write_actions_miss_init(
-    of_table_feature_prop_write_actions_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_write_setfield_t *
+extern of_object_t *
     of_table_feature_prop_write_setfield_new(of_version_t version);
 extern void of_table_feature_prop_write_setfield_init(
-    of_table_feature_prop_write_setfield_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_feature_prop_write_setfield_miss_t *
+extern of_object_t *
     of_table_feature_prop_write_setfield_miss_new(of_version_t version);
 extern void of_table_feature_prop_write_setfield_miss_init(
-    of_table_feature_prop_write_setfield_miss_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_features_t *
+extern of_object_t *
     of_table_features_new(of_version_t version);
 extern void of_table_features_init(
-    of_table_features_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_mod_prop_t *
+extern of_object_t *
     of_table_mod_prop_new(of_version_t version);
 extern void of_table_mod_prop_init(
-    of_table_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_mod_prop_eviction_t *
+extern of_object_t *
     of_table_mod_prop_eviction_new(of_version_t version);
 extern void of_table_mod_prop_eviction_init(
-    of_table_mod_prop_eviction_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_mod_prop_experimenter_t *
+extern of_object_t *
     of_table_mod_prop_experimenter_new(of_version_t version);
 extern void of_table_mod_prop_experimenter_init(
-    of_table_mod_prop_experimenter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_mod_prop_vacancy_t *
+extern of_object_t *
     of_table_mod_prop_vacancy_new(of_version_t version);
 extern void of_table_mod_prop_vacancy_init(
-    of_table_mod_prop_vacancy_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_table_stats_entry_t *
+extern of_object_t *
     of_table_stats_entry_new(of_version_t version);
 extern void of_table_stats_entry_init(
-    of_table_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_uint32_t *
+extern of_object_t *
     of_uint32_new(of_version_t version);
 extern void of_uint32_init(
-    of_uint32_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_uint64_t *
+extern of_object_t *
     of_uint64_new(of_version_t version);
 extern void of_uint64_init(
-    of_uint64_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_uint8_t *
+extern of_object_t *
     of_uint8_new(of_version_t version);
 extern void of_uint8_init(
-    of_uint8_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_action_t *
+extern of_object_t *
     of_list_action_new(of_version_t version);
 extern void of_list_action_init(
-    of_list_action_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_action_id_t *
+extern of_object_t *
     of_list_action_id_new(of_version_t version);
 extern void of_list_action_id_init(
-    of_list_action_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_async_config_prop_t *
+extern of_object_t *
     of_list_async_config_prop_new(of_version_t version);
 extern void of_list_async_config_prop_init(
-    of_list_async_config_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_controller_connection_t *
+extern of_object_t *
     of_list_bsn_controller_connection_new(of_version_t version);
 extern void of_list_bsn_controller_connection_init(
-    of_list_bsn_controller_connection_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_debug_counter_desc_stats_entry_t *
+extern of_object_t *
     of_list_bsn_debug_counter_desc_stats_entry_new(of_version_t version);
 extern void of_list_bsn_debug_counter_desc_stats_entry_init(
-    of_list_bsn_debug_counter_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_debug_counter_stats_entry_t *
+extern of_object_t *
     of_list_bsn_debug_counter_stats_entry_new(of_version_t version);
 extern void of_list_bsn_debug_counter_stats_entry_init(
-    of_list_bsn_debug_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_flow_checksum_bucket_stats_entry_t *
+extern of_object_t *
     of_list_bsn_flow_checksum_bucket_stats_entry_new(of_version_t version);
 extern void of_list_bsn_flow_checksum_bucket_stats_entry_init(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_gentable_bucket_stats_entry_t *
+extern of_object_t *
     of_list_bsn_gentable_bucket_stats_entry_new(of_version_t version);
 extern void of_list_bsn_gentable_bucket_stats_entry_init(
-    of_list_bsn_gentable_bucket_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_gentable_desc_stats_entry_t *
+extern of_object_t *
     of_list_bsn_gentable_desc_stats_entry_new(of_version_t version);
 extern void of_list_bsn_gentable_desc_stats_entry_init(
-    of_list_bsn_gentable_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_gentable_entry_desc_stats_entry_t *
+extern of_object_t *
     of_list_bsn_gentable_entry_desc_stats_entry_new(of_version_t version);
 extern void of_list_bsn_gentable_entry_desc_stats_entry_init(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_gentable_entry_stats_entry_t *
+extern of_object_t *
     of_list_bsn_gentable_entry_stats_entry_new(of_version_t version);
 extern void of_list_bsn_gentable_entry_stats_entry_init(
-    of_list_bsn_gentable_entry_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_gentable_stats_entry_t *
+extern of_object_t *
     of_list_bsn_gentable_stats_entry_new(of_version_t version);
 extern void of_list_bsn_gentable_stats_entry_init(
-    of_list_bsn_gentable_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_interface_t *
+extern of_object_t *
     of_list_bsn_interface_new(of_version_t version);
 extern void of_list_bsn_interface_init(
-    of_list_bsn_interface_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_lacp_stats_entry_t *
+extern of_object_t *
     of_list_bsn_lacp_stats_entry_new(of_version_t version);
 extern void of_list_bsn_lacp_stats_entry_init(
-    of_list_bsn_lacp_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_port_counter_stats_entry_t *
+extern of_object_t *
     of_list_bsn_port_counter_stats_entry_new(of_version_t version);
 extern void of_list_bsn_port_counter_stats_entry_init(
-    of_list_bsn_port_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_switch_pipeline_stats_entry_t *
+extern of_object_t *
     of_list_bsn_switch_pipeline_stats_entry_new(of_version_t version);
 extern void of_list_bsn_switch_pipeline_stats_entry_init(
-    of_list_bsn_switch_pipeline_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_table_checksum_stats_entry_t *
+extern of_object_t *
     of_list_bsn_table_checksum_stats_entry_new(of_version_t version);
 extern void of_list_bsn_table_checksum_stats_entry_init(
-    of_list_bsn_table_checksum_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_tlv_t *
+extern of_object_t *
     of_list_bsn_tlv_new(of_version_t version);
 extern void of_list_bsn_tlv_init(
-    of_list_bsn_tlv_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_vlan_counter_stats_entry_t *
+extern of_object_t *
     of_list_bsn_vlan_counter_stats_entry_new(of_version_t version);
 extern void of_list_bsn_vlan_counter_stats_entry_init(
-    of_list_bsn_vlan_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bsn_vrf_counter_stats_entry_t *
+extern of_object_t *
     of_list_bsn_vrf_counter_stats_entry_new(of_version_t version);
 extern void of_list_bsn_vrf_counter_stats_entry_init(
-    of_list_bsn_vrf_counter_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bucket_t *
+extern of_object_t *
     of_list_bucket_new(of_version_t version);
 extern void of_list_bucket_init(
-    of_list_bucket_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bucket_counter_t *
+extern of_object_t *
     of_list_bucket_counter_new(of_version_t version);
 extern void of_list_bucket_counter_init(
-    of_list_bucket_counter_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_bundle_prop_t *
+extern of_object_t *
     of_list_bundle_prop_new(of_version_t version);
 extern void of_list_bundle_prop_init(
-    of_list_bundle_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_flow_stats_entry_t *
+extern of_object_t *
     of_list_flow_stats_entry_new(of_version_t version);
 extern void of_list_flow_stats_entry_init(
-    of_list_flow_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_group_desc_stats_entry_t *
+extern of_object_t *
     of_list_group_desc_stats_entry_new(of_version_t version);
 extern void of_list_group_desc_stats_entry_init(
-    of_list_group_desc_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_group_stats_entry_t *
+extern of_object_t *
     of_list_group_stats_entry_new(of_version_t version);
 extern void of_list_group_stats_entry_init(
-    of_list_group_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_hello_elem_t *
+extern of_object_t *
     of_list_hello_elem_new(of_version_t version);
 extern void of_list_hello_elem_init(
-    of_list_hello_elem_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_instruction_t *
+extern of_object_t *
     of_list_instruction_new(of_version_t version);
 extern void of_list_instruction_init(
-    of_list_instruction_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_instruction_id_t *
+extern of_object_t *
     of_list_instruction_id_new(of_version_t version);
 extern void of_list_instruction_id_init(
-    of_list_instruction_id_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_meter_band_t *
+extern of_object_t *
     of_list_meter_band_new(of_version_t version);
 extern void of_list_meter_band_init(
-    of_list_meter_band_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_meter_band_stats_t *
+extern of_object_t *
     of_list_meter_band_stats_new(of_version_t version);
 extern void of_list_meter_band_stats_init(
-    of_list_meter_band_stats_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_meter_stats_t *
+extern of_object_t *
     of_list_meter_stats_new(of_version_t version);
 extern void of_list_meter_stats_init(
-    of_list_meter_stats_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_oxm_t *
+extern of_object_t *
     of_list_oxm_new(of_version_t version);
 extern void of_list_oxm_init(
-    of_list_oxm_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_packet_queue_t *
+extern of_object_t *
     of_list_packet_queue_new(of_version_t version);
 extern void of_list_packet_queue_init(
-    of_list_packet_queue_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_port_desc_t *
+extern of_object_t *
     of_list_port_desc_new(of_version_t version);
 extern void of_list_port_desc_init(
-    of_list_port_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_port_desc_prop_t *
+extern of_object_t *
     of_list_port_desc_prop_new(of_version_t version);
 extern void of_list_port_desc_prop_init(
-    of_list_port_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_port_mod_prop_t *
+extern of_object_t *
     of_list_port_mod_prop_new(of_version_t version);
 extern void of_list_port_mod_prop_init(
-    of_list_port_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_port_stats_entry_t *
+extern of_object_t *
     of_list_port_stats_entry_new(of_version_t version);
 extern void of_list_port_stats_entry_init(
-    of_list_port_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_port_stats_prop_t *
+extern of_object_t *
     of_list_port_stats_prop_new(of_version_t version);
 extern void of_list_port_stats_prop_init(
-    of_list_port_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_queue_desc_t *
+extern of_object_t *
     of_list_queue_desc_new(of_version_t version);
 extern void of_list_queue_desc_init(
-    of_list_queue_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_queue_desc_prop_t *
+extern of_object_t *
     of_list_queue_desc_prop_new(of_version_t version);
 extern void of_list_queue_desc_prop_init(
-    of_list_queue_desc_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_queue_prop_t *
+extern of_object_t *
     of_list_queue_prop_new(of_version_t version);
 extern void of_list_queue_prop_init(
-    of_list_queue_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_queue_stats_entry_t *
+extern of_object_t *
     of_list_queue_stats_entry_new(of_version_t version);
 extern void of_list_queue_stats_entry_init(
-    of_list_queue_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_queue_stats_prop_t *
+extern of_object_t *
     of_list_queue_stats_prop_new(of_version_t version);
 extern void of_list_queue_stats_prop_init(
-    of_list_queue_stats_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_role_prop_t *
+extern of_object_t *
     of_list_role_prop_new(of_version_t version);
 extern void of_list_role_prop_init(
-    of_list_role_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_table_desc_t *
+extern of_object_t *
     of_list_table_desc_new(of_version_t version);
 extern void of_list_table_desc_init(
-    of_list_table_desc_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_table_feature_prop_t *
+extern of_object_t *
     of_list_table_feature_prop_new(of_version_t version);
 extern void of_list_table_feature_prop_init(
-    of_list_table_feature_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_table_features_t *
+extern of_object_t *
     of_list_table_features_new(of_version_t version);
 extern void of_list_table_features_init(
-    of_list_table_features_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_table_mod_prop_t *
+extern of_object_t *
     of_list_table_mod_prop_new(of_version_t version);
 extern void of_list_table_mod_prop_init(
-    of_list_table_mod_prop_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_table_stats_entry_t *
+extern of_object_t *
     of_list_table_stats_entry_new(of_version_t version);
 extern void of_list_table_stats_entry_init(
-    of_list_table_stats_entry_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_uint32_t *
+extern of_object_t *
     of_list_uint32_new(of_version_t version);
 extern void of_list_uint32_init(
-    of_list_uint32_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_uint64_t *
+extern of_object_t *
     of_list_uint64_new(of_version_t version);
 extern void of_list_uint64_init(
-    of_list_uint64_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
-extern of_list_uint8_t *
+extern of_object_t *
     of_list_uint8_new(of_version_t version);
 extern void of_list_uint8_init(
-    of_list_uint8_t *obj, of_version_t version, int bytes, int clean_wire);
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 /****************************************************************
  *
@@ -5064,8 +5097,8 @@ extern void of_list_uint8_init(
  * \ingroup of_aggregate_stats_reply
  */
 static inline void
-of_aggregate_stats_reply_delete(of_aggregate_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_aggregate_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5075,8 +5108,8 @@ of_aggregate_stats_reply_delete(of_aggregate_stats_reply_t *obj) {
  * \ingroup of_aggregate_stats_request
  */
 static inline void
-of_aggregate_stats_request_delete(of_aggregate_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_aggregate_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5086,8 +5119,8 @@ of_aggregate_stats_request_delete(of_aggregate_stats_request_t *obj) {
  * \ingroup of_async_get_reply
  */
 static inline void
-of_async_get_reply_delete(of_async_get_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_get_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5097,8 +5130,8 @@ of_async_get_reply_delete(of_async_get_reply_t *obj) {
  * \ingroup of_async_get_request
  */
 static inline void
-of_async_get_request_delete(of_async_get_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_get_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5108,8 +5141,8 @@ of_async_get_request_delete(of_async_get_request_t *obj) {
  * \ingroup of_async_set
  */
 static inline void
-of_async_set_delete(of_async_set_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_set_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5119,8 +5152,8 @@ of_async_set_delete(of_async_set_t *obj) {
  * \ingroup of_bad_action_error_msg
  */
 static inline void
-of_bad_action_error_msg_delete(of_bad_action_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bad_action_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5130,8 +5163,8 @@ of_bad_action_error_msg_delete(of_bad_action_error_msg_t *obj) {
  * \ingroup of_bad_instruction_error_msg
  */
 static inline void
-of_bad_instruction_error_msg_delete(of_bad_instruction_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bad_instruction_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5141,8 +5174,8 @@ of_bad_instruction_error_msg_delete(of_bad_instruction_error_msg_t *obj) {
  * \ingroup of_bad_match_error_msg
  */
 static inline void
-of_bad_match_error_msg_delete(of_bad_match_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bad_match_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5152,8 +5185,8 @@ of_bad_match_error_msg_delete(of_bad_match_error_msg_t *obj) {
  * \ingroup of_bad_request_error_msg
  */
 static inline void
-of_bad_request_error_msg_delete(of_bad_request_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bad_request_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5163,8 +5196,8 @@ of_bad_request_error_msg_delete(of_bad_request_error_msg_t *obj) {
  * \ingroup of_barrier_reply
  */
 static inline void
-of_barrier_reply_delete(of_barrier_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_barrier_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5174,8 +5207,8 @@ of_barrier_reply_delete(of_barrier_reply_t *obj) {
  * \ingroup of_barrier_request
  */
 static inline void
-of_barrier_request_delete(of_barrier_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_barrier_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5185,8 +5218,8 @@ of_barrier_request_delete(of_barrier_request_t *obj) {
  * \ingroup of_bsn_arp_idle
  */
 static inline void
-of_bsn_arp_idle_delete(of_bsn_arp_idle_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_arp_idle_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5196,8 +5229,8 @@ of_bsn_arp_idle_delete(of_bsn_arp_idle_t *obj) {
  * \ingroup of_bsn_bw_clear_data_reply
  */
 static inline void
-of_bsn_bw_clear_data_reply_delete(of_bsn_bw_clear_data_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_bw_clear_data_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5207,8 +5240,8 @@ of_bsn_bw_clear_data_reply_delete(of_bsn_bw_clear_data_reply_t *obj) {
  * \ingroup of_bsn_bw_clear_data_request
  */
 static inline void
-of_bsn_bw_clear_data_request_delete(of_bsn_bw_clear_data_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_bw_clear_data_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5218,8 +5251,8 @@ of_bsn_bw_clear_data_request_delete(of_bsn_bw_clear_data_request_t *obj) {
  * \ingroup of_bsn_bw_enable_get_reply
  */
 static inline void
-of_bsn_bw_enable_get_reply_delete(of_bsn_bw_enable_get_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_bw_enable_get_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5229,8 +5262,8 @@ of_bsn_bw_enable_get_reply_delete(of_bsn_bw_enable_get_reply_t *obj) {
  * \ingroup of_bsn_bw_enable_get_request
  */
 static inline void
-of_bsn_bw_enable_get_request_delete(of_bsn_bw_enable_get_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_bw_enable_get_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5240,8 +5273,8 @@ of_bsn_bw_enable_get_request_delete(of_bsn_bw_enable_get_request_t *obj) {
  * \ingroup of_bsn_bw_enable_set_reply
  */
 static inline void
-of_bsn_bw_enable_set_reply_delete(of_bsn_bw_enable_set_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_bw_enable_set_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5251,8 +5284,8 @@ of_bsn_bw_enable_set_reply_delete(of_bsn_bw_enable_set_reply_t *obj) {
  * \ingroup of_bsn_bw_enable_set_request
  */
 static inline void
-of_bsn_bw_enable_set_request_delete(of_bsn_bw_enable_set_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_bw_enable_set_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5262,8 +5295,8 @@ of_bsn_bw_enable_set_request_delete(of_bsn_bw_enable_set_request_t *obj) {
  * \ingroup of_bsn_controller_connections_reply
  */
 static inline void
-of_bsn_controller_connections_reply_delete(of_bsn_controller_connections_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_controller_connections_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5273,8 +5306,8 @@ of_bsn_controller_connections_reply_delete(of_bsn_controller_connections_reply_t
  * \ingroup of_bsn_controller_connections_request
  */
 static inline void
-of_bsn_controller_connections_request_delete(of_bsn_controller_connections_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_controller_connections_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5284,8 +5317,8 @@ of_bsn_controller_connections_request_delete(of_bsn_controller_connections_reque
  * \ingroup of_bsn_debug_counter_desc_stats_reply
  */
 static inline void
-of_bsn_debug_counter_desc_stats_reply_delete(of_bsn_debug_counter_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_debug_counter_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5295,8 +5328,8 @@ of_bsn_debug_counter_desc_stats_reply_delete(of_bsn_debug_counter_desc_stats_rep
  * \ingroup of_bsn_debug_counter_desc_stats_request
  */
 static inline void
-of_bsn_debug_counter_desc_stats_request_delete(of_bsn_debug_counter_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_debug_counter_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5306,8 +5339,8 @@ of_bsn_debug_counter_desc_stats_request_delete(of_bsn_debug_counter_desc_stats_r
  * \ingroup of_bsn_debug_counter_stats_reply
  */
 static inline void
-of_bsn_debug_counter_stats_reply_delete(of_bsn_debug_counter_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_debug_counter_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5317,8 +5350,8 @@ of_bsn_debug_counter_stats_reply_delete(of_bsn_debug_counter_stats_reply_t *obj)
  * \ingroup of_bsn_debug_counter_stats_request
  */
 static inline void
-of_bsn_debug_counter_stats_request_delete(of_bsn_debug_counter_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_debug_counter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5328,8 +5361,8 @@ of_bsn_debug_counter_stats_request_delete(of_bsn_debug_counter_stats_request_t *
  * \ingroup of_bsn_flow_checksum_bucket_stats_reply
  */
 static inline void
-of_bsn_flow_checksum_bucket_stats_reply_delete(of_bsn_flow_checksum_bucket_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_checksum_bucket_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5339,8 +5372,8 @@ of_bsn_flow_checksum_bucket_stats_reply_delete(of_bsn_flow_checksum_bucket_stats
  * \ingroup of_bsn_flow_checksum_bucket_stats_request
  */
 static inline void
-of_bsn_flow_checksum_bucket_stats_request_delete(of_bsn_flow_checksum_bucket_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_checksum_bucket_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5350,8 +5383,8 @@ of_bsn_flow_checksum_bucket_stats_request_delete(of_bsn_flow_checksum_bucket_sta
  * \ingroup of_bsn_flow_idle
  */
 static inline void
-of_bsn_flow_idle_delete(of_bsn_flow_idle_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_idle_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5361,8 +5394,8 @@ of_bsn_flow_idle_delete(of_bsn_flow_idle_t *obj) {
  * \ingroup of_bsn_flow_idle_enable_get_reply
  */
 static inline void
-of_bsn_flow_idle_enable_get_reply_delete(of_bsn_flow_idle_enable_get_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_idle_enable_get_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5372,8 +5405,8 @@ of_bsn_flow_idle_enable_get_reply_delete(of_bsn_flow_idle_enable_get_reply_t *ob
  * \ingroup of_bsn_flow_idle_enable_get_request
  */
 static inline void
-of_bsn_flow_idle_enable_get_request_delete(of_bsn_flow_idle_enable_get_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_idle_enable_get_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5383,8 +5416,8 @@ of_bsn_flow_idle_enable_get_request_delete(of_bsn_flow_idle_enable_get_request_t
  * \ingroup of_bsn_flow_idle_enable_set_reply
  */
 static inline void
-of_bsn_flow_idle_enable_set_reply_delete(of_bsn_flow_idle_enable_set_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_idle_enable_set_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5394,8 +5427,8 @@ of_bsn_flow_idle_enable_set_reply_delete(of_bsn_flow_idle_enable_set_reply_t *ob
  * \ingroup of_bsn_flow_idle_enable_set_request
  */
 static inline void
-of_bsn_flow_idle_enable_set_request_delete(of_bsn_flow_idle_enable_set_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_idle_enable_set_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5405,8 +5438,8 @@ of_bsn_flow_idle_enable_set_request_delete(of_bsn_flow_idle_enable_set_request_t
  * \ingroup of_bsn_gentable_bucket_stats_reply
  */
 static inline void
-of_bsn_gentable_bucket_stats_reply_delete(of_bsn_gentable_bucket_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_bucket_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5416,8 +5449,8 @@ of_bsn_gentable_bucket_stats_reply_delete(of_bsn_gentable_bucket_stats_reply_t *
  * \ingroup of_bsn_gentable_bucket_stats_request
  */
 static inline void
-of_bsn_gentable_bucket_stats_request_delete(of_bsn_gentable_bucket_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_bucket_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5427,8 +5460,8 @@ of_bsn_gentable_bucket_stats_request_delete(of_bsn_gentable_bucket_stats_request
  * \ingroup of_bsn_gentable_clear_reply
  */
 static inline void
-of_bsn_gentable_clear_reply_delete(of_bsn_gentable_clear_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_clear_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5438,8 +5471,8 @@ of_bsn_gentable_clear_reply_delete(of_bsn_gentable_clear_reply_t *obj) {
  * \ingroup of_bsn_gentable_clear_request
  */
 static inline void
-of_bsn_gentable_clear_request_delete(of_bsn_gentable_clear_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_clear_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5449,8 +5482,8 @@ of_bsn_gentable_clear_request_delete(of_bsn_gentable_clear_request_t *obj) {
  * \ingroup of_bsn_gentable_desc_stats_reply
  */
 static inline void
-of_bsn_gentable_desc_stats_reply_delete(of_bsn_gentable_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5460,8 +5493,8 @@ of_bsn_gentable_desc_stats_reply_delete(of_bsn_gentable_desc_stats_reply_t *obj)
  * \ingroup of_bsn_gentable_desc_stats_request
  */
 static inline void
-of_bsn_gentable_desc_stats_request_delete(of_bsn_gentable_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5471,8 +5504,8 @@ of_bsn_gentable_desc_stats_request_delete(of_bsn_gentable_desc_stats_request_t *
  * \ingroup of_bsn_gentable_entry_add
  */
 static inline void
-of_bsn_gentable_entry_add_delete(of_bsn_gentable_entry_add_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_add_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5482,8 +5515,8 @@ of_bsn_gentable_entry_add_delete(of_bsn_gentable_entry_add_t *obj) {
  * \ingroup of_bsn_gentable_entry_delete
  */
 static inline void
-of_bsn_gentable_entry_delete_delete(of_bsn_gentable_entry_delete_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_delete_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5493,8 +5526,8 @@ of_bsn_gentable_entry_delete_delete(of_bsn_gentable_entry_delete_t *obj) {
  * \ingroup of_bsn_gentable_entry_desc_stats_reply
  */
 static inline void
-of_bsn_gentable_entry_desc_stats_reply_delete(of_bsn_gentable_entry_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5504,8 +5537,8 @@ of_bsn_gentable_entry_desc_stats_reply_delete(of_bsn_gentable_entry_desc_stats_r
  * \ingroup of_bsn_gentable_entry_desc_stats_request
  */
 static inline void
-of_bsn_gentable_entry_desc_stats_request_delete(of_bsn_gentable_entry_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5515,8 +5548,8 @@ of_bsn_gentable_entry_desc_stats_request_delete(of_bsn_gentable_entry_desc_stats
  * \ingroup of_bsn_gentable_entry_stats_reply
  */
 static inline void
-of_bsn_gentable_entry_stats_reply_delete(of_bsn_gentable_entry_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5526,8 +5559,8 @@ of_bsn_gentable_entry_stats_reply_delete(of_bsn_gentable_entry_stats_reply_t *ob
  * \ingroup of_bsn_gentable_entry_stats_request
  */
 static inline void
-of_bsn_gentable_entry_stats_request_delete(of_bsn_gentable_entry_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5537,8 +5570,8 @@ of_bsn_gentable_entry_stats_request_delete(of_bsn_gentable_entry_stats_request_t
  * \ingroup of_bsn_gentable_set_buckets_size
  */
 static inline void
-of_bsn_gentable_set_buckets_size_delete(of_bsn_gentable_set_buckets_size_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_set_buckets_size_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5548,8 +5581,8 @@ of_bsn_gentable_set_buckets_size_delete(of_bsn_gentable_set_buckets_size_t *obj)
  * \ingroup of_bsn_gentable_stats_reply
  */
 static inline void
-of_bsn_gentable_stats_reply_delete(of_bsn_gentable_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5559,8 +5592,8 @@ of_bsn_gentable_stats_reply_delete(of_bsn_gentable_stats_reply_t *obj) {
  * \ingroup of_bsn_gentable_stats_request
  */
 static inline void
-of_bsn_gentable_stats_request_delete(of_bsn_gentable_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5570,8 +5603,8 @@ of_bsn_gentable_stats_request_delete(of_bsn_gentable_stats_request_t *obj) {
  * \ingroup of_bsn_get_interfaces_reply
  */
 static inline void
-of_bsn_get_interfaces_reply_delete(of_bsn_get_interfaces_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_interfaces_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5581,8 +5614,8 @@ of_bsn_get_interfaces_reply_delete(of_bsn_get_interfaces_reply_t *obj) {
  * \ingroup of_bsn_get_interfaces_request
  */
 static inline void
-of_bsn_get_interfaces_request_delete(of_bsn_get_interfaces_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_interfaces_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5592,8 +5625,8 @@ of_bsn_get_interfaces_request_delete(of_bsn_get_interfaces_request_t *obj) {
  * \ingroup of_bsn_get_ip_mask_reply
  */
 static inline void
-of_bsn_get_ip_mask_reply_delete(of_bsn_get_ip_mask_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_ip_mask_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5603,8 +5636,8 @@ of_bsn_get_ip_mask_reply_delete(of_bsn_get_ip_mask_reply_t *obj) {
  * \ingroup of_bsn_get_ip_mask_request
  */
 static inline void
-of_bsn_get_ip_mask_request_delete(of_bsn_get_ip_mask_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_ip_mask_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5614,8 +5647,8 @@ of_bsn_get_ip_mask_request_delete(of_bsn_get_ip_mask_request_t *obj) {
  * \ingroup of_bsn_get_l2_table_reply
  */
 static inline void
-of_bsn_get_l2_table_reply_delete(of_bsn_get_l2_table_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_l2_table_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5625,8 +5658,8 @@ of_bsn_get_l2_table_reply_delete(of_bsn_get_l2_table_reply_t *obj) {
  * \ingroup of_bsn_get_l2_table_request
  */
 static inline void
-of_bsn_get_l2_table_request_delete(of_bsn_get_l2_table_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_l2_table_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5636,8 +5669,8 @@ of_bsn_get_l2_table_request_delete(of_bsn_get_l2_table_request_t *obj) {
  * \ingroup of_bsn_get_mirroring_reply
  */
 static inline void
-of_bsn_get_mirroring_reply_delete(of_bsn_get_mirroring_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_mirroring_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5647,8 +5680,8 @@ of_bsn_get_mirroring_reply_delete(of_bsn_get_mirroring_reply_t *obj) {
  * \ingroup of_bsn_get_mirroring_request
  */
 static inline void
-of_bsn_get_mirroring_request_delete(of_bsn_get_mirroring_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_mirroring_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5658,8 +5691,8 @@ of_bsn_get_mirroring_request_delete(of_bsn_get_mirroring_request_t *obj) {
  * \ingroup of_bsn_get_switch_pipeline_reply
  */
 static inline void
-of_bsn_get_switch_pipeline_reply_delete(of_bsn_get_switch_pipeline_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_switch_pipeline_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5669,8 +5702,8 @@ of_bsn_get_switch_pipeline_reply_delete(of_bsn_get_switch_pipeline_reply_t *obj)
  * \ingroup of_bsn_get_switch_pipeline_request
  */
 static inline void
-of_bsn_get_switch_pipeline_request_delete(of_bsn_get_switch_pipeline_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_get_switch_pipeline_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5680,8 +5713,8 @@ of_bsn_get_switch_pipeline_request_delete(of_bsn_get_switch_pipeline_request_t *
  * \ingroup of_bsn_header
  */
 static inline void
-of_bsn_header_delete(of_bsn_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5691,8 +5724,8 @@ of_bsn_header_delete(of_bsn_header_t *obj) {
  * \ingroup of_bsn_hybrid_get_reply
  */
 static inline void
-of_bsn_hybrid_get_reply_delete(of_bsn_hybrid_get_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_hybrid_get_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5702,8 +5735,8 @@ of_bsn_hybrid_get_reply_delete(of_bsn_hybrid_get_reply_t *obj) {
  * \ingroup of_bsn_hybrid_get_request
  */
 static inline void
-of_bsn_hybrid_get_request_delete(of_bsn_hybrid_get_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_hybrid_get_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5713,8 +5746,8 @@ of_bsn_hybrid_get_request_delete(of_bsn_hybrid_get_request_t *obj) {
  * \ingroup of_bsn_image_desc_stats_reply
  */
 static inline void
-of_bsn_image_desc_stats_reply_delete(of_bsn_image_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_image_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5724,8 +5757,8 @@ of_bsn_image_desc_stats_reply_delete(of_bsn_image_desc_stats_reply_t *obj) {
  * \ingroup of_bsn_image_desc_stats_request
  */
 static inline void
-of_bsn_image_desc_stats_request_delete(of_bsn_image_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_image_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5735,8 +5768,8 @@ of_bsn_image_desc_stats_request_delete(of_bsn_image_desc_stats_request_t *obj) {
  * \ingroup of_bsn_lacp_convergence_notif
  */
 static inline void
-of_bsn_lacp_convergence_notif_delete(of_bsn_lacp_convergence_notif_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_lacp_convergence_notif_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5746,8 +5779,8 @@ of_bsn_lacp_convergence_notif_delete(of_bsn_lacp_convergence_notif_t *obj) {
  * \ingroup of_bsn_lacp_stats_reply
  */
 static inline void
-of_bsn_lacp_stats_reply_delete(of_bsn_lacp_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_lacp_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5757,8 +5790,8 @@ of_bsn_lacp_stats_reply_delete(of_bsn_lacp_stats_reply_t *obj) {
  * \ingroup of_bsn_lacp_stats_request
  */
 static inline void
-of_bsn_lacp_stats_request_delete(of_bsn_lacp_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_lacp_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5768,8 +5801,8 @@ of_bsn_lacp_stats_request_delete(of_bsn_lacp_stats_request_t *obj) {
  * \ingroup of_bsn_log
  */
 static inline void
-of_bsn_log_delete(of_bsn_log_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_log_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5779,8 +5812,8 @@ of_bsn_log_delete(of_bsn_log_t *obj) {
  * \ingroup of_bsn_pdu_rx_reply
  */
 static inline void
-of_bsn_pdu_rx_reply_delete(of_bsn_pdu_rx_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_pdu_rx_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5790,8 +5823,8 @@ of_bsn_pdu_rx_reply_delete(of_bsn_pdu_rx_reply_t *obj) {
  * \ingroup of_bsn_pdu_rx_request
  */
 static inline void
-of_bsn_pdu_rx_request_delete(of_bsn_pdu_rx_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_pdu_rx_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5801,8 +5834,8 @@ of_bsn_pdu_rx_request_delete(of_bsn_pdu_rx_request_t *obj) {
  * \ingroup of_bsn_pdu_rx_timeout
  */
 static inline void
-of_bsn_pdu_rx_timeout_delete(of_bsn_pdu_rx_timeout_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_pdu_rx_timeout_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5812,8 +5845,8 @@ of_bsn_pdu_rx_timeout_delete(of_bsn_pdu_rx_timeout_t *obj) {
  * \ingroup of_bsn_pdu_tx_reply
  */
 static inline void
-of_bsn_pdu_tx_reply_delete(of_bsn_pdu_tx_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_pdu_tx_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5823,8 +5856,8 @@ of_bsn_pdu_tx_reply_delete(of_bsn_pdu_tx_reply_t *obj) {
  * \ingroup of_bsn_pdu_tx_request
  */
 static inline void
-of_bsn_pdu_tx_request_delete(of_bsn_pdu_tx_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_pdu_tx_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5834,8 +5867,8 @@ of_bsn_pdu_tx_request_delete(of_bsn_pdu_tx_request_t *obj) {
  * \ingroup of_bsn_port_counter_stats_reply
  */
 static inline void
-of_bsn_port_counter_stats_reply_delete(of_bsn_port_counter_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_port_counter_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5845,8 +5878,8 @@ of_bsn_port_counter_stats_reply_delete(of_bsn_port_counter_stats_reply_t *obj) {
  * \ingroup of_bsn_port_counter_stats_request
  */
 static inline void
-of_bsn_port_counter_stats_request_delete(of_bsn_port_counter_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_port_counter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5856,8 +5889,8 @@ of_bsn_port_counter_stats_request_delete(of_bsn_port_counter_stats_request_t *ob
  * \ingroup of_bsn_role_status
  */
 static inline void
-of_bsn_role_status_delete(of_bsn_role_status_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_role_status_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5867,8 +5900,8 @@ of_bsn_role_status_delete(of_bsn_role_status_t *obj) {
  * \ingroup of_bsn_set_aux_cxns_reply
  */
 static inline void
-of_bsn_set_aux_cxns_reply_delete(of_bsn_set_aux_cxns_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_aux_cxns_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5878,8 +5911,8 @@ of_bsn_set_aux_cxns_reply_delete(of_bsn_set_aux_cxns_reply_t *obj) {
  * \ingroup of_bsn_set_aux_cxns_request
  */
 static inline void
-of_bsn_set_aux_cxns_request_delete(of_bsn_set_aux_cxns_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_aux_cxns_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5889,8 +5922,8 @@ of_bsn_set_aux_cxns_request_delete(of_bsn_set_aux_cxns_request_t *obj) {
  * \ingroup of_bsn_set_ip_mask
  */
 static inline void
-of_bsn_set_ip_mask_delete(of_bsn_set_ip_mask_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_ip_mask_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5900,8 +5933,8 @@ of_bsn_set_ip_mask_delete(of_bsn_set_ip_mask_t *obj) {
  * \ingroup of_bsn_set_l2_table_reply
  */
 static inline void
-of_bsn_set_l2_table_reply_delete(of_bsn_set_l2_table_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_l2_table_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5911,8 +5944,8 @@ of_bsn_set_l2_table_reply_delete(of_bsn_set_l2_table_reply_t *obj) {
  * \ingroup of_bsn_set_l2_table_request
  */
 static inline void
-of_bsn_set_l2_table_request_delete(of_bsn_set_l2_table_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_l2_table_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5922,8 +5955,8 @@ of_bsn_set_l2_table_request_delete(of_bsn_set_l2_table_request_t *obj) {
  * \ingroup of_bsn_set_lacp_reply
  */
 static inline void
-of_bsn_set_lacp_reply_delete(of_bsn_set_lacp_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_lacp_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5933,8 +5966,8 @@ of_bsn_set_lacp_reply_delete(of_bsn_set_lacp_reply_t *obj) {
  * \ingroup of_bsn_set_lacp_request
  */
 static inline void
-of_bsn_set_lacp_request_delete(of_bsn_set_lacp_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_lacp_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5944,8 +5977,8 @@ of_bsn_set_lacp_request_delete(of_bsn_set_lacp_request_t *obj) {
  * \ingroup of_bsn_set_mirroring
  */
 static inline void
-of_bsn_set_mirroring_delete(of_bsn_set_mirroring_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_mirroring_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5955,8 +5988,8 @@ of_bsn_set_mirroring_delete(of_bsn_set_mirroring_t *obj) {
  * \ingroup of_bsn_set_pktin_suppression_reply
  */
 static inline void
-of_bsn_set_pktin_suppression_reply_delete(of_bsn_set_pktin_suppression_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_pktin_suppression_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5966,8 +5999,8 @@ of_bsn_set_pktin_suppression_reply_delete(of_bsn_set_pktin_suppression_reply_t *
  * \ingroup of_bsn_set_pktin_suppression_request
  */
 static inline void
-of_bsn_set_pktin_suppression_request_delete(of_bsn_set_pktin_suppression_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_pktin_suppression_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5977,8 +6010,8 @@ of_bsn_set_pktin_suppression_request_delete(of_bsn_set_pktin_suppression_request
  * \ingroup of_bsn_set_switch_pipeline_reply
  */
 static inline void
-of_bsn_set_switch_pipeline_reply_delete(of_bsn_set_switch_pipeline_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_switch_pipeline_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5988,8 +6021,8 @@ of_bsn_set_switch_pipeline_reply_delete(of_bsn_set_switch_pipeline_reply_t *obj)
  * \ingroup of_bsn_set_switch_pipeline_request
  */
 static inline void
-of_bsn_set_switch_pipeline_request_delete(of_bsn_set_switch_pipeline_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_set_switch_pipeline_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -5999,8 +6032,8 @@ of_bsn_set_switch_pipeline_request_delete(of_bsn_set_switch_pipeline_request_t *
  * \ingroup of_bsn_shell_command
  */
 static inline void
-of_bsn_shell_command_delete(of_bsn_shell_command_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_shell_command_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6010,8 +6043,8 @@ of_bsn_shell_command_delete(of_bsn_shell_command_t *obj) {
  * \ingroup of_bsn_shell_output
  */
 static inline void
-of_bsn_shell_output_delete(of_bsn_shell_output_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_shell_output_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6021,8 +6054,8 @@ of_bsn_shell_output_delete(of_bsn_shell_output_t *obj) {
  * \ingroup of_bsn_shell_status
  */
 static inline void
-of_bsn_shell_status_delete(of_bsn_shell_status_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_shell_status_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6032,8 +6065,8 @@ of_bsn_shell_status_delete(of_bsn_shell_status_t *obj) {
  * \ingroup of_bsn_stats_reply
  */
 static inline void
-of_bsn_stats_reply_delete(of_bsn_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6043,8 +6076,8 @@ of_bsn_stats_reply_delete(of_bsn_stats_reply_t *obj) {
  * \ingroup of_bsn_stats_request
  */
 static inline void
-of_bsn_stats_request_delete(of_bsn_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6054,8 +6087,8 @@ of_bsn_stats_request_delete(of_bsn_stats_request_t *obj) {
  * \ingroup of_bsn_switch_pipeline_stats_reply
  */
 static inline void
-of_bsn_switch_pipeline_stats_reply_delete(of_bsn_switch_pipeline_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_switch_pipeline_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6065,8 +6098,8 @@ of_bsn_switch_pipeline_stats_reply_delete(of_bsn_switch_pipeline_stats_reply_t *
  * \ingroup of_bsn_switch_pipeline_stats_request
  */
 static inline void
-of_bsn_switch_pipeline_stats_request_delete(of_bsn_switch_pipeline_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_switch_pipeline_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6076,8 +6109,8 @@ of_bsn_switch_pipeline_stats_request_delete(of_bsn_switch_pipeline_stats_request
  * \ingroup of_bsn_table_checksum_stats_reply
  */
 static inline void
-of_bsn_table_checksum_stats_reply_delete(of_bsn_table_checksum_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_table_checksum_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6087,8 +6120,8 @@ of_bsn_table_checksum_stats_reply_delete(of_bsn_table_checksum_stats_reply_t *ob
  * \ingroup of_bsn_table_checksum_stats_request
  */
 static inline void
-of_bsn_table_checksum_stats_request_delete(of_bsn_table_checksum_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_table_checksum_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6098,8 +6131,8 @@ of_bsn_table_checksum_stats_request_delete(of_bsn_table_checksum_stats_request_t
  * \ingroup of_bsn_table_set_buckets_size
  */
 static inline void
-of_bsn_table_set_buckets_size_delete(of_bsn_table_set_buckets_size_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_table_set_buckets_size_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6109,8 +6142,8 @@ of_bsn_table_set_buckets_size_delete(of_bsn_table_set_buckets_size_t *obj) {
  * \ingroup of_bsn_time_reply
  */
 static inline void
-of_bsn_time_reply_delete(of_bsn_time_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_time_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6120,8 +6153,8 @@ of_bsn_time_reply_delete(of_bsn_time_reply_t *obj) {
  * \ingroup of_bsn_time_request
  */
 static inline void
-of_bsn_time_request_delete(of_bsn_time_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_time_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6131,8 +6164,8 @@ of_bsn_time_request_delete(of_bsn_time_request_t *obj) {
  * \ingroup of_bsn_virtual_port_create_reply
  */
 static inline void
-of_bsn_virtual_port_create_reply_delete(of_bsn_virtual_port_create_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_virtual_port_create_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6142,8 +6175,8 @@ of_bsn_virtual_port_create_reply_delete(of_bsn_virtual_port_create_reply_t *obj)
  * \ingroup of_bsn_virtual_port_create_request
  */
 static inline void
-of_bsn_virtual_port_create_request_delete(of_bsn_virtual_port_create_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_virtual_port_create_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6153,8 +6186,8 @@ of_bsn_virtual_port_create_request_delete(of_bsn_virtual_port_create_request_t *
  * \ingroup of_bsn_virtual_port_remove_reply
  */
 static inline void
-of_bsn_virtual_port_remove_reply_delete(of_bsn_virtual_port_remove_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_virtual_port_remove_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6164,8 +6197,8 @@ of_bsn_virtual_port_remove_reply_delete(of_bsn_virtual_port_remove_reply_t *obj)
  * \ingroup of_bsn_virtual_port_remove_request
  */
 static inline void
-of_bsn_virtual_port_remove_request_delete(of_bsn_virtual_port_remove_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_virtual_port_remove_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6175,8 +6208,8 @@ of_bsn_virtual_port_remove_request_delete(of_bsn_virtual_port_remove_request_t *
  * \ingroup of_bsn_vlan_counter_stats_reply
  */
 static inline void
-of_bsn_vlan_counter_stats_reply_delete(of_bsn_vlan_counter_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vlan_counter_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6186,8 +6219,8 @@ of_bsn_vlan_counter_stats_reply_delete(of_bsn_vlan_counter_stats_reply_t *obj) {
  * \ingroup of_bsn_vlan_counter_stats_request
  */
 static inline void
-of_bsn_vlan_counter_stats_request_delete(of_bsn_vlan_counter_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vlan_counter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6197,8 +6230,8 @@ of_bsn_vlan_counter_stats_request_delete(of_bsn_vlan_counter_stats_request_t *ob
  * \ingroup of_bsn_vrf_counter_stats_reply
  */
 static inline void
-of_bsn_vrf_counter_stats_reply_delete(of_bsn_vrf_counter_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vrf_counter_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6208,8 +6241,8 @@ of_bsn_vrf_counter_stats_reply_delete(of_bsn_vrf_counter_stats_reply_t *obj) {
  * \ingroup of_bsn_vrf_counter_stats_request
  */
 static inline void
-of_bsn_vrf_counter_stats_request_delete(of_bsn_vrf_counter_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vrf_counter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6219,8 +6252,8 @@ of_bsn_vrf_counter_stats_request_delete(of_bsn_vrf_counter_stats_request_t *obj)
  * \ingroup of_bundle_add_msg
  */
 static inline void
-of_bundle_add_msg_delete(of_bundle_add_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bundle_add_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6230,8 +6263,8 @@ of_bundle_add_msg_delete(of_bundle_add_msg_t *obj) {
  * \ingroup of_bundle_ctrl_msg
  */
 static inline void
-of_bundle_ctrl_msg_delete(of_bundle_ctrl_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bundle_ctrl_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6241,8 +6274,8 @@ of_bundle_ctrl_msg_delete(of_bundle_ctrl_msg_t *obj) {
  * \ingroup of_desc_stats_reply
  */
 static inline void
-of_desc_stats_reply_delete(of_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6252,8 +6285,8 @@ of_desc_stats_reply_delete(of_desc_stats_reply_t *obj) {
  * \ingroup of_desc_stats_request
  */
 static inline void
-of_desc_stats_request_delete(of_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6263,8 +6296,8 @@ of_desc_stats_request_delete(of_desc_stats_request_t *obj) {
  * \ingroup of_echo_reply
  */
 static inline void
-of_echo_reply_delete(of_echo_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_echo_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6274,8 +6307,8 @@ of_echo_reply_delete(of_echo_reply_t *obj) {
  * \ingroup of_echo_request
  */
 static inline void
-of_echo_request_delete(of_echo_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_echo_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6285,8 +6318,8 @@ of_echo_request_delete(of_echo_request_t *obj) {
  * \ingroup of_error_msg
  */
 static inline void
-of_error_msg_delete(of_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6296,8 +6329,8 @@ of_error_msg_delete(of_error_msg_t *obj) {
  * \ingroup of_experimenter
  */
 static inline void
-of_experimenter_delete(of_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6307,8 +6340,8 @@ of_experimenter_delete(of_experimenter_t *obj) {
  * \ingroup of_experimenter_error_msg
  */
 static inline void
-of_experimenter_error_msg_delete(of_experimenter_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_experimenter_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6318,8 +6351,8 @@ of_experimenter_error_msg_delete(of_experimenter_error_msg_t *obj) {
  * \ingroup of_experimenter_stats_reply
  */
 static inline void
-of_experimenter_stats_reply_delete(of_experimenter_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_experimenter_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6329,8 +6362,8 @@ of_experimenter_stats_reply_delete(of_experimenter_stats_reply_t *obj) {
  * \ingroup of_experimenter_stats_request
  */
 static inline void
-of_experimenter_stats_request_delete(of_experimenter_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_experimenter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6340,8 +6373,8 @@ of_experimenter_stats_request_delete(of_experimenter_stats_request_t *obj) {
  * \ingroup of_features_reply
  */
 static inline void
-of_features_reply_delete(of_features_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_features_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6351,8 +6384,8 @@ of_features_reply_delete(of_features_reply_t *obj) {
  * \ingroup of_features_request
  */
 static inline void
-of_features_request_delete(of_features_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_features_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6362,8 +6395,8 @@ of_features_request_delete(of_features_request_t *obj) {
  * \ingroup of_flow_add
  */
 static inline void
-of_flow_add_delete(of_flow_add_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_add_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6373,8 +6406,8 @@ of_flow_add_delete(of_flow_add_t *obj) {
  * \ingroup of_flow_delete
  */
 static inline void
-of_flow_delete_delete(of_flow_delete_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_delete_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6384,8 +6417,8 @@ of_flow_delete_delete(of_flow_delete_t *obj) {
  * \ingroup of_flow_delete_strict
  */
 static inline void
-of_flow_delete_strict_delete(of_flow_delete_strict_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_delete_strict_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6395,8 +6428,8 @@ of_flow_delete_strict_delete(of_flow_delete_strict_t *obj) {
  * \ingroup of_flow_mod
  */
 static inline void
-of_flow_mod_delete(of_flow_mod_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_mod_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6406,8 +6439,8 @@ of_flow_mod_delete(of_flow_mod_t *obj) {
  * \ingroup of_flow_mod_failed_error_msg
  */
 static inline void
-of_flow_mod_failed_error_msg_delete(of_flow_mod_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_mod_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6417,8 +6450,8 @@ of_flow_mod_failed_error_msg_delete(of_flow_mod_failed_error_msg_t *obj) {
  * \ingroup of_flow_modify
  */
 static inline void
-of_flow_modify_delete(of_flow_modify_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_modify_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6428,8 +6461,8 @@ of_flow_modify_delete(of_flow_modify_t *obj) {
  * \ingroup of_flow_modify_strict
  */
 static inline void
-of_flow_modify_strict_delete(of_flow_modify_strict_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_modify_strict_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6439,8 +6472,8 @@ of_flow_modify_strict_delete(of_flow_modify_strict_t *obj) {
  * \ingroup of_flow_removed
  */
 static inline void
-of_flow_removed_delete(of_flow_removed_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_removed_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6450,8 +6483,8 @@ of_flow_removed_delete(of_flow_removed_t *obj) {
  * \ingroup of_flow_stats_reply
  */
 static inline void
-of_flow_stats_reply_delete(of_flow_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6461,8 +6494,8 @@ of_flow_stats_reply_delete(of_flow_stats_reply_t *obj) {
  * \ingroup of_flow_stats_request
  */
 static inline void
-of_flow_stats_request_delete(of_flow_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6472,8 +6505,8 @@ of_flow_stats_request_delete(of_flow_stats_request_t *obj) {
  * \ingroup of_get_config_reply
  */
 static inline void
-of_get_config_reply_delete(of_get_config_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_get_config_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6483,8 +6516,8 @@ of_get_config_reply_delete(of_get_config_reply_t *obj) {
  * \ingroup of_get_config_request
  */
 static inline void
-of_get_config_request_delete(of_get_config_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_get_config_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6494,8 +6527,8 @@ of_get_config_request_delete(of_get_config_request_t *obj) {
  * \ingroup of_group_add
  */
 static inline void
-of_group_add_delete(of_group_add_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_add_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6505,8 +6538,8 @@ of_group_add_delete(of_group_add_t *obj) {
  * \ingroup of_group_delete
  */
 static inline void
-of_group_delete_delete(of_group_delete_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_delete_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6516,8 +6549,8 @@ of_group_delete_delete(of_group_delete_t *obj) {
  * \ingroup of_group_desc_stats_reply
  */
 static inline void
-of_group_desc_stats_reply_delete(of_group_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6527,8 +6560,8 @@ of_group_desc_stats_reply_delete(of_group_desc_stats_reply_t *obj) {
  * \ingroup of_group_desc_stats_request
  */
 static inline void
-of_group_desc_stats_request_delete(of_group_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6538,8 +6571,8 @@ of_group_desc_stats_request_delete(of_group_desc_stats_request_t *obj) {
  * \ingroup of_group_features_stats_reply
  */
 static inline void
-of_group_features_stats_reply_delete(of_group_features_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_features_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6549,8 +6582,8 @@ of_group_features_stats_reply_delete(of_group_features_stats_reply_t *obj) {
  * \ingroup of_group_features_stats_request
  */
 static inline void
-of_group_features_stats_request_delete(of_group_features_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_features_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6560,8 +6593,8 @@ of_group_features_stats_request_delete(of_group_features_stats_request_t *obj) {
  * \ingroup of_group_mod
  */
 static inline void
-of_group_mod_delete(of_group_mod_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_mod_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6571,8 +6604,8 @@ of_group_mod_delete(of_group_mod_t *obj) {
  * \ingroup of_group_mod_failed_error_msg
  */
 static inline void
-of_group_mod_failed_error_msg_delete(of_group_mod_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_mod_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6582,8 +6615,8 @@ of_group_mod_failed_error_msg_delete(of_group_mod_failed_error_msg_t *obj) {
  * \ingroup of_group_modify
  */
 static inline void
-of_group_modify_delete(of_group_modify_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_modify_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6593,8 +6626,8 @@ of_group_modify_delete(of_group_modify_t *obj) {
  * \ingroup of_group_stats_reply
  */
 static inline void
-of_group_stats_reply_delete(of_group_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6604,8 +6637,8 @@ of_group_stats_reply_delete(of_group_stats_reply_t *obj) {
  * \ingroup of_group_stats_request
  */
 static inline void
-of_group_stats_request_delete(of_group_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6615,8 +6648,8 @@ of_group_stats_request_delete(of_group_stats_request_t *obj) {
  * \ingroup of_header
  */
 static inline void
-of_header_delete(of_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6626,8 +6659,8 @@ of_header_delete(of_header_t *obj) {
  * \ingroup of_hello
  */
 static inline void
-of_hello_delete(of_hello_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_hello_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6637,8 +6670,8 @@ of_hello_delete(of_hello_t *obj) {
  * \ingroup of_hello_failed_error_msg
  */
 static inline void
-of_hello_failed_error_msg_delete(of_hello_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_hello_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6648,8 +6681,8 @@ of_hello_failed_error_msg_delete(of_hello_failed_error_msg_t *obj) {
  * \ingroup of_meter_config_stats_reply
  */
 static inline void
-of_meter_config_stats_reply_delete(of_meter_config_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_config_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6659,8 +6692,8 @@ of_meter_config_stats_reply_delete(of_meter_config_stats_reply_t *obj) {
  * \ingroup of_meter_config_stats_request
  */
 static inline void
-of_meter_config_stats_request_delete(of_meter_config_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_config_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6670,8 +6703,8 @@ of_meter_config_stats_request_delete(of_meter_config_stats_request_t *obj) {
  * \ingroup of_meter_features_stats_reply
  */
 static inline void
-of_meter_features_stats_reply_delete(of_meter_features_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_features_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6681,8 +6714,8 @@ of_meter_features_stats_reply_delete(of_meter_features_stats_reply_t *obj) {
  * \ingroup of_meter_features_stats_request
  */
 static inline void
-of_meter_features_stats_request_delete(of_meter_features_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_features_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6692,8 +6725,8 @@ of_meter_features_stats_request_delete(of_meter_features_stats_request_t *obj) {
  * \ingroup of_meter_mod
  */
 static inline void
-of_meter_mod_delete(of_meter_mod_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_mod_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6703,8 +6736,8 @@ of_meter_mod_delete(of_meter_mod_t *obj) {
  * \ingroup of_meter_mod_failed_error_msg
  */
 static inline void
-of_meter_mod_failed_error_msg_delete(of_meter_mod_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_mod_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6714,8 +6747,8 @@ of_meter_mod_failed_error_msg_delete(of_meter_mod_failed_error_msg_t *obj) {
  * \ingroup of_meter_stats_reply
  */
 static inline void
-of_meter_stats_reply_delete(of_meter_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6725,8 +6758,8 @@ of_meter_stats_reply_delete(of_meter_stats_reply_t *obj) {
  * \ingroup of_meter_stats_request
  */
 static inline void
-of_meter_stats_request_delete(of_meter_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6736,8 +6769,8 @@ of_meter_stats_request_delete(of_meter_stats_request_t *obj) {
  * \ingroup of_nicira_controller_role_reply
  */
 static inline void
-of_nicira_controller_role_reply_delete(of_nicira_controller_role_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_nicira_controller_role_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6747,8 +6780,8 @@ of_nicira_controller_role_reply_delete(of_nicira_controller_role_reply_t *obj) {
  * \ingroup of_nicira_controller_role_request
  */
 static inline void
-of_nicira_controller_role_request_delete(of_nicira_controller_role_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_nicira_controller_role_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6758,8 +6791,8 @@ of_nicira_controller_role_request_delete(of_nicira_controller_role_request_t *ob
  * \ingroup of_nicira_header
  */
 static inline void
-of_nicira_header_delete(of_nicira_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_nicira_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6769,8 +6802,8 @@ of_nicira_header_delete(of_nicira_header_t *obj) {
  * \ingroup of_packet_in
  */
 static inline void
-of_packet_in_delete(of_packet_in_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_packet_in_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6780,8 +6813,8 @@ of_packet_in_delete(of_packet_in_t *obj) {
  * \ingroup of_packet_out
  */
 static inline void
-of_packet_out_delete(of_packet_out_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_packet_out_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6791,8 +6824,8 @@ of_packet_out_delete(of_packet_out_t *obj) {
  * \ingroup of_port_desc_stats_reply
  */
 static inline void
-of_port_desc_stats_reply_delete(of_port_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6802,8 +6835,8 @@ of_port_desc_stats_reply_delete(of_port_desc_stats_reply_t *obj) {
  * \ingroup of_port_desc_stats_request
  */
 static inline void
-of_port_desc_stats_request_delete(of_port_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6813,8 +6846,8 @@ of_port_desc_stats_request_delete(of_port_desc_stats_request_t *obj) {
  * \ingroup of_port_mod
  */
 static inline void
-of_port_mod_delete(of_port_mod_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6824,8 +6857,8 @@ of_port_mod_delete(of_port_mod_t *obj) {
  * \ingroup of_port_mod_failed_error_msg
  */
 static inline void
-of_port_mod_failed_error_msg_delete(of_port_mod_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6835,8 +6868,8 @@ of_port_mod_failed_error_msg_delete(of_port_mod_failed_error_msg_t *obj) {
  * \ingroup of_port_stats_reply
  */
 static inline void
-of_port_stats_reply_delete(of_port_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6846,8 +6879,8 @@ of_port_stats_reply_delete(of_port_stats_reply_t *obj) {
  * \ingroup of_port_stats_request
  */
 static inline void
-of_port_stats_request_delete(of_port_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6857,8 +6890,8 @@ of_port_stats_request_delete(of_port_stats_request_t *obj) {
  * \ingroup of_port_status
  */
 static inline void
-of_port_status_delete(of_port_status_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_status_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6868,8 +6901,8 @@ of_port_status_delete(of_port_status_t *obj) {
  * \ingroup of_queue_desc_stats_reply
  */
 static inline void
-of_queue_desc_stats_reply_delete(of_queue_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6879,8 +6912,8 @@ of_queue_desc_stats_reply_delete(of_queue_desc_stats_reply_t *obj) {
  * \ingroup of_queue_desc_stats_request
  */
 static inline void
-of_queue_desc_stats_request_delete(of_queue_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6890,8 +6923,8 @@ of_queue_desc_stats_request_delete(of_queue_desc_stats_request_t *obj) {
  * \ingroup of_queue_get_config_reply
  */
 static inline void
-of_queue_get_config_reply_delete(of_queue_get_config_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_get_config_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6901,8 +6934,8 @@ of_queue_get_config_reply_delete(of_queue_get_config_reply_t *obj) {
  * \ingroup of_queue_get_config_request
  */
 static inline void
-of_queue_get_config_request_delete(of_queue_get_config_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_get_config_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6912,8 +6945,8 @@ of_queue_get_config_request_delete(of_queue_get_config_request_t *obj) {
  * \ingroup of_queue_op_failed_error_msg
  */
 static inline void
-of_queue_op_failed_error_msg_delete(of_queue_op_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_op_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6923,8 +6956,8 @@ of_queue_op_failed_error_msg_delete(of_queue_op_failed_error_msg_t *obj) {
  * \ingroup of_queue_stats_reply
  */
 static inline void
-of_queue_stats_reply_delete(of_queue_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6934,8 +6967,8 @@ of_queue_stats_reply_delete(of_queue_stats_reply_t *obj) {
  * \ingroup of_queue_stats_request
  */
 static inline void
-of_queue_stats_request_delete(of_queue_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6945,8 +6978,8 @@ of_queue_stats_request_delete(of_queue_stats_request_t *obj) {
  * \ingroup of_requestforward
  */
 static inline void
-of_requestforward_delete(of_requestforward_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_requestforward_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6956,8 +6989,8 @@ of_requestforward_delete(of_requestforward_t *obj) {
  * \ingroup of_role_reply
  */
 static inline void
-of_role_reply_delete(of_role_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6967,8 +7000,8 @@ of_role_reply_delete(of_role_reply_t *obj) {
  * \ingroup of_role_request
  */
 static inline void
-of_role_request_delete(of_role_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6978,8 +7011,8 @@ of_role_request_delete(of_role_request_t *obj) {
  * \ingroup of_role_request_failed_error_msg
  */
 static inline void
-of_role_request_failed_error_msg_delete(of_role_request_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_request_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -6989,8 +7022,8 @@ of_role_request_failed_error_msg_delete(of_role_request_failed_error_msg_t *obj)
  * \ingroup of_role_status
  */
 static inline void
-of_role_status_delete(of_role_status_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_status_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7000,8 +7033,8 @@ of_role_status_delete(of_role_status_t *obj) {
  * \ingroup of_set_config
  */
 static inline void
-of_set_config_delete(of_set_config_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_set_config_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7011,8 +7044,8 @@ of_set_config_delete(of_set_config_t *obj) {
  * \ingroup of_stats_reply
  */
 static inline void
-of_stats_reply_delete(of_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7022,8 +7055,8 @@ of_stats_reply_delete(of_stats_reply_t *obj) {
  * \ingroup of_stats_request
  */
 static inline void
-of_stats_request_delete(of_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7033,8 +7066,8 @@ of_stats_request_delete(of_stats_request_t *obj) {
  * \ingroup of_switch_config_failed_error_msg
  */
 static inline void
-of_switch_config_failed_error_msg_delete(of_switch_config_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_switch_config_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7044,8 +7077,8 @@ of_switch_config_failed_error_msg_delete(of_switch_config_failed_error_msg_t *ob
  * \ingroup of_table_desc_stats_reply
  */
 static inline void
-of_table_desc_stats_reply_delete(of_table_desc_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_desc_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7055,8 +7088,8 @@ of_table_desc_stats_reply_delete(of_table_desc_stats_reply_t *obj) {
  * \ingroup of_table_desc_stats_request
  */
 static inline void
-of_table_desc_stats_request_delete(of_table_desc_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_desc_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7066,8 +7099,8 @@ of_table_desc_stats_request_delete(of_table_desc_stats_request_t *obj) {
  * \ingroup of_table_features_failed_error_msg
  */
 static inline void
-of_table_features_failed_error_msg_delete(of_table_features_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_features_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7077,8 +7110,8 @@ of_table_features_failed_error_msg_delete(of_table_features_failed_error_msg_t *
  * \ingroup of_table_features_stats_reply
  */
 static inline void
-of_table_features_stats_reply_delete(of_table_features_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_features_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7088,8 +7121,8 @@ of_table_features_stats_reply_delete(of_table_features_stats_reply_t *obj) {
  * \ingroup of_table_features_stats_request
  */
 static inline void
-of_table_features_stats_request_delete(of_table_features_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_features_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7099,8 +7132,8 @@ of_table_features_stats_request_delete(of_table_features_stats_request_t *obj) {
  * \ingroup of_table_mod
  */
 static inline void
-of_table_mod_delete(of_table_mod_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_mod_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7110,8 +7143,8 @@ of_table_mod_delete(of_table_mod_t *obj) {
  * \ingroup of_table_mod_failed_error_msg
  */
 static inline void
-of_table_mod_failed_error_msg_delete(of_table_mod_failed_error_msg_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_mod_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7121,8 +7154,8 @@ of_table_mod_failed_error_msg_delete(of_table_mod_failed_error_msg_t *obj) {
  * \ingroup of_table_stats_reply
  */
 static inline void
-of_table_stats_reply_delete(of_table_stats_reply_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_stats_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7132,8 +7165,8 @@ of_table_stats_reply_delete(of_table_stats_reply_t *obj) {
  * \ingroup of_table_stats_request
  */
 static inline void
-of_table_stats_request_delete(of_table_stats_request_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_stats_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7143,8 +7176,8 @@ of_table_stats_request_delete(of_table_stats_request_t *obj) {
  * \ingroup of_table_status
  */
 static inline void
-of_table_status_delete(of_table_status_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_status_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7154,8 +7187,8 @@ of_table_status_delete(of_table_status_t *obj) {
  * \ingroup of_action
  */
 static inline void
-of_action_delete(of_action_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7165,8 +7198,8 @@ of_action_delete(of_action_t *obj) {
  * \ingroup of_action_bsn
  */
 static inline void
-of_action_bsn_delete(of_action_bsn_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7176,8 +7209,8 @@ of_action_bsn_delete(of_action_bsn_t *obj) {
  * \ingroup of_action_bsn_checksum
  */
 static inline void
-of_action_bsn_checksum_delete(of_action_bsn_checksum_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_bsn_checksum_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7187,8 +7220,8 @@ of_action_bsn_checksum_delete(of_action_bsn_checksum_t *obj) {
  * \ingroup of_action_bsn_gentable
  */
 static inline void
-of_action_bsn_gentable_delete(of_action_bsn_gentable_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_bsn_gentable_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7198,8 +7231,8 @@ of_action_bsn_gentable_delete(of_action_bsn_gentable_t *obj) {
  * \ingroup of_action_bsn_mirror
  */
 static inline void
-of_action_bsn_mirror_delete(of_action_bsn_mirror_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_bsn_mirror_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7209,8 +7242,8 @@ of_action_bsn_mirror_delete(of_action_bsn_mirror_t *obj) {
  * \ingroup of_action_bsn_set_tunnel_dst
  */
 static inline void
-of_action_bsn_set_tunnel_dst_delete(of_action_bsn_set_tunnel_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_bsn_set_tunnel_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7220,8 +7253,8 @@ of_action_bsn_set_tunnel_dst_delete(of_action_bsn_set_tunnel_dst_t *obj) {
  * \ingroup of_action_copy_ttl_in
  */
 static inline void
-of_action_copy_ttl_in_delete(of_action_copy_ttl_in_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_copy_ttl_in_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7231,8 +7264,8 @@ of_action_copy_ttl_in_delete(of_action_copy_ttl_in_t *obj) {
  * \ingroup of_action_copy_ttl_out
  */
 static inline void
-of_action_copy_ttl_out_delete(of_action_copy_ttl_out_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_copy_ttl_out_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7242,8 +7275,8 @@ of_action_copy_ttl_out_delete(of_action_copy_ttl_out_t *obj) {
  * \ingroup of_action_dec_mpls_ttl
  */
 static inline void
-of_action_dec_mpls_ttl_delete(of_action_dec_mpls_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_dec_mpls_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7253,8 +7286,8 @@ of_action_dec_mpls_ttl_delete(of_action_dec_mpls_ttl_t *obj) {
  * \ingroup of_action_dec_nw_ttl
  */
 static inline void
-of_action_dec_nw_ttl_delete(of_action_dec_nw_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_dec_nw_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7264,8 +7297,8 @@ of_action_dec_nw_ttl_delete(of_action_dec_nw_ttl_t *obj) {
  * \ingroup of_action_enqueue
  */
 static inline void
-of_action_enqueue_delete(of_action_enqueue_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_enqueue_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7275,8 +7308,8 @@ of_action_enqueue_delete(of_action_enqueue_t *obj) {
  * \ingroup of_action_experimenter
  */
 static inline void
-of_action_experimenter_delete(of_action_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7286,8 +7319,8 @@ of_action_experimenter_delete(of_action_experimenter_t *obj) {
  * \ingroup of_action_group
  */
 static inline void
-of_action_group_delete(of_action_group_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_group_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7297,8 +7330,8 @@ of_action_group_delete(of_action_group_t *obj) {
  * \ingroup of_action_header
  */
 static inline void
-of_action_header_delete(of_action_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7308,8 +7341,8 @@ of_action_header_delete(of_action_header_t *obj) {
  * \ingroup of_action_id
  */
 static inline void
-of_action_id_delete(of_action_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7319,8 +7352,8 @@ of_action_id_delete(of_action_id_t *obj) {
  * \ingroup of_action_id_bsn
  */
 static inline void
-of_action_id_bsn_delete(of_action_id_bsn_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7330,8 +7363,8 @@ of_action_id_bsn_delete(of_action_id_bsn_t *obj) {
  * \ingroup of_action_id_bsn_checksum
  */
 static inline void
-of_action_id_bsn_checksum_delete(of_action_id_bsn_checksum_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_bsn_checksum_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7341,8 +7374,8 @@ of_action_id_bsn_checksum_delete(of_action_id_bsn_checksum_t *obj) {
  * \ingroup of_action_id_bsn_gentable
  */
 static inline void
-of_action_id_bsn_gentable_delete(of_action_id_bsn_gentable_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_bsn_gentable_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7352,8 +7385,8 @@ of_action_id_bsn_gentable_delete(of_action_id_bsn_gentable_t *obj) {
  * \ingroup of_action_id_bsn_mirror
  */
 static inline void
-of_action_id_bsn_mirror_delete(of_action_id_bsn_mirror_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_bsn_mirror_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7363,8 +7396,8 @@ of_action_id_bsn_mirror_delete(of_action_id_bsn_mirror_t *obj) {
  * \ingroup of_action_id_bsn_set_tunnel_dst
  */
 static inline void
-of_action_id_bsn_set_tunnel_dst_delete(of_action_id_bsn_set_tunnel_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_bsn_set_tunnel_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7374,8 +7407,8 @@ of_action_id_bsn_set_tunnel_dst_delete(of_action_id_bsn_set_tunnel_dst_t *obj) {
  * \ingroup of_action_id_copy_ttl_in
  */
 static inline void
-of_action_id_copy_ttl_in_delete(of_action_id_copy_ttl_in_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_copy_ttl_in_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7385,8 +7418,8 @@ of_action_id_copy_ttl_in_delete(of_action_id_copy_ttl_in_t *obj) {
  * \ingroup of_action_id_copy_ttl_out
  */
 static inline void
-of_action_id_copy_ttl_out_delete(of_action_id_copy_ttl_out_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_copy_ttl_out_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7396,8 +7429,8 @@ of_action_id_copy_ttl_out_delete(of_action_id_copy_ttl_out_t *obj) {
  * \ingroup of_action_id_dec_mpls_ttl
  */
 static inline void
-of_action_id_dec_mpls_ttl_delete(of_action_id_dec_mpls_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_dec_mpls_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7407,8 +7440,8 @@ of_action_id_dec_mpls_ttl_delete(of_action_id_dec_mpls_ttl_t *obj) {
  * \ingroup of_action_id_dec_nw_ttl
  */
 static inline void
-of_action_id_dec_nw_ttl_delete(of_action_id_dec_nw_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_dec_nw_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7418,8 +7451,8 @@ of_action_id_dec_nw_ttl_delete(of_action_id_dec_nw_ttl_t *obj) {
  * \ingroup of_action_id_experimenter
  */
 static inline void
-of_action_id_experimenter_delete(of_action_id_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7429,8 +7462,8 @@ of_action_id_experimenter_delete(of_action_id_experimenter_t *obj) {
  * \ingroup of_action_id_group
  */
 static inline void
-of_action_id_group_delete(of_action_id_group_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_group_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7440,8 +7473,8 @@ of_action_id_group_delete(of_action_id_group_t *obj) {
  * \ingroup of_action_id_header
  */
 static inline void
-of_action_id_header_delete(of_action_id_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7451,8 +7484,8 @@ of_action_id_header_delete(of_action_id_header_t *obj) {
  * \ingroup of_action_id_nicira
  */
 static inline void
-of_action_id_nicira_delete(of_action_id_nicira_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_nicira_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7462,8 +7495,8 @@ of_action_id_nicira_delete(of_action_id_nicira_t *obj) {
  * \ingroup of_action_id_nicira_dec_ttl
  */
 static inline void
-of_action_id_nicira_dec_ttl_delete(of_action_id_nicira_dec_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_nicira_dec_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7473,8 +7506,8 @@ of_action_id_nicira_dec_ttl_delete(of_action_id_nicira_dec_ttl_t *obj) {
  * \ingroup of_action_id_output
  */
 static inline void
-of_action_id_output_delete(of_action_id_output_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_output_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7484,8 +7517,8 @@ of_action_id_output_delete(of_action_id_output_t *obj) {
  * \ingroup of_action_id_pop_mpls
  */
 static inline void
-of_action_id_pop_mpls_delete(of_action_id_pop_mpls_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_pop_mpls_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7495,8 +7528,8 @@ of_action_id_pop_mpls_delete(of_action_id_pop_mpls_t *obj) {
  * \ingroup of_action_id_pop_pbb
  */
 static inline void
-of_action_id_pop_pbb_delete(of_action_id_pop_pbb_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_pop_pbb_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7506,8 +7539,8 @@ of_action_id_pop_pbb_delete(of_action_id_pop_pbb_t *obj) {
  * \ingroup of_action_id_pop_vlan
  */
 static inline void
-of_action_id_pop_vlan_delete(of_action_id_pop_vlan_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_pop_vlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7517,8 +7550,8 @@ of_action_id_pop_vlan_delete(of_action_id_pop_vlan_t *obj) {
  * \ingroup of_action_id_push_mpls
  */
 static inline void
-of_action_id_push_mpls_delete(of_action_id_push_mpls_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_push_mpls_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7528,8 +7561,8 @@ of_action_id_push_mpls_delete(of_action_id_push_mpls_t *obj) {
  * \ingroup of_action_id_push_pbb
  */
 static inline void
-of_action_id_push_pbb_delete(of_action_id_push_pbb_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_push_pbb_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7539,8 +7572,8 @@ of_action_id_push_pbb_delete(of_action_id_push_pbb_t *obj) {
  * \ingroup of_action_id_push_vlan
  */
 static inline void
-of_action_id_push_vlan_delete(of_action_id_push_vlan_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_push_vlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7550,8 +7583,8 @@ of_action_id_push_vlan_delete(of_action_id_push_vlan_t *obj) {
  * \ingroup of_action_id_set_field
  */
 static inline void
-of_action_id_set_field_delete(of_action_id_set_field_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_set_field_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7561,8 +7594,8 @@ of_action_id_set_field_delete(of_action_id_set_field_t *obj) {
  * \ingroup of_action_id_set_mpls_ttl
  */
 static inline void
-of_action_id_set_mpls_ttl_delete(of_action_id_set_mpls_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_set_mpls_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7572,8 +7605,8 @@ of_action_id_set_mpls_ttl_delete(of_action_id_set_mpls_ttl_t *obj) {
  * \ingroup of_action_id_set_nw_ttl
  */
 static inline void
-of_action_id_set_nw_ttl_delete(of_action_id_set_nw_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_set_nw_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7583,8 +7616,8 @@ of_action_id_set_nw_ttl_delete(of_action_id_set_nw_ttl_t *obj) {
  * \ingroup of_action_id_set_queue
  */
 static inline void
-of_action_id_set_queue_delete(of_action_id_set_queue_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_id_set_queue_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7594,8 +7627,8 @@ of_action_id_set_queue_delete(of_action_id_set_queue_t *obj) {
  * \ingroup of_action_nicira
  */
 static inline void
-of_action_nicira_delete(of_action_nicira_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_nicira_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7605,8 +7638,8 @@ of_action_nicira_delete(of_action_nicira_t *obj) {
  * \ingroup of_action_nicira_dec_ttl
  */
 static inline void
-of_action_nicira_dec_ttl_delete(of_action_nicira_dec_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_nicira_dec_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7616,8 +7649,8 @@ of_action_nicira_dec_ttl_delete(of_action_nicira_dec_ttl_t *obj) {
  * \ingroup of_action_output
  */
 static inline void
-of_action_output_delete(of_action_output_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_output_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7627,8 +7660,8 @@ of_action_output_delete(of_action_output_t *obj) {
  * \ingroup of_action_pop_mpls
  */
 static inline void
-of_action_pop_mpls_delete(of_action_pop_mpls_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_pop_mpls_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7638,8 +7671,8 @@ of_action_pop_mpls_delete(of_action_pop_mpls_t *obj) {
  * \ingroup of_action_pop_pbb
  */
 static inline void
-of_action_pop_pbb_delete(of_action_pop_pbb_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_pop_pbb_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7649,8 +7682,8 @@ of_action_pop_pbb_delete(of_action_pop_pbb_t *obj) {
  * \ingroup of_action_pop_vlan
  */
 static inline void
-of_action_pop_vlan_delete(of_action_pop_vlan_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_pop_vlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7660,8 +7693,8 @@ of_action_pop_vlan_delete(of_action_pop_vlan_t *obj) {
  * \ingroup of_action_push_mpls
  */
 static inline void
-of_action_push_mpls_delete(of_action_push_mpls_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_push_mpls_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7671,8 +7704,8 @@ of_action_push_mpls_delete(of_action_push_mpls_t *obj) {
  * \ingroup of_action_push_pbb
  */
 static inline void
-of_action_push_pbb_delete(of_action_push_pbb_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_push_pbb_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7682,8 +7715,8 @@ of_action_push_pbb_delete(of_action_push_pbb_t *obj) {
  * \ingroup of_action_push_vlan
  */
 static inline void
-of_action_push_vlan_delete(of_action_push_vlan_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_push_vlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7693,8 +7726,8 @@ of_action_push_vlan_delete(of_action_push_vlan_t *obj) {
  * \ingroup of_action_set_dl_dst
  */
 static inline void
-of_action_set_dl_dst_delete(of_action_set_dl_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_dl_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7704,8 +7737,8 @@ of_action_set_dl_dst_delete(of_action_set_dl_dst_t *obj) {
  * \ingroup of_action_set_dl_src
  */
 static inline void
-of_action_set_dl_src_delete(of_action_set_dl_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_dl_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7715,8 +7748,8 @@ of_action_set_dl_src_delete(of_action_set_dl_src_t *obj) {
  * \ingroup of_action_set_field
  */
 static inline void
-of_action_set_field_delete(of_action_set_field_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_field_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7726,8 +7759,8 @@ of_action_set_field_delete(of_action_set_field_t *obj) {
  * \ingroup of_action_set_mpls_label
  */
 static inline void
-of_action_set_mpls_label_delete(of_action_set_mpls_label_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_mpls_label_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7737,8 +7770,8 @@ of_action_set_mpls_label_delete(of_action_set_mpls_label_t *obj) {
  * \ingroup of_action_set_mpls_tc
  */
 static inline void
-of_action_set_mpls_tc_delete(of_action_set_mpls_tc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_mpls_tc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7748,8 +7781,8 @@ of_action_set_mpls_tc_delete(of_action_set_mpls_tc_t *obj) {
  * \ingroup of_action_set_mpls_ttl
  */
 static inline void
-of_action_set_mpls_ttl_delete(of_action_set_mpls_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_mpls_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7759,8 +7792,8 @@ of_action_set_mpls_ttl_delete(of_action_set_mpls_ttl_t *obj) {
  * \ingroup of_action_set_nw_dst
  */
 static inline void
-of_action_set_nw_dst_delete(of_action_set_nw_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_nw_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7770,8 +7803,8 @@ of_action_set_nw_dst_delete(of_action_set_nw_dst_t *obj) {
  * \ingroup of_action_set_nw_ecn
  */
 static inline void
-of_action_set_nw_ecn_delete(of_action_set_nw_ecn_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_nw_ecn_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7781,8 +7814,8 @@ of_action_set_nw_ecn_delete(of_action_set_nw_ecn_t *obj) {
  * \ingroup of_action_set_nw_src
  */
 static inline void
-of_action_set_nw_src_delete(of_action_set_nw_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_nw_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7792,8 +7825,8 @@ of_action_set_nw_src_delete(of_action_set_nw_src_t *obj) {
  * \ingroup of_action_set_nw_tos
  */
 static inline void
-of_action_set_nw_tos_delete(of_action_set_nw_tos_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_nw_tos_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7803,8 +7836,8 @@ of_action_set_nw_tos_delete(of_action_set_nw_tos_t *obj) {
  * \ingroup of_action_set_nw_ttl
  */
 static inline void
-of_action_set_nw_ttl_delete(of_action_set_nw_ttl_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_nw_ttl_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7814,8 +7847,8 @@ of_action_set_nw_ttl_delete(of_action_set_nw_ttl_t *obj) {
  * \ingroup of_action_set_queue
  */
 static inline void
-of_action_set_queue_delete(of_action_set_queue_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_queue_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7825,8 +7858,8 @@ of_action_set_queue_delete(of_action_set_queue_t *obj) {
  * \ingroup of_action_set_tp_dst
  */
 static inline void
-of_action_set_tp_dst_delete(of_action_set_tp_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_tp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7836,8 +7869,8 @@ of_action_set_tp_dst_delete(of_action_set_tp_dst_t *obj) {
  * \ingroup of_action_set_tp_src
  */
 static inline void
-of_action_set_tp_src_delete(of_action_set_tp_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_tp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7847,8 +7880,8 @@ of_action_set_tp_src_delete(of_action_set_tp_src_t *obj) {
  * \ingroup of_action_set_vlan_pcp
  */
 static inline void
-of_action_set_vlan_pcp_delete(of_action_set_vlan_pcp_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_vlan_pcp_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7858,8 +7891,8 @@ of_action_set_vlan_pcp_delete(of_action_set_vlan_pcp_t *obj) {
  * \ingroup of_action_set_vlan_vid
  */
 static inline void
-of_action_set_vlan_vid_delete(of_action_set_vlan_vid_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_set_vlan_vid_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7869,8 +7902,8 @@ of_action_set_vlan_vid_delete(of_action_set_vlan_vid_t *obj) {
  * \ingroup of_action_strip_vlan
  */
 static inline void
-of_action_strip_vlan_delete(of_action_strip_vlan_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_action_strip_vlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7880,8 +7913,8 @@ of_action_strip_vlan_delete(of_action_strip_vlan_t *obj) {
  * \ingroup of_async_config_prop
  */
 static inline void
-of_async_config_prop_delete(of_async_config_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7891,8 +7924,8 @@ of_async_config_prop_delete(of_async_config_prop_t *obj) {
  * \ingroup of_async_config_prop_experimenter_master
  */
 static inline void
-of_async_config_prop_experimenter_master_delete(of_async_config_prop_experimenter_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_experimenter_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7902,8 +7935,8 @@ of_async_config_prop_experimenter_master_delete(of_async_config_prop_experimente
  * \ingroup of_async_config_prop_experimenter_slave
  */
 static inline void
-of_async_config_prop_experimenter_slave_delete(of_async_config_prop_experimenter_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_experimenter_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7913,8 +7946,8 @@ of_async_config_prop_experimenter_slave_delete(of_async_config_prop_experimenter
  * \ingroup of_async_config_prop_flow_removed_master
  */
 static inline void
-of_async_config_prop_flow_removed_master_delete(of_async_config_prop_flow_removed_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_flow_removed_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7924,8 +7957,8 @@ of_async_config_prop_flow_removed_master_delete(of_async_config_prop_flow_remove
  * \ingroup of_async_config_prop_flow_removed_slave
  */
 static inline void
-of_async_config_prop_flow_removed_slave_delete(of_async_config_prop_flow_removed_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_flow_removed_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7935,8 +7968,8 @@ of_async_config_prop_flow_removed_slave_delete(of_async_config_prop_flow_removed
  * \ingroup of_async_config_prop_header
  */
 static inline void
-of_async_config_prop_header_delete(of_async_config_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7946,8 +7979,8 @@ of_async_config_prop_header_delete(of_async_config_prop_header_t *obj) {
  * \ingroup of_async_config_prop_packet_in_master
  */
 static inline void
-of_async_config_prop_packet_in_master_delete(of_async_config_prop_packet_in_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_packet_in_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7957,8 +7990,8 @@ of_async_config_prop_packet_in_master_delete(of_async_config_prop_packet_in_mast
  * \ingroup of_async_config_prop_packet_in_slave
  */
 static inline void
-of_async_config_prop_packet_in_slave_delete(of_async_config_prop_packet_in_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_packet_in_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7968,8 +8001,8 @@ of_async_config_prop_packet_in_slave_delete(of_async_config_prop_packet_in_slave
  * \ingroup of_async_config_prop_port_status_master
  */
 static inline void
-of_async_config_prop_port_status_master_delete(of_async_config_prop_port_status_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_port_status_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7979,8 +8012,8 @@ of_async_config_prop_port_status_master_delete(of_async_config_prop_port_status_
  * \ingroup of_async_config_prop_port_status_slave
  */
 static inline void
-of_async_config_prop_port_status_slave_delete(of_async_config_prop_port_status_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_port_status_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -7990,8 +8023,8 @@ of_async_config_prop_port_status_slave_delete(of_async_config_prop_port_status_s
  * \ingroup of_async_config_prop_requestforward_master
  */
 static inline void
-of_async_config_prop_requestforward_master_delete(of_async_config_prop_requestforward_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_requestforward_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8001,8 +8034,8 @@ of_async_config_prop_requestforward_master_delete(of_async_config_prop_requestfo
  * \ingroup of_async_config_prop_requestforward_slave
  */
 static inline void
-of_async_config_prop_requestforward_slave_delete(of_async_config_prop_requestforward_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_requestforward_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8012,8 +8045,8 @@ of_async_config_prop_requestforward_slave_delete(of_async_config_prop_requestfor
  * \ingroup of_async_config_prop_role_status_master
  */
 static inline void
-of_async_config_prop_role_status_master_delete(of_async_config_prop_role_status_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_role_status_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8023,8 +8056,8 @@ of_async_config_prop_role_status_master_delete(of_async_config_prop_role_status_
  * \ingroup of_async_config_prop_role_status_slave
  */
 static inline void
-of_async_config_prop_role_status_slave_delete(of_async_config_prop_role_status_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_role_status_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8034,8 +8067,8 @@ of_async_config_prop_role_status_slave_delete(of_async_config_prop_role_status_s
  * \ingroup of_async_config_prop_table_status_master
  */
 static inline void
-of_async_config_prop_table_status_master_delete(of_async_config_prop_table_status_master_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_table_status_master_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8045,8 +8078,8 @@ of_async_config_prop_table_status_master_delete(of_async_config_prop_table_statu
  * \ingroup of_async_config_prop_table_status_slave
  */
 static inline void
-of_async_config_prop_table_status_slave_delete(of_async_config_prop_table_status_slave_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_async_config_prop_table_status_slave_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8056,8 +8089,8 @@ of_async_config_prop_table_status_slave_delete(of_async_config_prop_table_status
  * \ingroup of_bsn_controller_connection
  */
 static inline void
-of_bsn_controller_connection_delete(of_bsn_controller_connection_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_controller_connection_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8067,8 +8100,8 @@ of_bsn_controller_connection_delete(of_bsn_controller_connection_t *obj) {
  * \ingroup of_bsn_debug_counter_desc_stats_entry
  */
 static inline void
-of_bsn_debug_counter_desc_stats_entry_delete(of_bsn_debug_counter_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_debug_counter_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8078,8 +8111,8 @@ of_bsn_debug_counter_desc_stats_entry_delete(of_bsn_debug_counter_desc_stats_ent
  * \ingroup of_bsn_debug_counter_stats_entry
  */
 static inline void
-of_bsn_debug_counter_stats_entry_delete(of_bsn_debug_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_debug_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8089,8 +8122,8 @@ of_bsn_debug_counter_stats_entry_delete(of_bsn_debug_counter_stats_entry_t *obj)
  * \ingroup of_bsn_flow_checksum_bucket_stats_entry
  */
 static inline void
-of_bsn_flow_checksum_bucket_stats_entry_delete(of_bsn_flow_checksum_bucket_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_flow_checksum_bucket_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8100,8 +8133,8 @@ of_bsn_flow_checksum_bucket_stats_entry_delete(of_bsn_flow_checksum_bucket_stats
  * \ingroup of_bsn_gentable_bucket_stats_entry
  */
 static inline void
-of_bsn_gentable_bucket_stats_entry_delete(of_bsn_gentable_bucket_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_bucket_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8111,8 +8144,8 @@ of_bsn_gentable_bucket_stats_entry_delete(of_bsn_gentable_bucket_stats_entry_t *
  * \ingroup of_bsn_gentable_desc_stats_entry
  */
 static inline void
-of_bsn_gentable_desc_stats_entry_delete(of_bsn_gentable_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8122,8 +8155,8 @@ of_bsn_gentable_desc_stats_entry_delete(of_bsn_gentable_desc_stats_entry_t *obj)
  * \ingroup of_bsn_gentable_entry_desc_stats_entry
  */
 static inline void
-of_bsn_gentable_entry_desc_stats_entry_delete(of_bsn_gentable_entry_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8133,8 +8166,8 @@ of_bsn_gentable_entry_desc_stats_entry_delete(of_bsn_gentable_entry_desc_stats_e
  * \ingroup of_bsn_gentable_entry_stats_entry
  */
 static inline void
-of_bsn_gentable_entry_stats_entry_delete(of_bsn_gentable_entry_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_entry_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8144,8 +8177,8 @@ of_bsn_gentable_entry_stats_entry_delete(of_bsn_gentable_entry_stats_entry_t *ob
  * \ingroup of_bsn_gentable_stats_entry
  */
 static inline void
-of_bsn_gentable_stats_entry_delete(of_bsn_gentable_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_gentable_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8155,8 +8188,8 @@ of_bsn_gentable_stats_entry_delete(of_bsn_gentable_stats_entry_t *obj) {
  * \ingroup of_bsn_interface
  */
 static inline void
-of_bsn_interface_delete(of_bsn_interface_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_interface_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8166,8 +8199,8 @@ of_bsn_interface_delete(of_bsn_interface_t *obj) {
  * \ingroup of_bsn_lacp_stats_entry
  */
 static inline void
-of_bsn_lacp_stats_entry_delete(of_bsn_lacp_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_lacp_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8177,8 +8210,8 @@ of_bsn_lacp_stats_entry_delete(of_bsn_lacp_stats_entry_t *obj) {
  * \ingroup of_bsn_port_counter_stats_entry
  */
 static inline void
-of_bsn_port_counter_stats_entry_delete(of_bsn_port_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_port_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8188,8 +8221,8 @@ of_bsn_port_counter_stats_entry_delete(of_bsn_port_counter_stats_entry_t *obj) {
  * \ingroup of_bsn_switch_pipeline_stats_entry
  */
 static inline void
-of_bsn_switch_pipeline_stats_entry_delete(of_bsn_switch_pipeline_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_switch_pipeline_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8199,8 +8232,8 @@ of_bsn_switch_pipeline_stats_entry_delete(of_bsn_switch_pipeline_stats_entry_t *
  * \ingroup of_bsn_table_checksum_stats_entry
  */
 static inline void
-of_bsn_table_checksum_stats_entry_delete(of_bsn_table_checksum_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_table_checksum_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8210,8 +8243,8 @@ of_bsn_table_checksum_stats_entry_delete(of_bsn_table_checksum_stats_entry_t *ob
  * \ingroup of_bsn_tlv
  */
 static inline void
-of_bsn_tlv_delete(of_bsn_tlv_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8221,8 +8254,8 @@ of_bsn_tlv_delete(of_bsn_tlv_t *obj) {
  * \ingroup of_bsn_tlv_actor_key
  */
 static inline void
-of_bsn_tlv_actor_key_delete(of_bsn_tlv_actor_key_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_actor_key_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8232,8 +8265,8 @@ of_bsn_tlv_actor_key_delete(of_bsn_tlv_actor_key_t *obj) {
  * \ingroup of_bsn_tlv_actor_port_num
  */
 static inline void
-of_bsn_tlv_actor_port_num_delete(of_bsn_tlv_actor_port_num_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_actor_port_num_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8243,8 +8276,8 @@ of_bsn_tlv_actor_port_num_delete(of_bsn_tlv_actor_port_num_t *obj) {
  * \ingroup of_bsn_tlv_actor_port_priority
  */
 static inline void
-of_bsn_tlv_actor_port_priority_delete(of_bsn_tlv_actor_port_priority_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_actor_port_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8254,8 +8287,8 @@ of_bsn_tlv_actor_port_priority_delete(of_bsn_tlv_actor_port_priority_t *obj) {
  * \ingroup of_bsn_tlv_actor_state
  */
 static inline void
-of_bsn_tlv_actor_state_delete(of_bsn_tlv_actor_state_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_actor_state_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8265,8 +8298,8 @@ of_bsn_tlv_actor_state_delete(of_bsn_tlv_actor_state_t *obj) {
  * \ingroup of_bsn_tlv_actor_system_mac
  */
 static inline void
-of_bsn_tlv_actor_system_mac_delete(of_bsn_tlv_actor_system_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_actor_system_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8276,8 +8309,8 @@ of_bsn_tlv_actor_system_mac_delete(of_bsn_tlv_actor_system_mac_t *obj) {
  * \ingroup of_bsn_tlv_actor_system_priority
  */
 static inline void
-of_bsn_tlv_actor_system_priority_delete(of_bsn_tlv_actor_system_priority_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_actor_system_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8287,8 +8320,8 @@ of_bsn_tlv_actor_system_priority_delete(of_bsn_tlv_actor_system_priority_t *obj)
  * \ingroup of_bsn_tlv_broadcast_query_timeout
  */
 static inline void
-of_bsn_tlv_broadcast_query_timeout_delete(of_bsn_tlv_broadcast_query_timeout_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_broadcast_query_timeout_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8298,8 +8331,8 @@ of_bsn_tlv_broadcast_query_timeout_delete(of_bsn_tlv_broadcast_query_timeout_t *
  * \ingroup of_bsn_tlv_circuit_id
  */
 static inline void
-of_bsn_tlv_circuit_id_delete(of_bsn_tlv_circuit_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_circuit_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8309,8 +8342,8 @@ of_bsn_tlv_circuit_id_delete(of_bsn_tlv_circuit_id_t *obj) {
  * \ingroup of_bsn_tlv_convergence_status
  */
 static inline void
-of_bsn_tlv_convergence_status_delete(of_bsn_tlv_convergence_status_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_convergence_status_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8320,8 +8353,8 @@ of_bsn_tlv_convergence_status_delete(of_bsn_tlv_convergence_status_t *obj) {
  * \ingroup of_bsn_tlv_crc_enabled
  */
 static inline void
-of_bsn_tlv_crc_enabled_delete(of_bsn_tlv_crc_enabled_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_crc_enabled_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8331,8 +8364,8 @@ of_bsn_tlv_crc_enabled_delete(of_bsn_tlv_crc_enabled_t *obj) {
  * \ingroup of_bsn_tlv_eth_dst
  */
 static inline void
-of_bsn_tlv_eth_dst_delete(of_bsn_tlv_eth_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_eth_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8342,8 +8375,8 @@ of_bsn_tlv_eth_dst_delete(of_bsn_tlv_eth_dst_t *obj) {
  * \ingroup of_bsn_tlv_eth_src
  */
 static inline void
-of_bsn_tlv_eth_src_delete(of_bsn_tlv_eth_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_eth_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8353,8 +8386,8 @@ of_bsn_tlv_eth_src_delete(of_bsn_tlv_eth_src_t *obj) {
  * \ingroup of_bsn_tlv_external_gateway_ip
  */
 static inline void
-of_bsn_tlv_external_gateway_ip_delete(of_bsn_tlv_external_gateway_ip_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_external_gateway_ip_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8364,8 +8397,8 @@ of_bsn_tlv_external_gateway_ip_delete(of_bsn_tlv_external_gateway_ip_t *obj) {
  * \ingroup of_bsn_tlv_external_gateway_mac
  */
 static inline void
-of_bsn_tlv_external_gateway_mac_delete(of_bsn_tlv_external_gateway_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_external_gateway_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8375,8 +8408,8 @@ of_bsn_tlv_external_gateway_mac_delete(of_bsn_tlv_external_gateway_mac_t *obj) {
  * \ingroup of_bsn_tlv_external_ip
  */
 static inline void
-of_bsn_tlv_external_ip_delete(of_bsn_tlv_external_ip_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_external_ip_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8386,8 +8419,8 @@ of_bsn_tlv_external_ip_delete(of_bsn_tlv_external_ip_t *obj) {
  * \ingroup of_bsn_tlv_external_mac
  */
 static inline void
-of_bsn_tlv_external_mac_delete(of_bsn_tlv_external_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_external_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8397,8 +8430,8 @@ of_bsn_tlv_external_mac_delete(of_bsn_tlv_external_mac_t *obj) {
  * \ingroup of_bsn_tlv_external_netmask
  */
 static inline void
-of_bsn_tlv_external_netmask_delete(of_bsn_tlv_external_netmask_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8408,8 +8441,8 @@ of_bsn_tlv_external_netmask_delete(of_bsn_tlv_external_netmask_t *obj) {
  * \ingroup of_bsn_tlv_header
  */
 static inline void
-of_bsn_tlv_header_delete(of_bsn_tlv_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8419,8 +8452,8 @@ of_bsn_tlv_header_delete(of_bsn_tlv_header_t *obj) {
  * \ingroup of_bsn_tlv_header_size
  */
 static inline void
-of_bsn_tlv_header_size_delete(of_bsn_tlv_header_size_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_header_size_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8430,8 +8463,8 @@ of_bsn_tlv_header_size_delete(of_bsn_tlv_header_size_t *obj) {
  * \ingroup of_bsn_tlv_idle_notification
  */
 static inline void
-of_bsn_tlv_idle_notification_delete(of_bsn_tlv_idle_notification_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_idle_notification_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8441,8 +8474,8 @@ of_bsn_tlv_idle_notification_delete(of_bsn_tlv_idle_notification_t *obj) {
  * \ingroup of_bsn_tlv_idle_time
  */
 static inline void
-of_bsn_tlv_idle_time_delete(of_bsn_tlv_idle_time_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_idle_time_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8452,8 +8485,8 @@ of_bsn_tlv_idle_time_delete(of_bsn_tlv_idle_time_t *obj) {
  * \ingroup of_bsn_tlv_idle_timeout
  */
 static inline void
-of_bsn_tlv_idle_timeout_delete(of_bsn_tlv_idle_timeout_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_idle_timeout_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8463,8 +8496,8 @@ of_bsn_tlv_idle_timeout_delete(of_bsn_tlv_idle_timeout_t *obj) {
  * \ingroup of_bsn_tlv_internal_gateway_mac
  */
 static inline void
-of_bsn_tlv_internal_gateway_mac_delete(of_bsn_tlv_internal_gateway_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_internal_gateway_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8474,8 +8507,8 @@ of_bsn_tlv_internal_gateway_mac_delete(of_bsn_tlv_internal_gateway_mac_t *obj) {
  * \ingroup of_bsn_tlv_internal_mac
  */
 static inline void
-of_bsn_tlv_internal_mac_delete(of_bsn_tlv_internal_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_internal_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8485,8 +8518,8 @@ of_bsn_tlv_internal_mac_delete(of_bsn_tlv_internal_mac_t *obj) {
  * \ingroup of_bsn_tlv_ipv4
  */
 static inline void
-of_bsn_tlv_ipv4_delete(of_bsn_tlv_ipv4_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_ipv4_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8496,8 +8529,8 @@ of_bsn_tlv_ipv4_delete(of_bsn_tlv_ipv4_t *obj) {
  * \ingroup of_bsn_tlv_ipv4_dst
  */
 static inline void
-of_bsn_tlv_ipv4_dst_delete(of_bsn_tlv_ipv4_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_ipv4_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8507,8 +8540,8 @@ of_bsn_tlv_ipv4_dst_delete(of_bsn_tlv_ipv4_dst_t *obj) {
  * \ingroup of_bsn_tlv_ipv4_src
  */
 static inline void
-of_bsn_tlv_ipv4_src_delete(of_bsn_tlv_ipv4_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_ipv4_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8518,8 +8551,8 @@ of_bsn_tlv_ipv4_src_delete(of_bsn_tlv_ipv4_src_t *obj) {
  * \ingroup of_bsn_tlv_mac
  */
 static inline void
-of_bsn_tlv_mac_delete(of_bsn_tlv_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8529,8 +8562,8 @@ of_bsn_tlv_mac_delete(of_bsn_tlv_mac_t *obj) {
  * \ingroup of_bsn_tlv_miss_packets
  */
 static inline void
-of_bsn_tlv_miss_packets_delete(of_bsn_tlv_miss_packets_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_miss_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8540,8 +8573,8 @@ of_bsn_tlv_miss_packets_delete(of_bsn_tlv_miss_packets_t *obj) {
  * \ingroup of_bsn_tlv_name
  */
 static inline void
-of_bsn_tlv_name_delete(of_bsn_tlv_name_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_name_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8551,8 +8584,8 @@ of_bsn_tlv_name_delete(of_bsn_tlv_name_t *obj) {
  * \ingroup of_bsn_tlv_partner_key
  */
 static inline void
-of_bsn_tlv_partner_key_delete(of_bsn_tlv_partner_key_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_partner_key_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8562,8 +8595,8 @@ of_bsn_tlv_partner_key_delete(of_bsn_tlv_partner_key_t *obj) {
  * \ingroup of_bsn_tlv_partner_port_num
  */
 static inline void
-of_bsn_tlv_partner_port_num_delete(of_bsn_tlv_partner_port_num_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_partner_port_num_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8573,8 +8606,8 @@ of_bsn_tlv_partner_port_num_delete(of_bsn_tlv_partner_port_num_t *obj) {
  * \ingroup of_bsn_tlv_partner_port_priority
  */
 static inline void
-of_bsn_tlv_partner_port_priority_delete(of_bsn_tlv_partner_port_priority_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_partner_port_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8584,8 +8617,8 @@ of_bsn_tlv_partner_port_priority_delete(of_bsn_tlv_partner_port_priority_t *obj)
  * \ingroup of_bsn_tlv_partner_state
  */
 static inline void
-of_bsn_tlv_partner_state_delete(of_bsn_tlv_partner_state_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_partner_state_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8595,8 +8628,8 @@ of_bsn_tlv_partner_state_delete(of_bsn_tlv_partner_state_t *obj) {
  * \ingroup of_bsn_tlv_partner_system_mac
  */
 static inline void
-of_bsn_tlv_partner_system_mac_delete(of_bsn_tlv_partner_system_mac_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_partner_system_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8606,8 +8639,8 @@ of_bsn_tlv_partner_system_mac_delete(of_bsn_tlv_partner_system_mac_t *obj) {
  * \ingroup of_bsn_tlv_partner_system_priority
  */
 static inline void
-of_bsn_tlv_partner_system_priority_delete(of_bsn_tlv_partner_system_priority_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_partner_system_priority_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8617,8 +8650,8 @@ of_bsn_tlv_partner_system_priority_delete(of_bsn_tlv_partner_system_priority_t *
  * \ingroup of_bsn_tlv_port
  */
 static inline void
-of_bsn_tlv_port_delete(of_bsn_tlv_port_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_port_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8628,8 +8661,8 @@ of_bsn_tlv_port_delete(of_bsn_tlv_port_t *obj) {
  * \ingroup of_bsn_tlv_queue_id
  */
 static inline void
-of_bsn_tlv_queue_id_delete(of_bsn_tlv_queue_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_queue_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8639,8 +8672,8 @@ of_bsn_tlv_queue_id_delete(of_bsn_tlv_queue_id_t *obj) {
  * \ingroup of_bsn_tlv_queue_weight
  */
 static inline void
-of_bsn_tlv_queue_weight_delete(of_bsn_tlv_queue_weight_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_queue_weight_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8650,8 +8683,8 @@ of_bsn_tlv_queue_weight_delete(of_bsn_tlv_queue_weight_t *obj) {
  * \ingroup of_bsn_tlv_reply_packets
  */
 static inline void
-of_bsn_tlv_reply_packets_delete(of_bsn_tlv_reply_packets_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_reply_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8661,8 +8694,8 @@ of_bsn_tlv_reply_packets_delete(of_bsn_tlv_reply_packets_t *obj) {
  * \ingroup of_bsn_tlv_request_packets
  */
 static inline void
-of_bsn_tlv_request_packets_delete(of_bsn_tlv_request_packets_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_request_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8672,8 +8705,8 @@ of_bsn_tlv_request_packets_delete(of_bsn_tlv_request_packets_t *obj) {
  * \ingroup of_bsn_tlv_rx_packets
  */
 static inline void
-of_bsn_tlv_rx_packets_delete(of_bsn_tlv_rx_packets_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_rx_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8683,8 +8716,8 @@ of_bsn_tlv_rx_packets_delete(of_bsn_tlv_rx_packets_t *obj) {
  * \ingroup of_bsn_tlv_sampling_rate
  */
 static inline void
-of_bsn_tlv_sampling_rate_delete(of_bsn_tlv_sampling_rate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_sampling_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8694,8 +8727,8 @@ of_bsn_tlv_sampling_rate_delete(of_bsn_tlv_sampling_rate_t *obj) {
  * \ingroup of_bsn_tlv_sub_agent_id
  */
 static inline void
-of_bsn_tlv_sub_agent_id_delete(of_bsn_tlv_sub_agent_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_sub_agent_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8705,8 +8738,8 @@ of_bsn_tlv_sub_agent_id_delete(of_bsn_tlv_sub_agent_id_t *obj) {
  * \ingroup of_bsn_tlv_tx_bytes
  */
 static inline void
-of_bsn_tlv_tx_bytes_delete(of_bsn_tlv_tx_bytes_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_tx_bytes_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8716,8 +8749,8 @@ of_bsn_tlv_tx_bytes_delete(of_bsn_tlv_tx_bytes_t *obj) {
  * \ingroup of_bsn_tlv_tx_packets
  */
 static inline void
-of_bsn_tlv_tx_packets_delete(of_bsn_tlv_tx_packets_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_tx_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8727,8 +8760,8 @@ of_bsn_tlv_tx_packets_delete(of_bsn_tlv_tx_packets_t *obj) {
  * \ingroup of_bsn_tlv_udf_anchor
  */
 static inline void
-of_bsn_tlv_udf_anchor_delete(of_bsn_tlv_udf_anchor_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_udf_anchor_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8738,8 +8771,8 @@ of_bsn_tlv_udf_anchor_delete(of_bsn_tlv_udf_anchor_t *obj) {
  * \ingroup of_bsn_tlv_udf_id
  */
 static inline void
-of_bsn_tlv_udf_id_delete(of_bsn_tlv_udf_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_udf_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8749,8 +8782,8 @@ of_bsn_tlv_udf_id_delete(of_bsn_tlv_udf_id_t *obj) {
  * \ingroup of_bsn_tlv_udf_length
  */
 static inline void
-of_bsn_tlv_udf_length_delete(of_bsn_tlv_udf_length_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_udf_length_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8760,8 +8793,8 @@ of_bsn_tlv_udf_length_delete(of_bsn_tlv_udf_length_t *obj) {
  * \ingroup of_bsn_tlv_udf_offset
  */
 static inline void
-of_bsn_tlv_udf_offset_delete(of_bsn_tlv_udf_offset_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_udf_offset_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8771,8 +8804,8 @@ of_bsn_tlv_udf_offset_delete(of_bsn_tlv_udf_offset_t *obj) {
  * \ingroup of_bsn_tlv_udp_dst
  */
 static inline void
-of_bsn_tlv_udp_dst_delete(of_bsn_tlv_udp_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_udp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8782,8 +8815,8 @@ of_bsn_tlv_udp_dst_delete(of_bsn_tlv_udp_dst_t *obj) {
  * \ingroup of_bsn_tlv_udp_src
  */
 static inline void
-of_bsn_tlv_udp_src_delete(of_bsn_tlv_udp_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_udp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8793,8 +8826,8 @@ of_bsn_tlv_udp_src_delete(of_bsn_tlv_udp_src_t *obj) {
  * \ingroup of_bsn_tlv_unicast_query_timeout
  */
 static inline void
-of_bsn_tlv_unicast_query_timeout_delete(of_bsn_tlv_unicast_query_timeout_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_unicast_query_timeout_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8804,8 +8837,8 @@ of_bsn_tlv_unicast_query_timeout_delete(of_bsn_tlv_unicast_query_timeout_t *obj)
  * \ingroup of_bsn_tlv_vlan_vid
  */
 static inline void
-of_bsn_tlv_vlan_vid_delete(of_bsn_tlv_vlan_vid_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_vlan_vid_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8815,8 +8848,8 @@ of_bsn_tlv_vlan_vid_delete(of_bsn_tlv_vlan_vid_t *obj) {
  * \ingroup of_bsn_tlv_vrf
  */
 static inline void
-of_bsn_tlv_vrf_delete(of_bsn_tlv_vrf_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_tlv_vrf_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8826,8 +8859,8 @@ of_bsn_tlv_vrf_delete(of_bsn_tlv_vrf_t *obj) {
  * \ingroup of_bsn_vlan_counter_stats_entry
  */
 static inline void
-of_bsn_vlan_counter_stats_entry_delete(of_bsn_vlan_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vlan_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8837,8 +8870,8 @@ of_bsn_vlan_counter_stats_entry_delete(of_bsn_vlan_counter_stats_entry_t *obj) {
  * \ingroup of_bsn_vport
  */
 static inline void
-of_bsn_vport_delete(of_bsn_vport_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vport_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8848,8 +8881,8 @@ of_bsn_vport_delete(of_bsn_vport_t *obj) {
  * \ingroup of_bsn_vport_header
  */
 static inline void
-of_bsn_vport_header_delete(of_bsn_vport_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vport_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8859,8 +8892,8 @@ of_bsn_vport_header_delete(of_bsn_vport_header_t *obj) {
  * \ingroup of_bsn_vport_l2gre
  */
 static inline void
-of_bsn_vport_l2gre_delete(of_bsn_vport_l2gre_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vport_l2gre_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8870,8 +8903,8 @@ of_bsn_vport_l2gre_delete(of_bsn_vport_l2gre_t *obj) {
  * \ingroup of_bsn_vport_q_in_q
  */
 static inline void
-of_bsn_vport_q_in_q_delete(of_bsn_vport_q_in_q_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vport_q_in_q_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8881,8 +8914,8 @@ of_bsn_vport_q_in_q_delete(of_bsn_vport_q_in_q_t *obj) {
  * \ingroup of_bsn_vrf_counter_stats_entry
  */
 static inline void
-of_bsn_vrf_counter_stats_entry_delete(of_bsn_vrf_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bsn_vrf_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8892,8 +8925,8 @@ of_bsn_vrf_counter_stats_entry_delete(of_bsn_vrf_counter_stats_entry_t *obj) {
  * \ingroup of_bucket
  */
 static inline void
-of_bucket_delete(of_bucket_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bucket_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8903,8 +8936,8 @@ of_bucket_delete(of_bucket_t *obj) {
  * \ingroup of_bucket_counter
  */
 static inline void
-of_bucket_counter_delete(of_bucket_counter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bucket_counter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8914,8 +8947,8 @@ of_bucket_counter_delete(of_bucket_counter_t *obj) {
  * \ingroup of_bundle_prop
  */
 static inline void
-of_bundle_prop_delete(of_bundle_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bundle_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8925,8 +8958,8 @@ of_bundle_prop_delete(of_bundle_prop_t *obj) {
  * \ingroup of_bundle_prop_experimenter
  */
 static inline void
-of_bundle_prop_experimenter_delete(of_bundle_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bundle_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8936,8 +8969,8 @@ of_bundle_prop_experimenter_delete(of_bundle_prop_experimenter_t *obj) {
  * \ingroup of_bundle_prop_header
  */
 static inline void
-of_bundle_prop_header_delete(of_bundle_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_bundle_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8947,8 +8980,8 @@ of_bundle_prop_header_delete(of_bundle_prop_header_t *obj) {
  * \ingroup of_flow_stats_entry
  */
 static inline void
-of_flow_stats_entry_delete(of_flow_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_flow_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8958,8 +8991,8 @@ of_flow_stats_entry_delete(of_flow_stats_entry_t *obj) {
  * \ingroup of_group_desc_stats_entry
  */
 static inline void
-of_group_desc_stats_entry_delete(of_group_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8969,8 +9002,8 @@ of_group_desc_stats_entry_delete(of_group_desc_stats_entry_t *obj) {
  * \ingroup of_group_stats_entry
  */
 static inline void
-of_group_stats_entry_delete(of_group_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_group_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8980,8 +9013,8 @@ of_group_stats_entry_delete(of_group_stats_entry_t *obj) {
  * \ingroup of_hello_elem
  */
 static inline void
-of_hello_elem_delete(of_hello_elem_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_hello_elem_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -8991,8 +9024,8 @@ of_hello_elem_delete(of_hello_elem_t *obj) {
  * \ingroup of_hello_elem_header
  */
 static inline void
-of_hello_elem_header_delete(of_hello_elem_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_hello_elem_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9002,8 +9035,8 @@ of_hello_elem_header_delete(of_hello_elem_header_t *obj) {
  * \ingroup of_hello_elem_versionbitmap
  */
 static inline void
-of_hello_elem_versionbitmap_delete(of_hello_elem_versionbitmap_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_hello_elem_versionbitmap_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9013,8 +9046,8 @@ of_hello_elem_versionbitmap_delete(of_hello_elem_versionbitmap_t *obj) {
  * \ingroup of_instruction
  */
 static inline void
-of_instruction_delete(of_instruction_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9024,8 +9057,8 @@ of_instruction_delete(of_instruction_t *obj) {
  * \ingroup of_instruction_apply_actions
  */
 static inline void
-of_instruction_apply_actions_delete(of_instruction_apply_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_apply_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9035,8 +9068,8 @@ of_instruction_apply_actions_delete(of_instruction_apply_actions_t *obj) {
  * \ingroup of_instruction_bsn
  */
 static inline void
-of_instruction_bsn_delete(of_instruction_bsn_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9046,8 +9079,8 @@ of_instruction_bsn_delete(of_instruction_bsn_t *obj) {
  * \ingroup of_instruction_bsn_arp_offload
  */
 static inline void
-of_instruction_bsn_arp_offload_delete(of_instruction_bsn_arp_offload_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_arp_offload_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9057,8 +9090,8 @@ of_instruction_bsn_arp_offload_delete(of_instruction_bsn_arp_offload_t *obj) {
  * \ingroup of_instruction_bsn_deny
  */
 static inline void
-of_instruction_bsn_deny_delete(of_instruction_bsn_deny_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_deny_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9068,8 +9101,8 @@ of_instruction_bsn_deny_delete(of_instruction_bsn_deny_t *obj) {
  * \ingroup of_instruction_bsn_dhcp_offload
  */
 static inline void
-of_instruction_bsn_dhcp_offload_delete(of_instruction_bsn_dhcp_offload_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_dhcp_offload_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9079,8 +9112,8 @@ of_instruction_bsn_dhcp_offload_delete(of_instruction_bsn_dhcp_offload_t *obj) {
  * \ingroup of_instruction_bsn_disable_split_horizon_check
  */
 static inline void
-of_instruction_bsn_disable_split_horizon_check_delete(of_instruction_bsn_disable_split_horizon_check_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_disable_split_horizon_check_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9090,8 +9123,8 @@ of_instruction_bsn_disable_split_horizon_check_delete(of_instruction_bsn_disable
  * \ingroup of_instruction_bsn_disable_src_mac_check
  */
 static inline void
-of_instruction_bsn_disable_src_mac_check_delete(of_instruction_bsn_disable_src_mac_check_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_disable_src_mac_check_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9101,8 +9134,8 @@ of_instruction_bsn_disable_src_mac_check_delete(of_instruction_bsn_disable_src_m
  * \ingroup of_instruction_bsn_disable_vlan_counters
  */
 static inline void
-of_instruction_bsn_disable_vlan_counters_delete(of_instruction_bsn_disable_vlan_counters_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_disable_vlan_counters_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9112,8 +9145,8 @@ of_instruction_bsn_disable_vlan_counters_delete(of_instruction_bsn_disable_vlan_
  * \ingroup of_instruction_bsn_packet_of_death
  */
 static inline void
-of_instruction_bsn_packet_of_death_delete(of_instruction_bsn_packet_of_death_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_packet_of_death_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9123,8 +9156,8 @@ of_instruction_bsn_packet_of_death_delete(of_instruction_bsn_packet_of_death_t *
  * \ingroup of_instruction_bsn_permit
  */
 static inline void
-of_instruction_bsn_permit_delete(of_instruction_bsn_permit_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_permit_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9134,8 +9167,8 @@ of_instruction_bsn_permit_delete(of_instruction_bsn_permit_t *obj) {
  * \ingroup of_instruction_bsn_prioritize_pdus
  */
 static inline void
-of_instruction_bsn_prioritize_pdus_delete(of_instruction_bsn_prioritize_pdus_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_prioritize_pdus_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9145,8 +9178,8 @@ of_instruction_bsn_prioritize_pdus_delete(of_instruction_bsn_prioritize_pdus_t *
  * \ingroup of_instruction_bsn_require_vlan_xlate
  */
 static inline void
-of_instruction_bsn_require_vlan_xlate_delete(of_instruction_bsn_require_vlan_xlate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_require_vlan_xlate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9156,8 +9189,8 @@ of_instruction_bsn_require_vlan_xlate_delete(of_instruction_bsn_require_vlan_xla
  * \ingroup of_instruction_bsn_span_destination
  */
 static inline void
-of_instruction_bsn_span_destination_delete(of_instruction_bsn_span_destination_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_bsn_span_destination_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9167,8 +9200,8 @@ of_instruction_bsn_span_destination_delete(of_instruction_bsn_span_destination_t
  * \ingroup of_instruction_clear_actions
  */
 static inline void
-of_instruction_clear_actions_delete(of_instruction_clear_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_clear_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9178,8 +9211,8 @@ of_instruction_clear_actions_delete(of_instruction_clear_actions_t *obj) {
  * \ingroup of_instruction_experimenter
  */
 static inline void
-of_instruction_experimenter_delete(of_instruction_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9189,8 +9222,8 @@ of_instruction_experimenter_delete(of_instruction_experimenter_t *obj) {
  * \ingroup of_instruction_goto_table
  */
 static inline void
-of_instruction_goto_table_delete(of_instruction_goto_table_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_goto_table_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9200,8 +9233,8 @@ of_instruction_goto_table_delete(of_instruction_goto_table_t *obj) {
  * \ingroup of_instruction_header
  */
 static inline void
-of_instruction_header_delete(of_instruction_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9211,8 +9244,8 @@ of_instruction_header_delete(of_instruction_header_t *obj) {
  * \ingroup of_instruction_id
  */
 static inline void
-of_instruction_id_delete(of_instruction_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9222,8 +9255,8 @@ of_instruction_id_delete(of_instruction_id_t *obj) {
  * \ingroup of_instruction_id_apply_actions
  */
 static inline void
-of_instruction_id_apply_actions_delete(of_instruction_id_apply_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_apply_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9233,8 +9266,8 @@ of_instruction_id_apply_actions_delete(of_instruction_id_apply_actions_t *obj) {
  * \ingroup of_instruction_id_bsn
  */
 static inline void
-of_instruction_id_bsn_delete(of_instruction_id_bsn_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9244,8 +9277,8 @@ of_instruction_id_bsn_delete(of_instruction_id_bsn_t *obj) {
  * \ingroup of_instruction_id_bsn_arp_offload
  */
 static inline void
-of_instruction_id_bsn_arp_offload_delete(of_instruction_id_bsn_arp_offload_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_arp_offload_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9255,8 +9288,8 @@ of_instruction_id_bsn_arp_offload_delete(of_instruction_id_bsn_arp_offload_t *ob
  * \ingroup of_instruction_id_bsn_deny
  */
 static inline void
-of_instruction_id_bsn_deny_delete(of_instruction_id_bsn_deny_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_deny_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9266,8 +9299,8 @@ of_instruction_id_bsn_deny_delete(of_instruction_id_bsn_deny_t *obj) {
  * \ingroup of_instruction_id_bsn_dhcp_offload
  */
 static inline void
-of_instruction_id_bsn_dhcp_offload_delete(of_instruction_id_bsn_dhcp_offload_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_dhcp_offload_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9277,8 +9310,8 @@ of_instruction_id_bsn_dhcp_offload_delete(of_instruction_id_bsn_dhcp_offload_t *
  * \ingroup of_instruction_id_bsn_disable_split_horizon_check
  */
 static inline void
-of_instruction_id_bsn_disable_split_horizon_check_delete(of_instruction_id_bsn_disable_split_horizon_check_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_disable_split_horizon_check_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9288,8 +9321,8 @@ of_instruction_id_bsn_disable_split_horizon_check_delete(of_instruction_id_bsn_d
  * \ingroup of_instruction_id_bsn_disable_src_mac_check
  */
 static inline void
-of_instruction_id_bsn_disable_src_mac_check_delete(of_instruction_id_bsn_disable_src_mac_check_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_disable_src_mac_check_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9299,8 +9332,8 @@ of_instruction_id_bsn_disable_src_mac_check_delete(of_instruction_id_bsn_disable
  * \ingroup of_instruction_id_bsn_disable_vlan_counters
  */
 static inline void
-of_instruction_id_bsn_disable_vlan_counters_delete(of_instruction_id_bsn_disable_vlan_counters_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_disable_vlan_counters_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9310,8 +9343,8 @@ of_instruction_id_bsn_disable_vlan_counters_delete(of_instruction_id_bsn_disable
  * \ingroup of_instruction_id_bsn_packet_of_death
  */
 static inline void
-of_instruction_id_bsn_packet_of_death_delete(of_instruction_id_bsn_packet_of_death_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_packet_of_death_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9321,8 +9354,8 @@ of_instruction_id_bsn_packet_of_death_delete(of_instruction_id_bsn_packet_of_dea
  * \ingroup of_instruction_id_bsn_permit
  */
 static inline void
-of_instruction_id_bsn_permit_delete(of_instruction_id_bsn_permit_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_permit_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9332,8 +9365,8 @@ of_instruction_id_bsn_permit_delete(of_instruction_id_bsn_permit_t *obj) {
  * \ingroup of_instruction_id_bsn_prioritize_pdus
  */
 static inline void
-of_instruction_id_bsn_prioritize_pdus_delete(of_instruction_id_bsn_prioritize_pdus_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_prioritize_pdus_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9343,8 +9376,8 @@ of_instruction_id_bsn_prioritize_pdus_delete(of_instruction_id_bsn_prioritize_pd
  * \ingroup of_instruction_id_bsn_require_vlan_xlate
  */
 static inline void
-of_instruction_id_bsn_require_vlan_xlate_delete(of_instruction_id_bsn_require_vlan_xlate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_require_vlan_xlate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9354,8 +9387,8 @@ of_instruction_id_bsn_require_vlan_xlate_delete(of_instruction_id_bsn_require_vl
  * \ingroup of_instruction_id_bsn_span_destination
  */
 static inline void
-of_instruction_id_bsn_span_destination_delete(of_instruction_id_bsn_span_destination_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_bsn_span_destination_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9365,8 +9398,8 @@ of_instruction_id_bsn_span_destination_delete(of_instruction_id_bsn_span_destina
  * \ingroup of_instruction_id_clear_actions
  */
 static inline void
-of_instruction_id_clear_actions_delete(of_instruction_id_clear_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_clear_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9376,8 +9409,8 @@ of_instruction_id_clear_actions_delete(of_instruction_id_clear_actions_t *obj) {
  * \ingroup of_instruction_id_experimenter
  */
 static inline void
-of_instruction_id_experimenter_delete(of_instruction_id_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9387,8 +9420,8 @@ of_instruction_id_experimenter_delete(of_instruction_id_experimenter_t *obj) {
  * \ingroup of_instruction_id_goto_table
  */
 static inline void
-of_instruction_id_goto_table_delete(of_instruction_id_goto_table_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_goto_table_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9398,8 +9431,8 @@ of_instruction_id_goto_table_delete(of_instruction_id_goto_table_t *obj) {
  * \ingroup of_instruction_id_header
  */
 static inline void
-of_instruction_id_header_delete(of_instruction_id_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9409,8 +9442,8 @@ of_instruction_id_header_delete(of_instruction_id_header_t *obj) {
  * \ingroup of_instruction_id_meter
  */
 static inline void
-of_instruction_id_meter_delete(of_instruction_id_meter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_meter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9420,8 +9453,8 @@ of_instruction_id_meter_delete(of_instruction_id_meter_t *obj) {
  * \ingroup of_instruction_id_write_actions
  */
 static inline void
-of_instruction_id_write_actions_delete(of_instruction_id_write_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_write_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9431,8 +9464,8 @@ of_instruction_id_write_actions_delete(of_instruction_id_write_actions_t *obj) {
  * \ingroup of_instruction_id_write_metadata
  */
 static inline void
-of_instruction_id_write_metadata_delete(of_instruction_id_write_metadata_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_id_write_metadata_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9442,8 +9475,8 @@ of_instruction_id_write_metadata_delete(of_instruction_id_write_metadata_t *obj)
  * \ingroup of_instruction_meter
  */
 static inline void
-of_instruction_meter_delete(of_instruction_meter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_meter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9453,8 +9486,8 @@ of_instruction_meter_delete(of_instruction_meter_t *obj) {
  * \ingroup of_instruction_write_actions
  */
 static inline void
-of_instruction_write_actions_delete(of_instruction_write_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_write_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9464,8 +9497,8 @@ of_instruction_write_actions_delete(of_instruction_write_actions_t *obj) {
  * \ingroup of_instruction_write_metadata
  */
 static inline void
-of_instruction_write_metadata_delete(of_instruction_write_metadata_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_instruction_write_metadata_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9475,8 +9508,8 @@ of_instruction_write_metadata_delete(of_instruction_write_metadata_t *obj) {
  * \ingroup of_match_v1
  */
 static inline void
-of_match_v1_delete(of_match_v1_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_match_v1_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9486,8 +9519,8 @@ of_match_v1_delete(of_match_v1_t *obj) {
  * \ingroup of_match_v2
  */
 static inline void
-of_match_v2_delete(of_match_v2_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_match_v2_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9497,8 +9530,8 @@ of_match_v2_delete(of_match_v2_t *obj) {
  * \ingroup of_match_v3
  */
 static inline void
-of_match_v3_delete(of_match_v3_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_match_v3_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9508,8 +9541,8 @@ of_match_v3_delete(of_match_v3_t *obj) {
  * \ingroup of_meter_band
  */
 static inline void
-of_meter_band_delete(of_meter_band_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_band_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9519,8 +9552,8 @@ of_meter_band_delete(of_meter_band_t *obj) {
  * \ingroup of_meter_band_drop
  */
 static inline void
-of_meter_band_drop_delete(of_meter_band_drop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_band_drop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9530,8 +9563,8 @@ of_meter_band_drop_delete(of_meter_band_drop_t *obj) {
  * \ingroup of_meter_band_dscp_remark
  */
 static inline void
-of_meter_band_dscp_remark_delete(of_meter_band_dscp_remark_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_band_dscp_remark_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9541,8 +9574,8 @@ of_meter_band_dscp_remark_delete(of_meter_band_dscp_remark_t *obj) {
  * \ingroup of_meter_band_experimenter
  */
 static inline void
-of_meter_band_experimenter_delete(of_meter_band_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_band_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9552,8 +9585,8 @@ of_meter_band_experimenter_delete(of_meter_band_experimenter_t *obj) {
  * \ingroup of_meter_band_header
  */
 static inline void
-of_meter_band_header_delete(of_meter_band_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_band_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9563,8 +9596,8 @@ of_meter_band_header_delete(of_meter_band_header_t *obj) {
  * \ingroup of_meter_band_stats
  */
 static inline void
-of_meter_band_stats_delete(of_meter_band_stats_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_band_stats_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9574,8 +9607,8 @@ of_meter_band_stats_delete(of_meter_band_stats_t *obj) {
  * \ingroup of_meter_config
  */
 static inline void
-of_meter_config_delete(of_meter_config_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_config_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9585,8 +9618,8 @@ of_meter_config_delete(of_meter_config_t *obj) {
  * \ingroup of_meter_features
  */
 static inline void
-of_meter_features_delete(of_meter_features_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_features_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9596,8 +9629,8 @@ of_meter_features_delete(of_meter_features_t *obj) {
  * \ingroup of_meter_stats
  */
 static inline void
-of_meter_stats_delete(of_meter_stats_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_meter_stats_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9607,8 +9640,8 @@ of_meter_stats_delete(of_meter_stats_t *obj) {
  * \ingroup of_oxm
  */
 static inline void
-of_oxm_delete(of_oxm_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9618,8 +9651,8 @@ of_oxm_delete(of_oxm_t *obj) {
  * \ingroup of_oxm_arp_op
  */
 static inline void
-of_oxm_arp_op_delete(of_oxm_arp_op_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_op_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9629,8 +9662,8 @@ of_oxm_arp_op_delete(of_oxm_arp_op_t *obj) {
  * \ingroup of_oxm_arp_op_masked
  */
 static inline void
-of_oxm_arp_op_masked_delete(of_oxm_arp_op_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_op_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9640,8 +9673,8 @@ of_oxm_arp_op_masked_delete(of_oxm_arp_op_masked_t *obj) {
  * \ingroup of_oxm_arp_sha
  */
 static inline void
-of_oxm_arp_sha_delete(of_oxm_arp_sha_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_sha_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9651,8 +9684,8 @@ of_oxm_arp_sha_delete(of_oxm_arp_sha_t *obj) {
  * \ingroup of_oxm_arp_sha_masked
  */
 static inline void
-of_oxm_arp_sha_masked_delete(of_oxm_arp_sha_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_sha_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9662,8 +9695,8 @@ of_oxm_arp_sha_masked_delete(of_oxm_arp_sha_masked_t *obj) {
  * \ingroup of_oxm_arp_spa
  */
 static inline void
-of_oxm_arp_spa_delete(of_oxm_arp_spa_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_spa_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9673,8 +9706,8 @@ of_oxm_arp_spa_delete(of_oxm_arp_spa_t *obj) {
  * \ingroup of_oxm_arp_spa_masked
  */
 static inline void
-of_oxm_arp_spa_masked_delete(of_oxm_arp_spa_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_spa_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9684,8 +9717,8 @@ of_oxm_arp_spa_masked_delete(of_oxm_arp_spa_masked_t *obj) {
  * \ingroup of_oxm_arp_tha
  */
 static inline void
-of_oxm_arp_tha_delete(of_oxm_arp_tha_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_tha_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9695,8 +9728,8 @@ of_oxm_arp_tha_delete(of_oxm_arp_tha_t *obj) {
  * \ingroup of_oxm_arp_tha_masked
  */
 static inline void
-of_oxm_arp_tha_masked_delete(of_oxm_arp_tha_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_tha_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9706,8 +9739,8 @@ of_oxm_arp_tha_masked_delete(of_oxm_arp_tha_masked_t *obj) {
  * \ingroup of_oxm_arp_tpa
  */
 static inline void
-of_oxm_arp_tpa_delete(of_oxm_arp_tpa_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_tpa_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9717,8 +9750,8 @@ of_oxm_arp_tpa_delete(of_oxm_arp_tpa_t *obj) {
  * \ingroup of_oxm_arp_tpa_masked
  */
 static inline void
-of_oxm_arp_tpa_masked_delete(of_oxm_arp_tpa_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_arp_tpa_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9728,8 +9761,8 @@ of_oxm_arp_tpa_masked_delete(of_oxm_arp_tpa_masked_t *obj) {
  * \ingroup of_oxm_bsn_egr_port_group_id
  */
 static inline void
-of_oxm_bsn_egr_port_group_id_delete(of_oxm_bsn_egr_port_group_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_egr_port_group_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9739,8 +9772,8 @@ of_oxm_bsn_egr_port_group_id_delete(of_oxm_bsn_egr_port_group_id_t *obj) {
  * \ingroup of_oxm_bsn_egr_port_group_id_masked
  */
 static inline void
-of_oxm_bsn_egr_port_group_id_masked_delete(of_oxm_bsn_egr_port_group_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_egr_port_group_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9750,8 +9783,8 @@ of_oxm_bsn_egr_port_group_id_masked_delete(of_oxm_bsn_egr_port_group_id_masked_t
  * \ingroup of_oxm_bsn_global_vrf_allowed
  */
 static inline void
-of_oxm_bsn_global_vrf_allowed_delete(of_oxm_bsn_global_vrf_allowed_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_global_vrf_allowed_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9761,8 +9794,8 @@ of_oxm_bsn_global_vrf_allowed_delete(of_oxm_bsn_global_vrf_allowed_t *obj) {
  * \ingroup of_oxm_bsn_global_vrf_allowed_masked
  */
 static inline void
-of_oxm_bsn_global_vrf_allowed_masked_delete(of_oxm_bsn_global_vrf_allowed_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_global_vrf_allowed_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9772,8 +9805,8 @@ of_oxm_bsn_global_vrf_allowed_masked_delete(of_oxm_bsn_global_vrf_allowed_masked
  * \ingroup of_oxm_bsn_in_ports_128
  */
 static inline void
-of_oxm_bsn_in_ports_128_delete(of_oxm_bsn_in_ports_128_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_in_ports_128_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9783,8 +9816,8 @@ of_oxm_bsn_in_ports_128_delete(of_oxm_bsn_in_ports_128_t *obj) {
  * \ingroup of_oxm_bsn_in_ports_128_masked
  */
 static inline void
-of_oxm_bsn_in_ports_128_masked_delete(of_oxm_bsn_in_ports_128_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_in_ports_128_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9794,8 +9827,8 @@ of_oxm_bsn_in_ports_128_masked_delete(of_oxm_bsn_in_ports_128_masked_t *obj) {
  * \ingroup of_oxm_bsn_l3_dst_class_id
  */
 static inline void
-of_oxm_bsn_l3_dst_class_id_delete(of_oxm_bsn_l3_dst_class_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_l3_dst_class_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9805,8 +9838,8 @@ of_oxm_bsn_l3_dst_class_id_delete(of_oxm_bsn_l3_dst_class_id_t *obj) {
  * \ingroup of_oxm_bsn_l3_dst_class_id_masked
  */
 static inline void
-of_oxm_bsn_l3_dst_class_id_masked_delete(of_oxm_bsn_l3_dst_class_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_l3_dst_class_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9816,8 +9849,8 @@ of_oxm_bsn_l3_dst_class_id_masked_delete(of_oxm_bsn_l3_dst_class_id_masked_t *ob
  * \ingroup of_oxm_bsn_l3_interface_class_id
  */
 static inline void
-of_oxm_bsn_l3_interface_class_id_delete(of_oxm_bsn_l3_interface_class_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_l3_interface_class_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9827,8 +9860,8 @@ of_oxm_bsn_l3_interface_class_id_delete(of_oxm_bsn_l3_interface_class_id_t *obj)
  * \ingroup of_oxm_bsn_l3_interface_class_id_masked
  */
 static inline void
-of_oxm_bsn_l3_interface_class_id_masked_delete(of_oxm_bsn_l3_interface_class_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_l3_interface_class_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9838,8 +9871,8 @@ of_oxm_bsn_l3_interface_class_id_masked_delete(of_oxm_bsn_l3_interface_class_id_
  * \ingroup of_oxm_bsn_l3_src_class_id
  */
 static inline void
-of_oxm_bsn_l3_src_class_id_delete(of_oxm_bsn_l3_src_class_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_l3_src_class_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9849,8 +9882,8 @@ of_oxm_bsn_l3_src_class_id_delete(of_oxm_bsn_l3_src_class_id_t *obj) {
  * \ingroup of_oxm_bsn_l3_src_class_id_masked
  */
 static inline void
-of_oxm_bsn_l3_src_class_id_masked_delete(of_oxm_bsn_l3_src_class_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_l3_src_class_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9860,8 +9893,8 @@ of_oxm_bsn_l3_src_class_id_masked_delete(of_oxm_bsn_l3_src_class_id_masked_t *ob
  * \ingroup of_oxm_bsn_lag_id
  */
 static inline void
-of_oxm_bsn_lag_id_delete(of_oxm_bsn_lag_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_lag_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9871,8 +9904,8 @@ of_oxm_bsn_lag_id_delete(of_oxm_bsn_lag_id_t *obj) {
  * \ingroup of_oxm_bsn_lag_id_masked
  */
 static inline void
-of_oxm_bsn_lag_id_masked_delete(of_oxm_bsn_lag_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_lag_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9882,8 +9915,8 @@ of_oxm_bsn_lag_id_masked_delete(of_oxm_bsn_lag_id_masked_t *obj) {
  * \ingroup of_oxm_bsn_tcp_flags
  */
 static inline void
-of_oxm_bsn_tcp_flags_delete(of_oxm_bsn_tcp_flags_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_tcp_flags_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9893,8 +9926,8 @@ of_oxm_bsn_tcp_flags_delete(of_oxm_bsn_tcp_flags_t *obj) {
  * \ingroup of_oxm_bsn_tcp_flags_masked
  */
 static inline void
-of_oxm_bsn_tcp_flags_masked_delete(of_oxm_bsn_tcp_flags_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_tcp_flags_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9904,8 +9937,8 @@ of_oxm_bsn_tcp_flags_masked_delete(of_oxm_bsn_tcp_flags_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf0
  */
 static inline void
-of_oxm_bsn_udf0_delete(of_oxm_bsn_udf0_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf0_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9915,8 +9948,8 @@ of_oxm_bsn_udf0_delete(of_oxm_bsn_udf0_t *obj) {
  * \ingroup of_oxm_bsn_udf0_masked
  */
 static inline void
-of_oxm_bsn_udf0_masked_delete(of_oxm_bsn_udf0_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf0_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9926,8 +9959,8 @@ of_oxm_bsn_udf0_masked_delete(of_oxm_bsn_udf0_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf1
  */
 static inline void
-of_oxm_bsn_udf1_delete(of_oxm_bsn_udf1_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf1_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9937,8 +9970,8 @@ of_oxm_bsn_udf1_delete(of_oxm_bsn_udf1_t *obj) {
  * \ingroup of_oxm_bsn_udf1_masked
  */
 static inline void
-of_oxm_bsn_udf1_masked_delete(of_oxm_bsn_udf1_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf1_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9948,8 +9981,8 @@ of_oxm_bsn_udf1_masked_delete(of_oxm_bsn_udf1_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf2
  */
 static inline void
-of_oxm_bsn_udf2_delete(of_oxm_bsn_udf2_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf2_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9959,8 +9992,8 @@ of_oxm_bsn_udf2_delete(of_oxm_bsn_udf2_t *obj) {
  * \ingroup of_oxm_bsn_udf2_masked
  */
 static inline void
-of_oxm_bsn_udf2_masked_delete(of_oxm_bsn_udf2_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf2_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9970,8 +10003,8 @@ of_oxm_bsn_udf2_masked_delete(of_oxm_bsn_udf2_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf3
  */
 static inline void
-of_oxm_bsn_udf3_delete(of_oxm_bsn_udf3_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf3_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9981,8 +10014,8 @@ of_oxm_bsn_udf3_delete(of_oxm_bsn_udf3_t *obj) {
  * \ingroup of_oxm_bsn_udf3_masked
  */
 static inline void
-of_oxm_bsn_udf3_masked_delete(of_oxm_bsn_udf3_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf3_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -9992,8 +10025,8 @@ of_oxm_bsn_udf3_masked_delete(of_oxm_bsn_udf3_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf4
  */
 static inline void
-of_oxm_bsn_udf4_delete(of_oxm_bsn_udf4_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf4_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10003,8 +10036,8 @@ of_oxm_bsn_udf4_delete(of_oxm_bsn_udf4_t *obj) {
  * \ingroup of_oxm_bsn_udf4_masked
  */
 static inline void
-of_oxm_bsn_udf4_masked_delete(of_oxm_bsn_udf4_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf4_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10014,8 +10047,8 @@ of_oxm_bsn_udf4_masked_delete(of_oxm_bsn_udf4_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf5
  */
 static inline void
-of_oxm_bsn_udf5_delete(of_oxm_bsn_udf5_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf5_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10025,8 +10058,8 @@ of_oxm_bsn_udf5_delete(of_oxm_bsn_udf5_t *obj) {
  * \ingroup of_oxm_bsn_udf5_masked
  */
 static inline void
-of_oxm_bsn_udf5_masked_delete(of_oxm_bsn_udf5_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf5_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10036,8 +10069,8 @@ of_oxm_bsn_udf5_masked_delete(of_oxm_bsn_udf5_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf6
  */
 static inline void
-of_oxm_bsn_udf6_delete(of_oxm_bsn_udf6_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf6_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10047,8 +10080,8 @@ of_oxm_bsn_udf6_delete(of_oxm_bsn_udf6_t *obj) {
  * \ingroup of_oxm_bsn_udf6_masked
  */
 static inline void
-of_oxm_bsn_udf6_masked_delete(of_oxm_bsn_udf6_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf6_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10058,8 +10091,8 @@ of_oxm_bsn_udf6_masked_delete(of_oxm_bsn_udf6_masked_t *obj) {
  * \ingroup of_oxm_bsn_udf7
  */
 static inline void
-of_oxm_bsn_udf7_delete(of_oxm_bsn_udf7_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf7_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10069,8 +10102,8 @@ of_oxm_bsn_udf7_delete(of_oxm_bsn_udf7_t *obj) {
  * \ingroup of_oxm_bsn_udf7_masked
  */
 static inline void
-of_oxm_bsn_udf7_masked_delete(of_oxm_bsn_udf7_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_udf7_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10080,8 +10113,8 @@ of_oxm_bsn_udf7_masked_delete(of_oxm_bsn_udf7_masked_t *obj) {
  * \ingroup of_oxm_bsn_vlan_xlate_port_group_id
  */
 static inline void
-of_oxm_bsn_vlan_xlate_port_group_id_delete(of_oxm_bsn_vlan_xlate_port_group_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_vlan_xlate_port_group_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10091,8 +10124,8 @@ of_oxm_bsn_vlan_xlate_port_group_id_delete(of_oxm_bsn_vlan_xlate_port_group_id_t
  * \ingroup of_oxm_bsn_vlan_xlate_port_group_id_masked
  */
 static inline void
-of_oxm_bsn_vlan_xlate_port_group_id_masked_delete(of_oxm_bsn_vlan_xlate_port_group_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_vlan_xlate_port_group_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10102,8 +10135,8 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_delete(of_oxm_bsn_vlan_xlate_port_gro
  * \ingroup of_oxm_bsn_vrf
  */
 static inline void
-of_oxm_bsn_vrf_delete(of_oxm_bsn_vrf_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_vrf_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10113,8 +10146,8 @@ of_oxm_bsn_vrf_delete(of_oxm_bsn_vrf_t *obj) {
  * \ingroup of_oxm_bsn_vrf_masked
  */
 static inline void
-of_oxm_bsn_vrf_masked_delete(of_oxm_bsn_vrf_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_bsn_vrf_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10124,8 +10157,8 @@ of_oxm_bsn_vrf_masked_delete(of_oxm_bsn_vrf_masked_t *obj) {
  * \ingroup of_oxm_eth_dst
  */
 static inline void
-of_oxm_eth_dst_delete(of_oxm_eth_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_eth_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10135,8 +10168,8 @@ of_oxm_eth_dst_delete(of_oxm_eth_dst_t *obj) {
  * \ingroup of_oxm_eth_dst_masked
  */
 static inline void
-of_oxm_eth_dst_masked_delete(of_oxm_eth_dst_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_eth_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10146,8 +10179,8 @@ of_oxm_eth_dst_masked_delete(of_oxm_eth_dst_masked_t *obj) {
  * \ingroup of_oxm_eth_src
  */
 static inline void
-of_oxm_eth_src_delete(of_oxm_eth_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_eth_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10157,8 +10190,8 @@ of_oxm_eth_src_delete(of_oxm_eth_src_t *obj) {
  * \ingroup of_oxm_eth_src_masked
  */
 static inline void
-of_oxm_eth_src_masked_delete(of_oxm_eth_src_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_eth_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10168,8 +10201,8 @@ of_oxm_eth_src_masked_delete(of_oxm_eth_src_masked_t *obj) {
  * \ingroup of_oxm_eth_type
  */
 static inline void
-of_oxm_eth_type_delete(of_oxm_eth_type_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_eth_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10179,8 +10212,8 @@ of_oxm_eth_type_delete(of_oxm_eth_type_t *obj) {
  * \ingroup of_oxm_eth_type_masked
  */
 static inline void
-of_oxm_eth_type_masked_delete(of_oxm_eth_type_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_eth_type_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10190,8 +10223,8 @@ of_oxm_eth_type_masked_delete(of_oxm_eth_type_masked_t *obj) {
  * \ingroup of_oxm_header
  */
 static inline void
-of_oxm_header_delete(of_oxm_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10201,8 +10234,8 @@ of_oxm_header_delete(of_oxm_header_t *obj) {
  * \ingroup of_oxm_icmpv4_code
  */
 static inline void
-of_oxm_icmpv4_code_delete(of_oxm_icmpv4_code_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv4_code_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10212,8 +10245,8 @@ of_oxm_icmpv4_code_delete(of_oxm_icmpv4_code_t *obj) {
  * \ingroup of_oxm_icmpv4_code_masked
  */
 static inline void
-of_oxm_icmpv4_code_masked_delete(of_oxm_icmpv4_code_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv4_code_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10223,8 +10256,8 @@ of_oxm_icmpv4_code_masked_delete(of_oxm_icmpv4_code_masked_t *obj) {
  * \ingroup of_oxm_icmpv4_type
  */
 static inline void
-of_oxm_icmpv4_type_delete(of_oxm_icmpv4_type_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv4_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10234,8 +10267,8 @@ of_oxm_icmpv4_type_delete(of_oxm_icmpv4_type_t *obj) {
  * \ingroup of_oxm_icmpv4_type_masked
  */
 static inline void
-of_oxm_icmpv4_type_masked_delete(of_oxm_icmpv4_type_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv4_type_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10245,8 +10278,8 @@ of_oxm_icmpv4_type_masked_delete(of_oxm_icmpv4_type_masked_t *obj) {
  * \ingroup of_oxm_icmpv6_code
  */
 static inline void
-of_oxm_icmpv6_code_delete(of_oxm_icmpv6_code_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv6_code_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10256,8 +10289,8 @@ of_oxm_icmpv6_code_delete(of_oxm_icmpv6_code_t *obj) {
  * \ingroup of_oxm_icmpv6_code_masked
  */
 static inline void
-of_oxm_icmpv6_code_masked_delete(of_oxm_icmpv6_code_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv6_code_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10267,8 +10300,8 @@ of_oxm_icmpv6_code_masked_delete(of_oxm_icmpv6_code_masked_t *obj) {
  * \ingroup of_oxm_icmpv6_type
  */
 static inline void
-of_oxm_icmpv6_type_delete(of_oxm_icmpv6_type_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv6_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10278,8 +10311,8 @@ of_oxm_icmpv6_type_delete(of_oxm_icmpv6_type_t *obj) {
  * \ingroup of_oxm_icmpv6_type_masked
  */
 static inline void
-of_oxm_icmpv6_type_masked_delete(of_oxm_icmpv6_type_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_icmpv6_type_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10289,8 +10322,8 @@ of_oxm_icmpv6_type_masked_delete(of_oxm_icmpv6_type_masked_t *obj) {
  * \ingroup of_oxm_in_phy_port
  */
 static inline void
-of_oxm_in_phy_port_delete(of_oxm_in_phy_port_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_in_phy_port_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10300,8 +10333,8 @@ of_oxm_in_phy_port_delete(of_oxm_in_phy_port_t *obj) {
  * \ingroup of_oxm_in_phy_port_masked
  */
 static inline void
-of_oxm_in_phy_port_masked_delete(of_oxm_in_phy_port_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_in_phy_port_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10311,8 +10344,8 @@ of_oxm_in_phy_port_masked_delete(of_oxm_in_phy_port_masked_t *obj) {
  * \ingroup of_oxm_in_port
  */
 static inline void
-of_oxm_in_port_delete(of_oxm_in_port_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_in_port_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10322,8 +10355,8 @@ of_oxm_in_port_delete(of_oxm_in_port_t *obj) {
  * \ingroup of_oxm_in_port_masked
  */
 static inline void
-of_oxm_in_port_masked_delete(of_oxm_in_port_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_in_port_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10333,8 +10366,8 @@ of_oxm_in_port_masked_delete(of_oxm_in_port_masked_t *obj) {
  * \ingroup of_oxm_ip_dscp
  */
 static inline void
-of_oxm_ip_dscp_delete(of_oxm_ip_dscp_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ip_dscp_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10344,8 +10377,8 @@ of_oxm_ip_dscp_delete(of_oxm_ip_dscp_t *obj) {
  * \ingroup of_oxm_ip_dscp_masked
  */
 static inline void
-of_oxm_ip_dscp_masked_delete(of_oxm_ip_dscp_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ip_dscp_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10355,8 +10388,8 @@ of_oxm_ip_dscp_masked_delete(of_oxm_ip_dscp_masked_t *obj) {
  * \ingroup of_oxm_ip_ecn
  */
 static inline void
-of_oxm_ip_ecn_delete(of_oxm_ip_ecn_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ip_ecn_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10366,8 +10399,8 @@ of_oxm_ip_ecn_delete(of_oxm_ip_ecn_t *obj) {
  * \ingroup of_oxm_ip_ecn_masked
  */
 static inline void
-of_oxm_ip_ecn_masked_delete(of_oxm_ip_ecn_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ip_ecn_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10377,8 +10410,8 @@ of_oxm_ip_ecn_masked_delete(of_oxm_ip_ecn_masked_t *obj) {
  * \ingroup of_oxm_ip_proto
  */
 static inline void
-of_oxm_ip_proto_delete(of_oxm_ip_proto_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ip_proto_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10388,8 +10421,8 @@ of_oxm_ip_proto_delete(of_oxm_ip_proto_t *obj) {
  * \ingroup of_oxm_ip_proto_masked
  */
 static inline void
-of_oxm_ip_proto_masked_delete(of_oxm_ip_proto_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ip_proto_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10399,8 +10432,8 @@ of_oxm_ip_proto_masked_delete(of_oxm_ip_proto_masked_t *obj) {
  * \ingroup of_oxm_ipv4_dst
  */
 static inline void
-of_oxm_ipv4_dst_delete(of_oxm_ipv4_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv4_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10410,8 +10443,8 @@ of_oxm_ipv4_dst_delete(of_oxm_ipv4_dst_t *obj) {
  * \ingroup of_oxm_ipv4_dst_masked
  */
 static inline void
-of_oxm_ipv4_dst_masked_delete(of_oxm_ipv4_dst_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv4_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10421,8 +10454,8 @@ of_oxm_ipv4_dst_masked_delete(of_oxm_ipv4_dst_masked_t *obj) {
  * \ingroup of_oxm_ipv4_src
  */
 static inline void
-of_oxm_ipv4_src_delete(of_oxm_ipv4_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv4_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10432,8 +10465,8 @@ of_oxm_ipv4_src_delete(of_oxm_ipv4_src_t *obj) {
  * \ingroup of_oxm_ipv4_src_masked
  */
 static inline void
-of_oxm_ipv4_src_masked_delete(of_oxm_ipv4_src_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv4_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10443,8 +10476,8 @@ of_oxm_ipv4_src_masked_delete(of_oxm_ipv4_src_masked_t *obj) {
  * \ingroup of_oxm_ipv6_dst
  */
 static inline void
-of_oxm_ipv6_dst_delete(of_oxm_ipv6_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10454,8 +10487,8 @@ of_oxm_ipv6_dst_delete(of_oxm_ipv6_dst_t *obj) {
  * \ingroup of_oxm_ipv6_dst_masked
  */
 static inline void
-of_oxm_ipv6_dst_masked_delete(of_oxm_ipv6_dst_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10465,8 +10498,8 @@ of_oxm_ipv6_dst_masked_delete(of_oxm_ipv6_dst_masked_t *obj) {
  * \ingroup of_oxm_ipv6_flabel
  */
 static inline void
-of_oxm_ipv6_flabel_delete(of_oxm_ipv6_flabel_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_flabel_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10476,8 +10509,8 @@ of_oxm_ipv6_flabel_delete(of_oxm_ipv6_flabel_t *obj) {
  * \ingroup of_oxm_ipv6_flabel_masked
  */
 static inline void
-of_oxm_ipv6_flabel_masked_delete(of_oxm_ipv6_flabel_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_flabel_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10487,8 +10520,8 @@ of_oxm_ipv6_flabel_masked_delete(of_oxm_ipv6_flabel_masked_t *obj) {
  * \ingroup of_oxm_ipv6_nd_sll
  */
 static inline void
-of_oxm_ipv6_nd_sll_delete(of_oxm_ipv6_nd_sll_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_nd_sll_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10498,8 +10531,8 @@ of_oxm_ipv6_nd_sll_delete(of_oxm_ipv6_nd_sll_t *obj) {
  * \ingroup of_oxm_ipv6_nd_sll_masked
  */
 static inline void
-of_oxm_ipv6_nd_sll_masked_delete(of_oxm_ipv6_nd_sll_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_nd_sll_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10509,8 +10542,8 @@ of_oxm_ipv6_nd_sll_masked_delete(of_oxm_ipv6_nd_sll_masked_t *obj) {
  * \ingroup of_oxm_ipv6_nd_target
  */
 static inline void
-of_oxm_ipv6_nd_target_delete(of_oxm_ipv6_nd_target_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_nd_target_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10520,8 +10553,8 @@ of_oxm_ipv6_nd_target_delete(of_oxm_ipv6_nd_target_t *obj) {
  * \ingroup of_oxm_ipv6_nd_target_masked
  */
 static inline void
-of_oxm_ipv6_nd_target_masked_delete(of_oxm_ipv6_nd_target_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_nd_target_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10531,8 +10564,8 @@ of_oxm_ipv6_nd_target_masked_delete(of_oxm_ipv6_nd_target_masked_t *obj) {
  * \ingroup of_oxm_ipv6_nd_tll
  */
 static inline void
-of_oxm_ipv6_nd_tll_delete(of_oxm_ipv6_nd_tll_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_nd_tll_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10542,8 +10575,8 @@ of_oxm_ipv6_nd_tll_delete(of_oxm_ipv6_nd_tll_t *obj) {
  * \ingroup of_oxm_ipv6_nd_tll_masked
  */
 static inline void
-of_oxm_ipv6_nd_tll_masked_delete(of_oxm_ipv6_nd_tll_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_nd_tll_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10553,8 +10586,8 @@ of_oxm_ipv6_nd_tll_masked_delete(of_oxm_ipv6_nd_tll_masked_t *obj) {
  * \ingroup of_oxm_ipv6_src
  */
 static inline void
-of_oxm_ipv6_src_delete(of_oxm_ipv6_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10564,8 +10597,8 @@ of_oxm_ipv6_src_delete(of_oxm_ipv6_src_t *obj) {
  * \ingroup of_oxm_ipv6_src_masked
  */
 static inline void
-of_oxm_ipv6_src_masked_delete(of_oxm_ipv6_src_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_ipv6_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10575,8 +10608,8 @@ of_oxm_ipv6_src_masked_delete(of_oxm_ipv6_src_masked_t *obj) {
  * \ingroup of_oxm_metadata
  */
 static inline void
-of_oxm_metadata_delete(of_oxm_metadata_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_metadata_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10586,8 +10619,8 @@ of_oxm_metadata_delete(of_oxm_metadata_t *obj) {
  * \ingroup of_oxm_metadata_masked
  */
 static inline void
-of_oxm_metadata_masked_delete(of_oxm_metadata_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_metadata_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10597,8 +10630,8 @@ of_oxm_metadata_masked_delete(of_oxm_metadata_masked_t *obj) {
  * \ingroup of_oxm_mpls_bos
  */
 static inline void
-of_oxm_mpls_bos_delete(of_oxm_mpls_bos_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_mpls_bos_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10608,8 +10641,8 @@ of_oxm_mpls_bos_delete(of_oxm_mpls_bos_t *obj) {
  * \ingroup of_oxm_mpls_bos_masked
  */
 static inline void
-of_oxm_mpls_bos_masked_delete(of_oxm_mpls_bos_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_mpls_bos_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10619,8 +10652,8 @@ of_oxm_mpls_bos_masked_delete(of_oxm_mpls_bos_masked_t *obj) {
  * \ingroup of_oxm_mpls_label
  */
 static inline void
-of_oxm_mpls_label_delete(of_oxm_mpls_label_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_mpls_label_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10630,8 +10663,8 @@ of_oxm_mpls_label_delete(of_oxm_mpls_label_t *obj) {
  * \ingroup of_oxm_mpls_label_masked
  */
 static inline void
-of_oxm_mpls_label_masked_delete(of_oxm_mpls_label_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_mpls_label_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10641,8 +10674,8 @@ of_oxm_mpls_label_masked_delete(of_oxm_mpls_label_masked_t *obj) {
  * \ingroup of_oxm_mpls_tc
  */
 static inline void
-of_oxm_mpls_tc_delete(of_oxm_mpls_tc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_mpls_tc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10652,8 +10685,8 @@ of_oxm_mpls_tc_delete(of_oxm_mpls_tc_t *obj) {
  * \ingroup of_oxm_mpls_tc_masked
  */
 static inline void
-of_oxm_mpls_tc_masked_delete(of_oxm_mpls_tc_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_mpls_tc_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10663,8 +10696,8 @@ of_oxm_mpls_tc_masked_delete(of_oxm_mpls_tc_masked_t *obj) {
  * \ingroup of_oxm_sctp_dst
  */
 static inline void
-of_oxm_sctp_dst_delete(of_oxm_sctp_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_sctp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10674,8 +10707,8 @@ of_oxm_sctp_dst_delete(of_oxm_sctp_dst_t *obj) {
  * \ingroup of_oxm_sctp_dst_masked
  */
 static inline void
-of_oxm_sctp_dst_masked_delete(of_oxm_sctp_dst_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_sctp_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10685,8 +10718,8 @@ of_oxm_sctp_dst_masked_delete(of_oxm_sctp_dst_masked_t *obj) {
  * \ingroup of_oxm_sctp_src
  */
 static inline void
-of_oxm_sctp_src_delete(of_oxm_sctp_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_sctp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10696,8 +10729,8 @@ of_oxm_sctp_src_delete(of_oxm_sctp_src_t *obj) {
  * \ingroup of_oxm_sctp_src_masked
  */
 static inline void
-of_oxm_sctp_src_masked_delete(of_oxm_sctp_src_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_sctp_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10707,8 +10740,8 @@ of_oxm_sctp_src_masked_delete(of_oxm_sctp_src_masked_t *obj) {
  * \ingroup of_oxm_tcp_dst
  */
 static inline void
-of_oxm_tcp_dst_delete(of_oxm_tcp_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_tcp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10718,8 +10751,8 @@ of_oxm_tcp_dst_delete(of_oxm_tcp_dst_t *obj) {
  * \ingroup of_oxm_tcp_dst_masked
  */
 static inline void
-of_oxm_tcp_dst_masked_delete(of_oxm_tcp_dst_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_tcp_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10729,8 +10762,8 @@ of_oxm_tcp_dst_masked_delete(of_oxm_tcp_dst_masked_t *obj) {
  * \ingroup of_oxm_tcp_src
  */
 static inline void
-of_oxm_tcp_src_delete(of_oxm_tcp_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_tcp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10740,8 +10773,8 @@ of_oxm_tcp_src_delete(of_oxm_tcp_src_t *obj) {
  * \ingroup of_oxm_tcp_src_masked
  */
 static inline void
-of_oxm_tcp_src_masked_delete(of_oxm_tcp_src_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_tcp_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10751,8 +10784,8 @@ of_oxm_tcp_src_masked_delete(of_oxm_tcp_src_masked_t *obj) {
  * \ingroup of_oxm_tunnel_id
  */
 static inline void
-of_oxm_tunnel_id_delete(of_oxm_tunnel_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_tunnel_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10762,8 +10795,8 @@ of_oxm_tunnel_id_delete(of_oxm_tunnel_id_t *obj) {
  * \ingroup of_oxm_tunnel_id_masked
  */
 static inline void
-of_oxm_tunnel_id_masked_delete(of_oxm_tunnel_id_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_tunnel_id_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10773,8 +10806,8 @@ of_oxm_tunnel_id_masked_delete(of_oxm_tunnel_id_masked_t *obj) {
  * \ingroup of_oxm_udp_dst
  */
 static inline void
-of_oxm_udp_dst_delete(of_oxm_udp_dst_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_udp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10784,8 +10817,8 @@ of_oxm_udp_dst_delete(of_oxm_udp_dst_t *obj) {
  * \ingroup of_oxm_udp_dst_masked
  */
 static inline void
-of_oxm_udp_dst_masked_delete(of_oxm_udp_dst_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_udp_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10795,8 +10828,8 @@ of_oxm_udp_dst_masked_delete(of_oxm_udp_dst_masked_t *obj) {
  * \ingroup of_oxm_udp_src
  */
 static inline void
-of_oxm_udp_src_delete(of_oxm_udp_src_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_udp_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10806,8 +10839,8 @@ of_oxm_udp_src_delete(of_oxm_udp_src_t *obj) {
  * \ingroup of_oxm_udp_src_masked
  */
 static inline void
-of_oxm_udp_src_masked_delete(of_oxm_udp_src_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_udp_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10817,8 +10850,8 @@ of_oxm_udp_src_masked_delete(of_oxm_udp_src_masked_t *obj) {
  * \ingroup of_oxm_vlan_pcp
  */
 static inline void
-of_oxm_vlan_pcp_delete(of_oxm_vlan_pcp_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_vlan_pcp_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10828,8 +10861,8 @@ of_oxm_vlan_pcp_delete(of_oxm_vlan_pcp_t *obj) {
  * \ingroup of_oxm_vlan_pcp_masked
  */
 static inline void
-of_oxm_vlan_pcp_masked_delete(of_oxm_vlan_pcp_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_vlan_pcp_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10839,8 +10872,8 @@ of_oxm_vlan_pcp_masked_delete(of_oxm_vlan_pcp_masked_t *obj) {
  * \ingroup of_oxm_vlan_vid
  */
 static inline void
-of_oxm_vlan_vid_delete(of_oxm_vlan_vid_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_vlan_vid_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10850,8 +10883,8 @@ of_oxm_vlan_vid_delete(of_oxm_vlan_vid_t *obj) {
  * \ingroup of_oxm_vlan_vid_masked
  */
 static inline void
-of_oxm_vlan_vid_masked_delete(of_oxm_vlan_vid_masked_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_oxm_vlan_vid_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10861,8 +10894,8 @@ of_oxm_vlan_vid_masked_delete(of_oxm_vlan_vid_masked_t *obj) {
  * \ingroup of_packet_queue
  */
 static inline void
-of_packet_queue_delete(of_packet_queue_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_packet_queue_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10872,8 +10905,8 @@ of_packet_queue_delete(of_packet_queue_t *obj) {
  * \ingroup of_port_desc
  */
 static inline void
-of_port_desc_delete(of_port_desc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10883,8 +10916,8 @@ of_port_desc_delete(of_port_desc_t *obj) {
  * \ingroup of_port_desc_prop
  */
 static inline void
-of_port_desc_prop_delete(of_port_desc_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10894,8 +10927,8 @@ of_port_desc_prop_delete(of_port_desc_prop_t *obj) {
  * \ingroup of_port_desc_prop_ethernet
  */
 static inline void
-of_port_desc_prop_ethernet_delete(of_port_desc_prop_ethernet_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_prop_ethernet_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10905,8 +10938,8 @@ of_port_desc_prop_ethernet_delete(of_port_desc_prop_ethernet_t *obj) {
  * \ingroup of_port_desc_prop_experimenter
  */
 static inline void
-of_port_desc_prop_experimenter_delete(of_port_desc_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10916,8 +10949,8 @@ of_port_desc_prop_experimenter_delete(of_port_desc_prop_experimenter_t *obj) {
  * \ingroup of_port_desc_prop_header
  */
 static inline void
-of_port_desc_prop_header_delete(of_port_desc_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10927,8 +10960,8 @@ of_port_desc_prop_header_delete(of_port_desc_prop_header_t *obj) {
  * \ingroup of_port_desc_prop_optical
  */
 static inline void
-of_port_desc_prop_optical_delete(of_port_desc_prop_optical_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_desc_prop_optical_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10938,8 +10971,8 @@ of_port_desc_prop_optical_delete(of_port_desc_prop_optical_t *obj) {
  * \ingroup of_port_mod_prop
  */
 static inline void
-of_port_mod_prop_delete(of_port_mod_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10949,8 +10982,8 @@ of_port_mod_prop_delete(of_port_mod_prop_t *obj) {
  * \ingroup of_port_mod_prop_ethernet
  */
 static inline void
-of_port_mod_prop_ethernet_delete(of_port_mod_prop_ethernet_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_prop_ethernet_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10960,8 +10993,8 @@ of_port_mod_prop_ethernet_delete(of_port_mod_prop_ethernet_t *obj) {
  * \ingroup of_port_mod_prop_experimenter
  */
 static inline void
-of_port_mod_prop_experimenter_delete(of_port_mod_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10971,8 +11004,8 @@ of_port_mod_prop_experimenter_delete(of_port_mod_prop_experimenter_t *obj) {
  * \ingroup of_port_mod_prop_header
  */
 static inline void
-of_port_mod_prop_header_delete(of_port_mod_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10982,8 +11015,8 @@ of_port_mod_prop_header_delete(of_port_mod_prop_header_t *obj) {
  * \ingroup of_port_mod_prop_optical
  */
 static inline void
-of_port_mod_prop_optical_delete(of_port_mod_prop_optical_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_mod_prop_optical_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -10993,8 +11026,8 @@ of_port_mod_prop_optical_delete(of_port_mod_prop_optical_t *obj) {
  * \ingroup of_port_stats_entry
  */
 static inline void
-of_port_stats_entry_delete(of_port_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11004,8 +11037,8 @@ of_port_stats_entry_delete(of_port_stats_entry_t *obj) {
  * \ingroup of_port_stats_prop
  */
 static inline void
-of_port_stats_prop_delete(of_port_stats_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11015,8 +11048,8 @@ of_port_stats_prop_delete(of_port_stats_prop_t *obj) {
  * \ingroup of_port_stats_prop_ethernet
  */
 static inline void
-of_port_stats_prop_ethernet_delete(of_port_stats_prop_ethernet_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_prop_ethernet_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11026,8 +11059,8 @@ of_port_stats_prop_ethernet_delete(of_port_stats_prop_ethernet_t *obj) {
  * \ingroup of_port_stats_prop_experimenter
  */
 static inline void
-of_port_stats_prop_experimenter_delete(of_port_stats_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11037,8 +11070,8 @@ of_port_stats_prop_experimenter_delete(of_port_stats_prop_experimenter_t *obj) {
  * \ingroup of_port_stats_prop_header
  */
 static inline void
-of_port_stats_prop_header_delete(of_port_stats_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11048,8 +11081,8 @@ of_port_stats_prop_header_delete(of_port_stats_prop_header_t *obj) {
  * \ingroup of_port_stats_prop_optical
  */
 static inline void
-of_port_stats_prop_optical_delete(of_port_stats_prop_optical_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_port_stats_prop_optical_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11059,8 +11092,8 @@ of_port_stats_prop_optical_delete(of_port_stats_prop_optical_t *obj) {
  * \ingroup of_queue_desc
  */
 static inline void
-of_queue_desc_delete(of_queue_desc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11070,8 +11103,8 @@ of_queue_desc_delete(of_queue_desc_t *obj) {
  * \ingroup of_queue_desc_prop
  */
 static inline void
-of_queue_desc_prop_delete(of_queue_desc_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11081,8 +11114,8 @@ of_queue_desc_prop_delete(of_queue_desc_prop_t *obj) {
  * \ingroup of_queue_desc_prop_experimenter
  */
 static inline void
-of_queue_desc_prop_experimenter_delete(of_queue_desc_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11092,8 +11125,8 @@ of_queue_desc_prop_experimenter_delete(of_queue_desc_prop_experimenter_t *obj) {
  * \ingroup of_queue_desc_prop_header
  */
 static inline void
-of_queue_desc_prop_header_delete(of_queue_desc_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11103,8 +11136,8 @@ of_queue_desc_prop_header_delete(of_queue_desc_prop_header_t *obj) {
  * \ingroup of_queue_desc_prop_max_rate
  */
 static inline void
-of_queue_desc_prop_max_rate_delete(of_queue_desc_prop_max_rate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_prop_max_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11114,8 +11147,8 @@ of_queue_desc_prop_max_rate_delete(of_queue_desc_prop_max_rate_t *obj) {
  * \ingroup of_queue_desc_prop_min_rate
  */
 static inline void
-of_queue_desc_prop_min_rate_delete(of_queue_desc_prop_min_rate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_desc_prop_min_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11125,8 +11158,8 @@ of_queue_desc_prop_min_rate_delete(of_queue_desc_prop_min_rate_t *obj) {
  * \ingroup of_queue_prop
  */
 static inline void
-of_queue_prop_delete(of_queue_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11136,8 +11169,8 @@ of_queue_prop_delete(of_queue_prop_t *obj) {
  * \ingroup of_queue_prop_experimenter
  */
 static inline void
-of_queue_prop_experimenter_delete(of_queue_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11147,8 +11180,8 @@ of_queue_prop_experimenter_delete(of_queue_prop_experimenter_t *obj) {
  * \ingroup of_queue_prop_header
  */
 static inline void
-of_queue_prop_header_delete(of_queue_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11158,8 +11191,8 @@ of_queue_prop_header_delete(of_queue_prop_header_t *obj) {
  * \ingroup of_queue_prop_max_rate
  */
 static inline void
-of_queue_prop_max_rate_delete(of_queue_prop_max_rate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_prop_max_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11169,8 +11202,8 @@ of_queue_prop_max_rate_delete(of_queue_prop_max_rate_t *obj) {
  * \ingroup of_queue_prop_min_rate
  */
 static inline void
-of_queue_prop_min_rate_delete(of_queue_prop_min_rate_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_prop_min_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11180,8 +11213,8 @@ of_queue_prop_min_rate_delete(of_queue_prop_min_rate_t *obj) {
  * \ingroup of_queue_stats_entry
  */
 static inline void
-of_queue_stats_entry_delete(of_queue_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11191,8 +11224,8 @@ of_queue_stats_entry_delete(of_queue_stats_entry_t *obj) {
  * \ingroup of_queue_stats_prop
  */
 static inline void
-of_queue_stats_prop_delete(of_queue_stats_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_stats_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11202,8 +11235,8 @@ of_queue_stats_prop_delete(of_queue_stats_prop_t *obj) {
  * \ingroup of_queue_stats_prop_experimenter
  */
 static inline void
-of_queue_stats_prop_experimenter_delete(of_queue_stats_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_stats_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11213,8 +11246,8 @@ of_queue_stats_prop_experimenter_delete(of_queue_stats_prop_experimenter_t *obj)
  * \ingroup of_queue_stats_prop_header
  */
 static inline void
-of_queue_stats_prop_header_delete(of_queue_stats_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_queue_stats_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11224,8 +11257,8 @@ of_queue_stats_prop_header_delete(of_queue_stats_prop_header_t *obj) {
  * \ingroup of_role_prop
  */
 static inline void
-of_role_prop_delete(of_role_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11235,8 +11268,8 @@ of_role_prop_delete(of_role_prop_t *obj) {
  * \ingroup of_role_prop_experimenter
  */
 static inline void
-of_role_prop_experimenter_delete(of_role_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11246,8 +11279,8 @@ of_role_prop_experimenter_delete(of_role_prop_experimenter_t *obj) {
  * \ingroup of_role_prop_header
  */
 static inline void
-of_role_prop_header_delete(of_role_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_role_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11257,8 +11290,8 @@ of_role_prop_header_delete(of_role_prop_header_t *obj) {
  * \ingroup of_table_desc
  */
 static inline void
-of_table_desc_delete(of_table_desc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_desc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11268,8 +11301,8 @@ of_table_desc_delete(of_table_desc_t *obj) {
  * \ingroup of_table_feature_prop
  */
 static inline void
-of_table_feature_prop_delete(of_table_feature_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11279,8 +11312,8 @@ of_table_feature_prop_delete(of_table_feature_prop_t *obj) {
  * \ingroup of_table_feature_prop_apply_actions
  */
 static inline void
-of_table_feature_prop_apply_actions_delete(of_table_feature_prop_apply_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_apply_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11290,8 +11323,8 @@ of_table_feature_prop_apply_actions_delete(of_table_feature_prop_apply_actions_t
  * \ingroup of_table_feature_prop_apply_actions_miss
  */
 static inline void
-of_table_feature_prop_apply_actions_miss_delete(of_table_feature_prop_apply_actions_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_apply_actions_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11301,8 +11334,8 @@ of_table_feature_prop_apply_actions_miss_delete(of_table_feature_prop_apply_acti
  * \ingroup of_table_feature_prop_apply_setfield
  */
 static inline void
-of_table_feature_prop_apply_setfield_delete(of_table_feature_prop_apply_setfield_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_apply_setfield_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11312,8 +11345,8 @@ of_table_feature_prop_apply_setfield_delete(of_table_feature_prop_apply_setfield
  * \ingroup of_table_feature_prop_apply_setfield_miss
  */
 static inline void
-of_table_feature_prop_apply_setfield_miss_delete(of_table_feature_prop_apply_setfield_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_apply_setfield_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11323,8 +11356,8 @@ of_table_feature_prop_apply_setfield_miss_delete(of_table_feature_prop_apply_set
  * \ingroup of_table_feature_prop_experimenter
  */
 static inline void
-of_table_feature_prop_experimenter_delete(of_table_feature_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11334,8 +11367,8 @@ of_table_feature_prop_experimenter_delete(of_table_feature_prop_experimenter_t *
  * \ingroup of_table_feature_prop_experimenter_miss
  */
 static inline void
-of_table_feature_prop_experimenter_miss_delete(of_table_feature_prop_experimenter_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_experimenter_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11345,8 +11378,8 @@ of_table_feature_prop_experimenter_miss_delete(of_table_feature_prop_experimente
  * \ingroup of_table_feature_prop_header
  */
 static inline void
-of_table_feature_prop_header_delete(of_table_feature_prop_header_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_header_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11356,8 +11389,8 @@ of_table_feature_prop_header_delete(of_table_feature_prop_header_t *obj) {
  * \ingroup of_table_feature_prop_instructions
  */
 static inline void
-of_table_feature_prop_instructions_delete(of_table_feature_prop_instructions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_instructions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11367,8 +11400,8 @@ of_table_feature_prop_instructions_delete(of_table_feature_prop_instructions_t *
  * \ingroup of_table_feature_prop_instructions_miss
  */
 static inline void
-of_table_feature_prop_instructions_miss_delete(of_table_feature_prop_instructions_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_instructions_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11378,8 +11411,8 @@ of_table_feature_prop_instructions_miss_delete(of_table_feature_prop_instruction
  * \ingroup of_table_feature_prop_match
  */
 static inline void
-of_table_feature_prop_match_delete(of_table_feature_prop_match_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_match_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11389,8 +11422,8 @@ of_table_feature_prop_match_delete(of_table_feature_prop_match_t *obj) {
  * \ingroup of_table_feature_prop_next_tables
  */
 static inline void
-of_table_feature_prop_next_tables_delete(of_table_feature_prop_next_tables_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_next_tables_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11400,8 +11433,8 @@ of_table_feature_prop_next_tables_delete(of_table_feature_prop_next_tables_t *ob
  * \ingroup of_table_feature_prop_next_tables_miss
  */
 static inline void
-of_table_feature_prop_next_tables_miss_delete(of_table_feature_prop_next_tables_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_next_tables_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11411,8 +11444,8 @@ of_table_feature_prop_next_tables_miss_delete(of_table_feature_prop_next_tables_
  * \ingroup of_table_feature_prop_table_sync_from
  */
 static inline void
-of_table_feature_prop_table_sync_from_delete(of_table_feature_prop_table_sync_from_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_table_sync_from_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11422,8 +11455,8 @@ of_table_feature_prop_table_sync_from_delete(of_table_feature_prop_table_sync_fr
  * \ingroup of_table_feature_prop_wildcards
  */
 static inline void
-of_table_feature_prop_wildcards_delete(of_table_feature_prop_wildcards_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_wildcards_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11433,8 +11466,8 @@ of_table_feature_prop_wildcards_delete(of_table_feature_prop_wildcards_t *obj) {
  * \ingroup of_table_feature_prop_write_actions
  */
 static inline void
-of_table_feature_prop_write_actions_delete(of_table_feature_prop_write_actions_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_write_actions_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11444,8 +11477,8 @@ of_table_feature_prop_write_actions_delete(of_table_feature_prop_write_actions_t
  * \ingroup of_table_feature_prop_write_actions_miss
  */
 static inline void
-of_table_feature_prop_write_actions_miss_delete(of_table_feature_prop_write_actions_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_write_actions_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11455,8 +11488,8 @@ of_table_feature_prop_write_actions_miss_delete(of_table_feature_prop_write_acti
  * \ingroup of_table_feature_prop_write_setfield
  */
 static inline void
-of_table_feature_prop_write_setfield_delete(of_table_feature_prop_write_setfield_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_write_setfield_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11466,8 +11499,8 @@ of_table_feature_prop_write_setfield_delete(of_table_feature_prop_write_setfield
  * \ingroup of_table_feature_prop_write_setfield_miss
  */
 static inline void
-of_table_feature_prop_write_setfield_miss_delete(of_table_feature_prop_write_setfield_miss_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_feature_prop_write_setfield_miss_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11477,8 +11510,8 @@ of_table_feature_prop_write_setfield_miss_delete(of_table_feature_prop_write_set
  * \ingroup of_table_features
  */
 static inline void
-of_table_features_delete(of_table_features_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_features_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11488,8 +11521,8 @@ of_table_features_delete(of_table_features_t *obj) {
  * \ingroup of_table_mod_prop
  */
 static inline void
-of_table_mod_prop_delete(of_table_mod_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_mod_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11499,8 +11532,8 @@ of_table_mod_prop_delete(of_table_mod_prop_t *obj) {
  * \ingroup of_table_mod_prop_eviction
  */
 static inline void
-of_table_mod_prop_eviction_delete(of_table_mod_prop_eviction_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_mod_prop_eviction_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11510,8 +11543,8 @@ of_table_mod_prop_eviction_delete(of_table_mod_prop_eviction_t *obj) {
  * \ingroup of_table_mod_prop_experimenter
  */
 static inline void
-of_table_mod_prop_experimenter_delete(of_table_mod_prop_experimenter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_mod_prop_experimenter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11521,8 +11554,8 @@ of_table_mod_prop_experimenter_delete(of_table_mod_prop_experimenter_t *obj) {
  * \ingroup of_table_mod_prop_vacancy
  */
 static inline void
-of_table_mod_prop_vacancy_delete(of_table_mod_prop_vacancy_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_mod_prop_vacancy_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11532,8 +11565,8 @@ of_table_mod_prop_vacancy_delete(of_table_mod_prop_vacancy_t *obj) {
  * \ingroup of_table_stats_entry
  */
 static inline void
-of_table_stats_entry_delete(of_table_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_table_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11543,8 +11576,8 @@ of_table_stats_entry_delete(of_table_stats_entry_t *obj) {
  * \ingroup of_uint32
  */
 static inline void
-of_uint32_delete(of_uint32_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_uint32_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11554,8 +11587,8 @@ of_uint32_delete(of_uint32_t *obj) {
  * \ingroup of_uint64
  */
 static inline void
-of_uint64_delete(of_uint64_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_uint64_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11565,8 +11598,8 @@ of_uint64_delete(of_uint64_t *obj) {
  * \ingroup of_uint8
  */
 static inline void
-of_uint8_delete(of_uint8_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_uint8_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11576,8 +11609,8 @@ of_uint8_delete(of_uint8_t *obj) {
  * \ingroup of_list_action
  */
 static inline void
-of_list_action_delete(of_list_action_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_action_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11587,8 +11620,8 @@ of_list_action_delete(of_list_action_t *obj) {
  * \ingroup of_list_action_id
  */
 static inline void
-of_list_action_id_delete(of_list_action_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_action_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11598,8 +11631,8 @@ of_list_action_id_delete(of_list_action_id_t *obj) {
  * \ingroup of_list_async_config_prop
  */
 static inline void
-of_list_async_config_prop_delete(of_list_async_config_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_async_config_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11609,8 +11642,8 @@ of_list_async_config_prop_delete(of_list_async_config_prop_t *obj) {
  * \ingroup of_list_bsn_controller_connection
  */
 static inline void
-of_list_bsn_controller_connection_delete(of_list_bsn_controller_connection_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_controller_connection_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11620,8 +11653,8 @@ of_list_bsn_controller_connection_delete(of_list_bsn_controller_connection_t *ob
  * \ingroup of_list_bsn_debug_counter_desc_stats_entry
  */
 static inline void
-of_list_bsn_debug_counter_desc_stats_entry_delete(of_list_bsn_debug_counter_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_debug_counter_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11631,8 +11664,8 @@ of_list_bsn_debug_counter_desc_stats_entry_delete(of_list_bsn_debug_counter_desc
  * \ingroup of_list_bsn_debug_counter_stats_entry
  */
 static inline void
-of_list_bsn_debug_counter_stats_entry_delete(of_list_bsn_debug_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_debug_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11642,8 +11675,8 @@ of_list_bsn_debug_counter_stats_entry_delete(of_list_bsn_debug_counter_stats_ent
  * \ingroup of_list_bsn_flow_checksum_bucket_stats_entry
  */
 static inline void
-of_list_bsn_flow_checksum_bucket_stats_entry_delete(of_list_bsn_flow_checksum_bucket_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_flow_checksum_bucket_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11653,8 +11686,8 @@ of_list_bsn_flow_checksum_bucket_stats_entry_delete(of_list_bsn_flow_checksum_bu
  * \ingroup of_list_bsn_gentable_bucket_stats_entry
  */
 static inline void
-of_list_bsn_gentable_bucket_stats_entry_delete(of_list_bsn_gentable_bucket_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_gentable_bucket_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11664,8 +11697,8 @@ of_list_bsn_gentable_bucket_stats_entry_delete(of_list_bsn_gentable_bucket_stats
  * \ingroup of_list_bsn_gentable_desc_stats_entry
  */
 static inline void
-of_list_bsn_gentable_desc_stats_entry_delete(of_list_bsn_gentable_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_gentable_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11675,8 +11708,8 @@ of_list_bsn_gentable_desc_stats_entry_delete(of_list_bsn_gentable_desc_stats_ent
  * \ingroup of_list_bsn_gentable_entry_desc_stats_entry
  */
 static inline void
-of_list_bsn_gentable_entry_desc_stats_entry_delete(of_list_bsn_gentable_entry_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_gentable_entry_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11686,8 +11719,8 @@ of_list_bsn_gentable_entry_desc_stats_entry_delete(of_list_bsn_gentable_entry_de
  * \ingroup of_list_bsn_gentable_entry_stats_entry
  */
 static inline void
-of_list_bsn_gentable_entry_stats_entry_delete(of_list_bsn_gentable_entry_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_gentable_entry_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11697,8 +11730,8 @@ of_list_bsn_gentable_entry_stats_entry_delete(of_list_bsn_gentable_entry_stats_e
  * \ingroup of_list_bsn_gentable_stats_entry
  */
 static inline void
-of_list_bsn_gentable_stats_entry_delete(of_list_bsn_gentable_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_gentable_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11708,8 +11741,8 @@ of_list_bsn_gentable_stats_entry_delete(of_list_bsn_gentable_stats_entry_t *obj)
  * \ingroup of_list_bsn_interface
  */
 static inline void
-of_list_bsn_interface_delete(of_list_bsn_interface_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_interface_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11719,8 +11752,8 @@ of_list_bsn_interface_delete(of_list_bsn_interface_t *obj) {
  * \ingroup of_list_bsn_lacp_stats_entry
  */
 static inline void
-of_list_bsn_lacp_stats_entry_delete(of_list_bsn_lacp_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_lacp_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11730,8 +11763,8 @@ of_list_bsn_lacp_stats_entry_delete(of_list_bsn_lacp_stats_entry_t *obj) {
  * \ingroup of_list_bsn_port_counter_stats_entry
  */
 static inline void
-of_list_bsn_port_counter_stats_entry_delete(of_list_bsn_port_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_port_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11741,8 +11774,8 @@ of_list_bsn_port_counter_stats_entry_delete(of_list_bsn_port_counter_stats_entry
  * \ingroup of_list_bsn_switch_pipeline_stats_entry
  */
 static inline void
-of_list_bsn_switch_pipeline_stats_entry_delete(of_list_bsn_switch_pipeline_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_switch_pipeline_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11752,8 +11785,8 @@ of_list_bsn_switch_pipeline_stats_entry_delete(of_list_bsn_switch_pipeline_stats
  * \ingroup of_list_bsn_table_checksum_stats_entry
  */
 static inline void
-of_list_bsn_table_checksum_stats_entry_delete(of_list_bsn_table_checksum_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_table_checksum_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11763,8 +11796,8 @@ of_list_bsn_table_checksum_stats_entry_delete(of_list_bsn_table_checksum_stats_e
  * \ingroup of_list_bsn_tlv
  */
 static inline void
-of_list_bsn_tlv_delete(of_list_bsn_tlv_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_tlv_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11774,8 +11807,8 @@ of_list_bsn_tlv_delete(of_list_bsn_tlv_t *obj) {
  * \ingroup of_list_bsn_vlan_counter_stats_entry
  */
 static inline void
-of_list_bsn_vlan_counter_stats_entry_delete(of_list_bsn_vlan_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_vlan_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11785,8 +11818,8 @@ of_list_bsn_vlan_counter_stats_entry_delete(of_list_bsn_vlan_counter_stats_entry
  * \ingroup of_list_bsn_vrf_counter_stats_entry
  */
 static inline void
-of_list_bsn_vrf_counter_stats_entry_delete(of_list_bsn_vrf_counter_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bsn_vrf_counter_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11796,8 +11829,8 @@ of_list_bsn_vrf_counter_stats_entry_delete(of_list_bsn_vrf_counter_stats_entry_t
  * \ingroup of_list_bucket
  */
 static inline void
-of_list_bucket_delete(of_list_bucket_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bucket_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11807,8 +11840,8 @@ of_list_bucket_delete(of_list_bucket_t *obj) {
  * \ingroup of_list_bucket_counter
  */
 static inline void
-of_list_bucket_counter_delete(of_list_bucket_counter_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bucket_counter_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11818,8 +11851,8 @@ of_list_bucket_counter_delete(of_list_bucket_counter_t *obj) {
  * \ingroup of_list_bundle_prop
  */
 static inline void
-of_list_bundle_prop_delete(of_list_bundle_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_bundle_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11829,8 +11862,8 @@ of_list_bundle_prop_delete(of_list_bundle_prop_t *obj) {
  * \ingroup of_list_flow_stats_entry
  */
 static inline void
-of_list_flow_stats_entry_delete(of_list_flow_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_flow_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11840,8 +11873,8 @@ of_list_flow_stats_entry_delete(of_list_flow_stats_entry_t *obj) {
  * \ingroup of_list_group_desc_stats_entry
  */
 static inline void
-of_list_group_desc_stats_entry_delete(of_list_group_desc_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_group_desc_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11851,8 +11884,8 @@ of_list_group_desc_stats_entry_delete(of_list_group_desc_stats_entry_t *obj) {
  * \ingroup of_list_group_stats_entry
  */
 static inline void
-of_list_group_stats_entry_delete(of_list_group_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_group_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11862,8 +11895,8 @@ of_list_group_stats_entry_delete(of_list_group_stats_entry_t *obj) {
  * \ingroup of_list_hello_elem
  */
 static inline void
-of_list_hello_elem_delete(of_list_hello_elem_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_hello_elem_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11873,8 +11906,8 @@ of_list_hello_elem_delete(of_list_hello_elem_t *obj) {
  * \ingroup of_list_instruction
  */
 static inline void
-of_list_instruction_delete(of_list_instruction_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_instruction_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11884,8 +11917,8 @@ of_list_instruction_delete(of_list_instruction_t *obj) {
  * \ingroup of_list_instruction_id
  */
 static inline void
-of_list_instruction_id_delete(of_list_instruction_id_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_instruction_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11895,8 +11928,8 @@ of_list_instruction_id_delete(of_list_instruction_id_t *obj) {
  * \ingroup of_list_meter_band
  */
 static inline void
-of_list_meter_band_delete(of_list_meter_band_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_meter_band_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11906,8 +11939,8 @@ of_list_meter_band_delete(of_list_meter_band_t *obj) {
  * \ingroup of_list_meter_band_stats
  */
 static inline void
-of_list_meter_band_stats_delete(of_list_meter_band_stats_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_meter_band_stats_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11917,8 +11950,8 @@ of_list_meter_band_stats_delete(of_list_meter_band_stats_t *obj) {
  * \ingroup of_list_meter_stats
  */
 static inline void
-of_list_meter_stats_delete(of_list_meter_stats_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_meter_stats_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11928,8 +11961,8 @@ of_list_meter_stats_delete(of_list_meter_stats_t *obj) {
  * \ingroup of_list_oxm
  */
 static inline void
-of_list_oxm_delete(of_list_oxm_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_oxm_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11939,8 +11972,8 @@ of_list_oxm_delete(of_list_oxm_t *obj) {
  * \ingroup of_list_packet_queue
  */
 static inline void
-of_list_packet_queue_delete(of_list_packet_queue_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_packet_queue_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11950,8 +11983,8 @@ of_list_packet_queue_delete(of_list_packet_queue_t *obj) {
  * \ingroup of_list_port_desc
  */
 static inline void
-of_list_port_desc_delete(of_list_port_desc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_port_desc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11961,8 +11994,8 @@ of_list_port_desc_delete(of_list_port_desc_t *obj) {
  * \ingroup of_list_port_desc_prop
  */
 static inline void
-of_list_port_desc_prop_delete(of_list_port_desc_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_port_desc_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11972,8 +12005,8 @@ of_list_port_desc_prop_delete(of_list_port_desc_prop_t *obj) {
  * \ingroup of_list_port_mod_prop
  */
 static inline void
-of_list_port_mod_prop_delete(of_list_port_mod_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_port_mod_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11983,8 +12016,8 @@ of_list_port_mod_prop_delete(of_list_port_mod_prop_t *obj) {
  * \ingroup of_list_port_stats_entry
  */
 static inline void
-of_list_port_stats_entry_delete(of_list_port_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_port_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -11994,8 +12027,8 @@ of_list_port_stats_entry_delete(of_list_port_stats_entry_t *obj) {
  * \ingroup of_list_port_stats_prop
  */
 static inline void
-of_list_port_stats_prop_delete(of_list_port_stats_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_port_stats_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12005,8 +12038,8 @@ of_list_port_stats_prop_delete(of_list_port_stats_prop_t *obj) {
  * \ingroup of_list_queue_desc
  */
 static inline void
-of_list_queue_desc_delete(of_list_queue_desc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_queue_desc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12016,8 +12049,8 @@ of_list_queue_desc_delete(of_list_queue_desc_t *obj) {
  * \ingroup of_list_queue_desc_prop
  */
 static inline void
-of_list_queue_desc_prop_delete(of_list_queue_desc_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_queue_desc_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12027,8 +12060,8 @@ of_list_queue_desc_prop_delete(of_list_queue_desc_prop_t *obj) {
  * \ingroup of_list_queue_prop
  */
 static inline void
-of_list_queue_prop_delete(of_list_queue_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_queue_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12038,8 +12071,8 @@ of_list_queue_prop_delete(of_list_queue_prop_t *obj) {
  * \ingroup of_list_queue_stats_entry
  */
 static inline void
-of_list_queue_stats_entry_delete(of_list_queue_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_queue_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12049,8 +12082,8 @@ of_list_queue_stats_entry_delete(of_list_queue_stats_entry_t *obj) {
  * \ingroup of_list_queue_stats_prop
  */
 static inline void
-of_list_queue_stats_prop_delete(of_list_queue_stats_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_queue_stats_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12060,8 +12093,8 @@ of_list_queue_stats_prop_delete(of_list_queue_stats_prop_t *obj) {
  * \ingroup of_list_role_prop
  */
 static inline void
-of_list_role_prop_delete(of_list_role_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_role_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12071,8 +12104,8 @@ of_list_role_prop_delete(of_list_role_prop_t *obj) {
  * \ingroup of_list_table_desc
  */
 static inline void
-of_list_table_desc_delete(of_list_table_desc_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_table_desc_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12082,8 +12115,8 @@ of_list_table_desc_delete(of_list_table_desc_t *obj) {
  * \ingroup of_list_table_feature_prop
  */
 static inline void
-of_list_table_feature_prop_delete(of_list_table_feature_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_table_feature_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12093,8 +12126,8 @@ of_list_table_feature_prop_delete(of_list_table_feature_prop_t *obj) {
  * \ingroup of_list_table_features
  */
 static inline void
-of_list_table_features_delete(of_list_table_features_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_table_features_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12104,8 +12137,8 @@ of_list_table_features_delete(of_list_table_features_t *obj) {
  * \ingroup of_list_table_mod_prop
  */
 static inline void
-of_list_table_mod_prop_delete(of_list_table_mod_prop_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_table_mod_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12115,8 +12148,8 @@ of_list_table_mod_prop_delete(of_list_table_mod_prop_t *obj) {
  * \ingroup of_list_table_stats_entry
  */
 static inline void
-of_list_table_stats_entry_delete(of_list_table_stats_entry_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_table_stats_entry_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12126,8 +12159,8 @@ of_list_table_stats_entry_delete(of_list_table_stats_entry_t *obj) {
  * \ingroup of_list_uint32
  */
 static inline void
-of_list_uint32_delete(of_list_uint32_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_uint32_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12137,8 +12170,8 @@ of_list_uint32_delete(of_list_uint32_t *obj) {
  * \ingroup of_list_uint64
  */
 static inline void
-of_list_uint64_delete(of_list_uint64_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_uint64_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 /**
@@ -12148,8 +12181,8 @@ of_list_uint64_delete(of_list_uint64_t *obj) {
  * \ingroup of_list_uint8
  */
 static inline void
-of_list_uint8_delete(of_list_uint8_t *obj) {
-    of_object_delete((of_object_t *)(obj));
+of_list_uint8_delete(of_object_t *obj) {
+    of_object_delete(obj);
 }
 
 typedef void (*of_object_init_f)(of_object_t *obj, of_version_t version,
@@ -24324,13 +24357,13 @@ extern void of_uint8_value_get(
 /* Unified accessor functions for of_list_action */
 
 extern int of_list_action_first(
-    of_list_action_t *list, of_action_t *obj);
+    of_list_action_t *list, of_list_iter_t iter);
 extern int of_list_action_next(
-    of_list_action_t *list, of_action_t *obj);
+    of_list_action_t *list, of_list_iter_t iter);
 extern int of_list_action_append_bind(
-    of_list_action_t *list, of_action_t *obj);
+    of_list_action_t *list, of_list_iter_t iter);
 extern int of_list_action_append(
-    of_list_action_t *list, of_action_t *obj);
+    of_list_action_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_action
@@ -24347,13 +24380,13 @@ extern int of_list_action_append(
 /* Unified accessor functions for of_list_action_id */
 
 extern int of_list_action_id_first(
-    of_list_action_id_t *list, of_action_id_t *obj);
+    of_list_action_id_t *list, of_list_iter_t iter);
 extern int of_list_action_id_next(
-    of_list_action_id_t *list, of_action_id_t *obj);
+    of_list_action_id_t *list, of_list_iter_t iter);
 extern int of_list_action_id_append_bind(
-    of_list_action_id_t *list, of_action_id_t *obj);
+    of_list_action_id_t *list, of_list_iter_t iter);
 extern int of_list_action_id_append(
-    of_list_action_id_t *list, of_action_id_t *obj);
+    of_list_action_id_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_action_id
@@ -24370,13 +24403,13 @@ extern int of_list_action_id_append(
 /* Unified accessor functions for of_list_async_config_prop */
 
 extern int of_list_async_config_prop_first(
-    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+    of_list_async_config_prop_t *list, of_list_iter_t iter);
 extern int of_list_async_config_prop_next(
-    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+    of_list_async_config_prop_t *list, of_list_iter_t iter);
 extern int of_list_async_config_prop_append_bind(
-    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+    of_list_async_config_prop_t *list, of_list_iter_t iter);
 extern int of_list_async_config_prop_append(
-    of_list_async_config_prop_t *list, of_async_config_prop_t *obj);
+    of_list_async_config_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_async_config_prop
@@ -24393,13 +24426,13 @@ extern int of_list_async_config_prop_append(
 /* Unified accessor functions for of_list_bsn_controller_connection */
 
 extern int of_list_bsn_controller_connection_first(
-    of_list_bsn_controller_connection_t *list, of_bsn_controller_connection_t *obj);
+    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
 extern int of_list_bsn_controller_connection_next(
-    of_list_bsn_controller_connection_t *list, of_bsn_controller_connection_t *obj);
+    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
 extern int of_list_bsn_controller_connection_append_bind(
-    of_list_bsn_controller_connection_t *list, of_bsn_controller_connection_t *obj);
+    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
 extern int of_list_bsn_controller_connection_append(
-    of_list_bsn_controller_connection_t *list, of_bsn_controller_connection_t *obj);
+    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_controller_connection
@@ -24416,13 +24449,13 @@ extern int of_list_bsn_controller_connection_append(
 /* Unified accessor functions for of_list_bsn_debug_counter_desc_stats_entry */
 
 extern int of_list_bsn_debug_counter_desc_stats_entry_first(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_debug_counter_desc_stats_entry_next(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_debug_counter_desc_stats_entry_append_bind(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_debug_counter_desc_stats_entry_append(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_bsn_debug_counter_desc_stats_entry_t *obj);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_debug_counter_desc_stats_entry
@@ -24439,13 +24472,13 @@ extern int of_list_bsn_debug_counter_desc_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_debug_counter_stats_entry */
 
 extern int of_list_bsn_debug_counter_stats_entry_first(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_debug_counter_stats_entry_next(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_debug_counter_stats_entry_append_bind(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_debug_counter_stats_entry_append(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_bsn_debug_counter_stats_entry_t *obj);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_debug_counter_stats_entry
@@ -24462,13 +24495,13 @@ extern int of_list_bsn_debug_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_flow_checksum_bucket_stats_entry */
 
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_first(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_bsn_flow_checksum_bucket_stats_entry_t *obj);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_next(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_bsn_flow_checksum_bucket_stats_entry_t *obj);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_append_bind(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_bsn_flow_checksum_bucket_stats_entry_t *obj);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_append(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_bsn_flow_checksum_bucket_stats_entry_t *obj);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_flow_checksum_bucket_stats_entry
@@ -24485,13 +24518,13 @@ extern int of_list_bsn_flow_checksum_bucket_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_bucket_stats_entry */
 
 extern int of_list_bsn_gentable_bucket_stats_entry_first(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_bucket_stats_entry_next(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_bucket_stats_entry_append_bind(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_bucket_stats_entry_append(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_bsn_gentable_bucket_stats_entry_t *obj);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_bucket_stats_entry
@@ -24508,13 +24541,13 @@ extern int of_list_bsn_gentable_bucket_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_desc_stats_entry */
 
 extern int of_list_bsn_gentable_desc_stats_entry_first(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_desc_stats_entry_next(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_desc_stats_entry_append_bind(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_desc_stats_entry_append(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_bsn_gentable_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_desc_stats_entry
@@ -24531,13 +24564,13 @@ extern int of_list_bsn_gentable_desc_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_entry_desc_stats_entry */
 
 extern int of_list_bsn_gentable_entry_desc_stats_entry_first(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_entry_desc_stats_entry_next(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_entry_desc_stats_entry_append_bind(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_entry_desc_stats_entry_append(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_bsn_gentable_entry_desc_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_entry_desc_stats_entry
@@ -24554,13 +24587,13 @@ extern int of_list_bsn_gentable_entry_desc_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_entry_stats_entry */
 
 extern int of_list_bsn_gentable_entry_stats_entry_first(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_entry_stats_entry_next(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_entry_stats_entry_append_bind(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_entry_stats_entry_append(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_bsn_gentable_entry_stats_entry_t *obj);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_entry_stats_entry
@@ -24577,13 +24610,13 @@ extern int of_list_bsn_gentable_entry_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_stats_entry */
 
 extern int of_list_bsn_gentable_stats_entry_first(
-    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_stats_entry_next(
-    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_stats_entry_append_bind(
-    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_gentable_stats_entry_append(
-    of_list_bsn_gentable_stats_entry_t *list, of_bsn_gentable_stats_entry_t *obj);
+    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_stats_entry
@@ -24600,13 +24633,13 @@ extern int of_list_bsn_gentable_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_interface */
 
 extern int of_list_bsn_interface_first(
-    of_list_bsn_interface_t *list, of_bsn_interface_t *obj);
+    of_list_bsn_interface_t *list, of_list_iter_t iter);
 extern int of_list_bsn_interface_next(
-    of_list_bsn_interface_t *list, of_bsn_interface_t *obj);
+    of_list_bsn_interface_t *list, of_list_iter_t iter);
 extern int of_list_bsn_interface_append_bind(
-    of_list_bsn_interface_t *list, of_bsn_interface_t *obj);
+    of_list_bsn_interface_t *list, of_list_iter_t iter);
 extern int of_list_bsn_interface_append(
-    of_list_bsn_interface_t *list, of_bsn_interface_t *obj);
+    of_list_bsn_interface_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_interface
@@ -24623,13 +24656,13 @@ extern int of_list_bsn_interface_append(
 /* Unified accessor functions for of_list_bsn_lacp_stats_entry */
 
 extern int of_list_bsn_lacp_stats_entry_first(
-    of_list_bsn_lacp_stats_entry_t *list, of_bsn_lacp_stats_entry_t *obj);
+    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_lacp_stats_entry_next(
-    of_list_bsn_lacp_stats_entry_t *list, of_bsn_lacp_stats_entry_t *obj);
+    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_lacp_stats_entry_append_bind(
-    of_list_bsn_lacp_stats_entry_t *list, of_bsn_lacp_stats_entry_t *obj);
+    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_lacp_stats_entry_append(
-    of_list_bsn_lacp_stats_entry_t *list, of_bsn_lacp_stats_entry_t *obj);
+    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_lacp_stats_entry
@@ -24646,13 +24679,13 @@ extern int of_list_bsn_lacp_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_port_counter_stats_entry */
 
 extern int of_list_bsn_port_counter_stats_entry_first(
-    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_port_counter_stats_entry_next(
-    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_port_counter_stats_entry_append_bind(
-    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_port_counter_stats_entry_append(
-    of_list_bsn_port_counter_stats_entry_t *list, of_bsn_port_counter_stats_entry_t *obj);
+    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_port_counter_stats_entry
@@ -24669,13 +24702,13 @@ extern int of_list_bsn_port_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_switch_pipeline_stats_entry */
 
 extern int of_list_bsn_switch_pipeline_stats_entry_first(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_bsn_switch_pipeline_stats_entry_t *obj);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_switch_pipeline_stats_entry_next(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_bsn_switch_pipeline_stats_entry_t *obj);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_switch_pipeline_stats_entry_append_bind(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_bsn_switch_pipeline_stats_entry_t *obj);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_switch_pipeline_stats_entry_append(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_bsn_switch_pipeline_stats_entry_t *obj);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_switch_pipeline_stats_entry
@@ -24692,13 +24725,13 @@ extern int of_list_bsn_switch_pipeline_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_table_checksum_stats_entry */
 
 extern int of_list_bsn_table_checksum_stats_entry_first(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_bsn_table_checksum_stats_entry_t *obj);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_table_checksum_stats_entry_next(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_bsn_table_checksum_stats_entry_t *obj);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_table_checksum_stats_entry_append_bind(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_bsn_table_checksum_stats_entry_t *obj);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_table_checksum_stats_entry_append(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_bsn_table_checksum_stats_entry_t *obj);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_table_checksum_stats_entry
@@ -24715,13 +24748,13 @@ extern int of_list_bsn_table_checksum_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_tlv */
 
 extern int of_list_bsn_tlv_first(
-    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+    of_list_bsn_tlv_t *list, of_list_iter_t iter);
 extern int of_list_bsn_tlv_next(
-    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+    of_list_bsn_tlv_t *list, of_list_iter_t iter);
 extern int of_list_bsn_tlv_append_bind(
-    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+    of_list_bsn_tlv_t *list, of_list_iter_t iter);
 extern int of_list_bsn_tlv_append(
-    of_list_bsn_tlv_t *list, of_bsn_tlv_t *obj);
+    of_list_bsn_tlv_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_tlv
@@ -24738,13 +24771,13 @@ extern int of_list_bsn_tlv_append(
 /* Unified accessor functions for of_list_bsn_vlan_counter_stats_entry */
 
 extern int of_list_bsn_vlan_counter_stats_entry_first(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_vlan_counter_stats_entry_next(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_vlan_counter_stats_entry_append_bind(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_vlan_counter_stats_entry_append(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_bsn_vlan_counter_stats_entry_t *obj);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_vlan_counter_stats_entry
@@ -24761,13 +24794,13 @@ extern int of_list_bsn_vlan_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_vrf_counter_stats_entry */
 
 extern int of_list_bsn_vrf_counter_stats_entry_first(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_vrf_counter_stats_entry_next(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_vrf_counter_stats_entry_append_bind(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_bsn_vrf_counter_stats_entry_append(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_bsn_vrf_counter_stats_entry_t *obj);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_vrf_counter_stats_entry
@@ -24784,13 +24817,13 @@ extern int of_list_bsn_vrf_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bucket */
 
 extern int of_list_bucket_first(
-    of_list_bucket_t *list, of_bucket_t *obj);
+    of_list_bucket_t *list, of_list_iter_t iter);
 extern int of_list_bucket_next(
-    of_list_bucket_t *list, of_bucket_t *obj);
+    of_list_bucket_t *list, of_list_iter_t iter);
 extern int of_list_bucket_append_bind(
-    of_list_bucket_t *list, of_bucket_t *obj);
+    of_list_bucket_t *list, of_list_iter_t iter);
 extern int of_list_bucket_append(
-    of_list_bucket_t *list, of_bucket_t *obj);
+    of_list_bucket_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bucket
@@ -24807,13 +24840,13 @@ extern int of_list_bucket_append(
 /* Unified accessor functions for of_list_bucket_counter */
 
 extern int of_list_bucket_counter_first(
-    of_list_bucket_counter_t *list, of_bucket_counter_t *obj);
+    of_list_bucket_counter_t *list, of_list_iter_t iter);
 extern int of_list_bucket_counter_next(
-    of_list_bucket_counter_t *list, of_bucket_counter_t *obj);
+    of_list_bucket_counter_t *list, of_list_iter_t iter);
 extern int of_list_bucket_counter_append_bind(
-    of_list_bucket_counter_t *list, of_bucket_counter_t *obj);
+    of_list_bucket_counter_t *list, of_list_iter_t iter);
 extern int of_list_bucket_counter_append(
-    of_list_bucket_counter_t *list, of_bucket_counter_t *obj);
+    of_list_bucket_counter_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bucket_counter
@@ -24830,13 +24863,13 @@ extern int of_list_bucket_counter_append(
 /* Unified accessor functions for of_list_bundle_prop */
 
 extern int of_list_bundle_prop_first(
-    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+    of_list_bundle_prop_t *list, of_list_iter_t iter);
 extern int of_list_bundle_prop_next(
-    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+    of_list_bundle_prop_t *list, of_list_iter_t iter);
 extern int of_list_bundle_prop_append_bind(
-    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+    of_list_bundle_prop_t *list, of_list_iter_t iter);
 extern int of_list_bundle_prop_append(
-    of_list_bundle_prop_t *list, of_bundle_prop_t *obj);
+    of_list_bundle_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_bundle_prop
@@ -24853,13 +24886,13 @@ extern int of_list_bundle_prop_append(
 /* Unified accessor functions for of_list_flow_stats_entry */
 
 extern int of_list_flow_stats_entry_first(
-    of_list_flow_stats_entry_t *list, of_flow_stats_entry_t *obj);
+    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_flow_stats_entry_next(
-    of_list_flow_stats_entry_t *list, of_flow_stats_entry_t *obj);
+    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_flow_stats_entry_append_bind(
-    of_list_flow_stats_entry_t *list, of_flow_stats_entry_t *obj);
+    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_flow_stats_entry_append(
-    of_list_flow_stats_entry_t *list, of_flow_stats_entry_t *obj);
+    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_flow_stats_entry
@@ -24876,13 +24909,13 @@ extern int of_list_flow_stats_entry_append(
 /* Unified accessor functions for of_list_group_desc_stats_entry */
 
 extern int of_list_group_desc_stats_entry_first(
-    of_list_group_desc_stats_entry_t *list, of_group_desc_stats_entry_t *obj);
+    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_group_desc_stats_entry_next(
-    of_list_group_desc_stats_entry_t *list, of_group_desc_stats_entry_t *obj);
+    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_group_desc_stats_entry_append_bind(
-    of_list_group_desc_stats_entry_t *list, of_group_desc_stats_entry_t *obj);
+    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_group_desc_stats_entry_append(
-    of_list_group_desc_stats_entry_t *list, of_group_desc_stats_entry_t *obj);
+    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_group_desc_stats_entry
@@ -24899,13 +24932,13 @@ extern int of_list_group_desc_stats_entry_append(
 /* Unified accessor functions for of_list_group_stats_entry */
 
 extern int of_list_group_stats_entry_first(
-    of_list_group_stats_entry_t *list, of_group_stats_entry_t *obj);
+    of_list_group_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_group_stats_entry_next(
-    of_list_group_stats_entry_t *list, of_group_stats_entry_t *obj);
+    of_list_group_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_group_stats_entry_append_bind(
-    of_list_group_stats_entry_t *list, of_group_stats_entry_t *obj);
+    of_list_group_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_group_stats_entry_append(
-    of_list_group_stats_entry_t *list, of_group_stats_entry_t *obj);
+    of_list_group_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_group_stats_entry
@@ -24922,13 +24955,13 @@ extern int of_list_group_stats_entry_append(
 /* Unified accessor functions for of_list_hello_elem */
 
 extern int of_list_hello_elem_first(
-    of_list_hello_elem_t *list, of_hello_elem_t *obj);
+    of_list_hello_elem_t *list, of_list_iter_t iter);
 extern int of_list_hello_elem_next(
-    of_list_hello_elem_t *list, of_hello_elem_t *obj);
+    of_list_hello_elem_t *list, of_list_iter_t iter);
 extern int of_list_hello_elem_append_bind(
-    of_list_hello_elem_t *list, of_hello_elem_t *obj);
+    of_list_hello_elem_t *list, of_list_iter_t iter);
 extern int of_list_hello_elem_append(
-    of_list_hello_elem_t *list, of_hello_elem_t *obj);
+    of_list_hello_elem_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_hello_elem
@@ -24945,13 +24978,13 @@ extern int of_list_hello_elem_append(
 /* Unified accessor functions for of_list_instruction */
 
 extern int of_list_instruction_first(
-    of_list_instruction_t *list, of_instruction_t *obj);
+    of_list_instruction_t *list, of_list_iter_t iter);
 extern int of_list_instruction_next(
-    of_list_instruction_t *list, of_instruction_t *obj);
+    of_list_instruction_t *list, of_list_iter_t iter);
 extern int of_list_instruction_append_bind(
-    of_list_instruction_t *list, of_instruction_t *obj);
+    of_list_instruction_t *list, of_list_iter_t iter);
 extern int of_list_instruction_append(
-    of_list_instruction_t *list, of_instruction_t *obj);
+    of_list_instruction_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_instruction
@@ -24968,13 +25001,13 @@ extern int of_list_instruction_append(
 /* Unified accessor functions for of_list_instruction_id */
 
 extern int of_list_instruction_id_first(
-    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+    of_list_instruction_id_t *list, of_list_iter_t iter);
 extern int of_list_instruction_id_next(
-    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+    of_list_instruction_id_t *list, of_list_iter_t iter);
 extern int of_list_instruction_id_append_bind(
-    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+    of_list_instruction_id_t *list, of_list_iter_t iter);
 extern int of_list_instruction_id_append(
-    of_list_instruction_id_t *list, of_instruction_id_t *obj);
+    of_list_instruction_id_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_instruction_id
@@ -24991,13 +25024,13 @@ extern int of_list_instruction_id_append(
 /* Unified accessor functions for of_list_meter_band */
 
 extern int of_list_meter_band_first(
-    of_list_meter_band_t *list, of_meter_band_t *obj);
+    of_list_meter_band_t *list, of_list_iter_t iter);
 extern int of_list_meter_band_next(
-    of_list_meter_band_t *list, of_meter_band_t *obj);
+    of_list_meter_band_t *list, of_list_iter_t iter);
 extern int of_list_meter_band_append_bind(
-    of_list_meter_band_t *list, of_meter_band_t *obj);
+    of_list_meter_band_t *list, of_list_iter_t iter);
 extern int of_list_meter_band_append(
-    of_list_meter_band_t *list, of_meter_band_t *obj);
+    of_list_meter_band_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_meter_band
@@ -25014,13 +25047,13 @@ extern int of_list_meter_band_append(
 /* Unified accessor functions for of_list_meter_band_stats */
 
 extern int of_list_meter_band_stats_first(
-    of_list_meter_band_stats_t *list, of_meter_band_stats_t *obj);
+    of_list_meter_band_stats_t *list, of_list_iter_t iter);
 extern int of_list_meter_band_stats_next(
-    of_list_meter_band_stats_t *list, of_meter_band_stats_t *obj);
+    of_list_meter_band_stats_t *list, of_list_iter_t iter);
 extern int of_list_meter_band_stats_append_bind(
-    of_list_meter_band_stats_t *list, of_meter_band_stats_t *obj);
+    of_list_meter_band_stats_t *list, of_list_iter_t iter);
 extern int of_list_meter_band_stats_append(
-    of_list_meter_band_stats_t *list, of_meter_band_stats_t *obj);
+    of_list_meter_band_stats_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_meter_band_stats
@@ -25037,13 +25070,13 @@ extern int of_list_meter_band_stats_append(
 /* Unified accessor functions for of_list_meter_stats */
 
 extern int of_list_meter_stats_first(
-    of_list_meter_stats_t *list, of_meter_stats_t *obj);
+    of_list_meter_stats_t *list, of_list_iter_t iter);
 extern int of_list_meter_stats_next(
-    of_list_meter_stats_t *list, of_meter_stats_t *obj);
+    of_list_meter_stats_t *list, of_list_iter_t iter);
 extern int of_list_meter_stats_append_bind(
-    of_list_meter_stats_t *list, of_meter_stats_t *obj);
+    of_list_meter_stats_t *list, of_list_iter_t iter);
 extern int of_list_meter_stats_append(
-    of_list_meter_stats_t *list, of_meter_stats_t *obj);
+    of_list_meter_stats_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_meter_stats
@@ -25060,13 +25093,13 @@ extern int of_list_meter_stats_append(
 /* Unified accessor functions for of_list_oxm */
 
 extern int of_list_oxm_first(
-    of_list_oxm_t *list, of_oxm_t *obj);
+    of_list_oxm_t *list, of_list_iter_t iter);
 extern int of_list_oxm_next(
-    of_list_oxm_t *list, of_oxm_t *obj);
+    of_list_oxm_t *list, of_list_iter_t iter);
 extern int of_list_oxm_append_bind(
-    of_list_oxm_t *list, of_oxm_t *obj);
+    of_list_oxm_t *list, of_list_iter_t iter);
 extern int of_list_oxm_append(
-    of_list_oxm_t *list, of_oxm_t *obj);
+    of_list_oxm_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_oxm
@@ -25083,13 +25116,13 @@ extern int of_list_oxm_append(
 /* Unified accessor functions for of_list_packet_queue */
 
 extern int of_list_packet_queue_first(
-    of_list_packet_queue_t *list, of_packet_queue_t *obj);
+    of_list_packet_queue_t *list, of_list_iter_t iter);
 extern int of_list_packet_queue_next(
-    of_list_packet_queue_t *list, of_packet_queue_t *obj);
+    of_list_packet_queue_t *list, of_list_iter_t iter);
 extern int of_list_packet_queue_append_bind(
-    of_list_packet_queue_t *list, of_packet_queue_t *obj);
+    of_list_packet_queue_t *list, of_list_iter_t iter);
 extern int of_list_packet_queue_append(
-    of_list_packet_queue_t *list, of_packet_queue_t *obj);
+    of_list_packet_queue_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_packet_queue
@@ -25106,13 +25139,13 @@ extern int of_list_packet_queue_append(
 /* Unified accessor functions for of_list_port_desc */
 
 extern int of_list_port_desc_first(
-    of_list_port_desc_t *list, of_port_desc_t *obj);
+    of_list_port_desc_t *list, of_list_iter_t iter);
 extern int of_list_port_desc_next(
-    of_list_port_desc_t *list, of_port_desc_t *obj);
+    of_list_port_desc_t *list, of_list_iter_t iter);
 extern int of_list_port_desc_append_bind(
-    of_list_port_desc_t *list, of_port_desc_t *obj);
+    of_list_port_desc_t *list, of_list_iter_t iter);
 extern int of_list_port_desc_append(
-    of_list_port_desc_t *list, of_port_desc_t *obj);
+    of_list_port_desc_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_port_desc
@@ -25129,13 +25162,13 @@ extern int of_list_port_desc_append(
 /* Unified accessor functions for of_list_port_desc_prop */
 
 extern int of_list_port_desc_prop_first(
-    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+    of_list_port_desc_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_desc_prop_next(
-    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+    of_list_port_desc_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_desc_prop_append_bind(
-    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+    of_list_port_desc_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_desc_prop_append(
-    of_list_port_desc_prop_t *list, of_port_desc_prop_t *obj);
+    of_list_port_desc_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_port_desc_prop
@@ -25152,13 +25185,13 @@ extern int of_list_port_desc_prop_append(
 /* Unified accessor functions for of_list_port_mod_prop */
 
 extern int of_list_port_mod_prop_first(
-    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+    of_list_port_mod_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_mod_prop_next(
-    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+    of_list_port_mod_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_mod_prop_append_bind(
-    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+    of_list_port_mod_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_mod_prop_append(
-    of_list_port_mod_prop_t *list, of_port_mod_prop_t *obj);
+    of_list_port_mod_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_port_mod_prop
@@ -25175,13 +25208,13 @@ extern int of_list_port_mod_prop_append(
 /* Unified accessor functions for of_list_port_stats_entry */
 
 extern int of_list_port_stats_entry_first(
-    of_list_port_stats_entry_t *list, of_port_stats_entry_t *obj);
+    of_list_port_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_port_stats_entry_next(
-    of_list_port_stats_entry_t *list, of_port_stats_entry_t *obj);
+    of_list_port_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_port_stats_entry_append_bind(
-    of_list_port_stats_entry_t *list, of_port_stats_entry_t *obj);
+    of_list_port_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_port_stats_entry_append(
-    of_list_port_stats_entry_t *list, of_port_stats_entry_t *obj);
+    of_list_port_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_port_stats_entry
@@ -25198,13 +25231,13 @@ extern int of_list_port_stats_entry_append(
 /* Unified accessor functions for of_list_port_stats_prop */
 
 extern int of_list_port_stats_prop_first(
-    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+    of_list_port_stats_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_stats_prop_next(
-    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+    of_list_port_stats_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_stats_prop_append_bind(
-    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+    of_list_port_stats_prop_t *list, of_list_iter_t iter);
 extern int of_list_port_stats_prop_append(
-    of_list_port_stats_prop_t *list, of_port_stats_prop_t *obj);
+    of_list_port_stats_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_port_stats_prop
@@ -25221,13 +25254,13 @@ extern int of_list_port_stats_prop_append(
 /* Unified accessor functions for of_list_queue_desc */
 
 extern int of_list_queue_desc_first(
-    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+    of_list_queue_desc_t *list, of_list_iter_t iter);
 extern int of_list_queue_desc_next(
-    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+    of_list_queue_desc_t *list, of_list_iter_t iter);
 extern int of_list_queue_desc_append_bind(
-    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+    of_list_queue_desc_t *list, of_list_iter_t iter);
 extern int of_list_queue_desc_append(
-    of_list_queue_desc_t *list, of_queue_desc_t *obj);
+    of_list_queue_desc_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_queue_desc
@@ -25244,13 +25277,13 @@ extern int of_list_queue_desc_append(
 /* Unified accessor functions for of_list_queue_desc_prop */
 
 extern int of_list_queue_desc_prop_first(
-    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_desc_prop_next(
-    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_desc_prop_append_bind(
-    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_desc_prop_append(
-    of_list_queue_desc_prop_t *list, of_queue_desc_prop_t *obj);
+    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_queue_desc_prop
@@ -25267,13 +25300,13 @@ extern int of_list_queue_desc_prop_append(
 /* Unified accessor functions for of_list_queue_prop */
 
 extern int of_list_queue_prop_first(
-    of_list_queue_prop_t *list, of_queue_prop_t *obj);
+    of_list_queue_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_prop_next(
-    of_list_queue_prop_t *list, of_queue_prop_t *obj);
+    of_list_queue_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_prop_append_bind(
-    of_list_queue_prop_t *list, of_queue_prop_t *obj);
+    of_list_queue_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_prop_append(
-    of_list_queue_prop_t *list, of_queue_prop_t *obj);
+    of_list_queue_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_queue_prop
@@ -25290,13 +25323,13 @@ extern int of_list_queue_prop_append(
 /* Unified accessor functions for of_list_queue_stats_entry */
 
 extern int of_list_queue_stats_entry_first(
-    of_list_queue_stats_entry_t *list, of_queue_stats_entry_t *obj);
+    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_queue_stats_entry_next(
-    of_list_queue_stats_entry_t *list, of_queue_stats_entry_t *obj);
+    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_queue_stats_entry_append_bind(
-    of_list_queue_stats_entry_t *list, of_queue_stats_entry_t *obj);
+    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_queue_stats_entry_append(
-    of_list_queue_stats_entry_t *list, of_queue_stats_entry_t *obj);
+    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_queue_stats_entry
@@ -25313,13 +25346,13 @@ extern int of_list_queue_stats_entry_append(
 /* Unified accessor functions for of_list_queue_stats_prop */
 
 extern int of_list_queue_stats_prop_first(
-    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_stats_prop_next(
-    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_stats_prop_append_bind(
-    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
 extern int of_list_queue_stats_prop_append(
-    of_list_queue_stats_prop_t *list, of_queue_stats_prop_t *obj);
+    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_queue_stats_prop
@@ -25336,13 +25369,13 @@ extern int of_list_queue_stats_prop_append(
 /* Unified accessor functions for of_list_role_prop */
 
 extern int of_list_role_prop_first(
-    of_list_role_prop_t *list, of_role_prop_t *obj);
+    of_list_role_prop_t *list, of_list_iter_t iter);
 extern int of_list_role_prop_next(
-    of_list_role_prop_t *list, of_role_prop_t *obj);
+    of_list_role_prop_t *list, of_list_iter_t iter);
 extern int of_list_role_prop_append_bind(
-    of_list_role_prop_t *list, of_role_prop_t *obj);
+    of_list_role_prop_t *list, of_list_iter_t iter);
 extern int of_list_role_prop_append(
-    of_list_role_prop_t *list, of_role_prop_t *obj);
+    of_list_role_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_role_prop
@@ -25359,13 +25392,13 @@ extern int of_list_role_prop_append(
 /* Unified accessor functions for of_list_table_desc */
 
 extern int of_list_table_desc_first(
-    of_list_table_desc_t *list, of_table_desc_t *obj);
+    of_list_table_desc_t *list, of_list_iter_t iter);
 extern int of_list_table_desc_next(
-    of_list_table_desc_t *list, of_table_desc_t *obj);
+    of_list_table_desc_t *list, of_list_iter_t iter);
 extern int of_list_table_desc_append_bind(
-    of_list_table_desc_t *list, of_table_desc_t *obj);
+    of_list_table_desc_t *list, of_list_iter_t iter);
 extern int of_list_table_desc_append(
-    of_list_table_desc_t *list, of_table_desc_t *obj);
+    of_list_table_desc_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_table_desc
@@ -25382,13 +25415,13 @@ extern int of_list_table_desc_append(
 /* Unified accessor functions for of_list_table_feature_prop */
 
 extern int of_list_table_feature_prop_first(
-    of_list_table_feature_prop_t *list, of_table_feature_prop_t *obj);
+    of_list_table_feature_prop_t *list, of_list_iter_t iter);
 extern int of_list_table_feature_prop_next(
-    of_list_table_feature_prop_t *list, of_table_feature_prop_t *obj);
+    of_list_table_feature_prop_t *list, of_list_iter_t iter);
 extern int of_list_table_feature_prop_append_bind(
-    of_list_table_feature_prop_t *list, of_table_feature_prop_t *obj);
+    of_list_table_feature_prop_t *list, of_list_iter_t iter);
 extern int of_list_table_feature_prop_append(
-    of_list_table_feature_prop_t *list, of_table_feature_prop_t *obj);
+    of_list_table_feature_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_table_feature_prop
@@ -25405,13 +25438,13 @@ extern int of_list_table_feature_prop_append(
 /* Unified accessor functions for of_list_table_features */
 
 extern int of_list_table_features_first(
-    of_list_table_features_t *list, of_table_features_t *obj);
+    of_list_table_features_t *list, of_list_iter_t iter);
 extern int of_list_table_features_next(
-    of_list_table_features_t *list, of_table_features_t *obj);
+    of_list_table_features_t *list, of_list_iter_t iter);
 extern int of_list_table_features_append_bind(
-    of_list_table_features_t *list, of_table_features_t *obj);
+    of_list_table_features_t *list, of_list_iter_t iter);
 extern int of_list_table_features_append(
-    of_list_table_features_t *list, of_table_features_t *obj);
+    of_list_table_features_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_table_features
@@ -25428,13 +25461,13 @@ extern int of_list_table_features_append(
 /* Unified accessor functions for of_list_table_mod_prop */
 
 extern int of_list_table_mod_prop_first(
-    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+    of_list_table_mod_prop_t *list, of_list_iter_t iter);
 extern int of_list_table_mod_prop_next(
-    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+    of_list_table_mod_prop_t *list, of_list_iter_t iter);
 extern int of_list_table_mod_prop_append_bind(
-    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+    of_list_table_mod_prop_t *list, of_list_iter_t iter);
 extern int of_list_table_mod_prop_append(
-    of_list_table_mod_prop_t *list, of_table_mod_prop_t *obj);
+    of_list_table_mod_prop_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_table_mod_prop
@@ -25451,13 +25484,13 @@ extern int of_list_table_mod_prop_append(
 /* Unified accessor functions for of_list_table_stats_entry */
 
 extern int of_list_table_stats_entry_first(
-    of_list_table_stats_entry_t *list, of_table_stats_entry_t *obj);
+    of_list_table_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_table_stats_entry_next(
-    of_list_table_stats_entry_t *list, of_table_stats_entry_t *obj);
+    of_list_table_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_table_stats_entry_append_bind(
-    of_list_table_stats_entry_t *list, of_table_stats_entry_t *obj);
+    of_list_table_stats_entry_t *list, of_list_iter_t iter);
 extern int of_list_table_stats_entry_append(
-    of_list_table_stats_entry_t *list, of_table_stats_entry_t *obj);
+    of_list_table_stats_entry_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_table_stats_entry
@@ -25474,13 +25507,13 @@ extern int of_list_table_stats_entry_append(
 /* Unified accessor functions for of_list_uint32 */
 
 extern int of_list_uint32_first(
-    of_list_uint32_t *list, of_uint32_t *obj);
+    of_list_uint32_t *list, of_list_iter_t iter);
 extern int of_list_uint32_next(
-    of_list_uint32_t *list, of_uint32_t *obj);
+    of_list_uint32_t *list, of_list_iter_t iter);
 extern int of_list_uint32_append_bind(
-    of_list_uint32_t *list, of_uint32_t *obj);
+    of_list_uint32_t *list, of_list_iter_t iter);
 extern int of_list_uint32_append(
-    of_list_uint32_t *list, of_uint32_t *obj);
+    of_list_uint32_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_uint32
@@ -25497,13 +25530,13 @@ extern int of_list_uint32_append(
 /* Unified accessor functions for of_list_uint64 */
 
 extern int of_list_uint64_first(
-    of_list_uint64_t *list, of_uint64_t *obj);
+    of_list_uint64_t *list, of_list_iter_t iter);
 extern int of_list_uint64_next(
-    of_list_uint64_t *list, of_uint64_t *obj);
+    of_list_uint64_t *list, of_list_iter_t iter);
 extern int of_list_uint64_append_bind(
-    of_list_uint64_t *list, of_uint64_t *obj);
+    of_list_uint64_t *list, of_list_iter_t iter);
 extern int of_list_uint64_append(
-    of_list_uint64_t *list, of_uint64_t *obj);
+    of_list_uint64_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_uint64
@@ -25520,13 +25553,13 @@ extern int of_list_uint64_append(
 /* Unified accessor functions for of_list_uint8 */
 
 extern int of_list_uint8_first(
-    of_list_uint8_t *list, of_uint8_t *obj);
+    of_list_uint8_t *list, of_list_iter_t iter);
 extern int of_list_uint8_next(
-    of_list_uint8_t *list, of_uint8_t *obj);
+    of_list_uint8_t *list, of_list_iter_t iter);
 extern int of_list_uint8_append_bind(
-    of_list_uint8_t *list, of_uint8_t *obj);
+    of_list_uint8_t *list, of_list_iter_t iter);
 extern int of_list_uint8_append(
-    of_list_uint8_t *list, of_uint8_t *obj);
+    of_list_uint8_t *list, of_list_iter_t iter);
 
 /**
  * Iteration macro for list of type of_list_uint8
