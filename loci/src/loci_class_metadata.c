@@ -3021,6 +3021,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_meter_stats_request_push_wire_types,
     },
+    [OF_OXM_IPV6_EXTHDR] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_ipv6_exthdr_push_wire_types,
+    },
+    [OF_OXM_IPV6_EXTHDR_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_ipv6_exthdr_masked_push_wire_types,
+    },
     [OF_OXM_MPLS_BOS] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,
@@ -3207,6 +3219,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=NULL,
     },
+    [OF_ASYNC_CONFIG_FAILED_ERROR_MSG] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_async_config_failed_error_msg_push_wire_types,
+    },
     [OF_ASYNC_CONFIG_PROP] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3303,6 +3321,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_async_config_prop_wire_object_id_get,
         .wire_type_set=of_async_config_prop_table_status_slave_push_wire_types,
     },
+    [OF_BAD_PROPERTY_ERROR_MSG] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bad_property_error_msg_push_wire_types,
+    },
     [OF_BUNDLE_ADD_MSG] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,
@@ -3314,6 +3338,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_object_message_wire_length_set,
         .wire_type_get=NULL,
         .wire_type_set=of_bundle_ctrl_msg_push_wire_types,
+    },
+    [OF_BUNDLE_FAILED_ERROR_MSG] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bundle_failed_error_msg_push_wire_types,
     },
     [OF_BUNDLE_PROP] = {
         .wire_length_get=of_tlv16_wire_length_get,
@@ -3332,6 +3362,24 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_bundle_prop_wire_object_id_get,
         .wire_type_set=NULL,
+    },
+    [OF_FLOW_MONITOR_FAILED_ERROR_MSG] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_flow_monitor_failed_error_msg_push_wire_types,
+    },
+    [OF_OXM_PBB_UCA] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_pbb_uca_push_wire_types,
+    },
+    [OF_OXM_PBB_UCA_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_pbb_uca_masked_push_wire_types,
     },
     [OF_PORT_DESC_PROP] = {
         .wire_length_get=of_tlv16_wire_length_get,

@@ -928,6 +928,9 @@ of_action_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x4:
             *id = OF_ACTION_BSN_CHECKSUM;
             break;
+        case 0x5:
+            *id = OF_ACTION_BSN_GENTABLE;
+            break;
         default:
             *id = OF_ACTION_BSN;
             break;
@@ -9057,6 +9060,18 @@ of_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xd:
             *id = OF_TABLE_FEATURES_FAILED_ERROR_MSG;
             break;
+        case 0xe:
+            *id = OF_BAD_PROPERTY_ERROR_MSG;
+            break;
+        case 0xf:
+            *id = OF_ASYNC_CONFIG_FAILED_ERROR_MSG;
+            break;
+        case 0x10:
+            *id = OF_FLOW_MONITOR_FAILED_ERROR_MSG;
+            break;
+        case 0x11:
+            *id = OF_BUNDLE_FAILED_ERROR_MSG;
+            break;
         case 0xffff:
             *id = OF_EXPERIMENTER_ERROR_MSG;
             break;
@@ -11544,6 +11559,84 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x23:
             *id = OF_BSN_PDU_RX_TIMEOUT;
+            break;
+        case 0x24:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST;
+            break;
+        case 0x25:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY;
+            break;
+        case 0x26:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST;
+            break;
+        case 0x27:
+            *id = OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY;
+            break;
+        case 0x28:
+            *id = OF_BSN_FLOW_IDLE;
+            break;
+        case 0x29:
+            *id = OF_BSN_SET_LACP_REQUEST;
+            break;
+        case 0x2a:
+            *id = OF_BSN_SET_LACP_REPLY;
+            break;
+        case 0x2b:
+            *id = OF_BSN_LACP_CONVERGENCE_NOTIF;
+            break;
+        case 0x2c:
+            *id = OF_BSN_TIME_REQUEST;
+            break;
+        case 0x2d:
+            *id = OF_BSN_TIME_REPLY;
+            break;
+        case 0x2e:
+            *id = OF_BSN_GENTABLE_ENTRY_ADD;
+            break;
+        case 0x2f:
+            *id = OF_BSN_GENTABLE_ENTRY_DELETE;
+            break;
+        case 0x30:
+            *id = OF_BSN_GENTABLE_CLEAR_REQUEST;
+            break;
+        case 0x31:
+            *id = OF_BSN_GENTABLE_CLEAR_REPLY;
+            break;
+        case 0x32:
+            *id = OF_BSN_GENTABLE_SET_BUCKETS_SIZE;
+            break;
+        case 0x33:
+            *id = OF_BSN_GET_SWITCH_PIPELINE_REQUEST;
+            break;
+        case 0x34:
+            *id = OF_BSN_GET_SWITCH_PIPELINE_REPLY;
+            break;
+        case 0x35:
+            *id = OF_BSN_SET_SWITCH_PIPELINE_REQUEST;
+            break;
+        case 0x36:
+            *id = OF_BSN_SET_SWITCH_PIPELINE_REPLY;
+            break;
+        case 0x38:
+            *id = OF_BSN_CONTROLLER_CONNECTIONS_REQUEST;
+            break;
+        case 0x39:
+            *id = OF_BSN_CONTROLLER_CONNECTIONS_REPLY;
+            break;
+        case 0x3a:
+            *id = OF_BSN_SET_AUX_CXNS_REQUEST;
+            break;
+        case 0x3b:
+            *id = OF_BSN_SET_AUX_CXNS_REPLY;
+            break;
+        case 0x3c:
+            *id = OF_BSN_ARP_IDLE;
+            break;
+        case 0x3d:
+            *id = OF_BSN_TABLE_SET_BUCKETS_SIZE;
+            break;
+        case 0x3f:
+            *id = OF_BSN_LOG;
             break;
         default:
             *id = OF_BSN_HEADER;

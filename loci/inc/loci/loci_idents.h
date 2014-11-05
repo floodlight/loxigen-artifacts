@@ -312,7 +312,8 @@
  * Original name LACP_OUT_OF_SYNC
  */
 #define LACP_OUT_OF_SYNC_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define LACP_OUT_OF_SYNC (0x2)
 #define LACP_OUT_OF_SYNC_BY_VERSION(version) (0x2)
 #define LACP_OUT_OF_SYNC_GENERIC 21
@@ -322,7 +323,8 @@
  * Original name LACP_SUCCESS
  */
 #define LACP_SUCCESS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define LACP_SUCCESS (0x0)
 #define LACP_SUCCESS_BY_VERSION(version) (0x0)
 #define LACP_SUCCESS_GENERIC 22
@@ -332,7 +334,8 @@
  * Original name LACP_TIMEDOUT
  */
 #define LACP_TIMEDOUT_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define LACP_TIMEDOUT (0x1)
 #define LACP_TIMEDOUT_BY_VERSION(version) (0x1)
 #define LACP_TIMEDOUT_GENERIC 23
@@ -359,7 +362,8 @@
  * Original name OFP_BSN_VLAN_COUNTER_RX_BYTES
  */
 #define OFP_BSN_VLAN_COUNTER_RX_BYTES_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VLAN_COUNTER_RX_BYTES (0x0)
 #define OFP_BSN_VLAN_COUNTER_RX_BYTES_BY_VERSION(version) (0x0)
 #define OFP_BSN_VLAN_COUNTER_RX_BYTES_GENERIC 25
@@ -369,7 +373,8 @@
  * Original name OFP_BSN_VLAN_COUNTER_RX_PACKETS
  */
 #define OFP_BSN_VLAN_COUNTER_RX_PACKETS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VLAN_COUNTER_RX_PACKETS (0x1)
 #define OFP_BSN_VLAN_COUNTER_RX_PACKETS_BY_VERSION(version) (0x1)
 #define OFP_BSN_VLAN_COUNTER_RX_PACKETS_GENERIC 26
@@ -379,7 +384,8 @@
  * Original name OFP_BSN_VLAN_COUNTER_TX_BYTES
  */
 #define OFP_BSN_VLAN_COUNTER_TX_BYTES_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VLAN_COUNTER_TX_BYTES (0x2)
 #define OFP_BSN_VLAN_COUNTER_TX_BYTES_BY_VERSION(version) (0x2)
 #define OFP_BSN_VLAN_COUNTER_TX_BYTES_GENERIC 27
@@ -389,7 +395,8 @@
  * Original name OFP_BSN_VLAN_COUNTER_TX_PACKETS
  */
 #define OFP_BSN_VLAN_COUNTER_TX_PACKETS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VLAN_COUNTER_TX_PACKETS (0x3)
 #define OFP_BSN_VLAN_COUNTER_TX_PACKETS_BY_VERSION(version) (0x3)
 #define OFP_BSN_VLAN_COUNTER_TX_PACKETS_GENERIC 28
@@ -403,7 +410,8 @@
  * Original name OFP_BSN_VRF_COUNTER_BYTES
  */
 #define OFP_BSN_VRF_COUNTER_BYTES_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VRF_COUNTER_BYTES (0x0)
 #define OFP_BSN_VRF_COUNTER_BYTES_BY_VERSION(version) (0x0)
 #define OFP_BSN_VRF_COUNTER_BYTES_GENERIC 29
@@ -413,7 +421,8 @@
  * Original name OFP_BSN_VRF_COUNTER_PACKETS
  */
 #define OFP_BSN_VRF_COUNTER_PACKETS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VRF_COUNTER_PACKETS (0x1)
 #define OFP_BSN_VRF_COUNTER_PACKETS_BY_VERSION(version) (0x1)
 #define OFP_BSN_VRF_COUNTER_PACKETS_GENERIC 30
@@ -1561,7 +1570,8 @@
  * Original name OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED
  */
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED (0x1)
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED_BY_VERSION(version) (0x1)
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED_GENERIC 130
@@ -1571,7 +1581,8 @@
  * Original name OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED
  */
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED (0x0)
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED_BY_VERSION(version) (0x0)
 #define OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED_GENERIC 131
@@ -1619,7 +1630,8 @@
  * Original name OFP_BSN_LACP_STATE_ACTIVITY
  */
 #define OFP_BSN_LACP_STATE_ACTIVITY_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_ACTIVITY (0x1)
 #define OFP_BSN_LACP_STATE_ACTIVITY_BY_VERSION(version) (0x1)
 #define OFP_BSN_LACP_STATE_ACTIVITY_GENERIC 135
@@ -1629,7 +1641,8 @@
  * Original name OFP_BSN_LACP_STATE_AGGREGATION
  */
 #define OFP_BSN_LACP_STATE_AGGREGATION_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_AGGREGATION (0x4)
 #define OFP_BSN_LACP_STATE_AGGREGATION_BY_VERSION(version) (0x4)
 #define OFP_BSN_LACP_STATE_AGGREGATION_GENERIC 136
@@ -1639,7 +1652,8 @@
  * Original name OFP_BSN_LACP_STATE_COLLECTING
  */
 #define OFP_BSN_LACP_STATE_COLLECTING_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_COLLECTING (0x10)
 #define OFP_BSN_LACP_STATE_COLLECTING_BY_VERSION(version) (0x10)
 #define OFP_BSN_LACP_STATE_COLLECTING_GENERIC 137
@@ -1649,7 +1663,8 @@
  * Original name OFP_BSN_LACP_STATE_DEFAULTED
  */
 #define OFP_BSN_LACP_STATE_DEFAULTED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_DEFAULTED (0x40)
 #define OFP_BSN_LACP_STATE_DEFAULTED_BY_VERSION(version) (0x40)
 #define OFP_BSN_LACP_STATE_DEFAULTED_GENERIC 138
@@ -1659,7 +1674,8 @@
  * Original name OFP_BSN_LACP_STATE_DISTRIBUTING
  */
 #define OFP_BSN_LACP_STATE_DISTRIBUTING_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_DISTRIBUTING (0x20)
 #define OFP_BSN_LACP_STATE_DISTRIBUTING_BY_VERSION(version) (0x20)
 #define OFP_BSN_LACP_STATE_DISTRIBUTING_GENERIC 139
@@ -1669,7 +1685,8 @@
  * Original name OFP_BSN_LACP_STATE_EXPIRED
  */
 #define OFP_BSN_LACP_STATE_EXPIRED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_EXPIRED (0x80)
 #define OFP_BSN_LACP_STATE_EXPIRED_BY_VERSION(version) (0x80)
 #define OFP_BSN_LACP_STATE_EXPIRED_GENERIC 140
@@ -1679,7 +1696,8 @@
  * Original name OFP_BSN_LACP_STATE_SYNCHRONIZATION
  */
 #define OFP_BSN_LACP_STATE_SYNCHRONIZATION_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_SYNCHRONIZATION (0x8)
 #define OFP_BSN_LACP_STATE_SYNCHRONIZATION_BY_VERSION(version) (0x8)
 #define OFP_BSN_LACP_STATE_SYNCHRONIZATION_GENERIC 141
@@ -1689,7 +1707,8 @@
  * Original name OFP_BSN_LACP_STATE_TIMEOUT
  */
 #define OFP_BSN_LACP_STATE_TIMEOUT_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LACP_STATE_TIMEOUT (0x2)
 #define OFP_BSN_LACP_STATE_TIMEOUT_BY_VERSION(version) (0x2)
 #define OFP_BSN_LACP_STATE_TIMEOUT_GENERIC 142
@@ -1703,7 +1722,8 @@
  * Original name OFP_BSN_LOGLEVEL_ERROR
  */
 #define OFP_BSN_LOGLEVEL_ERROR_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LOGLEVEL_ERROR (0x1)
 #define OFP_BSN_LOGLEVEL_ERROR_BY_VERSION(version) (0x1)
 #define OFP_BSN_LOGLEVEL_ERROR_GENERIC 143
@@ -1713,7 +1733,8 @@
  * Original name OFP_BSN_LOGLEVEL_INFO
  */
 #define OFP_BSN_LOGLEVEL_INFO_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LOGLEVEL_INFO (0x3)
 #define OFP_BSN_LOGLEVEL_INFO_BY_VERSION(version) (0x3)
 #define OFP_BSN_LOGLEVEL_INFO_GENERIC 144
@@ -1723,7 +1744,8 @@
  * Original name OFP_BSN_LOGLEVEL_MSG
  */
 #define OFP_BSN_LOGLEVEL_MSG_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LOGLEVEL_MSG (0x0)
 #define OFP_BSN_LOGLEVEL_MSG_BY_VERSION(version) (0x0)
 #define OFP_BSN_LOGLEVEL_MSG_GENERIC 145
@@ -1733,7 +1755,8 @@
  * Original name OFP_BSN_LOGLEVEL_TRACE
  */
 #define OFP_BSN_LOGLEVEL_TRACE_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LOGLEVEL_TRACE (0x5)
 #define OFP_BSN_LOGLEVEL_TRACE_BY_VERSION(version) (0x5)
 #define OFP_BSN_LOGLEVEL_TRACE_GENERIC 146
@@ -1743,7 +1766,8 @@
  * Original name OFP_BSN_LOGLEVEL_VERBOSE
  */
 #define OFP_BSN_LOGLEVEL_VERBOSE_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LOGLEVEL_VERBOSE (0x4)
 #define OFP_BSN_LOGLEVEL_VERBOSE_BY_VERSION(version) (0x4)
 #define OFP_BSN_LOGLEVEL_VERBOSE_GENERIC 147
@@ -1753,7 +1777,8 @@
  * Original name OFP_BSN_LOGLEVEL_WARN
  */
 #define OFP_BSN_LOGLEVEL_WARN_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_LOGLEVEL_WARN (0x2)
 #define OFP_BSN_LOGLEVEL_WARN_BY_VERSION(version) (0x2)
 #define OFP_BSN_LOGLEVEL_WARN_GENERIC 148
@@ -1767,7 +1792,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_ARP
  */
 #define OFP_BSN_PKTIN_FLAG_ARP_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_ARP (0x8)
 #define OFP_BSN_PKTIN_FLAG_ARP_BY_VERSION(version) (0x8)
 
@@ -1784,7 +1810,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_DEBUG
  */
 #define OFP_BSN_PKTIN_FLAG_DEBUG_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_DEBUG (0x40)
 #define OFP_BSN_PKTIN_FLAG_DEBUG_BY_VERSION(version) (0x40)
 
@@ -1801,7 +1828,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_DHCP
  */
 #define OFP_BSN_PKTIN_FLAG_DHCP_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_DHCP (0x10)
 #define OFP_BSN_PKTIN_FLAG_DHCP_BY_VERSION(version) (0x10)
 
@@ -1818,7 +1846,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_INGRESS_ACL
  */
 #define OFP_BSN_PKTIN_FLAG_INGRESS_ACL_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_INGRESS_ACL (0x400)
 #define OFP_BSN_PKTIN_FLAG_INGRESS_ACL_BY_VERSION(version) (0x400)
 
@@ -1835,7 +1864,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_L2_CPU
  */
 #define OFP_BSN_PKTIN_FLAG_L2_CPU_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_L2_CPU (0x20)
 #define OFP_BSN_PKTIN_FLAG_L2_CPU_BY_VERSION(version) (0x20)
 
@@ -1852,7 +1882,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_L3_CPU
  */
 #define OFP_BSN_PKTIN_FLAG_L3_CPU_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_L3_CPU (0x200)
 #define OFP_BSN_PKTIN_FLAG_L3_CPU_BY_VERSION(version) (0x200)
 
@@ -1869,7 +1900,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_L3_MISS
  */
 #define OFP_BSN_PKTIN_FLAG_L3_MISS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_L3_MISS (0x100)
 #define OFP_BSN_PKTIN_FLAG_L3_MISS_BY_VERSION(version) (0x100)
 
@@ -1886,7 +1918,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_NEW_HOST
  */
 #define OFP_BSN_PKTIN_FLAG_NEW_HOST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_NEW_HOST (0x2)
 #define OFP_BSN_PKTIN_FLAG_NEW_HOST_BY_VERSION(version) (0x2)
 
@@ -1903,7 +1936,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_PDU
  */
 #define OFP_BSN_PKTIN_FLAG_PDU_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_PDU (0x1)
 #define OFP_BSN_PKTIN_FLAG_PDU_BY_VERSION(version) (0x1)
 
@@ -1920,7 +1954,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_STATION_MOVE
  */
 #define OFP_BSN_PKTIN_FLAG_STATION_MOVE_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_STATION_MOVE (0x4)
 #define OFP_BSN_PKTIN_FLAG_STATION_MOVE_BY_VERSION(version) (0x4)
 
@@ -1937,7 +1972,8 @@
  * Original name OFP_BSN_PKTIN_FLAG_TTL_EXPIRED
  */
 #define OFP_BSN_PKTIN_FLAG_TTL_EXPIRED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PKTIN_FLAG_TTL_EXPIRED (0x80)
 #define OFP_BSN_PKTIN_FLAG_TTL_EXPIRED_BY_VERSION(version) (0x80)
 
@@ -1958,7 +1994,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS (0xf)
 #define OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS_BY_VERSION(version) (0xf)
 #define OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS_GENERIC 160
@@ -1968,7 +2005,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_BYTES
  */
 #define OFP_BSN_PORT_COUNTER_RX_BYTES_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_BYTES (0x0)
 #define OFP_BSN_PORT_COUNTER_RX_BYTES_BY_VERSION(version) (0x0)
 #define OFP_BSN_PORT_COUNTER_RX_BYTES_GENERIC 161
@@ -1978,7 +2016,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS (0xe)
 #define OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS_BY_VERSION(version) (0xe)
 #define OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS_GENERIC 162
@@ -1988,7 +2027,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_DROPPED
  */
 #define OFP_BSN_PORT_COUNTER_RX_DROPPED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_DROPPED (0x4)
 #define OFP_BSN_PORT_COUNTER_RX_DROPPED_BY_VERSION(version) (0x4)
 #define OFP_BSN_PORT_COUNTER_RX_DROPPED_GENERIC 163
@@ -1998,7 +2038,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_RX_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_ERRORS (0x5)
 #define OFP_BSN_PORT_COUNTER_RX_ERRORS_BY_VERSION(version) (0x5)
 #define OFP_BSN_PORT_COUNTER_RX_ERRORS_GENERIC 164
@@ -2008,7 +2049,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_GIANTS
  */
 #define OFP_BSN_PORT_COUNTER_RX_GIANTS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_GIANTS (0xd)
 #define OFP_BSN_PORT_COUNTER_RX_GIANTS_BY_VERSION(version) (0xd)
 #define OFP_BSN_PORT_COUNTER_RX_GIANTS_GENERIC 165
@@ -2018,7 +2060,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS (0x18)
 #define OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS_BY_VERSION(version) (0x18)
 #define OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS_GENERIC 166
@@ -2028,7 +2071,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS (0x19)
 #define OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS_BY_VERSION(version) (0x19)
 #define OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS_GENERIC 167
@@ -2038,7 +2082,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_PACKETS
  */
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS (0x16)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_BY_VERSION(version) (0x16)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_GENERIC 168
@@ -2048,7 +2093,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST
  */
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST (0x2)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST_BY_VERSION(version) (0x2)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST_GENERIC 169
@@ -2058,7 +2104,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST
  */
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST (0x3)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST_BY_VERSION(version) (0x3)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST_GENERIC 170
@@ -2068,7 +2115,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST
  */
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST (0x1)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST_BY_VERSION(version) (0x1)
 #define OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST_GENERIC 171
@@ -2078,7 +2126,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT
  */
 #define OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT (0x11)
 #define OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT_BY_VERSION(version) (0x11)
 #define OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT_GENERIC 172
@@ -2088,7 +2137,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_RUNTS
  */
 #define OFP_BSN_PORT_COUNTER_RX_RUNTS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_RUNTS (0xc)
 #define OFP_BSN_PORT_COUNTER_RX_RUNTS_BY_VERSION(version) (0xc)
 #define OFP_BSN_PORT_COUNTER_RX_RUNTS_GENERIC 173
@@ -2098,7 +2148,8 @@
  * Original name OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS (0x10)
 #define OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS_BY_VERSION(version) (0x10)
 #define OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS_GENERIC 174
@@ -2108,7 +2159,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_BYTES
  */
 #define OFP_BSN_PORT_COUNTER_TX_BYTES_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_BYTES (0x6)
 #define OFP_BSN_PORT_COUNTER_TX_BYTES_BY_VERSION(version) (0x6)
 #define OFP_BSN_PORT_COUNTER_TX_BYTES_GENERIC 175
@@ -2118,7 +2170,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS (0x1a)
 #define OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS_BY_VERSION(version) (0x1a)
 #define OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS_GENERIC 176
@@ -2128,7 +2181,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_COLLISIONS
  */
 #define OFP_BSN_PORT_COUNTER_TX_COLLISIONS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_COLLISIONS (0x12)
 #define OFP_BSN_PORT_COUNTER_TX_COLLISIONS_BY_VERSION(version) (0x12)
 #define OFP_BSN_PORT_COUNTER_TX_COLLISIONS_GENERIC 177
@@ -2138,7 +2192,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_DEFERRED
  */
 #define OFP_BSN_PORT_COUNTER_TX_DEFERRED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_DEFERRED (0x14)
 #define OFP_BSN_PORT_COUNTER_TX_DEFERRED_BY_VERSION(version) (0x14)
 #define OFP_BSN_PORT_COUNTER_TX_DEFERRED_GENERIC 178
@@ -2148,7 +2203,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_DROPPED
  */
 #define OFP_BSN_PORT_COUNTER_TX_DROPPED_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_DROPPED (0xa)
 #define OFP_BSN_PORT_COUNTER_TX_DROPPED_BY_VERSION(version) (0xa)
 #define OFP_BSN_PORT_COUNTER_TX_DROPPED_GENERIC 179
@@ -2158,7 +2214,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_ERRORS
  */
 #define OFP_BSN_PORT_COUNTER_TX_ERRORS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_ERRORS (0xb)
 #define OFP_BSN_PORT_COUNTER_TX_ERRORS_BY_VERSION(version) (0xb)
 #define OFP_BSN_PORT_COUNTER_TX_ERRORS_GENERIC 180
@@ -2168,7 +2225,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS
  */
 #define OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS (0x13)
 #define OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS_BY_VERSION(version) (0x13)
 #define OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS_GENERIC 181
@@ -2178,7 +2236,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_PACKETS
  */
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS (0x17)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_BY_VERSION(version) (0x17)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_GENERIC 182
@@ -2188,7 +2247,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST
  */
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST (0x8)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST_BY_VERSION(version) (0x8)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST_GENERIC 183
@@ -2198,7 +2258,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST
  */
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST (0x9)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST_BY_VERSION(version) (0x9)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST_GENERIC 184
@@ -2208,7 +2269,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST
  */
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST (0x7)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST_BY_VERSION(version) (0x7)
 #define OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST_GENERIC 185
@@ -2218,7 +2280,8 @@
  * Original name OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT
  */
 #define OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT (0x15)
 #define OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT_BY_VERSION(version) (0x15)
 #define OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT_GENERIC 186
@@ -2233,7 +2296,8 @@
  */
 #define OFP_BSN_TCP_FLAG_ACK_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_ACK (0x10)
 #define OFP_BSN_TCP_FLAG_ACK_BY_VERSION(version) (0x10)
 
@@ -2251,7 +2315,8 @@
  */
 #define OFP_BSN_TCP_FLAG_CWR_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_CWR (0x80)
 #define OFP_BSN_TCP_FLAG_CWR_BY_VERSION(version) (0x80)
 
@@ -2269,7 +2334,8 @@
  */
 #define OFP_BSN_TCP_FLAG_ECE_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_ECE (0x40)
 #define OFP_BSN_TCP_FLAG_ECE_BY_VERSION(version) (0x40)
 
@@ -2287,7 +2353,8 @@
  */
 #define OFP_BSN_TCP_FLAG_FIN_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_FIN (0x1)
 #define OFP_BSN_TCP_FLAG_FIN_BY_VERSION(version) (0x1)
 
@@ -2305,7 +2372,8 @@
  */
 #define OFP_BSN_TCP_FLAG_NS_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_NS (0x100)
 #define OFP_BSN_TCP_FLAG_NS_BY_VERSION(version) (0x100)
 
@@ -2323,7 +2391,8 @@
  */
 #define OFP_BSN_TCP_FLAG_PSH_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_PSH (0x8)
 #define OFP_BSN_TCP_FLAG_PSH_BY_VERSION(version) (0x8)
 
@@ -2341,7 +2410,8 @@
  */
 #define OFP_BSN_TCP_FLAG_RST_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_RST (0x4)
 #define OFP_BSN_TCP_FLAG_RST_BY_VERSION(version) (0x4)
 
@@ -2359,7 +2429,8 @@
  */
 #define OFP_BSN_TCP_FLAG_SYN_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_SYN (0x2)
 #define OFP_BSN_TCP_FLAG_SYN_BY_VERSION(version) (0x2)
 
@@ -2377,7 +2448,8 @@
  */
 #define OFP_BSN_TCP_FLAG_URG_SUPPORTED(version)      \
     (((version) == OF_VERSION_1_2) || \
-     ((version) == OF_VERSION_1_3))
+     ((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_TCP_FLAG_URG (0x20)
 #define OFP_BSN_TCP_FLAG_URG_BY_VERSION(version) (0x20)
 
@@ -2398,7 +2470,8 @@
  * Original name OFP_BSN_UDF_ANCHOR_L3_HEADER_START
  */
 #define OFP_BSN_UDF_ANCHOR_L3_HEADER_START_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_UDF_ANCHOR_L3_HEADER_START (0x1)
 #define OFP_BSN_UDF_ANCHOR_L3_HEADER_START_BY_VERSION(version) (0x1)
 #define OFP_BSN_UDF_ANCHOR_L3_HEADER_START_GENERIC 196
@@ -2408,7 +2481,8 @@
  * Original name OFP_BSN_UDF_ANCHOR_L4_HEADER_START
  */
 #define OFP_BSN_UDF_ANCHOR_L4_HEADER_START_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_UDF_ANCHOR_L4_HEADER_START (0x2)
 #define OFP_BSN_UDF_ANCHOR_L4_HEADER_START_BY_VERSION(version) (0x2)
 #define OFP_BSN_UDF_ANCHOR_L4_HEADER_START_GENERIC 197
@@ -2418,7 +2492,8 @@
  * Original name OFP_BSN_UDF_ANCHOR_PACKET_START
  */
 #define OFP_BSN_UDF_ANCHOR_PACKET_START_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_UDF_ANCHOR_PACKET_START (0x0)
 #define OFP_BSN_UDF_ANCHOR_PACKET_START_BY_VERSION(version) (0x0)
 #define OFP_BSN_UDF_ANCHOR_PACKET_START_GENERIC 198
@@ -2432,7 +2507,8 @@
  * Original name OFP_BSN_VLAN_ALL
  */
 #define OFP_BSN_VLAN_ALL_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VLAN_ALL (0xffff)
 #define OFP_BSN_VLAN_ALL_BY_VERSION(version) (0xffff)
 #define OFP_BSN_VLAN_ALL_GENERIC 199
@@ -2530,7 +2606,8 @@
  * Original name OFP_BSN_VRF_ALL
  */
 #define OFP_BSN_VRF_ALL_SUPPORTED(version)      \
-    (((version) == OF_VERSION_1_3))
+    (((version) == OF_VERSION_1_3) || \
+     ((version) == OF_VERSION_1_4))
 #define OFP_BSN_VRF_ALL (0xffffffff)
 #define OFP_BSN_VRF_ALL_BY_VERSION(version) (0xffffffff)
 #define OFP_BSN_VRF_ALL_GENERIC 208

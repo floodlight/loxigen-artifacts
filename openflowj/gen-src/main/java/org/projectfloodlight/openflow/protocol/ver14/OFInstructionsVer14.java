@@ -74,15 +74,15 @@ public class OFInstructionsVer14 implements OFInstructions {
     }
 
     public OFInstructionBsnArpOffload bsnArpOffload() {
-        throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.4");
+        return OFInstructionBsnArpOffloadVer14.INSTANCE;
     }
 
     public OFInstructionBsnDeny bsnDeny() {
-        throw new UnsupportedOperationException("OFInstructionBsnDeny not supported in version 1.4");
+        return OFInstructionBsnDenyVer14.INSTANCE;
     }
 
     public OFInstructionBsnDhcpOffload bsnDhcpOffload() {
-        throw new UnsupportedOperationException("OFInstructionBsnDhcpOffload not supported in version 1.4");
+        return OFInstructionBsnDhcpOffloadVer14.INSTANCE;
     }
 
     public OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
@@ -90,31 +90,31 @@ public class OFInstructionsVer14 implements OFInstructions {
     }
 
     public OFInstructionBsnDisableSrcMacCheck bsnDisableSrcMacCheck() {
-        throw new UnsupportedOperationException("OFInstructionBsnDisableSrcMacCheck not supported in version 1.4");
+        return OFInstructionBsnDisableSrcMacCheckVer14.INSTANCE;
     }
 
     public OFInstructionBsnDisableVlanCounters bsnDisableVlanCounters() {
-        throw new UnsupportedOperationException("OFInstructionBsnDisableVlanCounters not supported in version 1.4");
+        return OFInstructionBsnDisableVlanCountersVer14.INSTANCE;
     }
 
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
-        throw new UnsupportedOperationException("OFInstructionBsnPacketOfDeath not supported in version 1.4");
+        return OFInstructionBsnPacketOfDeathVer14.INSTANCE;
     }
 
     public OFInstructionBsnPermit bsnPermit() {
-        throw new UnsupportedOperationException("OFInstructionBsnPermit not supported in version 1.4");
+        return OFInstructionBsnPermitVer14.INSTANCE;
     }
 
     public OFInstructionBsnPrioritizePdus bsnPrioritizePdus() {
-        throw new UnsupportedOperationException("OFInstructionBsnPrioritizePdus not supported in version 1.4");
+        return OFInstructionBsnPrioritizePdusVer14.INSTANCE;
     }
 
     public OFInstructionBsnRequireVlanXlate bsnRequireVlanXlate() {
-        throw new UnsupportedOperationException("OFInstructionBsnRequireVlanXlate not supported in version 1.4");
+        return OFInstructionBsnRequireVlanXlateVer14.INSTANCE;
     }
 
     public OFInstructionBsnSpanDestination bsnSpanDestination() {
-        throw new UnsupportedOperationException("OFInstructionBsnSpanDestination not supported in version 1.4");
+        return OFInstructionBsnSpanDestinationVer14.INSTANCE;
     }
 
     public OFInstructionMeter.Builder buildMeter() {

@@ -654,257 +654,306 @@ public class OFFactoryVer14 implements OFFactory {
     }
 
     public OFBsnArpIdle.Builder buildBsnArpIdle() {
-        throw new UnsupportedOperationException("OFBsnArpIdle not supported in version 1.4");
+        return new OFBsnArpIdleVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnControllerConnection.Builder buildBsnControllerConnection() {
-        throw new UnsupportedOperationException("OFBsnControllerConnection not supported in version 1.4");
+        return new OFBsnControllerConnectionVer14.Builder();
     }
 
     public OFBsnControllerConnectionsReply.Builder buildBsnControllerConnectionsReply() {
-        throw new UnsupportedOperationException("OFBsnControllerConnectionsReply not supported in version 1.4");
+        return new OFBsnControllerConnectionsReplyVer14.Builder().setXid(nextXid());
     }
     public OFBsnControllerConnectionsReply bsnControllerConnectionsReply(List<OFBsnControllerConnection> connections) {
-        throw new UnsupportedOperationException("OFBsnControllerConnectionsReply not supported in version 1.4");
+        return new OFBsnControllerConnectionsReplyVer14(
+                nextXid(),
+                      connections
+                    );
     }
 
     public OFBsnControllerConnectionsRequest.Builder buildBsnControllerConnectionsRequest() {
-        throw new UnsupportedOperationException("OFBsnControllerConnectionsRequest not supported in version 1.4");
+        return new OFBsnControllerConnectionsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnControllerConnectionsRequest bsnControllerConnectionsRequest() {
-        throw new UnsupportedOperationException("OFBsnControllerConnectionsRequest not supported in version 1.4");
+        return new OFBsnControllerConnectionsRequestVer14(
+                nextXid()
+                    );
     }
 
     public OFBsnDebugCounterDescStatsEntry.Builder buildBsnDebugCounterDescStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsEntry not supported in version 1.4");
+        return new OFBsnDebugCounterDescStatsEntryVer14.Builder();
     }
 
     public OFBsnDebugCounterDescStatsReply.Builder buildBsnDebugCounterDescStatsReply() {
-        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsReply not supported in version 1.4");
+        return new OFBsnDebugCounterDescStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnDebugCounterDescStatsRequest.Builder buildBsnDebugCounterDescStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsRequest not supported in version 1.4");
+        return new OFBsnDebugCounterDescStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnDebugCounterDescStatsRequest bsnDebugCounterDescStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnDebugCounterDescStatsRequest not supported in version 1.4");
+        return new OFBsnDebugCounterDescStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnDebugCounterStatsEntry.Builder buildBsnDebugCounterStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnDebugCounterStatsEntry not supported in version 1.4");
+        return new OFBsnDebugCounterStatsEntryVer14.Builder();
     }
     public OFBsnDebugCounterStatsEntry bsnDebugCounterStatsEntry(U64 counterId, U64 value) {
-        throw new UnsupportedOperationException("OFBsnDebugCounterStatsEntry not supported in version 1.4");
+        return new OFBsnDebugCounterStatsEntryVer14(
+                counterId,
+                      value
+                    );
     }
 
     public OFBsnDebugCounterStatsReply.Builder buildBsnDebugCounterStatsReply() {
-        throw new UnsupportedOperationException("OFBsnDebugCounterStatsReply not supported in version 1.4");
+        return new OFBsnDebugCounterStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnDebugCounterStatsRequest.Builder buildBsnDebugCounterStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnDebugCounterStatsRequest not supported in version 1.4");
+        return new OFBsnDebugCounterStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnDebugCounterStatsRequest bsnDebugCounterStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnDebugCounterStatsRequest not supported in version 1.4");
+        return new OFBsnDebugCounterStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnFlowChecksumBucketStatsEntry.Builder buildBsnFlowChecksumBucketStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsEntry not supported in version 1.4");
+        return new OFBsnFlowChecksumBucketStatsEntryVer14.Builder();
     }
     public OFBsnFlowChecksumBucketStatsEntry bsnFlowChecksumBucketStatsEntry(U64 checksum) {
-        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsEntry not supported in version 1.4");
+        return new OFBsnFlowChecksumBucketStatsEntryVer14(
+                checksum
+                    );
     }
 
     public OFBsnFlowChecksumBucketStatsReply.Builder buildBsnFlowChecksumBucketStatsReply() {
-        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsReply not supported in version 1.4");
+        return new OFBsnFlowChecksumBucketStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnFlowChecksumBucketStatsRequest.Builder buildBsnFlowChecksumBucketStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnFlowChecksumBucketStatsRequest not supported in version 1.4");
+        return new OFBsnFlowChecksumBucketStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnFlowIdle.Builder buildBsnFlowIdle() {
-        throw new UnsupportedOperationException("OFBsnFlowIdle not supported in version 1.4");
+        return new OFBsnFlowIdleVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnFlowIdleEnableGetReply.Builder buildBsnFlowIdleEnableGetReply() {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableGetReply not supported in version 1.4");
+        return new OFBsnFlowIdleEnableGetReplyVer14.Builder().setXid(nextXid());
     }
     public OFBsnFlowIdleEnableGetReply bsnFlowIdleEnableGetReply(long enabled) {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableGetReply not supported in version 1.4");
+        return new OFBsnFlowIdleEnableGetReplyVer14(
+                nextXid(),
+                      enabled
+                    );
     }
 
     public OFBsnFlowIdleEnableGetRequest.Builder buildBsnFlowIdleEnableGetRequest() {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableGetRequest not supported in version 1.4");
+        return new OFBsnFlowIdleEnableGetRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnFlowIdleEnableGetRequest bsnFlowIdleEnableGetRequest() {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableGetRequest not supported in version 1.4");
+        return new OFBsnFlowIdleEnableGetRequestVer14(
+                nextXid()
+                    );
     }
 
     public OFBsnFlowIdleEnableSetReply.Builder buildBsnFlowIdleEnableSetReply() {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableSetReply not supported in version 1.4");
+        return new OFBsnFlowIdleEnableSetReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnFlowIdleEnableSetRequest.Builder buildBsnFlowIdleEnableSetRequest() {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableSetRequest not supported in version 1.4");
+        return new OFBsnFlowIdleEnableSetRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnFlowIdleEnableSetRequest bsnFlowIdleEnableSetRequest(long enable) {
-        throw new UnsupportedOperationException("OFBsnFlowIdleEnableSetRequest not supported in version 1.4");
+        return new OFBsnFlowIdleEnableSetRequestVer14(
+                nextXid(),
+                      enable
+                    );
     }
 
     public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.4");
+        return new OFBsnGentableBucketStatsEntryVer14.Builder();
     }
     public OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(U128 checksum) {
-        throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.4");
+        return new OFBsnGentableBucketStatsEntryVer14(
+                checksum
+                    );
     }
 
     public OFBsnGentableBucketStatsReply.Builder buildBsnGentableBucketStatsReply() {
-        throw new UnsupportedOperationException("OFBsnGentableBucketStatsReply not supported in version 1.4");
+        return new OFBsnGentableBucketStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableBucketStatsRequest.Builder buildBsnGentableBucketStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnGentableBucketStatsRequest not supported in version 1.4");
+        return new OFBsnGentableBucketStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableClearReply.Builder buildBsnGentableClearReply() {
-        throw new UnsupportedOperationException("OFBsnGentableClearReply not supported in version 1.4");
+        return new OFBsnGentableClearReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableClearRequest.Builder buildBsnGentableClearRequest() {
-        throw new UnsupportedOperationException("OFBsnGentableClearRequest not supported in version 1.4");
+        return new OFBsnGentableClearRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableDescStatsEntry.Builder buildBsnGentableDescStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnGentableDescStatsEntry not supported in version 1.4");
+        return new OFBsnGentableDescStatsEntryVer14.Builder();
     }
 
     public OFBsnGentableDescStatsReply.Builder buildBsnGentableDescStatsReply() {
-        throw new UnsupportedOperationException("OFBsnGentableDescStatsReply not supported in version 1.4");
+        return new OFBsnGentableDescStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableDescStatsRequest.Builder buildBsnGentableDescStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnGentableDescStatsRequest not supported in version 1.4");
+        return new OFBsnGentableDescStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnGentableDescStatsRequest bsnGentableDescStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnGentableDescStatsRequest not supported in version 1.4");
+        return new OFBsnGentableDescStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnGentableEntryAdd.Builder buildBsnGentableEntryAdd() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryAdd not supported in version 1.4");
+        return new OFBsnGentableEntryAddVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableEntryDelete.Builder buildBsnGentableEntryDelete() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryDelete not supported in version 1.4");
+        return new OFBsnGentableEntryDeleteVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableEntryDescStatsEntry.Builder buildBsnGentableEntryDescStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryDescStatsEntry not supported in version 1.4");
+        return new OFBsnGentableEntryDescStatsEntryVer14.Builder();
     }
 
     public OFBsnGentableEntryDescStatsReply.Builder buildBsnGentableEntryDescStatsReply() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryDescStatsReply not supported in version 1.4");
+        return new OFBsnGentableEntryDescStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableEntryDescStatsRequest.Builder buildBsnGentableEntryDescStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryDescStatsRequest not supported in version 1.4");
+        return new OFBsnGentableEntryDescStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableEntryStatsEntry.Builder buildBsnGentableEntryStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryStatsEntry not supported in version 1.4");
+        return new OFBsnGentableEntryStatsEntryVer14.Builder();
     }
     public OFBsnGentableEntryStatsEntry bsnGentableEntryStatsEntry(List<OFBsnTlv> key, List<OFBsnTlv> stats) {
-        throw new UnsupportedOperationException("OFBsnGentableEntryStatsEntry not supported in version 1.4");
+        return new OFBsnGentableEntryStatsEntryVer14(
+                key,
+                      stats
+                    );
     }
 
     public OFBsnGentableEntryStatsReply.Builder buildBsnGentableEntryStatsReply() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryStatsReply not supported in version 1.4");
+        return new OFBsnGentableEntryStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableEntryStatsRequest.Builder buildBsnGentableEntryStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnGentableEntryStatsRequest not supported in version 1.4");
+        return new OFBsnGentableEntryStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableSetBucketsSize.Builder buildBsnGentableSetBucketsSize() {
-        throw new UnsupportedOperationException("OFBsnGentableSetBucketsSize not supported in version 1.4");
+        return new OFBsnGentableSetBucketsSizeVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableStatsEntry.Builder buildBsnGentableStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnGentableStatsEntry not supported in version 1.4");
+        return new OFBsnGentableStatsEntryVer14.Builder();
     }
 
     public OFBsnGentableStatsReply.Builder buildBsnGentableStatsReply() {
-        throw new UnsupportedOperationException("OFBsnGentableStatsReply not supported in version 1.4");
+        return new OFBsnGentableStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnGentableStatsRequest.Builder buildBsnGentableStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnGentableStatsRequest not supported in version 1.4");
+        return new OFBsnGentableStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnGentableStatsRequest bsnGentableStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnGentableStatsRequest not supported in version 1.4");
+        return new OFBsnGentableStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnGetSwitchPipelineReply.Builder buildBsnGetSwitchPipelineReply() {
-        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineReply not supported in version 1.4");
+        return new OFBsnGetSwitchPipelineReplyVer14.Builder().setXid(nextXid());
     }
     public OFBsnGetSwitchPipelineReply bsnGetSwitchPipelineReply(String pipeline) {
-        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineReply not supported in version 1.4");
+        return new OFBsnGetSwitchPipelineReplyVer14(
+                nextXid(),
+                      pipeline
+                    );
     }
 
     public OFBsnGetSwitchPipelineRequest.Builder buildBsnGetSwitchPipelineRequest() {
-        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineRequest not supported in version 1.4");
+        return new OFBsnGetSwitchPipelineRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnGetSwitchPipelineRequest bsnGetSwitchPipelineRequest() {
-        throw new UnsupportedOperationException("OFBsnGetSwitchPipelineRequest not supported in version 1.4");
+        return new OFBsnGetSwitchPipelineRequestVer14(
+                nextXid()
+                    );
     }
 
     public OFBsnImageDescStatsReply.Builder buildBsnImageDescStatsReply() {
-        throw new UnsupportedOperationException("OFBsnImageDescStatsReply not supported in version 1.4");
+        return new OFBsnImageDescStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnImageDescStatsRequest.Builder buildBsnImageDescStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnImageDescStatsRequest not supported in version 1.4");
+        return new OFBsnImageDescStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnImageDescStatsRequest bsnImageDescStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnImageDescStatsRequest not supported in version 1.4");
+        return new OFBsnImageDescStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnLacpConvergenceNotif.Builder buildBsnLacpConvergenceNotif() {
-        throw new UnsupportedOperationException("OFBsnLacpConvergenceNotif not supported in version 1.4");
+        return new OFBsnLacpConvergenceNotifVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnLacpStatsEntry.Builder buildBsnLacpStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnLacpStatsEntry not supported in version 1.4");
+        return new OFBsnLacpStatsEntryVer14.Builder();
     }
 
     public OFBsnLacpStatsReply.Builder buildBsnLacpStatsReply() {
-        throw new UnsupportedOperationException("OFBsnLacpStatsReply not supported in version 1.4");
+        return new OFBsnLacpStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnLacpStatsRequest.Builder buildBsnLacpStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnLacpStatsRequest not supported in version 1.4");
+        return new OFBsnLacpStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnLacpStatsRequest bsnLacpStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnLacpStatsRequest not supported in version 1.4");
+        return new OFBsnLacpStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnLog.Builder buildBsnLog() {
-        throw new UnsupportedOperationException("OFBsnLog not supported in version 1.4");
+        return new OFBsnLogVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnPortCounterStatsEntry not supported in version 1.4");
+        return new OFBsnPortCounterStatsEntryVer14.Builder();
     }
     public OFBsnPortCounterStatsEntry bsnPortCounterStatsEntry(OFPort portNo, List<U64> values) {
-        throw new UnsupportedOperationException("OFBsnPortCounterStatsEntry not supported in version 1.4");
+        return new OFBsnPortCounterStatsEntryVer14(
+                portNo,
+                      values
+                    );
     }
 
     public OFBsnPortCounterStatsReply.Builder buildBsnPortCounterStatsReply() {
-        throw new UnsupportedOperationException("OFBsnPortCounterStatsReply not supported in version 1.4");
+        return new OFBsnPortCounterStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnPortCounterStatsRequest.Builder buildBsnPortCounterStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnPortCounterStatsRequest not supported in version 1.4");
+        return new OFBsnPortCounterStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnRoleStatus.Builder buildBsnRoleStatus() {
@@ -912,120 +961,151 @@ public class OFFactoryVer14 implements OFFactory {
     }
 
     public OFBsnSetAuxCxnsReply.Builder buildBsnSetAuxCxnsReply() {
-        throw new UnsupportedOperationException("OFBsnSetAuxCxnsReply not supported in version 1.4");
+        return new OFBsnSetAuxCxnsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnSetAuxCxnsRequest.Builder buildBsnSetAuxCxnsRequest() {
-        throw new UnsupportedOperationException("OFBsnSetAuxCxnsRequest not supported in version 1.4");
+        return new OFBsnSetAuxCxnsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnSetAuxCxnsRequest bsnSetAuxCxnsRequest(long numAux) {
-        throw new UnsupportedOperationException("OFBsnSetAuxCxnsRequest not supported in version 1.4");
+        return new OFBsnSetAuxCxnsRequestVer14(
+                nextXid(),
+                      numAux
+                    );
     }
 
     public OFBsnSetLacpReply.Builder buildBsnSetLacpReply() {
-        throw new UnsupportedOperationException("OFBsnSetLacpReply not supported in version 1.4");
+        return new OFBsnSetLacpReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnSetLacpRequest.Builder buildBsnSetLacpRequest() {
-        throw new UnsupportedOperationException("OFBsnSetLacpRequest not supported in version 1.4");
+        return new OFBsnSetLacpRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnSetSwitchPipelineReply.Builder buildBsnSetSwitchPipelineReply() {
-        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineReply not supported in version 1.4");
+        return new OFBsnSetSwitchPipelineReplyVer14.Builder().setXid(nextXid());
     }
     public OFBsnSetSwitchPipelineReply bsnSetSwitchPipelineReply(long status) {
-        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineReply not supported in version 1.4");
+        return new OFBsnSetSwitchPipelineReplyVer14(
+                nextXid(),
+                      status
+                    );
     }
 
     public OFBsnSetSwitchPipelineRequest.Builder buildBsnSetSwitchPipelineRequest() {
-        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineRequest not supported in version 1.4");
+        return new OFBsnSetSwitchPipelineRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnSetSwitchPipelineRequest bsnSetSwitchPipelineRequest(String pipeline) {
-        throw new UnsupportedOperationException("OFBsnSetSwitchPipelineRequest not supported in version 1.4");
+        return new OFBsnSetSwitchPipelineRequestVer14(
+                nextXid(),
+                      pipeline
+                    );
     }
 
     public OFBsnSwitchPipelineStatsEntry.Builder buildBsnSwitchPipelineStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsEntry not supported in version 1.4");
+        return new OFBsnSwitchPipelineStatsEntryVer14.Builder();
     }
     public OFBsnSwitchPipelineStatsEntry bsnSwitchPipelineStatsEntry(String pipeline) {
-        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsEntry not supported in version 1.4");
+        return new OFBsnSwitchPipelineStatsEntryVer14(
+                pipeline
+                    );
     }
 
     public OFBsnSwitchPipelineStatsReply.Builder buildBsnSwitchPipelineStatsReply() {
-        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsReply not supported in version 1.4");
+        return new OFBsnSwitchPipelineStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnSwitchPipelineStatsRequest.Builder buildBsnSwitchPipelineStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsRequest not supported in version 1.4");
+        return new OFBsnSwitchPipelineStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnSwitchPipelineStatsRequest bsnSwitchPipelineStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnSwitchPipelineStatsRequest not supported in version 1.4");
+        return new OFBsnSwitchPipelineStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnTableChecksumStatsEntry.Builder buildBsnTableChecksumStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnTableChecksumStatsEntry not supported in version 1.4");
+        return new OFBsnTableChecksumStatsEntryVer14.Builder();
     }
     public OFBsnTableChecksumStatsEntry bsnTableChecksumStatsEntry(TableId tableId, U64 checksum) {
-        throw new UnsupportedOperationException("OFBsnTableChecksumStatsEntry not supported in version 1.4");
+        return new OFBsnTableChecksumStatsEntryVer14(
+                tableId,
+                      checksum
+                    );
     }
 
     public OFBsnTableChecksumStatsReply.Builder buildBsnTableChecksumStatsReply() {
-        throw new UnsupportedOperationException("OFBsnTableChecksumStatsReply not supported in version 1.4");
+        return new OFBsnTableChecksumStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnTableChecksumStatsRequest.Builder buildBsnTableChecksumStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnTableChecksumStatsRequest not supported in version 1.4");
+        return new OFBsnTableChecksumStatsRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnTableChecksumStatsRequest bsnTableChecksumStatsRequest(Set<OFStatsRequestFlags> flags) {
-        throw new UnsupportedOperationException("OFBsnTableChecksumStatsRequest not supported in version 1.4");
+        return new OFBsnTableChecksumStatsRequestVer14(
+                nextXid(),
+                      flags
+                    );
     }
 
     public OFBsnTableSetBucketsSize.Builder buildBsnTableSetBucketsSize() {
-        throw new UnsupportedOperationException("OFBsnTableSetBucketsSize not supported in version 1.4");
+        return new OFBsnTableSetBucketsSizeVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnTimeReply.Builder buildBsnTimeReply() {
-        throw new UnsupportedOperationException("OFBsnTimeReply not supported in version 1.4");
+        return new OFBsnTimeReplyVer14.Builder().setXid(nextXid());
     }
     public OFBsnTimeReply bsnTimeReply(U64 timeMs) {
-        throw new UnsupportedOperationException("OFBsnTimeReply not supported in version 1.4");
+        return new OFBsnTimeReplyVer14(
+                nextXid(),
+                      timeMs
+                    );
     }
 
     public OFBsnTimeRequest.Builder buildBsnTimeRequest() {
-        throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.4");
+        return new OFBsnTimeRequestVer14.Builder().setXid(nextXid());
     }
     public OFBsnTimeRequest bsnTimeRequest() {
-        throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.4");
+        return new OFBsnTimeRequestVer14(
+                nextXid()
+                    );
     }
 
     public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnVlanCounterStatsEntry not supported in version 1.4");
+        return new OFBsnVlanCounterStatsEntryVer14.Builder();
     }
     public OFBsnVlanCounterStatsEntry bsnVlanCounterStatsEntry(int vlanVid, List<U64> values) {
-        throw new UnsupportedOperationException("OFBsnVlanCounterStatsEntry not supported in version 1.4");
+        return new OFBsnVlanCounterStatsEntryVer14(
+                vlanVid,
+                      values
+                    );
     }
 
     public OFBsnVlanCounterStatsReply.Builder buildBsnVlanCounterStatsReply() {
-        throw new UnsupportedOperationException("OFBsnVlanCounterStatsReply not supported in version 1.4");
+        return new OFBsnVlanCounterStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnVlanCounterStatsRequest.Builder buildBsnVlanCounterStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnVlanCounterStatsRequest not supported in version 1.4");
+        return new OFBsnVlanCounterStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnVrfCounterStatsEntry.Builder buildBsnVrfCounterStatsEntry() {
-        throw new UnsupportedOperationException("OFBsnVrfCounterStatsEntry not supported in version 1.4");
+        return new OFBsnVrfCounterStatsEntryVer14.Builder();
     }
     public OFBsnVrfCounterStatsEntry bsnVrfCounterStatsEntry(long vrf, List<U64> values) {
-        throw new UnsupportedOperationException("OFBsnVrfCounterStatsEntry not supported in version 1.4");
+        return new OFBsnVrfCounterStatsEntryVer14(
+                vrf,
+                      values
+                    );
     }
 
     public OFBsnVrfCounterStatsReply.Builder buildBsnVrfCounterStatsReply() {
-        throw new UnsupportedOperationException("OFBsnVrfCounterStatsReply not supported in version 1.4");
+        return new OFBsnVrfCounterStatsReplyVer14.Builder().setXid(nextXid());
     }
 
     public OFBsnVrfCounterStatsRequest.Builder buildBsnVrfCounterStatsRequest() {
-        throw new UnsupportedOperationException("OFBsnVrfCounterStatsRequest not supported in version 1.4");
+        return new OFBsnVrfCounterStatsRequestVer14.Builder().setXid(nextXid());
     }
 
     public OFHelloElemVersionbitmap.Builder buildHelloElemVersionbitmap() {

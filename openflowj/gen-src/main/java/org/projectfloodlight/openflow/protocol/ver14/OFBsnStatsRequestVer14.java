@@ -65,6 +65,51 @@ abstract class OFBsnStatsRequestVer14 {
             int subtype = bb.readInt();
             bb.readerIndex(start);
             switch(subtype) {
+               case 0xd:
+                   // discriminator value 0xdL=0xdL for class OFBsnDebugCounterDescStatsRequestVer14
+                   return OFBsnDebugCounterDescStatsRequestVer14.READER.readFrom(bb);
+               case 0xc:
+                   // discriminator value 0xcL=0xcL for class OFBsnDebugCounterStatsRequestVer14
+                   return OFBsnDebugCounterStatsRequestVer14.READER.readFrom(bb);
+               case 0xa:
+                   // discriminator value 0xaL=0xaL for class OFBsnFlowChecksumBucketStatsRequestVer14
+                   return OFBsnFlowChecksumBucketStatsRequestVer14.READER.readFrom(bb);
+               case 0x5:
+                   // discriminator value 0x5L=0x5L for class OFBsnGentableBucketStatsRequestVer14
+                   return OFBsnGentableBucketStatsRequestVer14.READER.readFrom(bb);
+               case 0x4:
+                   // discriminator value 0x4L=0x4L for class OFBsnGentableDescStatsRequestVer14
+                   return OFBsnGentableDescStatsRequestVer14.READER.readFrom(bb);
+               case 0x2:
+                   // discriminator value 0x2L=0x2L for class OFBsnGentableEntryDescStatsRequestVer14
+                   return OFBsnGentableEntryDescStatsRequestVer14.READER.readFrom(bb);
+               case 0x3:
+                   // discriminator value 0x3L=0x3L for class OFBsnGentableEntryStatsRequestVer14
+                   return OFBsnGentableEntryStatsRequestVer14.READER.readFrom(bb);
+               case 0x7:
+                   // discriminator value 0x7L=0x7L for class OFBsnGentableStatsRequestVer14
+                   return OFBsnGentableStatsRequestVer14.READER.readFrom(bb);
+               case 0xe:
+                   // discriminator value 0xeL=0xeL for class OFBsnImageDescStatsRequestVer14
+                   return OFBsnImageDescStatsRequestVer14.READER.readFrom(bb);
+               case 0x1:
+                   // discriminator value 0x1L=0x1L for class OFBsnLacpStatsRequestVer14
+                   return OFBsnLacpStatsRequestVer14.READER.readFrom(bb);
+               case 0x8:
+                   // discriminator value 0x8L=0x8L for class OFBsnPortCounterStatsRequestVer14
+                   return OFBsnPortCounterStatsRequestVer14.READER.readFrom(bb);
+               case 0x6:
+                   // discriminator value 0x6L=0x6L for class OFBsnSwitchPipelineStatsRequestVer14
+                   return OFBsnSwitchPipelineStatsRequestVer14.READER.readFrom(bb);
+               case 0xb:
+                   // discriminator value 0xbL=0xbL for class OFBsnTableChecksumStatsRequestVer14
+                   return OFBsnTableChecksumStatsRequestVer14.READER.readFrom(bb);
+               case 0x9:
+                   // discriminator value 0x9L=0x9L for class OFBsnVlanCounterStatsRequestVer14
+                   return OFBsnVlanCounterStatsRequestVer14.READER.readFrom(bb);
+               case 0xf:
+                   // discriminator value 0xfL=0xfL for class OFBsnVrfCounterStatsRequestVer14
+                   return OFBsnVrfCounterStatsRequestVer14.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnStatsRequestVer14: " + subtype);
             }

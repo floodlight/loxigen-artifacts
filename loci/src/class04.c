@@ -9327,6 +9327,9 @@ of_instruction_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t 
     case OF_VERSION_1_4: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
         switch (value) {
+        case 0x5c16c7:
+            of_instruction_bsn_wire_object_id_get(obj, id);
+            break;
         default:
             *id = OF_INSTRUCTION_EXPERIMENTER;
             break;

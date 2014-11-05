@@ -119,6 +119,51 @@ of_bsn_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     case OF_VERSION_1_4: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
         switch (value) {
+        case 0x1:
+            *id = OF_BSN_LACP_STATS_REPLY;
+            break;
+        case 0x2:
+            *id = OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY;
+            break;
+        case 0x3:
+            *id = OF_BSN_GENTABLE_ENTRY_STATS_REPLY;
+            break;
+        case 0x4:
+            *id = OF_BSN_GENTABLE_DESC_STATS_REPLY;
+            break;
+        case 0x5:
+            *id = OF_BSN_GENTABLE_BUCKET_STATS_REPLY;
+            break;
+        case 0x6:
+            *id = OF_BSN_SWITCH_PIPELINE_STATS_REPLY;
+            break;
+        case 0x7:
+            *id = OF_BSN_GENTABLE_STATS_REPLY;
+            break;
+        case 0x8:
+            *id = OF_BSN_PORT_COUNTER_STATS_REPLY;
+            break;
+        case 0x9:
+            *id = OF_BSN_VLAN_COUNTER_STATS_REPLY;
+            break;
+        case 0xa:
+            *id = OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY;
+            break;
+        case 0xb:
+            *id = OF_BSN_TABLE_CHECKSUM_STATS_REPLY;
+            break;
+        case 0xc:
+            *id = OF_BSN_DEBUG_COUNTER_STATS_REPLY;
+            break;
+        case 0xd:
+            *id = OF_BSN_DEBUG_COUNTER_DESC_STATS_REPLY;
+            break;
+        case 0xe:
+            *id = OF_BSN_IMAGE_DESC_STATS_REPLY;
+            break;
+        case 0xf:
+            *id = OF_BSN_VRF_COUNTER_STATS_REPLY;
+            break;
         default:
             *id = OF_BSN_STATS_REPLY;
             break;
@@ -1295,6 +1340,51 @@ of_bsn_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     case OF_VERSION_1_4: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 20)); /* subtype */
         switch (value) {
+        case 0x1:
+            *id = OF_BSN_LACP_STATS_REQUEST;
+            break;
+        case 0x2:
+            *id = OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST;
+            break;
+        case 0x3:
+            *id = OF_BSN_GENTABLE_ENTRY_STATS_REQUEST;
+            break;
+        case 0x4:
+            *id = OF_BSN_GENTABLE_DESC_STATS_REQUEST;
+            break;
+        case 0x5:
+            *id = OF_BSN_GENTABLE_BUCKET_STATS_REQUEST;
+            break;
+        case 0x6:
+            *id = OF_BSN_SWITCH_PIPELINE_STATS_REQUEST;
+            break;
+        case 0x7:
+            *id = OF_BSN_GENTABLE_STATS_REQUEST;
+            break;
+        case 0x8:
+            *id = OF_BSN_PORT_COUNTER_STATS_REQUEST;
+            break;
+        case 0x9:
+            *id = OF_BSN_VLAN_COUNTER_STATS_REQUEST;
+            break;
+        case 0xa:
+            *id = OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST;
+            break;
+        case 0xb:
+            *id = OF_BSN_TABLE_CHECKSUM_STATS_REQUEST;
+            break;
+        case 0xc:
+            *id = OF_BSN_DEBUG_COUNTER_STATS_REQUEST;
+            break;
+        case 0xd:
+            *id = OF_BSN_DEBUG_COUNTER_DESC_STATS_REQUEST;
+            break;
+        case 0xe:
+            *id = OF_BSN_IMAGE_DESC_STATS_REQUEST;
+            break;
+        case 0xf:
+            *id = OF_BSN_VRF_COUNTER_STATS_REQUEST;
+            break;
         default:
             *id = OF_BSN_STATS_REQUEST;
             break;

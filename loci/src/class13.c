@@ -35,6 +35,7 @@ of_bsn_tlv_queue_id_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x14); /* type */
         break;
     default:
@@ -145,6 +146,7 @@ of_bsn_tlv_queue_id_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -183,6 +185,7 @@ of_bsn_tlv_queue_id_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -234,6 +237,7 @@ of_bsn_tlv_queue_weight_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x15); /* type */
         break;
     default:
@@ -344,6 +348,7 @@ of_bsn_tlv_queue_weight_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -382,6 +387,7 @@ of_bsn_tlv_queue_weight_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -433,6 +439,7 @@ of_bsn_tlv_reply_packets_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xc); /* type */
         break;
     default:
@@ -543,6 +550,7 @@ of_bsn_tlv_reply_packets_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -581,6 +589,7 @@ of_bsn_tlv_reply_packets_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -632,6 +641,7 @@ of_bsn_tlv_request_packets_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xb); /* type */
         break;
     default:
@@ -742,6 +752,7 @@ of_bsn_tlv_request_packets_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -780,6 +791,7 @@ of_bsn_tlv_request_packets_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -831,6 +843,7 @@ of_bsn_tlv_rx_packets_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x2); /* type */
         break;
     default:
@@ -941,6 +954,7 @@ of_bsn_tlv_rx_packets_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -979,6 +993,7 @@ of_bsn_tlv_rx_packets_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1030,6 +1045,7 @@ of_bsn_tlv_sampling_rate_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1e); /* type */
         break;
     default:
@@ -1140,6 +1156,7 @@ of_bsn_tlv_sampling_rate_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1178,6 +1195,7 @@ of_bsn_tlv_sampling_rate_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1229,6 +1247,7 @@ of_bsn_tlv_sub_agent_id_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x26); /* type */
         break;
     default:
@@ -1339,6 +1358,7 @@ of_bsn_tlv_sub_agent_id_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1377,6 +1397,7 @@ of_bsn_tlv_sub_agent_id_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1428,6 +1449,7 @@ of_bsn_tlv_tx_bytes_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x27); /* type */
         break;
     default:
@@ -1538,6 +1560,7 @@ of_bsn_tlv_tx_bytes_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1576,6 +1599,7 @@ of_bsn_tlv_tx_bytes_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1627,6 +1651,7 @@ of_bsn_tlv_tx_packets_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x3); /* type */
         break;
     default:
@@ -1737,6 +1762,7 @@ of_bsn_tlv_tx_packets_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1775,6 +1801,7 @@ of_bsn_tlv_tx_packets_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1826,6 +1853,7 @@ of_bsn_tlv_udf_anchor_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x10); /* type */
         break;
     default:
@@ -1936,6 +1964,7 @@ of_bsn_tlv_udf_anchor_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1974,6 +2003,7 @@ of_bsn_tlv_udf_anchor_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2025,6 +2055,7 @@ of_bsn_tlv_udf_id_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xf); /* type */
         break;
     default:
@@ -2135,6 +2166,7 @@ of_bsn_tlv_udf_id_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2173,6 +2205,7 @@ of_bsn_tlv_udf_id_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2224,6 +2257,7 @@ of_bsn_tlv_udf_length_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x12); /* type */
         break;
     default:
@@ -2334,6 +2368,7 @@ of_bsn_tlv_udf_length_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2372,6 +2407,7 @@ of_bsn_tlv_udf_length_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2423,6 +2459,7 @@ of_bsn_tlv_udf_offset_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x11); /* type */
         break;
     default:
@@ -2533,6 +2570,7 @@ of_bsn_tlv_udf_offset_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2571,6 +2609,7 @@ of_bsn_tlv_udf_offset_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2622,6 +2661,7 @@ of_bsn_tlv_udp_dst_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x25); /* type */
         break;
     default:
@@ -2732,6 +2772,7 @@ of_bsn_tlv_udp_dst_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2770,6 +2811,7 @@ of_bsn_tlv_udp_dst_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2821,6 +2863,7 @@ of_bsn_tlv_udp_src_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x24); /* type */
         break;
     default:
@@ -2931,6 +2974,7 @@ of_bsn_tlv_udp_src_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2969,6 +3013,7 @@ of_bsn_tlv_udp_src_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3020,6 +3065,7 @@ of_bsn_tlv_unicast_query_timeout_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x9); /* type */
         break;
     default:
@@ -3130,6 +3176,7 @@ of_bsn_tlv_unicast_query_timeout_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3168,6 +3215,7 @@ of_bsn_tlv_unicast_query_timeout_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3219,6 +3267,7 @@ of_bsn_tlv_vlan_vid_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x6); /* type */
         break;
     default:
@@ -3329,6 +3378,7 @@ of_bsn_tlv_vlan_vid_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3367,6 +3417,7 @@ of_bsn_tlv_vlan_vid_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3418,6 +3469,7 @@ of_bsn_tlv_vrf_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x13); /* type */
         break;
     default:
@@ -3528,6 +3580,7 @@ of_bsn_tlv_vrf_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3566,6 +3619,7 @@ of_bsn_tlv_vrf_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3713,6 +3767,7 @@ of_bsn_vlan_counter_stats_entry_vlan_vid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 2;
         break;
     default:
@@ -3751,6 +3806,7 @@ of_bsn_vlan_counter_stats_entry_vlan_vid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 2;
         break;
     default:
@@ -3797,6 +3853,7 @@ of_bsn_vlan_counter_stats_entry_values_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3867,6 +3924,7 @@ of_bsn_vlan_counter_stats_entry_values_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -3944,6 +4002,7 @@ of_bsn_vlan_counter_stats_reply_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
@@ -4058,6 +4117,7 @@ of_bsn_vlan_counter_stats_reply_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4096,6 +4156,7 @@ of_bsn_vlan_counter_stats_reply_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4136,6 +4197,7 @@ of_bsn_vlan_counter_stats_reply_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4174,6 +4236,7 @@ of_bsn_vlan_counter_stats_reply_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4214,6 +4277,7 @@ of_bsn_vlan_counter_stats_reply_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -4252,6 +4316,7 @@ of_bsn_vlan_counter_stats_reply_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -4292,6 +4357,7 @@ of_bsn_vlan_counter_stats_reply_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -4330,6 +4396,7 @@ of_bsn_vlan_counter_stats_reply_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -4376,6 +4443,7 @@ of_bsn_vlan_counter_stats_reply_entries_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4446,6 +4514,7 @@ of_bsn_vlan_counter_stats_reply_entries_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4523,6 +4592,7 @@ of_bsn_vlan_counter_stats_request_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
@@ -4637,6 +4707,7 @@ of_bsn_vlan_counter_stats_request_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4675,6 +4746,7 @@ of_bsn_vlan_counter_stats_request_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4715,6 +4787,7 @@ of_bsn_vlan_counter_stats_request_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4753,6 +4826,7 @@ of_bsn_vlan_counter_stats_request_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -4793,6 +4867,7 @@ of_bsn_vlan_counter_stats_request_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -4831,6 +4906,7 @@ of_bsn_vlan_counter_stats_request_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -4871,6 +4947,7 @@ of_bsn_vlan_counter_stats_request_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -4909,6 +4986,7 @@ of_bsn_vlan_counter_stats_request_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -4949,6 +5027,7 @@ of_bsn_vlan_counter_stats_request_vlan_vid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -4987,6 +5066,7 @@ of_bsn_vlan_counter_stats_request_vlan_vid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -5134,6 +5214,7 @@ of_bsn_vrf_counter_stats_entry_vrf_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5172,6 +5253,7 @@ of_bsn_vrf_counter_stats_entry_vrf_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5218,6 +5300,7 @@ of_bsn_vrf_counter_stats_entry_values_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5288,6 +5371,7 @@ of_bsn_vrf_counter_stats_entry_values_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5365,6 +5449,7 @@ of_bsn_vrf_counter_stats_reply_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x13; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
@@ -5479,6 +5564,7 @@ of_bsn_vrf_counter_stats_reply_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5517,6 +5603,7 @@ of_bsn_vrf_counter_stats_reply_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5557,6 +5644,7 @@ of_bsn_vrf_counter_stats_reply_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -5595,6 +5683,7 @@ of_bsn_vrf_counter_stats_reply_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -5635,6 +5724,7 @@ of_bsn_vrf_counter_stats_reply_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -5673,6 +5763,7 @@ of_bsn_vrf_counter_stats_reply_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -5713,6 +5804,7 @@ of_bsn_vrf_counter_stats_reply_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -5751,6 +5843,7 @@ of_bsn_vrf_counter_stats_reply_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -5797,6 +5890,7 @@ of_bsn_vrf_counter_stats_reply_entries_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5867,6 +5961,7 @@ of_bsn_vrf_counter_stats_reply_entries_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -5944,6 +6039,7 @@ of_bsn_vrf_counter_stats_request_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint8_t *)(buf + 0) = obj->version; /* version */
         *(uint8_t *)(buf + 1) = 0x12; /* type */
         *(uint16_t *)(buf + 8) = U16_HTON(0xffff); /* stats_type */
@@ -6058,6 +6154,7 @@ of_bsn_vrf_counter_stats_request_xid_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6096,6 +6193,7 @@ of_bsn_vrf_counter_stats_request_xid_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6136,6 +6234,7 @@ of_bsn_vrf_counter_stats_request_flags_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6174,6 +6273,7 @@ of_bsn_vrf_counter_stats_request_flags_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 10;
         break;
     default:
@@ -6214,6 +6314,7 @@ of_bsn_vrf_counter_stats_request_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -6252,6 +6353,7 @@ of_bsn_vrf_counter_stats_request_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         break;
     default:
@@ -6292,6 +6394,7 @@ of_bsn_vrf_counter_stats_request_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -6330,6 +6433,7 @@ of_bsn_vrf_counter_stats_request_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 20;
         break;
     default:
@@ -6370,6 +6474,7 @@ of_bsn_vrf_counter_stats_request_vrf_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -6408,6 +6513,7 @@ of_bsn_vrf_counter_stats_request_vrf_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 24;
         break;
     default:
@@ -7205,6 +7311,45 @@ of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x0:
+            *id = OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK;
+            break;
+        case 0x1:
+            *id = OF_INSTRUCTION_BSN_ARP_OFFLOAD;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_BSN_DHCP_OFFLOAD;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_BSN_PERMIT;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_BSN_DENY;
+            break;
+        case 0x6:
+            *id = OF_INSTRUCTION_BSN_PACKET_OF_DEATH;
+            break;
+        case 0x7:
+            *id = OF_INSTRUCTION_BSN_PRIORITIZE_PDUS;
+            break;
+        case 0x8:
+            *id = OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE;
+            break;
+        case 0x9:
+            *id = OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS;
+            break;
+        case 0xa:
+            *id = OF_INSTRUCTION_BSN_SPAN_DESTINATION;
+            break;
+        default:
+            *id = OF_INSTRUCTION_BSN;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -7310,6 +7455,7 @@ of_instruction_bsn_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7348,6 +7494,7 @@ of_instruction_bsn_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7388,6 +7535,7 @@ of_instruction_bsn_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7426,6 +7574,7 @@ of_instruction_bsn_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7492,6 +7641,9 @@ of_instruction_id_experimenter_wire_object_id_get(of_object_t *obj, of_object_id
     case OF_VERSION_1_4: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 4)); /* experimenter */
         switch (value) {
+        case 0x5c16c7:
+            of_instruction_id_bsn_wire_object_id_get(obj, id);
+            break;
         default:
             *id = OF_INSTRUCTION_ID_EXPERIMENTER;
             break;
@@ -7736,6 +7888,45 @@ of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         }
         break;
     }
+    case OF_VERSION_1_4: {
+        uint32_t value = U32_NTOH(*(uint32_t *)(buf + 8)); /* subtype */
+        switch (value) {
+        case 0x0:
+            *id = OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK;
+            break;
+        case 0x1:
+            *id = OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD;
+            break;
+        case 0x2:
+            *id = OF_INSTRUCTION_ID_BSN_DHCP_OFFLOAD;
+            break;
+        case 0x4:
+            *id = OF_INSTRUCTION_ID_BSN_PERMIT;
+            break;
+        case 0x5:
+            *id = OF_INSTRUCTION_ID_BSN_DENY;
+            break;
+        case 0x6:
+            *id = OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH;
+            break;
+        case 0x7:
+            *id = OF_INSTRUCTION_ID_BSN_PRIORITIZE_PDUS;
+            break;
+        case 0x8:
+            *id = OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE;
+            break;
+        case 0x9:
+            *id = OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS;
+            break;
+        case 0xa:
+            *id = OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION;
+            break;
+        default:
+            *id = OF_INSTRUCTION_ID_BSN;
+            break;
+        }
+        break;
+    }
     default:
         LOCI_ASSERT(0);
     }
@@ -7841,6 +8032,7 @@ of_instruction_id_bsn_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7879,6 +8071,7 @@ of_instruction_id_bsn_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7919,6 +8112,7 @@ of_instruction_id_bsn_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7957,6 +8151,7 @@ of_instruction_id_bsn_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -8008,6 +8203,7 @@ of_instruction_bsn_arp_offload_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x1); /* subtype */
@@ -8120,6 +8316,7 @@ of_instruction_bsn_arp_offload_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8158,6 +8355,7 @@ of_instruction_bsn_arp_offload_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8198,6 +8396,7 @@ of_instruction_bsn_arp_offload_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -8236,6 +8435,7 @@ of_instruction_bsn_arp_offload_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:

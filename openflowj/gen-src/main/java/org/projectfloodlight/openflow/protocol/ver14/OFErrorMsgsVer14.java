@@ -92,6 +92,22 @@ public class OFErrorMsgsVer14 implements OFErrorMsgs {
         return new OFTableFeaturesFailedErrorMsgVer14.Builder().setXid(nextXid());
     }
 
+    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
+        return new OFAsyncConfigFailedErrorMsgVer14.Builder().setXid(nextXid());
+    }
+
+    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
+        return new OFBadPropertyErrorMsgVer14.Builder().setXid(nextXid());
+    }
+
+    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
+        return new OFBundleFailedErrorMsgVer14.Builder().setXid(nextXid());
+    }
+
+    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
+        return new OFFlowMonitorFailedErrorMsgVer14.Builder().setXid(nextXid());
+    }
+
     public OFMessageReader<OFErrorMsg> getReader() {
         return OFErrorMsgVer14.READER;
     }

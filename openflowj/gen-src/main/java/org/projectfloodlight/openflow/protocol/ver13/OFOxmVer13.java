@@ -366,6 +366,12 @@ abstract class OFOxmVer13 {
                case (int) 0x80000d04:
                    // discriminator value 0x80000d04L=0x80000d04L for class OFOxmVlanVidMaskedVer13
                    return OFOxmVlanVidMaskedVer13.READER.readFrom(bb);
+               case (int) 0x80004e02:
+                   // discriminator value 0x80004e02L=0x80004e02L for class OFOxmIpv6ExthdrVer13
+                   return OFOxmIpv6ExthdrVer13.READER.readFrom(bb);
+               case (int) 0x80004f04:
+                   // discriminator value 0x80004f04L=0x80004f04L for class OFOxmIpv6ExthdrMaskedVer13
+                   return OFOxmIpv6ExthdrMaskedVer13.READER.readFrom(bb);
                case (int) 0x80004801:
                    // discriminator value 0x80004801L=0x80004801L for class OFOxmMplsBosVer13
                    return OFOxmMplsBosVer13.READER.readFrom(bb);

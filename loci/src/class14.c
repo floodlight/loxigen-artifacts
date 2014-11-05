@@ -35,6 +35,7 @@ of_instruction_id_bsn_arp_offload_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x1); /* subtype */
@@ -147,6 +148,7 @@ of_instruction_id_bsn_arp_offload_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -185,6 +187,7 @@ of_instruction_id_bsn_arp_offload_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -225,6 +228,7 @@ of_instruction_id_bsn_arp_offload_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -263,6 +267,7 @@ of_instruction_id_bsn_arp_offload_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -314,6 +319,7 @@ of_instruction_bsn_deny_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
@@ -426,6 +432,7 @@ of_instruction_bsn_deny_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -464,6 +471,7 @@ of_instruction_bsn_deny_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -504,6 +512,7 @@ of_instruction_bsn_deny_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -542,6 +551,7 @@ of_instruction_bsn_deny_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -593,6 +603,7 @@ of_instruction_id_bsn_deny_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
@@ -705,6 +716,7 @@ of_instruction_id_bsn_deny_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -743,6 +755,7 @@ of_instruction_id_bsn_deny_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -783,6 +796,7 @@ of_instruction_id_bsn_deny_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -821,6 +835,7 @@ of_instruction_id_bsn_deny_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -872,6 +887,7 @@ of_instruction_bsn_dhcp_offload_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x2); /* subtype */
@@ -984,6 +1000,7 @@ of_instruction_bsn_dhcp_offload_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1022,6 +1039,7 @@ of_instruction_bsn_dhcp_offload_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1062,6 +1080,7 @@ of_instruction_bsn_dhcp_offload_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1100,6 +1119,7 @@ of_instruction_bsn_dhcp_offload_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1151,6 +1171,7 @@ of_instruction_id_bsn_dhcp_offload_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x2); /* subtype */
@@ -1263,6 +1284,7 @@ of_instruction_id_bsn_dhcp_offload_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1301,6 +1323,7 @@ of_instruction_id_bsn_dhcp_offload_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1341,6 +1364,7 @@ of_instruction_id_bsn_dhcp_offload_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1379,6 +1403,7 @@ of_instruction_id_bsn_dhcp_offload_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1988,6 +2013,7 @@ of_instruction_bsn_disable_src_mac_check_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x0); /* subtype */
@@ -2100,6 +2126,7 @@ of_instruction_bsn_disable_src_mac_check_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2138,6 +2165,7 @@ of_instruction_bsn_disable_src_mac_check_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2178,6 +2206,7 @@ of_instruction_bsn_disable_src_mac_check_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2216,6 +2245,7 @@ of_instruction_bsn_disable_src_mac_check_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2267,6 +2297,7 @@ of_instruction_id_bsn_disable_src_mac_check_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x0); /* subtype */
@@ -2379,6 +2410,7 @@ of_instruction_id_bsn_disable_src_mac_check_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2417,6 +2449,7 @@ of_instruction_id_bsn_disable_src_mac_check_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2457,6 +2490,7 @@ of_instruction_id_bsn_disable_src_mac_check_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2495,6 +2529,7 @@ of_instruction_id_bsn_disable_src_mac_check_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2546,6 +2581,7 @@ of_instruction_bsn_disable_vlan_counters_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x9); /* subtype */
@@ -2658,6 +2694,7 @@ of_instruction_bsn_disable_vlan_counters_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2696,6 +2733,7 @@ of_instruction_bsn_disable_vlan_counters_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2736,6 +2774,7 @@ of_instruction_bsn_disable_vlan_counters_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2774,6 +2813,7 @@ of_instruction_bsn_disable_vlan_counters_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2825,6 +2865,7 @@ of_instruction_id_bsn_disable_vlan_counters_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x9); /* subtype */
@@ -2937,6 +2978,7 @@ of_instruction_id_bsn_disable_vlan_counters_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2975,6 +3017,7 @@ of_instruction_id_bsn_disable_vlan_counters_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3015,6 +3058,7 @@ of_instruction_id_bsn_disable_vlan_counters_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3053,6 +3097,7 @@ of_instruction_id_bsn_disable_vlan_counters_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3104,6 +3149,7 @@ of_instruction_bsn_packet_of_death_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x6); /* subtype */
@@ -3216,6 +3262,7 @@ of_instruction_bsn_packet_of_death_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3254,6 +3301,7 @@ of_instruction_bsn_packet_of_death_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3294,6 +3342,7 @@ of_instruction_bsn_packet_of_death_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3332,6 +3381,7 @@ of_instruction_bsn_packet_of_death_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3383,6 +3433,7 @@ of_instruction_id_bsn_packet_of_death_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x6); /* subtype */
@@ -3495,6 +3546,7 @@ of_instruction_id_bsn_packet_of_death_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3533,6 +3585,7 @@ of_instruction_id_bsn_packet_of_death_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3573,6 +3626,7 @@ of_instruction_id_bsn_packet_of_death_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3611,6 +3665,7 @@ of_instruction_id_bsn_packet_of_death_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3662,6 +3717,7 @@ of_instruction_bsn_permit_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x4); /* subtype */
@@ -3774,6 +3830,7 @@ of_instruction_bsn_permit_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3812,6 +3869,7 @@ of_instruction_bsn_permit_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3852,6 +3910,7 @@ of_instruction_bsn_permit_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3890,6 +3949,7 @@ of_instruction_bsn_permit_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3941,6 +4001,7 @@ of_instruction_id_bsn_permit_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x4); /* subtype */
@@ -4053,6 +4114,7 @@ of_instruction_id_bsn_permit_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4091,6 +4153,7 @@ of_instruction_id_bsn_permit_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4131,6 +4194,7 @@ of_instruction_id_bsn_permit_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4169,6 +4233,7 @@ of_instruction_id_bsn_permit_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4220,6 +4285,7 @@ of_instruction_bsn_prioritize_pdus_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x7); /* subtype */
@@ -4332,6 +4398,7 @@ of_instruction_bsn_prioritize_pdus_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4370,6 +4437,7 @@ of_instruction_bsn_prioritize_pdus_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4410,6 +4478,7 @@ of_instruction_bsn_prioritize_pdus_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4448,6 +4517,7 @@ of_instruction_bsn_prioritize_pdus_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4499,6 +4569,7 @@ of_instruction_id_bsn_prioritize_pdus_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x7); /* subtype */
@@ -4611,6 +4682,7 @@ of_instruction_id_bsn_prioritize_pdus_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4649,6 +4721,7 @@ of_instruction_id_bsn_prioritize_pdus_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4689,6 +4762,7 @@ of_instruction_id_bsn_prioritize_pdus_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4727,6 +4801,7 @@ of_instruction_id_bsn_prioritize_pdus_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4778,6 +4853,7 @@ of_instruction_bsn_require_vlan_xlate_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x8); /* subtype */
@@ -4890,6 +4966,7 @@ of_instruction_bsn_require_vlan_xlate_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4928,6 +5005,7 @@ of_instruction_bsn_require_vlan_xlate_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4968,6 +5046,7 @@ of_instruction_bsn_require_vlan_xlate_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5006,6 +5085,7 @@ of_instruction_bsn_require_vlan_xlate_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5057,6 +5137,7 @@ of_instruction_id_bsn_require_vlan_xlate_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x8); /* subtype */
@@ -5169,6 +5250,7 @@ of_instruction_id_bsn_require_vlan_xlate_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5207,6 +5289,7 @@ of_instruction_id_bsn_require_vlan_xlate_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5247,6 +5330,7 @@ of_instruction_id_bsn_require_vlan_xlate_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5285,6 +5369,7 @@ of_instruction_id_bsn_require_vlan_xlate_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5336,6 +5421,7 @@ of_instruction_bsn_span_destination_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0xa); /* subtype */
@@ -5448,6 +5534,7 @@ of_instruction_bsn_span_destination_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5486,6 +5573,7 @@ of_instruction_bsn_span_destination_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5526,6 +5614,7 @@ of_instruction_bsn_span_destination_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5564,6 +5653,7 @@ of_instruction_bsn_span_destination_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5615,6 +5705,7 @@ of_instruction_id_bsn_span_destination_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0xa); /* subtype */
@@ -5727,6 +5818,7 @@ of_instruction_id_bsn_span_destination_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5765,6 +5857,7 @@ of_instruction_id_bsn_span_destination_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5805,6 +5898,7 @@ of_instruction_id_bsn_span_destination_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5843,6 +5937,7 @@ of_instruction_id_bsn_span_destination_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:

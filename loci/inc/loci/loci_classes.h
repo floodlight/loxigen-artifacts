@@ -987,6 +987,10 @@ void of_meter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_meter_stats_reply_push_wire_types(of_object_t *obj);
 void of_meter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_meter_stats_request_push_wire_types(of_object_t *obj);
+void of_oxm_ipv6_exthdr_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_ipv6_exthdr_push_wire_types(of_object_t *obj);
+void of_oxm_ipv6_exthdr_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_ipv6_exthdr_masked_push_wire_types(of_object_t *obj);
 void of_oxm_mpls_bos_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_mpls_bos_push_wire_types(of_object_t *obj);
 void of_oxm_mpls_bos_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1047,6 +1051,8 @@ void of_uint64_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_uint64_push_wire_types(of_object_t *obj);
 void of_uint8_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_uint8_push_wire_types(of_object_t *obj);
+void of_async_config_failed_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_async_config_failed_error_msg_push_wire_types(of_object_t *obj);
 void of_async_config_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_async_config_prop_push_wire_types(of_object_t *obj);
 void of_async_config_prop_experimenter_master_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1077,14 +1083,24 @@ void of_async_config_prop_table_status_master_wire_object_id_get(of_object_t *ob
 void of_async_config_prop_table_status_master_push_wire_types(of_object_t *obj);
 void of_async_config_prop_table_status_slave_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_async_config_prop_table_status_slave_push_wire_types(of_object_t *obj);
+void of_bad_property_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bad_property_error_msg_push_wire_types(of_object_t *obj);
 void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_add_msg_push_wire_types(of_object_t *obj);
 void of_bundle_ctrl_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_ctrl_msg_push_wire_types(of_object_t *obj);
+void of_bundle_failed_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bundle_failed_error_msg_push_wire_types(of_object_t *obj);
 void of_bundle_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_prop_push_wire_types(of_object_t *obj);
 void of_bundle_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_flow_monitor_failed_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_flow_monitor_failed_error_msg_push_wire_types(of_object_t *obj);
+void of_oxm_pbb_uca_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_pbb_uca_push_wire_types(of_object_t *obj);
+void of_oxm_pbb_uca_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_pbb_uca_masked_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1212,12 +1228,14 @@ typedef union of_oxm_u of_oxm_t;
 /* LOCI object typedefs */
 typedef of_object_t of_aggregate_stats_reply_t;
 typedef of_object_t of_aggregate_stats_request_t;
+typedef of_object_t of_async_config_failed_error_msg_t;
 typedef of_object_t of_async_get_reply_t;
 typedef of_object_t of_async_get_request_t;
 typedef of_object_t of_async_set_t;
 typedef of_object_t of_bad_action_error_msg_t;
 typedef of_object_t of_bad_instruction_error_msg_t;
 typedef of_object_t of_bad_match_error_msg_t;
+typedef of_object_t of_bad_property_error_msg_t;
 typedef of_object_t of_bad_request_error_msg_t;
 typedef of_object_t of_barrier_reply_t;
 typedef of_object_t of_barrier_request_t;
@@ -1317,6 +1335,7 @@ typedef of_object_t of_bsn_vrf_counter_stats_reply_t;
 typedef of_object_t of_bsn_vrf_counter_stats_request_t;
 typedef of_object_t of_bundle_add_msg_t;
 typedef of_object_t of_bundle_ctrl_msg_t;
+typedef of_object_t of_bundle_failed_error_msg_t;
 typedef of_object_t of_desc_stats_reply_t;
 typedef of_object_t of_desc_stats_request_t;
 typedef of_object_t of_echo_reply_t;
@@ -1335,6 +1354,7 @@ typedef of_object_t of_flow_mod_t;
 typedef of_object_t of_flow_mod_failed_error_msg_t;
 typedef of_object_t of_flow_modify_t;
 typedef of_object_t of_flow_modify_strict_t;
+typedef of_object_t of_flow_monitor_failed_error_msg_t;
 typedef of_object_t of_flow_removed_t;
 typedef of_object_t of_flow_stats_reply_t;
 typedef of_object_t of_flow_stats_request_t;
@@ -1691,6 +1711,8 @@ typedef of_object_t of_oxm_ipv4_src_t;
 typedef of_object_t of_oxm_ipv4_src_masked_t;
 typedef of_object_t of_oxm_ipv6_dst_t;
 typedef of_object_t of_oxm_ipv6_dst_masked_t;
+typedef of_object_t of_oxm_ipv6_exthdr_t;
+typedef of_object_t of_oxm_ipv6_exthdr_masked_t;
 typedef of_object_t of_oxm_ipv6_flabel_t;
 typedef of_object_t of_oxm_ipv6_flabel_masked_t;
 typedef of_object_t of_oxm_ipv6_nd_sll_t;
@@ -1709,6 +1731,8 @@ typedef of_object_t of_oxm_mpls_label_t;
 typedef of_object_t of_oxm_mpls_label_masked_t;
 typedef of_object_t of_oxm_mpls_tc_t;
 typedef of_object_t of_oxm_mpls_tc_masked_t;
+typedef of_object_t of_oxm_pbb_uca_t;
+typedef of_object_t of_oxm_pbb_uca_masked_t;
 typedef of_object_t of_oxm_sctp_dst_t;
 typedef of_object_t of_oxm_sctp_dst_masked_t;
 typedef of_object_t of_oxm_sctp_src_t;
@@ -1872,6 +1896,11 @@ extern void of_aggregate_stats_request_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_async_config_failed_error_msg_new(of_version_t version);
+extern void of_async_config_failed_error_msg_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_async_get_reply_new(of_version_t version);
 extern void of_async_get_reply_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -1899,6 +1928,11 @@ extern void of_bad_instruction_error_msg_init(
 extern of_object_t *
     of_bad_match_error_msg_new(of_version_t version);
 extern void of_bad_match_error_msg_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bad_property_error_msg_new(of_version_t version);
+extern void of_bad_property_error_msg_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -2397,6 +2431,11 @@ extern void of_bundle_ctrl_msg_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bundle_failed_error_msg_new(of_version_t version);
+extern void of_bundle_failed_error_msg_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_desc_stats_reply_new(of_version_t version);
 extern void of_desc_stats_reply_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -2484,6 +2523,11 @@ extern void of_flow_modify_init(
 extern of_object_t *
     of_flow_modify_strict_new(of_version_t version);
 extern void of_flow_modify_strict_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_flow_monitor_failed_error_msg_new(of_version_t version);
+extern void of_flow_monitor_failed_error_msg_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4322,6 +4366,16 @@ extern void of_oxm_ipv6_dst_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_oxm_ipv6_exthdr_new(of_version_t version);
+extern void of_oxm_ipv6_exthdr_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_ipv6_exthdr_masked_new(of_version_t version);
+extern void of_oxm_ipv6_exthdr_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_oxm_ipv6_flabel_new(of_version_t version);
 extern void of_oxm_ipv6_flabel_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4409,6 +4463,16 @@ extern void of_oxm_mpls_tc_init(
 extern of_object_t *
     of_oxm_mpls_tc_masked_new(of_version_t version);
 extern void of_oxm_mpls_tc_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_pbb_uca_new(of_version_t version);
+extern void of_oxm_pbb_uca_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_pbb_uca_masked_new(of_version_t version);
+extern void of_oxm_pbb_uca_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -5121,6 +5185,17 @@ of_aggregate_stats_request_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_async_config_failed_error_msg_t
+ * @param obj An instance of type of_async_config_failed_error_msg_t
+ *
+ * \ingroup of_async_config_failed_error_msg
+ */
+static inline void
+of_async_config_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_async_get_reply_t
  * @param obj An instance of type of_async_get_reply_t
  *
@@ -5183,6 +5258,17 @@ of_bad_instruction_error_msg_delete(of_object_t *obj) {
  */
 static inline void
 of_bad_match_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bad_property_error_msg_t
+ * @param obj An instance of type of_bad_property_error_msg_t
+ *
+ * \ingroup of_bad_property_error_msg
+ */
+static inline void
+of_bad_property_error_msg_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -6276,6 +6362,17 @@ of_bundle_ctrl_msg_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bundle_failed_error_msg_t
+ * @param obj An instance of type of_bundle_failed_error_msg_t
+ *
+ * \ingroup of_bundle_failed_error_msg
+ */
+static inline void
+of_bundle_failed_error_msg_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_desc_stats_reply_t
  * @param obj An instance of type of_desc_stats_reply_t
  *
@@ -6470,6 +6567,17 @@ of_flow_modify_delete(of_object_t *obj) {
  */
 static inline void
 of_flow_modify_strict_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_flow_monitor_failed_error_msg_t
+ * @param obj An instance of type of_flow_monitor_failed_error_msg_t
+ *
+ * \ingroup of_flow_monitor_failed_error_msg
+ */
+static inline void
+of_flow_monitor_failed_error_msg_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -10511,6 +10619,28 @@ of_oxm_ipv6_dst_masked_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_oxm_ipv6_exthdr_t
+ * @param obj An instance of type of_oxm_ipv6_exthdr_t
+ *
+ * \ingroup of_oxm_ipv6_exthdr
+ */
+static inline void
+of_oxm_ipv6_exthdr_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_ipv6_exthdr_masked_t
+ * @param obj An instance of type of_oxm_ipv6_exthdr_masked_t
+ *
+ * \ingroup of_oxm_ipv6_exthdr_masked
+ */
+static inline void
+of_oxm_ipv6_exthdr_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_oxm_ipv6_flabel_t
  * @param obj An instance of type of_oxm_ipv6_flabel_t
  *
@@ -10705,6 +10835,28 @@ of_oxm_mpls_tc_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_mpls_tc_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_pbb_uca_t
+ * @param obj An instance of type of_oxm_pbb_uca_t
+ *
+ * \ingroup of_oxm_pbb_uca
+ */
+static inline void
+of_oxm_pbb_uca_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_pbb_uca_masked_t
+ * @param obj An instance of type of_oxm_pbb_uca_masked_t
+ *
+ * \ingroup of_oxm_pbb_uca_masked
+ */
+static inline void
+of_oxm_pbb_uca_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -12316,6 +12468,29 @@ extern int WARN_UNUSED_RESULT of_aggregate_stats_request_match_get(
     of_aggregate_stats_request_t *obj,
     of_match_t *match);
 
+/* Unified accessor functions for of_async_config_failed_error_msg */
+
+extern void of_async_config_failed_error_msg_xid_set(
+    of_async_config_failed_error_msg_t *obj,
+    uint32_t xid);
+extern void of_async_config_failed_error_msg_xid_get(
+    of_async_config_failed_error_msg_t *obj,
+    uint32_t *xid);
+
+extern void of_async_config_failed_error_msg_code_set(
+    of_async_config_failed_error_msg_t *obj,
+    uint16_t code);
+extern void of_async_config_failed_error_msg_code_get(
+    of_async_config_failed_error_msg_t *obj,
+    uint16_t *code);
+
+extern int WARN_UNUSED_RESULT of_async_config_failed_error_msg_data_set(
+    of_async_config_failed_error_msg_t *obj,
+    of_octets_t *data);
+extern void of_async_config_failed_error_msg_data_get(
+    of_async_config_failed_error_msg_t *obj,
+    of_octets_t *data);
+
 /* Unified accessor functions for of_async_get_reply */
 
 extern void of_async_get_reply_xid_set(
@@ -12563,6 +12738,29 @@ extern int WARN_UNUSED_RESULT of_bad_match_error_msg_data_set(
     of_octets_t *data);
 extern void of_bad_match_error_msg_data_get(
     of_bad_match_error_msg_t *obj,
+    of_octets_t *data);
+
+/* Unified accessor functions for of_bad_property_error_msg */
+
+extern void of_bad_property_error_msg_xid_set(
+    of_bad_property_error_msg_t *obj,
+    uint32_t xid);
+extern void of_bad_property_error_msg_xid_get(
+    of_bad_property_error_msg_t *obj,
+    uint32_t *xid);
+
+extern void of_bad_property_error_msg_code_set(
+    of_bad_property_error_msg_t *obj,
+    uint16_t code);
+extern void of_bad_property_error_msg_code_get(
+    of_bad_property_error_msg_t *obj,
+    uint16_t *code);
+
+extern int WARN_UNUSED_RESULT of_bad_property_error_msg_data_set(
+    of_bad_property_error_msg_t *obj,
+    of_octets_t *data);
+extern void of_bad_property_error_msg_data_get(
+    of_bad_property_error_msg_t *obj,
     of_octets_t *data);
 
 /* Unified accessor functions for of_bad_request_error_msg */
@@ -16088,6 +16286,29 @@ extern void of_bundle_ctrl_msg_properties_bind(
 extern of_list_bundle_prop_t *of_bundle_ctrl_msg_properties_get(
     of_bundle_ctrl_msg_t *obj);
 
+/* Unified accessor functions for of_bundle_failed_error_msg */
+
+extern void of_bundle_failed_error_msg_xid_set(
+    of_bundle_failed_error_msg_t *obj,
+    uint32_t xid);
+extern void of_bundle_failed_error_msg_xid_get(
+    of_bundle_failed_error_msg_t *obj,
+    uint32_t *xid);
+
+extern void of_bundle_failed_error_msg_code_set(
+    of_bundle_failed_error_msg_t *obj,
+    uint16_t code);
+extern void of_bundle_failed_error_msg_code_get(
+    of_bundle_failed_error_msg_t *obj,
+    uint16_t *code);
+
+extern int WARN_UNUSED_RESULT of_bundle_failed_error_msg_data_set(
+    of_bundle_failed_error_msg_t *obj,
+    of_octets_t *data);
+extern void of_bundle_failed_error_msg_data_get(
+    of_bundle_failed_error_msg_t *obj,
+    of_octets_t *data);
+
 /* Unified accessor functions for of_desc_stats_reply */
 
 extern void of_desc_stats_reply_xid_set(
@@ -17087,6 +17308,29 @@ extern void of_flow_modify_strict_actions_bind(
     of_list_action_t *actions);
 extern of_list_action_t *of_flow_modify_strict_actions_get(
     of_flow_modify_strict_t *obj);
+
+/* Unified accessor functions for of_flow_monitor_failed_error_msg */
+
+extern void of_flow_monitor_failed_error_msg_xid_set(
+    of_flow_monitor_failed_error_msg_t *obj,
+    uint32_t xid);
+extern void of_flow_monitor_failed_error_msg_xid_get(
+    of_flow_monitor_failed_error_msg_t *obj,
+    uint32_t *xid);
+
+extern void of_flow_monitor_failed_error_msg_code_set(
+    of_flow_monitor_failed_error_msg_t *obj,
+    uint16_t code);
+extern void of_flow_monitor_failed_error_msg_code_get(
+    of_flow_monitor_failed_error_msg_t *obj,
+    uint16_t *code);
+
+extern int WARN_UNUSED_RESULT of_flow_monitor_failed_error_msg_data_set(
+    of_flow_monitor_failed_error_msg_t *obj,
+    of_octets_t *data);
+extern void of_flow_monitor_failed_error_msg_data_get(
+    of_flow_monitor_failed_error_msg_t *obj,
+    of_octets_t *data);
 
 /* Unified accessor functions for of_flow_removed */
 
@@ -22712,6 +22956,31 @@ extern void of_oxm_ipv6_dst_masked_value_mask_get(
     of_oxm_ipv6_dst_masked_t *obj,
     of_ipv6_t *value_mask);
 
+/* Unified accessor functions for of_oxm_ipv6_exthdr */
+
+extern void of_oxm_ipv6_exthdr_value_set(
+    of_oxm_ipv6_exthdr_t *obj,
+    uint16_t value);
+extern void of_oxm_ipv6_exthdr_value_get(
+    of_oxm_ipv6_exthdr_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_oxm_ipv6_exthdr_masked */
+
+extern void of_oxm_ipv6_exthdr_masked_value_set(
+    of_oxm_ipv6_exthdr_masked_t *obj,
+    uint16_t value);
+extern void of_oxm_ipv6_exthdr_masked_value_get(
+    of_oxm_ipv6_exthdr_masked_t *obj,
+    uint16_t *value);
+
+extern void of_oxm_ipv6_exthdr_masked_value_mask_set(
+    of_oxm_ipv6_exthdr_masked_t *obj,
+    uint16_t value_mask);
+extern void of_oxm_ipv6_exthdr_masked_value_mask_get(
+    of_oxm_ipv6_exthdr_masked_t *obj,
+    uint16_t *value_mask);
+
 /* Unified accessor functions for of_oxm_ipv6_flabel */
 
 extern void of_oxm_ipv6_flabel_value_set(
@@ -22935,6 +23204,31 @@ extern void of_oxm_mpls_tc_masked_value_mask_set(
     uint8_t value_mask);
 extern void of_oxm_mpls_tc_masked_value_mask_get(
     of_oxm_mpls_tc_masked_t *obj,
+    uint8_t *value_mask);
+
+/* Unified accessor functions for of_oxm_pbb_uca */
+
+extern void of_oxm_pbb_uca_value_set(
+    of_oxm_pbb_uca_t *obj,
+    uint8_t value);
+extern void of_oxm_pbb_uca_value_get(
+    of_oxm_pbb_uca_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_oxm_pbb_uca_masked */
+
+extern void of_oxm_pbb_uca_masked_value_set(
+    of_oxm_pbb_uca_masked_t *obj,
+    uint8_t value);
+extern void of_oxm_pbb_uca_masked_value_get(
+    of_oxm_pbb_uca_masked_t *obj,
+    uint8_t *value);
+
+extern void of_oxm_pbb_uca_masked_value_mask_set(
+    of_oxm_pbb_uca_masked_t *obj,
+    uint8_t value_mask);
+extern void of_oxm_pbb_uca_masked_value_mask_get(
+    of_oxm_pbb_uca_masked_t *obj,
     uint8_t *value_mask);
 
 /* Unified accessor functions for of_oxm_sctp_dst */
@@ -26113,6 +26407,8 @@ union of_oxm_u {
     of_oxm_ipv4_src_masked_t ipv4_src_masked;
     of_oxm_ipv6_dst_t ipv6_dst;
     of_oxm_ipv6_dst_masked_t ipv6_dst_masked;
+    of_oxm_ipv6_exthdr_t ipv6_exthdr;
+    of_oxm_ipv6_exthdr_masked_t ipv6_exthdr_masked;
     of_oxm_ipv6_flabel_t ipv6_flabel;
     of_oxm_ipv6_flabel_masked_t ipv6_flabel_masked;
     of_oxm_ipv6_nd_sll_t ipv6_nd_sll;
@@ -26131,6 +26427,8 @@ union of_oxm_u {
     of_oxm_mpls_label_masked_t mpls_label_masked;
     of_oxm_mpls_tc_t mpls_tc;
     of_oxm_mpls_tc_masked_t mpls_tc_masked;
+    of_oxm_pbb_uca_t pbb_uca;
+    of_oxm_pbb_uca_masked_t pbb_uca_masked;
     of_oxm_sctp_dst_t sctp_dst;
     of_oxm_sctp_dst_masked_t sctp_dst_masked;
     of_oxm_sctp_src_t sctp_src;

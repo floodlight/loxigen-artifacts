@@ -243,6 +243,10 @@ public interface OFOxms {
     OFOxmVlanVid vlanVid(OFVlanVidMatch value);
     OFOxmVlanVidMasked.Builder buildVlanVidMasked() throws UnsupportedOperationException;
     OFOxmVlanVidMasked vlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask);
+    OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() throws UnsupportedOperationException;
+    OFOxmIpv6Exthdr ipv6Exthdr(U16 value);
+    OFOxmIpv6ExthdrMasked.Builder buildIpv6ExthdrMasked() throws UnsupportedOperationException;
+    OFOxmIpv6ExthdrMasked ipv6ExthdrMasked(U16 value, U16 mask);
     OFOxmMplsBos.Builder buildMplsBos() throws UnsupportedOperationException;
     OFOxmMplsBos mplsBos(OFBooleanValue value);
     OFOxmMplsBosMasked.Builder buildMplsBosMasked() throws UnsupportedOperationException;
@@ -251,6 +255,10 @@ public interface OFOxms {
     OFOxmTunnelId tunnelId(U64 value);
     OFOxmTunnelIdMasked.Builder buildTunnelIdMasked() throws UnsupportedOperationException;
     OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask);
+    OFOxmPbbUca.Builder buildPbbUca() throws UnsupportedOperationException;
+    OFOxmPbbUca pbbUca(OFBooleanValue value);
+    OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() throws UnsupportedOperationException;
+    OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask);
 
     OFMessageReader<OFOxm<?>> getReader();
     OFVersion getVersion();

@@ -1057,6 +1057,20 @@ public class OFOxmsVer12 implements OFOxms {
                     );
     }
 
+    public OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() {
+        throw new UnsupportedOperationException("OFOxmIpv6Exthdr not supported in version 1.2");
+    }
+    public OFOxmIpv6Exthdr ipv6Exthdr(U16 value) {
+        throw new UnsupportedOperationException("OFOxmIpv6Exthdr not supported in version 1.2");
+    }
+
+    public OFOxmIpv6ExthdrMasked.Builder buildIpv6ExthdrMasked() {
+        throw new UnsupportedOperationException("OFOxmIpv6ExthdrMasked not supported in version 1.2");
+    }
+    public OFOxmIpv6ExthdrMasked ipv6ExthdrMasked(U16 value, U16 mask) {
+        throw new UnsupportedOperationException("OFOxmIpv6ExthdrMasked not supported in version 1.2");
+    }
+
     public OFOxmMplsBos.Builder buildMplsBos() {
         throw new UnsupportedOperationException("OFOxmMplsBos not supported in version 1.2");
     }
@@ -1083,6 +1097,20 @@ public class OFOxmsVer12 implements OFOxms {
     }
     public OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask) {
         throw new UnsupportedOperationException("OFOxmTunnelIdMasked not supported in version 1.2");
+    }
+
+    public OFOxmPbbUca.Builder buildPbbUca() {
+        throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.2");
+    }
+    public OFOxmPbbUca pbbUca(OFBooleanValue value) {
+        throw new UnsupportedOperationException("OFOxmPbbUca not supported in version 1.2");
+    }
+
+    public OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() {
+        throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.2");
+    }
+    public OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask) {
+        throw new UnsupportedOperationException("OFOxmPbbUcaMasked not supported in version 1.2");
     }
 
     public OFMessageReader<OFOxm<?>> getReader() {
@@ -1200,10 +1228,14 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6Exthdr((U16)((Object)value)));
             case MPLS_BOS:
                 return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1320,10 +1352,14 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)value), (U16)((Object)mask)));
             case MPLS_BOS:
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1440,10 +1476,14 @@ public class OFOxmsVer12 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case MPLS_BOS:
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             default:
                 return null;
         }

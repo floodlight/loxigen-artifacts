@@ -99,6 +99,18 @@ abstract class OFErrorMsgVer14 {
                case (short) 0xd:
                    // discriminator value OFErrorType.TABLE_FEATURES_FAILED=13 for class OFTableFeaturesFailedErrorMsgVer14
                    return OFTableFeaturesFailedErrorMsgVer14.READER.readFrom(bb);
+               case (short) 0xf:
+                   // discriminator value OFErrorType.ASYNC_CONFIG_FAILED=15 for class OFAsyncConfigFailedErrorMsgVer14
+                   return OFAsyncConfigFailedErrorMsgVer14.READER.readFrom(bb);
+               case (short) 0xe:
+                   // discriminator value OFErrorType.BAD_PROPERTY=14 for class OFBadPropertyErrorMsgVer14
+                   return OFBadPropertyErrorMsgVer14.READER.readFrom(bb);
+               case (short) 0x11:
+                   // discriminator value OFErrorType.BUNDLE_FAILED=17 for class OFBundleFailedErrorMsgVer14
+                   return OFBundleFailedErrorMsgVer14.READER.readFrom(bb);
+               case (short) 0x10:
+                   // discriminator value OFErrorType.FLOW_MONITOR_FAILED=16 for class OFFlowMonitorFailedErrorMsgVer14
+                   return OFFlowMonitorFailedErrorMsgVer14.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator errType of class OFErrorMsgVer14: " + errType);
             }

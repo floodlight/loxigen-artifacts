@@ -59,6 +59,8 @@ typedef struct of_match_fields_s {
     uint8_t              mpls_tc;
     uint8_t              mpls_bos;
     uint64_t             tunnel_id;
+    uint16_t             ipv6_exthdr;
+    uint8_t              pbb_uca;
     of_bitmap_128_t      bsn_in_ports_128;
     uint32_t             bsn_lag_id;
     uint32_t             bsn_vrf;
@@ -359,6 +361,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->vlan_pcp, q_f->vlan_pcp,
             q_m->vlan_pcp)) {
+        return 0;
+    }
+
+    /* Mask and values for ipv6_exthdr */
+    if (!OF_MORE_SPECIFIC_INT(e_m->ipv6_exthdr, q_m->ipv6_exthdr)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->ipv6_exthdr, q_f->ipv6_exthdr,
+            q_m->ipv6_exthdr)) {
         return 0;
     }
 
@@ -668,6 +679,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for pbb_uca */
+    if (!OF_MORE_SPECIFIC_INT(e_m->pbb_uca, q_m->pbb_uca)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->pbb_uca, q_f->pbb_uca,
+            q_m->pbb_uca)) {
+        return 0;
+    }
+
     /* Mask and values for bsn_global_vrf_allowed */
     if (!OF_MORE_SPECIFIC_INT(e_m->bsn_global_vrf_allowed, q_m->bsn_global_vrf_allowed)) {
         return 0;
@@ -880,6 +900,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
+    /* Check overlap for ipv6_exthdr */
+    if (!OF_OVERLAP_INT(f1->ipv6_exthdr, f2->ipv6_exthdr,
+        m2->ipv6_exthdr, m1->ipv6_exthdr)) {
+        return 0; /* This field differentiates; all done */
+    }
+
     /* Check overlap for ipv4_src */
     if (!OF_OVERLAP_INT(f1->ipv4_src, f2->ipv4_src,
         m2->ipv4_src, m1->ipv4_src)) {
@@ -1081,6 +1107,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for ip_ecn */
     if (!OF_OVERLAP_INT(f1->ip_ecn, f2->ip_ecn,
         m2->ip_ecn, m1->ip_ecn)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for pbb_uca */
+    if (!OF_OVERLAP_INT(f1->pbb_uca, f2->pbb_uca,
+        m2->pbb_uca, m1->pbb_uca)) {
         return 0; /* This field differentiates; all done */
     }
 

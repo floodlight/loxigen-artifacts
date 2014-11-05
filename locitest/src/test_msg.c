@@ -16740,6 +16740,49 @@ test_of_aggregate_stats_request_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_async_config_failed_error_msg_create_OF_VERSION_1_4(void)
+{
+    of_async_config_failed_error_msg_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_async_config_failed_error_msg_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_ASYNC_CONFIG_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_ASYNC_CONFIG_FAILED_ERROR_MSG);
+
+    /* Set up incrementing values for scalar members */
+    value = of_async_config_failed_error_msg_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_async_config_failed_error_msg_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_async_config_failed_error_msg_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_async_config_failed_error_msg_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_async_get_reply_create_OF_VERSION_1_4(void)
 {
     of_async_get_reply_t *obj;
@@ -16998,6 +17041,49 @@ test_of_bad_match_error_msg_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bad_property_error_msg_create_OF_VERSION_1_4(void)
+{
+    of_bad_property_error_msg_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bad_property_error_msg_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BAD_PROPERTY_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BAD_PROPERTY_ERROR_MSG);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bad_property_error_msg_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bad_property_error_msg_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bad_property_error_msg_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bad_property_error_msg_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bad_request_error_msg_create_OF_VERSION_1_4(void)
 {
     of_bad_request_error_msg_t *obj;
@@ -17122,6 +17208,49 @@ test_of_barrier_request_create_OF_VERSION_1_4(void)
     TEST_ASSERT(value != 0);
 
     of_barrier_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_arp_idle_create_OF_VERSION_1_4(void)
+{
+    of_bsn_arp_idle_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_arp_idle_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_ARP_IDLE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_ARP_IDLE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_arp_idle_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_arp_idle_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_arp_idle_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_arp_idle_delete(obj);
 
     return TEST_PASS;
 }
@@ -17385,6 +17514,1210 @@ test_of_bsn_bw_enable_set_request_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_controller_connections_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_controller_connections_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_controller_connections_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTIONS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_CONTROLLER_CONNECTIONS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_controller_connections_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_controller_connections_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_controller_connections_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_controller_connections_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_controller_connections_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_controller_connections_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_controller_connections_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_CONTROLLER_CONNECTIONS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_CONTROLLER_CONNECTIONS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_controller_connections_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_controller_connections_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_controller_connections_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_controller_connections_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_debug_counter_desc_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_debug_counter_desc_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_debug_counter_desc_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_DEBUG_COUNTER_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_DEBUG_COUNTER_DESC_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_debug_counter_desc_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_debug_counter_desc_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_debug_counter_desc_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_debug_counter_desc_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_debug_counter_desc_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_debug_counter_desc_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_DEBUG_COUNTER_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_DEBUG_COUNTER_DESC_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_debug_counter_desc_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_debug_counter_desc_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_debug_counter_desc_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_debug_counter_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_debug_counter_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_debug_counter_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_DEBUG_COUNTER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_DEBUG_COUNTER_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_debug_counter_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_debug_counter_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_debug_counter_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_debug_counter_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_debug_counter_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_debug_counter_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_debug_counter_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_DEBUG_COUNTER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_DEBUG_COUNTER_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_debug_counter_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_debug_counter_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_debug_counter_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_debug_counter_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_checksum_bucket_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_checksum_bucket_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_checksum_bucket_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_checksum_bucket_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_checksum_bucket_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_checksum_bucket_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 25);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_CHECKSUM_BUCKET_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_checksum_bucket_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_checksum_bucket_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_idle_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_idle_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_idle_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 40);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_idle_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_idle_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_idle_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_idle_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_idle_enable_get_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_idle_enable_get_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_idle_enable_get_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_idle_enable_get_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_idle_enable_get_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_idle_enable_get_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_idle_enable_get_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_GET_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_idle_enable_get_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_idle_enable_get_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_idle_enable_set_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_idle_enable_set_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_idle_enable_set_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_idle_enable_set_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_idle_enable_set_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_flow_idle_enable_set_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_flow_idle_enable_set_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_flow_idle_enable_set_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_FLOW_IDLE_ENABLE_SET_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_flow_idle_enable_set_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_flow_idle_enable_set_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_bucket_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_bucket_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_bucket_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_BUCKET_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_BUCKET_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_bucket_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_bucket_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_bucket_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_bucket_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_bucket_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 26);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_BUCKET_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_BUCKET_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_bucket_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_bucket_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_bucket_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_bucket_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_clear_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_clear_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_clear_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 28);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_CLEAR_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_CLEAR_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_clear_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_clear_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_clear_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_clear_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_clear_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_clear_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_clear_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 52);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_CLEAR_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_CLEAR_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_clear_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_clear_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_clear_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_clear_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_desc_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_desc_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_desc_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_DESC_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_desc_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_desc_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_desc_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_desc_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_desc_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_desc_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_desc_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_DESC_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_desc_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_desc_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_desc_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_desc_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_entry_add_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_entry_add_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_entry_add_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 36);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_ADD);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_ADD);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_entry_add_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_entry_add_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_entry_add_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_entry_add_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_entry_delete_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_entry_delete_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_entry_delete_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 18);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_DELETE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_DELETE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_entry_delete_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_entry_delete_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_entry_delete_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_entry_delete_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_entry_desc_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_entry_desc_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_entry_desc_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_entry_desc_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_entry_desc_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_entry_desc_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_entry_desc_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_entry_desc_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_entry_desc_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 60);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_DESC_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_entry_desc_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_entry_desc_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_entry_desc_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_entry_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_entry_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_entry_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_entry_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_entry_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_entry_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_entry_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_entry_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_entry_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_entry_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 60);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_ENTRY_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_ENTRY_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_entry_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_entry_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_entry_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_set_buckets_size_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_set_buckets_size_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_set_buckets_size_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_SET_BUCKETS_SIZE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_SET_BUCKETS_SIZE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_set_buckets_size_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_set_buckets_size_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_set_buckets_size_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_set_buckets_size_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_gentable_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_gentable_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_gentable_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENTABLE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GENTABLE_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_gentable_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_gentable_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_gentable_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_gentable_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_get_interfaces_reply_create_OF_VERSION_1_4(void)
 {
     of_bsn_get_interfaces_reply_t *obj;
@@ -17552,6 +18885,350 @@ test_of_bsn_get_mirroring_request_create_OF_VERSION_1_4(void)
     TEST_ASSERT(value != 0);
 
     of_bsn_get_mirroring_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_get_switch_pipeline_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_get_switch_pipeline_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_get_switch_pipeline_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_SWITCH_PIPELINE_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_get_switch_pipeline_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_get_switch_pipeline_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_get_switch_pipeline_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_get_switch_pipeline_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_get_switch_pipeline_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_get_switch_pipeline_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_get_switch_pipeline_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_GET_SWITCH_PIPELINE_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_get_switch_pipeline_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_get_switch_pipeline_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_get_switch_pipeline_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_get_switch_pipeline_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_image_desc_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_image_desc_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_image_desc_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 536);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_IMAGE_DESC_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_IMAGE_DESC_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_image_desc_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_image_desc_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_image_desc_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_image_desc_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_image_desc_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_image_desc_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_image_desc_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_IMAGE_DESC_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_IMAGE_DESC_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_image_desc_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_image_desc_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_image_desc_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_image_desc_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lacp_convergence_notif_create_OF_VERSION_1_4(void)
+{
+    of_bsn_lacp_convergence_notif_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lacp_convergence_notif_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 52);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LACP_CONVERGENCE_NOTIF);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LACP_CONVERGENCE_NOTIF);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lacp_convergence_notif_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lacp_convergence_notif_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lacp_convergence_notif_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lacp_convergence_notif_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lacp_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_lacp_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lacp_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LACP_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LACP_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lacp_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lacp_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lacp_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lacp_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lacp_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_lacp_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lacp_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LACP_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LACP_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lacp_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lacp_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lacp_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lacp_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_log_create_OF_VERSION_1_4(void)
+{
+    of_bsn_log_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_log_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 17);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LOG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LOG);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_log_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_log_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_log_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_log_delete(obj);
 
     return TEST_PASS;
 }
@@ -17772,6 +19449,264 @@ test_of_bsn_pdu_tx_request_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_port_counter_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_port_counter_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_port_counter_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_PORT_COUNTER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PORT_COUNTER_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_port_counter_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_port_counter_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_port_counter_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_port_counter_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_port_counter_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_port_counter_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_port_counter_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 28);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_PORT_COUNTER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_PORT_COUNTER_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_port_counter_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_port_counter_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_port_counter_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_port_counter_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_aux_cxns_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_set_aux_cxns_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_set_aux_cxns_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_AUX_CXNS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_AUX_CXNS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_set_aux_cxns_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_set_aux_cxns_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_set_aux_cxns_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_set_aux_cxns_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_aux_cxns_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_set_aux_cxns_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_set_aux_cxns_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_AUX_CXNS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_AUX_CXNS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_set_aux_cxns_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_set_aux_cxns_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_set_aux_cxns_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_set_aux_cxns_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_lacp_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_set_lacp_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_set_lacp_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_LACP_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_LACP_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_set_lacp_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_set_lacp_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_set_lacp_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_set_lacp_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_lacp_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_set_lacp_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_set_lacp_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 38);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_LACP_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_LACP_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_set_lacp_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_set_lacp_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_set_lacp_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_set_lacp_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_set_mirroring_create_OF_VERSION_1_4(void)
 {
     of_bsn_set_mirroring_t *obj;
@@ -17896,6 +19831,393 @@ test_of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_4(void)
     TEST_ASSERT(value != 0);
 
     of_bsn_set_pktin_suppression_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_switch_pipeline_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_set_switch_pipeline_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_set_switch_pipeline_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 20);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_SWITCH_PIPELINE_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_set_switch_pipeline_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_set_switch_pipeline_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_set_switch_pipeline_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_set_switch_pipeline_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_set_switch_pipeline_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_set_switch_pipeline_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 272);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SET_SWITCH_PIPELINE_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_set_switch_pipeline_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_set_switch_pipeline_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_set_switch_pipeline_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_set_switch_pipeline_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_switch_pipeline_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_switch_pipeline_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SWITCH_PIPELINE_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_switch_pipeline_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_switch_pipeline_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_switch_pipeline_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_switch_pipeline_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_SWITCH_PIPELINE_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_switch_pipeline_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_switch_pipeline_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_switch_pipeline_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_switch_pipeline_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_table_checksum_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_table_checksum_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TABLE_CHECKSUM_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_table_checksum_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_table_checksum_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_table_checksum_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_table_checksum_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_table_checksum_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_table_checksum_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_table_checksum_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TABLE_CHECKSUM_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_table_checksum_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_table_checksum_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_table_checksum_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_table_checksum_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_4(void)
+{
+    of_bsn_table_set_buckets_size_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_table_set_buckets_size_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TABLE_SET_BUCKETS_SIZE);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TABLE_SET_BUCKETS_SIZE);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_table_set_buckets_size_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_table_set_buckets_size_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_table_set_buckets_size_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_table_set_buckets_size_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_time_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_time_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_time_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TIME_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TIME_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_time_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_time_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_time_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_time_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_time_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_time_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_time_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TIME_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TIME_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_time_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_time_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_time_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_time_request_delete(obj);
 
     return TEST_PASS;
 }
@@ -18073,6 +20395,178 @@ test_of_bsn_virtual_port_remove_request_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_vlan_counter_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_vlan_counter_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_vlan_counter_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VLAN_COUNTER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VLAN_COUNTER_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_vlan_counter_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_vlan_counter_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vlan_counter_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_vlan_counter_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_vlan_counter_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 26);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VLAN_COUNTER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VLAN_COUNTER_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_vlan_counter_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_vlan_counter_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_vlan_counter_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_vlan_counter_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vrf_counter_stats_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_vrf_counter_stats_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_vrf_counter_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VRF_COUNTER_STATS_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VRF_COUNTER_STATS_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_vrf_counter_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_vrf_counter_stats_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_vrf_counter_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_vrf_counter_stats_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_vrf_counter_stats_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_vrf_counter_stats_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_vrf_counter_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 28);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_VRF_COUNTER_STATS_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_VRF_COUNTER_STATS_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_vrf_counter_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_vrf_counter_stats_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_vrf_counter_stats_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_vrf_counter_stats_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bundle_add_msg_create_OF_VERSION_1_4(void)
 {
     of_bundle_add_msg_t *obj;
@@ -18154,6 +20648,49 @@ test_of_bundle_ctrl_msg_create_OF_VERSION_1_4(void)
     TEST_ASSERT(value != 0);
 
     of_bundle_ctrl_msg_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bundle_failed_error_msg_create_OF_VERSION_1_4(void)
+{
+    of_bundle_failed_error_msg_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bundle_failed_error_msg_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BUNDLE_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BUNDLE_FAILED_ERROR_MSG);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bundle_failed_error_msg_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bundle_failed_error_msg_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bundle_failed_error_msg_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bundle_failed_error_msg_delete(obj);
 
     return TEST_PASS;
 }
@@ -18713,6 +21250,49 @@ test_of_flow_modify_strict_create_OF_VERSION_1_4(void)
     TEST_ASSERT(value != 0);
 
     of_flow_modify_strict_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_flow_monitor_failed_error_msg_create_OF_VERSION_1_4(void)
+{
+    of_flow_monitor_failed_error_msg_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_flow_monitor_failed_error_msg_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_FLOW_MONITOR_FAILED_ERROR_MSG);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_FLOW_MONITOR_FAILED_ERROR_MSG);
+
+    /* Set up incrementing values for scalar members */
+    value = of_flow_monitor_failed_error_msg_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_flow_monitor_failed_error_msg_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_flow_monitor_failed_error_msg_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_flow_monitor_failed_error_msg_delete(obj);
 
     return TEST_PASS;
 }
@@ -21517,39 +24097,98 @@ run_message_tests(void)
     RUN_TEST(of_table_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_aggregate_stats_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_aggregate_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_async_config_failed_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_async_get_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_async_get_request_create_OF_VERSION_1_4);
     RUN_TEST(of_async_set_create_OF_VERSION_1_4);
     RUN_TEST(of_bad_action_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_bad_instruction_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_bad_match_error_msg_create_OF_VERSION_1_4);
+    RUN_TEST(of_bad_property_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_bad_request_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_barrier_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_barrier_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_arp_idle_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_bw_clear_data_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_bw_clear_data_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_bw_enable_get_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_bw_enable_get_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_bw_enable_set_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_bw_enable_set_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_controller_connections_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_controller_connections_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_debug_counter_desc_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_debug_counter_desc_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_debug_counter_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_debug_counter_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_checksum_bucket_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_checksum_bucket_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_idle_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_idle_enable_get_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_idle_enable_get_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_idle_enable_set_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_flow_idle_enable_set_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_bucket_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_bucket_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_clear_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_clear_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_desc_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_desc_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_entry_add_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_entry_delete_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_entry_desc_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_entry_desc_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_entry_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_entry_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_set_buckets_size_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_gentable_stats_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_get_interfaces_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_get_interfaces_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_get_mirroring_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_get_mirroring_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_get_switch_pipeline_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_get_switch_pipeline_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_image_desc_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_image_desc_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lacp_convergence_notif_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lacp_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lacp_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_log_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_timeout_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_tx_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_tx_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_port_counter_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_port_counter_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_set_aux_cxns_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_set_aux_cxns_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_set_lacp_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_set_lacp_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_set_mirroring_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_set_pktin_suppression_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_set_pktin_suppression_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_set_switch_pipeline_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_set_switch_pipeline_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_switch_pipeline_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_switch_pipeline_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_table_checksum_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_table_set_buckets_size_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_time_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_time_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_virtual_port_create_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_virtual_port_create_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_virtual_port_remove_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_virtual_port_remove_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_vlan_counter_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_vlan_counter_stats_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_vrf_counter_stats_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_vrf_counter_stats_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bundle_add_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_bundle_ctrl_msg_create_OF_VERSION_1_4);
+    RUN_TEST(of_bundle_failed_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_desc_stats_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_desc_stats_request_create_OF_VERSION_1_4);
     RUN_TEST(of_echo_reply_create_OF_VERSION_1_4);
@@ -21563,6 +24202,7 @@ run_message_tests(void)
     RUN_TEST(of_flow_mod_failed_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_flow_modify_create_OF_VERSION_1_4);
     RUN_TEST(of_flow_modify_strict_create_OF_VERSION_1_4);
+    RUN_TEST(of_flow_monitor_failed_error_msg_create_OF_VERSION_1_4);
     RUN_TEST(of_flow_removed_create_OF_VERSION_1_4);
     RUN_TEST(of_flow_stats_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_flow_stats_request_create_OF_VERSION_1_4);

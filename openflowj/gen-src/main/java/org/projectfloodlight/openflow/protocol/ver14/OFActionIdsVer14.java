@@ -37,7 +37,7 @@ public class OFActionIdsVer14 implements OFActionIds {
     }
 
     public OFActionIdBsnGentable bsnGentable() {
-        throw new UnsupportedOperationException("OFActionIdBsnGentable not supported in version 1.4");
+        return OFActionIdBsnGentableVer14.INSTANCE;
     }
 
     public OFActionIdBsnMirror bsnMirror() {

@@ -125,6 +125,84 @@ abstract class OFBsnHeaderVer14 {
                case 0x11:
                    // discriminator value 0x11L=0x11L for class OFBsnVirtualPortRemoveRequestVer14
                    return OFBsnVirtualPortRemoveRequestVer14.READER.readFrom(bb);
+               case 0x3c:
+                   // discriminator value 0x3cL=0x3cL for class OFBsnArpIdleVer14
+                   return OFBsnArpIdleVer14.READER.readFrom(bb);
+               case 0x39:
+                   // discriminator value 0x39L=0x39L for class OFBsnControllerConnectionsReplyVer14
+                   return OFBsnControllerConnectionsReplyVer14.READER.readFrom(bb);
+               case 0x38:
+                   // discriminator value 0x38L=0x38L for class OFBsnControllerConnectionsRequestVer14
+                   return OFBsnControllerConnectionsRequestVer14.READER.readFrom(bb);
+               case 0x28:
+                   // discriminator value 0x28L=0x28L for class OFBsnFlowIdleVer14
+                   return OFBsnFlowIdleVer14.READER.readFrom(bb);
+               case 0x27:
+                   // discriminator value 0x27L=0x27L for class OFBsnFlowIdleEnableGetReplyVer14
+                   return OFBsnFlowIdleEnableGetReplyVer14.READER.readFrom(bb);
+               case 0x26:
+                   // discriminator value 0x26L=0x26L for class OFBsnFlowIdleEnableGetRequestVer14
+                   return OFBsnFlowIdleEnableGetRequestVer14.READER.readFrom(bb);
+               case 0x25:
+                   // discriminator value 0x25L=0x25L for class OFBsnFlowIdleEnableSetReplyVer14
+                   return OFBsnFlowIdleEnableSetReplyVer14.READER.readFrom(bb);
+               case 0x24:
+                   // discriminator value 0x24L=0x24L for class OFBsnFlowIdleEnableSetRequestVer14
+                   return OFBsnFlowIdleEnableSetRequestVer14.READER.readFrom(bb);
+               case 0x31:
+                   // discriminator value 0x31L=0x31L for class OFBsnGentableClearReplyVer14
+                   return OFBsnGentableClearReplyVer14.READER.readFrom(bb);
+               case 0x30:
+                   // discriminator value 0x30L=0x30L for class OFBsnGentableClearRequestVer14
+                   return OFBsnGentableClearRequestVer14.READER.readFrom(bb);
+               case 0x2e:
+                   // discriminator value 0x2eL=0x2eL for class OFBsnGentableEntryAddVer14
+                   return OFBsnGentableEntryAddVer14.READER.readFrom(bb);
+               case 0x2f:
+                   // discriminator value 0x2fL=0x2fL for class OFBsnGentableEntryDeleteVer14
+                   return OFBsnGentableEntryDeleteVer14.READER.readFrom(bb);
+               case 0x32:
+                   // discriminator value 0x32L=0x32L for class OFBsnGentableSetBucketsSizeVer14
+                   return OFBsnGentableSetBucketsSizeVer14.READER.readFrom(bb);
+               case 0x34:
+                   // discriminator value 0x34L=0x34L for class OFBsnGetSwitchPipelineReplyVer14
+                   return OFBsnGetSwitchPipelineReplyVer14.READER.readFrom(bb);
+               case 0x33:
+                   // discriminator value 0x33L=0x33L for class OFBsnGetSwitchPipelineRequestVer14
+                   return OFBsnGetSwitchPipelineRequestVer14.READER.readFrom(bb);
+               case 0x2b:
+                   // discriminator value 0x2bL=0x2bL for class OFBsnLacpConvergenceNotifVer14
+                   return OFBsnLacpConvergenceNotifVer14.READER.readFrom(bb);
+               case 0x3f:
+                   // discriminator value 0x3fL=0x3fL for class OFBsnLogVer14
+                   return OFBsnLogVer14.READER.readFrom(bb);
+               case 0x3b:
+                   // discriminator value 0x3bL=0x3bL for class OFBsnSetAuxCxnsReplyVer14
+                   return OFBsnSetAuxCxnsReplyVer14.READER.readFrom(bb);
+               case 0x3a:
+                   // discriminator value 0x3aL=0x3aL for class OFBsnSetAuxCxnsRequestVer14
+                   return OFBsnSetAuxCxnsRequestVer14.READER.readFrom(bb);
+               case 0x2a:
+                   // discriminator value 0x2aL=0x2aL for class OFBsnSetLacpReplyVer14
+                   return OFBsnSetLacpReplyVer14.READER.readFrom(bb);
+               case 0x29:
+                   // discriminator value 0x29L=0x29L for class OFBsnSetLacpRequestVer14
+                   return OFBsnSetLacpRequestVer14.READER.readFrom(bb);
+               case 0x36:
+                   // discriminator value 0x36L=0x36L for class OFBsnSetSwitchPipelineReplyVer14
+                   return OFBsnSetSwitchPipelineReplyVer14.READER.readFrom(bb);
+               case 0x35:
+                   // discriminator value 0x35L=0x35L for class OFBsnSetSwitchPipelineRequestVer14
+                   return OFBsnSetSwitchPipelineRequestVer14.READER.readFrom(bb);
+               case 0x3d:
+                   // discriminator value 0x3dL=0x3dL for class OFBsnTableSetBucketsSizeVer14
+                   return OFBsnTableSetBucketsSizeVer14.READER.readFrom(bb);
+               case 0x2d:
+                   // discriminator value 0x2dL=0x2dL for class OFBsnTimeReplyVer14
+                   return OFBsnTimeReplyVer14.READER.readFrom(bb);
+               case 0x2c:
+                   // discriminator value 0x2cL=0x2cL for class OFBsnTimeRequestVer14
+                   return OFBsnTimeRequestVer14.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnHeaderVer14: " + subtype);
             }

@@ -127,17 +127,22 @@ public class OFOxmsVer14 implements OFOxms {
     }
 
     public OFOxmBsnEgrPortGroupId.Builder buildBsnEgrPortGroupId() {
-        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupId not supported in version 1.4");
+        return new OFOxmBsnEgrPortGroupIdVer14.Builder();
     }
     public OFOxmBsnEgrPortGroupId bsnEgrPortGroupId(ClassId value) {
-        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupId not supported in version 1.4");
+        return new OFOxmBsnEgrPortGroupIdVer14(
+                value
+                    );
     }
 
     public OFOxmBsnEgrPortGroupIdMasked.Builder buildBsnEgrPortGroupIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupIdMasked not supported in version 1.4");
+        return new OFOxmBsnEgrPortGroupIdMaskedVer14.Builder();
     }
     public OFOxmBsnEgrPortGroupIdMasked bsnEgrPortGroupIdMasked(ClassId value, ClassId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnEgrPortGroupIdMasked not supported in version 1.4");
+        return new OFOxmBsnEgrPortGroupIdMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnGlobalVrfAllowed.Builder buildBsnGlobalVrfAllowed() {
@@ -155,17 +160,22 @@ public class OFOxmsVer14 implements OFOxms {
     }
 
     public OFOxmBsnInPorts128.Builder buildBsnInPorts128() {
-        throw new UnsupportedOperationException("OFOxmBsnInPorts128 not supported in version 1.4");
+        return new OFOxmBsnInPorts128Ver14.Builder();
     }
     public OFOxmBsnInPorts128 bsnInPorts128(OFBitMask128 value) {
-        throw new UnsupportedOperationException("OFOxmBsnInPorts128 not supported in version 1.4");
+        return new OFOxmBsnInPorts128Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnInPorts128Masked.Builder buildBsnInPorts128Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnInPorts128Masked not supported in version 1.4");
+        return new OFOxmBsnInPorts128MaskedVer14.Builder();
     }
     public OFOxmBsnInPorts128Masked bsnInPorts128Masked(OFBitMask128 value, OFBitMask128 mask) {
-        throw new UnsupportedOperationException("OFOxmBsnInPorts128Masked not supported in version 1.4");
+        return new OFOxmBsnInPorts128MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnL3DstClassId.Builder buildBsnL3DstClassId() {
@@ -183,199 +193,269 @@ public class OFOxmsVer14 implements OFOxms {
     }
 
     public OFOxmBsnL3InterfaceClassId.Builder buildBsnL3InterfaceClassId() {
-        throw new UnsupportedOperationException("OFOxmBsnL3InterfaceClassId not supported in version 1.4");
+        return new OFOxmBsnL3InterfaceClassIdVer14.Builder();
     }
     public OFOxmBsnL3InterfaceClassId bsnL3InterfaceClassId(ClassId value) {
-        throw new UnsupportedOperationException("OFOxmBsnL3InterfaceClassId not supported in version 1.4");
+        return new OFOxmBsnL3InterfaceClassIdVer14(
+                value
+                    );
     }
 
     public OFOxmBsnL3InterfaceClassIdMasked.Builder buildBsnL3InterfaceClassIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnL3InterfaceClassIdMasked not supported in version 1.4");
+        return new OFOxmBsnL3InterfaceClassIdMaskedVer14.Builder();
     }
     public OFOxmBsnL3InterfaceClassIdMasked bsnL3InterfaceClassIdMasked(ClassId value, ClassId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnL3InterfaceClassIdMasked not supported in version 1.4");
+        return new OFOxmBsnL3InterfaceClassIdMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnL3SrcClassId.Builder buildBsnL3SrcClassId() {
-        throw new UnsupportedOperationException("OFOxmBsnL3SrcClassId not supported in version 1.4");
+        return new OFOxmBsnL3SrcClassIdVer14.Builder();
     }
     public OFOxmBsnL3SrcClassId bsnL3SrcClassId(ClassId value) {
-        throw new UnsupportedOperationException("OFOxmBsnL3SrcClassId not supported in version 1.4");
+        return new OFOxmBsnL3SrcClassIdVer14(
+                value
+                    );
     }
 
     public OFOxmBsnL3SrcClassIdMasked.Builder buildBsnL3SrcClassIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnL3SrcClassIdMasked not supported in version 1.4");
+        return new OFOxmBsnL3SrcClassIdMaskedVer14.Builder();
     }
     public OFOxmBsnL3SrcClassIdMasked bsnL3SrcClassIdMasked(ClassId value, ClassId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnL3SrcClassIdMasked not supported in version 1.4");
+        return new OFOxmBsnL3SrcClassIdMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnLagId.Builder buildBsnLagId() {
-        throw new UnsupportedOperationException("OFOxmBsnLagId not supported in version 1.4");
+        return new OFOxmBsnLagIdVer14.Builder();
     }
     public OFOxmBsnLagId bsnLagId(LagId value) {
-        throw new UnsupportedOperationException("OFOxmBsnLagId not supported in version 1.4");
+        return new OFOxmBsnLagIdVer14(
+                value
+                    );
     }
 
     public OFOxmBsnLagIdMasked.Builder buildBsnLagIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnLagIdMasked not supported in version 1.4");
+        return new OFOxmBsnLagIdMaskedVer14.Builder();
     }
     public OFOxmBsnLagIdMasked bsnLagIdMasked(LagId value, LagId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnLagIdMasked not supported in version 1.4");
+        return new OFOxmBsnLagIdMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnTcpFlags.Builder buildBsnTcpFlags() {
-        throw new UnsupportedOperationException("OFOxmBsnTcpFlags not supported in version 1.4");
+        return new OFOxmBsnTcpFlagsVer14.Builder();
     }
     public OFOxmBsnTcpFlags bsnTcpFlags(U16 value) {
-        throw new UnsupportedOperationException("OFOxmBsnTcpFlags not supported in version 1.4");
+        return new OFOxmBsnTcpFlagsVer14(
+                value
+                    );
     }
 
     public OFOxmBsnTcpFlagsMasked.Builder buildBsnTcpFlagsMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnTcpFlagsMasked not supported in version 1.4");
+        return new OFOxmBsnTcpFlagsMaskedVer14.Builder();
     }
     public OFOxmBsnTcpFlagsMasked bsnTcpFlagsMasked(U16 value, U16 mask) {
-        throw new UnsupportedOperationException("OFOxmBsnTcpFlagsMasked not supported in version 1.4");
+        return new OFOxmBsnTcpFlagsMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf0.Builder buildBsnUdf0() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf0 not supported in version 1.4");
+        return new OFOxmBsnUdf0Ver14.Builder();
     }
     public OFOxmBsnUdf0 bsnUdf0(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf0 not supported in version 1.4");
+        return new OFOxmBsnUdf0Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf0Masked.Builder buildBsnUdf0Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf0Masked not supported in version 1.4");
+        return new OFOxmBsnUdf0MaskedVer14.Builder();
     }
     public OFOxmBsnUdf0Masked bsnUdf0Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf0Masked not supported in version 1.4");
+        return new OFOxmBsnUdf0MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf1.Builder buildBsnUdf1() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf1 not supported in version 1.4");
+        return new OFOxmBsnUdf1Ver14.Builder();
     }
     public OFOxmBsnUdf1 bsnUdf1(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf1 not supported in version 1.4");
+        return new OFOxmBsnUdf1Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf1Masked.Builder buildBsnUdf1Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf1Masked not supported in version 1.4");
+        return new OFOxmBsnUdf1MaskedVer14.Builder();
     }
     public OFOxmBsnUdf1Masked bsnUdf1Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf1Masked not supported in version 1.4");
+        return new OFOxmBsnUdf1MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf2.Builder buildBsnUdf2() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf2 not supported in version 1.4");
+        return new OFOxmBsnUdf2Ver14.Builder();
     }
     public OFOxmBsnUdf2 bsnUdf2(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf2 not supported in version 1.4");
+        return new OFOxmBsnUdf2Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf2Masked.Builder buildBsnUdf2Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf2Masked not supported in version 1.4");
+        return new OFOxmBsnUdf2MaskedVer14.Builder();
     }
     public OFOxmBsnUdf2Masked bsnUdf2Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf2Masked not supported in version 1.4");
+        return new OFOxmBsnUdf2MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf3.Builder buildBsnUdf3() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf3 not supported in version 1.4");
+        return new OFOxmBsnUdf3Ver14.Builder();
     }
     public OFOxmBsnUdf3 bsnUdf3(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf3 not supported in version 1.4");
+        return new OFOxmBsnUdf3Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf3Masked.Builder buildBsnUdf3Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf3Masked not supported in version 1.4");
+        return new OFOxmBsnUdf3MaskedVer14.Builder();
     }
     public OFOxmBsnUdf3Masked bsnUdf3Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf3Masked not supported in version 1.4");
+        return new OFOxmBsnUdf3MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf4.Builder buildBsnUdf4() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf4 not supported in version 1.4");
+        return new OFOxmBsnUdf4Ver14.Builder();
     }
     public OFOxmBsnUdf4 bsnUdf4(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf4 not supported in version 1.4");
+        return new OFOxmBsnUdf4Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf4Masked.Builder buildBsnUdf4Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf4Masked not supported in version 1.4");
+        return new OFOxmBsnUdf4MaskedVer14.Builder();
     }
     public OFOxmBsnUdf4Masked bsnUdf4Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf4Masked not supported in version 1.4");
+        return new OFOxmBsnUdf4MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf5.Builder buildBsnUdf5() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf5 not supported in version 1.4");
+        return new OFOxmBsnUdf5Ver14.Builder();
     }
     public OFOxmBsnUdf5 bsnUdf5(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf5 not supported in version 1.4");
+        return new OFOxmBsnUdf5Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf5Masked.Builder buildBsnUdf5Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf5Masked not supported in version 1.4");
+        return new OFOxmBsnUdf5MaskedVer14.Builder();
     }
     public OFOxmBsnUdf5Masked bsnUdf5Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf5Masked not supported in version 1.4");
+        return new OFOxmBsnUdf5MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf6.Builder buildBsnUdf6() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf6 not supported in version 1.4");
+        return new OFOxmBsnUdf6Ver14.Builder();
     }
     public OFOxmBsnUdf6 bsnUdf6(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf6 not supported in version 1.4");
+        return new OFOxmBsnUdf6Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf6Masked.Builder buildBsnUdf6Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf6Masked not supported in version 1.4");
+        return new OFOxmBsnUdf6MaskedVer14.Builder();
     }
     public OFOxmBsnUdf6Masked bsnUdf6Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf6Masked not supported in version 1.4");
+        return new OFOxmBsnUdf6MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnUdf7.Builder buildBsnUdf7() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf7 not supported in version 1.4");
+        return new OFOxmBsnUdf7Ver14.Builder();
     }
     public OFOxmBsnUdf7 bsnUdf7(UDF value) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf7 not supported in version 1.4");
+        return new OFOxmBsnUdf7Ver14(
+                value
+                    );
     }
 
     public OFOxmBsnUdf7Masked.Builder buildBsnUdf7Masked() {
-        throw new UnsupportedOperationException("OFOxmBsnUdf7Masked not supported in version 1.4");
+        return new OFOxmBsnUdf7MaskedVer14.Builder();
     }
     public OFOxmBsnUdf7Masked bsnUdf7Masked(UDF value, UDF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnUdf7Masked not supported in version 1.4");
+        return new OFOxmBsnUdf7MaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnVlanXlatePortGroupId.Builder buildBsnVlanXlatePortGroupId() {
-        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupId not supported in version 1.4");
+        return new OFOxmBsnVlanXlatePortGroupIdVer14.Builder();
     }
     public OFOxmBsnVlanXlatePortGroupId bsnVlanXlatePortGroupId(ClassId value) {
-        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupId not supported in version 1.4");
+        return new OFOxmBsnVlanXlatePortGroupIdVer14(
+                value
+                    );
     }
 
     public OFOxmBsnVlanXlatePortGroupIdMasked.Builder buildBsnVlanXlatePortGroupIdMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupIdMasked not supported in version 1.4");
+        return new OFOxmBsnVlanXlatePortGroupIdMaskedVer14.Builder();
     }
     public OFOxmBsnVlanXlatePortGroupIdMasked bsnVlanXlatePortGroupIdMasked(ClassId value, ClassId mask) {
-        throw new UnsupportedOperationException("OFOxmBsnVlanXlatePortGroupIdMasked not supported in version 1.4");
+        return new OFOxmBsnVlanXlatePortGroupIdMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmBsnVrf.Builder buildBsnVrf() {
-        throw new UnsupportedOperationException("OFOxmBsnVrf not supported in version 1.4");
+        return new OFOxmBsnVrfVer14.Builder();
     }
     public OFOxmBsnVrf bsnVrf(VRF value) {
-        throw new UnsupportedOperationException("OFOxmBsnVrf not supported in version 1.4");
+        return new OFOxmBsnVrfVer14(
+                value
+                    );
     }
 
     public OFOxmBsnVrfMasked.Builder buildBsnVrfMasked() {
-        throw new UnsupportedOperationException("OFOxmBsnVrfMasked not supported in version 1.4");
+        return new OFOxmBsnVrfMaskedVer14.Builder();
     }
     public OFOxmBsnVrfMasked bsnVrfMasked(VRF value, VRF mask) {
-        throw new UnsupportedOperationException("OFOxmBsnVrfMasked not supported in version 1.4");
+        return new OFOxmBsnVrfMaskedVer14(
+                value,
+                      mask
+                    );
     }
 
     public OFOxmEthDst.Builder buildEthDst() {
@@ -967,6 +1047,25 @@ public class OFOxmsVer14 implements OFOxms {
                     );
     }
 
+    public OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() {
+        return new OFOxmIpv6ExthdrVer14.Builder();
+    }
+    public OFOxmIpv6Exthdr ipv6Exthdr(U16 value) {
+        return new OFOxmIpv6ExthdrVer14(
+                value
+                    );
+    }
+
+    public OFOxmIpv6ExthdrMasked.Builder buildIpv6ExthdrMasked() {
+        return new OFOxmIpv6ExthdrMaskedVer14.Builder();
+    }
+    public OFOxmIpv6ExthdrMasked ipv6ExthdrMasked(U16 value, U16 mask) {
+        return new OFOxmIpv6ExthdrMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmMplsBos.Builder buildMplsBos() {
         return new OFOxmMplsBosVer14.Builder();
     }
@@ -1000,6 +1099,25 @@ public class OFOxmsVer14 implements OFOxms {
     }
     public OFOxmTunnelIdMasked tunnelIdMasked(U64 value, U64 mask) {
         return new OFOxmTunnelIdMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmPbbUca.Builder buildPbbUca() {
+        return new OFOxmPbbUcaVer14.Builder();
+    }
+    public OFOxmPbbUca pbbUca(OFBooleanValue value) {
+        return new OFOxmPbbUcaVer14(
+                value
+                    );
+    }
+
+    public OFOxmPbbUcaMasked.Builder buildPbbUcaMasked() {
+        return new OFOxmPbbUcaMaskedVer14.Builder();
+    }
+    public OFOxmPbbUcaMasked pbbUcaMasked(OFBooleanValue value, OFBooleanValue mask) {
+        return new OFOxmPbbUcaMaskedVer14(
                 value,
                       mask
                     );
@@ -1120,10 +1238,14 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6Exthdr((U16)((Object)value)));
             case MPLS_BOS:
                 return (OFOxm<F>)((Object)mplsBos((OFBooleanValue)((Object)value)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelId((U64)((Object)value)));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUca((OFBooleanValue)((Object)value)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1240,10 +1362,14 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)value), (U16)((Object)mask)));
             case MPLS_BOS:
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)value), (U64)((Object)mask)));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             default:
                 throw new IllegalArgumentException("No OXM known for match field " + field);
         }
@@ -1360,10 +1486,14 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case IPV6_EXTHDR:
+                return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case MPLS_BOS:
                 return (OFOxm<F>)((Object)mplsBosMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case TUNNEL_ID:
                 return (OFOxm<F>)((Object)tunnelIdMasked((U64)((Object)(masked.getValue())), (U64)((Object)(masked.getMask()))));
+            case PBB_UCA:
+                return (OFOxm<F>)((Object)pbbUcaMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             default:
                 return null;
         }

@@ -92,6 +92,22 @@ public class OFErrorMsgsVer12 implements OFErrorMsgs {
         throw new UnsupportedOperationException("OFTableFeaturesFailedErrorMsg not supported in version 1.2");
     }
 
+    public OFAsyncConfigFailedErrorMsg.Builder buildAsyncConfigFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFAsyncConfigFailedErrorMsg not supported in version 1.2");
+    }
+
+    public OFBadPropertyErrorMsg.Builder buildBadPropertyErrorMsg() {
+        throw new UnsupportedOperationException("OFBadPropertyErrorMsg not supported in version 1.2");
+    }
+
+    public OFBundleFailedErrorMsg.Builder buildBundleFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFBundleFailedErrorMsg not supported in version 1.2");
+    }
+
+    public OFFlowMonitorFailedErrorMsg.Builder buildFlowMonitorFailedErrorMsg() {
+        throw new UnsupportedOperationException("OFFlowMonitorFailedErrorMsg not supported in version 1.2");
+    }
+
     public OFMessageReader<OFErrorMsg> getReader() {
         return OFErrorMsgVer12.READER;
     }

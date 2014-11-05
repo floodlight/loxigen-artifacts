@@ -7089,6 +7089,9 @@ of_action_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x4:
             *id = OF_ACTION_ID_BSN_CHECKSUM;
             break;
+        case 0x5:
+            *id = OF_ACTION_ID_BSN_GENTABLE;
+            break;
         default:
             *id = OF_ACTION_ID_BSN;
             break;
@@ -7655,6 +7658,7 @@ of_action_bsn_gentable_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
@@ -7767,6 +7771,7 @@ of_action_bsn_gentable_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7805,6 +7810,7 @@ of_action_bsn_gentable_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -7845,6 +7851,7 @@ of_action_bsn_gentable_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7883,6 +7890,7 @@ of_action_bsn_gentable_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -7923,6 +7931,7 @@ of_action_bsn_gentable_table_id_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -7961,6 +7970,7 @@ of_action_bsn_gentable_table_id_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 12;
         break;
     default:
@@ -8007,6 +8017,7 @@ of_action_bsn_gentable_key_bind(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8077,6 +8088,7 @@ of_action_bsn_gentable_key_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 16;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -8154,6 +8166,7 @@ of_action_id_bsn_gentable_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
         *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
@@ -8266,6 +8279,7 @@ of_action_id_bsn_gentable_experimenter_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8304,6 +8318,7 @@ of_action_id_bsn_gentable_experimenter_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -8344,6 +8359,7 @@ of_action_id_bsn_gentable_subtype_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -8382,6 +8398,7 @@ of_action_id_bsn_gentable_subtype_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:

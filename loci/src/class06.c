@@ -36,6 +36,7 @@ of_oxm_bsn_tcp_flags_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x32002); /* type_len */
         break;
     default:
@@ -146,6 +147,7 @@ of_oxm_bsn_tcp_flags_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -185,6 +187,7 @@ of_oxm_bsn_tcp_flags_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -237,6 +240,7 @@ of_oxm_bsn_tcp_flags_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x32104); /* type_len */
         break;
     default:
@@ -347,6 +351,7 @@ of_oxm_bsn_tcp_flags_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -386,6 +391,7 @@ of_oxm_bsn_tcp_flags_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -427,6 +433,7 @@ of_oxm_bsn_tcp_flags_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 6;
         break;
     default:
@@ -466,6 +473,7 @@ of_oxm_bsn_tcp_flags_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 6;
         break;
     default:
@@ -518,6 +526,7 @@ of_oxm_bsn_udf0_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31004); /* type_len */
         break;
     default:
@@ -628,6 +637,7 @@ of_oxm_bsn_udf0_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -667,6 +677,7 @@ of_oxm_bsn_udf0_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -719,6 +730,7 @@ of_oxm_bsn_udf0_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31108); /* type_len */
         break;
     default:
@@ -829,6 +841,7 @@ of_oxm_bsn_udf0_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -868,6 +881,7 @@ of_oxm_bsn_udf0_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -909,6 +923,7 @@ of_oxm_bsn_udf0_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -948,6 +963,7 @@ of_oxm_bsn_udf0_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1000,6 +1016,7 @@ of_oxm_bsn_udf1_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31204); /* type_len */
         break;
     default:
@@ -1110,6 +1127,7 @@ of_oxm_bsn_udf1_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1149,6 +1167,7 @@ of_oxm_bsn_udf1_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1201,6 +1220,7 @@ of_oxm_bsn_udf1_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31308); /* type_len */
         break;
     default:
@@ -1311,6 +1331,7 @@ of_oxm_bsn_udf1_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1350,6 +1371,7 @@ of_oxm_bsn_udf1_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1391,6 +1413,7 @@ of_oxm_bsn_udf1_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1430,6 +1453,7 @@ of_oxm_bsn_udf1_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1482,6 +1506,7 @@ of_oxm_bsn_udf2_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31404); /* type_len */
         break;
     default:
@@ -1592,6 +1617,7 @@ of_oxm_bsn_udf2_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1631,6 +1657,7 @@ of_oxm_bsn_udf2_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1683,6 +1710,7 @@ of_oxm_bsn_udf2_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31508); /* type_len */
         break;
     default:
@@ -1793,6 +1821,7 @@ of_oxm_bsn_udf2_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1832,6 +1861,7 @@ of_oxm_bsn_udf2_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1873,6 +1903,7 @@ of_oxm_bsn_udf2_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1912,6 +1943,7 @@ of_oxm_bsn_udf2_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -1964,6 +1996,7 @@ of_oxm_bsn_udf3_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31604); /* type_len */
         break;
     default:
@@ -2074,6 +2107,7 @@ of_oxm_bsn_udf3_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2113,6 +2147,7 @@ of_oxm_bsn_udf3_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2165,6 +2200,7 @@ of_oxm_bsn_udf3_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31708); /* type_len */
         break;
     default:
@@ -2275,6 +2311,7 @@ of_oxm_bsn_udf3_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2314,6 +2351,7 @@ of_oxm_bsn_udf3_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2355,6 +2393,7 @@ of_oxm_bsn_udf3_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2394,6 +2433,7 @@ of_oxm_bsn_udf3_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2446,6 +2486,7 @@ of_oxm_bsn_udf4_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31804); /* type_len */
         break;
     default:
@@ -2556,6 +2597,7 @@ of_oxm_bsn_udf4_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2595,6 +2637,7 @@ of_oxm_bsn_udf4_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2647,6 +2690,7 @@ of_oxm_bsn_udf4_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31908); /* type_len */
         break;
     default:
@@ -2757,6 +2801,7 @@ of_oxm_bsn_udf4_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2796,6 +2841,7 @@ of_oxm_bsn_udf4_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2837,6 +2883,7 @@ of_oxm_bsn_udf4_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2876,6 +2923,7 @@ of_oxm_bsn_udf4_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -2928,6 +2976,7 @@ of_oxm_bsn_udf5_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31a04); /* type_len */
         break;
     default:
@@ -3038,6 +3087,7 @@ of_oxm_bsn_udf5_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3077,6 +3127,7 @@ of_oxm_bsn_udf5_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3129,6 +3180,7 @@ of_oxm_bsn_udf5_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31b08); /* type_len */
         break;
     default:
@@ -3239,6 +3291,7 @@ of_oxm_bsn_udf5_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3278,6 +3331,7 @@ of_oxm_bsn_udf5_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3319,6 +3373,7 @@ of_oxm_bsn_udf5_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3358,6 +3413,7 @@ of_oxm_bsn_udf5_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3410,6 +3466,7 @@ of_oxm_bsn_udf6_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31c04); /* type_len */
         break;
     default:
@@ -3520,6 +3577,7 @@ of_oxm_bsn_udf6_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3559,6 +3617,7 @@ of_oxm_bsn_udf6_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3611,6 +3670,7 @@ of_oxm_bsn_udf6_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31d08); /* type_len */
         break;
     default:
@@ -3721,6 +3781,7 @@ of_oxm_bsn_udf6_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3760,6 +3821,7 @@ of_oxm_bsn_udf6_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3801,6 +3863,7 @@ of_oxm_bsn_udf6_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3840,6 +3903,7 @@ of_oxm_bsn_udf6_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -3892,6 +3956,7 @@ of_oxm_bsn_udf7_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31e04); /* type_len */
         break;
     default:
@@ -4002,6 +4067,7 @@ of_oxm_bsn_udf7_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4041,6 +4107,7 @@ of_oxm_bsn_udf7_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4093,6 +4160,7 @@ of_oxm_bsn_udf7_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x31f08); /* type_len */
         break;
     default:
@@ -4203,6 +4271,7 @@ of_oxm_bsn_udf7_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4242,6 +4311,7 @@ of_oxm_bsn_udf7_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4283,6 +4353,7 @@ of_oxm_bsn_udf7_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4322,6 +4393,7 @@ of_oxm_bsn_udf7_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4374,6 +4446,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x32204); /* type_len */
         break;
     default:
@@ -4484,6 +4557,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4523,6 +4597,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4575,6 +4650,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x32308); /* type_len */
         break;
     default:
@@ -4685,6 +4761,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4724,6 +4801,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4765,6 +4843,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4804,6 +4883,7 @@ of_oxm_bsn_vlan_xlate_port_group_id_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -4856,6 +4936,7 @@ of_oxm_bsn_vrf_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x30404); /* type_len */
         break;
     default:
@@ -4966,6 +5047,7 @@ of_oxm_bsn_vrf_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5005,6 +5087,7 @@ of_oxm_bsn_vrf_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5057,6 +5140,7 @@ of_oxm_bsn_vrf_masked_push_wire_types(of_object_t *obj)
     switch (obj->version) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint32_t *)(buf + 0) = U32_HTON(0x30508); /* type_len */
         break;
     default:
@@ -5167,6 +5251,7 @@ of_oxm_bsn_vrf_masked_value_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5206,6 +5291,7 @@ of_oxm_bsn_vrf_masked_value_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5247,6 +5333,7 @@ of_oxm_bsn_vrf_masked_value_mask_get(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:
@@ -5286,6 +5373,7 @@ of_oxm_bsn_vrf_masked_value_mask_set(
     switch (ver) {
     case OF_VERSION_1_2:
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 8;
         break;
     default:

@@ -140,6 +140,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case IPV4_DST:
             case IPV4_SRC:
             case IPV6_DST:
+            case IPV6_EXTHDR:
             case IPV6_FLABEL:
             case IPV6_ND_SLL:
             case IPV6_ND_TARGET:
@@ -152,6 +153,7 @@ class OFMatchV3Ver13 implements OFMatchV3 {
             case MPLS_BOS:
             case MPLS_LABEL:
             case MPLS_TC:
+            case PBB_UCA:
             case SCTP_DST:
             case SCTP_SRC:
             case TCP_DST:

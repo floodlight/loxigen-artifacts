@@ -35,6 +35,7 @@ of_bsn_tlv_actor_system_priority_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x28); /* type */
         break;
     default:
@@ -145,6 +146,7 @@ of_bsn_tlv_actor_system_priority_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -183,6 +185,7 @@ of_bsn_tlv_actor_system_priority_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -234,6 +237,7 @@ of_bsn_tlv_broadcast_query_timeout_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xa); /* type */
         break;
     default:
@@ -344,6 +348,7 @@ of_bsn_tlv_broadcast_query_timeout_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -382,6 +387,7 @@ of_bsn_tlv_broadcast_query_timeout_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -433,6 +439,7 @@ of_bsn_tlv_circuit_id_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xe); /* type */
         break;
     default:
@@ -544,6 +551,7 @@ of_bsn_tlv_circuit_id_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -588,6 +596,7 @@ of_bsn_tlv_circuit_id_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -650,6 +659,7 @@ of_bsn_tlv_convergence_status_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x2d); /* type */
         break;
     default:
@@ -760,6 +770,7 @@ of_bsn_tlv_convergence_status_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -798,6 +809,7 @@ of_bsn_tlv_convergence_status_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -849,6 +861,7 @@ of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x16); /* type */
         break;
     default:
@@ -959,6 +972,7 @@ of_bsn_tlv_crc_enabled_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -997,6 +1011,7 @@ of_bsn_tlv_crc_enabled_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1048,6 +1063,7 @@ of_bsn_tlv_data_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x37); /* type */
         break;
     default:
@@ -1159,6 +1175,7 @@ of_bsn_tlv_data_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -1203,6 +1220,7 @@ of_bsn_tlv_data_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -1265,6 +1283,7 @@ of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x21); /* type */
         break;
     default:
@@ -1375,6 +1394,7 @@ of_bsn_tlv_eth_dst_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1413,6 +1433,7 @@ of_bsn_tlv_eth_dst_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1464,6 +1485,7 @@ of_bsn_tlv_eth_src_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x20); /* type */
         break;
     default:
@@ -1574,6 +1596,7 @@ of_bsn_tlv_eth_src_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1612,6 +1635,7 @@ of_bsn_tlv_eth_src_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1663,6 +1687,7 @@ of_bsn_tlv_external_gateway_ip_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1a); /* type */
         break;
     default:
@@ -1773,6 +1798,7 @@ of_bsn_tlv_external_gateway_ip_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1811,6 +1837,7 @@ of_bsn_tlv_external_gateway_ip_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -1862,6 +1889,7 @@ of_bsn_tlv_external_gateway_mac_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1d); /* type */
         break;
     default:
@@ -1972,6 +2000,7 @@ of_bsn_tlv_external_gateway_mac_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2010,6 +2039,7 @@ of_bsn_tlv_external_gateway_mac_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2061,6 +2091,7 @@ of_bsn_tlv_external_ip_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x17); /* type */
         break;
     default:
@@ -2171,6 +2202,7 @@ of_bsn_tlv_external_ip_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2209,6 +2241,7 @@ of_bsn_tlv_external_ip_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2260,6 +2293,7 @@ of_bsn_tlv_external_mac_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x18); /* type */
         break;
     default:
@@ -2370,6 +2404,7 @@ of_bsn_tlv_external_mac_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2408,6 +2443,7 @@ of_bsn_tlv_external_mac_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2459,6 +2495,7 @@ of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x19); /* type */
         break;
     default:
@@ -2569,6 +2606,7 @@ of_bsn_tlv_external_netmask_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2607,6 +2645,7 @@ of_bsn_tlv_external_netmask_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2658,6 +2697,7 @@ of_bsn_tlv_header_size_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1f); /* type */
         break;
     default:
@@ -2768,6 +2808,7 @@ of_bsn_tlv_header_size_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2806,6 +2847,7 @@ of_bsn_tlv_header_size_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -2857,6 +2899,7 @@ of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x7); /* type */
         break;
     default:
@@ -2978,6 +3021,7 @@ of_bsn_tlv_idle_time_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
         break;
     default:
@@ -3088,6 +3132,7 @@ of_bsn_tlv_idle_time_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3126,6 +3171,7 @@ of_bsn_tlv_idle_time_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3177,6 +3223,7 @@ of_bsn_tlv_idle_timeout_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x8); /* type */
         break;
     default:
@@ -3287,6 +3334,7 @@ of_bsn_tlv_idle_timeout_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3325,6 +3373,7 @@ of_bsn_tlv_idle_timeout_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3376,6 +3425,7 @@ of_bsn_tlv_internal_gateway_mac_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1c); /* type */
         break;
     default:
@@ -3486,6 +3536,7 @@ of_bsn_tlv_internal_gateway_mac_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3524,6 +3575,7 @@ of_bsn_tlv_internal_gateway_mac_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3575,6 +3627,7 @@ of_bsn_tlv_internal_mac_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1b); /* type */
         break;
     default:
@@ -3685,6 +3738,7 @@ of_bsn_tlv_internal_mac_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3723,6 +3777,7 @@ of_bsn_tlv_internal_mac_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3774,6 +3829,7 @@ of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x4); /* type */
         break;
     default:
@@ -3884,6 +3940,7 @@ of_bsn_tlv_ipv4_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3922,6 +3979,7 @@ of_bsn_tlv_ipv4_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -3973,6 +4031,7 @@ of_bsn_tlv_ipv4_dst_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x23); /* type */
         break;
     default:
@@ -4083,6 +4142,7 @@ of_bsn_tlv_ipv4_dst_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4121,6 +4181,7 @@ of_bsn_tlv_ipv4_dst_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4172,6 +4233,7 @@ of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x22); /* type */
         break;
     default:
@@ -4282,6 +4344,7 @@ of_bsn_tlv_ipv4_src_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4320,6 +4383,7 @@ of_bsn_tlv_ipv4_src_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4371,6 +4435,7 @@ of_bsn_tlv_mac_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x1); /* type */
         break;
     default:
@@ -4481,6 +4546,7 @@ of_bsn_tlv_mac_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4519,6 +4585,7 @@ of_bsn_tlv_mac_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4570,6 +4637,7 @@ of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0xd); /* type */
         break;
     default:
@@ -4680,6 +4748,7 @@ of_bsn_tlv_miss_packets_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4718,6 +4787,7 @@ of_bsn_tlv_miss_packets_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -4769,6 +4839,7 @@ of_bsn_tlv_name_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x34); /* type */
         break;
     default:
@@ -4880,6 +4951,7 @@ of_bsn_tlv_name_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4924,6 +4996,7 @@ of_bsn_tlv_name_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         cur_len = _END_LEN(obj, offset);
         break;
@@ -4986,6 +5059,7 @@ of_bsn_tlv_partner_key_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x33); /* type */
         break;
     default:
@@ -5096,6 +5170,7 @@ of_bsn_tlv_partner_key_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5134,6 +5209,7 @@ of_bsn_tlv_partner_key_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5185,6 +5261,7 @@ of_bsn_tlv_partner_port_num_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x32); /* type */
         break;
     default:
@@ -5295,6 +5372,7 @@ of_bsn_tlv_partner_port_num_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5333,6 +5411,7 @@ of_bsn_tlv_partner_port_num_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5384,6 +5463,7 @@ of_bsn_tlv_partner_port_priority_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x31); /* type */
         break;
     default:
@@ -5494,6 +5574,7 @@ of_bsn_tlv_partner_port_priority_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5532,6 +5613,7 @@ of_bsn_tlv_partner_port_priority_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5583,6 +5665,7 @@ of_bsn_tlv_partner_state_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x36); /* type */
         break;
     default:
@@ -5693,6 +5776,7 @@ of_bsn_tlv_partner_state_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5731,6 +5815,7 @@ of_bsn_tlv_partner_state_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5782,6 +5867,7 @@ of_bsn_tlv_partner_system_mac_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x30); /* type */
         break;
     default:
@@ -5892,6 +5978,7 @@ of_bsn_tlv_partner_system_mac_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5930,6 +6017,7 @@ of_bsn_tlv_partner_system_mac_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -5981,6 +6069,7 @@ of_bsn_tlv_partner_system_priority_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x2f); /* type */
         break;
     default:
@@ -6091,6 +6180,7 @@ of_bsn_tlv_partner_system_priority_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6129,6 +6219,7 @@ of_bsn_tlv_partner_system_priority_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6180,6 +6271,7 @@ of_bsn_tlv_port_push_wire_types(of_object_t *obj)
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         *(uint16_t *)(buf + 0) = U16_HTON(0x0); /* type */
         break;
     default:
@@ -6290,6 +6382,7 @@ of_bsn_tlv_port_value_get(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
@@ -6329,6 +6422,7 @@ of_bsn_tlv_port_value_set(
     /* By version, determine offset and current length (where needed) */
     switch (ver) {
     case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
         offset = 4;
         break;
     default:
