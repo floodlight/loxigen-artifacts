@@ -1295,6 +1295,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_mac_mask_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_miss_packets_dup(
         of_object_t *src);
 
@@ -1328,6 +1332,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_port_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_priority_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5955,6 +5963,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5988,6 +6000,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_priority_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8243,6 +8259,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8276,6 +8296,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_port_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_priority_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

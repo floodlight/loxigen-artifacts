@@ -83,6 +83,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
+    OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
+    OFBsnTlvMacMask macMask(MacAddress value);
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
@@ -101,6 +103,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvPriority.Builder buildPriority() throws UnsupportedOperationException;
+    OFBsnTlvPriority priority(long value);
     OFBsnTlvQueueId.Builder buildQueueId() throws UnsupportedOperationException;
     OFBsnTlvQueueId queueId(long value);
     OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;

@@ -6403,6 +6403,17 @@ typedef struct of_bsn_tlv_ipv4_src_s of_bsn_tlv_ipv4_src_t;
 typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
 
 /**
+ * Structure for of_bsn_tlv_mac_mask object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_bsn_tlv_mac_mask_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_mac_mask_s of_bsn_tlv_mac_mask_t;
+
+/**
  * Structure for of_bsn_tlv_miss_packets object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6500,6 +6511,17 @@ typedef struct of_bsn_tlv_partner_system_priority_s of_bsn_tlv_partner_system_pr
  *
  */
 typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
+
+/**
+ * Structure for of_bsn_tlv_priority object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_priority_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_priority_s of_bsn_tlv_priority_t;
 
 /**
  * Structure for of_bsn_tlv_queue_id object.  Get/set

@@ -279,6 +279,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvMacMask.Builder buildMacMask() {
+        return new OFBsnTlvMacMaskVer14.Builder();
+    }
+    public OFBsnTlvMacMask macMask(MacAddress value) {
+        return new OFBsnTlvMacMaskVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
         return new OFBsnTlvMissPacketsVer14.Builder();
     }
@@ -356,6 +365,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvPort port(OFPort value) {
         return new OFBsnTlvPortVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvPriority.Builder buildPriority() {
+        return new OFBsnTlvPriorityVer14.Builder();
+    }
+    public OFBsnTlvPriority priority(long value) {
+        return new OFBsnTlvPriorityVer14(
                 value
                     );
     }

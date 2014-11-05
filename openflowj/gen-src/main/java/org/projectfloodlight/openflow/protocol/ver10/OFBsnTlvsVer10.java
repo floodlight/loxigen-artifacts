@@ -225,6 +225,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMac not supported in version 1.0");
     }
 
+    public OFBsnTlvMacMask.Builder buildMacMask() {
+        throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.0");
+    }
+    public OFBsnTlvMacMask macMask(MacAddress value) {
+        throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.0");
+    }
+
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
         throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.0");
     }
@@ -286,6 +293,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvPort port(OFPort value) {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.0");
+    }
+
+    public OFBsnTlvPriority.Builder buildPriority() {
+        throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.0");
+    }
+    public OFBsnTlvPriority priority(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvPriority not supported in version 1.0");
     }
 
     public OFBsnTlvQueueId.Builder buildQueueId() {

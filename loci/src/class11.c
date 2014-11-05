@@ -14439,6 +14439,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x37:
             *id = OF_BSN_TLV_DATA;
             break;
+        case 0x38:
+            *id = OF_BSN_TLV_MAC_MASK;
+            break;
+        case 0x39:
+            *id = OF_BSN_TLV_PRIORITY;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -14612,6 +14618,12 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x37:
             *id = OF_BSN_TLV_DATA;
+            break;
+        case 0x38:
+            *id = OF_BSN_TLV_MAC_MASK;
+            break;
+        case 0x39:
+            *id = OF_BSN_TLV_PRIORITY;
             break;
         default:
             *id = OF_BSN_TLV;

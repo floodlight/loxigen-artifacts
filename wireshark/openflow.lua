@@ -6697,6 +6697,9 @@ fields['of13.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_src.v
 fields['of13.bsn_tlv_mac.type'] = ProtoField.uint16("of13.bsn_tlv_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mac.length'] = ProtoField.uint16("of13.bsn_tlv_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "value")
+fields['of13.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.value", "value")
 fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -6724,6 +6727,9 @@ fields['of13.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of13.b
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_priority.type'] = ProtoField.uint16("of13.bsn_tlv_priority.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_priority.length'] = ProtoField.uint16("of13.bsn_tlv_priority.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_priority.value'] = ProtoField.uint32("of13.bsn_tlv_priority.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.type'] = ProtoField.uint16("of13.bsn_tlv_queue_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.length'] = ProtoField.uint16("of13.bsn_tlv_queue_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_queue_id.value'] = ProtoField.uint32("of13.bsn_tlv_queue_id.value", "value", base.DEC, nil)
@@ -9096,6 +9102,9 @@ fields['of14.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_src.v
 fields['of14.bsn_tlv_mac.type'] = ProtoField.uint16("of14.bsn_tlv_mac.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mac.length'] = ProtoField.uint16("of14.bsn_tlv_mac.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac.value'] = ProtoField.ether("of14.bsn_tlv_mac.value", "value")
+fields['of14.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.value", "value")
 fields['of14.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of14.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -9123,6 +9132,9 @@ fields['of14.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of14.b
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_priority.type'] = ProtoField.uint16("of14.bsn_tlv_priority.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_priority.length'] = ProtoField.uint16("of14.bsn_tlv_priority.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_priority.value'] = ProtoField.uint32("of14.bsn_tlv_priority.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_queue_id.type'] = ProtoField.uint16("of14.bsn_tlv_queue_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_queue_id.length'] = ProtoField.uint16("of14.bsn_tlv_queue_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_queue_id.value'] = ProtoField.uint32("of14.bsn_tlv_queue_id.value", "value", base.DEC, nil)
@@ -14667,6 +14679,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_mac.type'],
     fields['of13.bsn_tlv_mac.length'],
     fields['of13.bsn_tlv_mac.value'],
+    fields['of13.bsn_tlv_mac_mask.type'],
+    fields['of13.bsn_tlv_mac_mask.length'],
+    fields['of13.bsn_tlv_mac_mask.value'],
     fields['of13.bsn_tlv_miss_packets.type'],
     fields['of13.bsn_tlv_miss_packets.length'],
     fields['of13.bsn_tlv_miss_packets.value'],
@@ -14694,6 +14709,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_priority.type'],
+    fields['of13.bsn_tlv_priority.length'],
+    fields['of13.bsn_tlv_priority.value'],
     fields['of13.bsn_tlv_queue_id.type'],
     fields['of13.bsn_tlv_queue_id.length'],
     fields['of13.bsn_tlv_queue_id.value'],
@@ -17066,6 +17084,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_mac.type'],
     fields['of14.bsn_tlv_mac.length'],
     fields['of14.bsn_tlv_mac.value'],
+    fields['of14.bsn_tlv_mac_mask.type'],
+    fields['of14.bsn_tlv_mac_mask.length'],
+    fields['of14.bsn_tlv_mac_mask.value'],
     fields['of14.bsn_tlv_miss_packets.type'],
     fields['of14.bsn_tlv_miss_packets.length'],
     fields['of14.bsn_tlv_miss_packets.value'],
@@ -17093,6 +17114,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
+    fields['of14.bsn_tlv_priority.type'],
+    fields['of14.bsn_tlv_priority.length'],
+    fields['of14.bsn_tlv_priority.value'],
     fields['of14.bsn_tlv_queue_id.type'],
     fields['of14.bsn_tlv_queue_id.length'],
     fields['of14.bsn_tlv_queue_id.value'],
@@ -27926,6 +27950,16 @@ function dissect_of_bsn_tlv_mac_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[1] = dissect_of_bsn_tlv_mac_v4
 
+-- child class of_bsn_tlv_mac_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mac_mask_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mac_mask.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mac_mask.length')
+    read_of_mac_addr_t(reader, 4, subtree, 'of13.bsn_tlv_mac_mask.value')
+    return 'of_bsn_tlv_mac_mask'
+end
+of_bsn_tlv_v4_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v4
+
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_miss_packets_v4(reader, subtree)
@@ -28018,6 +28052,16 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
+
+-- child class of_bsn_tlv_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_priority_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_priority.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_priority.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_priority.value')
+    return 'of_bsn_tlv_priority'
+end
+of_bsn_tlv_v4_dissectors[57] = dissect_of_bsn_tlv_priority_v4
 
 -- child class of_bsn_tlv_queue_id
 -- Child of of_bsn_tlv
@@ -34105,6 +34149,16 @@ function dissect_of_bsn_tlv_mac_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[1] = dissect_of_bsn_tlv_mac_v5
 
+-- child class of_bsn_tlv_mac_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mac_mask_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mac_mask.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mac_mask.length')
+    read_of_mac_addr_t(reader, 5, subtree, 'of14.bsn_tlv_mac_mask.value')
+    return 'of_bsn_tlv_mac_mask'
+end
+of_bsn_tlv_v5_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v5
+
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_miss_packets_v5(reader, subtree)
@@ -34197,6 +34251,16 @@ function dissect_of_bsn_tlv_port_v5(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v5_dissectors[0] = dissect_of_bsn_tlv_port_v5
+
+-- child class of_bsn_tlv_priority
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_priority_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_priority.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_priority.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_priority.value')
+    return 'of_bsn_tlv_priority'
+end
+of_bsn_tlv_v5_dissectors[57] = dissect_of_bsn_tlv_priority_v5
 
 -- child class of_bsn_tlv_queue_id
 -- Child of of_bsn_tlv
