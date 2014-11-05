@@ -705,6 +705,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_broadcast_query_time
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_circuit_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_convergence_status_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_crc_enabled_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_data_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -19282,6 +19283,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_convergence_status_OF_VERSION_1_3(data, len, out_len);
     case 0x16:
         return loci_validate_of_bsn_tlv_crc_enabled_OF_VERSION_1_3(data, len, out_len);
+    case 0x37:
+        return loci_validate_of_bsn_tlv_data_OF_VERSION_1_3(data, len, out_len);
     case 0x21:
         return loci_validate_of_bsn_tlv_eth_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x20:
@@ -19590,6 +19593,29 @@ loci_validate_of_bsn_tlv_crc_enabled_OF_VERSION_1_3(uint8_t *data, int len, int 
     if (wire_len > len || wire_len < 5) {
         return -1;
     }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_data_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 4) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 4) {
+        return -1;
+    }
+
+    len = wire_len;
 
 
 

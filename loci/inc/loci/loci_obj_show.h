@@ -839,6 +839,7 @@ int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer,
 int of_bsn_tlv_circuit_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_convergence_status_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_crc_enabled_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_data_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_eth_dst_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_eth_src_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_external_gateway_ip_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);

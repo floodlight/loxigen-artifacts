@@ -6531,6 +6531,9 @@ fields['of13.bsn_tlv_convergence_status.value'] = ProtoField.uint8("of13.bsn_tlv
 fields['of13.bsn_tlv_crc_enabled.type'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.length'] = ProtoField.uint16("of13.bsn_tlv_crc_enabled.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_enabled.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_data.type'] = ProtoField.uint16("of13.bsn_tlv_data.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_data.length'] = ProtoField.uint16("of13.bsn_tlv_data.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_data.value'] = ProtoField.bytes("of13.bsn_tlv_data.value", "value")
 fields['of13.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.value'] = ProtoField.ether("of13.bsn_tlv_eth_dst.value", "value")
@@ -13578,6 +13581,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_crc_enabled.type'],
     fields['of13.bsn_tlv_crc_enabled.length'],
     fields['of13.bsn_tlv_crc_enabled.value'],
+    fields['of13.bsn_tlv_data.type'],
+    fields['of13.bsn_tlv_data.length'],
+    fields['of13.bsn_tlv_data.value'],
     fields['of13.bsn_tlv_eth_dst.type'],
     fields['of13.bsn_tlv_eth_dst.length'],
     fields['of13.bsn_tlv_eth_dst.value'],
@@ -25781,6 +25787,19 @@ function dissect_of_bsn_tlv_crc_enabled_v4(reader, subtree)
     return 'of_bsn_tlv_crc_enabled'
 end
 of_bsn_tlv_v4_dissectors[22] = dissect_of_bsn_tlv_crc_enabled_v4
+
+-- child class of_bsn_tlv_data
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_data_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_data.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_data.length')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_tlv_data.value')
+    return 'of_bsn_tlv_data'
+end
+of_bsn_tlv_v4_dissectors[55] = dissect_of_bsn_tlv_data_v4
 
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv

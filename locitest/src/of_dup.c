@@ -28873,6 +28873,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_DATA) {
+        return of_bsn_tlv_data_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CIRCUIT_ID) {
         return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
     }
@@ -29310,6 +29314,31 @@ of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_crc_enabled_value_get(src, &val8);
     of_bsn_tlv_crc_enabled_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_data
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_data.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_data_t *
+of_bsn_tlv_data_OF_VERSION_1_3_dup(
+    of_bsn_tlv_data_t *src)
+{
+    of_bsn_tlv_data_t *dst;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_tlv_data_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_data_value_get(src, &octets);
+    of_bsn_tlv_data_value_set(dst, &octets);
 
     return dst;
 }
@@ -57814,6 +57843,19 @@ of_bsn_tlv_crc_enabled_dup(
 
     if (src->version == OF_VERSION_1_3) {
         return of_bsn_tlv_crc_enabled_OF_VERSION_1_3_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_data_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_data_OF_VERSION_1_3_dup(src);
     }
 
     /* Class not supported in given version */

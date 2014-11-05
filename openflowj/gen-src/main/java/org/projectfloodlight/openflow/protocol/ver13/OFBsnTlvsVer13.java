@@ -122,6 +122,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvData.Builder buildData() {
+        return new OFBsnTlvDataVer13.Builder();
+    }
+    public OFBsnTlvData data(byte[] value) {
+        return new OFBsnTlvDataVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer13.Builder();
     }

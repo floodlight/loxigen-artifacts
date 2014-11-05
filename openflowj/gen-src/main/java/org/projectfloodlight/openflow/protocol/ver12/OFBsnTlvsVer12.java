@@ -102,6 +102,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvCrcEnabled not supported in version 1.2");
     }
 
+    public OFBsnTlvData.Builder buildData() {
+        throw new UnsupportedOperationException("OFBsnTlvData not supported in version 1.2");
+    }
+    public OFBsnTlvData data(byte[] value) {
+        throw new UnsupportedOperationException("OFBsnTlvData not supported in version 1.2");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.2");
     }

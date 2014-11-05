@@ -48,6 +48,8 @@ public interface OFBsnTlvs {
     OFBsnTlvConvergenceStatus convergenceStatus(short value);
     OFBsnTlvCrcEnabled.Builder buildCrcEnabled() throws UnsupportedOperationException;
     OFBsnTlvCrcEnabled crcEnabled(short value);
+    OFBsnTlvData.Builder buildData() throws UnsupportedOperationException;
+    OFBsnTlvData data(byte[] value);
     OFBsnTlvEthDst.Builder buildEthDst() throws UnsupportedOperationException;
     OFBsnTlvEthDst ethDst(MacAddress value);
     OFBsnTlvEthSrc.Builder buildEthSrc() throws UnsupportedOperationException;

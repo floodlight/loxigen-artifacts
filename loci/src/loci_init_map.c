@@ -309,6 +309,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_circuit_id_init,
     (of_object_init_f)of_bsn_tlv_convergence_status_init,
     (of_object_init_f)of_bsn_tlv_crc_enabled_init,
+    (of_object_init_f)of_bsn_tlv_data_init,
     (of_object_init_f)of_bsn_tlv_eth_dst_init,
     (of_object_init_f)of_bsn_tlv_eth_src_init,
     (of_object_init_f)of_bsn_tlv_external_gateway_ip_init,

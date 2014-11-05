@@ -14159,6 +14159,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x36:
             *id = OF_BSN_TLV_PARTNER_STATE;
             break;
+        case 0x37:
+            *id = OF_BSN_TLV_DATA;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;

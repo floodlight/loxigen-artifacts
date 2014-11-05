@@ -6126,6 +6126,17 @@ typedef struct of_bsn_tlv_convergence_status_s of_bsn_tlv_convergence_status_t;
 typedef struct of_bsn_tlv_crc_enabled_s of_bsn_tlv_crc_enabled_t;
 
 /**
+ * Structure for of_bsn_tlv_data object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3).
+ *   Accessors for value, a variable of type of_octets.  Functions
+ *   are of type of_bsn_tlv_data_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_data_s of_bsn_tlv_data_t;
+
+/**
  * Structure for of_bsn_tlv_eth_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

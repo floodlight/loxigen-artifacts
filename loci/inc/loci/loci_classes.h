@@ -783,6 +783,8 @@ void of_bsn_tlv_convergence_status_wire_object_id_get(of_object_t *obj, of_objec
 void of_bsn_tlv_convergence_status_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_crc_enabled_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_crc_enabled_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_data_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_data_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_eth_dst_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_eth_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1501,6 +1503,7 @@ typedef of_object_t of_bsn_tlv_broadcast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_circuit_id_t;
 typedef of_object_t of_bsn_tlv_convergence_status_t;
 typedef of_object_t of_bsn_tlv_crc_enabled_t;
+typedef of_object_t of_bsn_tlv_data_t;
 typedef of_object_t of_bsn_tlv_eth_dst_t;
 typedef of_object_t of_bsn_tlv_eth_src_t;
 typedef of_object_t of_bsn_tlv_external_gateway_ip_t;
@@ -3341,6 +3344,11 @@ extern void of_bsn_tlv_convergence_status_init(
 extern of_object_t *
     of_bsn_tlv_crc_enabled_new(of_version_t version);
 extern void of_bsn_tlv_crc_enabled_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_data_new(of_version_t version);
+extern void of_bsn_tlv_data_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -8354,6 +8362,17 @@ of_bsn_tlv_convergence_status_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_crc_enabled_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_data_t
+ * @param obj An instance of type of_bsn_tlv_data_t
+ *
+ * \ingroup of_bsn_tlv_data
+ */
+static inline void
+of_bsn_tlv_data_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -19981,6 +20000,15 @@ extern void of_bsn_tlv_crc_enabled_value_get(
     of_bsn_tlv_crc_enabled_t *obj,
     uint8_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_data */
+
+extern int WARN_UNUSED_RESULT of_bsn_tlv_data_value_set(
+    of_bsn_tlv_data_t *obj,
+    of_octets_t *value);
+extern void of_bsn_tlv_data_value_get(
+    of_bsn_tlv_data_t *obj,
+    of_octets_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_eth_dst */
 
 extern void of_bsn_tlv_eth_dst_value_set(
@@ -25818,6 +25846,7 @@ union of_bsn_tlv_u {
     of_bsn_tlv_circuit_id_t circuit_id;
     of_bsn_tlv_convergence_status_t convergence_status;
     of_bsn_tlv_crc_enabled_t crc_enabled;
+    of_bsn_tlv_data_t data;
     of_bsn_tlv_eth_dst_t eth_dst;
     of_bsn_tlv_eth_src_t eth_src;
     of_bsn_tlv_external_gateway_ip_t external_gateway_ip;
