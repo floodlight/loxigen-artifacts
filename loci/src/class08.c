@@ -30,6 +30,496 @@
 #include "loci_int.h"
 
 void
+of_oxm_metadata_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000408); /* type_len */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_oxm_metadata of_oxm_metadata
+ */
+
+/**
+ * Create a new of_oxm_metadata object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_oxm_metadata
+ */
+
+of_object_t *
+of_oxm_metadata_new(of_version_t version)
+{
+    of_object_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_OXM_METADATA];
+
+    if ((obj = of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_metadata_init(obj, version, bytes, 0);
+    of_oxm_metadata_push_wire_types(obj);
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_oxm_metadata.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_oxm_metadata_init(of_object_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_METADATA] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_OXM_METADATA];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_OXM_METADATA;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+/**
+ * Get value from an object of type of_oxm_metadata.
+ * @param obj Pointer to an object of type of_oxm_metadata.
+ * @param value Pointer to the child object of type
+ * uint64_t to be filled out.
+ *
+ */
+void
+of_oxm_metadata_value_get(
+    of_oxm_metadata_t *obj,
+    uint64_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_OXM_METADATA);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u64_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_oxm_metadata.
+ * @param obj Pointer to an object of type of_oxm_metadata.
+ * @param value The value to write into the object
+ */
+void
+of_oxm_metadata_value_set(
+    of_oxm_metadata_t *obj,
+    uint64_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_OXM_METADATA);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u64_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
+of_oxm_metadata_masked_push_wire_types(of_object_t *obj)
+{
+    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
+    switch (obj->version) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        *(uint32_t *)(buf + 0) = U32_HTON(0x80000510); /* type_len */
+        break;
+    default:
+        UNREACHABLE();
+    }
+}
+
+
+
+/**
+ * \defgroup of_oxm_metadata_masked of_oxm_metadata_masked
+ */
+
+/**
+ * Create a new of_oxm_metadata_masked object
+ *
+ * @param version The wire version to use for the object
+ * @return Pointer to the newly create object or NULL on error
+ *
+ * Initializes the new object with it's default fixed length associating
+ * a new underlying wire buffer.
+ *
+ * \ingroup of_oxm_metadata_masked
+ */
+
+of_object_t *
+of_oxm_metadata_masked_new(of_version_t version)
+{
+    of_object_t *obj;
+    int bytes;
+
+    bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED];
+
+    if ((obj = of_object_new(bytes)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_metadata_masked_init(obj, version, bytes, 0);
+    of_oxm_metadata_masked_push_wire_types(obj);
+
+    return obj;
+}
+
+/**
+ * Initialize an object of type of_oxm_metadata_masked.
+ *
+ * @param obj Pointer to the object to initialize
+ * @param version The wire version to use for the object
+ * @param bytes How many bytes in the object
+ * @param clean_wire Boolean: If true, clear the wire object control struct
+ *
+ * If bytes < 0, then the default fixed length is used for the object
+ *
+ * This is a "coerce" function that sets up the pointers for the
+ * accessors properly.
+ *
+ * If anything other than 0 is passed in for the buffer size, the underlying
+ * wire buffer will have 'grow' called.
+ */
+
+void
+of_oxm_metadata_masked_init(of_object_t *obj,
+    of_version_t version, int bytes, int clean_wire)
+{
+    LOCI_ASSERT(of_object_fixed_len[version][OF_OXM_METADATA_MASKED] >= 0);
+    if (clean_wire) {
+        MEMSET(obj, 0, sizeof(*obj));
+    }
+    if (bytes < 0) {
+        bytes = of_object_fixed_len[version][OF_OXM_METADATA_MASKED];
+    }
+    obj->version = version;
+    obj->length = bytes;
+    obj->object_id = OF_OXM_METADATA_MASKED;
+
+    /* Grow the wire buffer */
+    if (obj->wbuf != NULL) {
+        int tot_bytes;
+
+        tot_bytes = bytes + obj->obj_offset;
+        of_wire_buffer_grow(obj->wbuf, tot_bytes);
+    }
+}
+
+/**
+ * Get value from an object of type of_oxm_metadata_masked.
+ * @param obj Pointer to an object of type of_oxm_metadata_masked.
+ * @param value Pointer to the child object of type
+ * uint64_t to be filled out.
+ *
+ */
+void
+of_oxm_metadata_masked_value_get(
+    of_oxm_metadata_masked_t *obj,
+    uint64_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_OXM_METADATA_MASKED);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u64_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_oxm_metadata_masked.
+ * @param obj Pointer to an object of type of_oxm_metadata_masked.
+ * @param value The value to write into the object
+ */
+void
+of_oxm_metadata_masked_value_set(
+    of_oxm_metadata_masked_t *obj,
+    uint64_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_OXM_METADATA_MASKED);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u64_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Get value_mask from an object of type of_oxm_metadata_masked.
+ * @param obj Pointer to an object of type of_oxm_metadata_masked.
+ * @param value_mask Pointer to the child object of type
+ * uint64_t to be filled out.
+ *
+ */
+void
+of_oxm_metadata_masked_value_mask_get(
+    of_oxm_metadata_masked_t *obj,
+    uint64_t *value_mask)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_OXM_METADATA_MASKED);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 12;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u64_get(wbuf, abs_offset, value_mask);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value_mask in an object of type of_oxm_metadata_masked.
+ * @param obj Pointer to an object of type of_oxm_metadata_masked.
+ * @param value_mask The value to write into the object
+ */
+void
+of_oxm_metadata_masked_value_mask_set(
+    of_oxm_metadata_masked_t *obj,
+    uint64_t value_mask)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_OXM_METADATA_MASKED);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_2:
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 12;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u64_set(wbuf, abs_offset, value_mask);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
+/* Copyright (c) 2011, 2012 Open Networking Foundation */
+/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
+/* See the file LICENSE.loci which should have been included in the source distribution */
+#ifdef __GNUC__
+
+#ifdef __linux__
+/* glibc */
+#include <features.h>
+#else
+/* NetBSD etc */
+#include <sys/cdefs.h>
+#ifdef __GNUC_PREREQ__
+#define __GNUC_PREREQ __GNUC_PREREQ__
+#endif
+#endif
+
+#ifndef __GNUC_PREREQ
+/* fallback */
+#define __GNUC_PREREQ(maj, min) 0
+#endif
+
+#if __GNUC_PREREQ(4,6)
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+#endif
+
+#endif
+
+#include "loci_log.h"
+#include "loci_int.h"
+
+void
 of_oxm_mpls_label_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
@@ -8128,572 +8618,4 @@ of_action_bsn_gentable_key_set(
     OF_LENGTH_CHECK_ASSERT(obj);
 
     return OF_ERROR_NONE;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_action_id_bsn_gentable_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
-        *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_action_id_bsn_gentable of_action_id_bsn_gentable
- */
-
-/**
- * Create a new of_action_id_bsn_gentable object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_action_id_bsn_gentable
- */
-
-of_object_t *
-of_action_id_bsn_gentable_new(of_version_t version)
-{
-    of_object_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_ACTION_ID_BSN_GENTABLE];
-
-    if ((obj = of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_action_id_bsn_gentable_init(obj, version, bytes, 0);
-    of_action_id_bsn_gentable_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_action_id_bsn_gentable.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_action_id_bsn_gentable_init(of_object_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_ID_BSN_GENTABLE] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_ID_BSN_GENTABLE];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_ACTION_ID_BSN_GENTABLE;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-/**
- * Get experimenter from an object of type of_action_id_bsn_gentable.
- * @param obj Pointer to an object of type of_action_id_bsn_gentable.
- * @param experimenter Pointer to the child object of type
- * uint32_t to be filled out.
- *
- */
-void
-of_action_id_bsn_gentable_experimenter_get(
-    of_action_id_bsn_gentable_t *obj,
-    uint32_t *experimenter)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_GENTABLE);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set experimenter in an object of type of_action_id_bsn_gentable.
- * @param obj Pointer to an object of type of_action_id_bsn_gentable.
- * @param experimenter The value to write into the object
- */
-void
-of_action_id_bsn_gentable_experimenter_set(
-    of_action_id_bsn_gentable_t *obj,
-    uint32_t experimenter)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_GENTABLE);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Get subtype from an object of type of_action_id_bsn_gentable.
- * @param obj Pointer to an object of type of_action_id_bsn_gentable.
- * @param subtype Pointer to the child object of type
- * uint32_t to be filled out.
- *
- */
-void
-of_action_id_bsn_gentable_subtype_get(
-    of_action_id_bsn_gentable_t *obj,
-    uint32_t *subtype)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_GENTABLE);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 8;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set subtype in an object of type of_action_id_bsn_gentable.
- * @param obj Pointer to an object of type of_action_id_bsn_gentable.
- * @param subtype The value to write into the object
- */
-void
-of_action_id_bsn_gentable_subtype_set(
-    of_action_id_bsn_gentable_t *obj,
-    uint32_t subtype)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_GENTABLE);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 8;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-/* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
-/* Copyright (c) 2011, 2012 Open Networking Foundation */
-/* Copyright (c) 2012, 2013 Big Switch Networks, Inc. */
-/* See the file LICENSE.loci which should have been included in the source distribution */
-#ifdef __GNUC__
-
-#ifdef __linux__
-/* glibc */
-#include <features.h>
-#else
-/* NetBSD etc */
-#include <sys/cdefs.h>
-#ifdef __GNUC_PREREQ__
-#define __GNUC_PREREQ __GNUC_PREREQ__
-#endif
-#endif
-
-#ifndef __GNUC_PREREQ
-/* fallback */
-#define __GNUC_PREREQ(maj, min) 0
-#endif
-
-#if __GNUC_PREREQ(4,6)
-#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
-#endif
-
-#endif
-
-#include "loci_log.h"
-#include "loci_int.h"
-
-void
-of_action_id_bsn_mirror_push_wire_types(of_object_t *obj)
-{
-    unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
-    switch (obj->version) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
-        *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 8) = U32_HTON(0x1); /* subtype */
-        break;
-    default:
-        UNREACHABLE();
-    }
-}
-
-
-
-/**
- * \defgroup of_action_id_bsn_mirror of_action_id_bsn_mirror
- */
-
-/**
- * Create a new of_action_id_bsn_mirror object
- *
- * @param version The wire version to use for the object
- * @return Pointer to the newly create object or NULL on error
- *
- * Initializes the new object with it's default fixed length associating
- * a new underlying wire buffer.
- *
- * \ingroup of_action_id_bsn_mirror
- */
-
-of_object_t *
-of_action_id_bsn_mirror_new(of_version_t version)
-{
-    of_object_t *obj;
-    int bytes;
-
-    bytes = of_object_fixed_len[version][OF_ACTION_ID_BSN_MIRROR];
-
-    if ((obj = of_object_new(bytes)) == NULL) {
-        return NULL;
-    }
-
-    of_action_id_bsn_mirror_init(obj, version, bytes, 0);
-    of_action_id_bsn_mirror_push_wire_types(obj);
-    of_tlv16_wire_length_set(obj, obj->length);
-
-    return obj;
-}
-
-/**
- * Initialize an object of type of_action_id_bsn_mirror.
- *
- * @param obj Pointer to the object to initialize
- * @param version The wire version to use for the object
- * @param bytes How many bytes in the object
- * @param clean_wire Boolean: If true, clear the wire object control struct
- *
- * If bytes < 0, then the default fixed length is used for the object
- *
- * This is a "coerce" function that sets up the pointers for the
- * accessors properly.
- *
- * If anything other than 0 is passed in for the buffer size, the underlying
- * wire buffer will have 'grow' called.
- */
-
-void
-of_action_id_bsn_mirror_init(of_object_t *obj,
-    of_version_t version, int bytes, int clean_wire)
-{
-    LOCI_ASSERT(of_object_fixed_len[version][OF_ACTION_ID_BSN_MIRROR] >= 0);
-    if (clean_wire) {
-        MEMSET(obj, 0, sizeof(*obj));
-    }
-    if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_ACTION_ID_BSN_MIRROR];
-    }
-    obj->version = version;
-    obj->length = bytes;
-    obj->object_id = OF_ACTION_ID_BSN_MIRROR;
-
-    /* Grow the wire buffer */
-    if (obj->wbuf != NULL) {
-        int tot_bytes;
-
-        tot_bytes = bytes + obj->obj_offset;
-        of_wire_buffer_grow(obj->wbuf, tot_bytes);
-    }
-}
-
-/**
- * Get experimenter from an object of type of_action_id_bsn_mirror.
- * @param obj Pointer to an object of type of_action_id_bsn_mirror.
- * @param experimenter Pointer to the child object of type
- * uint32_t to be filled out.
- *
- */
-void
-of_action_id_bsn_mirror_experimenter_get(
-    of_action_id_bsn_mirror_t *obj,
-    uint32_t *experimenter)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_MIRROR);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, experimenter);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set experimenter in an object of type of_action_id_bsn_mirror.
- * @param obj Pointer to an object of type of_action_id_bsn_mirror.
- * @param experimenter The value to write into the object
- */
-void
-of_action_id_bsn_mirror_experimenter_set(
-    of_action_id_bsn_mirror_t *obj,
-    uint32_t experimenter)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_MIRROR);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 4;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, experimenter);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Get subtype from an object of type of_action_id_bsn_mirror.
- * @param obj Pointer to an object of type of_action_id_bsn_mirror.
- * @param subtype Pointer to the child object of type
- * uint32_t to be filled out.
- *
- */
-void
-of_action_id_bsn_mirror_subtype_get(
-    of_action_id_bsn_mirror_t *obj,
-    uint32_t *subtype)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_MIRROR);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 8;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_get(wbuf, abs_offset, subtype);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
-}
-
-/**
- * Set subtype in an object of type of_action_id_bsn_mirror.
- * @param obj Pointer to an object of type of_action_id_bsn_mirror.
- * @param subtype The value to write into the object
- */
-void
-of_action_id_bsn_mirror_subtype_set(
-    of_action_id_bsn_mirror_t *obj,
-    uint32_t subtype)
-{
-    of_wire_buffer_t *wbuf;
-    int offset = 0; /* Offset of value relative to the start obj */
-    int abs_offset; /* Offset of value relative to start of wbuf */
-    of_version_t ver;
-
-    LOCI_ASSERT(obj->object_id == OF_ACTION_ID_BSN_MIRROR);
-    ver = obj->version;
-    wbuf = OF_OBJECT_TO_WBUF(obj);
-    LOCI_ASSERT(wbuf != NULL);
-
-    /* By version, determine offset and current length (where needed) */
-    switch (ver) {
-    case OF_VERSION_1_3:
-    case OF_VERSION_1_4:
-        offset = 8;
-        break;
-    default:
-        LOCI_ASSERT(0);
-    }
-
-    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
-    LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u32_set(wbuf, abs_offset, subtype);
-
-    OF_LENGTH_CHECK_ASSERT(obj);
-
-    return ;
 }

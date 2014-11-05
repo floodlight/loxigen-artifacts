@@ -183,6 +183,25 @@ public class OFOxmsVer13 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnL2CacheHit.Builder buildBsnL2CacheHit() {
+        return new OFOxmBsnL2CacheHitVer13.Builder();
+    }
+    public OFOxmBsnL2CacheHit bsnL2CacheHit(OFBooleanValue value) {
+        return new OFOxmBsnL2CacheHitVer13(
+                value
+                    );
+    }
+
+    public OFOxmBsnL2CacheHitMasked.Builder buildBsnL2CacheHitMasked() {
+        return new OFOxmBsnL2CacheHitMaskedVer13.Builder();
+    }
+    public OFOxmBsnL2CacheHitMasked bsnL2CacheHitMasked(OFBooleanValue value, OFBooleanValue mask) {
+        return new OFOxmBsnL2CacheHitMaskedVer13(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmBsnL3DstClassId.Builder buildBsnL3DstClassId() {
         return new OFOxmBsnL3DstClassIdVer13.Builder();
     }
@@ -1151,6 +1170,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowed((OFBooleanValue)((Object)value)));
             case BSN_IN_PORTS_128:
                 return (OFOxm<F>)((Object)bsnInPorts128((OFBitMask128)((Object)value)));
+            case BSN_L2_CACHE_HIT:
+                return (OFOxm<F>)((Object)bsnL2CacheHit((OFBooleanValue)((Object)value)));
             case BSN_L3_DST_CLASS_ID:
                 return (OFOxm<F>)((Object)bsnL3DstClassId((ClassId)((Object)value)));
             case BSN_L3_INTERFACE_CLASS_ID:
@@ -1275,6 +1296,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowedMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_IN_PORTS_128:
                 return (OFOxm<F>)((Object)bsnInPorts128Masked((OFBitMask128)((Object)value), (OFBitMask128)((Object)mask)));
+            case BSN_L2_CACHE_HIT:
+                return (OFOxm<F>)((Object)bsnL2CacheHitMasked((OFBooleanValue)((Object)value), (OFBooleanValue)((Object)mask)));
             case BSN_L3_DST_CLASS_ID:
                 return (OFOxm<F>)((Object)bsnL3DstClassIdMasked((ClassId)((Object)value), (ClassId)((Object)mask)));
             case BSN_L3_INTERFACE_CLASS_ID:
@@ -1399,6 +1422,8 @@ public class OFOxmsVer13 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnGlobalVrfAllowedMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_IN_PORTS_128:
                 return (OFOxm<F>)((Object)bsnInPorts128Masked((OFBitMask128)((Object)(masked.getValue())), (OFBitMask128)((Object)(masked.getMask()))));
+            case BSN_L2_CACHE_HIT:
+                return (OFOxm<F>)((Object)bsnL2CacheHitMasked((OFBooleanValue)((Object)(masked.getValue())), (OFBooleanValue)((Object)(masked.getMask()))));
             case BSN_L3_DST_CLASS_ID:
                 return (OFOxm<F>)((Object)bsnL3DstClassIdMasked((ClassId)((Object)(masked.getValue())), (ClassId)((Object)(masked.getMask()))));
             case BSN_L3_INTERFACE_CLASS_ID:

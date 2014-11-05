@@ -79,6 +79,7 @@ typedef struct of_match_fields_s {
     uint32_t             bsn_udf7;
     uint16_t             bsn_tcp_flags;
     uint32_t             bsn_vlan_xlate_port_group_id;
+    uint8_t              bsn_l2_cache_hit;
 
 } of_match_fields_t;
 
@@ -490,12 +491,12 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
-    /* Mask and values for arp_op */
-    if (!OF_MORE_SPECIFIC_INT(e_m->arp_op, q_m->arp_op)) {
+    /* Mask and values for bsn_udf0 */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf0, q_m->bsn_udf0)) {
         return 0;
     }
-    if (!OF_RESTRICTED_MATCH_INT(e_f->arp_op, q_f->arp_op,
-            q_m->arp_op)) {
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf0, q_f->bsn_udf0,
+            q_m->bsn_udf0)) {
         return 0;
     }
 
@@ -514,6 +515,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->tunnel_id, q_f->tunnel_id,
             q_m->tunnel_id)) {
+        return 0;
+    }
+
+    /* Mask and values for sctp_src */
+    if (!OF_MORE_SPECIFIC_INT(e_m->sctp_src, q_m->sctp_src)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->sctp_src, q_f->sctp_src,
+            q_m->sctp_src)) {
         return 0;
     }
 
@@ -544,12 +554,12 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
-    /* Mask and values for ipv6_nd_target */
-    if (!OF_MORE_SPECIFIC_IPV6(&e_m->ipv6_nd_target, &q_m->ipv6_nd_target)) {
+    /* Mask and values for arp_op */
+    if (!OF_MORE_SPECIFIC_INT(e_m->arp_op, q_m->arp_op)) {
         return 0;
     }
-    if (!OF_RESTRICTED_MATCH_IPV6(&e_f->ipv6_nd_target, &q_f->ipv6_nd_target,
-            &q_m->ipv6_nd_target)) {
+    if (!OF_RESTRICTED_MATCH_INT(e_f->arp_op, q_f->arp_op,
+            q_m->arp_op)) {
         return 0;
     }
 
@@ -706,21 +716,12 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
-    /* Mask and values for bsn_udf0 */
-    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_udf0, q_m->bsn_udf0)) {
+    /* Mask and values for ipv6_nd_target */
+    if (!OF_MORE_SPECIFIC_IPV6(&e_m->ipv6_nd_target, &q_m->ipv6_nd_target)) {
         return 0;
     }
-    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_udf0, q_f->bsn_udf0,
-            q_m->bsn_udf0)) {
-        return 0;
-    }
-
-    /* Mask and values for sctp_src */
-    if (!OF_MORE_SPECIFIC_INT(e_m->sctp_src, q_m->sctp_src)) {
-        return 0;
-    }
-    if (!OF_RESTRICTED_MATCH_INT(e_f->sctp_src, q_f->sctp_src,
-            q_m->sctp_src)) {
+    if (!OF_RESTRICTED_MATCH_IPV6(&e_f->ipv6_nd_target, &q_f->ipv6_nd_target,
+            &q_m->ipv6_nd_target)) {
         return 0;
     }
 
@@ -766,6 +767,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->metadata, q_f->metadata,
             q_m->metadata)) {
+        return 0;
+    }
+
+    /* Mask and values for bsn_l2_cache_hit */
+    if (!OF_MORE_SPECIFIC_INT(e_m->bsn_l2_cache_hit, q_m->bsn_l2_cache_hit)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->bsn_l2_cache_hit, q_f->bsn_l2_cache_hit,
+            q_m->bsn_l2_cache_hit)) {
         return 0;
     }
 
@@ -984,9 +994,9 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
-    /* Check overlap for arp_op */
-    if (!OF_OVERLAP_INT(f1->arp_op, f2->arp_op,
-        m2->arp_op, m1->arp_op)) {
+    /* Check overlap for bsn_udf0 */
+    if (!OF_OVERLAP_INT(f1->bsn_udf0, f2->bsn_udf0,
+        m2->bsn_udf0, m1->bsn_udf0)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -999,6 +1009,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for tunnel_id */
     if (!OF_OVERLAP_INT(f1->tunnel_id, f2->tunnel_id,
         m2->tunnel_id, m1->tunnel_id)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for sctp_src */
+    if (!OF_OVERLAP_INT(f1->sctp_src, f2->sctp_src,
+        m2->sctp_src, m1->sctp_src)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -1020,9 +1036,9 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
-    /* Check overlap for ipv6_nd_target */
-    if (!OF_OVERLAP_IPV6(&f1->ipv6_nd_target, &f2->ipv6_nd_target,
-        &m2->ipv6_nd_target, &m1->ipv6_nd_target)) {
+    /* Check overlap for arp_op */
+    if (!OF_OVERLAP_INT(f1->arp_op, f2->arp_op,
+        m2->arp_op, m1->arp_op)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -1128,15 +1144,9 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
-    /* Check overlap for bsn_udf0 */
-    if (!OF_OVERLAP_INT(f1->bsn_udf0, f2->bsn_udf0,
-        m2->bsn_udf0, m1->bsn_udf0)) {
-        return 0; /* This field differentiates; all done */
-    }
-
-    /* Check overlap for sctp_src */
-    if (!OF_OVERLAP_INT(f1->sctp_src, f2->sctp_src,
-        m2->sctp_src, m1->sctp_src)) {
+    /* Check overlap for ipv6_nd_target */
+    if (!OF_OVERLAP_IPV6(&f1->ipv6_nd_target, &f2->ipv6_nd_target,
+        &m2->ipv6_nd_target, &m1->ipv6_nd_target)) {
         return 0; /* This field differentiates; all done */
     }
 
@@ -1167,6 +1177,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for metadata */
     if (!OF_OVERLAP_INT(f1->metadata, f2->metadata,
         m2->metadata, m1->metadata)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for bsn_l2_cache_hit */
+    if (!OF_OVERLAP_INT(f1->bsn_l2_cache_hit, f2->bsn_l2_cache_hit,
+        m2->bsn_l2_cache_hit, m1->bsn_l2_cache_hit)) {
         return 0; /* This field differentiates; all done */
     }
 

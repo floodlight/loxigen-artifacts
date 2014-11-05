@@ -59,6 +59,10 @@ public interface OFOxms {
     OFOxmBsnInPorts128 bsnInPorts128(OFBitMask128 value);
     OFOxmBsnInPorts128Masked.Builder buildBsnInPorts128Masked() throws UnsupportedOperationException;
     OFOxmBsnInPorts128Masked bsnInPorts128Masked(OFBitMask128 value, OFBitMask128 mask);
+    OFOxmBsnL2CacheHit.Builder buildBsnL2CacheHit() throws UnsupportedOperationException;
+    OFOxmBsnL2CacheHit bsnL2CacheHit(OFBooleanValue value);
+    OFOxmBsnL2CacheHitMasked.Builder buildBsnL2CacheHitMasked() throws UnsupportedOperationException;
+    OFOxmBsnL2CacheHitMasked bsnL2CacheHitMasked(OFBooleanValue value, OFBooleanValue mask);
     OFOxmBsnL3DstClassId.Builder buildBsnL3DstClassId() throws UnsupportedOperationException;
     OFOxmBsnL3DstClassId bsnL3DstClassId(ClassId value);
     OFOxmBsnL3DstClassIdMasked.Builder buildBsnL3DstClassIdMasked() throws UnsupportedOperationException;

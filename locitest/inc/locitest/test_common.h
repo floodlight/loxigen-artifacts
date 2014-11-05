@@ -4019,6 +4019,24 @@ extern int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_populate_scalars(
 extern int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_check_scalars(
     of_oxm_bsn_in_ports_128_masked_t *obj, int value);
 
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_populate(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_check(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_populate(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_check(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_populate_scalars(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_check_scalars(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+
 extern int of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_populate(
     of_oxm_bsn_l3_dst_class_id_t *obj, int value);
 extern int of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_check(
@@ -8365,6 +8383,24 @@ extern int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_populate_scalars(
     of_oxm_bsn_in_ports_128_masked_t *obj, int value);
 extern int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_check_scalars(
     of_oxm_bsn_in_ports_128_masked_t *obj, int value);
+
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_populate(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_check(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_l2_cache_hit_t *obj, int value);
+
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_populate(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_check(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_populate_scalars(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
+extern int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_check_scalars(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj, int value);
 
 extern int of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_populate(
     of_oxm_bsn_l3_dst_class_id_t *obj, int value);

@@ -446,6 +446,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_bsn_global_vrf_allowed_masked",
     "of_oxm_bsn_in_ports_128",
     "of_oxm_bsn_in_ports_128_masked",
+    "of_oxm_bsn_l2_cache_hit",
+    "of_oxm_bsn_l2_cache_hit_masked",
     "of_oxm_bsn_l3_dst_class_id",
     "of_oxm_bsn_l3_dst_class_id_masked",
     "of_oxm_bsn_l3_interface_class_id",

@@ -373,6 +373,10 @@ void of_oxm_bsn_in_ports_128_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_oxm_bsn_in_ports_128_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_in_ports_128_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_in_ports_128_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_l2_cache_hit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_l2_cache_hit_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_l2_cache_hit_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_l2_cache_hit_masked_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_l3_dst_class_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_l3_dst_class_id_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_l3_dst_class_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1656,6 +1660,8 @@ typedef of_object_t of_oxm_bsn_global_vrf_allowed_t;
 typedef of_object_t of_oxm_bsn_global_vrf_allowed_masked_t;
 typedef of_object_t of_oxm_bsn_in_ports_128_t;
 typedef of_object_t of_oxm_bsn_in_ports_128_masked_t;
+typedef of_object_t of_oxm_bsn_l2_cache_hit_t;
+typedef of_object_t of_oxm_bsn_l2_cache_hit_masked_t;
 typedef of_object_t of_oxm_bsn_l3_dst_class_id_t;
 typedef of_object_t of_oxm_bsn_l3_dst_class_id_masked_t;
 typedef of_object_t of_oxm_bsn_l3_interface_class_id_t;
@@ -4074,6 +4080,16 @@ extern void of_oxm_bsn_in_ports_128_init(
 extern of_object_t *
     of_oxm_bsn_in_ports_128_masked_new(of_version_t version);
 extern void of_oxm_bsn_in_ports_128_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_l2_cache_hit_new(of_version_t version);
+extern void of_oxm_bsn_l2_cache_hit_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_l2_cache_hit_masked_new(of_version_t version);
+extern void of_oxm_bsn_l2_cache_hit_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9982,6 +9998,28 @@ of_oxm_bsn_in_ports_128_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_bsn_in_ports_128_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_l2_cache_hit_t
+ * @param obj An instance of type of_oxm_bsn_l2_cache_hit_t
+ *
+ * \ingroup of_oxm_bsn_l2_cache_hit
+ */
+static inline void
+of_oxm_bsn_l2_cache_hit_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_l2_cache_hit_masked_t
+ * @param obj An instance of type of_oxm_bsn_l2_cache_hit_masked_t
+ *
+ * \ingroup of_oxm_bsn_l2_cache_hit_masked
+ */
+static inline void
+of_oxm_bsn_l2_cache_hit_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22260,6 +22298,31 @@ extern void of_oxm_bsn_in_ports_128_masked_value_mask_get(
     of_oxm_bsn_in_ports_128_masked_t *obj,
     of_bitmap_128_t *value_mask);
 
+/* Unified accessor functions for of_oxm_bsn_l2_cache_hit */
+
+extern void of_oxm_bsn_l2_cache_hit_value_set(
+    of_oxm_bsn_l2_cache_hit_t *obj,
+    uint8_t value);
+extern void of_oxm_bsn_l2_cache_hit_value_get(
+    of_oxm_bsn_l2_cache_hit_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_l2_cache_hit_masked */
+
+extern void of_oxm_bsn_l2_cache_hit_masked_value_set(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj,
+    uint8_t value);
+extern void of_oxm_bsn_l2_cache_hit_masked_value_get(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj,
+    uint8_t *value);
+
+extern void of_oxm_bsn_l2_cache_hit_masked_value_mask_set(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj,
+    uint8_t value_mask);
+extern void of_oxm_bsn_l2_cache_hit_masked_value_mask_get(
+    of_oxm_bsn_l2_cache_hit_masked_t *obj,
+    uint8_t *value_mask);
+
 /* Unified accessor functions for of_oxm_bsn_l3_dst_class_id */
 
 extern void of_oxm_bsn_l3_dst_class_id_value_set(
@@ -26405,6 +26468,8 @@ union of_oxm_u {
     of_oxm_bsn_global_vrf_allowed_masked_t bsn_global_vrf_allowed_masked;
     of_oxm_bsn_in_ports_128_t bsn_in_ports_128;
     of_oxm_bsn_in_ports_128_masked_t bsn_in_ports_128_masked;
+    of_oxm_bsn_l2_cache_hit_t bsn_l2_cache_hit;
+    of_oxm_bsn_l2_cache_hit_masked_t bsn_l2_cache_hit_masked;
     of_oxm_bsn_l3_dst_class_id_t bsn_l3_dst_class_id;
     of_oxm_bsn_l3_dst_class_id_masked_t bsn_l3_dst_class_id_masked;
     of_oxm_bsn_l3_interface_class_id_t bsn_l3_interface_class_id;

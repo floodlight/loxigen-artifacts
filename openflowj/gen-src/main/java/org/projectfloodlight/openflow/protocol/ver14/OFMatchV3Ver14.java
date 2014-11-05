@@ -113,6 +113,7 @@ class OFMatchV3Ver14 implements OFMatchV3 {
             case BSN_EGR_PORT_GROUP_ID:
             case BSN_GLOBAL_VRF_ALLOWED:
             case BSN_IN_PORTS_128:
+            case BSN_L2_CACHE_HIT:
             case BSN_L3_DST_CLASS_ID:
             case BSN_L3_INTERFACE_CLASS_ID:
             case BSN_L3_SRC_CLASS_ID:

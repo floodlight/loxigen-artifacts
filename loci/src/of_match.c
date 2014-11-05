@@ -119,7 +119,7 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -131,6 +131,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -139,7 +143,7 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -191,11 +195,7 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
-        return 0;
-    }
-
-    if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -216,6 +216,10 @@ of_match_v1_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_METADATA_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_L2_CACHE_HIT_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -420,7 +424,7 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -432,6 +436,10 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_BSN_EGR_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -440,7 +448,7 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_ARP_OP_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -488,11 +496,7 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
-    if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
-        return 0;
-    }
-
-    if (OF_MATCH_MASK_SCTP_SRC_ACTIVE_TEST(match)) {
+    if (OF_MATCH_MASK_IPV6_ND_TARGET_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -505,6 +509,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_BSN_VLAN_XLATE_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_L2_CACHE_HIT_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1659,6 +1667,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_vlan_xlate_port_group_id_value_set(&elt, src->fields.bsn_vlan_xlate_port_group_id);
         }
     }
+    if (OF_MATCH_MASK_BSN_L2_CACHE_HIT_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_L2_CACHE_HIT_EXACT_TEST(src)) {
+            of_oxm_bsn_l2_cache_hit_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l2_cache_hit_masked_value_set(&elt,
+                   src->fields.bsn_l2_cache_hit);
+            of_oxm_bsn_l2_cache_hit_masked_value_mask_set(&elt,
+                   src->masks.bsn_l2_cache_hit);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_l2_cache_hit_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_l2_cache_hit_value_set(&elt, src->fields.bsn_l2_cache_hit);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2166,20 +2190,20 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.ipv4_dst);
             break;
 
-        case OF_OXM_ARP_OP_MASKED:
-            of_oxm_arp_op_masked_value_mask_get(
+        case OF_OXM_BSN_UDF0_MASKED:
+            of_oxm_bsn_udf0_masked_value_mask_get(
                 &oxm_entry,
-                &dst->masks.arp_op);
-            of_oxm_arp_op_masked_value_get(
+                &dst->masks.bsn_udf0);
+            of_oxm_bsn_udf0_masked_value_get(
                 &oxm_entry,
-                &dst->fields.arp_op);
-            of_memmask(&dst->fields.arp_op, &dst->masks.arp_op, sizeof(&dst->fields.arp_op));
+                &dst->fields.bsn_udf0);
+            of_memmask(&dst->fields.bsn_udf0, &dst->masks.bsn_udf0, sizeof(&dst->fields.bsn_udf0));
             break;
-        case OF_OXM_ARP_OP:
-            OF_MATCH_MASK_ARP_OP_EXACT_SET(dst);
-            of_oxm_arp_op_value_get(
+        case OF_OXM_BSN_UDF0:
+            OF_MATCH_MASK_BSN_UDF0_EXACT_SET(dst);
+            of_oxm_bsn_udf0_value_get(
                 &oxm_entry,
-                &dst->fields.arp_op);
+                &dst->fields.bsn_udf0);
             break;
 
         case OF_OXM_IPV6_ND_TLL_MASKED:
@@ -2212,6 +2236,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_tunnel_id_value_get(
                 &oxm_entry,
                 &dst->fields.tunnel_id);
+            break;
+
+        case OF_OXM_SCTP_SRC_MASKED:
+            of_oxm_sctp_src_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.sctp_src);
+            of_oxm_sctp_src_masked_value_get(
+                &oxm_entry,
+                &dst->fields.sctp_src);
+            of_memmask(&dst->fields.sctp_src, &dst->masks.sctp_src, sizeof(&dst->fields.sctp_src));
+            break;
+        case OF_OXM_SCTP_SRC:
+            OF_MATCH_MASK_SCTP_SRC_EXACT_SET(dst);
+            of_oxm_sctp_src_value_get(
+                &oxm_entry,
+                &dst->fields.sctp_src);
             break;
 
         case OF_OXM_BSN_EGR_PORT_GROUP_ID_MASKED:
@@ -2262,20 +2302,20 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.eth_type);
             break;
 
-        case OF_OXM_IPV6_ND_TARGET_MASKED:
-            of_oxm_ipv6_nd_target_masked_value_mask_get(
+        case OF_OXM_ARP_OP_MASKED:
+            of_oxm_arp_op_masked_value_mask_get(
                 &oxm_entry,
-                &dst->masks.ipv6_nd_target);
-            of_oxm_ipv6_nd_target_masked_value_get(
+                &dst->masks.arp_op);
+            of_oxm_arp_op_masked_value_get(
                 &oxm_entry,
-                &dst->fields.ipv6_nd_target);
-            of_memmask(&dst->fields.ipv6_nd_target, &dst->masks.ipv6_nd_target, sizeof(&dst->fields.ipv6_nd_target));
+                &dst->fields.arp_op);
+            of_memmask(&dst->fields.arp_op, &dst->masks.arp_op, sizeof(&dst->fields.arp_op));
             break;
-        case OF_OXM_IPV6_ND_TARGET:
-            OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_SET(dst);
-            of_oxm_ipv6_nd_target_value_get(
+        case OF_OXM_ARP_OP:
+            OF_MATCH_MASK_ARP_OP_EXACT_SET(dst);
+            of_oxm_arp_op_value_get(
                 &oxm_entry,
-                &dst->fields.ipv6_nd_target);
+                &dst->fields.arp_op);
             break;
 
         case OF_OXM_MPLS_LABEL_MASKED:
@@ -2550,36 +2590,20 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.udp_dst);
             break;
 
-        case OF_OXM_BSN_UDF0_MASKED:
-            of_oxm_bsn_udf0_masked_value_mask_get(
+        case OF_OXM_IPV6_ND_TARGET_MASKED:
+            of_oxm_ipv6_nd_target_masked_value_mask_get(
                 &oxm_entry,
-                &dst->masks.bsn_udf0);
-            of_oxm_bsn_udf0_masked_value_get(
+                &dst->masks.ipv6_nd_target);
+            of_oxm_ipv6_nd_target_masked_value_get(
                 &oxm_entry,
-                &dst->fields.bsn_udf0);
-            of_memmask(&dst->fields.bsn_udf0, &dst->masks.bsn_udf0, sizeof(&dst->fields.bsn_udf0));
+                &dst->fields.ipv6_nd_target);
+            of_memmask(&dst->fields.ipv6_nd_target, &dst->masks.ipv6_nd_target, sizeof(&dst->fields.ipv6_nd_target));
             break;
-        case OF_OXM_BSN_UDF0:
-            OF_MATCH_MASK_BSN_UDF0_EXACT_SET(dst);
-            of_oxm_bsn_udf0_value_get(
+        case OF_OXM_IPV6_ND_TARGET:
+            OF_MATCH_MASK_IPV6_ND_TARGET_EXACT_SET(dst);
+            of_oxm_ipv6_nd_target_value_get(
                 &oxm_entry,
-                &dst->fields.bsn_udf0);
-            break;
-
-        case OF_OXM_SCTP_SRC_MASKED:
-            of_oxm_sctp_src_masked_value_mask_get(
-                &oxm_entry,
-                &dst->masks.sctp_src);
-            of_oxm_sctp_src_masked_value_get(
-                &oxm_entry,
-                &dst->fields.sctp_src);
-            of_memmask(&dst->fields.sctp_src, &dst->masks.sctp_src, sizeof(&dst->fields.sctp_src));
-            break;
-        case OF_OXM_SCTP_SRC:
-            OF_MATCH_MASK_SCTP_SRC_EXACT_SET(dst);
-            of_oxm_sctp_src_value_get(
-                &oxm_entry,
-                &dst->fields.sctp_src);
+                &dst->fields.ipv6_nd_target);
             break;
 
         case OF_OXM_IN_PHY_PORT_MASKED:
@@ -2660,6 +2684,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_metadata_value_get(
                 &oxm_entry,
                 &dst->fields.metadata);
+            break;
+
+        case OF_OXM_BSN_L2_CACHE_HIT_MASKED:
+            of_oxm_bsn_l2_cache_hit_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.bsn_l2_cache_hit);
+            of_oxm_bsn_l2_cache_hit_masked_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_l2_cache_hit);
+            of_memmask(&dst->fields.bsn_l2_cache_hit, &dst->masks.bsn_l2_cache_hit, sizeof(&dst->fields.bsn_l2_cache_hit));
+            break;
+        case OF_OXM_BSN_L2_CACHE_HIT:
+            OF_MATCH_MASK_BSN_L2_CACHE_HIT_EXACT_SET(dst);
+            of_oxm_bsn_l2_cache_hit_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_l2_cache_hit);
             break;
 
         case OF_OXM_BSN_UDF1_MASKED:
