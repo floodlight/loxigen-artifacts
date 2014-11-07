@@ -2951,11 +2951,11 @@ of_bsn_virtual_port_create_request_subtype_set(
 }
 
 /**
- * Bind an object of type of_bsn_vport_header_t to the parent of type of_bsn_virtual_port_create_request for
+ * Bind an object of type of_bsn_vport_t to the parent of type of_bsn_virtual_port_create_request for
  * member vport
  * @param obj Pointer to an object of type of_bsn_virtual_port_create_request.
  * @param vport Pointer to the child object of type
- * of_bsn_vport_header_t to be filled out.
+ * of_bsn_vport_t to be filled out.
  * \ingroup of_bsn_virtual_port_create_request
  *
  * The parameter vport is filled out to point to the same underlying
@@ -2965,7 +2965,7 @@ of_bsn_virtual_port_create_request_subtype_set(
 void
 of_bsn_virtual_port_create_request_vport_bind(
     of_bsn_virtual_port_create_request_t *obj,
-    of_bsn_vport_header_t *vport)
+    of_bsn_vport_t *vport)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -2997,7 +2997,7 @@ of_bsn_virtual_port_create_request_vport_bind(
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
-    of_bsn_vport_header_init(vport, obj->version, 0, 1);
+    of_bsn_vport_init(vport, obj->version, 0, 1);
     /* Attach to parent */
     of_object_attach(obj, vport, offset, cur_len);
     of_object_wire_init(vport, OF_BSN_VPORT, 0);
@@ -3008,28 +3008,28 @@ of_bsn_virtual_port_create_request_vport_bind(
 }
 
 /**
- * Create a copy of vport into a new variable of type of_bsn_vport_header_t from
+ * Create a copy of vport into a new variable of type of_bsn_vport_t from
  * a of_bsn_virtual_port_create_request instance.
  *
  * @param obj Pointer to the source of type of_bsn_virtual_port_create_request_t
- * @returns A pointer to a new instance of type of_bsn_vport_header_t whose contents
+ * @returns A pointer to a new instance of type of_bsn_vport_t whose contents
  * match that of vport from source
  * @returns NULL if an error occurs
  */
-of_bsn_vport_header_t *
+of_bsn_vport_t *
 of_bsn_virtual_port_create_request_vport_get(of_bsn_virtual_port_create_request_t *obj) {
-    of_bsn_vport_header_t _vport;
-    of_bsn_vport_header_t *_vport_ptr;
+    of_bsn_vport_t _vport;
+    of_bsn_vport_t *_vport_ptr;
 
     of_bsn_virtual_port_create_request_vport_bind(obj, &_vport);
-    _vport_ptr = (of_bsn_vport_header_t *)of_object_dup(&_vport);
+    _vport_ptr = (of_bsn_vport_t *)of_object_dup(&_vport);
     return _vport_ptr;
 }
 
 /**
  * Set vport in an object of type of_bsn_virtual_port_create_request.
  * @param obj Pointer to an object of type of_bsn_virtual_port_create_request.
- * @param vport Pointer to the child of type of_bsn_vport_header_t.
+ * @param vport Pointer to the child of type of_bsn_vport_t.
  *
  * If the child's wire buffer is the same as the parent's, then
  * nothing is done as the changes have already been registered in the
@@ -3039,7 +3039,7 @@ of_bsn_virtual_port_create_request_vport_get(of_bsn_virtual_port_create_request_
 int WARN_UNUSED_RESULT
 of_bsn_virtual_port_create_request_vport_set(
     of_bsn_virtual_port_create_request_t *obj,
-    of_bsn_vport_header_t *vport)
+    of_bsn_vport_t *vport)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */

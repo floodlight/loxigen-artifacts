@@ -21,12 +21,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_action_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_ACTION_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_action_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_ACTION_EXPERIMENTER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -435,12 +429,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_vport_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_BSN_VPORT_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_bsn_vport_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_BSN_VIRTUAL_PORT_CREATE_REQUEST] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,
@@ -705,12 +693,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_queue_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_QUEUE_PROP_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_queue_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_QUEUE_PROP_MIN_RATE] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -951,12 +933,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_instruction_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_INSTRUCTION_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_instruction_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_INSTRUCTION_APPLY_ACTIONS] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -1012,12 +988,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_table_mod_failed_error_msg_push_wire_types,
     },
     [OF_OXM] = {
-        .wire_length_get=of_oxm_wire_length_get,
-        .wire_length_set=NULL,
-        .wire_type_get=of_oxm_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
-    [OF_OXM_HEADER] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,
         .wire_type_get=of_oxm_wire_object_id_get,
@@ -1749,12 +1719,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_action_id_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_ACTION_ID_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_action_id_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_ACTION_ID_EXPERIMENTER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2337,12 +2301,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_BSN_TLV_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_bsn_tlv_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_BSN_TLV_ACTOR_KEY] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2727,12 +2685,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_hello_elem_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_HELLO_ELEM_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_hello_elem_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_HELLO_ELEM_VERSIONBITMAP] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -2740,12 +2692,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_hello_elem_versionbitmap_push_wire_types,
     },
     [OF_INSTRUCTION_ID] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_instruction_id_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
-    [OF_INSTRUCTION_ID_HEADER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_instruction_id_wire_object_id_get,
@@ -2949,12 +2895,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_meter_band_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_METER_BAND_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_meter_band_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_METER_BAND_DROP] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3094,12 +3034,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_port_desc_stats_request_push_wire_types,
     },
     [OF_TABLE_FEATURE_PROP] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_table_feature_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
-    [OF_TABLE_FEATURE_PROP_HEADER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_table_feature_prop_wire_object_id_get,
@@ -3255,12 +3189,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_async_config_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_ASYNC_CONFIG_PROP_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_async_config_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_ASYNC_CONFIG_PROP_EXPERIMENTER_MASTER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3375,12 +3303,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bundle_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_BUNDLE_PROP_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_bundle_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_BUNDLE_PROP_EXPERIMENTER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3411,12 +3333,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_PORT_DESC_PROP_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_port_desc_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_PORT_DESC_PROP_ETHERNET] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3441,12 +3357,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_port_mod_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_PORT_MOD_PROP_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_port_mod_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_PORT_MOD_PROP_ETHERNET] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3466,12 +3376,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_port_mod_prop_optical_push_wire_types,
     },
     [OF_PORT_STATS_PROP] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_port_stats_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
-    [OF_PORT_STATS_PROP_HEADER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_port_stats_prop_wire_object_id_get,
@@ -3502,12 +3406,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=NULL,
     },
     [OF_QUEUE_DESC_PROP] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_queue_desc_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
-    [OF_QUEUE_DESC_PROP_HEADER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_queue_desc_prop_wire_object_id_get,
@@ -3549,12 +3447,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_queue_stats_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_QUEUE_STATS_PROP_HEADER] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_queue_stats_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
     [OF_QUEUE_STATS_PROP_EXPERIMENTER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
@@ -3568,12 +3460,6 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_set=of_requestforward_push_wire_types,
     },
     [OF_ROLE_PROP] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_role_prop_wire_object_id_get,
-        .wire_type_set=NULL,
-    },
-    [OF_ROLE_PROP_HEADER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_role_prop_wire_object_id_get,

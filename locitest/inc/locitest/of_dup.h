@@ -843,10 +843,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_id_dup(
         of_object_t *src);
 
@@ -892,10 +888,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_id_group_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1075,10 +1067,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_async_config_prop_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_async_config_prop_packet_in_master_dup(
         of_object_t *src);
 
@@ -1251,10 +1239,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_header_size_dup(
         of_object_t *src);
 
@@ -1419,10 +1403,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_vport_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vport_l2gre_dup(
         of_object_t *src);
 
@@ -1451,10 +1431,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bundle_prop_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_flow_stats_entry_dup(
         of_object_t *src);
 
@@ -1468,10 +1444,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_hello_elem_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_hello_elem_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1547,10 +1519,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_dup(
         of_object_t *src);
 
@@ -1619,10 +1587,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_id_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_meter_dup(
         of_object_t *src);
 
@@ -1672,10 +1636,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_meter_band_experimenter_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_meter_band_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -1912,10 +1872,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_eth_type_masked_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2195,10 +2151,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_desc_prop_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_desc_prop_optical_dup(
         of_object_t *src);
 
@@ -2212,10 +2164,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_port_mod_prop_experimenter_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_mod_prop_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2239,10 +2187,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_stats_prop_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_stats_prop_optical_dup(
         of_object_t *src);
 
@@ -2259,10 +2203,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_queue_desc_prop_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_queue_desc_prop_max_rate_dup(
         of_object_t *src);
 
@@ -2276,10 +2216,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_prop_experimenter_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2303,19 +2239,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_queue_stats_prop_header_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_role_prop_dup(
         of_object_t *src);
 
 extern of_object_t *
     of_role_prop_experimenter_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_role_prop_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2348,10 +2276,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_table_feature_prop_experimenter_miss_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_header_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2727,10 +2651,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_header_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_hybrid_get_reply_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -2795,14 +2715,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_stats_reply_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_request_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_virtual_port_create_reply_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -2835,22 +2747,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_error_msg_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_reply_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_request_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_features_reply_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -2868,10 +2764,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_flow_delete_strict_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_flow_mod_OF_VERSION_1_0_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2927,10 +2819,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_nicira_header_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_packet_in_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -2983,14 +2871,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_stats_reply_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_stats_request_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_table_mod_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -3007,10 +2887,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_bsn_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_bsn_checksum_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -3024,18 +2900,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_enqueue_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_experimenter_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_header_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_nicira_OF_VERSION_1_0_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3095,10 +2959,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_vport_header_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vport_l2gre_OF_VERSION_1_0_dup(
         of_object_t *src);
 
@@ -3128,10 +2988,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_prop_OF_VERSION_1_0_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_header_OF_VERSION_1_0_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3255,10 +3111,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_header_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_pdu_rx_reply_OF_VERSION_1_1_dup(
         of_object_t *src);
 
@@ -3288,14 +3140,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_set_pktin_suppression_request_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_reply_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_request_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3331,22 +3175,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_error_msg_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_reply_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_request_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_features_reply_OF_VERSION_1_1_dup(
         of_object_t *src);
 
@@ -3364,10 +3192,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_flow_delete_strict_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_flow_mod_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3419,10 +3243,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_group_mod_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_group_mod_failed_error_msg_OF_VERSION_1_1_dup(
         of_object_t *src);
 
@@ -3448,10 +3268,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_hello_failed_error_msg_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_nicira_header_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3507,14 +3323,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_stats_reply_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_stats_request_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_switch_config_failed_error_msg_OF_VERSION_1_1_dup(
         of_object_t *src);
 
@@ -3536,10 +3344,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_bsn_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3571,19 +3375,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_experimenter_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_group_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_header_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_nicira_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3679,10 +3471,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_vport_header_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vport_l2gre_OF_VERSION_1_1_dup(
         of_object_t *src);
 
@@ -3723,15 +3511,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_experimenter_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_goto_table_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_header_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3760,10 +3540,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_prop_OF_VERSION_1_1_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_header_OF_VERSION_1_1_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3907,10 +3683,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_header_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_pdu_rx_reply_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -3940,14 +3712,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_set_pktin_suppression_request_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_reply_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_request_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -3983,23 +3747,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_error_msg_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_experimenter_error_msg_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_reply_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_request_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4020,10 +3768,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_flow_delete_strict_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_flow_mod_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4083,10 +3827,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_group_mod_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_group_mod_failed_error_msg_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -4112,10 +3852,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_hello_failed_error_msg_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_nicira_header_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4183,14 +3919,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_stats_reply_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_stats_request_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_switch_config_failed_error_msg_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -4212,10 +3940,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_bsn_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4247,19 +3971,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_experimenter_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_group_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_header_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_nicira_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4311,10 +4023,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_vport_header_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vport_l2gre_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -4355,15 +4063,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_experimenter_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_goto_table_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_header_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4596,10 +4296,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_eth_type_masked_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_header_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4840,14 +4536,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_prop_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_experimenter_OF_VERSION_1_2_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_header_OF_VERSION_1_2_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5135,10 +4823,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_image_desc_stats_reply_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5231,14 +4915,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_stats_reply_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_request_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_switch_pipeline_stats_reply_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5315,23 +4991,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_error_msg_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_experimenter_error_msg_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_reply_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_request_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5352,10 +5012,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_flow_delete_strict_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_flow_mod_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5412,10 +5068,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_group_features_stats_request_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_group_mod_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5476,10 +5128,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_meter_stats_request_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_nicira_header_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5555,14 +5203,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_stats_reply_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_stats_request_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_switch_config_failed_error_msg_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5599,10 +5239,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_bsn_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_bsn_checksum_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5635,23 +5271,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_group_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_action_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_id_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_bsn_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5687,19 +5311,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_id_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_id_group_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_nicira_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5748,10 +5360,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_id_set_queue_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_nicira_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -5935,10 +5543,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_header_size_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6103,10 +5707,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_vport_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vport_l2gre_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6143,10 +5743,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_hello_elem_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_hello_elem_versionbitmap_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6156,10 +5752,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_apply_actions_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_bsn_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6211,15 +5803,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_goto_table_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_header_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6228,10 +5812,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_apply_actions_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_bsn_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6283,15 +5863,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_id_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_goto_table_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_header_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6336,10 +5908,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_meter_band_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_meter_band_header_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6576,10 +6144,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_eth_type_masked_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_header_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6847,14 +6411,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_queue_prop_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_header_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_queue_prop_max_rate_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6884,18 +6440,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_experimenter_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_experimenter_miss_OF_VERSION_1_3_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_header_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7343,10 +6887,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_image_desc_stats_reply_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -7432,14 +6972,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_set_switch_pipeline_request_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_reply_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bsn_stats_request_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7531,23 +7063,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_error_msg_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_experimenter_error_msg_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_reply_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_experimenter_stats_request_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7568,10 +7084,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_flow_delete_strict_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_flow_mod_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7635,10 +7147,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_group_mod_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_group_mod_failed_error_msg_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -7696,10 +7204,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_meter_stats_request_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_nicira_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7783,14 +7287,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_stats_reply_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_stats_request_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_switch_config_failed_error_msg_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -7839,10 +7335,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_bsn_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_bsn_checksum_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -7875,23 +7367,11 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_group_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
-    of_action_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_id_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_bsn_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7927,19 +7407,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_action_id_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_action_id_group_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_id_nicira_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7988,10 +7456,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_action_id_set_queue_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_action_nicira_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8060,10 +7524,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_async_config_prop_flow_removed_slave_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_async_config_prop_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8239,10 +7699,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_tlv_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_tlv_header_size_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8407,10 +7863,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bsn_vport_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_bsn_vport_l2gre_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8435,14 +7887,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_bundle_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_bundle_prop_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_flow_stats_entry_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8459,10 +7903,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_hello_elem_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_hello_elem_versionbitmap_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8472,10 +7912,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_apply_actions_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_bsn_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8523,15 +7959,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_goto_table_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8540,10 +7968,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_apply_actions_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_bsn_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8591,15 +8015,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_instruction_id_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_instruction_id_goto_table_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_instruction_id_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8644,10 +8060,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_meter_band_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_meter_band_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8860,10 +8272,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_eth_type_masked_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_oxm_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9139,14 +8547,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_desc_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_desc_prop_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_desc_prop_optical_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9156,14 +8556,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_port_mod_prop_ethernet_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_mod_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_mod_prop_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9183,14 +8575,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_port_stats_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_port_stats_prop_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_port_stats_prop_optical_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9203,14 +8587,6 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_queue_desc_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_desc_prop_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_queue_desc_prop_max_rate_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -9220,14 +8596,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_queue_prop_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_prop_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9247,23 +8615,7 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
-    of_queue_stats_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_queue_stats_prop_header_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
     of_role_prop_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_role_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_role_prop_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -9288,18 +8640,6 @@ extern of_object_t *
 
 extern of_object_t *
     of_table_feature_prop_apply_setfield_miss_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_experimenter_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_experimenter_miss_OF_VERSION_1_4_dup(
-        of_object_t *src);
-
-extern of_object_t *
-    of_table_feature_prop_header_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

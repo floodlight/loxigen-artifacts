@@ -1178,60 +1178,6 @@ void of_table_mod_prop_vacancy_push_wire_types(of_object_t *obj);
 void of_table_status_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_table_status_push_wire_types(of_object_t *obj);
 
-/*
- * Transparent union used for list iteration
- *
- * This will be removed when all callers are converted to of_object_t.
- */
-union of_list_iter_u {
-    of_object_t *obj;
-    union of_action_u *of_action;
-    union of_header_u *of_header;
-    union of_bsn_vport_u *of_bsn_vport;
-    union of_queue_prop_u *of_queue_prop;
-    union of_instruction_u *of_instruction;
-    union of_oxm_u *of_oxm;
-    union of_action_id_u *of_action_id;
-    union of_bsn_tlv_u *of_bsn_tlv;
-    union of_hello_elem_u *of_hello_elem;
-    union of_instruction_id_u *of_instruction_id;
-    union of_meter_band_u *of_meter_band;
-    union of_table_feature_prop_u *of_table_feature_prop;
-    union of_async_config_prop_u *of_async_config_prop;
-    union of_bundle_prop_u *of_bundle_prop;
-    union of_port_desc_prop_u *of_port_desc_prop;
-    union of_port_mod_prop_u *of_port_mod_prop;
-    union of_port_stats_prop_u *of_port_stats_prop;
-    union of_queue_desc_prop_u *of_queue_desc_prop;
-    union of_queue_stats_prop_u *of_queue_stats_prop;
-    union of_role_prop_u *of_role_prop;
-    union of_table_mod_prop_u *of_table_mod_prop;
-    union of_table_mod_prop_experimenter_u *of_table_mod_prop_experimenter;
-} __attribute__ ((__transparent_union__));
-
-typedef union of_list_iter_u of_list_iter_t;
-
-
-/* LOCI inheritance parent typedefs */
-typedef union of_queue_prop_u of_queue_prop_t;
-typedef union of_action_u of_action_t;
-typedef union of_queue_stats_prop_u of_queue_stats_prop_t;
-typedef union of_bsn_vport_u of_bsn_vport_t;
-typedef union of_table_feature_prop_u of_table_feature_prop_t;
-typedef union of_hello_elem_u of_hello_elem_t;
-typedef union of_queue_desc_prop_u of_queue_desc_prop_t;
-typedef union of_port_desc_prop_u of_port_desc_prop_t;
-typedef union of_port_stats_prop_u of_port_stats_prop_t;
-typedef union of_instruction_u of_instruction_t;
-typedef union of_port_mod_prop_u of_port_mod_prop_t;
-typedef union of_bsn_tlv_u of_bsn_tlv_t;
-typedef union of_instruction_id_u of_instruction_id_t;
-typedef union of_meter_band_u of_meter_band_t;
-typedef union of_async_config_prop_u of_async_config_prop_t;
-typedef union of_bundle_prop_u of_bundle_prop_t;
-typedef union of_action_id_u of_action_id_t;
-typedef union of_role_prop_u of_role_prop_t;
-typedef union of_oxm_u of_oxm_t;
 
 /* LOCI object typedefs */
 typedef of_object_t of_aggregate_stats_reply_t;
@@ -1428,6 +1374,7 @@ typedef of_object_t of_table_mod_failed_error_msg_t;
 typedef of_object_t of_table_stats_reply_t;
 typedef of_object_t of_table_stats_request_t;
 typedef of_object_t of_table_status_t;
+typedef of_object_t of_action_t;
 typedef of_object_t of_action_bsn_t;
 typedef of_object_t of_action_bsn_checksum_t;
 typedef of_object_t of_action_bsn_gentable_t;
@@ -1440,7 +1387,7 @@ typedef of_object_t of_action_dec_nw_ttl_t;
 typedef of_object_t of_action_enqueue_t;
 typedef of_object_t of_action_experimenter_t;
 typedef of_object_t of_action_group_t;
-typedef of_object_t of_action_header_t;
+typedef of_object_t of_action_id_t;
 typedef of_object_t of_action_id_bsn_t;
 typedef of_object_t of_action_id_bsn_checksum_t;
 typedef of_object_t of_action_id_bsn_gentable_t;
@@ -1452,7 +1399,6 @@ typedef of_object_t of_action_id_dec_mpls_ttl_t;
 typedef of_object_t of_action_id_dec_nw_ttl_t;
 typedef of_object_t of_action_id_experimenter_t;
 typedef of_object_t of_action_id_group_t;
-typedef of_object_t of_action_id_header_t;
 typedef of_object_t of_action_id_nicira_t;
 typedef of_object_t of_action_id_nicira_dec_ttl_t;
 typedef of_object_t of_action_id_output_t;
@@ -1492,11 +1438,11 @@ typedef of_object_t of_action_set_tp_src_t;
 typedef of_object_t of_action_set_vlan_pcp_t;
 typedef of_object_t of_action_set_vlan_vid_t;
 typedef of_object_t of_action_strip_vlan_t;
+typedef of_object_t of_async_config_prop_t;
 typedef of_object_t of_async_config_prop_experimenter_master_t;
 typedef of_object_t of_async_config_prop_experimenter_slave_t;
 typedef of_object_t of_async_config_prop_flow_removed_master_t;
 typedef of_object_t of_async_config_prop_flow_removed_slave_t;
-typedef of_object_t of_async_config_prop_header_t;
 typedef of_object_t of_async_config_prop_packet_in_master_t;
 typedef of_object_t of_async_config_prop_packet_in_slave_t;
 typedef of_object_t of_async_config_prop_port_status_master_t;
@@ -1521,6 +1467,7 @@ typedef of_object_t of_bsn_lacp_stats_entry_t;
 typedef of_object_t of_bsn_port_counter_stats_entry_t;
 typedef of_object_t of_bsn_switch_pipeline_stats_entry_t;
 typedef of_object_t of_bsn_table_checksum_stats_entry_t;
+typedef of_object_t of_bsn_tlv_t;
 typedef of_object_t of_bsn_tlv_actor_key_t;
 typedef of_object_t of_bsn_tlv_actor_port_num_t;
 typedef of_object_t of_bsn_tlv_actor_port_priority_t;
@@ -1539,7 +1486,6 @@ typedef of_object_t of_bsn_tlv_external_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
-typedef of_object_t of_bsn_tlv_header_t;
 typedef of_object_t of_bsn_tlv_header_size_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
@@ -1580,19 +1526,20 @@ typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
-typedef of_object_t of_bsn_vport_header_t;
+typedef of_object_t of_bsn_vport_t;
 typedef of_object_t of_bsn_vport_l2gre_t;
 typedef of_object_t of_bsn_vport_q_in_q_t;
 typedef of_object_t of_bsn_vrf_counter_stats_entry_t;
 typedef of_object_t of_bucket_t;
 typedef of_object_t of_bucket_counter_t;
+typedef of_object_t of_bundle_prop_t;
 typedef of_object_t of_bundle_prop_experimenter_t;
-typedef of_object_t of_bundle_prop_header_t;
 typedef of_object_t of_flow_stats_entry_t;
 typedef of_object_t of_group_desc_stats_entry_t;
 typedef of_object_t of_group_stats_entry_t;
-typedef of_object_t of_hello_elem_header_t;
+typedef of_object_t of_hello_elem_t;
 typedef of_object_t of_hello_elem_versionbitmap_t;
+typedef of_object_t of_instruction_t;
 typedef of_object_t of_instruction_apply_actions_t;
 typedef of_object_t of_instruction_bsn_t;
 typedef of_object_t of_instruction_bsn_arp_offload_t;
@@ -1609,7 +1556,7 @@ typedef of_object_t of_instruction_bsn_span_destination_t;
 typedef of_object_t of_instruction_clear_actions_t;
 typedef of_object_t of_instruction_experimenter_t;
 typedef of_object_t of_instruction_goto_table_t;
-typedef of_object_t of_instruction_header_t;
+typedef of_object_t of_instruction_id_t;
 typedef of_object_t of_instruction_id_apply_actions_t;
 typedef of_object_t of_instruction_id_bsn_t;
 typedef of_object_t of_instruction_id_bsn_arp_offload_t;
@@ -1626,7 +1573,6 @@ typedef of_object_t of_instruction_id_bsn_span_destination_t;
 typedef of_object_t of_instruction_id_clear_actions_t;
 typedef of_object_t of_instruction_id_experimenter_t;
 typedef of_object_t of_instruction_id_goto_table_t;
-typedef of_object_t of_instruction_id_header_t;
 typedef of_object_t of_instruction_id_meter_t;
 typedef of_object_t of_instruction_id_write_actions_t;
 typedef of_object_t of_instruction_id_write_metadata_t;
@@ -1636,14 +1582,15 @@ typedef of_object_t of_instruction_write_metadata_t;
 typedef of_object_t of_match_v1_t;
 typedef of_object_t of_match_v2_t;
 typedef of_object_t of_match_v3_t;
+typedef of_object_t of_meter_band_t;
 typedef of_object_t of_meter_band_drop_t;
 typedef of_object_t of_meter_band_dscp_remark_t;
 typedef of_object_t of_meter_band_experimenter_t;
-typedef of_object_t of_meter_band_header_t;
 typedef of_object_t of_meter_band_stats_t;
 typedef of_object_t of_meter_config_t;
 typedef of_object_t of_meter_features_t;
 typedef of_object_t of_meter_stats_t;
+typedef of_object_t of_oxm_t;
 typedef of_object_t of_oxm_arp_op_t;
 typedef of_object_t of_oxm_arp_op_masked_t;
 typedef of_object_t of_oxm_arp_sha_t;
@@ -1698,7 +1645,6 @@ typedef of_object_t of_oxm_eth_src_t;
 typedef of_object_t of_oxm_eth_src_masked_t;
 typedef of_object_t of_oxm_eth_type_t;
 typedef of_object_t of_oxm_eth_type_masked_t;
-typedef of_object_t of_oxm_header_t;
 typedef of_object_t of_oxm_icmpv4_code_t;
 typedef of_object_t of_oxm_icmpv4_code_masked_t;
 typedef of_object_t of_oxm_icmpv4_type_t;
@@ -1765,41 +1711,41 @@ typedef of_object_t of_oxm_vlan_vid_t;
 typedef of_object_t of_oxm_vlan_vid_masked_t;
 typedef of_object_t of_packet_queue_t;
 typedef of_object_t of_port_desc_t;
+typedef of_object_t of_port_desc_prop_t;
 typedef of_object_t of_port_desc_prop_ethernet_t;
 typedef of_object_t of_port_desc_prop_experimenter_t;
-typedef of_object_t of_port_desc_prop_header_t;
 typedef of_object_t of_port_desc_prop_optical_t;
+typedef of_object_t of_port_mod_prop_t;
 typedef of_object_t of_port_mod_prop_ethernet_t;
 typedef of_object_t of_port_mod_prop_experimenter_t;
-typedef of_object_t of_port_mod_prop_header_t;
 typedef of_object_t of_port_mod_prop_optical_t;
 typedef of_object_t of_port_stats_entry_t;
+typedef of_object_t of_port_stats_prop_t;
 typedef of_object_t of_port_stats_prop_ethernet_t;
 typedef of_object_t of_port_stats_prop_experimenter_t;
-typedef of_object_t of_port_stats_prop_header_t;
 typedef of_object_t of_port_stats_prop_optical_t;
 typedef of_object_t of_queue_desc_t;
+typedef of_object_t of_queue_desc_prop_t;
 typedef of_object_t of_queue_desc_prop_experimenter_t;
-typedef of_object_t of_queue_desc_prop_header_t;
 typedef of_object_t of_queue_desc_prop_max_rate_t;
 typedef of_object_t of_queue_desc_prop_min_rate_t;
+typedef of_object_t of_queue_prop_t;
 typedef of_object_t of_queue_prop_experimenter_t;
-typedef of_object_t of_queue_prop_header_t;
 typedef of_object_t of_queue_prop_max_rate_t;
 typedef of_object_t of_queue_prop_min_rate_t;
 typedef of_object_t of_queue_stats_entry_t;
+typedef of_object_t of_queue_stats_prop_t;
 typedef of_object_t of_queue_stats_prop_experimenter_t;
-typedef of_object_t of_queue_stats_prop_header_t;
+typedef of_object_t of_role_prop_t;
 typedef of_object_t of_role_prop_experimenter_t;
-typedef of_object_t of_role_prop_header_t;
 typedef of_object_t of_table_desc_t;
+typedef of_object_t of_table_feature_prop_t;
 typedef of_object_t of_table_feature_prop_apply_actions_t;
 typedef of_object_t of_table_feature_prop_apply_actions_miss_t;
 typedef of_object_t of_table_feature_prop_apply_setfield_t;
 typedef of_object_t of_table_feature_prop_apply_setfield_miss_t;
 typedef of_object_t of_table_feature_prop_experimenter_t;
 typedef of_object_t of_table_feature_prop_experimenter_miss_t;
-typedef of_object_t of_table_feature_prop_header_t;
 typedef of_object_t of_table_feature_prop_instructions_t;
 typedef of_object_t of_table_feature_prop_instructions_miss_t;
 typedef of_object_t of_table_feature_prop_match_t;
@@ -2933,11 +2879,6 @@ extern void of_action_group_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_action_header_new(of_version_t version);
-extern void of_action_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_action_id_new(of_version_t version);
 extern void of_action_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -2995,11 +2936,6 @@ extern void of_action_id_experimenter_init(
 extern of_object_t *
     of_action_id_group_new(of_version_t version);
 extern void of_action_id_group_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_action_id_header_new(of_version_t version);
-extern void of_action_id_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -3223,11 +3159,6 @@ extern void of_async_config_prop_flow_removed_slave_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_async_config_prop_header_new(of_version_t version);
-extern void of_async_config_prop_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_async_config_prop_packet_in_master_new(of_version_t version);
 extern void of_async_config_prop_packet_in_master_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3443,11 +3374,6 @@ extern void of_bsn_tlv_external_netmask_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_bsn_tlv_header_new(of_version_t version);
-extern void of_bsn_tlv_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_bsn_tlv_header_size_new(of_version_t version);
 extern void of_bsn_tlv_header_size_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3653,11 +3579,6 @@ extern void of_bsn_vport_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_bsn_vport_header_new(of_version_t version);
-extern void of_bsn_vport_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_bsn_vport_l2gre_new(of_version_t version);
 extern void of_bsn_vport_l2gre_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3693,11 +3614,6 @@ extern void of_bundle_prop_experimenter_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_bundle_prop_header_new(of_version_t version);
-extern void of_bundle_prop_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_flow_stats_entry_new(of_version_t version);
 extern void of_flow_stats_entry_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3715,11 +3631,6 @@ extern void of_group_stats_entry_init(
 extern of_object_t *
     of_hello_elem_new(of_version_t version);
 extern void of_hello_elem_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_hello_elem_header_new(of_version_t version);
-extern void of_hello_elem_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -3813,11 +3724,6 @@ extern void of_instruction_goto_table_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_instruction_header_new(of_version_t version);
-extern void of_instruction_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_instruction_id_new(of_version_t version);
 extern void of_instruction_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3903,11 +3809,6 @@ extern void of_instruction_id_goto_table_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_instruction_id_header_new(of_version_t version);
-extern void of_instruction_id_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_instruction_id_meter_new(of_version_t version);
 extern void of_instruction_id_meter_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3970,11 +3871,6 @@ extern void of_meter_band_dscp_remark_init(
 extern of_object_t *
     of_meter_band_experimenter_new(of_version_t version);
 extern void of_meter_band_experimenter_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_meter_band_header_new(of_version_t version);
-extern void of_meter_band_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4270,11 +4166,6 @@ extern void of_oxm_eth_type_init(
 extern of_object_t *
     of_oxm_eth_type_masked_new(of_version_t version);
 extern void of_oxm_eth_type_masked_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_oxm_header_new(of_version_t version);
-extern void of_oxm_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4623,11 +4514,6 @@ extern void of_port_desc_prop_experimenter_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_port_desc_prop_header_new(of_version_t version);
-extern void of_port_desc_prop_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_port_desc_prop_optical_new(of_version_t version);
 extern void of_port_desc_prop_optical_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4645,11 +4531,6 @@ extern void of_port_mod_prop_ethernet_init(
 extern of_object_t *
     of_port_mod_prop_experimenter_new(of_version_t version);
 extern void of_port_mod_prop_experimenter_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_port_mod_prop_header_new(of_version_t version);
-extern void of_port_mod_prop_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4678,11 +4559,6 @@ extern void of_port_stats_prop_experimenter_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_port_stats_prop_header_new(of_version_t version);
-extern void of_port_stats_prop_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_port_stats_prop_optical_new(of_version_t version);
 extern void of_port_stats_prop_optical_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4703,11 +4579,6 @@ extern void of_queue_desc_prop_experimenter_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_queue_desc_prop_header_new(of_version_t version);
-extern void of_queue_desc_prop_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_queue_desc_prop_max_rate_new(of_version_t version);
 extern void of_queue_desc_prop_max_rate_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4725,11 +4596,6 @@ extern void of_queue_prop_init(
 extern of_object_t *
     of_queue_prop_experimenter_new(of_version_t version);
 extern void of_queue_prop_experimenter_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_queue_prop_header_new(of_version_t version);
-extern void of_queue_prop_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4758,11 +4624,6 @@ extern void of_queue_stats_prop_experimenter_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
-    of_queue_stats_prop_header_new(of_version_t version);
-extern void of_queue_stats_prop_header_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
     of_role_prop_new(of_version_t version);
 extern void of_role_prop_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4770,11 +4631,6 @@ extern void of_role_prop_init(
 extern of_object_t *
     of_role_prop_experimenter_new(of_version_t version);
 extern void of_role_prop_experimenter_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_role_prop_header_new(of_version_t version);
-extern void of_role_prop_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -4815,11 +4671,6 @@ extern void of_table_feature_prop_experimenter_init(
 extern of_object_t *
     of_table_feature_prop_experimenter_miss_new(of_version_t version);
 extern void of_table_feature_prop_experimenter_miss_init(
-    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
-
-extern of_object_t *
-    of_table_feature_prop_header_new(of_version_t version);
-extern void of_table_feature_prop_header_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -7472,17 +7323,6 @@ of_action_group_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_action_header_t
- * @param obj An instance of type of_action_header_t
- *
- * \ingroup of_action_header
- */
-static inline void
-of_action_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_action_id_t
  * @param obj An instance of type of_action_id_t
  *
@@ -7611,17 +7451,6 @@ of_action_id_experimenter_delete(of_object_t *obj) {
  */
 static inline void
 of_action_id_group_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_action_id_header_t
- * @param obj An instance of type of_action_id_header_t
- *
- * \ingroup of_action_id_header
- */
-static inline void
-of_action_id_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -8110,17 +7939,6 @@ of_async_config_prop_flow_removed_slave_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_async_config_prop_header_t
- * @param obj An instance of type of_async_config_prop_header_t
- *
- * \ingroup of_async_config_prop_header
- */
-static inline void
-of_async_config_prop_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_async_config_prop_packet_in_master_t
  * @param obj An instance of type of_async_config_prop_packet_in_master_t
  *
@@ -8594,17 +8412,6 @@ of_bsn_tlv_external_netmask_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_bsn_tlv_header_t
- * @param obj An instance of type of_bsn_tlv_header_t
- *
- * \ingroup of_bsn_tlv_header
- */
-static inline void
-of_bsn_tlv_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_bsn_tlv_header_size_t
  * @param obj An instance of type of_bsn_tlv_header_size_t
  *
@@ -9056,17 +8863,6 @@ of_bsn_vport_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_bsn_vport_header_t
- * @param obj An instance of type of_bsn_vport_header_t
- *
- * \ingroup of_bsn_vport_header
- */
-static inline void
-of_bsn_vport_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_bsn_vport_l2gre_t
  * @param obj An instance of type of_bsn_vport_l2gre_t
  *
@@ -9144,17 +8940,6 @@ of_bundle_prop_experimenter_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_bundle_prop_header_t
- * @param obj An instance of type of_bundle_prop_header_t
- *
- * \ingroup of_bundle_prop_header
- */
-static inline void
-of_bundle_prop_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_flow_stats_entry_t
  * @param obj An instance of type of_flow_stats_entry_t
  *
@@ -9195,17 +8980,6 @@ of_group_stats_entry_delete(of_object_t *obj) {
  */
 static inline void
 of_hello_elem_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_hello_elem_header_t
- * @param obj An instance of type of_hello_elem_header_t
- *
- * \ingroup of_hello_elem_header
- */
-static inline void
-of_hello_elem_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -9408,17 +9182,6 @@ of_instruction_goto_table_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_instruction_header_t
- * @param obj An instance of type of_instruction_header_t
- *
- * \ingroup of_instruction_header
- */
-static inline void
-of_instruction_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_instruction_id_t
  * @param obj An instance of type of_instruction_id_t
  *
@@ -9606,17 +9369,6 @@ of_instruction_id_goto_table_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_instruction_id_header_t
- * @param obj An instance of type of_instruction_id_header_t
- *
- * \ingroup of_instruction_id_header
- */
-static inline void
-of_instruction_id_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_instruction_id_meter_t
  * @param obj An instance of type of_instruction_id_meter_t
  *
@@ -9756,17 +9508,6 @@ of_meter_band_dscp_remark_delete(of_object_t *obj) {
  */
 static inline void
 of_meter_band_experimenter_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_meter_band_header_t
- * @param obj An instance of type of_meter_band_header_t
- *
- * \ingroup of_meter_band_header
- */
-static inline void
-of_meter_band_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -10416,17 +10157,6 @@ of_oxm_eth_type_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_eth_type_masked_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_oxm_header_t
- * @param obj An instance of type of_oxm_header_t
- *
- * \ingroup of_oxm_header
- */
-static inline void
-of_oxm_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11190,17 +10920,6 @@ of_port_desc_prop_experimenter_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_port_desc_prop_header_t
- * @param obj An instance of type of_port_desc_prop_header_t
- *
- * \ingroup of_port_desc_prop_header
- */
-static inline void
-of_port_desc_prop_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_port_desc_prop_optical_t
  * @param obj An instance of type of_port_desc_prop_optical_t
  *
@@ -11241,17 +10960,6 @@ of_port_mod_prop_ethernet_delete(of_object_t *obj) {
  */
 static inline void
 of_port_mod_prop_experimenter_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_port_mod_prop_header_t
- * @param obj An instance of type of_port_mod_prop_header_t
- *
- * \ingroup of_port_mod_prop_header
- */
-static inline void
-of_port_mod_prop_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11311,17 +11019,6 @@ of_port_stats_prop_experimenter_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_port_stats_prop_header_t
- * @param obj An instance of type of_port_stats_prop_header_t
- *
- * \ingroup of_port_stats_prop_header
- */
-static inline void
-of_port_stats_prop_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_port_stats_prop_optical_t
  * @param obj An instance of type of_port_stats_prop_optical_t
  *
@@ -11366,17 +11063,6 @@ of_queue_desc_prop_experimenter_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_queue_desc_prop_header_t
- * @param obj An instance of type of_queue_desc_prop_header_t
- *
- * \ingroup of_queue_desc_prop_header
- */
-static inline void
-of_queue_desc_prop_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_queue_desc_prop_max_rate_t
  * @param obj An instance of type of_queue_desc_prop_max_rate_t
  *
@@ -11417,17 +11103,6 @@ of_queue_prop_delete(of_object_t *obj) {
  */
 static inline void
 of_queue_prop_experimenter_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_queue_prop_header_t
- * @param obj An instance of type of_queue_prop_header_t
- *
- * \ingroup of_queue_prop_header
- */
-static inline void
-of_queue_prop_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11487,17 +11162,6 @@ of_queue_stats_prop_experimenter_delete(of_object_t *obj) {
 }
 
 /**
- * Delete an object of type of_queue_stats_prop_header_t
- * @param obj An instance of type of_queue_stats_prop_header_t
- *
- * \ingroup of_queue_stats_prop_header
- */
-static inline void
-of_queue_stats_prop_header_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
  * Delete an object of type of_role_prop_t
  * @param obj An instance of type of_role_prop_t
  *
@@ -11516,17 +11180,6 @@ of_role_prop_delete(of_object_t *obj) {
  */
 static inline void
 of_role_prop_experimenter_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_role_prop_header_t
- * @param obj An instance of type of_role_prop_header_t
- *
- * \ingroup of_role_prop_header
- */
-static inline void
-of_role_prop_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -11615,17 +11268,6 @@ of_table_feature_prop_experimenter_delete(of_object_t *obj) {
  */
 static inline void
 of_table_feature_prop_experimenter_miss_delete(of_object_t *obj) {
-    of_object_delete(obj);
-}
-
-/**
- * Delete an object of type of_table_feature_prop_header_t
- * @param obj An instance of type of_table_feature_prop_header_t
- *
- * \ingroup of_table_feature_prop_header
- */
-static inline void
-of_table_feature_prop_header_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -14438,29 +14080,6 @@ extern void of_bsn_get_switch_pipeline_request_subtype_get(
     of_bsn_get_switch_pipeline_request_t *obj,
     uint32_t *subtype);
 
-/* Unified accessor functions for of_bsn_header */
-
-extern void of_bsn_header_xid_set(
-    of_bsn_header_t *obj,
-    uint32_t xid);
-extern void of_bsn_header_xid_get(
-    of_bsn_header_t *obj,
-    uint32_t *xid);
-
-extern void of_bsn_header_experimenter_set(
-    of_bsn_header_t *obj,
-    uint32_t experimenter);
-extern void of_bsn_header_experimenter_get(
-    of_bsn_header_t *obj,
-    uint32_t *experimenter);
-
-extern void of_bsn_header_subtype_set(
-    of_bsn_header_t *obj,
-    uint32_t subtype);
-extern void of_bsn_header_subtype_get(
-    of_bsn_header_t *obj,
-    uint32_t *subtype);
-
 /* Unified accessor functions for of_bsn_hybrid_get_reply */
 
 extern void of_bsn_hybrid_get_reply_xid_set(
@@ -15724,66 +15343,6 @@ extern void of_bsn_shell_status_status_get(
     of_bsn_shell_status_t *obj,
     uint32_t *status);
 
-/* Unified accessor functions for of_bsn_stats_reply */
-
-extern void of_bsn_stats_reply_xid_set(
-    of_bsn_stats_reply_t *obj,
-    uint32_t xid);
-extern void of_bsn_stats_reply_xid_get(
-    of_bsn_stats_reply_t *obj,
-    uint32_t *xid);
-
-extern void of_bsn_stats_reply_flags_set(
-    of_bsn_stats_reply_t *obj,
-    uint16_t flags);
-extern void of_bsn_stats_reply_flags_get(
-    of_bsn_stats_reply_t *obj,
-    uint16_t *flags);
-
-extern void of_bsn_stats_reply_experimenter_set(
-    of_bsn_stats_reply_t *obj,
-    uint32_t experimenter);
-extern void of_bsn_stats_reply_experimenter_get(
-    of_bsn_stats_reply_t *obj,
-    uint32_t *experimenter);
-
-extern void of_bsn_stats_reply_subtype_set(
-    of_bsn_stats_reply_t *obj,
-    uint32_t subtype);
-extern void of_bsn_stats_reply_subtype_get(
-    of_bsn_stats_reply_t *obj,
-    uint32_t *subtype);
-
-/* Unified accessor functions for of_bsn_stats_request */
-
-extern void of_bsn_stats_request_xid_set(
-    of_bsn_stats_request_t *obj,
-    uint32_t xid);
-extern void of_bsn_stats_request_xid_get(
-    of_bsn_stats_request_t *obj,
-    uint32_t *xid);
-
-extern void of_bsn_stats_request_flags_set(
-    of_bsn_stats_request_t *obj,
-    uint16_t flags);
-extern void of_bsn_stats_request_flags_get(
-    of_bsn_stats_request_t *obj,
-    uint16_t *flags);
-
-extern void of_bsn_stats_request_experimenter_set(
-    of_bsn_stats_request_t *obj,
-    uint32_t experimenter);
-extern void of_bsn_stats_request_experimenter_get(
-    of_bsn_stats_request_t *obj,
-    uint32_t *experimenter);
-
-extern void of_bsn_stats_request_subtype_set(
-    of_bsn_stats_request_t *obj,
-    uint32_t subtype);
-extern void of_bsn_stats_request_subtype_get(
-    of_bsn_stats_request_t *obj,
-    uint32_t *subtype);
-
 /* Unified accessor functions for of_bsn_switch_pipeline_stats_reply */
 
 extern void of_bsn_switch_pipeline_stats_reply_xid_set(
@@ -16074,11 +15633,11 @@ extern void of_bsn_virtual_port_create_request_subtype_get(
 
 extern int WARN_UNUSED_RESULT of_bsn_virtual_port_create_request_vport_set(
     of_bsn_virtual_port_create_request_t *obj,
-    of_bsn_vport_header_t *vport);
+    of_bsn_vport_t *vport);
 extern void of_bsn_virtual_port_create_request_vport_bind(
     of_bsn_virtual_port_create_request_t *obj,
-    of_bsn_vport_header_t *vport);
-extern of_bsn_vport_header_t *of_bsn_virtual_port_create_request_vport_get(
+    of_bsn_vport_t *vport);
+extern of_bsn_vport_t *of_bsn_virtual_port_create_request_vport_get(
     of_bsn_virtual_port_create_request_t *obj);
 
 /* Unified accessor functions for of_bsn_virtual_port_remove_reply */
@@ -16484,45 +16043,6 @@ extern void of_echo_request_data_get(
     of_echo_request_t *obj,
     of_octets_t *data);
 
-/* Unified accessor functions for of_error_msg */
-
-extern void of_error_msg_xid_set(
-    of_error_msg_t *obj,
-    uint32_t xid);
-extern void of_error_msg_xid_get(
-    of_error_msg_t *obj,
-    uint32_t *xid);
-
-/* Unified accessor functions for of_experimenter */
-
-extern void of_experimenter_xid_set(
-    of_experimenter_t *obj,
-    uint32_t xid);
-extern void of_experimenter_xid_get(
-    of_experimenter_t *obj,
-    uint32_t *xid);
-
-extern void of_experimenter_experimenter_set(
-    of_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_experimenter_experimenter_get(
-    of_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_experimenter_subtype_set(
-    of_experimenter_t *obj,
-    uint32_t subtype);
-extern void of_experimenter_subtype_get(
-    of_experimenter_t *obj,
-    uint32_t *subtype);
-
-extern int WARN_UNUSED_RESULT of_experimenter_data_set(
-    of_experimenter_t *obj,
-    of_octets_t *data);
-extern void of_experimenter_data_get(
-    of_experimenter_t *obj,
-    of_octets_t *data);
-
 /* Unified accessor functions for of_experimenter_error_msg */
 
 extern void of_experimenter_error_msg_xid_set(
@@ -16551,80 +16071,6 @@ extern int WARN_UNUSED_RESULT of_experimenter_error_msg_data_set(
     of_octets_t *data);
 extern void of_experimenter_error_msg_data_get(
     of_experimenter_error_msg_t *obj,
-    of_octets_t *data);
-
-/* Unified accessor functions for of_experimenter_stats_reply */
-
-extern void of_experimenter_stats_reply_xid_set(
-    of_experimenter_stats_reply_t *obj,
-    uint32_t xid);
-extern void of_experimenter_stats_reply_xid_get(
-    of_experimenter_stats_reply_t *obj,
-    uint32_t *xid);
-
-extern void of_experimenter_stats_reply_flags_set(
-    of_experimenter_stats_reply_t *obj,
-    uint16_t flags);
-extern void of_experimenter_stats_reply_flags_get(
-    of_experimenter_stats_reply_t *obj,
-    uint16_t *flags);
-
-extern void of_experimenter_stats_reply_experimenter_set(
-    of_experimenter_stats_reply_t *obj,
-    uint32_t experimenter);
-extern void of_experimenter_stats_reply_experimenter_get(
-    of_experimenter_stats_reply_t *obj,
-    uint32_t *experimenter);
-
-extern void of_experimenter_stats_reply_subtype_set(
-    of_experimenter_stats_reply_t *obj,
-    uint32_t subtype);
-extern void of_experimenter_stats_reply_subtype_get(
-    of_experimenter_stats_reply_t *obj,
-    uint32_t *subtype);
-
-extern int WARN_UNUSED_RESULT of_experimenter_stats_reply_data_set(
-    of_experimenter_stats_reply_t *obj,
-    of_octets_t *data);
-extern void of_experimenter_stats_reply_data_get(
-    of_experimenter_stats_reply_t *obj,
-    of_octets_t *data);
-
-/* Unified accessor functions for of_experimenter_stats_request */
-
-extern void of_experimenter_stats_request_xid_set(
-    of_experimenter_stats_request_t *obj,
-    uint32_t xid);
-extern void of_experimenter_stats_request_xid_get(
-    of_experimenter_stats_request_t *obj,
-    uint32_t *xid);
-
-extern void of_experimenter_stats_request_flags_set(
-    of_experimenter_stats_request_t *obj,
-    uint16_t flags);
-extern void of_experimenter_stats_request_flags_get(
-    of_experimenter_stats_request_t *obj,
-    uint16_t *flags);
-
-extern void of_experimenter_stats_request_experimenter_set(
-    of_experimenter_stats_request_t *obj,
-    uint32_t experimenter);
-extern void of_experimenter_stats_request_experimenter_get(
-    of_experimenter_stats_request_t *obj,
-    uint32_t *experimenter);
-
-extern void of_experimenter_stats_request_subtype_set(
-    of_experimenter_stats_request_t *obj,
-    uint32_t subtype);
-extern void of_experimenter_stats_request_subtype_get(
-    of_experimenter_stats_request_t *obj,
-    uint32_t *subtype);
-
-extern int WARN_UNUSED_RESULT of_experimenter_stats_request_data_set(
-    of_experimenter_stats_request_t *obj,
-    of_octets_t *data);
-extern void of_experimenter_stats_request_data_get(
-    of_experimenter_stats_request_t *obj,
     of_octets_t *data);
 
 /* Unified accessor functions for of_features_reply */
@@ -17035,110 +16481,6 @@ extern void of_flow_delete_strict_actions_bind(
     of_list_action_t *actions);
 extern of_list_action_t *of_flow_delete_strict_actions_get(
     of_flow_delete_strict_t *obj);
-
-/* Unified accessor functions for of_flow_mod */
-
-extern void of_flow_mod_xid_set(
-    of_flow_mod_t *obj,
-    uint32_t xid);
-extern void of_flow_mod_xid_get(
-    of_flow_mod_t *obj,
-    uint32_t *xid);
-
-extern void of_flow_mod_cookie_set(
-    of_flow_mod_t *obj,
-    uint64_t cookie);
-extern void of_flow_mod_cookie_get(
-    of_flow_mod_t *obj,
-    uint64_t *cookie);
-
-extern void of_flow_mod_cookie_mask_set(
-    of_flow_mod_t *obj,
-    uint64_t cookie_mask);
-extern void of_flow_mod_cookie_mask_get(
-    of_flow_mod_t *obj,
-    uint64_t *cookie_mask);
-
-extern void of_flow_mod_table_id_set(
-    of_flow_mod_t *obj,
-    uint8_t table_id);
-extern void of_flow_mod_table_id_get(
-    of_flow_mod_t *obj,
-    uint8_t *table_id);
-
-extern void of_flow_mod_idle_timeout_set(
-    of_flow_mod_t *obj,
-    uint16_t idle_timeout);
-extern void of_flow_mod_idle_timeout_get(
-    of_flow_mod_t *obj,
-    uint16_t *idle_timeout);
-
-extern void of_flow_mod_hard_timeout_set(
-    of_flow_mod_t *obj,
-    uint16_t hard_timeout);
-extern void of_flow_mod_hard_timeout_get(
-    of_flow_mod_t *obj,
-    uint16_t *hard_timeout);
-
-extern void of_flow_mod_priority_set(
-    of_flow_mod_t *obj,
-    uint16_t priority);
-extern void of_flow_mod_priority_get(
-    of_flow_mod_t *obj,
-    uint16_t *priority);
-
-extern void of_flow_mod_buffer_id_set(
-    of_flow_mod_t *obj,
-    uint32_t buffer_id);
-extern void of_flow_mod_buffer_id_get(
-    of_flow_mod_t *obj,
-    uint32_t *buffer_id);
-
-extern void of_flow_mod_out_port_set(
-    of_flow_mod_t *obj,
-    of_port_no_t out_port);
-extern void of_flow_mod_out_port_get(
-    of_flow_mod_t *obj,
-    of_port_no_t *out_port);
-
-extern void of_flow_mod_out_group_set(
-    of_flow_mod_t *obj,
-    uint32_t out_group);
-extern void of_flow_mod_out_group_get(
-    of_flow_mod_t *obj,
-    uint32_t *out_group);
-
-extern void of_flow_mod_flags_set(
-    of_flow_mod_t *obj,
-    uint16_t flags);
-extern void of_flow_mod_flags_get(
-    of_flow_mod_t *obj,
-    uint16_t *flags);
-
-extern int WARN_UNUSED_RESULT of_flow_mod_match_set(
-    of_flow_mod_t *obj,
-    of_match_t *match);
-extern int WARN_UNUSED_RESULT of_flow_mod_match_get(
-    of_flow_mod_t *obj,
-    of_match_t *match);
-
-extern int WARN_UNUSED_RESULT of_flow_mod_instructions_set(
-    of_flow_mod_t *obj,
-    of_list_instruction_t *instructions);
-extern void of_flow_mod_instructions_bind(
-    of_flow_mod_t *obj,
-    of_list_instruction_t *instructions);
-extern of_list_instruction_t *of_flow_mod_instructions_get(
-    of_flow_mod_t *obj);
-
-extern int WARN_UNUSED_RESULT of_flow_mod_actions_set(
-    of_flow_mod_t *obj,
-    of_list_action_t *actions);
-extern void of_flow_mod_actions_bind(
-    of_flow_mod_t *obj,
-    of_list_action_t *actions);
-extern of_list_action_t *of_flow_mod_actions_get(
-    of_flow_mod_t *obj);
 
 /* Unified accessor functions for of_flow_mod_failed_error_msg */
 
@@ -17816,38 +17158,6 @@ extern void of_group_features_stats_request_flags_get(
     of_group_features_stats_request_t *obj,
     uint16_t *flags);
 
-/* Unified accessor functions for of_group_mod */
-
-extern void of_group_mod_xid_set(
-    of_group_mod_t *obj,
-    uint32_t xid);
-extern void of_group_mod_xid_get(
-    of_group_mod_t *obj,
-    uint32_t *xid);
-
-extern void of_group_mod_group_type_set(
-    of_group_mod_t *obj,
-    uint8_t group_type);
-extern void of_group_mod_group_type_get(
-    of_group_mod_t *obj,
-    uint8_t *group_type);
-
-extern void of_group_mod_group_id_set(
-    of_group_mod_t *obj,
-    uint32_t group_id);
-extern void of_group_mod_group_id_get(
-    of_group_mod_t *obj,
-    uint32_t *group_id);
-
-extern int WARN_UNUSED_RESULT of_group_mod_buckets_set(
-    of_group_mod_t *obj,
-    of_list_bucket_t *buckets);
-extern void of_group_mod_buckets_bind(
-    of_group_mod_t *obj,
-    of_list_bucket_t *buckets);
-extern of_list_bucket_t *of_group_mod_buckets_get(
-    of_group_mod_t *obj);
-
 /* Unified accessor functions for of_group_mod_failed_error_msg */
 
 extern void of_group_mod_failed_error_msg_xid_set(
@@ -17950,15 +17260,6 @@ extern void of_group_stats_request_group_id_set(
 extern void of_group_stats_request_group_id_get(
     of_group_stats_request_t *obj,
     uint32_t *group_id);
-
-/* Unified accessor functions for of_header */
-
-extern void of_header_xid_set(
-    of_header_t *obj,
-    uint32_t xid);
-extern void of_header_xid_get(
-    of_header_t *obj,
-    uint32_t *xid);
 
 /* Unified accessor functions for of_hello */
 
@@ -18261,29 +17562,6 @@ extern void of_nicira_controller_role_request_role_set(
 extern void of_nicira_controller_role_request_role_get(
     of_nicira_controller_role_request_t *obj,
     uint32_t *role);
-
-/* Unified accessor functions for of_nicira_header */
-
-extern void of_nicira_header_xid_set(
-    of_nicira_header_t *obj,
-    uint32_t xid);
-extern void of_nicira_header_xid_get(
-    of_nicira_header_t *obj,
-    uint32_t *xid);
-
-extern void of_nicira_header_experimenter_set(
-    of_nicira_header_t *obj,
-    uint32_t experimenter);
-extern void of_nicira_header_experimenter_get(
-    of_nicira_header_t *obj,
-    uint32_t *experimenter);
-
-extern void of_nicira_header_subtype_set(
-    of_nicira_header_t *obj,
-    uint32_t subtype);
-extern void of_nicira_header_subtype_get(
-    of_nicira_header_t *obj,
-    uint32_t *subtype);
 
 /* Unified accessor functions for of_packet_in */
 
@@ -18900,38 +18178,6 @@ extern void of_set_config_miss_send_len_get(
     of_set_config_t *obj,
     uint16_t *miss_send_len);
 
-/* Unified accessor functions for of_stats_reply */
-
-extern void of_stats_reply_xid_set(
-    of_stats_reply_t *obj,
-    uint32_t xid);
-extern void of_stats_reply_xid_get(
-    of_stats_reply_t *obj,
-    uint32_t *xid);
-
-extern void of_stats_reply_flags_set(
-    of_stats_reply_t *obj,
-    uint16_t flags);
-extern void of_stats_reply_flags_get(
-    of_stats_reply_t *obj,
-    uint16_t *flags);
-
-/* Unified accessor functions for of_stats_request */
-
-extern void of_stats_request_xid_set(
-    of_stats_request_t *obj,
-    uint32_t xid);
-extern void of_stats_request_xid_get(
-    of_stats_request_t *obj,
-    uint32_t *xid);
-
-extern void of_stats_request_flags_set(
-    of_stats_request_t *obj,
-    uint16_t flags);
-extern void of_stats_request_flags_get(
-    of_stats_request_t *obj,
-    uint16_t *flags);
-
 /* Unified accessor functions for of_switch_config_failed_error_msg */
 
 extern void of_switch_config_failed_error_msg_xid_set(
@@ -19197,22 +18443,6 @@ extern void of_table_status_table_bind(
 extern of_table_desc_t *of_table_status_table_get(
     of_table_status_t *obj);
 
-/* Unified accessor functions for of_action_bsn */
-
-extern void of_action_bsn_experimenter_set(
-    of_action_bsn_t *obj,
-    uint32_t experimenter);
-extern void of_action_bsn_experimenter_get(
-    of_action_bsn_t *obj,
-    uint32_t *experimenter);
-
-extern void of_action_bsn_subtype_set(
-    of_action_bsn_t *obj,
-    uint32_t subtype);
-extern void of_action_bsn_subtype_get(
-    of_action_bsn_t *obj,
-    uint32_t *subtype);
-
 /* Unified accessor functions for of_action_bsn_checksum */
 
 extern void of_action_bsn_checksum_experimenter_set(
@@ -19352,22 +18582,6 @@ extern void of_action_enqueue_queue_id_get(
     of_action_enqueue_t *obj,
     uint32_t *queue_id);
 
-/* Unified accessor functions for of_action_experimenter */
-
-extern void of_action_experimenter_experimenter_set(
-    of_action_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_action_experimenter_experimenter_get(
-    of_action_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern int WARN_UNUSED_RESULT of_action_experimenter_data_set(
-    of_action_experimenter_t *obj,
-    of_octets_t *data);
-extern void of_action_experimenter_data_get(
-    of_action_experimenter_t *obj,
-    of_octets_t *data);
-
 /* Unified accessor functions for of_action_group */
 
 extern void of_action_group_group_id_set(
@@ -19376,24 +18590,6 @@ extern void of_action_group_group_id_set(
 extern void of_action_group_group_id_get(
     of_action_group_t *obj,
     uint32_t *group_id);
-
-/* Unified accessor functions for of_action_header */
-
-/* Unified accessor functions for of_action_id_bsn */
-
-extern void of_action_id_bsn_experimenter_set(
-    of_action_id_bsn_t *obj,
-    uint32_t experimenter);
-extern void of_action_id_bsn_experimenter_get(
-    of_action_id_bsn_t *obj,
-    uint32_t *experimenter);
-
-extern void of_action_id_bsn_subtype_set(
-    of_action_id_bsn_t *obj,
-    uint32_t subtype);
-extern void of_action_id_bsn_subtype_get(
-    of_action_id_bsn_t *obj,
-    uint32_t *subtype);
 
 /* Unified accessor functions for of_action_id_bsn_checksum */
 
@@ -19467,34 +18663,7 @@ extern void of_action_id_bsn_set_tunnel_dst_subtype_get(
 
 /* Unified accessor functions for of_action_id_dec_nw_ttl */
 
-/* Unified accessor functions for of_action_id_experimenter */
-
-extern void of_action_id_experimenter_experimenter_set(
-    of_action_id_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_action_id_experimenter_experimenter_get(
-    of_action_id_experimenter_t *obj,
-    uint32_t *experimenter);
-
 /* Unified accessor functions for of_action_id_group */
-
-/* Unified accessor functions for of_action_id_header */
-
-/* Unified accessor functions for of_action_id_nicira */
-
-extern void of_action_id_nicira_experimenter_set(
-    of_action_id_nicira_t *obj,
-    uint32_t experimenter);
-extern void of_action_id_nicira_experimenter_get(
-    of_action_id_nicira_t *obj,
-    uint32_t *experimenter);
-
-extern void of_action_id_nicira_subtype_set(
-    of_action_id_nicira_t *obj,
-    uint16_t subtype);
-extern void of_action_id_nicira_subtype_get(
-    of_action_id_nicira_t *obj,
-    uint16_t *subtype);
 
 /* Unified accessor functions for of_action_id_nicira_dec_ttl */
 
@@ -19533,22 +18702,6 @@ extern void of_action_id_nicira_dec_ttl_subtype_get(
 /* Unified accessor functions for of_action_id_set_nw_ttl */
 
 /* Unified accessor functions for of_action_id_set_queue */
-
-/* Unified accessor functions for of_action_nicira */
-
-extern void of_action_nicira_experimenter_set(
-    of_action_nicira_t *obj,
-    uint32_t experimenter);
-extern void of_action_nicira_experimenter_get(
-    of_action_nicira_t *obj,
-    uint32_t *experimenter);
-
-extern void of_action_nicira_subtype_set(
-    of_action_nicira_t *obj,
-    uint16_t subtype);
-extern void of_action_nicira_subtype_get(
-    of_action_nicira_t *obj,
-    uint16_t *subtype);
 
 /* Unified accessor functions for of_action_nicira_dec_ttl */
 
@@ -19644,11 +18797,11 @@ extern void of_action_set_dl_src_dl_addr_get(
 
 extern int WARN_UNUSED_RESULT of_action_set_field_field_set(
     of_action_set_field_t *obj,
-    of_oxm_header_t *field);
+    of_oxm_t *field);
 extern void of_action_set_field_field_bind(
     of_action_set_field_t *obj,
-    of_oxm_header_t *field);
-extern of_oxm_header_t *of_action_set_field_field_get(
+    of_oxm_t *field);
+extern of_oxm_t *of_action_set_field_field_get(
     of_action_set_field_t *obj);
 
 /* Unified accessor functions for of_action_set_mpls_label */
@@ -19791,8 +18944,6 @@ extern void of_async_config_prop_flow_removed_slave_mask_set(
 extern void of_async_config_prop_flow_removed_slave_mask_get(
     of_async_config_prop_flow_removed_slave_t *obj,
     uint32_t *mask);
-
-/* Unified accessor functions for of_async_config_prop_header */
 
 /* Unified accessor functions for of_async_config_prop_packet_in_master */
 
@@ -20392,8 +19543,6 @@ extern void of_bsn_tlv_external_netmask_value_get(
     of_bsn_tlv_external_netmask_t *obj,
     of_ipv4_t *value);
 
-/* Unified accessor functions for of_bsn_tlv_header */
-
 /* Unified accessor functions for of_bsn_tlv_header_size */
 
 extern void of_bsn_tlv_header_size_value_set(
@@ -20756,8 +19905,6 @@ extern void of_bsn_vlan_counter_stats_entry_values_bind(
 extern of_list_uint64_t *of_bsn_vlan_counter_stats_entry_values_get(
     of_bsn_vlan_counter_stats_entry_t *obj);
 
-/* Unified accessor functions for of_bsn_vport_header */
-
 /* Unified accessor functions for of_bsn_vport_l2gre */
 
 extern void of_bsn_vport_l2gre_flags_set(
@@ -20954,24 +20101,6 @@ extern void of_bucket_counter_byte_count_get(
     of_bucket_counter_t *obj,
     uint64_t *byte_count);
 
-/* Unified accessor functions for of_bundle_prop_experimenter */
-
-extern void of_bundle_prop_experimenter_experimenter_set(
-    of_bundle_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_bundle_prop_experimenter_experimenter_get(
-    of_bundle_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_bundle_prop_experimenter_exp_type_set(
-    of_bundle_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_bundle_prop_experimenter_exp_type_get(
-    of_bundle_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-/* Unified accessor functions for of_bundle_prop_header */
-
 /* Unified accessor functions for of_flow_stats_entry */
 
 extern void of_flow_stats_entry_table_id_set(
@@ -21154,8 +20283,6 @@ extern void of_group_stats_entry_bucket_stats_bind(
 extern of_list_bucket_counter_t *of_group_stats_entry_bucket_stats_get(
     of_group_stats_entry_t *obj);
 
-/* Unified accessor functions for of_hello_elem_header */
-
 /* Unified accessor functions for of_hello_elem_versionbitmap */
 
 extern int WARN_UNUSED_RESULT of_hello_elem_versionbitmap_bitmaps_set(
@@ -21177,22 +20304,6 @@ extern void of_instruction_apply_actions_actions_bind(
     of_list_action_t *actions);
 extern of_list_action_t *of_instruction_apply_actions_actions_get(
     of_instruction_apply_actions_t *obj);
-
-/* Unified accessor functions for of_instruction_bsn */
-
-extern void of_instruction_bsn_experimenter_set(
-    of_instruction_bsn_t *obj,
-    uint32_t experimenter);
-extern void of_instruction_bsn_experimenter_get(
-    of_instruction_bsn_t *obj,
-    uint32_t *experimenter);
-
-extern void of_instruction_bsn_subtype_set(
-    of_instruction_bsn_t *obj,
-    uint32_t subtype);
-extern void of_instruction_bsn_subtype_get(
-    of_instruction_bsn_t *obj,
-    uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_bsn_arp_offload */
 
@@ -21372,22 +20483,6 @@ extern void of_instruction_bsn_span_destination_subtype_get(
 
 /* Unified accessor functions for of_instruction_clear_actions */
 
-/* Unified accessor functions for of_instruction_experimenter */
-
-extern void of_instruction_experimenter_experimenter_set(
-    of_instruction_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_instruction_experimenter_experimenter_get(
-    of_instruction_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern int WARN_UNUSED_RESULT of_instruction_experimenter_data_set(
-    of_instruction_experimenter_t *obj,
-    of_octets_t *data);
-extern void of_instruction_experimenter_data_get(
-    of_instruction_experimenter_t *obj,
-    of_octets_t *data);
-
 /* Unified accessor functions for of_instruction_goto_table */
 
 extern void of_instruction_goto_table_table_id_set(
@@ -21397,25 +20492,7 @@ extern void of_instruction_goto_table_table_id_get(
     of_instruction_goto_table_t *obj,
     uint8_t *table_id);
 
-/* Unified accessor functions for of_instruction_header */
-
 /* Unified accessor functions for of_instruction_id_apply_actions */
-
-/* Unified accessor functions for of_instruction_id_bsn */
-
-extern void of_instruction_id_bsn_experimenter_set(
-    of_instruction_id_bsn_t *obj,
-    uint32_t experimenter);
-extern void of_instruction_id_bsn_experimenter_get(
-    of_instruction_id_bsn_t *obj,
-    uint32_t *experimenter);
-
-extern void of_instruction_id_bsn_subtype_set(
-    of_instruction_id_bsn_t *obj,
-    uint32_t subtype);
-extern void of_instruction_id_bsn_subtype_get(
-    of_instruction_id_bsn_t *obj,
-    uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_bsn_arp_offload */
 
@@ -21595,18 +20672,7 @@ extern void of_instruction_id_bsn_span_destination_subtype_get(
 
 /* Unified accessor functions for of_instruction_id_clear_actions */
 
-/* Unified accessor functions for of_instruction_id_experimenter */
-
-extern void of_instruction_id_experimenter_experimenter_set(
-    of_instruction_id_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_instruction_id_experimenter_experimenter_get(
-    of_instruction_id_experimenter_t *obj,
-    uint32_t *experimenter);
-
 /* Unified accessor functions for of_instruction_id_goto_table */
-
-/* Unified accessor functions for of_instruction_id_header */
 
 /* Unified accessor functions for of_instruction_id_meter */
 
@@ -21964,8 +21030,6 @@ extern void of_meter_band_experimenter_experimenter_set(
 extern void of_meter_band_experimenter_experimenter_get(
     of_meter_band_experimenter_t *obj,
     uint32_t *experimenter);
-
-/* Unified accessor functions for of_meter_band_header */
 
 /* Unified accessor functions for of_meter_band_stats */
 
@@ -22772,8 +21836,6 @@ extern void of_oxm_eth_type_masked_value_mask_set(
 extern void of_oxm_eth_type_masked_value_mask_get(
     of_oxm_eth_type_masked_t *obj,
     uint16_t *value_mask);
-
-/* Unified accessor functions for of_oxm_header */
 
 /* Unified accessor functions for of_oxm_icmpv4_code */
 
@@ -23732,24 +22794,6 @@ extern void of_port_desc_prop_ethernet_max_speed_get(
     of_port_desc_prop_ethernet_t *obj,
     uint32_t *max_speed);
 
-/* Unified accessor functions for of_port_desc_prop_experimenter */
-
-extern void of_port_desc_prop_experimenter_experimenter_set(
-    of_port_desc_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_port_desc_prop_experimenter_experimenter_get(
-    of_port_desc_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_port_desc_prop_experimenter_exp_type_set(
-    of_port_desc_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_port_desc_prop_experimenter_exp_type_get(
-    of_port_desc_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-/* Unified accessor functions for of_port_desc_prop_header */
-
 /* Unified accessor functions for of_port_desc_prop_optical */
 
 extern void of_port_desc_prop_optical_supported_set(
@@ -23823,24 +22867,6 @@ extern void of_port_mod_prop_ethernet_advertise_set(
 extern void of_port_mod_prop_ethernet_advertise_get(
     of_port_mod_prop_ethernet_t *obj,
     uint32_t *advertise);
-
-/* Unified accessor functions for of_port_mod_prop_experimenter */
-
-extern void of_port_mod_prop_experimenter_experimenter_set(
-    of_port_mod_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_port_mod_prop_experimenter_experimenter_get(
-    of_port_mod_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_port_mod_prop_experimenter_exp_type_set(
-    of_port_mod_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_port_mod_prop_experimenter_exp_type_get(
-    of_port_mod_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-/* Unified accessor functions for of_port_mod_prop_header */
 
 /* Unified accessor functions for of_port_mod_prop_optical */
 
@@ -24025,31 +23051,6 @@ extern void of_port_stats_prop_ethernet_collisions_get(
     of_port_stats_prop_ethernet_t *obj,
     uint64_t *collisions);
 
-/* Unified accessor functions for of_port_stats_prop_experimenter */
-
-extern void of_port_stats_prop_experimenter_experimenter_set(
-    of_port_stats_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_port_stats_prop_experimenter_experimenter_get(
-    of_port_stats_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_port_stats_prop_experimenter_exp_type_set(
-    of_port_stats_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_port_stats_prop_experimenter_exp_type_get(
-    of_port_stats_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-extern int WARN_UNUSED_RESULT of_port_stats_prop_experimenter_experimenter_data_set(
-    of_port_stats_prop_experimenter_t *obj,
-    of_octets_t *experimenter_data);
-extern void of_port_stats_prop_experimenter_experimenter_data_get(
-    of_port_stats_prop_experimenter_t *obj,
-    of_octets_t *experimenter_data);
-
-/* Unified accessor functions for of_port_stats_prop_header */
-
 /* Unified accessor functions for of_port_stats_prop_optical */
 
 extern void of_port_stats_prop_optical_flags_set(
@@ -24154,24 +23155,6 @@ extern void of_queue_desc_properties_bind(
 extern of_list_queue_desc_prop_t *of_queue_desc_properties_get(
     of_queue_desc_t *obj);
 
-/* Unified accessor functions for of_queue_desc_prop_experimenter */
-
-extern void of_queue_desc_prop_experimenter_experimenter_set(
-    of_queue_desc_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_queue_desc_prop_experimenter_experimenter_get(
-    of_queue_desc_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_queue_desc_prop_experimenter_exp_type_set(
-    of_queue_desc_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_queue_desc_prop_experimenter_exp_type_get(
-    of_queue_desc_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-/* Unified accessor functions for of_queue_desc_prop_header */
-
 /* Unified accessor functions for of_queue_desc_prop_max_rate */
 
 extern void of_queue_desc_prop_max_rate_rate_set(
@@ -24189,24 +23172,6 @@ extern void of_queue_desc_prop_min_rate_rate_set(
 extern void of_queue_desc_prop_min_rate_rate_get(
     of_queue_desc_prop_min_rate_t *obj,
     uint16_t *rate);
-
-/* Unified accessor functions for of_queue_prop_experimenter */
-
-extern void of_queue_prop_experimenter_experimenter_set(
-    of_queue_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_queue_prop_experimenter_experimenter_get(
-    of_queue_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern int WARN_UNUSED_RESULT of_queue_prop_experimenter_data_set(
-    of_queue_prop_experimenter_t *obj,
-    of_octets_t *data);
-extern void of_queue_prop_experimenter_data_get(
-    of_queue_prop_experimenter_t *obj,
-    of_octets_t *data);
-
-/* Unified accessor functions for of_queue_prop_header */
 
 /* Unified accessor functions for of_queue_prop_max_rate */
 
@@ -24286,42 +23251,6 @@ extern void of_queue_stats_entry_properties_bind(
 extern of_list_queue_stats_prop_t *of_queue_stats_entry_properties_get(
     of_queue_stats_entry_t *obj);
 
-/* Unified accessor functions for of_queue_stats_prop_experimenter */
-
-extern void of_queue_stats_prop_experimenter_experimenter_set(
-    of_queue_stats_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_queue_stats_prop_experimenter_experimenter_get(
-    of_queue_stats_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_queue_stats_prop_experimenter_exp_type_set(
-    of_queue_stats_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_queue_stats_prop_experimenter_exp_type_get(
-    of_queue_stats_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-/* Unified accessor functions for of_queue_stats_prop_header */
-
-/* Unified accessor functions for of_role_prop_experimenter */
-
-extern void of_role_prop_experimenter_experimenter_set(
-    of_role_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_role_prop_experimenter_experimenter_get(
-    of_role_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_role_prop_experimenter_exp_type_set(
-    of_role_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_role_prop_experimenter_exp_type_get(
-    of_role_prop_experimenter_t *obj,
-    uint32_t *exp_type);
-
-/* Unified accessor functions for of_role_prop_header */
-
 /* Unified accessor functions for of_table_desc */
 
 extern void of_table_desc_table_id_set(
@@ -24381,54 +23310,6 @@ extern void of_table_feature_prop_apply_setfield_miss_oxm_ids_bind(
     of_list_uint32_t *oxm_ids);
 extern of_list_uint32_t *of_table_feature_prop_apply_setfield_miss_oxm_ids_get(
     of_table_feature_prop_apply_setfield_miss_t *obj);
-
-/* Unified accessor functions for of_table_feature_prop_experimenter */
-
-extern void of_table_feature_prop_experimenter_experimenter_set(
-    of_table_feature_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_table_feature_prop_experimenter_experimenter_get(
-    of_table_feature_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_table_feature_prop_experimenter_subtype_set(
-    of_table_feature_prop_experimenter_t *obj,
-    uint32_t subtype);
-extern void of_table_feature_prop_experimenter_subtype_get(
-    of_table_feature_prop_experimenter_t *obj,
-    uint32_t *subtype);
-
-extern int WARN_UNUSED_RESULT of_table_feature_prop_experimenter_experimenter_data_set(
-    of_table_feature_prop_experimenter_t *obj,
-    of_octets_t *experimenter_data);
-extern void of_table_feature_prop_experimenter_experimenter_data_get(
-    of_table_feature_prop_experimenter_t *obj,
-    of_octets_t *experimenter_data);
-
-/* Unified accessor functions for of_table_feature_prop_experimenter_miss */
-
-extern void of_table_feature_prop_experimenter_miss_experimenter_set(
-    of_table_feature_prop_experimenter_miss_t *obj,
-    uint32_t experimenter);
-extern void of_table_feature_prop_experimenter_miss_experimenter_get(
-    of_table_feature_prop_experimenter_miss_t *obj,
-    uint32_t *experimenter);
-
-extern void of_table_feature_prop_experimenter_miss_subtype_set(
-    of_table_feature_prop_experimenter_miss_t *obj,
-    uint32_t subtype);
-extern void of_table_feature_prop_experimenter_miss_subtype_get(
-    of_table_feature_prop_experimenter_miss_t *obj,
-    uint32_t *subtype);
-
-extern int WARN_UNUSED_RESULT of_table_feature_prop_experimenter_miss_experimenter_data_set(
-    of_table_feature_prop_experimenter_miss_t *obj,
-    of_octets_t *experimenter_data);
-extern void of_table_feature_prop_experimenter_miss_experimenter_data_get(
-    of_table_feature_prop_experimenter_miss_t *obj,
-    of_octets_t *experimenter_data);
-
-/* Unified accessor functions for of_table_feature_prop_header */
 
 /* Unified accessor functions for of_table_feature_prop_instructions */
 
@@ -24604,8 +23485,6 @@ extern void of_table_features_properties_bind(
 extern of_list_table_feature_prop_t *of_table_features_properties_get(
     of_table_features_t *obj);
 
-/* Unified accessor functions for of_table_mod_prop */
-
 /* Unified accessor functions for of_table_mod_prop_eviction */
 
 extern void of_table_mod_prop_eviction_flags_set(
@@ -24614,22 +23493,6 @@ extern void of_table_mod_prop_eviction_flags_set(
 extern void of_table_mod_prop_eviction_flags_get(
     of_table_mod_prop_eviction_t *obj,
     uint32_t *flags);
-
-/* Unified accessor functions for of_table_mod_prop_experimenter */
-
-extern void of_table_mod_prop_experimenter_experimenter_set(
-    of_table_mod_prop_experimenter_t *obj,
-    uint32_t experimenter);
-extern void of_table_mod_prop_experimenter_experimenter_get(
-    of_table_mod_prop_experimenter_t *obj,
-    uint32_t *experimenter);
-
-extern void of_table_mod_prop_experimenter_exp_type_set(
-    of_table_mod_prop_experimenter_t *obj,
-    uint32_t exp_type);
-extern void of_table_mod_prop_experimenter_exp_type_get(
-    of_table_mod_prop_experimenter_t *obj,
-    uint32_t *exp_type);
 
 /* Unified accessor functions for of_table_mod_prop_vacancy */
 
@@ -24798,13 +23661,13 @@ extern void of_uint8_value_get(
 /* Unified accessor functions for of_list_action */
 
 extern int of_list_action_first(
-    of_list_action_t *list, of_list_iter_t iter);
+    of_list_action_t *list, of_object_t *iter);
 extern int of_list_action_next(
-    of_list_action_t *list, of_list_iter_t iter);
+    of_list_action_t *list, of_object_t *iter);
 extern int of_list_action_append_bind(
-    of_list_action_t *list, of_list_iter_t iter);
+    of_list_action_t *list, of_object_t *iter);
 extern int of_list_action_append(
-    of_list_action_t *list, of_list_iter_t iter);
+    of_list_action_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_action
@@ -24821,13 +23684,13 @@ extern int of_list_action_append(
 /* Unified accessor functions for of_list_action_id */
 
 extern int of_list_action_id_first(
-    of_list_action_id_t *list, of_list_iter_t iter);
+    of_list_action_id_t *list, of_object_t *iter);
 extern int of_list_action_id_next(
-    of_list_action_id_t *list, of_list_iter_t iter);
+    of_list_action_id_t *list, of_object_t *iter);
 extern int of_list_action_id_append_bind(
-    of_list_action_id_t *list, of_list_iter_t iter);
+    of_list_action_id_t *list, of_object_t *iter);
 extern int of_list_action_id_append(
-    of_list_action_id_t *list, of_list_iter_t iter);
+    of_list_action_id_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_action_id
@@ -24844,13 +23707,13 @@ extern int of_list_action_id_append(
 /* Unified accessor functions for of_list_async_config_prop */
 
 extern int of_list_async_config_prop_first(
-    of_list_async_config_prop_t *list, of_list_iter_t iter);
+    of_list_async_config_prop_t *list, of_object_t *iter);
 extern int of_list_async_config_prop_next(
-    of_list_async_config_prop_t *list, of_list_iter_t iter);
+    of_list_async_config_prop_t *list, of_object_t *iter);
 extern int of_list_async_config_prop_append_bind(
-    of_list_async_config_prop_t *list, of_list_iter_t iter);
+    of_list_async_config_prop_t *list, of_object_t *iter);
 extern int of_list_async_config_prop_append(
-    of_list_async_config_prop_t *list, of_list_iter_t iter);
+    of_list_async_config_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_async_config_prop
@@ -24867,13 +23730,13 @@ extern int of_list_async_config_prop_append(
 /* Unified accessor functions for of_list_bsn_controller_connection */
 
 extern int of_list_bsn_controller_connection_first(
-    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
+    of_list_bsn_controller_connection_t *list, of_object_t *iter);
 extern int of_list_bsn_controller_connection_next(
-    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
+    of_list_bsn_controller_connection_t *list, of_object_t *iter);
 extern int of_list_bsn_controller_connection_append_bind(
-    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
+    of_list_bsn_controller_connection_t *list, of_object_t *iter);
 extern int of_list_bsn_controller_connection_append(
-    of_list_bsn_controller_connection_t *list, of_list_iter_t iter);
+    of_list_bsn_controller_connection_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_controller_connection
@@ -24890,13 +23753,13 @@ extern int of_list_bsn_controller_connection_append(
 /* Unified accessor functions for of_list_bsn_debug_counter_desc_stats_entry */
 
 extern int of_list_bsn_debug_counter_desc_stats_entry_first(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_debug_counter_desc_stats_entry_next(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_debug_counter_desc_stats_entry_append_bind(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_debug_counter_desc_stats_entry_append(
-    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_desc_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_debug_counter_desc_stats_entry
@@ -24913,13 +23776,13 @@ extern int of_list_bsn_debug_counter_desc_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_debug_counter_stats_entry */
 
 extern int of_list_bsn_debug_counter_stats_entry_first(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_debug_counter_stats_entry_next(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_debug_counter_stats_entry_append_bind(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_debug_counter_stats_entry_append(
-    of_list_bsn_debug_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_debug_counter_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_debug_counter_stats_entry
@@ -24936,13 +23799,13 @@ extern int of_list_bsn_debug_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_flow_checksum_bucket_stats_entry */
 
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_first(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_next(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_append_bind(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_append(
-    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_flow_checksum_bucket_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_flow_checksum_bucket_stats_entry
@@ -24959,13 +23822,13 @@ extern int of_list_bsn_flow_checksum_bucket_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_bucket_stats_entry */
 
 extern int of_list_bsn_gentable_bucket_stats_entry_first(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_bucket_stats_entry_next(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_bucket_stats_entry_append_bind(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_bucket_stats_entry_append(
-    of_list_bsn_gentable_bucket_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_bucket_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_bucket_stats_entry
@@ -24982,13 +23845,13 @@ extern int of_list_bsn_gentable_bucket_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_desc_stats_entry */
 
 extern int of_list_bsn_gentable_desc_stats_entry_first(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_desc_stats_entry_next(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_desc_stats_entry_append_bind(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_desc_stats_entry_append(
-    of_list_bsn_gentable_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_desc_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_desc_stats_entry
@@ -25005,13 +23868,13 @@ extern int of_list_bsn_gentable_desc_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_entry_desc_stats_entry */
 
 extern int of_list_bsn_gentable_entry_desc_stats_entry_first(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_entry_desc_stats_entry_next(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_entry_desc_stats_entry_append_bind(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_entry_desc_stats_entry_append(
-    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_desc_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_entry_desc_stats_entry
@@ -25028,13 +23891,13 @@ extern int of_list_bsn_gentable_entry_desc_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_entry_stats_entry */
 
 extern int of_list_bsn_gentable_entry_stats_entry_first(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_entry_stats_entry_next(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_entry_stats_entry_append_bind(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_entry_stats_entry_append(
-    of_list_bsn_gentable_entry_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_entry_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_entry_stats_entry
@@ -25051,13 +23914,13 @@ extern int of_list_bsn_gentable_entry_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_gentable_stats_entry */
 
 extern int of_list_bsn_gentable_stats_entry_first(
-    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_stats_entry_next(
-    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_stats_entry_append_bind(
-    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_gentable_stats_entry_append(
-    of_list_bsn_gentable_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_gentable_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_gentable_stats_entry
@@ -25074,13 +23937,13 @@ extern int of_list_bsn_gentable_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_interface */
 
 extern int of_list_bsn_interface_first(
-    of_list_bsn_interface_t *list, of_list_iter_t iter);
+    of_list_bsn_interface_t *list, of_object_t *iter);
 extern int of_list_bsn_interface_next(
-    of_list_bsn_interface_t *list, of_list_iter_t iter);
+    of_list_bsn_interface_t *list, of_object_t *iter);
 extern int of_list_bsn_interface_append_bind(
-    of_list_bsn_interface_t *list, of_list_iter_t iter);
+    of_list_bsn_interface_t *list, of_object_t *iter);
 extern int of_list_bsn_interface_append(
-    of_list_bsn_interface_t *list, of_list_iter_t iter);
+    of_list_bsn_interface_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_interface
@@ -25097,13 +23960,13 @@ extern int of_list_bsn_interface_append(
 /* Unified accessor functions for of_list_bsn_lacp_stats_entry */
 
 extern int of_list_bsn_lacp_stats_entry_first(
-    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_lacp_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_lacp_stats_entry_next(
-    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_lacp_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_lacp_stats_entry_append_bind(
-    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_lacp_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_lacp_stats_entry_append(
-    of_list_bsn_lacp_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_lacp_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_lacp_stats_entry
@@ -25120,13 +23983,13 @@ extern int of_list_bsn_lacp_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_port_counter_stats_entry */
 
 extern int of_list_bsn_port_counter_stats_entry_first(
-    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_port_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_port_counter_stats_entry_next(
-    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_port_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_port_counter_stats_entry_append_bind(
-    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_port_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_port_counter_stats_entry_append(
-    of_list_bsn_port_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_port_counter_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_port_counter_stats_entry
@@ -25143,13 +24006,13 @@ extern int of_list_bsn_port_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_switch_pipeline_stats_entry */
 
 extern int of_list_bsn_switch_pipeline_stats_entry_first(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_switch_pipeline_stats_entry_next(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_switch_pipeline_stats_entry_append_bind(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_switch_pipeline_stats_entry_append(
-    of_list_bsn_switch_pipeline_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_switch_pipeline_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_switch_pipeline_stats_entry
@@ -25166,13 +24029,13 @@ extern int of_list_bsn_switch_pipeline_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_table_checksum_stats_entry */
 
 extern int of_list_bsn_table_checksum_stats_entry_first(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_table_checksum_stats_entry_next(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_table_checksum_stats_entry_append_bind(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_table_checksum_stats_entry_append(
-    of_list_bsn_table_checksum_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_table_checksum_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_table_checksum_stats_entry
@@ -25189,13 +24052,13 @@ extern int of_list_bsn_table_checksum_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_tlv */
 
 extern int of_list_bsn_tlv_first(
-    of_list_bsn_tlv_t *list, of_list_iter_t iter);
+    of_list_bsn_tlv_t *list, of_object_t *iter);
 extern int of_list_bsn_tlv_next(
-    of_list_bsn_tlv_t *list, of_list_iter_t iter);
+    of_list_bsn_tlv_t *list, of_object_t *iter);
 extern int of_list_bsn_tlv_append_bind(
-    of_list_bsn_tlv_t *list, of_list_iter_t iter);
+    of_list_bsn_tlv_t *list, of_object_t *iter);
 extern int of_list_bsn_tlv_append(
-    of_list_bsn_tlv_t *list, of_list_iter_t iter);
+    of_list_bsn_tlv_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_tlv
@@ -25212,13 +24075,13 @@ extern int of_list_bsn_tlv_append(
 /* Unified accessor functions for of_list_bsn_vlan_counter_stats_entry */
 
 extern int of_list_bsn_vlan_counter_stats_entry_first(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_vlan_counter_stats_entry_next(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_vlan_counter_stats_entry_append_bind(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_vlan_counter_stats_entry_append(
-    of_list_bsn_vlan_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vlan_counter_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_vlan_counter_stats_entry
@@ -25235,13 +24098,13 @@ extern int of_list_bsn_vlan_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bsn_vrf_counter_stats_entry */
 
 extern int of_list_bsn_vrf_counter_stats_entry_first(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_vrf_counter_stats_entry_next(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_vrf_counter_stats_entry_append_bind(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_object_t *iter);
 extern int of_list_bsn_vrf_counter_stats_entry_append(
-    of_list_bsn_vrf_counter_stats_entry_t *list, of_list_iter_t iter);
+    of_list_bsn_vrf_counter_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bsn_vrf_counter_stats_entry
@@ -25258,13 +24121,13 @@ extern int of_list_bsn_vrf_counter_stats_entry_append(
 /* Unified accessor functions for of_list_bucket */
 
 extern int of_list_bucket_first(
-    of_list_bucket_t *list, of_list_iter_t iter);
+    of_list_bucket_t *list, of_object_t *iter);
 extern int of_list_bucket_next(
-    of_list_bucket_t *list, of_list_iter_t iter);
+    of_list_bucket_t *list, of_object_t *iter);
 extern int of_list_bucket_append_bind(
-    of_list_bucket_t *list, of_list_iter_t iter);
+    of_list_bucket_t *list, of_object_t *iter);
 extern int of_list_bucket_append(
-    of_list_bucket_t *list, of_list_iter_t iter);
+    of_list_bucket_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bucket
@@ -25281,13 +24144,13 @@ extern int of_list_bucket_append(
 /* Unified accessor functions for of_list_bucket_counter */
 
 extern int of_list_bucket_counter_first(
-    of_list_bucket_counter_t *list, of_list_iter_t iter);
+    of_list_bucket_counter_t *list, of_object_t *iter);
 extern int of_list_bucket_counter_next(
-    of_list_bucket_counter_t *list, of_list_iter_t iter);
+    of_list_bucket_counter_t *list, of_object_t *iter);
 extern int of_list_bucket_counter_append_bind(
-    of_list_bucket_counter_t *list, of_list_iter_t iter);
+    of_list_bucket_counter_t *list, of_object_t *iter);
 extern int of_list_bucket_counter_append(
-    of_list_bucket_counter_t *list, of_list_iter_t iter);
+    of_list_bucket_counter_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bucket_counter
@@ -25304,13 +24167,13 @@ extern int of_list_bucket_counter_append(
 /* Unified accessor functions for of_list_bundle_prop */
 
 extern int of_list_bundle_prop_first(
-    of_list_bundle_prop_t *list, of_list_iter_t iter);
+    of_list_bundle_prop_t *list, of_object_t *iter);
 extern int of_list_bundle_prop_next(
-    of_list_bundle_prop_t *list, of_list_iter_t iter);
+    of_list_bundle_prop_t *list, of_object_t *iter);
 extern int of_list_bundle_prop_append_bind(
-    of_list_bundle_prop_t *list, of_list_iter_t iter);
+    of_list_bundle_prop_t *list, of_object_t *iter);
 extern int of_list_bundle_prop_append(
-    of_list_bundle_prop_t *list, of_list_iter_t iter);
+    of_list_bundle_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_bundle_prop
@@ -25327,13 +24190,13 @@ extern int of_list_bundle_prop_append(
 /* Unified accessor functions for of_list_flow_stats_entry */
 
 extern int of_list_flow_stats_entry_first(
-    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
+    of_list_flow_stats_entry_t *list, of_object_t *iter);
 extern int of_list_flow_stats_entry_next(
-    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
+    of_list_flow_stats_entry_t *list, of_object_t *iter);
 extern int of_list_flow_stats_entry_append_bind(
-    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
+    of_list_flow_stats_entry_t *list, of_object_t *iter);
 extern int of_list_flow_stats_entry_append(
-    of_list_flow_stats_entry_t *list, of_list_iter_t iter);
+    of_list_flow_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_flow_stats_entry
@@ -25350,13 +24213,13 @@ extern int of_list_flow_stats_entry_append(
 /* Unified accessor functions for of_list_group_desc_stats_entry */
 
 extern int of_list_group_desc_stats_entry_first(
-    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_group_desc_stats_entry_next(
-    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_group_desc_stats_entry_append_bind(
-    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_desc_stats_entry_t *list, of_object_t *iter);
 extern int of_list_group_desc_stats_entry_append(
-    of_list_group_desc_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_desc_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_group_desc_stats_entry
@@ -25373,13 +24236,13 @@ extern int of_list_group_desc_stats_entry_append(
 /* Unified accessor functions for of_list_group_stats_entry */
 
 extern int of_list_group_stats_entry_first(
-    of_list_group_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_stats_entry_t *list, of_object_t *iter);
 extern int of_list_group_stats_entry_next(
-    of_list_group_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_stats_entry_t *list, of_object_t *iter);
 extern int of_list_group_stats_entry_append_bind(
-    of_list_group_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_stats_entry_t *list, of_object_t *iter);
 extern int of_list_group_stats_entry_append(
-    of_list_group_stats_entry_t *list, of_list_iter_t iter);
+    of_list_group_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_group_stats_entry
@@ -25396,13 +24259,13 @@ extern int of_list_group_stats_entry_append(
 /* Unified accessor functions for of_list_hello_elem */
 
 extern int of_list_hello_elem_first(
-    of_list_hello_elem_t *list, of_list_iter_t iter);
+    of_list_hello_elem_t *list, of_object_t *iter);
 extern int of_list_hello_elem_next(
-    of_list_hello_elem_t *list, of_list_iter_t iter);
+    of_list_hello_elem_t *list, of_object_t *iter);
 extern int of_list_hello_elem_append_bind(
-    of_list_hello_elem_t *list, of_list_iter_t iter);
+    of_list_hello_elem_t *list, of_object_t *iter);
 extern int of_list_hello_elem_append(
-    of_list_hello_elem_t *list, of_list_iter_t iter);
+    of_list_hello_elem_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_hello_elem
@@ -25419,13 +24282,13 @@ extern int of_list_hello_elem_append(
 /* Unified accessor functions for of_list_instruction */
 
 extern int of_list_instruction_first(
-    of_list_instruction_t *list, of_list_iter_t iter);
+    of_list_instruction_t *list, of_object_t *iter);
 extern int of_list_instruction_next(
-    of_list_instruction_t *list, of_list_iter_t iter);
+    of_list_instruction_t *list, of_object_t *iter);
 extern int of_list_instruction_append_bind(
-    of_list_instruction_t *list, of_list_iter_t iter);
+    of_list_instruction_t *list, of_object_t *iter);
 extern int of_list_instruction_append(
-    of_list_instruction_t *list, of_list_iter_t iter);
+    of_list_instruction_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_instruction
@@ -25442,13 +24305,13 @@ extern int of_list_instruction_append(
 /* Unified accessor functions for of_list_instruction_id */
 
 extern int of_list_instruction_id_first(
-    of_list_instruction_id_t *list, of_list_iter_t iter);
+    of_list_instruction_id_t *list, of_object_t *iter);
 extern int of_list_instruction_id_next(
-    of_list_instruction_id_t *list, of_list_iter_t iter);
+    of_list_instruction_id_t *list, of_object_t *iter);
 extern int of_list_instruction_id_append_bind(
-    of_list_instruction_id_t *list, of_list_iter_t iter);
+    of_list_instruction_id_t *list, of_object_t *iter);
 extern int of_list_instruction_id_append(
-    of_list_instruction_id_t *list, of_list_iter_t iter);
+    of_list_instruction_id_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_instruction_id
@@ -25465,13 +24328,13 @@ extern int of_list_instruction_id_append(
 /* Unified accessor functions for of_list_meter_band */
 
 extern int of_list_meter_band_first(
-    of_list_meter_band_t *list, of_list_iter_t iter);
+    of_list_meter_band_t *list, of_object_t *iter);
 extern int of_list_meter_band_next(
-    of_list_meter_band_t *list, of_list_iter_t iter);
+    of_list_meter_band_t *list, of_object_t *iter);
 extern int of_list_meter_band_append_bind(
-    of_list_meter_band_t *list, of_list_iter_t iter);
+    of_list_meter_band_t *list, of_object_t *iter);
 extern int of_list_meter_band_append(
-    of_list_meter_band_t *list, of_list_iter_t iter);
+    of_list_meter_band_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_meter_band
@@ -25488,13 +24351,13 @@ extern int of_list_meter_band_append(
 /* Unified accessor functions for of_list_meter_band_stats */
 
 extern int of_list_meter_band_stats_first(
-    of_list_meter_band_stats_t *list, of_list_iter_t iter);
+    of_list_meter_band_stats_t *list, of_object_t *iter);
 extern int of_list_meter_band_stats_next(
-    of_list_meter_band_stats_t *list, of_list_iter_t iter);
+    of_list_meter_band_stats_t *list, of_object_t *iter);
 extern int of_list_meter_band_stats_append_bind(
-    of_list_meter_band_stats_t *list, of_list_iter_t iter);
+    of_list_meter_band_stats_t *list, of_object_t *iter);
 extern int of_list_meter_band_stats_append(
-    of_list_meter_band_stats_t *list, of_list_iter_t iter);
+    of_list_meter_band_stats_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_meter_band_stats
@@ -25511,13 +24374,13 @@ extern int of_list_meter_band_stats_append(
 /* Unified accessor functions for of_list_meter_stats */
 
 extern int of_list_meter_stats_first(
-    of_list_meter_stats_t *list, of_list_iter_t iter);
+    of_list_meter_stats_t *list, of_object_t *iter);
 extern int of_list_meter_stats_next(
-    of_list_meter_stats_t *list, of_list_iter_t iter);
+    of_list_meter_stats_t *list, of_object_t *iter);
 extern int of_list_meter_stats_append_bind(
-    of_list_meter_stats_t *list, of_list_iter_t iter);
+    of_list_meter_stats_t *list, of_object_t *iter);
 extern int of_list_meter_stats_append(
-    of_list_meter_stats_t *list, of_list_iter_t iter);
+    of_list_meter_stats_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_meter_stats
@@ -25534,13 +24397,13 @@ extern int of_list_meter_stats_append(
 /* Unified accessor functions for of_list_oxm */
 
 extern int of_list_oxm_first(
-    of_list_oxm_t *list, of_list_iter_t iter);
+    of_list_oxm_t *list, of_object_t *iter);
 extern int of_list_oxm_next(
-    of_list_oxm_t *list, of_list_iter_t iter);
+    of_list_oxm_t *list, of_object_t *iter);
 extern int of_list_oxm_append_bind(
-    of_list_oxm_t *list, of_list_iter_t iter);
+    of_list_oxm_t *list, of_object_t *iter);
 extern int of_list_oxm_append(
-    of_list_oxm_t *list, of_list_iter_t iter);
+    of_list_oxm_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_oxm
@@ -25557,13 +24420,13 @@ extern int of_list_oxm_append(
 /* Unified accessor functions for of_list_packet_queue */
 
 extern int of_list_packet_queue_first(
-    of_list_packet_queue_t *list, of_list_iter_t iter);
+    of_list_packet_queue_t *list, of_object_t *iter);
 extern int of_list_packet_queue_next(
-    of_list_packet_queue_t *list, of_list_iter_t iter);
+    of_list_packet_queue_t *list, of_object_t *iter);
 extern int of_list_packet_queue_append_bind(
-    of_list_packet_queue_t *list, of_list_iter_t iter);
+    of_list_packet_queue_t *list, of_object_t *iter);
 extern int of_list_packet_queue_append(
-    of_list_packet_queue_t *list, of_list_iter_t iter);
+    of_list_packet_queue_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_packet_queue
@@ -25580,13 +24443,13 @@ extern int of_list_packet_queue_append(
 /* Unified accessor functions for of_list_port_desc */
 
 extern int of_list_port_desc_first(
-    of_list_port_desc_t *list, of_list_iter_t iter);
+    of_list_port_desc_t *list, of_object_t *iter);
 extern int of_list_port_desc_next(
-    of_list_port_desc_t *list, of_list_iter_t iter);
+    of_list_port_desc_t *list, of_object_t *iter);
 extern int of_list_port_desc_append_bind(
-    of_list_port_desc_t *list, of_list_iter_t iter);
+    of_list_port_desc_t *list, of_object_t *iter);
 extern int of_list_port_desc_append(
-    of_list_port_desc_t *list, of_list_iter_t iter);
+    of_list_port_desc_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_port_desc
@@ -25603,13 +24466,13 @@ extern int of_list_port_desc_append(
 /* Unified accessor functions for of_list_port_desc_prop */
 
 extern int of_list_port_desc_prop_first(
-    of_list_port_desc_prop_t *list, of_list_iter_t iter);
+    of_list_port_desc_prop_t *list, of_object_t *iter);
 extern int of_list_port_desc_prop_next(
-    of_list_port_desc_prop_t *list, of_list_iter_t iter);
+    of_list_port_desc_prop_t *list, of_object_t *iter);
 extern int of_list_port_desc_prop_append_bind(
-    of_list_port_desc_prop_t *list, of_list_iter_t iter);
+    of_list_port_desc_prop_t *list, of_object_t *iter);
 extern int of_list_port_desc_prop_append(
-    of_list_port_desc_prop_t *list, of_list_iter_t iter);
+    of_list_port_desc_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_port_desc_prop
@@ -25626,13 +24489,13 @@ extern int of_list_port_desc_prop_append(
 /* Unified accessor functions for of_list_port_mod_prop */
 
 extern int of_list_port_mod_prop_first(
-    of_list_port_mod_prop_t *list, of_list_iter_t iter);
+    of_list_port_mod_prop_t *list, of_object_t *iter);
 extern int of_list_port_mod_prop_next(
-    of_list_port_mod_prop_t *list, of_list_iter_t iter);
+    of_list_port_mod_prop_t *list, of_object_t *iter);
 extern int of_list_port_mod_prop_append_bind(
-    of_list_port_mod_prop_t *list, of_list_iter_t iter);
+    of_list_port_mod_prop_t *list, of_object_t *iter);
 extern int of_list_port_mod_prop_append(
-    of_list_port_mod_prop_t *list, of_list_iter_t iter);
+    of_list_port_mod_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_port_mod_prop
@@ -25649,13 +24512,13 @@ extern int of_list_port_mod_prop_append(
 /* Unified accessor functions for of_list_port_stats_entry */
 
 extern int of_list_port_stats_entry_first(
-    of_list_port_stats_entry_t *list, of_list_iter_t iter);
+    of_list_port_stats_entry_t *list, of_object_t *iter);
 extern int of_list_port_stats_entry_next(
-    of_list_port_stats_entry_t *list, of_list_iter_t iter);
+    of_list_port_stats_entry_t *list, of_object_t *iter);
 extern int of_list_port_stats_entry_append_bind(
-    of_list_port_stats_entry_t *list, of_list_iter_t iter);
+    of_list_port_stats_entry_t *list, of_object_t *iter);
 extern int of_list_port_stats_entry_append(
-    of_list_port_stats_entry_t *list, of_list_iter_t iter);
+    of_list_port_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_port_stats_entry
@@ -25672,13 +24535,13 @@ extern int of_list_port_stats_entry_append(
 /* Unified accessor functions for of_list_port_stats_prop */
 
 extern int of_list_port_stats_prop_first(
-    of_list_port_stats_prop_t *list, of_list_iter_t iter);
+    of_list_port_stats_prop_t *list, of_object_t *iter);
 extern int of_list_port_stats_prop_next(
-    of_list_port_stats_prop_t *list, of_list_iter_t iter);
+    of_list_port_stats_prop_t *list, of_object_t *iter);
 extern int of_list_port_stats_prop_append_bind(
-    of_list_port_stats_prop_t *list, of_list_iter_t iter);
+    of_list_port_stats_prop_t *list, of_object_t *iter);
 extern int of_list_port_stats_prop_append(
-    of_list_port_stats_prop_t *list, of_list_iter_t iter);
+    of_list_port_stats_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_port_stats_prop
@@ -25695,13 +24558,13 @@ extern int of_list_port_stats_prop_append(
 /* Unified accessor functions for of_list_queue_desc */
 
 extern int of_list_queue_desc_first(
-    of_list_queue_desc_t *list, of_list_iter_t iter);
+    of_list_queue_desc_t *list, of_object_t *iter);
 extern int of_list_queue_desc_next(
-    of_list_queue_desc_t *list, of_list_iter_t iter);
+    of_list_queue_desc_t *list, of_object_t *iter);
 extern int of_list_queue_desc_append_bind(
-    of_list_queue_desc_t *list, of_list_iter_t iter);
+    of_list_queue_desc_t *list, of_object_t *iter);
 extern int of_list_queue_desc_append(
-    of_list_queue_desc_t *list, of_list_iter_t iter);
+    of_list_queue_desc_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_queue_desc
@@ -25718,13 +24581,13 @@ extern int of_list_queue_desc_append(
 /* Unified accessor functions for of_list_queue_desc_prop */
 
 extern int of_list_queue_desc_prop_first(
-    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
+    of_list_queue_desc_prop_t *list, of_object_t *iter);
 extern int of_list_queue_desc_prop_next(
-    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
+    of_list_queue_desc_prop_t *list, of_object_t *iter);
 extern int of_list_queue_desc_prop_append_bind(
-    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
+    of_list_queue_desc_prop_t *list, of_object_t *iter);
 extern int of_list_queue_desc_prop_append(
-    of_list_queue_desc_prop_t *list, of_list_iter_t iter);
+    of_list_queue_desc_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_queue_desc_prop
@@ -25741,13 +24604,13 @@ extern int of_list_queue_desc_prop_append(
 /* Unified accessor functions for of_list_queue_prop */
 
 extern int of_list_queue_prop_first(
-    of_list_queue_prop_t *list, of_list_iter_t iter);
+    of_list_queue_prop_t *list, of_object_t *iter);
 extern int of_list_queue_prop_next(
-    of_list_queue_prop_t *list, of_list_iter_t iter);
+    of_list_queue_prop_t *list, of_object_t *iter);
 extern int of_list_queue_prop_append_bind(
-    of_list_queue_prop_t *list, of_list_iter_t iter);
+    of_list_queue_prop_t *list, of_object_t *iter);
 extern int of_list_queue_prop_append(
-    of_list_queue_prop_t *list, of_list_iter_t iter);
+    of_list_queue_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_queue_prop
@@ -25764,13 +24627,13 @@ extern int of_list_queue_prop_append(
 /* Unified accessor functions for of_list_queue_stats_entry */
 
 extern int of_list_queue_stats_entry_first(
-    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
+    of_list_queue_stats_entry_t *list, of_object_t *iter);
 extern int of_list_queue_stats_entry_next(
-    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
+    of_list_queue_stats_entry_t *list, of_object_t *iter);
 extern int of_list_queue_stats_entry_append_bind(
-    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
+    of_list_queue_stats_entry_t *list, of_object_t *iter);
 extern int of_list_queue_stats_entry_append(
-    of_list_queue_stats_entry_t *list, of_list_iter_t iter);
+    of_list_queue_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_queue_stats_entry
@@ -25787,13 +24650,13 @@ extern int of_list_queue_stats_entry_append(
 /* Unified accessor functions for of_list_queue_stats_prop */
 
 extern int of_list_queue_stats_prop_first(
-    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
+    of_list_queue_stats_prop_t *list, of_object_t *iter);
 extern int of_list_queue_stats_prop_next(
-    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
+    of_list_queue_stats_prop_t *list, of_object_t *iter);
 extern int of_list_queue_stats_prop_append_bind(
-    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
+    of_list_queue_stats_prop_t *list, of_object_t *iter);
 extern int of_list_queue_stats_prop_append(
-    of_list_queue_stats_prop_t *list, of_list_iter_t iter);
+    of_list_queue_stats_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_queue_stats_prop
@@ -25810,13 +24673,13 @@ extern int of_list_queue_stats_prop_append(
 /* Unified accessor functions for of_list_role_prop */
 
 extern int of_list_role_prop_first(
-    of_list_role_prop_t *list, of_list_iter_t iter);
+    of_list_role_prop_t *list, of_object_t *iter);
 extern int of_list_role_prop_next(
-    of_list_role_prop_t *list, of_list_iter_t iter);
+    of_list_role_prop_t *list, of_object_t *iter);
 extern int of_list_role_prop_append_bind(
-    of_list_role_prop_t *list, of_list_iter_t iter);
+    of_list_role_prop_t *list, of_object_t *iter);
 extern int of_list_role_prop_append(
-    of_list_role_prop_t *list, of_list_iter_t iter);
+    of_list_role_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_role_prop
@@ -25833,13 +24696,13 @@ extern int of_list_role_prop_append(
 /* Unified accessor functions for of_list_table_desc */
 
 extern int of_list_table_desc_first(
-    of_list_table_desc_t *list, of_list_iter_t iter);
+    of_list_table_desc_t *list, of_object_t *iter);
 extern int of_list_table_desc_next(
-    of_list_table_desc_t *list, of_list_iter_t iter);
+    of_list_table_desc_t *list, of_object_t *iter);
 extern int of_list_table_desc_append_bind(
-    of_list_table_desc_t *list, of_list_iter_t iter);
+    of_list_table_desc_t *list, of_object_t *iter);
 extern int of_list_table_desc_append(
-    of_list_table_desc_t *list, of_list_iter_t iter);
+    of_list_table_desc_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_table_desc
@@ -25856,13 +24719,13 @@ extern int of_list_table_desc_append(
 /* Unified accessor functions for of_list_table_feature_prop */
 
 extern int of_list_table_feature_prop_first(
-    of_list_table_feature_prop_t *list, of_list_iter_t iter);
+    of_list_table_feature_prop_t *list, of_object_t *iter);
 extern int of_list_table_feature_prop_next(
-    of_list_table_feature_prop_t *list, of_list_iter_t iter);
+    of_list_table_feature_prop_t *list, of_object_t *iter);
 extern int of_list_table_feature_prop_append_bind(
-    of_list_table_feature_prop_t *list, of_list_iter_t iter);
+    of_list_table_feature_prop_t *list, of_object_t *iter);
 extern int of_list_table_feature_prop_append(
-    of_list_table_feature_prop_t *list, of_list_iter_t iter);
+    of_list_table_feature_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_table_feature_prop
@@ -25879,13 +24742,13 @@ extern int of_list_table_feature_prop_append(
 /* Unified accessor functions for of_list_table_features */
 
 extern int of_list_table_features_first(
-    of_list_table_features_t *list, of_list_iter_t iter);
+    of_list_table_features_t *list, of_object_t *iter);
 extern int of_list_table_features_next(
-    of_list_table_features_t *list, of_list_iter_t iter);
+    of_list_table_features_t *list, of_object_t *iter);
 extern int of_list_table_features_append_bind(
-    of_list_table_features_t *list, of_list_iter_t iter);
+    of_list_table_features_t *list, of_object_t *iter);
 extern int of_list_table_features_append(
-    of_list_table_features_t *list, of_list_iter_t iter);
+    of_list_table_features_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_table_features
@@ -25902,13 +24765,13 @@ extern int of_list_table_features_append(
 /* Unified accessor functions for of_list_table_mod_prop */
 
 extern int of_list_table_mod_prop_first(
-    of_list_table_mod_prop_t *list, of_list_iter_t iter);
+    of_list_table_mod_prop_t *list, of_object_t *iter);
 extern int of_list_table_mod_prop_next(
-    of_list_table_mod_prop_t *list, of_list_iter_t iter);
+    of_list_table_mod_prop_t *list, of_object_t *iter);
 extern int of_list_table_mod_prop_append_bind(
-    of_list_table_mod_prop_t *list, of_list_iter_t iter);
+    of_list_table_mod_prop_t *list, of_object_t *iter);
 extern int of_list_table_mod_prop_append(
-    of_list_table_mod_prop_t *list, of_list_iter_t iter);
+    of_list_table_mod_prop_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_table_mod_prop
@@ -25925,13 +24788,13 @@ extern int of_list_table_mod_prop_append(
 /* Unified accessor functions for of_list_table_stats_entry */
 
 extern int of_list_table_stats_entry_first(
-    of_list_table_stats_entry_t *list, of_list_iter_t iter);
+    of_list_table_stats_entry_t *list, of_object_t *iter);
 extern int of_list_table_stats_entry_next(
-    of_list_table_stats_entry_t *list, of_list_iter_t iter);
+    of_list_table_stats_entry_t *list, of_object_t *iter);
 extern int of_list_table_stats_entry_append_bind(
-    of_list_table_stats_entry_t *list, of_list_iter_t iter);
+    of_list_table_stats_entry_t *list, of_object_t *iter);
 extern int of_list_table_stats_entry_append(
-    of_list_table_stats_entry_t *list, of_list_iter_t iter);
+    of_list_table_stats_entry_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_table_stats_entry
@@ -25948,13 +24811,13 @@ extern int of_list_table_stats_entry_append(
 /* Unified accessor functions for of_list_uint32 */
 
 extern int of_list_uint32_first(
-    of_list_uint32_t *list, of_list_iter_t iter);
+    of_list_uint32_t *list, of_object_t *iter);
 extern int of_list_uint32_next(
-    of_list_uint32_t *list, of_list_iter_t iter);
+    of_list_uint32_t *list, of_object_t *iter);
 extern int of_list_uint32_append_bind(
-    of_list_uint32_t *list, of_list_iter_t iter);
+    of_list_uint32_t *list, of_object_t *iter);
 extern int of_list_uint32_append(
-    of_list_uint32_t *list, of_list_iter_t iter);
+    of_list_uint32_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_uint32
@@ -25971,13 +24834,13 @@ extern int of_list_uint32_append(
 /* Unified accessor functions for of_list_uint64 */
 
 extern int of_list_uint64_first(
-    of_list_uint64_t *list, of_list_iter_t iter);
+    of_list_uint64_t *list, of_object_t *iter);
 extern int of_list_uint64_next(
-    of_list_uint64_t *list, of_list_iter_t iter);
+    of_list_uint64_t *list, of_object_t *iter);
 extern int of_list_uint64_append_bind(
-    of_list_uint64_t *list, of_list_iter_t iter);
+    of_list_uint64_t *list, of_object_t *iter);
 extern int of_list_uint64_append(
-    of_list_uint64_t *list, of_list_iter_t iter);
+    of_list_uint64_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_uint64
@@ -25994,13 +24857,13 @@ extern int of_list_uint64_append(
 /* Unified accessor functions for of_list_uint8 */
 
 extern int of_list_uint8_first(
-    of_list_uint8_t *list, of_list_iter_t iter);
+    of_list_uint8_t *list, of_object_t *iter);
 extern int of_list_uint8_next(
-    of_list_uint8_t *list, of_list_iter_t iter);
+    of_list_uint8_t *list, of_object_t *iter);
 extern int of_list_uint8_append_bind(
-    of_list_uint8_t *list, of_list_iter_t iter);
+    of_list_uint8_t *list, of_object_t *iter);
 extern int of_list_uint8_append(
-    of_list_uint8_t *list, of_list_iter_t iter);
+    of_list_uint8_t *list, of_object_t *iter);
 
 /**
  * Iteration macro for list of type of_list_uint8
@@ -26013,564 +24876,6 @@ extern int of_list_uint8_append(
     for ((rv) = of_list_uint8_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_uint8_next((list), (elt)))
-
-/**
- * Inheritance super class for of_queue_prop
- *
- * This class is the union of of_queue_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_queue_prop_u {
-    of_queue_prop_header_t header; /* Generic instance */
-    of_queue_prop_experimenter_t experimenter;
-    of_queue_prop_max_rate_t max_rate;
-    of_queue_prop_min_rate_t min_rate;
-};
-
-/**
- * Inheritance super class for of_action
- *
- * This class is the union of of_action classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_action_u {
-    of_action_header_t header; /* Generic instance */
-    of_action_bsn_t bsn;
-    of_action_bsn_checksum_t bsn_checksum;
-    of_action_bsn_gentable_t bsn_gentable;
-    of_action_bsn_mirror_t bsn_mirror;
-    of_action_bsn_set_tunnel_dst_t bsn_set_tunnel_dst;
-    of_action_copy_ttl_in_t copy_ttl_in;
-    of_action_copy_ttl_out_t copy_ttl_out;
-    of_action_dec_mpls_ttl_t dec_mpls_ttl;
-    of_action_dec_nw_ttl_t dec_nw_ttl;
-    of_action_enqueue_t enqueue;
-    of_action_experimenter_t experimenter;
-    of_action_group_t group;
-    of_action_nicira_t nicira;
-    of_action_nicira_dec_ttl_t nicira_dec_ttl;
-    of_action_output_t output;
-    of_action_pop_mpls_t pop_mpls;
-    of_action_pop_pbb_t pop_pbb;
-    of_action_pop_vlan_t pop_vlan;
-    of_action_push_mpls_t push_mpls;
-    of_action_push_pbb_t push_pbb;
-    of_action_push_vlan_t push_vlan;
-    of_action_set_dl_dst_t set_dl_dst;
-    of_action_set_dl_src_t set_dl_src;
-    of_action_set_field_t set_field;
-    of_action_set_mpls_label_t set_mpls_label;
-    of_action_set_mpls_tc_t set_mpls_tc;
-    of_action_set_mpls_ttl_t set_mpls_ttl;
-    of_action_set_nw_dst_t set_nw_dst;
-    of_action_set_nw_ecn_t set_nw_ecn;
-    of_action_set_nw_src_t set_nw_src;
-    of_action_set_nw_tos_t set_nw_tos;
-    of_action_set_nw_ttl_t set_nw_ttl;
-    of_action_set_queue_t set_queue;
-    of_action_set_tp_dst_t set_tp_dst;
-    of_action_set_tp_src_t set_tp_src;
-    of_action_set_vlan_pcp_t set_vlan_pcp;
-    of_action_set_vlan_vid_t set_vlan_vid;
-    of_action_strip_vlan_t strip_vlan;
-};
-
-/**
- * Inheritance super class for of_queue_stats_prop
- *
- * This class is the union of of_queue_stats_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_queue_stats_prop_u {
-    of_queue_stats_prop_header_t header; /* Generic instance */
-    of_queue_stats_prop_experimenter_t experimenter;
-};
-
-/**
- * Inheritance super class for of_bsn_vport
- *
- * This class is the union of of_bsn_vport classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_bsn_vport_u {
-    of_bsn_vport_header_t header; /* Generic instance */
-    of_bsn_vport_l2gre_t l2gre;
-    of_bsn_vport_q_in_q_t q_in_q;
-};
-
-/**
- * Inheritance super class for of_table_feature_prop
- *
- * This class is the union of of_table_feature_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_table_feature_prop_u {
-    of_table_feature_prop_header_t header; /* Generic instance */
-    of_table_feature_prop_apply_actions_t apply_actions;
-    of_table_feature_prop_apply_actions_miss_t apply_actions_miss;
-    of_table_feature_prop_apply_setfield_t apply_setfield;
-    of_table_feature_prop_apply_setfield_miss_t apply_setfield_miss;
-    of_table_feature_prop_experimenter_t experimenter;
-    of_table_feature_prop_experimenter_miss_t experimenter_miss;
-    of_table_feature_prop_instructions_t instructions;
-    of_table_feature_prop_instructions_miss_t instructions_miss;
-    of_table_feature_prop_match_t match;
-    of_table_feature_prop_next_tables_t next_tables;
-    of_table_feature_prop_next_tables_miss_t next_tables_miss;
-    of_table_feature_prop_table_sync_from_t table_sync_from;
-    of_table_feature_prop_wildcards_t wildcards;
-    of_table_feature_prop_write_actions_t write_actions;
-    of_table_feature_prop_write_actions_miss_t write_actions_miss;
-    of_table_feature_prop_write_setfield_t write_setfield;
-    of_table_feature_prop_write_setfield_miss_t write_setfield_miss;
-};
-
-/**
- * Inheritance super class for of_hello_elem
- *
- * This class is the union of of_hello_elem classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_hello_elem_u {
-    of_hello_elem_header_t header; /* Generic instance */
-    of_hello_elem_versionbitmap_t versionbitmap;
-};
-
-/**
- * Inheritance super class for of_queue_desc_prop
- *
- * This class is the union of of_queue_desc_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_queue_desc_prop_u {
-    of_queue_desc_prop_header_t header; /* Generic instance */
-    of_queue_desc_prop_experimenter_t experimenter;
-    of_queue_desc_prop_max_rate_t max_rate;
-    of_queue_desc_prop_min_rate_t min_rate;
-};
-
-/**
- * Inheritance super class for of_port_desc_prop
- *
- * This class is the union of of_port_desc_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_port_desc_prop_u {
-    of_port_desc_prop_header_t header; /* Generic instance */
-    of_port_desc_prop_ethernet_t ethernet;
-    of_port_desc_prop_experimenter_t experimenter;
-    of_port_desc_prop_optical_t optical;
-};
-
-/**
- * Inheritance super class for of_port_stats_prop
- *
- * This class is the union of of_port_stats_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_port_stats_prop_u {
-    of_port_stats_prop_header_t header; /* Generic instance */
-    of_port_stats_prop_ethernet_t ethernet;
-    of_port_stats_prop_experimenter_t experimenter;
-    of_port_stats_prop_optical_t optical;
-};
-
-/**
- * Inheritance super class for of_instruction
- *
- * This class is the union of of_instruction classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_instruction_u {
-    of_instruction_header_t header; /* Generic instance */
-    of_instruction_apply_actions_t apply_actions;
-    of_instruction_bsn_t bsn;
-    of_instruction_bsn_arp_offload_t bsn_arp_offload;
-    of_instruction_bsn_deny_t bsn_deny;
-    of_instruction_bsn_dhcp_offload_t bsn_dhcp_offload;
-    of_instruction_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
-    of_instruction_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
-    of_instruction_bsn_disable_vlan_counters_t bsn_disable_vlan_counters;
-    of_instruction_bsn_packet_of_death_t bsn_packet_of_death;
-    of_instruction_bsn_permit_t bsn_permit;
-    of_instruction_bsn_prioritize_pdus_t bsn_prioritize_pdus;
-    of_instruction_bsn_require_vlan_xlate_t bsn_require_vlan_xlate;
-    of_instruction_bsn_span_destination_t bsn_span_destination;
-    of_instruction_clear_actions_t clear_actions;
-    of_instruction_experimenter_t experimenter;
-    of_instruction_goto_table_t goto_table;
-    of_instruction_meter_t meter;
-    of_instruction_write_actions_t write_actions;
-    of_instruction_write_metadata_t write_metadata;
-};
-
-/**
- * Inheritance super class for of_port_mod_prop
- *
- * This class is the union of of_port_mod_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_port_mod_prop_u {
-    of_port_mod_prop_header_t header; /* Generic instance */
-    of_port_mod_prop_ethernet_t ethernet;
-    of_port_mod_prop_experimenter_t experimenter;
-    of_port_mod_prop_optical_t optical;
-};
-
-/**
- * Inheritance super class for of_bsn_tlv
- *
- * This class is the union of of_bsn_tlv classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_bsn_tlv_u {
-    of_bsn_tlv_header_t header; /* Generic instance */
-    of_bsn_tlv_actor_key_t actor_key;
-    of_bsn_tlv_actor_port_num_t actor_port_num;
-    of_bsn_tlv_actor_port_priority_t actor_port_priority;
-    of_bsn_tlv_actor_state_t actor_state;
-    of_bsn_tlv_actor_system_mac_t actor_system_mac;
-    of_bsn_tlv_actor_system_priority_t actor_system_priority;
-    of_bsn_tlv_broadcast_query_timeout_t broadcast_query_timeout;
-    of_bsn_tlv_circuit_id_t circuit_id;
-    of_bsn_tlv_convergence_status_t convergence_status;
-    of_bsn_tlv_crc_enabled_t crc_enabled;
-    of_bsn_tlv_data_t data;
-    of_bsn_tlv_eth_dst_t eth_dst;
-    of_bsn_tlv_eth_src_t eth_src;
-    of_bsn_tlv_external_gateway_ip_t external_gateway_ip;
-    of_bsn_tlv_external_gateway_mac_t external_gateway_mac;
-    of_bsn_tlv_external_ip_t external_ip;
-    of_bsn_tlv_external_mac_t external_mac;
-    of_bsn_tlv_external_netmask_t external_netmask;
-    of_bsn_tlv_header_size_t header_size;
-    of_bsn_tlv_idle_notification_t idle_notification;
-    of_bsn_tlv_idle_time_t idle_time;
-    of_bsn_tlv_idle_timeout_t idle_timeout;
-    of_bsn_tlv_internal_gateway_mac_t internal_gateway_mac;
-    of_bsn_tlv_internal_mac_t internal_mac;
-    of_bsn_tlv_ipv4_t ipv4;
-    of_bsn_tlv_ipv4_dst_t ipv4_dst;
-    of_bsn_tlv_ipv4_src_t ipv4_src;
-    of_bsn_tlv_mac_t mac;
-    of_bsn_tlv_mac_mask_t mac_mask;
-    of_bsn_tlv_miss_packets_t miss_packets;
-    of_bsn_tlv_name_t name;
-    of_bsn_tlv_partner_key_t partner_key;
-    of_bsn_tlv_partner_port_num_t partner_port_num;
-    of_bsn_tlv_partner_port_priority_t partner_port_priority;
-    of_bsn_tlv_partner_state_t partner_state;
-    of_bsn_tlv_partner_system_mac_t partner_system_mac;
-    of_bsn_tlv_partner_system_priority_t partner_system_priority;
-    of_bsn_tlv_port_t port;
-    of_bsn_tlv_priority_t priority;
-    of_bsn_tlv_queue_id_t queue_id;
-    of_bsn_tlv_queue_weight_t queue_weight;
-    of_bsn_tlv_reply_packets_t reply_packets;
-    of_bsn_tlv_request_packets_t request_packets;
-    of_bsn_tlv_rx_packets_t rx_packets;
-    of_bsn_tlv_sampling_rate_t sampling_rate;
-    of_bsn_tlv_sub_agent_id_t sub_agent_id;
-    of_bsn_tlv_tx_bytes_t tx_bytes;
-    of_bsn_tlv_tx_packets_t tx_packets;
-    of_bsn_tlv_udf_anchor_t udf_anchor;
-    of_bsn_tlv_udf_id_t udf_id;
-    of_bsn_tlv_udf_length_t udf_length;
-    of_bsn_tlv_udf_offset_t udf_offset;
-    of_bsn_tlv_udp_dst_t udp_dst;
-    of_bsn_tlv_udp_src_t udp_src;
-    of_bsn_tlv_unicast_query_timeout_t unicast_query_timeout;
-    of_bsn_tlv_vlan_vid_t vlan_vid;
-    of_bsn_tlv_vrf_t vrf;
-};
-
-/**
- * Inheritance super class for of_instruction_id
- *
- * This class is the union of of_instruction_id classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_instruction_id_u {
-    of_instruction_id_header_t header; /* Generic instance */
-    of_instruction_id_apply_actions_t apply_actions;
-    of_instruction_id_bsn_t bsn;
-    of_instruction_id_bsn_arp_offload_t bsn_arp_offload;
-    of_instruction_id_bsn_deny_t bsn_deny;
-    of_instruction_id_bsn_dhcp_offload_t bsn_dhcp_offload;
-    of_instruction_id_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
-    of_instruction_id_bsn_disable_src_mac_check_t bsn_disable_src_mac_check;
-    of_instruction_id_bsn_disable_vlan_counters_t bsn_disable_vlan_counters;
-    of_instruction_id_bsn_packet_of_death_t bsn_packet_of_death;
-    of_instruction_id_bsn_permit_t bsn_permit;
-    of_instruction_id_bsn_prioritize_pdus_t bsn_prioritize_pdus;
-    of_instruction_id_bsn_require_vlan_xlate_t bsn_require_vlan_xlate;
-    of_instruction_id_bsn_span_destination_t bsn_span_destination;
-    of_instruction_id_clear_actions_t clear_actions;
-    of_instruction_id_experimenter_t experimenter;
-    of_instruction_id_goto_table_t goto_table;
-    of_instruction_id_meter_t meter;
-    of_instruction_id_write_actions_t write_actions;
-    of_instruction_id_write_metadata_t write_metadata;
-};
-
-/**
- * Inheritance super class for of_meter_band
- *
- * This class is the union of of_meter_band classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_meter_band_u {
-    of_meter_band_header_t header; /* Generic instance */
-    of_meter_band_drop_t drop;
-    of_meter_band_dscp_remark_t dscp_remark;
-    of_meter_band_experimenter_t experimenter;
-};
-
-/**
- * Inheritance super class for of_async_config_prop
- *
- * This class is the union of of_async_config_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_async_config_prop_u {
-    of_async_config_prop_header_t header; /* Generic instance */
-    of_async_config_prop_experimenter_master_t experimenter_master;
-    of_async_config_prop_experimenter_slave_t experimenter_slave;
-    of_async_config_prop_flow_removed_master_t flow_removed_master;
-    of_async_config_prop_flow_removed_slave_t flow_removed_slave;
-    of_async_config_prop_packet_in_master_t packet_in_master;
-    of_async_config_prop_packet_in_slave_t packet_in_slave;
-    of_async_config_prop_port_status_master_t port_status_master;
-    of_async_config_prop_port_status_slave_t port_status_slave;
-    of_async_config_prop_requestforward_master_t requestforward_master;
-    of_async_config_prop_requestforward_slave_t requestforward_slave;
-    of_async_config_prop_role_status_master_t role_status_master;
-    of_async_config_prop_role_status_slave_t role_status_slave;
-    of_async_config_prop_table_status_master_t table_status_master;
-    of_async_config_prop_table_status_slave_t table_status_slave;
-};
-
-/**
- * Inheritance super class for of_bundle_prop
- *
- * This class is the union of of_bundle_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_bundle_prop_u {
-    of_bundle_prop_header_t header; /* Generic instance */
-    of_bundle_prop_experimenter_t experimenter;
-};
-
-/**
- * Inheritance super class for of_action_id
- *
- * This class is the union of of_action_id classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_action_id_u {
-    of_action_id_header_t header; /* Generic instance */
-    of_action_id_bsn_t bsn;
-    of_action_id_bsn_checksum_t bsn_checksum;
-    of_action_id_bsn_gentable_t bsn_gentable;
-    of_action_id_bsn_mirror_t bsn_mirror;
-    of_action_id_bsn_set_tunnel_dst_t bsn_set_tunnel_dst;
-    of_action_id_copy_ttl_in_t copy_ttl_in;
-    of_action_id_copy_ttl_out_t copy_ttl_out;
-    of_action_id_dec_mpls_ttl_t dec_mpls_ttl;
-    of_action_id_dec_nw_ttl_t dec_nw_ttl;
-    of_action_id_experimenter_t experimenter;
-    of_action_id_group_t group;
-    of_action_id_nicira_t nicira;
-    of_action_id_nicira_dec_ttl_t nicira_dec_ttl;
-    of_action_id_output_t output;
-    of_action_id_pop_mpls_t pop_mpls;
-    of_action_id_pop_pbb_t pop_pbb;
-    of_action_id_pop_vlan_t pop_vlan;
-    of_action_id_push_mpls_t push_mpls;
-    of_action_id_push_pbb_t push_pbb;
-    of_action_id_push_vlan_t push_vlan;
-    of_action_id_set_field_t set_field;
-    of_action_id_set_mpls_ttl_t set_mpls_ttl;
-    of_action_id_set_nw_ttl_t set_nw_ttl;
-    of_action_id_set_queue_t set_queue;
-};
-
-/**
- * Inheritance super class for of_role_prop
- *
- * This class is the union of of_role_prop classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_role_prop_u {
-    of_role_prop_header_t header; /* Generic instance */
-    of_role_prop_experimenter_t experimenter;
-};
-
-/**
- * Inheritance super class for of_oxm
- *
- * This class is the union of of_oxm classes.  You can refer
- * to it untyped by refering to the member 'header' whose structure
- * is common across all sub-classes.
- */
-
-union of_oxm_u {
-    of_oxm_header_t header; /* Generic instance */
-    of_oxm_arp_op_t arp_op;
-    of_oxm_arp_op_masked_t arp_op_masked;
-    of_oxm_arp_sha_t arp_sha;
-    of_oxm_arp_sha_masked_t arp_sha_masked;
-    of_oxm_arp_spa_t arp_spa;
-    of_oxm_arp_spa_masked_t arp_spa_masked;
-    of_oxm_arp_tha_t arp_tha;
-    of_oxm_arp_tha_masked_t arp_tha_masked;
-    of_oxm_arp_tpa_t arp_tpa;
-    of_oxm_arp_tpa_masked_t arp_tpa_masked;
-    of_oxm_bsn_egr_port_group_id_t bsn_egr_port_group_id;
-    of_oxm_bsn_egr_port_group_id_masked_t bsn_egr_port_group_id_masked;
-    of_oxm_bsn_global_vrf_allowed_t bsn_global_vrf_allowed;
-    of_oxm_bsn_global_vrf_allowed_masked_t bsn_global_vrf_allowed_masked;
-    of_oxm_bsn_in_ports_128_t bsn_in_ports_128;
-    of_oxm_bsn_in_ports_128_masked_t bsn_in_ports_128_masked;
-    of_oxm_bsn_l2_cache_hit_t bsn_l2_cache_hit;
-    of_oxm_bsn_l2_cache_hit_masked_t bsn_l2_cache_hit_masked;
-    of_oxm_bsn_l3_dst_class_id_t bsn_l3_dst_class_id;
-    of_oxm_bsn_l3_dst_class_id_masked_t bsn_l3_dst_class_id_masked;
-    of_oxm_bsn_l3_interface_class_id_t bsn_l3_interface_class_id;
-    of_oxm_bsn_l3_interface_class_id_masked_t bsn_l3_interface_class_id_masked;
-    of_oxm_bsn_l3_src_class_id_t bsn_l3_src_class_id;
-    of_oxm_bsn_l3_src_class_id_masked_t bsn_l3_src_class_id_masked;
-    of_oxm_bsn_lag_id_t bsn_lag_id;
-    of_oxm_bsn_lag_id_masked_t bsn_lag_id_masked;
-    of_oxm_bsn_tcp_flags_t bsn_tcp_flags;
-    of_oxm_bsn_tcp_flags_masked_t bsn_tcp_flags_masked;
-    of_oxm_bsn_udf0_t bsn_udf0;
-    of_oxm_bsn_udf0_masked_t bsn_udf0_masked;
-    of_oxm_bsn_udf1_t bsn_udf1;
-    of_oxm_bsn_udf1_masked_t bsn_udf1_masked;
-    of_oxm_bsn_udf2_t bsn_udf2;
-    of_oxm_bsn_udf2_masked_t bsn_udf2_masked;
-    of_oxm_bsn_udf3_t bsn_udf3;
-    of_oxm_bsn_udf3_masked_t bsn_udf3_masked;
-    of_oxm_bsn_udf4_t bsn_udf4;
-    of_oxm_bsn_udf4_masked_t bsn_udf4_masked;
-    of_oxm_bsn_udf5_t bsn_udf5;
-    of_oxm_bsn_udf5_masked_t bsn_udf5_masked;
-    of_oxm_bsn_udf6_t bsn_udf6;
-    of_oxm_bsn_udf6_masked_t bsn_udf6_masked;
-    of_oxm_bsn_udf7_t bsn_udf7;
-    of_oxm_bsn_udf7_masked_t bsn_udf7_masked;
-    of_oxm_bsn_vlan_xlate_port_group_id_t bsn_vlan_xlate_port_group_id;
-    of_oxm_bsn_vlan_xlate_port_group_id_masked_t bsn_vlan_xlate_port_group_id_masked;
-    of_oxm_bsn_vrf_t bsn_vrf;
-    of_oxm_bsn_vrf_masked_t bsn_vrf_masked;
-    of_oxm_eth_dst_t eth_dst;
-    of_oxm_eth_dst_masked_t eth_dst_masked;
-    of_oxm_eth_src_t eth_src;
-    of_oxm_eth_src_masked_t eth_src_masked;
-    of_oxm_eth_type_t eth_type;
-    of_oxm_eth_type_masked_t eth_type_masked;
-    of_oxm_icmpv4_code_t icmpv4_code;
-    of_oxm_icmpv4_code_masked_t icmpv4_code_masked;
-    of_oxm_icmpv4_type_t icmpv4_type;
-    of_oxm_icmpv4_type_masked_t icmpv4_type_masked;
-    of_oxm_icmpv6_code_t icmpv6_code;
-    of_oxm_icmpv6_code_masked_t icmpv6_code_masked;
-    of_oxm_icmpv6_type_t icmpv6_type;
-    of_oxm_icmpv6_type_masked_t icmpv6_type_masked;
-    of_oxm_in_phy_port_t in_phy_port;
-    of_oxm_in_phy_port_masked_t in_phy_port_masked;
-    of_oxm_in_port_t in_port;
-    of_oxm_in_port_masked_t in_port_masked;
-    of_oxm_ip_dscp_t ip_dscp;
-    of_oxm_ip_dscp_masked_t ip_dscp_masked;
-    of_oxm_ip_ecn_t ip_ecn;
-    of_oxm_ip_ecn_masked_t ip_ecn_masked;
-    of_oxm_ip_proto_t ip_proto;
-    of_oxm_ip_proto_masked_t ip_proto_masked;
-    of_oxm_ipv4_dst_t ipv4_dst;
-    of_oxm_ipv4_dst_masked_t ipv4_dst_masked;
-    of_oxm_ipv4_src_t ipv4_src;
-    of_oxm_ipv4_src_masked_t ipv4_src_masked;
-    of_oxm_ipv6_dst_t ipv6_dst;
-    of_oxm_ipv6_dst_masked_t ipv6_dst_masked;
-    of_oxm_ipv6_exthdr_t ipv6_exthdr;
-    of_oxm_ipv6_exthdr_masked_t ipv6_exthdr_masked;
-    of_oxm_ipv6_flabel_t ipv6_flabel;
-    of_oxm_ipv6_flabel_masked_t ipv6_flabel_masked;
-    of_oxm_ipv6_nd_sll_t ipv6_nd_sll;
-    of_oxm_ipv6_nd_sll_masked_t ipv6_nd_sll_masked;
-    of_oxm_ipv6_nd_target_t ipv6_nd_target;
-    of_oxm_ipv6_nd_target_masked_t ipv6_nd_target_masked;
-    of_oxm_ipv6_nd_tll_t ipv6_nd_tll;
-    of_oxm_ipv6_nd_tll_masked_t ipv6_nd_tll_masked;
-    of_oxm_ipv6_src_t ipv6_src;
-    of_oxm_ipv6_src_masked_t ipv6_src_masked;
-    of_oxm_metadata_t metadata;
-    of_oxm_metadata_masked_t metadata_masked;
-    of_oxm_mpls_bos_t mpls_bos;
-    of_oxm_mpls_bos_masked_t mpls_bos_masked;
-    of_oxm_mpls_label_t mpls_label;
-    of_oxm_mpls_label_masked_t mpls_label_masked;
-    of_oxm_mpls_tc_t mpls_tc;
-    of_oxm_mpls_tc_masked_t mpls_tc_masked;
-    of_oxm_pbb_uca_t pbb_uca;
-    of_oxm_pbb_uca_masked_t pbb_uca_masked;
-    of_oxm_sctp_dst_t sctp_dst;
-    of_oxm_sctp_dst_masked_t sctp_dst_masked;
-    of_oxm_sctp_src_t sctp_src;
-    of_oxm_sctp_src_masked_t sctp_src_masked;
-    of_oxm_tcp_dst_t tcp_dst;
-    of_oxm_tcp_dst_masked_t tcp_dst_masked;
-    of_oxm_tcp_src_t tcp_src;
-    of_oxm_tcp_src_masked_t tcp_src_masked;
-    of_oxm_tunnel_id_t tunnel_id;
-    of_oxm_tunnel_id_masked_t tunnel_id_masked;
-    of_oxm_udp_dst_t udp_dst;
-    of_oxm_udp_dst_masked_t udp_dst_masked;
-    of_oxm_udp_src_t udp_src;
-    of_oxm_udp_src_masked_t udp_src_masked;
-    of_oxm_vlan_pcp_t vlan_pcp;
-    of_oxm_vlan_pcp_masked_t vlan_pcp_masked;
-    of_oxm_vlan_vid_t vlan_vid;
-    of_oxm_vlan_vid_masked_t vlan_vid_masked;
-};
 
 
 #endif

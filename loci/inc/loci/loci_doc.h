@@ -2655,8 +2655,8 @@ typedef struct of_bsn_virtual_port_create_reply_s of_bsn_virtual_port_create_rep
  *   are of type of_bsn_virtual_port_create_request_uint32_get_f and _set_f.
  *
  * @param vport_get/set ( OF_1_0 OF_1_1 OF_1_2 OF_1_3 OF_1_4).
- *   Accessors for vport, a variable of type of_bsn_vport_header.  Functions
- *   are of type of_bsn_virtual_port_create_request_of_bsn_vport_header_get_f and _set_f.
+ *   Accessors for vport, a variable of type of_bsn_vport.  Functions
+ *   are of type of_bsn_virtual_port_create_request_of_bsn_vport_get_f and _set_f.
  *
  */
 typedef struct of_bsn_virtual_port_create_request_s of_bsn_virtual_port_create_request_t;
@@ -5116,13 +5116,6 @@ typedef struct of_action_experimenter_s of_action_experimenter_t;
 typedef struct of_action_group_s of_action_group_t;
 
 /**
- * Structure for of_action_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_action_header_s of_action_header_t;
-
-/**
  * Structure for of_action_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5249,13 +5242,6 @@ typedef struct of_action_id_experimenter_s of_action_id_experimenter_t;
  *
  */
 typedef struct of_action_id_group_s of_action_id_group_t;
-
-/**
- * Structure for of_action_id_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_action_id_header_s of_action_id_header_t;
 
 /**
  * Structure for of_action_id_nicira object.  Get/set
@@ -5494,8 +5480,8 @@ typedef struct of_action_set_dl_src_s of_action_set_dl_src_t;
  * accessors available in all versions unless noted otherwise
  *
  * @param field_get/set 
- *   Accessors for field, a variable of type of_oxm_header.  Functions
- *   are of type of_action_set_field_of_oxm_header_get_f and _set_f.
+ *   Accessors for field, a variable of type of_oxm.  Functions
+ *   are of type of_action_set_field_of_oxm_get_f and _set_f.
  *
  */
 typedef struct of_action_set_field_s of_action_set_field_t;
@@ -5692,13 +5678,6 @@ typedef struct of_async_config_prop_flow_removed_master_s of_async_config_prop_f
  *
  */
 typedef struct of_async_config_prop_flow_removed_slave_s of_async_config_prop_flow_removed_slave_t;
-
-/**
- * Structure for of_async_config_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_async_config_prop_header_s of_async_config_prop_header_t;
 
 /**
  * Structure for of_async_config_prop_packet_in_master object.  Get/set
@@ -6290,13 +6269,6 @@ typedef struct of_bsn_tlv_external_mac_s of_bsn_tlv_external_mac_t;
 typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 
 /**
- * Structure for of_bsn_tlv_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_bsn_tlv_header_s of_bsn_tlv_header_t;
-
-/**
  * Structure for of_bsn_tlv_header_size object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6744,13 +6716,6 @@ typedef struct of_bsn_vlan_counter_stats_entry_s of_bsn_vlan_counter_stats_entry
 typedef struct of_bsn_vport_s of_bsn_vport_t;
 
 /**
- * Structure for of_bsn_vport_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_bsn_vport_header_s of_bsn_vport_header_t;
-
-/**
  * Structure for of_bsn_vport_l2gre object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6912,13 +6877,6 @@ typedef struct of_bundle_prop_s of_bundle_prop_t;
 typedef struct of_bundle_prop_experimenter_s of_bundle_prop_experimenter_t;
 
 /**
- * Structure for of_bundle_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_bundle_prop_header_s of_bundle_prop_header_t;
-
-/**
  * Structure for of_flow_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7041,13 +6999,6 @@ typedef struct of_group_stats_entry_s of_group_stats_entry_t;
  *
  */
 typedef struct of_hello_elem_s of_hello_elem_t;
-
-/**
- * Structure for of_hello_elem_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_hello_elem_header_s of_hello_elem_header_t;
 
 /**
  * Structure for of_hello_elem_versionbitmap object.  Get/set
@@ -7292,13 +7243,6 @@ typedef struct of_instruction_experimenter_s of_instruction_experimenter_t;
 typedef struct of_instruction_goto_table_s of_instruction_goto_table_t;
 
 /**
- * Structure for of_instruction_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_instruction_header_s of_instruction_header_t;
-
-/**
  * Structure for of_instruction_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7516,13 +7460,6 @@ typedef struct of_instruction_id_experimenter_s of_instruction_id_experimenter_t
  *
  */
 typedef struct of_instruction_id_goto_table_s of_instruction_id_goto_table_t;
-
-/**
- * Structure for of_instruction_id_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_instruction_id_header_s of_instruction_id_header_t;
 
 /**
  * Structure for of_instruction_id_meter object.  Get/set
@@ -7802,13 +7739,6 @@ typedef struct of_meter_band_dscp_remark_s of_meter_band_dscp_remark_t;
  *
  */
 typedef struct of_meter_band_experimenter_s of_meter_band_experimenter_t;
-
-/**
- * Structure for of_meter_band_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_meter_band_header_s of_meter_band_header_t;
 
 /**
  * Structure for of_meter_band_stats object.  Get/set
@@ -8614,13 +8544,6 @@ typedef struct of_oxm_eth_type_s of_oxm_eth_type_t;
  *
  */
 typedef struct of_oxm_eth_type_masked_s of_oxm_eth_type_masked_t;
-
-/**
- * Structure for of_oxm_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_oxm_header_s of_oxm_header_t;
 
 /**
  * Structure for of_oxm_icmpv4_code object.  Get/set
@@ -9582,13 +9505,6 @@ typedef struct of_port_desc_prop_ethernet_s of_port_desc_prop_ethernet_t;
 typedef struct of_port_desc_prop_experimenter_s of_port_desc_prop_experimenter_t;
 
 /**
- * Structure for of_port_desc_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_port_desc_prop_header_s of_port_desc_prop_header_t;
-
-/**
  * Structure for of_port_desc_prop_optical object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -9663,13 +9579,6 @@ typedef struct of_port_mod_prop_ethernet_s of_port_mod_prop_ethernet_t;
  *
  */
 typedef struct of_port_mod_prop_experimenter_s of_port_mod_prop_experimenter_t;
-
-/**
- * Structure for of_port_mod_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_port_mod_prop_header_s of_port_mod_prop_header_t;
 
 /**
  * Structure for of_port_mod_prop_optical object.  Get/set
@@ -9819,13 +9728,6 @@ typedef struct of_port_stats_prop_ethernet_s of_port_stats_prop_ethernet_t;
 typedef struct of_port_stats_prop_experimenter_s of_port_stats_prop_experimenter_t;
 
 /**
- * Structure for of_port_stats_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_port_stats_prop_header_s of_port_stats_prop_header_t;
-
-/**
  * Structure for of_port_stats_prop_optical object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -9918,13 +9820,6 @@ typedef struct of_queue_desc_prop_s of_queue_desc_prop_t;
 typedef struct of_queue_desc_prop_experimenter_s of_queue_desc_prop_experimenter_t;
 
 /**
- * Structure for of_queue_desc_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_queue_desc_prop_header_s of_queue_desc_prop_header_t;
-
-/**
  * Structure for of_queue_desc_prop_max_rate object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -9967,13 +9862,6 @@ typedef struct of_queue_prop_s of_queue_prop_t;
  *
  */
 typedef struct of_queue_prop_experimenter_s of_queue_prop_experimenter_t;
-
-/**
- * Structure for of_queue_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_queue_prop_header_s of_queue_prop_header_t;
 
 /**
  * Structure for of_queue_prop_max_rate object.  Get/set
@@ -10059,13 +9947,6 @@ typedef struct of_queue_stats_prop_s of_queue_stats_prop_t;
 typedef struct of_queue_stats_prop_experimenter_s of_queue_stats_prop_experimenter_t;
 
 /**
- * Structure for of_queue_stats_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_queue_stats_prop_header_s of_queue_stats_prop_header_t;
-
-/**
  * Structure for of_role_prop object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -10086,13 +9967,6 @@ typedef struct of_role_prop_s of_role_prop_t;
  *
  */
 typedef struct of_role_prop_experimenter_s of_role_prop_experimenter_t;
-
-/**
- * Structure for of_role_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_role_prop_header_s of_role_prop_header_t;
 
 /**
  * Structure for of_table_desc object.  Get/set
@@ -10197,13 +10071,6 @@ typedef struct of_table_feature_prop_experimenter_s of_table_feature_prop_experi
  *
  */
 typedef struct of_table_feature_prop_experimenter_miss_s of_table_feature_prop_experimenter_miss_t;
-
-/**
- * Structure for of_table_feature_prop_header object.  Get/set
- * accessors available in all versions unless noted otherwise
- *
- */
-typedef struct of_table_feature_prop_header_s of_table_feature_prop_header_t;
 
 /**
  * Structure for of_table_feature_prop_instructions object.  Get/set

@@ -2072,11 +2072,11 @@ of_action_set_field_init(of_object_t *obj,
 }
 
 /**
- * Bind an object of type of_oxm_header_t to the parent of type of_action_set_field for
+ * Bind an object of type of_oxm_t to the parent of type of_action_set_field for
  * member field
  * @param obj Pointer to an object of type of_action_set_field.
  * @param field Pointer to the child object of type
- * of_oxm_header_t to be filled out.
+ * of_oxm_t to be filled out.
  * \ingroup of_action_set_field
  *
  * The parameter field is filled out to point to the same underlying
@@ -2086,7 +2086,7 @@ of_action_set_field_init(of_object_t *obj,
 void
 of_action_set_field_field_bind(
     of_action_set_field_t *obj,
-    of_oxm_header_t *field)
+    of_oxm_t *field)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -2116,7 +2116,7 @@ of_action_set_field_field_bind(
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
-    of_oxm_header_init(field, obj->version, 0, 1);
+    of_oxm_init(field, obj->version, 0, 1);
     /* Attach to parent */
     of_object_attach(obj, field, offset, cur_len);
     of_object_wire_init(field, OF_OXM, 0);
@@ -2127,28 +2127,28 @@ of_action_set_field_field_bind(
 }
 
 /**
- * Create a copy of field into a new variable of type of_oxm_header_t from
+ * Create a copy of field into a new variable of type of_oxm_t from
  * a of_action_set_field instance.
  *
  * @param obj Pointer to the source of type of_action_set_field_t
- * @returns A pointer to a new instance of type of_oxm_header_t whose contents
+ * @returns A pointer to a new instance of type of_oxm_t whose contents
  * match that of field from source
  * @returns NULL if an error occurs
  */
-of_oxm_header_t *
+of_oxm_t *
 of_action_set_field_field_get(of_action_set_field_t *obj) {
-    of_oxm_header_t _field;
-    of_oxm_header_t *_field_ptr;
+    of_oxm_t _field;
+    of_oxm_t *_field_ptr;
 
     of_action_set_field_field_bind(obj, &_field);
-    _field_ptr = (of_oxm_header_t *)of_object_dup(&_field);
+    _field_ptr = (of_oxm_t *)of_object_dup(&_field);
     return _field_ptr;
 }
 
 /**
  * Set field in an object of type of_action_set_field.
  * @param obj Pointer to an object of type of_action_set_field.
- * @param field Pointer to the child of type of_oxm_header_t.
+ * @param field Pointer to the child of type of_oxm_t.
  *
  * If the child's wire buffer is the same as the parent's, then
  * nothing is done as the changes have already been registered in the
@@ -2158,7 +2158,7 @@ of_action_set_field_field_get(of_action_set_field_t *obj) {
 int WARN_UNUSED_RESULT
 of_action_set_field_field_set(
     of_action_set_field_t *obj,
-    of_oxm_header_t *field)
+    of_oxm_t *field)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */

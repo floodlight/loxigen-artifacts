@@ -40,10 +40,9 @@
  */
 
 int
-of_list_queue_desc_prop_first(of_list_queue_desc_prop_t *list, of_list_iter_t iter)
+of_list_queue_desc_prop_first(of_list_queue_desc_prop_t *list, of_object_t *obj)
 {
     int rv;
-    of_object_t *obj = iter.obj;
 
     of_queue_desc_prop_init(obj, list->version, -1, 1);
 
@@ -67,10 +66,9 @@ of_list_queue_desc_prop_first(of_list_queue_desc_prop_t *list, of_list_iter_t it
  */
 
 int
-of_list_queue_desc_prop_next(of_list_queue_desc_prop_t *list, of_list_iter_t iter)
+of_list_queue_desc_prop_next(of_list_queue_desc_prop_t *list, of_object_t *obj)
 {
     int rv;
-    of_object_t *obj = iter.obj;
 
     if ((rv = of_list_next(list, obj)) < 0) {
         return rv;
@@ -95,9 +93,9 @@ of_list_queue_desc_prop_next(of_list_queue_desc_prop_t *list, of_list_iter_t ite
  */
 
 int
-of_list_queue_desc_prop_append_bind(of_list_queue_desc_prop_t *list, of_list_iter_t iter)
+of_list_queue_desc_prop_append_bind(of_list_queue_desc_prop_t *list, of_object_t *obj)
 {
-    return of_list_append_bind(list, iter.obj);
+    return of_list_append_bind(list, obj);
 }
 
 /**
@@ -109,9 +107,9 @@ of_list_queue_desc_prop_append_bind(of_list_queue_desc_prop_t *list, of_list_ite
  */
 
 int
-of_list_queue_desc_prop_append(of_list_queue_desc_prop_t *list, of_list_iter_t iter)
+of_list_queue_desc_prop_append(of_list_queue_desc_prop_t *list, of_object_t *obj)
 {
-    return of_list_append(list, iter.obj);
+    return of_list_append(list, obj);
 }
 
 /**

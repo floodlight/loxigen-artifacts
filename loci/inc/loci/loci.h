@@ -35,7 +35,6 @@
  * Per-class static delete functions
  * Per-class, per-member accessor declarations
  * Per-class structure definitions
- * Generic union (inheritance) definitions
  * Pointer set function declarations
  * Some special case macros
  *

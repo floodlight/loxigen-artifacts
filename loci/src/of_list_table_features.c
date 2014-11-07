@@ -40,10 +40,9 @@
  */
 
 int
-of_list_table_features_first(of_list_table_features_t *list, of_list_iter_t iter)
+of_list_table_features_first(of_list_table_features_t *list, of_object_t *obj)
 {
     int rv;
-    of_object_t *obj = iter.obj;
 
     of_table_features_init(obj, list->version, -1, 1);
 
@@ -66,10 +65,9 @@ of_list_table_features_first(of_list_table_features_t *list, of_list_iter_t iter
  */
 
 int
-of_list_table_features_next(of_list_table_features_t *list, of_list_iter_t iter)
+of_list_table_features_next(of_list_table_features_t *list, of_object_t *obj)
 {
     int rv;
-    of_object_t *obj = iter.obj;
 
     if ((rv = of_list_next(list, obj)) < 0) {
         return rv;
@@ -93,9 +91,9 @@ of_list_table_features_next(of_list_table_features_t *list, of_list_iter_t iter)
  */
 
 int
-of_list_table_features_append_bind(of_list_table_features_t *list, of_list_iter_t iter)
+of_list_table_features_append_bind(of_list_table_features_t *list, of_object_t *obj)
 {
-    return of_list_append_bind(list, iter.obj);
+    return of_list_append_bind(list, obj);
 }
 
 /**
@@ -107,9 +105,9 @@ of_list_table_features_append_bind(of_list_table_features_t *list, of_list_iter_
  */
 
 int
-of_list_table_features_append(of_list_table_features_t *list, of_list_iter_t iter)
+of_list_table_features_append(of_list_table_features_t *list, of_object_t *obj)
 {
-    return of_list_append(list, iter.obj);
+    return of_list_append(list, obj);
 }
 
 /**
