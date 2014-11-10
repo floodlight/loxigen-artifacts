@@ -32,5 +32,6 @@ public enum OFPortConfig {
      NO_FLOOD,
      NO_FWD,
      NO_PACKET_IN,
-     BSN_MIRROR_DEST;
+     BSN_MIRROR_DEST,
+     BSN_BREAKOUT_ENABLED;
 }

@@ -38,6 +38,7 @@ public class OFPortConfigSerializerVer13 {
     public final static int NO_FWD_VAL = 0x20;
     public final static int NO_PACKET_IN_VAL = 0x40;
     public final static int BSN_MIRROR_DEST_VAL = (int) 0x80000000;
+    public final static int BSN_BREAKOUT_ENABLED_VAL = 0x40000000;
 
     public static Set<OFPortConfig> readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -69,6 +70,8 @@ public class OFPortConfigSerializerVer13 {
             set.add(OFPortConfig.NO_PACKET_IN);
         if((val & BSN_MIRROR_DEST_VAL) != 0)
             set.add(OFPortConfig.BSN_MIRROR_DEST);
+        if((val & BSN_BREAKOUT_ENABLED_VAL) != 0)
+            set.add(OFPortConfig.BSN_BREAKOUT_ENABLED);
         return Collections.unmodifiableSet(set);
     }
 
@@ -91,6 +94,9 @@ public class OFPortConfigSerializerVer13 {
                     break;
                 case BSN_MIRROR_DEST:
                     wireValue |= BSN_MIRROR_DEST_VAL;
+                    break;
+                case BSN_BREAKOUT_ENABLED:
+                    wireValue |= BSN_BREAKOUT_ENABLED_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFPortConfig in version 1.3: " + e);

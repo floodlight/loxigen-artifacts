@@ -1337,6 +1337,7 @@ enum_v4_ofp_port_config = {
     [4] = "OFPPC_NO_RECV",
     [32] = "OFPPC_NO_FWD",
     [64] = "OFPPC_NO_PACKET_IN",
+    [1073741824] = "OFPPC_BSN_BREAKOUT_ENABLED",
     [2147483648] = "OFPPC_BSN_MIRROR_DEST",
 }
 
@@ -1838,6 +1839,7 @@ enum_v4_ofp_port_features = {
     [8192] = "OFPPF_AUTONEG",
     [16384] = "OFPPF_PAUSE",
     [32768] = "OFPPF_PAUSE_ASYM",
+    [2147483648] = "OFPPF_BSN_BREAKOUT_CAPABLE",
 }
 
 enum_v4_ofp_bsn_udf_anchor = {
