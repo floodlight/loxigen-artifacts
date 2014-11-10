@@ -1850,6 +1850,7 @@ enum_v4_ofp_port_features = {
     [8192] = "OFPPF_AUTONEG",
     [16384] = "OFPPF_PAUSE",
     [32768] = "OFPPF_PAUSE_ASYM",
+    [2147483648] = "OFPPF_BSN_BREAKOUT_CAPABLE",
 }
 
 enum_v4_ofp_bsn_udf_anchor = {
