@@ -54,6 +54,18 @@ class OFBsnInterfaceVer11 implements OFBsnInterface {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnInterfaceVer11(MacAddress hwAddr, String name, IPv4Address ipv4Addr, IPv4Address ipv4Netmask) {
+        if(hwAddr == null) {
+            throw new NullPointerException("OFBsnInterfaceVer11: property hwAddr cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFBsnInterfaceVer11: property name cannot be null");
+        }
+        if(ipv4Addr == null) {
+            throw new NullPointerException("OFBsnInterfaceVer11: property ipv4Addr cannot be null");
+        }
+        if(ipv4Netmask == null) {
+            throw new NullPointerException("OFBsnInterfaceVer11: property ipv4Netmask cannot be null");
+        }
         this.hwAddr = hwAddr;
         this.name = name;
         this.ipv4Addr = ipv4Addr;

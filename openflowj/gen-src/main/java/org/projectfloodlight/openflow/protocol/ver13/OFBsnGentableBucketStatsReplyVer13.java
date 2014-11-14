@@ -55,6 +55,12 @@ class OFBsnGentableBucketStatsReplyVer13 implements OFBsnGentableBucketStatsRepl
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableBucketStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, List<OFBsnGentableBucketStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnGentableBucketStatsReplyVer13: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFBsnGentableBucketStatsReplyVer13: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

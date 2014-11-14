@@ -50,6 +50,12 @@ class OFOxmBsnTcpFlagsMaskedVer14 implements OFOxmBsnTcpFlagsMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnTcpFlagsMaskedVer14(U16 value, U16 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnTcpFlagsMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnTcpFlagsMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

@@ -48,6 +48,9 @@ class OFOxmIpv4DstVer13 implements OFOxmIpv4Dst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv4DstVer13(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv4DstVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

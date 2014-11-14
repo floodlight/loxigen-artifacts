@@ -63,6 +63,15 @@ class OFFeaturesReplyVer12 implements OFFeaturesReply {
 
     // package private constructor - used by readers, builders, and factory
     OFFeaturesReplyVer12(long xid, DatapathId datapathId, long nBuffers, short nTables, Set<OFCapabilities> capabilities, long reserved, List<OFPortDesc> ports) {
+        if(datapathId == null) {
+            throw new NullPointerException("OFFeaturesReplyVer12: property datapathId cannot be null");
+        }
+        if(capabilities == null) {
+            throw new NullPointerException("OFFeaturesReplyVer12: property capabilities cannot be null");
+        }
+        if(ports == null) {
+            throw new NullPointerException("OFFeaturesReplyVer12: property ports cannot be null");
+        }
         this.xid = xid;
         this.datapathId = datapathId;
         this.nBuffers = nBuffers;

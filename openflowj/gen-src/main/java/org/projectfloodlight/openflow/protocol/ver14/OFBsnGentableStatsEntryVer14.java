@@ -47,6 +47,12 @@ class OFBsnGentableStatsEntryVer14 implements OFBsnGentableStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableStatsEntryVer14(GenTableId tableId, long entryCount, U128 checksum) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableStatsEntryVer14: property tableId cannot be null");
+        }
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableStatsEntryVer14: property checksum cannot be null");
+        }
         this.tableId = tableId;
         this.entryCount = entryCount;
         this.checksum = checksum;

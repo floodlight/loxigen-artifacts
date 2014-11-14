@@ -48,6 +48,9 @@ class OFActionSetNwDstVer10 implements OFActionSetNwDst {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetNwDstVer10(IPv4Address nwAddr) {
+        if(nwAddr == null) {
+            throw new NullPointerException("OFActionSetNwDstVer10: property nwAddr cannot be null");
+        }
         this.nwAddr = nwAddr;
     }
 

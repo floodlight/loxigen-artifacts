@@ -55,6 +55,12 @@ class OFTableFeaturesStatsRequestVer14 implements OFTableFeaturesStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturesStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags, List<OFTableFeatures> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFTableFeaturesStatsRequestVer14: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFTableFeaturesStatsRequestVer14: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

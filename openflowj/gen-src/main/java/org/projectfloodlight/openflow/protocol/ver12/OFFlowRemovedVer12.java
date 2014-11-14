@@ -70,6 +70,21 @@ class OFFlowRemovedVer12 implements OFFlowRemoved {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowRemovedVer12(long xid, U64 cookie, int priority, short reason, TableId tableId, long durationSec, long durationNsec, int idleTimeout, int hardTimeout, U64 packetCount, U64 byteCount, Match match) {
+        if(cookie == null) {
+            throw new NullPointerException("OFFlowRemovedVer12: property cookie cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFFlowRemovedVer12: property tableId cannot be null");
+        }
+        if(packetCount == null) {
+            throw new NullPointerException("OFFlowRemovedVer12: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFFlowRemovedVer12: property byteCount cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFFlowRemovedVer12: property match cannot be null");
+        }
         this.xid = xid;
         this.cookie = cookie;
         this.priority = priority;

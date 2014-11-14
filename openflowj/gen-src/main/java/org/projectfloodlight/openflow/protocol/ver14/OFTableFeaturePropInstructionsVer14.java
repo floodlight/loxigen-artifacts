@@ -50,6 +50,9 @@ class OFTableFeaturePropInstructionsVer14 implements OFTableFeaturePropInstructi
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropInstructionsVer14(List<OFInstructionId> instructionIds) {
+        if(instructionIds == null) {
+            throw new NullPointerException("OFTableFeaturePropInstructionsVer14: property instructionIds cannot be null");
+        }
         this.instructionIds = instructionIds;
     }
 

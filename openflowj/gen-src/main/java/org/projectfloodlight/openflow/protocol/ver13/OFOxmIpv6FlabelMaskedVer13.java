@@ -50,6 +50,12 @@ class OFOxmIpv6FlabelMaskedVer13 implements OFOxmIpv6FlabelMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6FlabelMaskedVer13(IPv6FlowLabel value, IPv6FlowLabel mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6FlabelMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv6FlabelMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

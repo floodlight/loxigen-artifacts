@@ -59,6 +59,12 @@ class OFPortModVer13 implements OFPortMod {
 
     // package private constructor - used by readers, builders, and factory
     OFPortModVer13(long xid, OFPort portNo, MacAddress hwAddr, long config, long mask, long advertise) {
+        if(portNo == null) {
+            throw new NullPointerException("OFPortModVer13: property portNo cannot be null");
+        }
+        if(hwAddr == null) {
+            throw new NullPointerException("OFPortModVer13: property hwAddr cannot be null");
+        }
         this.xid = xid;
         this.portNo = portNo;
         this.hwAddr = hwAddr;

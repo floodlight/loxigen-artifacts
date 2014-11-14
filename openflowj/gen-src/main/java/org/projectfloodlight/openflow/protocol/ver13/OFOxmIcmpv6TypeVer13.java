@@ -48,6 +48,9 @@ class OFOxmIcmpv6TypeVer13 implements OFOxmIcmpv6Type {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIcmpv6TypeVer13(U8 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIcmpv6TypeVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

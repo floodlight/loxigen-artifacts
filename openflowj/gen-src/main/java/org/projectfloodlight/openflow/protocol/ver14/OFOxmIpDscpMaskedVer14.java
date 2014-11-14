@@ -50,6 +50,12 @@ class OFOxmIpDscpMaskedVer14 implements OFOxmIpDscpMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpDscpMaskedVer14(IpDscp value, IpDscp mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpDscpMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpDscpMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

@@ -47,6 +47,12 @@ class OFPortModFailedErrorMsgVer14 implements OFPortModFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFPortModFailedErrorMsgVer14(long xid, OFPortModFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFPortModFailedErrorMsgVer14: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFPortModFailedErrorMsgVer14: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

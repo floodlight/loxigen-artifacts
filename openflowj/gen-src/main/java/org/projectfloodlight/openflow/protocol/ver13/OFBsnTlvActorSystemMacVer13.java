@@ -48,6 +48,9 @@ class OFBsnTlvActorSystemMacVer13 implements OFBsnTlvActorSystemMac {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvActorSystemMacVer13(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvActorSystemMacVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

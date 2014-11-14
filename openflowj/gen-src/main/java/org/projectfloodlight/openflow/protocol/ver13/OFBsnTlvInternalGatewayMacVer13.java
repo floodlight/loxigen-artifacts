@@ -48,6 +48,9 @@ class OFBsnTlvInternalGatewayMacVer13 implements OFBsnTlvInternalGatewayMac {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvInternalGatewayMacVer13(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvInternalGatewayMacVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

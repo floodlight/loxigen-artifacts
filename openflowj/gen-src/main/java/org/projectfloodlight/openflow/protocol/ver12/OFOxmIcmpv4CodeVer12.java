@@ -48,6 +48,9 @@ class OFOxmIcmpv4CodeVer12 implements OFOxmIcmpv4Code {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIcmpv4CodeVer12(ICMPv4Code value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIcmpv4CodeVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

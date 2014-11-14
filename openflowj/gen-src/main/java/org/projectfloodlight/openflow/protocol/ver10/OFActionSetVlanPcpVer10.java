@@ -48,6 +48,9 @@ class OFActionSetVlanPcpVer10 implements OFActionSetVlanPcp {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetVlanPcpVer10(VlanPcp vlanPcp) {
+        if(vlanPcp == null) {
+            throw new NullPointerException("OFActionSetVlanPcpVer10: property vlanPcp cannot be null");
+        }
         this.vlanPcp = vlanPcp;
     }
 

@@ -48,6 +48,9 @@ class OFOxmIcmpv4TypeVer14 implements OFOxmIcmpv4Type {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIcmpv4TypeVer14(ICMPv4Type value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIcmpv4TypeVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

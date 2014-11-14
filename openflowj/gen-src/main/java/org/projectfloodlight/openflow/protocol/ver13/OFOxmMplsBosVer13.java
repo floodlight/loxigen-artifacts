@@ -48,6 +48,9 @@ class OFOxmMplsBosVer13 implements OFOxmMplsBos {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmMplsBosVer13(OFBooleanValue value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmMplsBosVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

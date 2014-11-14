@@ -48,6 +48,15 @@ class OFBsnRoleStatusVer13 implements OFBsnRoleStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnRoleStatusVer13(long xid, OFControllerRole role, OFBsnControllerRoleReason reason, U64 generationId) {
+        if(role == null) {
+            throw new NullPointerException("OFBsnRoleStatusVer13: property role cannot be null");
+        }
+        if(reason == null) {
+            throw new NullPointerException("OFBsnRoleStatusVer13: property reason cannot be null");
+        }
+        if(generationId == null) {
+            throw new NullPointerException("OFBsnRoleStatusVer13: property generationId cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.reason = reason;

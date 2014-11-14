@@ -50,6 +50,9 @@ class OFInstructionApplyActionsVer11 implements OFInstructionApplyActions {
 
     // package private constructor - used by readers, builders, and factory
     OFInstructionApplyActionsVer11(List<OFAction> actions) {
+        if(actions == null) {
+            throw new NullPointerException("OFInstructionApplyActionsVer11: property actions cannot be null");
+        }
         this.actions = actions;
     }
 

@@ -46,6 +46,12 @@ class OFPortStatusVer13 implements OFPortStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatusVer13(long xid, OFPortReason reason, OFPortDesc desc) {
+        if(reason == null) {
+            throw new NullPointerException("OFPortStatusVer13: property reason cannot be null");
+        }
+        if(desc == null) {
+            throw new NullPointerException("OFPortStatusVer13: property desc cannot be null");
+        }
         this.xid = xid;
         this.reason = reason;
         this.desc = desc;

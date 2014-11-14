@@ -57,6 +57,12 @@ class OFBsnPduTxRequestVer11 implements OFBsnPduTxRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnPduTxRequestVer11(long xid, long txIntervalMs, OFPort portNo, short slotNum, byte[] data) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnPduTxRequestVer11: property portNo cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBsnPduTxRequestVer11: property data cannot be null");
+        }
         this.xid = xid;
         this.txIntervalMs = txIntervalMs;
         this.portNo = portNo;

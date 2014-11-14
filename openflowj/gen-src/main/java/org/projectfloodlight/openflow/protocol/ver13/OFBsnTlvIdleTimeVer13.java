@@ -48,6 +48,9 @@ class OFBsnTlvIdleTimeVer13 implements OFBsnTlvIdleTime {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIdleTimeVer13(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvIdleTimeVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

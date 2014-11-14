@@ -50,6 +50,12 @@ class OFOxmIpEcnMaskedVer14 implements OFOxmIpEcnMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpEcnMaskedVer14(IpEcn value, IpEcn mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpEcnMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpEcnMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

@@ -50,6 +50,9 @@ class OFTableFeaturePropWriteActionsMissVer13 implements OFTableFeaturePropWrite
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropWriteActionsMissVer13(List<OFActionId> actionIds) {
+        if(actionIds == null) {
+            throw new NullPointerException("OFTableFeaturePropWriteActionsMissVer13: property actionIds cannot be null");
+        }
         this.actionIds = actionIds;
     }
 

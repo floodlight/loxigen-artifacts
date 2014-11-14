@@ -30,9 +30,9 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    long getBundleId();
+    BundleId getBundleId();
     Set<OFBundleFlags> getFlags();
-    byte[] getData();
+    OFMessage getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -43,11 +43,11 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        long getBundleId();
-        Builder setBundleId(long bundleId);
+        BundleId getBundleId();
+        Builder setBundleId(BundleId bundleId);
         Set<OFBundleFlags> getFlags();
         Builder setFlags(Set<OFBundleFlags> flags);
-        byte[] getData();
-        Builder setData(byte[] data);
+        OFMessage getData();
+        Builder setData(OFMessage data);
     }
 }

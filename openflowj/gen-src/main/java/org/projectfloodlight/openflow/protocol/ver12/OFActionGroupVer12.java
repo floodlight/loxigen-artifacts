@@ -48,6 +48,9 @@ class OFActionGroupVer12 implements OFActionGroup {
 
     // package private constructor - used by readers, builders, and factory
     OFActionGroupVer12(OFGroup group) {
+        if(group == null) {
+            throw new NullPointerException("OFActionGroupVer12: property group cannot be null");
+        }
         this.group = group;
     }
 

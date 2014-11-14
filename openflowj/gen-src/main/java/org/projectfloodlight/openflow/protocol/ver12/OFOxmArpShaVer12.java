@@ -48,6 +48,9 @@ class OFOxmArpShaVer12 implements OFOxmArpSha {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpShaVer12(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpShaVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

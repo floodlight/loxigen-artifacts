@@ -48,6 +48,9 @@ class OFOxmUdpSrcVer13 implements OFOxmUdpSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmUdpSrcVer13(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmUdpSrcVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

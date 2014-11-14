@@ -52,6 +52,9 @@ class OFActionBsnGentableVer14 implements OFActionBsnGentable {
 
     // package private constructor - used by readers, builders, and factory
     OFActionBsnGentableVer14(long tableId, List<OFBsnTlv> key) {
+        if(key == null) {
+            throw new NullPointerException("OFActionBsnGentableVer14: property key cannot be null");
+        }
         this.tableId = tableId;
         this.key = key;
     }

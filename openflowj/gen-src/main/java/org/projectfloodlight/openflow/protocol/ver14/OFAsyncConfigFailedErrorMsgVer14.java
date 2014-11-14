@@ -47,6 +47,12 @@ class OFAsyncConfigFailedErrorMsgVer14 implements OFAsyncConfigFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncConfigFailedErrorMsgVer14(long xid, OFAsyncConfigFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFAsyncConfigFailedErrorMsgVer14: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFAsyncConfigFailedErrorMsgVer14: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

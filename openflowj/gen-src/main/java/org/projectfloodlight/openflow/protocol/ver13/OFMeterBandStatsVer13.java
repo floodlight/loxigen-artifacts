@@ -50,6 +50,12 @@ class OFMeterBandStatsVer13 implements OFMeterBandStats {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterBandStatsVer13(U64 packetBandCount, U64 byteBandCount) {
+        if(packetBandCount == null) {
+            throw new NullPointerException("OFMeterBandStatsVer13: property packetBandCount cannot be null");
+        }
+        if(byteBandCount == null) {
+            throw new NullPointerException("OFMeterBandStatsVer13: property byteBandCount cannot be null");
+        }
         this.packetBandCount = packetBandCount;
         this.byteBandCount = byteBandCount;
     }

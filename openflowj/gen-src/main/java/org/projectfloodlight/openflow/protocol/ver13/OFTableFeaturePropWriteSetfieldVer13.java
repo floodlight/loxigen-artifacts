@@ -50,6 +50,9 @@ class OFTableFeaturePropWriteSetfieldVer13 implements OFTableFeaturePropWriteSet
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropWriteSetfieldVer13(List<U32> oxmIds) {
+        if(oxmIds == null) {
+            throw new NullPointerException("OFTableFeaturePropWriteSetfieldVer13: property oxmIds cannot be null");
+        }
         this.oxmIds = oxmIds;
     }
 

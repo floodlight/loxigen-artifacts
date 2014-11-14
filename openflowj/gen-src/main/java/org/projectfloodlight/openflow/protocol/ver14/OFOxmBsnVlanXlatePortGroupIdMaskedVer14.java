@@ -50,6 +50,12 @@ class OFOxmBsnVlanXlatePortGroupIdMaskedVer14 implements OFOxmBsnVlanXlatePortGr
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnVlanXlatePortGroupIdMaskedVer14(ClassId value, ClassId mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnVlanXlatePortGroupIdMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnVlanXlatePortGroupIdMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

@@ -54,6 +54,15 @@ class OFBsnGentableEntryDescStatsEntryVer14 implements OFBsnGentableEntryDescSta
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableEntryDescStatsEntryVer14(U128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsEntryVer14: property checksum cannot be null");
+        }
+        if(key == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsEntryVer14: property key cannot be null");
+        }
+        if(value == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsEntryVer14: property value cannot be null");
+        }
         this.checksum = checksum;
         this.key = key;
         this.value = value;

@@ -48,6 +48,9 @@ class OFOxmInPortVer14 implements OFOxmInPort {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmInPortVer14(OFPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmInPortVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

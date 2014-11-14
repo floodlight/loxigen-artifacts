@@ -48,6 +48,9 @@ class OFOxmMplsTcVer12 implements OFOxmMplsTc {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmMplsTcVer12(U8 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmMplsTcVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

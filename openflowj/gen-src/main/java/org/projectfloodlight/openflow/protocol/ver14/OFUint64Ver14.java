@@ -48,6 +48,9 @@ class OFUint64Ver14 implements OFUint64 {
 
     // package private constructor - used by readers, builders, and factory
     OFUint64Ver14(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFUint64Ver14: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -48,6 +48,12 @@ class OFMeterFeaturesStatsReplyVer14 implements OFMeterFeaturesStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterFeaturesStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, OFMeterFeatures features) {
+        if(flags == null) {
+            throw new NullPointerException("OFMeterFeaturesStatsReplyVer14: property flags cannot be null");
+        }
+        if(features == null) {
+            throw new NullPointerException("OFMeterFeaturesStatsReplyVer14: property features cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.features = features;

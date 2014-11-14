@@ -52,6 +52,12 @@ class OFBsnGentableEntryStatsEntryVer13 implements OFBsnGentableEntryStatsEntry 
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableEntryStatsEntryVer13(List<OFBsnTlv> key, List<OFBsnTlv> stats) {
+        if(key == null) {
+            throw new NullPointerException("OFBsnGentableEntryStatsEntryVer13: property key cannot be null");
+        }
+        if(stats == null) {
+            throw new NullPointerException("OFBsnGentableEntryStatsEntryVer13: property stats cannot be null");
+        }
         this.key = key;
         this.stats = stats;
     }

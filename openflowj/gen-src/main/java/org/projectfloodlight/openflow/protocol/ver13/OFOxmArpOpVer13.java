@@ -48,6 +48,9 @@ class OFOxmArpOpVer13 implements OFOxmArpOp {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpOpVer13(ArpOpcode value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpOpVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

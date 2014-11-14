@@ -52,6 +52,9 @@ class OFBsnGetInterfacesReplyVer12 implements OFBsnGetInterfacesReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetInterfacesReplyVer12(long xid, List<OFBsnInterface> interfaces) {
+        if(interfaces == null) {
+            throw new NullPointerException("OFBsnGetInterfacesReplyVer12: property interfaces cannot be null");
+        }
         this.xid = xid;
         this.interfaces = interfaces;
     }

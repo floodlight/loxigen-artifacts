@@ -48,6 +48,9 @@ class OFBsnTlvRequestPacketsVer14 implements OFBsnTlvRequestPackets {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvRequestPacketsVer14(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvRequestPacketsVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

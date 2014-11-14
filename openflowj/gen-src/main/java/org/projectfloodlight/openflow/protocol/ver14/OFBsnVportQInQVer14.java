@@ -58,6 +58,9 @@ class OFBsnVportQInQVer14 implements OFBsnVportQInQ {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVportQInQVer14(long portNo, int ingressTpid, int ingressVlanId, int egressTpid, int egressVlanId, String ifName) {
+        if(ifName == null) {
+            throw new NullPointerException("OFBsnVportQInQVer14: property ifName cannot be null");
+        }
         this.portNo = portNo;
         this.ingressTpid = ingressTpid;
         this.ingressVlanId = ingressVlanId;

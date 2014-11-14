@@ -49,6 +49,9 @@ class OFBsnTlvNameVer13 implements OFBsnTlvName {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvNameVer13(byte[] value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvNameVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

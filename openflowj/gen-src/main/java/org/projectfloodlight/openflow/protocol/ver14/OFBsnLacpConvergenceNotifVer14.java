@@ -72,6 +72,15 @@ class OFBsnLacpConvergenceNotifVer14 implements OFBsnLacpConvergenceNotif {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLacpConvergenceNotifVer14(long xid, short convergenceStatus, OFPort portNo, int actorSysPriority, MacAddress actorSysMac, int actorPortPriority, int actorPortNum, int actorKey, int partnerSysPriority, MacAddress partnerSysMac, int partnerPortPriority, int partnerPortNum, int partnerKey) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnLacpConvergenceNotifVer14: property portNo cannot be null");
+        }
+        if(actorSysMac == null) {
+            throw new NullPointerException("OFBsnLacpConvergenceNotifVer14: property actorSysMac cannot be null");
+        }
+        if(partnerSysMac == null) {
+            throw new NullPointerException("OFBsnLacpConvergenceNotifVer14: property partnerSysMac cannot be null");
+        }
         this.xid = xid;
         this.convergenceStatus = convergenceStatus;
         this.portNo = portNo;

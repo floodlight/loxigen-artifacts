@@ -53,6 +53,12 @@ class OFPortStatsRequestVer10 implements OFPortStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsRequestVer10(long xid, Set<OFStatsRequestFlags> flags, OFPort portNo) {
+        if(flags == null) {
+            throw new NullPointerException("OFPortStatsRequestVer10: property flags cannot be null");
+        }
+        if(portNo == null) {
+            throw new NullPointerException("OFPortStatsRequestVer10: property portNo cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.portNo = portNo;

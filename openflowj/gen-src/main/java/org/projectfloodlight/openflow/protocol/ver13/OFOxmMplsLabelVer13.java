@@ -48,6 +48,9 @@ class OFOxmMplsLabelVer13 implements OFOxmMplsLabel {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmMplsLabelVer13(U32 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmMplsLabelVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

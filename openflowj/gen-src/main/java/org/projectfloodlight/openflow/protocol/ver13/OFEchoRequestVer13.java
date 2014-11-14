@@ -51,6 +51,9 @@ class OFEchoRequestVer13 implements OFEchoRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFEchoRequestVer13(long xid, byte[] data) {
+        if(data == null) {
+            throw new NullPointerException("OFEchoRequestVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.data = data;
     }

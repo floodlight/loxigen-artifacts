@@ -55,6 +55,12 @@ class OFBsnLacpStatsReplyVer14 implements OFBsnLacpStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLacpStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, List<OFBsnLacpStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnLacpStatsReplyVer14: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFBsnLacpStatsReplyVer14: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

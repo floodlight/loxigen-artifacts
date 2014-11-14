@@ -48,6 +48,9 @@ class OFOxmIpv4SrcVer12 implements OFOxmIpv4Src {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv4SrcVer12(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv4SrcVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

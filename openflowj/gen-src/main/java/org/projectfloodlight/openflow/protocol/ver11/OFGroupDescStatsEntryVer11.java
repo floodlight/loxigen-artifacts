@@ -49,6 +49,15 @@ class OFGroupDescStatsEntryVer11 implements OFGroupDescStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupDescStatsEntryVer11(OFGroupType groupType, OFGroup group, List<OFBucket> buckets) {
+        if(groupType == null) {
+            throw new NullPointerException("OFGroupDescStatsEntryVer11: property groupType cannot be null");
+        }
+        if(group == null) {
+            throw new NullPointerException("OFGroupDescStatsEntryVer11: property group cannot be null");
+        }
+        if(buckets == null) {
+            throw new NullPointerException("OFGroupDescStatsEntryVer11: property buckets cannot be null");
+        }
         this.groupType = groupType;
         this.group = group;
         this.buckets = buckets;

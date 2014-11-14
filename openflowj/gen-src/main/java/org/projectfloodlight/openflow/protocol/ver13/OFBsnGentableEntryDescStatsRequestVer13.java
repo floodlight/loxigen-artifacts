@@ -52,6 +52,18 @@ class OFBsnGentableEntryDescStatsRequestVer13 implements OFBsnGentableEntryDescS
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableEntryDescStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, GenTableId tableId, U128 checksum, U128 checksumMask) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsRequestVer13: property flags cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsRequestVer13: property tableId cannot be null");
+        }
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsRequestVer13: property checksum cannot be null");
+        }
+        if(checksumMask == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsRequestVer13: property checksumMask cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;

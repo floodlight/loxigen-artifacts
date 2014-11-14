@@ -54,6 +54,9 @@ class OFExperimenterErrorMsgVer13 implements OFExperimenterErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFExperimenterErrorMsgVer13(long xid, int subtype, long experimenter, OFErrorCauseData data) {
+        if(data == null) {
+            throw new NullPointerException("OFExperimenterErrorMsgVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.subtype = subtype;
         this.experimenter = experimenter;

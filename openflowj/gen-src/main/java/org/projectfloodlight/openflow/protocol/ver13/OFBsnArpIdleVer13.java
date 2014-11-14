@@ -52,6 +52,9 @@ class OFBsnArpIdleVer13 implements OFBsnArpIdle {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnArpIdleVer13(long xid, int vlanVid, IPv4Address ipv4Addr) {
+        if(ipv4Addr == null) {
+            throw new NullPointerException("OFBsnArpIdleVer13: property ipv4Addr cannot be null");
+        }
         this.xid = xid;
         this.vlanVid = vlanVid;
         this.ipv4Addr = ipv4Addr;

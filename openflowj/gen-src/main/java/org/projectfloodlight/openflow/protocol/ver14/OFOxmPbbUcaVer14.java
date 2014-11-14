@@ -48,6 +48,9 @@ class OFOxmPbbUcaVer14 implements OFOxmPbbUca {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmPbbUcaVer14(OFBooleanValue value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmPbbUcaVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

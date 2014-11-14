@@ -54,6 +54,18 @@ class OFPacketInVer10 implements OFPacketIn {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketInVer10(long xid, OFBufferId bufferId, int totalLen, OFPort inPort, OFPacketInReason reason, byte[] data) {
+        if(bufferId == null) {
+            throw new NullPointerException("OFPacketInVer10: property bufferId cannot be null");
+        }
+        if(inPort == null) {
+            throw new NullPointerException("OFPacketInVer10: property inPort cannot be null");
+        }
+        if(reason == null) {
+            throw new NullPointerException("OFPacketInVer10: property reason cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFPacketInVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.bufferId = bufferId;
         this.totalLen = totalLen;

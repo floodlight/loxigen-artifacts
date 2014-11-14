@@ -47,6 +47,12 @@ class OFBadActionErrorMsgVer12 implements OFBadActionErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFBadActionErrorMsgVer12(long xid, OFBadActionCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFBadActionErrorMsgVer12: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBadActionErrorMsgVer12: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

@@ -43,6 +43,9 @@ class OFBsnTlvUdfAnchorVer14 implements OFBsnTlvUdfAnchor {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvUdfAnchorVer14(OFBsnUdfAnchor value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvUdfAnchorVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

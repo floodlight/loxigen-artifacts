@@ -51,6 +51,9 @@ class OFBsnImageDescStatsRequestVer14 implements OFBsnImageDescStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnImageDescStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnImageDescStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

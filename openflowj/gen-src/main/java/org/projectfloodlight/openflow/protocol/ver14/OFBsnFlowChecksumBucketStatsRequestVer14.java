@@ -53,6 +53,12 @@ class OFBsnFlowChecksumBucketStatsRequestVer14 implements OFBsnFlowChecksumBucke
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowChecksumBucketStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags, TableId tableId) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnFlowChecksumBucketStatsRequestVer14: property flags cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnFlowChecksumBucketStatsRequestVer14: property tableId cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;

@@ -56,6 +56,15 @@ class OFBucketVer11 implements OFBucket {
 
     // package private constructor - used by readers, builders, and factory
     OFBucketVer11(int weight, OFPort watchPort, OFGroup watchGroup, List<OFAction> actions) {
+        if(watchPort == null) {
+            throw new NullPointerException("OFBucketVer11: property watchPort cannot be null");
+        }
+        if(watchGroup == null) {
+            throw new NullPointerException("OFBucketVer11: property watchGroup cannot be null");
+        }
+        if(actions == null) {
+            throw new NullPointerException("OFBucketVer11: property actions cannot be null");
+        }
         this.weight = weight;
         this.watchPort = watchPort;
         this.watchGroup = watchGroup;

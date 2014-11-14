@@ -50,6 +50,9 @@ class OFHelloElemVersionbitmapVer14 implements OFHelloElemVersionbitmap {
 
     // package private constructor - used by readers, builders, and factory
     OFHelloElemVersionbitmapVer14(List<U32> bitmaps) {
+        if(bitmaps == null) {
+            throw new NullPointerException("OFHelloElemVersionbitmapVer14: property bitmaps cannot be null");
+        }
         this.bitmaps = bitmaps;
     }
 

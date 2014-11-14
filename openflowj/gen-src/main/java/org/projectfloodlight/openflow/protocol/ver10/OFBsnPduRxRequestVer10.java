@@ -57,6 +57,12 @@ class OFBsnPduRxRequestVer10 implements OFBsnPduRxRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnPduRxRequestVer10(long xid, long timeoutMs, OFPort portNo, short slotNum, byte[] data) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnPduRxRequestVer10: property portNo cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBsnPduRxRequestVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.timeoutMs = timeoutMs;
         this.portNo = portNo;

@@ -57,6 +57,18 @@ class OFQueueStatsEntryVer12 implements OFQueueStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueStatsEntryVer12(OFPort portNo, long queueId, U64 txBytes, U64 txPackets, U64 txErrors) {
+        if(portNo == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer12: property portNo cannot be null");
+        }
+        if(txBytes == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer12: property txBytes cannot be null");
+        }
+        if(txPackets == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer12: property txPackets cannot be null");
+        }
+        if(txErrors == null) {
+            throw new NullPointerException("OFQueueStatsEntryVer12: property txErrors cannot be null");
+        }
         this.portNo = portNo;
         this.queueId = queueId;
         this.txBytes = txBytes;

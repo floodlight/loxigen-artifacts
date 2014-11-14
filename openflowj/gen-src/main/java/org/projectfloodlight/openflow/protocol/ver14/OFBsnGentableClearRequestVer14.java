@@ -49,6 +49,15 @@ class OFBsnGentableClearRequestVer14 implements OFBsnGentableClearRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableClearRequestVer14(long xid, GenTableId tableId, U128 checksum, U128 checksumMask) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableClearRequestVer14: property tableId cannot be null");
+        }
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableClearRequestVer14: property checksum cannot be null");
+        }
+        if(checksumMask == null) {
+            throw new NullPointerException("OFBsnGentableClearRequestVer14: property checksumMask cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.checksum = checksum;

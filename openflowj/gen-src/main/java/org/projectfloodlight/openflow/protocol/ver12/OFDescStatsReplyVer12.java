@@ -61,6 +61,24 @@ class OFDescStatsReplyVer12 implements OFDescStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFDescStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, String mfrDesc, String hwDesc, String swDesc, String serialNum, String dpDesc) {
+        if(flags == null) {
+            throw new NullPointerException("OFDescStatsReplyVer12: property flags cannot be null");
+        }
+        if(mfrDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer12: property mfrDesc cannot be null");
+        }
+        if(hwDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer12: property hwDesc cannot be null");
+        }
+        if(swDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer12: property swDesc cannot be null");
+        }
+        if(serialNum == null) {
+            throw new NullPointerException("OFDescStatsReplyVer12: property serialNum cannot be null");
+        }
+        if(dpDesc == null) {
+            throw new NullPointerException("OFDescStatsReplyVer12: property dpDesc cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.mfrDesc = mfrDesc;

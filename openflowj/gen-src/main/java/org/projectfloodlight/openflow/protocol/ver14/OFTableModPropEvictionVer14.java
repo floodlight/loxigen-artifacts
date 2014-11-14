@@ -49,6 +49,9 @@ class OFTableModPropEvictionVer14 implements OFTableModPropEviction {
 
     // package private constructor - used by readers, builders, and factory
     OFTableModPropEvictionVer14(Set<OFTableModPropEvictionFlag> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFTableModPropEvictionVer14: property flags cannot be null");
+        }
         this.flags = flags;
     }
 

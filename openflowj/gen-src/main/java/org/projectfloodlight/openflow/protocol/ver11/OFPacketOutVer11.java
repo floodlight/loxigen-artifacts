@@ -59,6 +59,18 @@ class OFPacketOutVer11 implements OFPacketOut {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketOutVer11(long xid, OFBufferId bufferId, OFPort inPort, List<OFAction> actions, byte[] data) {
+        if(bufferId == null) {
+            throw new NullPointerException("OFPacketOutVer11: property bufferId cannot be null");
+        }
+        if(inPort == null) {
+            throw new NullPointerException("OFPacketOutVer11: property inPort cannot be null");
+        }
+        if(actions == null) {
+            throw new NullPointerException("OFPacketOutVer11: property actions cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFPacketOutVer11: property data cannot be null");
+        }
         this.xid = xid;
         this.bufferId = bufferId;
         this.inPort = inPort;

@@ -47,6 +47,12 @@ class OFHelloFailedErrorMsgVer13 implements OFHelloFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFHelloFailedErrorMsgVer13(long xid, OFHelloFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFHelloFailedErrorMsgVer13: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFHelloFailedErrorMsgVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

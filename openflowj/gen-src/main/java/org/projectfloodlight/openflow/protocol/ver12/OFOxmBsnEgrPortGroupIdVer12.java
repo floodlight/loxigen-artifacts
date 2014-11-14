@@ -48,6 +48,9 @@ class OFOxmBsnEgrPortGroupIdVer12 implements OFOxmBsnEgrPortGroupId {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnEgrPortGroupIdVer12(ClassId value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnEgrPortGroupIdVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

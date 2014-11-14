@@ -48,6 +48,9 @@ class OFOxmBsnVrfVer13 implements OFOxmBsnVrf {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnVrfVer13(VRF value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnVrfVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

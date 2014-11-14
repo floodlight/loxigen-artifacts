@@ -50,6 +50,9 @@ class OFTableFeaturePropApplyActionsMissVer14 implements OFTableFeaturePropApply
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropApplyActionsMissVer14(List<OFActionId> actionIds) {
+        if(actionIds == null) {
+            throw new NullPointerException("OFTableFeaturePropApplyActionsMissVer14: property actionIds cannot be null");
+        }
         this.actionIds = actionIds;
     }
 

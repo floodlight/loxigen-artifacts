@@ -50,6 +50,12 @@ class OFOxmVlanVidMaskedVer14 implements OFOxmVlanVidMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmVlanVidMaskedVer14(OFVlanVidMatch value, OFVlanVidMatch mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmVlanVidMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmVlanVidMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

@@ -47,6 +47,12 @@ class OFBadMatchErrorMsgVer12 implements OFBadMatchErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFBadMatchErrorMsgVer12(long xid, OFBadMatchCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFBadMatchErrorMsgVer12: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBadMatchErrorMsgVer12: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

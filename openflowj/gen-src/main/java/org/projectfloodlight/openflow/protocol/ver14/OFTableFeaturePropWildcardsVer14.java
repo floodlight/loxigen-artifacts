@@ -50,6 +50,9 @@ class OFTableFeaturePropWildcardsVer14 implements OFTableFeaturePropWildcards {
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropWildcardsVer14(List<U32> oxmIds) {
+        if(oxmIds == null) {
+            throw new NullPointerException("OFTableFeaturePropWildcardsVer14: property oxmIds cannot be null");
+        }
         this.oxmIds = oxmIds;
     }
 

@@ -48,6 +48,9 @@ class OFBsnTlvExternalIpVer13 implements OFBsnTlvExternalIp {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvExternalIpVer13(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvExternalIpVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

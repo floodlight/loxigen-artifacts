@@ -45,6 +45,9 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
 
     // package private constructor - used by readers, builders, and factory
     OFNiciraControllerRoleRequestVer10(long xid, OFNiciraControllerRole role) {
+        if(role == null) {
+            throw new NullPointerException("OFNiciraControllerRoleRequestVer10: property role cannot be null");
+        }
         this.xid = xid;
         this.role = role;
     }

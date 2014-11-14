@@ -74,6 +74,42 @@ class OFMatchV1Ver10 implements OFMatchV1 {
 
     // package private constructor - used by readers, builders, and factory
     OFMatchV1Ver10(int wildcards, OFPort inPort, MacAddress ethSrc, MacAddress ethDst, OFVlanVidMatch vlanVid, VlanPcp vlanPcp, EthType ethType, IpDscp ipDscp, IpProtocol ipProto, IPv4Address ipv4Src, IPv4Address ipv4Dst, TransportPort tcpSrc, TransportPort tcpDst) {
+        if(inPort == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property inPort cannot be null");
+        }
+        if(ethSrc == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ethSrc cannot be null");
+        }
+        if(ethDst == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ethDst cannot be null");
+        }
+        if(vlanVid == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property vlanVid cannot be null");
+        }
+        if(vlanPcp == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property vlanPcp cannot be null");
+        }
+        if(ethType == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ethType cannot be null");
+        }
+        if(ipDscp == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipDscp cannot be null");
+        }
+        if(ipProto == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipProto cannot be null");
+        }
+        if(ipv4Src == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipv4Src cannot be null");
+        }
+        if(ipv4Dst == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property ipv4Dst cannot be null");
+        }
+        if(tcpSrc == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property tcpSrc cannot be null");
+        }
+        if(tcpDst == null) {
+            throw new NullPointerException("OFMatchV1Ver10: property tcpDst cannot be null");
+        }
         this.wildcards = wildcards;
         this.inPort = inPort;
         this.ethSrc = ethSrc;

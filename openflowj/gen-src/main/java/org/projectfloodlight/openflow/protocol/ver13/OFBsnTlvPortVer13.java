@@ -48,6 +48,9 @@ class OFBsnTlvPortVer13 implements OFBsnTlvPort {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvPortVer13(OFPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvPortVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

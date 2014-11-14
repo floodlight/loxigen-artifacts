@@ -73,6 +73,45 @@ class OFPortStatsEntryVer10 implements OFPortStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsEntryVer10(OFPort portNo, U64 rxPackets, U64 txPackets, U64 rxBytes, U64 txBytes, U64 rxDropped, U64 txDropped, U64 rxErrors, U64 txErrors, U64 rxFrameErr, U64 rxOverErr, U64 rxCrcErr, U64 collisions) {
+        if(portNo == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property portNo cannot be null");
+        }
+        if(rxPackets == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxPackets cannot be null");
+        }
+        if(txPackets == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property txPackets cannot be null");
+        }
+        if(rxBytes == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxBytes cannot be null");
+        }
+        if(txBytes == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property txBytes cannot be null");
+        }
+        if(rxDropped == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxDropped cannot be null");
+        }
+        if(txDropped == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property txDropped cannot be null");
+        }
+        if(rxErrors == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxErrors cannot be null");
+        }
+        if(txErrors == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property txErrors cannot be null");
+        }
+        if(rxFrameErr == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxFrameErr cannot be null");
+        }
+        if(rxOverErr == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxOverErr cannot be null");
+        }
+        if(rxCrcErr == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property rxCrcErr cannot be null");
+        }
+        if(collisions == null) {
+            throw new NullPointerException("OFPortStatsEntryVer10: property collisions cannot be null");
+        }
         this.portNo = portNo;
         this.rxPackets = rxPackets;
         this.txPackets = txPackets;

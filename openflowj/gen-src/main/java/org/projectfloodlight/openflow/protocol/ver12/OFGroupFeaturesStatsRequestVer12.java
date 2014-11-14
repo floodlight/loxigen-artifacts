@@ -51,6 +51,9 @@ class OFGroupFeaturesStatsRequestVer12 implements OFGroupFeaturesStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupFeaturesStatsRequestVer12(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupFeaturesStatsRequestVer12: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

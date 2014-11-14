@@ -48,6 +48,9 @@ class OFOxmBsnL3InterfaceClassIdVer12 implements OFOxmBsnL3InterfaceClassId {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL3InterfaceClassIdVer12(ClassId value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnL3InterfaceClassIdVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

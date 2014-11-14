@@ -52,6 +52,9 @@ class OFActionBsnMirrorVer13 implements OFActionBsnMirror {
 
     // package private constructor - used by readers, builders, and factory
     OFActionBsnMirrorVer13(OFPort destPort, long vlanTag, short copyStage) {
+        if(destPort == null) {
+            throw new NullPointerException("OFActionBsnMirrorVer13: property destPort cannot be null");
+        }
         this.destPort = destPort;
         this.vlanTag = vlanTag;
         this.copyStage = copyStage;

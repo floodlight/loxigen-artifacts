@@ -48,6 +48,9 @@ class OFOxmTcpSrcVer12 implements OFOxmTcpSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmTcpSrcVer12(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmTcpSrcVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

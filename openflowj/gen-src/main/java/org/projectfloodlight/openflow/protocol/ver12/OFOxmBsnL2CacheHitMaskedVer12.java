@@ -50,6 +50,12 @@ class OFOxmBsnL2CacheHitMaskedVer12 implements OFOxmBsnL2CacheHitMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL2CacheHitMaskedVer12(OFBooleanValue value, OFBooleanValue mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnL2CacheHitMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnL2CacheHitMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

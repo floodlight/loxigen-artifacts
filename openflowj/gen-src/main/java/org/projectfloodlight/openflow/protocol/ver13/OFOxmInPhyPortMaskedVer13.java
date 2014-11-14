@@ -50,6 +50,12 @@ class OFOxmInPhyPortMaskedVer13 implements OFOxmInPhyPortMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmInPhyPortMaskedVer13(OFPort value, OFPort mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmInPhyPortMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmInPhyPortMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

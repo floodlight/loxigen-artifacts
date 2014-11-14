@@ -45,6 +45,9 @@ class OFBsnVirtualPortCreateRequestVer11 implements OFBsnVirtualPortCreateReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVirtualPortCreateRequestVer11(long xid, OFBsnVport vport) {
+        if(vport == null) {
+            throw new NullPointerException("OFBsnVirtualPortCreateRequestVer11: property vport cannot be null");
+        }
         this.xid = xid;
         this.vport = vport;
     }

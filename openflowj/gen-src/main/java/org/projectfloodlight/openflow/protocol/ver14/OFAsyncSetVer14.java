@@ -52,6 +52,9 @@ class OFAsyncSetVer14 implements OFAsyncSet {
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncSetVer14(long xid, List<OFAsyncConfigProp> properties) {
+        if(properties == null) {
+            throw new NullPointerException("OFAsyncSetVer14: property properties cannot be null");
+        }
         this.xid = xid;
         this.properties = properties;
     }

@@ -58,6 +58,9 @@ class OFBsnSetPktinSuppressionRequestVer13 implements OFBsnSetPktinSuppressionRe
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetPktinSuppressionRequestVer13(long xid, boolean enabled, int idleTimeout, int hardTimeout, int priority, U64 cookie) {
+        if(cookie == null) {
+            throw new NullPointerException("OFBsnSetPktinSuppressionRequestVer13: property cookie cannot be null");
+        }
         this.xid = xid;
         this.enabled = enabled;
         this.idleTimeout = idleTimeout;

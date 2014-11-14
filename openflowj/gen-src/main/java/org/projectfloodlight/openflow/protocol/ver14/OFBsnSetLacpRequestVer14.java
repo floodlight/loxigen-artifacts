@@ -62,6 +62,12 @@ class OFBsnSetLacpRequestVer14 implements OFBsnSetLacpRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetLacpRequestVer14(long xid, short enabled, OFPort portNo, int actorSysPriority, MacAddress actorSysMac, int actorPortPriority, int actorPortNum, int actorKey) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnSetLacpRequestVer14: property portNo cannot be null");
+        }
+        if(actorSysMac == null) {
+            throw new NullPointerException("OFBsnSetLacpRequestVer14: property actorSysMac cannot be null");
+        }
         this.xid = xid;
         this.enabled = enabled;
         this.portNo = portNo;

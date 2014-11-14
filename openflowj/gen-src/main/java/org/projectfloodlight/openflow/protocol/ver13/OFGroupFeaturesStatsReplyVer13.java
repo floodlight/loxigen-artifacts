@@ -71,6 +71,9 @@ class OFGroupFeaturesStatsReplyVer13 implements OFGroupFeaturesStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupFeaturesStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, long types, long capabilities, long maxGroupsAll, long maxGroupsSelect, long maxGroupsIndirect, long maxGroupsFf, long actionsAll, long actionsSelect, long actionsIndirect, long actionsFf) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupFeaturesStatsReplyVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.types = types;

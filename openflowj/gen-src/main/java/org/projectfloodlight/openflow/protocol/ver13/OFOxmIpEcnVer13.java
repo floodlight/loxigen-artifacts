@@ -48,6 +48,9 @@ class OFOxmIpEcnVer13 implements OFOxmIpEcn {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpEcnVer13(IpEcn value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpEcnVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -49,6 +49,12 @@ class OFBsnGentableDescStatsEntryVer14 implements OFBsnGentableDescStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableDescStatsEntryVer14(GenTableId tableId, String name, long bucketsSize, long maxEntries) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableDescStatsEntryVer14: property tableId cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFBsnGentableDescStatsEntryVer14: property name cannot be null");
+        }
         this.tableId = tableId;
         this.name = name;
         this.bucketsSize = bucketsSize;

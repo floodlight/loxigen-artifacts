@@ -50,6 +50,12 @@ class OFOxmEthSrcMaskedVer14 implements OFOxmEthSrcMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmEthSrcMaskedVer14(MacAddress value, MacAddress mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmEthSrcMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmEthSrcMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

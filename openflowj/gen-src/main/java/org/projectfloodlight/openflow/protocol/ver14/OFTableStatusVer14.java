@@ -48,6 +48,12 @@ class OFTableStatusVer14 implements OFTableStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatusVer14(long xid, long role, OFTableReason reason, OFTableDesc table) {
+        if(reason == null) {
+            throw new NullPointerException("OFTableStatusVer14: property reason cannot be null");
+        }
+        if(table == null) {
+            throw new NullPointerException("OFTableStatusVer14: property table cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.reason = reason;

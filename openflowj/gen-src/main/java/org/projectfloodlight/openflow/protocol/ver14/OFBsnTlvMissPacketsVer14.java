@@ -48,6 +48,9 @@ class OFBsnTlvMissPacketsVer14 implements OFBsnTlvMissPackets {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvMissPacketsVer14(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvMissPacketsVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

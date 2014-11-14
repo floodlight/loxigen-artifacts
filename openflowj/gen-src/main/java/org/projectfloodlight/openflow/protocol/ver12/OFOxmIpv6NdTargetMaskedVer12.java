@@ -50,6 +50,12 @@ class OFOxmIpv6NdTargetMaskedVer12 implements OFOxmIpv6NdTargetMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6NdTargetMaskedVer12(IPv6Address value, IPv6Address mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6NdTargetMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv6NdTargetMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

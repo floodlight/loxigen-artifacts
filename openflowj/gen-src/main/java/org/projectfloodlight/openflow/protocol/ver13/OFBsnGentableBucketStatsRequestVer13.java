@@ -48,6 +48,12 @@ class OFBsnGentableBucketStatsRequestVer13 implements OFBsnGentableBucketStatsRe
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableBucketStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, GenTableId tableId) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnGentableBucketStatsRequestVer13: property flags cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableBucketStatsRequestVer13: property tableId cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;

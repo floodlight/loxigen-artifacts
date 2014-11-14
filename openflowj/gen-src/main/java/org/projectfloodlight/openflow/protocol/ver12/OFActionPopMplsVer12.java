@@ -48,6 +48,9 @@ class OFActionPopMplsVer12 implements OFActionPopMpls {
 
     // package private constructor - used by readers, builders, and factory
     OFActionPopMplsVer12(EthType ethertype) {
+        if(ethertype == null) {
+            throw new NullPointerException("OFActionPopMplsVer12: property ethertype cannot be null");
+        }
         this.ethertype = ethertype;
     }
 

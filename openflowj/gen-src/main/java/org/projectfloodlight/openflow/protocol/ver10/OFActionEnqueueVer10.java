@@ -50,6 +50,9 @@ class OFActionEnqueueVer10 implements OFActionEnqueue {
 
     // package private constructor - used by readers, builders, and factory
     OFActionEnqueueVer10(OFPort port, long queueId) {
+        if(port == null) {
+            throw new NullPointerException("OFActionEnqueueVer10: property port cannot be null");
+        }
         this.port = port;
         this.queueId = queueId;
     }

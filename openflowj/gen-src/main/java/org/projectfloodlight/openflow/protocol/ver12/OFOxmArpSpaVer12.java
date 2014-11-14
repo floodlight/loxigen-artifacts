@@ -48,6 +48,9 @@ class OFOxmArpSpaVer12 implements OFOxmArpSpa {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpSpaVer12(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpSpaVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

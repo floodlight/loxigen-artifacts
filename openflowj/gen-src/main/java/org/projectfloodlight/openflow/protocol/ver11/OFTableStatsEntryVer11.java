@@ -65,6 +65,21 @@ class OFTableStatsEntryVer11 implements OFTableStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsEntryVer11(TableId tableId, String name, int wildcards, OFMatchBmap match, long instructions, long writeActions, long applyActions, long config, long maxEntries, long activeCount, U64 lookupCount, U64 matchedCount) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableStatsEntryVer11: property tableId cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFTableStatsEntryVer11: property name cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFTableStatsEntryVer11: property match cannot be null");
+        }
+        if(lookupCount == null) {
+            throw new NullPointerException("OFTableStatsEntryVer11: property lookupCount cannot be null");
+        }
+        if(matchedCount == null) {
+            throw new NullPointerException("OFTableStatsEntryVer11: property matchedCount cannot be null");
+        }
         this.tableId = tableId;
         this.name = name;
         this.wildcards = wildcards;

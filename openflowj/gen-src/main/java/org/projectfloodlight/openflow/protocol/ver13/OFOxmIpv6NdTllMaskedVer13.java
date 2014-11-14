@@ -50,6 +50,12 @@ class OFOxmIpv6NdTllMaskedVer13 implements OFOxmIpv6NdTllMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6NdTllMaskedVer13(MacAddress value, MacAddress mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6NdTllMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv6NdTllMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

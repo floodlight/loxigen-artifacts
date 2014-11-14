@@ -53,6 +53,9 @@ class OFBsnVrfCounterStatsRequestVer14 implements OFBsnVrfCounterStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVrfCounterStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags, long vrf) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnVrfCounterStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.vrf = vrf;

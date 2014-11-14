@@ -48,6 +48,18 @@ class OFBsnControllerConnectionVer14 implements OFBsnControllerConnection {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnControllerConnectionVer14(OFBsnControllerConnectionState state, OFAuxId auxiliaryId, OFControllerRole role, String uri) {
+        if(state == null) {
+            throw new NullPointerException("OFBsnControllerConnectionVer14: property state cannot be null");
+        }
+        if(auxiliaryId == null) {
+            throw new NullPointerException("OFBsnControllerConnectionVer14: property auxiliaryId cannot be null");
+        }
+        if(role == null) {
+            throw new NullPointerException("OFBsnControllerConnectionVer14: property role cannot be null");
+        }
+        if(uri == null) {
+            throw new NullPointerException("OFBsnControllerConnectionVer14: property uri cannot be null");
+        }
         this.state = state;
         this.auxiliaryId = auxiliaryId;
         this.role = role;

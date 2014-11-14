@@ -48,6 +48,9 @@ class OFOxmBsnVlanXlatePortGroupIdVer12 implements OFOxmBsnVlanXlatePortGroupId 
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnVlanXlatePortGroupIdVer12(ClassId value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnVlanXlatePortGroupIdVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

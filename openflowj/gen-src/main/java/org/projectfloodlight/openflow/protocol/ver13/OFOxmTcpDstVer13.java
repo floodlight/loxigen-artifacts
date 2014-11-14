@@ -48,6 +48,9 @@ class OFOxmTcpDstVer13 implements OFOxmTcpDst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmTcpDstVer13(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmTcpDstVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -48,6 +48,9 @@ class OFOxmBsnLagIdVer13 implements OFOxmBsnLagId {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnLagIdVer13(LagId value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnLagIdVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

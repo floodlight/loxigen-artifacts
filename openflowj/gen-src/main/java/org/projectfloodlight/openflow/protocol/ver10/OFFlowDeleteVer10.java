@@ -69,6 +69,24 @@ class OFFlowDeleteVer10 implements OFFlowDelete {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowDeleteVer10(long xid, Match match, U64 cookie, int idleTimeout, int hardTimeout, int priority, OFBufferId bufferId, OFPort outPort, Set<OFFlowModFlags> flags, List<OFAction> actions) {
+        if(match == null) {
+            throw new NullPointerException("OFFlowDeleteVer10: property match cannot be null");
+        }
+        if(cookie == null) {
+            throw new NullPointerException("OFFlowDeleteVer10: property cookie cannot be null");
+        }
+        if(bufferId == null) {
+            throw new NullPointerException("OFFlowDeleteVer10: property bufferId cannot be null");
+        }
+        if(outPort == null) {
+            throw new NullPointerException("OFFlowDeleteVer10: property outPort cannot be null");
+        }
+        if(flags == null) {
+            throw new NullPointerException("OFFlowDeleteVer10: property flags cannot be null");
+        }
+        if(actions == null) {
+            throw new NullPointerException("OFFlowDeleteVer10: property actions cannot be null");
+        }
         this.xid = xid;
         this.match = match;
         this.cookie = cookie;

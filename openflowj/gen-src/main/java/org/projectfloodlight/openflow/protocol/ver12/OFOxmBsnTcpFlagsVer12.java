@@ -48,6 +48,9 @@ class OFOxmBsnTcpFlagsVer12 implements OFOxmBsnTcpFlags {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnTcpFlagsVer12(U16 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnTcpFlagsVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -58,6 +58,24 @@ class OFPacketInVer14 implements OFPacketIn {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketInVer14(long xid, OFBufferId bufferId, int totalLen, OFPacketInReason reason, TableId tableId, U64 cookie, Match match, byte[] data) {
+        if(bufferId == null) {
+            throw new NullPointerException("OFPacketInVer14: property bufferId cannot be null");
+        }
+        if(reason == null) {
+            throw new NullPointerException("OFPacketInVer14: property reason cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFPacketInVer14: property tableId cannot be null");
+        }
+        if(cookie == null) {
+            throw new NullPointerException("OFPacketInVer14: property cookie cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFPacketInVer14: property match cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFPacketInVer14: property data cannot be null");
+        }
         this.xid = xid;
         this.bufferId = bufferId;
         this.totalLen = totalLen;

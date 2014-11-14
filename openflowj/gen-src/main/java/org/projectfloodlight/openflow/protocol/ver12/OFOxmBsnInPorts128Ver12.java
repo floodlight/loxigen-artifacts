@@ -48,6 +48,9 @@ class OFOxmBsnInPorts128Ver12 implements OFOxmBsnInPorts128 {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnInPorts128Ver12(OFBitMask128 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnInPorts128Ver12: property value cannot be null");
+        }
         this.value = value;
     }
 

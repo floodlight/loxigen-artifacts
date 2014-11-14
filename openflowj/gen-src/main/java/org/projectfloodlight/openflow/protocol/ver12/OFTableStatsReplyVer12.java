@@ -55,6 +55,12 @@ class OFTableStatsReplyVer12 implements OFTableStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, List<OFTableStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFTableStatsReplyVer12: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFTableStatsReplyVer12: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

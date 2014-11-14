@@ -48,6 +48,9 @@ class OFOxmUdpDstVer12 implements OFOxmUdpDst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmUdpDstVer12(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmUdpDstVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

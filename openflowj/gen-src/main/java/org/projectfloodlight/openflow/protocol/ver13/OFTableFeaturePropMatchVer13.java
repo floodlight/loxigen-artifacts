@@ -50,6 +50,9 @@ class OFTableFeaturePropMatchVer13 implements OFTableFeaturePropMatch {
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropMatchVer13(List<U32> oxmIds) {
+        if(oxmIds == null) {
+            throw new NullPointerException("OFTableFeaturePropMatchVer13: property oxmIds cannot be null");
+        }
         this.oxmIds = oxmIds;
     }
 

@@ -66,6 +66,33 @@ class OFPortDescVer10 implements OFPortDesc {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescVer10(OFPort portNo, MacAddress hwAddr, String name, Set<OFPortConfig> config, Set<OFPortState> state, Set<OFPortFeatures> curr, Set<OFPortFeatures> advertised, Set<OFPortFeatures> supported, Set<OFPortFeatures> peer) {
+        if(portNo == null) {
+            throw new NullPointerException("OFPortDescVer10: property portNo cannot be null");
+        }
+        if(hwAddr == null) {
+            throw new NullPointerException("OFPortDescVer10: property hwAddr cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFPortDescVer10: property name cannot be null");
+        }
+        if(config == null) {
+            throw new NullPointerException("OFPortDescVer10: property config cannot be null");
+        }
+        if(state == null) {
+            throw new NullPointerException("OFPortDescVer10: property state cannot be null");
+        }
+        if(curr == null) {
+            throw new NullPointerException("OFPortDescVer10: property curr cannot be null");
+        }
+        if(advertised == null) {
+            throw new NullPointerException("OFPortDescVer10: property advertised cannot be null");
+        }
+        if(supported == null) {
+            throw new NullPointerException("OFPortDescVer10: property supported cannot be null");
+        }
+        if(peer == null) {
+            throw new NullPointerException("OFPortDescVer10: property peer cannot be null");
+        }
         this.portNo = portNo;
         this.hwAddr = hwAddr;
         this.name = name;

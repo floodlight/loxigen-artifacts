@@ -50,6 +50,12 @@ class OFOxmBsnVrfMaskedVer12 implements OFOxmBsnVrfMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnVrfMaskedVer12(VRF value, VRF mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnVrfMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnVrfMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

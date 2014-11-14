@@ -51,6 +51,9 @@ class OFBsnDebugCounterDescStatsRequestVer14 implements OFBsnDebugCounterDescSta
 
     // package private constructor - used by readers, builders, and factory
     OFBsnDebugCounterDescStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnDebugCounterDescStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

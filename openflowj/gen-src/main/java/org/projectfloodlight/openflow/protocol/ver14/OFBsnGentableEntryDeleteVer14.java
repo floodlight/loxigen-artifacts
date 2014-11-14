@@ -49,6 +49,12 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableEntryDeleteVer14(long xid, GenTableId tableId, List<OFBsnTlv> key) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableEntryDeleteVer14: property tableId cannot be null");
+        }
+        if(key == null) {
+            throw new NullPointerException("OFBsnGentableEntryDeleteVer14: property key cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.key = key;

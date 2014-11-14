@@ -50,6 +50,12 @@ class OFInstructionWriteMetadataVer12 implements OFInstructionWriteMetadata {
 
     // package private constructor - used by readers, builders, and factory
     OFInstructionWriteMetadataVer12(U64 metadata, U64 metadataMask) {
+        if(metadata == null) {
+            throw new NullPointerException("OFInstructionWriteMetadataVer12: property metadata cannot be null");
+        }
+        if(metadataMask == null) {
+            throw new NullPointerException("OFInstructionWriteMetadataVer12: property metadataMask cannot be null");
+        }
         this.metadata = metadata;
         this.metadataMask = metadataMask;
     }

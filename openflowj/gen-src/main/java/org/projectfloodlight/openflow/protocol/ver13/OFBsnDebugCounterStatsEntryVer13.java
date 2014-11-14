@@ -50,6 +50,12 @@ class OFBsnDebugCounterStatsEntryVer13 implements OFBsnDebugCounterStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnDebugCounterStatsEntryVer13(U64 counterId, U64 value) {
+        if(counterId == null) {
+            throw new NullPointerException("OFBsnDebugCounterStatsEntryVer13: property counterId cannot be null");
+        }
+        if(value == null) {
+            throw new NullPointerException("OFBsnDebugCounterStatsEntryVer13: property value cannot be null");
+        }
         this.counterId = counterId;
         this.value = value;
     }

@@ -50,6 +50,12 @@ class OFOxmBsnL3InterfaceClassIdMaskedVer14 implements OFOxmBsnL3InterfaceClassI
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL3InterfaceClassIdMaskedVer14(ClassId value, ClassId mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnL3InterfaceClassIdMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnL3InterfaceClassIdMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

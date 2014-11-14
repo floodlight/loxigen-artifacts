@@ -40,20 +40,31 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     final static int MINIMUM_LENGTH = 16;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static long DEFAULT_BUNDLE_ID = 0x0L;
         private final static Set<OFBundleFlags> DEFAULT_FLAGS = ImmutableSet.<OFBundleFlags>of();
         private final static List<OFBundleProp> DEFAULT_PROPERTIES = ImmutableList.<OFBundleProp>of();
 
     // OF message fields
     private final long xid;
-    private final long bundleId;
+    private final BundleId bundleId;
     private final OFBundleCtrlType bundleCtrlType;
     private final Set<OFBundleFlags> flags;
     private final List<OFBundleProp> properties;
 //
 
     // package private constructor - used by readers, builders, and factory
-    OFBundleCtrlMsgVer14(long xid, long bundleId, OFBundleCtrlType bundleCtrlType, Set<OFBundleFlags> flags, List<OFBundleProp> properties) {
+    OFBundleCtrlMsgVer14(long xid, BundleId bundleId, OFBundleCtrlType bundleCtrlType, Set<OFBundleFlags> flags, List<OFBundleProp> properties) {
+        if(bundleId == null) {
+            throw new NullPointerException("OFBundleCtrlMsgVer14: property bundleId cannot be null");
+        }
+        if(bundleCtrlType == null) {
+            throw new NullPointerException("OFBundleCtrlMsgVer14: property bundleCtrlType cannot be null");
+        }
+        if(flags == null) {
+            throw new NullPointerException("OFBundleCtrlMsgVer14: property flags cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFBundleCtrlMsgVer14: property properties cannot be null");
+        }
         this.xid = xid;
         this.bundleId = bundleId;
         this.bundleCtrlType = bundleCtrlType;
@@ -78,7 +89,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
     }
 
     @Override
-    public long getBundleId() {
+    public BundleId getBundleId() {
         return bundleId;
     }
 
@@ -110,7 +121,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         private boolean xidSet;
         private long xid;
         private boolean bundleIdSet;
-        private long bundleId;
+        private BundleId bundleId;
         private boolean bundleCtrlTypeSet;
         private OFBundleCtrlType bundleCtrlType;
         private boolean flagsSet;
@@ -144,12 +155,12 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         return this;
     }
     @Override
-    public long getBundleId() {
+    public BundleId getBundleId() {
         return bundleId;
     }
 
     @Override
-    public OFBundleCtrlMsg.Builder setBundleId(long bundleId) {
+    public OFBundleCtrlMsg.Builder setBundleId(BundleId bundleId) {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
         return this;
@@ -192,7 +203,9 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         @Override
         public OFBundleCtrlMsg build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                long bundleId = this.bundleIdSet ? this.bundleId : parentMessage.bundleId;
+                BundleId bundleId = this.bundleIdSet ? this.bundleId : parentMessage.bundleId;
+                if(bundleId == null)
+                    throw new NullPointerException("Property bundleId must not be null");
                 OFBundleCtrlType bundleCtrlType = this.bundleCtrlTypeSet ? this.bundleCtrlType : parentMessage.bundleCtrlType;
                 if(bundleCtrlType == null)
                     throw new NullPointerException("Property bundleCtrlType must not be null");
@@ -220,7 +233,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         private boolean xidSet;
         private long xid;
         private boolean bundleIdSet;
-        private long bundleId;
+        private BundleId bundleId;
         private boolean bundleCtrlTypeSet;
         private OFBundleCtrlType bundleCtrlType;
         private boolean flagsSet;
@@ -250,12 +263,12 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         return this;
     }
     @Override
-    public long getBundleId() {
+    public BundleId getBundleId() {
         return bundleId;
     }
 
     @Override
-    public OFBundleCtrlMsg.Builder setBundleId(long bundleId) {
+    public OFBundleCtrlMsg.Builder setBundleId(BundleId bundleId) {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
         return this;
@@ -297,7 +310,10 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         @Override
         public OFBundleCtrlMsg build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            long bundleId = this.bundleIdSet ? this.bundleId : DEFAULT_BUNDLE_ID;
+            if(!this.bundleIdSet)
+                throw new IllegalStateException("Property bundleId doesn't have default value -- must be set");
+            if(bundleId == null)
+                throw new NullPointerException("Property bundleId must not be null");
             if(!this.bundleCtrlTypeSet)
                 throw new IllegalStateException("Property bundleCtrlType doesn't have default value -- must be set");
             if(bundleCtrlType == null)
@@ -346,7 +362,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            long bundleId = U32.f(bb.readInt());
+            BundleId bundleId = BundleId.read4Bytes(bb);
             OFBundleCtrlType bundleCtrlType = OFBundleCtrlTypeSerializerVer14.readFrom(bb);
             Set<OFBundleFlags> flags = OFBundleFlagsSerializerVer14.readFrom(bb);
             List<OFBundleProp> properties = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFBundlePropVer14.READER);
@@ -379,7 +395,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
             sink.putByte((byte) 0x21);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            sink.putLong(message.bundleId);
+            message.bundleId.putTo(sink);
             OFBundleCtrlTypeSerializerVer14.putTo(message.bundleCtrlType, sink);
             OFBundleFlagsSerializerVer14.putTo(message.flags, sink);
             FunnelUtils.putList(message.properties, sink);
@@ -405,7 +421,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            bb.writeInt(U32.t(message.bundleId));
+            message.bundleId.write4Bytes(bb);
             OFBundleCtrlTypeSerializerVer14.writeTo(bb, message.bundleCtrlType);
             OFBundleFlagsSerializerVer14.writeTo(bb, message.flags);
             ChannelUtils.writeList(bb, message.properties);
@@ -445,7 +461,10 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
 
         if( xid != other.xid)
             return false;
-        if( bundleId != other.bundleId)
+        if (bundleId == null) {
+            if (other.bundleId != null)
+                return false;
+        } else if (!bundleId.equals(other.bundleId))
             return false;
         if (bundleCtrlType == null) {
             if (other.bundleCtrlType != null)
@@ -471,7 +490,7 @@ class OFBundleCtrlMsgVer14 implements OFBundleCtrlMsg {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (bundleId ^ (bundleId >>> 32));
+        result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
         result = prime * result + ((bundleCtrlType == null) ? 0 : bundleCtrlType.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
         result = prime * result + ((properties == null) ? 0 : properties.hashCode());

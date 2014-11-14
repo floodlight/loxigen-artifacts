@@ -48,6 +48,9 @@ class OFOxmIpDscpVer13 implements OFOxmIpDscp {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpDscpVer13(IpDscp value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpDscpVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

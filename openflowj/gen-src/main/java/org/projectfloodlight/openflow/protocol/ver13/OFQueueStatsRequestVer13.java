@@ -55,6 +55,12 @@ class OFQueueStatsRequestVer13 implements OFQueueStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, OFPort portNo, long queueId) {
+        if(flags == null) {
+            throw new NullPointerException("OFQueueStatsRequestVer13: property flags cannot be null");
+        }
+        if(portNo == null) {
+            throw new NullPointerException("OFQueueStatsRequestVer13: property portNo cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.portNo = portNo;

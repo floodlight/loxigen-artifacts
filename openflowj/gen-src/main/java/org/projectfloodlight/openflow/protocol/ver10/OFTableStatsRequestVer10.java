@@ -51,6 +51,9 @@ class OFTableStatsRequestVer10 implements OFTableStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsRequestVer10(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFTableStatsRequestVer10: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

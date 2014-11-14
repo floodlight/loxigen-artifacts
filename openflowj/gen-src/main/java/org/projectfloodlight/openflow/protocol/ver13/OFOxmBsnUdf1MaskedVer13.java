@@ -50,6 +50,12 @@ class OFOxmBsnUdf1MaskedVer13 implements OFOxmBsnUdf1Masked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnUdf1MaskedVer13(UDF value, UDF mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnUdf1MaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnUdf1MaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

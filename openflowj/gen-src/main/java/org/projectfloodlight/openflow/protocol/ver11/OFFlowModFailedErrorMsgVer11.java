@@ -47,6 +47,12 @@ class OFFlowModFailedErrorMsgVer11 implements OFFlowModFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowModFailedErrorMsgVer11(long xid, OFFlowModFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFFlowModFailedErrorMsgVer11: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFFlowModFailedErrorMsgVer11: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

@@ -48,6 +48,9 @@ class OFOxmVlanPcpVer14 implements OFOxmVlanPcp {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmVlanPcpVer14(VlanPcp value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmVlanPcpVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

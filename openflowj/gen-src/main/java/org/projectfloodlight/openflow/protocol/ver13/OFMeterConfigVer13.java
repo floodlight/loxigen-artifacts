@@ -54,6 +54,9 @@ class OFMeterConfigVer13 implements OFMeterConfig {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterConfigVer13(int flags, long meterId, List<OFMeterBand> entries) {
+        if(entries == null) {
+            throw new NullPointerException("OFMeterConfigVer13: property entries cannot be null");
+        }
         this.flags = flags;
         this.meterId = meterId;
         this.entries = entries;

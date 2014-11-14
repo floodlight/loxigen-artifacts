@@ -57,6 +57,18 @@ class OFFlowStatsRequestVer10 implements OFFlowStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowStatsRequestVer10(long xid, Set<OFStatsRequestFlags> flags, Match match, TableId tableId, OFPort outPort) {
+        if(flags == null) {
+            throw new NullPointerException("OFFlowStatsRequestVer10: property flags cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFFlowStatsRequestVer10: property match cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFFlowStatsRequestVer10: property tableId cannot be null");
+        }
+        if(outPort == null) {
+            throw new NullPointerException("OFFlowStatsRequestVer10: property outPort cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.match = match;

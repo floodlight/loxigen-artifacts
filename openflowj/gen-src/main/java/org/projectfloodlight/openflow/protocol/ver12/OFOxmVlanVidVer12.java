@@ -48,6 +48,9 @@ class OFOxmVlanVidVer12 implements OFOxmVlanVid {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmVlanVidVer12(OFVlanVidMatch value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmVlanVidVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

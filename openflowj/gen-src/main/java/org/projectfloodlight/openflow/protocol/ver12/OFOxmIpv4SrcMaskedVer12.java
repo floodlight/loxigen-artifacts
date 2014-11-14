@@ -50,6 +50,12 @@ class OFOxmIpv4SrcMaskedVer12 implements OFOxmIpv4SrcMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv4SrcMaskedVer12(IPv4Address value, IPv4Address mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv4SrcMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv4SrcMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

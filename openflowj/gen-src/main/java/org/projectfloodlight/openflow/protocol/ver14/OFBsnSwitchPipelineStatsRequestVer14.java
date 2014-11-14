@@ -51,6 +51,9 @@ class OFBsnSwitchPipelineStatsRequestVer14 implements OFBsnSwitchPipelineStatsRe
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSwitchPipelineStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnSwitchPipelineStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

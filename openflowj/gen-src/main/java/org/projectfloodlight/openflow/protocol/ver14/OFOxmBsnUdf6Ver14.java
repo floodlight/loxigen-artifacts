@@ -48,6 +48,9 @@ class OFOxmBsnUdf6Ver14 implements OFOxmBsnUdf6 {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnUdf6Ver14(UDF value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnUdf6Ver14: property value cannot be null");
+        }
         this.value = value;
     }
 

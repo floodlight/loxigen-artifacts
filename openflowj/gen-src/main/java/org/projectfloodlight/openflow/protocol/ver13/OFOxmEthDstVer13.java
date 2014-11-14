@@ -48,6 +48,9 @@ class OFOxmEthDstVer13 implements OFOxmEthDst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmEthDstVer13(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmEthDstVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

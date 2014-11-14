@@ -49,6 +49,9 @@ class OFBsnTlvActorStateVer13 implements OFBsnTlvActorState {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvActorStateVer13(Set<OFBsnLacpState> value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvActorStateVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

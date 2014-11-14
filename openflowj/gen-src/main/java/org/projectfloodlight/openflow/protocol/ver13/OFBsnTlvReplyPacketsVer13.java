@@ -48,6 +48,9 @@ class OFBsnTlvReplyPacketsVer13 implements OFBsnTlvReplyPackets {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvReplyPacketsVer13(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvReplyPacketsVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

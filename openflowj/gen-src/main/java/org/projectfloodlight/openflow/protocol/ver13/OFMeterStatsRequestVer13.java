@@ -53,6 +53,9 @@ class OFMeterStatsRequestVer13 implements OFMeterStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags, long meterId) {
+        if(flags == null) {
+            throw new NullPointerException("OFMeterStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.meterId = meterId;

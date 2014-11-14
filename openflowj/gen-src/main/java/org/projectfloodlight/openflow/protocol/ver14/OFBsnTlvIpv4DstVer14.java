@@ -48,6 +48,9 @@ class OFBsnTlvIpv4DstVer14 implements OFBsnTlvIpv4Dst {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvIpv4DstVer14(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvIpv4DstVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

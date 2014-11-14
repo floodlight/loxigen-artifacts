@@ -72,6 +72,36 @@ class OFPortStatsEntryVer14 implements OFPortStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsEntryVer14(OFPort portNo, long durationSec, long durationNsec, U64 rxPackets, U64 txPackets, U64 rxBytes, U64 txBytes, U64 rxDropped, U64 txDropped, U64 rxErrors, U64 txErrors, List<OFPortStatsProp> properties) {
+        if(portNo == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property portNo cannot be null");
+        }
+        if(rxPackets == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property rxPackets cannot be null");
+        }
+        if(txPackets == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property txPackets cannot be null");
+        }
+        if(rxBytes == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property rxBytes cannot be null");
+        }
+        if(txBytes == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property txBytes cannot be null");
+        }
+        if(rxDropped == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property rxDropped cannot be null");
+        }
+        if(txDropped == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property txDropped cannot be null");
+        }
+        if(rxErrors == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property rxErrors cannot be null");
+        }
+        if(txErrors == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property txErrors cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFPortStatsEntryVer14: property properties cannot be null");
+        }
         this.portNo = portNo;
         this.durationSec = durationSec;
         this.durationNsec = durationNsec;

@@ -51,6 +51,9 @@ class OFBsnLacpStatsRequestVer13 implements OFBsnLacpStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLacpStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnLacpStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

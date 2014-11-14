@@ -58,6 +58,18 @@ class OFGroupStatsEntryVer11 implements OFGroupStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupStatsEntryVer11(OFGroup group, long refCount, U64 packetCount, U64 byteCount, List<OFBucketCounter> bucketStats) {
+        if(group == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer11: property group cannot be null");
+        }
+        if(packetCount == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer11: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer11: property byteCount cannot be null");
+        }
+        if(bucketStats == null) {
+            throw new NullPointerException("OFGroupStatsEntryVer11: property bucketStats cannot be null");
+        }
         this.group = group;
         this.refCount = refCount;
         this.packetCount = packetCount;

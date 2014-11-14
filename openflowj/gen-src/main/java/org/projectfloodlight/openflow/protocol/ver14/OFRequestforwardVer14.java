@@ -53,6 +53,9 @@ class OFRequestforwardVer14 implements OFRequestforward {
 
     // package private constructor - used by readers, builders, and factory
     OFRequestforwardVer14(long xid, long role, byte[] data) {
+        if(data == null) {
+            throw new NullPointerException("OFRequestforwardVer14: property data cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.data = data;

@@ -48,6 +48,9 @@ class OFBsnTlvExternalGatewayIpVer14 implements OFBsnTlvExternalGatewayIp {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvExternalGatewayIpVer14(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvExternalGatewayIpVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

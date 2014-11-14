@@ -61,6 +61,24 @@ class OFPortDescVer14 implements OFPortDesc {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescVer14(OFPort portNo, MacAddress hwAddr, String name, Set<OFPortConfig> config, Set<OFPortState> state, List<OFPortDescProp> properties) {
+        if(portNo == null) {
+            throw new NullPointerException("OFPortDescVer14: property portNo cannot be null");
+        }
+        if(hwAddr == null) {
+            throw new NullPointerException("OFPortDescVer14: property hwAddr cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFPortDescVer14: property name cannot be null");
+        }
+        if(config == null) {
+            throw new NullPointerException("OFPortDescVer14: property config cannot be null");
+        }
+        if(state == null) {
+            throw new NullPointerException("OFPortDescVer14: property state cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFPortDescVer14: property properties cannot be null");
+        }
         this.portNo = portNo;
         this.hwAddr = hwAddr;
         this.name = name;

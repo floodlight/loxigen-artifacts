@@ -48,6 +48,9 @@ class OFOxmIpv6ExthdrVer14 implements OFOxmIpv6Exthdr {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6ExthdrVer14(U16 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6ExthdrVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

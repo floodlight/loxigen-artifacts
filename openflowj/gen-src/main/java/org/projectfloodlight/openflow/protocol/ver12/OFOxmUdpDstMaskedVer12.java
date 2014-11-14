@@ -50,6 +50,12 @@ class OFOxmUdpDstMaskedVer12 implements OFOxmUdpDstMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmUdpDstMaskedVer12(TransportPort value, TransportPort mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmUdpDstMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmUdpDstMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

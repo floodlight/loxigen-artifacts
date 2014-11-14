@@ -47,6 +47,12 @@ class OFRoleRequestFailedErrorMsgVer12 implements OFRoleRequestFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFRoleRequestFailedErrorMsgVer12(long xid, OFRoleRequestFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFRoleRequestFailedErrorMsgVer12: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFRoleRequestFailedErrorMsgVer12: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

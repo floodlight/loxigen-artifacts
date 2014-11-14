@@ -55,6 +55,12 @@ class OFQueueStatsReplyVer11 implements OFQueueStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueStatsReplyVer11(long xid, Set<OFStatsReplyFlags> flags, List<OFQueueStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFQueueStatsReplyVer11: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFQueueStatsReplyVer11: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

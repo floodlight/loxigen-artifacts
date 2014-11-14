@@ -48,6 +48,9 @@ class OFOxmBsnGlobalVrfAllowedVer13 implements OFOxmBsnGlobalVrfAllowed {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnGlobalVrfAllowedVer13(OFBooleanValue value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnGlobalVrfAllowedVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

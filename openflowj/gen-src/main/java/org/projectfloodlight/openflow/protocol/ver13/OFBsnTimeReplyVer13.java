@@ -50,6 +50,9 @@ class OFBsnTimeReplyVer13 implements OFBsnTimeReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTimeReplyVer13(long xid, U64 timeMs) {
+        if(timeMs == null) {
+            throw new NullPointerException("OFBsnTimeReplyVer13: property timeMs cannot be null");
+        }
         this.xid = xid;
         this.timeMs = timeMs;
     }

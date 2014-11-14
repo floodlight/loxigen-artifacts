@@ -48,6 +48,9 @@ class OFBsnTlvTxBytesVer14 implements OFBsnTlvTxBytes {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvTxBytesVer14(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvTxBytesVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

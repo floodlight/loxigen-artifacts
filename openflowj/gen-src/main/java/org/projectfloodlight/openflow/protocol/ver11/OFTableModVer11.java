@@ -53,6 +53,9 @@ class OFTableModVer11 implements OFTableMod {
 
     // package private constructor - used by readers, builders, and factory
     OFTableModVer11(long xid, TableId tableId, long config) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableModVer11: property tableId cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.config = config;

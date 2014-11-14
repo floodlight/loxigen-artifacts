@@ -43,6 +43,9 @@ class OFActionSetFieldVer13 implements OFActionSetField {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetFieldVer13(OFOxm<?> field) {
+        if(field == null) {
+            throw new NullPointerException("OFActionSetFieldVer13: property field cannot be null");
+        }
         this.field = field;
     }
 

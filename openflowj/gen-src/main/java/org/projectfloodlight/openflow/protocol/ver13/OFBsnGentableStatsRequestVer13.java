@@ -51,6 +51,9 @@ class OFBsnGentableStatsRequestVer13 implements OFBsnGentableStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnGentableStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

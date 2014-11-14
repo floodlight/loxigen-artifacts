@@ -55,6 +55,12 @@ class OFGroupStatsReplyVer14 implements OFGroupStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, List<OFGroupStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupStatsReplyVer14: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFGroupStatsReplyVer14: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

@@ -50,6 +50,9 @@ class OFTableFeaturePropNextTablesMissVer14 implements OFTableFeaturePropNextTab
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropNextTablesMissVer14(List<U8> nextTableIds) {
+        if(nextTableIds == null) {
+            throw new NullPointerException("OFTableFeaturePropNextTablesMissVer14: property nextTableIds cannot be null");
+        }
         this.nextTableIds = nextTableIds;
     }
 

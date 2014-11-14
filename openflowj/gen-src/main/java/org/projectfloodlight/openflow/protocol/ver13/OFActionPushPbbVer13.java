@@ -48,6 +48,9 @@ class OFActionPushPbbVer13 implements OFActionPushPbb {
 
     // package private constructor - used by readers, builders, and factory
     OFActionPushPbbVer13(EthType ethertype) {
+        if(ethertype == null) {
+            throw new NullPointerException("OFActionPushPbbVer13: property ethertype cannot be null");
+        }
         this.ethertype = ethertype;
     }
 

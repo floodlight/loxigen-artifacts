@@ -50,6 +50,12 @@ class OFOxmBsnInPorts128MaskedVer14 implements OFOxmBsnInPorts128Masked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnInPorts128MaskedVer14(OFBitMask128 value, OFBitMask128 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnInPorts128MaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnInPorts128MaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

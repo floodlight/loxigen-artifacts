@@ -51,6 +51,9 @@ class OFBsnGentableDescStatsRequestVer14 implements OFBsnGentableDescStatsReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableDescStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnGentableDescStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

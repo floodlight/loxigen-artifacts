@@ -47,6 +47,12 @@ class OFRoleRequestVer13 implements OFRoleRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFRoleRequestVer13(long xid, OFControllerRole role, U64 generationId) {
+        if(role == null) {
+            throw new NullPointerException("OFRoleRequestVer13: property role cannot be null");
+        }
+        if(generationId == null) {
+            throw new NullPointerException("OFRoleRequestVer13: property generationId cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.generationId = generationId;

@@ -51,6 +51,9 @@ class OFGroupDescStatsRequestVer11 implements OFGroupDescStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupDescStatsRequestVer11(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFGroupDescStatsRequestVer11: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

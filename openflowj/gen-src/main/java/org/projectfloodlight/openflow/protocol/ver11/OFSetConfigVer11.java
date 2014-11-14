@@ -53,6 +53,9 @@ class OFSetConfigVer11 implements OFSetConfig {
 
     // package private constructor - used by readers, builders, and factory
     OFSetConfigVer11(long xid, Set<OFConfigFlags> flags, int missSendLen) {
+        if(flags == null) {
+            throw new NullPointerException("OFSetConfigVer11: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.missSendLen = missSendLen;

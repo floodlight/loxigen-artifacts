@@ -30,7 +30,6 @@ import com.google.common.collect.ImmutableSet;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
-import java.util.Arrays;
 
 class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     private static final Logger logger = LoggerFactory.getLogger(OFBundleAddMsgVer14.class);
@@ -39,23 +38,26 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     final static int MINIMUM_LENGTH = 16;
 
         private final static long DEFAULT_XID = 0x0L;
-        private final static long DEFAULT_BUNDLE_ID = 0x0L;
         private final static Set<OFBundleFlags> DEFAULT_FLAGS = ImmutableSet.<OFBundleFlags>of();
-        private final static byte[] DEFAULT_DATA = new byte[0];
 
     // OF message fields
     private final long xid;
-    private final long bundleId;
+    private final BundleId bundleId;
     private final Set<OFBundleFlags> flags;
-    private final byte[] data;
+    private final OFMessage data;
 //
-    // Immutable default instance
-    final static OFBundleAddMsgVer14 DEFAULT = new OFBundleAddMsgVer14(
-        DEFAULT_XID, DEFAULT_BUNDLE_ID, DEFAULT_FLAGS, DEFAULT_DATA
-    );
 
     // package private constructor - used by readers, builders, and factory
-    OFBundleAddMsgVer14(long xid, long bundleId, Set<OFBundleFlags> flags, byte[] data) {
+    OFBundleAddMsgVer14(long xid, BundleId bundleId, Set<OFBundleFlags> flags, OFMessage data) {
+        if(bundleId == null) {
+            throw new NullPointerException("OFBundleAddMsgVer14: property bundleId cannot be null");
+        }
+        if(flags == null) {
+            throw new NullPointerException("OFBundleAddMsgVer14: property flags cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBundleAddMsgVer14: property data cannot be null");
+        }
         this.xid = xid;
         this.bundleId = bundleId;
         this.flags = flags;
@@ -79,7 +81,7 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     }
 
     @Override
-    public long getBundleId() {
+    public BundleId getBundleId() {
         return bundleId;
     }
 
@@ -89,7 +91,7 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
     }
 
     @Override
-    public byte[] getData() {
+    public OFMessage getData() {
         return data;
     }
 
@@ -106,11 +108,11 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         private boolean xidSet;
         private long xid;
         private boolean bundleIdSet;
-        private long bundleId;
+        private BundleId bundleId;
         private boolean flagsSet;
         private Set<OFBundleFlags> flags;
         private boolean dataSet;
-        private byte[] data;
+        private OFMessage data;
 
         BuilderWithParent(OFBundleAddMsgVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -138,12 +140,12 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public long getBundleId() {
+    public BundleId getBundleId() {
         return bundleId;
     }
 
     @Override
-    public OFBundleAddMsg.Builder setBundleId(long bundleId) {
+    public OFBundleAddMsg.Builder setBundleId(BundleId bundleId) {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
         return this;
@@ -160,12 +162,12 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFMessage getData() {
         return data;
     }
 
     @Override
-    public OFBundleAddMsg.Builder setData(byte[] data) {
+    public OFBundleAddMsg.Builder setData(OFMessage data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -175,11 +177,13 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         @Override
         public OFBundleAddMsg build() {
                 long xid = this.xidSet ? this.xid : parentMessage.xid;
-                long bundleId = this.bundleIdSet ? this.bundleId : parentMessage.bundleId;
+                BundleId bundleId = this.bundleIdSet ? this.bundleId : parentMessage.bundleId;
+                if(bundleId == null)
+                    throw new NullPointerException("Property bundleId must not be null");
                 Set<OFBundleFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                byte[] data = this.dataSet ? this.data : parentMessage.data;
+                OFMessage data = this.dataSet ? this.data : parentMessage.data;
                 if(data == null)
                     throw new NullPointerException("Property data must not be null");
 
@@ -199,11 +203,11 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         private boolean xidSet;
         private long xid;
         private boolean bundleIdSet;
-        private long bundleId;
+        private BundleId bundleId;
         private boolean flagsSet;
         private Set<OFBundleFlags> flags;
         private boolean dataSet;
-        private byte[] data;
+        private OFMessage data;
 
     @Override
     public OFVersion getVersion() {
@@ -227,12 +231,12 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public long getBundleId() {
+    public BundleId getBundleId() {
         return bundleId;
     }
 
     @Override
-    public OFBundleAddMsg.Builder setBundleId(long bundleId) {
+    public OFBundleAddMsg.Builder setBundleId(BundleId bundleId) {
         this.bundleId = bundleId;
         this.bundleIdSet = true;
         return this;
@@ -249,12 +253,12 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         return this;
     }
     @Override
-    public byte[] getData() {
+    public OFMessage getData() {
         return data;
     }
 
     @Override
-    public OFBundleAddMsg.Builder setData(byte[] data) {
+    public OFBundleAddMsg.Builder setData(OFMessage data) {
         this.data = data;
         this.dataSet = true;
         return this;
@@ -263,11 +267,15 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         @Override
         public OFBundleAddMsg build() {
             long xid = this.xidSet ? this.xid : DEFAULT_XID;
-            long bundleId = this.bundleIdSet ? this.bundleId : DEFAULT_BUNDLE_ID;
+            if(!this.bundleIdSet)
+                throw new IllegalStateException("Property bundleId doesn't have default value -- must be set");
+            if(bundleId == null)
+                throw new NullPointerException("Property bundleId must not be null");
             Set<OFBundleFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            byte[] data = this.dataSet ? this.data : DEFAULT_DATA;
+            if(!this.dataSet)
+                throw new IllegalStateException("Property data doesn't have default value -- must be set");
             if(data == null)
                 throw new NullPointerException("Property data must not be null");
 
@@ -307,11 +315,11 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             long xid = U32.f(bb.readInt());
-            long bundleId = U32.f(bb.readInt());
+            BundleId bundleId = BundleId.read4Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
             Set<OFBundleFlags> flags = OFBundleFlagsSerializerVer14.readFrom(bb);
-            byte[] data = ChannelUtils.readBytes(bb, length - (bb.readerIndex() - start));
+            OFMessage data = OFMessageVer14.READER.readFrom(bb);
 
             OFBundleAddMsgVer14 bundleAddMsgVer14 = new OFBundleAddMsgVer14(
                     xid,
@@ -340,10 +348,10 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
             sink.putByte((byte) 0x22);
             // FIXME: skip funnel of length
             sink.putLong(message.xid);
-            sink.putLong(message.bundleId);
+            message.bundleId.putTo(sink);
             // skip pad (2 bytes)
             OFBundleFlagsSerializerVer14.putTo(message.flags, sink);
-            sink.putBytes(message.data);
+            message.data.putTo(sink);
         }
     }
 
@@ -366,11 +374,11 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
             bb.writeShort(U16.t(0));
 
             bb.writeInt(U32.t(message.xid));
-            bb.writeInt(U32.t(message.bundleId));
+            message.bundleId.write4Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);
             OFBundleFlagsSerializerVer14.writeTo(bb, message.flags);
-            bb.writeBytes(message.data);
+            message.data.writeTo(bb);
 
             // update length field
             int length = bb.writerIndex() - startIndex;
@@ -388,7 +396,7 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         b.append(", ");
         b.append("flags=").append(flags);
         b.append(", ");
-        b.append("data=").append(Arrays.toString(data));
+        b.append("data=").append(data);
         b.append(")");
         return b.toString();
     }
@@ -405,15 +413,21 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
 
         if( xid != other.xid)
             return false;
-        if( bundleId != other.bundleId)
+        if (bundleId == null) {
+            if (other.bundleId != null)
+                return false;
+        } else if (!bundleId.equals(other.bundleId))
             return false;
         if (flags == null) {
             if (other.flags != null)
                 return false;
         } else if (!flags.equals(other.flags))
             return false;
-        if (!Arrays.equals(data, other.data))
+        if (data == null) {
+            if (other.data != null)
                 return false;
+        } else if (!data.equals(other.data))
+            return false;
         return true;
     }
 
@@ -423,9 +437,9 @@ class OFBundleAddMsgVer14 implements OFBundleAddMsg {
         int result = 1;
 
         result = prime *  (int) (xid ^ (xid >>> 32));
-        result = prime *  (int) (bundleId ^ (bundleId >>> 32));
+        result = prime * result + ((bundleId == null) ? 0 : bundleId.hashCode());
         result = prime * result + ((flags == null) ? 0 : flags.hashCode());
-        result = prime * result + Arrays.hashCode(data);
+        result = prime * result + ((data == null) ? 0 : data.hashCode());
         return result;
     }
 

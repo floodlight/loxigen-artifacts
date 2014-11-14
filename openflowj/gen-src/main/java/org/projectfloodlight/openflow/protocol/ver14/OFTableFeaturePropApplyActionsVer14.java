@@ -50,6 +50,9 @@ class OFTableFeaturePropApplyActionsVer14 implements OFTableFeaturePropApplyActi
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropApplyActionsVer14(List<OFActionId> actionIds) {
+        if(actionIds == null) {
+            throw new NullPointerException("OFTableFeaturePropApplyActionsVer14: property actionIds cannot be null");
+        }
         this.actionIds = actionIds;
     }
 

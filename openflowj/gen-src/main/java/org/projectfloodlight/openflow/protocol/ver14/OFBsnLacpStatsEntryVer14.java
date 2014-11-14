@@ -70,6 +70,15 @@ class OFBsnLacpStatsEntryVer14 implements OFBsnLacpStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLacpStatsEntryVer14(OFPort portNo, int actorSysPriority, MacAddress actorSysMac, int actorPortPriority, int actorPortNum, int actorKey, short convergenceStatus, int partnerSysPriority, MacAddress partnerSysMac, int partnerPortPriority, int partnerPortNum, int partnerKey) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnLacpStatsEntryVer14: property portNo cannot be null");
+        }
+        if(actorSysMac == null) {
+            throw new NullPointerException("OFBsnLacpStatsEntryVer14: property actorSysMac cannot be null");
+        }
+        if(partnerSysMac == null) {
+            throw new NullPointerException("OFBsnLacpStatsEntryVer14: property partnerSysMac cannot be null");
+        }
         this.portNo = portNo;
         this.actorSysPriority = actorSysPriority;
         this.actorSysMac = actorSysMac;

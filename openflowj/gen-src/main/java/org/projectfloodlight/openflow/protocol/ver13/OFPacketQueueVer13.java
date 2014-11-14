@@ -54,6 +54,12 @@ class OFPacketQueueVer13 implements OFPacketQueue {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketQueueVer13(long queueId, OFPort port, List<OFQueueProp> properties) {
+        if(port == null) {
+            throw new NullPointerException("OFPacketQueueVer13: property port cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFPacketQueueVer13: property properties cannot be null");
+        }
         this.queueId = queueId;
         this.port = port;
         this.properties = properties;

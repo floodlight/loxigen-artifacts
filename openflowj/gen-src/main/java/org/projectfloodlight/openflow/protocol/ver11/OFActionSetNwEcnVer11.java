@@ -48,6 +48,9 @@ class OFActionSetNwEcnVer11 implements OFActionSetNwEcn {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetNwEcnVer11(IpEcn nwEcn) {
+        if(nwEcn == null) {
+            throw new NullPointerException("OFActionSetNwEcnVer11: property nwEcn cannot be null");
+        }
         this.nwEcn = nwEcn;
     }
 

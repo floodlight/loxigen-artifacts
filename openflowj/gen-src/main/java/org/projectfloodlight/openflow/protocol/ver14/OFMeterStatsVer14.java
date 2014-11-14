@@ -62,6 +62,15 @@ class OFMeterStatsVer14 implements OFMeterStats {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterStatsVer14(long meterId, long flowCount, U64 packetInCount, U64 byteInCount, long durationSec, long durationNsec, List<OFMeterBandStats> bandStats) {
+        if(packetInCount == null) {
+            throw new NullPointerException("OFMeterStatsVer14: property packetInCount cannot be null");
+        }
+        if(byteInCount == null) {
+            throw new NullPointerException("OFMeterStatsVer14: property byteInCount cannot be null");
+        }
+        if(bandStats == null) {
+            throw new NullPointerException("OFMeterStatsVer14: property bandStats cannot be null");
+        }
         this.meterId = meterId;
         this.flowCount = flowCount;
         this.packetInCount = packetInCount;

@@ -53,6 +53,9 @@ class OFMeterConfigStatsRequestVer14 implements OFMeterConfigStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterConfigStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags, long meterId) {
+        if(flags == null) {
+            throw new NullPointerException("OFMeterConfigStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.meterId = meterId;

@@ -48,6 +48,9 @@ class OFActionPushMplsVer13 implements OFActionPushMpls {
 
     // package private constructor - used by readers, builders, and factory
     OFActionPushMplsVer13(EthType ethertype) {
+        if(ethertype == null) {
+            throw new NullPointerException("OFActionPushMplsVer13: property ethertype cannot be null");
+        }
         this.ethertype = ethertype;
     }
 

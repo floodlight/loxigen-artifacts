@@ -56,6 +56,15 @@ class OFBsnFlowIdleVer14 implements OFBsnFlowIdle {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowIdleVer14(long xid, U64 cookie, int priority, TableId tableId, Match match) {
+        if(cookie == null) {
+            throw new NullPointerException("OFBsnFlowIdleVer14: property cookie cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnFlowIdleVer14: property tableId cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFBsnFlowIdleVer14: property match cannot be null");
+        }
         this.xid = xid;
         this.cookie = cookie;
         this.priority = priority;

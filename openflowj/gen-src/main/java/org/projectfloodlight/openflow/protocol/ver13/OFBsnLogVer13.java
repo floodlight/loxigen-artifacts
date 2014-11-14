@@ -47,6 +47,12 @@ class OFBsnLogVer13 implements OFBsnLog {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnLogVer13(long xid, OFBsnLoglevel loglevel, String data) {
+        if(loglevel == null) {
+            throw new NullPointerException("OFBsnLogVer13: property loglevel cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBsnLogVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.loglevel = loglevel;
         this.data = data;

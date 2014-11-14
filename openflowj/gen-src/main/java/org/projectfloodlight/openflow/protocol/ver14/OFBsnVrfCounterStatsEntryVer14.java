@@ -52,6 +52,9 @@ class OFBsnVrfCounterStatsEntryVer14 implements OFBsnVrfCounterStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVrfCounterStatsEntryVer14(long vrf, List<U64> values) {
+        if(values == null) {
+            throw new NullPointerException("OFBsnVrfCounterStatsEntryVer14: property values cannot be null");
+        }
         this.vrf = vrf;
         this.values = values;
     }

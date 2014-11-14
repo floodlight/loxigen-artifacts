@@ -48,6 +48,9 @@ class OFActionSetTpSrcVer11 implements OFActionSetTpSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetTpSrcVer11(TransportPort tpPort) {
+        if(tpPort == null) {
+            throw new NullPointerException("OFActionSetTpSrcVer11: property tpPort cannot be null");
+        }
         this.tpPort = tpPort;
     }
 

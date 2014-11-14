@@ -48,6 +48,9 @@ class OFActionPushVlanVer12 implements OFActionPushVlan {
 
     // package private constructor - used by readers, builders, and factory
     OFActionPushVlanVer12(EthType ethertype) {
+        if(ethertype == null) {
+            throw new NullPointerException("OFActionPushVlanVer12: property ethertype cannot be null");
+        }
         this.ethertype = ethertype;
     }
 

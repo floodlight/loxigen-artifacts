@@ -50,6 +50,9 @@ class OFTableFeaturePropTableSyncFromVer14 implements OFTableFeaturePropTableSyn
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropTableSyncFromVer14(List<U8> tableIds) {
+        if(tableIds == null) {
+            throw new NullPointerException("OFTableFeaturePropTableSyncFromVer14: property tableIds cannot be null");
+        }
         this.tableIds = tableIds;
     }
 

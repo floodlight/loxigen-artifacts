@@ -49,6 +49,9 @@ class OFBsnTlvPartnerStateVer14 implements OFBsnTlvPartnerState {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvPartnerStateVer14(Set<OFBsnLacpState> value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvPartnerStateVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

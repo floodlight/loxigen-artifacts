@@ -51,6 +51,9 @@ class OFQueueDescStatsRequestVer14 implements OFQueueDescStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueDescStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFQueueDescStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

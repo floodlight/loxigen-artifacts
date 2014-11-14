@@ -49,6 +49,9 @@ class OFBsnGentableClearReplyVer14 implements OFBsnGentableClearReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableClearReplyVer14(long xid, GenTableId tableId, long deletedCount, long errorCount) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableClearReplyVer14: property tableId cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.deletedCount = deletedCount;

@@ -47,6 +47,12 @@ class OFMeterModFailedErrorMsgVer13 implements OFMeterModFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterModFailedErrorMsgVer13(long xid, OFMeterModFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFMeterModFailedErrorMsgVer13: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFMeterModFailedErrorMsgVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

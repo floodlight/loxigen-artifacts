@@ -50,6 +50,9 @@ class OFBsnSetSwitchPipelineRequestVer14 implements OFBsnSetSwitchPipelineReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetSwitchPipelineRequestVer14(long xid, String pipeline) {
+        if(pipeline == null) {
+            throw new NullPointerException("OFBsnSetSwitchPipelineRequestVer14: property pipeline cannot be null");
+        }
         this.xid = xid;
         this.pipeline = pipeline;
     }

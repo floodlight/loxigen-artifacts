@@ -71,6 +71,30 @@ class OFBsnVportL2GreVer11 implements OFBsnVportL2Gre {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVportL2GreVer11(Set<OFBsnVportL2GreFlags> flags, OFPort portNo, OFPort loopbackPortNo, MacAddress localMac, MacAddress nhMac, IPv4Address srcIp, IPv4Address dstIp, short dscp, short ttl, long vpn, long rateLimit, String ifName) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property flags cannot be null");
+        }
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property portNo cannot be null");
+        }
+        if(loopbackPortNo == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property loopbackPortNo cannot be null");
+        }
+        if(localMac == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property localMac cannot be null");
+        }
+        if(nhMac == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property nhMac cannot be null");
+        }
+        if(srcIp == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property srcIp cannot be null");
+        }
+        if(dstIp == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property dstIp cannot be null");
+        }
+        if(ifName == null) {
+            throw new NullPointerException("OFBsnVportL2GreVer11: property ifName cannot be null");
+        }
         this.flags = flags;
         this.portNo = portNo;
         this.loopbackPortNo = loopbackPortNo;

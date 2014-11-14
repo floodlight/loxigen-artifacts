@@ -50,6 +50,12 @@ class OFBsnTableChecksumStatsEntryVer14 implements OFBsnTableChecksumStatsEntry 
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTableChecksumStatsEntryVer14(TableId tableId, U64 checksum) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnTableChecksumStatsEntryVer14: property tableId cannot be null");
+        }
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnTableChecksumStatsEntryVer14: property checksum cannot be null");
+        }
         this.tableId = tableId;
         this.checksum = checksum;
     }

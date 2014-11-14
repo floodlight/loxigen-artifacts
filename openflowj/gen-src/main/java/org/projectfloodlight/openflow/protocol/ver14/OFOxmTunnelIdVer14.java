@@ -48,6 +48,9 @@ class OFOxmTunnelIdVer14 implements OFOxmTunnelId {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmTunnelIdVer14(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmTunnelIdVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

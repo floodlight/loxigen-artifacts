@@ -48,6 +48,9 @@ class OFOxmBsnL3DstClassIdVer13 implements OFOxmBsnL3DstClassId {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL3DstClassIdVer13(ClassId value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnL3DstClassIdVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

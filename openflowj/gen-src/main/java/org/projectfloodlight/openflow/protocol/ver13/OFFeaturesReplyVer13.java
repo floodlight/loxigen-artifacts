@@ -62,6 +62,15 @@ class OFFeaturesReplyVer13 implements OFFeaturesReply {
 
     // package private constructor - used by readers, builders, and factory
     OFFeaturesReplyVer13(long xid, DatapathId datapathId, long nBuffers, short nTables, OFAuxId auxiliaryId, Set<OFCapabilities> capabilities, long reserved) {
+        if(datapathId == null) {
+            throw new NullPointerException("OFFeaturesReplyVer13: property datapathId cannot be null");
+        }
+        if(auxiliaryId == null) {
+            throw new NullPointerException("OFFeaturesReplyVer13: property auxiliaryId cannot be null");
+        }
+        if(capabilities == null) {
+            throw new NullPointerException("OFFeaturesReplyVer13: property capabilities cannot be null");
+        }
         this.xid = xid;
         this.datapathId = datapathId;
         this.nBuffers = nBuffers;

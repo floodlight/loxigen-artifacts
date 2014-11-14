@@ -73,6 +73,33 @@ class OFTableStatsEntryVer12 implements OFTableStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFTableStatsEntryVer12(TableId tableId, String name, OFMatchBmap match, int wildcards, long writeActions, long applyActions, U64 writeSetfields, U64 applySetfields, U64 metadataMatch, U64 metadataWrite, long instructions, long config, long maxEntries, long activeCount, U64 lookupCount, U64 matchedCount) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property tableId cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property name cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property match cannot be null");
+        }
+        if(writeSetfields == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property writeSetfields cannot be null");
+        }
+        if(applySetfields == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property applySetfields cannot be null");
+        }
+        if(metadataMatch == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property metadataMatch cannot be null");
+        }
+        if(metadataWrite == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property metadataWrite cannot be null");
+        }
+        if(lookupCount == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property lookupCount cannot be null");
+        }
+        if(matchedCount == null) {
+            throw new NullPointerException("OFTableStatsEntryVer12: property matchedCount cannot be null");
+        }
         this.tableId = tableId;
         this.name = name;
         this.match = match;

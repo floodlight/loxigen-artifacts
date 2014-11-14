@@ -48,6 +48,9 @@ class OFOxmIpProtoVer14 implements OFOxmIpProto {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpProtoVer14(IpProtocol value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpProtoVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

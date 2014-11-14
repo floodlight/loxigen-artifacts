@@ -50,6 +50,12 @@ class OFOxmIpv6SrcMaskedVer13 implements OFOxmIpv6SrcMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6SrcMaskedVer13(IPv6Address value, IPv6Address mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6SrcMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv6SrcMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

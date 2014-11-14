@@ -57,6 +57,15 @@ class OFAggregateStatsReplyVer12 implements OFAggregateStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFAggregateStatsReplyVer12(long xid, Set<OFStatsReplyFlags> flags, U64 packetCount, U64 byteCount, long flowCount) {
+        if(flags == null) {
+            throw new NullPointerException("OFAggregateStatsReplyVer12: property flags cannot be null");
+        }
+        if(packetCount == null) {
+            throw new NullPointerException("OFAggregateStatsReplyVer12: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFAggregateStatsReplyVer12: property byteCount cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.packetCount = packetCount;

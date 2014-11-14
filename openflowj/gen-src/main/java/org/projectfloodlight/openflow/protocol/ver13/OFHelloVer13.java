@@ -52,6 +52,9 @@ class OFHelloVer13 implements OFHello {
 
     // package private constructor - used by readers, builders, and factory
     OFHelloVer13(long xid, List<OFHelloElem> elements) {
+        if(elements == null) {
+            throw new NullPointerException("OFHelloVer13: property elements cannot be null");
+        }
         this.xid = xid;
         this.elements = elements;
     }

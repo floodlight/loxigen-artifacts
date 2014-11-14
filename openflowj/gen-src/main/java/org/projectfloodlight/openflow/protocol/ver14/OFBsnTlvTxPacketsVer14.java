@@ -48,6 +48,9 @@ class OFBsnTlvTxPacketsVer14 implements OFBsnTlvTxPackets {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvTxPacketsVer14(U64 value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvTxPacketsVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

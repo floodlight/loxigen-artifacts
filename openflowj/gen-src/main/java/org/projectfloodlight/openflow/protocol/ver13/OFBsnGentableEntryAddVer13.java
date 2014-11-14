@@ -53,6 +53,18 @@ class OFBsnGentableEntryAddVer13 implements OFBsnGentableEntryAdd {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableEntryAddVer13(long xid, GenTableId tableId, U128 checksum, List<OFBsnTlv> key, List<OFBsnTlv> value) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableEntryAddVer13: property tableId cannot be null");
+        }
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableEntryAddVer13: property checksum cannot be null");
+        }
+        if(key == null) {
+            throw new NullPointerException("OFBsnGentableEntryAddVer13: property key cannot be null");
+        }
+        if(value == null) {
+            throw new NullPointerException("OFBsnGentableEntryAddVer13: property value cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.checksum = checksum;

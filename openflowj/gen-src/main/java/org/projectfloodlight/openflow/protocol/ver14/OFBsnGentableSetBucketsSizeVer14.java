@@ -47,6 +47,9 @@ class OFBsnGentableSetBucketsSizeVer14 implements OFBsnGentableSetBucketsSize {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableSetBucketsSizeVer14(long xid, GenTableId tableId, long bucketsSize) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnGentableSetBucketsSizeVer14: property tableId cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.bucketsSize = bucketsSize;

@@ -70,6 +70,24 @@ class OFFlowStatsEntryVer11 implements OFFlowStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowStatsEntryVer11(TableId tableId, long durationSec, long durationNsec, int priority, int idleTimeout, int hardTimeout, U64 cookie, U64 packetCount, U64 byteCount, Match match, List<OFInstruction> instructions) {
+        if(tableId == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer11: property tableId cannot be null");
+        }
+        if(cookie == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer11: property cookie cannot be null");
+        }
+        if(packetCount == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer11: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer11: property byteCount cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer11: property match cannot be null");
+        }
+        if(instructions == null) {
+            throw new NullPointerException("OFFlowStatsEntryVer11: property instructions cannot be null");
+        }
         this.tableId = tableId;
         this.durationSec = durationSec;
         this.durationNsec = durationNsec;

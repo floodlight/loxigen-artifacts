@@ -55,6 +55,12 @@ class OFPortDescStatsReplyVer13 implements OFPortDescStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, List<OFPortDesc> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFPortDescStatsReplyVer13: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFPortDescStatsReplyVer13: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

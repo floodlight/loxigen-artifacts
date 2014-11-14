@@ -51,6 +51,9 @@ class OFPortDescStatsRequestVer13 implements OFPortDescStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFPortDescStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFPortDescStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

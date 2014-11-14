@@ -50,6 +50,9 @@ class OFActionOutputVer13 implements OFActionOutput {
 
     // package private constructor - used by readers, builders, and factory
     OFActionOutputVer13(OFPort port, int maxLen) {
+        if(port == null) {
+            throw new NullPointerException("OFActionOutputVer13: property port cannot be null");
+        }
         this.port = port;
         this.maxLen = maxLen;
     }

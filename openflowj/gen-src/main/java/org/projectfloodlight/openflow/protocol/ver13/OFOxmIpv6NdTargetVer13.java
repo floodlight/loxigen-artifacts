@@ -48,6 +48,9 @@ class OFOxmIpv6NdTargetVer13 implements OFOxmIpv6NdTarget {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6NdTargetVer13(IPv6Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6NdTargetVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

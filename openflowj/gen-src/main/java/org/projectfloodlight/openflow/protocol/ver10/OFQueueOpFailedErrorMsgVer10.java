@@ -47,6 +47,12 @@ class OFQueueOpFailedErrorMsgVer10 implements OFQueueOpFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueOpFailedErrorMsgVer10(long xid, OFQueueOpFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFQueueOpFailedErrorMsgVer10: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFQueueOpFailedErrorMsgVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

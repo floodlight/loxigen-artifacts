@@ -50,6 +50,12 @@ class OFOxmTunnelIdMaskedVer14 implements OFOxmTunnelIdMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmTunnelIdMaskedVer14(U64 value, U64 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmTunnelIdMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmTunnelIdMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

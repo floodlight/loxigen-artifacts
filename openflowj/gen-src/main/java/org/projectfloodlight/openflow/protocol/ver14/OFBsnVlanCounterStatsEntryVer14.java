@@ -52,6 +52,9 @@ class OFBsnVlanCounterStatsEntryVer14 implements OFBsnVlanCounterStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVlanCounterStatsEntryVer14(int vlanVid, List<U64> values) {
+        if(values == null) {
+            throw new NullPointerException("OFBsnVlanCounterStatsEntryVer14: property values cannot be null");
+        }
         this.vlanVid = vlanVid;
         this.values = values;
     }

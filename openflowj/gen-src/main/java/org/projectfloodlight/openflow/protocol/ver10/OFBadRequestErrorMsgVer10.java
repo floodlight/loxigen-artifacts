@@ -47,6 +47,12 @@ class OFBadRequestErrorMsgVer10 implements OFBadRequestErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFBadRequestErrorMsgVer10(long xid, OFBadRequestCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFBadRequestErrorMsgVer10: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFBadRequestErrorMsgVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

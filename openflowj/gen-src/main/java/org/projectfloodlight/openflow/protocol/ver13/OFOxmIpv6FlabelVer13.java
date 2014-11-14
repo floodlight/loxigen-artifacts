@@ -48,6 +48,9 @@ class OFOxmIpv6FlabelVer13 implements OFOxmIpv6Flabel {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6FlabelVer13(IPv6FlowLabel value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6FlabelVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -50,6 +50,9 @@ class OFBsnGetSwitchPipelineReplyVer14 implements OFBsnGetSwitchPipelineReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGetSwitchPipelineReplyVer14(long xid, String pipeline) {
+        if(pipeline == null) {
+            throw new NullPointerException("OFBsnGetSwitchPipelineReplyVer14: property pipeline cannot be null");
+        }
         this.xid = xid;
         this.pipeline = pipeline;
     }

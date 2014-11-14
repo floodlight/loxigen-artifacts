@@ -50,6 +50,12 @@ class OFOxmMplsLabelMaskedVer13 implements OFOxmMplsLabelMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmMplsLabelMaskedVer13(U32 value, U32 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmMplsLabelMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmMplsLabelMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

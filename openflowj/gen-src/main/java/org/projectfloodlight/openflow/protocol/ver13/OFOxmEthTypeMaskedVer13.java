@@ -50,6 +50,12 @@ class OFOxmEthTypeMaskedVer13 implements OFOxmEthTypeMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmEthTypeMaskedVer13(EthType value, EthType mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmEthTypeMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmEthTypeMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

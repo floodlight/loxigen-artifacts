@@ -48,6 +48,9 @@ class OFOxmEthSrcVer14 implements OFOxmEthSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmEthSrcVer14(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmEthSrcVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -47,6 +47,12 @@ class OFSwitchConfigFailedErrorMsgVer13 implements OFSwitchConfigFailedErrorMsg 
 
     // package private constructor - used by readers, builders, and factory
     OFSwitchConfigFailedErrorMsgVer13(long xid, OFSwitchConfigFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFSwitchConfigFailedErrorMsgVer13: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFSwitchConfigFailedErrorMsgVer13: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

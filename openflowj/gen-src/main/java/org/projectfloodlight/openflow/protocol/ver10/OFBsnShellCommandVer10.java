@@ -53,6 +53,9 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnShellCommandVer10(long xid, long service, byte[] data) {
+        if(data == null) {
+            throw new NullPointerException("OFBsnShellCommandVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.service = service;
         this.data = data;

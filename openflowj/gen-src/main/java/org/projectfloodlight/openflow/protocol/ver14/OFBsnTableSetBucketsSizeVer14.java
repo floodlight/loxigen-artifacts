@@ -52,6 +52,9 @@ class OFBsnTableSetBucketsSizeVer14 implements OFBsnTableSetBucketsSize {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTableSetBucketsSizeVer14(long xid, TableId tableId, long bucketsSize) {
+        if(tableId == null) {
+            throw new NullPointerException("OFBsnTableSetBucketsSizeVer14: property tableId cannot be null");
+        }
         this.xid = xid;
         this.tableId = tableId;
         this.bucketsSize = bucketsSize;

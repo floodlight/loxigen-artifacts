@@ -48,6 +48,9 @@ class OFOxmSctpDstVer14 implements OFOxmSctpDst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmSctpDstVer14(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmSctpDstVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -49,6 +49,9 @@ class OFBsnTlvDataVer14 implements OFBsnTlvData {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvDataVer14(byte[] value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvDataVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

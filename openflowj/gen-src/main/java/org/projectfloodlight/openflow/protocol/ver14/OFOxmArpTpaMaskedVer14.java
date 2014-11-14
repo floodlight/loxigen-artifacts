@@ -50,6 +50,12 @@ class OFOxmArpTpaMaskedVer14 implements OFOxmArpTpaMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpTpaMaskedVer14(IPv4Address value, IPv4Address mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpTpaMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmArpTpaMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

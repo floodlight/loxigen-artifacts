@@ -51,6 +51,12 @@ class OFTableDescVer14 implements OFTableDesc {
 
     // package private constructor - used by readers, builders, and factory
     OFTableDescVer14(TableId tableId, Set<OFTableConfig> config) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableDescVer14: property tableId cannot be null");
+        }
+        if(config == null) {
+            throw new NullPointerException("OFTableDescVer14: property config cannot be null");
+        }
         this.tableId = tableId;
         this.config = config;
     }

@@ -47,6 +47,12 @@ class OFGroupModFailedErrorMsgVer12 implements OFGroupModFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupModFailedErrorMsgVer12(long xid, OFGroupModFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFGroupModFailedErrorMsgVer12: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFGroupModFailedErrorMsgVer12: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

@@ -47,6 +47,12 @@ class OFTableModFailedErrorMsgVer12 implements OFTableModFailedErrorMsg {
 
     // package private constructor - used by readers, builders, and factory
     OFTableModFailedErrorMsgVer12(long xid, OFTableModFailedCode code, OFErrorCauseData data) {
+        if(code == null) {
+            throw new NullPointerException("OFTableModFailedErrorMsgVer12: property code cannot be null");
+        }
+        if(data == null) {
+            throw new NullPointerException("OFTableModFailedErrorMsgVer12: property data cannot be null");
+        }
         this.xid = xid;
         this.code = code;
         this.data = data;

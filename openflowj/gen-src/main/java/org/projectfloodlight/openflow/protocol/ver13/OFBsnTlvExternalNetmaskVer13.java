@@ -48,6 +48,9 @@ class OFBsnTlvExternalNetmaskVer13 implements OFBsnTlvExternalNetmask {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvExternalNetmaskVer13(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvExternalNetmaskVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

@@ -54,6 +54,18 @@ class OFPortStatsPropEthernetVer14 implements OFPortStatsPropEthernet {
 
     // package private constructor - used by readers, builders, and factory
     OFPortStatsPropEthernetVer14(U64 rxFrameErr, U64 rxOverErr, U64 rxCrcErr, U64 collisions) {
+        if(rxFrameErr == null) {
+            throw new NullPointerException("OFPortStatsPropEthernetVer14: property rxFrameErr cannot be null");
+        }
+        if(rxOverErr == null) {
+            throw new NullPointerException("OFPortStatsPropEthernetVer14: property rxOverErr cannot be null");
+        }
+        if(rxCrcErr == null) {
+            throw new NullPointerException("OFPortStatsPropEthernetVer14: property rxCrcErr cannot be null");
+        }
+        if(collisions == null) {
+            throw new NullPointerException("OFPortStatsPropEthernetVer14: property collisions cannot be null");
+        }
         this.rxFrameErr = rxFrameErr;
         this.rxOverErr = rxOverErr;
         this.rxCrcErr = rxCrcErr;

@@ -52,6 +52,9 @@ class OFBsnPduRxTimeoutVer14 implements OFBsnPduRxTimeout {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnPduRxTimeoutVer14(long xid, OFPort portNo, short slotNum) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnPduRxTimeoutVer14: property portNo cannot be null");
+        }
         this.xid = xid;
         this.portNo = portNo;
         this.slotNum = slotNum;

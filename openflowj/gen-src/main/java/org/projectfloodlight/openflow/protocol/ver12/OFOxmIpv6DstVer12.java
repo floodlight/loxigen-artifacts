@@ -48,6 +48,9 @@ class OFOxmIpv6DstVer12 implements OFOxmIpv6Dst {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6DstVer12(IPv6Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6DstVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

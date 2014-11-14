@@ -48,6 +48,9 @@ class OFBsnTlvVlanVidVer14 implements OFBsnTlvVlanVid {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvVlanVidVer14(VlanVid value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvVlanVidVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

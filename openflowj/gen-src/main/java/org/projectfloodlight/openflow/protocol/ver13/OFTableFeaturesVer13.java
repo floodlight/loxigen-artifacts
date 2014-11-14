@@ -62,6 +62,21 @@ class OFTableFeaturesVer13 implements OFTableFeatures {
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturesVer13(TableId tableId, String name, U64 metadataMatch, U64 metadataWrite, long config, long maxEntries, List<OFTableFeatureProp> properties) {
+        if(tableId == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property tableId cannot be null");
+        }
+        if(name == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property name cannot be null");
+        }
+        if(metadataMatch == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property metadataMatch cannot be null");
+        }
+        if(metadataWrite == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property metadataWrite cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFTableFeaturesVer13: property properties cannot be null");
+        }
         this.tableId = tableId;
         this.name = name;
         this.metadataMatch = metadataMatch;

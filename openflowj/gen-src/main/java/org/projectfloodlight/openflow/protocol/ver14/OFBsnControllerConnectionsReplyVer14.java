@@ -52,6 +52,9 @@ class OFBsnControllerConnectionsReplyVer14 implements OFBsnControllerConnections
 
     // package private constructor - used by readers, builders, and factory
     OFBsnControllerConnectionsReplyVer14(long xid, List<OFBsnControllerConnection> connections) {
+        if(connections == null) {
+            throw new NullPointerException("OFBsnControllerConnectionsReplyVer14: property connections cannot be null");
+        }
         this.xid = xid;
         this.connections = connections;
     }

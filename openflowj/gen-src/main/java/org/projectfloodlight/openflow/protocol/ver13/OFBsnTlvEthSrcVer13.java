@@ -48,6 +48,9 @@ class OFBsnTlvEthSrcVer13 implements OFBsnTlvEthSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvEthSrcVer13(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvEthSrcVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

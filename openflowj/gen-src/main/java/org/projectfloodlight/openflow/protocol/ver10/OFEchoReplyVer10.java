@@ -51,6 +51,9 @@ class OFEchoReplyVer10 implements OFEchoReply {
 
     // package private constructor - used by readers, builders, and factory
     OFEchoReplyVer10(long xid, byte[] data) {
+        if(data == null) {
+            throw new NullPointerException("OFEchoReplyVer10: property data cannot be null");
+        }
         this.xid = xid;
         this.data = data;
     }

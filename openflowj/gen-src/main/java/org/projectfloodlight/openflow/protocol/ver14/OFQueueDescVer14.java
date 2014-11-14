@@ -54,6 +54,9 @@ class OFQueueDescVer14 implements OFQueueDesc {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueDescVer14(long portNo, long queueId, List<OFQueueDescProp> properties) {
+        if(properties == null) {
+            throw new NullPointerException("OFQueueDescVer14: property properties cannot be null");
+        }
         this.portNo = portNo;
         this.queueId = queueId;
         this.properties = properties;

@@ -63,6 +63,27 @@ class OFAggregateStatsRequestVer11 implements OFAggregateStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFAggregateStatsRequestVer11(long xid, Set<OFStatsRequestFlags> flags, TableId tableId, OFPort outPort, OFGroup outGroup, U64 cookie, U64 cookieMask, Match match) {
+        if(flags == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property flags cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property tableId cannot be null");
+        }
+        if(outPort == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property outPort cannot be null");
+        }
+        if(outGroup == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property outGroup cannot be null");
+        }
+        if(cookie == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property cookie cannot be null");
+        }
+        if(cookieMask == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property cookieMask cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer11: property match cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.tableId = tableId;

@@ -50,6 +50,12 @@ class OFOxmSctpSrcMaskedVer13 implements OFOxmSctpSrcMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmSctpSrcMaskedVer13(TransportPort value, TransportPort mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmSctpSrcMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmSctpSrcMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

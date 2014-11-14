@@ -48,6 +48,9 @@ class OFActionSetDlSrcVer11 implements OFActionSetDlSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetDlSrcVer11(MacAddress dlAddr) {
+        if(dlAddr == null) {
+            throw new NullPointerException("OFActionSetDlSrcVer11: property dlAddr cannot be null");
+        }
         this.dlAddr = dlAddr;
     }
 

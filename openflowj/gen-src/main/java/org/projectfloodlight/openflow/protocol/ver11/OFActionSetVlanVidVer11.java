@@ -48,6 +48,9 @@ class OFActionSetVlanVidVer11 implements OFActionSetVlanVid {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetVlanVidVer11(VlanVid vlanVid) {
+        if(vlanVid == null) {
+            throw new NullPointerException("OFActionSetVlanVidVer11: property vlanVid cannot be null");
+        }
         this.vlanVid = vlanVid;
     }
 

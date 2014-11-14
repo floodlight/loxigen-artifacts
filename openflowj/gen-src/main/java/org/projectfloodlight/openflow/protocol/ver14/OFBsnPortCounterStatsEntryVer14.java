@@ -52,6 +52,12 @@ class OFBsnPortCounterStatsEntryVer14 implements OFBsnPortCounterStatsEntry {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnPortCounterStatsEntryVer14(OFPort portNo, List<U64> values) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnPortCounterStatsEntryVer14: property portNo cannot be null");
+        }
+        if(values == null) {
+            throw new NullPointerException("OFBsnPortCounterStatsEntryVer14: property values cannot be null");
+        }
         this.portNo = portNo;
         this.values = values;
     }

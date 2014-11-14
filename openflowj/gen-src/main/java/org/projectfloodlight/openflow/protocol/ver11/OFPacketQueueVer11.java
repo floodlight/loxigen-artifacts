@@ -52,6 +52,9 @@ class OFPacketQueueVer11 implements OFPacketQueue {
 
     // package private constructor - used by readers, builders, and factory
     OFPacketQueueVer11(long queueId, List<OFQueueProp> properties) {
+        if(properties == null) {
+            throw new NullPointerException("OFPacketQueueVer11: property properties cannot be null");
+        }
         this.queueId = queueId;
         this.properties = properties;
     }

@@ -48,6 +48,9 @@ class OFOxmInPhyPortVer13 implements OFOxmInPhyPort {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmInPhyPortVer13(OFPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmInPhyPortVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

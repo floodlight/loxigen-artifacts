@@ -50,6 +50,12 @@ class OFBucketCounterVer11 implements OFBucketCounter {
 
     // package private constructor - used by readers, builders, and factory
     OFBucketCounterVer11(U64 packetCount, U64 byteCount) {
+        if(packetCount == null) {
+            throw new NullPointerException("OFBucketCounterVer11: property packetCount cannot be null");
+        }
+        if(byteCount == null) {
+            throw new NullPointerException("OFBucketCounterVer11: property byteCount cannot be null");
+        }
         this.packetCount = packetCount;
         this.byteCount = byteCount;
     }

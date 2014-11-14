@@ -52,6 +52,9 @@ class OFAsyncGetRequestVer14 implements OFAsyncGetRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncGetRequestVer14(long xid, List<OFAsyncConfigProp> properties) {
+        if(properties == null) {
+            throw new NullPointerException("OFAsyncGetRequestVer14: property properties cannot be null");
+        }
         this.xid = xid;
         this.properties = properties;
     }

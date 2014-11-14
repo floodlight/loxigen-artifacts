@@ -77,6 +77,33 @@ class OFFlowDeleteVer14 implements OFFlowDelete {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowDeleteVer14(long xid, U64 cookie, U64 cookieMask, TableId tableId, int idleTimeout, int hardTimeout, int priority, OFBufferId bufferId, OFPort outPort, OFGroup outGroup, Set<OFFlowModFlags> flags, int importance, Match match, List<OFInstruction> instructions) {
+        if(cookie == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property cookie cannot be null");
+        }
+        if(cookieMask == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property cookieMask cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property tableId cannot be null");
+        }
+        if(bufferId == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property bufferId cannot be null");
+        }
+        if(outPort == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property outPort cannot be null");
+        }
+        if(outGroup == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property outGroup cannot be null");
+        }
+        if(flags == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property flags cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property match cannot be null");
+        }
+        if(instructions == null) {
+            throw new NullPointerException("OFFlowDeleteVer14: property instructions cannot be null");
+        }
         this.xid = xid;
         this.cookie = cookie;
         this.cookieMask = cookieMask;

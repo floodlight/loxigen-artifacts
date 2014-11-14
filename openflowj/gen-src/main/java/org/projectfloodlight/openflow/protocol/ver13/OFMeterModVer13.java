@@ -58,6 +58,9 @@ class OFMeterModVer13 implements OFMeterMod {
 
     // package private constructor - used by readers, builders, and factory
     OFMeterModVer13(long xid, int command, int flags, long meterId, List<OFMeterBand> meters) {
+        if(meters == null) {
+            throw new NullPointerException("OFMeterModVer13: property meters cannot be null");
+        }
         this.xid = xid;
         this.command = command;
         this.flags = flags;

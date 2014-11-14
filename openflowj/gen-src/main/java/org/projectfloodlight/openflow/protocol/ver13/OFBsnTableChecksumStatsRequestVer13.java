@@ -51,6 +51,9 @@ class OFBsnTableChecksumStatsRequestVer13 implements OFBsnTableChecksumStatsRequ
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTableChecksumStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnTableChecksumStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

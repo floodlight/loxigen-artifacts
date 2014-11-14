@@ -48,6 +48,9 @@ class OFOxmArpThaVer12 implements OFOxmArpTha {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpThaVer12(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpThaVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

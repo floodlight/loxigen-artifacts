@@ -50,6 +50,12 @@ class OFOxmBsnL3SrcClassIdMaskedVer12 implements OFOxmBsnL3SrcClassIdMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL3SrcClassIdMaskedVer12(ClassId value, ClassId mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnL3SrcClassIdMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnL3SrcClassIdMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

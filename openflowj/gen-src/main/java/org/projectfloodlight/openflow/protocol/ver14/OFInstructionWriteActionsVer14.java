@@ -50,6 +50,9 @@ class OFInstructionWriteActionsVer14 implements OFInstructionWriteActions {
 
     // package private constructor - used by readers, builders, and factory
     OFInstructionWriteActionsVer14(List<OFAction> actions) {
+        if(actions == null) {
+            throw new NullPointerException("OFInstructionWriteActionsVer14: property actions cannot be null");
+        }
         this.actions = actions;
     }
 

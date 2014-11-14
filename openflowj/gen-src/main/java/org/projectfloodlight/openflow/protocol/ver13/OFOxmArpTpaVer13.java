@@ -48,6 +48,9 @@ class OFOxmArpTpaVer13 implements OFOxmArpTpa {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpTpaVer13(IPv4Address value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpTpaVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

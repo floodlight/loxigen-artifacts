@@ -54,6 +54,9 @@ class OFBsnPduRxReplyVer10 implements OFBsnPduRxReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnPduRxReplyVer10(long xid, long status, OFPort portNo, short slotNum) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnPduRxReplyVer10: property portNo cannot be null");
+        }
         this.xid = xid;
         this.status = status;
         this.portNo = portNo;

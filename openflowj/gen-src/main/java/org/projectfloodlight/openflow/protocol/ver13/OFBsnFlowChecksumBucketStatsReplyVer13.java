@@ -55,6 +55,12 @@ class OFBsnFlowChecksumBucketStatsReplyVer13 implements OFBsnFlowChecksumBucketS
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowChecksumBucketStatsReplyVer13(long xid, Set<OFStatsReplyFlags> flags, List<OFBsnFlowChecksumBucketStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnFlowChecksumBucketStatsReplyVer13: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFBsnFlowChecksumBucketStatsReplyVer13: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

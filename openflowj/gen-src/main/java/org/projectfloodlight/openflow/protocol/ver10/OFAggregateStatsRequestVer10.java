@@ -57,6 +57,18 @@ class OFAggregateStatsRequestVer10 implements OFAggregateStatsRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFAggregateStatsRequestVer10(long xid, Set<OFStatsRequestFlags> flags, Match match, TableId tableId, OFPort outPort) {
+        if(flags == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property flags cannot be null");
+        }
+        if(match == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property match cannot be null");
+        }
+        if(tableId == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property tableId cannot be null");
+        }
+        if(outPort == null) {
+            throw new NullPointerException("OFAggregateStatsRequestVer10: property outPort cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.match = match;

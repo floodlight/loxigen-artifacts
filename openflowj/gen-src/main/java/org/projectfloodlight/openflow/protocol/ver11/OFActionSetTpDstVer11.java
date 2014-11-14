@@ -48,6 +48,9 @@ class OFActionSetTpDstVer11 implements OFActionSetTpDst {
 
     // package private constructor - used by readers, builders, and factory
     OFActionSetTpDstVer11(TransportPort tpPort) {
+        if(tpPort == null) {
+            throw new NullPointerException("OFActionSetTpDstVer11: property tpPort cannot be null");
+        }
         this.tpPort = tpPort;
     }
 

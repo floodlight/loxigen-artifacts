@@ -49,6 +49,9 @@ class OFBsnTlvCircuitIdVer13 implements OFBsnTlvCircuitId {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnTlvCircuitIdVer13(byte[] value) {
+        if(value == null) {
+            throw new NullPointerException("OFBsnTlvCircuitIdVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

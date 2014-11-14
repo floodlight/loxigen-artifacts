@@ -55,6 +55,12 @@ class OFBsnGentableEntryDescStatsReplyVer14 implements OFBsnGentableEntryDescSta
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableEntryDescStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, List<OFBsnGentableEntryDescStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsReplyVer14: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFBsnGentableEntryDescStatsReplyVer14: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

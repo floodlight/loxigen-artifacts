@@ -50,6 +50,12 @@ class OFOxmIpv6ExthdrMaskedVer13 implements OFOxmIpv6ExthdrMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6ExthdrMaskedVer13(U16 value, U16 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6ExthdrMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv6ExthdrMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

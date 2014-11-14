@@ -50,6 +50,12 @@ class OFOxmIpv4DstMaskedVer13 implements OFOxmIpv4DstMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv4DstMaskedVer13(IPv4Address value, IPv4Address mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv4DstMaskedVer13: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpv4DstMaskedVer13: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

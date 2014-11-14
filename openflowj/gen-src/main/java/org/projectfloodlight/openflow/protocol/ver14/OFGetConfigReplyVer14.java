@@ -53,6 +53,9 @@ class OFGetConfigReplyVer14 implements OFGetConfigReply {
 
     // package private constructor - used by readers, builders, and factory
     OFGetConfigReplyVer14(long xid, Set<OFConfigFlags> flags, int missSendLen) {
+        if(flags == null) {
+            throw new NullPointerException("OFGetConfigReplyVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.missSendLen = missSendLen;

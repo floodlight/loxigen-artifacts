@@ -48,6 +48,9 @@ class OFBsnFlowChecksumBucketStatsEntryVer14 implements OFBsnFlowChecksumBucketS
 
     // package private constructor - used by readers, builders, and factory
     OFBsnFlowChecksumBucketStatsEntryVer14(U64 checksum) {
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnFlowChecksumBucketStatsEntryVer14: property checksum cannot be null");
+        }
         this.checksum = checksum;
     }
 

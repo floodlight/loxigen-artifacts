@@ -50,6 +50,12 @@ class OFOxmIpProtoMaskedVer12 implements OFOxmIpProtoMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpProtoMaskedVer12(IpProtocol value, IpProtocol mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpProtoMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIpProtoMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

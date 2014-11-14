@@ -50,6 +50,9 @@ class OFQueueGetConfigRequestVer11 implements OFQueueGetConfigRequest {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueGetConfigRequestVer11(long xid, OFPort port) {
+        if(port == null) {
+            throw new NullPointerException("OFQueueGetConfigRequestVer11: property port cannot be null");
+        }
         this.xid = xid;
         this.port = port;
     }

@@ -51,6 +51,9 @@ class OFBsnDebugCounterStatsRequestVer13 implements OFBsnDebugCounterStatsReques
 
     // package private constructor - used by readers, builders, and factory
     OFBsnDebugCounterStatsRequestVer13(long xid, Set<OFStatsRequestFlags> flags) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnDebugCounterStatsRequestVer13: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
     }

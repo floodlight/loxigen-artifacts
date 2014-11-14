@@ -50,6 +50,12 @@ class OFOxmArpShaMaskedVer12 implements OFOxmArpShaMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpShaMaskedVer12(MacAddress value, MacAddress mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpShaMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmArpShaMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

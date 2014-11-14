@@ -88,6 +88,39 @@ class OFMatchV2Ver11 implements OFMatchV2 {
 
     // package private constructor - used by readers, builders, and factory
     OFMatchV2Ver11(OFPort inPort, int wildcards, MacAddress ethSrc, MacAddress ethSrcMask, MacAddress ethDst, MacAddress ethDstMask, int vlanVid, short vlanPcp, int ethType, short ipDscp, short ipProto, IPv4Address ipv4Src, IPv4Address ipv4SrcMask, IPv4Address ipv4Dst, IPv4Address ipv4DstMask, int tcpSrc, int tcpDst, long mplsLabel, short mplsTc, U64 metadata, U64 metadataMask) {
+        if(inPort == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property inPort cannot be null");
+        }
+        if(ethSrc == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethSrc cannot be null");
+        }
+        if(ethSrcMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethSrcMask cannot be null");
+        }
+        if(ethDst == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethDst cannot be null");
+        }
+        if(ethDstMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ethDstMask cannot be null");
+        }
+        if(ipv4Src == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4Src cannot be null");
+        }
+        if(ipv4SrcMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4SrcMask cannot be null");
+        }
+        if(ipv4Dst == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4Dst cannot be null");
+        }
+        if(ipv4DstMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property ipv4DstMask cannot be null");
+        }
+        if(metadata == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property metadata cannot be null");
+        }
+        if(metadataMask == null) {
+            throw new NullPointerException("OFMatchV2Ver11: property metadataMask cannot be null");
+        }
         this.inPort = inPort;
         this.wildcards = wildcards;
         this.ethSrc = ethSrc;

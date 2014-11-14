@@ -48,6 +48,9 @@ class OFOxmSctpSrcVer14 implements OFOxmSctpSrc {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmSctpSrcVer14(TransportPort value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmSctpSrcVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

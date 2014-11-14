@@ -48,6 +48,9 @@ class OFOxmMetadataVer12 implements OFOxmMetadata {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmMetadataVer12(OFMetadata value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmMetadataVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

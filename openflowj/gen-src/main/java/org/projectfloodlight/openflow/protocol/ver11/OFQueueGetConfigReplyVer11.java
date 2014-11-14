@@ -54,6 +54,12 @@ class OFQueueGetConfigReplyVer11 implements OFQueueGetConfigReply {
 
     // package private constructor - used by readers, builders, and factory
     OFQueueGetConfigReplyVer11(long xid, OFPort port, List<OFPacketQueue> queues) {
+        if(port == null) {
+            throw new NullPointerException("OFQueueGetConfigReplyVer11: property port cannot be null");
+        }
+        if(queues == null) {
+            throw new NullPointerException("OFQueueGetConfigReplyVer11: property queues cannot be null");
+        }
         this.xid = xid;
         this.port = port;
         this.queues = queues;

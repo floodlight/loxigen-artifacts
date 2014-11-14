@@ -48,6 +48,9 @@ class OFOxmEthTypeVer14 implements OFOxmEthType {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmEthTypeVer14(EthType value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmEthTypeVer14: property value cannot be null");
+        }
         this.value = value;
     }
 

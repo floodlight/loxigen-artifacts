@@ -48,6 +48,9 @@ class OFBsnGentableBucketStatsEntryVer13 implements OFBsnGentableBucketStatsEntr
 
     // package private constructor - used by readers, builders, and factory
     OFBsnGentableBucketStatsEntryVer13(U128 checksum) {
+        if(checksum == null) {
+            throw new NullPointerException("OFBsnGentableBucketStatsEntryVer13: property checksum cannot be null");
+        }
         this.checksum = checksum;
     }
 

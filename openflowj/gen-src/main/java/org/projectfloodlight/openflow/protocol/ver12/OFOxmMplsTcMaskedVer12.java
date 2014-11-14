@@ -50,6 +50,12 @@ class OFOxmMplsTcMaskedVer12 implements OFOxmMplsTcMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmMplsTcMaskedVer12(U8 value, U8 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmMplsTcMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmMplsTcMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

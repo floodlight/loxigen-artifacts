@@ -48,6 +48,9 @@ class OFOxmBsnL2CacheHitVer13 implements OFOxmBsnL2CacheHit {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnL2CacheHitVer13(OFBooleanValue value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnL2CacheHitVer13: property value cannot be null");
+        }
         this.value = value;
     }
 

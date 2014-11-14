@@ -55,6 +55,15 @@ class OFBsnImageDescStatsReplyVer14 implements OFBsnImageDescStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnImageDescStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, String imageChecksum, String startupConfigChecksum) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnImageDescStatsReplyVer14: property flags cannot be null");
+        }
+        if(imageChecksum == null) {
+            throw new NullPointerException("OFBsnImageDescStatsReplyVer14: property imageChecksum cannot be null");
+        }
+        if(startupConfigChecksum == null) {
+            throw new NullPointerException("OFBsnImageDescStatsReplyVer14: property startupConfigChecksum cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.imageChecksum = imageChecksum;

@@ -50,6 +50,12 @@ class OFOxmVlanPcpMaskedVer14 implements OFOxmVlanPcpMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmVlanPcpMaskedVer14(VlanPcp value, VlanPcp mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmVlanPcpMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmVlanPcpMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

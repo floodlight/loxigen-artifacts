@@ -47,6 +47,12 @@ class OFRoleReplyVer14 implements OFRoleReply {
 
     // package private constructor - used by readers, builders, and factory
     OFRoleReplyVer14(long xid, OFControllerRole role, U64 generationId) {
+        if(role == null) {
+            throw new NullPointerException("OFRoleReplyVer14: property role cannot be null");
+        }
+        if(generationId == null) {
+            throw new NullPointerException("OFRoleReplyVer14: property generationId cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.generationId = generationId;

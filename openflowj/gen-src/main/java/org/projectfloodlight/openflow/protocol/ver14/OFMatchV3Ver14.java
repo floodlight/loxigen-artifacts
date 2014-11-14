@@ -51,6 +51,9 @@ class OFMatchV3Ver14 implements OFMatchV3 {
 
     // package private constructor - used by readers, builders, and factory
     OFMatchV3Ver14(OFOxmList oxmList) {
+        if(oxmList == null) {
+            throw new NullPointerException("OFMatchV3Ver14: property oxmList cannot be null");
+        }
         this.oxmList = oxmList;
     }
 

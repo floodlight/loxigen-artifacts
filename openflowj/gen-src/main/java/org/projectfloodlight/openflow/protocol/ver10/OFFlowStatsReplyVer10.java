@@ -55,6 +55,12 @@ class OFFlowStatsReplyVer10 implements OFFlowStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFFlowStatsReplyVer10(long xid, Set<OFStatsReplyFlags> flags, List<OFFlowStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFFlowStatsReplyVer10: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFFlowStatsReplyVer10: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

@@ -50,6 +50,12 @@ class OFOxmBsnLagIdMaskedVer14 implements OFOxmBsnLagIdMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmBsnLagIdMaskedVer14(LagId value, LagId mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmBsnLagIdMaskedVer14: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmBsnLagIdMaskedVer14: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

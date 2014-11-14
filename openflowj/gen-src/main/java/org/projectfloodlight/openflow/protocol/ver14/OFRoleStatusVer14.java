@@ -53,6 +53,15 @@ class OFRoleStatusVer14 implements OFRoleStatus {
 
     // package private constructor - used by readers, builders, and factory
     OFRoleStatusVer14(long xid, long role, OFControllerRoleReason reason, U64 generationId, List<OFRoleProp> properties) {
+        if(reason == null) {
+            throw new NullPointerException("OFRoleStatusVer14: property reason cannot be null");
+        }
+        if(generationId == null) {
+            throw new NullPointerException("OFRoleStatusVer14: property generationId cannot be null");
+        }
+        if(properties == null) {
+            throw new NullPointerException("OFRoleStatusVer14: property properties cannot be null");
+        }
         this.xid = xid;
         this.role = role;
         this.reason = reason;

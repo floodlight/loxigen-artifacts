@@ -55,6 +55,12 @@ class OFBsnVlanCounterStatsReplyVer14 implements OFBsnVlanCounterStatsReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVlanCounterStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, List<OFBsnVlanCounterStatsEntry> entries) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnVlanCounterStatsReplyVer14: property flags cannot be null");
+        }
+        if(entries == null) {
+            throw new NullPointerException("OFBsnVlanCounterStatsReplyVer14: property entries cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.entries = entries;

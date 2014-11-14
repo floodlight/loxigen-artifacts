@@ -27,11 +27,11 @@ import java.util.Set;
 import java.util.List;
 import org.jboss.netty.buffer.ChannelBuffer;
 
-public interface OFBundleCtrlMsg extends OFObject, OFMessage {
+public interface OFBundleCtrlMsg extends OFObject, OFMessage, OFRequest<OFBundleCtrlMsg> {
     OFVersion getVersion();
     OFType getType();
     long getXid();
-    long getBundleId();
+    BundleId getBundleId();
     OFBundleCtrlType getBundleCtrlType();
     Set<OFBundleFlags> getFlags();
     List<OFBundleProp> getProperties();
@@ -45,8 +45,8 @@ public interface OFBundleCtrlMsg extends OFObject, OFMessage {
         OFType getType();
         long getXid();
         Builder setXid(long xid);
-        long getBundleId();
-        Builder setBundleId(long bundleId);
+        BundleId getBundleId();
+        Builder setBundleId(BundleId bundleId);
         OFBundleCtrlType getBundleCtrlType();
         Builder setBundleCtrlType(OFBundleCtrlType bundleCtrlType);
         Set<OFBundleFlags> getFlags();

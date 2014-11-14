@@ -51,6 +51,15 @@ class OFGroupAddVer11 implements OFGroupAdd {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupAddVer11(long xid, OFGroupType groupType, OFGroup group, List<OFBucket> buckets) {
+        if(groupType == null) {
+            throw new NullPointerException("OFGroupAddVer11: property groupType cannot be null");
+        }
+        if(group == null) {
+            throw new NullPointerException("OFGroupAddVer11: property group cannot be null");
+        }
+        if(buckets == null) {
+            throw new NullPointerException("OFGroupAddVer11: property buckets cannot be null");
+        }
         this.xid = xid;
         this.groupType = groupType;
         this.group = group;

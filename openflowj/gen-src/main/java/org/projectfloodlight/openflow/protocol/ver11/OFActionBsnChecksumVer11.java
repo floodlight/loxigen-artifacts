@@ -48,6 +48,9 @@ class OFActionBsnChecksumVer11 implements OFActionBsnChecksum {
 
     // package private constructor - used by readers, builders, and factory
     OFActionBsnChecksumVer11(U128 checksum) {
+        if(checksum == null) {
+            throw new NullPointerException("OFActionBsnChecksumVer11: property checksum cannot be null");
+        }
         this.checksum = checksum;
     }
 

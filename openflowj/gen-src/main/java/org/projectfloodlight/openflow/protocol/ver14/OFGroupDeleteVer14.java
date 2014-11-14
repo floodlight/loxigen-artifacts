@@ -51,6 +51,15 @@ class OFGroupDeleteVer14 implements OFGroupDelete {
 
     // package private constructor - used by readers, builders, and factory
     OFGroupDeleteVer14(long xid, OFGroupType groupType, OFGroup group, List<OFBucket> buckets) {
+        if(groupType == null) {
+            throw new NullPointerException("OFGroupDeleteVer14: property groupType cannot be null");
+        }
+        if(group == null) {
+            throw new NullPointerException("OFGroupDeleteVer14: property group cannot be null");
+        }
+        if(buckets == null) {
+            throw new NullPointerException("OFGroupDeleteVer14: property buckets cannot be null");
+        }
         this.xid = xid;
         this.groupType = groupType;
         this.group = group;

@@ -52,6 +52,9 @@ class OFAsyncGetReplyVer14 implements OFAsyncGetReply {
 
     // package private constructor - used by readers, builders, and factory
     OFAsyncGetReplyVer14(long xid, List<OFAsyncConfigProp> properties) {
+        if(properties == null) {
+            throw new NullPointerException("OFAsyncGetReplyVer14: property properties cannot be null");
+        }
         this.xid = xid;
         this.properties = properties;
     }

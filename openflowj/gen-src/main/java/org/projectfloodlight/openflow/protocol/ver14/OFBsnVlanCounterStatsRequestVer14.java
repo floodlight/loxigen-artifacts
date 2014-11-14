@@ -53,6 +53,9 @@ class OFBsnVlanCounterStatsRequestVer14 implements OFBsnVlanCounterStatsRequest 
 
     // package private constructor - used by readers, builders, and factory
     OFBsnVlanCounterStatsRequestVer14(long xid, Set<OFStatsRequestFlags> flags, int vlanVid) {
+        if(flags == null) {
+            throw new NullPointerException("OFBsnVlanCounterStatsRequestVer14: property flags cannot be null");
+        }
         this.xid = xid;
         this.flags = flags;
         this.vlanVid = vlanVid;

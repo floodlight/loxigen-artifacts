@@ -50,6 +50,12 @@ class OFOxmIcmpv6CodeMaskedVer12 implements OFOxmIcmpv6CodeMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIcmpv6CodeMaskedVer12(U8 value, U8 mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIcmpv6CodeMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmIcmpv6CodeMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }

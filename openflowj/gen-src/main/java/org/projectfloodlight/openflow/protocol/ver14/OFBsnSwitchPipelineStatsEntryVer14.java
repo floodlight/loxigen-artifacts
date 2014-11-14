@@ -48,6 +48,9 @@ class OFBsnSwitchPipelineStatsEntryVer14 implements OFBsnSwitchPipelineStatsEntr
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSwitchPipelineStatsEntryVer14(String pipeline) {
+        if(pipeline == null) {
+            throw new NullPointerException("OFBsnSwitchPipelineStatsEntryVer14: property pipeline cannot be null");
+        }
         this.pipeline = pipeline;
     }
 

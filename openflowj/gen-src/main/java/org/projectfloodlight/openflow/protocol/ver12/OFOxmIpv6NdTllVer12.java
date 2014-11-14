@@ -48,6 +48,9 @@ class OFOxmIpv6NdTllVer12 implements OFOxmIpv6NdTll {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmIpv6NdTllVer12(MacAddress value) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmIpv6NdTllVer12: property value cannot be null");
+        }
         this.value = value;
     }
 

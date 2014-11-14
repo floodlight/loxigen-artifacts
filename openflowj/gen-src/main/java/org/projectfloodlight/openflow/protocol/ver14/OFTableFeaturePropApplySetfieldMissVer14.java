@@ -50,6 +50,9 @@ class OFTableFeaturePropApplySetfieldMissVer14 implements OFTableFeaturePropAppl
 
     // package private constructor - used by readers, builders, and factory
     OFTableFeaturePropApplySetfieldMissVer14(List<U32> oxmIds) {
+        if(oxmIds == null) {
+            throw new NullPointerException("OFTableFeaturePropApplySetfieldMissVer14: property oxmIds cannot be null");
+        }
         this.oxmIds = oxmIds;
     }
 

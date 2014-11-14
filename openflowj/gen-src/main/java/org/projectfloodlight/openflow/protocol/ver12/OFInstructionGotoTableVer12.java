@@ -48,6 +48,9 @@ class OFInstructionGotoTableVer12 implements OFInstructionGotoTable {
 
     // package private constructor - used by readers, builders, and factory
     OFInstructionGotoTableVer12(TableId tableId) {
+        if(tableId == null) {
+            throw new NullPointerException("OFInstructionGotoTableVer12: property tableId cannot be null");
+        }
         this.tableId = tableId;
     }
 

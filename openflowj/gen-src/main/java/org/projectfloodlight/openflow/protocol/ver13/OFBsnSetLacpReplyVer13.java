@@ -52,6 +52,9 @@ class OFBsnSetLacpReplyVer13 implements OFBsnSetLacpReply {
 
     // package private constructor - used by readers, builders, and factory
     OFBsnSetLacpReplyVer13(long xid, long status, OFPort portNo) {
+        if(portNo == null) {
+            throw new NullPointerException("OFBsnSetLacpReplyVer13: property portNo cannot be null");
+        }
         this.xid = xid;
         this.status = status;
         this.portNo = portNo;

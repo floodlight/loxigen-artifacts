@@ -50,6 +50,12 @@ class OFOxmArpOpMaskedVer12 implements OFOxmArpOpMasked {
 
     // package private constructor - used by readers, builders, and factory
     OFOxmArpOpMaskedVer12(ArpOpcode value, ArpOpcode mask) {
+        if(value == null) {
+            throw new NullPointerException("OFOxmArpOpMaskedVer12: property value cannot be null");
+        }
+        if(mask == null) {
+            throw new NullPointerException("OFOxmArpOpMaskedVer12: property mask cannot be null");
+        }
         this.value = value;
         this.mask = mask;
     }
