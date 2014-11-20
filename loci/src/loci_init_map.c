@@ -324,6 +324,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_idle_timeout_init,
     (of_object_init_f)of_bsn_tlv_internal_gateway_mac_init,
     (of_object_init_f)of_bsn_tlv_internal_mac_init,
+    (of_object_init_f)of_bsn_tlv_interval_init,
     (of_object_init_f)of_bsn_tlv_ipv4_init,
     (of_object_init_f)of_bsn_tlv_ipv4_dst_init,
     (of_object_init_f)of_bsn_tlv_ipv4_src_init,

@@ -6693,6 +6693,9 @@ fields['of13.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of13.bsn_t
 fields['of13.bsn_tlv_internal_mac.type'] = ProtoField.uint16("of13.bsn_tlv_internal_mac.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_internal_mac.length'] = ProtoField.uint16("of13.bsn_tlv_internal_mac.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_internal_mac.value'] = ProtoField.ether("of13.bsn_tlv_internal_mac.value", "value")
+fields['of13.bsn_tlv_interval.type'] = ProtoField.uint16("of13.bsn_tlv_interval.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_interval.length'] = ProtoField.uint16("of13.bsn_tlv_interval.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_interval.value'] = ProtoField.uint32("of13.bsn_tlv_interval.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4.value", "value")
@@ -9103,6 +9106,9 @@ fields['of14.bsn_tlv_internal_gateway_mac.value'] = ProtoField.ether("of14.bsn_t
 fields['of14.bsn_tlv_internal_mac.type'] = ProtoField.uint16("of14.bsn_tlv_internal_mac.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_internal_mac.length'] = ProtoField.uint16("of14.bsn_tlv_internal_mac.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_internal_mac.value'] = ProtoField.ether("of14.bsn_tlv_internal_mac.value", "value")
+fields['of14.bsn_tlv_interval.type'] = ProtoField.uint16("of14.bsn_tlv_interval.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_interval.length'] = ProtoField.uint16("of14.bsn_tlv_interval.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_interval.value'] = ProtoField.uint32("of14.bsn_tlv_interval.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4.type'] = ProtoField.uint16("of14.bsn_tlv_ipv4.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4.length'] = ProtoField.uint16("of14.bsn_tlv_ipv4.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4.value", "value")
@@ -14685,6 +14691,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_internal_mac.type'],
     fields['of13.bsn_tlv_internal_mac.length'],
     fields['of13.bsn_tlv_internal_mac.value'],
+    fields['of13.bsn_tlv_interval.type'],
+    fields['of13.bsn_tlv_interval.length'],
+    fields['of13.bsn_tlv_interval.value'],
     fields['of13.bsn_tlv_ipv4.type'],
     fields['of13.bsn_tlv_ipv4.length'],
     fields['of13.bsn_tlv_ipv4.value'],
@@ -17095,6 +17104,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_internal_mac.type'],
     fields['of14.bsn_tlv_internal_mac.length'],
     fields['of14.bsn_tlv_internal_mac.value'],
+    fields['of14.bsn_tlv_interval.type'],
+    fields['of14.bsn_tlv_interval.length'],
+    fields['of14.bsn_tlv_interval.value'],
     fields['of14.bsn_tlv_ipv4.type'],
     fields['of14.bsn_tlv_ipv4.length'],
     fields['of14.bsn_tlv_ipv4.value'],
@@ -27952,6 +27964,16 @@ function dissect_of_bsn_tlv_internal_mac_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[27] = dissect_of_bsn_tlv_internal_mac_v4
 
+-- child class of_bsn_tlv_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_interval_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_interval.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_interval.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_interval.value')
+    return 'of_bsn_tlv_interval'
+end
+of_bsn_tlv_v4_dissectors[58] = dissect_of_bsn_tlv_interval_v4
+
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_ipv4_v4(reader, subtree)
@@ -34169,6 +34191,16 @@ function dissect_of_bsn_tlv_internal_mac_v5(reader, subtree)
     return 'of_bsn_tlv_internal_mac'
 end
 of_bsn_tlv_v5_dissectors[27] = dissect_of_bsn_tlv_internal_mac_v5
+
+-- child class of_bsn_tlv_interval
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_interval_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_interval.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_interval.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_interval.value')
+    return 'of_bsn_tlv_interval'
+end
+of_bsn_tlv_v5_dissectors[58] = dissect_of_bsn_tlv_interval_v5
 
 -- child class of_bsn_tlv_ipv4
 -- Child of of_bsn_tlv

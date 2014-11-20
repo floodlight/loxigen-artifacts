@@ -114,6 +114,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x1b:
                    // discriminator value 0x1b=0x1b for class OFBsnTlvInternalMacVer14
                    return OFBsnTlvInternalMacVer14.READER.readFrom(bb);
+               case (short) 0x3a:
+                   // discriminator value 0x3a=0x3a for class OFBsnTlvIntervalVer14
+                   return OFBsnTlvIntervalVer14.READER.readFrom(bb);
                case (short) 0x4:
                    // discriminator value 0x4=0x4 for class OFBsnTlvIpv4Ver14
                    return OFBsnTlvIpv4Ver14.READER.readFrom(bb);

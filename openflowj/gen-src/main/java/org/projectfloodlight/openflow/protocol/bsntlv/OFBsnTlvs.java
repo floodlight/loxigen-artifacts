@@ -75,6 +75,8 @@ public interface OFBsnTlvs {
     OFBsnTlvInternalGatewayMac internalGatewayMac(MacAddress value);
     OFBsnTlvInternalMac.Builder buildInternalMac() throws UnsupportedOperationException;
     OFBsnTlvInternalMac internalMac(MacAddress value);
+    OFBsnTlvInterval.Builder buildInterval() throws UnsupportedOperationException;
+    OFBsnTlvInterval interval(long value);
     OFBsnTlvIpv4.Builder buildIpv4() throws UnsupportedOperationException;
     OFBsnTlvIpv4 ipv4(IPv4Address value);
     OFBsnTlvIpv4Dst.Builder buildIpv4Dst() throws UnsupportedOperationException;

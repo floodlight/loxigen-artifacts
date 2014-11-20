@@ -197,6 +197,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvInternalMac not supported in version 1.2");
     }
 
+    public OFBsnTlvInterval.Builder buildInterval() {
+        throw new UnsupportedOperationException("OFBsnTlvInterval not supported in version 1.2");
+    }
+    public OFBsnTlvInterval interval(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvInterval not supported in version 1.2");
+    }
+
     public OFBsnTlvIpv4.Builder buildIpv4() {
         throw new UnsupportedOperationException("OFBsnTlvIpv4 not supported in version 1.2");
     }

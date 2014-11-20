@@ -243,6 +243,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvInterval.Builder buildInterval() {
+        return new OFBsnTlvIntervalVer14.Builder();
+    }
+    public OFBsnTlvInterval interval(long value) {
+        return new OFBsnTlvIntervalVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvIpv4.Builder buildIpv4() {
         return new OFBsnTlvIpv4Ver14.Builder();
     }

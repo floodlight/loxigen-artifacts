@@ -321,6 +321,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_idle_timeout",
     "of_bsn_tlv_internal_gateway_mac",
     "of_bsn_tlv_internal_mac",
+    "of_bsn_tlv_interval",
     "of_bsn_tlv_ipv4",
     "of_bsn_tlv_ipv4_dst",
     "of_bsn_tlv_ipv4_src",

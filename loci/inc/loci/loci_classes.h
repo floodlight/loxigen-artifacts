@@ -815,6 +815,8 @@ void of_bsn_tlv_internal_gateway_mac_wire_object_id_get(of_object_t *obj, of_obj
 void of_bsn_tlv_internal_gateway_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_internal_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_internal_mac_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_interval_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1492,6 +1494,7 @@ typedef of_object_t of_bsn_tlv_idle_time_t;
 typedef of_object_t of_bsn_tlv_idle_timeout_t;
 typedef of_object_t of_bsn_tlv_internal_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_internal_mac_t;
+typedef of_object_t of_bsn_tlv_interval_t;
 typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
@@ -3401,6 +3404,11 @@ extern void of_bsn_tlv_internal_gateway_mac_init(
 extern of_object_t *
     of_bsn_tlv_internal_mac_new(of_version_t version);
 extern void of_bsn_tlv_internal_mac_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_interval_new(of_version_t version);
+extern void of_bsn_tlv_interval_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -8474,6 +8482,17 @@ of_bsn_tlv_internal_gateway_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_internal_mac_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_interval_t
+ * @param obj An instance of type of_bsn_tlv_interval_t
+ *
+ * \ingroup of_bsn_tlv_interval
+ */
+static inline void
+of_bsn_tlv_interval_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -19589,6 +19608,15 @@ extern void of_bsn_tlv_internal_mac_value_set(
 extern void of_bsn_tlv_internal_mac_value_get(
     of_bsn_tlv_internal_mac_t *obj,
     of_mac_addr_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_interval */
+
+extern void of_bsn_tlv_interval_value_set(
+    of_bsn_tlv_interval_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_interval_value_get(
+    of_bsn_tlv_interval_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_ipv4 */
 

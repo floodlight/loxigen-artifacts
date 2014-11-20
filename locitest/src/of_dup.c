@@ -26276,6 +26276,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mac_mask_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
         return of_bsn_tlv_actor_state_OF_VERSION_1_3_dup(src);
     }
@@ -26412,8 +26416,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_vrf_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
-        return of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_INTERVAL) {
+        return of_bsn_tlv_interval_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
@@ -27095,6 +27099,31 @@ of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_internal_mac_value_get(src, &mac_addr);
     of_bsn_tlv_internal_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_interval
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_interval.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_interval_t *
+of_bsn_tlv_interval_OF_VERSION_1_3_dup(
+    of_bsn_tlv_interval_t *src)
+{
+    of_bsn_tlv_interval_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_interval_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_interval_value_get(src, &val32);
+    of_bsn_tlv_interval_value_set(dst, val32);
 
     return dst;
 }
@@ -44549,6 +44578,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mac_mask_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
+        return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ACTOR_STATE) {
         return of_bsn_tlv_actor_state_OF_VERSION_1_4_dup(src);
     }
@@ -44685,8 +44718,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_vrf_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_VLAN_VID) {
-        return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_INTERVAL) {
+        return of_bsn_tlv_interval_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_PORT_PRIORITY) {
@@ -45368,6 +45401,31 @@ of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_internal_mac_value_get(src, &mac_addr);
     of_bsn_tlv_internal_mac_value_set(dst, mac_addr);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_interval
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_interval.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_interval_t *
+of_bsn_tlv_interval_OF_VERSION_1_4_dup(
+    of_bsn_tlv_interval_t *src)
+{
+    of_bsn_tlv_interval_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_interval_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_interval_value_get(src, &val32);
+    of_bsn_tlv_interval_value_set(dst, val32);
 
     return dst;
 }
@@ -60881,6 +60939,23 @@ of_bsn_tlv_internal_mac_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_interval_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_interval_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_interval_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

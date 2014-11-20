@@ -1263,6 +1263,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_interval_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv4_dup(
         of_object_t *src);
 
@@ -5567,6 +5571,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_interval_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_ipv4_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7720,6 +7728,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_interval_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
