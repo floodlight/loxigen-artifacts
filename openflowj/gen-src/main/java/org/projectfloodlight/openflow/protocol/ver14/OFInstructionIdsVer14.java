@@ -39,6 +39,10 @@ public class OFInstructionIdsVer14 implements OFInstructionIds {
         return OFInstructionIdBsnArpOffloadVer14.INSTANCE;
     }
 
+    public OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation() {
+        return OFInstructionIdBsnAutoNegotiationVer14.INSTANCE;
+    }
+
     public OFInstructionIdBsnDeny bsnDeny() {
         return OFInstructionIdBsnDenyVer14.INSTANCE;
     }

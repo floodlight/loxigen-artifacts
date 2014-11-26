@@ -39,6 +39,10 @@ public class OFInstructionIdsVer12 implements OFInstructionIds {
         throw new UnsupportedOperationException("OFInstructionIdBsnArpOffload not supported in version 1.2");
     }
 
+    public OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation() {
+        throw new UnsupportedOperationException("OFInstructionIdBsnAutoNegotiation not supported in version 1.2");
+    }
+
     public OFInstructionIdBsnDeny bsnDeny() {
         throw new UnsupportedOperationException("OFInstructionIdBsnDeny not supported in version 1.2");
     }

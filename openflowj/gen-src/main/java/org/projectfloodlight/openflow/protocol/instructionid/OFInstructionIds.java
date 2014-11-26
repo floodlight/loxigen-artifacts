@@ -29,6 +29,7 @@ public interface OFInstructionIds {
 
     OFInstructionIdApplyActions applyActions();
     OFInstructionIdBsnArpOffload bsnArpOffload();
+    OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation();
     OFInstructionIdBsnDeny bsnDeny();
     OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
     OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();

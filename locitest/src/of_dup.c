@@ -28468,6 +28468,10 @@ of_instruction_OF_VERSION_1_3_dup(
         return of_instruction_bsn_deny_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE) {
         return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
     }
@@ -28593,6 +28597,34 @@ of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_bsn_arp_offload_subtype_get(src, &val32);
     of_instruction_bsn_arp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_auto_negotiation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_auto_negotiation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_auto_negotiation_t *
+of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dup(
+    of_instruction_bsn_auto_negotiation_t *src)
+{
+    of_instruction_bsn_auto_negotiation_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_auto_negotiation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_auto_negotiation_experimenter_get(src, &val32);
+    of_instruction_bsn_auto_negotiation_experimenter_set(dst, val32);
+
+    of_instruction_bsn_auto_negotiation_subtype_get(src, &val32);
+    of_instruction_bsn_auto_negotiation_subtype_set(dst, val32);
 
     return dst;
 }
@@ -28943,6 +28975,10 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
         return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
     }
@@ -29051,6 +29087,34 @@ of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_arp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_arp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_auto_negotiation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_auto_negotiation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_auto_negotiation_t *
+of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_auto_negotiation_t *src)
+{
+    of_instruction_id_bsn_auto_negotiation_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_auto_negotiation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_auto_negotiation_experimenter_get(src, &val32);
+    of_instruction_id_bsn_auto_negotiation_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_auto_negotiation_subtype_get(src, &val32);
+    of_instruction_id_bsn_auto_negotiation_subtype_set(dst, val32);
 
     return dst;
 }
@@ -46788,6 +46852,10 @@ of_instruction_OF_VERSION_1_4_dup(
         return of_instruction_bsn_deny_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_REQUIRE_VLAN_XLATE) {
         return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
     }
@@ -46909,6 +46977,34 @@ of_instruction_bsn_arp_offload_OF_VERSION_1_4_dup(
 
     of_instruction_bsn_arp_offload_subtype_get(src, &val32);
     of_instruction_bsn_arp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_auto_negotiation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_auto_negotiation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_auto_negotiation_t *
+of_instruction_bsn_auto_negotiation_OF_VERSION_1_4_dup(
+    of_instruction_bsn_auto_negotiation_t *src)
+{
+    of_instruction_bsn_auto_negotiation_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_auto_negotiation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_auto_negotiation_experimenter_get(src, &val32);
+    of_instruction_bsn_auto_negotiation_experimenter_set(dst, val32);
+
+    of_instruction_bsn_auto_negotiation_subtype_get(src, &val32);
+    of_instruction_bsn_auto_negotiation_subtype_set(dst, val32);
 
     return dst;
 }
@@ -47231,6 +47327,10 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
         return of_instruction_id_clear_actions_OF_VERSION_1_4_dup(src);
     }
@@ -47335,6 +47435,34 @@ of_instruction_id_bsn_arp_offload_OF_VERSION_1_4_dup(
 
     of_instruction_id_bsn_arp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_arp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_auto_negotiation
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_auto_negotiation.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_auto_negotiation_t *
+of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(
+    of_instruction_id_bsn_auto_negotiation_t *src)
+{
+    of_instruction_id_bsn_auto_negotiation_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_auto_negotiation_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_auto_negotiation_experimenter_get(src, &val32);
+    of_instruction_id_bsn_auto_negotiation_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_auto_negotiation_subtype_get(src, &val32);
+    of_instruction_id_bsn_auto_negotiation_subtype_set(dst, val32);
 
     return dst;
 }
@@ -61906,6 +62034,23 @@ of_instruction_bsn_arp_offload_dup(
 }
 
 of_object_t *
+of_instruction_bsn_auto_negotiation_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_instruction_bsn_deny_dup(
     of_object_t *src)
 {
@@ -62184,6 +62329,23 @@ of_instruction_id_bsn_arp_offload_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_instruction_id_bsn_arp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_instruction_id_bsn_auto_negotiation_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

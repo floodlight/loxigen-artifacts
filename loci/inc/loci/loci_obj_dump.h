@@ -780,6 +780,7 @@ int of_group_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie,
 int of_hello_elem_versionbitmap_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_apply_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_arp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_deny_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -794,6 +795,7 @@ int of_instruction_clear_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void*
 int of_instruction_goto_table_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_apply_actions_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_deny_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1265,6 +1267,7 @@ int of_group_stats_entry_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie,
 int of_hello_elem_versionbitmap_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_apply_actions_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_arp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_bsn_auto_negotiation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_deny_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_bsn_disable_src_mac_check_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1278,6 +1281,7 @@ int of_instruction_clear_actions_OF_VERSION_1_4_dump(loci_writer_f writer, void*
 int of_instruction_goto_table_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_apply_actions_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_arp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_deny_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
