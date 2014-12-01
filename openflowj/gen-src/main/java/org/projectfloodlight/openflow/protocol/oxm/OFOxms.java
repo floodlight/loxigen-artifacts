@@ -231,6 +231,14 @@ public interface OFOxms {
     OFOxmTcpSrc tcpSrc(TransportPort value);
     OFOxmTcpSrcMasked.Builder buildTcpSrcMasked() throws UnsupportedOperationException;
     OFOxmTcpSrcMasked tcpSrcMasked(TransportPort value, TransportPort mask);
+    OFOxmTunnelIpv4Dst.Builder buildTunnelIpv4Dst() throws UnsupportedOperationException;
+    OFOxmTunnelIpv4Dst tunnelIpv4Dst(IPv4Address value);
+    OFOxmTunnelIpv4DstMasked.Builder buildTunnelIpv4DstMasked() throws UnsupportedOperationException;
+    OFOxmTunnelIpv4DstMasked tunnelIpv4DstMasked(IPv4Address value, IPv4Address mask);
+    OFOxmTunnelIpv4Src.Builder buildTunnelIpv4Src() throws UnsupportedOperationException;
+    OFOxmTunnelIpv4Src tunnelIpv4Src(IPv4Address value);
+    OFOxmTunnelIpv4SrcMasked.Builder buildTunnelIpv4SrcMasked() throws UnsupportedOperationException;
+    OFOxmTunnelIpv4SrcMasked tunnelIpv4SrcMasked(IPv4Address value, IPv4Address mask);
     OFOxmUdpDst.Builder buildUdpDst() throws UnsupportedOperationException;
     OFOxmUdpDst udpDst(TransportPort value);
     OFOxmUdpDstMasked.Builder buildUdpDstMasked() throws UnsupportedOperationException;

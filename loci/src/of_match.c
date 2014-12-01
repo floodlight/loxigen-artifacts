@@ -159,6 +159,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_IPV4_DST_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -184,6 +188,10 @@ of_match_v1_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_PBB_UCA_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_TUNNEL_IPV4_SRC_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -460,6 +468,10 @@ of_match_v2_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_TUNNEL_IPV4_DST_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_ICMPV4_CODE_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -485,6 +497,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_PBB_UCA_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_TUNNEL_IPV4_SRC_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1377,6 +1393,38 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
                 oxm_list->version, -1, 1);
             of_list_oxm_append_bind(oxm_list, &elt);
             of_oxm_pbb_uca_value_set(&elt, src->fields.pbb_uca);
+        }
+    }
+    if (OF_MATCH_MASK_TUNNEL_IPV4_SRC_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_TUNNEL_IPV4_SRC_EXACT_TEST(src)) {
+            of_oxm_tunnel_ipv4_src_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv4_src_masked_value_set(&elt,
+                   src->fields.tunnel_ipv4_src);
+            of_oxm_tunnel_ipv4_src_masked_value_mask_set(&elt,
+                   src->masks.tunnel_ipv4_src);
+        } else {  /* Active, but not masked */
+            of_oxm_tunnel_ipv4_src_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv4_src_value_set(&elt, src->fields.tunnel_ipv4_src);
+        }
+    }
+    if (OF_MATCH_MASK_TUNNEL_IPV4_DST_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_TUNNEL_IPV4_DST_EXACT_TEST(src)) {
+            of_oxm_tunnel_ipv4_dst_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv4_dst_masked_value_set(&elt,
+                   src->fields.tunnel_ipv4_dst);
+            of_oxm_tunnel_ipv4_dst_masked_value_mask_set(&elt,
+                   src->masks.tunnel_ipv4_dst);
+        } else {  /* Active, but not masked */
+            of_oxm_tunnel_ipv4_dst_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_tunnel_ipv4_dst_value_set(&elt, src->fields.tunnel_ipv4_dst);
         }
     }
     if (OF_MATCH_MASK_BSN_IN_PORTS_128_ACTIVE_TEST(src)) {
@@ -2414,6 +2462,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
                 &dst->fields.tcp_src);
             break;
 
+        case OF_OXM_TUNNEL_IPV4_DST_MASKED:
+            of_oxm_tunnel_ipv4_dst_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.tunnel_ipv4_dst);
+            of_oxm_tunnel_ipv4_dst_masked_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_ipv4_dst);
+            of_memmask(&dst->fields.tunnel_ipv4_dst, &dst->masks.tunnel_ipv4_dst, sizeof(&dst->fields.tunnel_ipv4_dst));
+            break;
+        case OF_OXM_TUNNEL_IPV4_DST:
+            OF_MATCH_MASK_TUNNEL_IPV4_DST_EXACT_SET(dst);
+            of_oxm_tunnel_ipv4_dst_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_ipv4_dst);
+            break;
+
         case OF_OXM_ICMPV4_CODE_MASKED:
             of_oxm_icmpv4_code_masked_value_mask_get(
                 &oxm_entry,
@@ -2556,6 +2620,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_pbb_uca_value_get(
                 &oxm_entry,
                 &dst->fields.pbb_uca);
+            break;
+
+        case OF_OXM_TUNNEL_IPV4_SRC_MASKED:
+            of_oxm_tunnel_ipv4_src_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.tunnel_ipv4_src);
+            of_oxm_tunnel_ipv4_src_masked_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_ipv4_src);
+            of_memmask(&dst->fields.tunnel_ipv4_src, &dst->masks.tunnel_ipv4_src, sizeof(&dst->fields.tunnel_ipv4_src));
+            break;
+        case OF_OXM_TUNNEL_IPV4_SRC:
+            OF_MATCH_MASK_TUNNEL_IPV4_SRC_EXACT_SET(dst);
+            of_oxm_tunnel_ipv4_src_value_get(
+                &oxm_entry,
+                &dst->fields.tunnel_ipv4_src);
             break;
 
         case OF_OXM_BSN_GLOBAL_VRF_ALLOWED_MASKED:

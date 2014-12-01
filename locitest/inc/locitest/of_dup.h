@@ -2111,6 +2111,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_udp_dst_dup(
         of_object_t *src);
 
@@ -4503,6 +4519,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_udp_dst_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -6384,6 +6416,22 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8532,6 +8580,22 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

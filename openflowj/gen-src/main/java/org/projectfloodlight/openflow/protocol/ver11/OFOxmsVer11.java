@@ -745,6 +745,34 @@ public class OFOxmsVer11 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmTcpSrcMasked not supported in version 1.1");
     }
 
+    public OFOxmTunnelIpv4Dst.Builder buildTunnelIpv4Dst() {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4Dst not supported in version 1.1");
+    }
+    public OFOxmTunnelIpv4Dst tunnelIpv4Dst(IPv4Address value) {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4Dst not supported in version 1.1");
+    }
+
+    public OFOxmTunnelIpv4DstMasked.Builder buildTunnelIpv4DstMasked() {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4DstMasked not supported in version 1.1");
+    }
+    public OFOxmTunnelIpv4DstMasked tunnelIpv4DstMasked(IPv4Address value, IPv4Address mask) {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4DstMasked not supported in version 1.1");
+    }
+
+    public OFOxmTunnelIpv4Src.Builder buildTunnelIpv4Src() {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4Src not supported in version 1.1");
+    }
+    public OFOxmTunnelIpv4Src tunnelIpv4Src(IPv4Address value) {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4Src not supported in version 1.1");
+    }
+
+    public OFOxmTunnelIpv4SrcMasked.Builder buildTunnelIpv4SrcMasked() {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4SrcMasked not supported in version 1.1");
+    }
+    public OFOxmTunnelIpv4SrcMasked tunnelIpv4SrcMasked(IPv4Address value, IPv4Address mask) {
+        throw new UnsupportedOperationException("OFOxmTunnelIpv4SrcMasked not supported in version 1.1");
+    }
+
     public OFOxmUdpDst.Builder buildUdpDst() {
         throw new UnsupportedOperationException("OFOxmUdpDst not supported in version 1.1");
     }
@@ -966,6 +994,10 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)tcpDst((TransportPort)((Object)value)));
             case TCP_SRC:
                 return (OFOxm<F>)((Object)tcpSrc((TransportPort)((Object)value)));
+            case TUNNEL_IPV4_DST:
+                return (OFOxm<F>)((Object)tunnelIpv4Dst((IPv4Address)((Object)value)));
+            case TUNNEL_IPV4_SRC:
+                return (OFOxm<F>)((Object)tunnelIpv4Src((IPv4Address)((Object)value)));
             case UDP_DST:
                 return (OFOxm<F>)((Object)udpDst((TransportPort)((Object)value)));
             case UDP_SRC:
@@ -1092,6 +1124,10 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)tcpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case TCP_SRC:
                 return (OFOxm<F>)((Object)tcpSrcMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
+            case TUNNEL_IPV4_DST:
+                return (OFOxm<F>)((Object)tunnelIpv4DstMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
+            case TUNNEL_IPV4_SRC:
+                return (OFOxm<F>)((Object)tunnelIpv4SrcMasked((IPv4Address)((Object)value), (IPv4Address)((Object)mask)));
             case UDP_DST:
                 return (OFOxm<F>)((Object)udpDstMasked((TransportPort)((Object)value), (TransportPort)((Object)mask)));
             case UDP_SRC:
@@ -1218,6 +1254,10 @@ public class OFOxmsVer11 implements OFOxms {
                 return (OFOxm<F>)((Object)tcpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case TCP_SRC:
                 return (OFOxm<F>)((Object)tcpSrcMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
+            case TUNNEL_IPV4_DST:
+                return (OFOxm<F>)((Object)tunnelIpv4DstMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
+            case TUNNEL_IPV4_SRC:
+                return (OFOxm<F>)((Object)tunnelIpv4SrcMasked((IPv4Address)((Object)(masked.getValue())), (IPv4Address)((Object)(masked.getMask()))));
             case UDP_DST:
                 return (OFOxm<F>)((Object)udpDstMasked((TransportPort)((Object)(masked.getValue())), (TransportPort)((Object)(masked.getMask()))));
             case UDP_SRC:

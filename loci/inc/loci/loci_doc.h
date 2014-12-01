@@ -9315,6 +9315,58 @@ typedef struct of_oxm_tunnel_id_s of_oxm_tunnel_id_t;
 typedef struct of_oxm_tunnel_id_masked_s of_oxm_tunnel_id_masked_t;
 
 /**
+ * Structure for of_oxm_tunnel_ipv4_dst object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_oxm_tunnel_ipv4_dst_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_tunnel_ipv4_dst_s of_oxm_tunnel_ipv4_dst_t;
+
+/**
+ * Structure for of_oxm_tunnel_ipv4_dst_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_oxm_tunnel_ipv4_dst_masked_of_ipv4_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type of_ipv4.  Functions
+ *   are of type of_oxm_tunnel_ipv4_dst_masked_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_tunnel_ipv4_dst_masked_s of_oxm_tunnel_ipv4_dst_masked_t;
+
+/**
+ * Structure for of_oxm_tunnel_ipv4_src object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_oxm_tunnel_ipv4_src_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_tunnel_ipv4_src_s of_oxm_tunnel_ipv4_src_t;
+
+/**
+ * Structure for of_oxm_tunnel_ipv4_src_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set 
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_oxm_tunnel_ipv4_src_masked_of_ipv4_get_f and _set_f.
+ *
+ * @param value_mask_get/set 
+ *   Accessors for value_mask, a variable of type of_ipv4.  Functions
+ *   are of type of_oxm_tunnel_ipv4_src_masked_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_tunnel_ipv4_src_masked_s of_oxm_tunnel_ipv4_src_masked_t;
+
+/**
  * Structure for of_oxm_udp_dst object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

@@ -830,6 +830,18 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     case OF_VERSION_1_2: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 0)); /* type_len */
         switch (value) {
+        case 0x13e04:
+            *id = OF_OXM_TUNNEL_IPV4_SRC;
+            break;
+        case 0x13f08:
+            *id = OF_OXM_TUNNEL_IPV4_SRC_MASKED;
+            break;
+        case 0x14004:
+            *id = OF_OXM_TUNNEL_IPV4_DST;
+            break;
+        case 0x14108:
+            *id = OF_OXM_TUNNEL_IPV4_DST_MASKED;
+            break;
         case 0x30010:
             *id = OF_OXM_BSN_IN_PORTS_128;
             break;
@@ -1169,6 +1181,18 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     case OF_VERSION_1_3: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 0)); /* type_len */
         switch (value) {
+        case 0x13e04:
+            *id = OF_OXM_TUNNEL_IPV4_SRC;
+            break;
+        case 0x13f08:
+            *id = OF_OXM_TUNNEL_IPV4_SRC_MASKED;
+            break;
+        case 0x14004:
+            *id = OF_OXM_TUNNEL_IPV4_DST;
+            break;
+        case 0x14108:
+            *id = OF_OXM_TUNNEL_IPV4_DST_MASKED;
+            break;
         case 0x30010:
             *id = OF_OXM_BSN_IN_PORTS_128;
             break;
@@ -1526,6 +1550,18 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
     case OF_VERSION_1_4: {
         uint32_t value = U32_NTOH(*(uint32_t *)(buf + 0)); /* type_len */
         switch (value) {
+        case 0x13e04:
+            *id = OF_OXM_TUNNEL_IPV4_SRC;
+            break;
+        case 0x13f08:
+            *id = OF_OXM_TUNNEL_IPV4_SRC_MASKED;
+            break;
+        case 0x14004:
+            *id = OF_OXM_TUNNEL_IPV4_DST;
+            break;
+        case 0x14108:
+            *id = OF_OXM_TUNNEL_IPV4_DST_MASKED;
+            break;
         case 0x30010:
             *id = OF_OXM_BSN_IN_PORTS_128;
             break;

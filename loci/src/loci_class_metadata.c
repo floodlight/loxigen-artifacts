@@ -1635,6 +1635,30 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_oxm_wire_object_id_get,
         .wire_type_set=of_oxm_tcp_src_masked_push_wire_types,
     },
+    [OF_OXM_TUNNEL_IPV4_DST] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_tunnel_ipv4_dst_push_wire_types,
+    },
+    [OF_OXM_TUNNEL_IPV4_DST_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_tunnel_ipv4_dst_masked_push_wire_types,
+    },
+    [OF_OXM_TUNNEL_IPV4_SRC] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_tunnel_ipv4_src_push_wire_types,
+    },
+    [OF_OXM_TUNNEL_IPV4_SRC_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_tunnel_ipv4_src_masked_push_wire_types,
+    },
     [OF_OXM_UDP_DST] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,

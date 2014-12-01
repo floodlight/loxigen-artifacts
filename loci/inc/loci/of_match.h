@@ -61,6 +61,8 @@ typedef struct of_match_fields_s {
     uint64_t             tunnel_id;
     uint16_t             ipv6_exthdr;
     uint8_t              pbb_uca;
+    of_ipv4_t            tunnel_ipv4_src;
+    of_ipv4_t            tunnel_ipv4_dst;
     of_bitmap_128_t      bsn_in_ports_128;
     uint32_t             bsn_lag_id;
     uint32_t             bsn_vrf;
@@ -617,6 +619,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
         return 0;
     }
 
+    /* Mask and values for tunnel_ipv4_dst */
+    if (!OF_MORE_SPECIFIC_INT(e_m->tunnel_ipv4_dst, q_m->tunnel_ipv4_dst)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->tunnel_ipv4_dst, q_f->tunnel_ipv4_dst,
+            q_m->tunnel_ipv4_dst)) {
+        return 0;
+    }
+
     /* Mask and values for icmpv4_code */
     if (!OF_MORE_SPECIFIC_INT(e_m->icmpv4_code, q_m->icmpv4_code)) {
         return 0;
@@ -695,6 +706,15 @@ of_match_more_specific(of_match_t *entry, of_match_t *query)
     }
     if (!OF_RESTRICTED_MATCH_INT(e_f->pbb_uca, q_f->pbb_uca,
             q_m->pbb_uca)) {
+        return 0;
+    }
+
+    /* Mask and values for tunnel_ipv4_src */
+    if (!OF_MORE_SPECIFIC_INT(e_m->tunnel_ipv4_src, q_m->tunnel_ipv4_src)) {
+        return 0;
+    }
+    if (!OF_RESTRICTED_MATCH_INT(e_f->tunnel_ipv4_src, q_f->tunnel_ipv4_src,
+            q_m->tunnel_ipv4_src)) {
         return 0;
     }
 
@@ -1078,6 +1098,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
         return 0; /* This field differentiates; all done */
     }
 
+    /* Check overlap for tunnel_ipv4_dst */
+    if (!OF_OVERLAP_INT(f1->tunnel_ipv4_dst, f2->tunnel_ipv4_dst,
+        m2->tunnel_ipv4_dst, m1->tunnel_ipv4_dst)) {
+        return 0; /* This field differentiates; all done */
+    }
+
     /* Check overlap for icmpv4_code */
     if (!OF_OVERLAP_INT(f1->icmpv4_code, f2->icmpv4_code,
         m2->icmpv4_code, m1->icmpv4_code)) {
@@ -1129,6 +1155,12 @@ of_match_overlap(of_match_t *match1, of_match_t *match2)
     /* Check overlap for pbb_uca */
     if (!OF_OVERLAP_INT(f1->pbb_uca, f2->pbb_uca,
         m2->pbb_uca, m1->pbb_uca)) {
+        return 0; /* This field differentiates; all done */
+    }
+
+    /* Check overlap for tunnel_ipv4_src */
+    if (!OF_OVERLAP_INT(f1->tunnel_ipv4_src, f2->tunnel_ipv4_src,
+        m2->tunnel_ipv4_src, m1->tunnel_ipv4_src)) {
         return 0; /* This field differentiates; all done */
     }
 

@@ -14275,6 +14275,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
     }
@@ -14303,6 +14307,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_sctp_dst_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_2_dup(src);
     }
@@ -14325,6 +14333,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
         return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
@@ -14493,6 +14505,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_ARP_OP_MASKED) {
         return of_oxm_arp_op_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_VLAN_VID) {
@@ -17253,6 +17269,112 @@ of_oxm_tcp_src_masked_OF_VERSION_1_2_dup(
 
     of_oxm_tcp_src_masked_value_mask_get(src, &val16);
     of_oxm_tcp_src_masked_value_mask_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_dst_t *
+of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv4_dst_t *src)
+{
+    of_oxm_tunnel_ipv4_dst_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_dst_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_dst_masked_t *
+of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv4_dst_masked_t *src)
+{
+    of_oxm_tunnel_ipv4_dst_masked_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_dst_masked_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_masked_value_set(dst, ipv4);
+
+    of_oxm_tunnel_ipv4_dst_masked_value_mask_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_masked_value_mask_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_src_t *
+of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv4_src_t *src)
+{
+    of_oxm_tunnel_ipv4_src_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_src_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_src_masked_t *
+of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(
+    of_oxm_tunnel_ipv4_src_masked_t *src)
+{
+    of_oxm_tunnel_ipv4_src_masked_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_src_masked_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_masked_value_set(dst, ipv4);
+
+    of_oxm_tunnel_ipv4_src_masked_value_mask_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_masked_value_mask_set(dst, ipv4);
 
     return dst;
 }
@@ -30089,6 +30211,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
     }
@@ -30117,6 +30243,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_sctp_dst_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_3_dup(src);
     }
@@ -30139,6 +30269,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
         return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
@@ -30317,8 +30451,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_EXTHDR) {
-        return of_oxm_ipv6_exthdr_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_VLAN_VID) {
@@ -30375,6 +30509,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_ARP_TPA) {
         return of_oxm_arp_tpa_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_EXTHDR) {
+        return of_oxm_ipv6_exthdr_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
@@ -33242,6 +33380,112 @@ of_oxm_tunnel_id_masked_OF_VERSION_1_3_dup(
 
     of_oxm_tunnel_id_masked_value_mask_get(src, &val64);
     of_oxm_tunnel_id_masked_value_mask_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_dst_t *
+of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv4_dst_t *src)
+{
+    of_oxm_tunnel_ipv4_dst_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_dst_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_dst_masked_t *
+of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv4_dst_masked_t *src)
+{
+    of_oxm_tunnel_ipv4_dst_masked_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_dst_masked_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_masked_value_set(dst, ipv4);
+
+    of_oxm_tunnel_ipv4_dst_masked_value_mask_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_masked_value_mask_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_src_t *
+of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv4_src_t *src)
+{
+    of_oxm_tunnel_ipv4_src_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_src_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_src_masked_t *
+of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(
+    of_oxm_tunnel_ipv4_src_masked_t *src)
+{
+    of_oxm_tunnel_ipv4_src_masked_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_src_masked_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_masked_value_set(dst, ipv4);
+
+    of_oxm_tunnel_ipv4_src_masked_value_mask_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_masked_value_mask_set(dst, ipv4);
 
     return dst;
 }
@@ -48393,6 +48637,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST_MASKED) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_L3_INTERFACE_CLASS_ID) {
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(src);
     }
@@ -48421,6 +48669,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_sctp_dst_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_BSN_UDF5_MASKED) {
         return of_oxm_bsn_udf5_masked_OF_VERSION_1_4_dup(src);
     }
@@ -48443,6 +48695,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
         return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_DST) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV4_SRC_MASKED) {
@@ -48617,8 +48873,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_EXTHDR) {
-        return of_oxm_ipv6_exthdr_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_TUNNEL_IPV4_SRC_MASKED) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_VLAN_VID) {
@@ -48679,6 +48935,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_ARP_TPA) {
         return of_oxm_arp_tpa_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV6_EXTHDR) {
+        return of_oxm_ipv6_exthdr_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
@@ -51440,6 +51700,112 @@ of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(
 
     of_oxm_tunnel_id_masked_value_mask_get(src, &val64);
     of_oxm_tunnel_id_masked_value_mask_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_dst
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_dst.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_dst_t *
+of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv4_dst_t *src)
+{
+    of_oxm_tunnel_ipv4_dst_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_dst_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_dst_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_dst_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_dst_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_dst_masked_t *
+of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv4_dst_masked_t *src)
+{
+    of_oxm_tunnel_ipv4_dst_masked_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_dst_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_dst_masked_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_masked_value_set(dst, ipv4);
+
+    of_oxm_tunnel_ipv4_dst_masked_value_mask_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_dst_masked_value_mask_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_src
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_src.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_src_t *
+of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv4_src_t *src)
+{
+    of_oxm_tunnel_ipv4_src_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_src_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_src_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_tunnel_ipv4_src_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_tunnel_ipv4_src_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_tunnel_ipv4_src_masked_t *
+of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(
+    of_oxm_tunnel_ipv4_src_masked_t *src)
+{
+    of_oxm_tunnel_ipv4_src_masked_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_oxm_tunnel_ipv4_src_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_tunnel_ipv4_src_masked_value_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_masked_value_set(dst, ipv4);
+
+    of_oxm_tunnel_ipv4_src_masked_value_mask_get(src, &ipv4);
+    of_oxm_tunnel_ipv4_src_masked_value_mask_set(dst, ipv4);
 
     return dst;
 }
@@ -65123,6 +65489,90 @@ of_oxm_tunnel_id_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_tunnel_id_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv4_dst_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv4_dst_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv4_src_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv4_src_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_tunnel_ipv4_src_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_tunnel_ipv4_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

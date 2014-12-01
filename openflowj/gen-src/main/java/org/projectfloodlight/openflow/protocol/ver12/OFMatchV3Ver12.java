@@ -163,6 +163,8 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case TCP_DST:
             case TCP_SRC:
             case TUNNEL_ID:
+            case TUNNEL_IPV4_DST:
+            case TUNNEL_IPV4_SRC:
             case UDP_DST:
             case UDP_SRC:
             case VLAN_PCP:
