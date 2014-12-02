@@ -38,6 +38,7 @@ public interface OFInstructions {
     OFInstructionWriteMetadata.Builder buildWriteMetadata() throws UnsupportedOperationException;
     OFInstructionWriteMetadata writeMetadata(U64 metadata, U64 metadataMask);
     OFInstructionBsnArpOffload bsnArpOffload();
+    OFInstructionBsnAutoNegotiation bsnAutoNegotiation();
     OFInstructionBsnDeny bsnDeny();
     OFInstructionBsnDhcpOffload bsnDhcpOffload();
     OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();

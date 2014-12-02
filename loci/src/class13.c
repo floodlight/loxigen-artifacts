@@ -7038,6 +7038,9 @@ of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xa:
             *id = OF_INSTRUCTION_BSN_SPAN_DESTINATION;
             break;
+        case 0xb:
+            *id = OF_INSTRUCTION_BSN_AUTO_NEGOTIATION;
+            break;
         default:
             *id = OF_INSTRUCTION_BSN;
             break;
@@ -7561,6 +7564,9 @@ of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xa:
             *id = OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION;
+            break;
+        case 0xb:
+            *id = OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION;
             break;
         default:
             *id = OF_INSTRUCTION_ID_BSN;
@@ -8435,14 +8441,14 @@ of_instruction_id_bsn_arp_offload_subtype_set(
 #include "loci_int.h"
 
 void
-of_instruction_bsn_deny_push_wire_types(of_object_t *obj)
+of_instruction_bsn_auto_negotiation_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0xb); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -8452,17 +8458,17 @@ of_instruction_bsn_deny_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_instruction_bsn_deny of_instruction_bsn_deny
+ * \defgroup of_instruction_bsn_auto_negotiation of_instruction_bsn_auto_negotiation
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_instruction_bsn_deny_push_wire_values(of_instruction_bsn_deny_t *obj)
+of_instruction_bsn_auto_negotiation_push_wire_values(of_instruction_bsn_auto_negotiation_t *obj)
 {
 
-    of_instruction_bsn_deny_push_wire_types(obj);
+    of_instruction_bsn_auto_negotiation_push_wire_types(obj);
 
     /* TLV obj; set length */
     of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
@@ -8471,7 +8477,7 @@ of_instruction_bsn_deny_push_wire_values(of_instruction_bsn_deny_t *obj)
 }
 
 /**
- * Create a new of_instruction_bsn_deny object
+ * Create a new of_instruction_bsn_auto_negotiation object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -8479,24 +8485,24 @@ of_instruction_bsn_deny_push_wire_values(of_instruction_bsn_deny_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_instruction_bsn_deny
+ * \ingroup of_instruction_bsn_auto_negotiation
  */
 
-of_instruction_bsn_deny_t *
-of_instruction_bsn_deny_new(of_version_t version)
+of_instruction_bsn_auto_negotiation_t *
+of_instruction_bsn_auto_negotiation_new(of_version_t version)
 {
-    of_instruction_bsn_deny_t *obj;
+    of_instruction_bsn_auto_negotiation_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DENY] + of_object_extra_len[version][OF_INSTRUCTION_BSN_DENY];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_AUTO_NEGOTIATION] + of_object_extra_len[version][OF_INSTRUCTION_BSN_AUTO_NEGOTIATION];
 
-    if ((obj = (of_instruction_bsn_deny_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_bsn_auto_negotiation_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_instruction_bsn_deny_init(obj, version, bytes, 0);
+    of_instruction_bsn_auto_negotiation_init(obj, version, bytes, 0);
 
-    if (of_instruction_bsn_deny_push_wire_values(obj) < 0) {
+    if (of_instruction_bsn_auto_negotiation_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -8505,7 +8511,7 @@ of_instruction_bsn_deny_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_instruction_bsn_deny.
+ * Initialize an object of type of_instruction_bsn_auto_negotiation.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -8522,20 +8528,20 @@ of_instruction_bsn_deny_new(of_version_t version)
  */
 
 void
-of_instruction_bsn_deny_init(of_instruction_bsn_deny_t *obj,
+of_instruction_bsn_auto_negotiation_init(of_instruction_bsn_auto_negotiation_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_DENY] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_BSN_AUTO_NEGOTIATION] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_DENY] + of_object_extra_len[version][OF_INSTRUCTION_BSN_DENY];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_BSN_AUTO_NEGOTIATION] + of_object_extra_len[version][OF_INSTRUCTION_BSN_AUTO_NEGOTIATION];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_INSTRUCTION_BSN_DENY;
+    obj->object_id = OF_INSTRUCTION_BSN_AUTO_NEGOTIATION;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -8548,15 +8554,15 @@ of_instruction_bsn_deny_init(of_instruction_bsn_deny_t *obj,
 
 
 /**
- * Get experimenter from an object of type of_instruction_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_bsn_deny.
+ * Get experimenter from an object of type of_instruction_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_bsn_auto_negotiation.
  * @param experimenter Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_instruction_bsn_deny_experimenter_get(
-    of_instruction_bsn_deny_t *obj,
+of_instruction_bsn_auto_negotiation_experimenter_get(
+    of_instruction_bsn_auto_negotiation_t *obj,
     uint32_t *experimenter)
 {
     of_wire_buffer_t *wbuf;
@@ -8564,7 +8570,7 @@ of_instruction_bsn_deny_experimenter_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8588,13 +8594,13 @@ of_instruction_bsn_deny_experimenter_get(
 }
 
 /**
- * Set experimenter in an object of type of_instruction_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_bsn_deny.
+ * Set experimenter in an object of type of_instruction_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_bsn_auto_negotiation.
  * @param experimenter The value to write into the object
  */
 void
-of_instruction_bsn_deny_experimenter_set(
-    of_instruction_bsn_deny_t *obj,
+of_instruction_bsn_auto_negotiation_experimenter_set(
+    of_instruction_bsn_auto_negotiation_t *obj,
     uint32_t experimenter)
 {
     of_wire_buffer_t *wbuf;
@@ -8602,7 +8608,7 @@ of_instruction_bsn_deny_experimenter_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8626,15 +8632,15 @@ of_instruction_bsn_deny_experimenter_set(
 }
 
 /**
- * Get subtype from an object of type of_instruction_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_bsn_deny.
+ * Get subtype from an object of type of_instruction_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_bsn_auto_negotiation.
  * @param subtype Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_instruction_bsn_deny_subtype_get(
-    of_instruction_bsn_deny_t *obj,
+of_instruction_bsn_auto_negotiation_subtype_get(
+    of_instruction_bsn_auto_negotiation_t *obj,
     uint32_t *subtype)
 {
     of_wire_buffer_t *wbuf;
@@ -8642,7 +8648,7 @@ of_instruction_bsn_deny_subtype_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8666,13 +8672,13 @@ of_instruction_bsn_deny_subtype_get(
 }
 
 /**
- * Set subtype in an object of type of_instruction_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_bsn_deny.
+ * Set subtype in an object of type of_instruction_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_bsn_auto_negotiation.
  * @param subtype The value to write into the object
  */
 void
-of_instruction_bsn_deny_subtype_set(
-    of_instruction_bsn_deny_t *obj,
+of_instruction_bsn_auto_negotiation_subtype_set(
+    of_instruction_bsn_auto_negotiation_t *obj,
     uint32_t subtype)
 {
     of_wire_buffer_t *wbuf;
@@ -8680,7 +8686,7 @@ of_instruction_bsn_deny_subtype_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8734,14 +8740,14 @@ of_instruction_bsn_deny_subtype_set(
 #include "loci_int.h"
 
 void
-of_instruction_id_bsn_deny_push_wire_types(of_object_t *obj)
+of_instruction_id_bsn_auto_negotiation_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
         *(uint16_t *)(buf + 0) = U16_HTON(0xffff); /* type */
         *(uint32_t *)(buf + 4) = U32_HTON(0x5c16c7); /* experimenter */
-        *(uint32_t *)(buf + 8) = U32_HTON(0x5); /* subtype */
+        *(uint32_t *)(buf + 8) = U32_HTON(0xb); /* subtype */
         break;
     default:
         UNREACHABLE();
@@ -8751,17 +8757,17 @@ of_instruction_id_bsn_deny_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_instruction_id_bsn_deny of_instruction_id_bsn_deny
+ * \defgroup of_instruction_id_bsn_auto_negotiation of_instruction_id_bsn_auto_negotiation
  */
 
 /**
  * Helper function to push values into the wire buffer
  */
 static inline int
-of_instruction_id_bsn_deny_push_wire_values(of_instruction_id_bsn_deny_t *obj)
+of_instruction_id_bsn_auto_negotiation_push_wire_values(of_instruction_id_bsn_auto_negotiation_t *obj)
 {
 
-    of_instruction_id_bsn_deny_push_wire_types(obj);
+    of_instruction_id_bsn_auto_negotiation_push_wire_types(obj);
 
     /* TLV obj; set length */
     of_tlv16_wire_length_set((of_object_t *)obj, obj->length);
@@ -8770,7 +8776,7 @@ of_instruction_id_bsn_deny_push_wire_values(of_instruction_id_bsn_deny_t *obj)
 }
 
 /**
- * Create a new of_instruction_id_bsn_deny object
+ * Create a new of_instruction_id_bsn_auto_negotiation object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -8778,24 +8784,24 @@ of_instruction_id_bsn_deny_push_wire_values(of_instruction_id_bsn_deny_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_instruction_id_bsn_deny
+ * \ingroup of_instruction_id_bsn_auto_negotiation
  */
 
-of_instruction_id_bsn_deny_t *
-of_instruction_id_bsn_deny_new(of_version_t version)
+of_instruction_id_bsn_auto_negotiation_t *
+of_instruction_id_bsn_auto_negotiation_new(of_version_t version)
 {
-    of_instruction_id_bsn_deny_t *obj;
+    of_instruction_id_bsn_auto_negotiation_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DENY] + of_object_extra_len[version][OF_INSTRUCTION_ID_BSN_DENY];
+    bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION] + of_object_extra_len[version][OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION];
 
-    if ((obj = (of_instruction_id_bsn_deny_t *)of_object_new(bytes)) == NULL) {
+    if ((obj = (of_instruction_id_bsn_auto_negotiation_t *)of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_instruction_id_bsn_deny_init(obj, version, bytes, 0);
+    of_instruction_id_bsn_auto_negotiation_init(obj, version, bytes, 0);
 
-    if (of_instruction_id_bsn_deny_push_wire_values(obj) < 0) {
+    if (of_instruction_id_bsn_auto_negotiation_push_wire_values(obj) < 0) {
         FREE(obj);
         return NULL;
     }
@@ -8804,7 +8810,7 @@ of_instruction_id_bsn_deny_new(of_version_t version)
 }
 
 /**
- * Initialize an object of type of_instruction_id_bsn_deny.
+ * Initialize an object of type of_instruction_id_bsn_auto_negotiation.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -8821,20 +8827,20 @@ of_instruction_id_bsn_deny_new(of_version_t version)
  */
 
 void
-of_instruction_id_bsn_deny_init(of_instruction_id_bsn_deny_t *obj,
+of_instruction_id_bsn_auto_negotiation_init(of_instruction_id_bsn_auto_negotiation_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
 
-    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DENY] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_DENY] + of_object_extra_len[version][OF_INSTRUCTION_ID_BSN_DENY];
+        bytes = of_object_fixed_len[version][OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION] + of_object_extra_len[version][OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_INSTRUCTION_ID_BSN_DENY;
+    obj->object_id = OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -8847,15 +8853,15 @@ of_instruction_id_bsn_deny_init(of_instruction_id_bsn_deny_t *obj,
 
 
 /**
- * Get experimenter from an object of type of_instruction_id_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_id_bsn_deny.
+ * Get experimenter from an object of type of_instruction_id_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_auto_negotiation.
  * @param experimenter Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_instruction_id_bsn_deny_experimenter_get(
-    of_instruction_id_bsn_deny_t *obj,
+of_instruction_id_bsn_auto_negotiation_experimenter_get(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
     uint32_t *experimenter)
 {
     of_wire_buffer_t *wbuf;
@@ -8863,7 +8869,7 @@ of_instruction_id_bsn_deny_experimenter_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8887,13 +8893,13 @@ of_instruction_id_bsn_deny_experimenter_get(
 }
 
 /**
- * Set experimenter in an object of type of_instruction_id_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_id_bsn_deny.
+ * Set experimenter in an object of type of_instruction_id_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_auto_negotiation.
  * @param experimenter The value to write into the object
  */
 void
-of_instruction_id_bsn_deny_experimenter_set(
-    of_instruction_id_bsn_deny_t *obj,
+of_instruction_id_bsn_auto_negotiation_experimenter_set(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
     uint32_t experimenter)
 {
     of_wire_buffer_t *wbuf;
@@ -8901,7 +8907,7 @@ of_instruction_id_bsn_deny_experimenter_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8925,15 +8931,15 @@ of_instruction_id_bsn_deny_experimenter_set(
 }
 
 /**
- * Get subtype from an object of type of_instruction_id_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_id_bsn_deny.
+ * Get subtype from an object of type of_instruction_id_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_auto_negotiation.
  * @param subtype Pointer to the child object of type
  * uint32_t to be filled out.
  *
  */
 void
-of_instruction_id_bsn_deny_subtype_get(
-    of_instruction_id_bsn_deny_t *obj,
+of_instruction_id_bsn_auto_negotiation_subtype_get(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
     uint32_t *subtype)
 {
     of_wire_buffer_t *wbuf;
@@ -8941,7 +8947,7 @@ of_instruction_id_bsn_deny_subtype_get(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8965,13 +8971,13 @@ of_instruction_id_bsn_deny_subtype_get(
 }
 
 /**
- * Set subtype in an object of type of_instruction_id_bsn_deny.
- * @param obj Pointer to an object of type of_instruction_id_bsn_deny.
+ * Set subtype in an object of type of_instruction_id_bsn_auto_negotiation.
+ * @param obj Pointer to an object of type of_instruction_id_bsn_auto_negotiation.
  * @param subtype The value to write into the object
  */
 void
-of_instruction_id_bsn_deny_subtype_set(
-    of_instruction_id_bsn_deny_t *obj,
+of_instruction_id_bsn_auto_negotiation_subtype_set(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
     uint32_t subtype)
 {
     of_wire_buffer_t *wbuf;
@@ -8979,7 +8985,7 @@ of_instruction_id_bsn_deny_subtype_set(
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_DENY);
+    LOCI_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);

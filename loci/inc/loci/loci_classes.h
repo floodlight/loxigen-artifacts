@@ -897,6 +897,10 @@ void of_instruction_bsn_arp_offload_wire_object_id_get(of_object_t *obj, of_obje
 void of_instruction_bsn_arp_offload_push_wire_types(of_object_t *obj);
 void of_instruction_id_bsn_arp_offload_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_id_bsn_arp_offload_push_wire_types(of_object_t *obj);
+void of_instruction_bsn_auto_negotiation_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_bsn_auto_negotiation_push_wire_types(of_object_t *obj);
+void of_instruction_id_bsn_auto_negotiation_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_instruction_id_bsn_auto_negotiation_push_wire_types(of_object_t *obj);
 void of_instruction_bsn_deny_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_instruction_bsn_deny_push_wire_types(of_object_t *obj);
 void of_instruction_id_bsn_deny_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1384,6 +1388,7 @@ typedef of_object_t of_hello_elem_versionbitmap_t;
 typedef of_object_t of_instruction_apply_actions_t;
 typedef of_object_t of_instruction_bsn_t;
 typedef of_object_t of_instruction_bsn_arp_offload_t;
+typedef of_object_t of_instruction_bsn_auto_negotiation_t;
 typedef of_object_t of_instruction_bsn_deny_t;
 typedef of_object_t of_instruction_bsn_dhcp_offload_t;
 typedef of_object_t of_instruction_bsn_disable_split_horizon_check_t;
@@ -1401,6 +1406,7 @@ typedef of_object_t of_instruction_header_t;
 typedef of_object_t of_instruction_id_apply_actions_t;
 typedef of_object_t of_instruction_id_bsn_t;
 typedef of_object_t of_instruction_id_bsn_arp_offload_t;
+typedef of_object_t of_instruction_id_bsn_auto_negotiation_t;
 typedef of_object_t of_instruction_id_bsn_deny_t;
 typedef of_object_t of_instruction_id_bsn_dhcp_offload_t;
 typedef of_object_t of_instruction_id_bsn_disable_split_horizon_check_t;
@@ -3306,6 +3312,11 @@ extern of_instruction_bsn_arp_offload_t *
 extern void of_instruction_bsn_arp_offload_init(
     of_instruction_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
 
+extern of_instruction_bsn_auto_negotiation_t *
+    of_instruction_bsn_auto_negotiation_new(of_version_t version);
+extern void of_instruction_bsn_auto_negotiation_init(
+    of_instruction_bsn_auto_negotiation_t *obj, of_version_t version, int bytes, int clean_wire);
+
 extern of_instruction_bsn_deny_t *
     of_instruction_bsn_deny_new(of_version_t version);
 extern void of_instruction_bsn_deny_init(
@@ -3395,6 +3406,11 @@ extern of_instruction_id_bsn_arp_offload_t *
     of_instruction_id_bsn_arp_offload_new(of_version_t version);
 extern void of_instruction_id_bsn_arp_offload_init(
     of_instruction_id_bsn_arp_offload_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_instruction_id_bsn_auto_negotiation_t *
+    of_instruction_id_bsn_auto_negotiation_new(of_version_t version);
+extern void of_instruction_id_bsn_auto_negotiation_init(
+    of_instruction_id_bsn_auto_negotiation_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_instruction_id_bsn_deny_t *
     of_instruction_id_bsn_deny_new(of_version_t version);
@@ -8167,6 +8183,17 @@ of_instruction_bsn_arp_offload_delete(of_instruction_bsn_arp_offload_t *obj) {
 }
 
 /**
+ * Delete an object of type of_instruction_bsn_auto_negotiation_t
+ * @param obj An instance of type of_instruction_bsn_auto_negotiation_t
+ *
+ * \ingroup of_instruction_bsn_auto_negotiation
+ */
+static inline void
+of_instruction_bsn_auto_negotiation_delete(of_instruction_bsn_auto_negotiation_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
  * Delete an object of type of_instruction_bsn_deny_t
  * @param obj An instance of type of_instruction_bsn_deny_t
  *
@@ -8361,6 +8388,17 @@ of_instruction_id_bsn_delete(of_instruction_id_bsn_t *obj) {
  */
 static inline void
 of_instruction_id_bsn_arp_offload_delete(of_instruction_id_bsn_arp_offload_t *obj) {
+    of_object_delete((of_object_t *)(obj));
+}
+
+/**
+ * Delete an object of type of_instruction_id_bsn_auto_negotiation_t
+ * @param obj An instance of type of_instruction_id_bsn_auto_negotiation_t
+ *
+ * \ingroup of_instruction_id_bsn_auto_negotiation
+ */
+static inline void
+of_instruction_id_bsn_auto_negotiation_delete(of_instruction_id_bsn_auto_negotiation_t *obj) {
     of_object_delete((of_object_t *)(obj));
 }
 
@@ -18952,6 +18990,22 @@ extern void of_instruction_bsn_arp_offload_subtype_get(
     of_instruction_bsn_arp_offload_t *obj,
     uint32_t *subtype);
 
+/* Unified accessor functions for of_instruction_bsn_auto_negotiation */
+
+extern void of_instruction_bsn_auto_negotiation_experimenter_set(
+    of_instruction_bsn_auto_negotiation_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_bsn_auto_negotiation_experimenter_get(
+    of_instruction_bsn_auto_negotiation_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_bsn_auto_negotiation_subtype_set(
+    of_instruction_bsn_auto_negotiation_t *obj,
+    uint32_t subtype);
+extern void of_instruction_bsn_auto_negotiation_subtype_get(
+    of_instruction_bsn_auto_negotiation_t *obj,
+    uint32_t *subtype);
+
 /* Unified accessor functions for of_instruction_bsn_deny */
 
 extern void of_instruction_bsn_deny_experimenter_set(
@@ -19173,6 +19227,22 @@ extern void of_instruction_id_bsn_arp_offload_subtype_set(
     uint32_t subtype);
 extern void of_instruction_id_bsn_arp_offload_subtype_get(
     of_instruction_id_bsn_arp_offload_t *obj,
+    uint32_t *subtype);
+
+/* Unified accessor functions for of_instruction_id_bsn_auto_negotiation */
+
+extern void of_instruction_id_bsn_auto_negotiation_experimenter_set(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
+    uint32_t experimenter);
+extern void of_instruction_id_bsn_auto_negotiation_experimenter_get(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
+    uint32_t *experimenter);
+
+extern void of_instruction_id_bsn_auto_negotiation_subtype_set(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
+    uint32_t subtype);
+extern void of_instruction_id_bsn_auto_negotiation_subtype_get(
+    of_instruction_id_bsn_auto_negotiation_t *obj,
     uint32_t *subtype);
 
 /* Unified accessor functions for of_instruction_id_bsn_deny */
@@ -23035,6 +23105,7 @@ union of_instruction_u {
     of_instruction_apply_actions_t apply_actions;
     of_instruction_bsn_t bsn;
     of_instruction_bsn_arp_offload_t bsn_arp_offload;
+    of_instruction_bsn_auto_negotiation_t bsn_auto_negotiation;
     of_instruction_bsn_deny_t bsn_deny;
     of_instruction_bsn_dhcp_offload_t bsn_dhcp_offload;
     of_instruction_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;
@@ -23130,6 +23201,7 @@ union of_instruction_id_u {
     of_instruction_id_apply_actions_t apply_actions;
     of_instruction_id_bsn_t bsn;
     of_instruction_id_bsn_arp_offload_t bsn_arp_offload;
+    of_instruction_id_bsn_auto_negotiation_t bsn_auto_negotiation;
     of_instruction_id_bsn_deny_t bsn_deny;
     of_instruction_id_bsn_dhcp_offload_t bsn_dhcp_offload;
     of_instruction_id_bsn_disable_split_horizon_check_t bsn_disable_split_horizon_check;

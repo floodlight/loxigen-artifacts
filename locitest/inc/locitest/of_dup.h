@@ -1346,6 +1346,10 @@ extern of_instruction_bsn_arp_offload_t *
     of_instruction_bsn_arp_offload_dup(
         of_instruction_bsn_arp_offload_t *src);
 
+extern of_instruction_bsn_auto_negotiation_t *
+    of_instruction_bsn_auto_negotiation_dup(
+        of_instruction_bsn_auto_negotiation_t *src);
+
 extern of_instruction_bsn_deny_t *
     of_instruction_bsn_deny_dup(
         of_instruction_bsn_deny_t *src);
@@ -1417,6 +1421,10 @@ extern of_instruction_id_bsn_t *
 extern of_instruction_id_bsn_arp_offload_t *
     of_instruction_id_bsn_arp_offload_dup(
         of_instruction_id_bsn_arp_offload_t *src);
+
+extern of_instruction_id_bsn_auto_negotiation_t *
+    of_instruction_id_bsn_auto_negotiation_dup(
+        of_instruction_id_bsn_auto_negotiation_t *src);
 
 extern of_instruction_id_bsn_deny_t *
     of_instruction_id_bsn_deny_dup(
@@ -5790,6 +5798,10 @@ extern of_instruction_bsn_arp_offload_t *
     of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(
         of_instruction_bsn_arp_offload_t *src);
 
+extern of_instruction_bsn_auto_negotiation_t *
+    of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_dup(
+        of_instruction_bsn_auto_negotiation_t *src);
+
 extern of_instruction_bsn_deny_t *
     of_instruction_bsn_deny_OF_VERSION_1_3_dup(
         of_instruction_bsn_deny_t *src);
@@ -5861,6 +5873,10 @@ extern of_instruction_id_bsn_t *
 extern of_instruction_id_bsn_arp_offload_t *
     of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_dup(
         of_instruction_id_bsn_arp_offload_t *src);
+
+extern of_instruction_id_bsn_auto_negotiation_t *
+    of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(
+        of_instruction_id_bsn_auto_negotiation_t *src);
 
 extern of_instruction_id_bsn_deny_t *
     of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(

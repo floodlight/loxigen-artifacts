@@ -56,6 +56,9 @@ abstract class OFInstructionIdBsnVer13 {
                case 0x1:
                    // discriminator value 0x1L=0x1L for class OFInstructionIdBsnArpOffloadVer13
                    return OFInstructionIdBsnArpOffloadVer13.READER.readFrom(bb);
+               case 0xb:
+                   // discriminator value 0xbL=0xbL for class OFInstructionIdBsnAutoNegotiationVer13
+                   return OFInstructionIdBsnAutoNegotiationVer13.READER.readFrom(bb);
                case 0x5:
                    // discriminator value 0x5L=0x5L for class OFInstructionIdBsnDenyVer13
                    return OFInstructionIdBsnDenyVer13.READER.readFrom(bb);

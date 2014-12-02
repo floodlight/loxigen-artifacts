@@ -28971,6 +28971,43 @@ test_of_instruction_bsn_arp_offload_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_scalar(void)
+{
+    of_instruction_bsn_auto_negotiation_t *obj;
+
+    obj = of_instruction_bsn_auto_negotiation_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION);
+
+    {
+        of_object_id_t object_id;
+        of_instruction_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_instruction_bsn_auto_negotiation_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_instruction_bsn_deny_OF_VERSION_1_3_scalar(void)
 {
     of_instruction_bsn_deny_t *obj;
@@ -29537,6 +29574,43 @@ test_of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_instruction_id_bsn_arp_offload_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_scalar(void)
+{
+    of_instruction_id_bsn_auto_negotiation_t *obj;
+
+    obj = of_instruction_id_bsn_auto_negotiation_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION);
+
+    {
+        of_object_id_t object_id;
+        of_instruction_id_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_instruction_id_bsn_auto_negotiation_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -37303,6 +37377,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_instruction_apply_actions_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_bsn_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_bsn_arp_offload_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_bsn_deny_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_bsn_disable_split_horizon_check_OF_VERSION_1_3_scalar);
@@ -37320,6 +37395,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_instruction_id_apply_actions_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_id_bsn_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_id_bsn_deny_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_scalar);
     RUN_TEST(of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_scalar);

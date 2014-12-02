@@ -6554,6 +6554,21 @@ typedef struct of_instruction_bsn_s of_instruction_bsn_t;
 typedef struct of_instruction_bsn_arp_offload_s of_instruction_bsn_arp_offload_t;
 
 /**
+ * Structure for of_instruction_bsn_auto_negotiation object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_auto_negotiation_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_auto_negotiation_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_auto_negotiation_s of_instruction_bsn_auto_negotiation_t;
+
+/**
  * Structure for of_instruction_bsn_deny object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6786,6 +6801,21 @@ typedef struct of_instruction_id_bsn_s of_instruction_id_bsn_t;
  *
  */
 typedef struct of_instruction_id_bsn_arp_offload_s of_instruction_id_bsn_arp_offload_t;
+
+/**
+ * Structure for of_instruction_id_bsn_auto_negotiation object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_auto_negotiation_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_auto_negotiation_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_auto_negotiation_s of_instruction_id_bsn_auto_negotiation_t;
 
 /**
  * Structure for of_instruction_id_bsn_deny object.  Get/set
