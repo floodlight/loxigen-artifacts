@@ -1,1 +1,1 @@
-15cadf5b28443de31a6bfc4e7a204576270044b6 Merge into master from pull request #358: wireshark: fix header sanity checks for OF 1.4 (https://github.com/floodlight/loxigen/pull/358)
+fcc37923e9308155c9c61534e37061cfc3c6cdde Merge into master from pull request #356: java_model: generate OFErrorMsg accessor for ErrorCause data (https://github.com/floodlight/loxigen/pull/356)

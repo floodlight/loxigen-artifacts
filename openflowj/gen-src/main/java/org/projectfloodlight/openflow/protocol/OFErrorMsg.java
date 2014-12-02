@@ -30,6 +30,7 @@ public interface OFErrorMsg extends OFObject, OFMessage {
     OFType getType();
     long getXid();
     OFErrorType getErrType();
+    OFErrorCauseData getData();
 
     void writeTo(ChannelBuffer channelBuffer);
 
@@ -41,5 +42,6 @@ public interface OFErrorMsg extends OFObject, OFMessage {
         long getXid();
         Builder setXid(long xid);
         OFErrorType getErrType();
+        OFErrorCauseData getData();
     }
 }
