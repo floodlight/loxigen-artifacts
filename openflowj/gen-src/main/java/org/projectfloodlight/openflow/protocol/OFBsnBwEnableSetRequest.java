@@ -34,6 +34,7 @@ public interface OFBsnBwEnableSetRequest extends OFObject, OFBsnHeader, OFReques
     long getSubtype();
     long getEnable();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

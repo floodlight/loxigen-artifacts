@@ -32,6 +32,7 @@ public interface OFBsnGentableEntryDescStatsEntry extends OFObject {
     List<OFBsnTlv> getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

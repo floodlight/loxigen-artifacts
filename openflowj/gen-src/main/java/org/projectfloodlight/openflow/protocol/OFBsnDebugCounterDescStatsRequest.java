@@ -35,6 +35,7 @@ public interface OFBsnDebugCounterDescStatsRequest extends OFObject, OFBsnStatsR
     long getExperimenter();
     long getSubtype();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

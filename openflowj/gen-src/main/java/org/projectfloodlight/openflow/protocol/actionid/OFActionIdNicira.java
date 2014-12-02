@@ -31,6 +31,7 @@ public interface OFActionIdNicira extends OFObject, OFActionIdExperimenter {
     int getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

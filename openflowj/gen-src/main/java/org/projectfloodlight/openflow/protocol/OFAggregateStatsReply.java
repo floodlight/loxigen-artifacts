@@ -36,6 +36,7 @@ public interface OFAggregateStatsReply extends OFObject, OFStatsReply {
     U64 getByteCount();
     long getFlowCount();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

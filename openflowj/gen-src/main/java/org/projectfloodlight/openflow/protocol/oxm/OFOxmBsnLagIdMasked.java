@@ -34,6 +34,7 @@ public interface OFOxmBsnLagIdMasked extends OFObject, OFOxm<LagId> {
     OFOxm<LagId> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

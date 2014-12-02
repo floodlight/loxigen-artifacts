@@ -36,6 +36,7 @@ public interface OFBsnFlowIdle extends OFObject, OFBsnHeader {
     TableId getTableId();
     Match getMatch();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

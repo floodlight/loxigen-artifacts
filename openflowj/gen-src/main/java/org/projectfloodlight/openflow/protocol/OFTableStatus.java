@@ -33,6 +33,7 @@ public interface OFTableStatus extends OFObject, OFMessage {
     OFTableReason getReason();
     OFTableDesc getTable();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

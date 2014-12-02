@@ -32,6 +32,7 @@ public interface OFRoleReply extends OFObject, OFMessage {
     OFControllerRole getRole();
     U64 getGenerationId();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

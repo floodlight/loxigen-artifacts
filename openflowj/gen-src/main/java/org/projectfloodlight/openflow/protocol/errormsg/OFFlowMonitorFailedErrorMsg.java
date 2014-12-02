@@ -33,6 +33,7 @@ public interface OFFlowMonitorFailedErrorMsg extends OFObject, OFErrorMsg {
     OFFlowMonitorFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

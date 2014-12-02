@@ -33,6 +33,7 @@ public interface OFSetConfig extends OFObject, OFMessage {
     Set<OFConfigFlags> getFlags();
     int getMissSendLen();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

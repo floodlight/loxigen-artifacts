@@ -37,6 +37,7 @@ public interface OFBsnDebugCounterStatsReply extends OFObject, OFBsnStatsReply {
     long getSubtype();
     List<OFBsnDebugCounterStatsEntry> getEntries();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

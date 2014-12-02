@@ -45,6 +45,7 @@ public interface OFTableStatsEntry extends OFObject {
     U64 getMatchedCount();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

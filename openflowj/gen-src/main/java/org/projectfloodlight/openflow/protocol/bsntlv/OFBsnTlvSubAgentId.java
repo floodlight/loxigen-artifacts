@@ -30,6 +30,7 @@ public interface OFBsnTlvSubAgentId extends OFObject, OFBsnTlv {
     long getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

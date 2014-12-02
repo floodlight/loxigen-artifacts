@@ -34,6 +34,7 @@ public interface OFOxmBsnTcpFlags extends OFObject, OFOxm<U16> {
     U16 getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

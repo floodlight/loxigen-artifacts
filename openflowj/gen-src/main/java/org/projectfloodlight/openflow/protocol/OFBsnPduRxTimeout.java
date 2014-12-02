@@ -34,6 +34,7 @@ public interface OFBsnPduRxTimeout extends OFObject, OFBsnHeader {
     OFPort getPortNo();
     short getSlotNum();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

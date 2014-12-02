@@ -34,6 +34,7 @@ public interface OFOxmIpProto extends OFObject, OFOxm<IpProtocol> {
     IpProtocol getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

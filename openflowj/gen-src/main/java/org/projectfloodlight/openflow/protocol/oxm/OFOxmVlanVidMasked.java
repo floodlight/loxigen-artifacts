@@ -34,6 +34,7 @@ public interface OFOxmVlanVidMasked extends OFObject, OFOxm<OFVlanVidMatch> {
     OFOxm<OFVlanVidMatch> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

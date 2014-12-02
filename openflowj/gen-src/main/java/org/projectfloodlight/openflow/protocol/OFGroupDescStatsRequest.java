@@ -33,6 +33,7 @@ public interface OFGroupDescStatsRequest extends OFObject, OFStatsRequest<OFGrou
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

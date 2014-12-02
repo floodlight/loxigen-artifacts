@@ -31,6 +31,7 @@ public interface OFHelloElemVersionbitmap extends OFObject, OFHelloElem {
     List<U32> getBitmaps();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

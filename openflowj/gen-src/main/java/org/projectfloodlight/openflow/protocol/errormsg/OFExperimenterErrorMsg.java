@@ -34,6 +34,7 @@ public interface OFExperimenterErrorMsg extends OFObject, OFErrorMsg {
     long getExperimenter();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

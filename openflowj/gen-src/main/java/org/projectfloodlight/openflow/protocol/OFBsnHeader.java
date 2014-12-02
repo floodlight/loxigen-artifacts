@@ -32,6 +32,7 @@ public interface OFBsnHeader extends OFObject, OFExperimenter {
     long getExperimenter();
     long getSubtype();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

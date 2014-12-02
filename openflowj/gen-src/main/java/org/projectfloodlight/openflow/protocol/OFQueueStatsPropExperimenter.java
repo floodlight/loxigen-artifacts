@@ -31,6 +31,7 @@ public interface OFQueueStatsPropExperimenter extends OFObject, OFQueueStatsProp
     long getExpType();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

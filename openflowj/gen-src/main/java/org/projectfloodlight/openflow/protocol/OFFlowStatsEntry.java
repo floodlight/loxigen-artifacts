@@ -44,6 +44,7 @@ public interface OFFlowStatsEntry extends OFObject {
     int getImportance() throws UnsupportedOperationException;
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

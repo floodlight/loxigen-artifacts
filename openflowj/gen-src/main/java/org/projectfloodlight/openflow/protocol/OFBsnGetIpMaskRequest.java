@@ -33,6 +33,7 @@ public interface OFBsnGetIpMaskRequest extends OFObject, OFBsnHeader, OFRequest<
     long getSubtype();
     short getIndex();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

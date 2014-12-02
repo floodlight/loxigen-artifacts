@@ -33,6 +33,7 @@ public interface OFBsnTimeReply extends OFObject, OFBsnHeader {
     long getSubtype();
     U64 getTimeMs();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

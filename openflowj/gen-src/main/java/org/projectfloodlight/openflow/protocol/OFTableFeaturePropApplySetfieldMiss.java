@@ -32,6 +32,7 @@ public interface OFTableFeaturePropApplySetfieldMiss extends OFObject, OFTableFe
     List<U32> getOxmIds();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

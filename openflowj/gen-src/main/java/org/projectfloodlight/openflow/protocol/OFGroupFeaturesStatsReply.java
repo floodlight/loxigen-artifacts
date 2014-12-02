@@ -43,6 +43,7 @@ public interface OFGroupFeaturesStatsReply extends OFObject, OFStatsReply {
     long getActionsIndirect();
     long getActionsFf();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

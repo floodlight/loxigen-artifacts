@@ -31,6 +31,7 @@ public interface OFInstructionBsnDisableSplitHorizonCheck extends OFObject, OFIn
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

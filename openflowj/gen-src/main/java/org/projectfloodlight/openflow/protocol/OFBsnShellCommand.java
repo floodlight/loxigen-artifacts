@@ -34,6 +34,7 @@ public interface OFBsnShellCommand extends OFObject, OFBsnHeader {
     long getService();
     byte[] getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

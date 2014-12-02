@@ -30,6 +30,7 @@ public interface OFBsnTlvUdfLength extends OFObject, OFBsnTlv {
     int getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -33,6 +33,7 @@ public interface OFQueueGetConfigReply extends OFObject, OFMessage {
     OFPort getPort();
     List<OFPacketQueue> getQueues();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

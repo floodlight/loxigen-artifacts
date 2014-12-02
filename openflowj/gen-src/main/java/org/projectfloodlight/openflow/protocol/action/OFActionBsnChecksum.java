@@ -32,6 +32,7 @@ public interface OFActionBsnChecksum extends OFObject, OFActionBsn {
     U128 getChecksum();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -34,6 +34,7 @@ public interface OFOxmBsnUdf6 extends OFObject, OFOxm<UDF> {
     UDF getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

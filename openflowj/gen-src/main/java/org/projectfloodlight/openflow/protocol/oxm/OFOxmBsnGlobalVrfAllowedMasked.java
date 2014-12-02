@@ -34,6 +34,7 @@ public interface OFOxmBsnGlobalVrfAllowedMasked extends OFObject, OFOxm<OFBoolea
     OFOxm<OFBooleanValue> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

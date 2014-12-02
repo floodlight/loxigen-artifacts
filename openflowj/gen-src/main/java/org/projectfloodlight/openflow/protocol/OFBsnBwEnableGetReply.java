@@ -33,6 +33,7 @@ public interface OFBsnBwEnableGetReply extends OFObject, OFBsnHeader {
     long getSubtype();
     long getEnabled();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

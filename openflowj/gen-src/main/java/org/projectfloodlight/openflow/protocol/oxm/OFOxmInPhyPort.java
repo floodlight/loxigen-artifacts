@@ -34,6 +34,7 @@ public interface OFOxmInPhyPort extends OFObject, OFOxm<OFPort> {
     OFPort getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

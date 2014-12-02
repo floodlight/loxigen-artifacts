@@ -34,6 +34,7 @@ public interface OFOxmBsnL3InterfaceClassId extends OFObject, OFOxm<ClassId> {
     ClassId getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

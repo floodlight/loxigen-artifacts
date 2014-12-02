@@ -34,6 +34,7 @@ public interface OFOxmIcmpv6TypeMasked extends OFObject, OFOxm<U8> {
     OFOxm<U8> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

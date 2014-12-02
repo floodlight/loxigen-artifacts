@@ -34,6 +34,7 @@ public interface OFOxmTcpDst extends OFObject, OFOxm<TransportPort> {
     TransportPort getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

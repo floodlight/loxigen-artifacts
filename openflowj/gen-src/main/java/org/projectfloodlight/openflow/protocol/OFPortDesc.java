@@ -41,6 +41,8 @@ public interface OFPortDesc extends OFObject {
     long getMaxSpeed() throws UnsupportedOperationException;
     List<OFPortDescProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
+    // Additional method
+    boolean isEnabled();
 
     void writeTo(ChannelBuffer channelBuffer);
 

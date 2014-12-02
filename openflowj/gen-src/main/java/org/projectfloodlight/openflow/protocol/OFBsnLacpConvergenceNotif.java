@@ -44,6 +44,7 @@ public interface OFBsnLacpConvergenceNotif extends OFObject, OFBsnHeader {
     int getPartnerPortNum();
     int getPartnerKey();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

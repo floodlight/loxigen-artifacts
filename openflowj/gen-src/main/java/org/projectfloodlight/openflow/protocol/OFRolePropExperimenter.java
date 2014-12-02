@@ -31,6 +31,7 @@ public interface OFRolePropExperimenter extends OFObject, OFRoleProp {
     long getExpType();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

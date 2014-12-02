@@ -33,6 +33,7 @@ public interface OFBucket extends OFObject {
     List<OFAction> getActions();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

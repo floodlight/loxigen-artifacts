@@ -34,6 +34,7 @@ public interface OFBundleAddMsg extends OFObject, OFMessage {
     Set<OFBundleFlags> getFlags();
     OFMessage getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

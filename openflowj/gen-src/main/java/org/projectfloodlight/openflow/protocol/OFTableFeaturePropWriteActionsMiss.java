@@ -31,6 +31,7 @@ public interface OFTableFeaturePropWriteActionsMiss extends OFObject, OFTableFea
     List<OFActionId> getActionIds();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

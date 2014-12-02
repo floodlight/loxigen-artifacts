@@ -34,6 +34,7 @@ public interface OFBsnGetIpMaskReply extends OFObject, OFBsnHeader {
     short getIndex();
     long getMask();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

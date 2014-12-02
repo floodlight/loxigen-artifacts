@@ -34,6 +34,7 @@ public interface OFOxmIcmpv4CodeMasked extends OFObject, OFOxm<ICMPv4Code> {
     OFOxm<ICMPv4Code> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

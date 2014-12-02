@@ -37,6 +37,7 @@ public interface OFBsnGentableBucketStatsReply extends OFObject, OFBsnStatsReply
     long getSubtype();
     List<OFBsnGentableBucketStatsEntry> getEntries();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

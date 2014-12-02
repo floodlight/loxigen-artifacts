@@ -33,6 +33,7 @@ public interface OFBsnFlowIdleEnableGetReply extends OFObject, OFBsnHeader {
     long getSubtype();
     long getEnabled();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

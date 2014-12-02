@@ -31,6 +31,7 @@ public interface OFInstructionBsnArpOffload extends OFObject, OFInstructionBsn {
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

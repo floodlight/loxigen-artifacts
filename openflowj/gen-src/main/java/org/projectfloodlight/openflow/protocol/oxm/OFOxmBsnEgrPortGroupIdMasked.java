@@ -34,6 +34,7 @@ public interface OFOxmBsnEgrPortGroupIdMasked extends OFObject, OFOxm<ClassId> {
     OFOxm<ClassId> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

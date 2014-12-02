@@ -34,6 +34,7 @@ public interface OFBsnGetInterfacesReply extends OFObject, OFBsnHeader {
     long getSubtype();
     List<OFBsnInterface> getInterfaces();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

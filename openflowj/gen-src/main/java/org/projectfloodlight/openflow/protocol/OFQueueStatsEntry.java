@@ -37,6 +37,7 @@ public interface OFQueueStatsEntry extends OFObject {
     List<OFQueueStatsProp> getProperties() throws UnsupportedOperationException;
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

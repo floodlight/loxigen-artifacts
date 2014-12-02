@@ -32,6 +32,7 @@ public interface OFBsnTimeRequest extends OFObject, OFBsnHeader, OFRequest<OFBsn
     long getExperimenter();
     long getSubtype();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

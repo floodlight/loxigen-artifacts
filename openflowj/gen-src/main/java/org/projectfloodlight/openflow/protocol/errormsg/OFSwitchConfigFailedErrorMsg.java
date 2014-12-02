@@ -33,6 +33,7 @@ public interface OFSwitchConfigFailedErrorMsg extends OFObject, OFErrorMsg {
     OFSwitchConfigFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

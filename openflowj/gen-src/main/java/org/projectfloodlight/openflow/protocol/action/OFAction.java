@@ -29,6 +29,7 @@ public interface OFAction extends OFObject {
     OFActionType getType();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

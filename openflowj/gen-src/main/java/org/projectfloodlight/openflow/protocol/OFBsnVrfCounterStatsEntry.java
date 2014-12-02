@@ -31,6 +31,7 @@ public interface OFBsnVrfCounterStatsEntry extends OFObject {
     List<U64> getValues();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

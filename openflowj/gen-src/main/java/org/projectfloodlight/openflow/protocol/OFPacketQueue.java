@@ -32,6 +32,7 @@ public interface OFPacketQueue extends OFObject {
     List<OFQueueProp> getProperties();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

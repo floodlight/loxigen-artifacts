@@ -34,6 +34,7 @@ public interface OFOxm<T extends OFValueType<T>> extends OFObject {
     OFOxm<T> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder<T> createBuilder();

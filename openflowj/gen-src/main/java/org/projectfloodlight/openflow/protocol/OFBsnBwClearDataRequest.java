@@ -32,6 +32,7 @@ public interface OFBsnBwClearDataRequest extends OFObject, OFBsnHeader, OFReques
     long getExperimenter();
     long getSubtype();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

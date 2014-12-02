@@ -31,6 +31,7 @@ public interface OFActionSetVlanVid extends OFObject, OFAction {
     VlanVid getVlanVid();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

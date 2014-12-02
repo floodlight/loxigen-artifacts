@@ -32,6 +32,7 @@ public interface OFRoleRequest extends OFObject, OFMessage, OFRequest<OFRoleRepl
     OFControllerRole getRole();
     U64 getGenerationId();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

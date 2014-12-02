@@ -30,6 +30,7 @@ public interface OFBsnTlvMacMask extends OFObject, OFBsnTlv {
     MacAddress getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

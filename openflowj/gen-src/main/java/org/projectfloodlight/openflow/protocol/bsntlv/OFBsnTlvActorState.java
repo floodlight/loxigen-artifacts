@@ -31,6 +31,7 @@ public interface OFBsnTlvActorState extends OFObject, OFBsnTlv {
     Set<OFBsnLacpState> getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

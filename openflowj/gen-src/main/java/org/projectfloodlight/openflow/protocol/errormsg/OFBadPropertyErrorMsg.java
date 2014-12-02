@@ -33,6 +33,7 @@ public interface OFBadPropertyErrorMsg extends OFObject, OFErrorMsg {
     OFBadPropertyCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

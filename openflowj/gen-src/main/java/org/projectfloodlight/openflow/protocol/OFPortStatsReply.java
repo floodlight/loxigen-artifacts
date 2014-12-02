@@ -35,6 +35,7 @@ public interface OFPortStatsReply extends OFObject, OFStatsReply {
     Set<OFStatsReplyFlags> getFlags();
     List<OFPortStatsEntry> getEntries();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

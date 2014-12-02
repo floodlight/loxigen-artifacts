@@ -29,6 +29,7 @@ public interface OFUint64 extends OFObject {
     U64 getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

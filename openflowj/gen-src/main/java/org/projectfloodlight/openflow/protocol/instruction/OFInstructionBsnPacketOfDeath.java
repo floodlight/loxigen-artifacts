@@ -31,6 +31,7 @@ public interface OFInstructionBsnPacketOfDeath extends OFObject, OFInstructionBs
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -32,6 +32,7 @@ public interface OFMeterConfig extends OFObject {
     List<OFMeterBand> getEntries();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

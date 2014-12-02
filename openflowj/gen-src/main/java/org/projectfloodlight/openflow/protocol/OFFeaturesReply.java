@@ -40,6 +40,7 @@ public interface OFFeaturesReply extends OFObject, OFMessage {
     Set<OFActionType> getActions() throws UnsupportedOperationException;
     OFAuxId getAuxiliaryId() throws UnsupportedOperationException;
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

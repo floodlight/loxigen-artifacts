@@ -34,6 +34,7 @@ public interface OFOxmTunnelIdMasked extends OFObject, OFOxm<U64> {
     OFOxm<U64> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

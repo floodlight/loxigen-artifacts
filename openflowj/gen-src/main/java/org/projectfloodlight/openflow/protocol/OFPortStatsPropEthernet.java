@@ -33,6 +33,7 @@ public interface OFPortStatsPropEthernet extends OFObject, OFPortStatsProp {
     U64 getCollisions();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

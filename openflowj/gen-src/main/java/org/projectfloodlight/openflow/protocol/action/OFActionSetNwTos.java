@@ -31,6 +31,7 @@ public interface OFActionSetNwTos extends OFObject, OFAction {
     short getNwTos();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

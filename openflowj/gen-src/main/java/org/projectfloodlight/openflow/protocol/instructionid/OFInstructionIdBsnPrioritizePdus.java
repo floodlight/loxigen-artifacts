@@ -31,6 +31,7 @@ public interface OFInstructionIdBsnPrioritizePdus extends OFObject, OFInstructio
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -30,6 +30,7 @@ public interface OFBarrierReply extends OFObject, OFMessage {
     OFType getType();
     long getXid();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -35,6 +35,7 @@ public interface OFGroupMod extends OFObject, OFMessage {
     OFGroup getGroup();
     List<OFBucket> getBuckets();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

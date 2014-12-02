@@ -37,6 +37,7 @@ public interface OFBsnFlowChecksumBucketStatsReply extends OFObject, OFBsnStatsR
     long getSubtype();
     List<OFBsnFlowChecksumBucketStatsEntry> getEntries();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

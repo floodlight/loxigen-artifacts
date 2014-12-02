@@ -30,6 +30,7 @@ public interface OFAsyncConfigPropPacketInSlave extends OFObject, OFAsyncConfigP
     long getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

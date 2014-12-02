@@ -30,6 +30,7 @@ public interface OFAsyncConfigPropFlowRemovedSlave extends OFObject, OFAsyncConf
     long getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

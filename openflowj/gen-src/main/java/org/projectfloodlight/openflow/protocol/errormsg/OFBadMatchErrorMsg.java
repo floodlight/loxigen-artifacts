@@ -33,6 +33,7 @@ public interface OFBadMatchErrorMsg extends OFObject, OFErrorMsg {
     OFBadMatchCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

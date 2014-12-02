@@ -33,6 +33,7 @@ public interface OFMeterFeatures extends OFObject {
     short getMaxColor();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

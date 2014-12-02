@@ -33,6 +33,7 @@ public interface OFGroupModFailedErrorMsg extends OFObject, OFErrorMsg {
     OFGroupModFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

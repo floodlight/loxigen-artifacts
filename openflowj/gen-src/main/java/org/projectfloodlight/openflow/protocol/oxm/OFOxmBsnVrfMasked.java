@@ -34,6 +34,7 @@ public interface OFOxmBsnVrfMasked extends OFObject, OFOxm<VRF> {
     OFOxm<VRF> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

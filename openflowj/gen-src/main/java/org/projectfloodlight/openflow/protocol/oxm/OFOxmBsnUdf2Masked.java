@@ -34,6 +34,7 @@ public interface OFOxmBsnUdf2Masked extends OFObject, OFOxm<UDF> {
     OFOxm<UDF> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

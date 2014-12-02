@@ -30,6 +30,7 @@ public interface OFBucketCounter extends OFObject {
     U64 getByteCount();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

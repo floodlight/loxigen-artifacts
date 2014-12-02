@@ -32,6 +32,7 @@ public interface OFTableFeaturePropApplySetfield extends OFObject, OFTableFeatur
     List<U32> getOxmIds();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

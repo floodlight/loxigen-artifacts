@@ -41,6 +41,7 @@ public interface OFFlowRemoved extends OFObject, OFMessage {
     U64 getByteCount();
     Match getMatch();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

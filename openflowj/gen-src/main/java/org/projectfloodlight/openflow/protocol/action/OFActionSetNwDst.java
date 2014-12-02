@@ -31,6 +31,7 @@ public interface OFActionSetNwDst extends OFObject, OFAction {
     IPv4Address getNwAddr();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -32,6 +32,7 @@ public interface OFTableModPropVacancy extends OFObject {
     short getVacancy();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -34,6 +34,7 @@ public interface OFPortModPropOptical extends OFObject, OFPortModProp {
     long getTxPwr();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

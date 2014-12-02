@@ -34,6 +34,7 @@ public interface OFOxmIpv6NdTargetMasked extends OFObject, OFOxm<IPv6Address> {
     OFOxm<IPv6Address> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

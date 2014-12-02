@@ -31,6 +31,7 @@ public interface OFInstructionWriteActions extends OFObject, OFInstruction {
     List<OFAction> getActions();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

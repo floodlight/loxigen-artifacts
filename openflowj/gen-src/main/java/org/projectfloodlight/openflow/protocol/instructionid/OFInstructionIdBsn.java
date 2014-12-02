@@ -31,6 +31,7 @@ public interface OFInstructionIdBsn extends OFObject, OFInstructionIdExperimente
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

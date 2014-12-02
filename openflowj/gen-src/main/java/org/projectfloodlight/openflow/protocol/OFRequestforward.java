@@ -32,6 +32,7 @@ public interface OFRequestforward extends OFObject, OFMessage {
     long getRole();
     byte[] getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

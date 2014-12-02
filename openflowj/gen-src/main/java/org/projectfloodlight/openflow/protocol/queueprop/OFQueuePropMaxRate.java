@@ -30,6 +30,7 @@ public interface OFQueuePropMaxRate extends OFObject, OFQueueProp {
     int getRate();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

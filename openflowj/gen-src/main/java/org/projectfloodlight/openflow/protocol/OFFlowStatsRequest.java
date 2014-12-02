@@ -39,6 +39,7 @@ public interface OFFlowStatsRequest extends OFObject, OFStatsRequest<OFFlowStats
     U64 getCookieMask() throws UnsupportedOperationException;
     Match getMatch();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -30,6 +30,7 @@ public interface OFAsyncConfigPropTableStatusMaster extends OFObject, OFAsyncCon
     long getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

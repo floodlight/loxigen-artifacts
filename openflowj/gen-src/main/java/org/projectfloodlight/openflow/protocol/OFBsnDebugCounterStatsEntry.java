@@ -30,6 +30,7 @@ public interface OFBsnDebugCounterStatsEntry extends OFObject {
     U64 getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

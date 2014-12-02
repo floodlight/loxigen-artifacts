@@ -38,6 +38,7 @@ public interface OFBsnGentableEntryDescStatsRequest extends OFObject, OFBsnStats
     U128 getChecksum();
     U128 getChecksumMask();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

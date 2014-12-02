@@ -30,6 +30,7 @@ public interface OFBsnTlvCrcEnabled extends OFObject, OFBsnTlv {
     short getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

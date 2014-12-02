@@ -30,6 +30,7 @@ public interface OFGetConfigRequest extends OFObject, OFMessage, OFRequest<OFGet
     OFType getType();
     long getXid();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

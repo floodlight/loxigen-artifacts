@@ -42,6 +42,7 @@ public interface OFBsnVportL2Gre extends OFObject, OFBsnVport {
     String getIfName();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

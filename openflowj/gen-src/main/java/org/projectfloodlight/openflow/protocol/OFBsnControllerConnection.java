@@ -32,6 +32,7 @@ public interface OFBsnControllerConnection extends OFObject {
     String getUri();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

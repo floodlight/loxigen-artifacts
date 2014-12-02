@@ -31,6 +31,7 @@ public interface OFActionEnqueue extends OFObject, OFAction {
     long getQueueId();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

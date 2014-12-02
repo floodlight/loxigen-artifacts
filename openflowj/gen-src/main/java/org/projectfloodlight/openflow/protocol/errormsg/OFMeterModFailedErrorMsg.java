@@ -33,6 +33,7 @@ public interface OFMeterModFailedErrorMsg extends OFObject, OFErrorMsg {
     OFMeterModFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

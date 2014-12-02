@@ -29,6 +29,7 @@ public interface OFActionPopPbb extends OFObject, OFAction {
     OFActionType getType();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

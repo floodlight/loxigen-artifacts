@@ -33,6 +33,7 @@ public interface OFTableDescStatsRequest extends OFObject, OFStatsRequest<OFTabl
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

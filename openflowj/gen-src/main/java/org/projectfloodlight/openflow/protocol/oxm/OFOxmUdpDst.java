@@ -34,6 +34,7 @@ public interface OFOxmUdpDst extends OFObject, OFOxm<TransportPort> {
     TransportPort getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -34,6 +34,7 @@ public interface OFBsnLog extends OFObject, OFBsnHeader {
     OFBsnLoglevel getLoglevel();
     String getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

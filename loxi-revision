@@ -1,1 +1,1 @@
-fcc37923e9308155c9c61534e37061cfc3c6cdde Merge into master from pull request #356: java_model: generate OFErrorMsg accessor for ErrorCause data (https://github.com/floodlight/loxigen/pull/356)
+da3267677e36c86ea2743d8058bb938630f41adc Merge into master from pull request #359: Add OFPortDesc helper methods (https://github.com/floodlight/loxigen/pull/359)

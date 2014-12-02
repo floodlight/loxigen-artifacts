@@ -33,6 +33,7 @@ public interface OFFlowModFailedErrorMsg extends OFObject, OFErrorMsg {
     OFFlowModFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

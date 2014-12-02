@@ -37,6 +37,7 @@ public interface OFPortMod extends OFObject, OFMessage {
     long getAdvertise() throws UnsupportedOperationException;
     List<OFPortModProp> getProperties() throws UnsupportedOperationException;
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -39,6 +39,7 @@ public interface OFPacketIn extends OFObject, OFMessage {
     OFPort getInPhyPort() throws UnsupportedOperationException;
     U64 getCookie() throws UnsupportedOperationException;
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

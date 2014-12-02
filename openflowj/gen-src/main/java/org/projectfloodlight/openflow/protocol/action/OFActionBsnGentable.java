@@ -34,6 +34,7 @@ public interface OFActionBsnGentable extends OFObject, OFActionBsn {
     List<OFBsnTlv> getKey();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

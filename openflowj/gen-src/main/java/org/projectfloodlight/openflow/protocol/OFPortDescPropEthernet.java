@@ -35,6 +35,7 @@ public interface OFPortDescPropEthernet extends OFObject, OFPortDescProp {
     long getMaxSpeed();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

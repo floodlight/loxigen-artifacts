@@ -33,6 +33,7 @@ public interface OFBsnGetMirroringRequest extends OFObject, OFBsnHeader, OFReque
     long getSubtype();
     short getReportMirrorPorts();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

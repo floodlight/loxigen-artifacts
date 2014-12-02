@@ -34,6 +34,7 @@ public interface OFMeterStatsRequest extends OFObject, OFStatsRequest<OFMeterSta
     Set<OFStatsRequestFlags> getFlags();
     long getMeterId();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

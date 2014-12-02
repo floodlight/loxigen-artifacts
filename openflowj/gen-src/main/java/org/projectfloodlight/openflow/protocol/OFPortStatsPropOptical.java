@@ -40,6 +40,7 @@ public interface OFPortStatsPropOptical extends OFObject, OFPortStatsProp {
     int getTemperature();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

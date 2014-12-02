@@ -32,6 +32,7 @@ public interface OFErrorMsg extends OFObject, OFMessage {
     OFErrorType getErrType();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

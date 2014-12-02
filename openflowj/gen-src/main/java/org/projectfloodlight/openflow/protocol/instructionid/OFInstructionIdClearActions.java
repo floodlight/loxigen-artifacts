@@ -29,6 +29,7 @@ public interface OFInstructionIdClearActions extends OFObject, OFInstructionId {
     OFInstructionType getType();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -37,6 +37,7 @@ public interface OFBsnImageDescStatsReply extends OFObject, OFBsnStatsReply {
     String getImageChecksum();
     String getStartupConfigChecksum();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

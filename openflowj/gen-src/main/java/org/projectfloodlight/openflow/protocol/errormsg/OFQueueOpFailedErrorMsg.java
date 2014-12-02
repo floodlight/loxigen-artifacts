@@ -33,6 +33,7 @@ public interface OFQueueOpFailedErrorMsg extends OFObject, OFErrorMsg {
     OFQueueOpFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -35,6 +35,7 @@ public interface OFBsnGentableClearRequest extends OFObject, OFBsnHeader, OFRequ
     U128 getChecksum();
     U128 getChecksumMask();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -34,6 +34,7 @@ public interface OFBsnSetAuxCxnsRequest extends OFObject, OFBsnHeader, OFRequest
     long getSubtype();
     long getNumAux();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

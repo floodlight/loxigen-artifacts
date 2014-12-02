@@ -30,6 +30,7 @@ public interface OFMessage extends OFObject {
     OFType getType();
     long getXid();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

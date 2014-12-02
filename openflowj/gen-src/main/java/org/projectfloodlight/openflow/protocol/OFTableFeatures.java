@@ -36,6 +36,7 @@ public interface OFTableFeatures extends OFObject {
     List<OFTableFeatureProp> getProperties();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

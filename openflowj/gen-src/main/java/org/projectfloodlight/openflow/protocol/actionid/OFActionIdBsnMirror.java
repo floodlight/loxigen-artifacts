@@ -31,6 +31,7 @@ public interface OFActionIdBsnMirror extends OFObject, OFActionIdBsn {
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -30,6 +30,7 @@ public interface OFAsyncConfigPropPacketInMaster extends OFObject, OFAsyncConfig
     long getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

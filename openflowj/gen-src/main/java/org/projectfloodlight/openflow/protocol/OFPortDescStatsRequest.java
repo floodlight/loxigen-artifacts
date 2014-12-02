@@ -33,6 +33,7 @@ public interface OFPortDescStatsRequest extends OFObject, OFStatsRequest<OFPortD
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

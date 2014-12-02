@@ -30,6 +30,7 @@ public interface OFMeterBandStats extends OFObject {
     U64 getByteBandCount();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

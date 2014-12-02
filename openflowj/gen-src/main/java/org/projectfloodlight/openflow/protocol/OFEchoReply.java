@@ -31,6 +31,7 @@ public interface OFEchoReply extends OFObject, OFMessage {
     long getXid();
     byte[] getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

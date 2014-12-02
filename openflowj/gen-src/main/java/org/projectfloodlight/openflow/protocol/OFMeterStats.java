@@ -36,6 +36,7 @@ public interface OFMeterStats extends OFObject {
     List<OFMeterBandStats> getBandStats();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

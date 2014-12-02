@@ -30,6 +30,7 @@ public interface OFInstructionMeter extends OFObject, OFInstruction {
     long getMeterId();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -30,6 +30,7 @@ public interface OFAsyncConfigPropPortStatusSlave extends OFObject, OFAsyncConfi
     long getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

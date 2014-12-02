@@ -30,6 +30,7 @@ public interface OFActionGroup extends OFObject, OFAction {
     OFGroup getGroup();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

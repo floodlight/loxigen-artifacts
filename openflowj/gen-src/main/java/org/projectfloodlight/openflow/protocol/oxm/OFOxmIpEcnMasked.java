@@ -34,6 +34,7 @@ public interface OFOxmIpEcnMasked extends OFObject, OFOxm<IpEcn> {
     OFOxm<IpEcn> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

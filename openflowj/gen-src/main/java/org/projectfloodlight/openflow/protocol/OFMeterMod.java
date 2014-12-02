@@ -36,6 +36,7 @@ public interface OFMeterMod extends OFObject, OFMessage {
     List<OFMeterBand> getMeters() throws UnsupportedOperationException;
     List<OFMeterBand> getBands() throws UnsupportedOperationException;
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

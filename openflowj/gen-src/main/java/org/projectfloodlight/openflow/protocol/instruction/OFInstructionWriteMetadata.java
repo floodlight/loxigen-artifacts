@@ -31,6 +31,7 @@ public interface OFInstructionWriteMetadata extends OFObject, OFInstruction {
     U64 getMetadataMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

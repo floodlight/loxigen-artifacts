@@ -31,6 +31,7 @@ public interface OFTableFeaturePropNextTablesMiss extends OFObject, OFTableFeatu
     List<U8> getNextTableIds();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

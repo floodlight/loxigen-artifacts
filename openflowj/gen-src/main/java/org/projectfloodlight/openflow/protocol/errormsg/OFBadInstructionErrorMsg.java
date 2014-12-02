@@ -33,6 +33,7 @@ public interface OFBadInstructionErrorMsg extends OFObject, OFErrorMsg {
     OFBadInstructionCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

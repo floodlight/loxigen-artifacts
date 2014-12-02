@@ -35,6 +35,7 @@ public interface OFRoleStatus extends OFObject, OFMessage {
     U64 getGenerationId();
     List<OFRoleProp> getProperties();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

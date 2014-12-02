@@ -34,6 +34,7 @@ public interface OFOxmTunnelIpv4DstMasked extends OFObject, OFOxm<IPv4Address> {
     OFOxm<IPv4Address> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

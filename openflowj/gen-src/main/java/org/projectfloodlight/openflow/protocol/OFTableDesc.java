@@ -31,6 +31,7 @@ public interface OFTableDesc extends OFObject {
     Set<OFTableConfig> getConfig();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -35,6 +35,7 @@ public interface OFBsnGentableEntryDelete extends OFObject, OFBsnHeader {
     GenTableId getTableId();
     List<OFBsnTlv> getKey();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

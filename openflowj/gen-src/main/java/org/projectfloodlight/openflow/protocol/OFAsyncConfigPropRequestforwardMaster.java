@@ -30,6 +30,7 @@ public interface OFAsyncConfigPropRequestforwardMaster extends OFObject, OFAsync
     long getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

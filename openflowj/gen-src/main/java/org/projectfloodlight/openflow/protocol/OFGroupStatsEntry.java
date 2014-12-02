@@ -36,6 +36,7 @@ public interface OFGroupStatsEntry extends OFObject {
     long getDurationNsec() throws UnsupportedOperationException;
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -34,6 +34,7 @@ public interface OFMeterFeaturesStatsReply extends OFObject, OFStatsReply {
     Set<OFStatsReplyFlags> getFlags();
     OFMeterFeatures getFeatures();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

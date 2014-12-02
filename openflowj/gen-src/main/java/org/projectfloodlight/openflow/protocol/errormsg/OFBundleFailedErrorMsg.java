@@ -33,6 +33,7 @@ public interface OFBundleFailedErrorMsg extends OFObject, OFErrorMsg {
     OFBundleFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

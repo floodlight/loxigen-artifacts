@@ -37,6 +37,7 @@ public interface OFBsnSwitchPipelineStatsReply extends OFObject, OFBsnStatsReply
     long getSubtype();
     List<OFBsnSwitchPipelineStatsEntry> getEntries();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

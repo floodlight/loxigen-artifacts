@@ -35,6 +35,7 @@ public interface OFBsnLacpStatsRequest extends OFObject, OFBsnStatsRequest<OFBsn
     long getExperimenter();
     long getSubtype();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

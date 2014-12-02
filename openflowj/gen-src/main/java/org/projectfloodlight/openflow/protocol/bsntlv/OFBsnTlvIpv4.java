@@ -30,6 +30,7 @@ public interface OFBsnTlvIpv4 extends OFObject, OFBsnTlv {
     IPv4Address getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

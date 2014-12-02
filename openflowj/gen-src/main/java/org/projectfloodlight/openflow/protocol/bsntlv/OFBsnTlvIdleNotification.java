@@ -29,6 +29,7 @@ public interface OFBsnTlvIdleNotification extends OFObject, OFBsnTlv {
     int getType();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

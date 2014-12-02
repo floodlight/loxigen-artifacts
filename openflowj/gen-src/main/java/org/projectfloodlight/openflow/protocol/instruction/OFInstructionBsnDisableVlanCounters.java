@@ -31,6 +31,7 @@ public interface OFInstructionBsnDisableVlanCounters extends OFObject, OFInstruc
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

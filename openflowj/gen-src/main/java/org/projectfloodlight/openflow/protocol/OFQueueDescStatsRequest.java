@@ -33,6 +33,7 @@ public interface OFQueueDescStatsRequest extends OFObject, OFStatsRequest<OFQueu
     OFStatsType getStatsType();
     Set<OFStatsRequestFlags> getFlags();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

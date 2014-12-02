@@ -38,6 +38,7 @@ public interface OFAsyncGetReply extends OFObject, OFMessage {
     long getFlowRemovedMaskSlave() throws UnsupportedOperationException;
     List<OFAsyncConfigProp> getProperties() throws UnsupportedOperationException;
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

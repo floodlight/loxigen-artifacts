@@ -30,6 +30,7 @@ public interface OFBarrierRequest extends OFObject, OFMessage, OFRequest<OFBarri
     OFType getType();
     long getXid();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

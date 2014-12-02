@@ -34,6 +34,7 @@ public interface OFOxmEthDst extends OFObject, OFOxm<MacAddress> {
     MacAddress getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

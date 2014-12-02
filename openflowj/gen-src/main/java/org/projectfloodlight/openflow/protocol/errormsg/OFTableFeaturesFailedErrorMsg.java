@@ -33,6 +33,7 @@ public interface OFTableFeaturesFailedErrorMsg extends OFObject, OFErrorMsg {
     OFTableFeaturesFailedCode getCode();
     OFErrorCauseData getData();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

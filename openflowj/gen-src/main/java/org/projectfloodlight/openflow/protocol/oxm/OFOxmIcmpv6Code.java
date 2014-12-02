@@ -34,6 +34,7 @@ public interface OFOxmIcmpv6Code extends OFObject, OFOxm<U8> {
     U8 getMask();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -30,6 +30,7 @@ public interface OFBsnTlvMissPackets extends OFObject, OFBsnTlv {
     U64 getValue();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

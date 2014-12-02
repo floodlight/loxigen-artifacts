@@ -34,6 +34,7 @@ public interface OFOxmBsnInPorts128Masked extends OFObject, OFOxm<OFBitMask128> 
     OFOxm<OFBitMask128> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

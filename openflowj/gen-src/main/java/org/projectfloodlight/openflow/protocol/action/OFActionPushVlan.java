@@ -30,6 +30,7 @@ public interface OFActionPushVlan extends OFObject, OFAction {
     EthType getEthertype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

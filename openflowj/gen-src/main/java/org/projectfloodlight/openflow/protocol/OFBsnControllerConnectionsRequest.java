@@ -32,6 +32,7 @@ public interface OFBsnControllerConnectionsRequest extends OFObject, OFBsnHeader
     long getExperimenter();
     long getSubtype();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

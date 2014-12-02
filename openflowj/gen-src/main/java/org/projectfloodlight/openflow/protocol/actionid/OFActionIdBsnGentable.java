@@ -31,6 +31,7 @@ public interface OFActionIdBsnGentable extends OFObject, OFActionIdBsn {
     long getSubtype();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -34,6 +34,7 @@ public interface OFOxmPbbUcaMasked extends OFObject, OFOxm<OFBooleanValue> {
     OFOxm<OFBooleanValue> getCanonical();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();

@@ -32,6 +32,7 @@ public interface OFGroupDescStatsEntry extends OFObject {
     List<OFBucket> getBuckets();
     OFVersion getVersion();
 
+
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
