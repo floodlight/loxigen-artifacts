@@ -2745,6 +2745,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_instruction_id_wire_object_id_get,
         .wire_type_set=of_instruction_id_bsn_arp_offload_push_wire_types,
     },
+    [OF_INSTRUCTION_BSN_AUTO_NEGOTIATION] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_instruction_wire_object_id_get,
+        .wire_type_set=of_instruction_bsn_auto_negotiation_push_wire_types,
+    },
+    [OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_instruction_id_wire_object_id_get,
+        .wire_type_set=of_instruction_id_bsn_auto_negotiation_push_wire_types,
+    },
     [OF_INSTRUCTION_BSN_DENY] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

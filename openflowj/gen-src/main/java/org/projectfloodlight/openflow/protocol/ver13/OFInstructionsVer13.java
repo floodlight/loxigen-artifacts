@@ -77,6 +77,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnArpOffloadVer13.INSTANCE;
     }
 
+    public OFInstructionBsnAutoNegotiation bsnAutoNegotiation() {
+        return OFInstructionBsnAutoNegotiationVer13.INSTANCE;
+    }
+
     public OFInstructionBsnDeny bsnDeny() {
         return OFInstructionBsnDenyVer13.INSTANCE;
     }

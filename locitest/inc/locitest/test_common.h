@@ -7763,6 +7763,15 @@ extern int of_instruction_bsn_arp_offload_OF_VERSION_1_3_populate_scalars(
 extern int of_instruction_bsn_arp_offload_OF_VERSION_1_3_check_scalars(
     of_instruction_bsn_arp_offload_t *obj, int value);
 
+extern int of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_populate(
+    of_instruction_bsn_auto_negotiation_t *obj, int value);
+extern int of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_check(
+    of_instruction_bsn_auto_negotiation_t *obj, int value);
+extern int of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_populate_scalars(
+    of_instruction_bsn_auto_negotiation_t *obj, int value);
+extern int of_instruction_bsn_auto_negotiation_OF_VERSION_1_3_check_scalars(
+    of_instruction_bsn_auto_negotiation_t *obj, int value);
+
 extern int of_instruction_bsn_deny_OF_VERSION_1_3_populate(
     of_instruction_bsn_deny_t *obj, int value);
 extern int of_instruction_bsn_deny_OF_VERSION_1_3_check(
@@ -7915,6 +7924,15 @@ extern int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_populate_scalars(
     of_instruction_id_bsn_arp_offload_t *obj, int value);
 extern int of_instruction_id_bsn_arp_offload_OF_VERSION_1_3_check_scalars(
     of_instruction_id_bsn_arp_offload_t *obj, int value);
+
+extern int of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_populate(
+    of_instruction_id_bsn_auto_negotiation_t *obj, int value);
+extern int of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_check(
+    of_instruction_id_bsn_auto_negotiation_t *obj, int value);
+extern int of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_populate_scalars(
+    of_instruction_id_bsn_auto_negotiation_t *obj, int value);
+extern int of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_check_scalars(
+    of_instruction_id_bsn_auto_negotiation_t *obj, int value);
 
 extern int of_instruction_id_bsn_deny_OF_VERSION_1_3_populate(
     of_instruction_id_bsn_deny_t *obj, int value);

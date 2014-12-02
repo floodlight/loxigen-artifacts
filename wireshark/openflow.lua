@@ -1337,7 +1337,6 @@ enum_v4_ofp_port_config = {
     [4] = "OFPPC_NO_RECV",
     [32] = "OFPPC_NO_FWD",
     [64] = "OFPPC_NO_PACKET_IN",
-    [1073741824] = "OFPPC_BSN_BREAKOUT_ENABLED",
     [2147483648] = "OFPPC_BSN_MIRROR_DEST",
 }
 
@@ -6447,6 +6446,14 @@ fields['of13.instruction_id_bsn_arp_offload.type'] = ProtoField.uint16("of13.ins
 fields['of13.instruction_id_bsn_arp_offload.len'] = ProtoField.uint16("of13.instruction_id_bsn_arp_offload.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_arp_offload.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_arp_offload.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_arp_offload.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_arp_offload.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_auto_negotiation.type'] = ProtoField.uint16("of13.instruction_bsn_auto_negotiation.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_auto_negotiation.len'] = ProtoField.uint16("of13.instruction_bsn_auto_negotiation.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_auto_negotiation.experimenter'] = ProtoField.uint32("of13.instruction_bsn_auto_negotiation.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_auto_negotiation.subtype'] = ProtoField.uint32("of13.instruction_bsn_auto_negotiation.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_auto_negotiation.type'] = ProtoField.uint16("of13.instruction_id_bsn_auto_negotiation.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_auto_negotiation.len'] = ProtoField.uint16("of13.instruction_id_bsn_auto_negotiation.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_auto_negotiation.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_auto_negotiation.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_auto_negotiation.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_auto_negotiation.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_bsn_deny.type'] = ProtoField.uint16("of13.instruction_bsn_deny.type", "type", base.DEC, nil)
 fields['of13.instruction_bsn_deny.len'] = ProtoField.uint16("of13.instruction_bsn_deny.len", "len", base.DEC, nil)
 fields['of13.instruction_bsn_deny.experimenter'] = ProtoField.uint32("of13.instruction_bsn_deny.experimenter", "experimenter", base.DEC, nil)
@@ -11828,6 +11835,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_arp_offload.len'],
     fields['of13.instruction_id_bsn_arp_offload.experimenter'],
     fields['of13.instruction_id_bsn_arp_offload.subtype'],
+    fields['of13.instruction_bsn_auto_negotiation.type'],
+    fields['of13.instruction_bsn_auto_negotiation.len'],
+    fields['of13.instruction_bsn_auto_negotiation.experimenter'],
+    fields['of13.instruction_bsn_auto_negotiation.subtype'],
+    fields['of13.instruction_id_bsn_auto_negotiation.type'],
+    fields['of13.instruction_id_bsn_auto_negotiation.len'],
+    fields['of13.instruction_id_bsn_auto_negotiation.experimenter'],
+    fields['of13.instruction_id_bsn_auto_negotiation.subtype'],
     fields['of13.instruction_bsn_deny.type'],
     fields['of13.instruction_bsn_deny.len'],
     fields['of13.instruction_bsn_deny.experimenter'],
@@ -23102,6 +23117,29 @@ function dissect_of_instruction_id_bsn_arp_offload_v4(reader, subtree)
     return 'of_instruction_id_bsn_arp_offload'
 end
 of_instruction_id_bsn_v4_dissectors[1] = dissect_of_instruction_id_bsn_arp_offload_v4
+
+-- child class of_instruction_bsn_auto_negotiation
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_auto_negotiation_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_auto_negotiation.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_auto_negotiation.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_auto_negotiation.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_auto_negotiation.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_auto_negotiation'
+end
+of_instruction_bsn_v4_dissectors[11] = dissect_of_instruction_bsn_auto_negotiation_v4
+
+-- child class of_instruction_id_bsn_auto_negotiation
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_auto_negotiation_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_auto_negotiation.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_auto_negotiation.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_auto_negotiation.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_auto_negotiation.subtype')
+    return 'of_instruction_id_bsn_auto_negotiation'
+end
+of_instruction_id_bsn_v4_dissectors[11] = dissect_of_instruction_id_bsn_auto_negotiation_v4
 
 -- child class of_instruction_bsn_deny
 -- Child of of_instruction_bsn

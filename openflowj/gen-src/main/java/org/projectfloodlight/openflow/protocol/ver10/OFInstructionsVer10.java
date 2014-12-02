@@ -68,6 +68,10 @@ public class OFInstructionsVer10 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnArpOffload not supported in version 1.0");
     }
 
+    public OFInstructionBsnAutoNegotiation bsnAutoNegotiation() {
+        throw new UnsupportedOperationException("OFInstructionBsnAutoNegotiation not supported in version 1.0");
+    }
+
     public OFInstructionBsnDeny bsnDeny() {
         throw new UnsupportedOperationException("OFInstructionBsnDeny not supported in version 1.0");
     }
