@@ -728,6 +728,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_internal_mac_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_interval_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1248,6 +1249,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_internal_mac_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_interval_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_ipv4_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_mac_mask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -19660,6 +19662,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_3(data, len, out_len);
     case 0x23:
         return loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_1_3(data, len, out_len);
+    case 0x3c:
+        return loci_validate_of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3(data, len, out_len);
     case 0x22:
         return loci_validate_of_bsn_tlv_ipv4_src_OF_VERSION_1_3(data, len, out_len);
     case 0x1:
@@ -20305,6 +20309,28 @@ loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_3(uint8_t *data, int len, int *out_le
 
 static int
 loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
         return -1;
@@ -32689,6 +32715,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_4(data, len, out_len);
     case 0x23:
         return loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_1_4(data, len, out_len);
+    case 0x3c:
+        return loci_validate_of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4(data, len, out_len);
     case 0x22:
         return loci_validate_of_bsn_tlv_ipv4_src_OF_VERSION_1_4(data, len, out_len);
     case 0x1:
@@ -33334,6 +33362,28 @@ loci_validate_of_bsn_tlv_ipv4_OF_VERSION_1_4(uint8_t *data, int len, int *out_le
 
 static int
 loci_validate_of_bsn_tlv_ipv4_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 8) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
         return -1;

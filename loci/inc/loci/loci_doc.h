@@ -6364,6 +6364,17 @@ typedef struct of_bsn_tlv_ipv4_s of_bsn_tlv_ipv4_t;
 typedef struct of_bsn_tlv_ipv4_dst_s of_bsn_tlv_ipv4_dst_t;
 
 /**
+ * Structure for of_bsn_tlv_ipv4_netmask object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_ipv4.  Functions
+ *   are of type of_bsn_tlv_ipv4_netmask_of_ipv4_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ipv4_netmask_s of_bsn_tlv_ipv4_netmask_t;
+
+/**
  * Structure for of_bsn_tlv_ipv4_src object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

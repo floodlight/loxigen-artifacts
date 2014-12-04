@@ -6712,6 +6712,9 @@ fields['of13.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4.value", "
 fields['of13.bsn_tlv_ipv4_dst.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4_dst.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4_dst.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_dst.value", "value")
+fields['of13.bsn_tlv_ipv4_netmask.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4_netmask.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ipv4_netmask.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4_netmask.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ipv4_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_netmask.value", "value")
 fields['of13.bsn_tlv_ipv4_src.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4_src.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_src.value", "value")
@@ -9143,6 +9146,9 @@ fields['of14.bsn_tlv_ipv4.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4.value", "
 fields['of14.bsn_tlv_ipv4_dst.type'] = ProtoField.uint16("of14.bsn_tlv_ipv4_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4_dst.length'] = ProtoField.uint16("of14.bsn_tlv_ipv4_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4_dst.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_dst.value", "value")
+fields['of14.bsn_tlv_ipv4_netmask.type'] = ProtoField.uint16("of14.bsn_tlv_ipv4_netmask.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ipv4_netmask.length'] = ProtoField.uint16("of14.bsn_tlv_ipv4_netmask.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ipv4_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_netmask.value", "value")
 fields['of14.bsn_tlv_ipv4_src.type'] = ProtoField.uint16("of14.bsn_tlv_ipv4_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4_src.length'] = ProtoField.uint16("of14.bsn_tlv_ipv4_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_src.value", "value")
@@ -14756,6 +14762,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_ipv4_dst.type'],
     fields['of13.bsn_tlv_ipv4_dst.length'],
     fields['of13.bsn_tlv_ipv4_dst.value'],
+    fields['of13.bsn_tlv_ipv4_netmask.type'],
+    fields['of13.bsn_tlv_ipv4_netmask.length'],
+    fields['of13.bsn_tlv_ipv4_netmask.value'],
     fields['of13.bsn_tlv_ipv4_src.type'],
     fields['of13.bsn_tlv_ipv4_src.length'],
     fields['of13.bsn_tlv_ipv4_src.value'],
@@ -17187,6 +17196,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_ipv4_dst.type'],
     fields['of14.bsn_tlv_ipv4_dst.length'],
     fields['of14.bsn_tlv_ipv4_dst.value'],
+    fields['of14.bsn_tlv_ipv4_netmask.type'],
+    fields['of14.bsn_tlv_ipv4_netmask.length'],
+    fields['of14.bsn_tlv_ipv4_netmask.value'],
     fields['of14.bsn_tlv_ipv4_src.type'],
     fields['of14.bsn_tlv_ipv4_src.length'],
     fields['of14.bsn_tlv_ipv4_src.value'],
@@ -28124,6 +28136,16 @@ function dissect_of_bsn_tlv_ipv4_dst_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[35] = dissect_of_bsn_tlv_ipv4_dst_v4
 
+-- child class of_bsn_tlv_ipv4_netmask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv4_netmask_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ipv4_netmask.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ipv4_netmask.length')
+    read_of_ipv4_t(reader, 4, subtree, 'of13.bsn_tlv_ipv4_netmask.value')
+    return 'of_bsn_tlv_ipv4_netmask'
+end
+of_bsn_tlv_v4_dissectors[60] = dissect_of_bsn_tlv_ipv4_netmask_v4
+
 -- child class of_bsn_tlv_ipv4_src
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_ipv4_src_v4(reader, subtree)
@@ -34412,6 +34434,16 @@ function dissect_of_bsn_tlv_ipv4_dst_v5(reader, subtree)
     return 'of_bsn_tlv_ipv4_dst'
 end
 of_bsn_tlv_v5_dissectors[35] = dissect_of_bsn_tlv_ipv4_dst_v5
+
+-- child class of_bsn_tlv_ipv4_netmask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv4_netmask_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ipv4_netmask.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ipv4_netmask.length')
+    read_of_ipv4_t(reader, 5, subtree, 'of14.bsn_tlv_ipv4_netmask.value')
+    return 'of_bsn_tlv_ipv4_netmask'
+end
+of_bsn_tlv_v5_dissectors[60] = dissect_of_bsn_tlv_ipv4_netmask_v5
 
 -- child class of_bsn_tlv_ipv4_src
 -- Child of of_bsn_tlv

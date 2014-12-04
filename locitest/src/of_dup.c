@@ -26614,6 +26614,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
         return of_bsn_tlv_eth_dst_OF_VERSION_1_3_dup(src);
     }
@@ -27296,6 +27300,31 @@ of_bsn_tlv_ipv4_dst_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_ipv4_dst_value_get(src, &ipv4);
     of_bsn_tlv_ipv4_dst_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ipv4_netmask
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ipv4_netmask.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ipv4_netmask_t *
+of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(
+    of_bsn_tlv_ipv4_netmask_t *src)
+{
+    of_bsn_tlv_ipv4_netmask_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_ipv4_netmask_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ipv4_netmask_value_get(src, &ipv4);
+    of_bsn_tlv_ipv4_netmask_value_set(dst, ipv4);
 
     return dst;
 }
@@ -45102,6 +45131,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_IPV4_NETMASK) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_ETH_DST) {
         return of_bsn_tlv_eth_dst_OF_VERSION_1_4_dup(src);
     }
@@ -45784,6 +45817,31 @@ of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_ipv4_dst_value_get(src, &ipv4);
     of_bsn_tlv_ipv4_dst_value_set(dst, ipv4);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_ipv4_netmask
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_ipv4_netmask.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_ipv4_netmask_t *
+of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(
+    of_bsn_tlv_ipv4_netmask_t *src)
+{
+    of_bsn_tlv_ipv4_netmask_t *dst;
+    of_ipv4_t ipv4;
+
+    if ((dst = of_bsn_tlv_ipv4_netmask_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_ipv4_netmask_value_get(src, &ipv4);
+    of_bsn_tlv_ipv4_netmask_value_set(dst, ipv4);
 
     return dst;
 }
@@ -61484,6 +61542,23 @@ of_bsn_tlv_ipv4_dst_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_ipv4_dst_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_ipv4_netmask_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_ipv4_netmask_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

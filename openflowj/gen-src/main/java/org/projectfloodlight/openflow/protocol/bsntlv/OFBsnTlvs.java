@@ -81,6 +81,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIpv4 ipv4(IPv4Address value);
     OFBsnTlvIpv4Dst.Builder buildIpv4Dst() throws UnsupportedOperationException;
     OFBsnTlvIpv4Dst ipv4Dst(IPv4Address value);
+    OFBsnTlvIpv4Netmask.Builder buildIpv4Netmask() throws UnsupportedOperationException;
+    OFBsnTlvIpv4Netmask ipv4Netmask(IPv4Address value);
     OFBsnTlvIpv4Src.Builder buildIpv4Src() throws UnsupportedOperationException;
     OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;

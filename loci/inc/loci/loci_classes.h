@@ -829,6 +829,8 @@ void of_bsn_tlv_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_dst_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ipv4_netmask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ipv4_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1509,6 +1511,7 @@ typedef of_object_t of_bsn_tlv_internal_mac_t;
 typedef of_object_t of_bsn_tlv_interval_t;
 typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_ipv4_dst_t;
+typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
@@ -3437,6 +3440,11 @@ extern void of_bsn_tlv_ipv4_init(
 extern of_object_t *
     of_bsn_tlv_ipv4_dst_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ipv4_netmask_new(of_version_t version);
+extern void of_bsn_tlv_ipv4_netmask_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -8563,6 +8571,17 @@ of_bsn_tlv_ipv4_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_ipv4_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ipv4_netmask_t
+ * @param obj An instance of type of_bsn_tlv_ipv4_netmask_t
+ *
+ * \ingroup of_bsn_tlv_ipv4_netmask
+ */
+static inline void
+of_bsn_tlv_ipv4_netmask_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -19748,6 +19767,15 @@ extern void of_bsn_tlv_ipv4_dst_value_set(
     of_ipv4_t value);
 extern void of_bsn_tlv_ipv4_dst_value_get(
     of_bsn_tlv_ipv4_dst_t *obj,
+    of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ipv4_netmask */
+
+extern void of_bsn_tlv_ipv4_netmask_value_set(
+    of_bsn_tlv_ipv4_netmask_t *obj,
+    of_ipv4_t value);
+extern void of_bsn_tlv_ipv4_netmask_value_get(
+    of_bsn_tlv_ipv4_netmask_t *obj,
     of_ipv4_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_ipv4_src */

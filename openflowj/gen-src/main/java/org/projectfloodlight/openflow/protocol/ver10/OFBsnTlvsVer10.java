@@ -218,6 +218,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIpv4Dst not supported in version 1.0");
     }
 
+    public OFBsnTlvIpv4Netmask.Builder buildIpv4Netmask() {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4Netmask not supported in version 1.0");
+    }
+    public OFBsnTlvIpv4Netmask ipv4Netmask(IPv4Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpv4Netmask not supported in version 1.0");
+    }
+
     public OFBsnTlvIpv4Src.Builder buildIpv4Src() {
         throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.0");
     }

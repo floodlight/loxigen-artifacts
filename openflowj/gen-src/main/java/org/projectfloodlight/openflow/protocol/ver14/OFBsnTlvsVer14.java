@@ -270,6 +270,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIpv4Netmask.Builder buildIpv4Netmask() {
+        return new OFBsnTlvIpv4NetmaskVer14.Builder();
+    }
+    public OFBsnTlvIpv4Netmask ipv4Netmask(IPv4Address value) {
+        return new OFBsnTlvIpv4NetmaskVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvIpv4Src.Builder buildIpv4Src() {
         return new OFBsnTlvIpv4SrcVer14.Builder();
     }
