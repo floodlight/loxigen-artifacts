@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 
 
 public class OFBsnTlvsVer10 implements OFBsnTlvs {
@@ -328,6 +329,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvQueueWeight queueWeight(long value) {
         throw new UnsupportedOperationException("OFBsnTlvQueueWeight not supported in version 1.0");
+    }
+
+    public OFBsnTlvReference.Builder buildReference() {
+        throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.0");
+    }
+    public OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key) {
+        throw new UnsupportedOperationException("OFBsnTlvReference not supported in version 1.0");
     }
 
     public OFBsnTlvReplyPackets.Builder buildReplyPackets() {

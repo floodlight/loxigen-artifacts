@@ -6540,6 +6540,21 @@ typedef struct of_bsn_tlv_queue_id_s of_bsn_tlv_queue_id_t;
 typedef struct of_bsn_tlv_queue_weight_s of_bsn_tlv_queue_weight_t;
 
 /**
+ * Structure for of_bsn_tlv_reference object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param table_id_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for table_id, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_reference_uint16_get_f and _set_f.
+ *
+ * @param key_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for key, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_tlv_reference_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_reference_s of_bsn_tlv_reference_t;
+
+/**
  * Structure for of_bsn_tlv_reply_packets object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

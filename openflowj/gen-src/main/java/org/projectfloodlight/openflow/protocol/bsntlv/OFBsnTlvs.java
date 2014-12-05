@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 
 public interface OFBsnTlvs {
     // Subfactories
@@ -113,6 +114,8 @@ public interface OFBsnTlvs {
     OFBsnTlvQueueId queueId(long value);
     OFBsnTlvQueueWeight.Builder buildQueueWeight() throws UnsupportedOperationException;
     OFBsnTlvQueueWeight queueWeight(long value);
+    OFBsnTlvReference.Builder buildReference() throws UnsupportedOperationException;
+    OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key);
     OFBsnTlvReplyPackets.Builder buildReplyPackets() throws UnsupportedOperationException;
     OFBsnTlvReplyPackets replyPackets(U64 value);
     OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;

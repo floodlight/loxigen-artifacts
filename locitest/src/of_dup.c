@@ -26594,6 +26594,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_actor_port_num_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_REFERENCE) {
+        return of_bsn_tlv_reference_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
         return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
     }
@@ -27700,6 +27704,44 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_reference
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_reference.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_reference_t *
+of_bsn_tlv_reference_OF_VERSION_1_3_dup(
+    of_bsn_tlv_reference_t *src)
+{
+    of_bsn_tlv_reference_t *dst;
+    uint16_t val16;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_tlv_reference_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_reference_table_id_get(src, &val16);
+    of_bsn_tlv_reference_table_id_set(dst, val16);
+
+    of_bsn_tlv_reference_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_reference_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_reference_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
 
     return dst;
 }
@@ -45111,6 +45153,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_actor_port_num_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_REFERENCE) {
+        return of_bsn_tlv_reference_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
         return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
     }
@@ -46217,6 +46263,44 @@ of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_queue_weight_value_get(src, &val32);
     of_bsn_tlv_queue_weight_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_reference
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_reference.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_reference_t *
+of_bsn_tlv_reference_OF_VERSION_1_4_dup(
+    of_bsn_tlv_reference_t *src)
+{
+    of_bsn_tlv_reference_t *dst;
+    uint16_t val16;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_tlv_reference_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_reference_table_id_get(src, &val16);
+    of_bsn_tlv_reference_table_id_set(dst, val16);
+
+    of_bsn_tlv_reference_key_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_reference_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_reference_key_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
 
     return dst;
 }
@@ -61814,6 +61898,23 @@ of_bsn_tlv_queue_weight_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_queue_weight_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_reference_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_reference_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_reference_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

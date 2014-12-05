@@ -6760,6 +6760,10 @@ fields['of13.bsn_tlv_queue_id.value'] = ProtoField.uint32("of13.bsn_tlv_queue_id
 fields['of13.bsn_tlv_queue_weight.type'] = ProtoField.uint16("of13.bsn_tlv_queue_weight.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_queue_weight.length'] = ProtoField.uint16("of13.bsn_tlv_queue_weight.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_queue_weight.value'] = ProtoField.uint32("of13.bsn_tlv_queue_weight.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_reference.type'] = ProtoField.uint16("of13.bsn_tlv_reference.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_reference.length'] = ProtoField.uint16("of13.bsn_tlv_reference.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_reference.table_id'] = ProtoField.uint16("of13.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
+fields['of13.bsn_tlv_reference.key'] = ProtoField.bytes("of13.bsn_tlv_reference.key", "key")
 fields['of13.bsn_tlv_reply_packets.type'] = ProtoField.uint16("of13.bsn_tlv_reply_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_reply_packets.length'] = ProtoField.uint16("of13.bsn_tlv_reply_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_reply_packets.value", "value", base.DEC, nil)
@@ -9194,6 +9198,10 @@ fields['of14.bsn_tlv_queue_id.value'] = ProtoField.uint32("of14.bsn_tlv_queue_id
 fields['of14.bsn_tlv_queue_weight.type'] = ProtoField.uint16("of14.bsn_tlv_queue_weight.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_queue_weight.length'] = ProtoField.uint16("of14.bsn_tlv_queue_weight.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_queue_weight.value'] = ProtoField.uint32("of14.bsn_tlv_queue_weight.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_reference.type'] = ProtoField.uint16("of14.bsn_tlv_reference.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_reference.length'] = ProtoField.uint16("of14.bsn_tlv_reference.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_reference.table_id'] = ProtoField.uint16("of14.bsn_tlv_reference.table_id", "table_id", base.DEC, nil)
+fields['of14.bsn_tlv_reference.key'] = ProtoField.bytes("of14.bsn_tlv_reference.key", "key")
 fields['of14.bsn_tlv_reply_packets.type'] = ProtoField.uint16("of14.bsn_tlv_reply_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_reply_packets.length'] = ProtoField.uint16("of14.bsn_tlv_reply_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of14.bsn_tlv_reply_packets.value", "value", base.DEC, nil)
@@ -14810,6 +14818,10 @@ p_of.fields = {
     fields['of13.bsn_tlv_queue_weight.type'],
     fields['of13.bsn_tlv_queue_weight.length'],
     fields['of13.bsn_tlv_queue_weight.value'],
+    fields['of13.bsn_tlv_reference.type'],
+    fields['of13.bsn_tlv_reference.length'],
+    fields['of13.bsn_tlv_reference.table_id'],
+    fields['of13.bsn_tlv_reference.key'],
     fields['of13.bsn_tlv_reply_packets.type'],
     fields['of13.bsn_tlv_reply_packets.length'],
     fields['of13.bsn_tlv_reply_packets.value'],
@@ -17244,6 +17256,10 @@ p_of.fields = {
     fields['of14.bsn_tlv_queue_weight.type'],
     fields['of14.bsn_tlv_queue_weight.length'],
     fields['of14.bsn_tlv_queue_weight.value'],
+    fields['of14.bsn_tlv_reference.type'],
+    fields['of14.bsn_tlv_reference.length'],
+    fields['of14.bsn_tlv_reference.table_id'],
+    fields['of14.bsn_tlv_reference.key'],
     fields['of14.bsn_tlv_reply_packets.type'],
     fields['of14.bsn_tlv_reply_packets.length'],
     fields['of14.bsn_tlv_reply_packets.value'],
@@ -28299,6 +28315,20 @@ function dissect_of_bsn_tlv_queue_weight_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[21] = dissect_of_bsn_tlv_queue_weight_v4
 
+-- child class of_bsn_tlv_reference
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_reference_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_reference.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_reference.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_reference.table_id')
+    read_list(reader, dissect_of_bsn_tlv_v4, subtree, 'of_bsn_tlv')
+    return 'of_bsn_tlv_reference'
+end
+of_bsn_tlv_v4_dissectors[59] = dissect_of_bsn_tlv_reference_v4
+
 -- child class of_bsn_tlv_reply_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_reply_packets_v4(reader, subtree)
@@ -34597,6 +34627,20 @@ function dissect_of_bsn_tlv_queue_weight_v5(reader, subtree)
     return 'of_bsn_tlv_queue_weight'
 end
 of_bsn_tlv_v5_dissectors[21] = dissect_of_bsn_tlv_queue_weight_v5
+
+-- child class of_bsn_tlv_reference
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_reference_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_reference.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_reference.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_reference.table_id')
+    read_list(reader, dissect_of_bsn_tlv_v5, subtree, 'of_bsn_tlv')
+    return 'of_bsn_tlv_reference'
+end
+of_bsn_tlv_v5_dissectors[59] = dissect_of_bsn_tlv_reference_v5
 
 -- child class of_bsn_tlv_reply_packets
 -- Child of of_bsn_tlv

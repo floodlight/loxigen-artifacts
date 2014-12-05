@@ -212,6 +212,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x3a:
             *id = OF_BSN_TLV_INTERVAL;
             break;
+        case 0x3b:
+            *id = OF_BSN_TLV_REFERENCE;
+            break;
         case 0x3c:
             *id = OF_BSN_TLV_IPV4_NETMASK;
             break;
@@ -397,6 +400,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x3a:
             *id = OF_BSN_TLV_INTERVAL;
+            break;
+        case 0x3b:
+            *id = OF_BSN_TLV_REFERENCE;
             break;
         case 0x3c:
             *id = OF_BSN_TLV_IPV4_NETMASK;

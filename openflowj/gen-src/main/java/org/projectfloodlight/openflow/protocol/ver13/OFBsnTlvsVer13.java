@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
+import java.util.List;
 
 
 public class OFBsnTlvsVer13 implements OFBsnTlvs {
@@ -411,6 +412,16 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     public OFBsnTlvQueueWeight queueWeight(long value) {
         return new OFBsnTlvQueueWeightVer13(
                 value
+                    );
+    }
+
+    public OFBsnTlvReference.Builder buildReference() {
+        return new OFBsnTlvReferenceVer13.Builder();
+    }
+    public OFBsnTlvReference reference(int tableId, List<OFBsnTlv> key) {
+        return new OFBsnTlvReferenceVer13(
+                tableId,
+                      key
                     );
     }
 

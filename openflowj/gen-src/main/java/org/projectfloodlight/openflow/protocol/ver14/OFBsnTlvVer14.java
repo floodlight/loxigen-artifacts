@@ -171,6 +171,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x15:
                    // discriminator value 0x15=0x15 for class OFBsnTlvQueueWeightVer14
                    return OFBsnTlvQueueWeightVer14.READER.readFrom(bb);
+               case (short) 0x3b:
+                   // discriminator value 0x3b=0x3b for class OFBsnTlvReferenceVer14
+                   return OFBsnTlvReferenceVer14.READER.readFrom(bb);
                case (short) 0xc:
                    // discriminator value 0xc=0xc for class OFBsnTlvReplyPacketsVer14
                    return OFBsnTlvReplyPacketsVer14.READER.readFrom(bb);
