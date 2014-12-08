@@ -316,6 +316,33 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvMplsControlWord.Builder buildMplsControlWord() {
+        return new OFBsnTlvMplsControlWordVer14.Builder();
+    }
+    public OFBsnTlvMplsControlWord mplsControlWord(short value) {
+        return new OFBsnTlvMplsControlWordVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvMplsLabel.Builder buildMplsLabel() {
+        return new OFBsnTlvMplsLabelVer14.Builder();
+    }
+    public OFBsnTlvMplsLabel mplsLabel(long value) {
+        return new OFBsnTlvMplsLabelVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvMplsSequenced.Builder buildMplsSequenced() {
+        return new OFBsnTlvMplsSequencedVer14.Builder();
+    }
+    public OFBsnTlvMplsSequenced mplsSequenced(short value) {
+        return new OFBsnTlvMplsSequencedVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvName.Builder buildName() {
         return new OFBsnTlvNameVer14.Builder();
     }

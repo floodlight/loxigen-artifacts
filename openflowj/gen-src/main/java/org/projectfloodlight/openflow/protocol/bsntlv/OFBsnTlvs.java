@@ -92,6 +92,12 @@ public interface OFBsnTlvs {
     OFBsnTlvMacMask macMask(MacAddress value);
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
+    OFBsnTlvMplsControlWord.Builder buildMplsControlWord() throws UnsupportedOperationException;
+    OFBsnTlvMplsControlWord mplsControlWord(short value);
+    OFBsnTlvMplsLabel.Builder buildMplsLabel() throws UnsupportedOperationException;
+    OFBsnTlvMplsLabel mplsLabel(long value);
+    OFBsnTlvMplsSequenced.Builder buildMplsSequenced() throws UnsupportedOperationException;
+    OFBsnTlvMplsSequenced mplsSequenced(short value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;

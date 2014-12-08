@@ -26572,12 +26572,20 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_circuit_id_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_MPLS_SEQUENCED) {
+        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
         return of_bsn_tlv_udf_anchor_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
         return of_bsn_tlv_udf_offset_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
+        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
@@ -26666,6 +26674,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
         return of_bsn_tlv_external_netmask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_VRF) {
@@ -27563,6 +27575,81 @@ of_bsn_tlv_miss_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_miss_packets_value_get(src, &val64);
     of_bsn_tlv_miss_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mpls_control_word
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mpls_control_word.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mpls_control_word_t *
+of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(
+    of_bsn_tlv_mpls_control_word_t *src)
+{
+    of_bsn_tlv_mpls_control_word_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_mpls_control_word_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mpls_control_word_value_get(src, &val8);
+    of_bsn_tlv_mpls_control_word_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mpls_label
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mpls_label.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mpls_label_t *
+of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(
+    of_bsn_tlv_mpls_label_t *src)
+{
+    of_bsn_tlv_mpls_label_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_mpls_label_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mpls_label_value_get(src, &val32);
+    of_bsn_tlv_mpls_label_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mpls_sequenced
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mpls_sequenced.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mpls_sequenced_t *
+of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(
+    of_bsn_tlv_mpls_sequenced_t *src)
+{
+    of_bsn_tlv_mpls_sequenced_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_mpls_sequenced_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mpls_sequenced_value_get(src, &val8);
+    of_bsn_tlv_mpls_sequenced_value_set(dst, val8);
 
     return dst;
 }
@@ -45299,12 +45386,20 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_circuit_id_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_MPLS_SEQUENCED) {
+        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_UDF_ANCHOR) {
         return of_bsn_tlv_udf_anchor_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_UDF_OFFSET) {
         return of_bsn_tlv_udf_offset_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_CONTROL_WORD) {
+        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
@@ -45393,6 +45488,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_NETMASK) {
         return of_bsn_tlv_external_netmask_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_MPLS_LABEL) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_VRF) {
@@ -46290,6 +46389,81 @@ of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_miss_packets_value_get(src, &val64);
     of_bsn_tlv_miss_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mpls_control_word
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mpls_control_word.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mpls_control_word_t *
+of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(
+    of_bsn_tlv_mpls_control_word_t *src)
+{
+    of_bsn_tlv_mpls_control_word_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_mpls_control_word_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mpls_control_word_value_get(src, &val8);
+    of_bsn_tlv_mpls_control_word_value_set(dst, val8);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mpls_label
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mpls_label.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mpls_label_t *
+of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(
+    of_bsn_tlv_mpls_label_t *src)
+{
+    of_bsn_tlv_mpls_label_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_tlv_mpls_label_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mpls_label_value_get(src, &val32);
+    of_bsn_tlv_mpls_label_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_mpls_sequenced
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_mpls_sequenced.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_mpls_sequenced_t *
+of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(
+    of_bsn_tlv_mpls_sequenced_t *src)
+{
+    of_bsn_tlv_mpls_sequenced_t *dst;
+    uint8_t val8;
+
+    if ((dst = of_bsn_tlv_mpls_sequenced_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_mpls_sequenced_value_get(src, &val8);
+    of_bsn_tlv_mpls_sequenced_value_set(dst, val8);
 
     return dst;
 }
@@ -62098,6 +62272,57 @@ of_bsn_tlv_miss_packets_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_miss_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_mpls_control_word_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_mpls_label_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_mpls_label_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_mpls_sequenced_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

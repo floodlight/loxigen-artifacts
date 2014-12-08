@@ -254,6 +254,27 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.0");
     }
 
+    public OFBsnTlvMplsControlWord.Builder buildMplsControlWord() {
+        throw new UnsupportedOperationException("OFBsnTlvMplsControlWord not supported in version 1.0");
+    }
+    public OFBsnTlvMplsControlWord mplsControlWord(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvMplsControlWord not supported in version 1.0");
+    }
+
+    public OFBsnTlvMplsLabel.Builder buildMplsLabel() {
+        throw new UnsupportedOperationException("OFBsnTlvMplsLabel not supported in version 1.0");
+    }
+    public OFBsnTlvMplsLabel mplsLabel(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvMplsLabel not supported in version 1.0");
+    }
+
+    public OFBsnTlvMplsSequenced.Builder buildMplsSequenced() {
+        throw new UnsupportedOperationException("OFBsnTlvMplsSequenced not supported in version 1.0");
+    }
+    public OFBsnTlvMplsSequenced mplsSequenced(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvMplsSequenced not supported in version 1.0");
+    }
+
     public OFBsnTlvName.Builder buildName() {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.0");
     }

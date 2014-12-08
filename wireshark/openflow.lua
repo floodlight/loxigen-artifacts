@@ -6748,6 +6748,15 @@ fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.
 fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_control_word.type'] = ProtoField.uint16("of13.bsn_tlv_mpls_control_word.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_control_word.length'] = ProtoField.uint16("of13.bsn_tlv_mpls_control_word.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_control_word.value'] = ProtoField.uint8("of13.bsn_tlv_mpls_control_word.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_label.type'] = ProtoField.uint16("of13.bsn_tlv_mpls_label.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_label.length'] = ProtoField.uint16("of13.bsn_tlv_mpls_label.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_label.value'] = ProtoField.uint32("of13.bsn_tlv_mpls_label.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_sequenced.type'] = ProtoField.uint16("of13.bsn_tlv_mpls_sequenced.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_sequenced.length'] = ProtoField.uint16("of13.bsn_tlv_mpls_sequenced.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of13.bsn_tlv_mpls_sequenced.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
@@ -9207,6 +9216,15 @@ fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.
 fields['of14.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of14.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_control_word.type'] = ProtoField.uint16("of14.bsn_tlv_mpls_control_word.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_control_word.length'] = ProtoField.uint16("of14.bsn_tlv_mpls_control_word.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_control_word.value'] = ProtoField.uint8("of14.bsn_tlv_mpls_control_word.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_label.type'] = ProtoField.uint16("of14.bsn_tlv_mpls_label.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_label.length'] = ProtoField.uint16("of14.bsn_tlv_mpls_label.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_label.value'] = ProtoField.uint32("of14.bsn_tlv_mpls_label.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_sequenced.type'] = ProtoField.uint16("of14.bsn_tlv_mpls_sequenced.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_sequenced.length'] = ProtoField.uint16("of14.bsn_tlv_mpls_sequenced.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of14.bsn_tlv_mpls_sequenced.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_name.type'] = ProtoField.uint16("of14.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
@@ -14848,6 +14866,15 @@ p_of.fields = {
     fields['of13.bsn_tlv_miss_packets.type'],
     fields['of13.bsn_tlv_miss_packets.length'],
     fields['of13.bsn_tlv_miss_packets.value'],
+    fields['of13.bsn_tlv_mpls_control_word.type'],
+    fields['of13.bsn_tlv_mpls_control_word.length'],
+    fields['of13.bsn_tlv_mpls_control_word.value'],
+    fields['of13.bsn_tlv_mpls_label.type'],
+    fields['of13.bsn_tlv_mpls_label.length'],
+    fields['of13.bsn_tlv_mpls_label.value'],
+    fields['of13.bsn_tlv_mpls_sequenced.type'],
+    fields['of13.bsn_tlv_mpls_sequenced.length'],
+    fields['of13.bsn_tlv_mpls_sequenced.value'],
     fields['of13.bsn_tlv_name.type'],
     fields['of13.bsn_tlv_name.length'],
     fields['of13.bsn_tlv_name.value'],
@@ -17307,6 +17334,15 @@ p_of.fields = {
     fields['of14.bsn_tlv_miss_packets.type'],
     fields['of14.bsn_tlv_miss_packets.length'],
     fields['of14.bsn_tlv_miss_packets.value'],
+    fields['of14.bsn_tlv_mpls_control_word.type'],
+    fields['of14.bsn_tlv_mpls_control_word.length'],
+    fields['of14.bsn_tlv_mpls_control_word.value'],
+    fields['of14.bsn_tlv_mpls_label.type'],
+    fields['of14.bsn_tlv_mpls_label.length'],
+    fields['of14.bsn_tlv_mpls_label.value'],
+    fields['of14.bsn_tlv_mpls_sequenced.type'],
+    fields['of14.bsn_tlv_mpls_sequenced.length'],
+    fields['of14.bsn_tlv_mpls_sequenced.value'],
     fields['of14.bsn_tlv_name.type'],
     fields['of14.bsn_tlv_name.length'],
     fields['of14.bsn_tlv_name.value'],
@@ -28336,6 +28372,36 @@ function dissect_of_bsn_tlv_miss_packets_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[13] = dissect_of_bsn_tlv_miss_packets_v4
 
+-- child class of_bsn_tlv_mpls_control_word
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_control_word_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_control_word.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_control_word.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_control_word.value')
+    return 'of_bsn_tlv_mpls_control_word'
+end
+of_bsn_tlv_v4_dissectors[62] = dissect_of_bsn_tlv_mpls_control_word_v4
+
+-- child class of_bsn_tlv_mpls_label
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_label_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_label.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_label.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_label.value')
+    return 'of_bsn_tlv_mpls_label'
+end
+of_bsn_tlv_v4_dissectors[61] = dissect_of_bsn_tlv_mpls_label_v4
+
+-- child class of_bsn_tlv_mpls_sequenced
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_sequenced_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_sequenced.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_sequenced.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_mpls_sequenced.value')
+    return 'of_bsn_tlv_mpls_sequenced'
+end
+of_bsn_tlv_v4_dissectors[63] = dissect_of_bsn_tlv_mpls_sequenced_v4
+
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_name_v4(reader, subtree)
@@ -34698,6 +34764,36 @@ function dissect_of_bsn_tlv_miss_packets_v5(reader, subtree)
     return 'of_bsn_tlv_miss_packets'
 end
 of_bsn_tlv_v5_dissectors[13] = dissect_of_bsn_tlv_miss_packets_v5
+
+-- child class of_bsn_tlv_mpls_control_word
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_control_word_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_control_word.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_control_word.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_control_word.value')
+    return 'of_bsn_tlv_mpls_control_word'
+end
+of_bsn_tlv_v5_dissectors[62] = dissect_of_bsn_tlv_mpls_control_word_v5
+
+-- child class of_bsn_tlv_mpls_label
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_label_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_label.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_label.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_label.value')
+    return 'of_bsn_tlv_mpls_label'
+end
+of_bsn_tlv_v5_dissectors[61] = dissect_of_bsn_tlv_mpls_label_v5
+
+-- child class of_bsn_tlv_mpls_sequenced
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mpls_sequenced_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_sequenced.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_sequenced.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_mpls_sequenced.value')
+    return 'of_bsn_tlv_mpls_sequenced'
+end
+of_bsn_tlv_v5_dissectors[63] = dissect_of_bsn_tlv_mpls_sequenced_v5
 
 -- child class of_bsn_tlv_name
 -- Child of of_bsn_tlv

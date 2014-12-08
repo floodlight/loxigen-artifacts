@@ -138,6 +138,15 @@ abstract class OFBsnTlvVer13 {
                case (short) 0xd:
                    // discriminator value 0xd=0xd for class OFBsnTlvMissPacketsVer13
                    return OFBsnTlvMissPacketsVer13.READER.readFrom(bb);
+               case (short) 0x3e:
+                   // discriminator value 0x3e=0x3e for class OFBsnTlvMplsControlWordVer13
+                   return OFBsnTlvMplsControlWordVer13.READER.readFrom(bb);
+               case (short) 0x3d:
+                   // discriminator value 0x3d=0x3d for class OFBsnTlvMplsLabelVer13
+                   return OFBsnTlvMplsLabelVer13.READER.readFrom(bb);
+               case (short) 0x3f:
+                   // discriminator value 0x3f=0x3f for class OFBsnTlvMplsSequencedVer13
+                   return OFBsnTlvMplsSequencedVer13.READER.readFrom(bb);
                case (short) 0x34:
                    // discriminator value 0x34=0x34 for class OFBsnTlvNameVer13
                    return OFBsnTlvNameVer13.READER.readFrom(bb);

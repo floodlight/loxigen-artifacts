@@ -1553,6 +1553,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x3c:
             *id = OF_BSN_TLV_IPV4_NETMASK;
             break;
+        case 0x3d:
+            *id = OF_BSN_TLV_MPLS_LABEL;
+            break;
+        case 0x3e:
+            *id = OF_BSN_TLV_MPLS_CONTROL_WORD;
+            break;
+        case 0x3f:
+            *id = OF_BSN_TLV_MPLS_SEQUENCED;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -1741,6 +1750,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x3c:
             *id = OF_BSN_TLV_IPV4_NETMASK;
+            break;
+        case 0x3d:
+            *id = OF_BSN_TLV_MPLS_LABEL;
+            break;
+        case 0x3e:
+            *id = OF_BSN_TLV_MPLS_CONTROL_WORD;
+            break;
+        case 0x3f:
+            *id = OF_BSN_TLV_MPLS_SEQUENCED;
             break;
         default:
             *id = OF_BSN_TLV;
