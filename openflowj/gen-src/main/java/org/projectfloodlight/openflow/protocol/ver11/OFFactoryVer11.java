@@ -749,6 +749,21 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnFlowIdleEnableSetRequest not supported in version 1.1");
     }
 
+    public OFBsnGenericStatsEntry.Builder buildBsnGenericStatsEntry() {
+        throw new UnsupportedOperationException("OFBsnGenericStatsEntry not supported in version 1.1");
+    }
+    public OFBsnGenericStatsEntry bsnGenericStatsEntry(List<OFBsnTlv> tlvs) {
+        throw new UnsupportedOperationException("OFBsnGenericStatsEntry not supported in version 1.1");
+    }
+
+    public OFBsnGenericStatsReply.Builder buildBsnGenericStatsReply() {
+        throw new UnsupportedOperationException("OFBsnGenericStatsReply not supported in version 1.1");
+    }
+
+    public OFBsnGenericStatsRequest.Builder buildBsnGenericStatsRequest() {
+        throw new UnsupportedOperationException("OFBsnGenericStatsRequest not supported in version 1.1");
+    }
+
     public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
         throw new UnsupportedOperationException("OFBsnGentableBucketStatsEntry not supported in version 1.1");
     }

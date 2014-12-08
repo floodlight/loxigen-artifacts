@@ -13994,6 +13994,94 @@ of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_show(loci_writer_f writer, vo
 }
 
 int
+of_bsn_generic_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_generic_stats_entry_t list;
+    of_object_t elt;
+    int rv;
+
+    of_bsn_generic_stats_reply_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_reply_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_generic_stats_entry_t={ ");
+    of_bsn_generic_stats_reply_entries_bind(obj, &list);
+    OF_LIST_BSN_GENERIC_STATS_ENTRY_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_generic_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_str64_t str64;
+
+    of_list_bsn_tlv_t list;
+    of_object_t elt;
+    int rv;
+
+    of_bsn_generic_stats_request_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_name_get(obj, &str64);
+    out += writer(cookie, "name=");
+    out += LOCI_SHOW_str64(writer, cookie, str64);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_tlv_t={ ");
+    of_bsn_generic_stats_request_tlvs_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
 of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -19041,6 +19129,25 @@ of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer
     out += writer(cookie, "checksum=");
     out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_generic_stats_entry_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    of_list_bsn_tlv_t list;
+    of_object_t elt;
+    int rv;
+
+    out += writer(cookie, "of_bsn_tlv_t={ ");
+    of_bsn_generic_stats_entry_tlvs_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
 
     return out;
 }
@@ -25029,6 +25136,94 @@ of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_show(loci_writer_f writer, vo
 }
 
 int
+of_bsn_generic_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_list_bsn_generic_stats_entry_t list;
+    of_object_t elt;
+    int rv;
+
+    of_bsn_generic_stats_reply_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_reply_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_reply_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_reply_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_generic_stats_entry_t={ ");
+    of_bsn_generic_stats_reply_entries_bind(obj, &list);
+    OF_LIST_BSN_GENERIC_STATS_ENTRY_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
+of_bsn_generic_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_str64_t str64;
+
+    of_list_bsn_tlv_t list;
+    of_object_t elt;
+    int rv;
+
+    of_bsn_generic_stats_request_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_generic_stats_request_name_get(obj, &str64);
+    out += writer(cookie, "name=");
+    out += LOCI_SHOW_str64(writer, cookie, str64);
+    out += writer(cookie, " ");
+
+    out += writer(cookie, "of_bsn_tlv_t={ ");
+    of_bsn_generic_stats_request_tlvs_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
+
+    return out;
+}
+
+int
 of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -30533,6 +30728,25 @@ of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer
     out += writer(cookie, "checksum=");
     out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_generic_stats_entry_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    of_list_bsn_tlv_t list;
+    of_object_t elt;
+    int rv;
+
+    out += writer(cookie, "of_bsn_tlv_t={ ");
+    of_bsn_generic_stats_entry_tlvs_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_show(writer, cookie, (of_object_t *)&elt);
+    }
+    out += writer(cookie, "} ");
 
     return out;
 }
@@ -36327,6 +36541,8 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_get_interfaces_reply_OF_VERSION_1_0_show,
     of_bsn_get_interfaces_request_OF_VERSION_1_0_show,
     of_bsn_get_ip_mask_reply_OF_VERSION_1_0_show,
@@ -36537,6 +36753,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     of_action_set_vlan_pcp_OF_VERSION_1_0_show,
     of_action_set_vlan_vid_OF_VERSION_1_0_show,
     of_action_strip_vlan_OF_VERSION_1_0_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -36926,6 +37143,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -36952,6 +37170,8 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_1_show,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_1_show,
     of_bsn_bw_enable_set_request_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -37189,6 +37409,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_action_set_tp_src_OF_VERSION_1_1_show,
     of_action_set_vlan_pcp_OF_VERSION_1_1_show,
     of_action_set_vlan_vid_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -37579,6 +37800,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -37605,6 +37827,8 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_2_show,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_2_show,
     of_bsn_bw_enable_set_request_OF_VERSION_1_2_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -37838,6 +38062,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     of_action_set_nw_ttl_OF_VERSION_1_2_show,
     of_action_set_queue_OF_VERSION_1_2_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -38232,6 +38457,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -38271,6 +38497,8 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_show,
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_show,
+    of_bsn_generic_stats_reply_OF_VERSION_1_3_show,
+    of_bsn_generic_stats_request_OF_VERSION_1_3_show,
     of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_show,
     of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_show,
     of_bsn_gentable_clear_reply_OF_VERSION_1_3_show,
@@ -38515,6 +38743,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_show,
     of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_show,
     of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_show,
+    of_bsn_generic_stats_entry_OF_VERSION_1_3_show,
     of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_show,
     of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_show,
     of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_show,
@@ -38885,6 +39114,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -38924,6 +39154,8 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4_show,
     of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_show,
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_show,
+    of_bsn_generic_stats_reply_OF_VERSION_1_4_show,
+    of_bsn_generic_stats_request_OF_VERSION_1_4_show,
     of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_show,
     of_bsn_gentable_bucket_stats_request_OF_VERSION_1_4_show,
     of_bsn_gentable_clear_reply_OF_VERSION_1_4_show,
@@ -39168,6 +39400,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_4_show,
     of_bsn_debug_counter_stats_entry_OF_VERSION_1_4_show,
     of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_show,
+    of_bsn_generic_stats_entry_OF_VERSION_1_4_show,
     of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_4_show,
     of_bsn_gentable_desc_stats_entry_OF_VERSION_1_4_show,
     of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_4_show,
@@ -39486,6 +39719,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_show,
     of_uint64_OF_VERSION_1_4_show,
     of_uint8_OF_VERSION_1_4_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,

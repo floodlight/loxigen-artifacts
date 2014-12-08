@@ -201,6 +201,10 @@ public interface OFFactory extends XidGenerator {
     OFBsnFlowIdleEnableSetReply.Builder buildBsnFlowIdleEnableSetReply() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableSetRequest.Builder buildBsnFlowIdleEnableSetRequest() throws UnsupportedOperationException;
     OFBsnFlowIdleEnableSetRequest bsnFlowIdleEnableSetRequest(long enable);
+    OFBsnGenericStatsEntry.Builder buildBsnGenericStatsEntry() throws UnsupportedOperationException;
+    OFBsnGenericStatsEntry bsnGenericStatsEntry(List<OFBsnTlv> tlvs);
+    OFBsnGenericStatsReply.Builder buildBsnGenericStatsReply() throws UnsupportedOperationException;
+    OFBsnGenericStatsRequest.Builder buildBsnGenericStatsRequest() throws UnsupportedOperationException;
     OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() throws UnsupportedOperationException;
     OFBsnGentableBucketStatsEntry bsnGentableBucketStatsEntry(U128 checksum);
     OFBsnGentableBucketStatsReply.Builder buildBsnGentableBucketStatsReply() throws UnsupportedOperationException;

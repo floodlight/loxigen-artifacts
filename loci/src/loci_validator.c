@@ -639,6 +639,9 @@ static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_get_rep
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1162,6 +1165,9 @@ static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_get_rep
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_gentable_bucket_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -14749,6 +14755,21 @@ loci_validate_of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3(uint8_
 }
 
 static int __attribute__((unused))
+loci_validate_of_list_bsn_generic_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_3(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -17759,6 +17780,8 @@ loci_validate_of_bsn_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out
         return loci_validate_of_bsn_debug_counter_stats_reply_OF_VERSION_1_3(data, len, out_len);
     case 0xa:
         return loci_validate_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_3(data, len, out_len);
+    case 0x10:
+        return loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_3(data, len, out_len);
     case 0x5:
         return loci_validate_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3(data, len, out_len);
     case 0x4:
@@ -17873,6 +17896,8 @@ loci_validate_of_bsn_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *o
         return loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_3(data, len, out_len);
     case 0xa:
         return loci_validate_of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_3(data, len, out_len);
+    case 0x10:
+        return loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_3(data, len, out_len);
     case 0x5:
         return loci_validate_of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3(data, len, out_len);
     case 0x4:
@@ -18164,6 +18189,90 @@ loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3(uint8_t *data, 
     }
 
 
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 2) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 0, &wire_len);
+    if (wire_len > len || wire_len < 2) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_tlvs = len - 2;
+    if (loci_validate_of_list_bsn_tlv_OF_VERSION_1_3(data + 2, wire_len_tlvs, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 24) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 24) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_entries = len - 24;
+    if (loci_validate_of_list_bsn_generic_stats_entry_OF_VERSION_1_3(data + 24, wire_len_entries, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 88) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 88) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_tlvs = len - 88;
+    if (loci_validate_of_list_bsn_tlv_OF_VERSION_1_3(data + 88, wire_len_tlvs, out_len) < 0) {
+        return -1;
+    }
 
 
     *out_len = len;
@@ -27280,6 +27389,21 @@ loci_validate_of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4(uint8_
 }
 
 static int __attribute__((unused))
+loci_validate_of_list_bsn_generic_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_4(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -30864,6 +30988,8 @@ loci_validate_of_bsn_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out
         return loci_validate_of_bsn_debug_counter_stats_reply_OF_VERSION_1_4(data, len, out_len);
     case 0xa:
         return loci_validate_of_bsn_flow_checksum_bucket_stats_reply_OF_VERSION_1_4(data, len, out_len);
+    case 0x10:
+        return loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_4(data, len, out_len);
     case 0x5:
         return loci_validate_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4(data, len, out_len);
     case 0x4:
@@ -30978,6 +31104,8 @@ loci_validate_of_bsn_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *o
         return loci_validate_of_bsn_debug_counter_stats_request_OF_VERSION_1_4(data, len, out_len);
     case 0xa:
         return loci_validate_of_bsn_flow_checksum_bucket_stats_request_OF_VERSION_1_4(data, len, out_len);
+    case 0x10:
+        return loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_4(data, len, out_len);
     case 0x5:
         return loci_validate_of_bsn_gentable_bucket_stats_request_OF_VERSION_1_4(data, len, out_len);
     case 0x4:
@@ -31269,6 +31397,90 @@ loci_validate_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4(uint8_t *data, 
     }
 
 
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 2) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 0, &wire_len);
+    if (wire_len > len || wire_len < 2) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_tlvs = len - 2;
+    if (loci_validate_of_list_bsn_tlv_OF_VERSION_1_4(data + 2, wire_len_tlvs, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 24) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 24) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_entries = len - 24;
+    if (loci_validate_of_list_bsn_generic_stats_entry_OF_VERSION_1_4(data + 24, wire_len_entries, out_len) < 0) {
+        return -1;
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_generic_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 88) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 88) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+    int wire_len_tlvs = len - 88;
+    if (loci_validate_of_list_bsn_tlv_OF_VERSION_1_4(data + 88, wire_len_tlvs, out_len) < 0) {
+        return -1;
+    }
 
 
     *out_len = len;

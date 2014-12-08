@@ -822,6 +822,64 @@ typedef struct of_bsn_flow_idle_enable_set_reply_s of_bsn_flow_idle_enable_set_r
 typedef struct of_bsn_flow_idle_enable_set_request_s of_bsn_flow_idle_enable_set_request_t;
 
 /**
+ * Structure for of_bsn_generic_stats_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_generic_stats_reply_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_stats_reply_uint32_get_f and _set_f.
+ *
+ * @param entries_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for entries, a variable of type of_list_bsn_generic_stats_entry.  Functions
+ *   are of type of_bsn_generic_stats_reply_of_list_bsn_generic_stats_entry_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_generic_stats_reply_s of_bsn_generic_stats_reply_t;
+
+/**
+ * Structure for of_bsn_generic_stats_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_stats_request_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_generic_stats_request_uint16_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_stats_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_stats_request_uint32_get_f and _set_f.
+ *
+ * @param name_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for name, a variable of type of_str64.  Functions
+ *   are of type of_bsn_generic_stats_request_of_str64_get_f and _set_f.
+ *
+ * @param tlvs_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for tlvs, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_generic_stats_request_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_generic_stats_request_s of_bsn_generic_stats_request_t;
+
+/**
  * Structure for of_bsn_gentable_bucket_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -5858,6 +5916,17 @@ typedef struct of_bsn_debug_counter_stats_entry_s of_bsn_debug_counter_stats_ent
 typedef struct of_bsn_flow_checksum_bucket_stats_entry_s of_bsn_flow_checksum_bucket_stats_entry_t;
 
 /**
+ * Structure for of_bsn_generic_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param tlvs_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for tlvs, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_generic_stats_entry_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_generic_stats_entry_s of_bsn_generic_stats_entry_t;
+
+/**
  * Structure for of_bsn_gentable_bucket_stats_entry object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -10607,6 +10676,21 @@ typedef struct of_list_bsn_debug_counter_stats_entry_s of_list_bsn_debug_counter
  * Copy an item to the end of a list
  */
 typedef struct of_list_bsn_flow_checksum_bucket_stats_entry_s of_list_bsn_flow_checksum_bucket_stats_entry_t;
+
+/**
+ * Structure for of_list_bsn_generic_stats_entry object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_bsn_generic_stats_entry_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_bsn_generic_stats_entry_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_bsn_generic_stats_entry_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_bsn_generic_stats_entry_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_bsn_generic_stats_entry_s of_list_bsn_generic_stats_entry_t;
 
 /**
  * Structure for of_list_bsn_gentable_bucket_stats_entry object.  Get/set

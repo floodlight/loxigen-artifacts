@@ -4847,6 +4847,24 @@ extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_check_scalars(
     of_bsn_flow_idle_enable_set_request_t *obj, int value);
 
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_3_populate(
+    of_bsn_generic_stats_reply_t *obj, int value);
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_3_check(
+    of_bsn_generic_stats_reply_t *obj, int value);
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_generic_stats_reply_t *obj, int value);
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_generic_stats_reply_t *obj, int value);
+
+extern int of_bsn_generic_stats_request_OF_VERSION_1_3_populate(
+    of_bsn_generic_stats_request_t *obj, int value);
+extern int of_bsn_generic_stats_request_OF_VERSION_1_3_check(
+    of_bsn_generic_stats_request_t *obj, int value);
+extern int of_bsn_generic_stats_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_generic_stats_request_t *obj, int value);
+extern int of_bsn_generic_stats_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_generic_stats_request_t *obj, int value);
+
 extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_populate(
     of_bsn_gentable_bucket_stats_reply_t *obj, int value);
 extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_check(
@@ -6367,6 +6385,15 @@ extern int of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_populate_scala
     of_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
 extern int of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_check_scalars(
     of_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
+
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_3_populate(
+    of_bsn_generic_stats_entry_t *obj, int value);
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_3_check(
+    of_bsn_generic_stats_entry_t *obj, int value);
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_bsn_generic_stats_entry_t *obj, int value);
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_bsn_generic_stats_entry_t *obj, int value);
 
 extern int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_populate(
     of_bsn_gentable_bucket_stats_entry_t *obj, int value);
@@ -8843,6 +8870,15 @@ extern int of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_populate_
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_check_scalars(
     of_list_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
 
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_3_populate(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_3_check(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_3_populate_scalars(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_3_check_scalars(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+
 extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_populate(
     of_list_bsn_gentable_bucket_stats_entry_t *obj, int value);
 extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_check(
@@ -9463,6 +9499,24 @@ extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_populate_scalars(
     of_bsn_flow_idle_enable_set_request_t *obj, int value);
 extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_check_scalars(
     of_bsn_flow_idle_enable_set_request_t *obj, int value);
+
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_populate(
+    of_bsn_generic_stats_reply_t *obj, int value);
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_check(
+    of_bsn_generic_stats_reply_t *obj, int value);
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_stats_reply_t *obj, int value);
+extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_stats_reply_t *obj, int value);
+
+extern int of_bsn_generic_stats_request_OF_VERSION_1_4_populate(
+    of_bsn_generic_stats_request_t *obj, int value);
+extern int of_bsn_generic_stats_request_OF_VERSION_1_4_check(
+    of_bsn_generic_stats_request_t *obj, int value);
+extern int of_bsn_generic_stats_request_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_stats_request_t *obj, int value);
+extern int of_bsn_generic_stats_request_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_stats_request_t *obj, int value);
 
 extern int of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_populate(
     of_bsn_gentable_bucket_stats_reply_t *obj, int value);
@@ -11182,6 +11236,15 @@ extern int of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_populate_scala
     of_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
 extern int of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_check_scalars(
     of_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
+
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_4_populate(
+    of_bsn_generic_stats_entry_t *obj, int value);
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_4_check(
+    of_bsn_generic_stats_entry_t *obj, int value);
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_stats_entry_t *obj, int value);
+extern int of_bsn_generic_stats_entry_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_stats_entry_t *obj, int value);
 
 extern int of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_4_populate(
     of_bsn_gentable_bucket_stats_entry_t *obj, int value);
@@ -13729,6 +13792,15 @@ extern int of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_populate_
     of_list_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
 extern int of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_check_scalars(
     of_list_bsn_flow_checksum_bucket_stats_entry_t *obj, int value);
+
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_4_populate(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_4_check(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_4_populate_scalars(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
+extern int of_list_bsn_generic_stats_entry_OF_VERSION_1_4_check_scalars(
+    of_list_bsn_generic_stats_entry_t *obj, int value);
 
 extern int of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_4_populate(
     of_list_bsn_gentable_bucket_stats_entry_t *obj, int value);

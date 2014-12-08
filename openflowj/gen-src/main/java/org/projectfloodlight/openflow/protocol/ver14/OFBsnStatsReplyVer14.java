@@ -74,6 +74,9 @@ abstract class OFBsnStatsReplyVer14 {
                case 0xa:
                    // discriminator value 0xaL=0xaL for class OFBsnFlowChecksumBucketStatsReplyVer14
                    return OFBsnFlowChecksumBucketStatsReplyVer14.READER.readFrom(bb);
+               case 0x10:
+                   // discriminator value 0x10L=0x10L for class OFBsnGenericStatsReplyVer14
+                   return OFBsnGenericStatsReplyVer14.READER.readFrom(bb);
                case 0x5:
                    // discriminator value 0x5L=0x5L for class OFBsnGentableBucketStatsReplyVer14
                    return OFBsnGentableBucketStatsReplyVer14.READER.readFrom(bb);

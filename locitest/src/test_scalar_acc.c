@@ -18078,6 +18078,80 @@ test_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_generic_stats_reply_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_generic_stats_reply_t *obj;
+
+    obj = of_bsn_generic_stats_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_STATS_REPLY);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_GENERIC_STATS_REPLY);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_stats_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_stats_reply_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_stats_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_generic_stats_request_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_generic_stats_request_t *obj;
+
+    obj = of_bsn_generic_stats_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 88);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_STATS_REQUEST);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_GENERIC_STATS_REQUEST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 88);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_stats_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_stats_request_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_stats_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_gentable_bucket_stats_reply_t *obj;
@@ -24301,6 +24375,37 @@ test_of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_bsn_flow_checksum_bucket_stats_entry_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_generic_stats_entry_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_generic_stats_entry_t *obj;
+
+    obj = of_bsn_generic_stats_entry_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 2);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_STATS_ENTRY);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 2);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_stats_entry_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_stats_entry_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_stats_entry_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -35299,6 +35404,80 @@ test_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_generic_stats_reply_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_generic_stats_reply_t *obj;
+
+    obj = of_bsn_generic_stats_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 24);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_STATS_REPLY);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_GENERIC_STATS_REPLY);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 24);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_stats_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_stats_reply_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_stats_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_generic_stats_request_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_generic_stats_request_t *obj;
+
+    obj = of_bsn_generic_stats_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 88);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_STATS_REQUEST);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_GENERIC_STATS_REQUEST);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 88);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_stats_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_stats_request_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_stats_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_gentable_bucket_stats_reply_t *obj;
@@ -42336,6 +42515,37 @@ test_of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_scalar(void)
     TEST_ASSERT(of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
 
     of_bsn_flow_checksum_bucket_stats_entry_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_generic_stats_entry_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_generic_stats_entry_t *obj;
+
+    obj = of_bsn_generic_stats_entry_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 2);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_STATS_ENTRY);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 2);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_stats_entry_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_stats_entry_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_stats_entry_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -52839,6 +53049,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_generic_stats_reply_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_generic_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_request_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_gentable_clear_reply_OF_VERSION_1_3_scalar);
@@ -53008,6 +53220,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_debug_counter_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_generic_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_gentable_desc_stats_entry_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_3_scalar);
@@ -53310,6 +53523,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_generic_stats_reply_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_generic_stats_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_clear_reply_OF_VERSION_1_4_scalar);
@@ -53501,6 +53716,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_debug_counter_desc_stats_entry_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_debug_counter_stats_entry_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_generic_stats_entry_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_entry_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_desc_stats_entry_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_entry_desc_stats_entry_OF_VERSION_1_4_scalar);

@@ -227,6 +227,48 @@ class bsn_flow_checksum_bucket_stats_entry(loxi.OFObject):
         q.text('}')
 
 
+class bsn_generic_stats_entry(loxi.OFObject):
+
+    def __init__(self, tlvs=None):
+        if tlvs != None:
+            self.tlvs = tlvs
+        else:
+            self.tlvs = []
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 0
+        packed.append(loxi.generic_util.pack_list(self.tlvs))
+        length = sum([len(x) for x in packed])
+        packed[0] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = bsn_generic_stats_entry()
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length - (0 + 2))
+        obj.tlvs = loxi.generic_util.unpack_list(reader, bsn_tlv.bsn_tlv.unpack)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        if self.tlvs != other.tlvs: return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("bsn_generic_stats_entry {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+                q.text("tlvs = ");
+                q.pp(self.tlvs)
+            q.breakable()
+        q.text('}')
+
+
 class bsn_gentable_bucket_stats_entry(loxi.OFObject):
 
     def __init__(self, checksum=None):

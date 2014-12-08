@@ -6149,6 +6149,27 @@ fields['of13.bsn_flow_idle_enable_set_request.xid'] = ProtoField.uint32("of13.bs
 fields['of13.bsn_flow_idle_enable_set_request.experimenter'] = ProtoField.uint32("of13.bsn_flow_idle_enable_set_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_flow_idle_enable_set_request.subtype'] = ProtoField.uint32("of13.bsn_flow_idle_enable_set_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_flow_idle_enable_set_request.enable'] = ProtoField.uint32("of13.bsn_flow_idle_enable_set_request.enable", "enable", base.DEC, nil)
+fields['of13.bsn_generic_stats_entry.length'] = ProtoField.uint16("of13.bsn_generic_stats_entry.length", "length", base.DEC, nil)
+fields['of13.bsn_generic_stats_entry.tlvs'] = ProtoField.bytes("of13.bsn_generic_stats_entry.tlvs", "tlvs")
+fields['of13.bsn_generic_stats_reply.version'] = ProtoField.uint8("of13.bsn_generic_stats_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.type'] = ProtoField.uint8("of13.bsn_generic_stats_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.length'] = ProtoField.uint16("of13.bsn_generic_stats_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.xid'] = ProtoField.uint32("of13.bsn_generic_stats_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.stats_type'] = ProtoField.uint16("of13.bsn_generic_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.flags'] = ProtoField.uint32("of13.bsn_generic_stats_reply.flags", "flags", base.HEX, enum_v4_ofp_stats_reply_flags)
+fields['of13.bsn_generic_stats_reply.experimenter'] = ProtoField.uint32("of13.bsn_generic_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.subtype'] = ProtoField.uint32("of13.bsn_generic_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_generic_stats_reply.entries'] = ProtoField.bytes("of13.bsn_generic_stats_reply.entries", "entries")
+fields['of13.bsn_generic_stats_request.version'] = ProtoField.uint8("of13.bsn_generic_stats_request.version", "version", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.type'] = ProtoField.uint8("of13.bsn_generic_stats_request.type", "type", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.length'] = ProtoField.uint16("of13.bsn_generic_stats_request.length", "length", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.xid'] = ProtoField.uint32("of13.bsn_generic_stats_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.stats_type'] = ProtoField.uint16("of13.bsn_generic_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.flags'] = ProtoField.uint32("of13.bsn_generic_stats_request.flags", "flags", base.HEX, enum_v4_ofp_stats_request_flags)
+fields['of13.bsn_generic_stats_request.experimenter'] = ProtoField.uint32("of13.bsn_generic_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.subtype'] = ProtoField.uint32("of13.bsn_generic_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_generic_stats_request.name'] = ProtoField.stringz("of13.bsn_generic_stats_request.name", "name")
+fields['of13.bsn_generic_stats_request.tlvs'] = ProtoField.bytes("of13.bsn_generic_stats_request.tlvs", "tlvs")
 fields['of13.bsn_gentable_bucket_stats_entry.checksum'] = ProtoField.bytes("of13.bsn_gentable_bucket_stats_entry.checksum", "checksum")
 fields['of13.bsn_gentable_bucket_stats_reply.version'] = ProtoField.uint8("of13.bsn_gentable_bucket_stats_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_gentable_bucket_stats_reply.type'] = ProtoField.uint8("of13.bsn_gentable_bucket_stats_reply.type", "type", base.DEC, nil)
@@ -8596,6 +8617,27 @@ fields['of14.bsn_flow_idle_enable_set_request.xid'] = ProtoField.uint32("of14.bs
 fields['of14.bsn_flow_idle_enable_set_request.experimenter'] = ProtoField.uint32("of14.bsn_flow_idle_enable_set_request.experimenter", "experimenter", base.DEC, nil)
 fields['of14.bsn_flow_idle_enable_set_request.subtype'] = ProtoField.uint32("of14.bsn_flow_idle_enable_set_request.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_flow_idle_enable_set_request.enable'] = ProtoField.uint32("of14.bsn_flow_idle_enable_set_request.enable", "enable", base.DEC, nil)
+fields['of14.bsn_generic_stats_entry.length'] = ProtoField.uint16("of14.bsn_generic_stats_entry.length", "length", base.DEC, nil)
+fields['of14.bsn_generic_stats_entry.tlvs'] = ProtoField.bytes("of14.bsn_generic_stats_entry.tlvs", "tlvs")
+fields['of14.bsn_generic_stats_reply.version'] = ProtoField.uint8("of14.bsn_generic_stats_reply.version", "version", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.type'] = ProtoField.uint8("of14.bsn_generic_stats_reply.type", "type", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.length'] = ProtoField.uint16("of14.bsn_generic_stats_reply.length", "length", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.xid'] = ProtoField.uint32("of14.bsn_generic_stats_reply.xid", "xid", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.stats_type'] = ProtoField.uint16("of14.bsn_generic_stats_reply.stats_type", "stats_type", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.flags'] = ProtoField.uint32("of14.bsn_generic_stats_reply.flags", "flags", base.HEX, enum_v5_ofp_stats_reply_flags)
+fields['of14.bsn_generic_stats_reply.experimenter'] = ProtoField.uint32("of14.bsn_generic_stats_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.subtype'] = ProtoField.uint32("of14.bsn_generic_stats_reply.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_generic_stats_reply.entries'] = ProtoField.bytes("of14.bsn_generic_stats_reply.entries", "entries")
+fields['of14.bsn_generic_stats_request.version'] = ProtoField.uint8("of14.bsn_generic_stats_request.version", "version", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.type'] = ProtoField.uint8("of14.bsn_generic_stats_request.type", "type", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.length'] = ProtoField.uint16("of14.bsn_generic_stats_request.length", "length", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.xid'] = ProtoField.uint32("of14.bsn_generic_stats_request.xid", "xid", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.stats_type'] = ProtoField.uint16("of14.bsn_generic_stats_request.stats_type", "stats_type", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.flags'] = ProtoField.uint32("of14.bsn_generic_stats_request.flags", "flags", base.HEX, enum_v5_ofp_stats_request_flags)
+fields['of14.bsn_generic_stats_request.experimenter'] = ProtoField.uint32("of14.bsn_generic_stats_request.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.subtype'] = ProtoField.uint32("of14.bsn_generic_stats_request.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_generic_stats_request.name'] = ProtoField.stringz("of14.bsn_generic_stats_request.name", "name")
+fields['of14.bsn_generic_stats_request.tlvs'] = ProtoField.bytes("of14.bsn_generic_stats_request.tlvs", "tlvs")
 fields['of14.bsn_gentable_bucket_stats_entry.checksum'] = ProtoField.bytes("of14.bsn_gentable_bucket_stats_entry.checksum", "checksum")
 fields['of14.bsn_gentable_bucket_stats_reply.version'] = ProtoField.uint8("of14.bsn_gentable_bucket_stats_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_gentable_bucket_stats_reply.type'] = ProtoField.uint8("of14.bsn_gentable_bucket_stats_reply.type", "type", base.DEC, nil)
@@ -14207,6 +14249,27 @@ p_of.fields = {
     fields['of13.bsn_flow_idle_enable_set_request.experimenter'],
     fields['of13.bsn_flow_idle_enable_set_request.subtype'],
     fields['of13.bsn_flow_idle_enable_set_request.enable'],
+    fields['of13.bsn_generic_stats_entry.length'],
+    fields['of13.bsn_generic_stats_entry.tlvs'],
+    fields['of13.bsn_generic_stats_reply.version'],
+    fields['of13.bsn_generic_stats_reply.type'],
+    fields['of13.bsn_generic_stats_reply.length'],
+    fields['of13.bsn_generic_stats_reply.xid'],
+    fields['of13.bsn_generic_stats_reply.stats_type'],
+    fields['of13.bsn_generic_stats_reply.flags'],
+    fields['of13.bsn_generic_stats_reply.experimenter'],
+    fields['of13.bsn_generic_stats_reply.subtype'],
+    fields['of13.bsn_generic_stats_reply.entries'],
+    fields['of13.bsn_generic_stats_request.version'],
+    fields['of13.bsn_generic_stats_request.type'],
+    fields['of13.bsn_generic_stats_request.length'],
+    fields['of13.bsn_generic_stats_request.xid'],
+    fields['of13.bsn_generic_stats_request.stats_type'],
+    fields['of13.bsn_generic_stats_request.flags'],
+    fields['of13.bsn_generic_stats_request.experimenter'],
+    fields['of13.bsn_generic_stats_request.subtype'],
+    fields['of13.bsn_generic_stats_request.name'],
+    fields['of13.bsn_generic_stats_request.tlvs'],
     fields['of13.bsn_gentable_bucket_stats_entry.checksum'],
     fields['of13.bsn_gentable_bucket_stats_reply.version'],
     fields['of13.bsn_gentable_bucket_stats_reply.type'],
@@ -16654,6 +16717,27 @@ p_of.fields = {
     fields['of14.bsn_flow_idle_enable_set_request.experimenter'],
     fields['of14.bsn_flow_idle_enable_set_request.subtype'],
     fields['of14.bsn_flow_idle_enable_set_request.enable'],
+    fields['of14.bsn_generic_stats_entry.length'],
+    fields['of14.bsn_generic_stats_entry.tlvs'],
+    fields['of14.bsn_generic_stats_reply.version'],
+    fields['of14.bsn_generic_stats_reply.type'],
+    fields['of14.bsn_generic_stats_reply.length'],
+    fields['of14.bsn_generic_stats_reply.xid'],
+    fields['of14.bsn_generic_stats_reply.stats_type'],
+    fields['of14.bsn_generic_stats_reply.flags'],
+    fields['of14.bsn_generic_stats_reply.experimenter'],
+    fields['of14.bsn_generic_stats_reply.subtype'],
+    fields['of14.bsn_generic_stats_reply.entries'],
+    fields['of14.bsn_generic_stats_request.version'],
+    fields['of14.bsn_generic_stats_request.type'],
+    fields['of14.bsn_generic_stats_request.length'],
+    fields['of14.bsn_generic_stats_request.xid'],
+    fields['of14.bsn_generic_stats_request.stats_type'],
+    fields['of14.bsn_generic_stats_request.flags'],
+    fields['of14.bsn_generic_stats_request.experimenter'],
+    fields['of14.bsn_generic_stats_request.subtype'],
+    fields['of14.bsn_generic_stats_request.name'],
+    fields['of14.bsn_generic_stats_request.tlvs'],
     fields['of14.bsn_gentable_bucket_stats_entry.checksum'],
     fields['of14.bsn_gentable_bucket_stats_reply.version'],
     fields['of14.bsn_gentable_bucket_stats_reply.type'],
@@ -26895,6 +26979,56 @@ function dissect_of_bsn_flow_idle_enable_set_request_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[36] = dissect_of_bsn_flow_idle_enable_set_request_v4
 
+-- top-level class of_bsn_generic_stats_entry
+function dissect_of_bsn_generic_stats_entry_v4(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_entry.length')
+    read_list(reader, dissect_of_bsn_tlv_v4, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_stats_entry'
+end
+-- child class of_bsn_generic_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_generic_stats_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_generic_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_generic_stats_entry_v4, subtree, 'of_bsn_generic_stats_entry')
+    return 'of_bsn_generic_stats_reply'
+end
+of_bsn_stats_reply_v4_dissectors[16] = dissect_of_bsn_generic_stats_reply_v4
+
+-- child class of_bsn_generic_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_generic_stats_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.xid')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.stats_type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.subtype')
+    read_of_str64_t(reader, 4, subtree, 'of13.bsn_generic_stats_request.name')
+    read_list(reader, dissect_of_bsn_tlv_v4, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_stats_request'
+end
+of_bsn_stats_request_v4_dissectors[16] = dissect_of_bsn_generic_stats_request_v4
+
 -- top-level class of_bsn_gentable_bucket_stats_entry
 function dissect_of_bsn_gentable_bucket_stats_entry_v4(reader, subtree)
     read_of_checksum_128_t(reader, 4, subtree, 'of13.bsn_gentable_bucket_stats_entry.checksum')
@@ -33224,6 +33358,56 @@ function dissect_of_bsn_flow_idle_enable_set_request_v5(reader, subtree)
     return 'of_bsn_flow_idle_enable_set_request'
 end
 of_bsn_header_v5_dissectors[36] = dissect_of_bsn_flow_idle_enable_set_request_v5
+
+-- top-level class of_bsn_generic_stats_entry
+function dissect_of_bsn_generic_stats_entry_v5(reader, subtree)
+    local _length = reader.peek(0, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_entry.length')
+    read_list(reader, dissect_of_bsn_tlv_v5, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_stats_entry'
+end
+-- child class of_bsn_generic_stats_reply
+-- Child of of_bsn_stats_reply
+function dissect_of_bsn_generic_stats_reply_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.xid')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.stats_type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_stats_reply.subtype')
+    read_list(reader, dissect_of_bsn_generic_stats_entry_v5, subtree, 'of_bsn_generic_stats_entry')
+    return 'of_bsn_generic_stats_reply'
+end
+of_bsn_stats_reply_v5_dissectors[16] = dissect_of_bsn_generic_stats_reply_v5
+
+-- child class of_bsn_generic_stats_request
+-- Child of of_bsn_stats_request
+function dissect_of_bsn_generic_stats_request_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.xid')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.stats_type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.flags')
+    reader.skip(4)
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.subtype')
+    read_of_str64_t(reader, 5, subtree, 'of14.bsn_generic_stats_request.name')
+    read_list(reader, dissect_of_bsn_tlv_v5, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_stats_request'
+end
+of_bsn_stats_request_v5_dissectors[16] = dissect_of_bsn_generic_stats_request_v5
 
 -- top-level class of_bsn_gentable_bucket_stats_entry
 function dissect_of_bsn_gentable_bucket_stats_entry_v5(reader, subtree)

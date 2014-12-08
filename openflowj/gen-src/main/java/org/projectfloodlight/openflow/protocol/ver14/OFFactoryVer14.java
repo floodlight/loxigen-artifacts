@@ -776,6 +776,23 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
+    public OFBsnGenericStatsEntry.Builder buildBsnGenericStatsEntry() {
+        return new OFBsnGenericStatsEntryVer14.Builder();
+    }
+    public OFBsnGenericStatsEntry bsnGenericStatsEntry(List<OFBsnTlv> tlvs) {
+        return new OFBsnGenericStatsEntryVer14(
+                tlvs
+                    );
+    }
+
+    public OFBsnGenericStatsReply.Builder buildBsnGenericStatsReply() {
+        return new OFBsnGenericStatsReplyVer14.Builder().setXid(nextXid());
+    }
+
+    public OFBsnGenericStatsRequest.Builder buildBsnGenericStatsRequest() {
+        return new OFBsnGenericStatsRequestVer14.Builder().setXid(nextXid());
+    }
+
     public OFBsnGentableBucketStatsEntry.Builder buildBsnGentableBucketStatsEntry() {
         return new OFBsnGentableBucketStatsEntryVer14.Builder();
     }

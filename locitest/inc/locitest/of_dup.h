@@ -147,6 +147,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_generic_stats_reply_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_request_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_gentable_bucket_stats_reply_dup(
         of_object_t *src);
 
@@ -1120,6 +1128,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_entry_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_entry_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -2420,6 +2432,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_bsn_flow_checksum_bucket_stats_entry_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_list_bsn_generic_stats_entry_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -4791,6 +4807,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_generic_stats_reply_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_request_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -5476,6 +5500,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_entry_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6615,6 +6643,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_list_bsn_generic_stats_entry_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_list_bsn_gentable_bucket_stats_entry_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6888,6 +6920,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_reply_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_request_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -7668,6 +7708,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_stats_entry_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8872,6 +8916,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_bsn_flow_checksum_bucket_stats_entry_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_list_bsn_generic_stats_entry_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
