@@ -49,6 +49,7 @@ public class OFPortFeaturesSerializerVer14 {
     public final static int PF_100GB_FD_VAL = 0x100;
     public final static int PF_1TB_FD_VAL = 0x200;
     public final static int PF_OTHER_VAL = 0x400;
+    public final static int PF_BSN_BREAKOUT_CAPABLE_VAL = (int) 0x80000000;
 
     public static Set<OFPortFeatures> readFrom(ChannelBuffer bb) throws OFParseError {
         try {
@@ -102,6 +103,8 @@ public class OFPortFeaturesSerializerVer14 {
             set.add(OFPortFeatures.PF_1TB_FD);
         if((val & PF_OTHER_VAL) != 0)
             set.add(OFPortFeatures.PF_OTHER);
+        if((val & PF_BSN_BREAKOUT_CAPABLE_VAL) != 0)
+            set.add(OFPortFeatures.PF_BSN_BREAKOUT_CAPABLE);
         return Collections.unmodifiableSet(set);
     }
 
@@ -157,6 +160,9 @@ public class OFPortFeaturesSerializerVer14 {
                     break;
                 case PF_OTHER:
                     wireValue |= PF_OTHER_VAL;
+                    break;
+                case PF_BSN_BREAKOUT_CAPABLE:
+                    wireValue |= PF_BSN_BREAKOUT_CAPABLE_VAL;
                     break;
                 default:
                     throw new IllegalArgumentException("Illegal enum value for type OFPortFeatures in version 1.4: " + e);
