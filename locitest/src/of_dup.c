@@ -26544,6 +26544,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mac_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
         return of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(src);
     }
@@ -26744,8 +26748,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_reference_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_BUCKET) {
+        return of_bsn_tlv_bucket_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
@@ -26954,6 +26958,40 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_bucket
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_bucket.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_bucket_t *
+of_bsn_tlv_bucket_OF_VERSION_1_3_dup(
+    of_bsn_tlv_bucket_t *src)
+{
+    of_bsn_tlv_bucket_t *dst;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_tlv_bucket_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_bucket_value_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_3_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_bucket_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_bucket_value_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
 
     return dst;
 }
@@ -45358,6 +45396,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mac_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
+        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_CONVERGENCE_STATUS) {
         return of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(src);
     }
@@ -45558,8 +45600,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_reference_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_SUB_AGENT_ID) {
-        return of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_BUCKET) {
+        return of_bsn_tlv_bucket_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_EXTERNAL_GATEWAY_IP) {
@@ -45768,6 +45810,40 @@ of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_broadcast_query_timeout_value_get(src, &val32);
     of_bsn_tlv_broadcast_query_timeout_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_bucket
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_bucket.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_bucket_t *
+of_bsn_tlv_bucket_OF_VERSION_1_4_dup(
+    of_bsn_tlv_bucket_t *src)
+{
+    of_bsn_tlv_bucket_t *dst;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_tlv_bucket_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_bucket_value_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_tlv_bucket_delete(dst);
+        return NULL;
+    }
+    of_bsn_tlv_bucket_value_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
 
     return dst;
 }
@@ -61847,6 +61923,23 @@ of_bsn_tlv_broadcast_query_timeout_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_bucket_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_bucket_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_bucket_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

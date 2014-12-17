@@ -96,6 +96,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvBucket.Builder buildBucket() {
+        return new OFBsnTlvBucketVer14.Builder();
+    }
+    public OFBsnTlvBucket bucket(List<OFBsnTlv> value) {
+        return new OFBsnTlvBucketVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         return new OFBsnTlvCircuitIdVer14.Builder();
     }

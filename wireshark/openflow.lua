@@ -6675,6 +6675,9 @@ fields['of13.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of13.bsn
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_bucket.type'] = ProtoField.uint16("of13.bsn_tlv_bucket.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_bucket.length'] = ProtoField.uint16("of13.bsn_tlv_bucket.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_bucket.value'] = ProtoField.bytes("of13.bsn_tlv_bucket.value", "value")
 fields['of13.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of13.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of13.bsn_tlv_circuit_id.value", "value")
@@ -9143,6 +9146,9 @@ fields['of14.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of14.bsn
 fields['of14.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_bucket.type'] = ProtoField.uint16("of14.bsn_tlv_bucket.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_bucket.length'] = ProtoField.uint16("of14.bsn_tlv_bucket.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_bucket.value'] = ProtoField.bytes("of14.bsn_tlv_bucket.value", "value")
 fields['of14.bsn_tlv_circuit_id.type'] = ProtoField.uint16("of14.bsn_tlv_circuit_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_circuit_id.length'] = ProtoField.uint16("of14.bsn_tlv_circuit_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_circuit_id.value'] = ProtoField.bytes("of14.bsn_tlv_circuit_id.value", "value")
@@ -14793,6 +14799,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
+    fields['of13.bsn_tlv_bucket.type'],
+    fields['of13.bsn_tlv_bucket.length'],
+    fields['of13.bsn_tlv_bucket.value'],
     fields['of13.bsn_tlv_circuit_id.type'],
     fields['of13.bsn_tlv_circuit_id.length'],
     fields['of13.bsn_tlv_circuit_id.value'],
@@ -17261,6 +17270,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_broadcast_query_timeout.type'],
     fields['of14.bsn_tlv_broadcast_query_timeout.length'],
     fields['of14.bsn_tlv_broadcast_query_timeout.value'],
+    fields['of14.bsn_tlv_bucket.type'],
+    fields['of14.bsn_tlv_bucket.length'],
+    fields['of14.bsn_tlv_bucket.value'],
     fields['of14.bsn_tlv_circuit_id.type'],
     fields['of14.bsn_tlv_circuit_id.length'],
     fields['of14.bsn_tlv_circuit_id.value'],
@@ -28118,6 +28130,19 @@ function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v4
 
+-- child class of_bsn_tlv_bucket
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bucket_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bucket.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_bucket.length')
+    read_list(reader, dissect_of_bsn_tlv_v4, subtree, 'of_bsn_tlv')
+    return 'of_bsn_tlv_bucket'
+end
+of_bsn_tlv_v4_dissectors[64] = dissect_of_bsn_tlv_bucket_v4
+
 -- child class of_bsn_tlv_circuit_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_circuit_id_v4(reader, subtree)
@@ -34510,6 +34535,19 @@ function dissect_of_bsn_tlv_broadcast_query_timeout_v5(reader, subtree)
     return 'of_bsn_tlv_broadcast_query_timeout'
 end
 of_bsn_tlv_v5_dissectors[10] = dissect_of_bsn_tlv_broadcast_query_timeout_v5
+
+-- child class of_bsn_tlv_bucket
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_bucket_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bucket.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_bucket.length')
+    read_list(reader, dissect_of_bsn_tlv_v5, subtree, 'of_bsn_tlv')
+    return 'of_bsn_tlv_bucket'
+end
+of_bsn_tlv_v5_dissectors[64] = dissect_of_bsn_tlv_bucket_v5
 
 -- child class of_bsn_tlv_circuit_id
 -- Child of of_bsn_tlv

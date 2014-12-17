@@ -6217,6 +6217,17 @@ typedef struct of_bsn_tlv_actor_system_priority_s of_bsn_tlv_actor_system_priori
 typedef struct of_bsn_tlv_broadcast_query_timeout_s of_bsn_tlv_broadcast_query_timeout_t;
 
 /**
+ * Structure for of_bsn_tlv_bucket object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_tlv_bucket_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_bucket_s of_bsn_tlv_bucket_t;
+
+/**
  * Structure for of_bsn_tlv_circuit_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

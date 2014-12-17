@@ -82,6 +82,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.0");
     }
 
+    public OFBsnTlvBucket.Builder buildBucket() {
+        throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.0");
+    }
+    public OFBsnTlvBucket bucket(List<OFBsnTlv> value) {
+        throw new UnsupportedOperationException("OFBsnTlvBucket not supported in version 1.0");
+    }
+
     public OFBsnTlvCircuitId.Builder buildCircuitId() {
         throw new UnsupportedOperationException("OFBsnTlvCircuitId not supported in version 1.0");
     }

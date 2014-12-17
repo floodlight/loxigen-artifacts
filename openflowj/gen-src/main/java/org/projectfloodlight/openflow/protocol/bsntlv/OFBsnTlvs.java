@@ -43,6 +43,8 @@ public interface OFBsnTlvs {
     OFBsnTlvActorSystemPriority actorSystemPriority(int value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
+    OFBsnTlvBucket.Builder buildBucket() throws UnsupportedOperationException;
+    OFBsnTlvBucket bucket(List<OFBsnTlv> value);
     OFBsnTlvCircuitId.Builder buildCircuitId() throws UnsupportedOperationException;
     OFBsnTlvCircuitId circuitId(byte[] value);
     OFBsnTlvConvergenceStatus.Builder buildConvergenceStatus() throws UnsupportedOperationException;
