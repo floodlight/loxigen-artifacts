@@ -78,6 +78,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_lacp_stats_reply",
     "of_bsn_lacp_stats_request",
     "of_bsn_log",
+    "of_bsn_lua_upload",
     "of_bsn_pdu_rx_reply",
     "of_bsn_pdu_rx_request",
     "of_bsn_pdu_rx_timeout",

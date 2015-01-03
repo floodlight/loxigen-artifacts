@@ -16086,6 +16086,50 @@ of_bsn_log_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *
 }
 
 int
+of_bsn_lua_upload_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_str64_t str64;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_lua_upload\n");
+
+    of_bsn_lua_upload_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_flags_get(obj, &val16);
+    out += writer(cookie, "  flags (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_filename_get(obj, &str64);
+    out += writer(cookie, "  filename (of_str64_t):  ");
+    out += LOCI_DUMP_str64(writer, cookie, str64);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_data_get(obj, &octets);
+    out += writer(cookie, "  data (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_pdu_rx_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -28161,6 +28205,50 @@ of_bsn_log_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *
 }
 
 int
+of_bsn_lua_upload_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_str64_t str64;
+    of_octets_t octets;
+
+    out += writer(cookie, "Object of type of_bsn_lua_upload\n");
+
+    of_bsn_lua_upload_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_flags_get(obj, &val16);
+    out += writer(cookie, "  flags (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_filename_get(obj, &str64);
+    out += writer(cookie, "  filename (of_str64_t):  ");
+    out += LOCI_DUMP_str64(writer, cookie, str64);
+    out += writer(cookie, "\n");
+
+    of_bsn_lua_upload_data_get(obj, &octets);
+    out += writer(cookie, "  data (of_octets_t):  ");
+    out += LOCI_DUMP_octets(writer, cookie, octets);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_pdu_rx_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -39335,6 +39423,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_pdu_rx_reply_OF_VERSION_1_0_dump,
     of_bsn_pdu_rx_request_OF_VERSION_1_0_dump,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_0_dump,
@@ -39985,6 +40074,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     of_bsn_get_mirroring_reply_OF_VERSION_1_1_dump,
     of_bsn_get_mirroring_request_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -40657,6 +40747,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_pdu_rx_reply_OF_VERSION_1_2_dump,
     of_bsn_pdu_rx_request_OF_VERSION_1_2_dump,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_2_dump,
@@ -41318,6 +41409,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_lacp_stats_reply_OF_VERSION_1_3_dump,
     of_bsn_lacp_stats_request_OF_VERSION_1_3_dump,
     of_bsn_log_OF_VERSION_1_3_dump,
+    of_bsn_lua_upload_OF_VERSION_1_3_dump,
     of_bsn_pdu_rx_reply_OF_VERSION_1_3_dump,
     of_bsn_pdu_rx_request_OF_VERSION_1_3_dump,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_3_dump,
@@ -41979,6 +42071,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_lacp_stats_reply_OF_VERSION_1_4_dump,
     of_bsn_lacp_stats_request_OF_VERSION_1_4_dump,
     of_bsn_log_OF_VERSION_1_4_dump,
+    of_bsn_lua_upload_OF_VERSION_1_4_dump,
     of_bsn_pdu_rx_reply_OF_VERSION_1_4_dump,
     of_bsn_pdu_rx_request_OF_VERSION_1_4_dump,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_4_dump,

@@ -904,6 +904,10 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnLog not supported in version 1.1");
     }
 
+    public OFBsnLuaUpload.Builder buildBsnLuaUpload() {
+        throw new UnsupportedOperationException("OFBsnLuaUpload not supported in version 1.1");
+    }
+
     public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
         throw new UnsupportedOperationException("OFBsnPortCounterStatsEntry not supported in version 1.1");
     }

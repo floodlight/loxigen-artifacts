@@ -81,6 +81,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_lacp_stats_reply_init,
     (of_object_init_f)of_bsn_lacp_stats_request_init,
     (of_object_init_f)of_bsn_log_init,
+    (of_object_init_f)of_bsn_lua_upload_init,
     (of_object_init_f)of_bsn_pdu_rx_reply_init,
     (of_object_init_f)of_bsn_pdu_rx_request_init,
     (of_object_init_f)of_bsn_pdu_rx_timeout_init,

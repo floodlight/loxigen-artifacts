@@ -15124,6 +15124,48 @@ of_bsn_log_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *
 }
 
 int
+of_bsn_lua_upload_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_str64_t str64;
+    of_octets_t octets;
+
+    of_bsn_lua_upload_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_filename_get(obj, &str64);
+    out += writer(cookie, "filename=");
+    out += LOCI_SHOW_str64(writer, cookie, str64);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_data_get(obj, &octets);
+    out += writer(cookie, "data=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_pdu_rx_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -26327,6 +26369,48 @@ of_bsn_log_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *
 }
 
 int
+of_bsn_lua_upload_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+    of_str64_t str64;
+    of_octets_t octets;
+
+    of_bsn_lua_upload_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_flags_get(obj, &val16);
+    out += writer(cookie, "flags=");
+    out += LOCI_SHOW_x16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_filename_get(obj, &str64);
+    out += writer(cookie, "filename=");
+    out += LOCI_SHOW_str64(writer, cookie, str64);
+    out += writer(cookie, " ");
+
+    of_bsn_lua_upload_data_get(obj, &octets);
+    out += writer(cookie, "data=");
+    out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_pdu_rx_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -36684,6 +36768,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_0_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_0_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_0_show,
@@ -37334,6 +37419,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_bsn_get_mirroring_reply_OF_VERSION_1_1_show,
     of_bsn_get_mirroring_request_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -38006,6 +38092,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_2_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_2_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_2_show,
@@ -38667,6 +38754,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_lacp_stats_reply_OF_VERSION_1_3_show,
     of_bsn_lacp_stats_request_OF_VERSION_1_3_show,
     of_bsn_log_OF_VERSION_1_3_show,
+    of_bsn_lua_upload_OF_VERSION_1_3_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_3_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_3_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_3_show,
@@ -39328,6 +39416,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_lacp_stats_reply_OF_VERSION_1_4_show,
     of_bsn_lacp_stats_request_OF_VERSION_1_4_show,
     of_bsn_log_OF_VERSION_1_4_show,
+    of_bsn_lua_upload_OF_VERSION_1_4_show,
     of_bsn_pdu_rx_reply_OF_VERSION_1_4_show,
     of_bsn_pdu_rx_request_OF_VERSION_1_4_show,
     of_bsn_pdu_rx_timeout_OF_VERSION_1_4_show,

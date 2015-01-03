@@ -1798,6 +1798,37 @@ typedef struct of_bsn_lacp_stats_request_s of_bsn_lacp_stats_request_t;
 typedef struct of_bsn_log_s of_bsn_log_t;
 
 /**
+ * Structure for of_bsn_lua_upload object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_upload_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_upload_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_upload_uint32_get_f and _set_f.
+ *
+ * @param flags_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for flags, a variable of type uint16.  Functions
+ *   are of type of_bsn_lua_upload_uint16_get_f and _set_f.
+ *
+ * @param filename_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for filename, a variable of type of_str64.  Functions
+ *   are of type of_bsn_lua_upload_of_str64_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_lua_upload_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_lua_upload_s of_bsn_lua_upload_t;
+
+/**
  * Structure for of_bsn_pdu_rx_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

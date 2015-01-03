@@ -242,6 +242,7 @@ public interface OFFactory extends XidGenerator {
     OFBsnLacpStatsRequest.Builder buildBsnLacpStatsRequest() throws UnsupportedOperationException;
     OFBsnLacpStatsRequest bsnLacpStatsRequest(Set<OFStatsRequestFlags> flags);
     OFBsnLog.Builder buildBsnLog() throws UnsupportedOperationException;
+    OFBsnLuaUpload.Builder buildBsnLuaUpload() throws UnsupportedOperationException;
     OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() throws UnsupportedOperationException;
     OFBsnPortCounterStatsEntry bsnPortCounterStatsEntry(OFPort portNo, List<U64> values);
     OFBsnPortCounterStatsReply.Builder buildBsnPortCounterStatsReply() throws UnsupportedOperationException;

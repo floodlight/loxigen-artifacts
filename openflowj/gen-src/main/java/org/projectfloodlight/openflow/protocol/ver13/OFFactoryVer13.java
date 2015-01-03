@@ -958,6 +958,10 @@ public class OFFactoryVer13 implements OFFactory {
         return new OFBsnLogVer13.Builder().setXid(nextXid());
     }
 
+    public OFBsnLuaUpload.Builder buildBsnLuaUpload() {
+        return new OFBsnLuaUploadVer13.Builder().setXid(nextXid());
+    }
+
     public OFBsnPortCounterStatsEntry.Builder buildBsnPortCounterStatsEntry() {
         return new OFBsnPortCounterStatsEntryVer13.Builder();
     }

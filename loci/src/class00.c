@@ -11485,6 +11485,9 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x3f:
             *id = OF_BSN_LOG;
             break;
+        case 0x40:
+            *id = OF_BSN_LUA_UPLOAD;
+            break;
         default:
             *id = OF_BSN_HEADER;
             break;
@@ -11637,6 +11640,9 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x3f:
             *id = OF_BSN_LOG;
+            break;
+        case 0x40:
+            *id = OF_BSN_LUA_UPLOAD;
             break;
         default:
             *id = OF_BSN_HEADER;

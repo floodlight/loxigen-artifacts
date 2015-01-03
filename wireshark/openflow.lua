@@ -1494,6 +1494,13 @@ enum_v4_ofp_bsn_vport_status = {
     [1] = "OF_BSN_VPORT_STATUS_FAILED",
 }
 
+enum_v4_ofp_group_type = {
+    [0] = "OFPGT_ALL",
+    [1] = "OFPGT_SELECT",
+    [2] = "OFPGT_INDIRECT",
+    [3] = "OFPGT_FF",
+}
+
 enum_v4_ofp_bsn_controller_connection_state = {
     [0] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_DISCONNECTED",
     [1] = "OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED",
@@ -1656,11 +1663,9 @@ enum_v4_ofp_port = {
     [4294967295] = "OFPP_ANY",
 }
 
-enum_v4_ofp_group_type = {
-    [0] = "OFPGT_ALL",
-    [1] = "OFPGT_SELECT",
-    [2] = "OFPGT_INDIRECT",
-    [3] = "OFPGT_FF",
+enum_v4_ofp_bsn_lua_upload_flags = {
+    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
+    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
 enum_v4_ofp_instruction_type = {
@@ -2117,12 +2122,9 @@ enum_v5_ofp_bsn_tcp_flag = {
     [256] = "OFP_BSN_TCP_FLAG_NS",
 }
 
-enum_v5_ofp_bsn_vport_l2gre_flags = {
-    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
-    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
-    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
-    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
-    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
+enum_v5_ofp_table = {
+    [254] = "OFPTT_MAX",
+    [255] = "OFPTT_ALL",
 }
 
 enum_v5_ofp_switch_config_failed_code = {
@@ -2167,9 +2169,12 @@ enum_v5_ofp_port_stats_optical_flags = {
     [64] = "OFPOSF_TX_TEMP",
 }
 
-enum_v5_ofp_table = {
-    [254] = "OFPTT_MAX",
-    [255] = "OFPTT_ALL",
+enum_v5_ofp_bsn_vport_l2gre_flags = {
+    [1] = "OF_BSN_VPORT_L2GRE_LOCAL_MAC_IS_VALID",
+    [2] = "OF_BSN_VPORT_L2GRE_DSCP_ASSIGN",
+    [4] = "OF_BSN_VPORT_L2GRE_DSCP_COPY",
+    [8] = "OF_BSN_VPORT_L2GRE_LOOPBACK_IS_VALID",
+    [16] = "OF_BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID",
 }
 
 enum_v5_ofp_bundle_failed_code = {
@@ -2209,6 +2214,13 @@ enum_v5_ofp_meter_mod_failed_code = {
 enum_v5_ofp_bsn_vport_status = {
     [0] = "OF_BSN_VPORT_STATUS_OK",
     [1] = "OF_BSN_VPORT_STATUS_FAILED",
+}
+
+enum_v5_ofp_group_type = {
+    [0] = "OFPGT_ALL",
+    [1] = "OFPGT_SELECT",
+    [2] = "OFPGT_INDIRECT",
+    [3] = "OFPGT_FF",
 }
 
 enum_v5_ofp_bsn_controller_connection_state = {
@@ -2397,11 +2409,9 @@ enum_v5_ofp_port = {
     [4294967295] = "OFPP_ANY",
 }
 
-enum_v5_ofp_group_type = {
-    [0] = "OFPGT_ALL",
-    [1] = "OFPGT_SELECT",
-    [2] = "OFPGT_INDIRECT",
-    [3] = "OFPGT_FF",
+enum_v5_ofp_bsn_lua_upload_flags = {
+    [1] = "OFP_BSN_LUA_UPLOAD_MORE",
+    [2] = "OFP_BSN_LUA_UPLOAD_FORCE",
 }
 
 enum_v5_ofp_instruction_type = {
@@ -6443,6 +6453,15 @@ fields['of13.bsn_log.experimenter'] = ProtoField.uint32("of13.bsn_log.experiment
 fields['of13.bsn_log.subtype'] = ProtoField.uint32("of13.bsn_log.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_log.loglevel'] = ProtoField.uint32("of13.bsn_log.loglevel", "loglevel", base.DEC, enum_v4_ofp_bsn_loglevel)
 fields['of13.bsn_log.data'] = ProtoField.bytes("of13.bsn_log.data", "data")
+fields['of13.bsn_lua_upload.version'] = ProtoField.uint8("of13.bsn_lua_upload.version", "version", base.DEC, nil)
+fields['of13.bsn_lua_upload.type'] = ProtoField.uint8("of13.bsn_lua_upload.type", "type", base.DEC, nil)
+fields['of13.bsn_lua_upload.length'] = ProtoField.uint16("of13.bsn_lua_upload.length", "length", base.DEC, nil)
+fields['of13.bsn_lua_upload.xid'] = ProtoField.uint32("of13.bsn_lua_upload.xid", "xid", base.DEC, nil)
+fields['of13.bsn_lua_upload.experimenter'] = ProtoField.uint32("of13.bsn_lua_upload.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_lua_upload.subtype'] = ProtoField.uint32("of13.bsn_lua_upload.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_lua_upload.flags'] = ProtoField.uint32("of13.bsn_lua_upload.flags", "flags", base.HEX, enum_v4_ofp_bsn_lua_upload_flags)
+fields['of13.bsn_lua_upload.filename'] = ProtoField.stringz("of13.bsn_lua_upload.filename", "filename")
+fields['of13.bsn_lua_upload.data'] = ProtoField.bytes("of13.bsn_lua_upload.data", "data")
 fields['of13.bsn_pdu_rx_reply.version'] = ProtoField.uint8("of13.bsn_pdu_rx_reply.version", "version", base.DEC, nil)
 fields['of13.bsn_pdu_rx_reply.type'] = ProtoField.uint8("of13.bsn_pdu_rx_reply.type", "type", base.DEC, nil)
 fields['of13.bsn_pdu_rx_reply.length'] = ProtoField.uint16("of13.bsn_pdu_rx_reply.length", "length", base.DEC, nil)
@@ -8923,6 +8942,15 @@ fields['of14.bsn_log.experimenter'] = ProtoField.uint32("of14.bsn_log.experiment
 fields['of14.bsn_log.subtype'] = ProtoField.uint32("of14.bsn_log.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_log.loglevel'] = ProtoField.uint32("of14.bsn_log.loglevel", "loglevel", base.DEC, enum_v5_ofp_bsn_loglevel)
 fields['of14.bsn_log.data'] = ProtoField.bytes("of14.bsn_log.data", "data")
+fields['of14.bsn_lua_upload.version'] = ProtoField.uint8("of14.bsn_lua_upload.version", "version", base.DEC, nil)
+fields['of14.bsn_lua_upload.type'] = ProtoField.uint8("of14.bsn_lua_upload.type", "type", base.DEC, nil)
+fields['of14.bsn_lua_upload.length'] = ProtoField.uint16("of14.bsn_lua_upload.length", "length", base.DEC, nil)
+fields['of14.bsn_lua_upload.xid'] = ProtoField.uint32("of14.bsn_lua_upload.xid", "xid", base.DEC, nil)
+fields['of14.bsn_lua_upload.experimenter'] = ProtoField.uint32("of14.bsn_lua_upload.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_lua_upload.subtype'] = ProtoField.uint32("of14.bsn_lua_upload.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_lua_upload.flags'] = ProtoField.uint32("of14.bsn_lua_upload.flags", "flags", base.HEX, enum_v5_ofp_bsn_lua_upload_flags)
+fields['of14.bsn_lua_upload.filename'] = ProtoField.stringz("of14.bsn_lua_upload.filename", "filename")
+fields['of14.bsn_lua_upload.data'] = ProtoField.bytes("of14.bsn_lua_upload.data", "data")
 fields['of14.bsn_pdu_rx_reply.version'] = ProtoField.uint8("of14.bsn_pdu_rx_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_pdu_rx_reply.type'] = ProtoField.uint8("of14.bsn_pdu_rx_reply.type", "type", base.DEC, nil)
 fields['of14.bsn_pdu_rx_reply.length'] = ProtoField.uint16("of14.bsn_pdu_rx_reply.length", "length", base.DEC, nil)
@@ -14567,6 +14595,15 @@ p_of.fields = {
     fields['of13.bsn_log.subtype'],
     fields['of13.bsn_log.loglevel'],
     fields['of13.bsn_log.data'],
+    fields['of13.bsn_lua_upload.version'],
+    fields['of13.bsn_lua_upload.type'],
+    fields['of13.bsn_lua_upload.length'],
+    fields['of13.bsn_lua_upload.xid'],
+    fields['of13.bsn_lua_upload.experimenter'],
+    fields['of13.bsn_lua_upload.subtype'],
+    fields['of13.bsn_lua_upload.flags'],
+    fields['of13.bsn_lua_upload.filename'],
+    fields['of13.bsn_lua_upload.data'],
     fields['of13.bsn_pdu_rx_reply.version'],
     fields['of13.bsn_pdu_rx_reply.type'],
     fields['of13.bsn_pdu_rx_reply.length'],
@@ -17047,6 +17084,15 @@ p_of.fields = {
     fields['of14.bsn_log.subtype'],
     fields['of14.bsn_log.loglevel'],
     fields['of14.bsn_log.data'],
+    fields['of14.bsn_lua_upload.version'],
+    fields['of14.bsn_lua_upload.type'],
+    fields['of14.bsn_lua_upload.length'],
+    fields['of14.bsn_lua_upload.xid'],
+    fields['of14.bsn_lua_upload.experimenter'],
+    fields['of14.bsn_lua_upload.subtype'],
+    fields['of14.bsn_lua_upload.flags'],
+    fields['of14.bsn_lua_upload.filename'],
+    fields['of14.bsn_lua_upload.data'],
     fields['of14.bsn_pdu_rx_reply.version'],
     fields['of14.bsn_pdu_rx_reply.type'],
     fields['of14.bsn_pdu_rx_reply.length'],
@@ -27633,6 +27679,25 @@ function dissect_of_bsn_log_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[63] = dissect_of_bsn_log_v4
 
+-- child class of_bsn_lua_upload
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_upload_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_upload.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_upload.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_lua_upload.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_upload.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_upload.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_upload.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_lua_upload.flags')
+    read_of_str64_t(reader, 4, subtree, 'of13.bsn_lua_upload.filename')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_lua_upload.data')
+    return 'of_bsn_lua_upload'
+end
+of_bsn_header_v4_dissectors[64] = dissect_of_bsn_lua_upload_v4
+
 -- child class of_bsn_pdu_rx_reply
 -- Child of of_bsn_header
 function dissect_of_bsn_pdu_rx_reply_v4(reader, subtree)
@@ -34055,6 +34120,25 @@ function dissect_of_bsn_log_v5(reader, subtree)
     return 'of_bsn_log'
 end
 of_bsn_header_v5_dissectors[63] = dissect_of_bsn_log_v5
+
+-- child class of_bsn_lua_upload
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_upload_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_upload.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_upload.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_lua_upload.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_upload.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_upload.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_upload.subtype')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_lua_upload.flags')
+    read_of_str64_t(reader, 5, subtree, 'of14.bsn_lua_upload.filename')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_lua_upload.data')
+    return 'of_bsn_lua_upload'
+end
+of_bsn_header_v5_dissectors[64] = dissect_of_bsn_lua_upload_v5
 
 -- child class of_bsn_pdu_rx_reply
 -- Child of of_bsn_header

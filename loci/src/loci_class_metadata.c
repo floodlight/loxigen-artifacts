@@ -2223,6 +2223,12 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_log_push_wire_types,
     },
+    [OF_BSN_LUA_UPLOAD] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_lua_upload_push_wire_types,
+    },
     [OF_BSN_PORT_COUNTER_STATS_ENTRY] = {
         .wire_length_get=of_u16_len_wire_length_get,
         .wire_length_set=of_u16_len_wire_length_set,
