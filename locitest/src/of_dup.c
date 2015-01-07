@@ -14259,8 +14259,16 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_SCTP_SRC) {
         return of_oxm_sctp_src_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC) {
@@ -14283,8 +14291,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -14327,8 +14335,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -14431,16 +14439,16 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ipv6_dst_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
-        return of_oxm_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_2_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
@@ -14491,6 +14499,10 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_ip_proto_OF_VERSION_1_2_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV6_SRC) {
         return of_oxm_ipv6_src_OF_VERSION_1_2_dup(src);
     }
@@ -14523,16 +14535,8 @@ of_oxm_OF_VERSION_1_2_dup(
         return of_oxm_tcp_src_masked_OF_VERSION_1_2_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_2_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_2_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
-        return of_oxm_eth_src_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
@@ -14561,6 +14565,10 @@ of_oxm_OF_VERSION_1_2_dup(
 
     if (src->object_id == OF_OXM_ARP_TPA) {
         return of_oxm_arp_tpa_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
+        return of_oxm_ipv4_dst_masked_OF_VERSION_1_2_dup(src);
     }
 
     if (src->object_id == OF_OXM_MPLS_LABEL_MASKED) {
@@ -14990,6 +14998,59 @@ of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dup(
 
     of_oxm_bsn_in_ports_128_masked_value_mask_get(src, &bitmap_128);
     of_oxm_bsn_in_ports_128_masked_value_mask_set(dst, bitmap_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_in_ports_512
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_in_ports_512.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_in_ports_512_t *
+of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dup(
+    of_oxm_bsn_in_ports_512_t *src)
+{
+    of_oxm_bsn_in_ports_512_t *dst;
+    of_bitmap_512_t bitmap_512;
+
+    if ((dst = of_oxm_bsn_in_ports_512_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_in_ports_512_value_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_value_set(dst, bitmap_512);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_in_ports_512_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_in_ports_512_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_in_ports_512_masked_t *
+of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dup(
+    of_oxm_bsn_in_ports_512_masked_t *src)
+{
+    of_oxm_bsn_in_ports_512_masked_t *dst;
+    of_bitmap_512_t bitmap_512;
+
+    if ((dst = of_oxm_bsn_in_ports_512_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_in_ports_512_masked_value_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_masked_value_set(dst, bitmap_512);
+
+    of_oxm_bsn_in_ports_512_masked_value_mask_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_masked_value_mask_set(dst, bitmap_512);
 
     return dst;
 }
@@ -30568,8 +30629,16 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_global_vrf_allowed_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_SCTP_SRC) {
         return of_oxm_sctp_src_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC) {
@@ -30592,8 +30661,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -30636,8 +30705,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -30744,16 +30813,16 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ipv6_dst_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
-        return of_oxm_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
@@ -30804,6 +30873,10 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_ip_proto_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV6_SRC) {
         return of_oxm_ipv6_src_OF_VERSION_1_3_dup(src);
     }
@@ -30844,16 +30917,8 @@ of_oxm_OF_VERSION_1_3_dup(
         return of_oxm_mpls_bos_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
-        return of_oxm_eth_src_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
@@ -30882,6 +30947,10 @@ of_oxm_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_OXM_ARP_TPA) {
         return of_oxm_arp_tpa_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
+        return of_oxm_ipv4_dst_masked_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_EXTHDR) {
@@ -31315,6 +31384,59 @@ of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dup(
 
     of_oxm_bsn_in_ports_128_masked_value_mask_get(src, &bitmap_128);
     of_oxm_bsn_in_ports_128_masked_value_mask_set(dst, bitmap_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_in_ports_512
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_in_ports_512.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_in_ports_512_t *
+of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dup(
+    of_oxm_bsn_in_ports_512_t *src)
+{
+    of_oxm_bsn_in_ports_512_t *dst;
+    of_bitmap_512_t bitmap_512;
+
+    if ((dst = of_oxm_bsn_in_ports_512_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_in_ports_512_value_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_value_set(dst, bitmap_512);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_in_ports_512_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_in_ports_512_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_in_ports_512_masked_t *
+of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dup(
+    of_oxm_bsn_in_ports_512_masked_t *src)
+{
+    of_oxm_bsn_in_ports_512_masked_t *dst;
+    of_bitmap_512_t bitmap_512;
+
+    if ((dst = of_oxm_bsn_in_ports_512_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_in_ports_512_masked_value_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_masked_value_set(dst, bitmap_512);
+
+    of_oxm_bsn_in_ports_512_masked_value_mask_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_masked_value_mask_set(dst, bitmap_512);
 
     return dst;
 }
@@ -49405,8 +49527,16 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_egr_port_group_id_masked_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
+        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_SCTP_SRC) {
         return of_oxm_sctp_src_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512_MASKED) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_UDP_SRC) {
@@ -49425,8 +49555,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_ARP_SPA_MASKED) {
-        return of_oxm_arp_spa_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
+        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_TCP_FLAGS) {
@@ -49469,8 +49599,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_icmpv4_code_masked_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
-        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_IPV4_DST) {
+        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_IN_PORTS_128_MASKED) {
@@ -49577,16 +49707,16 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ipv6_dst_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
-        return of_oxm_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
+        return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_VRF) {
         return of_oxm_bsn_vrf_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV4_DST) {
-        return of_oxm_ipv4_dst_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_OXM_BSN_UDF3_MASKED) {
+        return of_oxm_bsn_udf3_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_SRC_MASKED) {
@@ -49633,6 +49763,10 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_ip_proto_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_OXM_BSN_IN_PORTS_512) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_OXM_IPV6_SRC) {
         return of_oxm_ipv6_src_OF_VERSION_1_4_dup(src);
     }
@@ -49673,16 +49807,8 @@ of_oxm_OF_VERSION_1_4_dup(
         return of_oxm_mpls_bos_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_OXM_IPV6_DST_MASKED) {
-        return of_oxm_ipv6_dst_masked_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_OXM_METADATA) {
         return of_oxm_metadata_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_OXM_ETH_SRC_MASKED) {
-        return of_oxm_eth_src_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_BSN_UDF0_MASKED) {
@@ -49715,6 +49841,10 @@ of_oxm_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_OXM_ARP_TPA) {
         return of_oxm_arp_tpa_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_OXM_IPV4_DST_MASKED) {
+        return of_oxm_ipv4_dst_masked_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_OXM_IPV6_EXTHDR) {
@@ -50095,6 +50225,59 @@ of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dup(
 
     of_oxm_bsn_in_ports_128_masked_value_mask_get(src, &bitmap_128);
     of_oxm_bsn_in_ports_128_masked_value_mask_set(dst, bitmap_128);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_in_ports_512
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_in_ports_512.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_in_ports_512_t *
+of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dup(
+    of_oxm_bsn_in_ports_512_t *src)
+{
+    of_oxm_bsn_in_ports_512_t *dst;
+    of_bitmap_512_t bitmap_512;
+
+    if ((dst = of_oxm_bsn_in_ports_512_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_in_ports_512_value_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_value_set(dst, bitmap_512);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_oxm_bsn_in_ports_512_masked
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_oxm_bsn_in_ports_512_masked.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_oxm_bsn_in_ports_512_masked_t *
+of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dup(
+    of_oxm_bsn_in_ports_512_masked_t *src)
+{
+    of_oxm_bsn_in_ports_512_masked_t *dst;
+    of_bitmap_512_t bitmap_512;
+
+    if ((dst = of_oxm_bsn_in_ports_512_masked_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_oxm_bsn_in_ports_512_masked_value_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_masked_value_set(dst, bitmap_512);
+
+    of_oxm_bsn_in_ports_512_masked_value_mask_get(src, &bitmap_512);
+    of_oxm_bsn_in_ports_512_masked_value_mask_set(dst, bitmap_512);
 
     return dst;
 }
@@ -64555,6 +64738,48 @@ of_oxm_bsn_in_ports_128_masked_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_bsn_in_ports_512_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_oxm_bsn_in_ports_512_masked_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_2) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

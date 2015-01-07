@@ -449,6 +449,8 @@ const char *const of_object_id_str[] = {
     "of_oxm_bsn_global_vrf_allowed_masked",
     "of_oxm_bsn_in_ports_128",
     "of_oxm_bsn_in_ports_128_masked",
+    "of_oxm_bsn_in_ports_512",
+    "of_oxm_bsn_in_ports_512_masked",
     "of_oxm_bsn_l2_cache_hit",
     "of_oxm_bsn_l2_cache_hit_masked",
     "of_oxm_bsn_l3_dst_class_id",
@@ -701,6 +703,12 @@ const of_ipv6_t of_ipv6_all_zeros = {
         0, 0, 0, 0, 0, 0, 0, 0
     }
 };
+
+const of_bitmap_512_t of_bitmap_512_all_ones = {
+    { -1, -1, -1, -1, -1, -1, -1, -1, }
+};
+
+const of_bitmap_512_t of_bitmap_512_all_zeroes;
 
 /** @var of_error_strings
  * The error string map; use abs value to index

@@ -111,6 +111,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_MPLS_BOS_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -421,6 +425,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_ICMPV6_CODE_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1731,6 +1739,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_l2_cache_hit_value_set(&elt, src->fields.bsn_l2_cache_hit);
         }
     }
+    if (OF_MATCH_MASK_BSN_IN_PORTS_512_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_IN_PORTS_512_EXACT_TEST(src)) {
+            of_oxm_bsn_in_ports_512_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_in_ports_512_masked_value_set(&elt,
+                   src->fields.bsn_in_ports_512);
+            of_oxm_bsn_in_ports_512_masked_value_mask_set(&elt,
+                   src->masks.bsn_in_ports_512);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_in_ports_512_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_in_ports_512_value_set(&elt, src->fields.bsn_in_ports_512);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2172,6 +2196,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_icmpv6_code_value_get(
                 &oxm_entry,
                 &dst->fields.icmpv6_code);
+            break;
+
+        case OF_OXM_BSN_IN_PORTS_512_MASKED:
+            of_oxm_bsn_in_ports_512_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.bsn_in_ports_512);
+            of_oxm_bsn_in_ports_512_masked_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_in_ports_512);
+            of_memmask(&dst->fields.bsn_in_ports_512, &dst->masks.bsn_in_ports_512, sizeof(&dst->fields.bsn_in_ports_512));
+            break;
+        case OF_OXM_BSN_IN_PORTS_512:
+            OF_MATCH_MASK_BSN_IN_PORTS_512_EXACT_SET(dst);
+            of_oxm_bsn_in_ports_512_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_in_ports_512);
             break;
 
         case OF_OXM_MPLS_BOS_MASKED:

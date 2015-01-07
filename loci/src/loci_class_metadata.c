@@ -1119,6 +1119,18 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_oxm_wire_object_id_get,
         .wire_type_set=of_oxm_bsn_in_ports_128_masked_push_wire_types,
     },
+    [OF_OXM_BSN_IN_PORTS_512] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_in_ports_512_push_wire_types,
+    },
+    [OF_OXM_BSN_IN_PORTS_512_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_in_ports_512_masked_push_wire_types,
+    },
     [OF_OXM_BSN_L2_CACHE_HIT] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,
