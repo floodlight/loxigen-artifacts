@@ -1,1 +1,1 @@
-f6cf0c74f9436d4f83897a4d85187d20f95f378d Merge into master from pull request #374: openflow_input: add bsn_lua extensions for commands and notifications (https://github.com/floodlight/loxigen/pull/374)
+543bcb6d817624b48bed6e2b490eab879d5c74fd Merge into master from pull request #373: loci: make of_mac_addr_all_zeroes name match the definition (https://github.com/floodlight/loxigen/pull/373)
