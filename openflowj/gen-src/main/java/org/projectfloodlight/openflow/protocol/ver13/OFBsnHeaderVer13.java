@@ -176,6 +176,15 @@ abstract class OFBsnHeaderVer13 {
                case 0x3f:
                    // discriminator value 0x3fL=0x3fL for class OFBsnLogVer13
                    return OFBsnLogVer13.READER.readFrom(bb);
+               case 0x42:
+                   // discriminator value 0x42L=0x42L for class OFBsnLuaCommandReplyVer13
+                   return OFBsnLuaCommandReplyVer13.READER.readFrom(bb);
+               case 0x41:
+                   // discriminator value 0x41L=0x41L for class OFBsnLuaCommandRequestVer13
+                   return OFBsnLuaCommandRequestVer13.READER.readFrom(bb);
+               case 0x43:
+                   // discriminator value 0x43L=0x43L for class OFBsnLuaNotificationVer13
+                   return OFBsnLuaNotificationVer13.READER.readFrom(bb);
                case 0x40:
                    // discriminator value 0x40L=0x40L for class OFBsnLuaUploadVer13
                    return OFBsnLuaUploadVer13.READER.readFrom(bb);

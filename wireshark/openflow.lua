@@ -6458,6 +6458,27 @@ fields['of13.bsn_log.experimenter'] = ProtoField.uint32("of13.bsn_log.experiment
 fields['of13.bsn_log.subtype'] = ProtoField.uint32("of13.bsn_log.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_log.loglevel'] = ProtoField.uint32("of13.bsn_log.loglevel", "loglevel", base.DEC, enum_v4_ofp_bsn_loglevel)
 fields['of13.bsn_log.data'] = ProtoField.bytes("of13.bsn_log.data", "data")
+fields['of13.bsn_lua_command_reply.version'] = ProtoField.uint8("of13.bsn_lua_command_reply.version", "version", base.DEC, nil)
+fields['of13.bsn_lua_command_reply.type'] = ProtoField.uint8("of13.bsn_lua_command_reply.type", "type", base.DEC, nil)
+fields['of13.bsn_lua_command_reply.length'] = ProtoField.uint16("of13.bsn_lua_command_reply.length", "length", base.DEC, nil)
+fields['of13.bsn_lua_command_reply.xid'] = ProtoField.uint32("of13.bsn_lua_command_reply.xid", "xid", base.DEC, nil)
+fields['of13.bsn_lua_command_reply.experimenter'] = ProtoField.uint32("of13.bsn_lua_command_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_lua_command_reply.subtype'] = ProtoField.uint32("of13.bsn_lua_command_reply.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_lua_command_reply.data'] = ProtoField.bytes("of13.bsn_lua_command_reply.data", "data")
+fields['of13.bsn_lua_command_request.version'] = ProtoField.uint8("of13.bsn_lua_command_request.version", "version", base.DEC, nil)
+fields['of13.bsn_lua_command_request.type'] = ProtoField.uint8("of13.bsn_lua_command_request.type", "type", base.DEC, nil)
+fields['of13.bsn_lua_command_request.length'] = ProtoField.uint16("of13.bsn_lua_command_request.length", "length", base.DEC, nil)
+fields['of13.bsn_lua_command_request.xid'] = ProtoField.uint32("of13.bsn_lua_command_request.xid", "xid", base.DEC, nil)
+fields['of13.bsn_lua_command_request.experimenter'] = ProtoField.uint32("of13.bsn_lua_command_request.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_lua_command_request.subtype'] = ProtoField.uint32("of13.bsn_lua_command_request.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_lua_command_request.data'] = ProtoField.bytes("of13.bsn_lua_command_request.data", "data")
+fields['of13.bsn_lua_notification.version'] = ProtoField.uint8("of13.bsn_lua_notification.version", "version", base.DEC, nil)
+fields['of13.bsn_lua_notification.type'] = ProtoField.uint8("of13.bsn_lua_notification.type", "type", base.DEC, nil)
+fields['of13.bsn_lua_notification.length'] = ProtoField.uint16("of13.bsn_lua_notification.length", "length", base.DEC, nil)
+fields['of13.bsn_lua_notification.xid'] = ProtoField.uint32("of13.bsn_lua_notification.xid", "xid", base.DEC, nil)
+fields['of13.bsn_lua_notification.experimenter'] = ProtoField.uint32("of13.bsn_lua_notification.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_lua_notification.subtype'] = ProtoField.uint32("of13.bsn_lua_notification.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_lua_notification.data'] = ProtoField.bytes("of13.bsn_lua_notification.data", "data")
 fields['of13.bsn_lua_upload.version'] = ProtoField.uint8("of13.bsn_lua_upload.version", "version", base.DEC, nil)
 fields['of13.bsn_lua_upload.type'] = ProtoField.uint8("of13.bsn_lua_upload.type", "type", base.DEC, nil)
 fields['of13.bsn_lua_upload.length'] = ProtoField.uint16("of13.bsn_lua_upload.length", "length", base.DEC, nil)
@@ -8952,6 +8973,27 @@ fields['of14.bsn_log.experimenter'] = ProtoField.uint32("of14.bsn_log.experiment
 fields['of14.bsn_log.subtype'] = ProtoField.uint32("of14.bsn_log.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_log.loglevel'] = ProtoField.uint32("of14.bsn_log.loglevel", "loglevel", base.DEC, enum_v5_ofp_bsn_loglevel)
 fields['of14.bsn_log.data'] = ProtoField.bytes("of14.bsn_log.data", "data")
+fields['of14.bsn_lua_command_reply.version'] = ProtoField.uint8("of14.bsn_lua_command_reply.version", "version", base.DEC, nil)
+fields['of14.bsn_lua_command_reply.type'] = ProtoField.uint8("of14.bsn_lua_command_reply.type", "type", base.DEC, nil)
+fields['of14.bsn_lua_command_reply.length'] = ProtoField.uint16("of14.bsn_lua_command_reply.length", "length", base.DEC, nil)
+fields['of14.bsn_lua_command_reply.xid'] = ProtoField.uint32("of14.bsn_lua_command_reply.xid", "xid", base.DEC, nil)
+fields['of14.bsn_lua_command_reply.experimenter'] = ProtoField.uint32("of14.bsn_lua_command_reply.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_lua_command_reply.subtype'] = ProtoField.uint32("of14.bsn_lua_command_reply.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_lua_command_reply.data'] = ProtoField.bytes("of14.bsn_lua_command_reply.data", "data")
+fields['of14.bsn_lua_command_request.version'] = ProtoField.uint8("of14.bsn_lua_command_request.version", "version", base.DEC, nil)
+fields['of14.bsn_lua_command_request.type'] = ProtoField.uint8("of14.bsn_lua_command_request.type", "type", base.DEC, nil)
+fields['of14.bsn_lua_command_request.length'] = ProtoField.uint16("of14.bsn_lua_command_request.length", "length", base.DEC, nil)
+fields['of14.bsn_lua_command_request.xid'] = ProtoField.uint32("of14.bsn_lua_command_request.xid", "xid", base.DEC, nil)
+fields['of14.bsn_lua_command_request.experimenter'] = ProtoField.uint32("of14.bsn_lua_command_request.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_lua_command_request.subtype'] = ProtoField.uint32("of14.bsn_lua_command_request.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_lua_command_request.data'] = ProtoField.bytes("of14.bsn_lua_command_request.data", "data")
+fields['of14.bsn_lua_notification.version'] = ProtoField.uint8("of14.bsn_lua_notification.version", "version", base.DEC, nil)
+fields['of14.bsn_lua_notification.type'] = ProtoField.uint8("of14.bsn_lua_notification.type", "type", base.DEC, nil)
+fields['of14.bsn_lua_notification.length'] = ProtoField.uint16("of14.bsn_lua_notification.length", "length", base.DEC, nil)
+fields['of14.bsn_lua_notification.xid'] = ProtoField.uint32("of14.bsn_lua_notification.xid", "xid", base.DEC, nil)
+fields['of14.bsn_lua_notification.experimenter'] = ProtoField.uint32("of14.bsn_lua_notification.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_lua_notification.subtype'] = ProtoField.uint32("of14.bsn_lua_notification.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_lua_notification.data'] = ProtoField.bytes("of14.bsn_lua_notification.data", "data")
 fields['of14.bsn_lua_upload.version'] = ProtoField.uint8("of14.bsn_lua_upload.version", "version", base.DEC, nil)
 fields['of14.bsn_lua_upload.type'] = ProtoField.uint8("of14.bsn_lua_upload.type", "type", base.DEC, nil)
 fields['of14.bsn_lua_upload.length'] = ProtoField.uint16("of14.bsn_lua_upload.length", "length", base.DEC, nil)
@@ -14615,6 +14657,27 @@ p_of.fields = {
     fields['of13.bsn_log.subtype'],
     fields['of13.bsn_log.loglevel'],
     fields['of13.bsn_log.data'],
+    fields['of13.bsn_lua_command_reply.version'],
+    fields['of13.bsn_lua_command_reply.type'],
+    fields['of13.bsn_lua_command_reply.length'],
+    fields['of13.bsn_lua_command_reply.xid'],
+    fields['of13.bsn_lua_command_reply.experimenter'],
+    fields['of13.bsn_lua_command_reply.subtype'],
+    fields['of13.bsn_lua_command_reply.data'],
+    fields['of13.bsn_lua_command_request.version'],
+    fields['of13.bsn_lua_command_request.type'],
+    fields['of13.bsn_lua_command_request.length'],
+    fields['of13.bsn_lua_command_request.xid'],
+    fields['of13.bsn_lua_command_request.experimenter'],
+    fields['of13.bsn_lua_command_request.subtype'],
+    fields['of13.bsn_lua_command_request.data'],
+    fields['of13.bsn_lua_notification.version'],
+    fields['of13.bsn_lua_notification.type'],
+    fields['of13.bsn_lua_notification.length'],
+    fields['of13.bsn_lua_notification.xid'],
+    fields['of13.bsn_lua_notification.experimenter'],
+    fields['of13.bsn_lua_notification.subtype'],
+    fields['of13.bsn_lua_notification.data'],
     fields['of13.bsn_lua_upload.version'],
     fields['of13.bsn_lua_upload.type'],
     fields['of13.bsn_lua_upload.length'],
@@ -17109,6 +17172,27 @@ p_of.fields = {
     fields['of14.bsn_log.subtype'],
     fields['of14.bsn_log.loglevel'],
     fields['of14.bsn_log.data'],
+    fields['of14.bsn_lua_command_reply.version'],
+    fields['of14.bsn_lua_command_reply.type'],
+    fields['of14.bsn_lua_command_reply.length'],
+    fields['of14.bsn_lua_command_reply.xid'],
+    fields['of14.bsn_lua_command_reply.experimenter'],
+    fields['of14.bsn_lua_command_reply.subtype'],
+    fields['of14.bsn_lua_command_reply.data'],
+    fields['of14.bsn_lua_command_request.version'],
+    fields['of14.bsn_lua_command_request.type'],
+    fields['of14.bsn_lua_command_request.length'],
+    fields['of14.bsn_lua_command_request.xid'],
+    fields['of14.bsn_lua_command_request.experimenter'],
+    fields['of14.bsn_lua_command_request.subtype'],
+    fields['of14.bsn_lua_command_request.data'],
+    fields['of14.bsn_lua_notification.version'],
+    fields['of14.bsn_lua_notification.type'],
+    fields['of14.bsn_lua_notification.length'],
+    fields['of14.bsn_lua_notification.xid'],
+    fields['of14.bsn_lua_notification.experimenter'],
+    fields['of14.bsn_lua_notification.subtype'],
+    fields['of14.bsn_lua_notification.data'],
     fields['of14.bsn_lua_upload.version'],
     fields['of14.bsn_lua_upload.type'],
     fields['of14.bsn_lua_upload.length'],
@@ -27728,6 +27812,57 @@ function dissect_of_bsn_log_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[63] = dissect_of_bsn_log_v4
 
+-- child class of_bsn_lua_command_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_command_reply_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.subtype')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_lua_command_reply.data')
+    return 'of_bsn_lua_command_reply'
+end
+of_bsn_header_v4_dissectors[66] = dissect_of_bsn_lua_command_reply_v4
+
+-- child class of_bsn_lua_command_request
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_command_request_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_command_request.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_command_request.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_lua_command_request.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_command_request.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_command_request.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_command_request.subtype')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_lua_command_request.data')
+    return 'of_bsn_lua_command_request'
+end
+of_bsn_header_v4_dissectors[65] = dissect_of_bsn_lua_command_request_v4
+
+-- child class of_bsn_lua_notification
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_notification_v4(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_notification.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_lua_notification.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_lua_notification.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_notification.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_notification.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_lua_notification.subtype')
+    read_of_octets_t(reader, 4, subtree, 'of13.bsn_lua_notification.data')
+    return 'of_bsn_lua_notification'
+end
+of_bsn_header_v4_dissectors[67] = dissect_of_bsn_lua_notification_v4
+
 -- child class of_bsn_lua_upload
 -- Child of of_bsn_header
 function dissect_of_bsn_lua_upload_v4(reader, subtree)
@@ -34188,6 +34323,57 @@ function dissect_of_bsn_log_v5(reader, subtree)
     return 'of_bsn_log'
 end
 of_bsn_header_v5_dissectors[63] = dissect_of_bsn_log_v5
+
+-- child class of_bsn_lua_command_reply
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_command_reply_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.subtype')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_lua_command_reply.data')
+    return 'of_bsn_lua_command_reply'
+end
+of_bsn_header_v5_dissectors[66] = dissect_of_bsn_lua_command_reply_v5
+
+-- child class of_bsn_lua_command_request
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_command_request_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_command_request.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_command_request.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_lua_command_request.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_command_request.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_command_request.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_command_request.subtype')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_lua_command_request.data')
+    return 'of_bsn_lua_command_request'
+end
+of_bsn_header_v5_dissectors[65] = dissect_of_bsn_lua_command_request_v5
+
+-- child class of_bsn_lua_notification
+-- Child of of_bsn_header
+function dissect_of_bsn_lua_notification_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_notification.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_lua_notification.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_lua_notification.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_notification.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_notification.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_lua_notification.subtype')
+    read_of_octets_t(reader, 5, subtree, 'of14.bsn_lua_notification.data')
+    return 'of_bsn_lua_notification'
+end
+of_bsn_header_v5_dissectors[67] = dissect_of_bsn_lua_notification_v5
 
 -- child class of_bsn_lua_upload
 -- Child of of_bsn_header

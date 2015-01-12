@@ -745,6 +745,12 @@ void of_bsn_lacp_stats_request_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_lacp_stats_request_push_wire_types(of_object_t *obj);
 void of_bsn_log_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_log_push_wire_types(of_object_t *obj);
+void of_bsn_lua_command_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_lua_command_reply_push_wire_types(of_object_t *obj);
+void of_bsn_lua_command_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_lua_command_request_push_wire_types(of_object_t *obj);
+void of_bsn_lua_notification_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_lua_notification_push_wire_types(of_object_t *obj);
 void of_bsn_lua_upload_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_lua_upload_push_wire_types(of_object_t *obj);
 void of_bsn_port_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1287,6 +1293,9 @@ typedef of_object_t of_bsn_lacp_convergence_notif_t;
 typedef of_object_t of_bsn_lacp_stats_reply_t;
 typedef of_object_t of_bsn_lacp_stats_request_t;
 typedef of_object_t of_bsn_log_t;
+typedef of_object_t of_bsn_lua_command_reply_t;
+typedef of_object_t of_bsn_lua_command_request_t;
+typedef of_object_t of_bsn_lua_notification_t;
 typedef of_object_t of_bsn_lua_upload_t;
 typedef of_object_t of_bsn_pdu_rx_reply_t;
 typedef of_object_t of_bsn_pdu_rx_request_t;
@@ -2244,6 +2253,21 @@ extern void of_bsn_lacp_stats_request_init(
 extern of_object_t *
     of_bsn_log_new(of_version_t version);
 extern void of_bsn_log_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_lua_command_reply_new(of_version_t version);
+extern void of_bsn_lua_command_reply_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_lua_command_request_new(of_version_t version);
+extern void of_bsn_lua_command_request_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_lua_notification_new(of_version_t version);
+extern void of_bsn_lua_notification_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -5959,6 +5983,39 @@ of_bsn_lacp_stats_request_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_log_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_lua_command_reply_t
+ * @param obj An instance of type of_bsn_lua_command_reply_t
+ *
+ * \ingroup of_bsn_lua_command_reply
+ */
+static inline void
+of_bsn_lua_command_reply_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_lua_command_request_t
+ * @param obj An instance of type of_bsn_lua_command_request_t
+ *
+ * \ingroup of_bsn_lua_command_request
+ */
+static inline void
+of_bsn_lua_command_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_lua_notification_t
+ * @param obj An instance of type of_bsn_lua_notification_t
+ *
+ * \ingroup of_bsn_lua_notification
+ */
+static inline void
+of_bsn_lua_notification_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -14888,6 +14945,96 @@ extern int WARN_UNUSED_RESULT of_bsn_log_data_set(
     of_octets_t *data);
 extern void of_bsn_log_data_get(
     of_bsn_log_t *obj,
+    of_octets_t *data);
+
+/* Unified accessor functions for of_bsn_lua_command_reply */
+
+extern void of_bsn_lua_command_reply_xid_set(
+    of_bsn_lua_command_reply_t *obj,
+    uint32_t xid);
+extern void of_bsn_lua_command_reply_xid_get(
+    of_bsn_lua_command_reply_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_lua_command_reply_experimenter_set(
+    of_bsn_lua_command_reply_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_lua_command_reply_experimenter_get(
+    of_bsn_lua_command_reply_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_lua_command_reply_subtype_set(
+    of_bsn_lua_command_reply_t *obj,
+    uint32_t subtype);
+extern void of_bsn_lua_command_reply_subtype_get(
+    of_bsn_lua_command_reply_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_lua_command_reply_data_set(
+    of_bsn_lua_command_reply_t *obj,
+    of_octets_t *data);
+extern void of_bsn_lua_command_reply_data_get(
+    of_bsn_lua_command_reply_t *obj,
+    of_octets_t *data);
+
+/* Unified accessor functions for of_bsn_lua_command_request */
+
+extern void of_bsn_lua_command_request_xid_set(
+    of_bsn_lua_command_request_t *obj,
+    uint32_t xid);
+extern void of_bsn_lua_command_request_xid_get(
+    of_bsn_lua_command_request_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_lua_command_request_experimenter_set(
+    of_bsn_lua_command_request_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_lua_command_request_experimenter_get(
+    of_bsn_lua_command_request_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_lua_command_request_subtype_set(
+    of_bsn_lua_command_request_t *obj,
+    uint32_t subtype);
+extern void of_bsn_lua_command_request_subtype_get(
+    of_bsn_lua_command_request_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_lua_command_request_data_set(
+    of_bsn_lua_command_request_t *obj,
+    of_octets_t *data);
+extern void of_bsn_lua_command_request_data_get(
+    of_bsn_lua_command_request_t *obj,
+    of_octets_t *data);
+
+/* Unified accessor functions for of_bsn_lua_notification */
+
+extern void of_bsn_lua_notification_xid_set(
+    of_bsn_lua_notification_t *obj,
+    uint32_t xid);
+extern void of_bsn_lua_notification_xid_get(
+    of_bsn_lua_notification_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_lua_notification_experimenter_set(
+    of_bsn_lua_notification_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_lua_notification_experimenter_get(
+    of_bsn_lua_notification_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_lua_notification_subtype_set(
+    of_bsn_lua_notification_t *obj,
+    uint32_t subtype);
+extern void of_bsn_lua_notification_subtype_get(
+    of_bsn_lua_notification_t *obj,
+    uint32_t *subtype);
+
+extern int WARN_UNUSED_RESULT of_bsn_lua_notification_data_set(
+    of_bsn_lua_notification_t *obj,
+    of_octets_t *data);
+extern void of_bsn_lua_notification_data_get(
+    of_bsn_lua_notification_t *obj,
     of_octets_t *data);
 
 /* Unified accessor functions for of_bsn_lua_upload */

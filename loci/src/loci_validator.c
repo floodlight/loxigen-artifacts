@@ -678,6 +678,9 @@ static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_entry_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_log_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_lua_command_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_lua_command_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_lua_notification_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_lua_upload_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1211,6 +1214,9 @@ static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_entry_OF_VERS
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_lacp_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_log_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_lua_command_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_lua_command_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_lua_notification_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_lua_upload_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_pdu_rx_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -17494,6 +17500,12 @@ loci_validate_of_bsn_header_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_lacp_convergence_notif_OF_VERSION_1_3(data, len, out_len);
     case 0x3f:
         return loci_validate_of_bsn_log_OF_VERSION_1_3(data, len, out_len);
+    case 0x42:
+        return loci_validate_of_bsn_lua_command_reply_OF_VERSION_1_3(data, len, out_len);
+    case 0x41:
+        return loci_validate_of_bsn_lua_command_request_OF_VERSION_1_3(data, len, out_len);
+    case 0x43:
+        return loci_validate_of_bsn_lua_notification_OF_VERSION_1_3(data, len, out_len);
     case 0x40:
         return loci_validate_of_bsn_lua_upload_OF_VERSION_1_3(data, len, out_len);
     case 0x22:
@@ -19137,6 +19149,75 @@ loci_validate_of_bsn_log_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 17) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_lua_command_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_lua_command_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_lua_notification_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
         return -1;
     }
 
@@ -30867,6 +30948,12 @@ loci_validate_of_bsn_header_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_lacp_convergence_notif_OF_VERSION_1_4(data, len, out_len);
     case 0x3f:
         return loci_validate_of_bsn_log_OF_VERSION_1_4(data, len, out_len);
+    case 0x42:
+        return loci_validate_of_bsn_lua_command_reply_OF_VERSION_1_4(data, len, out_len);
+    case 0x41:
+        return loci_validate_of_bsn_lua_command_request_OF_VERSION_1_4(data, len, out_len);
+    case 0x43:
+        return loci_validate_of_bsn_lua_notification_OF_VERSION_1_4(data, len, out_len);
     case 0x40:
         return loci_validate_of_bsn_lua_upload_OF_VERSION_1_4(data, len, out_len);
     case 0x22:
@@ -32508,6 +32595,75 @@ loci_validate_of_bsn_log_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 17) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_lua_command_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_lua_command_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_lua_notification_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
         return -1;
     }
 

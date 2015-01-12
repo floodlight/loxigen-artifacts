@@ -955,6 +955,36 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFBsnLogVer14.Builder().setXid(nextXid());
     }
 
+    public OFBsnLuaCommandReply.Builder buildBsnLuaCommandReply() {
+        return new OFBsnLuaCommandReplyVer14.Builder().setXid(nextXid());
+    }
+    public OFBsnLuaCommandReply bsnLuaCommandReply(byte[] data) {
+        return new OFBsnLuaCommandReplyVer14(
+                nextXid(),
+                      data
+                    );
+    }
+
+    public OFBsnLuaCommandRequest.Builder buildBsnLuaCommandRequest() {
+        return new OFBsnLuaCommandRequestVer14.Builder().setXid(nextXid());
+    }
+    public OFBsnLuaCommandRequest bsnLuaCommandRequest(byte[] data) {
+        return new OFBsnLuaCommandRequestVer14(
+                nextXid(),
+                      data
+                    );
+    }
+
+    public OFBsnLuaNotification.Builder buildBsnLuaNotification() {
+        return new OFBsnLuaNotificationVer14.Builder().setXid(nextXid());
+    }
+    public OFBsnLuaNotification bsnLuaNotification(byte[] data) {
+        return new OFBsnLuaNotificationVer14(
+                nextXid(),
+                      data
+                    );
+    }
+
     public OFBsnLuaUpload.Builder buildBsnLuaUpload() {
         return new OFBsnLuaUploadVer14.Builder().setXid(nextXid());
     }

@@ -19925,6 +19925,120 @@ test_of_bsn_log_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_lua_command_reply_OF_VERSION_1_3(void)
+{
+    of_bsn_lua_command_reply_t *obj;
+    obj = of_bsn_lua_command_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REPLY);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_LUA_COMMAND_REPLY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_lua_command_reply_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_lua_command_reply_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_lua_command_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_command_request_OF_VERSION_1_3(void)
+{
+    of_bsn_lua_command_request_t *obj;
+    obj = of_bsn_lua_command_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REQUEST);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_LUA_COMMAND_REQUEST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_lua_command_request_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_lua_command_request_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_lua_command_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_notification_OF_VERSION_1_3(void)
+{
+    of_bsn_lua_notification_t *obj;
+    obj = of_bsn_lua_notification_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_NOTIFICATION);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_LUA_NOTIFICATION);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_lua_notification_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_lua_notification_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_lua_notification_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_lua_upload_OF_VERSION_1_3(void)
 {
     of_bsn_lua_upload_t *obj;
@@ -38203,6 +38317,120 @@ test_of_bsn_log_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_lua_command_reply_OF_VERSION_1_4(void)
+{
+    of_bsn_lua_command_reply_t *obj;
+    obj = of_bsn_lua_command_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REPLY);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_LUA_COMMAND_REPLY);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_lua_command_reply_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_lua_command_reply_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_lua_command_reply_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_command_request_OF_VERSION_1_4(void)
+{
+    of_bsn_lua_command_request_t *obj;
+    obj = of_bsn_lua_command_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REQUEST);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_LUA_COMMAND_REQUEST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_lua_command_request_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_lua_command_request_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_lua_command_request_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_notification_OF_VERSION_1_4(void)
+{
+    of_bsn_lua_notification_t *obj;
+    obj = of_bsn_lua_notification_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_NOTIFICATION);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_LUA_NOTIFICATION);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_lua_notification_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_lua_notification_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_lua_notification_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_lua_upload_OF_VERSION_1_4(void)
 {
     of_bsn_lua_upload_t *obj;
@@ -55753,6 +55981,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_lacp_stats_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lacp_stats_request_OF_VERSION_1_3);
     RUN_TEST(of_bsn_log_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_lua_command_reply_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_lua_command_request_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_lua_notification_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lua_upload_OF_VERSION_1_3);
     RUN_TEST(of_bsn_pdu_rx_reply_OF_VERSION_1_3);
     RUN_TEST(of_bsn_pdu_rx_request_OF_VERSION_1_3);
@@ -56234,6 +56465,9 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_lacp_stats_reply_OF_VERSION_1_4);
     RUN_TEST(of_bsn_lacp_stats_request_OF_VERSION_1_4);
     RUN_TEST(of_bsn_log_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lua_command_reply_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lua_command_request_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lua_notification_OF_VERSION_1_4);
     RUN_TEST(of_bsn_lua_upload_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_reply_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_request_OF_VERSION_1_4);

@@ -12612,6 +12612,135 @@ test_of_bsn_log_create_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_lua_command_reply_create_OF_VERSION_1_3(void)
+{
+    of_bsn_lua_command_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lua_command_reply_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LUA_COMMAND_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lua_command_reply_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lua_command_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lua_command_reply_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lua_command_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_command_request_create_OF_VERSION_1_3(void)
+{
+    of_bsn_lua_command_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lua_command_request_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LUA_COMMAND_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lua_command_request_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lua_command_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lua_command_request_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lua_command_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_notification_create_OF_VERSION_1_3(void)
+{
+    of_bsn_lua_notification_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lua_notification_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_NOTIFICATION);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LUA_NOTIFICATION);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lua_notification_OF_VERSION_1_3_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lua_notification_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lua_notification_OF_VERSION_1_3_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lua_notification_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_lua_upload_create_OF_VERSION_1_3(void)
 {
     of_bsn_lua_upload_t *obj;
@@ -19449,6 +19578,135 @@ test_of_bsn_log_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_lua_command_reply_create_OF_VERSION_1_4(void)
+{
+    of_bsn_lua_command_reply_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lua_command_reply_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REPLY);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LUA_COMMAND_REPLY);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lua_command_reply_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lua_command_reply_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lua_command_reply_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lua_command_reply_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_command_request_create_OF_VERSION_1_4(void)
+{
+    of_bsn_lua_command_request_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lua_command_request_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_COMMAND_REQUEST);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LUA_COMMAND_REQUEST);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lua_command_request_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lua_command_request_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lua_command_request_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lua_command_request_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_lua_notification_create_OF_VERSION_1_4(void)
+{
+    of_bsn_lua_notification_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_lua_notification_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_LUA_NOTIFICATION);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_LUA_NOTIFICATION);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_lua_notification_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_lua_notification_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_lua_notification_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_lua_notification_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_lua_upload_create_OF_VERSION_1_4(void)
 {
     of_bsn_lua_upload_t *obj;
@@ -24259,6 +24517,9 @@ run_message_tests(void)
     RUN_TEST(of_bsn_lacp_stats_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lacp_stats_request_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_log_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_lua_command_reply_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_lua_command_request_create_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_lua_notification_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_lua_upload_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_pdu_rx_reply_create_OF_VERSION_1_3);
     RUN_TEST(of_bsn_pdu_rx_request_create_OF_VERSION_1_3);
@@ -24418,6 +24679,9 @@ run_message_tests(void)
     RUN_TEST(of_bsn_lacp_stats_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_lacp_stats_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_log_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lua_command_reply_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lua_command_request_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_lua_notification_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_lua_upload_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_pdu_rx_request_create_OF_VERSION_1_4);

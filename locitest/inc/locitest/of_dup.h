@@ -291,6 +291,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_lua_command_reply_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_command_request_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_notification_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_lua_upload_dup(
         of_object_t *src);
 
@@ -4959,6 +4971,18 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_lua_command_reply_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_command_request_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_notification_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_lua_upload_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7100,6 +7124,18 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_log_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_command_reply_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_command_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_lua_notification_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

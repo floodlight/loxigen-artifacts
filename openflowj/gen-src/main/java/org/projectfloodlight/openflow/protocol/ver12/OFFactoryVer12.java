@@ -909,6 +909,27 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnLog not supported in version 1.2");
     }
 
+    public OFBsnLuaCommandReply.Builder buildBsnLuaCommandReply() {
+        throw new UnsupportedOperationException("OFBsnLuaCommandReply not supported in version 1.2");
+    }
+    public OFBsnLuaCommandReply bsnLuaCommandReply(byte[] data) {
+        throw new UnsupportedOperationException("OFBsnLuaCommandReply not supported in version 1.2");
+    }
+
+    public OFBsnLuaCommandRequest.Builder buildBsnLuaCommandRequest() {
+        throw new UnsupportedOperationException("OFBsnLuaCommandRequest not supported in version 1.2");
+    }
+    public OFBsnLuaCommandRequest bsnLuaCommandRequest(byte[] data) {
+        throw new UnsupportedOperationException("OFBsnLuaCommandRequest not supported in version 1.2");
+    }
+
+    public OFBsnLuaNotification.Builder buildBsnLuaNotification() {
+        throw new UnsupportedOperationException("OFBsnLuaNotification not supported in version 1.2");
+    }
+    public OFBsnLuaNotification bsnLuaNotification(byte[] data) {
+        throw new UnsupportedOperationException("OFBsnLuaNotification not supported in version 1.2");
+    }
+
     public OFBsnLuaUpload.Builder buildBsnLuaUpload() {
         throw new UnsupportedOperationException("OFBsnLuaUpload not supported in version 1.2");
     }

@@ -1798,6 +1798,75 @@ typedef struct of_bsn_lacp_stats_request_s of_bsn_lacp_stats_request_t;
 typedef struct of_bsn_log_s of_bsn_log_t;
 
 /**
+ * Structure for of_bsn_lua_command_reply object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_command_reply_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_command_reply_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_command_reply_uint32_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_lua_command_reply_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_lua_command_reply_s of_bsn_lua_command_reply_t;
+
+/**
+ * Structure for of_bsn_lua_command_request object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_command_request_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_command_request_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_command_request_uint32_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_lua_command_request_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_lua_command_request_s of_bsn_lua_command_request_t;
+
+/**
+ * Structure for of_bsn_lua_notification object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_notification_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_notification_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_lua_notification_uint32_get_f and _set_f.
+ *
+ * @param data_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for data, a variable of type of_octets.  Functions
+ *   are of type of_bsn_lua_notification_of_octets_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_lua_notification_s of_bsn_lua_notification_t;
+
+/**
  * Structure for of_bsn_lua_upload object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

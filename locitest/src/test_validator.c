@@ -3055,6 +3055,33 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_lua_notification_t *obj = of_bsn_lua_notification_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_lua_notification_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_lua_notification_delete(obj);
+    }
+
+    {
+        of_bsn_lua_command_request_t *obj = of_bsn_lua_command_request_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_lua_command_request_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_lua_command_request_delete(obj);
+    }
+
+    {
+        of_bsn_lua_command_reply_t *obj = of_bsn_lua_command_reply_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_lua_command_reply_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_lua_command_reply_delete(obj);
+    }
+
+    {
         of_bsn_log_t *obj = of_bsn_log_new(OF_VERSION_1_3);
         of_message_t msg;
         of_bsn_log_OF_VERSION_1_3_populate(obj, 1);
@@ -4537,6 +4564,33 @@ test_validate_all(void)
         msg = OF_OBJECT_TO_MESSAGE(obj);
         TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
         of_bsn_lua_upload_delete(obj);
+    }
+
+    {
+        of_bsn_lua_notification_t *obj = of_bsn_lua_notification_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_lua_notification_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_lua_notification_delete(obj);
+    }
+
+    {
+        of_bsn_lua_command_request_t *obj = of_bsn_lua_command_request_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_lua_command_request_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_lua_command_request_delete(obj);
+    }
+
+    {
+        of_bsn_lua_command_reply_t *obj = of_bsn_lua_command_reply_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_lua_command_reply_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_lua_command_reply_delete(obj);
     }
 
     {

@@ -5126,6 +5126,33 @@ extern int of_bsn_log_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_log_OF_VERSION_1_3_check_scalars(
     of_bsn_log_t *obj, int value);
 
+extern int of_bsn_lua_command_reply_OF_VERSION_1_3_populate(
+    of_bsn_lua_command_reply_t *obj, int value);
+extern int of_bsn_lua_command_reply_OF_VERSION_1_3_check(
+    of_bsn_lua_command_reply_t *obj, int value);
+extern int of_bsn_lua_command_reply_OF_VERSION_1_3_populate_scalars(
+    of_bsn_lua_command_reply_t *obj, int value);
+extern int of_bsn_lua_command_reply_OF_VERSION_1_3_check_scalars(
+    of_bsn_lua_command_reply_t *obj, int value);
+
+extern int of_bsn_lua_command_request_OF_VERSION_1_3_populate(
+    of_bsn_lua_command_request_t *obj, int value);
+extern int of_bsn_lua_command_request_OF_VERSION_1_3_check(
+    of_bsn_lua_command_request_t *obj, int value);
+extern int of_bsn_lua_command_request_OF_VERSION_1_3_populate_scalars(
+    of_bsn_lua_command_request_t *obj, int value);
+extern int of_bsn_lua_command_request_OF_VERSION_1_3_check_scalars(
+    of_bsn_lua_command_request_t *obj, int value);
+
+extern int of_bsn_lua_notification_OF_VERSION_1_3_populate(
+    of_bsn_lua_notification_t *obj, int value);
+extern int of_bsn_lua_notification_OF_VERSION_1_3_check(
+    of_bsn_lua_notification_t *obj, int value);
+extern int of_bsn_lua_notification_OF_VERSION_1_3_populate_scalars(
+    of_bsn_lua_notification_t *obj, int value);
+extern int of_bsn_lua_notification_OF_VERSION_1_3_check_scalars(
+    of_bsn_lua_notification_t *obj, int value);
+
 extern int of_bsn_lua_upload_OF_VERSION_1_3_populate(
     of_bsn_lua_upload_t *obj, int value);
 extern int of_bsn_lua_upload_OF_VERSION_1_3_check(
@@ -9841,6 +9868,33 @@ extern int of_bsn_log_OF_VERSION_1_4_populate_scalars(
     of_bsn_log_t *obj, int value);
 extern int of_bsn_log_OF_VERSION_1_4_check_scalars(
     of_bsn_log_t *obj, int value);
+
+extern int of_bsn_lua_command_reply_OF_VERSION_1_4_populate(
+    of_bsn_lua_command_reply_t *obj, int value);
+extern int of_bsn_lua_command_reply_OF_VERSION_1_4_check(
+    of_bsn_lua_command_reply_t *obj, int value);
+extern int of_bsn_lua_command_reply_OF_VERSION_1_4_populate_scalars(
+    of_bsn_lua_command_reply_t *obj, int value);
+extern int of_bsn_lua_command_reply_OF_VERSION_1_4_check_scalars(
+    of_bsn_lua_command_reply_t *obj, int value);
+
+extern int of_bsn_lua_command_request_OF_VERSION_1_4_populate(
+    of_bsn_lua_command_request_t *obj, int value);
+extern int of_bsn_lua_command_request_OF_VERSION_1_4_check(
+    of_bsn_lua_command_request_t *obj, int value);
+extern int of_bsn_lua_command_request_OF_VERSION_1_4_populate_scalars(
+    of_bsn_lua_command_request_t *obj, int value);
+extern int of_bsn_lua_command_request_OF_VERSION_1_4_check_scalars(
+    of_bsn_lua_command_request_t *obj, int value);
+
+extern int of_bsn_lua_notification_OF_VERSION_1_4_populate(
+    of_bsn_lua_notification_t *obj, int value);
+extern int of_bsn_lua_notification_OF_VERSION_1_4_check(
+    of_bsn_lua_notification_t *obj, int value);
+extern int of_bsn_lua_notification_OF_VERSION_1_4_populate_scalars(
+    of_bsn_lua_notification_t *obj, int value);
+extern int of_bsn_lua_notification_OF_VERSION_1_4_check_scalars(
+    of_bsn_lua_notification_t *obj, int value);
 
 extern int of_bsn_lua_upload_OF_VERSION_1_4_populate(
     of_bsn_lua_upload_t *obj, int value);

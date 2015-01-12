@@ -11488,6 +11488,15 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x40:
             *id = OF_BSN_LUA_UPLOAD;
             break;
+        case 0x41:
+            *id = OF_BSN_LUA_COMMAND_REQUEST;
+            break;
+        case 0x42:
+            *id = OF_BSN_LUA_COMMAND_REPLY;
+            break;
+        case 0x43:
+            *id = OF_BSN_LUA_NOTIFICATION;
+            break;
         default:
             *id = OF_BSN_HEADER;
             break;
@@ -11643,6 +11652,15 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x40:
             *id = OF_BSN_LUA_UPLOAD;
+            break;
+        case 0x41:
+            *id = OF_BSN_LUA_COMMAND_REQUEST;
+            break;
+        case 0x42:
+            *id = OF_BSN_LUA_COMMAND_REPLY;
+            break;
+        case 0x43:
+            *id = OF_BSN_LUA_NOTIFICATION;
             break;
         default:
             *id = OF_BSN_HEADER;

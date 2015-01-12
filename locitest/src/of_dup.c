@@ -20914,6 +20914,111 @@ of_bsn_log_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_lua_command_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_lua_command_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_lua_command_reply_t *
+of_bsn_lua_command_reply_OF_VERSION_1_3_dup(
+    of_bsn_lua_command_reply_t *src)
+{
+    of_bsn_lua_command_reply_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_lua_command_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_lua_command_reply_xid_get(src, &val32);
+    of_bsn_lua_command_reply_xid_set(dst, val32);
+
+    of_bsn_lua_command_reply_experimenter_get(src, &val32);
+    of_bsn_lua_command_reply_experimenter_set(dst, val32);
+
+    of_bsn_lua_command_reply_subtype_get(src, &val32);
+    of_bsn_lua_command_reply_subtype_set(dst, val32);
+
+    of_bsn_lua_command_reply_data_get(src, &octets);
+    of_bsn_lua_command_reply_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_lua_command_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_lua_command_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_lua_command_request_t *
+of_bsn_lua_command_request_OF_VERSION_1_3_dup(
+    of_bsn_lua_command_request_t *src)
+{
+    of_bsn_lua_command_request_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_lua_command_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_lua_command_request_xid_get(src, &val32);
+    of_bsn_lua_command_request_xid_set(dst, val32);
+
+    of_bsn_lua_command_request_experimenter_get(src, &val32);
+    of_bsn_lua_command_request_experimenter_set(dst, val32);
+
+    of_bsn_lua_command_request_subtype_get(src, &val32);
+    of_bsn_lua_command_request_subtype_set(dst, val32);
+
+    of_bsn_lua_command_request_data_get(src, &octets);
+    of_bsn_lua_command_request_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_lua_notification
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_lua_notification.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_lua_notification_t *
+of_bsn_lua_notification_OF_VERSION_1_3_dup(
+    of_bsn_lua_notification_t *src)
+{
+    of_bsn_lua_notification_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_lua_notification_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_lua_notification_xid_get(src, &val32);
+    of_bsn_lua_notification_xid_set(dst, val32);
+
+    of_bsn_lua_notification_experimenter_get(src, &val32);
+    of_bsn_lua_notification_experimenter_set(dst, val32);
+
+    of_bsn_lua_notification_subtype_get(src, &val32);
+    of_bsn_lua_notification_subtype_set(dst, val32);
+
+    of_bsn_lua_notification_data_get(src, &octets);
+    of_bsn_lua_notification_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_lua_upload
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -39109,6 +39214,111 @@ of_bsn_log_OF_VERSION_1_4_dup(
 
     of_bsn_log_data_get(src, &octets);
     of_bsn_log_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_lua_command_reply
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_lua_command_reply.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_lua_command_reply_t *
+of_bsn_lua_command_reply_OF_VERSION_1_4_dup(
+    of_bsn_lua_command_reply_t *src)
+{
+    of_bsn_lua_command_reply_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_lua_command_reply_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_lua_command_reply_xid_get(src, &val32);
+    of_bsn_lua_command_reply_xid_set(dst, val32);
+
+    of_bsn_lua_command_reply_experimenter_get(src, &val32);
+    of_bsn_lua_command_reply_experimenter_set(dst, val32);
+
+    of_bsn_lua_command_reply_subtype_get(src, &val32);
+    of_bsn_lua_command_reply_subtype_set(dst, val32);
+
+    of_bsn_lua_command_reply_data_get(src, &octets);
+    of_bsn_lua_command_reply_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_lua_command_request
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_lua_command_request.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_lua_command_request_t *
+of_bsn_lua_command_request_OF_VERSION_1_4_dup(
+    of_bsn_lua_command_request_t *src)
+{
+    of_bsn_lua_command_request_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_lua_command_request_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_lua_command_request_xid_get(src, &val32);
+    of_bsn_lua_command_request_xid_set(dst, val32);
+
+    of_bsn_lua_command_request_experimenter_get(src, &val32);
+    of_bsn_lua_command_request_experimenter_set(dst, val32);
+
+    of_bsn_lua_command_request_subtype_get(src, &val32);
+    of_bsn_lua_command_request_subtype_set(dst, val32);
+
+    of_bsn_lua_command_request_data_get(src, &octets);
+    of_bsn_lua_command_request_data_set(dst, &octets);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_lua_notification
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_lua_notification.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_lua_notification_t *
+of_bsn_lua_notification_OF_VERSION_1_4_dup(
+    of_bsn_lua_notification_t *src)
+{
+    of_bsn_lua_notification_t *dst;
+    uint32_t val32;
+    of_octets_t octets;
+
+    if ((dst = of_bsn_lua_notification_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_lua_notification_xid_get(src, &val32);
+    of_bsn_lua_notification_xid_set(dst, val32);
+
+    of_bsn_lua_notification_experimenter_get(src, &val32);
+    of_bsn_lua_notification_experimenter_set(dst, val32);
+
+    of_bsn_lua_notification_subtype_get(src, &val32);
+    of_bsn_lua_notification_subtype_set(dst, val32);
+
+    of_bsn_lua_notification_data_get(src, &octets);
+    of_bsn_lua_notification_data_set(dst, &octets);
 
     return dst;
 }
@@ -57739,6 +57949,57 @@ of_bsn_log_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_log_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_lua_command_reply_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_lua_command_reply_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_lua_command_reply_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_lua_command_request_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_lua_command_request_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_lua_command_request_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_lua_notification_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_lua_notification_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_lua_notification_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

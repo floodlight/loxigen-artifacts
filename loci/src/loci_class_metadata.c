@@ -2235,6 +2235,24 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_bsn_log_push_wire_types,
     },
+    [OF_BSN_LUA_COMMAND_REPLY] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_lua_command_reply_push_wire_types,
+    },
+    [OF_BSN_LUA_COMMAND_REQUEST] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_lua_command_request_push_wire_types,
+    },
+    [OF_BSN_LUA_NOTIFICATION] = {
+        .wire_length_get=of_object_message_wire_length_get,
+        .wire_length_set=of_object_message_wire_length_set,
+        .wire_type_get=NULL,
+        .wire_type_set=of_bsn_lua_notification_push_wire_types,
+    },
     [OF_BSN_LUA_UPLOAD] = {
         .wire_length_get=of_object_message_wire_length_get,
         .wire_length_set=of_object_message_wire_length_set,
