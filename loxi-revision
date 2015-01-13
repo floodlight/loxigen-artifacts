@@ -1,1 +1,1 @@
-346d40d1b5b64fd57a3d13a402da989e5927438f Merge into master from pull request #376: openflow_input: add more TLVs for conntrack (https://github.com/floodlight/loxigen/pull/376)
+551888298a26526816b79183114c8851d5ca509d Merge into master from pull request #375: fix to support ports > 32768 (https://github.com/floodlight/loxigen/pull/375)
