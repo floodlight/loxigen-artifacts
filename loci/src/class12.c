@@ -4089,6 +4089,24 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x40:
             *id = OF_BSN_TLV_BUCKET;
             break;
+        case 0x41:
+            *id = OF_BSN_TLV_TCP_SRC;
+            break;
+        case 0x42:
+            *id = OF_BSN_TLV_TCP_DST;
+            break;
+        case 0x43:
+            *id = OF_BSN_TLV_IP_PROTO;
+            break;
+        case 0x44:
+            *id = OF_BSN_TLV_ICMP_TYPE;
+            break;
+        case 0x45:
+            *id = OF_BSN_TLV_ICMP_CODE;
+            break;
+        case 0x46:
+            *id = OF_BSN_TLV_ICMP_ID;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -4289,6 +4307,24 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x40:
             *id = OF_BSN_TLV_BUCKET;
+            break;
+        case 0x41:
+            *id = OF_BSN_TLV_TCP_SRC;
+            break;
+        case 0x42:
+            *id = OF_BSN_TLV_TCP_DST;
+            break;
+        case 0x43:
+            *id = OF_BSN_TLV_IP_PROTO;
+            break;
+        case 0x44:
+            *id = OF_BSN_TLV_ICMP_TYPE;
+            break;
+        case 0x45:
+            *id = OF_BSN_TLV_ICMP_CODE;
+            break;
+        case 0x46:
+            *id = OF_BSN_TLV_ICMP_ID;
             break;
         default:
             *id = OF_BSN_TLV;
@@ -8547,13 +8583,13 @@ of_bsn_tlv_header_size_value_set(
 #include "loci_int.h"
 
 void
-of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj)
+of_bsn_tlv_icmp_code_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x7); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x45); /* type */
         break;
     default:
         UNREACHABLE();
@@ -8563,11 +8599,11 @@ of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_idle_notification of_bsn_tlv_idle_notification
+ * \defgroup of_bsn_tlv_icmp_code of_bsn_tlv_icmp_code
  */
 
 /**
- * Create a new of_bsn_tlv_idle_notification object
+ * Create a new of_bsn_tlv_icmp_code object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -8575,30 +8611,30 @@ of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_idle_notification
+ * \ingroup of_bsn_tlv_icmp_code
  */
 
 of_object_t *
-of_bsn_tlv_idle_notification_new(of_version_t version)
+of_bsn_tlv_icmp_code_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_IDLE_NOTIFICATION];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ICMP_CODE];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_idle_notification_init(obj, version, bytes, 0);
-    of_bsn_tlv_idle_notification_push_wire_types(obj);
+    of_bsn_tlv_icmp_code_init(obj, version, bytes, 0);
+    of_bsn_tlv_icmp_code_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_idle_notification.
+ * Initialize an object of type of_bsn_tlv_icmp_code.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -8615,19 +8651,19 @@ of_bsn_tlv_idle_notification_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_idle_notification_init(of_object_t *obj,
+of_bsn_tlv_icmp_code_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_IDLE_NOTIFICATION] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ICMP_CODE] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_IDLE_NOTIFICATION];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ICMP_CODE];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_IDLE_NOTIFICATION;
+    obj->object_id = OF_BSN_TLV_ICMP_CODE;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -8636,6 +8672,86 @@ of_bsn_tlv_idle_notification_init(of_object_t *obj,
         tot_bytes = bytes + obj->obj_offset;
         of_wire_buffer_grow(obj->wbuf, tot_bytes);
     }
+}
+
+/**
+ * Get value from an object of type of_bsn_tlv_icmp_code.
+ * @param obj Pointer to an object of type of_bsn_tlv_icmp_code.
+ * @param value Pointer to the child object of type
+ * uint8_t to be filled out.
+ *
+ */
+void
+of_bsn_tlv_icmp_code_value_get(
+    of_bsn_tlv_icmp_code_t *obj,
+    uint8_t *value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ICMP_CODE);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u8_get(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
+}
+
+/**
+ * Set value in an object of type of_bsn_tlv_icmp_code.
+ * @param obj Pointer to an object of type of_bsn_tlv_icmp_code.
+ * @param value The value to write into the object
+ */
+void
+of_bsn_tlv_icmp_code_value_set(
+    of_bsn_tlv_icmp_code_t *obj,
+    uint8_t value)
+{
+    of_wire_buffer_t *wbuf;
+    int offset = 0; /* Offset of value relative to the start obj */
+    int abs_offset; /* Offset of value relative to start of wbuf */
+    of_version_t ver;
+
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ICMP_CODE);
+    ver = obj->version;
+    wbuf = OF_OBJECT_TO_WBUF(obj);
+    LOCI_ASSERT(wbuf != NULL);
+
+    /* By version, determine offset and current length (where needed) */
+    switch (ver) {
+    case OF_VERSION_1_3:
+    case OF_VERSION_1_4:
+        offset = 4;
+        break;
+    default:
+        LOCI_ASSERT(0);
+    }
+
+    abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
+    LOCI_ASSERT(abs_offset >= 0);
+    of_wire_buffer_u8_set(wbuf, abs_offset, value);
+
+    OF_LENGTH_CHECK_ASSERT(obj);
+
+    return ;
 }
 /* Copyright (c) 2008 The Board of Trustees of The Leland Stanford Junior University */
 /* Copyright (c) 2011, 2012 Open Networking Foundation */
@@ -8669,13 +8785,13 @@ of_bsn_tlv_idle_notification_init(of_object_t *obj,
 #include "loci_int.h"
 
 void
-of_bsn_tlv_idle_time_push_wire_types(of_object_t *obj)
+of_bsn_tlv_icmp_id_push_wire_types(of_object_t *obj)
 {
     unsigned char *buf = OF_OBJECT_BUFFER_INDEX(obj, 0);
     switch (obj->version) {
     case OF_VERSION_1_3:
     case OF_VERSION_1_4:
-        *(uint16_t *)(buf + 0) = U16_HTON(0x5); /* type */
+        *(uint16_t *)(buf + 0) = U16_HTON(0x46); /* type */
         break;
     default:
         UNREACHABLE();
@@ -8685,11 +8801,11 @@ of_bsn_tlv_idle_time_push_wire_types(of_object_t *obj)
 
 
 /**
- * \defgroup of_bsn_tlv_idle_time of_bsn_tlv_idle_time
+ * \defgroup of_bsn_tlv_icmp_id of_bsn_tlv_icmp_id
  */
 
 /**
- * Create a new of_bsn_tlv_idle_time object
+ * Create a new of_bsn_tlv_icmp_id object
  *
  * @param version The wire version to use for the object
  * @return Pointer to the newly create object or NULL on error
@@ -8697,30 +8813,30 @@ of_bsn_tlv_idle_time_push_wire_types(of_object_t *obj)
  * Initializes the new object with it's default fixed length associating
  * a new underlying wire buffer.
  *
- * \ingroup of_bsn_tlv_idle_time
+ * \ingroup of_bsn_tlv_icmp_id
  */
 
 of_object_t *
-of_bsn_tlv_idle_time_new(of_version_t version)
+of_bsn_tlv_icmp_id_new(of_version_t version)
 {
     of_object_t *obj;
     int bytes;
 
-    bytes = of_object_fixed_len[version][OF_BSN_TLV_IDLE_TIME];
+    bytes = of_object_fixed_len[version][OF_BSN_TLV_ICMP_ID];
 
     if ((obj = of_object_new(bytes)) == NULL) {
         return NULL;
     }
 
-    of_bsn_tlv_idle_time_init(obj, version, bytes, 0);
-    of_bsn_tlv_idle_time_push_wire_types(obj);
+    of_bsn_tlv_icmp_id_init(obj, version, bytes, 0);
+    of_bsn_tlv_icmp_id_push_wire_types(obj);
     of_tlv16_wire_length_set(obj, obj->length);
 
     return obj;
 }
 
 /**
- * Initialize an object of type of_bsn_tlv_idle_time.
+ * Initialize an object of type of_bsn_tlv_icmp_id.
  *
  * @param obj Pointer to the object to initialize
  * @param version The wire version to use for the object
@@ -8737,19 +8853,19 @@ of_bsn_tlv_idle_time_new(of_version_t version)
  */
 
 void
-of_bsn_tlv_idle_time_init(of_object_t *obj,
+of_bsn_tlv_icmp_id_init(of_object_t *obj,
     of_version_t version, int bytes, int clean_wire)
 {
-    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_IDLE_TIME] >= 0);
+    LOCI_ASSERT(of_object_fixed_len[version][OF_BSN_TLV_ICMP_ID] >= 0);
     if (clean_wire) {
         MEMSET(obj, 0, sizeof(*obj));
     }
     if (bytes < 0) {
-        bytes = of_object_fixed_len[version][OF_BSN_TLV_IDLE_TIME];
+        bytes = of_object_fixed_len[version][OF_BSN_TLV_ICMP_ID];
     }
     obj->version = version;
     obj->length = bytes;
-    obj->object_id = OF_BSN_TLV_IDLE_TIME;
+    obj->object_id = OF_BSN_TLV_ICMP_ID;
 
     /* Grow the wire buffer */
     if (obj->wbuf != NULL) {
@@ -8761,23 +8877,23 @@ of_bsn_tlv_idle_time_init(of_object_t *obj,
 }
 
 /**
- * Get value from an object of type of_bsn_tlv_idle_time.
- * @param obj Pointer to an object of type of_bsn_tlv_idle_time.
+ * Get value from an object of type of_bsn_tlv_icmp_id.
+ * @param obj Pointer to an object of type of_bsn_tlv_icmp_id.
  * @param value Pointer to the child object of type
- * uint64_t to be filled out.
+ * uint16_t to be filled out.
  *
  */
 void
-of_bsn_tlv_idle_time_value_get(
-    of_bsn_tlv_idle_time_t *obj,
-    uint64_t *value)
+of_bsn_tlv_icmp_id_value_get(
+    of_bsn_tlv_icmp_id_t *obj,
+    uint16_t *value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_IDLE_TIME);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ICMP_ID);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8794,7 +8910,7 @@ of_bsn_tlv_idle_time_value_get(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u64_get(wbuf, abs_offset, value);
+    of_wire_buffer_u16_get(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 
@@ -8802,21 +8918,21 @@ of_bsn_tlv_idle_time_value_get(
 }
 
 /**
- * Set value in an object of type of_bsn_tlv_idle_time.
- * @param obj Pointer to an object of type of_bsn_tlv_idle_time.
+ * Set value in an object of type of_bsn_tlv_icmp_id.
+ * @param obj Pointer to an object of type of_bsn_tlv_icmp_id.
  * @param value The value to write into the object
  */
 void
-of_bsn_tlv_idle_time_value_set(
-    of_bsn_tlv_idle_time_t *obj,
-    uint64_t value)
+of_bsn_tlv_icmp_id_value_set(
+    of_bsn_tlv_icmp_id_t *obj,
+    uint16_t value)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
     int abs_offset; /* Offset of value relative to start of wbuf */
     of_version_t ver;
 
-    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_IDLE_TIME);
+    LOCI_ASSERT(obj->object_id == OF_BSN_TLV_ICMP_ID);
     ver = obj->version;
     wbuf = OF_OBJECT_TO_WBUF(obj);
     LOCI_ASSERT(wbuf != NULL);
@@ -8833,7 +8949,7 @@ of_bsn_tlv_idle_time_value_set(
 
     abs_offset = OF_OBJECT_ABSOLUTE_OFFSET(obj, offset);
     LOCI_ASSERT(abs_offset >= 0);
-    of_wire_buffer_u64_set(wbuf, abs_offset, value);
+    of_wire_buffer_u16_set(wbuf, abs_offset, value);
 
     OF_LENGTH_CHECK_ASSERT(obj);
 

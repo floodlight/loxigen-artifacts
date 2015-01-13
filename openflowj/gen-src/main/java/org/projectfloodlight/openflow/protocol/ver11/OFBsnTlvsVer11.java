@@ -173,6 +173,27 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvHeaderSize not supported in version 1.1");
     }
 
+    public OFBsnTlvIcmpCode.Builder buildIcmpCode() {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpCode not supported in version 1.1");
+    }
+    public OFBsnTlvIcmpCode icmpCode(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpCode not supported in version 1.1");
+    }
+
+    public OFBsnTlvIcmpId.Builder buildIcmpId() {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpId not supported in version 1.1");
+    }
+    public OFBsnTlvIcmpId icmpId(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpId not supported in version 1.1");
+    }
+
+    public OFBsnTlvIcmpType.Builder buildIcmpType() {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpType not supported in version 1.1");
+    }
+    public OFBsnTlvIcmpType icmpType(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvIcmpType not supported in version 1.1");
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         throw new UnsupportedOperationException("OFBsnTlvIdleNotification not supported in version 1.1");
     }
@@ -210,6 +231,13 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvInterval interval(long value) {
         throw new UnsupportedOperationException("OFBsnTlvInterval not supported in version 1.1");
+    }
+
+    public OFBsnTlvIpProto.Builder buildIpProto() {
+        throw new UnsupportedOperationException("OFBsnTlvIpProto not supported in version 1.1");
+    }
+    public OFBsnTlvIpProto ipProto(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpProto not supported in version 1.1");
     }
 
     public OFBsnTlvIpv4.Builder buildIpv4() {
@@ -399,6 +427,20 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.1");
+    }
+
+    public OFBsnTlvTcpDst.Builder buildTcpDst() {
+        throw new UnsupportedOperationException("OFBsnTlvTcpDst not supported in version 1.1");
+    }
+    public OFBsnTlvTcpDst tcpDst(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvTcpDst not supported in version 1.1");
+    }
+
+    public OFBsnTlvTcpSrc.Builder buildTcpSrc() {
+        throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.1");
+    }
+    public OFBsnTlvTcpSrc tcpSrc(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvTcpSrc not supported in version 1.1");
     }
 
     public OFBsnTlvTxBytes.Builder buildTxBytes() {

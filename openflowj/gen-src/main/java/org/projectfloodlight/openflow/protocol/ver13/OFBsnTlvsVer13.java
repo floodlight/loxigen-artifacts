@@ -213,6 +213,33 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIcmpCode.Builder buildIcmpCode() {
+        return new OFBsnTlvIcmpCodeVer13.Builder();
+    }
+    public OFBsnTlvIcmpCode icmpCode(short value) {
+        return new OFBsnTlvIcmpCodeVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIcmpId.Builder buildIcmpId() {
+        return new OFBsnTlvIcmpIdVer13.Builder();
+    }
+    public OFBsnTlvIcmpId icmpId(int value) {
+        return new OFBsnTlvIcmpIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIcmpType.Builder buildIcmpType() {
+        return new OFBsnTlvIcmpTypeVer13.Builder();
+    }
+    public OFBsnTlvIcmpType icmpType(short value) {
+        return new OFBsnTlvIcmpTypeVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvIdleNotification idleNotification() {
         return OFBsnTlvIdleNotificationVer13.INSTANCE;
     }
@@ -258,6 +285,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvInterval interval(long value) {
         return new OFBsnTlvIntervalVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvIpProto.Builder buildIpProto() {
+        return new OFBsnTlvIpProtoVer13.Builder();
+    }
+    public OFBsnTlvIpProto ipProto(short value) {
+        return new OFBsnTlvIpProtoVer13(
                 value
                     );
     }
@@ -502,6 +538,24 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvSubAgentId subAgentId(long value) {
         return new OFBsnTlvSubAgentIdVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvTcpDst.Builder buildTcpDst() {
+        return new OFBsnTlvTcpDstVer13.Builder();
+    }
+    public OFBsnTlvTcpDst tcpDst(int value) {
+        return new OFBsnTlvTcpDstVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvTcpSrc.Builder buildTcpSrc() {
+        return new OFBsnTlvTcpSrcVer13.Builder();
+    }
+    public OFBsnTlvTcpSrc tcpSrc(int value) {
+        return new OFBsnTlvTcpSrcVer13(
                 value
                     );
     }

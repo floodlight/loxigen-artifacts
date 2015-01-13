@@ -6460,6 +6460,39 @@ typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
 typedef struct of_bsn_tlv_header_size_s of_bsn_tlv_header_size_t;
 
 /**
+ * Structure for of_bsn_tlv_icmp_code object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_icmp_code_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_icmp_code_s of_bsn_tlv_icmp_code_t;
+
+/**
+ * Structure for of_bsn_tlv_icmp_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_icmp_id_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_icmp_id_s of_bsn_tlv_icmp_id_t;
+
+/**
+ * Structure for of_bsn_tlv_icmp_type object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_icmp_type_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_icmp_type_s of_bsn_tlv_icmp_type_t;
+
+/**
  * Structure for of_bsn_tlv_idle_notification object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6520,6 +6553,17 @@ typedef struct of_bsn_tlv_internal_mac_s of_bsn_tlv_internal_mac_t;
  *
  */
 typedef struct of_bsn_tlv_interval_s of_bsn_tlv_interval_t;
+
+/**
+ * Structure for of_bsn_tlv_ip_proto object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_ip_proto_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ip_proto_s of_bsn_tlv_ip_proto_t;
 
 /**
  * Structure for of_bsn_tlv_ipv4 object.  Get/set
@@ -6821,6 +6865,28 @@ typedef struct of_bsn_tlv_sampling_rate_s of_bsn_tlv_sampling_rate_t;
  *
  */
 typedef struct of_bsn_tlv_sub_agent_id_s of_bsn_tlv_sub_agent_id_t;
+
+/**
+ * Structure for of_bsn_tlv_tcp_dst object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_tcp_dst_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_tcp_dst_s of_bsn_tlv_tcp_dst_t;
+
+/**
+ * Structure for of_bsn_tlv_tcp_src object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_tcp_src_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_tcp_src_s of_bsn_tlv_tcp_src_t;
 
 /**
  * Structure for of_bsn_tlv_tx_bytes object.  Get/set

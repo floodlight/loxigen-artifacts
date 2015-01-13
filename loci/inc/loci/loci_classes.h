@@ -833,6 +833,12 @@ void of_bsn_tlv_external_netmask_wire_object_id_get(of_object_t *obj, of_object_
 void of_bsn_tlv_external_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_header_size_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_header_size_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_icmp_code_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_icmp_code_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_icmp_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_icmp_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_icmp_type_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_icmp_type_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_notification_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_idle_notification_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_time_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -845,6 +851,8 @@ void of_bsn_tlv_internal_mac_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_internal_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_interval_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_interval_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ip_proto_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ip_proto_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -899,6 +907,10 @@ void of_bsn_tlv_sampling_rate_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_sampling_rate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_sub_agent_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_sub_agent_id_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_tcp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_tcp_dst_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_tcp_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_tcp_src_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_tx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1539,12 +1551,16 @@ typedef of_object_t of_bsn_tlv_external_ip_t;
 typedef of_object_t of_bsn_tlv_external_mac_t;
 typedef of_object_t of_bsn_tlv_external_netmask_t;
 typedef of_object_t of_bsn_tlv_header_size_t;
+typedef of_object_t of_bsn_tlv_icmp_code_t;
+typedef of_object_t of_bsn_tlv_icmp_id_t;
+typedef of_object_t of_bsn_tlv_icmp_type_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
 typedef of_object_t of_bsn_tlv_idle_timeout_t;
 typedef of_object_t of_bsn_tlv_internal_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_internal_mac_t;
 typedef of_object_t of_bsn_tlv_interval_t;
+typedef of_object_t of_bsn_tlv_ip_proto_t;
 typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
@@ -1572,6 +1588,8 @@ typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
 typedef of_object_t of_bsn_tlv_sub_agent_id_t;
+typedef of_object_t of_bsn_tlv_tcp_dst_t;
+typedef of_object_t of_bsn_tlv_tcp_src_t;
 typedef of_object_t of_bsn_tlv_tx_bytes_t;
 typedef of_object_t of_bsn_tlv_tx_packets_t;
 typedef of_object_t of_bsn_tlv_udf_anchor_t;
@@ -3486,6 +3504,21 @@ extern void of_bsn_tlv_header_size_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_icmp_code_new(of_version_t version);
+extern void of_bsn_tlv_icmp_code_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_icmp_id_new(of_version_t version);
+extern void of_bsn_tlv_icmp_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_icmp_type_new(of_version_t version);
+extern void of_bsn_tlv_icmp_type_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_idle_notification_new(of_version_t version);
 extern void of_bsn_tlv_idle_notification_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3513,6 +3546,11 @@ extern void of_bsn_tlv_internal_mac_init(
 extern of_object_t *
     of_bsn_tlv_interval_new(of_version_t version);
 extern void of_bsn_tlv_interval_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ip_proto_new(of_version_t version);
+extern void of_bsn_tlv_ip_proto_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -3648,6 +3686,16 @@ extern void of_bsn_tlv_sampling_rate_init(
 extern of_object_t *
     of_bsn_tlv_sub_agent_id_new(of_version_t version);
 extern void of_bsn_tlv_sub_agent_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_tcp_dst_new(of_version_t version);
+extern void of_bsn_tlv_tcp_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_tcp_src_new(of_version_t version);
+extern void of_bsn_tlv_tcp_src_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -8693,6 +8741,39 @@ of_bsn_tlv_header_size_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_icmp_code_t
+ * @param obj An instance of type of_bsn_tlv_icmp_code_t
+ *
+ * \ingroup of_bsn_tlv_icmp_code
+ */
+static inline void
+of_bsn_tlv_icmp_code_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_icmp_id_t
+ * @param obj An instance of type of_bsn_tlv_icmp_id_t
+ *
+ * \ingroup of_bsn_tlv_icmp_id
+ */
+static inline void
+of_bsn_tlv_icmp_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_icmp_type_t
+ * @param obj An instance of type of_bsn_tlv_icmp_type_t
+ *
+ * \ingroup of_bsn_tlv_icmp_type
+ */
+static inline void
+of_bsn_tlv_icmp_type_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_idle_notification_t
  * @param obj An instance of type of_bsn_tlv_idle_notification_t
  *
@@ -8755,6 +8836,17 @@ of_bsn_tlv_internal_mac_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_interval_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ip_proto_t
+ * @param obj An instance of type of_bsn_tlv_ip_proto_t
+ *
+ * \ingroup of_bsn_tlv_ip_proto
+ */
+static inline void
+of_bsn_tlv_ip_proto_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -9052,6 +9144,28 @@ of_bsn_tlv_sampling_rate_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_sub_agent_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_tcp_dst_t
+ * @param obj An instance of type of_bsn_tlv_tcp_dst_t
+ *
+ * \ingroup of_bsn_tlv_tcp_dst
+ */
+static inline void
+of_bsn_tlv_tcp_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_tcp_src_t
+ * @param obj An instance of type of_bsn_tlv_tcp_src_t
+ *
+ * \ingroup of_bsn_tlv_tcp_src
+ */
+static inline void
+of_bsn_tlv_tcp_src_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -20228,6 +20342,33 @@ extern void of_bsn_tlv_header_size_value_get(
     of_bsn_tlv_header_size_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_icmp_code */
+
+extern void of_bsn_tlv_icmp_code_value_set(
+    of_bsn_tlv_icmp_code_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_icmp_code_value_get(
+    of_bsn_tlv_icmp_code_t *obj,
+    uint8_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_icmp_id */
+
+extern void of_bsn_tlv_icmp_id_value_set(
+    of_bsn_tlv_icmp_id_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_icmp_id_value_get(
+    of_bsn_tlv_icmp_id_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_icmp_type */
+
+extern void of_bsn_tlv_icmp_type_value_set(
+    of_bsn_tlv_icmp_type_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_icmp_type_value_get(
+    of_bsn_tlv_icmp_type_t *obj,
+    uint8_t *value);
+
 /* Unified accessor functions for of_bsn_tlv_idle_notification */
 
 /* Unified accessor functions for of_bsn_tlv_idle_time */
@@ -20274,6 +20415,15 @@ extern void of_bsn_tlv_interval_value_set(
 extern void of_bsn_tlv_interval_value_get(
     of_bsn_tlv_interval_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ip_proto */
+
+extern void of_bsn_tlv_ip_proto_value_set(
+    of_bsn_tlv_ip_proto_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_ip_proto_value_get(
+    of_bsn_tlv_ip_proto_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_ipv4 */
 
@@ -20526,6 +20676,24 @@ extern void of_bsn_tlv_sub_agent_id_value_set(
 extern void of_bsn_tlv_sub_agent_id_value_get(
     of_bsn_tlv_sub_agent_id_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_tcp_dst */
+
+extern void of_bsn_tlv_tcp_dst_value_set(
+    of_bsn_tlv_tcp_dst_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_tcp_dst_value_get(
+    of_bsn_tlv_tcp_dst_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_tcp_src */
+
+extern void of_bsn_tlv_tcp_src_value_set(
+    of_bsn_tlv_tcp_src_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_tcp_src_value_get(
+    of_bsn_tlv_tcp_src_t *obj,
+    uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_tx_bytes */
 

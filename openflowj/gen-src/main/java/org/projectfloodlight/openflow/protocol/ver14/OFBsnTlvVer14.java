@@ -102,6 +102,15 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x1f:
                    // discriminator value 0x1f=0x1f for class OFBsnTlvHeaderSizeVer14
                    return OFBsnTlvHeaderSizeVer14.READER.readFrom(bb);
+               case (short) 0x45:
+                   // discriminator value 0x45=0x45 for class OFBsnTlvIcmpCodeVer14
+                   return OFBsnTlvIcmpCodeVer14.READER.readFrom(bb);
+               case (short) 0x46:
+                   // discriminator value 0x46=0x46 for class OFBsnTlvIcmpIdVer14
+                   return OFBsnTlvIcmpIdVer14.READER.readFrom(bb);
+               case (short) 0x44:
+                   // discriminator value 0x44=0x44 for class OFBsnTlvIcmpTypeVer14
+                   return OFBsnTlvIcmpTypeVer14.READER.readFrom(bb);
                case (short) 0x7:
                    // discriminator value 0x7=0x7 for class OFBsnTlvIdleNotificationVer14
                    return OFBsnTlvIdleNotificationVer14.READER.readFrom(bb);
@@ -120,6 +129,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x3a:
                    // discriminator value 0x3a=0x3a for class OFBsnTlvIntervalVer14
                    return OFBsnTlvIntervalVer14.READER.readFrom(bb);
+               case (short) 0x43:
+                   // discriminator value 0x43=0x43 for class OFBsnTlvIpProtoVer14
+                   return OFBsnTlvIpProtoVer14.READER.readFrom(bb);
                case (short) 0x4:
                    // discriminator value 0x4=0x4 for class OFBsnTlvIpv4Ver14
                    return OFBsnTlvIpv4Ver14.READER.readFrom(bb);
@@ -201,6 +213,12 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x26:
                    // discriminator value 0x26=0x26 for class OFBsnTlvSubAgentIdVer14
                    return OFBsnTlvSubAgentIdVer14.READER.readFrom(bb);
+               case (short) 0x42:
+                   // discriminator value 0x42=0x42 for class OFBsnTlvTcpDstVer14
+                   return OFBsnTlvTcpDstVer14.READER.readFrom(bb);
+               case (short) 0x41:
+                   // discriminator value 0x41=0x41 for class OFBsnTlvTcpSrcVer14
+                   return OFBsnTlvTcpSrcVer14.READER.readFrom(bb);
                case (short) 0x27:
                    // discriminator value 0x27=0x27 for class OFBsnTlvTxBytesVer14
                    return OFBsnTlvTxBytesVer14.READER.readFrom(bb);

@@ -69,6 +69,12 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
     OFBsnTlvHeaderSize.Builder buildHeaderSize() throws UnsupportedOperationException;
     OFBsnTlvHeaderSize headerSize(long value);
+    OFBsnTlvIcmpCode.Builder buildIcmpCode() throws UnsupportedOperationException;
+    OFBsnTlvIcmpCode icmpCode(short value);
+    OFBsnTlvIcmpId.Builder buildIcmpId() throws UnsupportedOperationException;
+    OFBsnTlvIcmpId icmpId(int value);
+    OFBsnTlvIcmpType.Builder buildIcmpType() throws UnsupportedOperationException;
+    OFBsnTlvIcmpType icmpType(short value);
     OFBsnTlvIdleNotification idleNotification();
     OFBsnTlvIdleTime.Builder buildIdleTime() throws UnsupportedOperationException;
     OFBsnTlvIdleTime idleTime(U64 value);
@@ -80,6 +86,8 @@ public interface OFBsnTlvs {
     OFBsnTlvInternalMac internalMac(MacAddress value);
     OFBsnTlvInterval.Builder buildInterval() throws UnsupportedOperationException;
     OFBsnTlvInterval interval(long value);
+    OFBsnTlvIpProto.Builder buildIpProto() throws UnsupportedOperationException;
+    OFBsnTlvIpProto ipProto(short value);
     OFBsnTlvIpv4.Builder buildIpv4() throws UnsupportedOperationException;
     OFBsnTlvIpv4 ipv4(IPv4Address value);
     OFBsnTlvIpv4Dst.Builder buildIpv4Dst() throws UnsupportedOperationException;
@@ -134,6 +142,10 @@ public interface OFBsnTlvs {
     OFBsnTlvSamplingRate samplingRate(long value);
     OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
     OFBsnTlvSubAgentId subAgentId(long value);
+    OFBsnTlvTcpDst.Builder buildTcpDst() throws UnsupportedOperationException;
+    OFBsnTlvTcpDst tcpDst(int value);
+    OFBsnTlvTcpSrc.Builder buildTcpSrc() throws UnsupportedOperationException;
+    OFBsnTlvTcpSrc tcpSrc(int value);
     OFBsnTlvTxBytes.Builder buildTxBytes() throws UnsupportedOperationException;
     OFBsnTlvTxBytes txBytes(U64 value);
     OFBsnTlvTxPackets.Builder buildTxPackets() throws UnsupportedOperationException;
