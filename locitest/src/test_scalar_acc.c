@@ -26942,6 +26942,43 @@ test_of_bsn_tlv_request_packets_OF_VERSION_1_3_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_rx_bytes_OF_VERSION_1_3_scalar(void)
+{
+    of_bsn_tlv_rx_bytes_t *obj;
+
+    obj = of_bsn_tlv_rx_bytes_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_RX_BYTES);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_RX_BYTES);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_rx_bytes_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_rx_bytes_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_rx_bytes_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_rx_packets_OF_VERSION_1_3_scalar(void)
 {
     of_bsn_tlv_rx_packets_t *obj;
@@ -45674,6 +45711,43 @@ test_of_bsn_tlv_request_packets_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_tlv_rx_bytes_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_tlv_rx_bytes_t *obj;
+
+    obj = of_bsn_tlv_rx_bytes_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_RX_BYTES);
+
+    {
+        of_object_id_t object_id;
+        of_bsn_tlv_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_TLV_RX_BYTES);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_tlv_rx_bytes_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_rx_bytes_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_tlv_rx_bytes_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_rx_packets_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_tlv_rx_packets_t *obj;
@@ -54549,6 +54623,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_reference_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_reply_packets_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_request_packets_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_bsn_tlv_rx_bytes_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_rx_packets_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_sampling_rate_OF_VERSION_1_3_scalar);
     RUN_TEST(of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_scalar);
@@ -55061,6 +55136,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_tlv_reference_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_reply_packets_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_request_packets_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_tlv_rx_bytes_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_rx_packets_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_sampling_rate_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_scalar);

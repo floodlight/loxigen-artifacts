@@ -204,6 +204,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0xb:
                    // discriminator value 0xb=0xb for class OFBsnTlvRequestPacketsVer14
                    return OFBsnTlvRequestPacketsVer14.READER.readFrom(bb);
+               case (short) 0x47:
+                   // discriminator value 0x47=0x47 for class OFBsnTlvRxBytesVer14
+                   return OFBsnTlvRxBytesVer14.READER.readFrom(bb);
                case (short) 0x2:
                    // discriminator value 0x2=0x2 for class OFBsnTlvRxPacketsVer14
                    return OFBsnTlvRxPacketsVer14.READER.readFrom(bb);

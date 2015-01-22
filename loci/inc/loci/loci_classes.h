@@ -901,6 +901,8 @@ void of_bsn_tlv_reply_packets_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_reply_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_request_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_request_packets_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_rx_bytes_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_rx_bytes_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_rx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_rx_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_sampling_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1585,6 +1587,7 @@ typedef of_object_t of_bsn_tlv_queue_weight_t;
 typedef of_object_t of_bsn_tlv_reference_t;
 typedef of_object_t of_bsn_tlv_reply_packets_t;
 typedef of_object_t of_bsn_tlv_request_packets_t;
+typedef of_object_t of_bsn_tlv_rx_bytes_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
 typedef of_object_t of_bsn_tlv_sub_agent_id_t;
@@ -3671,6 +3674,11 @@ extern void of_bsn_tlv_reply_packets_init(
 extern of_object_t *
     of_bsn_tlv_request_packets_new(of_version_t version);
 extern void of_bsn_tlv_request_packets_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_rx_bytes_new(of_version_t version);
+extern void of_bsn_tlv_rx_bytes_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9111,6 +9119,17 @@ of_bsn_tlv_reply_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_request_packets_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_rx_bytes_t
+ * @param obj An instance of type of_bsn_tlv_rx_bytes_t
+ *
+ * \ingroup of_bsn_tlv_rx_bytes
+ */
+static inline void
+of_bsn_tlv_rx_bytes_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -20648,6 +20667,15 @@ extern void of_bsn_tlv_request_packets_value_set(
     uint64_t value);
 extern void of_bsn_tlv_request_packets_value_get(
     of_bsn_tlv_request_packets_t *obj,
+    uint64_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_rx_bytes */
+
+extern void of_bsn_tlv_rx_bytes_value_set(
+    of_bsn_tlv_rx_bytes_t *obj,
+    uint64_t value);
+extern void of_bsn_tlv_rx_bytes_value_get(
+    of_bsn_tlv_rx_bytes_t *obj,
     uint64_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_rx_packets */

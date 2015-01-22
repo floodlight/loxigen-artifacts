@@ -408,6 +408,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvRequestPackets not supported in version 1.0");
     }
 
+    public OFBsnTlvRxBytes.Builder buildRxBytes() {
+        throw new UnsupportedOperationException("OFBsnTlvRxBytes not supported in version 1.0");
+    }
+    public OFBsnTlvRxBytes rxBytes(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvRxBytes not supported in version 1.0");
+    }
+
     public OFBsnTlvRxPackets.Builder buildRxPackets() {
         throw new UnsupportedOperationException("OFBsnTlvRxPackets not supported in version 1.0");
     }

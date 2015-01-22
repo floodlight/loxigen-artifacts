@@ -136,6 +136,8 @@ public interface OFBsnTlvs {
     OFBsnTlvReplyPackets replyPackets(U64 value);
     OFBsnTlvRequestPackets.Builder buildRequestPackets() throws UnsupportedOperationException;
     OFBsnTlvRequestPackets requestPackets(U64 value);
+    OFBsnTlvRxBytes.Builder buildRxBytes() throws UnsupportedOperationException;
+    OFBsnTlvRxBytes rxBytes(U64 value);
     OFBsnTlvRxPackets.Builder buildRxPackets() throws UnsupportedOperationException;
     OFBsnTlvRxPackets rxPackets(U64 value);
     OFBsnTlvSamplingRate.Builder buildSamplingRate() throws UnsupportedOperationException;

@@ -26809,6 +26809,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
         return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
     }
@@ -28384,6 +28388,31 @@ of_bsn_tlv_request_packets_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_request_packets_value_get(src, &val64);
     of_bsn_tlv_request_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rx_bytes
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rx_bytes.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rx_bytes_t *
+of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(
+    of_bsn_tlv_rx_bytes_t *src)
+{
+    of_bsn_tlv_rx_bytes_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_rx_bytes_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rx_bytes_value_get(src, &val64);
+    of_bsn_tlv_rx_bytes_value_set(dst, val64);
 
     return dst;
 }
@@ -46044,6 +46073,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_mpls_control_word_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_RX_BYTES) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
         return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
     }
@@ -47619,6 +47652,31 @@ of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_request_packets_value_get(src, &val64);
     of_bsn_tlv_request_packets_value_set(dst, val64);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_rx_bytes
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_rx_bytes.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_rx_bytes_t *
+of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(
+    of_bsn_tlv_rx_bytes_t *src)
+{
+    of_bsn_tlv_rx_bytes_t *dst;
+    uint64_t val64;
+
+    if ((dst = of_bsn_tlv_rx_bytes_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_rx_bytes_value_get(src, &val64);
+    of_bsn_tlv_rx_bytes_value_set(dst, val64);
 
     return dst;
 }
@@ -63617,6 +63675,23 @@ of_bsn_tlv_request_packets_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_rx_bytes_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

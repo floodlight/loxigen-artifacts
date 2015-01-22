@@ -1411,6 +1411,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_rx_bytes_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_rx_packets_dup(
         of_object_t *src);
 
@@ -5855,6 +5859,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8124,6 +8132,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_request_packets_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -6861,6 +6861,9 @@ fields['of13.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of13.bsn_tlv_rep
 fields['of13.bsn_tlv_request_packets.type'] = ProtoField.uint16("of13.bsn_tlv_request_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_request_packets.length'] = ProtoField.uint16("of13.bsn_tlv_request_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_request_packets.value'] = ProtoField.uint64("of13.bsn_tlv_request_packets.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_rx_bytes.type'] = ProtoField.uint16("of13.bsn_tlv_rx_bytes.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_rx_bytes.length'] = ProtoField.uint16("of13.bsn_tlv_rx_bytes.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_rx_bytes.value'] = ProtoField.uint64("of13.bsn_tlv_rx_bytes.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_rx_packets.type'] = ProtoField.uint16("of13.bsn_tlv_rx_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_rx_packets.length'] = ProtoField.uint16("of13.bsn_tlv_rx_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_rx_packets.value", "value", base.DEC, nil)
@@ -9385,6 +9388,9 @@ fields['of14.bsn_tlv_reply_packets.value'] = ProtoField.uint64("of14.bsn_tlv_rep
 fields['of14.bsn_tlv_request_packets.type'] = ProtoField.uint16("of14.bsn_tlv_request_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_request_packets.length'] = ProtoField.uint16("of14.bsn_tlv_request_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_request_packets.value'] = ProtoField.uint64("of14.bsn_tlv_request_packets.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_rx_bytes.type'] = ProtoField.uint16("of14.bsn_tlv_rx_bytes.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_rx_bytes.length'] = ProtoField.uint16("of14.bsn_tlv_rx_bytes.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_rx_bytes.value'] = ProtoField.uint64("of14.bsn_tlv_rx_bytes.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_rx_packets.type'] = ProtoField.uint16("of14.bsn_tlv_rx_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_rx_packets.length'] = ProtoField.uint16("of14.bsn_tlv_rx_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of14.bsn_tlv_rx_packets.value", "value", base.DEC, nil)
@@ -15096,6 +15102,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_request_packets.type'],
     fields['of13.bsn_tlv_request_packets.length'],
     fields['of13.bsn_tlv_request_packets.value'],
+    fields['of13.bsn_tlv_rx_bytes.type'],
+    fields['of13.bsn_tlv_rx_bytes.length'],
+    fields['of13.bsn_tlv_rx_bytes.value'],
     fields['of13.bsn_tlv_rx_packets.type'],
     fields['of13.bsn_tlv_rx_packets.length'],
     fields['of13.bsn_tlv_rx_packets.value'],
@@ -17620,6 +17629,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_request_packets.type'],
     fields['of14.bsn_tlv_request_packets.length'],
     fields['of14.bsn_tlv_request_packets.value'],
+    fields['of14.bsn_tlv_rx_bytes.type'],
+    fields['of14.bsn_tlv_rx_bytes.length'],
+    fields['of14.bsn_tlv_rx_bytes.value'],
     fields['of14.bsn_tlv_rx_packets.type'],
     fields['of14.bsn_tlv_rx_packets.length'],
     fields['of14.bsn_tlv_rx_packets.value'],
@@ -28936,6 +28948,16 @@ function dissect_of_bsn_tlv_request_packets_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[11] = dissect_of_bsn_tlv_request_packets_v4
 
+-- child class of_bsn_tlv_rx_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rx_bytes_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_rx_bytes.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_rx_bytes.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_rx_bytes.value')
+    return 'of_bsn_tlv_rx_bytes'
+end
+of_bsn_tlv_v4_dissectors[71] = dissect_of_bsn_tlv_rx_bytes_v4
+
 -- child class of_bsn_tlv_rx_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_rx_packets_v4(reader, subtree)
@@ -35490,6 +35512,16 @@ function dissect_of_bsn_tlv_request_packets_v5(reader, subtree)
     return 'of_bsn_tlv_request_packets'
 end
 of_bsn_tlv_v5_dissectors[11] = dissect_of_bsn_tlv_request_packets_v5
+
+-- child class of_bsn_tlv_rx_bytes
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_rx_bytes_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_rx_bytes.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_rx_bytes.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_rx_bytes.value')
+    return 'of_bsn_tlv_rx_bytes'
+end
+of_bsn_tlv_v5_dissectors[71] = dissect_of_bsn_tlv_rx_bytes_v5
 
 -- child class of_bsn_tlv_rx_packets
 -- Child of of_bsn_tlv

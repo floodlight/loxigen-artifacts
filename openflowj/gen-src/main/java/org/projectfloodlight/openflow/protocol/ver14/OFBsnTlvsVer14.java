@@ -515,6 +515,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvRxBytes.Builder buildRxBytes() {
+        return new OFBsnTlvRxBytesVer14.Builder();
+    }
+    public OFBsnTlvRxBytes rxBytes(U64 value) {
+        return new OFBsnTlvRxBytesVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvRxPackets.Builder buildRxPackets() {
         return new OFBsnTlvRxPacketsVer14.Builder();
     }
