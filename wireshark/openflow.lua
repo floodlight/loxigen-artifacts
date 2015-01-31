@@ -10896,6 +10896,8 @@ fields['of14.uint32.value'] = ProtoField.uint32("of14.uint32.value", "value", ba
 fields['of14.uint64.value'] = ProtoField.uint64("of14.uint64.value", "value", base.DEC, nil)
 fields['of14.uint8.value'] = ProtoField.uint8("of14.uint8.value", "value", base.DEC, nil)
 
+error_field = ProtoField.string("of.error", "Error")
+
 p_of.fields = {
     fields['of10.action.type'],
     fields['of10.action.len'],
@@ -19136,6 +19138,7 @@ p_of.fields = {
     fields['of14.uint32.value'],
     fields['of14.uint64.value'],
     fields['of14.uint8.value'],
+    error_field,
 }
 
 -- Subclass maps for virtual classes
@@ -35915,7 +35918,7 @@ function dissect_of_bundle_add_msg_v5(reader, subtree)
     read_uint32_t(reader, 5, subtree, 'of14.bundle_add_msg.bundle_id')
     reader.skip(2)
     read_uint16_t(reader, 5, subtree, 'of14.bundle_add_msg.flags')
-    read_of_octets_t(reader, 5, subtree, 'of14.bundle_add_msg.data')
+    read_openflow(reader, 5, subtree, 'of14.bundle_add_msg.data')
     return 'of_bundle_add_msg'
 end
 of_header_v5_dissectors[34] = dissect_of_bundle_add_msg_v5
@@ -39626,6 +39629,8 @@ function read_of_match_t(reader, version, subtree, field_name)
         dissect_of_match_v3_v3(reader, subtree:add("of_match"))
     elseif version == 4 then
         dissect_of_match_v3_v4(reader, subtree:add("of_match"))
+    elseif version == 5 then
+        dissect_of_match_v3_v5(reader, subtree:add("of_match"))
     else
         error("Unsupported match version")
     end
@@ -39681,6 +39686,10 @@ end
 
 function read_of_table_name_t(reader, version, subtree, field_name)
     read_scalar(reader, subtree, field_name, 32)
+end
+
+function read_of_str64_t(reader, version, subtree, field_name)
+    read_scalar(reader, subtree, field_name, 64)
 end
 
 function read_of_port_desc_t(reader, version, subtree, field_name)
@@ -39754,6 +39763,13 @@ function dissect_of_message(buf, root)
         protocol = "OF " .. openflow_versions[version_val]
     else
         return "Unknown protocol", "Dissection error"
+    end
+
+    if type_val == 1 then -- OpenFlow error message
+        local err = subtree:add(error_field, "")
+        err:set_hidden()
+        err:set_generated()
+        subtree:add_expert_info(PI_DEBUG, PI_WARN, "OpenFlow error message")
     end
 
     local info = "unknown"
