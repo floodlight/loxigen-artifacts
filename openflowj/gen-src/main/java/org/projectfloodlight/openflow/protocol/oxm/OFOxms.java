@@ -63,6 +63,10 @@ public interface OFOxms {
     OFOxmBsnInPorts512 bsnInPorts512(OFBitMask512 value);
     OFOxmBsnInPorts512Masked.Builder buildBsnInPorts512Masked() throws UnsupportedOperationException;
     OFOxmBsnInPorts512Masked bsnInPorts512Masked(OFBitMask512 value, OFBitMask512 mask);
+    OFOxmBsnIngressPortGroupId.Builder buildBsnIngressPortGroupId() throws UnsupportedOperationException;
+    OFOxmBsnIngressPortGroupId bsnIngressPortGroupId(ClassId value);
+    OFOxmBsnIngressPortGroupIdMasked.Builder buildBsnIngressPortGroupIdMasked() throws UnsupportedOperationException;
+    OFOxmBsnIngressPortGroupIdMasked bsnIngressPortGroupIdMasked(ClassId value, ClassId mask);
     OFOxmBsnL2CacheHit.Builder buildBsnL2CacheHit() throws UnsupportedOperationException;
     OFOxmBsnL2CacheHit bsnL2CacheHit(OFBooleanValue value);
     OFOxmBsnL2CacheHitMasked.Builder buildBsnL2CacheHitMasked() throws UnsupportedOperationException;

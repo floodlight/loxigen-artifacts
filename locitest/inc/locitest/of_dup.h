@@ -1823,6 +1823,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_dup(
         of_object_t *src);
 
@@ -4275,6 +4283,14 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dup(
         of_object_t *src);
 
@@ -6236,6 +6252,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8500,6 +8524,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -83,6 +83,7 @@ typedef struct of_match_fields_s {
     uint32_t             bsn_vlan_xlate_port_group_id;
     uint8_t              bsn_l2_cache_hit;
     of_bitmap_512_t      bsn_in_ports_512;
+    uint32_t             bsn_ingress_port_group_id;
 
 } of_match_fields_t;
 

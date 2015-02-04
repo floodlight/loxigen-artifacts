@@ -377,6 +377,10 @@ void of_oxm_bsn_in_ports_512_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_oxm_bsn_in_ports_512_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_in_ports_512_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_in_ports_512_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_ingress_port_group_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_ingress_port_group_id_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_ingress_port_group_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_ingress_port_group_id_masked_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_l2_cache_hit_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_bsn_l2_cache_hit_push_wire_types(of_object_t *obj);
 void of_oxm_bsn_l2_cache_hit_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1690,6 +1694,8 @@ typedef of_object_t of_oxm_bsn_in_ports_128_t;
 typedef of_object_t of_oxm_bsn_in_ports_128_masked_t;
 typedef of_object_t of_oxm_bsn_in_ports_512_t;
 typedef of_object_t of_oxm_bsn_in_ports_512_masked_t;
+typedef of_object_t of_oxm_bsn_ingress_port_group_id_t;
+typedef of_object_t of_oxm_bsn_ingress_port_group_id_masked_t;
 typedef of_object_t of_oxm_bsn_l2_cache_hit_t;
 typedef of_object_t of_oxm_bsn_l2_cache_hit_masked_t;
 typedef of_object_t of_oxm_bsn_l3_dst_class_id_t;
@@ -4189,6 +4195,16 @@ extern void of_oxm_bsn_in_ports_512_init(
 extern of_object_t *
     of_oxm_bsn_in_ports_512_masked_new(of_version_t version);
 extern void of_oxm_bsn_in_ports_512_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_new(of_version_t version);
+extern void of_oxm_bsn_ingress_port_group_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_ingress_port_group_id_masked_new(of_version_t version);
+extern void of_oxm_bsn_ingress_port_group_id_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10252,6 +10268,28 @@ of_oxm_bsn_in_ports_512_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_bsn_in_ports_512_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_ingress_port_group_id_t
+ * @param obj An instance of type of_oxm_bsn_ingress_port_group_id_t
+ *
+ * \ingroup of_oxm_bsn_ingress_port_group_id
+ */
+static inline void
+of_oxm_bsn_ingress_port_group_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_ingress_port_group_id_masked_t
+ * @param obj An instance of type of_oxm_bsn_ingress_port_group_id_masked_t
+ *
+ * \ingroup of_oxm_bsn_ingress_port_group_id_masked
+ */
+static inline void
+of_oxm_bsn_ingress_port_group_id_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22353,6 +22391,31 @@ extern void of_oxm_bsn_in_ports_512_masked_value_mask_set(
 extern void of_oxm_bsn_in_ports_512_masked_value_mask_get(
     of_oxm_bsn_in_ports_512_masked_t *obj,
     of_bitmap_512_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_ingress_port_group_id */
+
+extern void of_oxm_bsn_ingress_port_group_id_value_set(
+    of_oxm_bsn_ingress_port_group_id_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_ingress_port_group_id_value_get(
+    of_oxm_bsn_ingress_port_group_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_ingress_port_group_id_masked */
+
+extern void of_oxm_bsn_ingress_port_group_id_masked_value_set(
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_ingress_port_group_id_masked_value_get(
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_ingress_port_group_id_masked_value_mask_set(
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj,
+    uint32_t *value_mask);
 
 /* Unified accessor functions for of_oxm_bsn_l2_cache_hit */
 

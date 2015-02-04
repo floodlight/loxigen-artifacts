@@ -127,6 +127,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -441,6 +445,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_BSN_UDF0_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1755,6 +1763,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_in_ports_512_value_set(&elt, src->fields.bsn_in_ports_512);
         }
     }
+    if (OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_EXACT_TEST(src)) {
+            of_oxm_bsn_ingress_port_group_id_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_ingress_port_group_id_masked_value_set(&elt,
+                   src->fields.bsn_ingress_port_group_id);
+            of_oxm_bsn_ingress_port_group_id_masked_value_mask_set(&elt,
+                   src->masks.bsn_ingress_port_group_id);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_ingress_port_group_id_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_ingress_port_group_id_value_set(&elt, src->fields.bsn_ingress_port_group_id);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2292,6 +2316,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_bsn_udf0_value_get(
                 &oxm_entry,
                 &dst->fields.bsn_udf0);
+            break;
+
+        case OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED:
+            of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.bsn_ingress_port_group_id);
+            of_oxm_bsn_ingress_port_group_id_masked_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_ingress_port_group_id);
+            of_memmask(&dst->fields.bsn_ingress_port_group_id, &dst->masks.bsn_ingress_port_group_id, sizeof(&dst->fields.bsn_ingress_port_group_id));
+            break;
+        case OF_OXM_BSN_INGRESS_PORT_GROUP_ID:
+            OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_EXACT_SET(dst);
+            of_oxm_bsn_ingress_port_group_id_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_ingress_port_group_id);
             break;
 
         case OF_OXM_IPV6_ND_TLL_MASKED:

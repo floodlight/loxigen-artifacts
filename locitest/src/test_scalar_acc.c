@@ -13146,6 +13146,80 @@ test_of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_scalar(void)
 }
 
 static int
+test_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_bsn_ingress_port_group_id_t *obj;
+
+    obj = of_oxm_bsn_ingress_port_group_id_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_ingress_port_group_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_scalar(void)
+{
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj;
+
+    obj = of_oxm_bsn_ingress_port_group_id_masked_new(OF_VERSION_1_2);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_2);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_ingress_port_group_id_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_scalar(void)
 {
     of_oxm_bsn_l2_cache_hit_t *obj;
@@ -30157,6 +30231,80 @@ test_of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_scalar(void)
     TEST_ASSERT(of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
 
     of_oxm_bsn_in_ports_512_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_bsn_ingress_port_group_id_t *obj;
+
+    obj = of_oxm_bsn_ingress_port_group_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_ingress_port_group_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_scalar(void)
+{
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj;
+
+    obj = of_oxm_bsn_ingress_port_group_id_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_ingress_port_group_id_masked_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -48784,6 +48932,80 @@ test_of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_bsn_ingress_port_group_id_t *obj;
+
+    obj = of_oxm_bsn_ingress_port_group_id_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_ingress_port_group_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_scalar(void)
+{
+    of_oxm_bsn_ingress_port_group_id_masked_t *obj;
+
+    obj = of_oxm_bsn_ingress_port_group_id_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED);
+
+    {
+        of_object_id_t object_id;
+        of_oxm_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_oxm_bsn_ingress_port_group_id_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_scalar(void)
 {
     of_oxm_bsn_l3_interface_class_id_t *obj;
@@ -54247,6 +54469,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_512_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_scalar);
+    RUN_TEST(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_scalar);
     RUN_TEST(of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_scalar);
@@ -54712,6 +54936,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_512_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_scalar);
+    RUN_TEST(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_scalar);
     RUN_TEST(of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_scalar);
@@ -55221,6 +55447,8 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_512_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_scalar);
     RUN_TEST(of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_scalar);

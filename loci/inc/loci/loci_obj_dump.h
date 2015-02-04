@@ -401,6 +401,8 @@ int of_oxm_bsn_in_ports_128_OF_VERSION_1_2_dump(loci_writer_f writer, void* cook
 int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -866,6 +868,8 @@ int of_oxm_bsn_in_ports_128_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
 int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1375,6 +1379,8 @@ int of_oxm_bsn_in_ports_128_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
 int of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

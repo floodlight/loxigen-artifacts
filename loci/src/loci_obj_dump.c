@@ -11731,6 +11731,43 @@ of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* c
 }
 
 int
+of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ingress_port_group_id\n");
+
+    of_oxm_bsn_ingress_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ingress_port_group_id_masked\n");
+
+    of_oxm_bsn_ingress_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -23642,6 +23679,43 @@ of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* c
     of_oxm_bsn_in_ports_512_masked_value_mask_get(obj, &bitmap_512);
     out += writer(cookie, "  value_mask (of_bitmap_512_t):  ");
     out += LOCI_DUMP_bitmap_512(writer, cookie, bitmap_512);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ingress_port_group_id\n");
+
+    of_oxm_bsn_ingress_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ingress_port_group_id_masked\n");
+
+    of_oxm_bsn_ingress_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
     out += writer(cookie, "\n");
 
     return out;
@@ -36434,6 +36508,43 @@ of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* c
 }
 
 int
+of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ingress_port_group_id\n");
+
+    of_oxm_bsn_ingress_port_group_id_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
+of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+
+    out += writer(cookie, "Object of type of_oxm_bsn_ingress_port_group_id_masked\n");
+
+    of_oxm_bsn_ingress_port_group_id_masked_value_get(obj, &val32);
+    out += writer(cookie, "  value (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(obj, &val32);
+    out += writer(cookie, "  value_mask (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -39540,6 +39651,14 @@ loci_dump_match(loci_writer_f writer, void* cookie, of_match_t *match)
         out += writer(cookie, "\n");
     }
 
+    if (OF_MATCH_MASK_BSN_INGRESS_PORT_GROUP_ID_ACTIVE_TEST(match)) {
+        out += writer(cookie, "  bsn_ingress_port_group_id (uint32_t) active: Value ");
+        out += LOCI_DUMP_u32(writer, cookie, match->fields.bsn_ingress_port_group_id);
+        out += writer(cookie, "\n    Mask ");
+        out += LOCI_DUMP_u32(writer, cookie, match->masks.bsn_ingress_port_group_id);
+        out += writer(cookie, "\n");
+    }
+
     if (OF_MATCH_MASK_IPV6_ND_TLL_ACTIVE_TEST(match)) {
         out += writer(cookie, "  ipv6_nd_tll (of_mac_addr_t) active: Value ");
         out += LOCI_DUMP_mac(writer, cookie, match->fields.ipv6_nd_tll);
@@ -40447,6 +40566,8 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
+    unknown_dump,
     of_packet_queue_OF_VERSION_1_0_dump,
     of_port_desc_OF_VERSION_1_0_dump,
     unknown_dump,
@@ -40987,6 +41108,8 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_instruction_write_metadata_OF_VERSION_1_1_dump,
     unknown_dump,
     of_match_v2_OF_VERSION_1_1_dump,
+    unknown_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -41689,6 +41812,8 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_in_ports_512_OF_VERSION_1_2_dump,
     of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_2_dump,
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_2_dump,
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_2_dump,
     of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_2_dump,
     of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_2_dump,
@@ -42363,6 +42488,8 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_in_ports_512_OF_VERSION_1_3_dump,
     of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3_dump,
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3_dump,
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dump,
     of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3_dump,
     of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3_dump,
@@ -43037,6 +43164,8 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_oxm_bsn_in_ports_128_masked_OF_VERSION_1_4_dump,
     of_oxm_bsn_in_ports_512_OF_VERSION_1_4_dump,
     of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4_dump,
+    of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4_dump,
+    of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
