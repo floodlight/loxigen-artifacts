@@ -1,1 +1,1 @@
-87680fd89dd1bf8ab63def47ee38ce8073fed5bd Merge into master from pull request #382: Add '0x' prefix to the hex value in toString(). (https://github.com/floodlight/loxigen/pull/382)
+ea34f1679e0ffb7a048a0515d559aeaec5ecfcf5 Merge into master from pull request #383: Use unsigned long comparison in IPv6Address.compareTo() (https://github.com/floodlight/loxigen/pull/383)
