@@ -1,1 +1,1 @@
-ea34f1679e0ffb7a048a0515d559aeaec5ecfcf5 Merge into master from pull request #383: Use unsigned long comparison in IPv6Address.compareTo() (https://github.com/floodlight/loxigen/pull/383)
+0de98dda167b49a167a61dbef1c5b8d226288dc6 Merge into master from pull request #385: Rebuild openflowj when pre-written files' changed (https://github.com/floodlight/loxigen/pull/385)
