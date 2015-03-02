@@ -1350,6 +1350,10 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.1");
     }
 
+    public OFPortDescPropBsnUplink portDescPropBsnUplink() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnUplink not supported in version 1.1");
+    }
+
     public OFPortDescPropEthernet.Builder buildPortDescPropEthernet() {
         throw new UnsupportedOperationException("OFPortDescPropEthernet not supported in version 1.1");
     }

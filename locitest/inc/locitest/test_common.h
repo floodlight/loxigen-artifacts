@@ -13784,6 +13784,15 @@ extern int of_port_desc_OF_VERSION_1_4_populate_scalars(
 extern int of_port_desc_OF_VERSION_1_4_check_scalars(
     of_port_desc_t *obj, int value);
 
+extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_populate(
+    of_port_desc_prop_bsn_uplink_t *obj, int value);
+extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_check(
+    of_port_desc_prop_bsn_uplink_t *obj, int value);
+extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_populate_scalars(
+    of_port_desc_prop_bsn_uplink_t *obj, int value);
+extern int of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_check_scalars(
+    of_port_desc_prop_bsn_uplink_t *obj, int value);
+
 extern int of_port_desc_prop_ethernet_OF_VERSION_1_4_populate(
     of_port_desc_prop_ethernet_t *obj, int value);
 extern int of_port_desc_prop_ethernet_OF_VERSION_1_4_check(

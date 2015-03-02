@@ -1488,6 +1488,10 @@ public class OFFactoryVer13 implements OFFactory {
         throw new UnsupportedOperationException("OFBundleCtrlMsg not supported in version 1.3");
     }
 
+    public OFPortDescPropBsnUplink portDescPropBsnUplink() {
+        throw new UnsupportedOperationException("OFPortDescPropBsnUplink not supported in version 1.3");
+    }
+
     public OFPortDescPropEthernet.Builder buildPortDescPropEthernet() {
         throw new UnsupportedOperationException("OFPortDescPropEthernet not supported in version 1.3");
     }

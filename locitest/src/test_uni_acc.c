@@ -54847,6 +54847,44 @@ test_of_port_desc_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(void)
+{
+    of_port_desc_prop_bsn_uplink_t *obj;
+    obj = of_port_desc_prop_bsn_uplink_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_PORT_DESC_PROP_BSN_UPLINK);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_PORT_DESC_PROP_BSN_UPLINK);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_port_desc_prop_bsn_uplink_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_port_desc_prop_ethernet_OF_VERSION_1_4(void)
 {
     of_port_desc_prop_ethernet_t *obj;
@@ -57660,6 +57698,7 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_oxm_vlan_vid_masked_OF_VERSION_1_4);
     RUN_TEST(of_packet_queue_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_OF_VERSION_1_4);
+    RUN_TEST(of_port_desc_prop_bsn_uplink_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_ethernet_OF_VERSION_1_4);
     RUN_TEST(of_port_desc_prop_optical_OF_VERSION_1_4);
     RUN_TEST(of_port_mod_prop_ethernet_OF_VERSION_1_4);

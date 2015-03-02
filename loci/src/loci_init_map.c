@@ -575,6 +575,8 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_packet_queue_init,
     (of_object_init_f)of_port_desc_init,
     (of_object_init_f)of_port_desc_prop_init,
+    (of_object_init_f)of_port_desc_prop_bsn_init,
+    (of_object_init_f)of_port_desc_prop_bsn_uplink_init,
     (of_object_init_f)of_port_desc_prop_ethernet_init,
     (of_object_init_f)of_port_desc_prop_experimenter_init,
     (of_object_init_f)of_port_desc_prop_optical_init,

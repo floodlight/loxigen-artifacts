@@ -1173,10 +1173,14 @@ void of_oxm_pbb_uca_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_oxm_pbb_uca_masked_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_push_wire_types(of_object_t *obj);
-void of_port_desc_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
-void of_port_desc_prop_ethernet_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_experimenter_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_uplink_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_uplink_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_ethernet_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_optical_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_optical_push_wire_types(of_object_t *obj);
 void of_port_mod_prop_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1805,6 +1809,8 @@ typedef of_object_t of_oxm_vlan_vid_masked_t;
 typedef of_object_t of_packet_queue_t;
 typedef of_object_t of_port_desc_t;
 typedef of_object_t of_port_desc_prop_t;
+typedef of_object_t of_port_desc_prop_bsn_t;
+typedef of_object_t of_port_desc_prop_bsn_uplink_t;
 typedef of_object_t of_port_desc_prop_ethernet_t;
 typedef of_object_t of_port_desc_prop_experimenter_t;
 typedef of_object_t of_port_desc_prop_optical_t;
@@ -4750,6 +4756,16 @@ extern void of_port_desc_init(
 extern of_object_t *
     of_port_desc_prop_new(of_version_t version);
 extern void of_port_desc_prop_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_new(of_version_t version);
+extern void of_port_desc_prop_bsn_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_uplink_new(of_version_t version);
+extern void of_port_desc_prop_bsn_uplink_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11489,6 +11505,28 @@ of_port_desc_delete(of_object_t *obj) {
  */
 static inline void
 of_port_desc_prop_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_t
+ * @param obj An instance of type of_port_desc_prop_bsn_t
+ *
+ * \ingroup of_port_desc_prop_bsn
+ */
+static inline void
+of_port_desc_prop_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_uplink_t
+ * @param obj An instance of type of_port_desc_prop_bsn_uplink_t
+ *
+ * \ingroup of_port_desc_prop_bsn_uplink
+ */
+static inline void
+of_port_desc_prop_bsn_uplink_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -23854,6 +23892,22 @@ extern void of_port_desc_max_speed_set(
 extern void of_port_desc_max_speed_get(
     of_port_desc_t *obj,
     uint32_t *max_speed);
+
+/* Unified accessor functions for of_port_desc_prop_bsn_uplink */
+
+extern void of_port_desc_prop_bsn_uplink_experimenter_set(
+    of_port_desc_prop_bsn_uplink_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_bsn_uplink_experimenter_get(
+    of_port_desc_prop_bsn_uplink_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_bsn_uplink_exp_type_set(
+    of_port_desc_prop_bsn_uplink_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_bsn_uplink_exp_type_get(
+    of_port_desc_prop_bsn_uplink_t *obj,
+    uint32_t *exp_type);
 
 /* Unified accessor functions for of_port_desc_prop_ethernet */
 

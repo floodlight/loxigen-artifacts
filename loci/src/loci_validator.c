@@ -1568,8 +1568,10 @@ static int __attribute__((unused)) loci_validate_of_packet_out_OF_VERSION_1_4(ui
 static int __attribute__((unused)) loci_validate_of_packet_queue_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
-static int __attribute__((unused)) loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_prop_optical_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_port_desc_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -40245,35 +40247,13 @@ loci_validate_of_port_desc_prop_OF_VERSION_1_4(uint8_t *data, int len, int *out_
     uint16_t wire_type;
     buf_u16_get(data + 0, &wire_type);
     switch (wire_type) {
-    case 0x0:
-        return loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(data, len, out_len);
     case 0xffff:
         return loci_validate_of_port_desc_prop_experimenter_OF_VERSION_1_4(data, len, out_len);
+    case 0x0:
+        return loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(data, len, out_len);
     case 0x1:
         return loci_validate_of_port_desc_prop_optical_OF_VERSION_1_4(data, len, out_len);
     }
-
-
-    *out_len = len;
-    return 0;
-}
-
-static int
-loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
-{
-    if (len < 32) {
-        return -1;
-    }
-
-    len = 32;
-
-    uint16_t wire_len;
-    buf_u16_get(data + 2, &wire_len);
-    if (wire_len > len || wire_len < 32) {
-        return -1;
-    }
-
-
 
 
     *out_len = len;
@@ -40300,7 +40280,82 @@ loci_validate_of_port_desc_prop_experimenter_OF_VERSION_1_4(uint8_t *data, int l
     uint32_t wire_type;
     buf_u32_get(data + 4, &wire_type);
     switch (wire_type) {
+    case 0x5c16c7:
+        return loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(data, len, out_len);
     }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_desc_prop_bsn_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+    len = wire_len;
+
+
+    uint32_t wire_type;
+    buf_u32_get(data + 8, &wire_type);
+    switch (wire_type) {
+    case 0x0:
+        return loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(data, len, out_len);
+    }
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_desc_prop_bsn_uplink_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 12) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_port_desc_prop_ethernet_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 32) {
+        return -1;
+    }
+
+    len = 32;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 32) {
+        return -1;
+    }
+
+
 
 
     *out_len = len;

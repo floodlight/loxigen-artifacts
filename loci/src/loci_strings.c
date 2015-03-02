@@ -572,6 +572,8 @@ const char *const of_object_id_str[] = {
     "of_packet_queue",
     "of_port_desc",
     "of_port_desc_prop",
+    "of_port_desc_prop_bsn",
+    "of_port_desc_prop_bsn_uplink",
     "of_port_desc_prop_ethernet",
     "of_port_desc_prop_experimenter",
     "of_port_desc_prop_optical",

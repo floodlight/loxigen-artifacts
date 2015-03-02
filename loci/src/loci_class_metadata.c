@@ -3519,17 +3519,29 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=NULL,
     },
-    [OF_PORT_DESC_PROP_ETHERNET] = {
-        .wire_length_get=of_tlv16_wire_length_get,
-        .wire_length_set=of_tlv16_wire_length_set,
-        .wire_type_get=of_port_desc_prop_wire_object_id_get,
-        .wire_type_set=of_port_desc_prop_ethernet_push_wire_types,
-    },
     [OF_PORT_DESC_PROP_EXPERIMENTER] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,
         .wire_type_get=of_port_desc_prop_wire_object_id_get,
         .wire_type_set=NULL,
+    },
+    [OF_PORT_DESC_PROP_BSN] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=NULL,
+    },
+    [OF_PORT_DESC_PROP_BSN_UPLINK] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=of_port_desc_prop_bsn_uplink_push_wire_types,
+    },
+    [OF_PORT_DESC_PROP_ETHERNET] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_port_desc_prop_wire_object_id_get,
+        .wire_type_set=of_port_desc_prop_ethernet_push_wire_types,
     },
     [OF_PORT_DESC_PROP_OPTICAL] = {
         .wire_length_get=of_tlv16_wire_length_get,

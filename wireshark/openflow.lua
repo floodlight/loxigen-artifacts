@@ -10496,6 +10496,18 @@ fields['of14.port_desc.state'] = ProtoField.uint32("of14.port_desc.state", "stat
 fields['of14.port_desc.properties'] = ProtoField.bytes("of14.port_desc.properties", "properties")
 fields['of14.port_desc_prop.type'] = ProtoField.uint16("of14.port_desc_prop.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop.length'] = ProtoField.uint16("of14.port_desc_prop.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_experimenter.type'] = ProtoField.uint16("of14.port_desc_prop_experimenter.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_experimenter.length'] = ProtoField.uint16("of14.port_desc_prop_experimenter.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of14.port_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of14.port_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn.type'] = ProtoField.uint16("of14.port_desc_prop_bsn.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn.length'] = ProtoField.uint16("of14.port_desc_prop_bsn.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_uplink.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_uplink.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_uplink.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_uplink.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_uplink.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_uplink.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_uplink.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_uplink.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_ethernet.type'] = ProtoField.uint16("of14.port_desc_prop_ethernet.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_ethernet.length'] = ProtoField.uint16("of14.port_desc_prop_ethernet.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_ethernet.curr'] = ProtoField.uint32("of14.port_desc_prop_ethernet.curr", "curr", base.DEC, nil)
@@ -10504,10 +10516,6 @@ fields['of14.port_desc_prop_ethernet.supported'] = ProtoField.uint32("of14.port_
 fields['of14.port_desc_prop_ethernet.peer'] = ProtoField.uint32("of14.port_desc_prop_ethernet.peer", "peer", base.DEC, nil)
 fields['of14.port_desc_prop_ethernet.curr_speed'] = ProtoField.uint32("of14.port_desc_prop_ethernet.curr_speed", "curr_speed", base.DEC, nil)
 fields['of14.port_desc_prop_ethernet.max_speed'] = ProtoField.uint32("of14.port_desc_prop_ethernet.max_speed", "max_speed", base.DEC, nil)
-fields['of14.port_desc_prop_experimenter.type'] = ProtoField.uint16("of14.port_desc_prop_experimenter.type", "type", base.DEC, nil)
-fields['of14.port_desc_prop_experimenter.length'] = ProtoField.uint16("of14.port_desc_prop_experimenter.length", "length", base.DEC, nil)
-fields['of14.port_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of14.port_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
-fields['of14.port_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of14.port_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_optical.type'] = ProtoField.uint16("of14.port_desc_prop_optical.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_optical.length'] = ProtoField.uint16("of14.port_desc_prop_optical.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_optical.supported'] = ProtoField.uint32("of14.port_desc_prop_optical.supported", "supported", base.DEC, nil)
@@ -18754,6 +18762,18 @@ p_of.fields = {
     fields['of14.port_desc.properties'],
     fields['of14.port_desc_prop.type'],
     fields['of14.port_desc_prop.length'],
+    fields['of14.port_desc_prop_experimenter.type'],
+    fields['of14.port_desc_prop_experimenter.length'],
+    fields['of14.port_desc_prop_experimenter.experimenter'],
+    fields['of14.port_desc_prop_experimenter.exp_type'],
+    fields['of14.port_desc_prop_bsn.type'],
+    fields['of14.port_desc_prop_bsn.length'],
+    fields['of14.port_desc_prop_bsn.experimenter'],
+    fields['of14.port_desc_prop_bsn.exp_type'],
+    fields['of14.port_desc_prop_bsn_uplink.type'],
+    fields['of14.port_desc_prop_bsn_uplink.length'],
+    fields['of14.port_desc_prop_bsn_uplink.experimenter'],
+    fields['of14.port_desc_prop_bsn_uplink.exp_type'],
     fields['of14.port_desc_prop_ethernet.type'],
     fields['of14.port_desc_prop_ethernet.length'],
     fields['of14.port_desc_prop_ethernet.curr'],
@@ -18762,10 +18782,6 @@ p_of.fields = {
     fields['of14.port_desc_prop_ethernet.peer'],
     fields['of14.port_desc_prop_ethernet.curr_speed'],
     fields['of14.port_desc_prop_ethernet.max_speed'],
-    fields['of14.port_desc_prop_experimenter.type'],
-    fields['of14.port_desc_prop_experimenter.length'],
-    fields['of14.port_desc_prop_experimenter.experimenter'],
-    fields['of14.port_desc_prop_experimenter.exp_type'],
     fields['of14.port_desc_prop_optical.type'],
     fields['of14.port_desc_prop_optical.length'],
     fields['of14.port_desc_prop_optical.supported'],
@@ -19308,6 +19324,7 @@ of_meter_band_v5_dissectors = {}
 of_nicira_header_v5_dissectors = {}
 of_port_desc_prop_v5_dissectors = {}
 of_port_desc_prop_experimenter_v5_dissectors = {}
+of_port_desc_prop_bsn_v5_dissectors = {}
 of_port_mod_prop_v5_dissectors = {}
 of_port_mod_prop_experimenter_v5_dissectors = {}
 of_port_stats_prop_v5_dissectors = {}
@@ -38583,6 +38600,33 @@ end
 function dissect_of_port_desc_prop_v5(reader, subtree)
     return of_port_desc_prop_v5_dissectors[reader.peek(0,2):uint()](reader, subtree)
 end
+-- virtual child class of_port_desc_prop_experimenter
+-- Child of of_port_desc_prop
+-- Discriminator is experimenter
+function dissect_of_port_desc_prop_experimenter_v5(reader, subtree)
+    return of_port_desc_prop_experimenter_v5_dissectors[reader.peek(4,4):uint()](reader, subtree)
+end
+of_port_desc_prop_v5_dissectors[65535] = dissect_of_port_desc_prop_experimenter_v5
+
+-- virtual child class of_port_desc_prop_bsn
+-- Child of of_port_desc_prop_experimenter
+-- Discriminator is exp_type
+function dissect_of_port_desc_prop_bsn_v5(reader, subtree)
+    return of_port_desc_prop_bsn_v5_dissectors[reader.peek(8,4):uint()](reader, subtree)
+end
+of_port_desc_prop_experimenter_v5_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v5
+
+-- child class of_port_desc_prop_bsn_uplink
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_uplink_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_uplink.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_uplink.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_uplink.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_uplink.exp_type')
+    return 'of_port_desc_prop_bsn_uplink'
+end
+of_port_desc_prop_bsn_v5_dissectors[0] = dissect_of_port_desc_prop_bsn_uplink_v5
+
 -- child class of_port_desc_prop_ethernet
 -- Child of of_port_desc_prop
 function dissect_of_port_desc_prop_ethernet_v5(reader, subtree)
@@ -38598,14 +38642,6 @@ function dissect_of_port_desc_prop_ethernet_v5(reader, subtree)
     return 'of_port_desc_prop_ethernet'
 end
 of_port_desc_prop_v5_dissectors[0] = dissect_of_port_desc_prop_ethernet_v5
-
--- virtual child class of_port_desc_prop_experimenter
--- Child of of_port_desc_prop
--- Discriminator is experimenter
-function dissect_of_port_desc_prop_experimenter_v5(reader, subtree)
-    return of_port_desc_prop_experimenter_v5_dissectors[reader.peek(4,4):uint()](reader, subtree)
-end
-of_port_desc_prop_v5_dissectors[65535] = dissect_of_port_desc_prop_experimenter_v5
 
 -- child class of_port_desc_prop_optical
 -- Child of of_port_desc_prop

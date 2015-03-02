@@ -1509,6 +1509,10 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFBundleCtrlMsgVer14.Builder().setXid(nextXid());
     }
 
+    public OFPortDescPropBsnUplink portDescPropBsnUplink() {
+        return OFPortDescPropBsnUplinkVer14.INSTANCE;
+    }
+
     public OFPortDescPropEthernet.Builder buildPortDescPropEthernet() {
         return new OFPortDescPropEthernetVer14.Builder();
     }
