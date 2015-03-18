@@ -1321,6 +1321,7 @@ enum_v4_ofp_bsn_pktin_flag = {
     [1024] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL",
     [2048] = "OFP_BSN_PKTIN_FLAG_SFLOW",
     [4096] = "OFP_BSN_PKTIN_FLAG_ARP_CACHE",
+    [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
 }
 
 enum_v4_ofp_bad_instruction_code = {
@@ -2007,6 +2008,7 @@ enum_v5_ofp_bsn_pktin_flag = {
     [1024] = "OFP_BSN_PKTIN_FLAG_INGRESS_ACL",
     [2048] = "OFP_BSN_PKTIN_FLAG_SFLOW",
     [4096] = "OFP_BSN_PKTIN_FLAG_ARP_CACHE",
+    [8192] = "OFP_BSN_PKTIN_FLAG_ARP_TARGET",
 }
 
 enum_v5_ofp_bad_instruction_code = {
