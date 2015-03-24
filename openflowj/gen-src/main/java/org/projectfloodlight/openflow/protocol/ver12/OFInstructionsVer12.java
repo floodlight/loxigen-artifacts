@@ -101,6 +101,13 @@ public class OFInstructionsVer12 implements OFInstructions {
         throw new UnsupportedOperationException("OFInstructionBsnDisableVlanCounters not supported in version 1.2");
     }
 
+    public OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() {
+        throw new UnsupportedOperationException("OFInstructionBsnInternalPriority not supported in version 1.2");
+    }
+    public OFInstructionBsnInternalPriority bsnInternalPriority(long value) {
+        throw new UnsupportedOperationException("OFInstructionBsnInternalPriority not supported in version 1.2");
+    }
+
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
         throw new UnsupportedOperationException("OFInstructionBsnPacketOfDeath not supported in version 1.2");
     }

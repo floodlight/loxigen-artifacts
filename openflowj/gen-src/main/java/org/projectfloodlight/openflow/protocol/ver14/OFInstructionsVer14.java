@@ -101,6 +101,15 @@ public class OFInstructionsVer14 implements OFInstructions {
         return OFInstructionBsnDisableVlanCountersVer14.INSTANCE;
     }
 
+    public OFInstructionBsnInternalPriority.Builder buildBsnInternalPriority() {
+        return new OFInstructionBsnInternalPriorityVer14.Builder();
+    }
+    public OFInstructionBsnInternalPriority bsnInternalPriority(long value) {
+        return new OFInstructionBsnInternalPriorityVer14(
+                value
+                    );
+    }
+
     public OFInstructionBsnPacketOfDeath bsnPacketOfDeath() {
         return OFInstructionBsnPacketOfDeathVer14.INSTANCE;
     }

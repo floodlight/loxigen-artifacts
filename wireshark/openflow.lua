@@ -7435,6 +7435,15 @@ fields['of13.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16
 fields['of13.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of13.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_internal_priority.type'] = ProtoField.uint16("of13.instruction_bsn_internal_priority.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_internal_priority.len'] = ProtoField.uint16("of13.instruction_bsn_internal_priority.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_internal_priority.experimenter'] = ProtoField.uint32("of13.instruction_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_internal_priority.subtype'] = ProtoField.uint32("of13.instruction_bsn_internal_priority.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_internal_priority.value'] = ProtoField.uint32("of13.instruction_bsn_internal_priority.value", "value", base.DEC, nil)
+fields['of13.instruction_id_bsn_internal_priority.type'] = ProtoField.uint16("of13.instruction_id_bsn_internal_priority.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_internal_priority.len'] = ProtoField.uint16("of13.instruction_id_bsn_internal_priority.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_internal_priority.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_internal_priority.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_internal_priority.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_bsn_packet_of_death.type'] = ProtoField.uint16("of13.instruction_bsn_packet_of_death.type", "type", base.DEC, nil)
 fields['of13.instruction_bsn_packet_of_death.len'] = ProtoField.uint16("of13.instruction_bsn_packet_of_death.len", "len", base.DEC, nil)
 fields['of13.instruction_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of13.instruction_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
@@ -10000,6 +10009,15 @@ fields['of14.instruction_id_bsn_disable_vlan_counters.type'] = ProtoField.uint16
 fields['of14.instruction_id_bsn_disable_vlan_counters.len'] = ProtoField.uint16("of14.instruction_id_bsn_disable_vlan_counters.len", "len", base.DEC, nil)
 fields['of14.instruction_id_bsn_disable_vlan_counters.experimenter'] = ProtoField.uint32("of14.instruction_id_bsn_disable_vlan_counters.experimenter", "experimenter", base.DEC, nil)
 fields['of14.instruction_id_bsn_disable_vlan_counters.subtype'] = ProtoField.uint32("of14.instruction_id_bsn_disable_vlan_counters.subtype", "subtype", base.DEC, nil)
+fields['of14.instruction_bsn_internal_priority.type'] = ProtoField.uint16("of14.instruction_bsn_internal_priority.type", "type", base.DEC, nil)
+fields['of14.instruction_bsn_internal_priority.len'] = ProtoField.uint16("of14.instruction_bsn_internal_priority.len", "len", base.DEC, nil)
+fields['of14.instruction_bsn_internal_priority.experimenter'] = ProtoField.uint32("of14.instruction_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
+fields['of14.instruction_bsn_internal_priority.subtype'] = ProtoField.uint32("of14.instruction_bsn_internal_priority.subtype", "subtype", base.DEC, nil)
+fields['of14.instruction_bsn_internal_priority.value'] = ProtoField.uint32("of14.instruction_bsn_internal_priority.value", "value", base.DEC, nil)
+fields['of14.instruction_id_bsn_internal_priority.type'] = ProtoField.uint16("of14.instruction_id_bsn_internal_priority.type", "type", base.DEC, nil)
+fields['of14.instruction_id_bsn_internal_priority.len'] = ProtoField.uint16("of14.instruction_id_bsn_internal_priority.len", "len", base.DEC, nil)
+fields['of14.instruction_id_bsn_internal_priority.experimenter'] = ProtoField.uint32("of14.instruction_id_bsn_internal_priority.experimenter", "experimenter", base.DEC, nil)
+fields['of14.instruction_id_bsn_internal_priority.subtype'] = ProtoField.uint32("of14.instruction_id_bsn_internal_priority.subtype", "subtype", base.DEC, nil)
 fields['of14.instruction_bsn_packet_of_death.type'] = ProtoField.uint16("of14.instruction_bsn_packet_of_death.type", "type", base.DEC, nil)
 fields['of14.instruction_bsn_packet_of_death.len'] = ProtoField.uint16("of14.instruction_bsn_packet_of_death.len", "len", base.DEC, nil)
 fields['of14.instruction_bsn_packet_of_death.experimenter'] = ProtoField.uint32("of14.instruction_bsn_packet_of_death.experimenter", "experimenter", base.DEC, nil)
@@ -15701,6 +15719,15 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_disable_vlan_counters.len'],
     fields['of13.instruction_id_bsn_disable_vlan_counters.experimenter'],
     fields['of13.instruction_id_bsn_disable_vlan_counters.subtype'],
+    fields['of13.instruction_bsn_internal_priority.type'],
+    fields['of13.instruction_bsn_internal_priority.len'],
+    fields['of13.instruction_bsn_internal_priority.experimenter'],
+    fields['of13.instruction_bsn_internal_priority.subtype'],
+    fields['of13.instruction_bsn_internal_priority.value'],
+    fields['of13.instruction_id_bsn_internal_priority.type'],
+    fields['of13.instruction_id_bsn_internal_priority.len'],
+    fields['of13.instruction_id_bsn_internal_priority.experimenter'],
+    fields['of13.instruction_id_bsn_internal_priority.subtype'],
     fields['of13.instruction_bsn_packet_of_death.type'],
     fields['of13.instruction_bsn_packet_of_death.len'],
     fields['of13.instruction_bsn_packet_of_death.experimenter'],
@@ -18266,6 +18293,15 @@ p_of.fields = {
     fields['of14.instruction_id_bsn_disable_vlan_counters.len'],
     fields['of14.instruction_id_bsn_disable_vlan_counters.experimenter'],
     fields['of14.instruction_id_bsn_disable_vlan_counters.subtype'],
+    fields['of14.instruction_bsn_internal_priority.type'],
+    fields['of14.instruction_bsn_internal_priority.len'],
+    fields['of14.instruction_bsn_internal_priority.experimenter'],
+    fields['of14.instruction_bsn_internal_priority.subtype'],
+    fields['of14.instruction_bsn_internal_priority.value'],
+    fields['of14.instruction_id_bsn_internal_priority.type'],
+    fields['of14.instruction_id_bsn_internal_priority.len'],
+    fields['of14.instruction_id_bsn_internal_priority.experimenter'],
+    fields['of14.instruction_id_bsn_internal_priority.subtype'],
     fields['of14.instruction_bsn_packet_of_death.type'],
     fields['of14.instruction_bsn_packet_of_death.len'],
     fields['of14.instruction_bsn_packet_of_death.experimenter'],
@@ -30288,6 +30324,29 @@ function dissect_of_instruction_id_bsn_disable_vlan_counters_v4(reader, subtree)
 end
 of_instruction_id_bsn_v4_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v4
 
+-- child class of_instruction_bsn_internal_priority
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_internal_priority_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_internal_priority.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_internal_priority.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_internal_priority.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_internal_priority.subtype')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_internal_priority.value')
+    return 'of_instruction_bsn_internal_priority'
+end
+of_instruction_bsn_v4_dissectors[12] = dissect_of_instruction_bsn_internal_priority_v4
+
+-- child class of_instruction_id_bsn_internal_priority
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_internal_priority_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_internal_priority.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_internal_priority.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_internal_priority.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_internal_priority.subtype')
+    return 'of_instruction_id_bsn_internal_priority'
+end
+of_instruction_id_bsn_v4_dissectors[12] = dissect_of_instruction_id_bsn_internal_priority_v4
+
 -- child class of_instruction_bsn_packet_of_death
 -- Child of of_instruction_bsn
 function dissect_of_instruction_bsn_packet_of_death_v4(reader, subtree)
@@ -36932,6 +36991,29 @@ function dissect_of_instruction_id_bsn_disable_vlan_counters_v5(reader, subtree)
     return 'of_instruction_id_bsn_disable_vlan_counters'
 end
 of_instruction_id_bsn_v5_dissectors[9] = dissect_of_instruction_id_bsn_disable_vlan_counters_v5
+
+-- child class of_instruction_bsn_internal_priority
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_internal_priority_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_bsn_internal_priority.type')
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_bsn_internal_priority.len')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_internal_priority.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_internal_priority.subtype')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_internal_priority.value')
+    return 'of_instruction_bsn_internal_priority'
+end
+of_instruction_bsn_v5_dissectors[12] = dissect_of_instruction_bsn_internal_priority_v5
+
+-- child class of_instruction_id_bsn_internal_priority
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_internal_priority_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_id_bsn_internal_priority.type')
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_id_bsn_internal_priority.len')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_id_bsn_internal_priority.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_id_bsn_internal_priority.subtype')
+    return 'of_instruction_id_bsn_internal_priority'
+end
+of_instruction_id_bsn_v5_dissectors[12] = dissect_of_instruction_id_bsn_internal_priority_v5
 
 -- child class of_instruction_bsn_packet_of_death
 -- Child of of_instruction_bsn

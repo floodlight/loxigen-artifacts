@@ -29417,6 +29417,10 @@ of_instruction_OF_VERSION_1_3_dup(
         return of_instruction_clear_actions_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
         return of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(src);
     }
@@ -29695,6 +29699,37 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_instruction_bsn_internal_priority
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_internal_priority.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_internal_priority_t *
+of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(
+    of_instruction_bsn_internal_priority_t *src)
+{
+    of_instruction_bsn_internal_priority_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_internal_priority_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_internal_priority_experimenter_get(src, &val32);
+    of_instruction_bsn_internal_priority_experimenter_set(dst, val32);
+
+    of_instruction_bsn_internal_priority_subtype_get(src, &val32);
+    of_instruction_bsn_internal_priority_subtype_set(dst, val32);
+
+    of_instruction_bsn_internal_priority_value_get(src, &val32);
+    of_instruction_bsn_internal_priority_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_instruction_bsn_packet_of_death
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -29900,6 +29935,10 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
         return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
     }
@@ -29924,8 +29963,8 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
@@ -30180,6 +30219,34 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_disable_vlan_counters_subtype_get(src, &val32);
     of_instruction_id_bsn_disable_vlan_counters_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_internal_priority
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_internal_priority.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_internal_priority_t *
+of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_internal_priority_t *src)
+{
+    of_instruction_id_bsn_internal_priority_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_internal_priority_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_internal_priority_experimenter_get(src, &val32);
+    of_instruction_id_bsn_internal_priority_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_internal_priority_subtype_get(src, &val32);
+    of_instruction_id_bsn_internal_priority_subtype_set(dst, val32);
 
     return dst;
 }
@@ -48760,6 +48827,10 @@ of_instruction_OF_VERSION_1_4_dup(
         return of_instruction_clear_actions_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
         return of_instruction_bsn_arp_offload_OF_VERSION_1_4_dup(src);
     }
@@ -49006,6 +49077,37 @@ of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_instruction_bsn_internal_priority
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_internal_priority.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_internal_priority_t *
+of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(
+    of_instruction_bsn_internal_priority_t *src)
+{
+    of_instruction_bsn_internal_priority_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_internal_priority_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_internal_priority_experimenter_get(src, &val32);
+    of_instruction_bsn_internal_priority_experimenter_set(dst, val32);
+
+    of_instruction_bsn_internal_priority_subtype_get(src, &val32);
+    of_instruction_bsn_internal_priority_subtype_set(dst, val32);
+
+    of_instruction_bsn_internal_priority_value_get(src, &val32);
+    of_instruction_bsn_internal_priority_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_instruction_bsn_packet_of_death
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -49211,6 +49313,10 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
+        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
         return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
     }
@@ -49231,8 +49337,8 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
-        return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
@@ -49459,6 +49565,34 @@ of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(
 
     of_instruction_id_bsn_disable_vlan_counters_subtype_get(src, &val32);
     of_instruction_id_bsn_disable_vlan_counters_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_internal_priority
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_internal_priority.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_internal_priority_t *
+of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(
+    of_instruction_id_bsn_internal_priority_t *src)
+{
+    of_instruction_id_bsn_internal_priority_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_internal_priority_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_internal_priority_experimenter_get(src, &val32);
+    of_instruction_id_bsn_internal_priority_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_internal_priority_subtype_get(src, &val32);
+    of_instruction_id_bsn_internal_priority_subtype_set(dst, val32);
 
     return dst;
 }
@@ -64666,6 +64800,23 @@ of_instruction_bsn_disable_vlan_counters_dup(
 }
 
 of_object_t *
+of_instruction_bsn_internal_priority_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_instruction_bsn_packet_of_death_dup(
     of_object_t *src)
 {
@@ -64961,6 +65112,23 @@ of_instruction_id_bsn_disable_vlan_counters_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_instruction_id_bsn_internal_priority_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

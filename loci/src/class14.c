@@ -7510,6 +7510,9 @@ of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb:
             *id = OF_INSTRUCTION_BSN_AUTO_NEGOTIATION;
             break;
+        case 0xc:
+            *id = OF_INSTRUCTION_BSN_INTERNAL_PRIORITY;
+            break;
         default:
             *id = OF_INSTRUCTION_BSN;
             break;
@@ -7551,6 +7554,9 @@ of_instruction_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xb:
             *id = OF_INSTRUCTION_BSN_AUTO_NEGOTIATION;
+            break;
+        case 0xc:
+            *id = OF_INSTRUCTION_BSN_INTERNAL_PRIORITY;
             break;
         default:
             *id = OF_INSTRUCTION_BSN;
@@ -8093,6 +8099,9 @@ of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0xb:
             *id = OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION;
             break;
+        case 0xc:
+            *id = OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY;
+            break;
         default:
             *id = OF_INSTRUCTION_ID_BSN;
             break;
@@ -8134,6 +8143,9 @@ of_instruction_id_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0xb:
             *id = OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION;
+            break;
+        case 0xc:
+            *id = OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY;
             break;
         default:
             *id = OF_INSTRUCTION_ID_BSN;

@@ -63,6 +63,10 @@ public class OFInstructionIdsVer13 implements OFInstructionIds {
         return OFInstructionIdBsnDisableVlanCountersVer13.INSTANCE;
     }
 
+    public OFInstructionIdBsnInternalPriority bsnInternalPriority() {
+        return OFInstructionIdBsnInternalPriorityVer13.INSTANCE;
+    }
+
     public OFInstructionIdBsnPacketOfDeath bsnPacketOfDeath() {
         return OFInstructionIdBsnPacketOfDeathVer13.INSTANCE;
     }

@@ -1,1 +1,1 @@
-873086c2333ac367027bf73e2aecd451813f4d70 Merge into master from pull request #388: openflow_input: add OFP_BSN_PKTIN_FLAG_ARP_TARGET (https://github.com/floodlight/loxigen/pull/388)
+f8a632fb58854ccea74c81c44d8c01abb9cb38a6 Merge into master from pull request #389: openflow_input: add bsn_internal_priority extension (https://github.com/floodlight/loxigen/pull/389)

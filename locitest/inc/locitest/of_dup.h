@@ -1575,6 +1575,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_instruction_bsn_internal_priority_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_instruction_bsn_packet_of_death_dup(
         of_object_t *src);
 
@@ -1644,6 +1648,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_bsn_disable_vlan_counters_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_instruction_id_bsn_internal_priority_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6035,6 +6043,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6096,6 +6108,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8319,6 +8335,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_instruction_bsn_packet_of_death_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8376,6 +8396,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *
