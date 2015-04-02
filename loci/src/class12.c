@@ -5000,6 +5000,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x47:
             *id = OF_BSN_TLV_RX_BYTES;
             break;
+        case 0x48:
+            *id = OF_BSN_TLV_VLAN_PCP;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5221,6 +5224,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x47:
             *id = OF_BSN_TLV_RX_BYTES;
+            break;
+        case 0x48:
+            *id = OF_BSN_TLV_VLAN_PCP;
             break;
         default:
             *id = OF_BSN_TLV;

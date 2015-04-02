@@ -6915,6 +6915,9 @@ fields['of13.bsn_tlv_udp_src.value'] = ProtoField.uint16("of13.bsn_tlv_udp_src.v
 fields['of13.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of13.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
@@ -9456,6 +9459,9 @@ fields['of14.bsn_tlv_udp_src.value'] = ProtoField.uint16("of14.bsn_tlv_udp_src.v
 fields['of14.bsn_tlv_unicast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_unicast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_unicast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_unicast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_unicast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_unicast_query_timeout.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_pcp.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_pcp.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_pcp.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of14.bsn_tlv_vlan_pcp.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
@@ -15199,6 +15205,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_unicast_query_timeout.type'],
     fields['of13.bsn_tlv_unicast_query_timeout.length'],
     fields['of13.bsn_tlv_unicast_query_timeout.value'],
+    fields['of13.bsn_tlv_vlan_pcp.type'],
+    fields['of13.bsn_tlv_vlan_pcp.length'],
+    fields['of13.bsn_tlv_vlan_pcp.value'],
     fields['of13.bsn_tlv_vlan_vid.type'],
     fields['of13.bsn_tlv_vlan_vid.length'],
     fields['of13.bsn_tlv_vlan_vid.value'],
@@ -17740,6 +17749,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_unicast_query_timeout.type'],
     fields['of14.bsn_tlv_unicast_query_timeout.length'],
     fields['of14.bsn_tlv_unicast_query_timeout.value'],
+    fields['of14.bsn_tlv_vlan_pcp.type'],
+    fields['of14.bsn_tlv_vlan_pcp.length'],
+    fields['of14.bsn_tlv_vlan_pcp.value'],
     fields['of14.bsn_tlv_vlan_vid.type'],
     fields['of14.bsn_tlv_vlan_vid.length'],
     fields['of14.bsn_tlv_vlan_vid.value'],
@@ -29207,6 +29219,16 @@ function dissect_of_bsn_tlv_unicast_query_timeout_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[9] = dissect_of_bsn_tlv_unicast_query_timeout_v4
 
+-- child class of_bsn_tlv_vlan_pcp
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_pcp_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_pcp.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_pcp.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_pcp.value')
+    return 'of_bsn_tlv_vlan_pcp'
+end
+of_bsn_tlv_v4_dissectors[72] = dissect_of_bsn_tlv_vlan_pcp_v4
+
 -- child class of_bsn_tlv_vlan_vid
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vlan_vid_v4(reader, subtree)
@@ -35813,6 +35835,16 @@ function dissect_of_bsn_tlv_unicast_query_timeout_v5(reader, subtree)
     return 'of_bsn_tlv_unicast_query_timeout'
 end
 of_bsn_tlv_v5_dissectors[9] = dissect_of_bsn_tlv_unicast_query_timeout_v5
+
+-- child class of_bsn_tlv_vlan_pcp
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_pcp_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_pcp.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_pcp.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_pcp.value')
+    return 'of_bsn_tlv_vlan_pcp'
+end
+of_bsn_tlv_v5_dissectors[72] = dissect_of_bsn_tlv_vlan_pcp_v5
 
 -- child class of_bsn_tlv_vlan_vid
 -- Child of of_bsn_tlv

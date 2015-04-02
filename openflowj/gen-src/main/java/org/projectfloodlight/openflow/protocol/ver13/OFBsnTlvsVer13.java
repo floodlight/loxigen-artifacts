@@ -650,6 +650,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
+        return new OFBsnTlvVlanPcpVer13.Builder();
+    }
+    public OFBsnTlvVlanPcp vlanPcp(short value) {
+        return new OFBsnTlvVlanPcpVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvVlanVid.Builder buildVlanVid() {
         return new OFBsnTlvVlanVidVer13.Builder();
     }

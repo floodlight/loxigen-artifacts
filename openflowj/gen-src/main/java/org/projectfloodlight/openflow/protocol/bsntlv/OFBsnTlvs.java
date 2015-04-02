@@ -166,6 +166,8 @@ public interface OFBsnTlvs {
     OFBsnTlvUdpSrc udpSrc(int value);
     OFBsnTlvUnicastQueryTimeout.Builder buildUnicastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvUnicastQueryTimeout unicastQueryTimeout(long value);
+    OFBsnTlvVlanPcp.Builder buildVlanPcp() throws UnsupportedOperationException;
+    OFBsnTlvVlanPcp vlanPcp(short value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;
     OFBsnTlvVlanVid vlanVid(VlanVid value);
     OFBsnTlvVrf.Builder buildVrf() throws UnsupportedOperationException;

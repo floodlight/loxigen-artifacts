@@ -249,6 +249,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x9:
                    // discriminator value 0x9=0x9 for class OFBsnTlvUnicastQueryTimeoutVer13
                    return OFBsnTlvUnicastQueryTimeoutVer13.READER.readFrom(bb);
+               case (short) 0x48:
+                   // discriminator value 0x48=0x48 for class OFBsnTlvVlanPcpVer13
+                   return OFBsnTlvVlanPcpVer13.READER.readFrom(bb);
                case (short) 0x6:
                    // discriminator value 0x6=0x6 for class OFBsnTlvVlanVidVer13
                    return OFBsnTlvVlanVidVer13.READER.readFrom(bb);

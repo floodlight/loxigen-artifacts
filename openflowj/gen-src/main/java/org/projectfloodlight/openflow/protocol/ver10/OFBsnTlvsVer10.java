@@ -513,6 +513,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvUnicastQueryTimeout not supported in version 1.0");
     }
 
+    public OFBsnTlvVlanPcp.Builder buildVlanPcp() {
+        throw new UnsupportedOperationException("OFBsnTlvVlanPcp not supported in version 1.0");
+    }
+    public OFBsnTlvVlanPcp vlanPcp(short value) {
+        throw new UnsupportedOperationException("OFBsnTlvVlanPcp not supported in version 1.0");
+    }
+
     public OFBsnTlvVlanVid.Builder buildVlanVid() {
         throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.0");
     }

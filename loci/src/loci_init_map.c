@@ -376,6 +376,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_udp_dst_init,
     (of_object_init_f)of_bsn_tlv_udp_src_init,
     (of_object_init_f)of_bsn_tlv_unicast_query_timeout_init,
+    (of_object_init_f)of_bsn_tlv_vlan_pcp_init,
     (of_object_init_f)of_bsn_tlv_vlan_vid_init,
     (of_object_init_f)of_bsn_tlv_vrf_init,
     (of_object_init_f)of_bsn_vlan_counter_stats_entry_init,
