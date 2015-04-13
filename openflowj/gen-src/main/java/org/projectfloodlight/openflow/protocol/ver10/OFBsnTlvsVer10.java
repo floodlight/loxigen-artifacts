@@ -429,6 +429,22 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvSamplingRate not supported in version 1.0");
     }
 
+    public OFBsnTlvSetLoopbackMode setLoopbackMode() {
+        throw new UnsupportedOperationException("OFBsnTlvSetLoopbackMode not supported in version 1.0");
+    }
+
+    public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
+        throw new UnsupportedOperationException("OFBsnTlvStripMplsL2OnIngress not supported in version 1.0");
+    }
+
+    public OFBsnTlvStripMplsL3OnIngress stripMplsL3OnIngress() {
+        throw new UnsupportedOperationException("OFBsnTlvStripMplsL3OnIngress not supported in version 1.0");
+    }
+
+    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
+        throw new UnsupportedOperationException("OFBsnTlvStripVlanOnEgress not supported in version 1.0");
+    }
+
     public OFBsnTlvSubAgentId.Builder buildSubAgentId() {
         throw new UnsupportedOperationException("OFBsnTlvSubAgentId not supported in version 1.0");
     }

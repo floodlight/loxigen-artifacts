@@ -6867,6 +6867,34 @@ typedef struct of_bsn_tlv_rx_packets_s of_bsn_tlv_rx_packets_t;
 typedef struct of_bsn_tlv_sampling_rate_s of_bsn_tlv_sampling_rate_t;
 
 /**
+ * Structure for of_bsn_tlv_set_loopback_mode object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_set_loopback_mode_s of_bsn_tlv_set_loopback_mode_t;
+
+/**
+ * Structure for of_bsn_tlv_strip_mpls_l2_on_ingress object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_strip_mpls_l2_on_ingress_s of_bsn_tlv_strip_mpls_l2_on_ingress_t;
+
+/**
+ * Structure for of_bsn_tlv_strip_mpls_l3_on_ingress object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_strip_mpls_l3_on_ingress_s of_bsn_tlv_strip_mpls_l3_on_ingress_t;
+
+/**
+ * Structure for of_bsn_tlv_strip_vlan_on_egress object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_strip_vlan_on_egress_s of_bsn_tlv_strip_vlan_on_egress_t;
+
+/**
  * Structure for of_bsn_tlv_sub_agent_id object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

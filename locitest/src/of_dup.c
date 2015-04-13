@@ -26826,6 +26826,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_convergence_status_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
         return of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(src);
     }
@@ -26878,8 +26882,8 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
-        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
@@ -26888,6 +26892,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
         return of_bsn_tlv_rx_packets_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
@@ -27010,6 +27018,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_internal_mac_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
         return of_bsn_tlv_header_size_OF_VERSION_1_3_dup(src);
     }
@@ -27084,6 +27096,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
 
     if (src->object_id == OF_BSN_TLV_PORT) {
         return of_bsn_tlv_port_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -28528,6 +28544,90 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_sampling_rate_value_get(src, &val32);
     of_bsn_tlv_sampling_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_set_loopback_mode
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_set_loopback_mode.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_set_loopback_mode_t *
+of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(
+    of_bsn_tlv_set_loopback_mode_t *src)
+{
+    of_bsn_tlv_set_loopback_mode_t *dst;
+
+    if ((dst = of_bsn_tlv_set_loopback_mode_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_strip_mpls_l2_on_ingress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_strip_mpls_l2_on_ingress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_strip_mpls_l2_on_ingress_t *
+of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(
+    of_bsn_tlv_strip_mpls_l2_on_ingress_t *src)
+{
+    of_bsn_tlv_strip_mpls_l2_on_ingress_t *dst;
+
+    if ((dst = of_bsn_tlv_strip_mpls_l2_on_ingress_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_strip_mpls_l3_on_ingress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_strip_mpls_l3_on_ingress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_strip_mpls_l3_on_ingress_t *
+of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(
+    of_bsn_tlv_strip_mpls_l3_on_ingress_t *src)
+{
+    of_bsn_tlv_strip_mpls_l3_on_ingress_t *dst;
+
+    if ((dst = of_bsn_tlv_strip_mpls_l3_on_ingress_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_strip_vlan_on_egress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_strip_vlan_on_egress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_strip_vlan_on_egress_t *
+of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(
+    of_bsn_tlv_strip_vlan_on_egress_t *src)
+{
+    of_bsn_tlv_strip_vlan_on_egress_t *dst;
+
+    if ((dst = of_bsn_tlv_strip_vlan_on_egress_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -46247,6 +46347,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_convergence_status_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_SAMPLING_RATE) {
         return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
     }
@@ -46299,8 +46403,8 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
-        return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_PARTNER_STATE) {
@@ -46309,6 +46413,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_RX_PACKETS) {
         return of_bsn_tlv_rx_packets_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_BSN_TLV_ACTOR_SYSTEM_MAC) {
@@ -46431,6 +46539,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_internal_mac_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_TX_PACKETS) {
+        return of_bsn_tlv_tx_packets_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_HEADER_SIZE) {
         return of_bsn_tlv_header_size_OF_VERSION_1_4_dup(src);
     }
@@ -46505,6 +46617,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
 
     if (src->object_id == OF_BSN_TLV_PORT) {
         return of_bsn_tlv_port_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -47949,6 +48065,90 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_sampling_rate_value_get(src, &val32);
     of_bsn_tlv_sampling_rate_value_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_set_loopback_mode
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_set_loopback_mode.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_set_loopback_mode_t *
+of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(
+    of_bsn_tlv_set_loopback_mode_t *src)
+{
+    of_bsn_tlv_set_loopback_mode_t *dst;
+
+    if ((dst = of_bsn_tlv_set_loopback_mode_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_strip_mpls_l2_on_ingress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_strip_mpls_l2_on_ingress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_strip_mpls_l2_on_ingress_t *
+of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(
+    of_bsn_tlv_strip_mpls_l2_on_ingress_t *src)
+{
+    of_bsn_tlv_strip_mpls_l2_on_ingress_t *dst;
+
+    if ((dst = of_bsn_tlv_strip_mpls_l2_on_ingress_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_strip_mpls_l3_on_ingress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_strip_mpls_l3_on_ingress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_strip_mpls_l3_on_ingress_t *
+of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(
+    of_bsn_tlv_strip_mpls_l3_on_ingress_t *src)
+{
+    of_bsn_tlv_strip_mpls_l3_on_ingress_t *dst;
+
+    if ((dst = of_bsn_tlv_strip_mpls_l3_on_ingress_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_strip_vlan_on_egress
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_strip_vlan_on_egress.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_strip_vlan_on_egress_t *
+of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(
+    of_bsn_tlv_strip_vlan_on_egress_t *src)
+{
+    of_bsn_tlv_strip_vlan_on_egress_t *dst;
+
+    if ((dst = of_bsn_tlv_strip_vlan_on_egress_new(src->version)) == NULL) {
+        return NULL;
+    }
 
     return dst;
 }
@@ -64133,6 +64333,74 @@ of_bsn_tlv_sampling_rate_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_set_loopback_mode_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_strip_mpls_l2_on_ingress_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_strip_mpls_l3_on_ingress_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_strip_vlan_on_egress_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

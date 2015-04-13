@@ -28133,6 +28133,158 @@ test_of_bsn_tlv_sampling_rate_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_set_loopback_mode_t *obj;
+    obj = of_bsn_tlv_set_loopback_mode_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_SET_LOOPBACK_MODE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_set_loopback_mode_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_strip_mpls_l2_on_ingress_t *obj;
+    obj = of_bsn_tlv_strip_mpls_l2_on_ingress_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_strip_mpls_l2_on_ingress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_strip_mpls_l3_on_ingress_t *obj;
+    obj = of_bsn_tlv_strip_mpls_l3_on_ingress_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_strip_mpls_l3_on_ingress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3(void)
+{
+    of_bsn_tlv_strip_vlan_on_egress_t *obj;
+    obj = of_bsn_tlv_strip_vlan_on_egress_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_strip_vlan_on_egress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_sub_agent_id_OF_VERSION_1_3(void)
 {
     of_bsn_tlv_sub_agent_id_t *obj;
@@ -47817,6 +47969,158 @@ test_of_bsn_tlv_sampling_rate_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_set_loopback_mode_t *obj;
+    obj = of_bsn_tlv_set_loopback_mode_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_SET_LOOPBACK_MODE);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_SET_LOOPBACK_MODE);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_set_loopback_mode_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_strip_mpls_l2_on_ingress_t *obj;
+    obj = of_bsn_tlv_strip_mpls_l2_on_ingress_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_strip_mpls_l2_on_ingress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_strip_mpls_l3_on_ingress_t *obj;
+    obj = of_bsn_tlv_strip_mpls_l3_on_ingress_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_strip_mpls_l3_on_ingress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4(void)
+{
+    of_bsn_tlv_strip_vlan_on_egress_t *obj;
+    obj = of_bsn_tlv_strip_vlan_on_egress_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 4);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 4);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_BSN_TLV_STRIP_VLAN_ON_EGRESS);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_bsn_tlv_strip_vlan_on_egress_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_tlv_sub_agent_id_OF_VERSION_1_4(void)
 {
     of_bsn_tlv_sub_agent_id_t *obj;
@@ -57223,6 +57527,10 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_rx_bytes_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_rx_packets_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_sampling_rate_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3);
+    RUN_TEST(of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_sub_agent_id_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_tcp_dst_OF_VERSION_1_3);
     RUN_TEST(of_bsn_tlv_tcp_src_OF_VERSION_1_3);
@@ -57741,6 +58049,10 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_bsn_tlv_rx_bytes_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_rx_packets_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_sampling_rate_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_sub_agent_id_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_tcp_dst_OF_VERSION_1_4);
     RUN_TEST(of_bsn_tlv_tcp_src_OF_VERSION_1_4);

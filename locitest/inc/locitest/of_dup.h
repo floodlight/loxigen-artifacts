@@ -1423,6 +1423,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_set_loopback_mode_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l2_on_ingress_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l3_on_ingress_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_vlan_on_egress_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_sub_agent_id_dup(
         of_object_t *src);
 
@@ -5907,6 +5923,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8200,6 +8232,22 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_sampling_rate_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

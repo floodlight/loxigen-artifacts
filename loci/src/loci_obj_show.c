@@ -20450,6 +20450,38 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -32463,6 +32495,38 @@ of_bsn_tlv_sampling_rate_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie,
 }
 
 int
+of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
+of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+
+    return out;
+}
+
+int
 of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -37791,6 +37855,10 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
     unknown_show,
@@ -38393,6 +38461,10 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39153,6 +39225,10 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
     unknown_show,
@@ -39817,6 +39893,10 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_rx_bytes_OF_VERSION_1_3_show,
     of_bsn_tlv_rx_packets_OF_VERSION_1_3_show,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_3_show,
+    of_bsn_tlv_set_loopback_mode_OF_VERSION_1_3_show,
+    of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_show,
+    of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_3_show,
+    of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_3_show,
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_3_show,
     of_bsn_tlv_tcp_dst_OF_VERSION_1_3_show,
     of_bsn_tlv_tcp_src_OF_VERSION_1_3_show,
@@ -40498,6 +40578,10 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_rx_bytes_OF_VERSION_1_4_show,
     of_bsn_tlv_rx_packets_OF_VERSION_1_4_show,
     of_bsn_tlv_sampling_rate_OF_VERSION_1_4_show,
+    of_bsn_tlv_set_loopback_mode_OF_VERSION_1_4_show,
+    of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_show,
+    of_bsn_tlv_strip_mpls_l3_on_ingress_OF_VERSION_1_4_show,
+    of_bsn_tlv_strip_vlan_on_egress_OF_VERSION_1_4_show,
     of_bsn_tlv_sub_agent_id_OF_VERSION_1_4_show,
     of_bsn_tlv_tcp_dst_OF_VERSION_1_4_show,
     of_bsn_tlv_tcp_src_OF_VERSION_1_4_show,

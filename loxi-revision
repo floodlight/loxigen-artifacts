@@ -1,1 +1,1 @@
-817d6d10595f4add9166fafb4c66a79a31a682ab Merge into master from pull request #390: add vlan_pcp tlv (https://github.com/floodlight/loxigen/pull/390)
+9a3d42c25e93c1b8a642eb98dfc2d44970929ef9 Merge into master from pull request #391: Add a few tlvs for tag stripping (https://github.com/floodlight/loxigen/pull/391)

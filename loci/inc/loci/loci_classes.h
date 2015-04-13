@@ -911,6 +911,14 @@ void of_bsn_tlv_rx_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *
 void of_bsn_tlv_rx_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_sampling_rate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_sampling_rate_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_set_loopback_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_set_loopback_mode_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_strip_mpls_l2_on_ingress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_strip_mpls_l2_on_ingress_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_strip_mpls_l3_on_ingress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_strip_mpls_l3_on_ingress_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_strip_vlan_on_egress_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_strip_vlan_on_egress_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_sub_agent_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_sub_agent_id_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_tcp_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1604,6 +1612,10 @@ typedef of_object_t of_bsn_tlv_request_packets_t;
 typedef of_object_t of_bsn_tlv_rx_bytes_t;
 typedef of_object_t of_bsn_tlv_rx_packets_t;
 typedef of_object_t of_bsn_tlv_sampling_rate_t;
+typedef of_object_t of_bsn_tlv_set_loopback_mode_t;
+typedef of_object_t of_bsn_tlv_strip_mpls_l2_on_ingress_t;
+typedef of_object_t of_bsn_tlv_strip_mpls_l3_on_ingress_t;
+typedef of_object_t of_bsn_tlv_strip_vlan_on_egress_t;
 typedef of_object_t of_bsn_tlv_sub_agent_id_t;
 typedef of_object_t of_bsn_tlv_tcp_dst_t;
 typedef of_object_t of_bsn_tlv_tcp_src_t;
@@ -3710,6 +3722,26 @@ extern void of_bsn_tlv_rx_packets_init(
 extern of_object_t *
     of_bsn_tlv_sampling_rate_new(of_version_t version);
 extern void of_bsn_tlv_sampling_rate_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_set_loopback_mode_new(of_version_t version);
+extern void of_bsn_tlv_set_loopback_mode_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l2_on_ingress_new(of_version_t version);
+extern void of_bsn_tlv_strip_mpls_l2_on_ingress_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_strip_mpls_l3_on_ingress_new(of_version_t version);
+extern void of_bsn_tlv_strip_mpls_l3_on_ingress_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_strip_vlan_on_egress_new(of_version_t version);
+extern void of_bsn_tlv_strip_vlan_on_egress_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9208,6 +9240,50 @@ of_bsn_tlv_rx_packets_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_sampling_rate_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_set_loopback_mode_t
+ * @param obj An instance of type of_bsn_tlv_set_loopback_mode_t
+ *
+ * \ingroup of_bsn_tlv_set_loopback_mode
+ */
+static inline void
+of_bsn_tlv_set_loopback_mode_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_strip_mpls_l2_on_ingress_t
+ * @param obj An instance of type of_bsn_tlv_strip_mpls_l2_on_ingress_t
+ *
+ * \ingroup of_bsn_tlv_strip_mpls_l2_on_ingress
+ */
+static inline void
+of_bsn_tlv_strip_mpls_l2_on_ingress_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_strip_mpls_l3_on_ingress_t
+ * @param obj An instance of type of_bsn_tlv_strip_mpls_l3_on_ingress_t
+ *
+ * \ingroup of_bsn_tlv_strip_mpls_l3_on_ingress
+ */
+static inline void
+of_bsn_tlv_strip_mpls_l3_on_ingress_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_strip_vlan_on_egress_t
+ * @param obj An instance of type of_bsn_tlv_strip_vlan_on_egress_t
+ *
+ * \ingroup of_bsn_tlv_strip_vlan_on_egress
+ */
+static inline void
+of_bsn_tlv_strip_vlan_on_egress_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -20828,6 +20904,14 @@ extern void of_bsn_tlv_sampling_rate_value_set(
 extern void of_bsn_tlv_sampling_rate_value_get(
     of_bsn_tlv_sampling_rate_t *obj,
     uint32_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_set_loopback_mode */
+
+/* Unified accessor functions for of_bsn_tlv_strip_mpls_l2_on_ingress */
+
+/* Unified accessor functions for of_bsn_tlv_strip_mpls_l3_on_ingress */
+
+/* Unified accessor functions for of_bsn_tlv_strip_vlan_on_egress */
 
 /* Unified accessor functions for of_bsn_tlv_sub_agent_id */
 

@@ -2733,6 +2733,30 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=of_bsn_tlv_wire_object_id_get,
         .wire_type_set=of_bsn_tlv_sampling_rate_push_wire_types,
     },
+    [OF_BSN_TLV_SET_LOOPBACK_MODE] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_set_loopback_mode_push_wire_types,
+    },
+    [OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_strip_mpls_l2_on_ingress_push_wire_types,
+    },
+    [OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_strip_mpls_l3_on_ingress_push_wire_types,
+    },
+    [OF_BSN_TLV_STRIP_VLAN_ON_EGRESS] = {
+        .wire_length_get=of_tlv16_wire_length_get,
+        .wire_length_set=of_tlv16_wire_length_set,
+        .wire_type_get=of_bsn_tlv_wire_object_id_get,
+        .wire_type_set=of_bsn_tlv_strip_vlan_on_egress_push_wire_types,
+    },
     [OF_BSN_TLV_SUB_AGENT_ID] = {
         .wire_length_get=of_tlv16_wire_length_get,
         .wire_length_set=of_tlv16_wire_length_set,

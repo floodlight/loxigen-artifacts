@@ -5003,6 +5003,18 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x48:
             *id = OF_BSN_TLV_VLAN_PCP;
             break;
+        case 0x49:
+            *id = OF_BSN_TLV_STRIP_VLAN_ON_EGRESS;
+            break;
+        case 0x4a:
+            *id = OF_BSN_TLV_SET_LOOPBACK_MODE;
+            break;
+        case 0x4b:
+            *id = OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS;
+            break;
+        case 0x4c:
+            *id = OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5227,6 +5239,18 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x48:
             *id = OF_BSN_TLV_VLAN_PCP;
+            break;
+        case 0x49:
+            *id = OF_BSN_TLV_STRIP_VLAN_ON_EGRESS;
+            break;
+        case 0x4a:
+            *id = OF_BSN_TLV_SET_LOOPBACK_MODE;
+            break;
+        case 0x4b:
+            *id = OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS;
+            break;
+        case 0x4c:
+            *id = OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS;
             break;
         default:
             *id = OF_BSN_TLV;

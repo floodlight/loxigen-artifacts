@@ -6879,6 +6879,14 @@ fields['of13.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of13.bsn_tlv_rx_pac
 fields['of13.bsn_tlv_sampling_rate.type'] = ProtoField.uint16("of13.bsn_tlv_sampling_rate.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_sampling_rate.length'] = ProtoField.uint16("of13.bsn_tlv_sampling_rate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of13.bsn_tlv_sampling_rate.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of13.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of13.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_strip_mpls_l2_on_ingress.type'] = ProtoField.uint16("of13.bsn_tlv_strip_mpls_l2_on_ingress.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_strip_mpls_l2_on_ingress.length'] = ProtoField.uint16("of13.bsn_tlv_strip_mpls_l2_on_ingress.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_strip_mpls_l3_on_ingress.type'] = ProtoField.uint16("of13.bsn_tlv_strip_mpls_l3_on_ingress.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_strip_mpls_l3_on_ingress.length'] = ProtoField.uint16("of13.bsn_tlv_strip_mpls_l3_on_ingress.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_strip_vlan_on_egress.type'] = ProtoField.uint16("of13.bsn_tlv_strip_vlan_on_egress.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_strip_vlan_on_egress.length'] = ProtoField.uint16("of13.bsn_tlv_strip_vlan_on_egress.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_sub_agent_id.type'] = ProtoField.uint16("of13.bsn_tlv_sub_agent_id.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_sub_agent_id.length'] = ProtoField.uint16("of13.bsn_tlv_sub_agent_id.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of13.bsn_tlv_sub_agent_id.value", "value", base.DEC, nil)
@@ -9423,6 +9431,14 @@ fields['of14.bsn_tlv_rx_packets.value'] = ProtoField.uint64("of14.bsn_tlv_rx_pac
 fields['of14.bsn_tlv_sampling_rate.type'] = ProtoField.uint16("of14.bsn_tlv_sampling_rate.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_sampling_rate.length'] = ProtoField.uint16("of14.bsn_tlv_sampling_rate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_sampling_rate.value'] = ProtoField.uint32("of14.bsn_tlv_sampling_rate.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_set_loopback_mode.type'] = ProtoField.uint16("of14.bsn_tlv_set_loopback_mode.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_set_loopback_mode.length'] = ProtoField.uint16("of14.bsn_tlv_set_loopback_mode.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_strip_mpls_l2_on_ingress.type'] = ProtoField.uint16("of14.bsn_tlv_strip_mpls_l2_on_ingress.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_strip_mpls_l2_on_ingress.length'] = ProtoField.uint16("of14.bsn_tlv_strip_mpls_l2_on_ingress.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_strip_mpls_l3_on_ingress.type'] = ProtoField.uint16("of14.bsn_tlv_strip_mpls_l3_on_ingress.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_strip_mpls_l3_on_ingress.length'] = ProtoField.uint16("of14.bsn_tlv_strip_mpls_l3_on_ingress.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_strip_vlan_on_egress.type'] = ProtoField.uint16("of14.bsn_tlv_strip_vlan_on_egress.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_strip_vlan_on_egress.length'] = ProtoField.uint16("of14.bsn_tlv_strip_vlan_on_egress.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_sub_agent_id.type'] = ProtoField.uint16("of14.bsn_tlv_sub_agent_id.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_sub_agent_id.length'] = ProtoField.uint16("of14.bsn_tlv_sub_agent_id.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_sub_agent_id.value'] = ProtoField.uint32("of14.bsn_tlv_sub_agent_id.value", "value", base.DEC, nil)
@@ -15169,6 +15185,14 @@ p_of.fields = {
     fields['of13.bsn_tlv_sampling_rate.type'],
     fields['of13.bsn_tlv_sampling_rate.length'],
     fields['of13.bsn_tlv_sampling_rate.value'],
+    fields['of13.bsn_tlv_set_loopback_mode.type'],
+    fields['of13.bsn_tlv_set_loopback_mode.length'],
+    fields['of13.bsn_tlv_strip_mpls_l2_on_ingress.type'],
+    fields['of13.bsn_tlv_strip_mpls_l2_on_ingress.length'],
+    fields['of13.bsn_tlv_strip_mpls_l3_on_ingress.type'],
+    fields['of13.bsn_tlv_strip_mpls_l3_on_ingress.length'],
+    fields['of13.bsn_tlv_strip_vlan_on_egress.type'],
+    fields['of13.bsn_tlv_strip_vlan_on_egress.length'],
     fields['of13.bsn_tlv_sub_agent_id.type'],
     fields['of13.bsn_tlv_sub_agent_id.length'],
     fields['of13.bsn_tlv_sub_agent_id.value'],
@@ -17713,6 +17737,14 @@ p_of.fields = {
     fields['of14.bsn_tlv_sampling_rate.type'],
     fields['of14.bsn_tlv_sampling_rate.length'],
     fields['of14.bsn_tlv_sampling_rate.value'],
+    fields['of14.bsn_tlv_set_loopback_mode.type'],
+    fields['of14.bsn_tlv_set_loopback_mode.length'],
+    fields['of14.bsn_tlv_strip_mpls_l2_on_ingress.type'],
+    fields['of14.bsn_tlv_strip_mpls_l2_on_ingress.length'],
+    fields['of14.bsn_tlv_strip_mpls_l3_on_ingress.type'],
+    fields['of14.bsn_tlv_strip_mpls_l3_on_ingress.length'],
+    fields['of14.bsn_tlv_strip_vlan_on_egress.type'],
+    fields['of14.bsn_tlv_strip_vlan_on_egress.length'],
     fields['of14.bsn_tlv_sub_agent_id.type'],
     fields['of14.bsn_tlv_sub_agent_id.length'],
     fields['of14.bsn_tlv_sub_agent_id.value'],
@@ -29099,6 +29131,42 @@ function dissect_of_bsn_tlv_sampling_rate_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[30] = dissect_of_bsn_tlv_sampling_rate_v4
 
+-- child class of_bsn_tlv_set_loopback_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_set_loopback_mode_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_set_loopback_mode.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_set_loopback_mode.length')
+    return 'of_bsn_tlv_set_loopback_mode'
+end
+of_bsn_tlv_v4_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v4
+
+-- child class of_bsn_tlv_strip_mpls_l2_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_mpls_l2_on_ingress_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_strip_mpls_l2_on_ingress.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_strip_mpls_l2_on_ingress.length')
+    return 'of_bsn_tlv_strip_mpls_l2_on_ingress'
+end
+of_bsn_tlv_v4_dissectors[75] = dissect_of_bsn_tlv_strip_mpls_l2_on_ingress_v4
+
+-- child class of_bsn_tlv_strip_mpls_l3_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_mpls_l3_on_ingress_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_strip_mpls_l3_on_ingress.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_strip_mpls_l3_on_ingress.length')
+    return 'of_bsn_tlv_strip_mpls_l3_on_ingress'
+end
+of_bsn_tlv_v4_dissectors[76] = dissect_of_bsn_tlv_strip_mpls_l3_on_ingress_v4
+
+-- child class of_bsn_tlv_strip_vlan_on_egress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_vlan_on_egress_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_strip_vlan_on_egress.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_strip_vlan_on_egress.length')
+    return 'of_bsn_tlv_strip_vlan_on_egress'
+end
+of_bsn_tlv_v4_dissectors[73] = dissect_of_bsn_tlv_strip_vlan_on_egress_v4
+
 -- child class of_bsn_tlv_sub_agent_id
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_sub_agent_id_v4(reader, subtree)
@@ -35715,6 +35783,42 @@ function dissect_of_bsn_tlv_sampling_rate_v5(reader, subtree)
     return 'of_bsn_tlv_sampling_rate'
 end
 of_bsn_tlv_v5_dissectors[30] = dissect_of_bsn_tlv_sampling_rate_v5
+
+-- child class of_bsn_tlv_set_loopback_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_set_loopback_mode_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_set_loopback_mode.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_set_loopback_mode.length')
+    return 'of_bsn_tlv_set_loopback_mode'
+end
+of_bsn_tlv_v5_dissectors[74] = dissect_of_bsn_tlv_set_loopback_mode_v5
+
+-- child class of_bsn_tlv_strip_mpls_l2_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_mpls_l2_on_ingress_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_strip_mpls_l2_on_ingress.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_strip_mpls_l2_on_ingress.length')
+    return 'of_bsn_tlv_strip_mpls_l2_on_ingress'
+end
+of_bsn_tlv_v5_dissectors[75] = dissect_of_bsn_tlv_strip_mpls_l2_on_ingress_v5
+
+-- child class of_bsn_tlv_strip_mpls_l3_on_ingress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_mpls_l3_on_ingress_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_strip_mpls_l3_on_ingress.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_strip_mpls_l3_on_ingress.length')
+    return 'of_bsn_tlv_strip_mpls_l3_on_ingress'
+end
+of_bsn_tlv_v5_dissectors[76] = dissect_of_bsn_tlv_strip_mpls_l3_on_ingress_v5
+
+-- child class of_bsn_tlv_strip_vlan_on_egress
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_strip_vlan_on_egress_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_strip_vlan_on_egress.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_strip_vlan_on_egress.length')
+    return 'of_bsn_tlv_strip_vlan_on_egress'
+end
+of_bsn_tlv_v5_dissectors[73] = dissect_of_bsn_tlv_strip_vlan_on_egress_v5
 
 -- child class of_bsn_tlv_sub_agent_id
 -- Child of of_bsn_tlv

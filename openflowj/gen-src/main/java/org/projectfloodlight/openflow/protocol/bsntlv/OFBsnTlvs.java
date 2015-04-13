@@ -142,6 +142,10 @@ public interface OFBsnTlvs {
     OFBsnTlvRxPackets rxPackets(U64 value);
     OFBsnTlvSamplingRate.Builder buildSamplingRate() throws UnsupportedOperationException;
     OFBsnTlvSamplingRate samplingRate(long value);
+    OFBsnTlvSetLoopbackMode setLoopbackMode();
+    OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress();
+    OFBsnTlvStripMplsL3OnIngress stripMplsL3OnIngress();
+    OFBsnTlvStripVlanOnEgress stripVlanOnEgress();
     OFBsnTlvSubAgentId.Builder buildSubAgentId() throws UnsupportedOperationException;
     OFBsnTlvSubAgentId subAgentId(long value);
     OFBsnTlvTcpDst.Builder buildTcpDst() throws UnsupportedOperationException;

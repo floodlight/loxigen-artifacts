@@ -24,6 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.jboss.netty.buffer.ChannelBuffer;
+import java.util.Set;
 
 abstract class OFBsnTlvVer14 {
     // version: 1.4
@@ -213,6 +214,18 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x1e:
                    // discriminator value 0x1e=0x1e for class OFBsnTlvSamplingRateVer14
                    return OFBsnTlvSamplingRateVer14.READER.readFrom(bb);
+               case (short) 0x4a:
+                   // discriminator value 0x4a=0x4a for class OFBsnTlvSetLoopbackModeVer14
+                   return OFBsnTlvSetLoopbackModeVer14.READER.readFrom(bb);
+               case (short) 0x4b:
+                   // discriminator value 0x4b=0x4b for class OFBsnTlvStripMplsL2OnIngressVer14
+                   return OFBsnTlvStripMplsL2OnIngressVer14.READER.readFrom(bb);
+               case (short) 0x4c:
+                   // discriminator value 0x4c=0x4c for class OFBsnTlvStripMplsL3OnIngressVer14
+                   return OFBsnTlvStripMplsL3OnIngressVer14.READER.readFrom(bb);
+               case (short) 0x49:
+                   // discriminator value 0x49=0x49 for class OFBsnTlvStripVlanOnEgressVer14
+                   return OFBsnTlvStripVlanOnEgressVer14.READER.readFrom(bb);
                case (short) 0x26:
                    // discriminator value 0x26=0x26 for class OFBsnTlvSubAgentIdVer14
                    return OFBsnTlvSubAgentIdVer14.READER.readFrom(bb);

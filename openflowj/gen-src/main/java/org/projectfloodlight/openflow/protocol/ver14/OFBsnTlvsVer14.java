@@ -542,6 +542,22 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvSetLoopbackMode setLoopbackMode() {
+        return OFBsnTlvSetLoopbackModeVer14.INSTANCE;
+    }
+
+    public OFBsnTlvStripMplsL2OnIngress stripMplsL2OnIngress() {
+        return OFBsnTlvStripMplsL2OnIngressVer14.INSTANCE;
+    }
+
+    public OFBsnTlvStripMplsL3OnIngress stripMplsL3OnIngress() {
+        return OFBsnTlvStripMplsL3OnIngressVer14.INSTANCE;
+    }
+
+    public OFBsnTlvStripVlanOnEgress stripVlanOnEgress() {
+        return OFBsnTlvStripVlanOnEgressVer14.INSTANCE;
+    }
+
     public OFBsnTlvSubAgentId.Builder buildSubAgentId() {
         return new OFBsnTlvSubAgentIdVer14.Builder();
     }
