@@ -7471,6 +7471,21 @@ typedef struct of_instruction_bsn_deny_s of_instruction_bsn_deny_t;
 typedef struct of_instruction_bsn_dhcp_offload_s of_instruction_bsn_dhcp_offload_t;
 
 /**
+ * Structure for of_instruction_bsn_disable_l3 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_disable_l3_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_bsn_disable_l3_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_bsn_disable_l3_s of_instruction_bsn_disable_l3_t;
+
+/**
  * Structure for of_instruction_bsn_disable_split_horizon_check object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -7730,6 +7745,21 @@ typedef struct of_instruction_id_bsn_deny_s of_instruction_id_bsn_deny_t;
  *
  */
 typedef struct of_instruction_id_bsn_dhcp_offload_s of_instruction_id_bsn_dhcp_offload_t;
+
+/**
+ * Structure for of_instruction_id_bsn_disable_l3 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_disable_l3_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_instruction_id_bsn_disable_l3_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_instruction_id_bsn_disable_l3_s of_instruction_id_bsn_disable_l3_t;
 
 /**
  * Structure for of_instruction_id_bsn_disable_split_horizon_check object.  Get/set

@@ -29518,8 +29518,56 @@ of_instruction_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
+        return of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
+        return of_instruction_bsn_permit_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_L3) {
+        return of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
         return of_instruction_bsn_deny_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
+        return of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
+        return of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
+        return of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
@@ -29530,56 +29578,12 @@ of_instruction_OF_VERSION_1_3_dup(
         return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return of_instruction_apply_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
-        return of_instruction_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
-        return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return of_instruction_clear_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_bsn_internal_priority_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
-        return of_instruction_bsn_arp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
-        return of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return of_instruction_goto_table_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return of_instruction_write_metadata_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_METER) {
         return of_instruction_meter_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
-        return of_instruction_bsn_span_destination_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
-        return of_instruction_bsn_permit_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
@@ -29739,6 +29743,34 @@ of_instruction_bsn_dhcp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_disable_l3
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_disable_l3.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_disable_l3_t *
+of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(
+    of_instruction_bsn_disable_l3_t *src)
+{
+    of_instruction_bsn_disable_l3_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_disable_l3_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_disable_l3_experimenter_get(src, &val32);
+    of_instruction_bsn_disable_l3_experimenter_set(dst, val32);
+
+    of_instruction_bsn_disable_l3_subtype_get(src, &val32);
+    of_instruction_bsn_disable_l3_subtype_set(dst, val32);
 
     return dst;
 }
@@ -30056,28 +30088,16 @@ of_instruction_id_OF_VERSION_1_3_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
-        return of_instruction_id_apply_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
-        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
         return of_instruction_id_write_metadata_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
         return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
-        return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
-        return of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_METER) {
@@ -30088,12 +30108,32 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
-        return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
+        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
+        return of_instruction_id_write_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
+        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
+        return of_instruction_id_apply_actions_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
+        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SPLIT_HORIZON_CHECK) {
+        return of_instruction_id_bsn_disable_split_horizon_check_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
@@ -30108,28 +30148,24 @@ of_instruction_id_OF_VERSION_1_3_dup(
         return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
+        return of_instruction_id_bsn_deny_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
         return of_instruction_id_goto_table_OF_VERSION_1_3_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
-        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
-        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_3_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_L3) {
+        return of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
         return of_instruction_id_bsn_span_destination_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
-        return of_instruction_id_write_actions_OF_VERSION_1_3_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
-        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_3_dup(src);
     }
 
     return NULL;
@@ -30264,6 +30300,34 @@ of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_3_dup(
 
     of_instruction_id_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_disable_l3
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_disable_l3.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_disable_l3_t *
+of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_dup(
+    of_instruction_id_bsn_disable_l3_t *src)
+{
+    of_instruction_id_bsn_disable_l3_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_disable_l3_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_disable_l3_experimenter_get(src, &val32);
+    of_instruction_id_bsn_disable_l3_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_disable_l3_subtype_get(src, &val32);
+    of_instruction_id_bsn_disable_l3_subtype_set(dst, val32);
 
     return dst;
 }
@@ -49057,8 +49121,56 @@ of_instruction_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
+    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
+        return of_instruction_apply_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
+        return of_instruction_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
+        return of_instruction_bsn_permit_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
+        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_L3) {
+        return of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_BSN_DENY) {
         return of_instruction_bsn_deny_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
+        return of_instruction_clear_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
+        return of_instruction_bsn_arp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
+        return of_instruction_goto_table_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
+        return of_instruction_bsn_span_destination_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
+        return of_instruction_write_metadata_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
+        return of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_AUTO_NEGOTIATION) {
@@ -49069,56 +49181,12 @@ of_instruction_OF_VERSION_1_4_dup(
         return of_instruction_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_APPLY_ACTIONS) {
-        return of_instruction_apply_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PACKET_OF_DEATH) {
-        return of_instruction_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
-        return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_CLEAR_ACTIONS) {
-        return of_instruction_clear_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_bsn_internal_priority_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_ARP_OFFLOAD) {
-        return of_instruction_bsn_arp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_DHCP_OFFLOAD) {
-        return of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_GOTO_TABLE) {
-        return of_instruction_goto_table_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_WRITE_METADATA) {
-        return of_instruction_write_metadata_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PRIORITIZE_PDUS) {
-        return of_instruction_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_METER) {
         return of_instruction_meter_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_BSN_SPAN_DESTINATION) {
-        return of_instruction_bsn_span_destination_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_BSN_PERMIT) {
-        return of_instruction_bsn_permit_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK) {
@@ -49274,6 +49342,34 @@ of_instruction_bsn_dhcp_offload_OF_VERSION_1_4_dup(
 
     of_instruction_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_bsn_disable_l3
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_bsn_disable_l3.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_bsn_disable_l3_t *
+of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(
+    of_instruction_bsn_disable_l3_t *src)
+{
+    of_instruction_bsn_disable_l3_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_bsn_disable_l3_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_bsn_disable_l3_experimenter_get(src, &val32);
+    of_instruction_bsn_disable_l3_experimenter_set(dst, val32);
+
+    of_instruction_bsn_disable_l3_subtype_get(src, &val32);
+    of_instruction_bsn_disable_l3_subtype_set(dst, val32);
 
     return dst;
 }
@@ -49563,24 +49659,16 @@ of_instruction_id_OF_VERSION_1_4_dup(
     of_object_t *src)
 {
 
-    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
-        return of_instruction_id_apply_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
-        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
-    }
-
     if (src->object_id == OF_INSTRUCTION_ID_WRITE_METADATA) {
         return of_instruction_id_write_metadata_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
-        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
+        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
-        return of_instruction_id_clear_actions_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_AUTO_NEGOTIATION) {
+        return of_instruction_id_bsn_auto_negotiation_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_METER) {
@@ -49591,12 +49679,28 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
-        return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
+        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_INTERNAL_PRIORITY) {
-        return of_instruction_id_bsn_internal_priority_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
+        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
+        return of_instruction_id_write_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
+        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_APPLY_ACTIONS) {
+        return of_instruction_id_apply_actions_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_PACKET_OF_DEATH) {
+        return of_instruction_id_bsn_packet_of_death_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_ARP_OFFLOAD) {
@@ -49611,28 +49715,24 @@ of_instruction_id_OF_VERSION_1_4_dup(
         return of_instruction_id_bsn_prioritize_pdus_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DENY) {
+        return of_instruction_id_bsn_deny_OF_VERSION_1_4_dup(src);
+    }
+
+    if (src->object_id == OF_INSTRUCTION_ID_CLEAR_ACTIONS) {
+        return of_instruction_id_clear_actions_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_INSTRUCTION_ID_GOTO_TABLE) {
         return of_instruction_id_goto_table_OF_VERSION_1_4_dup(src);
     }
 
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_VLAN_COUNTERS) {
-        return of_instruction_id_bsn_disable_vlan_counters_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_REQUIRE_VLAN_XLATE) {
-        return of_instruction_id_bsn_require_vlan_xlate_OF_VERSION_1_4_dup(src);
+    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_L3) {
+        return of_instruction_id_bsn_disable_l3_OF_VERSION_1_4_dup(src);
     }
 
     if (src->object_id == OF_INSTRUCTION_ID_BSN_SPAN_DESTINATION) {
         return of_instruction_id_bsn_span_destination_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_WRITE_ACTIONS) {
-        return of_instruction_id_write_actions_OF_VERSION_1_4_dup(src);
-    }
-
-    if (src->object_id == OF_INSTRUCTION_ID_BSN_DISABLE_SRC_MAC_CHECK) {
-        return of_instruction_id_bsn_disable_src_mac_check_OF_VERSION_1_4_dup(src);
     }
 
     return NULL;
@@ -49767,6 +49867,34 @@ of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(
 
     of_instruction_id_bsn_dhcp_offload_subtype_get(src, &val32);
     of_instruction_id_bsn_dhcp_offload_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_instruction_id_bsn_disable_l3
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_instruction_id_bsn_disable_l3.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_instruction_id_bsn_disable_l3_t *
+of_instruction_id_bsn_disable_l3_OF_VERSION_1_4_dup(
+    of_instruction_id_bsn_disable_l3_t *src)
+{
+    of_instruction_id_bsn_disable_l3_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_instruction_id_bsn_disable_l3_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_instruction_id_bsn_disable_l3_experimenter_get(src, &val32);
+    of_instruction_id_bsn_disable_l3_experimenter_set(dst, val32);
+
+    of_instruction_id_bsn_disable_l3_subtype_get(src, &val32);
+    of_instruction_id_bsn_disable_l3_subtype_set(dst, val32);
 
     return dst;
 }
@@ -65096,6 +65224,23 @@ of_instruction_bsn_dhcp_offload_dup(
 }
 
 of_object_t *
+of_instruction_bsn_disable_l3_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_bsn_disable_l3_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_bsn_disable_l3_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
 of_instruction_bsn_disable_split_horizon_check_dup(
     of_object_t *src)
 {
@@ -65408,6 +65553,23 @@ of_instruction_id_bsn_dhcp_offload_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_instruction_id_bsn_dhcp_offload_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_instruction_id_bsn_disable_l3_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_instruction_id_bsn_disable_l3_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_instruction_id_bsn_disable_l3_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

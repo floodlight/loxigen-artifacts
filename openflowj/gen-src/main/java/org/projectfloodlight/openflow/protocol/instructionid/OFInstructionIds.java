@@ -32,6 +32,7 @@ public interface OFInstructionIds {
     OFInstructionIdBsnAutoNegotiation bsnAutoNegotiation();
     OFInstructionIdBsnDeny bsnDeny();
     OFInstructionIdBsnDhcpOffload bsnDhcpOffload();
+    OFInstructionIdBsnDisableL3 bsnDisableL3();
     OFInstructionIdBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck();
     OFInstructionIdBsnDisableSrcMacCheck bsnDisableSrcMacCheck();
     OFInstructionIdBsnDisableVlanCounters bsnDisableVlanCounters();

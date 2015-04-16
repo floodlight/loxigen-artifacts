@@ -89,6 +89,10 @@ public class OFInstructionsVer14 implements OFInstructions {
         return OFInstructionBsnDhcpOffloadVer14.INSTANCE;
     }
 
+    public OFInstructionBsnDisableL3 bsnDisableL3() {
+        return OFInstructionBsnDisableL3Ver14.INSTANCE;
+    }
+
     public OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
         throw new UnsupportedOperationException("OFInstructionBsnDisableSplitHorizonCheck not supported in version 1.4");
     }

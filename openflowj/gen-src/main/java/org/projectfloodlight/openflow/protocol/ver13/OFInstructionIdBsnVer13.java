@@ -65,6 +65,9 @@ abstract class OFInstructionIdBsnVer13 {
                case 0x2:
                    // discriminator value 0x2L=0x2L for class OFInstructionIdBsnDhcpOffloadVer13
                    return OFInstructionIdBsnDhcpOffloadVer13.READER.readFrom(bb);
+               case 0xd:
+                   // discriminator value 0xdL=0xdL for class OFInstructionIdBsnDisableL3Ver13
+                   return OFInstructionIdBsnDisableL3Ver13.READER.readFrom(bb);
                case 0x3:
                    // discriminator value 0x3L=0x3L for class OFInstructionIdBsnDisableSplitHorizonCheckVer13
                    return OFInstructionIdBsnDisableSplitHorizonCheckVer13.READER.readFrom(bb);

@@ -89,6 +89,10 @@ public class OFInstructionsVer13 implements OFInstructions {
         return OFInstructionBsnDhcpOffloadVer13.INSTANCE;
     }
 
+    public OFInstructionBsnDisableL3 bsnDisableL3() {
+        return OFInstructionBsnDisableL3Ver13.INSTANCE;
+    }
+
     public OFInstructionBsnDisableSplitHorizonCheck bsnDisableSplitHorizonCheck() {
         return OFInstructionBsnDisableSplitHorizonCheckVer13.INSTANCE;
     }

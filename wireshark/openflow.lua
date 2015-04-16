@@ -7422,6 +7422,14 @@ fields['of13.instruction_id_bsn_dhcp_offload.type'] = ProtoField.uint16("of13.in
 fields['of13.instruction_id_bsn_dhcp_offload.len'] = ProtoField.uint16("of13.instruction_id_bsn_dhcp_offload.len", "len", base.DEC, nil)
 fields['of13.instruction_id_bsn_dhcp_offload.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_dhcp_offload.experimenter", "experimenter", base.DEC, nil)
 fields['of13.instruction_id_bsn_dhcp_offload.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_dhcp_offload.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_bsn_disable_l3.type'] = ProtoField.uint16("of13.instruction_bsn_disable_l3.type", "type", base.DEC, nil)
+fields['of13.instruction_bsn_disable_l3.len'] = ProtoField.uint16("of13.instruction_bsn_disable_l3.len", "len", base.DEC, nil)
+fields['of13.instruction_bsn_disable_l3.experimenter'] = ProtoField.uint32("of13.instruction_bsn_disable_l3.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_bsn_disable_l3.subtype'] = ProtoField.uint32("of13.instruction_bsn_disable_l3.subtype", "subtype", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_l3.type'] = ProtoField.uint16("of13.instruction_id_bsn_disable_l3.type", "type", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_l3.len'] = ProtoField.uint16("of13.instruction_id_bsn_disable_l3.len", "len", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_l3.experimenter'] = ProtoField.uint32("of13.instruction_id_bsn_disable_l3.experimenter", "experimenter", base.DEC, nil)
+fields['of13.instruction_id_bsn_disable_l3.subtype'] = ProtoField.uint32("of13.instruction_id_bsn_disable_l3.subtype", "subtype", base.DEC, nil)
 fields['of13.instruction_bsn_disable_split_horizon_check.type'] = ProtoField.uint16("of13.instruction_bsn_disable_split_horizon_check.type", "type", base.DEC, nil)
 fields['of13.instruction_bsn_disable_split_horizon_check.len'] = ProtoField.uint16("of13.instruction_bsn_disable_split_horizon_check.len", "len", base.DEC, nil)
 fields['of13.instruction_bsn_disable_split_horizon_check.experimenter'] = ProtoField.uint32("of13.instruction_bsn_disable_split_horizon_check.experimenter", "experimenter", base.DEC, nil)
@@ -10015,6 +10023,14 @@ fields['of14.instruction_id_bsn_dhcp_offload.type'] = ProtoField.uint16("of14.in
 fields['of14.instruction_id_bsn_dhcp_offload.len'] = ProtoField.uint16("of14.instruction_id_bsn_dhcp_offload.len", "len", base.DEC, nil)
 fields['of14.instruction_id_bsn_dhcp_offload.experimenter'] = ProtoField.uint32("of14.instruction_id_bsn_dhcp_offload.experimenter", "experimenter", base.DEC, nil)
 fields['of14.instruction_id_bsn_dhcp_offload.subtype'] = ProtoField.uint32("of14.instruction_id_bsn_dhcp_offload.subtype", "subtype", base.DEC, nil)
+fields['of14.instruction_bsn_disable_l3.type'] = ProtoField.uint16("of14.instruction_bsn_disable_l3.type", "type", base.DEC, nil)
+fields['of14.instruction_bsn_disable_l3.len'] = ProtoField.uint16("of14.instruction_bsn_disable_l3.len", "len", base.DEC, nil)
+fields['of14.instruction_bsn_disable_l3.experimenter'] = ProtoField.uint32("of14.instruction_bsn_disable_l3.experimenter", "experimenter", base.DEC, nil)
+fields['of14.instruction_bsn_disable_l3.subtype'] = ProtoField.uint32("of14.instruction_bsn_disable_l3.subtype", "subtype", base.DEC, nil)
+fields['of14.instruction_id_bsn_disable_l3.type'] = ProtoField.uint16("of14.instruction_id_bsn_disable_l3.type", "type", base.DEC, nil)
+fields['of14.instruction_id_bsn_disable_l3.len'] = ProtoField.uint16("of14.instruction_id_bsn_disable_l3.len", "len", base.DEC, nil)
+fields['of14.instruction_id_bsn_disable_l3.experimenter'] = ProtoField.uint32("of14.instruction_id_bsn_disable_l3.experimenter", "experimenter", base.DEC, nil)
+fields['of14.instruction_id_bsn_disable_l3.subtype'] = ProtoField.uint32("of14.instruction_id_bsn_disable_l3.subtype", "subtype", base.DEC, nil)
 fields['of14.instruction_bsn_disable_src_mac_check.type'] = ProtoField.uint16("of14.instruction_bsn_disable_src_mac_check.type", "type", base.DEC, nil)
 fields['of14.instruction_bsn_disable_src_mac_check.len'] = ProtoField.uint16("of14.instruction_bsn_disable_src_mac_check.len", "len", base.DEC, nil)
 fields['of14.instruction_bsn_disable_src_mac_check.experimenter'] = ProtoField.uint32("of14.instruction_bsn_disable_src_mac_check.experimenter", "experimenter", base.DEC, nil)
@@ -15728,6 +15744,14 @@ p_of.fields = {
     fields['of13.instruction_id_bsn_dhcp_offload.len'],
     fields['of13.instruction_id_bsn_dhcp_offload.experimenter'],
     fields['of13.instruction_id_bsn_dhcp_offload.subtype'],
+    fields['of13.instruction_bsn_disable_l3.type'],
+    fields['of13.instruction_bsn_disable_l3.len'],
+    fields['of13.instruction_bsn_disable_l3.experimenter'],
+    fields['of13.instruction_bsn_disable_l3.subtype'],
+    fields['of13.instruction_id_bsn_disable_l3.type'],
+    fields['of13.instruction_id_bsn_disable_l3.len'],
+    fields['of13.instruction_id_bsn_disable_l3.experimenter'],
+    fields['of13.instruction_id_bsn_disable_l3.subtype'],
     fields['of13.instruction_bsn_disable_split_horizon_check.type'],
     fields['of13.instruction_bsn_disable_split_horizon_check.len'],
     fields['of13.instruction_bsn_disable_split_horizon_check.experimenter'],
@@ -18321,6 +18345,14 @@ p_of.fields = {
     fields['of14.instruction_id_bsn_dhcp_offload.len'],
     fields['of14.instruction_id_bsn_dhcp_offload.experimenter'],
     fields['of14.instruction_id_bsn_dhcp_offload.subtype'],
+    fields['of14.instruction_bsn_disable_l3.type'],
+    fields['of14.instruction_bsn_disable_l3.len'],
+    fields['of14.instruction_bsn_disable_l3.experimenter'],
+    fields['of14.instruction_bsn_disable_l3.subtype'],
+    fields['of14.instruction_id_bsn_disable_l3.type'],
+    fields['of14.instruction_id_bsn_disable_l3.len'],
+    fields['of14.instruction_id_bsn_disable_l3.experimenter'],
+    fields['of14.instruction_id_bsn_disable_l3.subtype'],
     fields['of14.instruction_bsn_disable_src_mac_check.type'],
     fields['of14.instruction_bsn_disable_src_mac_check.len'],
     fields['of14.instruction_bsn_disable_src_mac_check.experimenter'],
@@ -30345,6 +30377,29 @@ function dissect_of_instruction_id_bsn_dhcp_offload_v4(reader, subtree)
 end
 of_instruction_id_bsn_v4_dissectors[2] = dissect_of_instruction_id_bsn_dhcp_offload_v4
 
+-- child class of_instruction_bsn_disable_l3
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_l3_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_disable_l3.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_bsn_disable_l3.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_disable_l3.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_bsn_disable_l3.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_l3'
+end
+of_instruction_bsn_v4_dissectors[13] = dissect_of_instruction_bsn_disable_l3_v4
+
+-- child class of_instruction_id_bsn_disable_l3
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_disable_l3_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_l3.type')
+    read_uint16_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_l3.len')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_l3.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.instruction_id_bsn_disable_l3.subtype')
+    return 'of_instruction_id_bsn_disable_l3'
+end
+of_instruction_id_bsn_v4_dissectors[13] = dissect_of_instruction_id_bsn_disable_l3_v4
+
 -- child class of_instruction_bsn_disable_split_horizon_check
 -- Child of of_instruction_bsn
 function dissect_of_instruction_bsn_disable_split_horizon_check_v4(reader, subtree)
@@ -37081,6 +37136,29 @@ function dissect_of_instruction_id_bsn_dhcp_offload_v5(reader, subtree)
     return 'of_instruction_id_bsn_dhcp_offload'
 end
 of_instruction_id_bsn_v5_dissectors[2] = dissect_of_instruction_id_bsn_dhcp_offload_v5
+
+-- child class of_instruction_bsn_disable_l3
+-- Child of of_instruction_bsn
+function dissect_of_instruction_bsn_disable_l3_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_bsn_disable_l3.type')
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_bsn_disable_l3.len')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_disable_l3.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_bsn_disable_l3.subtype')
+    reader.skip(4)
+    return 'of_instruction_bsn_disable_l3'
+end
+of_instruction_bsn_v5_dissectors[13] = dissect_of_instruction_bsn_disable_l3_v5
+
+-- child class of_instruction_id_bsn_disable_l3
+-- Child of of_instruction_id_bsn
+function dissect_of_instruction_id_bsn_disable_l3_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_id_bsn_disable_l3.type')
+    read_uint16_t(reader, 5, subtree, 'of14.instruction_id_bsn_disable_l3.len')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_id_bsn_disable_l3.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.instruction_id_bsn_disable_l3.subtype')
+    return 'of_instruction_id_bsn_disable_l3'
+end
+of_instruction_id_bsn_v5_dissectors[13] = dissect_of_instruction_id_bsn_disable_l3_v5
 
 -- child class of_instruction_bsn_disable_src_mac_check
 -- Child of of_instruction_bsn
