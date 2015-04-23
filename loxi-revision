@@ -1,1 +1,1 @@
-8e0f3e8a2231b049a008014a2f1a94e63803f4a4 Merge into master from pull request #392: openflow_input: add bsn_disable_l3 extension (https://github.com/floodlight/loxigen/pull/392)
+bb0235a6ce85c32d5aeee156f1a2fd064456e447 Merge into master from pull request #393: Add rx port counter bad_vlan. (https://github.com/floodlight/loxigen/pull/393)
