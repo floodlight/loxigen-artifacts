@@ -31819,6 +31819,158 @@ test_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3(void)
+{
+    of_oxm_bsn_inner_eth_dst_t *obj;
+    obj = of_oxm_bsn_inner_eth_dst_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_DST);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_DST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3(void)
+{
+    of_oxm_bsn_inner_eth_dst_masked_t *obj;
+    obj = of_oxm_bsn_inner_eth_dst_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_DST_MASKED);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_inner_eth_src_OF_VERSION_1_3(void)
+{
+    of_oxm_bsn_inner_eth_src_t *obj;
+    obj = of_oxm_bsn_inner_eth_src_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_SRC);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_SRC);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3(void)
+{
+    of_oxm_bsn_inner_eth_src_masked_t *obj;
+    obj = of_oxm_bsn_inner_eth_src_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_SRC_MASKED);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_SRC_MASKED);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3(void)
 {
     of_oxm_bsn_l2_cache_hit_t *obj;
@@ -33029,6 +33181,82 @@ test_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(void)
         obj, 1) != 0);
 
     of_oxm_bsn_vrf_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3(void)
+{
+    of_oxm_bsn_vxlan_network_id_t *obj;
+    obj = of_oxm_bsn_vxlan_network_id_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_VXLAN_NETWORK_ID);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_vxlan_network_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(void)
+{
+    of_oxm_bsn_vxlan_network_id_masked_t *obj;
+    obj = of_oxm_bsn_vxlan_network_id_masked_new(OF_VERSION_1_3);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_3);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_vxlan_network_id_masked_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -51579,6 +51807,158 @@ test_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4(void)
+{
+    of_oxm_bsn_inner_eth_dst_t *obj;
+    obj = of_oxm_bsn_inner_eth_dst_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_DST);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_DST);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_dst_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4(void)
+{
+    of_oxm_bsn_inner_eth_dst_masked_t *obj;
+    obj = of_oxm_bsn_inner_eth_dst_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_DST_MASKED);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_DST_MASKED);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_dst_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_inner_eth_src_OF_VERSION_1_4(void)
+{
+    of_oxm_bsn_inner_eth_src_t *obj;
+    obj = of_oxm_bsn_inner_eth_src_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 10);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_SRC);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 10);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_SRC);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_src_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4(void)
+{
+    of_oxm_bsn_inner_eth_src_masked_t *obj;
+    obj = of_oxm_bsn_inner_eth_src_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_INNER_ETH_SRC_MASKED);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 16);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_INNER_ETH_SRC_MASKED);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_inner_eth_src_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4(void)
 {
     of_oxm_bsn_l3_interface_class_id_t *obj;
@@ -52637,6 +53017,82 @@ test_of_oxm_bsn_vrf_masked_OF_VERSION_1_4(void)
         obj, 1) != 0);
 
     of_oxm_bsn_vrf_masked_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4(void)
+{
+    of_oxm_bsn_vxlan_network_id_t *obj;
+    obj = of_oxm_bsn_vxlan_network_id_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 8);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 8);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_VXLAN_NETWORK_ID);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_vxlan_network_id_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
+test_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(void)
+{
+    of_oxm_bsn_vxlan_network_id_masked_t *obj;
+    obj = of_oxm_bsn_vxlan_network_id_masked_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 12);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED);
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 12);
+    }
+    if (loci_class_metadata[obj->object_id].wire_type_get != NULL) {
+        of_object_id_t obj_id;
+
+        loci_class_metadata[obj->object_id].wire_type_get((of_object_t *)obj, &obj_id);
+        TEST_ASSERT(obj_id == OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED);
+    }
+
+    /* Set up incrementing values for members */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_populate(
+        obj, 1) != 0);
+
+    /* Check values just set */
+    TEST_ASSERT(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_check(
+        obj, 1) != 0);
+
+    of_oxm_bsn_vxlan_network_id_masked_delete(obj);
 
     /* To do: Check memory */
     return TEST_PASS;
@@ -57776,6 +58232,10 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3);
+    RUN_TEST(of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3);
+    RUN_TEST(of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3);
+    RUN_TEST(of_oxm_bsn_inner_eth_src_OF_VERSION_1_3);
+    RUN_TEST(of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3);
@@ -57808,6 +58268,8 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_vrf_OF_VERSION_1_3);
     RUN_TEST(of_oxm_bsn_vrf_masked_OF_VERSION_1_3);
+    RUN_TEST(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3);
+    RUN_TEST(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3);
     RUN_TEST(of_oxm_eth_dst_OF_VERSION_1_3);
     RUN_TEST(of_oxm_eth_dst_masked_OF_VERSION_1_3);
     RUN_TEST(of_oxm_eth_src_OF_VERSION_1_3);
@@ -58296,6 +58758,10 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4);
+    RUN_TEST(of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4);
+    RUN_TEST(of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4);
+    RUN_TEST(of_oxm_bsn_inner_eth_src_OF_VERSION_1_4);
+    RUN_TEST(of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4);
@@ -58324,6 +58790,8 @@ run_unified_accessor_tests(void)
     RUN_TEST(of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_vrf_OF_VERSION_1_4);
     RUN_TEST(of_oxm_bsn_vrf_masked_OF_VERSION_1_4);
+    RUN_TEST(of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4);
+    RUN_TEST(of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4);
     RUN_TEST(of_oxm_eth_dst_OF_VERSION_1_4);
     RUN_TEST(of_oxm_eth_dst_masked_OF_VERSION_1_4);
     RUN_TEST(of_oxm_eth_src_OF_VERSION_1_4);

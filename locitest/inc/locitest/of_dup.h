@@ -1867,6 +1867,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_dup(
         of_object_t *src);
 
@@ -1992,6 +2008,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vrf_masked_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_masked_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -6343,6 +6367,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -6468,6 +6508,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vrf_masked_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3_dup(
         of_object_t *src);
 
 extern of_object_t *
@@ -8651,6 +8699,22 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4_dup(
         of_object_t *src);
 
@@ -8760,6 +8824,14 @@ extern of_object_t *
 
 extern of_object_t *
     of_oxm_bsn_vrf_masked_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

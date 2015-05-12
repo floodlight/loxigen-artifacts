@@ -1075,6 +1075,18 @@ void of_meter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_meter_stats_reply_push_wire_types(of_object_t *obj);
 void of_meter_stats_request_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_meter_stats_request_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_inner_eth_dst_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_inner_eth_dst_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_inner_eth_dst_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_inner_eth_dst_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_inner_eth_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_inner_eth_src_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_inner_eth_src_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_inner_eth_src_masked_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_vxlan_network_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_vxlan_network_id_push_wire_types(of_object_t *obj);
+void of_oxm_bsn_vxlan_network_id_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_oxm_bsn_vxlan_network_id_masked_push_wire_types(of_object_t *obj);
 void of_oxm_ipv6_exthdr_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_oxm_ipv6_exthdr_push_wire_types(of_object_t *obj);
 void of_oxm_ipv6_exthdr_masked_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1727,6 +1739,10 @@ typedef of_object_t of_oxm_bsn_in_ports_512_t;
 typedef of_object_t of_oxm_bsn_in_ports_512_masked_t;
 typedef of_object_t of_oxm_bsn_ingress_port_group_id_t;
 typedef of_object_t of_oxm_bsn_ingress_port_group_id_masked_t;
+typedef of_object_t of_oxm_bsn_inner_eth_dst_t;
+typedef of_object_t of_oxm_bsn_inner_eth_dst_masked_t;
+typedef of_object_t of_oxm_bsn_inner_eth_src_t;
+typedef of_object_t of_oxm_bsn_inner_eth_src_masked_t;
 typedef of_object_t of_oxm_bsn_l2_cache_hit_t;
 typedef of_object_t of_oxm_bsn_l2_cache_hit_masked_t;
 typedef of_object_t of_oxm_bsn_l3_dst_class_id_t;
@@ -1759,6 +1775,8 @@ typedef of_object_t of_oxm_bsn_vlan_xlate_port_group_id_t;
 typedef of_object_t of_oxm_bsn_vlan_xlate_port_group_id_masked_t;
 typedef of_object_t of_oxm_bsn_vrf_t;
 typedef of_object_t of_oxm_bsn_vrf_masked_t;
+typedef of_object_t of_oxm_bsn_vxlan_network_id_t;
+typedef of_object_t of_oxm_bsn_vxlan_network_id_masked_t;
 typedef of_object_t of_oxm_eth_dst_t;
 typedef of_object_t of_oxm_eth_dst_masked_t;
 typedef of_object_t of_oxm_eth_src_t;
@@ -4286,6 +4304,26 @@ extern void of_oxm_bsn_ingress_port_group_id_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_new(of_version_t version);
+extern void of_oxm_bsn_inner_eth_dst_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_dst_masked_new(of_version_t version);
+extern void of_oxm_bsn_inner_eth_dst_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_new(of_version_t version);
+extern void of_oxm_bsn_inner_eth_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_inner_eth_src_masked_new(of_version_t version);
+extern void of_oxm_bsn_inner_eth_src_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_oxm_bsn_l2_cache_hit_new(of_version_t version);
 extern void of_oxm_bsn_l2_cache_hit_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -4443,6 +4481,16 @@ extern void of_oxm_bsn_vrf_init(
 extern of_object_t *
     of_oxm_bsn_vrf_masked_new(of_version_t version);
 extern void of_oxm_bsn_vrf_masked_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_new(of_version_t version);
+extern void of_oxm_bsn_vxlan_network_id_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_oxm_bsn_vxlan_network_id_masked_new(of_version_t version);
+extern void of_oxm_bsn_vxlan_network_id_masked_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -10481,6 +10529,50 @@ of_oxm_bsn_ingress_port_group_id_masked_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_oxm_bsn_inner_eth_dst_t
+ * @param obj An instance of type of_oxm_bsn_inner_eth_dst_t
+ *
+ * \ingroup of_oxm_bsn_inner_eth_dst
+ */
+static inline void
+of_oxm_bsn_inner_eth_dst_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_inner_eth_dst_masked_t
+ * @param obj An instance of type of_oxm_bsn_inner_eth_dst_masked_t
+ *
+ * \ingroup of_oxm_bsn_inner_eth_dst_masked
+ */
+static inline void
+of_oxm_bsn_inner_eth_dst_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_inner_eth_src_t
+ * @param obj An instance of type of_oxm_bsn_inner_eth_src_t
+ *
+ * \ingroup of_oxm_bsn_inner_eth_src
+ */
+static inline void
+of_oxm_bsn_inner_eth_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_inner_eth_src_masked_t
+ * @param obj An instance of type of_oxm_bsn_inner_eth_src_masked_t
+ *
+ * \ingroup of_oxm_bsn_inner_eth_src_masked
+ */
+static inline void
+of_oxm_bsn_inner_eth_src_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_oxm_bsn_l2_cache_hit_t
  * @param obj An instance of type of_oxm_bsn_l2_cache_hit_t
  *
@@ -10829,6 +10921,28 @@ of_oxm_bsn_vrf_delete(of_object_t *obj) {
  */
 static inline void
 of_oxm_bsn_vrf_masked_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_vxlan_network_id_t
+ * @param obj An instance of type of_oxm_bsn_vxlan_network_id_t
+ *
+ * \ingroup of_oxm_bsn_vxlan_network_id
+ */
+static inline void
+of_oxm_bsn_vxlan_network_id_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_oxm_bsn_vxlan_network_id_masked_t
+ * @param obj An instance of type of_oxm_bsn_vxlan_network_id_masked_t
+ *
+ * \ingroup of_oxm_bsn_vxlan_network_id_masked
+ */
+static inline void
+of_oxm_bsn_vxlan_network_id_masked_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -22714,6 +22828,56 @@ extern void of_oxm_bsn_ingress_port_group_id_masked_value_mask_get(
     of_oxm_bsn_ingress_port_group_id_masked_t *obj,
     uint32_t *value_mask);
 
+/* Unified accessor functions for of_oxm_bsn_inner_eth_dst */
+
+extern void of_oxm_bsn_inner_eth_dst_value_set(
+    of_oxm_bsn_inner_eth_dst_t *obj,
+    of_mac_addr_t value);
+extern void of_oxm_bsn_inner_eth_dst_value_get(
+    of_oxm_bsn_inner_eth_dst_t *obj,
+    of_mac_addr_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_inner_eth_dst_masked */
+
+extern void of_oxm_bsn_inner_eth_dst_masked_value_set(
+    of_oxm_bsn_inner_eth_dst_masked_t *obj,
+    of_mac_addr_t value);
+extern void of_oxm_bsn_inner_eth_dst_masked_value_get(
+    of_oxm_bsn_inner_eth_dst_masked_t *obj,
+    of_mac_addr_t *value);
+
+extern void of_oxm_bsn_inner_eth_dst_masked_value_mask_set(
+    of_oxm_bsn_inner_eth_dst_masked_t *obj,
+    of_mac_addr_t value_mask);
+extern void of_oxm_bsn_inner_eth_dst_masked_value_mask_get(
+    of_oxm_bsn_inner_eth_dst_masked_t *obj,
+    of_mac_addr_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_inner_eth_src */
+
+extern void of_oxm_bsn_inner_eth_src_value_set(
+    of_oxm_bsn_inner_eth_src_t *obj,
+    of_mac_addr_t value);
+extern void of_oxm_bsn_inner_eth_src_value_get(
+    of_oxm_bsn_inner_eth_src_t *obj,
+    of_mac_addr_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_inner_eth_src_masked */
+
+extern void of_oxm_bsn_inner_eth_src_masked_value_set(
+    of_oxm_bsn_inner_eth_src_masked_t *obj,
+    of_mac_addr_t value);
+extern void of_oxm_bsn_inner_eth_src_masked_value_get(
+    of_oxm_bsn_inner_eth_src_masked_t *obj,
+    of_mac_addr_t *value);
+
+extern void of_oxm_bsn_inner_eth_src_masked_value_mask_set(
+    of_oxm_bsn_inner_eth_src_masked_t *obj,
+    of_mac_addr_t value_mask);
+extern void of_oxm_bsn_inner_eth_src_masked_value_mask_get(
+    of_oxm_bsn_inner_eth_src_masked_t *obj,
+    of_mac_addr_t *value_mask);
+
 /* Unified accessor functions for of_oxm_bsn_l2_cache_hit */
 
 extern void of_oxm_bsn_l2_cache_hit_value_set(
@@ -23112,6 +23276,31 @@ extern void of_oxm_bsn_vrf_masked_value_mask_set(
     uint32_t value_mask);
 extern void of_oxm_bsn_vrf_masked_value_mask_get(
     of_oxm_bsn_vrf_masked_t *obj,
+    uint32_t *value_mask);
+
+/* Unified accessor functions for of_oxm_bsn_vxlan_network_id */
+
+extern void of_oxm_bsn_vxlan_network_id_value_set(
+    of_oxm_bsn_vxlan_network_id_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_vxlan_network_id_value_get(
+    of_oxm_bsn_vxlan_network_id_t *obj,
+    uint32_t *value);
+
+/* Unified accessor functions for of_oxm_bsn_vxlan_network_id_masked */
+
+extern void of_oxm_bsn_vxlan_network_id_masked_value_set(
+    of_oxm_bsn_vxlan_network_id_masked_t *obj,
+    uint32_t value);
+extern void of_oxm_bsn_vxlan_network_id_masked_value_get(
+    of_oxm_bsn_vxlan_network_id_masked_t *obj,
+    uint32_t *value);
+
+extern void of_oxm_bsn_vxlan_network_id_masked_value_mask_set(
+    of_oxm_bsn_vxlan_network_id_masked_t *obj,
+    uint32_t value_mask);
+extern void of_oxm_bsn_vxlan_network_id_masked_value_mask_get(
+    of_oxm_bsn_vxlan_network_id_masked_t *obj,
     uint32_t *value_mask);
 
 /* Unified accessor functions for of_oxm_eth_dst */

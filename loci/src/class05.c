@@ -1331,6 +1331,24 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x32908:
             *id = OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED;
             break;
+        case 0x32a04:
+            *id = OF_OXM_BSN_VXLAN_NETWORK_ID;
+            break;
+        case 0x32b08:
+            *id = OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED;
+            break;
+        case 0x32c06:
+            *id = OF_OXM_BSN_INNER_ETH_DST;
+            break;
+        case 0x32d0c:
+            *id = OF_OXM_BSN_INNER_ETH_DST_MASKED;
+            break;
+        case 0x32e06:
+            *id = OF_OXM_BSN_INNER_ETH_SRC;
+            break;
+        case 0x32f0c:
+            *id = OF_OXM_BSN_INNER_ETH_SRC_MASKED;
+            break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
             break;
@@ -1693,6 +1711,24 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x32908:
             *id = OF_OXM_BSN_INGRESS_PORT_GROUP_ID_MASKED;
+            break;
+        case 0x32a04:
+            *id = OF_OXM_BSN_VXLAN_NETWORK_ID;
+            break;
+        case 0x32b08:
+            *id = OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED;
+            break;
+        case 0x32c06:
+            *id = OF_OXM_BSN_INNER_ETH_DST;
+            break;
+        case 0x32d0c:
+            *id = OF_OXM_BSN_INNER_ETH_DST_MASKED;
+            break;
+        case 0x32e06:
+            *id = OF_OXM_BSN_INNER_ETH_SRC;
+            break;
+        case 0x32f0c:
+            *id = OF_OXM_BSN_INNER_ETH_SRC_MASKED;
             break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;

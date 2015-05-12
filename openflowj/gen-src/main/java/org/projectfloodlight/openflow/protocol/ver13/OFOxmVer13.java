@@ -396,6 +396,24 @@ abstract class OFOxmVer13 {
                case (int) 0x80000d04:
                    // discriminator value 0x80000d04L=0x80000d04L for class OFOxmVlanVidMaskedVer13
                    return OFOxmVlanVidMaskedVer13.READER.readFrom(bb);
+               case 0x32c06:
+                   // discriminator value 0x32c06L=0x32c06L for class OFOxmBsnInnerEthDstVer13
+                   return OFOxmBsnInnerEthDstVer13.READER.readFrom(bb);
+               case 0x32d0c:
+                   // discriminator value 0x32d0cL=0x32d0cL for class OFOxmBsnInnerEthDstMaskedVer13
+                   return OFOxmBsnInnerEthDstMaskedVer13.READER.readFrom(bb);
+               case 0x32e06:
+                   // discriminator value 0x32e06L=0x32e06L for class OFOxmBsnInnerEthSrcVer13
+                   return OFOxmBsnInnerEthSrcVer13.READER.readFrom(bb);
+               case 0x32f0c:
+                   // discriminator value 0x32f0cL=0x32f0cL for class OFOxmBsnInnerEthSrcMaskedVer13
+                   return OFOxmBsnInnerEthSrcMaskedVer13.READER.readFrom(bb);
+               case 0x32a04:
+                   // discriminator value 0x32a04L=0x32a04L for class OFOxmBsnVxlanNetworkIdVer13
+                   return OFOxmBsnVxlanNetworkIdVer13.READER.readFrom(bb);
+               case 0x32b08:
+                   // discriminator value 0x32b08L=0x32b08L for class OFOxmBsnVxlanNetworkIdMaskedVer13
+                   return OFOxmBsnVxlanNetworkIdMaskedVer13.READER.readFrom(bb);
                case (int) 0x80004e02:
                    // discriminator value 0x80004e02L=0x80004e02L for class OFOxmIpv6ExthdrVer13
                    return OFOxmIpv6ExthdrVer13.READER.readFrom(bb);

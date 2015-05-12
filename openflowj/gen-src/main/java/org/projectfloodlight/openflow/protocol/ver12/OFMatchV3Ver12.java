@@ -116,6 +116,8 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case BSN_EGR_PORT_GROUP_ID:
             case BSN_GLOBAL_VRF_ALLOWED:
             case BSN_INGRESS_PORT_GROUP_ID:
+            case BSN_INNER_ETH_DST:
+            case BSN_INNER_ETH_SRC:
             case BSN_IN_PORTS_128:
             case BSN_IN_PORTS_512:
             case BSN_L2_CACHE_HIT:
@@ -134,6 +136,7 @@ class OFMatchV3Ver12 implements OFMatchV3 {
             case BSN_UDF7:
             case BSN_VLAN_XLATE_PORT_GROUP_ID:
             case BSN_VRF:
+            case BSN_VXLAN_NETWORK_ID:
             case ETH_DST:
             case ETH_SRC:
             case ETH_TYPE:

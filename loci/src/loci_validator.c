@@ -924,6 +924,10 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_in_ports_512_OF_VERS
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l2_cache_hit_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_dst_class_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -956,6 +960,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_grou
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1479,6 +1485,10 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_in_ports_512_OF_VERS
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_in_ports_512_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_interface_class_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_l3_src_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -1507,6 +1517,8 @@ static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_grou
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vlan_xlate_port_group_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_oxm_eth_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -16577,6 +16589,14 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_3(data, len, out_len);
     case 0x32908:
         return loci_validate_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x32c06:
+        return loci_validate_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3(data, len, out_len);
+    case 0x32d0c:
+        return loci_validate_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x32e06:
+        return loci_validate_of_oxm_bsn_inner_eth_src_OF_VERSION_1_3(data, len, out_len);
+    case 0x32f0c:
+        return loci_validate_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x32401:
         return loci_validate_of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3(data, len, out_len);
     case 0x32502:
@@ -16641,6 +16661,10 @@ loci_validate_of_oxm_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(data, len, out_len);
     case 0x30508:
         return loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(data, len, out_len);
+    case 0x32a04:
+        return loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3(data, len, out_len);
+    case 0x32b08:
+        return loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(data, len, out_len);
     case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_3(data, len, out_len);
     case 0x8000070c:
@@ -25015,6 +25039,70 @@ loci_validate_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_3(uint8_t *da
 }
 
 static int
+loci_validate_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_inner_eth_src_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_bsn_l2_cache_hit_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 5) {
@@ -25512,6 +25600,38 @@ loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_3(uint8_t *data, int len, int *out_len
 
 static int
 loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 12) {
         return -1;
@@ -30000,6 +30120,14 @@ loci_validate_of_oxm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_ingress_port_group_id_OF_VERSION_1_4(data, len, out_len);
     case 0x32908:
         return loci_validate_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x32c06:
+        return loci_validate_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4(data, len, out_len);
+    case 0x32d0c:
+        return loci_validate_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x32e06:
+        return loci_validate_of_oxm_bsn_inner_eth_src_OF_VERSION_1_4(data, len, out_len);
+    case 0x32f0c:
+        return loci_validate_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4(data, len, out_len);
     case 0x30804:
         return loci_validate_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4(data, len, out_len);
     case 0x30908:
@@ -30056,6 +30184,10 @@ loci_validate_of_oxm_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_4(data, len, out_len);
     case 0x30508:
         return loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_4(data, len, out_len);
+    case 0x32a04:
+        return loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4(data, len, out_len);
+    case 0x32b08:
+        return loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(data, len, out_len);
     case 0x80000606:
         return loci_validate_of_oxm_eth_dst_OF_VERSION_1_4(data, len, out_len);
     case 0x8000070c:
@@ -38932,6 +39064,70 @@ loci_validate_of_oxm_bsn_ingress_port_group_id_masked_OF_VERSION_1_4(uint8_t *da
 }
 
 static int
+loci_validate_of_oxm_bsn_inner_eth_dst_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_inner_eth_dst_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_inner_eth_src_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 10) {
+        return -1;
+    }
+
+    len = 10;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_inner_eth_src_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
 loci_validate_of_oxm_bsn_l3_interface_class_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 8) {
@@ -39365,6 +39561,38 @@ loci_validate_of_oxm_bsn_vrf_OF_VERSION_1_4(uint8_t *data, int len, int *out_len
 
 static int
 loci_validate_of_oxm_bsn_vrf_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 12) {
+        return -1;
+    }
+
+    len = 12;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vxlan_network_id_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 8) {
+        return -1;
+    }
+
+    len = 8;
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_oxm_bsn_vxlan_network_id_masked_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 12) {
         return -1;

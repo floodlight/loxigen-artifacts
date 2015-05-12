@@ -1,1 +1,1 @@
-bb0235a6ce85c32d5aeee156f1a2fd064456e447 Merge into master from pull request #393: Add rx port counter bad_vlan. (https://github.com/floodlight/loxigen/pull/393)
+a627b453673e256a0b3ba532ae7e28acbaca5285 Merge into master from pull request #395: Add OXMs for VXLAN network identifier, inner eth dest mac, and inner eth src mac (https://github.com/floodlight/loxigen/pull/395)

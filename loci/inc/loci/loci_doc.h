@@ -8564,6 +8564,58 @@ typedef struct of_oxm_bsn_ingress_port_group_id_s of_oxm_bsn_ingress_port_group_
 typedef struct of_oxm_bsn_ingress_port_group_id_masked_s of_oxm_bsn_ingress_port_group_id_masked_t;
 
 /**
+ * Structure for of_oxm_bsn_inner_eth_dst object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_oxm_bsn_inner_eth_dst_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_inner_eth_dst_s of_oxm_bsn_inner_eth_dst_t;
+
+/**
+ * Structure for of_oxm_bsn_inner_eth_dst_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_oxm_bsn_inner_eth_dst_masked_of_mac_addr_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
+ *   are of type of_oxm_bsn_inner_eth_dst_masked_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_inner_eth_dst_masked_s of_oxm_bsn_inner_eth_dst_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_inner_eth_src object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_oxm_bsn_inner_eth_src_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_inner_eth_src_s of_oxm_bsn_inner_eth_src_t;
+
+/**
+ * Structure for of_oxm_bsn_inner_eth_src_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_mac_addr.  Functions
+ *   are of type of_oxm_bsn_inner_eth_src_masked_of_mac_addr_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value_mask, a variable of type of_mac_addr.  Functions
+ *   are of type of_oxm_bsn_inner_eth_src_masked_of_mac_addr_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_inner_eth_src_masked_s of_oxm_bsn_inner_eth_src_masked_t;
+
+/**
  * Structure for of_oxm_bsn_l2_cache_hit object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -8978,6 +9030,32 @@ typedef struct of_oxm_bsn_vrf_s of_oxm_bsn_vrf_t;
  *
  */
 typedef struct of_oxm_bsn_vrf_masked_s of_oxm_bsn_vrf_masked_t;
+
+/**
+ * Structure for of_oxm_bsn_vxlan_network_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_vxlan_network_id_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_vxlan_network_id_s of_oxm_bsn_vxlan_network_id_t;
+
+/**
+ * Structure for of_oxm_bsn_vxlan_network_id_masked object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_vxlan_network_id_masked_uint32_get_f and _set_f.
+ *
+ * @param value_mask_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value_mask, a variable of type uint32.  Functions
+ *   are of type of_oxm_bsn_vxlan_network_id_masked_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_oxm_bsn_vxlan_network_id_masked_s of_oxm_bsn_vxlan_network_id_masked_t;
 
 /**
  * Structure for of_oxm_eth_dst object.  Get/set

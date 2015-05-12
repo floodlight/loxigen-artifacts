@@ -1137,6 +1137,63 @@ public class OFOxmsVer14 implements OFOxms {
                     );
     }
 
+    public OFOxmBsnInnerEthDst.Builder buildBsnInnerEthDst() {
+        return new OFOxmBsnInnerEthDstVer14.Builder();
+    }
+    public OFOxmBsnInnerEthDst bsnInnerEthDst(MacAddress value) {
+        return new OFOxmBsnInnerEthDstVer14(
+                value
+                    );
+    }
+
+    public OFOxmBsnInnerEthDstMasked.Builder buildBsnInnerEthDstMasked() {
+        return new OFOxmBsnInnerEthDstMaskedVer14.Builder();
+    }
+    public OFOxmBsnInnerEthDstMasked bsnInnerEthDstMasked(MacAddress value, MacAddress mask) {
+        return new OFOxmBsnInnerEthDstMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnInnerEthSrc.Builder buildBsnInnerEthSrc() {
+        return new OFOxmBsnInnerEthSrcVer14.Builder();
+    }
+    public OFOxmBsnInnerEthSrc bsnInnerEthSrc(MacAddress value) {
+        return new OFOxmBsnInnerEthSrcVer14(
+                value
+                    );
+    }
+
+    public OFOxmBsnInnerEthSrcMasked.Builder buildBsnInnerEthSrcMasked() {
+        return new OFOxmBsnInnerEthSrcMaskedVer14.Builder();
+    }
+    public OFOxmBsnInnerEthSrcMasked bsnInnerEthSrcMasked(MacAddress value, MacAddress mask) {
+        return new OFOxmBsnInnerEthSrcMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
+    public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
+        return new OFOxmBsnVxlanNetworkIdVer14.Builder();
+    }
+    public OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(U32 value) {
+        return new OFOxmBsnVxlanNetworkIdVer14(
+                value
+                    );
+    }
+
+    public OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() {
+        return new OFOxmBsnVxlanNetworkIdMaskedVer14.Builder();
+    }
+    public OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(U32 value, U32 mask) {
+        return new OFOxmBsnVxlanNetworkIdMaskedVer14(
+                value,
+                      mask
+                    );
+    }
+
     public OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() {
         return new OFOxmIpv6ExthdrVer14.Builder();
     }
@@ -1338,6 +1395,12 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcp((VlanPcp)((Object)value)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVid((OFVlanVidMatch)((Object)value)));
+            case BSN_INNER_ETH_DST:
+                return (OFOxm<F>)((Object)bsnInnerEthDst((MacAddress)((Object)value)));
+            case BSN_INNER_ETH_SRC:
+                return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
+            case BSN_VXLAN_NETWORK_ID:
+                return (OFOxm<F>)((Object)bsnVxlanNetworkId((U32)((Object)value)));
             case IPV6_EXTHDR:
                 return (OFOxm<F>)((Object)ipv6Exthdr((U16)((Object)value)));
             case MPLS_BOS:
@@ -1472,6 +1535,12 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)value), (VlanPcp)((Object)mask)));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
+            case BSN_INNER_ETH_DST:
+                return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
+            case BSN_INNER_ETH_SRC:
+                return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
+            case BSN_VXLAN_NETWORK_ID:
+                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((U32)((Object)value), (U32)((Object)mask)));
             case IPV6_EXTHDR:
                 return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)value), (U16)((Object)mask)));
             case MPLS_BOS:
@@ -1606,6 +1675,12 @@ public class OFOxmsVer14 implements OFOxms {
                 return (OFOxm<F>)((Object)vlanPcpMasked((VlanPcp)((Object)(masked.getValue())), (VlanPcp)((Object)(masked.getMask()))));
             case VLAN_VID:
                 return (OFOxm<F>)((Object)vlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
+            case BSN_INNER_ETH_DST:
+                return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
+            case BSN_INNER_ETH_SRC:
+                return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
+            case BSN_VXLAN_NETWORK_ID:
+                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
             case IPV6_EXTHDR:
                 return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case MPLS_BOS:

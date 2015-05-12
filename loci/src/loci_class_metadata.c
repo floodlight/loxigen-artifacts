@@ -3225,6 +3225,42 @@ struct loci_class_metadata loci_class_metadata[OF_OBJECT_COUNT] = {
         .wire_type_get=NULL,
         .wire_type_set=of_meter_stats_request_push_wire_types,
     },
+    [OF_OXM_BSN_INNER_ETH_DST] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_inner_eth_dst_push_wire_types,
+    },
+    [OF_OXM_BSN_INNER_ETH_DST_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_inner_eth_dst_masked_push_wire_types,
+    },
+    [OF_OXM_BSN_INNER_ETH_SRC] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_inner_eth_src_push_wire_types,
+    },
+    [OF_OXM_BSN_INNER_ETH_SRC_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_inner_eth_src_masked_push_wire_types,
+    },
+    [OF_OXM_BSN_VXLAN_NETWORK_ID] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_vxlan_network_id_push_wire_types,
+    },
+    [OF_OXM_BSN_VXLAN_NETWORK_ID_MASKED] = {
+        .wire_length_get=of_oxm_wire_length_get,
+        .wire_length_set=NULL,
+        .wire_type_get=of_oxm_wire_object_id_get,
+        .wire_type_set=of_oxm_bsn_vxlan_network_id_masked_push_wire_types,
+    },
     [OF_OXM_IPV6_EXTHDR] = {
         .wire_length_get=of_oxm_wire_length_get,
         .wire_length_set=NULL,
