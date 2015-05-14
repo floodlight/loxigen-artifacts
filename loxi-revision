@@ -1,1 +1,1 @@
-5d668c37636d11fec7faaacc567f861766670c40 Merge into master from pull request #397: Fix small bug in pre-written OFGroup.java. Replace MAX with ZERO. (https://github.com/floodlight/loxigen/pull/397)
+4cbe0e565453307bbeb9fe32c16f560f81971e44 Merge into master from pull request #398: Another fix for OFGroup.java (https://github.com/floodlight/loxigen/pull/398)
