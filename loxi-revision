@@ -1,1 +1,1 @@
-a627b453673e256a0b3ba532ae7e28acbaca5285 Merge into master from pull request #395: Add OXMs for VXLAN network identifier, inner eth dest mac, and inner eth src mac (https://github.com/floodlight/loxigen/pull/395)
+5d668c37636d11fec7faaacc567f861766670c40 Merge into master from pull request #397: Fix small bug in pre-written OFGroup.java. Replace MAX with ZERO. (https://github.com/floodlight/loxigen/pull/397)
