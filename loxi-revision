@@ -1,1 +1,1 @@
-bc53ec0ba668135e2909e9a2f3906c849893989b Merge into master from pull request #396: add isMulticast() in IPAddress (https://github.com/floodlight/loxigen/pull/396)
+bd960540d2200dc256872e6143a22929b42463bc Merge into master from pull request #399: Fix IPv6Address.of(byte[]) to correctly deal with the 8th and 16th byte when the first bit is one LOXI-67 (https://github.com/floodlight/loxigen/pull/399)
