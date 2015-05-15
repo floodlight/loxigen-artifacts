@@ -1,1 +1,1 @@
-4cbe0e565453307bbeb9fe32c16f560f81971e44 Merge into master from pull request #398: Another fix for OFGroup.java (https://github.com/floodlight/loxigen/pull/398)
+bc53ec0ba668135e2909e9a2f3906c849893989b Merge into master from pull request #396: add isMulticast() in IPAddress (https://github.com/floodlight/loxigen/pull/396)
