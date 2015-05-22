@@ -21,6 +21,7 @@ __pycache__
 
 # Java
 *.class
+*.classpath
 *~
 
 # Installer logs
@@ -39,3 +40,4 @@ nosetests.xml
 .project
 .pydevproject
 target
+.settings
