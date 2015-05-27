@@ -1,1 +1,1 @@
-bd960540d2200dc256872e6143a22929b42463bc Merge into master from pull request #399: Fix IPv6Address.of(byte[]) to correctly deal with the 8th and 16th byte when the first bit is one LOXI-67 (https://github.com/floodlight/loxigen/pull/399)
+858abb8865a89f8dc6d321e2c4fce77a4bf6c42b Merge into master from pull request #394: pyloxi: Connection class (https://github.com/floodlight/loxigen/pull/394)
