@@ -1185,6 +1185,8 @@ void of_async_config_prop_table_status_slave_wire_object_id_get(of_object_t *obj
 void of_async_config_prop_table_status_slave_push_wire_types(of_object_t *obj);
 void of_bad_property_error_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bad_property_error_msg_push_wire_types(of_object_t *obj);
+void of_bsn_generic_async_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_generic_async_push_wire_types(of_object_t *obj);
 void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_add_msg_push_wire_types(of_object_t *obj);
 void of_bundle_ctrl_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1309,6 +1311,7 @@ typedef of_object_t of_bsn_flow_idle_enable_get_reply_t;
 typedef of_object_t of_bsn_flow_idle_enable_get_request_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_reply_t;
 typedef of_object_t of_bsn_flow_idle_enable_set_request_t;
+typedef of_object_t of_bsn_generic_async_t;
 typedef of_object_t of_bsn_generic_stats_reply_t;
 typedef of_object_t of_bsn_generic_stats_request_t;
 typedef of_object_t of_bsn_gentable_bucket_stats_reply_t;
@@ -2151,6 +2154,11 @@ extern void of_bsn_flow_idle_enable_set_reply_init(
 extern of_object_t *
     of_bsn_flow_idle_enable_set_request_new(of_version_t version);
 extern void of_bsn_flow_idle_enable_set_request_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_generic_async_new(of_version_t version);
+extern void of_bsn_generic_async_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -5795,6 +5803,17 @@ of_bsn_flow_idle_enable_set_reply_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_flow_idle_enable_set_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_generic_async_t
+ * @param obj An instance of type of_bsn_generic_async_t
+ *
+ * \ingroup of_bsn_generic_async
+ */
+static inline void
+of_bsn_generic_async_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -14100,6 +14119,45 @@ extern void of_bsn_flow_idle_enable_set_request_enable_set(
 extern void of_bsn_flow_idle_enable_set_request_enable_get(
     of_bsn_flow_idle_enable_set_request_t *obj,
     uint32_t *enable);
+
+/* Unified accessor functions for of_bsn_generic_async */
+
+extern void of_bsn_generic_async_xid_set(
+    of_bsn_generic_async_t *obj,
+    uint32_t xid);
+extern void of_bsn_generic_async_xid_get(
+    of_bsn_generic_async_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_generic_async_experimenter_set(
+    of_bsn_generic_async_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_generic_async_experimenter_get(
+    of_bsn_generic_async_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_generic_async_subtype_set(
+    of_bsn_generic_async_t *obj,
+    uint32_t subtype);
+extern void of_bsn_generic_async_subtype_get(
+    of_bsn_generic_async_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_generic_async_name_set(
+    of_bsn_generic_async_t *obj,
+    of_str64_t name);
+extern void of_bsn_generic_async_name_get(
+    of_bsn_generic_async_t *obj,
+    of_str64_t *name);
+
+extern int WARN_UNUSED_RESULT of_bsn_generic_async_tlvs_set(
+    of_bsn_generic_async_t *obj,
+    of_list_bsn_tlv_t *tlvs);
+extern void of_bsn_generic_async_tlvs_bind(
+    of_bsn_generic_async_t *obj,
+    of_list_bsn_tlv_t *tlvs);
+extern of_list_bsn_tlv_t *of_bsn_generic_async_tlvs_get(
+    of_bsn_generic_async_t *obj);
 
 /* Unified accessor functions for of_bsn_generic_stats_reply */
 

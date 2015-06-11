@@ -147,6 +147,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_generic_async_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_generic_stats_reply_dup(
         of_object_t *src);
 
@@ -7216,6 +7220,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_generic_async_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

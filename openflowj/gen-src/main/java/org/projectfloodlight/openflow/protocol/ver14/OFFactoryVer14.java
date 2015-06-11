@@ -1501,6 +1501,10 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
+    public OFBsnGenericAsync.Builder buildBsnGenericAsync() {
+        return new OFBsnGenericAsyncVer14.Builder().setXid(nextXid());
+    }
+
     public OFBundleAddMsg.Builder buildBundleAddMsg() {
         return new OFBundleAddMsgVer14.Builder().setXid(nextXid());
     }

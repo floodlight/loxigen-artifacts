@@ -45,6 +45,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_flow_idle_enable_get_request_init,
     (of_object_init_f)of_bsn_flow_idle_enable_set_reply_init,
     (of_object_init_f)of_bsn_flow_idle_enable_set_request_init,
+    (of_object_init_f)of_bsn_generic_async_init,
     (of_object_init_f)of_bsn_generic_stats_reply_init,
     (of_object_init_f)of_bsn_generic_stats_request_init,
     (of_object_init_f)of_bsn_gentable_bucket_stats_reply_init,

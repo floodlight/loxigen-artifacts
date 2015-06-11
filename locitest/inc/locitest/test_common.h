@@ -9842,6 +9842,15 @@ extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_check_scalars(
     of_bsn_flow_idle_enable_set_request_t *obj, int value);
 
+extern int of_bsn_generic_async_OF_VERSION_1_4_populate(
+    of_bsn_generic_async_t *obj, int value);
+extern int of_bsn_generic_async_OF_VERSION_1_4_check(
+    of_bsn_generic_async_t *obj, int value);
+extern int of_bsn_generic_async_OF_VERSION_1_4_populate_scalars(
+    of_bsn_generic_async_t *obj, int value);
+extern int of_bsn_generic_async_OF_VERSION_1_4_check_scalars(
+    of_bsn_generic_async_t *obj, int value);
+
 extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_populate(
     of_bsn_generic_stats_reply_t *obj, int value);
 extern int of_bsn_generic_stats_reply_OF_VERSION_1_4_check(

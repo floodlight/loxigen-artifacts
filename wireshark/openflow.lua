@@ -8760,6 +8760,14 @@ fields['of14.bsn_flow_idle_enable_set_request.xid'] = ProtoField.uint32("of14.bs
 fields['of14.bsn_flow_idle_enable_set_request.experimenter'] = ProtoField.uint32("of14.bsn_flow_idle_enable_set_request.experimenter", "experimenter", base.DEC, nil)
 fields['of14.bsn_flow_idle_enable_set_request.subtype'] = ProtoField.uint32("of14.bsn_flow_idle_enable_set_request.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_flow_idle_enable_set_request.enable'] = ProtoField.uint32("of14.bsn_flow_idle_enable_set_request.enable", "enable", base.DEC, nil)
+fields['of14.bsn_generic_async.version'] = ProtoField.uint8("of14.bsn_generic_async.version", "version", base.DEC, nil)
+fields['of14.bsn_generic_async.type'] = ProtoField.uint8("of14.bsn_generic_async.type", "type", base.DEC, nil)
+fields['of14.bsn_generic_async.length'] = ProtoField.uint16("of14.bsn_generic_async.length", "length", base.DEC, nil)
+fields['of14.bsn_generic_async.xid'] = ProtoField.uint32("of14.bsn_generic_async.xid", "xid", base.DEC, nil)
+fields['of14.bsn_generic_async.experimenter'] = ProtoField.uint32("of14.bsn_generic_async.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_generic_async.subtype'] = ProtoField.uint32("of14.bsn_generic_async.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_generic_async.name'] = ProtoField.stringz("of14.bsn_generic_async.name", "name")
+fields['of14.bsn_generic_async.tlvs'] = ProtoField.bytes("of14.bsn_generic_async.tlvs", "tlvs")
 fields['of14.bsn_generic_stats_entry.length'] = ProtoField.uint16("of14.bsn_generic_stats_entry.length", "length", base.DEC, nil)
 fields['of14.bsn_generic_stats_entry.tlvs'] = ProtoField.bytes("of14.bsn_generic_stats_entry.tlvs", "tlvs")
 fields['of14.bsn_generic_stats_reply.version'] = ProtoField.uint8("of14.bsn_generic_stats_reply.version", "version", base.DEC, nil)
@@ -17112,6 +17120,14 @@ p_of.fields = {
     fields['of14.bsn_flow_idle_enable_set_request.experimenter'],
     fields['of14.bsn_flow_idle_enable_set_request.subtype'],
     fields['of14.bsn_flow_idle_enable_set_request.enable'],
+    fields['of14.bsn_generic_async.version'],
+    fields['of14.bsn_generic_async.type'],
+    fields['of14.bsn_generic_async.length'],
+    fields['of14.bsn_generic_async.xid'],
+    fields['of14.bsn_generic_async.experimenter'],
+    fields['of14.bsn_generic_async.subtype'],
+    fields['of14.bsn_generic_async.name'],
+    fields['of14.bsn_generic_async.tlvs'],
     fields['of14.bsn_generic_stats_entry.length'],
     fields['of14.bsn_generic_stats_entry.tlvs'],
     fields['of14.bsn_generic_stats_reply.version'],
@@ -34287,6 +34303,24 @@ function dissect_of_bsn_flow_idle_enable_set_request_v5(reader, subtree)
     return 'of_bsn_flow_idle_enable_set_request'
 end
 of_bsn_header_v5_dissectors[36] = dissect_of_bsn_flow_idle_enable_set_request_v5
+
+-- child class of_bsn_generic_async
+-- Child of of_bsn_header
+function dissect_of_bsn_generic_async_v5(reader, subtree)
+    local _length = reader.peek(2, 2):uint()
+    local orig_reader = reader
+    reader = orig_reader.slice(_length)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_async.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_generic_async.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_generic_async.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_async.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_async.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_generic_async.subtype')
+    read_of_str64_t(reader, 5, subtree, 'of14.bsn_generic_async.name')
+    read_list(reader, dissect_of_bsn_tlv_v5, subtree, 'of_bsn_tlv')
+    return 'of_bsn_generic_async'
+end
+of_bsn_header_v5_dissectors[68] = dissect_of_bsn_generic_async_v5
 
 -- top-level class of_bsn_generic_stats_entry
 function dissect_of_bsn_generic_stats_entry_v5(reader, subtree)

@@ -1342,6 +1342,10 @@ public class OFFactoryVer11 implements OFFactory {
         throw new UnsupportedOperationException("OFAsyncConfigPropTableStatusSlave not supported in version 1.1");
     }
 
+    public OFBsnGenericAsync.Builder buildBsnGenericAsync() {
+        throw new UnsupportedOperationException("OFBsnGenericAsync not supported in version 1.1");
+    }
+
     public OFBundleAddMsg.Builder buildBundleAddMsg() {
         throw new UnsupportedOperationException("OFBundleAddMsg not supported in version 1.1");
     }

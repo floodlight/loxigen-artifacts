@@ -822,6 +822,33 @@ typedef struct of_bsn_flow_idle_enable_set_reply_s of_bsn_flow_idle_enable_set_r
 typedef struct of_bsn_flow_idle_enable_set_request_s of_bsn_flow_idle_enable_set_request_t;
 
 /**
+ * Structure for of_bsn_generic_async object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_async_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_async_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_generic_async_uint32_get_f and _set_f.
+ *
+ * @param name_get/set ( OF_1_4).
+ *   Accessors for name, a variable of type of_str64.  Functions
+ *   are of type of_bsn_generic_async_of_str64_get_f and _set_f.
+ *
+ * @param tlvs_get/set ( OF_1_4).
+ *   Accessors for tlvs, a variable of type of_list_bsn_tlv.  Functions
+ *   are of type of_bsn_generic_async_of_list_bsn_tlv_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_generic_async_s of_bsn_generic_async_t;
+
+/**
  * Structure for of_bsn_generic_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

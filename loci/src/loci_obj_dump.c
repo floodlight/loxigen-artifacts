@@ -27641,6 +27641,48 @@ of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_dump(loci_writer_f writer, vo
 }
 
 int
+of_bsn_generic_async_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    of_str64_t str64;
+
+    of_list_bsn_tlv_t list;
+    of_object_t elt;
+    int rv;
+
+    out += writer(cookie, "Object of type of_bsn_generic_async\n");
+
+    of_bsn_generic_async_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_generic_async_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_generic_async_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_generic_async_name_get(obj, &str64);
+    out += writer(cookie, "  name (of_str64_t):  ");
+    out += LOCI_DUMP_str64(writer, cookie, str64);
+    out += writer(cookie, "\n");
+
+    out += writer(cookie, "List of of_bsn_tlv_t\n");
+    of_bsn_generic_async_tlvs_bind(obj, &list);
+    OF_LIST_BSN_TLV_ITER(&list, &elt, rv) {
+        of_object_dump(writer, cookie, (of_object_t *)&elt);
+    }
+
+    return out;
+}
+
+int
 of_bsn_generic_stats_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -40615,6 +40657,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_get_interfaces_reply_OF_VERSION_1_0_dump,
     of_bsn_get_interfaces_request_OF_VERSION_1_0_dump,
     of_bsn_get_ip_mask_reply_OF_VERSION_1_0_dump,
@@ -41278,6 +41321,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_bw_enable_get_request_OF_VERSION_1_1_dump,
     of_bsn_bw_enable_set_reply_OF_VERSION_1_1_dump,
     of_bsn_bw_enable_set_request_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -42001,6 +42045,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_bsn_get_interfaces_reply_OF_VERSION_1_2_dump,
     of_bsn_get_interfaces_request_OF_VERSION_1_2_dump,
     unknown_dump,
@@ -42677,6 +42722,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_3_dump,
     of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_3_dump,
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_3_dump,
+    unknown_dump,
     of_bsn_generic_stats_reply_OF_VERSION_1_3_dump,
     of_bsn_generic_stats_request_OF_VERSION_1_3_dump,
     of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_3_dump,
@@ -43370,6 +43416,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4_dump,
     of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_dump,
     of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_dump,
+    of_bsn_generic_async_OF_VERSION_1_4_dump,
     of_bsn_generic_stats_reply_OF_VERSION_1_4_dump,
     of_bsn_generic_stats_request_OF_VERSION_1_4_dump,
     of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_dump,

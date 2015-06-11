@@ -36810,6 +36810,43 @@ test_of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_scalar(void)
 }
 
 static int
+test_of_bsn_generic_async_OF_VERSION_1_4_scalar(void)
+{
+    of_bsn_generic_async_t *obj;
+
+    obj = of_bsn_generic_async_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 80);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_GENERIC_ASYNC);
+
+    {
+        of_object_id_t object_id;
+        of_header_wire_object_id_get(obj, &object_id);
+        TEST_ASSERT(object_id == OF_BSN_GENERIC_ASYNC);
+    }
+
+    if (loci_class_metadata[obj->object_id].wire_length_get != NULL) {
+        int length;
+
+        loci_class_metadata[obj->object_id].wire_length_get((of_object_t *)obj, &length);
+        TEST_ASSERT(length == 80);
+    }
+
+    /* Set up incrementing values for scalar members */
+    of_bsn_generic_async_OF_VERSION_1_4_populate_scalars(obj, 1);
+
+    /* Check values just set */
+    TEST_ASSERT(of_bsn_generic_async_OF_VERSION_1_4_check_scalars(obj, 1) != 0);
+
+    of_bsn_generic_async_delete(obj);
+
+    /* To do: Check memory */
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_generic_stats_reply_OF_VERSION_1_4_scalar(void)
 {
     of_bsn_generic_stats_reply_t *obj;
@@ -56262,6 +56299,7 @@ run_scalar_acc_tests(void)
     RUN_TEST(of_bsn_flow_idle_enable_get_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_set_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_scalar);
+    RUN_TEST(of_bsn_generic_async_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_generic_stats_reply_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_generic_stats_request_OF_VERSION_1_4_scalar);
     RUN_TEST(of_bsn_gentable_bucket_stats_reply_OF_VERSION_1_4_scalar);

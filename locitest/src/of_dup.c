@@ -38737,6 +38737,54 @@ of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_generic_async
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_generic_async.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_generic_async_t *
+of_bsn_generic_async_OF_VERSION_1_4_dup(
+    of_bsn_generic_async_t *src)
+{
+    of_bsn_generic_async_t *dst;
+    uint32_t val32;
+    of_str64_t str64;
+
+    of_list_bsn_tlv_t src_list;
+    of_list_bsn_tlv_t *dst_list;
+
+    if ((dst = of_bsn_generic_async_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_generic_async_xid_get(src, &val32);
+    of_bsn_generic_async_xid_set(dst, val32);
+
+    of_bsn_generic_async_experimenter_get(src, &val32);
+    of_bsn_generic_async_experimenter_set(dst, val32);
+
+    of_bsn_generic_async_subtype_get(src, &val32);
+    of_bsn_generic_async_subtype_set(dst, val32);
+
+    of_bsn_generic_async_name_get(src, &str64);
+    of_bsn_generic_async_name_set(dst, str64);
+
+    of_bsn_generic_async_tlvs_bind(
+        src, &src_list);
+    dst_list = of_list_bsn_tlv_OF_VERSION_1_4_dup(&src_list);
+    if (dst_list == NULL) {
+        of_bsn_generic_async_delete(dst);
+        return NULL;
+    }
+    of_bsn_generic_async_tlvs_set(dst, dst_list);
+    of_list_bsn_tlv_delete(dst_list);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_generic_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -58828,6 +58876,19 @@ of_bsn_flow_idle_enable_set_request_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_flow_idle_enable_set_request_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_generic_async_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_generic_async_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
