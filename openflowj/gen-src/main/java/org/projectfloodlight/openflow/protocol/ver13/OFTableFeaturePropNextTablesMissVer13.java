@@ -188,6 +188,8 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<U8> nextTableIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U8.READER);
+            // align message to 8 bytes (length does not contain alignment)
+            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropNextTablesMissVer13 tableFeaturePropNextTablesMissVer13 = new OFTableFeaturePropNextTablesMissVer13(
                     nextTableIds
@@ -234,7 +236,10 @@ class OFTableFeaturePropNextTablesMissVer13 implements OFTableFeaturePropNextTab
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
+            // align message to 8 bytes
+            bb.writeZero(alignedLength - length);
 
         }
     }

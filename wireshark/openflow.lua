@@ -32684,6 +32684,7 @@ function dissect_of_table_feature_prop_apply_actions_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions.length')
     read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_apply_actions'
 end
 of_table_feature_prop_v4_dissectors[6] = dissect_of_table_feature_prop_apply_actions_v4
@@ -32697,6 +32698,7 @@ function dissect_of_table_feature_prop_apply_actions_miss_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_actions_miss.length')
     read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_apply_actions_miss'
 end
 of_table_feature_prop_v4_dissectors[7] = dissect_of_table_feature_prop_apply_actions_miss_v4
@@ -32710,6 +32712,7 @@ function dissect_of_table_feature_prop_apply_setfield_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield.length')
     read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_apply_setfield'
 end
 of_table_feature_prop_v4_dissectors[14] = dissect_of_table_feature_prop_apply_setfield_v4
@@ -32723,6 +32726,7 @@ function dissect_of_table_feature_prop_apply_setfield_miss_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_apply_setfield_miss.length')
     read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_apply_setfield_miss'
 end
 of_table_feature_prop_v4_dissectors[15] = dissect_of_table_feature_prop_apply_setfield_miss_v4
@@ -32752,6 +32756,7 @@ function dissect_of_table_feature_prop_instructions_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions.length')
     read_list(reader, dissect_of_instruction_id_v4, subtree, 'of_instruction_id')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_instructions'
 end
 of_table_feature_prop_v4_dissectors[0] = dissect_of_table_feature_prop_instructions_v4
@@ -32765,6 +32770,7 @@ function dissect_of_table_feature_prop_instructions_miss_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_instructions_miss.length')
     read_list(reader, dissect_of_instruction_id_v4, subtree, 'of_instruction_id')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_instructions_miss'
 end
 of_table_feature_prop_v4_dissectors[1] = dissect_of_table_feature_prop_instructions_miss_v4
@@ -32778,6 +32784,7 @@ function dissect_of_table_feature_prop_match_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_match.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_match.length')
     read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_match'
 end
 of_table_feature_prop_v4_dissectors[8] = dissect_of_table_feature_prop_match_v4
@@ -32791,6 +32798,7 @@ function dissect_of_table_feature_prop_next_tables_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables.length')
     read_list(reader, dissect_of_uint8_v4, subtree, 'of_uint8')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_next_tables'
 end
 of_table_feature_prop_v4_dissectors[2] = dissect_of_table_feature_prop_next_tables_v4
@@ -32804,6 +32812,7 @@ function dissect_of_table_feature_prop_next_tables_miss_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_next_tables_miss.length')
     read_list(reader, dissect_of_uint8_v4, subtree, 'of_uint8')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_next_tables_miss'
 end
 of_table_feature_prop_v4_dissectors[3] = dissect_of_table_feature_prop_next_tables_miss_v4
@@ -32817,6 +32826,7 @@ function dissect_of_table_feature_prop_wildcards_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_wildcards.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_wildcards.length')
     read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_wildcards'
 end
 of_table_feature_prop_v4_dissectors[10] = dissect_of_table_feature_prop_wildcards_v4
@@ -32830,6 +32840,7 @@ function dissect_of_table_feature_prop_write_actions_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions.length')
     read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_write_actions'
 end
 of_table_feature_prop_v4_dissectors[4] = dissect_of_table_feature_prop_write_actions_v4
@@ -32843,6 +32854,7 @@ function dissect_of_table_feature_prop_write_actions_miss_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_actions_miss.length')
     read_list(reader, dissect_of_action_id_v4, subtree, 'of_action_id')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_write_actions_miss'
 end
 of_table_feature_prop_v4_dissectors[5] = dissect_of_table_feature_prop_write_actions_miss_v4
@@ -32856,6 +32868,7 @@ function dissect_of_table_feature_prop_write_setfield_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield.length')
     read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_write_setfield'
 end
 of_table_feature_prop_v4_dissectors[12] = dissect_of_table_feature_prop_write_setfield_v4
@@ -32869,6 +32882,7 @@ function dissect_of_table_feature_prop_write_setfield_miss_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield_miss.type')
     read_uint16_t(reader, 4, subtree, 'of13.table_feature_prop_write_setfield_miss.length')
     read_list(reader, dissect_of_uint32_v4, subtree, 'of_uint32')
+    orig_reader.skip_align()
     return 'of_table_feature_prop_write_setfield_miss'
 end
 of_table_feature_prop_v4_dissectors[13] = dissect_of_table_feature_prop_write_setfield_miss_v4

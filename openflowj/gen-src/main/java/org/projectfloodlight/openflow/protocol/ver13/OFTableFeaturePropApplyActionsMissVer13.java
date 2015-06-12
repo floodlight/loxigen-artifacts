@@ -188,6 +188,8 @@ class OFTableFeaturePropApplyActionsMissVer13 implements OFTableFeaturePropApply
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<OFActionId> actionIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFActionIdVer13.READER);
+            // align message to 8 bytes (length does not contain alignment)
+            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropApplyActionsMissVer13 tableFeaturePropApplyActionsMissVer13 = new OFTableFeaturePropApplyActionsMissVer13(
                     actionIds
@@ -234,7 +236,10 @@ class OFTableFeaturePropApplyActionsMissVer13 implements OFTableFeaturePropApply
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
+            // align message to 8 bytes
+            bb.writeZero(alignedLength - length);
 
         }
     }

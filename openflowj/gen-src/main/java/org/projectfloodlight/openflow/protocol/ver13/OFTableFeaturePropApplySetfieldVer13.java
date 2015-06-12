@@ -188,6 +188,8 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
             if(logger.isTraceEnabled())
                 logger.trace("readFrom - length={}", length);
             List<U32> oxmIds = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), U32.READER);
+            // align message to 8 bytes (length does not contain alignment)
+            bb.skipBytes(((length + 7)/8 * 8 ) - length );
 
             OFTableFeaturePropApplySetfieldVer13 tableFeaturePropApplySetfieldVer13 = new OFTableFeaturePropApplySetfieldVer13(
                     oxmIds
@@ -234,7 +236,10 @@ class OFTableFeaturePropApplySetfieldVer13 implements OFTableFeaturePropApplySet
 
             // update length field
             int length = bb.writerIndex() - startIndex;
+            int alignedLength = ((length + 7)/8 * 8);
             bb.setShort(lengthIndex, length);
+            // align message to 8 bytes
+            bb.writeZero(alignedLength - length);
 
         }
     }
