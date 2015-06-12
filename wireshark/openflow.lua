@@ -9278,6 +9278,12 @@ fields['of14.bsn_table_set_buckets_size.experimenter'] = ProtoField.uint32("of14
 fields['of14.bsn_table_set_buckets_size.subtype'] = ProtoField.uint32("of14.bsn_table_set_buckets_size.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_table_set_buckets_size.table_id'] = ProtoField.uint8("of14.bsn_table_set_buckets_size.table_id", "table_id", base.DEC, nil)
 fields['of14.bsn_table_set_buckets_size.buckets_size'] = ProtoField.uint32("of14.bsn_table_set_buckets_size.buckets_size", "buckets_size", base.DEC, nil)
+fields['of14.bsn_takeover.version'] = ProtoField.uint8("of14.bsn_takeover.version", "version", base.DEC, nil)
+fields['of14.bsn_takeover.type'] = ProtoField.uint8("of14.bsn_takeover.type", "type", base.DEC, nil)
+fields['of14.bsn_takeover.length'] = ProtoField.uint16("of14.bsn_takeover.length", "length", base.DEC, nil)
+fields['of14.bsn_takeover.xid'] = ProtoField.uint32("of14.bsn_takeover.xid", "xid", base.DEC, nil)
+fields['of14.bsn_takeover.experimenter'] = ProtoField.uint32("of14.bsn_takeover.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_takeover.subtype'] = ProtoField.uint32("of14.bsn_takeover.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_time_reply.version'] = ProtoField.uint8("of14.bsn_time_reply.version", "version", base.DEC, nil)
 fields['of14.bsn_time_reply.type'] = ProtoField.uint8("of14.bsn_time_reply.type", "type", base.DEC, nil)
 fields['of14.bsn_time_reply.length'] = ProtoField.uint16("of14.bsn_time_reply.length", "length", base.DEC, nil)
@@ -17638,6 +17644,12 @@ p_of.fields = {
     fields['of14.bsn_table_set_buckets_size.subtype'],
     fields['of14.bsn_table_set_buckets_size.table_id'],
     fields['of14.bsn_table_set_buckets_size.buckets_size'],
+    fields['of14.bsn_takeover.version'],
+    fields['of14.bsn_takeover.type'],
+    fields['of14.bsn_takeover.length'],
+    fields['of14.bsn_takeover.xid'],
+    fields['of14.bsn_takeover.experimenter'],
+    fields['of14.bsn_takeover.subtype'],
     fields['of14.bsn_time_reply.version'],
     fields['of14.bsn_time_reply.type'],
     fields['of14.bsn_time_reply.length'],
@@ -35388,6 +35400,19 @@ function dissect_of_bsn_table_set_buckets_size_v5(reader, subtree)
     return 'of_bsn_table_set_buckets_size'
 end
 of_bsn_header_v5_dissectors[61] = dissect_of_bsn_table_set_buckets_size_v5
+
+-- child class of_bsn_takeover
+-- Child of of_bsn_header
+function dissect_of_bsn_takeover_v5(reader, subtree)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_takeover.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_takeover.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_takeover.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_takeover.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_takeover.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_takeover.subtype')
+    return 'of_bsn_takeover'
+end
+of_bsn_header_v5_dissectors[69] = dissect_of_bsn_takeover_v5
 
 -- child class of_bsn_time_reply
 -- Child of of_bsn_header

@@ -1102,6 +1102,7 @@ int of_bsn_switch_pipeline_stats_request_OF_VERSION_1_4_dump(loci_writer_f write
 int of_bsn_table_checksum_stats_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_table_checksum_stats_request_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_table_set_buckets_size_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_takeover_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_time_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_time_request_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_virtual_port_create_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

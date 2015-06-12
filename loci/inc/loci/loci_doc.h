@@ -2755,6 +2755,25 @@ typedef struct of_bsn_table_checksum_stats_request_s of_bsn_table_checksum_stats
 typedef struct of_bsn_table_set_buckets_size_s of_bsn_table_set_buckets_size_t;
 
 /**
+ * Structure for of_bsn_takeover object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_takeover_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_takeover_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_takeover_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_takeover_s of_bsn_takeover_t;
+
+/**
  * Structure for of_bsn_time_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

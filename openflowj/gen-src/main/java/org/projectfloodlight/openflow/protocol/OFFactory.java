@@ -364,6 +364,8 @@ public interface OFFactory extends XidGenerator {
     OFAsyncConfigPropTableStatusSlave.Builder buildAsyncConfigPropTableStatusSlave() throws UnsupportedOperationException;
     OFAsyncConfigPropTableStatusSlave asyncConfigPropTableStatusSlave(long mask);
     OFBsnGenericAsync.Builder buildBsnGenericAsync() throws UnsupportedOperationException;
+    OFBsnTakeover.Builder buildBsnTakeover() throws UnsupportedOperationException;
+    OFBsnTakeover bsnTakeover();
     OFBundleAddMsg.Builder buildBundleAddMsg() throws UnsupportedOperationException;
     OFBundleCtrlMsg.Builder buildBundleCtrlMsg() throws UnsupportedOperationException;
     OFPortDescPropBsnUplink portDescPropBsnUplink();

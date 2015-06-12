@@ -20696,6 +20696,49 @@ test_of_bsn_table_set_buckets_size_create_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_bsn_takeover_create_OF_VERSION_1_4(void)
+{
+    of_bsn_takeover_t *obj;
+    uint8_t *msg_buf;
+    int value;
+    of_object_id_t object_id;
+    int len;
+
+    obj = of_bsn_takeover_new(OF_VERSION_1_4);
+    TEST_ASSERT(obj != NULL);
+    TEST_ASSERT(obj->version == OF_VERSION_1_4);
+    TEST_ASSERT(obj->length == 16);
+    TEST_ASSERT(obj->parent == NULL);
+    TEST_ASSERT(obj->object_id == OF_BSN_TAKEOVER);
+
+    of_header_wire_object_id_get(obj, &object_id);
+    TEST_ASSERT(object_id == OF_BSN_TAKEOVER);
+
+    /* Set up incrementing values for scalar members */
+    value = of_bsn_takeover_OF_VERSION_1_4_populate_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    len = obj->length;
+
+    /* Grab the underlying buffer from the message */
+    of_object_wire_buffer_steal((of_object_t *)obj, &msg_buf);
+    TEST_ASSERT(msg_buf != NULL);
+    of_bsn_takeover_delete(obj);
+    obj = of_object_new_from_message(OF_BUFFER_TO_MESSAGE(msg_buf), len);
+
+    TEST_ASSERT(obj != NULL);
+
+    /* @fixme Set up all message objects (recursively?) */
+
+    value = of_bsn_takeover_OF_VERSION_1_4_check_scalars(obj, 1);
+    TEST_ASSERT(value != 0);
+
+    of_bsn_takeover_delete(obj);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_bsn_time_reply_create_OF_VERSION_1_4(void)
 {
     of_bsn_time_reply_t *obj;
@@ -24748,6 +24791,7 @@ run_message_tests(void)
     RUN_TEST(of_bsn_table_checksum_stats_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_table_checksum_stats_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_table_set_buckets_size_create_OF_VERSION_1_4);
+    RUN_TEST(of_bsn_takeover_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_time_reply_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_time_request_create_OF_VERSION_1_4);
     RUN_TEST(of_bsn_virtual_port_create_reply_create_OF_VERSION_1_4);

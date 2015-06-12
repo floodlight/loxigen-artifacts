@@ -41041,6 +41041,37 @@ of_bsn_table_set_buckets_size_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_takeover
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_takeover.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_takeover_t *
+of_bsn_takeover_OF_VERSION_1_4_dup(
+    of_bsn_takeover_t *src)
+{
+    of_bsn_takeover_t *dst;
+    uint32_t val32;
+
+    if ((dst = of_bsn_takeover_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_takeover_xid_get(src, &val32);
+    of_bsn_takeover_xid_set(dst, val32);
+
+    of_bsn_takeover_experimenter_get(src, &val32);
+    of_bsn_takeover_experimenter_set(dst, val32);
+
+    of_bsn_takeover_subtype_get(src, &val32);
+    of_bsn_takeover_subtype_set(dst, val32);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_time_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -60147,6 +60178,19 @@ of_bsn_table_set_buckets_size_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_table_set_buckets_size_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_takeover_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_takeover_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

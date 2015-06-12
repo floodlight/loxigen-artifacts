@@ -1187,6 +1187,8 @@ void of_bad_property_error_msg_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bad_property_error_msg_push_wire_types(of_object_t *obj);
 void of_bsn_generic_async_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_generic_async_push_wire_types(of_object_t *obj);
+void of_bsn_takeover_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_takeover_push_wire_types(of_object_t *obj);
 void of_bundle_add_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bundle_add_msg_push_wire_types(of_object_t *obj);
 void of_bundle_ctrl_msg_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1382,6 +1384,7 @@ typedef of_object_t of_bsn_switch_pipeline_stats_request_t;
 typedef of_object_t of_bsn_table_checksum_stats_reply_t;
 typedef of_object_t of_bsn_table_checksum_stats_request_t;
 typedef of_object_t of_bsn_table_set_buckets_size_t;
+typedef of_object_t of_bsn_takeover_t;
 typedef of_object_t of_bsn_time_reply_t;
 typedef of_object_t of_bsn_time_request_t;
 typedef of_object_t of_bsn_virtual_port_create_reply_t;
@@ -2509,6 +2512,11 @@ extern void of_bsn_table_checksum_stats_request_init(
 extern of_object_t *
     of_bsn_table_set_buckets_size_new(of_version_t version);
 extern void of_bsn_table_set_buckets_size_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_takeover_new(of_version_t version);
+extern void of_bsn_takeover_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -6584,6 +6592,17 @@ of_bsn_table_checksum_stats_request_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_table_set_buckets_size_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_takeover_t
+ * @param obj An instance of type of_bsn_takeover_t
+ *
+ * \ingroup of_bsn_takeover
+ */
+static inline void
+of_bsn_takeover_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -16723,6 +16742,29 @@ extern void of_bsn_table_set_buckets_size_buckets_size_set(
 extern void of_bsn_table_set_buckets_size_buckets_size_get(
     of_bsn_table_set_buckets_size_t *obj,
     uint32_t *buckets_size);
+
+/* Unified accessor functions for of_bsn_takeover */
+
+extern void of_bsn_takeover_xid_set(
+    of_bsn_takeover_t *obj,
+    uint32_t xid);
+extern void of_bsn_takeover_xid_get(
+    of_bsn_takeover_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_takeover_experimenter_set(
+    of_bsn_takeover_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_takeover_experimenter_get(
+    of_bsn_takeover_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_takeover_subtype_set(
+    of_bsn_takeover_t *obj,
+    uint32_t subtype);
+extern void of_bsn_takeover_subtype_get(
+    of_bsn_takeover_t *obj,
+    uint32_t *subtype);
 
 /* Unified accessor functions for of_bsn_time_reply */
 

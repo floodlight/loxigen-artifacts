@@ -11665,6 +11665,9 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x44:
             *id = OF_BSN_GENERIC_ASYNC;
             break;
+        case 0x45:
+            *id = OF_BSN_TAKEOVER;
+            break;
         default:
             *id = OF_BSN_HEADER;
             break;

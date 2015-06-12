@@ -10337,6 +10337,15 @@ extern int of_bsn_table_set_buckets_size_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_table_set_buckets_size_OF_VERSION_1_4_check_scalars(
     of_bsn_table_set_buckets_size_t *obj, int value);
 
+extern int of_bsn_takeover_OF_VERSION_1_4_populate(
+    of_bsn_takeover_t *obj, int value);
+extern int of_bsn_takeover_OF_VERSION_1_4_check(
+    of_bsn_takeover_t *obj, int value);
+extern int of_bsn_takeover_OF_VERSION_1_4_populate_scalars(
+    of_bsn_takeover_t *obj, int value);
+extern int of_bsn_takeover_OF_VERSION_1_4_check_scalars(
+    of_bsn_takeover_t *obj, int value);
+
 extern int of_bsn_time_reply_OF_VERSION_1_4_populate(
     of_bsn_time_reply_t *obj, int value);
 extern int of_bsn_time_reply_OF_VERSION_1_4_check(

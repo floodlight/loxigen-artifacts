@@ -431,6 +431,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_takeover_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_time_reply_dup(
         of_object_t *src);
 
@@ -7440,6 +7444,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_table_set_buckets_size_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_takeover_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

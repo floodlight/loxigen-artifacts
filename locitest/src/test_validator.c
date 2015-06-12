@@ -4369,6 +4369,15 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_takeover_t *obj = of_bsn_takeover_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_takeover_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_takeover_delete(obj);
+    }
+
+    {
         of_bsn_table_set_buckets_size_t *obj = of_bsn_table_set_buckets_size_new(OF_VERSION_1_4);
         of_message_t msg;
         of_bsn_table_set_buckets_size_OF_VERSION_1_4_populate(obj, 1);

@@ -1269,6 +1269,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_table_checksum_stats_ent
 static int __attribute__((unused)) loci_validate_of_bsn_table_checksum_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_table_checksum_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_table_set_buckets_size_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_takeover_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_time_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_time_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -31621,6 +31622,8 @@ loci_validate_of_bsn_header_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_set_switch_pipeline_request_OF_VERSION_1_4(data, len, out_len);
     case 0x3d:
         return loci_validate_of_bsn_table_set_buckets_size_OF_VERSION_1_4(data, len, out_len);
+    case 0x45:
+        return loci_validate_of_bsn_takeover_OF_VERSION_1_4(data, len, out_len);
     case 0x2d:
         return loci_validate_of_bsn_time_reply_OF_VERSION_1_4(data, len, out_len);
     case 0x2c:
@@ -33894,6 +33897,28 @@ loci_validate_of_bsn_table_set_buckets_size_OF_VERSION_1_4(uint8_t *data, int le
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 24) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_takeover_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 16) {
+        return -1;
+    }
+
+    len = 16;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 16) {
         return -1;
     }
 
