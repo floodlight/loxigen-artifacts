@@ -787,6 +787,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_udp_src_OF_VERSION_1
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1348,6 +1349,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_tlv_udp_src_OF_VERSION_1
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_create_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vport_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -20137,6 +20139,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_3(data, len, out_len);
     case 0x6:
         return loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(data, len, out_len);
+    case 0x4d:
+        return loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3(data, len, out_len);
     case 0x13:
         return loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_3(data, len, out_len);
     }
@@ -21791,6 +21795,28 @@ loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_3(uint8_t *data, int len, int *ou
 
 static int
 loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
         return -1;
@@ -34143,6 +34169,8 @@ loci_validate_of_bsn_tlv_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_4(data, len, out_len);
     case 0x6:
         return loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_4(data, len, out_len);
+    case 0x4d:
+        return loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4(data, len, out_len);
     case 0x13:
         return loci_validate_of_bsn_tlv_vrf_OF_VERSION_1_4(data, len, out_len);
     }
@@ -35797,6 +35825,28 @@ loci_validate_of_bsn_tlv_vlan_pcp_OF_VERSION_1_4(uint8_t *data, int len, int *ou
 
 static int
 loci_validate_of_bsn_tlv_vlan_vid_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 6) {
+        return -1;
+    }
+
+    len = 6;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 6) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
 {
     if (len < 6) {
         return -1;

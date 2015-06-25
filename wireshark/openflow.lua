@@ -6931,6 +6931,9 @@ fields['of13.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of13.bsn_tlv_vlan_pcp.
 fields['of13.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_vid_mask.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid_mask.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_vid_mask.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid_mask.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vlan_vid_mask.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid_mask.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.type'] = ProtoField.uint16("of13.bsn_tlv_vrf.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.length'] = ProtoField.uint16("of13.bsn_tlv_vrf.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.value'] = ProtoField.uint32("of13.bsn_tlv_vrf.value", "value", base.DEC, nil)
@@ -9520,6 +9523,9 @@ fields['of14.bsn_tlv_vlan_pcp.value'] = ProtoField.uint8("of14.bsn_tlv_vlan_pcp.
 fields['of14.bsn_tlv_vlan_vid.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_vid_mask.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid_mask.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_vid_mask.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid_mask.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_vlan_vid_mask.value'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid_mask.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.type'] = ProtoField.uint16("of14.bsn_tlv_vrf.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.length'] = ProtoField.uint16("of14.bsn_tlv_vrf.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.value'] = ProtoField.uint32("of14.bsn_tlv_vrf.value", "value", base.DEC, nil)
@@ -15297,6 +15303,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_vlan_vid.type'],
     fields['of13.bsn_tlv_vlan_vid.length'],
     fields['of13.bsn_tlv_vlan_vid.value'],
+    fields['of13.bsn_tlv_vlan_vid_mask.type'],
+    fields['of13.bsn_tlv_vlan_vid_mask.length'],
+    fields['of13.bsn_tlv_vlan_vid_mask.value'],
     fields['of13.bsn_tlv_vrf.type'],
     fields['of13.bsn_tlv_vrf.length'],
     fields['of13.bsn_tlv_vrf.value'],
@@ -17886,6 +17895,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_vlan_vid.type'],
     fields['of14.bsn_tlv_vlan_vid.length'],
     fields['of14.bsn_tlv_vlan_vid.value'],
+    fields['of14.bsn_tlv_vlan_vid_mask.type'],
+    fields['of14.bsn_tlv_vlan_vid_mask.length'],
+    fields['of14.bsn_tlv_vlan_vid_mask.value'],
     fields['of14.bsn_tlv_vrf.type'],
     fields['of14.bsn_tlv_vrf.length'],
     fields['of14.bsn_tlv_vrf.value'],
@@ -29429,6 +29441,16 @@ function dissect_of_bsn_tlv_vlan_vid_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[6] = dissect_of_bsn_tlv_vlan_vid_v4
 
+-- child class of_bsn_tlv_vlan_vid_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_vid_mask_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_vid_mask.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_vid_mask.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vlan_vid_mask.value')
+    return 'of_bsn_tlv_vlan_vid_mask'
+end
+of_bsn_tlv_v4_dissectors[77] = dissect_of_bsn_tlv_vlan_vid_mask_v4
+
 -- child class of_bsn_tlv_vrf
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_vrf_v4(reader, subtree)
@@ -36206,6 +36228,16 @@ function dissect_of_bsn_tlv_vlan_vid_v5(reader, subtree)
     return 'of_bsn_tlv_vlan_vid'
 end
 of_bsn_tlv_v5_dissectors[6] = dissect_of_bsn_tlv_vlan_vid_v5
+
+-- child class of_bsn_tlv_vlan_vid_mask
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vlan_vid_mask_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_vid_mask.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_vid_mask.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vlan_vid_mask.value')
+    return 'of_bsn_tlv_vlan_vid_mask'
+end
+of_bsn_tlv_v5_dissectors[77] = dissect_of_bsn_tlv_vlan_vid_mask_v5
 
 -- child class of_bsn_tlv_vrf
 -- Child of of_bsn_tlv

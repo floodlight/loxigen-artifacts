@@ -381,6 +381,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_unicast_query_timeout",
     "of_bsn_tlv_vlan_pcp",
     "of_bsn_tlv_vlan_vid",
+    "of_bsn_tlv_vlan_vid_mask",
     "of_bsn_tlv_vrf",
     "of_bsn_vlan_counter_stats_entry",
     "of_bsn_vport",

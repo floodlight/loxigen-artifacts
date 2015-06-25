@@ -5015,6 +5015,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x4c:
             *id = OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS;
             break;
+        case 0x4d:
+            *id = OF_BSN_TLV_VLAN_VID_MASK;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5251,6 +5254,9 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x4c:
             *id = OF_BSN_TLV_STRIP_MPLS_L3_ON_INGRESS;
+            break;
+        case 0x4d:
+            *id = OF_BSN_TLV_VLAN_VID_MASK;
             break;
         default:
             *id = OF_BSN_TLV;

@@ -684,6 +684,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvVlanVidMask.Builder buildVlanVidMask() {
+        return new OFBsnTlvVlanVidMaskVer14.Builder();
+    }
+    public OFBsnTlvVlanVidMask vlanVidMask(int value) {
+        return new OFBsnTlvVlanVidMaskVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvVrf.Builder buildVrf() {
         return new OFBsnTlvVrfVer14.Builder();
     }

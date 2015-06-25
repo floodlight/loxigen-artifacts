@@ -174,6 +174,8 @@ public interface OFBsnTlvs {
     OFBsnTlvVlanPcp vlanPcp(short value);
     OFBsnTlvVlanVid.Builder buildVlanVid() throws UnsupportedOperationException;
     OFBsnTlvVlanVid vlanVid(VlanVid value);
+    OFBsnTlvVlanVidMask.Builder buildVlanVidMask() throws UnsupportedOperationException;
+    OFBsnTlvVlanVidMask vlanVidMask(int value);
     OFBsnTlvVrf.Builder buildVrf() throws UnsupportedOperationException;
     OFBsnTlvVrf vrf(long value);
 

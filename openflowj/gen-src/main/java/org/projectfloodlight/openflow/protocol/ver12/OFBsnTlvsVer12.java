@@ -543,6 +543,13 @@ public class OFBsnTlvsVer12 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvVlanVid not supported in version 1.2");
     }
 
+    public OFBsnTlvVlanVidMask.Builder buildVlanVidMask() {
+        throw new UnsupportedOperationException("OFBsnTlvVlanVidMask not supported in version 1.2");
+    }
+    public OFBsnTlvVlanVidMask vlanVidMask(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvVlanVidMask not supported in version 1.2");
+    }
+
     public OFBsnTlvVrf.Builder buildVrf() {
         throw new UnsupportedOperationException("OFBsnTlvVrf not supported in version 1.2");
     }

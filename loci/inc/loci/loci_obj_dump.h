@@ -800,6 +800,7 @@ int of_bsn_tlv_udp_src_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, o
 int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vlan_pcp_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vrf_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vport_l2gre_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1332,6 +1333,7 @@ int of_bsn_tlv_udp_src_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, o
 int of_bsn_tlv_unicast_query_timeout_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vlan_pcp_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_tlv_vrf_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vport_l2gre_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj);

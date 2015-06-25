@@ -26882,6 +26882,10 @@ of_bsn_tlv_OF_VERSION_1_3_dup(
         return of_bsn_tlv_rx_bytes_OF_VERSION_1_3_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
         return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_3_dup(src);
     }
@@ -28978,6 +28982,31 @@ of_bsn_tlv_vlan_vid_OF_VERSION_1_3_dup(
 
     of_bsn_tlv_vlan_vid_value_get(src, &val16);
     of_bsn_tlv_vlan_vid_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vlan_vid_mask
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vlan_vid_mask.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vlan_vid_mask_t *
+of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(
+    of_bsn_tlv_vlan_vid_mask_t *src)
+{
+    of_bsn_tlv_vlan_vid_mask_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_vlan_vid_mask_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vlan_vid_mask_value_get(src, &val16);
+    of_bsn_tlv_vlan_vid_mask_value_set(dst, val16);
 
     return dst;
 }
@@ -46729,6 +46758,10 @@ of_bsn_tlv_OF_VERSION_1_4_dup(
         return of_bsn_tlv_rx_bytes_OF_VERSION_1_4_dup(src);
     }
 
+    if (src->object_id == OF_BSN_TLV_VLAN_VID_MASK) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
+    }
+
     if (src->object_id == OF_BSN_TLV_STRIP_MPLS_L2_ON_INGRESS) {
         return of_bsn_tlv_strip_mpls_l2_on_ingress_OF_VERSION_1_4_dup(src);
     }
@@ -48825,6 +48858,31 @@ of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(
 
     of_bsn_tlv_vlan_vid_value_get(src, &val16);
     of_bsn_tlv_vlan_vid_value_set(dst, val16);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_tlv_vlan_vid_mask
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_tlv_vlan_vid_mask.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_tlv_vlan_vid_mask_t *
+of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(
+    of_bsn_tlv_vlan_vid_mask_t *src)
+{
+    of_bsn_tlv_vlan_vid_mask_t *dst;
+    uint16_t val16;
+
+    if ((dst = of_bsn_tlv_vlan_vid_mask_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_tlv_vlan_vid_mask_value_get(src, &val16);
+    of_bsn_tlv_vlan_vid_mask_value_set(dst, val16);
 
     return dst;
 }
@@ -65238,6 +65296,23 @@ of_bsn_tlv_vlan_vid_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_tlv_vlan_vid_mask_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

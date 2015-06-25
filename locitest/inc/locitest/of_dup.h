@@ -1503,6 +1503,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_vlan_vid_mask_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vrf_dup(
         of_object_t *src);
 
@@ -6035,6 +6039,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_tlv_vrf_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -8384,6 +8392,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_tlv_vlan_vid_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

@@ -947,6 +947,8 @@ void of_bsn_tlv_vlan_pcp_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_vlan_pcp_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vlan_vid_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_vlan_vid_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_vlan_vid_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vrf_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1652,6 +1654,7 @@ typedef of_object_t of_bsn_tlv_udp_src_t;
 typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_pcp_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
+typedef of_object_t of_bsn_tlv_vlan_vid_mask_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_t;
@@ -3852,6 +3855,11 @@ extern void of_bsn_tlv_vlan_pcp_init(
 extern of_object_t *
     of_bsn_tlv_vlan_vid_new(of_version_t version);
 extern void of_bsn_tlv_vlan_vid_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_vlan_vid_mask_new(of_version_t version);
+extern void of_bsn_tlv_vlan_vid_mask_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9540,6 +9548,17 @@ of_bsn_tlv_vlan_pcp_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_vlan_vid_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_vlan_vid_mask_t
+ * @param obj An instance of type of_bsn_tlv_vlan_vid_mask_t
+ *
+ * \ingroup of_bsn_tlv_vlan_vid_mask
+ */
+static inline void
+of_bsn_tlv_vlan_vid_mask_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21289,6 +21308,15 @@ extern void of_bsn_tlv_vlan_vid_value_set(
     uint16_t value);
 extern void of_bsn_tlv_vlan_vid_value_get(
     of_bsn_tlv_vlan_vid_t *obj,
+    uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_vlan_vid_mask */
+
+extern void of_bsn_tlv_vlan_vid_mask_value_set(
+    of_bsn_tlv_vlan_vid_mask_t *obj,
+    uint16_t value);
+extern void of_bsn_tlv_vlan_vid_mask_value_get(
+    of_bsn_tlv_vlan_vid_mask_t *obj,
     uint16_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_vrf */

@@ -268,6 +268,9 @@ abstract class OFBsnTlvVer13 {
                case (short) 0x6:
                    // discriminator value 0x6=0x6 for class OFBsnTlvVlanVidVer13
                    return OFBsnTlvVlanVidVer13.READER.readFrom(bb);
+               case (short) 0x4d:
+                   // discriminator value 0x4d=0x4d for class OFBsnTlvVlanVidMaskVer13
+                   return OFBsnTlvVlanVidMaskVer13.READER.readFrom(bb);
                case (short) 0x13:
                    // discriminator value 0x13=0x13 for class OFBsnTlvVrfVer13
                    return OFBsnTlvVrfVer13.READER.readFrom(bb);
