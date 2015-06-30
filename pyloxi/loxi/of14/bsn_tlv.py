@@ -1274,6 +1274,44 @@ class idle_timeout(bsn_tlv):
 
 bsn_tlv.subtypes[8] = idle_timeout
 
+class igmp_snooping(bsn_tlv):
+    type = 78
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = igmp_snooping()
+        _type = reader.read("!H")[0]
+        assert(_type == 78)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("igmp_snooping {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[78] = igmp_snooping
+
 class internal_gateway_mac(bsn_tlv):
     type = 28
 
@@ -1649,6 +1687,44 @@ class ipv4_src(bsn_tlv):
         q.text('}')
 
 bsn_tlv.subtypes[34] = ipv4_src
+
+class l2_multicast_lookup(bsn_tlv):
+    type = 79
+
+    def __init__(self):
+        return
+
+    def pack(self):
+        packed = []
+        packed.append(struct.pack("!H", self.type))
+        packed.append(struct.pack("!H", 0)) # placeholder for length at index 1
+        length = sum([len(x) for x in packed])
+        packed[1] = struct.pack("!H", length)
+        return ''.join(packed)
+
+    @staticmethod
+    def unpack(reader):
+        obj = l2_multicast_lookup()
+        _type = reader.read("!H")[0]
+        assert(_type == 79)
+        _length = reader.read("!H")[0]
+        orig_reader = reader
+        reader = orig_reader.slice(_length, 4)
+        return obj
+
+    def __eq__(self, other):
+        if type(self) != type(other): return False
+        return True
+
+    def pretty_print(self, q):
+        q.text("l2_multicast_lookup {")
+        with q.group():
+            with q.indent(2):
+                q.breakable()
+            q.breakable()
+        q.text('}')
+
+bsn_tlv.subtypes[79] = l2_multicast_lookup
 
 class mac(bsn_tlv):
     type = 1

@@ -212,6 +212,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIdleTimeout not supported in version 1.0");
     }
 
+    public OFBsnTlvIgmpSnooping igmpSnooping() {
+        throw new UnsupportedOperationException("OFBsnTlvIgmpSnooping not supported in version 1.0");
+    }
+
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
         throw new UnsupportedOperationException("OFBsnTlvInternalGatewayMac not supported in version 1.0");
     }
@@ -266,6 +270,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvIpv4Src ipv4Src(IPv4Address value) {
         throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.0");
+    }
+
+    public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
+        throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.0");
     }
 
     public OFBsnTlvMac.Builder buildMac() {

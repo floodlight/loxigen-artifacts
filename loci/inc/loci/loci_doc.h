@@ -6568,6 +6568,13 @@ typedef struct of_bsn_tlv_idle_time_s of_bsn_tlv_idle_time_t;
 typedef struct of_bsn_tlv_idle_timeout_s of_bsn_tlv_idle_timeout_t;
 
 /**
+ * Structure for of_bsn_tlv_igmp_snooping object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_igmp_snooping_s of_bsn_tlv_igmp_snooping_t;
+
+/**
  * Structure for of_bsn_tlv_internal_gateway_mac object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6654,6 +6661,13 @@ typedef struct of_bsn_tlv_ipv4_netmask_s of_bsn_tlv_ipv4_netmask_t;
  *
  */
 typedef struct of_bsn_tlv_ipv4_src_s of_bsn_tlv_ipv4_src_t;
+
+/**
+ * Structure for of_bsn_tlv_l2_multicast_lookup object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_l2_multicast_lookup_s of_bsn_tlv_l2_multicast_lookup_t;
 
 /**
  * Structure for of_bsn_tlv_mac object.  Get/set

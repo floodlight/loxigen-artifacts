@@ -1,1 +1,1 @@
-7096ab3320b76ca2e816577b2d2f6e8966a5f461 Merge into master from pull request #406: openflow_input: add bsn_tlv vlan_vid_mask (https://github.com/floodlight/loxigen/pull/406)
+ca5b1ad831f6816c1c62219124a1dcccb9ea9f88 Merge into master from pull request #407: openflow_input: add a couple of BSN TLVs (https://github.com/floodlight/loxigen/pull/407)

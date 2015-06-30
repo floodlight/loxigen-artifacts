@@ -80,6 +80,7 @@ public interface OFBsnTlvs {
     OFBsnTlvIdleTime idleTime(U64 value);
     OFBsnTlvIdleTimeout.Builder buildIdleTimeout() throws UnsupportedOperationException;
     OFBsnTlvIdleTimeout idleTimeout(long value);
+    OFBsnTlvIgmpSnooping igmpSnooping();
     OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() throws UnsupportedOperationException;
     OFBsnTlvInternalGatewayMac internalGatewayMac(MacAddress value);
     OFBsnTlvInternalMac.Builder buildInternalMac() throws UnsupportedOperationException;
@@ -96,6 +97,7 @@ public interface OFBsnTlvs {
     OFBsnTlvIpv4Netmask ipv4Netmask(IPv4Address value);
     OFBsnTlvIpv4Src.Builder buildIpv4Src() throws UnsupportedOperationException;
     OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
+    OFBsnTlvL2MulticastLookup l2MulticastLookup();
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;

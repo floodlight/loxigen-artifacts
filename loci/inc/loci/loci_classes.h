@@ -849,6 +849,8 @@ void of_bsn_tlv_idle_time_wire_object_id_get(of_object_t *obj, of_object_id_t *i
 void of_bsn_tlv_idle_time_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_idle_timeout_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_idle_timeout_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_igmp_snooping_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_igmp_snooping_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_internal_gateway_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_internal_gateway_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_internal_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -865,6 +867,8 @@ void of_bsn_tlv_ipv4_netmask_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_ipv4_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_l2_multicast_lookup_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_l2_multicast_lookup_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1605,6 +1609,7 @@ typedef of_object_t of_bsn_tlv_icmp_type_t;
 typedef of_object_t of_bsn_tlv_idle_notification_t;
 typedef of_object_t of_bsn_tlv_idle_time_t;
 typedef of_object_t of_bsn_tlv_idle_timeout_t;
+typedef of_object_t of_bsn_tlv_igmp_snooping_t;
 typedef of_object_t of_bsn_tlv_internal_gateway_mac_t;
 typedef of_object_t of_bsn_tlv_internal_mac_t;
 typedef of_object_t of_bsn_tlv_interval_t;
@@ -1613,6 +1618,7 @@ typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
+typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
@@ -3613,6 +3619,11 @@ extern void of_bsn_tlv_idle_timeout_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_igmp_snooping_new(of_version_t version);
+extern void of_bsn_tlv_igmp_snooping_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_internal_gateway_mac_new(of_version_t version);
 extern void of_bsn_tlv_internal_gateway_mac_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3650,6 +3661,11 @@ extern void of_bsn_tlv_ipv4_netmask_init(
 extern of_object_t *
     of_bsn_tlv_ipv4_src_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_l2_multicast_lookup_new(of_version_t version);
+extern void of_bsn_tlv_l2_multicast_lookup_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9013,6 +9029,17 @@ of_bsn_tlv_idle_timeout_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_igmp_snooping_t
+ * @param obj An instance of type of_bsn_tlv_igmp_snooping_t
+ *
+ * \ingroup of_bsn_tlv_igmp_snooping
+ */
+static inline void
+of_bsn_tlv_igmp_snooping_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_internal_gateway_mac_t
  * @param obj An instance of type of_bsn_tlv_internal_gateway_mac_t
  *
@@ -9097,6 +9124,17 @@ of_bsn_tlv_ipv4_netmask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_ipv4_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_l2_multicast_lookup_t
+ * @param obj An instance of type of_bsn_tlv_l2_multicast_lookup_t
+ *
+ * \ingroup of_bsn_tlv_l2_multicast_lookup
+ */
+static inline void
+of_bsn_tlv_l2_multicast_lookup_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -20888,6 +20926,8 @@ extern void of_bsn_tlv_idle_timeout_value_get(
     of_bsn_tlv_idle_timeout_t *obj,
     uint32_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_igmp_snooping */
+
 /* Unified accessor functions for of_bsn_tlv_internal_gateway_mac */
 
 extern void of_bsn_tlv_internal_gateway_mac_value_set(
@@ -20959,6 +20999,8 @@ extern void of_bsn_tlv_ipv4_src_value_set(
 extern void of_bsn_tlv_ipv4_src_value_get(
     of_bsn_tlv_ipv4_src_t *obj,
     of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_l2_multicast_lookup */
 
 /* Unified accessor functions for of_bsn_tlv_mac */
 

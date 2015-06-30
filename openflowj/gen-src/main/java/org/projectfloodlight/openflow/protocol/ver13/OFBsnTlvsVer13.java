@@ -262,6 +262,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIgmpSnooping igmpSnooping() {
+        return OFBsnTlvIgmpSnoopingVer13.INSTANCE;
+    }
+
     public OFBsnTlvInternalGatewayMac.Builder buildInternalGatewayMac() {
         return new OFBsnTlvInternalGatewayMacVer13.Builder();
     }
@@ -332,6 +336,10 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
         return new OFBsnTlvIpv4SrcVer13(
                 value
                     );
+    }
+
+    public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
+        return OFBsnTlvL2MulticastLookupVer13.INSTANCE;
     }
 
     public OFBsnTlvMac.Builder buildMac() {
