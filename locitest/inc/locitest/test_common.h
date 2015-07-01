@@ -6611,6 +6611,15 @@ extern int of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_actor_system_priority_t *obj, int value);
 
+extern int of_bsn_tlv_anchor_OF_VERSION_1_3_populate(
+    of_bsn_tlv_anchor_t *obj, int value);
+extern int of_bsn_tlv_anchor_OF_VERSION_1_3_check(
+    of_bsn_tlv_anchor_t *obj, int value);
+extern int of_bsn_tlv_anchor_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_anchor_t *obj, int value);
+extern int of_bsn_tlv_anchor_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_anchor_t *obj, int value);
+
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_populate(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_check(
@@ -6727,6 +6736,15 @@ extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
 extern int of_bsn_tlv_external_netmask_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
+
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_populate(
+    of_bsn_tlv_generation_id_t *obj, int value);
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_check(
+    of_bsn_tlv_generation_id_t *obj, int value);
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_generation_id_t *obj, int value);
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_generation_id_t *obj, int value);
 
 extern int of_bsn_tlv_header_size_OF_VERSION_1_3_populate(
     of_bsn_tlv_header_size_t *obj, int value);
@@ -6943,6 +6961,15 @@ extern int of_bsn_tlv_name_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_name_t *obj, int value);
 extern int of_bsn_tlv_name_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_name_t *obj, int value);
+
+extern int of_bsn_tlv_offset_OF_VERSION_1_3_populate(
+    of_bsn_tlv_offset_t *obj, int value);
+extern int of_bsn_tlv_offset_OF_VERSION_1_3_check(
+    of_bsn_tlv_offset_t *obj, int value);
+extern int of_bsn_tlv_offset_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_offset_t *obj, int value);
+extern int of_bsn_tlv_offset_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_offset_t *obj, int value);
 
 extern int of_bsn_tlv_partner_key_OF_VERSION_1_3_populate(
     of_bsn_tlv_partner_key_t *obj, int value);
@@ -11813,6 +11840,15 @@ extern int of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_actor_system_priority_t *obj, int value);
 
+extern int of_bsn_tlv_anchor_OF_VERSION_1_4_populate(
+    of_bsn_tlv_anchor_t *obj, int value);
+extern int of_bsn_tlv_anchor_OF_VERSION_1_4_check(
+    of_bsn_tlv_anchor_t *obj, int value);
+extern int of_bsn_tlv_anchor_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_anchor_t *obj, int value);
+extern int of_bsn_tlv_anchor_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_anchor_t *obj, int value);
+
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_populate(
     of_bsn_tlv_broadcast_query_timeout_t *obj, int value);
 extern int of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_check(
@@ -11929,6 +11965,15 @@ extern int of_bsn_tlv_external_netmask_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
 extern int of_bsn_tlv_external_netmask_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_external_netmask_t *obj, int value);
+
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_populate(
+    of_bsn_tlv_generation_id_t *obj, int value);
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_check(
+    of_bsn_tlv_generation_id_t *obj, int value);
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_generation_id_t *obj, int value);
+extern int of_bsn_tlv_generation_id_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_generation_id_t *obj, int value);
 
 extern int of_bsn_tlv_header_size_OF_VERSION_1_4_populate(
     of_bsn_tlv_header_size_t *obj, int value);
@@ -12145,6 +12190,15 @@ extern int of_bsn_tlv_name_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_name_t *obj, int value);
 extern int of_bsn_tlv_name_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_name_t *obj, int value);
+
+extern int of_bsn_tlv_offset_OF_VERSION_1_4_populate(
+    of_bsn_tlv_offset_t *obj, int value);
+extern int of_bsn_tlv_offset_OF_VERSION_1_4_check(
+    of_bsn_tlv_offset_t *obj, int value);
+extern int of_bsn_tlv_offset_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_offset_t *obj, int value);
+extern int of_bsn_tlv_offset_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_offset_t *obj, int value);
 
 extern int of_bsn_tlv_partner_key_OF_VERSION_1_4_populate(
     of_bsn_tlv_partner_key_t *obj, int value);

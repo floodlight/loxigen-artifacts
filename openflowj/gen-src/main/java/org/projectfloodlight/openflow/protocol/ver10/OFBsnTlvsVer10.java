@@ -75,6 +75,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvActorSystemPriority not supported in version 1.0");
     }
 
+    public OFBsnTlvAnchor.Builder buildAnchor() {
+        throw new UnsupportedOperationException("OFBsnTlvAnchor not supported in version 1.0");
+    }
+    public OFBsnTlvAnchor anchor(OFBsnAnchor value) {
+        throw new UnsupportedOperationException("OFBsnTlvAnchor not supported in version 1.0");
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         throw new UnsupportedOperationException("OFBsnTlvBroadcastQueryTimeout not supported in version 1.0");
     }
@@ -164,6 +171,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
         throw new UnsupportedOperationException("OFBsnTlvExternalNetmask not supported in version 1.0");
+    }
+
+    public OFBsnTlvGenerationId.Builder buildGenerationId() {
+        throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.0");
+    }
+    public OFBsnTlvGenerationId generationId(U64 value) {
+        throw new UnsupportedOperationException("OFBsnTlvGenerationId not supported in version 1.0");
     }
 
     public OFBsnTlvHeaderSize.Builder buildHeaderSize() {
@@ -323,6 +337,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvName name(byte[] value) {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.0");
+    }
+
+    public OFBsnTlvOffset.Builder buildOffset() {
+        throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.0");
+    }
+    public OFBsnTlvOffset offset(int value) {
+        throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.0");
     }
 
     public OFBsnTlvPartnerKey.Builder buildPartnerKey() {

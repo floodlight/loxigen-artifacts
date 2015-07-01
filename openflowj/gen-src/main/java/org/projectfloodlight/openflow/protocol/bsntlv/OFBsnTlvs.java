@@ -41,6 +41,8 @@ public interface OFBsnTlvs {
     OFBsnTlvActorSystemMac actorSystemMac(MacAddress value);
     OFBsnTlvActorSystemPriority.Builder buildActorSystemPriority() throws UnsupportedOperationException;
     OFBsnTlvActorSystemPriority actorSystemPriority(int value);
+    OFBsnTlvAnchor.Builder buildAnchor() throws UnsupportedOperationException;
+    OFBsnTlvAnchor anchor(OFBsnAnchor value);
     OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() throws UnsupportedOperationException;
     OFBsnTlvBroadcastQueryTimeout broadcastQueryTimeout(long value);
     OFBsnTlvBucket.Builder buildBucket() throws UnsupportedOperationException;
@@ -67,6 +69,8 @@ public interface OFBsnTlvs {
     OFBsnTlvExternalMac externalMac(MacAddress value);
     OFBsnTlvExternalNetmask.Builder buildExternalNetmask() throws UnsupportedOperationException;
     OFBsnTlvExternalNetmask externalNetmask(IPv4Address value);
+    OFBsnTlvGenerationId.Builder buildGenerationId() throws UnsupportedOperationException;
+    OFBsnTlvGenerationId generationId(U64 value);
     OFBsnTlvHeaderSize.Builder buildHeaderSize() throws UnsupportedOperationException;
     OFBsnTlvHeaderSize headerSize(long value);
     OFBsnTlvIcmpCode.Builder buildIcmpCode() throws UnsupportedOperationException;
@@ -112,6 +116,8 @@ public interface OFBsnTlvs {
     OFBsnTlvMplsSequenced mplsSequenced(short value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
+    OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
+    OFBsnTlvOffset offset(int value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;
     OFBsnTlvPartnerKey partnerKey(int value);
     OFBsnTlvPartnerPortNum.Builder buildPartnerPortNum() throws UnsupportedOperationException;

@@ -1280,8 +1280,11 @@ enum_v4_ofp_controller_role = {
     [3] = "OFPCR_ROLE_SLAVE",
 }
 
-enum_v4_ofp_stats_reply_flags = {
-    [1] = "OFPSF_REPLY_MORE",
+enum_v4_ofp_bsn_anchor = {
+    [0] = "OFP_BSN_ANCHOR_PACKET_START",
+    [1] = "OFP_BSN_ANCHOR_L3_HEADER_START",
+    [2] = "OFP_BSN_ANCHOR_L4_HEADER_START",
+    [3] = "OFP_BSN_ANCHOR_L4_PAYLOAD_START",
 }
 
 enum_v4_ofp_oxm_class = {
@@ -1597,6 +1600,10 @@ enum_v4_ofp_match_type = {
 enum_v4_ofp_vlan_id = {
     [0] = "OFPVID_NONE",
     [4096] = "OFPVID_PRESENT",
+}
+
+enum_v4_ofp_stats_reply_flags = {
+    [1] = "OFPSF_REPLY_MORE",
 }
 
 enum_v4_ofp_stats_request_flags = {
@@ -1959,8 +1966,11 @@ enum_v5_ofp_controller_role = {
     [3] = "OFPCR_ROLE_SLAVE",
 }
 
-enum_v5_ofp_stats_reply_flags = {
-    [1] = "OFPSF_REPLY_MORE",
+enum_v5_ofp_bsn_anchor = {
+    [0] = "OFP_BSN_ANCHOR_PACKET_START",
+    [1] = "OFP_BSN_ANCHOR_L3_HEADER_START",
+    [2] = "OFP_BSN_ANCHOR_L4_HEADER_START",
+    [3] = "OFP_BSN_ANCHOR_L4_PAYLOAD_START",
 }
 
 enum_v5_ofp_oxm_class = {
@@ -2346,6 +2356,10 @@ enum_v5_ofp_match_type = {
 enum_v5_ofp_vlan_id = {
     [0] = "OFPVID_NONE",
     [4096] = "OFPVID_PRESENT",
+}
+
+enum_v5_ofp_stats_reply_flags = {
+    [1] = "OFPSF_REPLY_MORE",
 }
 
 enum_v5_ofp_stats_request_flags = {
@@ -6728,6 +6742,9 @@ fields['of13.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of13.bsn_tlv_a
 fields['of13.bsn_tlv_actor_system_priority.type'] = ProtoField.uint16("of13.bsn_tlv_actor_system_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_actor_system_priority.length'] = ProtoField.uint16("of13.bsn_tlv_actor_system_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of13.bsn_tlv_actor_system_priority.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_anchor.type'] = ProtoField.uint16("of13.bsn_tlv_anchor.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_anchor.length'] = ProtoField.uint16("of13.bsn_tlv_anchor.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_anchor.value'] = ProtoField.uint32("of13.bsn_tlv_anchor.value", "value", base.DEC, enum_v4_ofp_bsn_anchor)
 fields['of13.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of13.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of13.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -6767,6 +6784,9 @@ fields['of13.bsn_tlv_external_mac.value'] = ProtoField.ether("of13.bsn_tlv_exter
 fields['of13.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of13.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_external_netmask.value", "value")
+fields['of13.bsn_tlv_generation_id.type'] = ProtoField.uint16("of13.bsn_tlv_generation_id.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_generation_id.length'] = ProtoField.uint16("of13.bsn_tlv_generation_id.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_generation_id.value'] = ProtoField.uint64("of13.bsn_tlv_generation_id.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_header_size.type'] = ProtoField.uint16("of13.bsn_tlv_header_size.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_header_size.length'] = ProtoField.uint16("of13.bsn_tlv_header_size.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_header_size.value'] = ProtoField.uint32("of13.bsn_tlv_header_size.value", "value", base.DEC, nil)
@@ -6836,6 +6856,9 @@ fields['of13.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of13.bsn_tlv_mpl
 fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
+fields['of13.bsn_tlv_offset.type'] = ProtoField.uint16("of13.bsn_tlv_offset.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_offset.length'] = ProtoField.uint16("of13.bsn_tlv_offset.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_offset.value'] = ProtoField.uint16("of13.bsn_tlv_offset.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_partner_key.type'] = ProtoField.uint16("of13.bsn_tlv_partner_key.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_partner_key.length'] = ProtoField.uint16("of13.bsn_tlv_partner_key.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_partner_key.value'] = ProtoField.uint16("of13.bsn_tlv_partner_key.value", "value", base.DEC, nil)
@@ -9324,6 +9347,9 @@ fields['of14.bsn_tlv_actor_system_mac.value'] = ProtoField.ether("of14.bsn_tlv_a
 fields['of14.bsn_tlv_actor_system_priority.type'] = ProtoField.uint16("of14.bsn_tlv_actor_system_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_actor_system_priority.length'] = ProtoField.uint16("of14.bsn_tlv_actor_system_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_actor_system_priority.value'] = ProtoField.uint16("of14.bsn_tlv_actor_system_priority.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_anchor.type'] = ProtoField.uint16("of14.bsn_tlv_anchor.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_anchor.length'] = ProtoField.uint16("of14.bsn_tlv_anchor.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_anchor.value'] = ProtoField.uint32("of14.bsn_tlv_anchor.value", "value", base.DEC, enum_v5_ofp_bsn_anchor)
 fields['of14.bsn_tlv_broadcast_query_timeout.type'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.length'] = ProtoField.uint16("of14.bsn_tlv_broadcast_query_timeout.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_broadcast_query_timeout.value'] = ProtoField.uint32("of14.bsn_tlv_broadcast_query_timeout.value", "value", base.DEC, nil)
@@ -9363,6 +9389,9 @@ fields['of14.bsn_tlv_external_mac.value'] = ProtoField.ether("of14.bsn_tlv_exter
 fields['of14.bsn_tlv_external_netmask.type'] = ProtoField.uint16("of14.bsn_tlv_external_netmask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_external_netmask.length'] = ProtoField.uint16("of14.bsn_tlv_external_netmask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_external_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_external_netmask.value", "value")
+fields['of14.bsn_tlv_generation_id.type'] = ProtoField.uint16("of14.bsn_tlv_generation_id.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_generation_id.length'] = ProtoField.uint16("of14.bsn_tlv_generation_id.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_generation_id.value'] = ProtoField.uint64("of14.bsn_tlv_generation_id.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_header_size.type'] = ProtoField.uint16("of14.bsn_tlv_header_size.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_header_size.length'] = ProtoField.uint16("of14.bsn_tlv_header_size.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_header_size.value'] = ProtoField.uint32("of14.bsn_tlv_header_size.value", "value", base.DEC, nil)
@@ -9432,6 +9461,9 @@ fields['of14.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of14.bsn_tlv_mpl
 fields['of14.bsn_tlv_name.type'] = ProtoField.uint16("of14.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
+fields['of14.bsn_tlv_offset.type'] = ProtoField.uint16("of14.bsn_tlv_offset.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_offset.length'] = ProtoField.uint16("of14.bsn_tlv_offset.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_offset.value'] = ProtoField.uint16("of14.bsn_tlv_offset.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_partner_key.type'] = ProtoField.uint16("of14.bsn_tlv_partner_key.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_partner_key.length'] = ProtoField.uint16("of14.bsn_tlv_partner_key.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_partner_key.value'] = ProtoField.uint16("of14.bsn_tlv_partner_key.value", "value", base.DEC, nil)
@@ -15108,6 +15140,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_actor_system_priority.type'],
     fields['of13.bsn_tlv_actor_system_priority.length'],
     fields['of13.bsn_tlv_actor_system_priority.value'],
+    fields['of13.bsn_tlv_anchor.type'],
+    fields['of13.bsn_tlv_anchor.length'],
+    fields['of13.bsn_tlv_anchor.value'],
     fields['of13.bsn_tlv_broadcast_query_timeout.type'],
     fields['of13.bsn_tlv_broadcast_query_timeout.length'],
     fields['of13.bsn_tlv_broadcast_query_timeout.value'],
@@ -15147,6 +15182,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_external_netmask.type'],
     fields['of13.bsn_tlv_external_netmask.length'],
     fields['of13.bsn_tlv_external_netmask.value'],
+    fields['of13.bsn_tlv_generation_id.type'],
+    fields['of13.bsn_tlv_generation_id.length'],
+    fields['of13.bsn_tlv_generation_id.value'],
     fields['of13.bsn_tlv_header_size.type'],
     fields['of13.bsn_tlv_header_size.length'],
     fields['of13.bsn_tlv_header_size.value'],
@@ -15216,6 +15254,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_name.type'],
     fields['of13.bsn_tlv_name.length'],
     fields['of13.bsn_tlv_name.value'],
+    fields['of13.bsn_tlv_offset.type'],
+    fields['of13.bsn_tlv_offset.length'],
+    fields['of13.bsn_tlv_offset.value'],
     fields['of13.bsn_tlv_partner_key.type'],
     fields['of13.bsn_tlv_partner_key.length'],
     fields['of13.bsn_tlv_partner_key.value'],
@@ -17704,6 +17745,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_actor_system_priority.type'],
     fields['of14.bsn_tlv_actor_system_priority.length'],
     fields['of14.bsn_tlv_actor_system_priority.value'],
+    fields['of14.bsn_tlv_anchor.type'],
+    fields['of14.bsn_tlv_anchor.length'],
+    fields['of14.bsn_tlv_anchor.value'],
     fields['of14.bsn_tlv_broadcast_query_timeout.type'],
     fields['of14.bsn_tlv_broadcast_query_timeout.length'],
     fields['of14.bsn_tlv_broadcast_query_timeout.value'],
@@ -17743,6 +17787,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_external_netmask.type'],
     fields['of14.bsn_tlv_external_netmask.length'],
     fields['of14.bsn_tlv_external_netmask.value'],
+    fields['of14.bsn_tlv_generation_id.type'],
+    fields['of14.bsn_tlv_generation_id.length'],
+    fields['of14.bsn_tlv_generation_id.value'],
     fields['of14.bsn_tlv_header_size.type'],
     fields['of14.bsn_tlv_header_size.length'],
     fields['of14.bsn_tlv_header_size.value'],
@@ -17812,6 +17859,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_name.type'],
     fields['of14.bsn_tlv_name.length'],
     fields['of14.bsn_tlv_name.value'],
+    fields['of14.bsn_tlv_offset.type'],
+    fields['of14.bsn_tlv_offset.length'],
+    fields['of14.bsn_tlv_offset.value'],
     fields['of14.bsn_tlv_partner_key.type'],
     fields['of14.bsn_tlv_partner_key.length'],
     fields['of14.bsn_tlv_partner_key.value'],
@@ -28756,6 +28806,16 @@ function dissect_of_bsn_tlv_actor_system_priority_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[40] = dissect_of_bsn_tlv_actor_system_priority_v4
 
+-- child class of_bsn_tlv_anchor
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_anchor_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_anchor.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_anchor.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_anchor.value')
+    return 'of_bsn_tlv_anchor'
+end
+of_bsn_tlv_v4_dissectors[81] = dissect_of_bsn_tlv_anchor_v4
+
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_broadcast_query_timeout_v4(reader, subtree)
@@ -28894,6 +28954,16 @@ function dissect_of_bsn_tlv_external_netmask_v4(reader, subtree)
     return 'of_bsn_tlv_external_netmask'
 end
 of_bsn_tlv_v4_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v4
+
+-- child class of_bsn_tlv_generation_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_generation_id_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_generation_id.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_generation_id.length')
+    read_uint64_t(reader, 4, subtree, 'of13.bsn_tlv_generation_id.value')
+    return 'of_bsn_tlv_generation_id'
+end
+of_bsn_tlv_v4_dissectors[80] = dissect_of_bsn_tlv_generation_id_v4
 
 -- child class of_bsn_tlv_header_size
 -- Child of of_bsn_tlv
@@ -29134,6 +29204,16 @@ function dissect_of_bsn_tlv_name_v4(reader, subtree)
     return 'of_bsn_tlv_name'
 end
 of_bsn_tlv_v4_dissectors[52] = dissect_of_bsn_tlv_name_v4
+
+-- child class of_bsn_tlv_offset
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_offset_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_offset.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_offset.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_offset.value')
+    return 'of_bsn_tlv_offset'
+end
+of_bsn_tlv_v4_dissectors[82] = dissect_of_bsn_tlv_offset_v4
 
 -- child class of_bsn_tlv_partner_key
 -- Child of of_bsn_tlv
@@ -35562,6 +35642,16 @@ function dissect_of_bsn_tlv_actor_system_priority_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[40] = dissect_of_bsn_tlv_actor_system_priority_v5
 
+-- child class of_bsn_tlv_anchor
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_anchor_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_anchor.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_anchor.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_anchor.value')
+    return 'of_bsn_tlv_anchor'
+end
+of_bsn_tlv_v5_dissectors[81] = dissect_of_bsn_tlv_anchor_v5
+
 -- child class of_bsn_tlv_broadcast_query_timeout
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_broadcast_query_timeout_v5(reader, subtree)
@@ -35700,6 +35790,16 @@ function dissect_of_bsn_tlv_external_netmask_v5(reader, subtree)
     return 'of_bsn_tlv_external_netmask'
 end
 of_bsn_tlv_v5_dissectors[25] = dissect_of_bsn_tlv_external_netmask_v5
+
+-- child class of_bsn_tlv_generation_id
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_generation_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_generation_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_generation_id.length')
+    read_uint64_t(reader, 5, subtree, 'of14.bsn_tlv_generation_id.value')
+    return 'of_bsn_tlv_generation_id'
+end
+of_bsn_tlv_v5_dissectors[80] = dissect_of_bsn_tlv_generation_id_v5
 
 -- child class of_bsn_tlv_header_size
 -- Child of of_bsn_tlv
@@ -35940,6 +36040,16 @@ function dissect_of_bsn_tlv_name_v5(reader, subtree)
     return 'of_bsn_tlv_name'
 end
 of_bsn_tlv_v5_dissectors[52] = dissect_of_bsn_tlv_name_v5
+
+-- child class of_bsn_tlv_offset
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_offset_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_offset.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_offset.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_offset.value')
+    return 'of_bsn_tlv_offset'
+end
+of_bsn_tlv_v5_dissectors[82] = dissect_of_bsn_tlv_offset_v5
 
 -- child class of_bsn_tlv_partner_key
 -- Child of of_bsn_tlv

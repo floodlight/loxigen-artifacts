@@ -19726,6 +19726,20 @@ of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show(loci_writer_f writer, void*
 }
 
 int
+of_bsn_tlv_anchor_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_anchor_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -19907,6 +19921,20 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
     of_bsn_tlv_external_netmask_value_get(obj, &ipv4);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_generation_id_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_tlv_generation_id_value_get(obj, &val64);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -20225,6 +20253,20 @@ of_bsn_tlv_name_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_objec
     of_bsn_tlv_name_value_get(obj, &octets);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_offset_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_offset_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
     return out;
@@ -32003,6 +32045,20 @@ of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_show(loci_writer_f writer, void*
 }
 
 int
+of_bsn_tlv_anchor_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_anchor_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -32184,6 +32240,20 @@ of_bsn_tlv_external_netmask_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
     of_bsn_tlv_external_netmask_value_get(obj, &ipv4);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_ipv4(writer, cookie, ipv4);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_generation_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint64_t val64;
+
+    of_bsn_tlv_generation_id_value_get(obj, &val64);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u64(writer, cookie, val64);
     out += writer(cookie, " ");
 
     return out;
@@ -32502,6 +32572,20 @@ of_bsn_tlv_name_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_objec
     of_bsn_tlv_name_value_get(obj, &octets);
     out += writer(cookie, "value=");
     out += LOCI_SHOW_octets(writer, cookie, octets);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
+of_bsn_tlv_offset_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint16_t val16;
+
+    of_bsn_tlv_offset_value_get(obj, &val16);
+    out += writer(cookie, "value=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
     out += writer(cookie, " ");
 
     return out;
@@ -38287,6 +38371,9 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_0_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_0_show,
     unknown_show,
@@ -38899,6 +38986,9 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_bsn_interface_OF_VERSION_1_1_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39683,6 +39773,9 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
+    unknown_show,
+    unknown_show,
     of_bsn_vport_l2gre_OF_VERSION_1_2_show,
     of_bsn_vport_q_in_q_OF_VERSION_1_2_show,
     unknown_show,
@@ -40306,6 +40399,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_actor_state_OF_VERSION_1_3_show,
     of_bsn_tlv_actor_system_mac_OF_VERSION_1_3_show,
     of_bsn_tlv_actor_system_priority_OF_VERSION_1_3_show,
+    of_bsn_tlv_anchor_OF_VERSION_1_3_show,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_3_show,
     of_bsn_tlv_bucket_OF_VERSION_1_3_show,
     of_bsn_tlv_circuit_id_OF_VERSION_1_3_show,
@@ -40319,6 +40413,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_external_ip_OF_VERSION_1_3_show,
     of_bsn_tlv_external_mac_OF_VERSION_1_3_show,
     of_bsn_tlv_external_netmask_OF_VERSION_1_3_show,
+    of_bsn_tlv_generation_id_OF_VERSION_1_3_show,
     of_bsn_tlv_header_size_OF_VERSION_1_3_show,
     of_bsn_tlv_icmp_code_OF_VERSION_1_3_show,
     of_bsn_tlv_icmp_id_OF_VERSION_1_3_show,
@@ -40343,6 +40438,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mpls_label_OF_VERSION_1_3_show,
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_3_show,
     of_bsn_tlv_name_OF_VERSION_1_3_show,
+    of_bsn_tlv_offset_OF_VERSION_1_3_show,
     of_bsn_tlv_partner_key_OF_VERSION_1_3_show,
     of_bsn_tlv_partner_port_num_OF_VERSION_1_3_show,
     of_bsn_tlv_partner_port_priority_OF_VERSION_1_3_show,
@@ -41004,6 +41100,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_actor_state_OF_VERSION_1_4_show,
     of_bsn_tlv_actor_system_mac_OF_VERSION_1_4_show,
     of_bsn_tlv_actor_system_priority_OF_VERSION_1_4_show,
+    of_bsn_tlv_anchor_OF_VERSION_1_4_show,
     of_bsn_tlv_broadcast_query_timeout_OF_VERSION_1_4_show,
     of_bsn_tlv_bucket_OF_VERSION_1_4_show,
     of_bsn_tlv_circuit_id_OF_VERSION_1_4_show,
@@ -41017,6 +41114,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_external_ip_OF_VERSION_1_4_show,
     of_bsn_tlv_external_mac_OF_VERSION_1_4_show,
     of_bsn_tlv_external_netmask_OF_VERSION_1_4_show,
+    of_bsn_tlv_generation_id_OF_VERSION_1_4_show,
     of_bsn_tlv_header_size_OF_VERSION_1_4_show,
     of_bsn_tlv_icmp_code_OF_VERSION_1_4_show,
     of_bsn_tlv_icmp_id_OF_VERSION_1_4_show,
@@ -41041,6 +41139,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_tlv_mpls_label_OF_VERSION_1_4_show,
     of_bsn_tlv_mpls_sequenced_OF_VERSION_1_4_show,
     of_bsn_tlv_name_OF_VERSION_1_4_show,
+    of_bsn_tlv_offset_OF_VERSION_1_4_show,
     of_bsn_tlv_partner_key_OF_VERSION_1_4_show,
     of_bsn_tlv_partner_port_num_OF_VERSION_1_4_show,
     of_bsn_tlv_partner_port_priority_OF_VERSION_1_4_show,

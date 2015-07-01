@@ -61,6 +61,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x28:
                    // discriminator value 0x28=0x28 for class OFBsnTlvActorSystemPriorityVer14
                    return OFBsnTlvActorSystemPriorityVer14.READER.readFrom(bb);
+               case (short) 0x51:
+                   // discriminator value 0x51=0x51 for class OFBsnTlvAnchorVer14
+                   return OFBsnTlvAnchorVer14.READER.readFrom(bb);
                case (short) 0xa:
                    // discriminator value 0xa=0xa for class OFBsnTlvBroadcastQueryTimeoutVer14
                    return OFBsnTlvBroadcastQueryTimeoutVer14.READER.readFrom(bb);
@@ -100,6 +103,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x19:
                    // discriminator value 0x19=0x19 for class OFBsnTlvExternalNetmaskVer14
                    return OFBsnTlvExternalNetmaskVer14.READER.readFrom(bb);
+               case (short) 0x50:
+                   // discriminator value 0x50=0x50 for class OFBsnTlvGenerationIdVer14
+                   return OFBsnTlvGenerationIdVer14.READER.readFrom(bb);
                case (short) 0x1f:
                    // discriminator value 0x1f=0x1f for class OFBsnTlvHeaderSizeVer14
                    return OFBsnTlvHeaderSizeVer14.READER.readFrom(bb);
@@ -172,6 +178,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x34:
                    // discriminator value 0x34=0x34 for class OFBsnTlvNameVer14
                    return OFBsnTlvNameVer14.READER.readFrom(bb);
+               case (short) 0x52:
+                   // discriminator value 0x52=0x52 for class OFBsnTlvOffsetVer14
+                   return OFBsnTlvOffsetVer14.READER.readFrom(bb);
                case (short) 0x33:
                    // discriminator value 0x33=0x33 for class OFBsnTlvPartnerKeyVer14
                    return OFBsnTlvPartnerKeyVer14.READER.readFrom(bb);

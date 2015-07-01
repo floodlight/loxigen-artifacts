@@ -87,6 +87,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvAnchor.Builder buildAnchor() {
+        return new OFBsnTlvAnchorVer13.Builder();
+    }
+    public OFBsnTlvAnchor anchor(OFBsnAnchor value) {
+        return new OFBsnTlvAnchorVer13(
+                value
+                    );
+    }
+
     public OFBsnTlvBroadcastQueryTimeout.Builder buildBroadcastQueryTimeout() {
         return new OFBsnTlvBroadcastQueryTimeoutVer13.Builder();
     }
@@ -200,6 +209,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvExternalNetmask externalNetmask(IPv4Address value) {
         return new OFBsnTlvExternalNetmaskVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvGenerationId.Builder buildGenerationId() {
+        return new OFBsnTlvGenerationIdVer13.Builder();
+    }
+    public OFBsnTlvGenerationId generationId(U64 value) {
+        return new OFBsnTlvGenerationIdVer13(
                 value
                     );
     }
@@ -401,6 +419,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
     }
     public OFBsnTlvName name(byte[] value) {
         return new OFBsnTlvNameVer13(
+                value
+                    );
+    }
+
+    public OFBsnTlvOffset.Builder buildOffset() {
+        return new OFBsnTlvOffsetVer13.Builder();
+    }
+    public OFBsnTlvOffset offset(int value) {
+        return new OFBsnTlvOffsetVer13(
                 value
                     );
     }

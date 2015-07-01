@@ -6352,6 +6352,17 @@ typedef struct of_bsn_tlv_actor_system_mac_s of_bsn_tlv_actor_system_mac_t;
 typedef struct of_bsn_tlv_actor_system_priority_s of_bsn_tlv_actor_system_priority_t;
 
 /**
+ * Structure for of_bsn_tlv_anchor object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_anchor_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_anchor_s of_bsn_tlv_anchor_t;
+
+/**
  * Structure for of_bsn_tlv_broadcast_query_timeout object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6493,6 +6504,17 @@ typedef struct of_bsn_tlv_external_mac_s of_bsn_tlv_external_mac_t;
  *
  */
 typedef struct of_bsn_tlv_external_netmask_s of_bsn_tlv_external_netmask_t;
+
+/**
+ * Structure for of_bsn_tlv_generation_id object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint64.  Functions
+ *   are of type of_bsn_tlv_generation_id_uint64_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_generation_id_s of_bsn_tlv_generation_id_t;
 
 /**
  * Structure for of_bsn_tlv_header_size object.  Get/set
@@ -6745,6 +6767,17 @@ typedef struct of_bsn_tlv_mpls_sequenced_s of_bsn_tlv_mpls_sequenced_t;
  *
  */
 typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
+
+/**
+ * Structure for of_bsn_tlv_offset object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint16.  Functions
+ *   are of type of_bsn_tlv_offset_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_offset_s of_bsn_tlv_offset_t;
 
 /**
  * Structure for of_bsn_tlv_partner_key object.  Get/set
