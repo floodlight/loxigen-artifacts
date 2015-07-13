@@ -885,6 +885,20 @@ public class OFOxmsVer10 implements OFOxms {
         throw new UnsupportedOperationException("OFOxmBsnInnerEthSrcMasked not supported in version 1.0");
     }
 
+    public OFOxmBsnInnerVlanVid.Builder buildBsnInnerVlanVid() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVid not supported in version 1.0");
+    }
+    public OFOxmBsnInnerVlanVid bsnInnerVlanVid(OFVlanVidMatch value) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVid not supported in version 1.0");
+    }
+
+    public OFOxmBsnInnerVlanVidMasked.Builder buildBsnInnerVlanVidMasked() {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.0");
+    }
+    public OFOxmBsnInnerVlanVidMasked bsnInnerVlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask) {
+        throw new UnsupportedOperationException("OFOxmBsnInnerVlanVidMasked not supported in version 1.0");
+    }
+
     public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
         throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.0");
     }
@@ -1084,6 +1098,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthDst((MacAddress)((Object)value)));
             case BSN_INNER_ETH_SRC:
                 return (OFOxm<F>)((Object)bsnInnerEthSrc((MacAddress)((Object)value)));
+            case BSN_INNER_VLAN_VID:
+                return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkId((U32)((Object)value)));
             case IPV6_EXTHDR:
@@ -1224,6 +1240,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
             case BSN_INNER_ETH_SRC:
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)value), (MacAddress)((Object)mask)));
+            case BSN_INNER_VLAN_VID:
+                return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((U32)((Object)value), (U32)((Object)mask)));
             case IPV6_EXTHDR:
@@ -1364,6 +1382,8 @@ public class OFOxmsVer10 implements OFOxms {
                 return (OFOxm<F>)((Object)bsnInnerEthDstMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
             case BSN_INNER_ETH_SRC:
                 return (OFOxm<F>)((Object)bsnInnerEthSrcMasked((MacAddress)((Object)(masked.getValue())), (MacAddress)((Object)(masked.getMask()))));
+            case BSN_INNER_VLAN_VID:
+                return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
             case BSN_VXLAN_NETWORK_ID:
                 return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
             case IPV6_EXTHDR:

@@ -1,1 +1,1 @@
-e22b3695c0e28fb922667b2e69d46fdcdac53a62 Merge into master from pull request #410: openflow_input: add bsn_port_generation_id extension (https://github.com/floodlight/loxigen/pull/410)
+b613d53642d9406a92b109e975cc7359083a9a30 Merge into master from pull request #409: openflow_input: add oxm_bsn_inner_vlan_vid. (https://github.com/floodlight/loxigen/pull/409)

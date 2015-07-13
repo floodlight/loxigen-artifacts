@@ -271,6 +271,10 @@ public interface OFOxms {
     OFOxmBsnInnerEthSrc bsnInnerEthSrc(MacAddress value);
     OFOxmBsnInnerEthSrcMasked.Builder buildBsnInnerEthSrcMasked() throws UnsupportedOperationException;
     OFOxmBsnInnerEthSrcMasked bsnInnerEthSrcMasked(MacAddress value, MacAddress mask);
+    OFOxmBsnInnerVlanVid.Builder buildBsnInnerVlanVid() throws UnsupportedOperationException;
+    OFOxmBsnInnerVlanVid bsnInnerVlanVid(OFVlanVidMatch value);
+    OFOxmBsnInnerVlanVidMasked.Builder buildBsnInnerVlanVidMasked() throws UnsupportedOperationException;
+    OFOxmBsnInnerVlanVidMasked bsnInnerVlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask);
     OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() throws UnsupportedOperationException;
     OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(U32 value);
     OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() throws UnsupportedOperationException;

@@ -191,6 +191,10 @@ of_match_v1_compat_check(of_match_t *match)
         return 0;
     }
 
+    if (OF_MATCH_MASK_BSN_INNER_VLAN_VID_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
     if (OF_MATCH_MASK_ARP_SPA_ACTIVE_TEST(match)) {
         return 0;
     }
@@ -517,6 +521,10 @@ of_match_v2_compat_check(of_match_t *match)
     }
 
     if (OF_MATCH_MASK_BSN_VRF_ACTIVE_TEST(match)) {
+        return 0;
+    }
+
+    if (OF_MATCH_MASK_BSN_INNER_VLAN_VID_ACTIVE_TEST(match)) {
         return 0;
     }
 
@@ -1851,6 +1859,22 @@ populate_oxm_list(of_match_t *src, of_list_oxm_t *oxm_list)
             of_oxm_bsn_inner_eth_src_value_set(&elt, src->fields.bsn_inner_eth_src);
         }
     }
+    if (OF_MATCH_MASK_BSN_INNER_VLAN_VID_ACTIVE_TEST(src)) {
+        if (!OF_MATCH_MASK_BSN_INNER_VLAN_VID_EXACT_TEST(src)) {
+            of_oxm_bsn_inner_vlan_vid_masked_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_inner_vlan_vid_masked_value_set(&elt,
+                   src->fields.bsn_inner_vlan_vid);
+            of_oxm_bsn_inner_vlan_vid_masked_value_mask_set(&elt,
+                   src->masks.bsn_inner_vlan_vid);
+        } else {  /* Active, but not masked */
+            of_oxm_bsn_inner_vlan_vid_init(&elt,
+                oxm_list->version, -1, 1);
+            of_list_oxm_append_bind(oxm_list, &elt);
+            of_oxm_bsn_inner_vlan_vid_value_set(&elt, src->fields.bsn_inner_vlan_vid);
+        }
+    }
 
     return OF_ERROR_NONE;
 }
@@ -2724,6 +2748,22 @@ of_match_v3_to_match(of_match_v3_t *src, of_match_t *dst)
             of_oxm_bsn_vrf_value_get(
                 &oxm_entry,
                 &dst->fields.bsn_vrf);
+            break;
+
+        case OF_OXM_BSN_INNER_VLAN_VID_MASKED:
+            of_oxm_bsn_inner_vlan_vid_masked_value_mask_get(
+                &oxm_entry,
+                &dst->masks.bsn_inner_vlan_vid);
+            of_oxm_bsn_inner_vlan_vid_masked_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_inner_vlan_vid);
+            of_memmask(&dst->fields.bsn_inner_vlan_vid, &dst->masks.bsn_inner_vlan_vid, sizeof(&dst->fields.bsn_inner_vlan_vid));
+            break;
+        case OF_OXM_BSN_INNER_VLAN_VID:
+            OF_MATCH_MASK_BSN_INNER_VLAN_VID_EXACT_SET(dst);
+            of_oxm_bsn_inner_vlan_vid_value_get(
+                &oxm_entry,
+                &dst->fields.bsn_inner_vlan_vid);
             break;
 
         case OF_OXM_ARP_SPA_MASKED:

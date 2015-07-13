@@ -1349,6 +1349,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x32f0c:
             *id = OF_OXM_BSN_INNER_ETH_SRC_MASKED;
             break;
+        case 0x33002:
+            *id = OF_OXM_BSN_INNER_VLAN_VID;
+            break;
+        case 0x33104:
+            *id = OF_OXM_BSN_INNER_VLAN_VID_MASKED;
+            break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
             break;
@@ -1729,6 +1735,12 @@ of_oxm_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x32f0c:
             *id = OF_OXM_BSN_INNER_ETH_SRC_MASKED;
+            break;
+        case 0x33002:
+            *id = OF_OXM_BSN_INNER_VLAN_VID;
+            break;
+        case 0x33104:
+            *id = OF_OXM_BSN_INNER_VLAN_VID_MASKED;
             break;
         case 0x80000004:
             *id = OF_OXM_IN_PORT;
