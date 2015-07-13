@@ -53,6 +53,9 @@ abstract class OFPortDescPropBsnVer14 {
             int expType = bb.readInt();
             bb.readerIndex(start);
             switch(expType) {
+               case 0x1:
+                   // discriminator value 0x1L=0x1L for class OFPortDescPropBsnGenerationIdVer14
+                   return OFPortDescPropBsnGenerationIdVer14.READER.readFrom(bb);
                case 0x0:
                    // discriminator value 0x0L=0x0L for class OFPortDescPropBsnUplinkVer14
                    return OFPortDescPropBsnUplinkVer14.READER.readFrom(bb);

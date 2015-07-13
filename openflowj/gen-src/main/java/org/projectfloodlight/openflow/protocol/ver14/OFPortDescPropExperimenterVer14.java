@@ -28,7 +28,7 @@ import org.jboss.netty.buffer.ChannelBuffer;
 abstract class OFPortDescPropExperimenterVer14 {
     // version: 1.4
     final static byte WIRE_VERSION = 5;
-    final static int MINIMUM_LENGTH = 12;
+    final static int MINIMUM_LENGTH = 8;
 
 
     public final static OFPortDescPropExperimenterVer14.Reader READER = new Reader();

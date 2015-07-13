@@ -10649,11 +10649,15 @@ fields['of14.port_desc_prop.length'] = ProtoField.uint16("of14.port_desc_prop.le
 fields['of14.port_desc_prop_experimenter.type'] = ProtoField.uint16("of14.port_desc_prop_experimenter.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_experimenter.length'] = ProtoField.uint16("of14.port_desc_prop_experimenter.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_experimenter.experimenter'] = ProtoField.uint32("of14.port_desc_prop_experimenter.experimenter", "experimenter", base.DEC, nil)
-fields['of14.port_desc_prop_experimenter.exp_type'] = ProtoField.uint32("of14.port_desc_prop_experimenter.exp_type", "exp_type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.type'] = ProtoField.uint16("of14.port_desc_prop_bsn.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.length'] = ProtoField.uint16("of14.port_desc_prop_bsn.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn.experimenter", "experimenter", base.DEC, nil)
 fields['of14.port_desc_prop_bsn.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_generation_id.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_generation_id.type", "type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_generation_id.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_generation_id.length", "length", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_generation_id.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_generation_id.experimenter", "experimenter", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_generation_id.exp_type'] = ProtoField.uint32("of14.port_desc_prop_bsn_generation_id.exp_type", "exp_type", base.DEC, nil)
+fields['of14.port_desc_prop_bsn_generation_id.generation_id'] = ProtoField.uint64("of14.port_desc_prop_bsn_generation_id.generation_id", "generation_id", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_uplink.type'] = ProtoField.uint16("of14.port_desc_prop_bsn_uplink.type", "type", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_uplink.length'] = ProtoField.uint16("of14.port_desc_prop_bsn_uplink.length", "length", base.DEC, nil)
 fields['of14.port_desc_prop_bsn_uplink.experimenter'] = ProtoField.uint32("of14.port_desc_prop_bsn_uplink.experimenter", "experimenter", base.DEC, nil)
@@ -19047,11 +19051,15 @@ p_of.fields = {
     fields['of14.port_desc_prop_experimenter.type'],
     fields['of14.port_desc_prop_experimenter.length'],
     fields['of14.port_desc_prop_experimenter.experimenter'],
-    fields['of14.port_desc_prop_experimenter.exp_type'],
     fields['of14.port_desc_prop_bsn.type'],
     fields['of14.port_desc_prop_bsn.length'],
     fields['of14.port_desc_prop_bsn.experimenter'],
     fields['of14.port_desc_prop_bsn.exp_type'],
+    fields['of14.port_desc_prop_bsn_generation_id.type'],
+    fields['of14.port_desc_prop_bsn_generation_id.length'],
+    fields['of14.port_desc_prop_bsn_generation_id.experimenter'],
+    fields['of14.port_desc_prop_bsn_generation_id.exp_type'],
+    fields['of14.port_desc_prop_bsn_generation_id.generation_id'],
     fields['of14.port_desc_prop_bsn_uplink.type'],
     fields['of14.port_desc_prop_bsn_uplink.length'],
     fields['of14.port_desc_prop_bsn_uplink.experimenter'],
@@ -39356,6 +39364,18 @@ function dissect_of_port_desc_prop_bsn_v5(reader, subtree)
     return of_port_desc_prop_bsn_v5_dissectors[reader.peek(8,4):uint()](reader, subtree)
 end
 of_port_desc_prop_experimenter_v5_dissectors[6035143] = dissect_of_port_desc_prop_bsn_v5
+
+-- child class of_port_desc_prop_bsn_generation_id
+-- Child of of_port_desc_prop_bsn
+function dissect_of_port_desc_prop_bsn_generation_id_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_generation_id.type')
+    read_uint16_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_generation_id.length')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_generation_id.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_generation_id.exp_type')
+    read_uint64_t(reader, 5, subtree, 'of14.port_desc_prop_bsn_generation_id.generation_id')
+    return 'of_port_desc_prop_bsn_generation_id'
+end
+of_port_desc_prop_bsn_v5_dissectors[1] = dissect_of_port_desc_prop_bsn_generation_id_v5
 
 -- child class of_port_desc_prop_bsn_uplink
 -- Child of of_port_desc_prop_bsn

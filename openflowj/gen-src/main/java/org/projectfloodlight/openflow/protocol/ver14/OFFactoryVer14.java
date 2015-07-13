@@ -1522,6 +1522,15 @@ public class OFFactoryVer14 implements OFFactory {
         return new OFBundleCtrlMsgVer14.Builder().setXid(nextXid());
     }
 
+    public OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() {
+        return new OFPortDescPropBsnGenerationIdVer14.Builder();
+    }
+    public OFPortDescPropBsnGenerationId portDescPropBsnGenerationId(U64 generationId) {
+        return new OFPortDescPropBsnGenerationIdVer14(
+                generationId
+                    );
+    }
+
     public OFPortDescPropBsnUplink portDescPropBsnUplink() {
         return OFPortDescPropBsnUplinkVer14.INSTANCE;
     }

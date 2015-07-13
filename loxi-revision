@@ -1,1 +1,1 @@
-af6eeea932ec0107591dd0bfce3194e9ac1c6cf8 Merge into master from pull request #408: openflow_input: add more BSN TLVs (https://github.com/floodlight/loxigen/pull/408)
+e22b3695c0e28fb922667b2e69d46fdcdac53a62 Merge into master from pull request #410: openflow_input: add bsn_port_generation_id extension (https://github.com/floodlight/loxigen/pull/410)

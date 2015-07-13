@@ -368,6 +368,8 @@ public interface OFFactory extends XidGenerator {
     OFBsnTakeover bsnTakeover();
     OFBundleAddMsg.Builder buildBundleAddMsg() throws UnsupportedOperationException;
     OFBundleCtrlMsg.Builder buildBundleCtrlMsg() throws UnsupportedOperationException;
+    OFPortDescPropBsnGenerationId.Builder buildPortDescPropBsnGenerationId() throws UnsupportedOperationException;
+    OFPortDescPropBsnGenerationId portDescPropBsnGenerationId(U64 generationId);
     OFPortDescPropBsnUplink portDescPropBsnUplink();
     OFPortDescPropEthernet.Builder buildPortDescPropEthernet() throws UnsupportedOperationException;
     OFPortDescPropOptical.Builder buildPortDescPropOptical() throws UnsupportedOperationException;

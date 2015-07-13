@@ -1223,6 +1223,8 @@ void of_port_desc_prop_experimenter_wire_object_id_get(of_object_t *obj, of_obje
 void of_port_desc_prop_experimenter_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_push_wire_types(of_object_t *obj);
+void of_port_desc_prop_bsn_generation_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_port_desc_prop_bsn_generation_id_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_bsn_uplink_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_port_desc_prop_bsn_uplink_push_wire_types(of_object_t *obj);
 void of_port_desc_prop_ethernet_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1879,6 +1881,7 @@ typedef of_object_t of_packet_queue_t;
 typedef of_object_t of_port_desc_t;
 typedef of_object_t of_port_desc_prop_t;
 typedef of_object_t of_port_desc_prop_bsn_t;
+typedef of_object_t of_port_desc_prop_bsn_generation_id_t;
 typedef of_object_t of_port_desc_prop_bsn_uplink_t;
 typedef of_object_t of_port_desc_prop_ethernet_t;
 typedef of_object_t of_port_desc_prop_experimenter_t;
@@ -4945,6 +4948,11 @@ extern void of_port_desc_prop_init(
 extern of_object_t *
     of_port_desc_prop_bsn_new(of_version_t version);
 extern void of_port_desc_prop_bsn_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_port_desc_prop_bsn_generation_id_new(of_version_t version);
+extern void of_port_desc_prop_bsn_generation_id_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -11953,6 +11961,17 @@ of_port_desc_prop_delete(of_object_t *obj) {
  */
 static inline void
 of_port_desc_prop_bsn_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_port_desc_prop_bsn_generation_id_t
+ * @param obj An instance of type of_port_desc_prop_bsn_generation_id_t
+ *
+ * \ingroup of_port_desc_prop_bsn_generation_id
+ */
+static inline void
+of_port_desc_prop_bsn_generation_id_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -24594,6 +24613,29 @@ extern void of_port_desc_max_speed_set(
 extern void of_port_desc_max_speed_get(
     of_port_desc_t *obj,
     uint32_t *max_speed);
+
+/* Unified accessor functions for of_port_desc_prop_bsn_generation_id */
+
+extern void of_port_desc_prop_bsn_generation_id_experimenter_set(
+    of_port_desc_prop_bsn_generation_id_t *obj,
+    uint32_t experimenter);
+extern void of_port_desc_prop_bsn_generation_id_experimenter_get(
+    of_port_desc_prop_bsn_generation_id_t *obj,
+    uint32_t *experimenter);
+
+extern void of_port_desc_prop_bsn_generation_id_exp_type_set(
+    of_port_desc_prop_bsn_generation_id_t *obj,
+    uint32_t exp_type);
+extern void of_port_desc_prop_bsn_generation_id_exp_type_get(
+    of_port_desc_prop_bsn_generation_id_t *obj,
+    uint32_t *exp_type);
+
+extern void of_port_desc_prop_bsn_generation_id_generation_id_set(
+    of_port_desc_prop_bsn_generation_id_t *obj,
+    uint64_t generation_id);
+extern void of_port_desc_prop_bsn_generation_id_generation_id_get(
+    of_port_desc_prop_bsn_generation_id_t *obj,
+    uint64_t *generation_id);
 
 /* Unified accessor functions for of_port_desc_prop_bsn_uplink */
 

@@ -36510,6 +36510,31 @@ of_port_desc_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t
 }
 
 int
+of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint64_t val64;
+
+    of_port_desc_prop_bsn_generation_id_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_generation_id_exp_type_get(obj, &val32);
+    out += writer(cookie, "exp_type=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_port_desc_prop_bsn_generation_id_generation_id_get(obj, &val64);
+    out += writer(cookie, "generation_id=");
+    out += LOCI_SHOW_x64(writer, cookie, val64);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38588,6 +38613,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_0_show,
     unknown_show,
     unknown_show,
@@ -39279,6 +39305,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     of_packet_queue_OF_VERSION_1_1_show,
     of_port_desc_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39990,6 +40017,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_port_stats_entry_OF_VERSION_1_2_show,
     unknown_show,
     unknown_show,
@@ -40681,6 +40709,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_oxm_vlan_vid_masked_OF_VERSION_1_3_show,
     of_packet_queue_OF_VERSION_1_3_show,
     of_port_desc_OF_VERSION_1_3_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -41384,6 +41413,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_port_desc_OF_VERSION_1_4_show,
     unknown_show,
     unknown_show,
+    of_port_desc_prop_bsn_generation_id_OF_VERSION_1_4_show,
     of_port_desc_prop_bsn_uplink_OF_VERSION_1_4_show,
     of_port_desc_prop_ethernet_OF_VERSION_1_4_show,
     unknown_show,

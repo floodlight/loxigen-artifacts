@@ -28,7 +28,6 @@ import org.jboss.netty.buffer.ChannelBuffer;
 public interface OFPortDescPropExperimenter extends OFObject, OFPortDescProp {
     int getType();
     long getExperimenter();
-    long getExpType();
     OFVersion getVersion();
 
 
@@ -39,8 +38,6 @@ public interface OFPortDescPropExperimenter extends OFObject, OFPortDescProp {
         OFPortDescPropExperimenter build();
         int getType();
         long getExperimenter();
-        long getExpType();
-        Builder setExpType(long expType);
         OFVersion getVersion();
     }
 }
