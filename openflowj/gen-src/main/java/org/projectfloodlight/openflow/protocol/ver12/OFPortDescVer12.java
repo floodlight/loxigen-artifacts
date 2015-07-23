@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
+import javax.annotation.Nonnull;
 import org.jboss.netty.buffer.ChannelBuffer;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
@@ -187,6 +188,23 @@ class OFPortDescVer12 implements OFPortDesc {
     public boolean isEnabled() {
         return (!state.contains(OFPortState.LINK_DOWN) && !config.contains(OFPortConfig.PORT_DOWN));
     }
+
+    /**
+     * Returns the current generation ID of this port.
+     *
+     * The generationId is reported by the switch as a @{link OFPortDescProp} in
+     * @link{OFPortDescStatsReply} and @link{OFPortStatus} messages. If the
+     * current OFPortDesc does not contain a generation Id, returns U64.ZERO;
+     *
+     * For OpenFlow versions earlier than 1.4, always returns U64.ZERO;
+     *
+     * @return the generation ID or U64.NULL if not reported
+     * @since 1.4
+     */
+     @Nonnull
+     public U64 getBsnGenerationId() {
+         return U64.ZERO;
+     }
 
     public OFPortDesc.Builder createBuilder() {
         return new BuilderWithParent(this);

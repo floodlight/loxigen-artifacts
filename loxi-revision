@@ -1,1 +1,1 @@
-b613d53642d9406a92b109e975cc7359083a9a30 Merge into master from pull request #409: openflow_input: add oxm_bsn_inner_vlan_vid. (https://github.com/floodlight/loxigen/pull/409)
+53192c6f5e9f1388d1334dda75a2eb0b3fc87014 Merge into master from pull request #413: OFPortDesc: add convenience method to access BsnPortGenerationId (https://github.com/floodlight/loxigen/pull/413)
