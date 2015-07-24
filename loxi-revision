@@ -1,1 +1,1 @@
-53192c6f5e9f1388d1334dda75a2eb0b3fc87014 Merge into master from pull request #413: OFPortDesc: add convenience method to access BsnPortGenerationId (https://github.com/floodlight/loxigen/pull/413)
+fa56f26426e18cbb4168750850e5363473e0a969 Merge into master from pull request #411: DatapathId and MacAddress factory methods (https://github.com/floodlight/loxigen/pull/411)
