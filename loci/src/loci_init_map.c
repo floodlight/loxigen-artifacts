@@ -354,6 +354,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_tlv_mpls_label_init,
     (of_object_init_f)of_bsn_tlv_mpls_sequenced_init,
     (of_object_init_f)of_bsn_tlv_name_init,
+    (of_object_init_f)of_bsn_tlv_negate_init,
     (of_object_init_f)of_bsn_tlv_offset_init,
     (of_object_init_f)of_bsn_tlv_partner_key_init,
     (of_object_init_f)of_bsn_tlv_partner_port_num_init,

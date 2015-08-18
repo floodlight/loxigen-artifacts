@@ -6769,6 +6769,13 @@ typedef struct of_bsn_tlv_mpls_sequenced_s of_bsn_tlv_mpls_sequenced_t;
 typedef struct of_bsn_tlv_name_s of_bsn_tlv_name_t;
 
 /**
+ * Structure for of_bsn_tlv_negate object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_negate_s of_bsn_tlv_negate_t;
+
+/**
  * Structure for of_bsn_tlv_offset object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

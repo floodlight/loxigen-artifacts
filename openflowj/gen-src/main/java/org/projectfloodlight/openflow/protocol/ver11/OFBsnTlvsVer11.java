@@ -339,6 +339,10 @@ public class OFBsnTlvsVer11 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvName not supported in version 1.1");
     }
 
+    public OFBsnTlvNegate negate() {
+        throw new UnsupportedOperationException("OFBsnTlvNegate not supported in version 1.1");
+    }
+
     public OFBsnTlvOffset.Builder buildOffset() {
         throw new UnsupportedOperationException("OFBsnTlvOffset not supported in version 1.1");
     }

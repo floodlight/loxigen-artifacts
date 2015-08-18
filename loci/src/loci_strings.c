@@ -351,6 +351,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_mpls_label",
     "of_bsn_tlv_mpls_sequenced",
     "of_bsn_tlv_name",
+    "of_bsn_tlv_negate",
     "of_bsn_tlv_offset",
     "of_bsn_tlv_partner_key",
     "of_bsn_tlv_partner_port_num",

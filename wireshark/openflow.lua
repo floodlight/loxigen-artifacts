@@ -6856,6 +6856,8 @@ fields['of13.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of13.bsn_tlv_mpl
 fields['of13.bsn_tlv_name.type'] = ProtoField.uint16("of13.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_name.length'] = ProtoField.uint16("of13.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_name.value'] = ProtoField.bytes("of13.bsn_tlv_name.value", "value")
+fields['of13.bsn_tlv_negate.type'] = ProtoField.uint16("of13.bsn_tlv_negate.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_negate.length'] = ProtoField.uint16("of13.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_offset.type'] = ProtoField.uint16("of13.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_offset.length'] = ProtoField.uint16("of13.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_offset.value'] = ProtoField.uint16("of13.bsn_tlv_offset.value", "value", base.DEC, nil)
@@ -9466,6 +9468,8 @@ fields['of14.bsn_tlv_mpls_sequenced.value'] = ProtoField.uint8("of14.bsn_tlv_mpl
 fields['of14.bsn_tlv_name.type'] = ProtoField.uint16("of14.bsn_tlv_name.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_name.length'] = ProtoField.uint16("of14.bsn_tlv_name.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_name.value'] = ProtoField.bytes("of14.bsn_tlv_name.value", "value")
+fields['of14.bsn_tlv_negate.type'] = ProtoField.uint16("of14.bsn_tlv_negate.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_negate.length'] = ProtoField.uint16("of14.bsn_tlv_negate.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_offset.type'] = ProtoField.uint16("of14.bsn_tlv_offset.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_offset.length'] = ProtoField.uint16("of14.bsn_tlv_offset.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_offset.value'] = ProtoField.uint16("of14.bsn_tlv_offset.value", "value", base.DEC, nil)
@@ -15268,6 +15272,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_name.type'],
     fields['of13.bsn_tlv_name.length'],
     fields['of13.bsn_tlv_name.value'],
+    fields['of13.bsn_tlv_negate.type'],
+    fields['of13.bsn_tlv_negate.length'],
     fields['of13.bsn_tlv_offset.type'],
     fields['of13.bsn_tlv_offset.length'],
     fields['of13.bsn_tlv_offset.value'],
@@ -17878,6 +17884,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_name.type'],
     fields['of14.bsn_tlv_name.length'],
     fields['of14.bsn_tlv_name.value'],
+    fields['of14.bsn_tlv_negate.type'],
+    fields['of14.bsn_tlv_negate.length'],
     fields['of14.bsn_tlv_offset.type'],
     fields['of14.bsn_tlv_offset.length'],
     fields['of14.bsn_tlv_offset.value'],
@@ -29233,6 +29241,15 @@ function dissect_of_bsn_tlv_name_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[52] = dissect_of_bsn_tlv_name_v4
 
+-- child class of_bsn_tlv_negate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_negate_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_negate.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_negate.length')
+    return 'of_bsn_tlv_negate'
+end
+of_bsn_tlv_v4_dissectors[83] = dissect_of_bsn_tlv_negate_v4
+
 -- child class of_bsn_tlv_offset
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_offset_v4(reader, subtree)
@@ -36087,6 +36104,15 @@ function dissect_of_bsn_tlv_name_v5(reader, subtree)
     return 'of_bsn_tlv_name'
 end
 of_bsn_tlv_v5_dissectors[52] = dissect_of_bsn_tlv_name_v5
+
+-- child class of_bsn_tlv_negate
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_negate_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_negate.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_negate.length')
+    return 'of_bsn_tlv_negate'
+end
+of_bsn_tlv_v5_dissectors[83] = dissect_of_bsn_tlv_negate_v5
 
 -- child class of_bsn_tlv_offset
 -- Child of of_bsn_tlv

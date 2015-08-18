@@ -423,6 +423,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvNegate negate() {
+        return OFBsnTlvNegateVer14.INSTANCE;
+    }
+
     public OFBsnTlvOffset.Builder buildOffset() {
         return new OFBsnTlvOffsetVer14.Builder();
     }

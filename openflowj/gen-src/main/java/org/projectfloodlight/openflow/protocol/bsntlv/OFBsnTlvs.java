@@ -116,6 +116,7 @@ public interface OFBsnTlvs {
     OFBsnTlvMplsSequenced mplsSequenced(short value);
     OFBsnTlvName.Builder buildName() throws UnsupportedOperationException;
     OFBsnTlvName name(byte[] value);
+    OFBsnTlvNegate negate();
     OFBsnTlvOffset.Builder buildOffset() throws UnsupportedOperationException;
     OFBsnTlvOffset offset(int value);
     OFBsnTlvPartnerKey.Builder buildPartnerKey() throws UnsupportedOperationException;

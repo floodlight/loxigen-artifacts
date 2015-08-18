@@ -887,6 +887,8 @@ void of_bsn_tlv_mpls_sequenced_wire_object_id_get(of_object_t *obj, of_object_id
 void of_bsn_tlv_mpls_sequenced_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_name_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_name_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_negate_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_negate_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_offset_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_offset_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_partner_key_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1640,6 +1642,7 @@ typedef of_object_t of_bsn_tlv_mpls_control_word_t;
 typedef of_object_t of_bsn_tlv_mpls_label_t;
 typedef of_object_t of_bsn_tlv_mpls_sequenced_t;
 typedef of_object_t of_bsn_tlv_name_t;
+typedef of_object_t of_bsn_tlv_negate_t;
 typedef of_object_t of_bsn_tlv_offset_t;
 typedef of_object_t of_bsn_tlv_partner_key_t;
 typedef of_object_t of_bsn_tlv_partner_port_num_t;
@@ -3729,6 +3732,11 @@ extern void of_bsn_tlv_mpls_sequenced_init(
 extern of_object_t *
     of_bsn_tlv_name_new(of_version_t version);
 extern void of_bsn_tlv_name_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_negate_new(of_version_t version);
+extern void of_bsn_tlv_negate_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9282,6 +9290,17 @@ of_bsn_tlv_mpls_sequenced_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_name_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_negate_t
+ * @param obj An instance of type of_bsn_tlv_negate_t
+ *
+ * \ingroup of_bsn_tlv_negate
+ */
+static inline void
+of_bsn_tlv_negate_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21196,6 +21215,8 @@ extern int WARN_UNUSED_RESULT of_bsn_tlv_name_value_set(
 extern void of_bsn_tlv_name_value_get(
     of_bsn_tlv_name_t *obj,
     of_octets_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_negate */
 
 /* Unified accessor functions for of_bsn_tlv_offset */
 
