@@ -6833,6 +6833,9 @@ fields['of13.bsn_tlv_ipv4_netmask.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_n
 fields['of13.bsn_tlv_ipv4_src.type'] = ProtoField.uint16("of13.bsn_tlv_ipv4_src.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4_src.length'] = ProtoField.uint16("of13.bsn_tlv_ipv4_src.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of13.bsn_tlv_ipv4_src.value", "value")
+fields['of13.bsn_tlv_ipv6.type'] = ProtoField.uint16("of13.bsn_tlv_ipv6.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_ipv6.length'] = ProtoField.uint16("of13.bsn_tlv_ipv6.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of13.bsn_tlv_ipv6.value", "value")
 fields['of13.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of13.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac.type'] = ProtoField.uint16("of13.bsn_tlv_mac.type", "type", base.DEC, nil)
@@ -9445,6 +9448,9 @@ fields['of14.bsn_tlv_ipv4_netmask.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_n
 fields['of14.bsn_tlv_ipv4_src.type'] = ProtoField.uint16("of14.bsn_tlv_ipv4_src.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4_src.length'] = ProtoField.uint16("of14.bsn_tlv_ipv4_src.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_ipv4_src.value'] = ProtoField.ipv4("of14.bsn_tlv_ipv4_src.value", "value")
+fields['of14.bsn_tlv_ipv6.type'] = ProtoField.uint16("of14.bsn_tlv_ipv6.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_ipv6.length'] = ProtoField.uint16("of14.bsn_tlv_ipv6.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_ipv6.value'] = ProtoField.ipv6("of14.bsn_tlv_ipv6.value", "value")
 fields['of14.bsn_tlv_l2_multicast_lookup.type'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_l2_multicast_lookup.length'] = ProtoField.uint16("of14.bsn_tlv_l2_multicast_lookup.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac.type'] = ProtoField.uint16("of14.bsn_tlv_mac.type", "type", base.DEC, nil)
@@ -15249,6 +15255,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_ipv4_src.type'],
     fields['of13.bsn_tlv_ipv4_src.length'],
     fields['of13.bsn_tlv_ipv4_src.value'],
+    fields['of13.bsn_tlv_ipv6.type'],
+    fields['of13.bsn_tlv_ipv6.length'],
+    fields['of13.bsn_tlv_ipv6.value'],
     fields['of13.bsn_tlv_l2_multicast_lookup.type'],
     fields['of13.bsn_tlv_l2_multicast_lookup.length'],
     fields['of13.bsn_tlv_mac.type'],
@@ -17861,6 +17870,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_ipv4_src.type'],
     fields['of14.bsn_tlv_ipv4_src.length'],
     fields['of14.bsn_tlv_ipv4_src.value'],
+    fields['of14.bsn_tlv_ipv6.type'],
+    fields['of14.bsn_tlv_ipv6.length'],
+    fields['of14.bsn_tlv_ipv6.value'],
     fields['of14.bsn_tlv_l2_multicast_lookup.type'],
     fields['of14.bsn_tlv_l2_multicast_lookup.length'],
     fields['of14.bsn_tlv_mac.type'],
@@ -29159,6 +29171,16 @@ function dissect_of_bsn_tlv_ipv4_src_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[34] = dissect_of_bsn_tlv_ipv4_src_v4
 
+-- child class of_bsn_tlv_ipv6
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv6_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6.length')
+    read_of_ipv6_t(reader, 4, subtree, 'of13.bsn_tlv_ipv6.value')
+    return 'of_bsn_tlv_ipv6'
+end
+of_bsn_tlv_v4_dissectors[84] = dissect_of_bsn_tlv_ipv6_v4
+
 -- child class of_bsn_tlv_l2_multicast_lookup
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_l2_multicast_lookup_v4(reader, subtree)
@@ -36022,6 +36044,16 @@ function dissect_of_bsn_tlv_ipv4_src_v5(reader, subtree)
     return 'of_bsn_tlv_ipv4_src'
 end
 of_bsn_tlv_v5_dissectors[34] = dissect_of_bsn_tlv_ipv4_src_v5
+
+-- child class of_bsn_tlv_ipv6
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_ipv6_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6.length')
+    read_of_ipv6_t(reader, 5, subtree, 'of14.bsn_tlv_ipv6.value')
+    return 'of_bsn_tlv_ipv6'
+end
+of_bsn_tlv_v5_dissectors[84] = dissect_of_bsn_tlv_ipv6_v5
 
 -- child class of_bsn_tlv_l2_multicast_lookup
 -- Child of of_bsn_tlv

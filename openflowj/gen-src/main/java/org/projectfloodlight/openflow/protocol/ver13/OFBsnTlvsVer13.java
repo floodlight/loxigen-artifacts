@@ -356,6 +356,15 @@ public class OFBsnTlvsVer13 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvIpv6.Builder buildIpv6() {
+        return new OFBsnTlvIpv6Ver13.Builder();
+    }
+    public OFBsnTlvIpv6 ipv6(IPv6Address value) {
+        return new OFBsnTlvIpv6Ver13(
+                value
+                    );
+    }
+
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         return OFBsnTlvL2MulticastLookupVer13.INSTANCE;
     }

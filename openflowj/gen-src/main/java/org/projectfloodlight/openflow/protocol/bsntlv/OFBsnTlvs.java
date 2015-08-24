@@ -101,6 +101,8 @@ public interface OFBsnTlvs {
     OFBsnTlvIpv4Netmask ipv4Netmask(IPv4Address value);
     OFBsnTlvIpv4Src.Builder buildIpv4Src() throws UnsupportedOperationException;
     OFBsnTlvIpv4Src ipv4Src(IPv4Address value);
+    OFBsnTlvIpv6.Builder buildIpv6() throws UnsupportedOperationException;
+    OFBsnTlvIpv6 ipv6(IPv6Address value);
     OFBsnTlvL2MulticastLookup l2MulticastLookup();
     OFBsnTlvMac.Builder buildMac() throws UnsupportedOperationException;
     OFBsnTlvMac mac(MacAddress value);

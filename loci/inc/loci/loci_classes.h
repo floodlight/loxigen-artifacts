@@ -871,6 +871,8 @@ void of_bsn_tlv_ipv4_netmask_wire_object_id_get(of_object_t *obj, of_object_id_t
 void of_bsn_tlv_ipv4_netmask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_ipv4_src_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_ipv4_src_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_ipv6_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_ipv6_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_l2_multicast_lookup_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_l2_multicast_lookup_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1634,6 +1636,7 @@ typedef of_object_t of_bsn_tlv_ipv4_t;
 typedef of_object_t of_bsn_tlv_ipv4_dst_t;
 typedef of_object_t of_bsn_tlv_ipv4_netmask_t;
 typedef of_object_t of_bsn_tlv_ipv4_src_t;
+typedef of_object_t of_bsn_tlv_ipv6_t;
 typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
@@ -3692,6 +3695,11 @@ extern void of_bsn_tlv_ipv4_netmask_init(
 extern of_object_t *
     of_bsn_tlv_ipv4_src_new(of_version_t version);
 extern void of_bsn_tlv_ipv4_src_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_ipv6_new(of_version_t version);
+extern void of_bsn_tlv_ipv6_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9202,6 +9210,17 @@ of_bsn_tlv_ipv4_netmask_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_ipv4_src_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_ipv6_t
+ * @param obj An instance of type of_bsn_tlv_ipv6_t
+ *
+ * \ingroup of_bsn_tlv_ipv6
+ */
+static inline void
+of_bsn_tlv_ipv6_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21150,6 +21169,15 @@ extern void of_bsn_tlv_ipv4_src_value_set(
 extern void of_bsn_tlv_ipv4_src_value_get(
     of_bsn_tlv_ipv4_src_t *obj,
     of_ipv4_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_ipv6 */
+
+extern void of_bsn_tlv_ipv6_value_set(
+    of_bsn_tlv_ipv6_t *obj,
+    of_ipv6_t value);
+extern void of_bsn_tlv_ipv6_value_get(
+    of_bsn_tlv_ipv6_t *obj,
+    of_ipv6_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_l2_multicast_lookup */
 

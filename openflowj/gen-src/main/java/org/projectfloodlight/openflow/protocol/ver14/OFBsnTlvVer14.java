@@ -154,6 +154,9 @@ abstract class OFBsnTlvVer14 {
                case (short) 0x22:
                    // discriminator value 0x22=0x22 for class OFBsnTlvIpv4SrcVer14
                    return OFBsnTlvIpv4SrcVer14.READER.readFrom(bb);
+               case (short) 0x54:
+                   // discriminator value 0x54=0x54 for class OFBsnTlvIpv6Ver14
+                   return OFBsnTlvIpv6Ver14.READER.readFrom(bb);
                case (short) 0x4f:
                    // discriminator value 0x4f=0x4f for class OFBsnTlvL2MulticastLookupVer14
                    return OFBsnTlvL2MulticastLookupVer14.READER.readFrom(bb);

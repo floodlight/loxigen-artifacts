@@ -6685,6 +6685,17 @@ typedef struct of_bsn_tlv_ipv4_netmask_s of_bsn_tlv_ipv4_netmask_t;
 typedef struct of_bsn_tlv_ipv4_src_s of_bsn_tlv_ipv4_src_t;
 
 /**
+ * Structure for of_bsn_tlv_ipv6 object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type of_ipv6.  Functions
+ *   are of type of_bsn_tlv_ipv6_of_ipv6_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_ipv6_s of_bsn_tlv_ipv6_t;
+
+/**
  * Structure for of_bsn_tlv_l2_multicast_lookup object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

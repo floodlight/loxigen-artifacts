@@ -343,6 +343,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_ipv4_dst",
     "of_bsn_tlv_ipv4_netmask",
     "of_bsn_tlv_ipv4_src",
+    "of_bsn_tlv_ipv6",
     "of_bsn_tlv_l2_multicast_lookup",
     "of_bsn_tlv_mac",
     "of_bsn_tlv_mac_mask",

@@ -286,6 +286,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvIpv4Src not supported in version 1.0");
     }
 
+    public OFBsnTlvIpv6.Builder buildIpv6() {
+        throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.0");
+    }
+    public OFBsnTlvIpv6 ipv6(IPv6Address value) {
+        throw new UnsupportedOperationException("OFBsnTlvIpv6 not supported in version 1.0");
+    }
+
     public OFBsnTlvL2MulticastLookup l2MulticastLookup() {
         throw new UnsupportedOperationException("OFBsnTlvL2MulticastLookup not supported in version 1.0");
     }
