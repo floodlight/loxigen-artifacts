@@ -5487,11 +5487,11 @@ of_meter_config_stats_reply_flags_set(
 }
 
 /**
- * Bind an object of type of_list_meter_band_t to the parent of type of_meter_config_stats_reply for
+ * Bind an object of type of_list_meter_config_t to the parent of type of_meter_config_stats_reply for
  * member entries
  * @param obj Pointer to an object of type of_meter_config_stats_reply.
  * @param entries Pointer to the child object of type
- * of_list_meter_band_t to be filled out.
+ * of_list_meter_config_t to be filled out.
  * \ingroup of_meter_config_stats_reply
  *
  * The parameter entries is filled out to point to the same underlying
@@ -5501,7 +5501,7 @@ of_meter_config_stats_reply_flags_set(
 void
 of_meter_config_stats_reply_entries_bind(
     of_meter_config_stats_reply_t *obj,
-    of_list_meter_band_t *entries)
+    of_list_meter_config_t *entries)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */
@@ -5530,7 +5530,7 @@ of_meter_config_stats_reply_entries_bind(
     LOCI_ASSERT(cur_len >= 0 && cur_len < 64 * 1024);
 
     /* Initialize child */
-    of_list_meter_band_init(entries, obj->version, 0, 1);
+    of_list_meter_config_init(entries, obj->version, 0, 1);
     /* Attach to parent */
     of_object_attach(obj, entries, offset, cur_len);
 
@@ -5540,28 +5540,28 @@ of_meter_config_stats_reply_entries_bind(
 }
 
 /**
- * Create a copy of entries into a new variable of type of_list_meter_band_t from
+ * Create a copy of entries into a new variable of type of_list_meter_config_t from
  * a of_meter_config_stats_reply instance.
  *
  * @param obj Pointer to the source of type of_meter_config_stats_reply_t
- * @returns A pointer to a new instance of type of_list_meter_band_t whose contents
+ * @returns A pointer to a new instance of type of_list_meter_config_t whose contents
  * match that of entries from source
  * @returns NULL if an error occurs
  */
-of_list_meter_band_t *
+of_list_meter_config_t *
 of_meter_config_stats_reply_entries_get(of_meter_config_stats_reply_t *obj) {
-    of_list_meter_band_t _entries;
-    of_list_meter_band_t *_entries_ptr;
+    of_list_meter_config_t _entries;
+    of_list_meter_config_t *_entries_ptr;
 
     of_meter_config_stats_reply_entries_bind(obj, &_entries);
-    _entries_ptr = (of_list_meter_band_t *)of_object_dup(&_entries);
+    _entries_ptr = (of_list_meter_config_t *)of_object_dup(&_entries);
     return _entries_ptr;
 }
 
 /**
  * Set entries in an object of type of_meter_config_stats_reply.
  * @param obj Pointer to an object of type of_meter_config_stats_reply.
- * @param entries Pointer to the child of type of_list_meter_band_t.
+ * @param entries Pointer to the child of type of_list_meter_config_t.
  *
  * If the child's wire buffer is the same as the parent's, then
  * nothing is done as the changes have already been registered in the
@@ -5571,7 +5571,7 @@ of_meter_config_stats_reply_entries_get(of_meter_config_stats_reply_t *obj) {
 int WARN_UNUSED_RESULT
 of_meter_config_stats_reply_entries_set(
     of_meter_config_stats_reply_t *obj,
-    of_list_meter_band_t *entries)
+    of_list_meter_config_t *entries)
 {
     of_wire_buffer_t *wbuf;
     int offset = 0; /* Offset of value relative to the start obj */

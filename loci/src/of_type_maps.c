@@ -701,28 +701,29 @@ of_object_fixed_len_v1[OF_OBJECT_COUNT] = {
     -1,   /* 677: of_list_instruction_id */
     -1,   /* 678: of_list_meter_band */
     -1,   /* 679: of_list_meter_band_stats */
-    -1,   /* 680: of_list_meter_stats */
-    -1,   /* 681: of_list_oxm */
-    0,    /* 682: of_list_packet_queue */
-    0,    /* 683: of_list_port_desc */
-    -1,   /* 684: of_list_port_desc_prop */
-    -1,   /* 685: of_list_port_mod_prop */
-    0,    /* 686: of_list_port_stats_entry */
-    -1,   /* 687: of_list_port_stats_prop */
-    -1,   /* 688: of_list_queue_desc */
-    -1,   /* 689: of_list_queue_desc_prop */
-    0,    /* 690: of_list_queue_prop */
-    0,    /* 691: of_list_queue_stats_entry */
-    -1,   /* 692: of_list_queue_stats_prop */
-    -1,   /* 693: of_list_role_prop */
-    -1,   /* 694: of_list_table_desc */
-    -1,   /* 695: of_list_table_feature_prop */
-    -1,   /* 696: of_list_table_features */
-    -1,   /* 697: of_list_table_mod_prop */
-    0,    /* 698: of_list_table_stats_entry */
-    -1,   /* 699: of_list_uint32 */
-    -1,   /* 700: of_list_uint64 */
-    -1    /* 701: of_list_uint8 */
+    -1,   /* 680: of_list_meter_config */
+    -1,   /* 681: of_list_meter_stats */
+    -1,   /* 682: of_list_oxm */
+    0,    /* 683: of_list_packet_queue */
+    0,    /* 684: of_list_port_desc */
+    -1,   /* 685: of_list_port_desc_prop */
+    -1,   /* 686: of_list_port_mod_prop */
+    0,    /* 687: of_list_port_stats_entry */
+    -1,   /* 688: of_list_port_stats_prop */
+    -1,   /* 689: of_list_queue_desc */
+    -1,   /* 690: of_list_queue_desc_prop */
+    0,    /* 691: of_list_queue_prop */
+    0,    /* 692: of_list_queue_stats_entry */
+    -1,   /* 693: of_list_queue_stats_prop */
+    -1,   /* 694: of_list_role_prop */
+    -1,   /* 695: of_list_table_desc */
+    -1,   /* 696: of_list_table_feature_prop */
+    -1,   /* 697: of_list_table_features */
+    -1,   /* 698: of_list_table_mod_prop */
+    0,    /* 699: of_list_table_stats_entry */
+    -1,   /* 700: of_list_uint32 */
+    -1,   /* 701: of_list_uint64 */
+    -1    /* 702: of_list_uint8 */
 };
 
 static const int
@@ -1407,28 +1408,29 @@ of_object_fixed_len_v2[OF_OBJECT_COUNT] = {
     -1,   /* 677: of_list_instruction_id */
     -1,   /* 678: of_list_meter_band */
     -1,   /* 679: of_list_meter_band_stats */
-    -1,   /* 680: of_list_meter_stats */
-    -1,   /* 681: of_list_oxm */
-    0,    /* 682: of_list_packet_queue */
-    0,    /* 683: of_list_port_desc */
-    -1,   /* 684: of_list_port_desc_prop */
-    -1,   /* 685: of_list_port_mod_prop */
-    0,    /* 686: of_list_port_stats_entry */
-    -1,   /* 687: of_list_port_stats_prop */
-    -1,   /* 688: of_list_queue_desc */
-    -1,   /* 689: of_list_queue_desc_prop */
-    0,    /* 690: of_list_queue_prop */
-    0,    /* 691: of_list_queue_stats_entry */
-    -1,   /* 692: of_list_queue_stats_prop */
-    -1,   /* 693: of_list_role_prop */
-    -1,   /* 694: of_list_table_desc */
-    -1,   /* 695: of_list_table_feature_prop */
-    -1,   /* 696: of_list_table_features */
-    -1,   /* 697: of_list_table_mod_prop */
-    0,    /* 698: of_list_table_stats_entry */
-    -1,   /* 699: of_list_uint32 */
-    -1,   /* 700: of_list_uint64 */
-    -1    /* 701: of_list_uint8 */
+    -1,   /* 680: of_list_meter_config */
+    -1,   /* 681: of_list_meter_stats */
+    -1,   /* 682: of_list_oxm */
+    0,    /* 683: of_list_packet_queue */
+    0,    /* 684: of_list_port_desc */
+    -1,   /* 685: of_list_port_desc_prop */
+    -1,   /* 686: of_list_port_mod_prop */
+    0,    /* 687: of_list_port_stats_entry */
+    -1,   /* 688: of_list_port_stats_prop */
+    -1,   /* 689: of_list_queue_desc */
+    -1,   /* 690: of_list_queue_desc_prop */
+    0,    /* 691: of_list_queue_prop */
+    0,    /* 692: of_list_queue_stats_entry */
+    -1,   /* 693: of_list_queue_stats_prop */
+    -1,   /* 694: of_list_role_prop */
+    -1,   /* 695: of_list_table_desc */
+    -1,   /* 696: of_list_table_feature_prop */
+    -1,   /* 697: of_list_table_features */
+    -1,   /* 698: of_list_table_mod_prop */
+    0,    /* 699: of_list_table_stats_entry */
+    -1,   /* 700: of_list_uint32 */
+    -1,   /* 701: of_list_uint64 */
+    -1    /* 702: of_list_uint8 */
 };
 
 static const int
@@ -2113,28 +2115,29 @@ of_object_fixed_len_v3[OF_OBJECT_COUNT] = {
     -1,   /* 677: of_list_instruction_id */
     -1,   /* 678: of_list_meter_band */
     -1,   /* 679: of_list_meter_band_stats */
-    -1,   /* 680: of_list_meter_stats */
-    0,    /* 681: of_list_oxm */
-    0,    /* 682: of_list_packet_queue */
-    0,    /* 683: of_list_port_desc */
-    -1,   /* 684: of_list_port_desc_prop */
-    -1,   /* 685: of_list_port_mod_prop */
-    0,    /* 686: of_list_port_stats_entry */
-    -1,   /* 687: of_list_port_stats_prop */
-    -1,   /* 688: of_list_queue_desc */
-    -1,   /* 689: of_list_queue_desc_prop */
-    0,    /* 690: of_list_queue_prop */
-    0,    /* 691: of_list_queue_stats_entry */
-    -1,   /* 692: of_list_queue_stats_prop */
-    -1,   /* 693: of_list_role_prop */
-    -1,   /* 694: of_list_table_desc */
-    -1,   /* 695: of_list_table_feature_prop */
-    -1,   /* 696: of_list_table_features */
-    -1,   /* 697: of_list_table_mod_prop */
-    0,    /* 698: of_list_table_stats_entry */
-    -1,   /* 699: of_list_uint32 */
-    -1,   /* 700: of_list_uint64 */
-    -1    /* 701: of_list_uint8 */
+    -1,   /* 680: of_list_meter_config */
+    -1,   /* 681: of_list_meter_stats */
+    0,    /* 682: of_list_oxm */
+    0,    /* 683: of_list_packet_queue */
+    0,    /* 684: of_list_port_desc */
+    -1,   /* 685: of_list_port_desc_prop */
+    -1,   /* 686: of_list_port_mod_prop */
+    0,    /* 687: of_list_port_stats_entry */
+    -1,   /* 688: of_list_port_stats_prop */
+    -1,   /* 689: of_list_queue_desc */
+    -1,   /* 690: of_list_queue_desc_prop */
+    0,    /* 691: of_list_queue_prop */
+    0,    /* 692: of_list_queue_stats_entry */
+    -1,   /* 693: of_list_queue_stats_prop */
+    -1,   /* 694: of_list_role_prop */
+    -1,   /* 695: of_list_table_desc */
+    -1,   /* 696: of_list_table_feature_prop */
+    -1,   /* 697: of_list_table_features */
+    -1,   /* 698: of_list_table_mod_prop */
+    0,    /* 699: of_list_table_stats_entry */
+    -1,   /* 700: of_list_uint32 */
+    -1,   /* 701: of_list_uint64 */
+    -1    /* 702: of_list_uint8 */
 };
 
 static const int
@@ -2819,28 +2822,29 @@ of_object_fixed_len_v4[OF_OBJECT_COUNT] = {
     0,    /* 677: of_list_instruction_id */
     0,    /* 678: of_list_meter_band */
     0,    /* 679: of_list_meter_band_stats */
-    0,    /* 680: of_list_meter_stats */
-    0,    /* 681: of_list_oxm */
-    0,    /* 682: of_list_packet_queue */
-    0,    /* 683: of_list_port_desc */
-    -1,   /* 684: of_list_port_desc_prop */
-    -1,   /* 685: of_list_port_mod_prop */
-    0,    /* 686: of_list_port_stats_entry */
-    -1,   /* 687: of_list_port_stats_prop */
-    -1,   /* 688: of_list_queue_desc */
-    -1,   /* 689: of_list_queue_desc_prop */
-    0,    /* 690: of_list_queue_prop */
-    0,    /* 691: of_list_queue_stats_entry */
-    -1,   /* 692: of_list_queue_stats_prop */
-    -1,   /* 693: of_list_role_prop */
-    -1,   /* 694: of_list_table_desc */
-    0,    /* 695: of_list_table_feature_prop */
-    0,    /* 696: of_list_table_features */
-    -1,   /* 697: of_list_table_mod_prop */
-    0,    /* 698: of_list_table_stats_entry */
-    0,    /* 699: of_list_uint32 */
-    0,    /* 700: of_list_uint64 */
-    0     /* 701: of_list_uint8 */
+    0,    /* 680: of_list_meter_config */
+    0,    /* 681: of_list_meter_stats */
+    0,    /* 682: of_list_oxm */
+    0,    /* 683: of_list_packet_queue */
+    0,    /* 684: of_list_port_desc */
+    -1,   /* 685: of_list_port_desc_prop */
+    -1,   /* 686: of_list_port_mod_prop */
+    0,    /* 687: of_list_port_stats_entry */
+    -1,   /* 688: of_list_port_stats_prop */
+    -1,   /* 689: of_list_queue_desc */
+    -1,   /* 690: of_list_queue_desc_prop */
+    0,    /* 691: of_list_queue_prop */
+    0,    /* 692: of_list_queue_stats_entry */
+    -1,   /* 693: of_list_queue_stats_prop */
+    -1,   /* 694: of_list_role_prop */
+    -1,   /* 695: of_list_table_desc */
+    0,    /* 696: of_list_table_feature_prop */
+    0,    /* 697: of_list_table_features */
+    -1,   /* 698: of_list_table_mod_prop */
+    0,    /* 699: of_list_table_stats_entry */
+    0,    /* 700: of_list_uint32 */
+    0,    /* 701: of_list_uint64 */
+    0     /* 702: of_list_uint8 */
 };
 
 static const int
@@ -3525,28 +3529,29 @@ of_object_fixed_len_v5[OF_OBJECT_COUNT] = {
     0,    /* 677: of_list_instruction_id */
     0,    /* 678: of_list_meter_band */
     0,    /* 679: of_list_meter_band_stats */
-    0,    /* 680: of_list_meter_stats */
-    0,    /* 681: of_list_oxm */
-    -1,   /* 682: of_list_packet_queue */
-    0,    /* 683: of_list_port_desc */
-    0,    /* 684: of_list_port_desc_prop */
-    0,    /* 685: of_list_port_mod_prop */
-    0,    /* 686: of_list_port_stats_entry */
-    0,    /* 687: of_list_port_stats_prop */
-    0,    /* 688: of_list_queue_desc */
-    0,    /* 689: of_list_queue_desc_prop */
-    0,    /* 690: of_list_queue_prop */
-    0,    /* 691: of_list_queue_stats_entry */
-    0,    /* 692: of_list_queue_stats_prop */
-    0,    /* 693: of_list_role_prop */
-    0,    /* 694: of_list_table_desc */
-    0,    /* 695: of_list_table_feature_prop */
-    0,    /* 696: of_list_table_features */
-    0,    /* 697: of_list_table_mod_prop */
-    0,    /* 698: of_list_table_stats_entry */
-    0,    /* 699: of_list_uint32 */
-    0,    /* 700: of_list_uint64 */
-    0     /* 701: of_list_uint8 */
+    0,    /* 680: of_list_meter_config */
+    0,    /* 681: of_list_meter_stats */
+    0,    /* 682: of_list_oxm */
+    -1,   /* 683: of_list_packet_queue */
+    0,    /* 684: of_list_port_desc */
+    0,    /* 685: of_list_port_desc_prop */
+    0,    /* 686: of_list_port_mod_prop */
+    0,    /* 687: of_list_port_stats_entry */
+    0,    /* 688: of_list_port_stats_prop */
+    0,    /* 689: of_list_queue_desc */
+    0,    /* 690: of_list_queue_desc_prop */
+    0,    /* 691: of_list_queue_prop */
+    0,    /* 692: of_list_queue_stats_entry */
+    0,    /* 693: of_list_queue_stats_prop */
+    0,    /* 694: of_list_role_prop */
+    0,    /* 695: of_list_table_desc */
+    0,    /* 696: of_list_table_feature_prop */
+    0,    /* 697: of_list_table_features */
+    0,    /* 698: of_list_table_mod_prop */
+    0,    /* 699: of_list_table_stats_entry */
+    0,    /* 700: of_list_uint32 */
+    0,    /* 701: of_list_uint64 */
+    0     /* 702: of_list_uint8 */
 };
 
 /**

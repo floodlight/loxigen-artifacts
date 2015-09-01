@@ -691,6 +691,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_list_instruction_id_init,
     (of_object_init_f)of_list_meter_band_init,
     (of_object_init_f)of_list_meter_band_stats_init,
+    (of_object_init_f)of_list_meter_config_init,
     (of_object_init_f)of_list_meter_stats_init,
     (of_object_init_f)of_list_oxm_init,
     (of_object_init_f)of_list_packet_queue_init,

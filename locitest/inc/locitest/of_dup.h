@@ -2731,6 +2731,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_list_meter_config_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_list_meter_stats_dup(
         of_object_t *src);
 
@@ -7127,6 +7131,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_list_meter_config_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_list_meter_stats_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -9596,6 +9604,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_list_meter_band_stats_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_list_meter_config_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

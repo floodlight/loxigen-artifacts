@@ -31085,7 +31085,7 @@ function dissect_of_meter_config_stats_reply_v4(reader, subtree)
     read_uint16_t(reader, 4, subtree, 'of13.meter_config_stats_reply.stats_type')
     read_uint16_t(reader, 4, subtree, 'of13.meter_config_stats_reply.flags')
     reader.skip(4)
-    read_list(reader, dissect_of_meter_band_v4, subtree, 'of_meter_band')
+    read_list(reader, dissect_of_meter_config_v4, subtree, 'of_meter_config')
     return 'of_meter_config_stats_reply'
 end
 of_stats_reply_v4_dissectors[10] = dissect_of_meter_config_stats_reply_v4
@@ -38020,7 +38020,7 @@ function dissect_of_meter_config_stats_reply_v5(reader, subtree)
     read_uint16_t(reader, 5, subtree, 'of14.meter_config_stats_reply.stats_type')
     read_uint16_t(reader, 5, subtree, 'of14.meter_config_stats_reply.flags')
     reader.skip(4)
-    read_list(reader, dissect_of_meter_band_v5, subtree, 'of_meter_band')
+    read_list(reader, dissect_of_meter_config_v5, subtree, 'of_meter_config')
     return 'of_meter_config_stats_reply'
 end
 of_stats_reply_v5_dissectors[10] = dissect_of_meter_config_stats_reply_v5

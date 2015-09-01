@@ -41,12 +41,12 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
 
         private final static long DEFAULT_XID = 0x0L;
         private final static Set<OFStatsReplyFlags> DEFAULT_FLAGS = ImmutableSet.<OFStatsReplyFlags>of();
-        private final static List<OFMeterBand> DEFAULT_ENTRIES = ImmutableList.<OFMeterBand>of();
+        private final static List<OFMeterConfig> DEFAULT_ENTRIES = ImmutableList.<OFMeterConfig>of();
 
     // OF message fields
     private final long xid;
     private final Set<OFStatsReplyFlags> flags;
-    private final List<OFMeterBand> entries;
+    private final List<OFMeterConfig> entries;
 //
     // Immutable default instance
     final static OFMeterConfigStatsReplyVer14 DEFAULT = new OFMeterConfigStatsReplyVer14(
@@ -54,7 +54,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFMeterConfigStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, List<OFMeterBand> entries) {
+    OFMeterConfigStatsReplyVer14(long xid, Set<OFStatsReplyFlags> flags, List<OFMeterConfig> entries) {
         if(flags == null) {
             throw new NullPointerException("OFMeterConfigStatsReplyVer14: property flags cannot be null");
         }
@@ -93,7 +93,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
     }
 
     @Override
-    public List<OFMeterBand> getEntries() {
+    public List<OFMeterConfig> getEntries() {
         return entries;
     }
 
@@ -112,7 +112,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         private boolean flagsSet;
         private Set<OFStatsReplyFlags> flags;
         private boolean entriesSet;
-        private List<OFMeterBand> entries;
+        private List<OFMeterConfig> entries;
 
         BuilderWithParent(OFMeterConfigStatsReplyVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -156,12 +156,12 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         return this;
     }
     @Override
-    public List<OFMeterBand> getEntries() {
+    public List<OFMeterConfig> getEntries() {
         return entries;
     }
 
     @Override
-    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterBand> entries) {
+    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
@@ -174,7 +174,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
                 Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : parentMessage.flags;
                 if(flags == null)
                     throw new NullPointerException("Property flags must not be null");
-                List<OFMeterBand> entries = this.entriesSet ? this.entries : parentMessage.entries;
+                List<OFMeterConfig> entries = this.entriesSet ? this.entries : parentMessage.entries;
                 if(entries == null)
                     throw new NullPointerException("Property entries must not be null");
 
@@ -195,7 +195,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         private boolean flagsSet;
         private Set<OFStatsReplyFlags> flags;
         private boolean entriesSet;
-        private List<OFMeterBand> entries;
+        private List<OFMeterConfig> entries;
 
     @Override
     public OFVersion getVersion() {
@@ -235,12 +235,12 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
         return this;
     }
     @Override
-    public List<OFMeterBand> getEntries() {
+    public List<OFMeterConfig> getEntries() {
         return entries;
     }
 
     @Override
-    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterBand> entries) {
+    public OFMeterConfigStatsReply.Builder setEntries(List<OFMeterConfig> entries) {
         this.entries = entries;
         this.entriesSet = true;
         return this;
@@ -252,7 +252,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
             Set<OFStatsReplyFlags> flags = this.flagsSet ? this.flags : DEFAULT_FLAGS;
             if(flags == null)
                 throw new NullPointerException("Property flags must not be null");
-            List<OFMeterBand> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
+            List<OFMeterConfig> entries = this.entriesSet ? this.entries : DEFAULT_ENTRIES;
             if(entries == null)
                 throw new NullPointerException("Property entries must not be null");
 
@@ -298,7 +298,7 @@ class OFMeterConfigStatsReplyVer14 implements OFMeterConfigStatsReply {
             Set<OFStatsReplyFlags> flags = OFStatsReplyFlagsSerializerVer14.readFrom(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
-            List<OFMeterBand> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterBandVer14.READER);
+            List<OFMeterConfig> entries = ChannelUtils.readList(bb, length - (bb.readerIndex() - start), OFMeterConfigVer14.READER);
 
             OFMeterConfigStatsReplyVer14 meterConfigStatsReplyVer14 = new OFMeterConfigStatsReplyVer14(
                     xid,

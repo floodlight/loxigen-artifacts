@@ -15299,6 +15299,21 @@ loci_validate_of_list_meter_band_OF_VERSION_1_3(uint8_t *data, int len, int *out
 }
 
 static int __attribute__((unused))
+loci_validate_of_list_meter_config_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_meter_config_OF_VERSION_1_3(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
 loci_validate_of_list_meter_band_stats_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
 {
     while (len > 0) {
@@ -24689,7 +24704,7 @@ loci_validate_of_meter_config_stats_reply_OF_VERSION_1_3(uint8_t *data, int len,
 
 
     int wire_len_entries = len - 16;
-    if (loci_validate_of_list_meter_band_OF_VERSION_1_3(data + 16, wire_len_entries, out_len) < 0) {
+    if (loci_validate_of_list_meter_config_OF_VERSION_1_3(data + 16, wire_len_entries, out_len) < 0) {
         return -1;
     }
 
@@ -28932,6 +28947,21 @@ loci_validate_of_list_meter_band_OF_VERSION_1_4(uint8_t *data, int len, int *out
     while (len > 0) {
         int cur_len = 0xffff;
         if (loci_validate_of_meter_band_OF_VERSION_1_4(data, len, &cur_len) < 0) {
+            return -1;
+        }
+        len -= cur_len;
+        data += cur_len;
+    }
+
+    return 0;
+}
+
+static int __attribute__((unused))
+loci_validate_of_list_meter_config_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    while (len > 0) {
+        int cur_len = 0xffff;
+        if (loci_validate_of_meter_config_OF_VERSION_1_4(data, len, &cur_len) < 0) {
             return -1;
         }
         len -= cur_len;
@@ -39028,7 +39058,7 @@ loci_validate_of_meter_config_stats_reply_OF_VERSION_1_4(uint8_t *data, int len,
 
 
     int wire_len_entries = len - 16;
-    if (loci_validate_of_list_meter_band_OF_VERSION_1_4(data + 16, wire_len_entries, out_len) < 0) {
+    if (loci_validate_of_list_meter_config_OF_VERSION_1_4(data + 16, wire_len_entries, out_len) < 0) {
         return -1;
     }
 

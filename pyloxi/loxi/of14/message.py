@@ -12841,7 +12841,7 @@ class meter_config_stats_reply(stats_reply):
         assert(_stats_type == 10)
         obj.flags = reader.read("!H")[0]
         reader.skip(4)
-        obj.entries = loxi.generic_util.unpack_list(reader, ofp.meter_band.meter_band.unpack)
+        obj.entries = loxi.generic_util.unpack_list(reader, ofp.common.meter_config.unpack)
         return obj
 
     def __eq__(self, other):

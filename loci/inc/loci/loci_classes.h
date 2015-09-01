@@ -1981,6 +1981,7 @@ typedef of_object_t of_list_instruction_t;
 typedef of_object_t of_list_instruction_id_t;
 typedef of_object_t of_list_meter_band_t;
 typedef of_object_t of_list_meter_band_stats_t;
+typedef of_object_t of_list_meter_config_t;
 typedef of_object_t of_list_meter_stats_t;
 typedef of_object_t of_list_oxm_t;
 typedef of_object_t of_list_packet_queue_t;
@@ -5420,6 +5421,11 @@ extern void of_list_meter_band_init(
 extern of_object_t *
     of_list_meter_band_stats_new(of_version_t version);
 extern void of_list_meter_band_stats_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_list_meter_config_new(of_version_t version);
+extern void of_list_meter_config_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -13009,6 +13015,17 @@ of_list_meter_band_stats_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_list_meter_config_t
+ * @param obj An instance of type of_list_meter_config_t
+ *
+ * \ingroup of_list_meter_config
+ */
+static inline void
+of_list_meter_config_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_list_meter_stats_t
  * @param obj An instance of type of_list_meter_stats_t
  *
@@ -18777,11 +18794,11 @@ extern void of_meter_config_stats_reply_flags_get(
 
 extern int WARN_UNUSED_RESULT of_meter_config_stats_reply_entries_set(
     of_meter_config_stats_reply_t *obj,
-    of_list_meter_band_t *entries);
+    of_list_meter_config_t *entries);
 extern void of_meter_config_stats_reply_entries_bind(
     of_meter_config_stats_reply_t *obj,
-    of_list_meter_band_t *entries);
-extern of_list_meter_band_t *of_meter_config_stats_reply_entries_get(
+    of_list_meter_config_t *entries);
+extern of_list_meter_config_t *of_meter_config_stats_reply_entries_get(
     of_meter_config_stats_reply_t *obj);
 
 /* Unified accessor functions for of_meter_config_stats_request */
@@ -26408,6 +26425,29 @@ extern int of_list_meter_band_stats_append(
     for ((rv) = of_list_meter_band_stats_first((list), (elt));   \
          (rv) == OF_ERROR_NONE;   \
          (rv) = of_list_meter_band_stats_next((list), (elt)))
+
+/* Unified accessor functions for of_list_meter_config */
+
+extern int of_list_meter_config_first(
+    of_list_meter_config_t *list, of_object_t *iter);
+extern int of_list_meter_config_next(
+    of_list_meter_config_t *list, of_object_t *iter);
+extern int of_list_meter_config_append_bind(
+    of_list_meter_config_t *list, of_object_t *iter);
+extern int of_list_meter_config_append(
+    of_list_meter_config_t *list, of_object_t *iter);
+
+/**
+ * Iteration macro for list of type of_list_meter_config
+ * @param list Pointer to the list being iterated over of
+ * type of_list_meter_config
+ * @param elt Pointer to an element of type of_meter_config
+ * @param rv On exiting the loop will have the value OF_ERROR_RANGE.
+ */
+#define OF_LIST_METER_CONFIG_ITER(list, elt, rv)  \
+    for ((rv) = of_list_meter_config_first((list), (elt));   \
+         (rv) == OF_ERROR_NONE;   \
+         (rv) = of_list_meter_config_next((list), (elt)))
 
 /* Unified accessor functions for of_list_meter_stats */
 

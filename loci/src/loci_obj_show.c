@@ -17721,7 +17721,7 @@ of_meter_config_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
     uint32_t val32;
     uint16_t val16;
 
-    of_list_meter_band_t list;
+    of_list_meter_config_t list;
     of_object_t elt;
     int rv;
 
@@ -17735,9 +17735,9 @@ of_meter_config_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cook
     out += LOCI_SHOW_x16(writer, cookie, val16);
     out += writer(cookie, " ");
 
-    out += writer(cookie, "of_meter_band_t={ ");
+    out += writer(cookie, "of_meter_config_t={ ");
     of_meter_config_stats_reply_entries_bind(obj, &list);
-    OF_LIST_METER_BAND_ITER(&list, &elt, rv) {
+    OF_LIST_METER_CONFIG_ITER(&list, &elt, rv) {
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
@@ -29746,7 +29746,7 @@ of_meter_config_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
     uint32_t val32;
     uint16_t val16;
 
-    of_list_meter_band_t list;
+    of_list_meter_config_t list;
     of_object_t elt;
     int rv;
 
@@ -29760,9 +29760,9 @@ of_meter_config_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cook
     out += LOCI_SHOW_x16(writer, cookie, val16);
     out += writer(cookie, " ");
 
-    out += writer(cookie, "of_meter_band_t={ ");
+    out += writer(cookie, "of_meter_config_t={ ");
     of_meter_config_stats_reply_entries_bind(obj, &list);
-    OF_LIST_METER_BAND_ITER(&list, &elt, rv) {
+    OF_LIST_METER_CONFIG_ITER(&list, &elt, rv) {
         of_object_show(writer, cookie, (of_object_t *)&elt);
     }
     out += writer(cookie, "} ");
@@ -38836,6 +38836,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -39486,6 +39487,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     of_table_stats_entry_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -40248,6 +40250,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -40954,6 +40957,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     unknown_show
 };
 
@@ -41607,6 +41611,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_show,
     of_uint64_OF_VERSION_1_4_show,
     of_uint8_OF_VERSION_1_4_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,

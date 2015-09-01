@@ -18806,7 +18806,7 @@ of_meter_config_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
     uint32_t val32;
     uint16_t val16;
 
-    of_list_meter_band_t list;
+    of_list_meter_config_t list;
     of_object_t elt;
     int rv;
 
@@ -18822,9 +18822,9 @@ of_meter_config_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cook
     out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
-    out += writer(cookie, "List of of_meter_band_t\n");
+    out += writer(cookie, "List of of_meter_config_t\n");
     of_meter_config_stats_reply_entries_bind(obj, &list);
-    OF_LIST_METER_BAND_ITER(&list, &elt, rv) {
+    OF_LIST_METER_CONFIG_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
 
@@ -31791,7 +31791,7 @@ of_meter_config_stats_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
     uint32_t val32;
     uint16_t val16;
 
-    of_list_meter_band_t list;
+    of_list_meter_config_t list;
     of_object_t elt;
     int rv;
 
@@ -31807,9 +31807,9 @@ of_meter_config_stats_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cook
     out += LOCI_DUMP_u16(writer, cookie, val16);
     out += writer(cookie, "\n");
 
-    out += writer(cookie, "List of of_meter_band_t\n");
+    out += writer(cookie, "List of of_meter_config_t\n");
     of_meter_config_stats_reply_entries_bind(obj, &list);
-    OF_LIST_METER_BAND_ITER(&list, &elt, rv) {
+    OF_LIST_METER_CONFIG_ITER(&list, &elt, rv) {
         of_object_dump(writer, cookie, (of_object_t *)&elt);
     }
 
@@ -41662,6 +41662,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     unknown_dump
 };
 
@@ -42312,6 +42313,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     of_table_stats_entry_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -43074,6 +43076,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     unknown_dump
 };
 
@@ -43780,6 +43783,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     unknown_dump
 };
 
@@ -44433,6 +44437,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_uint32_OF_VERSION_1_4_dump,
     of_uint64_OF_VERSION_1_4_dump,
     of_uint8_OF_VERSION_1_4_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,

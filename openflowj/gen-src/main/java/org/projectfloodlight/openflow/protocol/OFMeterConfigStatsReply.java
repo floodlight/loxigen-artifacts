@@ -33,7 +33,7 @@ public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
     long getXid();
     OFStatsType getStatsType();
     Set<OFStatsReplyFlags> getFlags();
-    List<OFMeterBand> getEntries();
+    List<OFMeterConfig> getEntries();
 
 
     void writeTo(ChannelBuffer channelBuffer);
@@ -48,7 +48,7 @@ public interface OFMeterConfigStatsReply extends OFObject, OFStatsReply {
         OFStatsType getStatsType();
         Set<OFStatsReplyFlags> getFlags();
         Builder setFlags(Set<OFStatsReplyFlags> flags);
-        List<OFMeterBand> getEntries();
-        Builder setEntries(List<OFMeterBand> entries);
+        List<OFMeterConfig> getEntries();
+        Builder setEntries(List<OFMeterConfig> entries);
     }
 }

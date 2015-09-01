@@ -1797,6 +1797,32 @@ test_of_list_meter_band_stats_OF_VERSION_1_3(void)
 }
 
 static int
+test_of_list_meter_config_OF_VERSION_1_3(void)
+{
+    of_list_meter_config_t *list;
+    int value = 1;
+
+    list = of_list_meter_config_new(OF_VERSION_1_3);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_3);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_METER_CONFIG);
+
+    value = of_list_meter_config_OF_VERSION_1_3_populate(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = of_list_meter_config_OF_VERSION_1_3_check(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_meter_config_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_list_meter_stats_OF_VERSION_1_3(void)
 {
     of_list_meter_stats_t *list;
@@ -2971,6 +2997,32 @@ test_of_list_meter_band_stats_OF_VERSION_1_4(void)
 }
 
 static int
+test_of_list_meter_config_OF_VERSION_1_4(void)
+{
+    of_list_meter_config_t *list;
+    int value = 1;
+
+    list = of_list_meter_config_new(OF_VERSION_1_4);
+    TEST_ASSERT(list != NULL);
+    TEST_ASSERT(list->version == OF_VERSION_1_4);
+    TEST_ASSERT(list->length == 0);
+    TEST_ASSERT(list->parent == NULL);
+    TEST_ASSERT(list->object_id == OF_LIST_METER_CONFIG);
+
+    value = of_list_meter_config_OF_VERSION_1_4_populate(list, value);
+    TEST_ASSERT(value != 0);
+
+    /* Now check values */
+    value = 1;
+    value = of_list_meter_config_OF_VERSION_1_4_check(list, value);
+    TEST_ASSERT(value != 0);
+
+    of_list_meter_config_delete(list);
+
+    return TEST_PASS;
+}
+
+static int
 test_of_list_meter_stats_OF_VERSION_1_4(void)
 {
     of_list_meter_stats_t *list;
@@ -3587,6 +3639,7 @@ run_list_tests(void)
     RUN_TEST(of_list_instruction_id_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_band_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_band_stats_OF_VERSION_1_3);
+    RUN_TEST(of_list_meter_config_OF_VERSION_1_3);
     RUN_TEST(of_list_meter_stats_OF_VERSION_1_3);
     RUN_TEST(of_list_oxm_OF_VERSION_1_3);
     RUN_TEST(of_list_packet_queue_OF_VERSION_1_3);
@@ -3632,6 +3685,7 @@ run_list_tests(void)
     RUN_TEST(of_list_instruction_id_OF_VERSION_1_4);
     RUN_TEST(of_list_meter_band_OF_VERSION_1_4);
     RUN_TEST(of_list_meter_band_stats_OF_VERSION_1_4);
+    RUN_TEST(of_list_meter_config_OF_VERSION_1_4);
     RUN_TEST(of_list_meter_stats_OF_VERSION_1_4);
     RUN_TEST(of_list_oxm_OF_VERSION_1_4);
     RUN_TEST(of_list_port_desc_OF_VERSION_1_4);

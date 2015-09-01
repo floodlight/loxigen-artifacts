@@ -4223,8 +4223,8 @@ typedef struct of_hello_failed_error_msg_s of_hello_failed_error_msg_t;
  *   are of type of_meter_config_stats_reply_uint16_get_f and _set_f.
  *
  * @param entries_get/set ( OF_1_3 OF_1_4).
- *   Accessors for entries, a variable of type of_list_meter_band.  Functions
- *   are of type of_meter_config_stats_reply_of_list_meter_band_get_f and _set_f.
+ *   Accessors for entries, a variable of type of_list_meter_config.  Functions
+ *   are of type of_meter_config_stats_reply_of_list_meter_config_get_f and _set_f.
  *
  */
 typedef struct of_meter_config_stats_reply_s of_meter_config_stats_reply_t;
@@ -11698,6 +11698,21 @@ typedef struct of_list_meter_band_s of_list_meter_band_t;
  * Copy an item to the end of a list
  */
 typedef struct of_list_meter_band_stats_s of_list_meter_band_stats_t;
+
+/**
+ * Structure for of_list_meter_config object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param first Function of type of_list_meter_config_first_f.
+ * Setup a TBD class object to the first entry in the list
+ * @param next Function of type of_list_meter_config_next_f.
+ * Advance a TBD class object to the next entry in the list
+ * @param append_bind Function of type of_list_meter_config_append_bind_f
+ * Setup a TBD class object for append to the end of the current list
+ * @param append  Function of type @ref of_list_meter_config_append_f.
+ * Copy an item to the end of a list
+ */
+typedef struct of_list_meter_config_s of_list_meter_config_t;
 
 /**
  * Structure for of_list_meter_stats object.  Get/set

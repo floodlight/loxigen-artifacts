@@ -23776,8 +23776,8 @@ of_meter_config_stats_reply_OF_VERSION_1_3_dup(
     uint32_t val32;
     uint16_t val16;
 
-    of_list_meter_band_t src_list;
-    of_list_meter_band_t *dst_list;
+    of_list_meter_config_t src_list;
+    of_list_meter_config_t *dst_list;
 
     if ((dst = of_meter_config_stats_reply_new(src->version)) == NULL) {
         return NULL;
@@ -23791,13 +23791,13 @@ of_meter_config_stats_reply_OF_VERSION_1_3_dup(
 
     of_meter_config_stats_reply_entries_bind(
         src, &src_list);
-    dst_list = of_list_meter_band_OF_VERSION_1_3_dup(&src_list);
+    dst_list = of_list_meter_config_OF_VERSION_1_3_dup(&src_list);
     if (dst_list == NULL) {
         of_meter_config_stats_reply_delete(dst);
         return NULL;
     }
     of_meter_config_stats_reply_entries_set(dst, dst_list);
-    of_list_meter_band_delete(dst_list);
+    of_list_meter_config_delete(dst_list);
 
     return dst;
 }
@@ -37373,6 +37373,40 @@ of_list_meter_band_stats_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_meter_config
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_meter_config.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_meter_config_t *
+of_list_meter_config_OF_VERSION_1_3_dup(
+    of_list_meter_config_t *src)
+{
+    of_object_t src_elt;
+    of_object_t *dst_elt;
+    int rv;
+    of_list_meter_config_t *dst;
+
+    if ((dst = of_list_meter_config_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_METER_CONFIG_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_meter_config_OF_VERSION_1_3_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_meter_config_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_meter_stats
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -43271,8 +43305,8 @@ of_meter_config_stats_reply_OF_VERSION_1_4_dup(
     uint32_t val32;
     uint16_t val16;
 
-    of_list_meter_band_t src_list;
-    of_list_meter_band_t *dst_list;
+    of_list_meter_config_t src_list;
+    of_list_meter_config_t *dst_list;
 
     if ((dst = of_meter_config_stats_reply_new(src->version)) == NULL) {
         return NULL;
@@ -43286,13 +43320,13 @@ of_meter_config_stats_reply_OF_VERSION_1_4_dup(
 
     of_meter_config_stats_reply_entries_bind(
         src, &src_list);
-    dst_list = of_list_meter_band_OF_VERSION_1_4_dup(&src_list);
+    dst_list = of_list_meter_config_OF_VERSION_1_4_dup(&src_list);
     if (dst_list == NULL) {
         of_meter_config_stats_reply_delete(dst);
         return NULL;
     }
     of_meter_config_stats_reply_entries_set(dst, dst_list);
-    of_list_meter_band_delete(dst_list);
+    of_list_meter_config_delete(dst_list);
 
     return dst;
 }
@@ -58085,6 +58119,40 @@ of_list_meter_band_stats_OF_VERSION_1_4_dup(
 }
 
 /**
+ * Duplicate a list of type of_list_meter_config
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_list_meter_config.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_list_meter_config_t *
+of_list_meter_config_OF_VERSION_1_4_dup(
+    of_list_meter_config_t *src)
+{
+    of_object_t src_elt;
+    of_object_t *dst_elt;
+    int rv;
+    of_list_meter_config_t *dst;
+
+    if ((dst = of_list_meter_config_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    OF_LIST_METER_CONFIG_ITER(src, &src_elt, rv) {
+        if ((dst_elt = of_meter_config_OF_VERSION_1_4_dup(&src_elt)) == NULL) {
+            of_object_delete((of_object_t *)dst);
+            return NULL;
+        }
+        _TRY_FREE(of_list_meter_config_append(dst, dst_elt),
+            dst, NULL);
+        of_object_delete((of_object_t *)dst_elt);
+    }
+
+    return dst;
+}
+
+/**
  * Duplicate a list of type of_list_meter_stats
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -71555,6 +71623,23 @@ of_list_meter_band_stats_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_list_meter_band_stats_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_list_meter_config_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_list_meter_config_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_list_meter_config_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */

@@ -688,6 +688,7 @@ const char *const of_object_id_str[] = {
     "of_list_instruction_id",
     "of_list_meter_band",
     "of_list_meter_band_stats",
+    "of_list_meter_config",
     "of_list_meter_stats",
     "of_list_oxm",
     "of_list_packet_queue",
