@@ -17366,6 +17366,38 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dump(loci_writer_f writer, voi
 }
 
 int
+of_bsn_vlan_counter_clear_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_vlan_counter_clear\n");
+
+    of_bsn_vlan_counter_clear_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vlan_counter_clear_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vlan_counter_clear_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vlan_counter_clear_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "  vlan_vid (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -30195,6 +30227,38 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_4_dump(loci_writer_f writer, voi
 }
 
 int
+of_bsn_vlan_counter_clear_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    out += writer(cookie, "Object of type of_bsn_vlan_counter_clear\n");
+
+    of_bsn_vlan_counter_clear_xid_get(obj, &val32);
+    out += writer(cookie, "  xid (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vlan_counter_clear_experimenter_get(obj, &val32);
+    out += writer(cookie, "  experimenter (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vlan_counter_clear_subtype_get(obj, &val32);
+    out += writer(cookie, "  subtype (uint32_t):  ");
+    out += LOCI_DUMP_u32(writer, cookie, val32);
+    out += writer(cookie, "\n");
+
+    of_bsn_vlan_counter_clear_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "  vlan_vid (uint16_t):  ");
+    out += LOCI_DUMP_u16(writer, cookie, val16);
+    out += writer(cookie, "\n");
+
+    return out;
+}
+
+int
 of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_dump(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -41080,6 +41144,7 @@ static const loci_obj_dump_f dump_funs_v1[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_desc_stats_reply_OF_VERSION_1_0_dump,
     of_desc_stats_request_OF_VERSION_1_0_dump,
     of_echo_reply_OF_VERSION_1_0_dump,
@@ -41780,6 +41845,7 @@ static const loci_obj_dump_f dump_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_1_dump,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_dump,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_1_dump,
+    unknown_dump,
     unknown_dump,
     unknown_dump,
     unknown_dump,
@@ -42494,6 +42560,7 @@ static const loci_obj_dump_f dump_funs_v3[OF_OBJECT_COUNT] = {
     unknown_dump,
     unknown_dump,
     unknown_dump,
+    unknown_dump,
     of_desc_stats_reply_OF_VERSION_1_2_dump,
     of_desc_stats_request_OF_VERSION_1_2_dump,
     of_echo_reply_OF_VERSION_1_2_dump,
@@ -43194,6 +43261,7 @@ static const loci_obj_dump_f dump_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_3_dump,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_dump,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dump,
+    of_bsn_vlan_counter_clear_OF_VERSION_1_3_dump,
     of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dump,
     of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_dump,
     of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_dump,
@@ -43901,6 +43969,7 @@ static const loci_obj_dump_f dump_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_4_dump,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_4_dump,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_4_dump,
+    of_bsn_vlan_counter_clear_OF_VERSION_1_4_dump,
     of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_dump,
     of_bsn_vlan_counter_stats_request_OF_VERSION_1_4_dump,
     of_bsn_vrf_counter_stats_reply_OF_VERSION_1_4_dump,

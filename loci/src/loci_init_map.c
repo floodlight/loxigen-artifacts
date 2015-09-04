@@ -123,6 +123,7 @@ const of_object_init_f of_object_init_map[] = {
     (of_object_init_f)of_bsn_virtual_port_create_request_init,
     (of_object_init_f)of_bsn_virtual_port_remove_reply_init,
     (of_object_init_f)of_bsn_virtual_port_remove_request_init,
+    (of_object_init_f)of_bsn_vlan_counter_clear_init,
     (of_object_init_f)of_bsn_vlan_counter_stats_reply_init,
     (of_object_init_f)of_bsn_vlan_counter_stats_request_init,
     (of_object_init_f)of_bsn_vrf_counter_stats_reply_init,

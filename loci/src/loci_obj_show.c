@@ -16335,6 +16335,36 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show(loci_writer_f writer, voi
 }
 
 int
+of_bsn_vlan_counter_clear_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_bsn_vlan_counter_clear_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_counter_clear_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_counter_clear_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_counter_clear_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "vlan_vid=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -28211,6 +28241,36 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_4_show(loci_writer_f writer, voi
 }
 
 int
+of_bsn_vlan_counter_clear_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
+{
+    int out = 0;
+    uint32_t val32;
+    uint16_t val16;
+
+    of_bsn_vlan_counter_clear_xid_get(obj, &val32);
+    out += writer(cookie, "xid=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_counter_clear_experimenter_get(obj, &val32);
+    out += writer(cookie, "experimenter=");
+    out += LOCI_SHOW_x32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_counter_clear_subtype_get(obj, &val32);
+    out += writer(cookie, "subtype=");
+    out += LOCI_SHOW_u32(writer, cookie, val32);
+    out += writer(cookie, " ");
+
+    of_bsn_vlan_counter_clear_vlan_vid_get(obj, &val16);
+    out += writer(cookie, "vlan_vid=");
+    out += LOCI_SHOW_u16(writer, cookie, val16);
+    out += writer(cookie, " ");
+
+    return out;
+}
+
+int
 of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj)
 {
     int out = 0;
@@ -38254,6 +38314,7 @@ static const loci_obj_show_f show_funs_v1[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_desc_stats_reply_OF_VERSION_1_0_show,
     of_desc_stats_request_OF_VERSION_1_0_show,
     of_echo_reply_OF_VERSION_1_0_show,
@@ -38954,6 +39015,7 @@ static const loci_obj_show_f show_funs_v2[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_1_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_1_show,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_1_show,
+    unknown_show,
     unknown_show,
     unknown_show,
     unknown_show,
@@ -39668,6 +39730,7 @@ static const loci_obj_show_f show_funs_v3[OF_OBJECT_COUNT] = {
     unknown_show,
     unknown_show,
     unknown_show,
+    unknown_show,
     of_desc_stats_reply_OF_VERSION_1_2_show,
     of_desc_stats_request_OF_VERSION_1_2_show,
     of_echo_reply_OF_VERSION_1_2_show,
@@ -40368,6 +40431,7 @@ static const loci_obj_show_f show_funs_v4[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_3_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_show,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show,
+    of_bsn_vlan_counter_clear_OF_VERSION_1_3_show,
     of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show,
     of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show,
     of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show,
@@ -41075,6 +41139,7 @@ static const loci_obj_show_f show_funs_v5[OF_OBJECT_COUNT] = {
     of_bsn_virtual_port_create_request_OF_VERSION_1_4_show,
     of_bsn_virtual_port_remove_reply_OF_VERSION_1_4_show,
     of_bsn_virtual_port_remove_request_OF_VERSION_1_4_show,
+    of_bsn_vlan_counter_clear_OF_VERSION_1_4_show,
     of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_show,
     of_bsn_vlan_counter_stats_request_OF_VERSION_1_4_show,
     of_bsn_vrf_counter_stats_reply_OF_VERSION_1_4_show,

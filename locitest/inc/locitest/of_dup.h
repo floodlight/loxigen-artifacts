@@ -459,6 +459,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_vlan_counter_clear_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_vlan_counter_stats_reply_dup(
         of_object_t *src);
 
@@ -5267,6 +5271,10 @@ extern of_object_t *
         of_object_t *src);
 
 extern of_object_t *
+    of_bsn_vlan_counter_clear_OF_VERSION_1_3_dup(
+        of_object_t *src);
+
+extern of_object_t *
     of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_dup(
         of_object_t *src);
 
@@ -7564,6 +7572,10 @@ extern of_object_t *
 
 extern of_object_t *
     of_bsn_virtual_port_remove_request_OF_VERSION_1_4_dup(
+        of_object_t *src);
+
+extern of_object_t *
+    of_bsn_vlan_counter_clear_OF_VERSION_1_4_dup(
         of_object_t *src);
 
 extern of_object_t *

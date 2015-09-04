@@ -1,1 +1,1 @@
-6085236e6cd5308dfbfa6712a304f0da9b1506ff Merge into master from pull request #417: fixing support for meter config statistics (https://github.com/floodlight/loxigen/pull/417)
+4776c8a61ae3bb101f06453045ee7eccef86b71e Merge into master from pull request #421: openflow_input: add message of_bsn_vlan_counter_clear (https://github.com/floodlight/loxigen/pull/421)

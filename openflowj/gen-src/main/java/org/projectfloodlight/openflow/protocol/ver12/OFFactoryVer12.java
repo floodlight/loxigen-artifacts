@@ -1040,6 +1040,13 @@ public class OFFactoryVer12 implements OFFactory {
         throw new UnsupportedOperationException("OFBsnTimeRequest not supported in version 1.2");
     }
 
+    public OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() {
+        throw new UnsupportedOperationException("OFBsnVlanCounterClear not supported in version 1.2");
+    }
+    public OFBsnVlanCounterClear bsnVlanCounterClear(int vlanVid) {
+        throw new UnsupportedOperationException("OFBsnVlanCounterClear not supported in version 1.2");
+    }
+
     public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {
         throw new UnsupportedOperationException("OFBsnVlanCounterStatsEntry not supported in version 1.2");
     }

@@ -120,6 +120,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_virtual_port_create_request",
     "of_bsn_virtual_port_remove_reply",
     "of_bsn_virtual_port_remove_request",
+    "of_bsn_vlan_counter_clear",
     "of_bsn_vlan_counter_stats_reply",
     "of_bsn_vlan_counter_stats_request",
     "of_bsn_vrf_counter_stats_reply",

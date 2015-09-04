@@ -7000,6 +7000,13 @@ fields['of13.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of13.bsn
 fields['of13.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of13.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of13.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of13.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of13.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of13.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.version'] = ProtoField.uint8("of13.bsn_vlan_counter_clear.version", "version", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.type'] = ProtoField.uint8("of13.bsn_vlan_counter_clear.type", "type", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.length'] = ProtoField.uint16("of13.bsn_vlan_counter_clear.length", "length", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.xid'] = ProtoField.uint32("of13.bsn_vlan_counter_clear.xid", "xid", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.experimenter'] = ProtoField.uint32("of13.bsn_vlan_counter_clear.experimenter", "experimenter", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.subtype'] = ProtoField.uint32("of13.bsn_vlan_counter_clear.subtype", "subtype", base.DEC, nil)
+fields['of13.bsn_vlan_counter_clear.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_counter_clear.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_entry.length'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_entry.length", "length", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_entry.vlan_vid'] = ProtoField.uint16("of13.bsn_vlan_counter_stats_entry.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of13.bsn_vlan_counter_stats_entry.values'] = ProtoField.bytes("of13.bsn_vlan_counter_stats_entry.values", "values")
@@ -9615,6 +9622,13 @@ fields['of14.bsn_virtual_port_remove_request.xid'] = ProtoField.uint32("of14.bsn
 fields['of14.bsn_virtual_port_remove_request.experimenter'] = ProtoField.uint32("of14.bsn_virtual_port_remove_request.experimenter", "experimenter", base.DEC, nil)
 fields['of14.bsn_virtual_port_remove_request.subtype'] = ProtoField.uint32("of14.bsn_virtual_port_remove_request.subtype", "subtype", base.DEC, nil)
 fields['of14.bsn_virtual_port_remove_request.vport_no'] = ProtoField.uint32("of14.bsn_virtual_port_remove_request.vport_no", "vport_no", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.version'] = ProtoField.uint8("of14.bsn_vlan_counter_clear.version", "version", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.type'] = ProtoField.uint8("of14.bsn_vlan_counter_clear.type", "type", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.length'] = ProtoField.uint16("of14.bsn_vlan_counter_clear.length", "length", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.xid'] = ProtoField.uint32("of14.bsn_vlan_counter_clear.xid", "xid", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.experimenter'] = ProtoField.uint32("of14.bsn_vlan_counter_clear.experimenter", "experimenter", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.subtype'] = ProtoField.uint32("of14.bsn_vlan_counter_clear.subtype", "subtype", base.DEC, nil)
+fields['of14.bsn_vlan_counter_clear.vlan_vid'] = ProtoField.uint16("of14.bsn_vlan_counter_clear.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of14.bsn_vlan_counter_stats_entry.length'] = ProtoField.uint16("of14.bsn_vlan_counter_stats_entry.length", "length", base.DEC, nil)
 fields['of14.bsn_vlan_counter_stats_entry.vlan_vid'] = ProtoField.uint16("of14.bsn_vlan_counter_stats_entry.vlan_vid", "vlan_vid", base.DEC, nil)
 fields['of14.bsn_vlan_counter_stats_entry.values'] = ProtoField.bytes("of14.bsn_vlan_counter_stats_entry.values", "values")
@@ -15422,6 +15436,13 @@ p_of.fields = {
     fields['of13.bsn_virtual_port_remove_request.experimenter'],
     fields['of13.bsn_virtual_port_remove_request.subtype'],
     fields['of13.bsn_virtual_port_remove_request.vport_no'],
+    fields['of13.bsn_vlan_counter_clear.version'],
+    fields['of13.bsn_vlan_counter_clear.type'],
+    fields['of13.bsn_vlan_counter_clear.length'],
+    fields['of13.bsn_vlan_counter_clear.xid'],
+    fields['of13.bsn_vlan_counter_clear.experimenter'],
+    fields['of13.bsn_vlan_counter_clear.subtype'],
+    fields['of13.bsn_vlan_counter_clear.vlan_vid'],
     fields['of13.bsn_vlan_counter_stats_entry.length'],
     fields['of13.bsn_vlan_counter_stats_entry.vlan_vid'],
     fields['of13.bsn_vlan_counter_stats_entry.values'],
@@ -18037,6 +18058,13 @@ p_of.fields = {
     fields['of14.bsn_virtual_port_remove_request.experimenter'],
     fields['of14.bsn_virtual_port_remove_request.subtype'],
     fields['of14.bsn_virtual_port_remove_request.vport_no'],
+    fields['of14.bsn_vlan_counter_clear.version'],
+    fields['of14.bsn_vlan_counter_clear.type'],
+    fields['of14.bsn_vlan_counter_clear.length'],
+    fields['of14.bsn_vlan_counter_clear.xid'],
+    fields['of14.bsn_vlan_counter_clear.experimenter'],
+    fields['of14.bsn_vlan_counter_clear.subtype'],
+    fields['of14.bsn_vlan_counter_clear.vlan_vid'],
     fields['of14.bsn_vlan_counter_stats_entry.length'],
     fields['of14.bsn_vlan_counter_stats_entry.vlan_vid'],
     fields['of14.bsn_vlan_counter_stats_entry.values'],
@@ -29707,6 +29735,20 @@ function dissect_of_bsn_virtual_port_remove_request_v4(reader, subtree)
 end
 of_bsn_header_v4_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v4
 
+-- child class of_bsn_vlan_counter_clear
+-- Child of of_bsn_header
+function dissect_of_bsn_vlan_counter_clear_v4(reader, subtree)
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.version')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.xid')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.experimenter')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.subtype')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_vlan_counter_clear.vlan_vid')
+    return 'of_bsn_vlan_counter_clear'
+end
+of_bsn_header_v4_dissectors[70] = dissect_of_bsn_vlan_counter_clear_v4
+
 -- top-level class of_bsn_vlan_counter_stats_entry
 function dissect_of_bsn_vlan_counter_stats_entry_v4(reader, subtree)
     local _length = reader.peek(0, 2):uint()
@@ -36580,6 +36622,20 @@ function dissect_of_bsn_virtual_port_remove_request_v5(reader, subtree)
     return 'of_bsn_virtual_port_remove_request'
 end
 of_bsn_header_v5_dissectors[17] = dissect_of_bsn_virtual_port_remove_request_v5
+
+-- child class of_bsn_vlan_counter_clear
+-- Child of of_bsn_header
+function dissect_of_bsn_vlan_counter_clear_v5(reader, subtree)
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.version')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.xid')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.experimenter')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.subtype')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_vlan_counter_clear.vlan_vid')
+    return 'of_bsn_vlan_counter_clear'
+end
+of_bsn_header_v5_dissectors[70] = dissect_of_bsn_vlan_counter_clear_v5
 
 -- top-level class of_bsn_vlan_counter_stats_entry
 function dissect_of_bsn_vlan_counter_stats_entry_v5(reader, subtree)

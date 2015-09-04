@@ -11497,6 +11497,9 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x43:
             *id = OF_BSN_LUA_NOTIFICATION;
             break;
+        case 0x46:
+            *id = OF_BSN_VLAN_COUNTER_CLEAR;
+            break;
         default:
             *id = OF_BSN_HEADER;
             break;
@@ -11667,6 +11670,9 @@ of_bsn_header_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x45:
             *id = OF_BSN_TAKEOVER;
+            break;
+        case 0x46:
+            *id = OF_BSN_VLAN_COUNTER_CLEAR;
             break;
         default:
             *id = OF_BSN_HEADER;

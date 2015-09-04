@@ -1123,6 +1123,16 @@ public class OFFactoryVer14 implements OFFactory {
                     );
     }
 
+    public OFBsnVlanCounterClear.Builder buildBsnVlanCounterClear() {
+        return new OFBsnVlanCounterClearVer14.Builder().setXid(nextXid());
+    }
+    public OFBsnVlanCounterClear bsnVlanCounterClear(int vlanVid) {
+        return new OFBsnVlanCounterClearVer14(
+                nextXid(),
+                      vlanVid
+                    );
+    }
+
     public OFBsnVlanCounterStatsEntry.Builder buildBsnVlanCounterStatsEntry() {
         return new OFBsnVlanCounterStatsEntryVer14.Builder();
     }

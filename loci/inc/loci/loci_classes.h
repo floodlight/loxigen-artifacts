@@ -965,6 +965,8 @@ void of_bsn_tlv_vlan_vid_mask_wire_object_id_get(of_object_t *obj, of_object_id_
 void of_bsn_tlv_vlan_vid_mask_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vrf_push_wire_types(of_object_t *obj);
+void of_bsn_vlan_counter_clear_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_vlan_counter_clear_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_stats_entry_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_vlan_counter_stats_entry_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_stats_reply_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1413,6 +1415,7 @@ typedef of_object_t of_bsn_virtual_port_create_reply_t;
 typedef of_object_t of_bsn_virtual_port_create_request_t;
 typedef of_object_t of_bsn_virtual_port_remove_reply_t;
 typedef of_object_t of_bsn_virtual_port_remove_request_t;
+typedef of_object_t of_bsn_vlan_counter_clear_t;
 typedef of_object_t of_bsn_vlan_counter_stats_reply_t;
 typedef of_object_t of_bsn_vlan_counter_stats_request_t;
 typedef of_object_t of_bsn_vrf_counter_stats_reply_t;
@@ -2581,6 +2584,11 @@ extern void of_bsn_virtual_port_remove_reply_init(
 extern of_object_t *
     of_bsn_virtual_port_remove_request_new(of_version_t version);
 extern void of_bsn_virtual_port_remove_request_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_vlan_counter_clear_new(of_version_t version);
+extern void of_bsn_vlan_counter_clear_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -6763,6 +6771,17 @@ of_bsn_virtual_port_remove_reply_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_virtual_port_remove_request_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_vlan_counter_clear_t
+ * @param obj An instance of type of_bsn_vlan_counter_clear_t
+ *
+ * \ingroup of_bsn_vlan_counter_clear
+ */
+static inline void
+of_bsn_vlan_counter_clear_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -17173,6 +17192,36 @@ extern void of_bsn_virtual_port_remove_request_vport_no_set(
 extern void of_bsn_virtual_port_remove_request_vport_no_get(
     of_bsn_virtual_port_remove_request_t *obj,
     uint32_t *vport_no);
+
+/* Unified accessor functions for of_bsn_vlan_counter_clear */
+
+extern void of_bsn_vlan_counter_clear_xid_set(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint32_t xid);
+extern void of_bsn_vlan_counter_clear_xid_get(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint32_t *xid);
+
+extern void of_bsn_vlan_counter_clear_experimenter_set(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint32_t experimenter);
+extern void of_bsn_vlan_counter_clear_experimenter_get(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint32_t *experimenter);
+
+extern void of_bsn_vlan_counter_clear_subtype_set(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint32_t subtype);
+extern void of_bsn_vlan_counter_clear_subtype_get(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint32_t *subtype);
+
+extern void of_bsn_vlan_counter_clear_vlan_vid_set(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint16_t vlan_vid);
+extern void of_bsn_vlan_counter_clear_vlan_vid_get(
+    of_bsn_vlan_counter_clear_t *obj,
+    uint16_t *vlan_vid);
 
 /* Unified accessor functions for of_bsn_vlan_counter_stats_reply */
 

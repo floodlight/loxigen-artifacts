@@ -801,6 +801,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_vport_OF_VERSION_1_3(uin
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_clear_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_entry_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_3(uint8_t *data, int len, int *out_len);
@@ -1372,6 +1373,7 @@ static int __attribute__((unused)) loci_validate_of_bsn_vport_OF_VERSION_1_4(uin
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_create_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
+static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_clear_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_entry_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
 static int __attribute__((unused)) loci_validate_of_bsn_vlan_counter_stats_request_OF_VERSION_1_4(uint8_t *data, int len, int *out_len);
@@ -17698,6 +17700,8 @@ loci_validate_of_bsn_header_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_3(data, len, out_len);
     case 0x11:
         return loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_3(data, len, out_len);
+    case 0x46:
+        return loci_validate_of_bsn_vlan_counter_clear_OF_VERSION_1_3(data, len, out_len);
     }
 
 
@@ -22176,6 +22180,28 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_3(uint8_t *data, i
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 20) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vlan_counter_clear_OF_VERSION_1_3(uint8_t *data, int len, int *out_len)
+{
+    if (len < 18) {
+        return -1;
+    }
+
+    len = 18;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 18) {
         return -1;
     }
 
@@ -31919,6 +31945,8 @@ loci_validate_of_bsn_header_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
         return loci_validate_of_bsn_virtual_port_remove_reply_OF_VERSION_1_4(data, len, out_len);
     case 0x11:
         return loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_4(data, len, out_len);
+    case 0x46:
+        return loci_validate_of_bsn_vlan_counter_clear_OF_VERSION_1_4(data, len, out_len);
     }
 
 
@@ -36425,6 +36453,28 @@ loci_validate_of_bsn_virtual_port_remove_request_OF_VERSION_1_4(uint8_t *data, i
     uint16_t wire_len;
     buf_u16_get(data + 2, &wire_len);
     if (wire_len > len || wire_len < 20) {
+        return -1;
+    }
+
+
+
+
+    *out_len = len;
+    return 0;
+}
+
+static int
+loci_validate_of_bsn_vlan_counter_clear_OF_VERSION_1_4(uint8_t *data, int len, int *out_len)
+{
+    if (len < 18) {
+        return -1;
+    }
+
+    len = 18;
+
+    uint16_t wire_len;
+    buf_u16_get(data + 2, &wire_len);
+    if (wire_len > len || wire_len < 18) {
         return -1;
     }
 

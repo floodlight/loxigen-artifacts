@@ -2912,6 +2912,29 @@ typedef struct of_bsn_virtual_port_remove_reply_s of_bsn_virtual_port_remove_rep
 typedef struct of_bsn_virtual_port_remove_request_s of_bsn_virtual_port_remove_request_t;
 
 /**
+ * Structure for of_bsn_vlan_counter_clear object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param xid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for xid, a variable of type uint32.  Functions
+ *   are of type of_bsn_vlan_counter_clear_uint32_get_f and _set_f.
+ *
+ * @param experimenter_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for experimenter, a variable of type uint32.  Functions
+ *   are of type of_bsn_vlan_counter_clear_uint32_get_f and _set_f.
+ *
+ * @param subtype_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for subtype, a variable of type uint32.  Functions
+ *   are of type of_bsn_vlan_counter_clear_uint32_get_f and _set_f.
+ *
+ * @param vlan_vid_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for vlan_vid, a variable of type uint16.  Functions
+ *   are of type of_bsn_vlan_counter_clear_uint16_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_vlan_counter_clear_s of_bsn_vlan_counter_clear_t;
+
+/**
  * Structure for of_bsn_vlan_counter_stats_reply object.  Get/set
  * accessors available in all versions unless noted otherwise
  *

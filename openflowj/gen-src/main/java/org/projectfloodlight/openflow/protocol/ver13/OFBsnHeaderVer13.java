@@ -218,6 +218,9 @@ abstract class OFBsnHeaderVer13 {
                case 0x2c:
                    // discriminator value 0x2cL=0x2cL for class OFBsnTimeRequestVer13
                    return OFBsnTimeRequestVer13.READER.readFrom(bb);
+               case 0x46:
+                   // discriminator value 0x46L=0x46L for class OFBsnVlanCounterClearVer13
+                   return OFBsnVlanCounterClearVer13.READER.readFrom(bb);
                default:
                    throw new OFParseError("Unknown value for discriminator subtype of class OFBsnHeaderVer13: " + subtype);
             }

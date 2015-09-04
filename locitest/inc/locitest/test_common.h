@@ -5432,6 +5432,15 @@ extern int of_bsn_virtual_port_remove_request_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_virtual_port_remove_request_OF_VERSION_1_3_check_scalars(
     of_bsn_virtual_port_remove_request_t *obj, int value);
 
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_3_populate(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_3_check(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_3_populate_scalars(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_3_check_scalars(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+
 extern int of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_populate(
     of_bsn_vlan_counter_stats_reply_t *obj, int value);
 extern int of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_check(
@@ -10498,6 +10507,15 @@ extern int of_bsn_virtual_port_remove_request_OF_VERSION_1_4_populate_scalars(
     of_bsn_virtual_port_remove_request_t *obj, int value);
 extern int of_bsn_virtual_port_remove_request_OF_VERSION_1_4_check_scalars(
     of_bsn_virtual_port_remove_request_t *obj, int value);
+
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_4_populate(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_4_check(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_4_populate_scalars(
+    of_bsn_vlan_counter_clear_t *obj, int value);
+extern int of_bsn_vlan_counter_clear_OF_VERSION_1_4_check_scalars(
+    of_bsn_vlan_counter_clear_t *obj, int value);
 
 extern int of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_populate(
     of_bsn_vlan_counter_stats_reply_t *obj, int value);

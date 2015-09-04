@@ -600,6 +600,7 @@ int of_bsn_virtual_port_create_reply_OF_VERSION_1_3_show(loci_writer_f writer, v
 int of_bsn_virtual_port_create_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_virtual_port_remove_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_virtual_port_remove_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_vlan_counter_clear_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_request_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_3_show(loci_writer_f writer, void* cookie, of_object_t *obj);
@@ -1119,6 +1120,7 @@ int of_bsn_virtual_port_create_reply_OF_VERSION_1_4_show(loci_writer_f writer, v
 int of_bsn_virtual_port_create_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_virtual_port_remove_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_virtual_port_remove_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
+int of_bsn_vlan_counter_clear_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vlan_counter_stats_request_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);
 int of_bsn_vrf_counter_stats_reply_OF_VERSION_1_4_show(loci_writer_f writer, void* cookie, of_object_t *obj);

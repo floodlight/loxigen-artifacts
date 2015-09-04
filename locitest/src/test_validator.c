@@ -2794,6 +2794,15 @@ test_validate_all(void)
     }
 
     {
+        of_bsn_vlan_counter_clear_t *obj = of_bsn_vlan_counter_clear_new(OF_VERSION_1_3);
+        of_message_t msg;
+        of_bsn_vlan_counter_clear_OF_VERSION_1_3_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_vlan_counter_clear_delete(obj);
+    }
+
+    {
         of_bsn_virtual_port_remove_request_t *obj = of_bsn_virtual_port_remove_request_new(OF_VERSION_1_3);
         of_message_t msg;
         of_bsn_virtual_port_remove_request_OF_VERSION_1_3_populate(obj, 1);
@@ -4312,6 +4321,15 @@ test_validate_all(void)
         msg = OF_OBJECT_TO_MESSAGE(obj);
         TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
         of_bsn_vlan_counter_stats_reply_delete(obj);
+    }
+
+    {
+        of_bsn_vlan_counter_clear_t *obj = of_bsn_vlan_counter_clear_new(OF_VERSION_1_4);
+        of_message_t msg;
+        of_bsn_vlan_counter_clear_OF_VERSION_1_4_populate(obj, 1);
+        msg = OF_OBJECT_TO_MESSAGE(obj);
+        TEST_ASSERT(of_validate_message(msg, of_message_length_get(msg)) == 0);
+        of_bsn_vlan_counter_clear_delete(obj);
     }
 
     {

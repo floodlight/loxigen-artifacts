@@ -22238,6 +22238,41 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_3_dup(
 }
 
 /**
+ * Duplicate an object of type of_bsn_vlan_counter_clear
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_counter_clear.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_counter_clear_t *
+of_bsn_vlan_counter_clear_OF_VERSION_1_3_dup(
+    of_bsn_vlan_counter_clear_t *src)
+{
+    of_bsn_vlan_counter_clear_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_vlan_counter_clear_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_counter_clear_xid_get(src, &val32);
+    of_bsn_vlan_counter_clear_xid_set(dst, val32);
+
+    of_bsn_vlan_counter_clear_experimenter_get(src, &val32);
+    of_bsn_vlan_counter_clear_experimenter_set(dst, val32);
+
+    of_bsn_vlan_counter_clear_subtype_get(src, &val32);
+    of_bsn_vlan_counter_clear_subtype_set(dst, val32);
+
+    of_bsn_vlan_counter_clear_vlan_vid_get(src, &val16);
+    of_bsn_vlan_counter_clear_vlan_vid_set(dst, val16);
+
+    return dst;
+}
+
+/**
  * Duplicate an object of type of_bsn_vlan_counter_stats_reply
  * using accessor functions
  * @param src Pointer to object to be duplicated
@@ -41597,6 +41632,41 @@ of_bsn_virtual_port_remove_request_OF_VERSION_1_4_dup(
 
     of_bsn_virtual_port_remove_request_vport_no_get(src, &val32);
     of_bsn_virtual_port_remove_request_vport_no_set(dst, val32);
+
+    return dst;
+}
+
+/**
+ * Duplicate an object of type of_bsn_vlan_counter_clear
+ * using accessor functions
+ * @param src Pointer to object to be duplicated
+ * @returns A new object of type of_bsn_vlan_counter_clear.
+ *
+ * The caller is responsible for deleting the returned value
+ */
+of_bsn_vlan_counter_clear_t *
+of_bsn_vlan_counter_clear_OF_VERSION_1_4_dup(
+    of_bsn_vlan_counter_clear_t *src)
+{
+    of_bsn_vlan_counter_clear_t *dst;
+    uint32_t val32;
+    uint16_t val16;
+
+    if ((dst = of_bsn_vlan_counter_clear_new(src->version)) == NULL) {
+        return NULL;
+    }
+
+    of_bsn_vlan_counter_clear_xid_get(src, &val32);
+    of_bsn_vlan_counter_clear_xid_set(dst, val32);
+
+    of_bsn_vlan_counter_clear_experimenter_get(src, &val32);
+    of_bsn_vlan_counter_clear_experimenter_set(dst, val32);
+
+    of_bsn_vlan_counter_clear_subtype_get(src, &val32);
+    of_bsn_vlan_counter_clear_subtype_set(dst, val32);
+
+    of_bsn_vlan_counter_clear_vlan_vid_get(src, &val16);
+    of_bsn_vlan_counter_clear_vlan_vid_set(dst, val16);
 
     return dst;
 }
@@ -61007,6 +61077,23 @@ of_bsn_virtual_port_remove_request_dup(
 
     if (src->version == OF_VERSION_1_4) {
         return of_bsn_virtual_port_remove_request_OF_VERSION_1_4_dup(src);
+    }
+
+    /* Class not supported in given version */
+    return NULL;
+}
+
+of_object_t *
+of_bsn_vlan_counter_clear_dup(
+    of_object_t *src)
+{
+
+    if (src->version == OF_VERSION_1_3) {
+        return of_bsn_vlan_counter_clear_OF_VERSION_1_3_dup(src);
+    }
+
+    if (src->version == OF_VERSION_1_4) {
+        return of_bsn_vlan_counter_clear_OF_VERSION_1_4_dup(src);
     }
 
     /* Class not supported in given version */
