@@ -1,1 +1,1 @@
-4776c8a61ae3bb101f06453045ee7eccef86b71e Merge into master from pull request #421: openflow_input: add message of_bsn_vlan_counter_clear (https://github.com/floodlight/loxigen/pull/421)
+3030a39d5a52f198ef997d6b1e0f41a33e48511b Merge into master from pull request #420: Added static function to generate macAddress from IPv4 Multicast address (https://github.com/floodlight/loxigen/pull/420)
