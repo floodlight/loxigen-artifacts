@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnControllerConnectionsRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnControllerConnectionsReply> {
     OFVersion getVersion();
@@ -33,7 +33,7 @@ public interface OFBsnControllerConnectionsRequest extends OFObject, OFBsnHeader
     long getSubtype();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {

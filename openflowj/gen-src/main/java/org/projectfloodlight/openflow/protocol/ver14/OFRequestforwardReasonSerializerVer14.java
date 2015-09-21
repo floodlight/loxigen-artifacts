@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFRequestforwardReason;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFRequestforwardReasonSerializerVer14 {
@@ -32,7 +32,7 @@ public class OFRequestforwardReasonSerializerVer14 {
     public final static short GROUP_MOD_VAL = (short) 0x0;
     public final static short METER_MOD_VAL = (short) 0x1;
 
-    public static OFRequestforwardReason readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFRequestforwardReason readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(U8.f(bb.readByte()));
         } catch (IllegalArgumentException e) {
@@ -40,7 +40,7 @@ public class OFRequestforwardReasonSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFRequestforwardReason e) {
+    public static void writeTo(ByteBuf bb, OFRequestforwardReason e) {
         bb.writeByte(U8.t(toWireValue(e)));
     }
 

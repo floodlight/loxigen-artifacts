@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import javax.annotation.Nonnull;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -553,7 +553,7 @@ class OFPortDescVer14 implements OFPortDesc {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             OFPort portNo = OFPort.read4Bytes(bb);
             int length = U16.f(bb.readShort());
@@ -612,14 +612,14 @@ class OFPortDescVer14 implements OFPortDesc {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortDescVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFPortDescVer14 message) {
+        public void write(ByteBuf bb, OFPortDescVer14 message) {
             int startIndex = bb.writerIndex();
             message.portNo.write4Bytes(bb);
             // length is length of variable message, will be updated at the end

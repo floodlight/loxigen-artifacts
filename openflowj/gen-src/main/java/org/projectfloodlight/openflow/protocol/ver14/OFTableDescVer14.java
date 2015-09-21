@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -200,7 +200,7 @@ class OFTableDescVer14 implements OFTableDesc {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableDesc> {
         @Override
-        public OFTableDesc readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableDesc readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length != 8)
@@ -245,14 +245,14 @@ class OFTableDescVer14 implements OFTableDesc {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableDescVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFTableDescVer14 message) {
+        public void write(ByteBuf bb, OFTableDescVer14 message) {
             // fixed value property length = 8
             bb.writeShort((short) 0x8);
             message.tableId.writeByte(bb);

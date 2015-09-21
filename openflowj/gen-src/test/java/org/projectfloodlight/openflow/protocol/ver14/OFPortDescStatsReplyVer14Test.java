@@ -32,8 +32,8 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.EnumSet;
 import com.google.common.collect.Sets;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -69,7 +69,7 @@ public class OFPortDescStatsReplyVer14Test {
                    .build())
          );;
         OFPortDescStatsReply portDescStatsReply = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         portDescStatsReply.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -98,7 +98,7 @@ public class OFPortDescStatsReplyVer14Test {
          );;
         OFPortDescStatsReply portDescStatsReplyBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFPortDescStatsReply portDescStatsReplyRead = OFPortDescStatsReplyVer14.READER.readFrom(input);
@@ -109,14 +109,14 @@ public class OFPortDescStatsReplyVer14Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(PORT_DESC_STATS_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFPortDescStatsReply portDescStatsReply = OFPortDescStatsReplyVer14.READER.readFrom(input);
        assertEquals(PORT_DESC_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        portDescStatsReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

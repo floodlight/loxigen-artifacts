@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBundleCtrlMsg extends OFObject, OFMessage, OFRequest<OFBundleCtrlMsg> {
     OFVersion getVersion();
@@ -37,7 +37,7 @@ public interface OFBundleCtrlMsg extends OFObject, OFMessage, OFRequest<OFBundle
     List<OFBundleProp> getProperties();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {

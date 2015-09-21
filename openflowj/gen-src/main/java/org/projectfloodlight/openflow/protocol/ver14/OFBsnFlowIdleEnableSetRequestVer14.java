@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -230,7 +230,7 @@ class OFBsnFlowIdleEnableSetRequestVer14 implements OFBsnFlowIdleEnableSetReques
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnFlowIdleEnableSetRequest> {
         @Override
-        public OFBsnFlowIdleEnableSetRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnFlowIdleEnableSetRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -296,14 +296,14 @@ class OFBsnFlowIdleEnableSetRequestVer14 implements OFBsnFlowIdleEnableSetReques
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnFlowIdleEnableSetRequestVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnFlowIdleEnableSetRequestVer14 message) {
+        public void write(ByteBuf bb, OFBsnFlowIdleEnableSetRequestVer14 message) {
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);
             // fixed value property type = 4

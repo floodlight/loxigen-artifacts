@@ -27,7 +27,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -414,7 +414,7 @@ class OFAsyncSetVer13 implements OFAsyncSet {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFAsyncSet> {
         @Override
-        public OFAsyncSet readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFAsyncSet readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -483,14 +483,14 @@ class OFAsyncSetVer13 implements OFAsyncSet {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFAsyncSetVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFAsyncSetVer13 message) {
+        public void write(ByteBuf bb, OFAsyncSetVer13 message) {
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);
             // fixed value property type = 28

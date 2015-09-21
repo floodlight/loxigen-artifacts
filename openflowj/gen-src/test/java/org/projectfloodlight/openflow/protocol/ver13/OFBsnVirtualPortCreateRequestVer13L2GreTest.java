@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -73,7 +73,7 @@ public class OFBsnVirtualPortCreateRequestVer13L2GreTest {
             .build()
     );;
         OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         bsnVirtualPortCreateRequest.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -110,7 +110,7 @@ public class OFBsnVirtualPortCreateRequestVer13L2GreTest {
     );;
         OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequestBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_VIRTUAL_PORT_CREATE_REQUEST_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BSN_VIRTUAL_PORT_CREATE_REQUEST_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequestRead = OFBsnVirtualPortCreateRequestVer13.READER.readFrom(input);
@@ -121,14 +121,14 @@ public class OFBsnVirtualPortCreateRequestVer13L2GreTest {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_VIRTUAL_PORT_CREATE_REQUEST_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_VIRTUAL_PORT_CREATE_REQUEST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnVirtualPortCreateRequest bsnVirtualPortCreateRequest = OFBsnVirtualPortCreateRequestVer13.READER.readFrom(input);
        assertEquals(BSN_VIRTUAL_PORT_CREATE_REQUEST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnVirtualPortCreateRequest.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

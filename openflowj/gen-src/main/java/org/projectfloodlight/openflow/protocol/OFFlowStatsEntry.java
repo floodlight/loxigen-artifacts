@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFFlowStatsEntry extends OFObject {
     TableId getTableId();
@@ -45,7 +45,7 @@ public interface OFFlowStatsEntry extends OFObject {
     OFVersion getVersion();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder  {

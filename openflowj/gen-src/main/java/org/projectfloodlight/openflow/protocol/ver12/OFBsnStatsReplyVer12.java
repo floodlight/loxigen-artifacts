@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 abstract class OFBsnStatsReplyVer12 {
     // version: 1.2
@@ -35,7 +35,7 @@ abstract class OFBsnStatsReplyVer12 {
 
     static class Reader implements OFMessageReader<OFBsnStatsReply> {
         @Override
-        public OFBsnStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnStatsReply readFrom(ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();

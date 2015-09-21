@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -229,7 +229,7 @@ class OFOxmIpv6NdTargetVer13 implements OFOxmIpv6NdTarget {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmIpv6NdTarget> {
         @Override
-        public OFOxmIpv6NdTarget readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmIpv6NdTarget readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x80003e10L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003e10)
@@ -261,14 +261,14 @@ class OFOxmIpv6NdTargetVer13 implements OFOxmIpv6NdTarget {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmIpv6NdTargetVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmIpv6NdTargetVer13 message) {
+        public void write(ByteBuf bb, OFOxmIpv6NdTargetVer13 message) {
             // fixed value property typeLen = 0x80003e10L
             bb.writeInt((int) 0x80003e10);
             message.value.write16Bytes(bb);

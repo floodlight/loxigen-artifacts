@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -76,7 +76,7 @@ public class OFGroupModifyVer13Test {
       )
       .build();;
         OFGroupModify groupModify = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         groupModify.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -116,7 +116,7 @@ public class OFGroupModifyVer13Test {
       .build();;
         OFGroupModify groupModifyBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(GROUP_MODIFY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(GROUP_MODIFY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFGroupModify groupModifyRead = OFGroupModifyVer13.READER.readFrom(input);
@@ -127,14 +127,14 @@ public class OFGroupModifyVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(GROUP_MODIFY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(GROUP_MODIFY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFGroupModify groupModify = OFGroupModifyVer13.READER.readFrom(input);
        assertEquals(GROUP_MODIFY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        groupModify.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

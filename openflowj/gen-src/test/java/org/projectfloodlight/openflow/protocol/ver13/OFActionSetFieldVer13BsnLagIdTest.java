@@ -27,8 +27,8 @@ import static org.junit.Assert.*;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -50,7 +50,7 @@ public class OFActionSetFieldVer13BsnLagIdTest {
         OFOxms oxms = OFFactories.getFactory(OFVersion.OF_13).oxms();
 builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
         OFActionSetField actionSetField = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         actionSetField.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -65,7 +65,7 @@ builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
 builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
         OFActionSetField actionSetFieldBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFActionSetField actionSetFieldRead = OFActionSetFieldVer13.READER.readFrom(input);
@@ -76,14 +76,14 @@ builder.setField(oxms.bsnLagId(LagId.of(0x12345678)));
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(ACTION_SET_FIELD_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFActionSetField actionSetField = OFActionSetFieldVer13.READER.readFrom(input);
        assertEquals(ACTION_SET_FIELD_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        actionSetField.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

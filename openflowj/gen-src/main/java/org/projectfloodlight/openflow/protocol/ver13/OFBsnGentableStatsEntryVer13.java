@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -233,7 +233,7 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableStatsEntry> {
         @Override
-        public OFBsnGentableStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnGentableStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             GenTableId tableId = GenTableId.read2Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
@@ -268,14 +268,14 @@ class OFBsnGentableStatsEntryVer13 implements OFBsnGentableStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableStatsEntryVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGentableStatsEntryVer13 message) {
+        public void write(ByteBuf bb, OFBsnGentableStatsEntryVer13 message) {
             message.tableId.write2Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);

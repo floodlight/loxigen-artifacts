@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFFlowModCommand;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFFlowModCommandSerializerVer10 {
@@ -35,7 +35,7 @@ public class OFFlowModCommandSerializerVer10 {
     public final static short DELETE_VAL = (short) 0x3;
     public final static short DELETE_STRICT_VAL = (short) 0x4;
 
-    public static OFFlowModCommand readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFFlowModCommand readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -43,7 +43,7 @@ public class OFFlowModCommandSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFFlowModCommand e) {
+    public static void writeTo(ByteBuf bb, OFFlowModCommand e) {
         bb.writeShort(toWireValue(e));
     }
 

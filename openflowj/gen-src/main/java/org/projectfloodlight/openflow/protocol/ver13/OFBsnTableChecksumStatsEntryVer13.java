@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -199,7 +199,7 @@ class OFBsnTableChecksumStatsEntryVer13 implements OFBsnTableChecksumStatsEntry 
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTableChecksumStatsEntry> {
         @Override
-        public OFBsnTableChecksumStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTableChecksumStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             TableId tableId = TableId.readByte(bb);
             U64 checksum = U64.ofRaw(bb.readLong());
 
@@ -228,14 +228,14 @@ class OFBsnTableChecksumStatsEntryVer13 implements OFBsnTableChecksumStatsEntry 
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTableChecksumStatsEntryVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTableChecksumStatsEntryVer13 message) {
+        public void write(ByteBuf bb, OFBsnTableChecksumStatsEntryVer13 message) {
             message.tableId.writeByte(bb);
             bb.writeLong(message.checksum.getValue());
 

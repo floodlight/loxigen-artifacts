@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -72,7 +72,7 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
         )
     );
         OFBsnGentableEntryDescStatsReply bsnGentableEntryDescStatsReply = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         bsnGentableEntryDescStatsReply.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -108,7 +108,7 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
     );
         OFBsnGentableEntryDescStatsReply bsnGentableEntryDescStatsReplyBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_ENTRY_DESC_STATS_REPLY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DESC_STATS_REPLY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnGentableEntryDescStatsReply bsnGentableEntryDescStatsReplyRead = OFBsnGentableEntryDescStatsReplyVer13.READER.readFrom(input);
@@ -119,14 +119,14 @@ public class OFBsnGentableEntryDescStatsReplyVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_ENTRY_DESC_STATS_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DESC_STATS_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnGentableEntryDescStatsReply bsnGentableEntryDescStatsReply = OFBsnGentableEntryDescStatsReplyVer13.READER.readFrom(input);
        assertEquals(BSN_GENTABLE_ENTRY_DESC_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnGentableEntryDescStatsReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

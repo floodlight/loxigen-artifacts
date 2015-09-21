@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -48,7 +48,7 @@ public class OFActionOutputVer13Test {
         OFActionOutput.Builder builder = factory.buildOutput();
         builder.setPort(OFPort.of(50)).setMaxLen(65535);
         OFActionOutput actionOutput = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         actionOutput.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -62,7 +62,7 @@ public class OFActionOutputVer13Test {
         builder.setPort(OFPort.of(50)).setMaxLen(65535);
         OFActionOutput actionOutputBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(ACTION_OUTPUT_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(ACTION_OUTPUT_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFActionOutput actionOutputRead = OFActionOutputVer13.READER.readFrom(input);
@@ -73,14 +73,14 @@ public class OFActionOutputVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(ACTION_OUTPUT_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(ACTION_OUTPUT_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFActionOutput actionOutput = OFActionOutputVer13.READER.readFrom(input);
        assertEquals(ACTION_OUTPUT_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        actionOutput.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

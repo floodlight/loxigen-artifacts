@@ -27,8 +27,8 @@ import static org.junit.Assert.*;
 import java.util.Set;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -48,14 +48,14 @@ public class OFActionBsnSetTunnelDstVer10Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(ACTION_BSN_SET_TUNNEL_DST_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(ACTION_BSN_SET_TUNNEL_DST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFActionBsnSetTunnelDst actionBsnSetTunnelDst = OFActionBsnSetTunnelDstVer10.READER.readFrom(input);
        assertEquals(ACTION_BSN_SET_TUNNEL_DST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        actionBsnSetTunnelDst.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

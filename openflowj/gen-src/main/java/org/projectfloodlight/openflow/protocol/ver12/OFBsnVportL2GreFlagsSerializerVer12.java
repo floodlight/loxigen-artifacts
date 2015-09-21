@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnVportL2GreFlags;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -39,7 +39,7 @@ public class OFBsnVportL2GreFlagsSerializerVer12 {
     public final static int BSN_VPORT_L2GRE_LOOPBACK_IS_VALID_VAL = 0x8;
     public final static int BSN_VPORT_L2GRE_RATE_LIMIT_IS_VALID_VAL = 0x10;
 
-    public static Set<OFBsnVportL2GreFlags> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFBsnVportL2GreFlags> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -47,7 +47,7 @@ public class OFBsnVportL2GreFlagsSerializerVer12 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFBsnVportL2GreFlags> set) {
+    public static void writeTo(ByteBuf bb, Set<OFBsnVportL2GreFlags> set) {
         bb.writeInt(toWireValue(set));
     }
 

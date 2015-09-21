@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -70,7 +70,7 @@ class OFActionIdPopVlanVer13 implements OFActionIdPopVlan {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionIdPopVlan> {
         @Override
-        public OFActionIdPopVlan readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionIdPopVlan readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 18
             short type = bb.readShort();
@@ -110,14 +110,14 @@ class OFActionIdPopVlanVer13 implements OFActionIdPopVlan {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionIdPopVlanVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFActionIdPopVlanVer13 message) {
+        public void write(ByteBuf bb, OFActionIdPopVlanVer13 message) {
             // fixed value property type = 18
             bb.writeShort((short) 0x12);
             // fixed value property length = 4

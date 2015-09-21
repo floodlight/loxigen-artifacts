@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -280,7 +280,7 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableEntryDelete> {
         @Override
-        public OFBsnGentableEntryDelete readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnGentableEntryDelete readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -348,14 +348,14 @@ class OFBsnGentableEntryDeleteVer14 implements OFBsnGentableEntryDelete {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableEntryDeleteVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGentableEntryDeleteVer14 message) {
+        public void write(ByteBuf bb, OFBsnGentableEntryDeleteVer14 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);

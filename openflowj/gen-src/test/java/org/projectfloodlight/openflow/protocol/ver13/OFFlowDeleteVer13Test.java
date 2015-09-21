@@ -30,8 +30,8 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -78,7 +78,7 @@ public class OFFlowDeleteVer13Test {
         )
     );;
         OFFlowDelete flowDelete = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         flowDelete.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -118,7 +118,7 @@ public class OFFlowDeleteVer13Test {
     );;
         OFFlowDelete flowDeleteBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(FLOW_DELETE_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(FLOW_DELETE_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFFlowDelete flowDeleteRead = OFFlowDeleteVer13.READER.readFrom(input);
@@ -129,14 +129,14 @@ public class OFFlowDeleteVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(FLOW_DELETE_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(FLOW_DELETE_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFFlowDelete flowDelete = OFFlowDeleteVer13.READER.readFrom(input);
        assertEquals(FLOW_DELETE_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        flowDelete.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -276,7 +276,7 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnShellCommand> {
         @Override
-        public OFBsnShellCommand readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnShellCommand readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -344,14 +344,14 @@ class OFBsnShellCommandVer10 implements OFBsnShellCommand {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnShellCommandVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnShellCommandVer10 message) {
+        public void write(ByteBuf bb, OFBsnShellCommandVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);

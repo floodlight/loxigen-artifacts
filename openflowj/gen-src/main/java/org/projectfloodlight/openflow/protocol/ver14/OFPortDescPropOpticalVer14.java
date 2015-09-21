@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -466,7 +466,7 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortDescPropOptical> {
         @Override
-        public OFPortDescPropOptical readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFPortDescPropOptical readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -538,14 +538,14 @@ class OFPortDescPropOpticalVer14 implements OFPortDescPropOptical {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortDescPropOpticalVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFPortDescPropOpticalVer14 message) {
+        public void write(ByteBuf bb, OFPortDescPropOpticalVer14 message) {
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);
             // fixed value property length = 44

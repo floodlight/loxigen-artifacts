@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFControllerRoleReason;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFControllerRoleReasonSerializerVer14 {
@@ -33,7 +33,7 @@ public class OFControllerRoleReasonSerializerVer14 {
     public final static byte CONFIG_VAL = (byte) 0x1;
     public final static byte EXPERIMENTER_VAL = (byte) 0x2;
 
-    public static OFControllerRoleReason readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFControllerRoleReason readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -41,7 +41,7 @@ public class OFControllerRoleReasonSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFControllerRoleReason e) {
+    public static void writeTo(ByteBuf bb, OFControllerRoleReason e) {
         bb.writeByte(toWireValue(e));
     }
 

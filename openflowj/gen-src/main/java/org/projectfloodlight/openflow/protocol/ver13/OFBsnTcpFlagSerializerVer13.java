@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnTcpFlag;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -43,7 +43,7 @@ public class OFBsnTcpFlagSerializerVer13 {
     public final static short BSN_TCP_FLAG_CWR_VAL = (short) 0x80;
     public final static short BSN_TCP_FLAG_NS_VAL = (short) 0x100;
 
-    public static Set<OFBsnTcpFlag> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFBsnTcpFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -51,7 +51,7 @@ public class OFBsnTcpFlagSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFBsnTcpFlag> set) {
+    public static void writeTo(ByteBuf bb, Set<OFBsnTcpFlag> set) {
         bb.writeShort(toWireValue(set));
     }
 

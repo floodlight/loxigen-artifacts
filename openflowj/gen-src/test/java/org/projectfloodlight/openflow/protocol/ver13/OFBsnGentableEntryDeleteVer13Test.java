@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -57,7 +57,7 @@ public class OFBsnGentableEntryDeleteVer13Test {
         )
     );
         OFBsnGentableEntryDelete bsnGentableEntryDelete = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         bsnGentableEntryDelete.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -78,7 +78,7 @@ public class OFBsnGentableEntryDeleteVer13Test {
     );
         OFBsnGentableEntryDelete bsnGentableEntryDeleteBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnGentableEntryDelete bsnGentableEntryDeleteRead = OFBsnGentableEntryDeleteVer13.READER.readFrom(input);
@@ -89,14 +89,14 @@ public class OFBsnGentableEntryDeleteVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnGentableEntryDelete bsnGentableEntryDelete = OFBsnGentableEntryDeleteVer13.READER.readFrom(input);
        assertEquals(BSN_GENTABLE_ENTRY_DELETE_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnGentableEntryDelete.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

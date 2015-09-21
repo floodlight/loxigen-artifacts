@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public final class OFFactories {
 
@@ -47,8 +47,8 @@ public final class OFFactories {
     }
 
     private static class GenericReader implements OFMessageReader<OFMessage> {
-        public OFMessage readFrom(ChannelBuffer bb) throws OFParseError {
-            if(!bb.readable())
+        public OFMessage readFrom(ByteBuf bb) throws OFParseError {
+            if(!bb.isReadable())
                 return null;
             short wireVersion = U8.f(bb.getByte(bb.readerIndex()));
             OFFactory factory;

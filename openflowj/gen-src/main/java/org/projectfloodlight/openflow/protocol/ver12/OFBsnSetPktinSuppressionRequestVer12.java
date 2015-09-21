@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -389,7 +389,7 @@ class OFBsnSetPktinSuppressionRequestVer12 implements OFBsnSetPktinSuppressionRe
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnSetPktinSuppressionRequest> {
         @Override
-        public OFBsnSetPktinSuppressionRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnSetPktinSuppressionRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -470,14 +470,14 @@ class OFBsnSetPktinSuppressionRequestVer12 implements OFBsnSetPktinSuppressionRe
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnSetPktinSuppressionRequestVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnSetPktinSuppressionRequestVer12 message) {
+        public void write(ByteBuf bb, OFBsnSetPktinSuppressionRequestVer12 message) {
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);
             // fixed value property type = 4

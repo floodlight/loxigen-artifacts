@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnLoglevel;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnLoglevelSerializerVer13 {
@@ -36,7 +36,7 @@ public class OFBsnLoglevelSerializerVer13 {
     public final static byte BSN_LOGLEVEL_VERBOSE_VAL = (byte) 0x4;
     public final static byte BSN_LOGLEVEL_TRACE_VAL = (byte) 0x5;
 
-    public static OFBsnLoglevel readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnLoglevel readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -44,7 +44,7 @@ public class OFBsnLoglevelSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnLoglevel e) {
+    public static void writeTo(ByteBuf bb, OFBsnLoglevel e) {
         bb.writeByte(toWireValue(e));
     }
 

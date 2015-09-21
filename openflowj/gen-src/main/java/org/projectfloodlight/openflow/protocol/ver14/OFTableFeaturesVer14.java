@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -412,7 +412,7 @@ class OFTableFeaturesVer14 implements OFTableFeatures {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableFeatures> {
         @Override
-        public OFTableFeatures readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableFeatures readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -471,14 +471,14 @@ class OFTableFeaturesVer14 implements OFTableFeatures {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableFeaturesVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFTableFeaturesVer14 message) {
+        public void write(ByteBuf bb, OFTableFeaturesVer14 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

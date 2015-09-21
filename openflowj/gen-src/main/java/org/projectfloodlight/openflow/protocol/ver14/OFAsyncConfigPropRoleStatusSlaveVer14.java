@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +162,7 @@ class OFAsyncConfigPropRoleStatusSlaveVer14 implements OFAsyncConfigPropRoleStat
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFAsyncConfigPropRoleStatusSlave> {
         @Override
-        public OFAsyncConfigPropRoleStatusSlave readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFAsyncConfigPropRoleStatusSlave readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x6
             short type = bb.readShort();
@@ -207,14 +207,14 @@ class OFAsyncConfigPropRoleStatusSlaveVer14 implements OFAsyncConfigPropRoleStat
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFAsyncConfigPropRoleStatusSlaveVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFAsyncConfigPropRoleStatusSlaveVer14 message) {
+        public void write(ByteBuf bb, OFAsyncConfigPropRoleStatusSlaveVer14 message) {
             // fixed value property type = 0x6
             bb.writeShort((short) 0x6);
             // fixed value property length = 8

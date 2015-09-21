@@ -24,14 +24,14 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFHelloElemType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFHelloElemTypeSerializerVer13 {
 
     public final static short VERSIONBITMAP_VAL = (short) 0x1;
 
-    public static OFHelloElemType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFHelloElemType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -39,7 +39,7 @@ public class OFHelloElemTypeSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFHelloElemType e) {
+    public static void writeTo(ByteBuf bb, OFHelloElemType e) {
         bb.writeShort(toWireValue(e));
     }
 

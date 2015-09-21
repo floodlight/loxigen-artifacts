@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFExperimenterStatsRequest<T extends OFExperimenterStatsReply> extends OFObject, OFStatsRequest<T> {
     OFVersion getVersion();
@@ -35,7 +35,7 @@ public interface OFExperimenterStatsRequest<T extends OFExperimenterStatsReply> 
     long getExperimenter();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder<T> createBuilder();
     public interface Builder<T extends OFExperimenterStatsReply> extends OFStatsRequest.Builder<T> {

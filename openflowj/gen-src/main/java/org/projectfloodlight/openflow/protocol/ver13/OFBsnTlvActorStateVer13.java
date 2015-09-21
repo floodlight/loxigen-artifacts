@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -170,7 +170,7 @@ class OFBsnTlvActorStateVer13 implements OFBsnTlvActorState {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvActorState> {
         @Override
-        public OFBsnTlvActorState readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvActorState readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x35
             short type = bb.readShort();
@@ -215,14 +215,14 @@ class OFBsnTlvActorStateVer13 implements OFBsnTlvActorState {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvActorStateVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvActorStateVer13 message) {
+        public void write(ByteBuf bb, OFBsnTlvActorStateVer13 message) {
             // fixed value property type = 0x35
             bb.writeShort((short) 0x35);
             // fixed value property length = 5

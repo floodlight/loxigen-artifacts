@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableEntryStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnGentableEntryStatsReply>, OFRequest<OFBsnGentableEntryStatsReply> {
     OFVersion getVersion();
@@ -39,7 +39,7 @@ public interface OFBsnGentableEntryStatsRequest extends OFObject, OFBsnStatsRequ
     U128 getChecksumMask();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnStatsRequest.Builder<OFBsnGentableEntryStatsReply> {

@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnPktinFlag;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -48,7 +48,7 @@ public class OFBsnPktinFlagSerializerVer13 {
     public final static long BSN_PKTIN_FLAG_ARP_CACHE_VAL = 0x1000L;
     public final static long BSN_PKTIN_FLAG_ARP_TARGET_VAL = 0x2000L;
 
-    public static Set<OFBsnPktinFlag> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFBsnPktinFlag> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readLong());
         } catch (IllegalArgumentException e) {
@@ -56,7 +56,7 @@ public class OFBsnPktinFlagSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFBsnPktinFlag> set) {
+    public static void writeTo(ByteBuf bb, Set<OFBsnPktinFlag> set) {
         bb.writeLong(toWireValue(set));
     }
 

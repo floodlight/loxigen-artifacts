@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFPortState;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -37,7 +37,7 @@ public class OFPortStateSerializerVer12 {
     public final static int BLOCKED_VAL = 0x2;
     public final static int LIVE_VAL = 0x4;
 
-    public static Set<OFPortState> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFPortState> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -45,7 +45,7 @@ public class OFPortStateSerializerVer12 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFPortState> set) {
+    public static void writeTo(ByteBuf bb, Set<OFPortState> set) {
         bb.writeInt(toWireValue(set));
     }
 

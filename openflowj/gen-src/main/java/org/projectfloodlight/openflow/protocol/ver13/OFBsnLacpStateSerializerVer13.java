@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnLacpState;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -42,7 +42,7 @@ public class OFBsnLacpStateSerializerVer13 {
     public final static byte BSN_LACP_STATE_DEFAULTED_VAL = (byte) 0x40;
     public final static byte BSN_LACP_STATE_EXPIRED_VAL = (byte) 0x80;
 
-    public static Set<OFBsnLacpState> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFBsnLacpState> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -50,7 +50,7 @@ public class OFBsnLacpStateSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFBsnLacpState> set) {
+    public static void writeTo(ByteBuf bb, Set<OFBsnLacpState> set) {
         bb.writeByte(toWireValue(set));
     }
 

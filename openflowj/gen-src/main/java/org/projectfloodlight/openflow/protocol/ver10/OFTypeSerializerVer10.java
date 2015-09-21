@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFTypeSerializerVer10 {
@@ -52,7 +52,7 @@ public class OFTypeSerializerVer10 {
     public final static byte QUEUE_GET_CONFIG_REQUEST_VAL = (byte) 0x14;
     public final static byte QUEUE_GET_CONFIG_REPLY_VAL = (byte) 0x15;
 
-    public static OFType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -60,7 +60,7 @@ public class OFTypeSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFType e) {
+    public static void writeTo(ByteBuf bb, OFType e) {
         bb.writeByte(toWireValue(e));
     }
 

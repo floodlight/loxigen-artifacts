@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnVlanCounter;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnVlanCounterSerializerVer13 {
@@ -34,7 +34,7 @@ public class OFBsnVlanCounterSerializerVer13 {
     public final static byte BSN_VLAN_COUNTER_TX_BYTES_VAL = (byte) 0x2;
     public final static byte BSN_VLAN_COUNTER_TX_PACKETS_VAL = (byte) 0x3;
 
-    public static OFBsnVlanCounter readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnVlanCounter readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -42,7 +42,7 @@ public class OFBsnVlanCounterSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnVlanCounter e) {
+    public static void writeTo(ByteBuf bb, OFBsnVlanCounter e) {
         bb.writeByte(toWireValue(e));
     }
 

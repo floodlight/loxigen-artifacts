@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -154,7 +154,7 @@ class OFUint64Ver13 implements OFUint64 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFUint64> {
         @Override
-        public OFUint64 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFUint64 readFrom(ByteBuf bb) throws OFParseError {
             U64 value = U64.ofRaw(bb.readLong());
 
             OFUint64Ver13 uint64Ver13 = new OFUint64Ver13(
@@ -180,14 +180,14 @@ class OFUint64Ver13 implements OFUint64 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFUint64Ver13> {
         @Override
-        public void write(ChannelBuffer bb, OFUint64Ver13 message) {
+        public void write(ByteBuf bb, OFUint64Ver13 message) {
             bb.writeLong(message.value.getValue());
 
 

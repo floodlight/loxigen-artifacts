@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -285,7 +285,7 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnControllerConnection> {
         @Override
-        public OFBsnControllerConnection readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnControllerConnection readFrom(ByteBuf bb) throws OFParseError {
             OFBsnControllerConnectionState state = OFBsnControllerConnectionStateSerializerVer13.readFrom(bb);
             OFAuxId auxiliaryId = OFAuxId.readByte(bb);
             // pad: 2 bytes
@@ -323,14 +323,14 @@ class OFBsnControllerConnectionVer13 implements OFBsnControllerConnection {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnControllerConnectionVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnControllerConnectionVer13 message) {
+        public void write(ByteBuf bb, OFBsnControllerConnectionVer13 message) {
             OFBsnControllerConnectionStateSerializerVer13.writeTo(bb, message.state);
             message.auxiliaryId.writeByte(bb);
             // pad: 2 bytes

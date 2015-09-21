@@ -29,7 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import javax.annotation.Nonnull;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -613,7 +613,7 @@ class OFPortDescVer10 implements OFPortDesc {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortDesc> {
         @Override
-        public OFPortDesc readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFPortDesc readFrom(ByteBuf bb) throws OFParseError {
             OFPort portNo = OFPort.read2Bytes(bb);
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
             String name = ChannelUtils.readFixedLengthString(bb, 16);
@@ -663,14 +663,14 @@ class OFPortDescVer10 implements OFPortDesc {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortDescVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFPortDescVer10 message) {
+        public void write(ByteBuf bb, OFPortDescVer10 message) {
             message.portNo.write2Bytes(bb);
             message.hwAddr.write6Bytes(bb);
             ChannelUtils.writeFixedLengthString(bb, message.name, 16);

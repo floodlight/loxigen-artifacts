@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +162,7 @@ class OFAsyncConfigPropRequestforwardMasterVer14 implements OFAsyncConfigPropReq
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFAsyncConfigPropRequestforwardMaster> {
         @Override
-        public OFAsyncConfigPropRequestforwardMaster readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFAsyncConfigPropRequestforwardMaster readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0xb
             short type = bb.readShort();
@@ -207,14 +207,14 @@ class OFAsyncConfigPropRequestforwardMasterVer14 implements OFAsyncConfigPropReq
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFAsyncConfigPropRequestforwardMasterVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFAsyncConfigPropRequestforwardMasterVer14 message) {
+        public void write(ByteBuf bb, OFAsyncConfigPropRequestforwardMasterVer14 message) {
             // fixed value property type = 0xb
             bb.writeShort((short) 0xb);
             // fixed value property length = 8

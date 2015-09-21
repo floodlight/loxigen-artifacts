@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -586,7 +586,7 @@ class OFBsnLacpStatsEntryVer14 implements OFBsnLacpStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnLacpStatsEntry> {
         @Override
-        public OFBsnLacpStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnLacpStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             OFPort portNo = OFPort.read4Bytes(bb);
             int actorSysPriority = U16.f(bb.readShort());
             MacAddress actorSysMac = MacAddress.read6Bytes(bb);
@@ -651,14 +651,14 @@ class OFBsnLacpStatsEntryVer14 implements OFBsnLacpStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnLacpStatsEntryVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnLacpStatsEntryVer14 message) {
+        public void write(ByteBuf bb, OFBsnLacpStatsEntryVer14 message) {
             message.portNo.write4Bytes(bb);
             bb.writeShort(U16.t(message.actorSysPriority));
             message.actorSysMac.write6Bytes(bb);

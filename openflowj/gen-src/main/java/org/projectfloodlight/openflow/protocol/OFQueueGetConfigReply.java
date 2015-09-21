@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFQueueGetConfigReply extends OFObject, OFMessage {
     OFVersion getVersion();
@@ -34,7 +34,7 @@ public interface OFQueueGetConfigReply extends OFObject, OFMessage {
     List<OFPacketQueue> getQueues();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFMessage.Builder {

@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnSetPktinSuppressionRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnSetPktinSuppressionReply> {
     OFVersion getVersion();
@@ -39,7 +39,7 @@ public interface OFBsnSetPktinSuppressionRequest extends OFObject, OFBsnHeader, 
     U64 getCookie();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {

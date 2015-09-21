@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnUdfAnchor;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnUdfAnchorSerializerVer14 {
@@ -33,7 +33,7 @@ public class OFBsnUdfAnchorSerializerVer14 {
     public final static short BSN_UDF_ANCHOR_L3_HEADER_START_VAL = (short) 0x1;
     public final static short BSN_UDF_ANCHOR_L4_HEADER_START_VAL = (short) 0x2;
 
-    public static OFBsnUdfAnchor readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnUdfAnchor readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -41,7 +41,7 @@ public class OFBsnUdfAnchorSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnUdfAnchor e) {
+    public static void writeTo(ByteBuf bb, OFBsnUdfAnchor e) {
         bb.writeShort(toWireValue(e));
     }
 

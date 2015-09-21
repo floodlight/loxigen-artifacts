@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +162,7 @@ class OFBsnTlvActorSystemPriorityVer13 implements OFBsnTlvActorSystemPriority {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvActorSystemPriority> {
         @Override
-        public OFBsnTlvActorSystemPriority readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvActorSystemPriority readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x28
             short type = bb.readShort();
@@ -207,14 +207,14 @@ class OFBsnTlvActorSystemPriorityVer13 implements OFBsnTlvActorSystemPriority {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvActorSystemPriorityVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvActorSystemPriorityVer13 message) {
+        public void write(ByteBuf bb, OFBsnTlvActorSystemPriorityVer13 message) {
             // fixed value property type = 0x28
             bb.writeShort((short) 0x28);
             // fixed value property length = 6

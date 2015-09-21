@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBundleCtrlType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBundleCtrlTypeSerializerVer14 {
@@ -38,7 +38,7 @@ public class OFBundleCtrlTypeSerializerVer14 {
     public final static short DISCARD_REQUEST_VAL = (short) 0x6;
     public final static short DISCARD_REPLY_VAL = (short) 0x7;
 
-    public static OFBundleCtrlType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBundleCtrlType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -46,7 +46,7 @@ public class OFBundleCtrlTypeSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBundleCtrlType e) {
+    public static void writeTo(ByteBuf bb, OFBundleCtrlType e) {
         bb.writeShort(toWireValue(e));
     }
 

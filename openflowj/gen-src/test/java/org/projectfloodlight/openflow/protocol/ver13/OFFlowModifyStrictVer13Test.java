@@ -30,8 +30,8 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -78,7 +78,7 @@ public class OFFlowModifyStrictVer13Test {
         )
     );;
         OFFlowModifyStrict flowModifyStrict = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         flowModifyStrict.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -118,7 +118,7 @@ public class OFFlowModifyStrictVer13Test {
     );;
         OFFlowModifyStrict flowModifyStrictBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(FLOW_MODIFY_STRICT_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(FLOW_MODIFY_STRICT_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFFlowModifyStrict flowModifyStrictRead = OFFlowModifyStrictVer13.READER.readFrom(input);
@@ -129,14 +129,14 @@ public class OFFlowModifyStrictVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(FLOW_MODIFY_STRICT_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(FLOW_MODIFY_STRICT_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFFlowModifyStrict flowModifyStrict = OFFlowModifyStrictVer13.READER.readFrom(input);
        assertEquals(FLOW_MODIFY_STRICT_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        flowModifyStrict.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

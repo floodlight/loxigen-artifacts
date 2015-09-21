@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -64,7 +64,7 @@ public class OFBsnGentableEntryAddVer13Test {
         )
     );
         OFBsnGentableEntryAdd bsnGentableEntryAdd = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         bsnGentableEntryAdd.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -92,7 +92,7 @@ public class OFBsnGentableEntryAddVer13Test {
     );
         OFBsnGentableEntryAdd bsnGentableEntryAddBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_ENTRY_ADD_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_ADD_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnGentableEntryAdd bsnGentableEntryAddRead = OFBsnGentableEntryAddVer13.READER.readFrom(input);
@@ -103,14 +103,14 @@ public class OFBsnGentableEntryAddVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_ENTRY_ADD_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_ENTRY_ADD_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnGentableEntryAdd bsnGentableEntryAdd = OFBsnGentableEntryAddVer13.READER.readFrom(input);
        assertEquals(BSN_GENTABLE_ENTRY_ADD_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnGentableEntryAdd.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

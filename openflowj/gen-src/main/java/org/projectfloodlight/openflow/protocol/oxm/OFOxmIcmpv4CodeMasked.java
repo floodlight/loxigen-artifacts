@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFOxmIcmpv4CodeMasked extends OFObject, OFOxm<ICMPv4Code> {
     long getTypeLen();
@@ -35,7 +35,7 @@ public interface OFOxmIcmpv4CodeMasked extends OFObject, OFOxm<ICMPv4Code> {
     OFVersion getVersion();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFOxm.Builder<ICMPv4Code> {

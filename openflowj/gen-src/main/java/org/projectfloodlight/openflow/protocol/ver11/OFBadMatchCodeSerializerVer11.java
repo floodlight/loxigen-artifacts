@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBadMatchCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBadMatchCodeSerializerVer11 {
@@ -38,7 +38,7 @@ public class OFBadMatchCodeSerializerVer11 {
     public final static short BAD_FIELD_VAL = (short) 0x6;
     public final static short BAD_VALUE_VAL = (short) 0x7;
 
-    public static OFBadMatchCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBadMatchCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -46,7 +46,7 @@ public class OFBadMatchCodeSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBadMatchCode e) {
+    public static void writeTo(ByteBuf bb, OFBadMatchCode e) {
         bb.writeShort(toWireValue(e));
     }
 

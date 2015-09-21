@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -244,7 +244,7 @@ class OFBsnDebugCounterDescStatsEntryVer14 implements OFBsnDebugCounterDescStats
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnDebugCounterDescStatsEntry> {
         @Override
-        public OFBsnDebugCounterDescStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnDebugCounterDescStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             U64 counterId = U64.ofRaw(bb.readLong());
             String name = ChannelUtils.readFixedLengthString(bb, 64);
             String description = ChannelUtils.readFixedLengthString(bb, 256);
@@ -276,14 +276,14 @@ class OFBsnDebugCounterDescStatsEntryVer14 implements OFBsnDebugCounterDescStats
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnDebugCounterDescStatsEntryVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnDebugCounterDescStatsEntryVer14 message) {
+        public void write(ByteBuf bb, OFBsnDebugCounterDescStatsEntryVer14 message) {
             bb.writeLong(message.counterId.getValue());
             ChannelUtils.writeFixedLengthString(bb, message.name, 64);
             ChannelUtils.writeFixedLengthString(bb, message.description, 256);

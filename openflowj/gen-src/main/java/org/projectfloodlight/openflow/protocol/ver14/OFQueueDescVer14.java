@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -232,7 +232,7 @@ class OFQueueDescVer14 implements OFQueueDesc {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFQueueDesc> {
         @Override
-        public OFQueueDesc readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFQueueDesc readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             long portNo = U32.f(bb.readInt());
             long queueId = U32.f(bb.readInt());
@@ -279,14 +279,14 @@ class OFQueueDescVer14 implements OFQueueDesc {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFQueueDescVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFQueueDescVer14 message) {
+        public void write(ByteBuf bb, OFQueueDescVer14 message) {
             int startIndex = bb.writerIndex();
             bb.writeInt(U32.t(message.portNo));
             bb.writeInt(U32.t(message.queueId));

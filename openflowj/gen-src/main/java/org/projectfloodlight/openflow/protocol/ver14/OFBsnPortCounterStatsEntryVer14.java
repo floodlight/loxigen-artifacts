@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -201,7 +201,7 @@ class OFBsnPortCounterStatsEntryVer14 implements OFBsnPortCounterStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnPortCounterStatsEntry> {
         @Override
-        public OFBsnPortCounterStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnPortCounterStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -245,14 +245,14 @@ class OFBsnPortCounterStatsEntryVer14 implements OFBsnPortCounterStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnPortCounterStatsEntryVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnPortCounterStatsEntryVer14 message) {
+        public void write(ByteBuf bb, OFBsnPortCounterStatsEntryVer14 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -233,7 +233,7 @@ class OFBsnVirtualPortCreateRequestVer14 implements OFBsnVirtualPortCreateReques
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnVirtualPortCreateRequest> {
         @Override
-        public OFBsnVirtualPortCreateRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnVirtualPortCreateRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -298,14 +298,14 @@ class OFBsnVirtualPortCreateRequestVer14 implements OFBsnVirtualPortCreateReques
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnVirtualPortCreateRequestVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnVirtualPortCreateRequestVer14 message) {
+        public void write(ByteBuf bb, OFBsnVirtualPortCreateRequestVer14 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);

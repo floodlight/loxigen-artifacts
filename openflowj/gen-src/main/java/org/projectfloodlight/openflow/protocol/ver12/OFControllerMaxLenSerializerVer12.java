@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFControllerMaxLen;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFControllerMaxLenSerializerVer12 {
@@ -32,7 +32,7 @@ public class OFControllerMaxLenSerializerVer12 {
     public final static short MAX_VAL = (short) 0xffe5;
     public final static short NO_BUFFER_VAL = (short) 0xffff;
 
-    public static OFControllerMaxLen readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFControllerMaxLen readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -40,7 +40,7 @@ public class OFControllerMaxLenSerializerVer12 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFControllerMaxLen e) {
+    public static void writeTo(ByteBuf bb, OFControllerMaxLen e) {
         bb.writeShort(toWireValue(e));
     }
 

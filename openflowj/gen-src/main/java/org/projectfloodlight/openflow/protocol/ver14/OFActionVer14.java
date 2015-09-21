@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import java.util.Set;
 
 abstract class OFActionVer14 {
@@ -36,7 +36,7 @@ abstract class OFActionVer14 {
 
     static class Reader implements OFMessageReader<OFAction> {
         @Override
-        public OFAction readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFAction readFrom(ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();

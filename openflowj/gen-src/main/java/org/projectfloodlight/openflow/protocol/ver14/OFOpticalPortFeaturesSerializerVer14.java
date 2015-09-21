@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFOpticalPortFeatures;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -38,7 +38,7 @@ public class OFOpticalPortFeaturesSerializerVer14 {
     public final static int TX_PWR_VAL = 0x4;
     public final static int USE_FREQ_VAL = 0x8;
 
-    public static Set<OFOpticalPortFeatures> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFOpticalPortFeatures> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -46,7 +46,7 @@ public class OFOpticalPortFeaturesSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFOpticalPortFeatures> set) {
+    public static void writeTo(ByteBuf bb, Set<OFOpticalPortFeatures> set) {
         bb.writeInt(toWireValue(set));
     }
 

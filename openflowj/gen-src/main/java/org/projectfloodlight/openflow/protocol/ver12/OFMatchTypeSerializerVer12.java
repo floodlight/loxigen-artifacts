@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFMatchType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFMatchTypeSerializerVer12 {
@@ -32,7 +32,7 @@ public class OFMatchTypeSerializerVer12 {
     public final static short STANDARD_VAL = (short) 0x0;
     public final static short OXM_VAL = (short) 0x1;
 
-    public static OFMatchType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFMatchType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -40,7 +40,7 @@ public class OFMatchTypeSerializerVer12 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFMatchType e) {
+    public static void writeTo(ByteBuf bb, OFMatchType e) {
         bb.writeShort(toWireValue(e));
     }
 

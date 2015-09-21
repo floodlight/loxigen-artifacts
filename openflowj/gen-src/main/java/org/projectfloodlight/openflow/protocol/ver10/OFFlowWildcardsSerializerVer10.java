@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFFlowWildcards;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -49,7 +49,7 @@ public class OFFlowWildcardsSerializerVer10 {
     public final static int NW_TOS_VAL = 0x200000;
     public final static int ALL_VAL = 0x3fffff;
 
-    public static Set<OFFlowWildcards> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFFlowWildcards> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readInt());
         } catch (IllegalArgumentException e) {
@@ -57,7 +57,7 @@ public class OFFlowWildcardsSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFFlowWildcards> set) {
+    public static void writeTo(ByteBuf bb, Set<OFFlowWildcards> set) {
         bb.writeInt(toWireValue(set));
     }
 

@@ -29,7 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -678,7 +678,7 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowStatsEntry> {
         @Override
-        public OFFlowStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFFlowStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             int length = U16.f(bb.readShort());
             if(length < MINIMUM_LENGTH)
@@ -758,14 +758,14 @@ class OFFlowStatsEntryVer14 implements OFFlowStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowStatsEntryVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFFlowStatsEntryVer14 message) {
+        public void write(ByteBuf bb, OFFlowStatsEntryVer14 message) {
             int startIndex = bb.writerIndex();
             // length is length of variable message, will be updated at the end
             int lengthIndex = bb.writerIndex();

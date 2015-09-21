@@ -29,7 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -270,7 +270,7 @@ class OFFlowStatsReplyVer12 implements OFFlowStatsReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowStatsReply> {
         @Override
-        public OFFlowStatsReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFFlowStatsReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 3
             byte version = bb.readByte();
@@ -335,14 +335,14 @@ class OFFlowStatsReplyVer12 implements OFFlowStatsReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowStatsReplyVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFFlowStatsReplyVer12 message) {
+        public void write(ByteBuf bb, OFFlowStatsReplyVer12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 3
             bb.writeByte((byte) 0x3);

@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 import java.util.Arrays;
@@ -329,7 +329,7 @@ class OFBsnLuaUploadVer13 implements OFBsnLuaUpload {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnLuaUpload> {
         @Override
-        public OFBsnLuaUpload readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnLuaUpload readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 4
             byte version = bb.readByte();
@@ -400,14 +400,14 @@ class OFBsnLuaUploadVer13 implements OFBsnLuaUpload {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnLuaUploadVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnLuaUploadVer13 message) {
+        public void write(ByteBuf bb, OFBsnLuaUploadVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 4
             bb.writeByte((byte) 0x4);

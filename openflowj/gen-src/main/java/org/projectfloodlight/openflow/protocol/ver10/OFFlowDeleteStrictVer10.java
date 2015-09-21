@@ -29,7 +29,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -679,7 +679,7 @@ class OFFlowDeleteStrictVer10 implements OFFlowDeleteStrict {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFlowDeleteStrict> {
         @Override
-        public OFFlowDeleteStrict readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFFlowDeleteStrict readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -762,14 +762,14 @@ class OFFlowDeleteStrictVer10 implements OFFlowDeleteStrict {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFlowDeleteStrictVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFFlowDeleteStrictVer10 message) {
+        public void write(ByteBuf bb, OFFlowDeleteStrictVer10 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);

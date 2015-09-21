@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFFlowModFailedCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFFlowModFailedCodeSerializerVer13 {
@@ -38,7 +38,7 @@ public class OFFlowModFailedCodeSerializerVer13 {
     public final static short BAD_COMMAND_VAL = (short) 0x6;
     public final static short BAD_FLAGS_VAL = (short) 0x7;
 
-    public static OFFlowModFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFFlowModFailedCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -46,7 +46,7 @@ public class OFFlowModFailedCodeSerializerVer13 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFFlowModFailedCode e) {
+    public static void writeTo(ByteBuf bb, OFFlowModFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

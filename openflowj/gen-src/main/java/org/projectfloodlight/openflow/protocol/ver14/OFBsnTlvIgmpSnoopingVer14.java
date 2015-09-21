@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -70,7 +70,7 @@ class OFBsnTlvIgmpSnoopingVer14 implements OFBsnTlvIgmpSnooping {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvIgmpSnooping> {
         @Override
-        public OFBsnTlvIgmpSnooping readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvIgmpSnooping readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x4e
             short type = bb.readShort();
@@ -110,14 +110,14 @@ class OFBsnTlvIgmpSnoopingVer14 implements OFBsnTlvIgmpSnooping {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvIgmpSnoopingVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvIgmpSnoopingVer14 message) {
+        public void write(ByteBuf bb, OFBsnTlvIgmpSnoopingVer14 message) {
             // fixed value property type = 0x4e
             bb.writeShort((short) 0x4e);
             // fixed value property length = 4

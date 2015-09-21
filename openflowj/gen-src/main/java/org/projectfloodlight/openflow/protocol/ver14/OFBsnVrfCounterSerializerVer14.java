@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnVrfCounter;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnVrfCounterSerializerVer14 {
@@ -32,7 +32,7 @@ public class OFBsnVrfCounterSerializerVer14 {
     public final static byte BSN_VRF_COUNTER_BYTES_VAL = (byte) 0x0;
     public final static byte BSN_VRF_COUNTER_PACKETS_VAL = (byte) 0x1;
 
-    public static OFBsnVrfCounter readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnVrfCounter readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -40,7 +40,7 @@ public class OFBsnVrfCounterSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnVrfCounter e) {
+    public static void writeTo(ByteBuf bb, OFBsnVrfCounter e) {
         bb.writeByte(toWireValue(e));
     }
 

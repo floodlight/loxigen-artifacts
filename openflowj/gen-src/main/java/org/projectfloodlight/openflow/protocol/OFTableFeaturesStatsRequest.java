@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFTableFeaturesStatsRequest extends OFObject, OFStatsRequest<OFTableFeaturesStatsReply>, OFRequest<OFTableFeaturesStatsReply> {
     OFVersion getVersion();
@@ -36,7 +36,7 @@ public interface OFTableFeaturesStatsRequest extends OFObject, OFStatsRequest<OF
     List<OFTableFeatures> getEntries();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFStatsRequest.Builder<OFTableFeaturesStatsReply> {

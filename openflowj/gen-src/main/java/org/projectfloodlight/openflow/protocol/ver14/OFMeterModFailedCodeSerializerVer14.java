@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFMeterModFailedCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFMeterModFailedCodeSerializerVer14 {
@@ -42,7 +42,7 @@ public class OFMeterModFailedCodeSerializerVer14 {
     public final static short OUT_OF_METERS_VAL = (short) 0xa;
     public final static short OUT_OF_BANDS_VAL = (short) 0xb;
 
-    public static OFMeterModFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFMeterModFailedCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -50,7 +50,7 @@ public class OFMeterModFailedCodeSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFMeterModFailedCode e) {
+    public static void writeTo(ByteBuf bb, OFMeterModFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

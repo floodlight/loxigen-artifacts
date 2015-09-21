@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnLacpConvergenceStatus;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnLacpConvergenceStatusSerializerVer14 {
@@ -33,7 +33,7 @@ public class OFBsnLacpConvergenceStatusSerializerVer14 {
     public final static byte TIMEDOUT_VAL = (byte) 0x1;
     public final static byte OUT_OF_SYNC_VAL = (byte) 0x2;
 
-    public static OFBsnLacpConvergenceStatus readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnLacpConvergenceStatus readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -41,7 +41,7 @@ public class OFBsnLacpConvergenceStatusSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnLacpConvergenceStatus e) {
+    public static void writeTo(ByteBuf bb, OFBsnLacpConvergenceStatus e) {
         bb.writeByte(toWireValue(e));
     }
 

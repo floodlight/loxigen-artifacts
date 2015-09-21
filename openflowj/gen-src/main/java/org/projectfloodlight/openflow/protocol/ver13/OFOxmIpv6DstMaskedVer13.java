@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -264,7 +264,7 @@ class OFOxmIpv6DstMaskedVer13 implements OFOxmIpv6DstMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmIpv6DstMasked> {
         @Override
-        public OFOxmIpv6DstMasked readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmIpv6DstMasked readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x80003720L
             int typeLen = bb.readInt();
             if(typeLen != (int) 0x80003720)
@@ -299,14 +299,14 @@ class OFOxmIpv6DstMaskedVer13 implements OFOxmIpv6DstMasked {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmIpv6DstMaskedVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmIpv6DstMaskedVer13 message) {
+        public void write(ByteBuf bb, OFOxmIpv6DstMaskedVer13 message) {
             // fixed value property typeLen = 0x80003720L
             bb.writeInt((int) 0x80003720);
             message.value.write16Bytes(bb);

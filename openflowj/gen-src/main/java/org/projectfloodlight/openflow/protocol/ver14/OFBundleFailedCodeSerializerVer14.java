@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBundleFailedCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBundleFailedCodeSerializerVer14 {
@@ -46,7 +46,7 @@ public class OFBundleFailedCodeSerializerVer14 {
     public final static short TIMEOUT_VAL = (short) 0xe;
     public final static short BUNDLE_IN_PROGRESS_VAL = (short) 0xf;
 
-    public static OFBundleFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBundleFailedCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -54,7 +54,7 @@ public class OFBundleFailedCodeSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBundleFailedCode e) {
+    public static void writeTo(ByteBuf bb, OFBundleFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

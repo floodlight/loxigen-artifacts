@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -292,7 +292,7 @@ class OFTableModVer14 implements OFTableMod {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableMod> {
         @Override
-        public OFTableMod readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableMod readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -354,14 +354,14 @@ class OFTableModVer14 implements OFTableMod {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableModVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFTableModVer14 message) {
+        public void write(ByteBuf bb, OFTableModVer14 message) {
             int startIndex = bb.writerIndex();
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);

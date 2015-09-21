@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFMeterFlags;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -38,7 +38,7 @@ public class OFMeterFlagsSerializerVer14 {
     public final static short BURST_VAL = (short) 0x4;
     public final static short STATS_VAL = (short) 0x8;
 
-    public static Set<OFMeterFlags> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFMeterFlags> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -46,7 +46,7 @@ public class OFMeterFlagsSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFMeterFlags> set) {
+    public static void writeTo(ByteBuf bb, Set<OFMeterFlags> set) {
         bb.writeShort(toWireValue(set));
     }
 

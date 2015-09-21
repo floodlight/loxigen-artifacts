@@ -24,14 +24,14 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnPduSlotNum;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnPduSlotNumSerializerVer11 {
 
     public final static byte PDU_SLOT_NUM_ANY_VAL = (byte) 0xff;
 
-    public static OFBsnPduSlotNum readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnPduSlotNum readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -39,7 +39,7 @@ public class OFBsnPduSlotNumSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnPduSlotNum e) {
+    public static void writeTo(ByteBuf bb, OFBsnPduSlotNum e) {
         bb.writeByte(toWireValue(e));
     }
 

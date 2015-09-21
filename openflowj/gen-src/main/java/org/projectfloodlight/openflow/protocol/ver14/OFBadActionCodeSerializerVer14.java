@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBadActionCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBadActionCodeSerializerVer14 {
@@ -46,7 +46,7 @@ public class OFBadActionCodeSerializerVer14 {
     public final static short BAD_SET_LEN_VAL = (short) 0xe;
     public final static short BAD_SET_ARGUMENT_VAL = (short) 0xf;
 
-    public static OFBadActionCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBadActionCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -54,7 +54,7 @@ public class OFBadActionCodeSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBadActionCode e) {
+    public static void writeTo(ByteBuf bb, OFBadActionCode e) {
         bb.writeShort(toWireValue(e));
     }
 

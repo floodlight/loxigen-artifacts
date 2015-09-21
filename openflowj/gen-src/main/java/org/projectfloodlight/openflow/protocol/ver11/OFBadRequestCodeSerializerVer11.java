@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBadRequestCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBadRequestCodeSerializerVer11 {
@@ -40,7 +40,7 @@ public class OFBadRequestCodeSerializerVer11 {
     public final static short BUFFER_UNKNOWN_VAL = (short) 0x8;
     public final static short BAD_TABLE_ID_VAL = (short) 0x9;
 
-    public static OFBadRequestCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBadRequestCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -48,7 +48,7 @@ public class OFBadRequestCodeSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBadRequestCode e) {
+    public static void writeTo(ByteBuf bb, OFBadRequestCode e) {
         bb.writeShort(toWireValue(e));
     }
 

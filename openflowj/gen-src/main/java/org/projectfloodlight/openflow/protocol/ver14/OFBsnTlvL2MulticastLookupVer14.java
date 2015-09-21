@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -70,7 +70,7 @@ class OFBsnTlvL2MulticastLookupVer14 implements OFBsnTlvL2MulticastLookup {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvL2MulticastLookup> {
         @Override
-        public OFBsnTlvL2MulticastLookup readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvL2MulticastLookup readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x4f
             short type = bb.readShort();
@@ -110,14 +110,14 @@ class OFBsnTlvL2MulticastLookupVer14 implements OFBsnTlvL2MulticastLookup {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvL2MulticastLookupVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvL2MulticastLookupVer14 message) {
+        public void write(ByteBuf bb, OFBsnTlvL2MulticastLookupVer14 message) {
             // fixed value property type = 0x4f
             bb.writeShort((short) 0x4f);
             // fixed value property length = 4

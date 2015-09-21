@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFConfigFlags;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -38,7 +38,7 @@ public class OFConfigFlagsSerializerVer10 {
     public final static short FRAG_REASM_VAL = (short) 0x2;
     public final static short FRAG_MASK_VAL = (short) 0x3;
 
-    public static Set<OFConfigFlags> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFConfigFlags> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -46,7 +46,7 @@ public class OFConfigFlagsSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFConfigFlags> set) {
+    public static void writeTo(ByteBuf bb, Set<OFConfigFlags> set) {
         bb.writeShort(toWireValue(set));
     }
 

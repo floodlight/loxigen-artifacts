@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFFlowModify extends OFObject, OFFlowMod {
     OFVersion getVersion();
@@ -48,7 +48,7 @@ public interface OFFlowModify extends OFObject, OFFlowMod {
     int getImportance() throws UnsupportedOperationException;
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFFlowMod.Builder {

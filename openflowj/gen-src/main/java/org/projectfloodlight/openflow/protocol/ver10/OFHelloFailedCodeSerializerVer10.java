@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFHelloFailedCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFHelloFailedCodeSerializerVer10 {
@@ -32,7 +32,7 @@ public class OFHelloFailedCodeSerializerVer10 {
     public final static short INCOMPATIBLE_VAL = (short) 0x0;
     public final static short EPERM_VAL = (short) 0x1;
 
-    public static OFHelloFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFHelloFailedCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -40,7 +40,7 @@ public class OFHelloFailedCodeSerializerVer10 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFHelloFailedCode e) {
+    public static void writeTo(ByteBuf bb, OFHelloFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

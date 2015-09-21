@@ -24,14 +24,14 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBsnVportQInQUntagged;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFBsnVportQInQUntaggedSerializerVer14 {
 
     public final static short BSN_VPORT_Q_IN_Q_UNTAGGED_VAL = (short) 0xffff;
 
-    public static OFBsnVportQInQUntagged readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFBsnVportQInQUntagged readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -39,7 +39,7 @@ public class OFBsnVportQInQUntaggedSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFBsnVportQInQUntagged e) {
+    public static void writeTo(ByteBuf bb, OFBsnVportQInQUntagged e) {
         bb.writeShort(toWireValue(e));
     }
 

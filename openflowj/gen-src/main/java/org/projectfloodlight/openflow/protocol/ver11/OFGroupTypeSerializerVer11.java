@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFGroupType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFGroupTypeSerializerVer11 {
@@ -34,7 +34,7 @@ public class OFGroupTypeSerializerVer11 {
     public final static byte INDIRECT_VAL = (byte) 0x2;
     public final static byte FF_VAL = (byte) 0x3;
 
-    public static OFGroupType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFGroupType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -42,7 +42,7 @@ public class OFGroupTypeSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFGroupType e) {
+    public static void writeTo(ByteBuf bb, OFGroupType e) {
         bb.writeByte(toWireValue(e));
     }
 

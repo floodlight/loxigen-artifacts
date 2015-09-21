@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFPacketInReason;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFPacketInReasonSerializerVer12 {
@@ -33,7 +33,7 @@ public class OFPacketInReasonSerializerVer12 {
     public final static byte ACTION_VAL = (byte) 0x1;
     public final static byte INVALID_TTL_VAL = (byte) 0x2;
 
-    public static OFPacketInReason readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFPacketInReason readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -41,7 +41,7 @@ public class OFPacketInReasonSerializerVer12 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFPacketInReason e) {
+    public static void writeTo(ByteBuf bb, OFPacketInReason e) {
         bb.writeByte(toWireValue(e));
     }
 

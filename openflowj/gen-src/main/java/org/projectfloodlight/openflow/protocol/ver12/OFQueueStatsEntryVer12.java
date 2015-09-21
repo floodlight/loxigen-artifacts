@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -397,7 +397,7 @@ class OFQueueStatsEntryVer12 implements OFQueueStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFQueueStatsEntry> {
         @Override
-        public OFQueueStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFQueueStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             OFPort portNo = OFPort.read4Bytes(bb);
             long queueId = U32.f(bb.readInt());
             U64 txBytes = U64.ofRaw(bb.readLong());
@@ -435,14 +435,14 @@ class OFQueueStatsEntryVer12 implements OFQueueStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFQueueStatsEntryVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFQueueStatsEntryVer12 message) {
+        public void write(ByteBuf bb, OFQueueStatsEntryVer12 message) {
             message.portNo.write4Bytes(bb);
             bb.writeInt(U32.t(message.queueId));
             bb.writeLong(message.txBytes.getValue());

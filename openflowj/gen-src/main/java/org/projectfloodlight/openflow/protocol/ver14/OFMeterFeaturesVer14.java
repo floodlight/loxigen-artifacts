@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -299,7 +299,7 @@ class OFMeterFeaturesVer14 implements OFMeterFeatures {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMeterFeatures> {
         @Override
-        public OFMeterFeatures readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMeterFeatures readFrom(ByteBuf bb) throws OFParseError {
             long maxMeter = U32.f(bb.readInt());
             long bandTypes = U32.f(bb.readInt());
             long capabilities = U32.f(bb.readInt());
@@ -340,14 +340,14 @@ class OFMeterFeaturesVer14 implements OFMeterFeatures {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMeterFeaturesVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFMeterFeaturesVer14 message) {
+        public void write(ByteBuf bb, OFMeterFeaturesVer14 message) {
             bb.writeInt(U32.t(message.maxMeter));
             bb.writeInt(U32.t(message.bandTypes));
             bb.writeInt(U32.t(message.capabilities));

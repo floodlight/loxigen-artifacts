@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnPortCounterStatsRequest extends OFObject, OFBsnStatsRequest<OFBsnPortCounterStatsReply>, OFRequest<OFBsnPortCounterStatsReply> {
     OFVersion getVersion();
@@ -37,7 +37,7 @@ public interface OFBsnPortCounterStatsRequest extends OFObject, OFBsnStatsReques
     OFPort getPortNo();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnStatsRequest.Builder<OFBsnPortCounterStatsReply> {

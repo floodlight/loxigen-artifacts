@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -50,7 +50,7 @@ public class OFBadMatchErrorMsgVer13Test {
     .setCode(OFBadMatchCode.BAD_MASK)
     .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
         OFBadMatchErrorMsg badMatchErrorMsg = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         badMatchErrorMsg.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -66,7 +66,7 @@ public class OFBadMatchErrorMsgVer13Test {
     .setData(OFErrorCauseData.of(new byte[] { 0x61, 0x62, 0x63 }, OFVersion.OF_13));;
         OFBadMatchErrorMsg badMatchErrorMsgBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BAD_MATCH_ERROR_MSG_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BAD_MATCH_ERROR_MSG_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBadMatchErrorMsg badMatchErrorMsgRead = OFBadMatchErrorMsgVer13.READER.readFrom(input);
@@ -77,14 +77,14 @@ public class OFBadMatchErrorMsgVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BAD_MATCH_ERROR_MSG_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BAD_MATCH_ERROR_MSG_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBadMatchErrorMsg badMatchErrorMsg = OFBadMatchErrorMsgVer13.READER.readFrom(input);
        assertEquals(BAD_MATCH_ERROR_MSG_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        badMatchErrorMsg.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

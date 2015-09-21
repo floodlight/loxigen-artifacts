@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -47,14 +47,14 @@ public class OFQueueGetConfigReplyVer10Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(QUEUE_GET_CONFIG_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(QUEUE_GET_CONFIG_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFQueueGetConfigReply queueGetConfigReply = OFQueueGetConfigReplyVer10.READER.readFrom(input);
        assertEquals(QUEUE_GET_CONFIG_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        queueGetConfigReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

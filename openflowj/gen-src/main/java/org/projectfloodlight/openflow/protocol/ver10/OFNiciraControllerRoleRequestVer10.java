@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -233,7 +233,7 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFNiciraControllerRoleRequest> {
         @Override
-        public OFNiciraControllerRoleRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFNiciraControllerRoleRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 1
             byte version = bb.readByte();
@@ -299,14 +299,14 @@ class OFNiciraControllerRoleRequestVer10 implements OFNiciraControllerRoleReques
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFNiciraControllerRoleRequestVer10> {
         @Override
-        public void write(ChannelBuffer bb, OFNiciraControllerRoleRequestVer10 message) {
+        public void write(ByteBuf bb, OFNiciraControllerRoleRequestVer10 message) {
             // fixed value property version = 1
             bb.writeByte((byte) 0x1);
             // fixed value property type = 4

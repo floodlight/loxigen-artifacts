@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnGentableClearRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnGentableClearReply> {
     OFVersion getVersion();
@@ -36,7 +36,7 @@ public interface OFBsnGentableClearRequest extends OFObject, OFBsnHeader, OFRequ
     U128 getChecksumMask();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {

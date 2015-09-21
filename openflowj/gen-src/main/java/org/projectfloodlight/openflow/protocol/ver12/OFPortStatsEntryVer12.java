@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -764,7 +764,7 @@ class OFPortStatsEntryVer12 implements OFPortStatsEntry {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFPortStatsEntry> {
         @Override
-        public OFPortStatsEntry readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFPortStatsEntry readFrom(ByteBuf bb) throws OFParseError {
             OFPort portNo = OFPort.read4Bytes(bb);
             // pad: 4 bytes
             bb.skipBytes(4);
@@ -829,14 +829,14 @@ class OFPortStatsEntryVer12 implements OFPortStatsEntry {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFPortStatsEntryVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFPortStatsEntryVer12 message) {
+        public void write(ByteBuf bb, OFPortStatsEntryVer12 message) {
             message.portNo.write4Bytes(bb);
             // pad: 4 bytes
             bb.writeZero(4);

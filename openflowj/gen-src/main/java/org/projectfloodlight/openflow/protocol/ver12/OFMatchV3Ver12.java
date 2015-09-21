@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Iterator;
 import com.google.common.collect.AbstractIterator;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -550,7 +550,7 @@ class OFMatchV3Ver12 implements OFMatchV3 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMatchV3> {
         @Override
-        public OFMatchV3 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMatchV3 readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x1
             short type = bb.readShort();
@@ -596,14 +596,14 @@ class OFMatchV3Ver12 implements OFMatchV3 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMatchV3Ver12> {
         @Override
-        public void write(ChannelBuffer bb, OFMatchV3Ver12 message) {
+        public void write(ByteBuf bb, OFMatchV3Ver12 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0x1
             bb.writeShort((short) 0x1);

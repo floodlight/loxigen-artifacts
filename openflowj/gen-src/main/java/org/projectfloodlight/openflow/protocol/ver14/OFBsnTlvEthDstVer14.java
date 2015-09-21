@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -169,7 +169,7 @@ class OFBsnTlvEthDstVer14 implements OFBsnTlvEthDst {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvEthDst> {
         @Override
-        public OFBsnTlvEthDst readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvEthDst readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x21
             short type = bb.readShort();
@@ -214,14 +214,14 @@ class OFBsnTlvEthDstVer14 implements OFBsnTlvEthDst {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvEthDstVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvEthDstVer14 message) {
+        public void write(ByteBuf bb, OFBsnTlvEthDstVer14 message) {
             // fixed value property type = 0x21
             bb.writeShort((short) 0x21);
             // fixed value property length = 10

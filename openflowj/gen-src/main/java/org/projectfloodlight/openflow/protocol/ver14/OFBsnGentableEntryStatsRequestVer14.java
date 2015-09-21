@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -384,7 +384,7 @@ class OFBsnGentableEntryStatsRequestVer14 implements OFBsnGentableEntryStatsRequ
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnGentableEntryStatsRequest> {
         @Override
-        public OFBsnGentableEntryStatsRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnGentableEntryStatsRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -471,14 +471,14 @@ class OFBsnGentableEntryStatsRequestVer14 implements OFBsnGentableEntryStatsRequ
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnGentableEntryStatsRequestVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnGentableEntryStatsRequestVer14 message) {
+        public void write(ByteBuf bb, OFBsnGentableEntryStatsRequestVer14 message) {
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);
             // fixed value property type = 18

@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -237,7 +237,7 @@ class OFBsnTimeReplyVer14 implements OFBsnTimeReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTimeReply> {
         @Override
-        public OFBsnTimeReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTimeReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -303,14 +303,14 @@ class OFBsnTimeReplyVer14 implements OFBsnTimeReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTimeReplyVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTimeReplyVer14 message) {
+        public void write(ByteBuf bb, OFBsnTimeReplyVer14 message) {
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);
             // fixed value property type = 4

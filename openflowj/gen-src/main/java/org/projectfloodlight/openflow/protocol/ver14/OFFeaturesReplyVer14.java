@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -459,7 +459,7 @@ class OFFeaturesReplyVer14 implements OFFeaturesReply {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFFeaturesReply> {
         @Override
-        public OFFeaturesReply readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFFeaturesReply readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -531,14 +531,14 @@ class OFFeaturesReplyVer14 implements OFFeaturesReply {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFFeaturesReplyVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFFeaturesReplyVer14 message) {
+        public void write(ByteBuf bb, OFFeaturesReplyVer14 message) {
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);
             // fixed value property type = 6

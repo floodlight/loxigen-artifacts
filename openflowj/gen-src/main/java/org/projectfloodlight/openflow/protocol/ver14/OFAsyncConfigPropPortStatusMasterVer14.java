@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +162,7 @@ class OFAsyncConfigPropPortStatusMasterVer14 implements OFAsyncConfigPropPortSta
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFAsyncConfigPropPortStatusMaster> {
         @Override
-        public OFAsyncConfigPropPortStatusMaster readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFAsyncConfigPropPortStatusMaster readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x3
             short type = bb.readShort();
@@ -207,14 +207,14 @@ class OFAsyncConfigPropPortStatusMasterVer14 implements OFAsyncConfigPropPortSta
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFAsyncConfigPropPortStatusMasterVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFAsyncConfigPropPortStatusMasterVer14 message) {
+        public void write(ByteBuf bb, OFAsyncConfigPropPortStatusMasterVer14 message) {
             // fixed value property type = 0x3
             bb.writeShort((short) 0x3);
             // fixed value property length = 8

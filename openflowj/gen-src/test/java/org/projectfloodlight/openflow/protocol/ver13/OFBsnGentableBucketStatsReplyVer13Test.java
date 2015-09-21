@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -56,7 +56,7 @@ public class OFBsnGentableBucketStatsReplyVer13Test {
         )
     );
         OFBsnGentableBucketStatsReply bsnGentableBucketStatsReply = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         bsnGentableBucketStatsReply.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -76,7 +76,7 @@ public class OFBsnGentableBucketStatsReplyVer13Test {
     );
         OFBsnGentableBucketStatsReply bsnGentableBucketStatsReplyBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_BUCKET_STATS_REPLY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_BUCKET_STATS_REPLY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnGentableBucketStatsReply bsnGentableBucketStatsReplyRead = OFBsnGentableBucketStatsReplyVer13.READER.readFrom(input);
@@ -87,14 +87,14 @@ public class OFBsnGentableBucketStatsReplyVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_GENTABLE_BUCKET_STATS_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_GENTABLE_BUCKET_STATS_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnGentableBucketStatsReply bsnGentableBucketStatsReply = OFBsnGentableBucketStatsReplyVer13.READER.readFrom(input);
        assertEquals(BSN_GENTABLE_BUCKET_STATS_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnGentableBucketStatsReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

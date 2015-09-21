@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -48,7 +48,7 @@ public class OFOxmBsnGlobalVrfAllowedVer13Test {
         OFOxmBsnGlobalVrfAllowed.Builder builder = factory.buildBsnGlobalVrfAllowed();
         builder.setValue(OFBooleanValue.TRUE);
         OFOxmBsnGlobalVrfAllowed oxmBsnGlobalVrfAllowed = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         oxmBsnGlobalVrfAllowed.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -62,7 +62,7 @@ public class OFOxmBsnGlobalVrfAllowedVer13Test {
         builder.setValue(OFBooleanValue.TRUE);
         OFOxmBsnGlobalVrfAllowed oxmBsnGlobalVrfAllowedBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(OXM_BSN_GLOBAL_VRF_ALLOWED_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(OXM_BSN_GLOBAL_VRF_ALLOWED_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFOxmBsnGlobalVrfAllowed oxmBsnGlobalVrfAllowedRead = OFOxmBsnGlobalVrfAllowedVer13.READER.readFrom(input);
@@ -73,14 +73,14 @@ public class OFOxmBsnGlobalVrfAllowedVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(OXM_BSN_GLOBAL_VRF_ALLOWED_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(OXM_BSN_GLOBAL_VRF_ALLOWED_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFOxmBsnGlobalVrfAllowed oxmBsnGlobalVrfAllowed = OFOxmBsnGlobalVrfAllowedVer13.READER.readFrom(input);
        assertEquals(OXM_BSN_GLOBAL_VRF_ALLOWED_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        oxmBsnGlobalVrfAllowed.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

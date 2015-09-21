@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -2201,7 +2201,7 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMatchV1> {
         @Override
-        public OFMatchV1 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMatchV1 readFrom(ByteBuf bb) throws OFParseError {
             int wildcards = bb.readInt();
             OFPort inPort = OFPort.read2Bytes(bb);
             MacAddress ethSrc = MacAddress.read6Bytes(bb);
@@ -2322,14 +2322,14 @@ class OFMatchV1Ver10 implements OFMatchV1 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMatchV1Ver10> {
         @Override
-        public void write(ChannelBuffer bb, OFMatchV1Ver10 message) {
+        public void write(ByteBuf bb, OFMatchV1Ver10 message) {
             bb.writeInt(message.wildcards);
             message.inPort.write2Bytes(bb);
             message.ethSrc.write6Bytes(bb);

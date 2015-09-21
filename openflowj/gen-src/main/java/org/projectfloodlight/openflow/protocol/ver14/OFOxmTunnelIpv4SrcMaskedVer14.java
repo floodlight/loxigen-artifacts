@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -264,7 +264,7 @@ class OFOxmTunnelIpv4SrcMaskedVer14 implements OFOxmTunnelIpv4SrcMasked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmTunnelIpv4SrcMasked> {
         @Override
-        public OFOxmTunnelIpv4SrcMasked readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmTunnelIpv4SrcMasked readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x13f08L
             int typeLen = bb.readInt();
             if(typeLen != 0x13f08)
@@ -299,14 +299,14 @@ class OFOxmTunnelIpv4SrcMaskedVer14 implements OFOxmTunnelIpv4SrcMasked {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmTunnelIpv4SrcMaskedVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmTunnelIpv4SrcMaskedVer14 message) {
+        public void write(ByteBuf bb, OFOxmTunnelIpv4SrcMaskedVer14 message) {
             // fixed value property typeLen = 0x13f08L
             bb.writeInt(0x13f08);
             message.value.write4Bytes(bb);

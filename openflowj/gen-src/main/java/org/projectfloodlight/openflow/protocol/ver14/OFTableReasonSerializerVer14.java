@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFTableReason;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFTableReasonSerializerVer14 {
@@ -32,7 +32,7 @@ public class OFTableReasonSerializerVer14 {
     public final static byte VACANCY_DOWN_VAL = (byte) 0x3;
     public final static byte VACANCY_UP_VAL = (byte) 0x4;
 
-    public static OFTableReason readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFTableReason readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readByte());
         } catch (IllegalArgumentException e) {
@@ -40,7 +40,7 @@ public class OFTableReasonSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFTableReason e) {
+    public static void writeTo(ByteBuf bb, OFTableReason e) {
         bb.writeByte(toWireValue(e));
     }
 

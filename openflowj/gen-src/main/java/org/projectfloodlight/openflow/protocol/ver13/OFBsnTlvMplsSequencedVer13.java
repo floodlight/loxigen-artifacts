@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +162,7 @@ class OFBsnTlvMplsSequencedVer13 implements OFBsnTlvMplsSequenced {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvMplsSequenced> {
         @Override
-        public OFBsnTlvMplsSequenced readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvMplsSequenced readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x3f
             short type = bb.readShort();
@@ -207,14 +207,14 @@ class OFBsnTlvMplsSequencedVer13 implements OFBsnTlvMplsSequenced {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvMplsSequencedVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvMplsSequencedVer13 message) {
+        public void write(ByteBuf bb, OFBsnTlvMplsSequencedVer13 message) {
             // fixed value property type = 0x3f
             bb.writeShort((short) 0x3f);
             // fixed value property length = 5

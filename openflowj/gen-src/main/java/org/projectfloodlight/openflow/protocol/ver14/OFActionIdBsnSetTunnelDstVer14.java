@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -81,7 +81,7 @@ class OFActionIdBsnSetTunnelDstVer14 implements OFActionIdBsnSetTunnelDst {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFActionIdBsnSetTunnelDst> {
         @Override
-        public OFActionIdBsnSetTunnelDst readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFActionIdBsnSetTunnelDst readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 65535
             short type = bb.readShort();
@@ -133,14 +133,14 @@ class OFActionIdBsnSetTunnelDstVer14 implements OFActionIdBsnSetTunnelDst {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFActionIdBsnSetTunnelDstVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFActionIdBsnSetTunnelDstVer14 message) {
+        public void write(ByteBuf bb, OFActionIdBsnSetTunnelDstVer14 message) {
             // fixed value property type = 65535
             bb.writeShort((short) 0xffff);
             // fixed value property length = 12

@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -80,7 +80,7 @@ class OFInstructionIdBsnDisableL3Ver14 implements OFInstructionIdBsnDisableL3 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFInstructionIdBsnDisableL3> {
         @Override
-        public OFInstructionIdBsnDisableL3 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFInstructionIdBsnDisableL3 readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 65535
             short type = bb.readShort();
@@ -132,14 +132,14 @@ class OFInstructionIdBsnDisableL3Ver14 implements OFInstructionIdBsnDisableL3 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFInstructionIdBsnDisableL3Ver14> {
         @Override
-        public void write(ChannelBuffer bb, OFInstructionIdBsnDisableL3Ver14 message) {
+        public void write(ByteBuf bb, OFInstructionIdBsnDisableL3Ver14 message) {
             // fixed value property type = 65535
             bb.writeShort((short) 0xffff);
             // fixed value property length = 12

@@ -23,7 +23,7 @@ import org.projectfloodlight.openflow.protocol.queueprop.*;
 import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 abstract class OFBundlePropExperimenterVer14 {
     // version: 1.4
@@ -35,7 +35,7 @@ abstract class OFBundlePropExperimenterVer14 {
 
     static class Reader implements OFMessageReader<OFBundlePropExperimenter> {
         @Override
-        public OFBundlePropExperimenter readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBundlePropExperimenter readFrom(ByteBuf bb) throws OFParseError {
             if(bb.readableBytes() < MINIMUM_LENGTH)
                 return null;
             int start = bb.readerIndex();

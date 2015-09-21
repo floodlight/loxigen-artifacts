@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -264,7 +264,7 @@ class OFOxmBsnUdf5MaskedVer12 implements OFOxmBsnUdf5Masked {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFOxmBsnUdf5Masked> {
         @Override
-        public OFOxmBsnUdf5Masked readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFOxmBsnUdf5Masked readFrom(ByteBuf bb) throws OFParseError {
             // fixed value property typeLen == 0x31b08L
             int typeLen = bb.readInt();
             if(typeLen != 0x31b08)
@@ -299,14 +299,14 @@ class OFOxmBsnUdf5MaskedVer12 implements OFOxmBsnUdf5Masked {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFOxmBsnUdf5MaskedVer12> {
         @Override
-        public void write(ChannelBuffer bb, OFOxmBsnUdf5MaskedVer12 message) {
+        public void write(ByteBuf bb, OFOxmBsnUdf5MaskedVer12 message) {
             // fixed value property typeLen = 0x31b08L
             bb.writeInt(0x31b08);
             message.value.write4Bytes(bb);

@@ -29,8 +29,8 @@ import org.junit.Before;
 import java.util.EnumSet;
 import java.util.Set;
 import com.google.common.collect.Sets;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -54,7 +54,7 @@ public class OFGetConfigReplyVer13Test {
     .setMissSendLen(0xffff)
     .build();
         OFGetConfigReply getConfigReply = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         getConfigReply.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -71,7 +71,7 @@ public class OFGetConfigReplyVer13Test {
     .build();
         OFGetConfigReply getConfigReplyBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFGetConfigReply getConfigReplyRead = OFGetConfigReplyVer13.READER.readFrom(input);
@@ -82,14 +82,14 @@ public class OFGetConfigReplyVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(GET_CONFIG_REPLY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFGetConfigReply getConfigReply = OFGetConfigReplyVer13.READER.readFrom(input);
        assertEquals(GET_CONFIG_REPLY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        getConfigReply.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

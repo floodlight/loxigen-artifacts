@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -1190,7 +1190,7 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFMatchV2> {
         @Override
-        public OFMatchV2 readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFMatchV2 readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x0
             short type = bb.readShort();
@@ -1301,14 +1301,14 @@ class OFMatchV2Ver11 implements OFMatchV2 {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFMatchV2Ver11> {
         @Override
-        public void write(ChannelBuffer bb, OFMatchV2Ver11 message) {
+        public void write(ByteBuf bb, OFMatchV2Ver11 message) {
             // fixed value property type = 0x0
             bb.writeShort((short) 0x0);
             // fixed value property length = 88

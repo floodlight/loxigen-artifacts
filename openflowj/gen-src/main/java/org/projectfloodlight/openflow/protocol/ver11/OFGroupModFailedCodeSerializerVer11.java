@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFGroupModFailedCode;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFGroupModFailedCodeSerializerVer11 {
@@ -39,7 +39,7 @@ public class OFGroupModFailedCodeSerializerVer11 {
     public final static short LOOP_VAL = (short) 0x7;
     public final static short UNKNOWN_GROUP_VAL = (short) 0x8;
 
-    public static OFGroupModFailedCode readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFGroupModFailedCode readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -47,7 +47,7 @@ public class OFGroupModFailedCodeSerializerVer11 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFGroupModFailedCode e) {
+    public static void writeTo(ByteBuf bb, OFGroupModFailedCode e) {
         bb.writeShort(toWireValue(e));
     }
 

@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -162,7 +162,7 @@ class OFGetConfigRequestVer14 implements OFGetConfigRequest {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFGetConfigRequest> {
         @Override
-        public OFGetConfigRequest readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFGetConfigRequest readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property version == 5
             byte version = bb.readByte();
@@ -213,14 +213,14 @@ class OFGetConfigRequestVer14 implements OFGetConfigRequest {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFGetConfigRequestVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFGetConfigRequestVer14 message) {
+        public void write(ByteBuf bb, OFGetConfigRequestVer14 message) {
             // fixed value property version = 5
             bb.writeByte((byte) 0x5);
             // fixed value property type = 7

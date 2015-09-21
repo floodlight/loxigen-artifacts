@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -47,14 +47,14 @@ public class OFTableStatsEntryVer10Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(TABLE_STATS_ENTRY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(TABLE_STATS_ENTRY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFTableStatsEntry tableStatsEntry = OFTableStatsEntryVer10.READER.readFrom(input);
        assertEquals(TABLE_STATS_ENTRY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        tableStatsEntry.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

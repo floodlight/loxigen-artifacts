@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 
 public interface OFBsnSetSwitchPipelineRequest extends OFObject, OFBsnHeader, OFRequest<OFBsnSetSwitchPipelineReply> {
     OFVersion getVersion();
@@ -35,7 +35,7 @@ public interface OFBsnSetSwitchPipelineRequest extends OFObject, OFBsnHeader, OF
     String getPipeline();
 
 
-    void writeTo(ChannelBuffer channelBuffer);
+    void writeTo(ByteBuf channelBuffer);
 
     Builder createBuilder();
     public interface Builder extends OFBsnHeader.Builder {

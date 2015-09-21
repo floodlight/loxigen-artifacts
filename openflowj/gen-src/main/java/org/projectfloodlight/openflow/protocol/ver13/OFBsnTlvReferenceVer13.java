@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -209,7 +209,7 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvReference> {
         @Override
-        public OFBsnTlvReference readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvReference readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x3b
             short type = bb.readShort();
@@ -256,14 +256,14 @@ class OFBsnTlvReferenceVer13 implements OFBsnTlvReference {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvReferenceVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvReferenceVer13 message) {
+        public void write(ByteBuf bb, OFBsnTlvReferenceVer13 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0x3b
             bb.writeShort((short) 0x3b);

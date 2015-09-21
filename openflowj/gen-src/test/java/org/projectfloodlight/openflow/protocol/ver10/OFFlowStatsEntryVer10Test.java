@@ -28,8 +28,8 @@ import org.junit.Test;
 import org.junit.Before;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -75,7 +75,7 @@ public class OFFlowStatsEntryVer10Test {
                    )
       );;
         OFFlowStatsEntry flowStatsEntry = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         flowStatsEntry.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -114,7 +114,7 @@ public class OFFlowStatsEntryVer10Test {
       );;
         OFFlowStatsEntry flowStatsEntryBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFFlowStatsEntry flowStatsEntryRead = OFFlowStatsEntryVer10.READER.readFrom(input);
@@ -125,14 +125,14 @@ public class OFFlowStatsEntryVer10Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(FLOW_STATS_ENTRY_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFFlowStatsEntry flowStatsEntry = OFFlowStatsEntryVer10.READER.readFrom(input);
        assertEquals(FLOW_STATS_ENTRY_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        flowStatsEntry.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

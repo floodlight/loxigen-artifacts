@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -71,7 +71,7 @@ class OFBsnTlvSetLoopbackModeVer13 implements OFBsnTlvSetLoopbackMode {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnTlvSetLoopbackMode> {
         @Override
-        public OFBsnTlvSetLoopbackMode readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnTlvSetLoopbackMode readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0x4a
             short type = bb.readShort();
@@ -111,14 +111,14 @@ class OFBsnTlvSetLoopbackModeVer13 implements OFBsnTlvSetLoopbackMode {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnTlvSetLoopbackModeVer13> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnTlvSetLoopbackModeVer13 message) {
+        public void write(ByteBuf bb, OFBsnTlvSetLoopbackModeVer13 message) {
             // fixed value property type = 0x4a
             bb.writeShort((short) 0x4a);
             // fixed value property length = 4

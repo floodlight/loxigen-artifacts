@@ -25,7 +25,7 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFBundleFlags;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import java.util.EnumSet;
 import java.util.Collections;
@@ -36,7 +36,7 @@ public class OFBundleFlagsSerializerVer14 {
     public final static short ATOMIC_VAL = (short) 0x1;
     public final static short ORDERED_VAL = (short) 0x2;
 
-    public static Set<OFBundleFlags> readFrom(ChannelBuffer bb) throws OFParseError {
+    public static Set<OFBundleFlags> readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -44,7 +44,7 @@ public class OFBundleFlagsSerializerVer14 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, Set<OFBundleFlags> set) {
+    public static void writeTo(ByteBuf bb, Set<OFBundleFlags> set) {
         bb.writeShort(toWireValue(set));
     }
 

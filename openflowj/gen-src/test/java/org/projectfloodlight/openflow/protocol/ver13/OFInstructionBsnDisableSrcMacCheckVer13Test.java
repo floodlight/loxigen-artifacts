@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -46,7 +46,7 @@ public class OFInstructionBsnDisableSrcMacCheckVer13Test {
     @Test
     public void testWrite() {
         OFInstructionBsnDisableSrcMacCheck instructionBsnDisableSrcMacCheck = factory.bsnDisableSrcMacCheck();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         instructionBsnDisableSrcMacCheck.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -58,7 +58,7 @@ public class OFInstructionBsnDisableSrcMacCheckVer13Test {
     public void testRead() throws Exception {
         OFInstructionBsnDisableSrcMacCheck instructionBsnDisableSrcMacCheckBuilt = factory.bsnDisableSrcMacCheck();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFInstructionBsnDisableSrcMacCheck instructionBsnDisableSrcMacCheckRead = OFInstructionBsnDisableSrcMacCheckVer13.READER.readFrom(input);
@@ -69,14 +69,14 @@ public class OFInstructionBsnDisableSrcMacCheckVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFInstructionBsnDisableSrcMacCheck instructionBsnDisableSrcMacCheck = OFInstructionBsnDisableSrcMacCheckVer13.READER.readFrom(input);
        assertEquals(INSTRUCTION_BSN_DISABLE_SRC_MAC_CHECK_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        instructionBsnDisableSrcMacCheck.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

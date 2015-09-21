@@ -26,7 +26,7 @@ import org.projectfloodlight.openflow.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Set;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -289,7 +289,7 @@ class OFBsnInterfaceVer14 implements OFBsnInterface {
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFBsnInterface> {
         @Override
-        public OFBsnInterface readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFBsnInterface readFrom(ByteBuf bb) throws OFParseError {
             MacAddress hwAddr = MacAddress.read6Bytes(bb);
             // pad: 2 bytes
             bb.skipBytes(2);
@@ -327,14 +327,14 @@ class OFBsnInterfaceVer14 implements OFBsnInterface {
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFBsnInterfaceVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFBsnInterfaceVer14 message) {
+        public void write(ByteBuf bb, OFBsnInterfaceVer14 message) {
             message.hwAddr.write6Bytes(bb);
             // pad: 2 bytes
             bb.writeZero(2);

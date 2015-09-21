@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -47,14 +47,14 @@ public class OFFeaturesRequestVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(FEATURES_REQUEST_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(FEATURES_REQUEST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFFeaturesRequest featuresRequest = OFFeaturesRequestVer13.READER.readFrom(input);
        assertEquals(FEATURES_REQUEST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        featuresRequest.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

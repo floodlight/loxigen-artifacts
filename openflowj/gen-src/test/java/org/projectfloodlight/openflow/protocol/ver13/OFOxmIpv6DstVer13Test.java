@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -47,14 +47,14 @@ public class OFOxmIpv6DstVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(OXM_IPV6_DST_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(OXM_IPV6_DST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFOxmIpv6Dst oxmIpv6Dst = OFOxmIpv6DstVer13.READER.readFrom(input);
        assertEquals(OXM_IPV6_DST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        oxmIpv6Dst.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);

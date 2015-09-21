@@ -28,7 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 import com.google.common.hash.Funnel;
 
@@ -171,7 +171,7 @@ class OFTableFeaturePropApplySetfieldMissVer14 implements OFTableFeaturePropAppl
     final static Reader READER = new Reader();
     static class Reader implements OFMessageReader<OFTableFeaturePropApplySetfieldMiss> {
         @Override
-        public OFTableFeaturePropApplySetfieldMiss readFrom(ChannelBuffer bb) throws OFParseError {
+        public OFTableFeaturePropApplySetfieldMiss readFrom(ByteBuf bb) throws OFParseError {
             int start = bb.readerIndex();
             // fixed value property type == 0xf
             short type = bb.readShort();
@@ -215,14 +215,14 @@ class OFTableFeaturePropApplySetfieldMissVer14 implements OFTableFeaturePropAppl
     }
 
 
-    public void writeTo(ChannelBuffer bb) {
+    public void writeTo(ByteBuf bb) {
         WRITER.write(bb, this);
     }
 
     final static Writer WRITER = new Writer();
     static class Writer implements OFMessageWriter<OFTableFeaturePropApplySetfieldMissVer14> {
         @Override
-        public void write(ChannelBuffer bb, OFTableFeaturePropApplySetfieldMissVer14 message) {
+        public void write(ByteBuf bb, OFTableFeaturePropApplySetfieldMissVer14 message) {
             int startIndex = bb.writerIndex();
             // fixed value property type = 0xf
             bb.writeShort((short) 0xf);

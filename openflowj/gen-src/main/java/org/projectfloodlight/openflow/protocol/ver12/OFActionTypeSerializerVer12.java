@@ -24,7 +24,7 @@ import org.projectfloodlight.openflow.types.*;
 import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.projectfloodlight.openflow.protocol.OFActionType;
-import org.jboss.netty.buffer.ChannelBuffer;
+import io.netty.buffer.ByteBuf;
 import com.google.common.hash.PrimitiveSink;
 
 public class OFActionTypeSerializerVer12 {
@@ -45,7 +45,7 @@ public class OFActionTypeSerializerVer12 {
     public final static short SET_FIELD_VAL = (short) 0x19;
     public final static short EXPERIMENTER_VAL = (short) 0xffff;
 
-    public static OFActionType readFrom(ChannelBuffer bb) throws OFParseError {
+    public static OFActionType readFrom(ByteBuf bb) throws OFParseError {
         try {
             return ofWireValue(bb.readShort());
         } catch (IllegalArgumentException e) {
@@ -53,7 +53,7 @@ public class OFActionTypeSerializerVer12 {
         }
     }
 
-    public static void writeTo(ChannelBuffer bb, OFActionType e) {
+    public static void writeTo(ByteBuf bb, OFActionType e) {
         bb.writeShort(toWireValue(e));
     }
 

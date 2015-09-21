@@ -26,8 +26,8 @@ import org.projectfloodlight.openflow.exceptions.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import org.hamcrest.CoreMatchers;
 
 
@@ -48,7 +48,7 @@ public class OFBsnLacpStatsRequestVer13Test {
         OFBsnLacpStatsRequest.Builder builder = factory.buildBsnLacpStatsRequest();
         builder.setXid(0x12345678);
         OFBsnLacpStatsRequest bsnLacpStatsRequest = builder.build();
-        ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+        ByteBuf bb = Unpooled.buffer();
         bsnLacpStatsRequest.writeTo(bb);
         byte[] written = new byte[bb.readableBytes()];
         bb.readBytes(written);
@@ -62,7 +62,7 @@ public class OFBsnLacpStatsRequestVer13Test {
         builder.setXid(0x12345678);
         OFBsnLacpStatsRequest bsnLacpStatsRequestBuilt = builder.build();
 
-        ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_LACP_STATS_REQUEST_SERIALIZED);
+        ByteBuf input = Unpooled.copiedBuffer(BSN_LACP_STATS_REQUEST_SERIALIZED);
 
         // FIXME should invoke the overall reader once implemented
         OFBsnLacpStatsRequest bsnLacpStatsRequestRead = OFBsnLacpStatsRequestVer13.READER.readFrom(input);
@@ -73,14 +73,14 @@ public class OFBsnLacpStatsRequestVer13Test {
 
    @Test
    public void testReadWrite() throws Exception {
-       ChannelBuffer input = ChannelBuffers.copiedBuffer(BSN_LACP_STATS_REQUEST_SERIALIZED);
+       ByteBuf input = Unpooled.copiedBuffer(BSN_LACP_STATS_REQUEST_SERIALIZED);
 
        // FIXME should invoke the overall reader once implemented
        OFBsnLacpStatsRequest bsnLacpStatsRequest = OFBsnLacpStatsRequestVer13.READER.readFrom(input);
        assertEquals(BSN_LACP_STATS_REQUEST_SERIALIZED.length, input.readerIndex());
 
        // write message again
-       ChannelBuffer bb = ChannelBuffers.dynamicBuffer();
+       ByteBuf bb = Unpooled.buffer();
        bsnLacpStatsRequest.writeTo(bb);
        byte[] written = new byte[bb.readableBytes()];
        bb.readBytes(written);
