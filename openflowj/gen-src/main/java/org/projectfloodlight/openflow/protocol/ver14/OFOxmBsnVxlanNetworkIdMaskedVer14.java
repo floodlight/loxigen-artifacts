@@ -36,12 +36,12 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     final static byte WIRE_VERSION = 5;
     final static int LENGTH = 12;
 
-        private final static U32 DEFAULT_VALUE = U32.ZERO;
-        private final static U32 DEFAULT_VALUE_MASK = U32.ZERO;
+        private final static VxlanNI DEFAULT_VALUE = VxlanNI.ZERO;
+        private final static VxlanNI DEFAULT_VALUE_MASK = VxlanNI.ZERO;
 
     // OF message fields
-    private final U32 value;
-    private final U32 mask;
+    private final VxlanNI value;
+    private final VxlanNI mask;
 //
     // Immutable default instance
     final static OFOxmBsnVxlanNetworkIdMaskedVer14 DEFAULT = new OFOxmBsnVxlanNetworkIdMaskedVer14(
@@ -49,7 +49,7 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFOxmBsnVxlanNetworkIdMaskedVer14(U32 value, U32 mask) {
+    OFOxmBsnVxlanNetworkIdMaskedVer14(VxlanNI value, VxlanNI mask) {
         if(value == null) {
             throw new NullPointerException("OFOxmBsnVxlanNetworkIdMaskedVer14: property value cannot be null");
         }
@@ -67,17 +67,17 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public U32 getValue() {
+    public VxlanNI getValue() {
         return value;
     }
 
     @Override
-    public U32 getMask() {
+    public VxlanNI getMask() {
         return mask;
     }
 
     @Override
-    public MatchField<U32> getMatchField() {
+    public MatchField<VxlanNI> getMatchField() {
         return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
@@ -86,10 +86,10 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
         return true;
     }
 
-    public OFOxm<U32> getCanonical() {
-        if (U32.NO_MASK.equals(mask)) {
+    public OFOxm<VxlanNI> getCanonical() {
+        if (VxlanNI.NO_MASK.equals(mask)) {
             return new OFOxmBsnVxlanNetworkIdVer14(value);
-        } else if(U32.FULL_MASK.equals(mask)) {
+        } else if(VxlanNI.FULL_MASK.equals(mask)) {
             return null;
         } else {
             return this;
@@ -112,9 +112,9 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
 
         // OF message fields
         private boolean valueSet;
-        private U32 value;
+        private VxlanNI value;
         private boolean maskSet;
-        private U32 mask;
+        private VxlanNI mask;
 
         BuilderWithParent(OFOxmBsnVxlanNetworkIdMaskedVer14 parentMessage) {
             this.parentMessage = parentMessage;
@@ -126,29 +126,29 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public U32 getValue() {
+    public VxlanNI getValue() {
         return value;
     }
 
     @Override
-    public OFOxmBsnVxlanNetworkIdMasked.Builder setValue(U32 value) {
+    public OFOxmBsnVxlanNetworkIdMasked.Builder setValue(VxlanNI value) {
         this.value = value;
         this.valueSet = true;
         return this;
     }
     @Override
-    public U32 getMask() {
+    public VxlanNI getMask() {
         return mask;
     }
 
     @Override
-    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(U32 mask) {
+    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(VxlanNI mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
+    public MatchField<VxlanNI> getMatchField() {
         return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
@@ -158,7 +158,7 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
@@ -171,10 +171,10 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
 
         @Override
         public OFOxmBsnVxlanNetworkIdMasked build() {
-                U32 value = this.valueSet ? this.value : parentMessage.value;
+                VxlanNI value = this.valueSet ? this.value : parentMessage.value;
                 if(value == null)
                     throw new NullPointerException("Property value must not be null");
-                U32 mask = this.maskSet ? this.mask : parentMessage.mask;
+                VxlanNI mask = this.maskSet ? this.mask : parentMessage.mask;
                 if(mask == null)
                     throw new NullPointerException("Property mask must not be null");
 
@@ -190,9 +190,9 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     static class Builder implements OFOxmBsnVxlanNetworkIdMasked.Builder {
         // OF message fields
         private boolean valueSet;
-        private U32 value;
+        private VxlanNI value;
         private boolean maskSet;
-        private U32 mask;
+        private VxlanNI mask;
 
     @Override
     public long getTypeLen() {
@@ -200,29 +200,29 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public U32 getValue() {
+    public VxlanNI getValue() {
         return value;
     }
 
     @Override
-    public OFOxmBsnVxlanNetworkIdMasked.Builder setValue(U32 value) {
+    public OFOxmBsnVxlanNetworkIdMasked.Builder setValue(VxlanNI value) {
         this.value = value;
         this.valueSet = true;
         return this;
     }
     @Override
-    public U32 getMask() {
+    public VxlanNI getMask() {
         return mask;
     }
 
     @Override
-    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(U32 mask) {
+    public OFOxmBsnVxlanNetworkIdMasked.Builder setMask(VxlanNI mask) {
         this.mask = mask;
         this.maskSet = true;
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
+    public MatchField<VxlanNI> getMatchField() {
         return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
@@ -232,7 +232,7 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property canonical not supported in version 1.4");
     }
 
@@ -244,10 +244,10 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
 //
         @Override
         public OFOxmBsnVxlanNetworkIdMasked build() {
-            U32 value = this.valueSet ? this.value : DEFAULT_VALUE;
+            VxlanNI value = this.valueSet ? this.value : DEFAULT_VALUE;
             if(value == null)
                 throw new NullPointerException("Property value must not be null");
-            U32 mask = this.maskSet ? this.mask : DEFAULT_VALUE_MASK;
+            VxlanNI mask = this.maskSet ? this.mask : DEFAULT_VALUE_MASK;
             if(mask == null)
                 throw new NullPointerException("Property mask must not be null");
 
@@ -269,8 +269,8 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
             int typeLen = bb.readInt();
             if(typeLen != 0x32b08)
                 throw new OFParseError("Wrong typeLen: Expected=0x32b08L(0x32b08L), got="+typeLen);
-            U32 value = U32.of(bb.readInt());
-            U32 mask = U32.of(bb.readInt());
+            VxlanNI value = VxlanNI.read4Bytes(bb);
+            VxlanNI mask = VxlanNI.read4Bytes(bb);
 
             OFOxmBsnVxlanNetworkIdMaskedVer14 oxmBsnVxlanNetworkIdMaskedVer14 = new OFOxmBsnVxlanNetworkIdMaskedVer14(
                     value,
@@ -309,8 +309,8 @@ class OFOxmBsnVxlanNetworkIdMaskedVer14 implements OFOxmBsnVxlanNetworkIdMasked 
         public void write(ChannelBuffer bb, OFOxmBsnVxlanNetworkIdMaskedVer14 message) {
             // fixed value property typeLen = 0x32b08L
             bb.writeInt(0x32b08);
-            bb.writeInt(message.value.getRaw());
-            bb.writeInt(message.mask.getRaw());
+            message.value.write4Bytes(bb);
+            message.mask.write4Bytes(bb);
 
 
         }

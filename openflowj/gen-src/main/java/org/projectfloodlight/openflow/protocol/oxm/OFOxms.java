@@ -276,9 +276,9 @@ public interface OFOxms {
     OFOxmBsnInnerVlanVidMasked.Builder buildBsnInnerVlanVidMasked() throws UnsupportedOperationException;
     OFOxmBsnInnerVlanVidMasked bsnInnerVlanVidMasked(OFVlanVidMatch value, OFVlanVidMatch mask);
     OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() throws UnsupportedOperationException;
-    OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(U32 value);
+    OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(VxlanNI value);
     OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() throws UnsupportedOperationException;
-    OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(U32 value, U32 mask);
+    OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(VxlanNI value, VxlanNI mask);
     OFOxmIpv6Exthdr.Builder buildIpv6Exthdr() throws UnsupportedOperationException;
     OFOxmIpv6Exthdr ipv6Exthdr(U16 value);
     OFOxmIpv6ExthdrMasked.Builder buildIpv6ExthdrMasked() throws UnsupportedOperationException;

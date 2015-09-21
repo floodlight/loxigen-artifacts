@@ -25,29 +25,29 @@ import org.projectfloodlight.openflow.util.*;
 import org.projectfloodlight.openflow.exceptions.*;
 import org.jboss.netty.buffer.ChannelBuffer;
 
-public interface OFOxmBsnVxlanNetworkIdMasked extends OFObject, OFOxm<U32> {
+public interface OFOxmBsnVxlanNetworkIdMasked extends OFObject, OFOxm<VxlanNI> {
     long getTypeLen();
-    U32 getValue();
-    U32 getMask();
-    MatchField<U32> getMatchField();
+    VxlanNI getValue();
+    VxlanNI getMask();
+    MatchField<VxlanNI> getMatchField();
     boolean isMasked();
-    OFOxm<U32> getCanonical();
+    OFOxm<VxlanNI> getCanonical();
     OFVersion getVersion();
 
 
     void writeTo(ChannelBuffer channelBuffer);
 
     Builder createBuilder();
-    public interface Builder extends OFOxm.Builder<U32> {
+    public interface Builder extends OFOxm.Builder<VxlanNI> {
         OFOxmBsnVxlanNetworkIdMasked build();
         long getTypeLen();
-        U32 getValue();
-        Builder setValue(U32 value);
-        U32 getMask();
-        Builder setMask(U32 mask);
-        MatchField<U32> getMatchField();
+        VxlanNI getValue();
+        Builder setValue(VxlanNI value);
+        VxlanNI getMask();
+        Builder setMask(VxlanNI mask);
+        MatchField<VxlanNI> getMatchField();
         boolean isMasked();
-        OFOxm<U32> getCanonical();
+        OFOxm<VxlanNI> getCanonical();
         OFVersion getVersion();
     }
 }

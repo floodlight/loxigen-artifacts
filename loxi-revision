@@ -1,1 +1,1 @@
-3030a39d5a52f198ef997d6b1e0f41a33e48511b Merge into master from pull request #420: Added static function to generate macAddress from IPv4 Multicast address (https://github.com/floodlight/loxigen/pull/420)
+e16f4a7025feba2cd7c6508e38258b096db58f53 Merge into master from pull request #424: add VxLAN Network Identifier type to the Openflow library (https://github.com/floodlight/loxigen/pull/424)

@@ -902,14 +902,14 @@ public class OFOxmsVer11 implements OFOxms {
     public OFOxmBsnVxlanNetworkId.Builder buildBsnVxlanNetworkId() {
         throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.1");
     }
-    public OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(U32 value) {
+    public OFOxmBsnVxlanNetworkId bsnVxlanNetworkId(VxlanNI value) {
         throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkId not supported in version 1.1");
     }
 
     public OFOxmBsnVxlanNetworkIdMasked.Builder buildBsnVxlanNetworkIdMasked() {
         throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkIdMasked not supported in version 1.1");
     }
-    public OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(U32 value, U32 mask) {
+    public OFOxmBsnVxlanNetworkIdMasked bsnVxlanNetworkIdMasked(VxlanNI value, VxlanNI mask) {
         throw new UnsupportedOperationException("OFOxmBsnVxlanNetworkIdMasked not supported in version 1.1");
     }
 
@@ -1101,7 +1101,7 @@ public class OFOxmsVer11 implements OFOxms {
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVid((OFVlanVidMatch)((Object)value)));
             case BSN_VXLAN_NETWORK_ID:
-                return (OFOxm<F>)((Object)bsnVxlanNetworkId((U32)((Object)value)));
+                return (OFOxm<F>)((Object)bsnVxlanNetworkId((VxlanNI)((Object)value)));
             case IPV6_EXTHDR:
                 return (OFOxm<F>)((Object)ipv6Exthdr((U16)((Object)value)));
             case MPLS_BOS:
@@ -1243,7 +1243,7 @@ public class OFOxmsVer11 implements OFOxms {
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)value), (OFVlanVidMatch)((Object)mask)));
             case BSN_VXLAN_NETWORK_ID:
-                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((U32)((Object)value), (U32)((Object)mask)));
+                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)value), (VxlanNI)((Object)mask)));
             case IPV6_EXTHDR:
                 return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)value), (U16)((Object)mask)));
             case MPLS_BOS:
@@ -1385,7 +1385,7 @@ public class OFOxmsVer11 implements OFOxms {
             case BSN_INNER_VLAN_VID:
                 return (OFOxm<F>)((Object)bsnInnerVlanVidMasked((OFVlanVidMatch)((Object)(masked.getValue())), (OFVlanVidMatch)((Object)(masked.getMask()))));
             case BSN_VXLAN_NETWORK_ID:
-                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((U32)((Object)(masked.getValue())), (U32)((Object)(masked.getMask()))));
+                return (OFOxm<F>)((Object)bsnVxlanNetworkIdMasked((VxlanNI)((Object)(masked.getValue())), (VxlanNI)((Object)(masked.getMask()))));
             case IPV6_EXTHDR:
                 return (OFOxm<F>)((Object)ipv6ExthdrMasked((U16)((Object)(masked.getValue())), (U16)((Object)(masked.getMask()))));
             case MPLS_BOS:

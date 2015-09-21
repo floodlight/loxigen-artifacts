@@ -36,10 +36,10 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     final static byte WIRE_VERSION = 4;
     final static int LENGTH = 8;
 
-        private final static U32 DEFAULT_VALUE = U32.ZERO;
+        private final static VxlanNI DEFAULT_VALUE = VxlanNI.ZERO;
 
     // OF message fields
-    private final U32 value;
+    private final VxlanNI value;
 //
     // Immutable default instance
     final static OFOxmBsnVxlanNetworkIdVer13 DEFAULT = new OFOxmBsnVxlanNetworkIdVer13(
@@ -47,7 +47,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     );
 
     // package private constructor - used by readers, builders, and factory
-    OFOxmBsnVxlanNetworkIdVer13(U32 value) {
+    OFOxmBsnVxlanNetworkIdVer13(VxlanNI value) {
         if(value == null) {
             throw new NullPointerException("OFOxmBsnVxlanNetworkIdVer13: property value cannot be null");
         }
@@ -61,12 +61,12 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     }
 
     @Override
-    public U32 getValue() {
+    public VxlanNI getValue() {
         return value;
     }
 
     @Override
-    public MatchField<U32> getMatchField() {
+    public MatchField<VxlanNI> getMatchField() {
         return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
@@ -75,13 +75,13 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
         return false;
     }
 
-    public OFOxm<U32> getCanonical() {
+    public OFOxm<VxlanNI> getCanonical() {
         // exact match OXM is always canonical
         return this;
     }
 
     @Override
-    public U32 getMask()throws UnsupportedOperationException {
+    public VxlanNI getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
@@ -101,7 +101,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
 
         // OF message fields
         private boolean valueSet;
-        private U32 value;
+        private VxlanNI value;
 
         BuilderWithParent(OFOxmBsnVxlanNetworkIdVer13 parentMessage) {
             this.parentMessage = parentMessage;
@@ -113,18 +113,18 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     }
 
     @Override
-    public U32 getValue() {
+    public VxlanNI getValue() {
         return value;
     }
 
     @Override
-    public OFOxmBsnVxlanNetworkId.Builder setValue(U32 value) {
+    public OFOxmBsnVxlanNetworkId.Builder setValue(VxlanNI value) {
         this.value = value;
         this.valueSet = true;
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
+    public MatchField<VxlanNI> getMatchField() {
         return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
@@ -134,12 +134,12 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
-    public U32 getMask()throws UnsupportedOperationException {
+    public VxlanNI getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
@@ -152,7 +152,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
 
         @Override
         public OFOxmBsnVxlanNetworkId build() {
-                U32 value = this.valueSet ? this.value : parentMessage.value;
+                VxlanNI value = this.valueSet ? this.value : parentMessage.value;
                 if(value == null)
                     throw new NullPointerException("Property value must not be null");
 
@@ -167,7 +167,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     static class Builder implements OFOxmBsnVxlanNetworkId.Builder {
         // OF message fields
         private boolean valueSet;
-        private U32 value;
+        private VxlanNI value;
 
     @Override
     public long getTypeLen() {
@@ -175,18 +175,18 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     }
 
     @Override
-    public U32 getValue() {
+    public VxlanNI getValue() {
         return value;
     }
 
     @Override
-    public OFOxmBsnVxlanNetworkId.Builder setValue(U32 value) {
+    public OFOxmBsnVxlanNetworkId.Builder setValue(VxlanNI value) {
         this.value = value;
         this.valueSet = true;
         return this;
     }
     @Override
-    public MatchField<U32> getMatchField() {
+    public MatchField<VxlanNI> getMatchField() {
         return MatchField.BSN_VXLAN_NETWORK_ID;
     }
 
@@ -196,12 +196,12 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
     }
 
     @Override
-    public OFOxm<U32> getCanonical()throws UnsupportedOperationException {
+    public OFOxm<VxlanNI> getCanonical()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property canonical not supported in version 1.3");
     }
 
     @Override
-    public U32 getMask()throws UnsupportedOperationException {
+    public VxlanNI getMask()throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Property mask not supported in version 1.3");
     }
 
@@ -213,7 +213,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
 //
         @Override
         public OFOxmBsnVxlanNetworkId build() {
-            U32 value = this.valueSet ? this.value : DEFAULT_VALUE;
+            VxlanNI value = this.valueSet ? this.value : DEFAULT_VALUE;
             if(value == null)
                 throw new NullPointerException("Property value must not be null");
 
@@ -234,7 +234,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
             int typeLen = bb.readInt();
             if(typeLen != 0x32a04)
                 throw new OFParseError("Wrong typeLen: Expected=0x32a04L(0x32a04L), got="+typeLen);
-            U32 value = U32.of(bb.readInt());
+            VxlanNI value = VxlanNI.read4Bytes(bb);
 
             OFOxmBsnVxlanNetworkIdVer13 oxmBsnVxlanNetworkIdVer13 = new OFOxmBsnVxlanNetworkIdVer13(
                     value
@@ -271,7 +271,7 @@ class OFOxmBsnVxlanNetworkIdVer13 implements OFOxmBsnVxlanNetworkId {
         public void write(ChannelBuffer bb, OFOxmBsnVxlanNetworkIdVer13 message) {
             // fixed value property typeLen = 0x32a04L
             bb.writeInt(0x32a04);
-            bb.writeInt(message.value.getRaw());
+            message.value.write4Bytes(bb);
 
 
         }
