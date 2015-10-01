@@ -6759,6 +6759,13 @@ typedef struct of_bsn_tlv_mac_s of_bsn_tlv_mac_t;
 typedef struct of_bsn_tlv_mac_mask_s of_bsn_tlv_mac_mask_t;
 
 /**
+ * Structure for of_bsn_tlv_mcg_type_vxlan object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ */
+typedef struct of_bsn_tlv_mcg_type_vxlan_s of_bsn_tlv_mcg_type_vxlan_t;
+
+/**
  * Structure for of_bsn_tlv_miss_packets object.  Get/set
  * accessors available in all versions unless noted otherwise
  *
@@ -6907,6 +6914,17 @@ typedef struct of_bsn_tlv_partner_system_priority_s of_bsn_tlv_partner_system_pr
  *
  */
 typedef struct of_bsn_tlv_port_s of_bsn_tlv_port_t;
+
+/**
+ * Structure for of_bsn_tlv_port_vxlan_mode object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint8.  Functions
+ *   are of type of_bsn_tlv_port_vxlan_mode_uint8_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_port_vxlan_mode_s of_bsn_tlv_port_vxlan_mode_t;
 
 /**
  * Structure for of_bsn_tlv_priority object.  Get/set
@@ -7203,6 +7221,17 @@ typedef struct of_bsn_tlv_vlan_vid_s of_bsn_tlv_vlan_vid_t;
  *
  */
 typedef struct of_bsn_tlv_vlan_vid_mask_s of_bsn_tlv_vlan_vid_mask_t;
+
+/**
+ * Structure for of_bsn_tlv_vni object.  Get/set
+ * accessors available in all versions unless noted otherwise
+ *
+ * @param value_get/set ( OF_1_3 OF_1_4).
+ *   Accessors for value, a variable of type uint32.  Functions
+ *   are of type of_bsn_tlv_vni_uint32_get_f and _set_f.
+ *
+ */
+typedef struct of_bsn_tlv_vni_s of_bsn_tlv_vni_t;
 
 /**
  * Structure for of_bsn_tlv_vrf object.  Get/set

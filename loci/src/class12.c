@@ -5042,6 +5042,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
         case 0x55:
             *id = OF_BSN_TLV_DECAP;
             break;
+        case 0x56:
+            *id = OF_BSN_TLV_VNI;
+            break;
+        case 0x57:
+            *id = OF_BSN_TLV_MCG_TYPE_VXLAN;
+            break;
+        case 0x58:
+            *id = OF_BSN_TLV_PORT_VXLAN_MODE;
+            break;
         default:
             *id = OF_BSN_TLV;
             break;
@@ -5305,6 +5314,15 @@ of_bsn_tlv_wire_object_id_get(of_object_t *obj, of_object_id_t *id)
             break;
         case 0x55:
             *id = OF_BSN_TLV_DECAP;
+            break;
+        case 0x56:
+            *id = OF_BSN_TLV_VNI;
+            break;
+        case 0x57:
+            *id = OF_BSN_TLV_MCG_TYPE_VXLAN;
+            break;
+        case 0x58:
+            *id = OF_BSN_TLV_PORT_VXLAN_MODE;
             break;
         default:
             *id = OF_BSN_TLV;

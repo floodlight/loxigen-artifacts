@@ -318,6 +318,10 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvMacMask not supported in version 1.0");
     }
 
+    public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
+        throw new UnsupportedOperationException("OFBsnTlvMcgTypeVxlan not supported in version 1.0");
+    }
+
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
         throw new UnsupportedOperationException("OFBsnTlvMissPackets not supported in version 1.0");
     }
@@ -411,6 +415,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvPort port(OFPort value) {
         throw new UnsupportedOperationException("OFBsnTlvPort not supported in version 1.0");
+    }
+
+    public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
+        throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.0");
+    }
+    public OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value) {
+        throw new UnsupportedOperationException("OFBsnTlvPortVxlanMode not supported in version 1.0");
     }
 
     public OFBsnTlvPriority.Builder buildPriority() {
@@ -595,6 +606,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
     }
     public OFBsnTlvVlanVidMask vlanVidMask(int value) {
         throw new UnsupportedOperationException("OFBsnTlvVlanVidMask not supported in version 1.0");
+    }
+
+    public OFBsnTlvVni.Builder buildVni() {
+        throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.0");
+    }
+    public OFBsnTlvVni vni(long value) {
+        throw new UnsupportedOperationException("OFBsnTlvVni not supported in version 1.0");
     }
 
     public OFBsnTlvVrf.Builder buildVrf() {

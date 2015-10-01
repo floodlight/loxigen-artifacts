@@ -881,6 +881,8 @@ void of_bsn_tlv_mac_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mac_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_mac_mask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_mcg_type_vxlan_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_mcg_type_vxlan_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_miss_packets_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_miss_packets_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_mpls_control_word_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -909,6 +911,8 @@ void of_bsn_tlv_partner_system_priority_wire_object_id_get(of_object_t *obj, of_
 void of_bsn_tlv_partner_system_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_port_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_port_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_port_vxlan_mode_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_port_vxlan_mode_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_priority_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_priority_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_queue_id_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -965,6 +969,8 @@ void of_bsn_tlv_vlan_vid_wire_object_id_get(of_object_t *obj, of_object_id_t *id
 void of_bsn_tlv_vlan_vid_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vlan_vid_mask_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vlan_vid_mask_push_wire_types(of_object_t *obj);
+void of_bsn_tlv_vni_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
+void of_bsn_tlv_vni_push_wire_types(of_object_t *obj);
 void of_bsn_tlv_vrf_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
 void of_bsn_tlv_vrf_push_wire_types(of_object_t *obj);
 void of_bsn_vlan_counter_clear_wire_object_id_get(of_object_t *obj, of_object_id_t *id);
@@ -1646,6 +1652,7 @@ typedef of_object_t of_bsn_tlv_ipv6_t;
 typedef of_object_t of_bsn_tlv_l2_multicast_lookup_t;
 typedef of_object_t of_bsn_tlv_mac_t;
 typedef of_object_t of_bsn_tlv_mac_mask_t;
+typedef of_object_t of_bsn_tlv_mcg_type_vxlan_t;
 typedef of_object_t of_bsn_tlv_miss_packets_t;
 typedef of_object_t of_bsn_tlv_mpls_control_word_t;
 typedef of_object_t of_bsn_tlv_mpls_label_t;
@@ -1660,6 +1667,7 @@ typedef of_object_t of_bsn_tlv_partner_state_t;
 typedef of_object_t of_bsn_tlv_partner_system_mac_t;
 typedef of_object_t of_bsn_tlv_partner_system_priority_t;
 typedef of_object_t of_bsn_tlv_port_t;
+typedef of_object_t of_bsn_tlv_port_vxlan_mode_t;
 typedef of_object_t of_bsn_tlv_priority_t;
 typedef of_object_t of_bsn_tlv_queue_id_t;
 typedef of_object_t of_bsn_tlv_queue_weight_t;
@@ -1688,6 +1696,7 @@ typedef of_object_t of_bsn_tlv_unicast_query_timeout_t;
 typedef of_object_t of_bsn_tlv_vlan_pcp_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_t;
 typedef of_object_t of_bsn_tlv_vlan_vid_mask_t;
+typedef of_object_t of_bsn_tlv_vni_t;
 typedef of_object_t of_bsn_tlv_vrf_t;
 typedef of_object_t of_bsn_vlan_counter_stats_entry_t;
 typedef of_object_t of_bsn_vport_t;
@@ -3735,6 +3744,11 @@ extern void of_bsn_tlv_mac_mask_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
+    of_bsn_tlv_mcg_type_vxlan_new(of_version_t version);
+extern void of_bsn_tlv_mcg_type_vxlan_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
     of_bsn_tlv_miss_packets_new(of_version_t version);
 extern void of_bsn_tlv_miss_packets_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
@@ -3802,6 +3816,11 @@ extern void of_bsn_tlv_partner_system_priority_init(
 extern of_object_t *
     of_bsn_tlv_port_new(of_version_t version);
 extern void of_bsn_tlv_port_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_port_vxlan_mode_new(of_version_t version);
+extern void of_bsn_tlv_port_vxlan_mode_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -3942,6 +3961,11 @@ extern void of_bsn_tlv_vlan_vid_init(
 extern of_object_t *
     of_bsn_tlv_vlan_vid_mask_new(of_version_t version);
 extern void of_bsn_tlv_vlan_vid_mask_init(
+    of_object_t *obj, of_version_t version, int bytes, int clean_wire);
+
+extern of_object_t *
+    of_bsn_tlv_vni_new(of_version_t version);
+extern void of_bsn_tlv_vni_init(
     of_object_t *obj, of_version_t version, int bytes, int clean_wire);
 
 extern of_object_t *
@@ -9302,6 +9326,17 @@ of_bsn_tlv_mac_mask_delete(of_object_t *obj) {
 }
 
 /**
+ * Delete an object of type of_bsn_tlv_mcg_type_vxlan_t
+ * @param obj An instance of type of_bsn_tlv_mcg_type_vxlan_t
+ *
+ * \ingroup of_bsn_tlv_mcg_type_vxlan
+ */
+static inline void
+of_bsn_tlv_mcg_type_vxlan_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
  * Delete an object of type of_bsn_tlv_miss_packets_t
  * @param obj An instance of type of_bsn_tlv_miss_packets_t
  *
@@ -9452,6 +9487,17 @@ of_bsn_tlv_partner_system_priority_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_port_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_port_vxlan_mode_t
+ * @param obj An instance of type of_bsn_tlv_port_vxlan_mode_t
+ *
+ * \ingroup of_bsn_tlv_port_vxlan_mode
+ */
+static inline void
+of_bsn_tlv_port_vxlan_mode_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -9760,6 +9806,17 @@ of_bsn_tlv_vlan_vid_delete(of_object_t *obj) {
  */
 static inline void
 of_bsn_tlv_vlan_vid_mask_delete(of_object_t *obj) {
+    of_object_delete(obj);
+}
+
+/**
+ * Delete an object of type of_bsn_tlv_vni_t
+ * @param obj An instance of type of_bsn_tlv_vni_t
+ *
+ * \ingroup of_bsn_tlv_vni
+ */
+static inline void
+of_bsn_tlv_vni_delete(of_object_t *obj) {
     of_object_delete(obj);
 }
 
@@ -21293,6 +21350,8 @@ extern void of_bsn_tlv_mac_mask_value_get(
     of_bsn_tlv_mac_mask_t *obj,
     of_mac_addr_t *value);
 
+/* Unified accessor functions for of_bsn_tlv_mcg_type_vxlan */
+
 /* Unified accessor functions for of_bsn_tlv_miss_packets */
 
 extern void of_bsn_tlv_miss_packets_value_set(
@@ -21411,6 +21470,15 @@ extern void of_bsn_tlv_port_value_set(
 extern void of_bsn_tlv_port_value_get(
     of_bsn_tlv_port_t *obj,
     of_port_no_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_port_vxlan_mode */
+
+extern void of_bsn_tlv_port_vxlan_mode_value_set(
+    of_bsn_tlv_port_vxlan_mode_t *obj,
+    uint8_t value);
+extern void of_bsn_tlv_port_vxlan_mode_value_get(
+    of_bsn_tlv_port_vxlan_mode_t *obj,
+    uint8_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_priority */
 
@@ -21644,6 +21712,15 @@ extern void of_bsn_tlv_vlan_vid_mask_value_set(
 extern void of_bsn_tlv_vlan_vid_mask_value_get(
     of_bsn_tlv_vlan_vid_mask_t *obj,
     uint16_t *value);
+
+/* Unified accessor functions for of_bsn_tlv_vni */
+
+extern void of_bsn_tlv_vni_value_set(
+    of_bsn_tlv_vni_t *obj,
+    uint32_t value);
+extern void of_bsn_tlv_vni_value_get(
+    of_bsn_tlv_vni_t *obj,
+    uint32_t *value);
 
 /* Unified accessor functions for of_bsn_tlv_vrf */
 

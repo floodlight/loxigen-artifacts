@@ -423,6 +423,15 @@ ofp_bsn_port_counter_map = {
     27: 'OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN',
 }
 
+# Identifiers from group ofp_bsn_port_vxlan_mode
+OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE = 0
+OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE = 1
+
+ofp_bsn_port_vxlan_mode_map = {
+    0: 'OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE',
+    1: 'OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE',
+}
+
 # Identifiers from group ofp_bsn_tcp_flag
 OFP_BSN_TCP_FLAG_FIN = 1
 OFP_BSN_TCP_FLAG_SYN = 2

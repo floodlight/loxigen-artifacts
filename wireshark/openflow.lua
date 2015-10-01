@@ -1398,6 +1398,11 @@ enum_v4_of_bsn_pdu_slot_num = {
     [255] = "BSN_PDU_SLOT_NUM_ANY",
 }
 
+enum_v4_ofp_bsn_port_vxlan_mode = {
+    [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
+    [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
+}
+
 enum_v4_ofp_controller_max_len = {
     [65509] = "OFPCML_MAX",
     [65535] = "OFPCML_NO_BUFFER",
@@ -1931,35 +1936,40 @@ enum_v5_ofp_stats_type = {
     [65535] = "OFPST_EXPERIMENTER",
 }
 
-enum_v5_ofp_bsn_port_counter = {
-    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
-    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
-    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
-    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
-    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
-    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
-    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
-    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
-    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
-    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
-    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
-    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
-    [12] = "OFP_BSN_PORT_COUNTER_RX_RUNTS",
-    [13] = "OFP_BSN_PORT_COUNTER_RX_GIANTS",
-    [14] = "OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS",
-    [15] = "OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS",
-    [16] = "OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS",
-    [17] = "OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT",
-    [18] = "OFP_BSN_PORT_COUNTER_TX_COLLISIONS",
-    [19] = "OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS",
-    [20] = "OFP_BSN_PORT_COUNTER_TX_DEFERRED",
-    [21] = "OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT",
-    [22] = "OFP_BSN_PORT_COUNTER_RX_PACKETS",
-    [23] = "OFP_BSN_PORT_COUNTER_TX_PACKETS",
-    [24] = "OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS",
-    [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
-    [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
-    [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
+enum_v5_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
+    [30] = "OFPT_ROLE_STATUS",
+    [31] = "OFPT_TABLE_STATUS",
+    [32] = "OFPT_REQUESTFORWARD",
+    [33] = "OFPT_BUNDLE_CONTROL",
+    [34] = "OFPT_BUNDLE_ADD_MESSAGE",
 }
 
 enum_v5_ofp_flow_mod_flags = {
@@ -2119,6 +2129,11 @@ enum_v5_ofp_async_config_failed_code = {
     [0] = "OFPACFC_INVALID",
     [1] = "OFPACFC_UNSUPPORTED",
     [2] = "OFPACFC_EPERM",
+}
+
+enum_v5_ofp_bsn_port_vxlan_mode = {
+    [0] = "OFP_BSN_PORT_VXLAN_RECIRCULATION_ENABLE",
+    [1] = "OFP_BSN_PORT_VXLAN_TERMINATION_ENABLE",
 }
 
 enum_v5_ofp_controller_max_len = {
@@ -2540,40 +2555,35 @@ enum_v5_ofp_bad_match_code = {
     [11] = "OFPBMC_EPERM",
 }
 
-enum_v5_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
-    [30] = "OFPT_ROLE_STATUS",
-    [31] = "OFPT_TABLE_STATUS",
-    [32] = "OFPT_REQUESTFORWARD",
-    [33] = "OFPT_BUNDLE_CONTROL",
-    [34] = "OFPT_BUNDLE_ADD_MESSAGE",
+enum_v5_ofp_bsn_port_counter = {
+    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
+    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
+    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
+    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
+    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
+    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
+    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
+    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
+    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
+    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
+    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
+    [12] = "OFP_BSN_PORT_COUNTER_RX_RUNTS",
+    [13] = "OFP_BSN_PORT_COUNTER_RX_GIANTS",
+    [14] = "OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS",
+    [15] = "OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS",
+    [16] = "OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS",
+    [17] = "OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT",
+    [18] = "OFP_BSN_PORT_COUNTER_TX_COLLISIONS",
+    [19] = "OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS",
+    [20] = "OFP_BSN_PORT_COUNTER_TX_DEFERRED",
+    [21] = "OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT",
+    [22] = "OFP_BSN_PORT_COUNTER_RX_PACKETS",
+    [23] = "OFP_BSN_PORT_COUNTER_TX_PACKETS",
+    [24] = "OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS",
+    [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
+    [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
+    [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
 }
 
 enum_v5_ofp_packet_in_reason = {
@@ -6871,6 +6881,8 @@ fields['of13.bsn_tlv_mac.value'] = ProtoField.ether("of13.bsn_tlv_mac.value", "v
 fields['of13.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of13.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_mac_mask.value'] = ProtoField.ether("of13.bsn_tlv_mac_mask.value", "value")
+fields['of13.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of13.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of13.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of13.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -6912,6 +6924,9 @@ fields['of13.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of13.b
 fields['of13.bsn_tlv_port.type'] = ProtoField.uint16("of13.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_port.length'] = ProtoField.uint16("of13.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_port.value'] = ProtoField.uint32("of13.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of13.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of13.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of13.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v4_ofp_bsn_port_vxlan_mode)
 fields['of13.bsn_tlv_priority.type'] = ProtoField.uint16("of13.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_priority.length'] = ProtoField.uint16("of13.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_priority.value'] = ProtoField.uint32("of13.bsn_tlv_priority.value", "value", base.DEC, nil)
@@ -6993,6 +7008,9 @@ fields['of13.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid
 fields['of13.bsn_tlv_vlan_vid_mask.type'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid_mask.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid_mask.length'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid_mask.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vlan_vid_mask.value'] = ProtoField.uint16("of13.bsn_tlv_vlan_vid_mask.value", "value", base.DEC, nil)
+fields['of13.bsn_tlv_vni.type'] = ProtoField.uint16("of13.bsn_tlv_vni.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_vni.length'] = ProtoField.uint16("of13.bsn_tlv_vni.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_vni.value'] = ProtoField.uint32("of13.bsn_tlv_vni.value", "value", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.type'] = ProtoField.uint16("of13.bsn_tlv_vrf.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.length'] = ProtoField.uint16("of13.bsn_tlv_vrf.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_vrf.value'] = ProtoField.uint32("of13.bsn_tlv_vrf.value", "value", base.DEC, nil)
@@ -9496,6 +9514,8 @@ fields['of14.bsn_tlv_mac.value'] = ProtoField.ether("of14.bsn_tlv_mac.value", "v
 fields['of14.bsn_tlv_mac_mask.type'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_mac_mask.length'] = ProtoField.uint16("of14.bsn_tlv_mac_mask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_mac_mask.value'] = ProtoField.ether("of14.bsn_tlv_mac_mask.value", "value")
+fields['of14.bsn_tlv_mcg_type_vxlan.type'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_mcg_type_vxlan.length'] = ProtoField.uint16("of14.bsn_tlv_mcg_type_vxlan.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.type'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.length'] = ProtoField.uint16("of14.bsn_tlv_miss_packets.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_miss_packets.value'] = ProtoField.uint64("of14.bsn_tlv_miss_packets.value", "value", base.DEC, nil)
@@ -9537,6 +9557,9 @@ fields['of14.bsn_tlv_partner_system_priority.value'] = ProtoField.uint16("of14.b
 fields['of14.bsn_tlv_port.type'] = ProtoField.uint16("of14.bsn_tlv_port.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_port.length'] = ProtoField.uint16("of14.bsn_tlv_port.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_port.value'] = ProtoField.uint32("of14.bsn_tlv_port.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_port_vxlan_mode.type'] = ProtoField.uint16("of14.bsn_tlv_port_vxlan_mode.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_port_vxlan_mode.length'] = ProtoField.uint16("of14.bsn_tlv_port_vxlan_mode.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_port_vxlan_mode.value'] = ProtoField.uint32("of14.bsn_tlv_port_vxlan_mode.value", "value", base.DEC, enum_v5_ofp_bsn_port_vxlan_mode)
 fields['of14.bsn_tlv_priority.type'] = ProtoField.uint16("of14.bsn_tlv_priority.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_priority.length'] = ProtoField.uint16("of14.bsn_tlv_priority.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_priority.value'] = ProtoField.uint32("of14.bsn_tlv_priority.value", "value", base.DEC, nil)
@@ -9618,6 +9641,9 @@ fields['of14.bsn_tlv_vlan_vid.value'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid
 fields['of14.bsn_tlv_vlan_vid_mask.type'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid_mask.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid_mask.length'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid_mask.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vlan_vid_mask.value'] = ProtoField.uint16("of14.bsn_tlv_vlan_vid_mask.value", "value", base.DEC, nil)
+fields['of14.bsn_tlv_vni.type'] = ProtoField.uint16("of14.bsn_tlv_vni.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_vni.length'] = ProtoField.uint16("of14.bsn_tlv_vni.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_vni.value'] = ProtoField.uint32("of14.bsn_tlv_vni.value", "value", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.type'] = ProtoField.uint16("of14.bsn_tlv_vrf.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.length'] = ProtoField.uint16("of14.bsn_tlv_vrf.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_vrf.value'] = ProtoField.uint32("of14.bsn_tlv_vrf.value", "value", base.DEC, nil)
@@ -15313,6 +15339,8 @@ p_of.fields = {
     fields['of13.bsn_tlv_mac_mask.type'],
     fields['of13.bsn_tlv_mac_mask.length'],
     fields['of13.bsn_tlv_mac_mask.value'],
+    fields['of13.bsn_tlv_mcg_type_vxlan.type'],
+    fields['of13.bsn_tlv_mcg_type_vxlan.length'],
     fields['of13.bsn_tlv_miss_packets.type'],
     fields['of13.bsn_tlv_miss_packets.length'],
     fields['of13.bsn_tlv_miss_packets.value'],
@@ -15354,6 +15382,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_port.type'],
     fields['of13.bsn_tlv_port.length'],
     fields['of13.bsn_tlv_port.value'],
+    fields['of13.bsn_tlv_port_vxlan_mode.type'],
+    fields['of13.bsn_tlv_port_vxlan_mode.length'],
+    fields['of13.bsn_tlv_port_vxlan_mode.value'],
     fields['of13.bsn_tlv_priority.type'],
     fields['of13.bsn_tlv_priority.length'],
     fields['of13.bsn_tlv_priority.value'],
@@ -15435,6 +15466,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_vlan_vid_mask.type'],
     fields['of13.bsn_tlv_vlan_vid_mask.length'],
     fields['of13.bsn_tlv_vlan_vid_mask.value'],
+    fields['of13.bsn_tlv_vni.type'],
+    fields['of13.bsn_tlv_vni.length'],
+    fields['of13.bsn_tlv_vni.value'],
     fields['of13.bsn_tlv_vrf.type'],
     fields['of13.bsn_tlv_vrf.length'],
     fields['of13.bsn_tlv_vrf.value'],
@@ -17938,6 +17972,8 @@ p_of.fields = {
     fields['of14.bsn_tlv_mac_mask.type'],
     fields['of14.bsn_tlv_mac_mask.length'],
     fields['of14.bsn_tlv_mac_mask.value'],
+    fields['of14.bsn_tlv_mcg_type_vxlan.type'],
+    fields['of14.bsn_tlv_mcg_type_vxlan.length'],
     fields['of14.bsn_tlv_miss_packets.type'],
     fields['of14.bsn_tlv_miss_packets.length'],
     fields['of14.bsn_tlv_miss_packets.value'],
@@ -17979,6 +18015,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_port.type'],
     fields['of14.bsn_tlv_port.length'],
     fields['of14.bsn_tlv_port.value'],
+    fields['of14.bsn_tlv_port_vxlan_mode.type'],
+    fields['of14.bsn_tlv_port_vxlan_mode.length'],
+    fields['of14.bsn_tlv_port_vxlan_mode.value'],
     fields['of14.bsn_tlv_priority.type'],
     fields['of14.bsn_tlv_priority.length'],
     fields['of14.bsn_tlv_priority.value'],
@@ -18060,6 +18099,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_vlan_vid_mask.type'],
     fields['of14.bsn_tlv_vlan_vid_mask.length'],
     fields['of14.bsn_tlv_vlan_vid_mask.value'],
+    fields['of14.bsn_tlv_vni.type'],
+    fields['of14.bsn_tlv_vni.length'],
+    fields['of14.bsn_tlv_vni.value'],
     fields['of14.bsn_tlv_vrf.type'],
     fields['of14.bsn_tlv_vrf.length'],
     fields['of14.bsn_tlv_vrf.value'],
@@ -29284,6 +29326,15 @@ function dissect_of_bsn_tlv_mac_mask_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v4
 
+-- child class of_bsn_tlv_mcg_type_vxlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mcg_type_vxlan_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mcg_type_vxlan.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_mcg_type_vxlan.length')
+    return 'of_bsn_tlv_mcg_type_vxlan'
+end
+of_bsn_tlv_v4_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v4
+
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_miss_packets_v4(reader, subtree)
@@ -29425,6 +29476,16 @@ function dissect_of_bsn_tlv_port_v4(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v4_dissectors[0] = dissect_of_bsn_tlv_port_v4
+
+-- child class of_bsn_tlv_port_vxlan_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_vxlan_mode_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_vxlan_mode.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_port_vxlan_mode.length')
+    read_uint8_t(reader, 4, subtree, 'of13.bsn_tlv_port_vxlan_mode.value')
+    return 'of_bsn_tlv_port_vxlan_mode'
+end
+of_bsn_tlv_v4_dissectors[88] = dissect_of_bsn_tlv_port_vxlan_mode_v4
 
 -- child class of_bsn_tlv_priority
 -- Child of of_bsn_tlv
@@ -29705,6 +29766,16 @@ function dissect_of_bsn_tlv_vlan_vid_mask_v4(reader, subtree)
     return 'of_bsn_tlv_vlan_vid_mask'
 end
 of_bsn_tlv_v4_dissectors[77] = dissect_of_bsn_tlv_vlan_vid_mask_v4
+
+-- child class of_bsn_tlv_vni
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vni_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vni.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_vni.length')
+    read_uint32_t(reader, 4, subtree, 'of13.bsn_tlv_vni.value')
+    return 'of_bsn_tlv_vni'
+end
+of_bsn_tlv_v4_dissectors[86] = dissect_of_bsn_tlv_vni_v4
 
 -- child class of_bsn_tlv_vrf
 -- Child of of_bsn_tlv
@@ -36182,6 +36253,15 @@ function dissect_of_bsn_tlv_mac_mask_v5(reader, subtree)
 end
 of_bsn_tlv_v5_dissectors[56] = dissect_of_bsn_tlv_mac_mask_v5
 
+-- child class of_bsn_tlv_mcg_type_vxlan
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_mcg_type_vxlan_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mcg_type_vxlan.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_mcg_type_vxlan.length')
+    return 'of_bsn_tlv_mcg_type_vxlan'
+end
+of_bsn_tlv_v5_dissectors[87] = dissect_of_bsn_tlv_mcg_type_vxlan_v5
+
 -- child class of_bsn_tlv_miss_packets
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_miss_packets_v5(reader, subtree)
@@ -36323,6 +36403,16 @@ function dissect_of_bsn_tlv_port_v5(reader, subtree)
     return 'of_bsn_tlv_port'
 end
 of_bsn_tlv_v5_dissectors[0] = dissect_of_bsn_tlv_port_v5
+
+-- child class of_bsn_tlv_port_vxlan_mode
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_port_vxlan_mode_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_vxlan_mode.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_port_vxlan_mode.length')
+    read_uint8_t(reader, 5, subtree, 'of14.bsn_tlv_port_vxlan_mode.value')
+    return 'of_bsn_tlv_port_vxlan_mode'
+end
+of_bsn_tlv_v5_dissectors[88] = dissect_of_bsn_tlv_port_vxlan_mode_v5
 
 -- child class of_bsn_tlv_priority
 -- Child of of_bsn_tlv
@@ -36603,6 +36693,16 @@ function dissect_of_bsn_tlv_vlan_vid_mask_v5(reader, subtree)
     return 'of_bsn_tlv_vlan_vid_mask'
 end
 of_bsn_tlv_v5_dissectors[77] = dissect_of_bsn_tlv_vlan_vid_mask_v5
+
+-- child class of_bsn_tlv_vni
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_vni_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vni.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_vni.length')
+    read_uint32_t(reader, 5, subtree, 'of14.bsn_tlv_vni.value')
+    return 'of_bsn_tlv_vni'
+end
+of_bsn_tlv_v5_dissectors[86] = dissect_of_bsn_tlv_vni_v5
 
 -- child class of_bsn_tlv_vrf
 -- Child of of_bsn_tlv

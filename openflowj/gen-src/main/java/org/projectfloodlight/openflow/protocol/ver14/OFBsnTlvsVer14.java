@@ -396,6 +396,10 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvMcgTypeVxlan mcgTypeVxlan() {
+        return OFBsnTlvMcgTypeVxlanVer14.INSTANCE;
+    }
+
     public OFBsnTlvMissPackets.Builder buildMissPackets() {
         return new OFBsnTlvMissPacketsVer14.Builder();
     }
@@ -513,6 +517,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvPort port(OFPort value) {
         return new OFBsnTlvPortVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() {
+        return new OFBsnTlvPortVxlanModeVer14.Builder();
+    }
+    public OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value) {
+        return new OFBsnTlvPortVxlanModeVer14(
                 value
                     );
     }
@@ -746,6 +759,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
     }
     public OFBsnTlvVlanVidMask vlanVidMask(int value) {
         return new OFBsnTlvVlanVidMaskVer14(
+                value
+                    );
+    }
+
+    public OFBsnTlvVni.Builder buildVni() {
+        return new OFBsnTlvVniVer14.Builder();
+    }
+    public OFBsnTlvVni vni(long value) {
+        return new OFBsnTlvVniVer14(
                 value
                     );
     }

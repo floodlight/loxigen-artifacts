@@ -110,6 +110,7 @@ public interface OFBsnTlvs {
     OFBsnTlvMac mac(MacAddress value);
     OFBsnTlvMacMask.Builder buildMacMask() throws UnsupportedOperationException;
     OFBsnTlvMacMask macMask(MacAddress value);
+    OFBsnTlvMcgTypeVxlan mcgTypeVxlan();
     OFBsnTlvMissPackets.Builder buildMissPackets() throws UnsupportedOperationException;
     OFBsnTlvMissPackets missPackets(U64 value);
     OFBsnTlvMplsControlWord.Builder buildMplsControlWord() throws UnsupportedOperationException;
@@ -137,6 +138,8 @@ public interface OFBsnTlvs {
     OFBsnTlvPartnerSystemPriority partnerSystemPriority(int value);
     OFBsnTlvPort.Builder buildPort() throws UnsupportedOperationException;
     OFBsnTlvPort port(OFPort value);
+    OFBsnTlvPortVxlanMode.Builder buildPortVxlanMode() throws UnsupportedOperationException;
+    OFBsnTlvPortVxlanMode portVxlanMode(OFBsnPortVxlanMode value);
     OFBsnTlvPriority.Builder buildPriority() throws UnsupportedOperationException;
     OFBsnTlvPriority priority(long value);
     OFBsnTlvQueueId.Builder buildQueueId() throws UnsupportedOperationException;
@@ -189,6 +192,8 @@ public interface OFBsnTlvs {
     OFBsnTlvVlanVid vlanVid(VlanVid value);
     OFBsnTlvVlanVidMask.Builder buildVlanVidMask() throws UnsupportedOperationException;
     OFBsnTlvVlanVidMask vlanVidMask(int value);
+    OFBsnTlvVni.Builder buildVni() throws UnsupportedOperationException;
+    OFBsnTlvVni vni(long value);
     OFBsnTlvVrf.Builder buildVrf() throws UnsupportedOperationException;
     OFBsnTlvVrf vrf(long value);
 

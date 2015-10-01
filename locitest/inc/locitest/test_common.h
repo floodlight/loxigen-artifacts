@@ -6944,6 +6944,15 @@ extern int of_bsn_tlv_mac_mask_OF_VERSION_1_3_populate_scalars(
 extern int of_bsn_tlv_mac_mask_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value);
 
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_populate(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+
 extern int of_bsn_tlv_miss_packets_OF_VERSION_1_3_populate(
     of_bsn_tlv_miss_packets_t *obj, int value);
 extern int of_bsn_tlv_miss_packets_OF_VERSION_1_3_check(
@@ -7069,6 +7078,15 @@ extern int of_bsn_tlv_port_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_port_t *obj, int value);
 extern int of_bsn_tlv_port_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_port_t *obj, int value);
+
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_populate(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_check(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
 
 extern int of_bsn_tlv_priority_OF_VERSION_1_3_populate(
     of_bsn_tlv_priority_t *obj, int value);
@@ -7321,6 +7339,15 @@ extern int of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_populate_scalars(
     of_bsn_tlv_vlan_vid_mask_t *obj, int value);
 extern int of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_3_check_scalars(
     of_bsn_tlv_vlan_vid_mask_t *obj, int value);
+
+extern int of_bsn_tlv_vni_OF_VERSION_1_3_populate(
+    of_bsn_tlv_vni_t *obj, int value);
+extern int of_bsn_tlv_vni_OF_VERSION_1_3_check(
+    of_bsn_tlv_vni_t *obj, int value);
+extern int of_bsn_tlv_vni_OF_VERSION_1_3_populate_scalars(
+    of_bsn_tlv_vni_t *obj, int value);
+extern int of_bsn_tlv_vni_OF_VERSION_1_3_check_scalars(
+    of_bsn_tlv_vni_t *obj, int value);
 
 extern int of_bsn_tlv_vrf_OF_VERSION_1_3_populate(
     of_bsn_tlv_vrf_t *obj, int value);
@@ -12236,6 +12263,15 @@ extern int of_bsn_tlv_mac_mask_OF_VERSION_1_4_populate_scalars(
 extern int of_bsn_tlv_mac_mask_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_mac_mask_t *obj, int value);
 
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_populate(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_check(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+extern int of_bsn_tlv_mcg_type_vxlan_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_mcg_type_vxlan_t *obj, int value);
+
 extern int of_bsn_tlv_miss_packets_OF_VERSION_1_4_populate(
     of_bsn_tlv_miss_packets_t *obj, int value);
 extern int of_bsn_tlv_miss_packets_OF_VERSION_1_4_check(
@@ -12361,6 +12397,15 @@ extern int of_bsn_tlv_port_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_port_t *obj, int value);
 extern int of_bsn_tlv_port_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_port_t *obj, int value);
+
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_populate(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_check(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
+extern int of_bsn_tlv_port_vxlan_mode_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_port_vxlan_mode_t *obj, int value);
 
 extern int of_bsn_tlv_priority_OF_VERSION_1_4_populate(
     of_bsn_tlv_priority_t *obj, int value);
@@ -12613,6 +12658,15 @@ extern int of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_populate_scalars(
     of_bsn_tlv_vlan_vid_mask_t *obj, int value);
 extern int of_bsn_tlv_vlan_vid_mask_OF_VERSION_1_4_check_scalars(
     of_bsn_tlv_vlan_vid_mask_t *obj, int value);
+
+extern int of_bsn_tlv_vni_OF_VERSION_1_4_populate(
+    of_bsn_tlv_vni_t *obj, int value);
+extern int of_bsn_tlv_vni_OF_VERSION_1_4_check(
+    of_bsn_tlv_vni_t *obj, int value);
+extern int of_bsn_tlv_vni_OF_VERSION_1_4_populate_scalars(
+    of_bsn_tlv_vni_t *obj, int value);
+extern int of_bsn_tlv_vni_OF_VERSION_1_4_check_scalars(
+    of_bsn_tlv_vni_t *obj, int value);
 
 extern int of_bsn_tlv_vrf_OF_VERSION_1_4_populate(
     of_bsn_tlv_vrf_t *obj, int value);
