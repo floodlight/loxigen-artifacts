@@ -320,6 +320,7 @@ const char *const of_object_id_str[] = {
     "of_bsn_tlv_convergence_status",
     "of_bsn_tlv_crc_enabled",
     "of_bsn_tlv_data",
+    "of_bsn_tlv_decap",
     "of_bsn_tlv_eth_dst",
     "of_bsn_tlv_eth_src",
     "of_bsn_tlv_external_gateway_ip",

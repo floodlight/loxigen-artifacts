@@ -150,6 +150,15 @@ public class OFBsnTlvsVer14 implements OFBsnTlvs {
                     );
     }
 
+    public OFBsnTlvDecap.Builder buildDecap() {
+        return new OFBsnTlvDecapVer14.Builder();
+    }
+    public OFBsnTlvDecap decap(OFBsnDecap value) {
+        return new OFBsnTlvDecapVer14(
+                value
+                    );
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         return new OFBsnTlvEthDstVer14.Builder();
     }

@@ -1233,35 +1233,37 @@ enum_v4_ofp_stats_type = {
     [65535] = "OFPST_EXPERIMENTER",
 }
 
-enum_v4_ofp_bsn_port_counter = {
-    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
-    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
-    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
-    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
-    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
-    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
-    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
-    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
-    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
-    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
-    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
-    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
-    [12] = "OFP_BSN_PORT_COUNTER_RX_RUNTS",
-    [13] = "OFP_BSN_PORT_COUNTER_RX_GIANTS",
-    [14] = "OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS",
-    [15] = "OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS",
-    [16] = "OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS",
-    [17] = "OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT",
-    [18] = "OFP_BSN_PORT_COUNTER_TX_COLLISIONS",
-    [19] = "OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS",
-    [20] = "OFP_BSN_PORT_COUNTER_TX_DEFERRED",
-    [21] = "OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT",
-    [22] = "OFP_BSN_PORT_COUNTER_RX_PACKETS",
-    [23] = "OFP_BSN_PORT_COUNTER_TX_PACKETS",
-    [24] = "OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS",
-    [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
-    [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
-    [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
+enum_v4_ofp_type = {
+    [0] = "OFPT_HELLO",
+    [1] = "OFPT_ERROR",
+    [2] = "OFPT_ECHO_REQUEST",
+    [3] = "OFPT_ECHO_REPLY",
+    [4] = "OFPT_EXPERIMENTER",
+    [5] = "OFPT_FEATURES_REQUEST",
+    [6] = "OFPT_FEATURES_REPLY",
+    [7] = "OFPT_GET_CONFIG_REQUEST",
+    [8] = "OFPT_GET_CONFIG_REPLY",
+    [9] = "OFPT_SET_CONFIG",
+    [10] = "OFPT_PACKET_IN",
+    [11] = "OFPT_FLOW_REMOVED",
+    [12] = "OFPT_PORT_STATUS",
+    [13] = "OFPT_PACKET_OUT",
+    [14] = "OFPT_FLOW_MOD",
+    [15] = "OFPT_GROUP_MOD",
+    [16] = "OFPT_PORT_MOD",
+    [17] = "OFPT_TABLE_MOD",
+    [18] = "OFPT_STATS_REQUEST",
+    [19] = "OFPT_STATS_REPLY",
+    [20] = "OFPT_BARRIER_REQUEST",
+    [21] = "OFPT_BARRIER_REPLY",
+    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
+    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
+    [24] = "OFPT_ROLE_REQUEST",
+    [25] = "OFPT_ROLE_REPLY",
+    [26] = "OFPT_GET_ASYNC_REQUEST",
+    [27] = "OFPT_GET_ASYNC_REPLY",
+    [28] = "OFPT_SET_ASYNC",
+    [29] = "OFPT_METER_MOD",
 }
 
 enum_v4_ofp_flow_mod_flags = {
@@ -1535,24 +1537,16 @@ enum_v4_ofp_table_config = {
     [3] = "OFPTC_DEPRECATED_MASK",
 }
 
-enum_v4_ofp_action_type = {
-    [0] = "OFPAT_OUTPUT",
-    [11] = "OFPAT_COPY_TTL_OUT",
-    [12] = "OFPAT_COPY_TTL_IN",
-    [15] = "OFPAT_SET_MPLS_TTL",
-    [16] = "OFPAT_DEC_MPLS_TTL",
-    [17] = "OFPAT_PUSH_VLAN",
-    [18] = "OFPAT_POP_VLAN",
-    [19] = "OFPAT_PUSH_MPLS",
-    [20] = "OFPAT_POP_MPLS",
-    [21] = "OFPAT_SET_QUEUE",
-    [22] = "OFPAT_GROUP",
-    [23] = "OFPAT_SET_NW_TTL",
-    [24] = "OFPAT_DEC_NW_TTL",
-    [25] = "OFPAT_SET_FIELD",
-    [26] = "OFPAT_PUSH_PBB",
-    [27] = "OFPAT_POP_PBB",
-    [65535] = "OFPAT_EXPERIMENTER",
+enum_v4_ofp_bsn_decap = {
+    [0] = "OFP_BSN_DECAP_VXLAN",
+    [1] = "OFP_BSN_DECAP_ERSPAN",
+    [2] = "OFP_BSN_DECAP_L2_GRE",
+    [3] = "OFP_BSN_DECAP_NVGRE",
+    [4] = "OFP_BSN_DECAP_CAPWAP",
+    [5] = "OFP_BSN_DECAP_L2_MPLS",
+    [6] = "OFP_BSN_DECAP_L3_GRE",
+    [7] = "OFP_BSN_DECAP_GTP",
+    [8] = "OFP_BSN_DECAP_L3_MPLS",
 }
 
 enum_v4_ofp_flow_mod_command = {
@@ -1766,37 +1760,35 @@ enum_v4_ofp_bad_match_code = {
     [11] = "OFPBMC_EPERM",
 }
 
-enum_v4_ofp_type = {
-    [0] = "OFPT_HELLO",
-    [1] = "OFPT_ERROR",
-    [2] = "OFPT_ECHO_REQUEST",
-    [3] = "OFPT_ECHO_REPLY",
-    [4] = "OFPT_EXPERIMENTER",
-    [5] = "OFPT_FEATURES_REQUEST",
-    [6] = "OFPT_FEATURES_REPLY",
-    [7] = "OFPT_GET_CONFIG_REQUEST",
-    [8] = "OFPT_GET_CONFIG_REPLY",
-    [9] = "OFPT_SET_CONFIG",
-    [10] = "OFPT_PACKET_IN",
-    [11] = "OFPT_FLOW_REMOVED",
-    [12] = "OFPT_PORT_STATUS",
-    [13] = "OFPT_PACKET_OUT",
-    [14] = "OFPT_FLOW_MOD",
-    [15] = "OFPT_GROUP_MOD",
-    [16] = "OFPT_PORT_MOD",
-    [17] = "OFPT_TABLE_MOD",
-    [18] = "OFPT_STATS_REQUEST",
-    [19] = "OFPT_STATS_REPLY",
-    [20] = "OFPT_BARRIER_REQUEST",
-    [21] = "OFPT_BARRIER_REPLY",
-    [22] = "OFPT_QUEUE_GET_CONFIG_REQUEST",
-    [23] = "OFPT_QUEUE_GET_CONFIG_REPLY",
-    [24] = "OFPT_ROLE_REQUEST",
-    [25] = "OFPT_ROLE_REPLY",
-    [26] = "OFPT_GET_ASYNC_REQUEST",
-    [27] = "OFPT_GET_ASYNC_REPLY",
-    [28] = "OFPT_SET_ASYNC",
-    [29] = "OFPT_METER_MOD",
+enum_v4_ofp_bsn_port_counter = {
+    [0] = "OFP_BSN_PORT_COUNTER_RX_BYTES",
+    [1] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_UNICAST",
+    [2] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BROADCAST",
+    [3] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_MULTICAST",
+    [4] = "OFP_BSN_PORT_COUNTER_RX_DROPPED",
+    [5] = "OFP_BSN_PORT_COUNTER_RX_ERRORS",
+    [6] = "OFP_BSN_PORT_COUNTER_TX_BYTES",
+    [7] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_UNICAST",
+    [8] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_BROADCAST",
+    [9] = "OFP_BSN_PORT_COUNTER_TX_PACKETS_MULTICAST",
+    [10] = "OFP_BSN_PORT_COUNTER_TX_DROPPED",
+    [11] = "OFP_BSN_PORT_COUNTER_TX_ERRORS",
+    [12] = "OFP_BSN_PORT_COUNTER_RX_RUNTS",
+    [13] = "OFP_BSN_PORT_COUNTER_RX_GIANTS",
+    [14] = "OFP_BSN_PORT_COUNTER_RX_CRC_ERRORS",
+    [15] = "OFP_BSN_PORT_COUNTER_RX_ALIGNMENT_ERRORS",
+    [16] = "OFP_BSN_PORT_COUNTER_RX_SYMBOL_ERRORS",
+    [17] = "OFP_BSN_PORT_COUNTER_RX_PAUSE_INPUT",
+    [18] = "OFP_BSN_PORT_COUNTER_TX_COLLISIONS",
+    [19] = "OFP_BSN_PORT_COUNTER_TX_LATE_COLLISIONS",
+    [20] = "OFP_BSN_PORT_COUNTER_TX_DEFERRED",
+    [21] = "OFP_BSN_PORT_COUNTER_TX_PAUSE_OUTPUT",
+    [22] = "OFP_BSN_PORT_COUNTER_RX_PACKETS",
+    [23] = "OFP_BSN_PORT_COUNTER_TX_PACKETS",
+    [24] = "OFP_BSN_PORT_COUNTER_RX_LENGTH_ERRORS",
+    [25] = "OFP_BSN_PORT_COUNTER_RX_OVERFLOW_ERRORS",
+    [26] = "OFP_BSN_PORT_COUNTER_TX_CARRIER_ERRORS",
+    [27] = "OFP_BSN_PORT_COUNTER_RX_PACKETS_BAD_VLAN",
 }
 
 enum_v4_ofp_packet_in_reason = {
@@ -1828,6 +1820,26 @@ enum_v4_ofp_bsn_lacp_state = {
     [32] = "OFP_BSN_LACP_STATE_DISTRIBUTING",
     [64] = "OFP_BSN_LACP_STATE_DEFAULTED",
     [128] = "OFP_BSN_LACP_STATE_EXPIRED",
+}
+
+enum_v4_ofp_action_type = {
+    [0] = "OFPAT_OUTPUT",
+    [11] = "OFPAT_COPY_TTL_OUT",
+    [12] = "OFPAT_COPY_TTL_IN",
+    [15] = "OFPAT_SET_MPLS_TTL",
+    [16] = "OFPAT_DEC_MPLS_TTL",
+    [17] = "OFPAT_PUSH_VLAN",
+    [18] = "OFPAT_POP_VLAN",
+    [19] = "OFPAT_PUSH_MPLS",
+    [20] = "OFPAT_POP_MPLS",
+    [21] = "OFPAT_SET_QUEUE",
+    [22] = "OFPAT_GROUP",
+    [23] = "OFPAT_SET_NW_TTL",
+    [24] = "OFPAT_DEC_NW_TTL",
+    [25] = "OFPAT_SET_FIELD",
+    [26] = "OFPAT_PUSH_PBB",
+    [27] = "OFPAT_POP_PBB",
+    [65535] = "OFPAT_EXPERIMENTER",
 }
 
 enum_v4_ofp_bsn_vport_q_in_q_untagged = {
@@ -2004,6 +2016,11 @@ enum_v5_ofp_bad_request_code = {
     [13] = "OFPBRC_MULTIPART_BUFFER_OVERFLOW",
     [14] = "OFPBRC_MULTIPART_REQUEST_TIMEOUT",
     [15] = "OFPBRC_MULTIPART_REPLY_TIMEOUT",
+}
+
+enum_v5_ofp_requestforward_reason = {
+    [0] = "OFPRFR_GROUP_MOD",
+    [1] = "OFPRFR_METER_MOD",
 }
 
 enum_v5_ofp_bsn_pktin_flag = {
@@ -2269,24 +2286,16 @@ enum_v5_ofp_table_config = {
     [8] = "OFPTC_VACANCY_EVENTS",
 }
 
-enum_v5_ofp_action_type = {
-    [0] = "OFPAT_OUTPUT",
-    [11] = "OFPAT_COPY_TTL_OUT",
-    [12] = "OFPAT_COPY_TTL_IN",
-    [15] = "OFPAT_SET_MPLS_TTL",
-    [16] = "OFPAT_DEC_MPLS_TTL",
-    [17] = "OFPAT_PUSH_VLAN",
-    [18] = "OFPAT_POP_VLAN",
-    [19] = "OFPAT_PUSH_MPLS",
-    [20] = "OFPAT_POP_MPLS",
-    [21] = "OFPAT_SET_QUEUE",
-    [22] = "OFPAT_GROUP",
-    [23] = "OFPAT_SET_NW_TTL",
-    [24] = "OFPAT_DEC_NW_TTL",
-    [25] = "OFPAT_SET_FIELD",
-    [26] = "OFPAT_PUSH_PBB",
-    [27] = "OFPAT_POP_PBB",
-    [65535] = "OFPAT_EXPERIMENTER",
+enum_v5_ofp_bsn_decap = {
+    [0] = "OFP_BSN_DECAP_VXLAN",
+    [1] = "OFP_BSN_DECAP_ERSPAN",
+    [2] = "OFP_BSN_DECAP_L2_GRE",
+    [3] = "OFP_BSN_DECAP_NVGRE",
+    [4] = "OFP_BSN_DECAP_CAPWAP",
+    [5] = "OFP_BSN_DECAP_L2_MPLS",
+    [6] = "OFP_BSN_DECAP_L3_GRE",
+    [7] = "OFP_BSN_DECAP_GTP",
+    [8] = "OFP_BSN_DECAP_L3_MPLS",
 }
 
 enum_v5_ofp_flow_mod_command = {
@@ -2617,9 +2626,24 @@ enum_v5_ofp_bsn_lacp_state = {
     [128] = "OFP_BSN_LACP_STATE_EXPIRED",
 }
 
-enum_v5_ofp_requestforward_reason = {
-    [0] = "OFPRFR_GROUP_MOD",
-    [1] = "OFPRFR_METER_MOD",
+enum_v5_ofp_action_type = {
+    [0] = "OFPAT_OUTPUT",
+    [11] = "OFPAT_COPY_TTL_OUT",
+    [12] = "OFPAT_COPY_TTL_IN",
+    [15] = "OFPAT_SET_MPLS_TTL",
+    [16] = "OFPAT_DEC_MPLS_TTL",
+    [17] = "OFPAT_PUSH_VLAN",
+    [18] = "OFPAT_POP_VLAN",
+    [19] = "OFPAT_PUSH_MPLS",
+    [20] = "OFPAT_POP_MPLS",
+    [21] = "OFPAT_SET_QUEUE",
+    [22] = "OFPAT_GROUP",
+    [23] = "OFPAT_SET_NW_TTL",
+    [24] = "OFPAT_DEC_NW_TTL",
+    [25] = "OFPAT_SET_FIELD",
+    [26] = "OFPAT_PUSH_PBB",
+    [27] = "OFPAT_POP_PBB",
+    [65535] = "OFPAT_EXPERIMENTER",
 }
 
 enum_v5_ofp_bsn_vport_q_in_q_untagged = {
@@ -6763,6 +6787,9 @@ fields['of13.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of13.bsn_tlv_crc_en
 fields['of13.bsn_tlv_data.type'] = ProtoField.uint16("of13.bsn_tlv_data.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_data.length'] = ProtoField.uint16("of13.bsn_tlv_data.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_data.value'] = ProtoField.bytes("of13.bsn_tlv_data.value", "value")
+fields['of13.bsn_tlv_decap.type'] = ProtoField.uint16("of13.bsn_tlv_decap.type", "type", base.DEC, nil)
+fields['of13.bsn_tlv_decap.length'] = ProtoField.uint16("of13.bsn_tlv_decap.length", "length", base.DEC, nil)
+fields['of13.bsn_tlv_decap.value'] = ProtoField.uint32("of13.bsn_tlv_decap.value", "value", base.DEC, enum_v4_ofp_bsn_decap)
 fields['of13.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of13.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of13.bsn_tlv_eth_dst.value'] = ProtoField.ether("of13.bsn_tlv_eth_dst.value", "value")
@@ -9385,6 +9412,9 @@ fields['of14.bsn_tlv_crc_enabled.value'] = ProtoField.uint8("of14.bsn_tlv_crc_en
 fields['of14.bsn_tlv_data.type'] = ProtoField.uint16("of14.bsn_tlv_data.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_data.length'] = ProtoField.uint16("of14.bsn_tlv_data.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_data.value'] = ProtoField.bytes("of14.bsn_tlv_data.value", "value")
+fields['of14.bsn_tlv_decap.type'] = ProtoField.uint16("of14.bsn_tlv_decap.type", "type", base.DEC, nil)
+fields['of14.bsn_tlv_decap.length'] = ProtoField.uint16("of14.bsn_tlv_decap.length", "length", base.DEC, nil)
+fields['of14.bsn_tlv_decap.value'] = ProtoField.uint32("of14.bsn_tlv_decap.value", "value", base.DEC, enum_v5_ofp_bsn_decap)
 fields['of14.bsn_tlv_eth_dst.type'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.type", "type", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.length'] = ProtoField.uint16("of14.bsn_tlv_eth_dst.length", "length", base.DEC, nil)
 fields['of14.bsn_tlv_eth_dst.value'] = ProtoField.ether("of14.bsn_tlv_eth_dst.value", "value")
@@ -15199,6 +15229,9 @@ p_of.fields = {
     fields['of13.bsn_tlv_data.type'],
     fields['of13.bsn_tlv_data.length'],
     fields['of13.bsn_tlv_data.value'],
+    fields['of13.bsn_tlv_decap.type'],
+    fields['of13.bsn_tlv_decap.length'],
+    fields['of13.bsn_tlv_decap.value'],
     fields['of13.bsn_tlv_eth_dst.type'],
     fields['of13.bsn_tlv_eth_dst.length'],
     fields['of13.bsn_tlv_eth_dst.value'],
@@ -17821,6 +17854,9 @@ p_of.fields = {
     fields['of14.bsn_tlv_data.type'],
     fields['of14.bsn_tlv_data.length'],
     fields['of14.bsn_tlv_data.value'],
+    fields['of14.bsn_tlv_decap.type'],
+    fields['of14.bsn_tlv_decap.length'],
+    fields['of14.bsn_tlv_decap.value'],
     fields['of14.bsn_tlv_eth_dst.type'],
     fields['of14.bsn_tlv_eth_dst.length'],
     fields['of14.bsn_tlv_eth_dst.value'],
@@ -28961,6 +28997,16 @@ function dissect_of_bsn_tlv_data_v4(reader, subtree)
 end
 of_bsn_tlv_v4_dissectors[55] = dissect_of_bsn_tlv_data_v4
 
+-- child class of_bsn_tlv_decap
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_decap_v4(reader, subtree)
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_decap.type')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_decap.length')
+    read_uint16_t(reader, 4, subtree, 'of13.bsn_tlv_decap.value')
+    return 'of_bsn_tlv_decap'
+end
+of_bsn_tlv_v4_dissectors[85] = dissect_of_bsn_tlv_decap_v4
+
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv
 function dissect_of_bsn_tlv_eth_dst_v4(reader, subtree)
@@ -35848,6 +35894,16 @@ function dissect_of_bsn_tlv_data_v5(reader, subtree)
     return 'of_bsn_tlv_data'
 end
 of_bsn_tlv_v5_dissectors[55] = dissect_of_bsn_tlv_data_v5
+
+-- child class of_bsn_tlv_decap
+-- Child of of_bsn_tlv
+function dissect_of_bsn_tlv_decap_v5(reader, subtree)
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_decap.type')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_decap.length')
+    read_uint16_t(reader, 5, subtree, 'of14.bsn_tlv_decap.value')
+    return 'of_bsn_tlv_decap'
+end
+of_bsn_tlv_v5_dissectors[85] = dissect_of_bsn_tlv_decap_v5
 
 -- child class of_bsn_tlv_eth_dst
 -- Child of of_bsn_tlv

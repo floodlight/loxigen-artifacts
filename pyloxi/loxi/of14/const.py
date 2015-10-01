@@ -288,6 +288,29 @@ ofp_bsn_controller_connection_state_map = {
     1: 'OFP_BSN_CONTROLLER_CONNECTION_STATE_CONNECTED',
 }
 
+# Identifiers from group ofp_bsn_decap
+OFP_BSN_DECAP_VXLAN = 0
+OFP_BSN_DECAP_ERSPAN = 1
+OFP_BSN_DECAP_L2_GRE = 2
+OFP_BSN_DECAP_NVGRE = 3
+OFP_BSN_DECAP_CAPWAP = 4
+OFP_BSN_DECAP_L2_MPLS = 5
+OFP_BSN_DECAP_L3_GRE = 6
+OFP_BSN_DECAP_GTP = 7
+OFP_BSN_DECAP_L3_MPLS = 8
+
+ofp_bsn_decap_map = {
+    0: 'OFP_BSN_DECAP_VXLAN',
+    1: 'OFP_BSN_DECAP_ERSPAN',
+    2: 'OFP_BSN_DECAP_L2_GRE',
+    3: 'OFP_BSN_DECAP_NVGRE',
+    4: 'OFP_BSN_DECAP_CAPWAP',
+    5: 'OFP_BSN_DECAP_L2_MPLS',
+    6: 'OFP_BSN_DECAP_L3_GRE',
+    7: 'OFP_BSN_DECAP_GTP',
+    8: 'OFP_BSN_DECAP_L3_MPLS',
+}
+
 # Identifiers from group ofp_bsn_lacp_state
 OFP_BSN_LACP_STATE_ACTIVITY = 1
 OFP_BSN_LACP_STATE_TIMEOUT = 2

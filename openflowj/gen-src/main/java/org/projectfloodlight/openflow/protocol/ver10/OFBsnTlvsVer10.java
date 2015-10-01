@@ -124,6 +124,13 @@ public class OFBsnTlvsVer10 implements OFBsnTlvs {
         throw new UnsupportedOperationException("OFBsnTlvData not supported in version 1.0");
     }
 
+    public OFBsnTlvDecap.Builder buildDecap() {
+        throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.0");
+    }
+    public OFBsnTlvDecap decap(OFBsnDecap value) {
+        throw new UnsupportedOperationException("OFBsnTlvDecap not supported in version 1.0");
+    }
+
     public OFBsnTlvEthDst.Builder buildEthDst() {
         throw new UnsupportedOperationException("OFBsnTlvEthDst not supported in version 1.0");
     }
